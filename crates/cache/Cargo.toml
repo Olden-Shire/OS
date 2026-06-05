@@ -1,5 +1,5 @@
 [package]
-name = "os1-db"
+name = "cache"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -7,3 +7,5 @@ license.workspace = true
 publish.workspace = true
 
 [dependencies]
+io.workspace = true
+datastruct.workspace = true

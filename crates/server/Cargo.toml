@@ -1,5 +1,5 @@
 [package]
-name = "os1-wordenc"
+name = "server"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -7,4 +7,7 @@ license.workspace = true
 publish.workspace = true
 
 [dependencies]
-os1-io.workspace = true
+io.workspace = true
+protocol.workspace = true
+engine.workspace = true
+db.workspace = true

@@ -3,65 +3,65 @@
 version = 4
 
 [[package]]
-name = "os1-app"
+name = "app"
 version = "0.1.0"
 dependencies = [
- "os1-engine",
- "os1-server",
+ "engine",
+ "server",
 ]
 
 [[package]]
-name = "os1-cache"
+name = "cache"
 version = "0.1.0"
 dependencies = [
- "os1-datastruct",
- "os1-io",
+ "datastruct",
+ "io",
 ]
 
 [[package]]
-name = "os1-datastruct"
+name = "datastruct"
 version = "0.1.0"
 
 [[package]]
-name = "os1-db"
+name = "db"
 version = "0.1.0"
 
 [[package]]
-name = "os1-engine"
+name = "engine"
 version = "0.1.0"
 dependencies = [
- "os1-cache",
- "os1-datastruct",
- "os1-io",
- "os1-protocol",
- "os1-wordenc",
+ "cache",
+ "datastruct",
+ "io",
+ "protocol",
+ "wordenc",
 ]
 
 [[package]]
-name = "os1-io"
+name = "io"
 version = "0.1.0"
 
 [[package]]
-name = "os1-protocol"
+name = "protocol"
 version = "0.1.0"
 dependencies = [
- "os1-cache",
- "os1-io",
+ "cache",
+ "io",
 ]
 
 [[package]]
-name = "os1-server"
+name = "server"
 version = "0.1.0"
 dependencies = [
- "os1-db",
- "os1-engine",
- "os1-io",
- "os1-protocol",
+ "db",
+ "engine",
+ "io",
+ "protocol",
 ]
 
 [[package]]
-name = "os1-wordenc"
+name = "wordenc"
 version = "0.1.0"
 dependencies = [
- "os1-io",
+ "io",
 ]
