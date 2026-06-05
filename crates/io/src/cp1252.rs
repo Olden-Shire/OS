@@ -50,6 +50,19 @@ pub fn encoded_len(s: &str) -> usize {
     s.chars().count()
 }
 
+/// Jagex name hash: `h = (h << 5) - h + cp1252_byte_signed` per character, matching
+/// `StringTools.computeCp1252HashFromUtf8` in the rev1 client. Used to resolve named files
+/// in JS5 archives (e.g. `"m40_55"` → group id).
+#[must_use]
+pub fn name_hash(s: &str) -> i32 {
+    let mut h = 0i32;
+    for c in s.chars() {
+        let b = encode_char(c) as i8; // sign-extend to match Java byte semantics
+        h = h.wrapping_mul(31).wrapping_add(i32::from(b));
+    }
+    h
+}
+
 fn encode_char(c: char) -> u8 {
     let cp = c as u32;
     // ASCII and Latin-1 supplement pass through (matching the Java guard exactly).
@@ -106,6 +119,21 @@ mod tests {
     #[test]
     fn embedded_nul_is_dropped_on_decode() {
         assert_eq!(decode(&[b'a', 0, b'b'], 0, 3), "ab");
+    }
+
+    #[test]
+    fn name_hash_matches_jagex_examples() {
+        // Cross-checked against keys.json entries committed under cache/ — these names hash
+        // to exactly the `name_hash` field in that file.
+        assert_eq!(name_hash("l40_55"), -1_153_472_937);
+        assert_eq!(name_hash("l45_73"), -1_153_323_922);
+        assert_eq!(name_hash("l29_80"), -1_155_051_772);
+        assert_eq!(name_hash("l36_52"), -1_154_217_715);
+    }
+
+    #[test]
+    fn name_hash_empty_string_is_zero() {
+        assert_eq!(name_hash(""), 0);
     }
 
     #[test]

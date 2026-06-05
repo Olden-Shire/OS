@@ -8,5 +8,6 @@ pub mod cp1252;
 pub mod crc32;
 pub mod gzip;
 pub mod packet;
+pub mod xtea;
 
 pub use packet::Packet;

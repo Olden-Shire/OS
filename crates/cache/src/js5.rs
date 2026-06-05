@@ -33,6 +33,20 @@ pub struct Js5Index {
 }
 
 impl Js5Index {
+    /// Look up a group id by its CP1252 name hash. Only returns `Some` for indices that
+    /// were packed with names (info bit 0 set in the header).
+    ///
+    /// Linear scan over present groups — fine for occasional lookups. If callers need to
+    /// resolve many names against the same index, build their own reverse map.
+    #[must_use]
+    pub fn find_group_by_hash(&self, hash: i32) -> Option<u32> {
+        let table = self.group_name_hashes.as_ref()?;
+        self.group_ids.iter().copied().find_map(|gid| {
+            let g = gid as usize;
+            if table.get(g).copied() == Some(hash) { Some(gid as u32) } else { None }
+        })
+    }
+
     /// Decode an index from its on-disk bytes (the JS5 wrapper is unwrapped internally).
     #[must_use]
     pub fn decode(raw: &[u8]) -> Self {
