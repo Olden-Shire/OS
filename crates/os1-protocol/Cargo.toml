@@ -1,0 +1,11 @@
+[package]
+name = "os1-protocol"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+os1-io.workspace = true
+os1-cache.workspace = true

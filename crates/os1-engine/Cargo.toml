@@ -1,0 +1,14 @@
+[package]
+name = "os1-engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+os1-io.workspace = true
+os1-datastruct.workspace = true
+os1-cache.workspace = true
+os1-protocol.workspace = true
+os1-wordenc.workspace = true

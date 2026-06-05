@@ -1,0 +1,35 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/os1-datastruct",
+    "crates/os1-io",
+    "crates/os1-wordenc",
+    "crates/os1-cache",
+    "crates/os1-protocol",
+    "crates/os1-engine",
+    "crates/os1-db",
+    "crates/os1-server",
+    "crates/os1-app",
+]
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+rust-version = "1.95"
+license = "MIT"
+publish = false
+
+[workspace.dependencies]
+os1-datastruct = { path = "crates/os1-datastruct" }
+os1-io = { path = "crates/os1-io" }
+os1-wordenc = { path = "crates/os1-wordenc" }
+os1-cache = { path = "crates/os1-cache" }
+os1-protocol = { path = "crates/os1-protocol" }
+os1-engine = { path = "crates/os1-engine" }
+os1-db = { path = "crates/os1-db" }
+os1-server = { path = "crates/os1-server" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

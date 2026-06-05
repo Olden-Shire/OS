@@ -1,0 +1,15 @@
+[package]
+name = "os1-app"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "os1"
+path = "src/main.rs"
+
+[dependencies]
+os1-server.workspace = true
+os1-engine.workspace = true
