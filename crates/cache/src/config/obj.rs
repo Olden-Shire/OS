@@ -114,6 +114,30 @@ impl ObjType {
         }
     }
 
+    /// Mirror of the Java client's `genCert` (note/cert template merge). If this obj is a
+    /// "cert" wrapping another item (`certtemplate != -1`), this copies visual fields from
+    /// `template`, name/members/cost from `link`, and forces `stackable = 1`.
+    ///
+    /// `template` is the visual template (typically item 799 — the cert paper graphic).
+    /// `link` is the underlying real item (the actual stackable note).
+    pub fn gen_cert(&mut self, template: &ObjType, link: &ObjType) {
+        self.model = template.model;
+        self.zoom2d = template.zoom2d;
+        self.xan2d = template.xan2d;
+        self.yan2d = template.yan2d;
+        self.zan2d = template.zan2d;
+        self.xof2d = template.xof2d;
+        self.yof2d = template.yof2d;
+        self.recol_s = template.recol_s.clone();
+        self.recol_d = template.recol_d.clone();
+        self.retex_s = template.retex_s.clone();
+        self.retex_d = template.retex_d.clone();
+        self.name = link.name.clone();
+        self.members = link.members;
+        self.cost = link.cost;
+        self.stackable = 1;
+    }
+
     fn decode_opcode(&mut self, p: &mut Packet, code: i32) {
         match code {
             1 => self.model = p.g2(),

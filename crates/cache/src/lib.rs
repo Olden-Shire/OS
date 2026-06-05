@@ -156,7 +156,7 @@ impl Cache {
         } else {
             None
         };
-        Ok(Some(Region::decode(&terrain, locs.as_deref())))
+        Ok(Some(Region::decode(x, y, &terrain, locs.as_deref())))
     }
 
     /// Read every file inside a group and pair each with its file id. The order matches

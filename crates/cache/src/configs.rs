@@ -34,8 +34,11 @@ pub struct Configs {
 impl Configs {
     /// Load every ConfigType record from the open cache. Panics if any record fails to
     /// decode — that means the cache isn't actually rev1 or our port has drifted.
+    ///
+    /// After decoding, walks all certs (objs with `certtemplate != -1`) and applies the
+    /// template/link merge that the Java client does at lookup time in `ObjType.list`.
     pub fn load(cache: &mut Cache) -> std::io::Result<Self> {
-        Ok(Self {
+        let mut me = Self {
             flus: load_group(cache, group::FLU, FluType::decode)?,
             idks: load_group(cache, group::IDK, IdkType::decode)?,
             flos: load_group(cache, group::FLO, FloType::decode)?,
@@ -48,7 +51,29 @@ impl Configs {
             spots: load_group(cache, group::SPOT, SpotType::decode)?,
             varbits: load_group(cache, group::VARBIT, VarBitType::decode)?,
             varps: load_group(cache, group::VARP, VarpType::decode)?,
-        })
+        };
+        me.resolve_cert_objs();
+        Ok(me)
+    }
+
+    fn resolve_cert_objs(&mut self) {
+        // Collect cert ids first to avoid an `objs.get` borrow while mutating `objs`.
+        let certs: Vec<(i32, i32, i32)> = self
+            .objs
+            .iter()
+            .filter_map(|(id, o)| {
+                if o.certtemplate != -1 { Some((*id, o.certtemplate, o.certlink)) } else { None }
+            })
+            .collect();
+        for (id, template_id, link_id) in certs {
+            let template = self.objs.get(&template_id).cloned();
+            let link = self.objs.get(&link_id).cloned();
+            if let (Some(t), Some(l)) = (template, link)
+                && let Some(obj) = self.objs.get_mut(&id)
+            {
+                obj.gen_cert(&t, &l);
+            }
+        }
     }
 
     /// Total record count across all 12 tables — handy for verification tests.

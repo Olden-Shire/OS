@@ -12,6 +12,8 @@
 //! * Locs: `jagex3.client.ClientBuild.loadLocations`. Delta-encoded loc id outer loop;
 //!   delta-encoded packed position inner loop; per-placement shape+rotation byte.
 
+mod perlin;
+
 use std::collections::HashMap;
 use std::path::Path;
 
@@ -32,13 +34,13 @@ pub const fn mapsquare(x: u32, y: u32) -> u32 {
 }
 
 /// Per-tile terrain data. Fields with `i32` defaults reflect "opcode wasn't emitted for
-/// this tile" — most tiles don't emit all opcodes. `height` is `None` when the on-disk
-/// stream used the implicit "compute from perlin noise" form (default for unedited tiles).
+/// this tile" — most tiles don't emit all opcodes.
 #[derive(Debug, Default, Clone, Copy)]
 pub struct Tile {
-    /// Explicit height in Jagex units (1/8 of a render unit). `None` ⇒ defaulted from
-    /// perlin noise on the client; we leave it unset rather than guessing.
-    pub height: Option<i32>,
+    /// Height in Jagex units (1/8 of a render unit). If the on-disk stream emitted an
+    /// explicit height (opcode 1), that's used; otherwise level 0 is filled from a
+    /// seeded perlin noise function and levels 1..=3 are `parent - 240`.
+    pub height: i32,
     /// Map flag bits (bit 0 = blocked, bit 1 = bridge, bit 2 = roof, bit 3 = bridge-block).
     pub mapflags: u8,
     /// Underlay floor id (FluType) + 1; 0 = no underlay.
@@ -47,7 +49,10 @@ pub struct Tile {
     pub overlay: u8,
     /// Overlay shape (0..=11); only meaningful when `overlay > 0`.
     pub overlay_shape: u8,
-    /// Overlay rotation (0..=3); only meaningful when `overlay > 0`.
+    /// Overlay rotation (0..=3); only meaningful when `overlay > 0`. The Java client adds
+    /// an additional "base rotation" to this when streaming instance rebuilds — we store
+    /// the unrotated component since instance rotation is a runtime/world-builder
+    /// concern, not a decode concern.
     pub overlay_rotation: u8,
 }
 
@@ -76,31 +81,70 @@ pub struct Region {
 }
 
 impl Region {
-    /// Decode a terrain stream and an optional (already-decrypted) loc stream.
-    /// `loc_bytes = None` for regions that have no loc file (rare; usually instance areas).
+    /// Decode a terrain stream and an optional (already-decrypted) loc stream. Default
+    /// tile heights (where the stream emitted no opcode 1) are filled from perlin noise
+    /// using the region's `(x, y)` coords.
+    ///
+    /// `loc_bytes = None` for regions with no loc file (rare; usually instance areas).
     #[must_use]
-    pub fn decode(terrain_bytes: &[u8], loc_bytes: Option<&[u8]>) -> Self {
-        let tiles = decode_terrain(terrain_bytes);
+    pub fn decode(
+        region_x: u32,
+        region_y: u32,
+        terrain_bytes: &[u8],
+        loc_bytes: Option<&[u8]>,
+    ) -> Self {
+        let tiles = decode_terrain(terrain_bytes, region_x, region_y);
         let locs = loc_bytes.map(decode_locs).unwrap_or_default();
         Self { tiles, locs }
     }
 }
 
-fn decode_terrain(bytes: &[u8]) -> Box<[[[Tile; REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]> {
+fn decode_terrain(
+    bytes: &[u8],
+    region_x: u32,
+    region_z: u32,
+) -> Box<[[[Tile; REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]> {
     let mut tiles: Box<[[[Tile; REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]> =
         Box::new([[[Tile::default(); REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]);
+    // Tracks tiles that received an explicit height from the stream, so the default-height
+    // pass doesn't overwrite them.
+    let mut explicit = [[[false; REGION_SIZE]; REGION_SIZE]; REGION_LEVELS];
+
     let mut p = Packet::from_vec(bytes.to_vec());
     for level in 0..REGION_LEVELS {
         for x in 0..REGION_SIZE {
             for z in 0..REGION_SIZE {
-                decode_tile(&mut p, &mut tiles[level][x][z]);
+                decode_tile(&mut p, &mut tiles[level][x][z], &mut explicit[level][x][z]);
             }
         }
     }
+
+    // Default heights (mirrors ClientBuild::loadGroundSquare's opcode-0 branch).
+    let base_x = region_x as i32 * REGION_SIZE as i32;
+    let base_z = region_z as i32 * REGION_SIZE as i32;
+    for level in 0..REGION_LEVELS {
+        for x in 0..REGION_SIZE {
+            for z in 0..REGION_SIZE {
+                if explicit[level][x][z] {
+                    continue;
+                }
+                let h = if level == 0 {
+                    -perlin::perlin(
+                        base_x + x as i32 + 932_731,
+                        base_z + z as i32 + 556_238,
+                    ) * 8
+                } else {
+                    tiles[level - 1][x][z].height - 240
+                };
+                tiles[level][x][z].height = h;
+            }
+        }
+    }
+
     tiles
 }
 
-fn decode_tile(p: &mut Packet, tile: &mut Tile) {
+fn decode_tile(p: &mut Packet, tile: &mut Tile, explicit_height: &mut bool) {
     loop {
         let code = p.g1();
         if code == 0 {
@@ -113,17 +157,13 @@ fn decode_tile(p: &mut Packet, tile: &mut Tile) {
             if h == 1 {
                 h = 0;
             }
-            tile.height = Some(h);
+            tile.height = h;
+            *explicit_height = true;
             return;
         }
         if code <= 49 {
-            // Overlay: shape (1..12) packed alongside texture/rotation base.
             tile.overlay = p.g1() as u8;
             tile.overlay_shape = ((code - 2) / 4) as u8;
-            // Rotation is `(code - 2 + base_rotation) & 0x3`; base_rotation comes from
-            // region-rotation transforms that the client applies when streaming regions
-            // (only non-zero for instance rebuilds). We store the unrotated component
-            // since we're not transforming.
             tile.overlay_rotation = ((code - 2) & 0x3) as u8;
         } else if code <= 81 {
             tile.mapflags = (code - 49) as u8;

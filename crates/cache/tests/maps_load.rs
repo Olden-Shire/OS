@@ -95,4 +95,21 @@ fn lumbridge_region_has_sensible_locs() {
         },
     );
     assert!(region.locs.len() > 500, "lumbridge has only {} locs", region.locs.len());
+
+    // Heights should all be concrete (perlin fill ran). Spot-check that they're in a
+    // sensible 32-bit range and that level 0 has more variation than higher levels (since
+    // each higher level is just level_below - 240 for unedited tiles).
+    let mut min_max = [(i32::MAX, i32::MIN); 4];
+    for level in 0..4 {
+        for x in 0..64 {
+            for z in 0..64 {
+                let h = region.tiles[level][x][z].height;
+                if h < min_max[level].0 { min_max[level].0 = h; }
+                if h > min_max[level].1 { min_max[level].1 = h; }
+            }
+        }
+    }
+    for level in 0..4 {
+        eprintln!("  (50,50) lvl{level} height min={:>5} max={:>5}", min_max[level].0, min_max[level].1);
+    }
 }

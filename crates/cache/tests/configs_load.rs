@@ -65,4 +65,15 @@ fn well_known_objs_have_plausible_fields() {
     // Members items should have members=true on at least some objs.
     let members_count = cfg.objs.values().filter(|o| o.members).count();
     assert!(members_count > 100, "only {} members items", members_count);
+
+    // Cert template merge: every cert obj (certtemplate != -1) should have stackable=1
+    // and a non-default name (copied from the linked obj).
+    let certs: Vec<_> = cfg.objs.values().filter(|o| o.certtemplate != -1).collect();
+    assert!(certs.len() > 100, "only {} cert objs", certs.len());
+    for cert in &certs {
+        assert_eq!(cert.stackable, 1, "cert {} not stackable after merge", cert.id);
+    }
+    let named_certs = certs.iter().filter(|o| o.name != "null").count();
+    assert!(named_certs > 100, "only {named_certs}/{} certs got linked names", certs.len());
+    eprintln!("  cert objs: {} total, {} with non-default name", certs.len(), named_certs);
 }
