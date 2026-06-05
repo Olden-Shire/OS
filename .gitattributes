@@ -1,0 +1,6 @@
+/gradlew        text eol=lf
+*.bat           text eol=crlf
+
+# Cache (OSRS rev1 game data) — binary, never normalize
+cache/main_file_cache.dat2  binary
+cache/main_file_cache.idx*  binary

@@ -1,0 +1,19 @@
+/.gradle/
+/.idea/
+
+build/
+*.class
+*.java~
+
+hs_err_pid*.log
+
+.DS_Store
+
+# Reference implementations (not part of this repo's history)
+/Engine-TS/
+/Content/
+
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock.bak
