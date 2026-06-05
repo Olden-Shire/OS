@@ -21,13 +21,10 @@ fn opens_cache_directory() {
 
 #[test]
 fn reads_master_index_for_every_archive() {
-    let mut c = Cache::open(&cache_dir()).expect("open cache");
+    let c = Cache::open(&cache_dir()).expect("open cache");
     let mut total_groups = 0u32;
     for archive in 0..ARCHIVE_COUNT {
-        let idx = c
-            .read_index(archive)
-            .expect("read_index io")
-            .unwrap_or_else(|| panic!("archive {archive} index missing"));
+        let idx = c.index(archive);
         assert!(idx.size > 0, "archive {archive} has 0 groups");
         assert!(matches!(idx.protocol, 5..=7), "archive {archive} unexpected protocol {}", idx.protocol);
         total_groups += idx.size;
@@ -47,11 +44,7 @@ fn reads_master_index_for_every_archive() {
 fn reads_first_group_of_every_archive() {
     let mut c = Cache::open(&cache_dir()).expect("open cache");
     for archive in 0..ARCHIVE_COUNT {
-        let idx = c
-            .read_index(archive)
-            .expect("read_index io")
-            .expect("master index missing entry");
-        let first_group = idx.group_ids[0] as u32;
+        let first_group = c.index(archive).group_ids[0] as u32;
         let bytes = c
             .read_group(archive, first_group)
             .expect("read_group io")
