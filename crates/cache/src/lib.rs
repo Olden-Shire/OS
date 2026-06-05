@@ -4,11 +4,14 @@
 //! `src/main/java/jagex3/js5/Js5.java`. Only the read path is ported (server doesn't write
 //! to its cache the way the client does during JS5 downloads).
 
+pub mod anim;
 pub mod config;
 pub mod configs;
 pub mod data_file;
+pub mod iftype;
 pub mod js5;
 pub mod maps;
+pub mod model;
 
 use std::fs::File;
 use std::path::Path;
@@ -28,12 +31,25 @@ pub const MASTER_ARCHIVE: u8 = 255;
 /// Number of game archives (idx0..idx15). The master archive (idx255) lives separately.
 pub const ARCHIVE_COUNT: u8 = 16;
 
+/// Archive 0 — animation frame sets (multi-file groups, one file per frame).
+pub const ANIMS_ARCHIVE: u8 = 0;
+
+/// Archive 1 — animation base poses / skeletons (one group per base, file 0).
+pub const BASES_ARCHIVE: u8 = 1;
+
 /// Archive 2 — holds all ConfigType records (NPCs, items, locs, seqs, etc.) grouped by type.
 pub const CONFIG_ARCHIVE: u8 = 2;
+
+/// Archive 3 — interface (UI) component definitions; one group per parent interface,
+/// one file per subcomponent.
+pub const INTERFACES_ARCHIVE: u8 = 3;
 
 /// Archive 5 — holds per-region terrain (`m{x}_{y}`) and loc placement (`l{x}_{y}`,
 /// XTEA-encrypted) files, looked up by CP1252 name hash.
 pub const MAPS_ARCHIVE: u8 = 5;
+
+/// Archive 7 — 3D models (ModelUnlit), one group per model (file 0 is the mesh).
+pub const MODELS_ARCHIVE: u8 = 7;
 
 const MASTER_MAX_FILE_SIZE: u32 = 500_000;
 const ARCHIVE_MAX_FILE_SIZE: u32 = 1_000_000;
