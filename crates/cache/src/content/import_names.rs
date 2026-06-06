@@ -52,7 +52,7 @@ struct ScopeSpec {
     content_subdir: &'static str,  // e.g. "models"
     pack_filename: &'static str,    // e.g. "model.pack"
     old_subdir: &'static str,       // e.g. "models" (under Content-old)
-    extension: &'static str,        // file ext to match in old dir, no dot
+    old_extension: &'static str,    // ext in Content-old (and matches our ext too)
 }
 
 impl ScopeSpec {
@@ -60,19 +60,19 @@ impl ScopeSpec {
         content_subdir: "models",
         pack_filename: "model.pack",
         old_subdir: "models",
-        extension: "ob2",
+        old_extension: "ob2",
     };
     const SONGS: Self = Self {
         content_subdir: "songs",
         pack_filename: "song.pack",
         old_subdir: "songs",
-        extension: "mid",
+        old_extension: "mid",
     };
     const JINGLES: Self = Self {
         content_subdir: "jingles",
         pack_filename: "jingle.pack",
         old_subdir: "jingles",
-        extension: "mid",
+        old_extension: "mid",
     };
 }
 
@@ -89,22 +89,27 @@ fn apply_scope(
         return Ok(stats);
     }
 
-    let index = OldContentIndex::build(&old_root, spec.extension)?;
+    let index = OldContentIndex::build(&old_root, spec.old_extension)?;
     stats.source_files = index.total_files;
 
     let mut pack_map = pack_file::read(&pack_path)?;
-    // Build reverse map (current_stem → id) to detect conflicts when renaming.
     let mut taken: std::collections::HashSet<String> = pack_map.values().cloned().collect();
 
     let entries: Vec<(u32, String)> =
         pack_map.iter().map(|(k, v)| (*k, v.clone())).collect();
 
     for (id, current_stem) in entries {
-        let path = scope_dir.join(format!("{current_stem}.dat"));
-        let bytes = match std::fs::read(&path) {
-            Ok(b) => b,
-            Err(_) => continue,
-        };
+        // Try the typed extension first (e.g. .ob2 for models), then fall back to .dat —
+        // covers both freshly-unpacked trees and older `.dat`-only trees.
+        let mut bytes = None;
+        for ext in [spec.old_extension, "dat"] {
+            let p = scope_dir.join(format!("{current_stem}.{ext}"));
+            if let Ok(b) = std::fs::read(&p) {
+                bytes = Some((p, b, ext));
+                break;
+            }
+        }
+        let Some((path, bytes, ext)) = bytes else { continue };
         stats.target_files += 1;
         let Some(matched_name) = index.lookup(&bytes) else { continue };
         if matched_name == current_stem {
@@ -115,7 +120,7 @@ fn apply_scope(
             stats.conflicts += 1;
             continue;
         }
-        let new_path = scope_dir.join(format!("{matched_name}.dat"));
+        let new_path = scope_dir.join(format!("{matched_name}.{ext}"));
         std::fs::rename(&path, &new_path)?;
         taken.remove(&current_stem);
         taken.insert(matched_name.to_string());

@@ -15,6 +15,7 @@ use std::path::Path;
 
 use io::xtea;
 
+use crate::content::extensions;
 use crate::content::manifest::{ArchiveManifest, GroupMeta, MasterManifest};
 use crate::content::pack_file;
 use crate::data_file::{IDX_ENTRY_SIZE, SECTOR_HEADER, SECTOR_PAYLOAD, SECTOR_SIZE};
@@ -134,6 +135,7 @@ fn read_group_payload(
     if let Some(file_ids) = &meta.file_ids {
         // Multi-file group.
         let group_dir = archive_dir.join(group_dir_name(meta, archive, packs));
+        let inner_ext = extensions::multi_file_inner_ext(archive, meta.id);
         // Files within: pack file (if config-type scope) overrides the default "{fid}" stem.
         let file_pack = if archive == CONFIG_ARCHIVE {
             pack_file::pack_name_for_config_group(meta.id).and_then(|s| packs.get(s))
@@ -145,7 +147,7 @@ fn read_group_payload(
             let stem = file_pack
                 .and_then(|m| m.get(&(fid as u32)).map(String::as_str))
                 .map_or_else(|| fid.to_string(), str::to_string);
-            let p = group_dir.join(format!("{stem}.dat"));
+            let p = group_dir.join(format!("{stem}.{inner_ext}"));
             files.push(fs::read(&p).map_err(|e| {
                 std::io::Error::new(e.kind(), format!("read {p:?}: {e}"))
             })?);
@@ -163,7 +165,15 @@ fn read_group_payload(
         // Single-file group.
         let stem = single_file_stem(meta, archive, packs);
         let dat = match stem {
-            Some(s) => archive_dir.join(format!("{s}.dat")),
+            Some(s) => {
+                // Preserve the extension from the manifest path so renames don't break
+                // archives like binary where the ext depends on content (.jpg vs .dat).
+                let ext = std::path::Path::new(&meta.path)
+                    .extension()
+                    .and_then(|e| e.to_str())
+                    .unwrap_or("dat");
+                archive_dir.join(format!("{s}.{ext}"))
+            }
             None => archive_dir.join(&meta.path),
         };
         fs::read(&dat).map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))

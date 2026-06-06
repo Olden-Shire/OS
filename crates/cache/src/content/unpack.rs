@@ -6,6 +6,7 @@ use std::path::Path;
 
 use io::{Packet, cp1252, xtea};
 
+use crate::content::extensions;
 use crate::content::manifest::{ArchiveManifest, GroupMeta, MasterManifest};
 use crate::content::pack_file;
 use crate::maps::XteaKeys;
@@ -146,10 +147,11 @@ fn unpack_one_group(
     let (path, stored_file_ids, chunks) = if file_ids.len() > 1 {
         let group_dir = archive_dir.join(&group_name);
         fs::create_dir_all(&group_dir)?;
+        let inner_ext = extensions::multi_file_inner_ext(archive, group_id);
         let files = crate::unpack_group(&payload, file_ids.len());
         for (i, file_bytes) in files.iter().enumerate() {
             let fid = file_ids[i];
-            fs::write(group_dir.join(format!("{fid}.dat")), file_bytes)?;
+            fs::write(group_dir.join(format!("{fid}.{inner_ext}")), file_bytes)?;
         }
         let chunks = extract_chunks(&payload, file_ids.len());
 
@@ -174,7 +176,8 @@ fn unpack_one_group(
 
         (group_name, Some(file_ids), chunks)
     } else {
-        let path = format!("{group_name}.dat");
+        let ext = extensions::single_file_ext(archive, &payload);
+        let path = format!("{group_name}.{ext}");
         fs::write(archive_dir.join(&path), &payload)?;
 
         // Single-file group: pack entry maps group_id → file stem (no .dat).

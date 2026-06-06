@@ -34,10 +34,10 @@ fn renaming_via_pack_file_preserves_crc() {
     unpack(&mut original, &keys, &content_dir).expect("unpack");
 
     // 2. Rename two files across different namespaces:
-    //    - models/model_995.dat → models/coins.dat (single-file archive scope)
-    //    - config/npc/0.dat     → config/npc/hans.dat (config-type file scope)
-    rename_via_pack(&content_dir, "models", "model.pack", 995, "model_995", "coins");
-    rename_via_pack(&content_dir, "config/npc", "npc.pack", 0, "0", "hans");
+    //    - models/model_995.ob2 → models/coins.ob2 (single-file archive, typed ext)
+    //    - config/npc/0.dat     → config/npc/hans.dat (config-type, default ext)
+    rename_via_pack(&content_dir, "models", "model.pack", 995, "model_995", "coins", "ob2");
+    rename_via_pack(&content_dir, "config/npc", "npc.pack", 0, "0", "hans", "dat");
 
     // 3. Pack and verify byte-identity per group.
     pack(&content_dir, &repacked_dir).expect("pack");
@@ -60,9 +60,9 @@ fn renaming_via_pack_file_preserves_crc() {
     eprintln!("  {compared} groups byte-identical after renames");
 }
 
-/// Rename `{stem_old}.dat` → `{stem_new}.dat` inside `{content_dir}/{rel_dir}`,
+/// Rename `{stem_old}.{ext}` → `{stem_new}.{ext}` inside `{content_dir}/{rel_dir}`,
 /// and update the `id=name` line in `{content_dir}/pack/{pack_file}` to point at the new
-/// stem.
+/// stem. Extension is preserved (e.g. `.ob2` for models, `.dat` for config files).
 fn rename_via_pack(
     content_dir: &PathBuf,
     rel_dir: &str,
@@ -70,10 +70,11 @@ fn rename_via_pack(
     id: u32,
     stem_old: &str,
     stem_new: &str,
+    ext: &str,
 ) {
     let dir = content_dir.join(rel_dir);
-    let old_path = dir.join(format!("{stem_old}.dat"));
-    let new_path = dir.join(format!("{stem_new}.dat"));
+    let old_path = dir.join(format!("{stem_old}.{ext}"));
+    let new_path = dir.join(format!("{stem_new}.{ext}"));
     assert!(
         old_path.exists(),
         "expected {old_path:?} to exist before rename",
