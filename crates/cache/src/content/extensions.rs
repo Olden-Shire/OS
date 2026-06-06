@@ -7,15 +7,28 @@
 //! isn't.
 
 /// Extension for a single-file group's payload, given its archive and a peek at the bytes.
-/// `payload` is the decompressed bytes — used by archive 10 (binary) to sniff between JPEG
-/// and other content.
+/// `payload` is the *raw cache bytes* (post-decompression, pre-codec).
+///
+/// Archives whose raw bytes need a format-aware codec to produce a standard file (songs,
+/// jingles, sprites, …) carry their *standardized* extension here so the on-disk file
+/// reflects what's actually written. The unpack pipeline applies the codec; pack reverses
+/// it for CRC-identical repack.
 #[must_use]
 pub fn single_file_ext(archive: u8, payload: &[u8]) -> &'static str {
     match archive {
-        7 => "ob2",
+        6 => "mid",     // songs — decoded via io::midi to standard MIDI
+        7 => "ob2",     // models — raw cache bytes are the .ob2 format
         10 => sniff_binary(payload),
+        11 => "mid",    // jingles — same codec as songs
         _ => "dat",
     }
+}
+
+/// `true` if a single-file scope requires the Jagex MIDI codec to convert between raw
+/// cache bytes and on-disk standard MIDI.
+#[must_use]
+pub const fn is_midi_archive(archive: u8) -> bool {
+    matches!(archive, 6 | 11)
 }
 
 /// Extension for a file *inside* a multi-file group directory (e.g. anim frames).

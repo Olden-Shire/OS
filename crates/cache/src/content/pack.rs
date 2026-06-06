@@ -166,8 +166,6 @@ fn read_group_payload(
         let stem = single_file_stem(meta, archive, packs);
         let dat = match stem {
             Some(s) => {
-                // Preserve the extension from the manifest path so renames don't break
-                // archives like binary where the ext depends on content (.jpg vs .dat).
                 let ext = std::path::Path::new(&meta.path)
                     .extension()
                     .and_then(|e| e.to_str())
@@ -176,7 +174,14 @@ fn read_group_payload(
             }
             None => archive_dir.join(&meta.path),
         };
-        fs::read(&dat).map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))
+        let bytes = fs::read(&dat)
+            .map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))?;
+        // Reverse the unpack-side codec: MIDI files on disk need re-encoding to Jagex.
+        if extensions::is_midi_archive(archive) {
+            Ok(io::midi::encode(&bytes))
+        } else {
+            Ok(bytes)
+        }
     }
 }
 

@@ -7,6 +7,7 @@ pub mod bzip2;
 pub mod cp1252;
 pub mod crc32;
 pub mod gzip;
+pub mod midi;
 pub mod packet;
 pub mod xtea;
 

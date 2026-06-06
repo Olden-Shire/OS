@@ -178,7 +178,12 @@ fn unpack_one_group(
     } else {
         let ext = extensions::single_file_ext(archive, &payload);
         let path = format!("{group_name}.{ext}");
-        fs::write(archive_dir.join(&path), &payload)?;
+        let on_disk: Vec<u8> = if extensions::is_midi_archive(archive) {
+            io::midi::decode(&payload)
+        } else {
+            payload.clone()
+        };
+        fs::write(archive_dir.join(&path), &on_disk)?;
 
         // Single-file group: pack entry maps group_id → file stem (no .dat).
         if archive != crate::CONFIG_ARCHIVE
