@@ -1,12 +1,13 @@
 //! Cache → Content-shaped directory tree.
 
-use std::collections::HashMap;
+use std::collections::{BTreeMap, HashMap};
 use std::fs;
 use std::path::Path;
 
 use io::{Packet, cp1252, xtea};
 
 use crate::content::manifest::{ArchiveManifest, GroupMeta, MasterManifest};
+use crate::content::pack_file;
 use crate::maps::XteaKeys;
 use crate::{ARCHIVE_COUNT, ARCHIVE_NAMES, Cache, MASTER_ARCHIVE, MAPS_ARCHIVE, decode_packet};
 use crate::config::group as config_group;
@@ -26,6 +27,8 @@ pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Resul
     fs::create_dir_all(dest)?;
     let mut stats = UnpackStats::default();
     let map_names = build_map_name_table();
+    // Accumulate one BTreeMap per pack-file scope; written at end of unpack.
+    let mut pack_data: HashMap<&'static str, BTreeMap<u32, String>> = HashMap::new();
 
     for archive in 0..ARCHIVE_COUNT {
         let archive_dir = dest.join(ARCHIVE_NAMES[archive as usize]);
@@ -42,12 +45,28 @@ pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Resul
             let raw = cache
                 .read_raw(archive, gid)?
                 .unwrap_or_else(|| panic!("archive {archive} group {gid} missing"));
-            let meta = unpack_one_group(cache, archive, gid, &raw, keys, &map_names, &archive_dir)?;
+            let meta = unpack_one_group(
+                cache,
+                archive,
+                gid,
+                &raw,
+                keys,
+                &map_names,
+                &archive_dir,
+                &mut pack_data,
+            )?;
             stats.total_groups += 1;
             manifest.groups.push(meta);
         }
         manifest.groups.sort_by_key(|g| g.id);
         write_manifest(&archive_dir.join("_meta.json"), &manifest)?;
+    }
+
+    // Write accumulated .pack files.
+    let pack_dir = dest.join("pack");
+    fs::create_dir_all(&pack_dir)?;
+    for (scope, map) in &pack_data {
+        pack_file::write(&pack_dir.join(format!("{scope}.pack")), map)?;
     }
 
     // Master archive (idx255) — entries have NO 2-byte version trailer (the per-archive
@@ -87,6 +106,7 @@ fn unpack_one_group(
     keys: &XteaKeys,
     map_names: &HashMap<i32, String>,
     archive_dir: &Path,
+    pack_data: &mut HashMap<&'static str, BTreeMap<u32, String>>,
 ) -> std::io::Result<GroupMeta> {
     // For map loc files (archive 5, l*_* name hash), decrypt before decompressing.
     let mut owned: Vec<u8>;
@@ -132,10 +152,38 @@ fn unpack_one_group(
             fs::write(group_dir.join(format!("{fid}.dat")), file_bytes)?;
         }
         let chunks = extract_chunks(&payload, file_ids.len());
+
+        // Config-archive groups (npc, obj, loc, …) put per-file entries into their
+        // type-specific .pack — default file stem is just the file id.
+        if archive == crate::CONFIG_ARCHIVE
+            && let Some(scope) = pack_file::pack_name_for_config_group(group_id)
+        {
+            let entry = pack_data.entry(scope).or_default();
+            for &fid in &file_ids {
+                entry.insert(fid as u32, fid.to_string());
+            }
+        }
+
+        // Non-config multi-file archives (anim_*, interface_*) get per-group entries
+        // mapping group_id → dir stem.
+        if archive != crate::CONFIG_ARCHIVE
+            && let Some(scope) = pack_file::pack_name_for_archive(archive)
+        {
+            pack_data.entry(scope).or_default().insert(group_id, group_name.clone());
+        }
+
         (group_name, Some(file_ids), chunks)
     } else {
         let path = format!("{group_name}.dat");
         fs::write(archive_dir.join(&path), &payload)?;
+
+        // Single-file group: pack entry maps group_id → file stem (no .dat).
+        if archive != crate::CONFIG_ARCHIVE
+            && let Some(scope) = pack_file::pack_name_for_archive(archive)
+        {
+            pack_data.entry(scope).or_default().insert(group_id, group_name.clone());
+        }
+
         (path, None, None)
     };
 

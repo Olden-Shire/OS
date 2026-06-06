@@ -56,6 +56,7 @@
 
 pub mod manifest;
 pub mod pack;
+pub mod pack_file;
 pub mod unpack;
 
 pub use manifest::{ArchiveManifest, GroupMeta, MasterManifest};

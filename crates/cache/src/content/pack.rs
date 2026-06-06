@@ -8,7 +8,7 @@
 //! version trailer, XTEA-encrypt `[5..len-2]` for map loc files, then sector-write into
 //! `main_file_cache.dat2` and the per-archive idx files.
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, HashMap};
 use std::fs::{self, File};
 use std::io::{Seek, SeekFrom, Write};
 use std::path::Path;
@@ -16,8 +16,9 @@ use std::path::Path;
 use io::xtea;
 
 use crate::content::manifest::{ArchiveManifest, GroupMeta, MasterManifest};
+use crate::content::pack_file;
 use crate::data_file::{IDX_ENTRY_SIZE, SECTOR_HEADER, SECTOR_PAYLOAD, SECTOR_SIZE};
-use crate::{ARCHIVE_COUNT, ARCHIVE_NAMES, MASTER_ARCHIVE};
+use crate::{ARCHIVE_COUNT, ARCHIVE_NAMES, CONFIG_ARCHIVE, MASTER_ARCHIVE};
 
 #[derive(Debug, Default)]
 pub struct PackStats {
@@ -34,12 +35,23 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
     let mut writer = DatWriter::new(File::create(&dat_path)?);
     let mut stats = PackStats::default();
 
+    // Load every .pack file at start; missing ones return an empty map (file renaming is
+    // optional — manifest's `path` is the fallback).
+    let pack_dir = src.join("pack");
+    let packs = load_all_pack_files(&pack_dir)?;
+
     for archive in 0..ARCHIVE_COUNT {
         let archive_dir = src.join(ARCHIVE_NAMES[archive as usize]);
         let manifest: ArchiveManifest = read_manifest(&archive_dir.join("_meta.json"))?;
         let mut idx: BTreeMap<u32, (u32, u32)> = BTreeMap::new();
         for group in &manifest.groups {
-            let group_bytes = build_group(&archive_dir, group, /* with_trailer = */ true)?;
+            let group_bytes = build_group(
+                &archive_dir,
+                group,
+                /* with_trailer = */ true,
+                archive,
+                &packs,
+            )?;
             let first_sector = writer.write_group(archive, group.id, &group_bytes)?;
             idx.insert(group.id, (group_bytes.len() as u32, first_sector));
             stats.total_groups += 1;
@@ -48,12 +60,18 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
         write_idx(&dest.join(format!("main_file_cache.idx{archive}")), &idx)?;
     }
 
-    // Master archive (idx255) — entries have no version trailer.
+    // Master archive (idx255) — entries have no version trailer and no pack-file scope.
     let master_dir = src.join("_master");
     let master_manifest: MasterManifest = read_manifest(&master_dir.join("_meta.json"))?;
     let mut master_idx: BTreeMap<u32, (u32, u32)> = BTreeMap::new();
     for entry in &master_manifest.entries {
-        let group_bytes = build_group(&master_dir, entry, /* with_trailer = */ false)?;
+        let group_bytes = build_group(
+            &master_dir,
+            entry,
+            /* with_trailer = */ false,
+            MASTER_ARCHIVE,
+            &packs,
+        )?;
         let first_sector = writer.write_group(MASTER_ARCHIVE, entry.id, &group_bytes)?;
         master_idx.insert(entry.id, (group_bytes.len() as u32, first_sector));
         stats.master_entries += 1;
@@ -65,9 +83,15 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
 
 /// Build one group's full on-the-wire bytes. `with_trailer` controls whether the 2-byte
 /// version trailer is appended after the payload (true for game-archive groups, false for
-/// master-archive entries).
-fn build_group(archive_dir: &Path, meta: &GroupMeta, with_trailer: bool) -> std::io::Result<Vec<u8>> {
-    let payload = read_group_payload(archive_dir, meta)?;
+/// master-archive entries). `packs` carries the loaded .pack files for filename overrides.
+fn build_group(
+    archive_dir: &Path,
+    meta: &GroupMeta,
+    with_trailer: bool,
+    archive: u8,
+    packs: &PackFiles,
+) -> std::io::Result<Vec<u8>> {
+    let payload = read_group_payload(archive_dir, meta, archive, packs)?;
     let compressed = match meta.ctype {
         0 => payload.clone(),
         1 => io::bzip2::compress(&payload),
@@ -98,16 +122,30 @@ fn build_group(archive_dir: &Path, meta: &GroupMeta, with_trailer: bool) -> std:
     Ok(out)
 }
 
-/// Read the decompressed payload for a group. Single-file groups: just read the .dat.
-/// Multi-file groups: read each per-file .dat in the **manifest's declaration order**,
-/// concat, then append the chunk-count=1 delta-encoded size table + 1-byte chunk count.
-fn read_group_payload(archive_dir: &Path, meta: &GroupMeta) -> std::io::Result<Vec<u8>> {
+/// Read the decompressed payload for a group. Single-file groups: read the .dat (name
+/// from pack file if scope exists, else manifest). Multi-file groups: read each per-file
+/// .dat in the **manifest's declaration order**, concat, then append the chunk-trailer.
+fn read_group_payload(
+    archive_dir: &Path,
+    meta: &GroupMeta,
+    archive: u8,
+    packs: &PackFiles,
+) -> std::io::Result<Vec<u8>> {
     if let Some(file_ids) = &meta.file_ids {
         // Multi-file group.
-        let group_dir = archive_dir.join(&meta.path);
+        let group_dir = archive_dir.join(group_dir_name(meta, archive, packs));
+        // Files within: pack file (if config-type scope) overrides the default "{fid}" stem.
+        let file_pack = if archive == CONFIG_ARCHIVE {
+            pack_file::pack_name_for_config_group(meta.id).and_then(|s| packs.get(s))
+        } else {
+            None
+        };
         let mut files: Vec<Vec<u8>> = Vec::with_capacity(file_ids.len());
         for &fid in file_ids {
-            let p = group_dir.join(format!("{fid}.dat"));
+            let stem = file_pack
+                .and_then(|m| m.get(&(fid as u32)).map(String::as_str))
+                .map_or_else(|| fid.to_string(), str::to_string);
+            let p = group_dir.join(format!("{stem}.dat"));
             files.push(fs::read(&p).map_err(|e| {
                 std::io::Error::new(e.kind(), format!("read {p:?}: {e}"))
             })?);
@@ -122,10 +160,59 @@ fn read_group_payload(archive_dir: &Path, meta: &GroupMeta) -> std::io::Result<V
         out.extend_from_slice(&trailer);
         Ok(out)
     } else {
-        // Single-file group: payload is the whole file as-is.
-        let dat = archive_dir.join(&meta.path);
+        // Single-file group.
+        let stem = single_file_stem(meta, archive, packs);
+        let dat = match stem {
+            Some(s) => archive_dir.join(format!("{s}.dat")),
+            None => archive_dir.join(&meta.path),
+        };
         fs::read(&dat).map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))
     }
+}
+
+/// Map of pack-file stem (e.g. "model") → its loaded id→name table.
+type PackFiles = HashMap<&'static str, BTreeMap<u32, String>>;
+
+fn load_all_pack_files(pack_dir: &Path) -> std::io::Result<PackFiles> {
+    let mut out = HashMap::new();
+    let scopes = [
+        "anim", "base", "interface", "jagfx", "song", "model", "sprite", "texture",
+        "binary", "jingle", "script", "font", "vorbis", "patch",
+        "flu", "idk", "flo", "inv", "loc", "enum", "npc", "obj", "seq", "spot",
+        "varbit", "varp",
+    ];
+    for scope in scopes {
+        let path = pack_dir.join(format!("{scope}.pack"));
+        let map = pack_file::read(&path)?;
+        if !map.is_empty() {
+            out.insert(scope, map);
+        }
+    }
+    Ok(out)
+}
+
+/// Resolve the dir name for a multi-file group: pack-file entry if scope exists, else
+/// the manifest's declared path.
+fn group_dir_name<'a>(meta: &'a GroupMeta, archive: u8, packs: &'a PackFiles) -> &'a str {
+    if archive != CONFIG_ARCHIVE
+        && let Some(scope) = pack_file::pack_name_for_archive(archive)
+        && let Some(name) = packs.get(scope).and_then(|m| m.get(&meta.id))
+    {
+        return name.as_str();
+    }
+    meta.path.as_str()
+}
+
+/// Resolve the file stem (no .dat) for a single-file group. Returns `None` to mean
+/// "use manifest.path verbatim".
+fn single_file_stem<'a>(meta: &'a GroupMeta, archive: u8, packs: &'a PackFiles) -> Option<&'a str> {
+    if archive != CONFIG_ARCHIVE
+        && let Some(scope) = pack_file::pack_name_for_archive(archive)
+        && let Some(name) = packs.get(scope).and_then(|m| m.get(&meta.id))
+    {
+        return Some(name.as_str());
+    }
+    None
 }
 
 /// Chunk_count=1 layout: concat all files, append delta-encoded sizes (one per file),
