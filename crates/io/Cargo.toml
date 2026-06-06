@@ -8,4 +8,4 @@ publish.workspace = true
 
 [dependencies]
 bzip2 = "0.5"
-flate2 = "1"
+flate2 = { version = "1", default-features = false, features = ["zlib"] }

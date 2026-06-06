@@ -7,13 +7,12 @@
 pub mod anim;
 pub mod config;
 pub mod configs;
+pub mod content;
 pub mod data_file;
 pub mod iftype;
 pub mod js5;
 pub mod maps;
 pub mod model;
-pub mod pack;
-pub mod unpack;
 
 use std::fs::File;
 use std::path::Path;
