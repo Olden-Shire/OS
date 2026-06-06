@@ -11,13 +11,14 @@ hs_err_pid*.log
 
 # Reference implementations (not part of this repo's history)
 /Engine-TS/
+/Content-old/
+
+# Derived from /cache via `cargo run -p app -- unpack` / `pack` — large (~400MB)
 /Content/
+/cache_repacked/
 
 # Rust
 /target/
 **/*.rs.bk
 Cargo.lock.bak
 
-# Derivable from /cache via `cargo run -p app -- unpack` / `pack`
-/content/
-/cache_repacked/

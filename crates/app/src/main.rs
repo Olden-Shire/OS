@@ -1,7 +1,7 @@
 //! CLI entry point. Subcommands available so far:
 //!
-//! * `unpack [--cache DIR] [--out DIR]`   — cache → Content-shaped tree (default `cache` → `content`)
-//! * `pack   [--in DIR]    [--out DIR]`   — Content-shaped tree → cache (default `content` → `cache_repacked`)
+//! * `unpack [--cache DIR] [--out DIR]`   — cache → Content-shaped tree (default `cache` → `Content`)
+//! * `pack   [--in DIR]    [--out DIR]`   — Content-shaped tree → cache (default `Content` → `cache_repacked`)
 
 use std::path::PathBuf;
 use std::process::ExitCode;
@@ -37,7 +37,7 @@ fn main() -> ExitCode {
 
 fn cmd_unpack(args: &[String]) -> std::io::Result<()> {
     let cache_dir = arg_path(args, "--cache").unwrap_or_else(|| PathBuf::from("cache"));
-    let out_dir = arg_path(args, "--out").unwrap_or_else(|| PathBuf::from("content"));
+    let out_dir = arg_path(args, "--out").unwrap_or_else(|| PathBuf::from("Content"));
 
     let mut c = cache::Cache::open(&cache_dir)?;
     let keys_path = cache_dir.join("keys.json");
@@ -58,7 +58,7 @@ fn cmd_unpack(args: &[String]) -> std::io::Result<()> {
 }
 
 fn cmd_pack(args: &[String]) -> std::io::Result<()> {
-    let in_dir = arg_path(args, "--in").unwrap_or_else(|| PathBuf::from("content"));
+    let in_dir = arg_path(args, "--in").unwrap_or_else(|| PathBuf::from("Content"));
     let out_dir = arg_path(args, "--out").unwrap_or_else(|| PathBuf::from("cache_repacked"));
     let stats = cache::content::pack(&in_dir, &out_dir)?;
     println!(
@@ -78,7 +78,7 @@ fn arg_path(args: &[String], name: &str) -> Option<PathBuf> {
 fn usage(prog: &str) {
     eprintln!(
         "usage:\n  \
-         {prog} unpack [--cache DIR] [--out DIR]   (defaults: cache → content)\n  \
-         {prog} pack   [--in DIR]    [--out DIR]   (defaults: content → cache_repacked)"
+         {prog} unpack [--cache DIR] [--out DIR]   (defaults: cache → Content)\n  \
+         {prog} pack   [--in DIR]    [--out DIR]   (defaults: Content → cache_repacked)"
     );
 }
