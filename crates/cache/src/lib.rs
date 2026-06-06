@@ -12,6 +12,8 @@ pub mod iftype;
 pub mod js5;
 pub mod maps;
 pub mod model;
+pub mod pack;
+pub mod unpack;
 
 use std::fs::File;
 use std::path::Path;
@@ -50,6 +52,27 @@ pub const MAPS_ARCHIVE: u8 = 5;
 
 /// Archive 7 — 3D models (ModelUnlit), one group per model (file 0 is the mesh).
 pub const MODELS_ARCHIVE: u8 = 7;
+
+/// Semantic names for archives 0..15, matching the Java client's `openJs5` calls. Used by
+/// unpack/pack to lay archives out as readable subdirectories.
+pub const ARCHIVE_NAMES: [&str; ARCHIVE_COUNT as usize] = [
+    "anims",          // 0
+    "bases",          // 1
+    "config",         // 2
+    "interfaces",     // 3
+    "jagfx",          // 4
+    "maps",           // 5
+    "songs",          // 6
+    "models",         // 7
+    "sprites",        // 8
+    "textures",       // 9
+    "binary",         // 10
+    "jingles",        // 11
+    "clientscripts",  // 12
+    "fonts",          // 13
+    "vorbis",         // 14
+    "patches",        // 15
+];
 
 const MASTER_MAX_FILE_SIZE: u32 = 500_000;
 const ARCHIVE_MAX_FILE_SIZE: u32 = 1_000_000;
@@ -138,6 +161,13 @@ impl Cache {
             xtea::decrypt(&mut raw, k, 5, end);
         }
         Ok(Some(decode_packet(&raw)))
+    }
+
+    /// Raw bytes of an archive's master-index entry from `idx255`. These are the still-
+    /// compressed Js5Index bytes — useful for unpack/repack where we want to preserve the
+    /// exact wire-format of the index without re-encoding it.
+    pub fn read_master_raw(&mut self, archive: u8) -> std::io::Result<Option<Vec<u8>>> {
+        self.master.read(u32::from(archive))
     }
 
     /// Re-read the index for an archive from `idx255`. Useful if the cache was just rebuilt.
