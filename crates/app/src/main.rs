@@ -1,7 +1,9 @@
 //! CLI entry point. Subcommands available so far:
 //!
-//! * `unpack [--cache DIR] [--out DIR]`   — cache → Content-shaped tree (default `cache` → `Content`)
-//! * `pack   [--in DIR]    [--out DIR]`   — Content-shaped tree → cache (default `Content` → `cache_repacked`)
+//! * `unpack [--cache DIR] [--out DIR]`        — cache → Content-shaped tree (default `cache` → `Content`)
+//! * `pack   [--in DIR]    [--out DIR]`        — Content-shaped tree → cache (default `Content` → `cache_repacked`)
+//! * `import-names [--content DIR] [--from DIR]` — hash-match Content-old files into our
+//!     Content tree, renaming any byte-identical files (default `Content` ← `Content-old`)
 
 use std::path::PathBuf;
 use std::process::ExitCode;
@@ -16,6 +18,7 @@ fn main() -> ExitCode {
     let res = match args[1].as_str() {
         "unpack" => cmd_unpack(rest),
         "pack" => cmd_pack(rest),
+        "import-names" => cmd_import_names(rest),
         "help" | "-h" | "--help" => {
             usage(&args[0]);
             return ExitCode::SUCCESS;
@@ -71,6 +74,23 @@ fn cmd_pack(args: &[String]) -> std::io::Result<()> {
     Ok(())
 }
 
+fn cmd_import_names(args: &[String]) -> std::io::Result<()> {
+    let content_dir = arg_path(args, "--content").unwrap_or_else(|| PathBuf::from("Content"));
+    let old_dir = arg_path(args, "--from").unwrap_or_else(|| PathBuf::from("Content-old"));
+    let stats = cache::content::import_names::import(&content_dir, &old_dir)?;
+    let report = |label: &str, s: &cache::content::import_names::ScopeStats| {
+        println!(
+            "  {label:<8}  source {:>5}  scanned {:>5}  renamed {:>5}  already {:>4}  conflicts {:>3}",
+            s.source_files, s.target_files, s.renamed, s.already_named, s.conflicts,
+        );
+    };
+    println!("imported names from {} into {}:", old_dir.display(), content_dir.display());
+    report("models",  &stats.models);
+    report("songs",   &stats.songs);
+    report("jingles", &stats.jingles);
+    Ok(())
+}
+
 fn arg_path(args: &[String], name: &str) -> Option<PathBuf> {
     args.windows(2).find(|w| w[0] == name).map(|w| PathBuf::from(&w[1]))
 }
@@ -78,7 +98,8 @@ fn arg_path(args: &[String], name: &str) -> Option<PathBuf> {
 fn usage(prog: &str) {
     eprintln!(
         "usage:\n  \
-         {prog} unpack [--cache DIR] [--out DIR]   (defaults: cache → Content)\n  \
-         {prog} pack   [--in DIR]    [--out DIR]   (defaults: Content → cache_repacked)"
+         {prog} unpack       [--cache DIR] [--out  DIR]   (defaults: cache → Content)\n  \
+         {prog} pack         [--in    DIR] [--out  DIR]   (defaults: Content → cache_repacked)\n  \
+         {prog} import-names [--content DIR] [--from DIR]   (defaults: Content ← Content-old)"
     );
 }

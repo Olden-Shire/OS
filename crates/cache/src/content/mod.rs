@@ -54,6 +54,7 @@
 //! is appended *after* encryption at pack time) — see
 //! `Cache::read_group_with_key` for the read side.
 
+pub mod import_names;
 pub mod manifest;
 pub mod pack;
 pub mod pack_file;
