@@ -17,3 +17,7 @@ hs_err_pid*.log
 /target/
 **/*.rs.bk
 Cargo.lock.bak
+
+# Derivable from /cache via `cargo run -p app -- unpack` / `pack`
+/content/
+/cache_repacked/

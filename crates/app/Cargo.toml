@@ -9,3 +9,4 @@ publish.workspace = true
 [dependencies]
 server.workspace = true
 engine.workspace = true
+cache.workspace = true
