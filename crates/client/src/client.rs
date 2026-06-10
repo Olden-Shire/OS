@@ -414,6 +414,14 @@ pub fn logout(c: &mut Client) {
     // BgSound.reset (clears the active emitter list).
     crate::sound::bg_sound::reset();
 
+    // Java :2929 — the character-design preview re-seeds on the next
+    // session (lazily via ensure_idk_design_init since the IdkType
+    // configs may be cold after the cache clear).
+    c.idk_design = crate::dash3d::player_model::PlayerModel::default();
+    c.idk_design_button1 = -1;
+    c.idk_design_button2 = -1;
+    crate::dash3d::player_model::reset_cache();
+
     // Return to title screen.
     c.state = 10;
 }
@@ -1673,27 +1681,69 @@ pub fn client_button(c: &mut Client, com: &crate::config::if_type::IfType) -> bo
         return true;
     }
     if (300..=313).contains(&code) {
-        let part = (code - 300) / 2;
-        let _forward = (code & 0x1) == 1;
-        let _ = part;
+        ensure_idk_design_init(c);
+        let part = ((code - 300) / 2) as usize;
+        let forward = (code & 0x1) == 1;
+        c.idk_design.idk_change_part(part, forward);
     } else if (314..=323).contains(&code) {
-        let col = (code - 314) / 2;
-        let _forward = (code & 0x1) == 1;
-        let _ = col;
+        ensure_idk_design_init(c);
+        let col = ((code - 314) / 2) as usize;
+        let forward = (code & 0x1) == 1;
+        c.idk_design.idk_change_colour(col, forward);
     } else if code == 324 {
-        // change_gender(false)
+        ensure_idk_design_init(c);
+        c.idk_design.idk_change_gender(false);
     } else if code == 325 {
-        // change_gender(true)
+        ensure_idk_design_init(c);
+        c.idk_design.idk_change_gender(true);
     } else if code == 326 {
-        // IDK_SAVEDESIGN — opcode 71.
+        // IDK_SAVEDESIGN — opcode 71 + the 12-part/5-colour body.
+        let design = c.idk_design.clone();
         let Some(isaac) = c.isaac_out.as_mut() else { return true; };
         let Some(out) = c.out_packet.as_mut() else { return true; };
         out.p1_enc(71, isaac);
-        // The body (12 worn-slot + 5 recol + gender) is written by
-        // idk_design.save_design once the composer ships.
+        design.idk_save_design(out);
         return true;
     }
     false
+}
+
+// Java initialises idkDesign with setAppearance(null, {0,0,0,0,0},
+// false, -1) during session reset (Client.java:2929). The default
+// fill walks the IdkType definitions, which haven't streamed at
+// construction time — so run it lazily the first time the design
+// screen is touched (and again after logout resets it).
+pub fn ensure_idk_design_init(c: &mut Client) {
+    if !c.idk_design.applied
+        && crate::config::idk_type::NUM_DEFINITIONS
+            .load(std::sync::atomic::Ordering::Relaxed) > 0
+    {
+        c.idk_design.set_appearance(None, [0; 5], false, -1);
+    }
+}
+
+// @ObfuscatedName("cy.ge(Leg;I)V") — Client.clientComponent. Verbatim
+// port of Client.java:11751-11787: per-frame mutation of the
+// character-design components — 324/325 swap the gender-button
+// graphic by the design's current gender, 327/328 spin the male /
+// female preview avatar (model1Type 5).
+pub fn client_component(c: &mut Client, com: &mut crate::config::if_type::IfType) {
+    let code = com.client_code;
+    if code == 324 || code == 325 {
+        if c.idk_design_button1 == -1 {
+            c.idk_design_button1 = com.graphic;
+            c.idk_design_button2 = com.graphic2;
+        }
+        ensure_idk_design_init(c);
+        let gender = c.idk_design.gender;
+        let pick_first = if code == 324 { gender } else { !gender };
+        com.graphic = if pick_first { c.idk_design_button1 } else { c.idk_design_button2 };
+    } else if code == 327 || code == 328 {
+        com.model_x_an = 150;
+        com.model_y_an = (((c.loop_cycle as f64) / 40.0).sin() * 256.0) as i32 & 0x7FF;
+        com.model1_type = 5;
+        com.model1_id = if code == 327 { 0 } else { 1 };
+    }
 }
 
 // @ObfuscatedName(— Client.enterTargetMode). Verbatim port of
@@ -5890,6 +5940,14 @@ pub struct Client {
     // only draw one model per frame (Client.java:4237-4241).
     pub tile_last_occupied: Vec<Vec<i32>>,
 
+    // @ObfuscatedName("client.idkDesign") — the character-design
+    // screen's preview PlayerModel (Client.java:1205), plus the
+    // male/female gender-button graphic pair captured by
+    // clientComponent 324/325.
+    pub idk_design: crate::dash3d::player_model::PlayerModel,
+    pub idk_design_button1: i32,
+    pub idk_design_button2: i32,
+
 
     // @ObfuscatedName("client.macroCameraX/Z") — auto-camera offset
     // applied on top of the local-player position. Used during
@@ -6457,6 +6515,9 @@ impl Client {
             hook_requests_timer: std::collections::VecDeque::new(),
             hook_requests_mouse_stop: std::collections::VecDeque::new(),
             tile_last_occupied: vec![vec![0; 104]; 104],
+            idk_design: crate::dash3d::player_model::PlayerModel::default(),
+            idk_design_button1: -1,
+            idk_design_button2: -1,
             macro_camera_x: 0,
             macro_camera_z: 0,
             key_held_96: false,

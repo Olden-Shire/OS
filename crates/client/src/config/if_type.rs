@@ -905,15 +905,15 @@ impl IfType {
     // type 1 = raw model archive file, 2 = npc chathead, 3 = player
     // chathead, 4 = obj model — lights it 64/768/-50/-10/-50 (objs use
     // their own ambient/contrast offsets), caches by (type<<16)+id,
-    // then applies the seq animation when one is supplied. The player
-    // arg is None until the PlayerModel appearance port lands — Java
-    // returns null for type 3 with a null player, so player-head
-    // components stay empty rather than wrong.
+    // then applies the seq animation when one is supplied. `player`
+    // is Java's localPlayer.model — type 3 composes its chathead;
+    // Java returns null for a null player.
     pub fn get_temp_model(
         &self,
         seq: Option<&crate::config::seq_type::SeqType>,
         seq_frame: i32,
         secondary: bool,
+        player: Option<&crate::dash3d::player_model::PlayerModel>,
     ) -> Option<Arc<crate::dash3d::model_lit::ModelLit>> {
         use crate::dash3d::model_lit::ModelLit;
         use crate::dash3d::model_unlit::ModelUnlit;
@@ -957,9 +957,11 @@ impl IfType {
                         ModelLit::light(&mut unlit, 64, 768, -50, -10, -50)
                     }
                     3 => {
-                        // player_head — needs the PlayerModel appearance
-                        // port; Java returns null when player == null.
-                        return None;
+                        // player_head — composes the local player's
+                        // chathead; Java returns null when player ==
+                        // null (no appearance yet).
+                        let mut unlit = player?.get_head_model()?;
+                        ModelLit::light(&mut unlit, 64, 768, -50, -10, -50)
                     }
                     4 => {
                         // object

@@ -257,6 +257,20 @@ fn draw_layer(
         }
         if com.v3 && com.hide { continue; }
 
+        // Java drawLayer 10066-10068 — clientComponent per-frame
+        // mutation (character-design gender buttons + spinning
+        // preview avatars). Applied to a frame-local copy; the store
+        // copy stays pristine like Java's statics-driven rewrite.
+        let mut cc_owned: Option<IfType> = None;
+        if com.client_code > 0 {
+            if let Some(c) = client.as_deref_mut() {
+                let mut copy = com.clone();
+                crate::client::client_component(c, &mut copy);
+                cc_owned = Some(copy);
+            }
+        }
+        let com: &IfType = cc_owned.as_ref().unwrap_or(com);
+
         let mut renderx = com.x + child_x;
         let mut rendery = com.y + child_y;
 
@@ -918,12 +932,32 @@ fn draw_layer(
                         }
                     }
                 } else if com.model1_type == 5 {
-                    // player avatar / idk design — pending PlayerModel.
-                } else if anim == -1 {
-                    model = com.get_temp_model(None, -1, active);
+                    // Java 10479-10484 — the character-design preview:
+                    // model1Id 0 spins the idkDesign composition, 1 the
+                    // local player's live avatar.
+                    if let Some(c) = client.as_deref_mut() {
+                        crate::client::ensure_idk_design_init(c);
+                        model = if com.model1_id == 0 {
+                            c.idk_design.get_temp_model(None, -1, None, -1)
+                                .map(std::sync::Arc::new)
+                        } else {
+                            let lc = c.loop_cycle;
+                            c.local_player.as_mut()
+                                .and_then(|lp| lp.get_temp_model(lc))
+                                .map(std::sync::Arc::new)
+                        };
+                    }
                 } else {
-                    let seq = crate::config::seq_type::list(anim);
-                    model = com.get_temp_model(Some(&seq), com.anim_frame, active);
+                    let player_model = client.as_deref()
+                        .and_then(|c| c.local_player.as_ref())
+                        .map(|lp| lp.model.clone());
+                    if anim == -1 {
+                        model = com.get_temp_model(None, -1, active, player_model.as_ref());
+                    } else {
+                        let seq = crate::config::seq_type::list(anim);
+                        model = com.get_temp_model(Some(&seq), com.anim_frame, active,
+                                                   player_model.as_ref());
+                    }
                 }
 
                 crate::dash3d::pix3d::set_origin(com.width / 2 + renderx,

@@ -2185,11 +2185,12 @@ fn run_script(c: &mut Client, req: &HookReq) {
             }
             if opcode == 1202 {
                 // if/cc_setplayerhead_self — Java reads
-                // localPlayer.model.method1176() (the appearance hash).
-                // PlayerModel isn't ported; model1_id = 0 keeps the
-                // component well-formed and the type-3 render path
-                // already shows nothing for player heads.
-                if !target.modify(|com| op_cc_setplayerhead_self(com, 0)) {
+                // localPlayer.model.method1176() (the appearance hash,
+                // doubling as the type-3 model cache key).
+                let hash = c.local_player.as_ref()
+                    .map(|lp| lp.model.head_hash())
+                    .unwrap_or(0);
+                if !target.modify(|com| op_cc_setplayerhead_self(com, hash)) {
                     panic!("setplayerhead: no component");
                 }
                 continue;
@@ -2907,13 +2908,14 @@ fn run_script(c: &mut Client, req: &HookReq) {
                     ssp += 1;
                 }
                 4105 => {
-                    // text_gender — PlayerModel pending; a null model
-                    // selects the male string in Java too.
+                    // text_gender — Java: localPlayer.model != null &&
+                    // model.gender picks the female string.
                     ssp -= 2;
-                    let female = std::mem::take(&mut string_stack[ssp + 1]);
-                    let male = std::mem::take(&mut string_stack[ssp]);
-                    let _ = female;
-                    string_stack[ssp] = male;
+                    let female_text = std::mem::take(&mut string_stack[ssp + 1]);
+                    let male_text = std::mem::take(&mut string_stack[ssp]);
+                    let female = c.local_player.as_ref()
+                        .map_or(false, |lp| lp.model.applied && lp.model.gender);
+                    string_stack[ssp] = if female { female_text } else { male_text };
                     ssp += 1;
                 }
                 4106 => {
