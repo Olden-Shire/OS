@@ -129,6 +129,10 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
         crate::client::draw_feedback(c, vx, vy);
     }
 
+    // Java gameDraw :2799 — a completed draw resets the tick counter
+    // the per-tick-unit motion scaled by.
+    c.world_update_num = 0;
+
     let pix = pix2d::STATE.lock().unwrap();
     let copy_w = pix.width.min(fb.width);
     let copy_h = pix.height.min(fb.height);
@@ -688,6 +692,66 @@ fn draw_layer(
                                 if dragged {
                                     sprite.trans_plot_sprite(slot_x + drag_dx,
                                                              slot_y + drag_dy, 128);
+
+                                    // Java drawLayer 10270-10301:
+                                    // dragging an item against the
+                                    // top/bottom clip edge of the
+                                    // scrolling parent layer
+                                    // autoscrolls it (rate capped at
+                                    // 10px/tick, clamped to the
+                                    // remaining scroll range) and
+                                    // shifts the grab anchor so the
+                                    // item stays under the cursor.
+                                    if layer_id != -1 {
+                                        if let Some(parent) =
+                                            children.get((layer_id & 0xFFFF) as usize)
+                                        {
+                                            let (clip_min_y, clip_max_y) = {
+                                                let p = pix2d::STATE.lock().unwrap();
+                                                (p.clip_min_y, p.clip_max_y)
+                                            };
+                                            let wun = client.as_deref()
+                                                .map_or(1, |c| c.world_update_num);
+                                            if slot_y + drag_dy < clip_min_y
+                                                && parent.scroll_pos_y > 0
+                                            {
+                                                let mut auto = wun
+                                                    * (clip_min_y - slot_y - drag_dy) / 3;
+                                                if auto > wun * 10 {
+                                                    auto = wun * 10;
+                                                }
+                                                if auto > parent.scroll_pos_y {
+                                                    auto = parent.scroll_pos_y;
+                                                }
+                                                if_type::modify(parent.parent_id,
+                                                    |t| t.scroll_pos_y -= auto);
+                                                if let Some(c) = client.as_deref_mut() {
+                                                    c.obj_grab_y += auto;
+                                                }
+                                            }
+                                            if slot_y + drag_dy + 32 > clip_max_y
+                                                && parent.scroll_pos_y
+                                                    < parent.scroll_height - parent.height
+                                            {
+                                                let mut auto = wun
+                                                    * (slot_y + drag_dy + 32 - clip_max_y) / 3;
+                                                if auto > wun * 10 {
+                                                    auto = wun * 10;
+                                                }
+                                                let room = parent.scroll_height
+                                                    - parent.height
+                                                    - parent.scroll_pos_y;
+                                                if auto > room {
+                                                    auto = room;
+                                                }
+                                                if_type::modify(parent.parent_id,
+                                                    |t| t.scroll_pos_y += auto);
+                                                if let Some(c) = client.as_deref_mut() {
+                                                    c.obj_grab_y -= auto;
+                                                }
+                                            }
+                                        }
+                                    }
                                 } else if sel_flash {
                                     sprite.trans_plot_sprite(slot_x, slot_y, 128);
                                 } else {
