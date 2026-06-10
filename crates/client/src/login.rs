@@ -412,15 +412,48 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 crate::client::add_chat(c, 0, None, Some(msg.clone()), None, 0);
             }
         }
-        86 => { // MESSAGE_PRIVATE
+        86 => { // MESSAGE_PRIVATE — verbatim port of Client.java:5977-6009.
+                // 40-bit message id deduped against the 100-deep ring;
+                // ignored senders and duplicates are dropped; staffmod
+                // senders get the crown img tag. Payload is WordPack-
+                // packed CP1252.
             let sender = p.gjstr();
-            let _msg_id = p.g4();
-            let _mode = p.g1();
-            eprintln!("[game] MessagePrivate from={sender}");
+            let id_hi = p.g2() as i64;
+            let id_lo = p.g3() as i64;
+            let mode = p.g1();
+            let msg_id = (id_hi << 32) + id_lo;
+            let mut dupe = c.message_ids.contains(&msg_id);
+            if crate::client::is_ignored(c, Some(&sender)) {
+                dupe = true;
+            }
+            if !dupe {
+                c.message_ids[c.private_message_count as usize] = msg_id;
+                c.private_message_count = (c.private_message_count + 1) % 100;
+                let text = crate::graphics::pix_font::PixFont::escape(
+                    &crate::jstring::force_capitalisation_of_words(
+                        &crate::wordpack::unpack(&mut p)));
+                if mode == 2 || mode == 3 {
+                    crate::client::add_chat(
+                        c, 7,
+                        Some(format!("{}{sender}", crate::string_constants::tag_img(1))),
+                        Some(text), None, 0);
+                } else if mode == 1 {
+                    crate::client::add_chat(
+                        c, 7,
+                        Some(format!("{}{sender}", crate::string_constants::tag_img(0))),
+                        Some(text), None, 0);
+                } else {
+                    crate::client::add_chat(c, 3, Some(sender), Some(text), None, 0);
+                }
+            }
         }
-        168 => { // MESSAGE_PRIVATE_ECHO
+        168 => { // MESSAGE_PRIVATE_ECHO — verbatim port of
+                 // Client.java:5800-5808.
             let recipient = p.gjstr();
-            eprintln!("[game] MessagePrivateEcho to={recipient}");
+            let text = crate::graphics::pix_font::PixFont::escape(
+                &crate::jstring::force_capitalisation_of_words(
+                    &crate::wordpack::unpack(&mut p)));
+            crate::client::add_chat(c, 6, Some(recipient), Some(text), None, 0);
         }
         57 => { // MESSAGE_FRIENDCHANNEL
             let _channel = p.gjstr();
