@@ -1222,25 +1222,41 @@ impl ModelUnlit {
         // renderer's `if axis < 0 { (a,b,c) }` branch already handles
         // -1 entries — but mirrors Java verbatim for diff stability.
         let mut clear_axis = false;
-        if self.face_texture_axis.is_some() {
+        if let Some(axis) = self.face_texture_axis.as_mut() {
             let mut has_texture = false;
-            let axis = self.face_texture_axis.as_mut().unwrap();
-            let pn = self.face_texture_p.as_ref().unwrap();
-            let mn = self.face_texture_m.as_ref().unwrap();
-            let nn = self.face_texture_n.as_ref().unwrap();
             for f in 0..num_faces as usize {
                 let slot = (axis[f] as i32) & 0xFF;
-                if slot != 255 {
-                    let p = pn[slot as usize] as i32 & 0xFFFF;
-                    let m = mn[slot as usize] as i32 & 0xFFFF;
-                    let n = nn[slot as usize] as i32 & 0xFFFF;
-                    if p == self.face_vertex_a[f]
-                        && m == self.face_vertex_b[f]
-                        && n == self.face_vertex_c[f]
-                    {
+                if slot == 255 {
+                    continue;
+                }
+                // Java only dereferences faceTextureP/M/N inside this
+                // branch — models with axis bytes but numT == 0 leave
+                // the arrays null and every slot at 255. A non-255
+                // slot with no triplet arrays (or out of range) is
+                // inconsistent data; fall back to the face's own
+                // vertices like the rasterizer's axis<0 path.
+                let p = self.face_texture_p.as_ref()
+                    .and_then(|v| v.get(slot as usize))
+                    .map(|&v| v as i32 & 0xFFFF);
+                let m = self.face_texture_m.as_ref()
+                    .and_then(|v| v.get(slot as usize))
+                    .map(|&v| v as i32 & 0xFFFF);
+                let n = self.face_texture_n.as_ref()
+                    .and_then(|v| v.get(slot as usize))
+                    .map(|&v| v as i32 & 0xFFFF);
+                match (p, m, n) {
+                    (Some(p), Some(m), Some(n)) => {
+                        if p == self.face_vertex_a[f]
+                            && m == self.face_vertex_b[f]
+                            && n == self.face_vertex_c[f]
+                        {
+                            axis[f] = -1;
+                        } else {
+                            has_texture = true;
+                        }
+                    }
+                    _ => {
                         axis[f] = -1;
-                    } else {
-                        has_texture = true;
                     }
                 }
             }
