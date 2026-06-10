@@ -11,3 +11,4 @@ io.workspace = true
 protocol.workspace = true
 engine.workspace = true
 db.workspace = true
+cache.workspace = true

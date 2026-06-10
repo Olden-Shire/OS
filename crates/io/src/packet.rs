@@ -468,6 +468,16 @@ impl Packet {
         }
     }
 
+    /// Bulk write with bytes reversed — the writer counterpart of
+    /// `gdata_alt1` (used by the PLAYER_INFO appearance block).
+    pub fn pdata_alt1(&mut self, src: &[u8]) {
+        self.ensure(src.len());
+        for &b in src.iter().rev() {
+            self.data[self.pos] = b;
+            self.pos += 1;
+        }
+    }
+
     // ───── CRC trailer ───────────────────────────────────────────────────────
 
     /// Compute CRC32 over bytes `start..pos` and write it as a 4-byte trailer.
