@@ -82,8 +82,9 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
         // though entities don't render in the scene yet.
         if let (Some(lp), Some(font)) = (c.local_player.as_ref(), p11_owned.as_ref()) {
             pix2d::set_clipping(0, 0, 765, 503);
-            let tile_x = c.map_build_base_x + lp.x;
-            let tile_z = c.map_build_base_z + lp.z;
+            // lp.x/z are fine coords (Java convention); >> 7 = tile.
+            let tile_x = c.map_build_base_x + (lp.x >> 7);
+            let tile_z = c.map_build_base_z + (lp.z >> 7);
             let line = format!("You: ({tile_x}, {tile_z}) level {}", c.minusedlevel);
             let y = 16;
             font.base.draw_string(&line, 6, y, 0x000000, 0);

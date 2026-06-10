@@ -6250,7 +6250,9 @@ impl GameShellLifecycle for Client {
         // writes — no contention).
         crate::scene::LOOP_CYCLE.store(self.loop_cycle, std::sync::atomic::Ordering::Relaxed);
         if let Some(lp) = self.local_player.as_ref() {
-            crate::scene::store_player_tile(lp.x, lp.z);
+            // entity.x/z are fine world coords (tile*128+64, Java's
+            // localPlayer.x convention); the camera pivot wants tiles.
+            crate::scene::store_player_tile(lp.entity.x >> 7, lp.entity.z >> 7);
         }
 
         // Always service the JS5 stream so loaders make progress.

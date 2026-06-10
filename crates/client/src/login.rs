@@ -1335,11 +1335,13 @@ fn rebuild_packet(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32,
 
     start_rebuild(c, zone_x, zone_z, level);
 
-    // Seed local player tile from the packet head until PlayerInfo mode 3
-    // actually arrives. (Engine2007 stubs the local branch.)
+    // Seed local player from the packet head until PlayerInfo mode 3
+    // actually arrives. (Engine2007 stubs the local branch.) Goes
+    // through teleport so entity.x/z carry the Java fine-coord
+    // convention (tile*128 + 64) that the minimap anchor, overlays
+    // and camera all derive from.
     if let Some(lp) = c.local_player.as_mut() {
-        lp.x = local_x;
-        lp.z = local_z;
+        lp.teleport(local_x, local_z, true);
         lp.level = level;
         c.minusedlevel = level;
         eprintln!("[game] RebuildNormal seed: local=({local_x},{local_z}) world=({},{}) level={level}",

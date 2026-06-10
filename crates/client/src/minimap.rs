@@ -55,11 +55,14 @@ pub struct Minimap {
     // blacked map, ≥3 blacked compass).
     pub state: i32,
     // @ObfuscatedName("client.??") — macroMinimapAngle/Zoom + drift
-    // modifiers (anti-macro wobble).
+    // modifiers (anti-macro wobble) + the 500-tick drift cycle.
     pub macro_angle: i32,
     pub macro_angle_mod: i32,
     pub macro_zoom: i32,
     pub macro_zoom_mod: i32,
+    pub macro_cycle: i32,
+    // Deterministic stand-in for Java's Math.random()*8 drift dice.
+    drift_seed: u32,
     // Sprites (Java mainLoad steps 80-130; we lazy-load from JS5).
     pub compass: Option<Pix32>,
     pub mapedge: Option<Pix32>,
@@ -96,6 +99,8 @@ pub static MINIMAP: std::sync::LazyLock<Mutex<Minimap>> = std::sync::LazyLock::n
         macro_angle_mod: 2,
         macro_zoom: 0,
         macro_zoom_mod: 1,
+        macro_cycle: 0,
+        drift_seed: 0x2545F491,
         compass: None,
         mapedge: None,
         mapback: None,
@@ -246,9 +251,22 @@ pub fn update(c: &mut Client) {
     let mut mm = MINIMAP.lock().unwrap();
     let mm = &mut *mm;
 
-    // Anti-macro wobble.
-    mm.macro_angle += mm.macro_angle_mod;
-    mm.macro_zoom += mm.macro_zoom_mod;
+    // Anti-macro wobble — Java Client.java:2701-2726: the drift only
+    // fires once every 500+ ticks (~10 s), and even then each
+    // component moves only when its random bit comes up. Applying it
+    // every tick (the previous port) swept the whole ±60 range in a
+    // couple of seconds — a visibly oscillating, nauseating minimap.
+    mm.macro_cycle += 1;
+    if mm.macro_cycle > 500 {
+        mm.macro_cycle = 0;
+        let dice = pseudo_rand(&mut mm.drift_seed) % 8;
+        if (dice & 0x1) == 1 {
+            mm.macro_angle += mm.macro_angle_mod;
+        }
+        if (dice & 0x2) == 2 {
+            mm.macro_zoom += mm.macro_zoom_mod;
+        }
+    }
     if mm.macro_angle < -60 {
         mm.macro_angle_mod = 2;
     }
@@ -370,6 +388,14 @@ pub fn update(c: &mut Client) {
                     mm.active_fn.push((fx, fz, func as usize));
                 }
             }
+        }
+    }
+
+    // Java addPlayers head (Client.java:4206-4208): reaching the walk
+    // destination clears the flag.
+    if let Some(lp) = c.local_player.as_ref() {
+        if (lp.entity.x >> 7) == c.minimap_flag_x && (lp.entity.z >> 7) == c.minimap_flag_z {
+            c.minimap_flag_x = 0;
         }
     }
 
