@@ -507,6 +507,86 @@ impl ModelLit {
             + (((self.radius * self.radius + self.max_y * self.max_y) as f64).sqrt() + 0.99) as i32;
     }
 
+    // @ObfuscatedName("fo.b([[IIIIZI)Lfo;") — ModelLit.hillSkew.
+    // Verbatim port of ModelLit.java:330-407 (copy=true form). Bends
+    // the model's vertices to follow the heightmap under its
+    // footprint. Returns None when the terrain is flat under the
+    // model or the footprint leaves the map — Java returns `this`
+    // unchanged in those cases, so the caller keeps its original.
+    pub fn hill_skew(&self, groundh: &[Vec<i32>], x: i32, y: i32, z: i32,
+                     blend: i32) -> Option<ModelLit> {
+        // calcBoundingCylinder values (computed fresh when the cache
+        // isn't populated — the model may be behind a shared Arc).
+        let (radius, b_min_y) = if self.bounding_calc == 1 {
+            (self.radius, self.min_y)
+        } else {
+            let mut min_y = 0i32;
+            let mut r2max = 0i32;
+            for i in 0..self.num_points as usize {
+                let px = self.point_x[i];
+                let py = self.point_y[i];
+                let pz = self.point_z[i];
+                if -py > min_y { min_y = -py; }
+                let r2 = px * px + pz * pz;
+                if r2 > r2max { r2max = r2; }
+            }
+            (((r2max as f64).sqrt() + 0.99) as i32, min_y)
+        };
+        let var7 = x - radius;
+        let var8 = radius + x;
+        let var9 = z - radius;
+        let var10 = radius + z;
+        if var7 < 0
+            || ((var8 + 128) >> 7) as usize >= groundh.len()
+            || var9 < 0
+            || ((var10 + 128) >> 7) as usize >= groundh[0].len()
+        {
+            return None;
+        }
+        let t11 = (var7 >> 7) as usize;
+        let t12 = ((var8 + 127) >> 7) as usize;
+        let t13 = (var9 >> 7) as usize;
+        let t14 = ((var10 + 127) >> 7) as usize;
+        if groundh[t11][t13] == y && groundh[t12][t13] == y
+            && groundh[t11][t14] == y && groundh[t12][t14] == y
+        {
+            return None;
+        }
+        let mut out = self.clone();
+        if blend == 0 {
+            for i in 0..self.num_points as usize {
+                let wx = self.point_x[i] + x;
+                let wz = self.point_z[i] + z;
+                let sub_x = wx & 0x7F;
+                let sub_z = wz & 0x7F;
+                let tx = (wx >> 7) as usize;
+                let tz = (wz >> 7) as usize;
+                let top = ((128 - sub_x) * groundh[tx][tz] + groundh[tx + 1][tz] * sub_x) >> 7;
+                let bot = ((128 - sub_x) * groundh[tx][tz + 1] + groundh[tx + 1][tz + 1] * sub_x) >> 7;
+                let h = ((128 - sub_z) * top + sub_z * bot) >> 7;
+                out.point_y[i] = self.point_y[i] + h - y;
+            }
+        } else if b_min_y != 0 {
+            for i in 0..self.num_points as usize {
+                let var27 = (-self.point_y[i] << 16) / b_min_y;
+                if var27 < blend {
+                    let wx = self.point_x[i] + x;
+                    let wz = self.point_z[i] + z;
+                    let sub_x = wx & 0x7F;
+                    let sub_z = wz & 0x7F;
+                    let tx = (wx >> 7) as usize;
+                    let tz = (wz >> 7) as usize;
+                    let top = ((128 - sub_x) * groundh[tx][tz] + groundh[tx + 1][tz] * sub_x) >> 7;
+                    let bot = ((128 - sub_x) * groundh[tx][tz + 1] + groundh[tx + 1][tz + 1] * sub_x) >> 7;
+                    let h = ((128 - sub_z) * top + sub_z * bot) >> 7;
+                    out.point_y[i] = (h - y) * (blend - var27) / blend + self.point_y[i];
+                }
+            }
+        }
+        out.bounding_calc = 0;
+        Some(out)
+    }
+
     // @ObfuscatedName("fo.o()V") — ModelLit.calcAABB.
     pub fn calc_aabb(&mut self) {
         if self.bounding_calc == 2 { return; }

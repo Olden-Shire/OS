@@ -123,6 +123,25 @@ impl ModelSource {
         Some(min_y)
     }
 
+    // ClientBuild.addLoc shadow-strength helper — Java's
+    // `instanceof ModelLit` + getRadiusCylinder(). Returns None for
+    // non-Lit sources (Java falls back to strength 15 for those).
+    pub fn lit_radius_cylinder(&self) -> Option<i32> {
+        let kind = self.kind.lock().unwrap();
+        let ModelSourceKind::Lit(m) = &*kind else { return None };
+        if m.bounding_calc == 1 {
+            return Some(m.radius);
+        }
+        let mut r2max = 0i32;
+        for i in 0..m.num_points as usize {
+            let r2 = m.point_x[i] * m.point_x[i] + m.point_z[i] * m.point_z[i];
+            if r2 > r2max {
+                r2max = r2;
+            }
+        }
+        Some(((r2max as f64).sqrt() + 0.99) as i32)
+    }
+
     // World.shareLight downcast helper — Java's
     // `instanceof ModelUnlit` checks. Runs `f` with the contained
     // ModelUnlit if this source is still unlit; returns None otherwise.
