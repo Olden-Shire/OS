@@ -311,11 +311,51 @@ fn draw_layer(
                 if com.type_ == 8 && hovered {
                     c.tooltip_com_next = com.parent_id;
                 }
+
+                // Java loopInterface 11296-11298: scrollbar input for
+                // legacy scrolling layers — arrow caps, grip drag,
+                // wheel.
+                if com.scroll_height > com.height {
+                    crate::client::do_scrollbar(
+                        c, com, com.width + renderx, rendery,
+                        com.height, com.scroll_height,
+                        mouse_x, mouse_y);
+                }
             }
         }
 
         match com.type_ {
             0 => {
+                // Java drawLayer 10181: hidden v1 layers stay skipped
+                // unless they're the current overCom — that's how
+                // hover-revealed submenus (overLayerId) work.
+                if !com.v3 && com.hide {
+                    let over = client.as_deref().map_or(false, |c| {
+                        c.over_com_id != -1 && c.over_com_id == com.parent_id
+                    });
+                    if !over {
+                        continue;
+                    }
+                }
+
+                // Java drawLayer 10185-10192: clamp the v1 scroll
+                // offset into [0, scrollHeight - height]. The store
+                // copy is updated too so the scrollbar input pass
+                // sees the clamped value next tick.
+                let mut scroll_pos_y = com.scroll_pos_y;
+                if !com.v3 {
+                    if scroll_pos_y > com.scroll_height - com.height {
+                        scroll_pos_y = com.scroll_height - com.height;
+                    }
+                    if scroll_pos_y < 0 {
+                        scroll_pos_y = 0;
+                    }
+                    if scroll_pos_y != com.scroll_pos_y {
+                        if_type::modify(com.parent_id,
+                                        |t| t.scroll_pos_y = scroll_pos_y);
+                    }
+                }
+
                 // layer — recurse into siblings with this layer as parent,
                 // then into any attached sub-interface.
                 draw_layer(
@@ -323,7 +363,7 @@ fn draw_layer(
                     com.parent_id,
                     var19, var20, var21, var22,
                     renderx - com.scroll_pos_x,
-                    rendery - com.scroll_pos_y,
+                    rendery - scroll_pos_y,
                     p11,
                     subinterfaces,
                     client,
@@ -335,7 +375,7 @@ fn draw_layer(
                         com.parent_id,
                         var19, var20, var21, var22,
                         renderx - com.scroll_pos_x,
-                        rendery - com.scroll_pos_y,
+                        rendery - scroll_pos_y,
                         p11,
                         subinterfaces,
                         client,
@@ -357,7 +397,7 @@ fn draw_layer(
                 // get the 16px scrollbar on their right edge.
                 if !com.v3 && com.scroll_height > com.height {
                     draw_scrollbar(rendery, com.width + renderx,
-                                   com.scroll_pos_y, com.height, com.scroll_height);
+                                   scroll_pos_y, com.height, com.scroll_height);
                 }
             }
             3 => {

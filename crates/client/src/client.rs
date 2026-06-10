@@ -2218,6 +2218,11 @@ pub fn game_input(c: &mut Client) {
          m.mouse_click_time, m.mouse_x, m.mouse_y, m.mouse_button)
     };
 
+    // Java updateGame :1380 — drain the wheel listener once per tick.
+    // winit's delta is positive-up; AWT's getWheelRotation (Java's
+    // convention everywhere downstream) is positive-down, so negate.
+    c.mouse_wheel_rotation = -MOUSE.lock().unwrap().take_scroll();
+
     // ── EVENT_MOUSE_MOVE (72) — drain the tracking buffer ──────────
     {
         let mut t = crate::input::mouse_tracking::TRACKING.lock().unwrap();
@@ -3031,6 +3036,58 @@ pub fn substitute_vars(c: &Client, text: &str, com: &crate::config::if_type::IfT
         }
     }
     text
+}
+
+// @ObfuscatedName("q.fl(Leg;IIIIIII)V") — Client.doScrollbar. Verbatim
+// port of Client.java:10712-10750: while the mouse button is held, the
+// 16×16 arrow caps nudge scrollPosY by 4, and the track maps the grip
+// centre to the scroll range (the hitbox widens by 32px each side
+// while grabbed so fast drags don't drop the grip). Wheel rotation
+// over the layer scrolls by 45px per notch. Mutations go through
+// if_type::modify since draw-pass components are clones of the store.
+pub fn do_scrollbar(c: &mut Client, com: &crate::config::if_type::IfType,
+                    left: i32, top: i32, height: i32, scrollable_height: i32,
+                    x: i32, y: i32) {
+    c.scroll_input_padding = if c.scroll_grabbed { 32 } else { 0 };
+    c.scroll_grabbed = false;
+
+    let mouse_button = crate::input::MOUSE.lock().unwrap().mouse_button;
+    if mouse_button != 0 {
+        if x >= left && x < left + 16 && y >= top && y < top + 16 {
+            crate::config::if_type::modify(com.parent_id, |t| t.scroll_pos_y -= 4);
+        } else if x >= left && x < left + 16 && y >= top + height - 16 && y < top + height {
+            crate::config::if_type::modify(com.parent_id, |t| t.scroll_pos_y += 4);
+        } else if x >= left - c.scroll_input_padding
+            && x < c.scroll_input_padding + left + 16
+            && y >= top + 16 && y < top + height - 16
+        {
+            let mut grip_size = (height - 32) * height / scrollable_height;
+            if grip_size < 8 {
+                grip_size = 8;
+            }
+
+            let grip_off = y - top - 16 - grip_size / 2;
+            let track = height - 32 - grip_size;
+            // Java divides unguarded; a layer short enough for the
+            // grip to fill the track would throw there — skip instead.
+            if track > 0 {
+                let pos = (scrollable_height - height) * grip_off / track;
+                crate::config::if_type::modify(com.parent_id, |t| t.scroll_pos_y = pos);
+            }
+            c.scroll_grabbed = true;
+        }
+    }
+
+    if c.mouse_wheel_rotation != 0 {
+        let width = com.width;
+        if x >= left - width && y >= top && x < left + 16 && y <= top + height {
+            let delta = c.mouse_wheel_rotation * 45;
+            crate::config::if_type::modify(com.parent_id, |t| t.scroll_pos_y += delta);
+            // Consume: the draw pass can run several times within the
+            // tick that snapshotted the rotation.
+            c.mouse_wheel_rotation = 0;
+        }
+    }
 }
 
 // @ObfuscatedName(— Client.addComponentOptions). Verbatim port of
@@ -5615,6 +5672,18 @@ pub struct Client {
     pub tooltip_num: i32,
     pub tooltip_redraw: i32,
 
+    // @ObfuscatedName("client.mouseWheelRotation") — wheel rotation
+    // drained once per tick (Java updateGame :1380 copies the AWT
+    // listener's accumulator). AWT sign convention: positive = wheel
+    // toward the user (scroll down). Zeroed when a scrollbar consumes
+    // it so multiple draw frames within a tick don't re-apply.
+    pub mouse_wheel_rotation: i32,
+    // @ObfuscatedName("client.scrollGrabbed") + scrollInputPadding —
+    // scrollbar grip drag state; while grabbed the track hitbox
+    // widens by 32px each side (Client.java:10713-10719).
+    pub scroll_grabbed: bool,
+    pub scroll_input_padding: i32,
+
 
     // @ObfuscatedName("client.macroCameraX/Z") — auto-camera offset
     // applied on top of the local-player position. Used during
@@ -6150,6 +6219,9 @@ impl Client {
             tooltip_com_next: -1,
             tooltip_num: 0,
             tooltip_redraw: 50,
+            mouse_wheel_rotation: 0,
+            scroll_grabbed: false,
+            scroll_input_padding: 0,
             macro_camera_x: 0,
             macro_camera_z: 0,
             key_held_96: false,
@@ -6652,10 +6724,23 @@ fn update_orbit_camera(c: &mut Client) {
 
     // Scroll wheel: positive = zoom in (decrease distance), negative
     // = zoom out (increase distance). orbit_cam_zoom is the orbit
-    // radius in world units (camera-to-player distance).
-    let scroll = MOUSE.lock().unwrap().take_scroll();
-    if scroll != 0 {
-        c.orbit_cam_zoom = (c.orbit_cam_zoom - scroll * 80).clamp(400, 3000);
+    // radius in world units (camera-to-player distance). Reads the
+    // per-tick wheel snapshot (AWT sign: positive = down = zoom out)
+    // and only while the mouse is over the 3D viewport, so wheel
+    // input over side panels reaches the interface scrollbars instead.
+    if c.mouse_wheel_rotation != 0 {
+        let (vx, vy, vw, vh) = {
+            let o = crate::overlays::OVERLAYS.lock().unwrap();
+            (o.viewport_x, o.viewport_y, o.viewport_w, o.viewport_h)
+        };
+        let (mx, my) = {
+            let m = MOUSE.lock().unwrap();
+            (m.mouse_x, m.mouse_y)
+        };
+        if mx >= vx && mx < vx + vw && my >= vy && my < vy + vh {
+            c.orbit_cam_zoom = (c.orbit_cam_zoom + c.mouse_wheel_rotation * 80)
+                .clamp(400, 3000);
+        }
     }
 }
 
