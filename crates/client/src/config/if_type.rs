@@ -269,11 +269,13 @@ pub struct IfType {
     // by cs2 to gate hover and click hooks.
     pub mouse_trigger: i32,
     pub click_trigger: i32,
-    // @ObfuscatedName("eg.cn") — drag context: the held child during
-    // an inv-drag (back-pointer to the component that owns the held
-    // slot). Java holds the IfType ref; we store the component id and
-    // resolve via get() at use sites.
+    // @ObfuscatedName("eg.cn") — drag context: the cs2-assigned drag
+    // target layer (cc_setdraggable stores IfType.get(parent, sub)).
+    // Java holds the IfType ref; we store the (component id, cc sub)
+    // pair — draggable_sub == -2 means unset, -1 means the component
+    // itself (Java's get(id, -1) identity case).
     pub draggable: i32,
+    pub draggable_sub: i32,
     // The inv-type flag bits (interactable / usable / swappable /
     // draggable) are folded into the existing `event_code` field
     // declared earlier. The high nibble encodes them:
@@ -315,6 +317,8 @@ impl IfType {
             // Java IfType.java:145 — lineWidth defaults to 1.
             line_width: 1,
             invobject: -1, invcount: -1, model_spin: 0,
+            draggable: 0,
+            draggable_sub: -2,
             ..Default::default()
         }
     }
@@ -652,7 +656,11 @@ pub fn open_interface(id: i32, interfaces_slot: i32) -> bool {
         let parent = (id << 16) | file_id;
         let parsed = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
             let mut t = IfType::new(parent);
-            t.sub_id = file_id;
+            // Java leaves subId at -1 for decoded components — only
+            // cc_create assigns it. The hook drain loop relies on
+            // this: subId < 0 executes unconditionally, subId >= 0
+            // is validated as a still-attached cc.
+            t.sub_id = -1;
             let mut p = Packet::from_vec(data);
             if p.data[0] == 0xFF { t.decode3(&mut p); } else { t.decode(&mut p); }
             t
@@ -994,34 +1002,41 @@ pub static FONT_CACHE: std::sync::LazyLock<Mutex<FontCache>> =
 impl IfType {
     // @ObfuscatedName("eg.w(B)Lfm;") — IfType.getFont
     pub fn get_font(&self) -> Option<Arc<PixFontGeneric>> {
-        if self.font < 0 { return None; }
-        if let Some(f) = FONT_CACHE.lock().unwrap().map.get(&self.font) {
-            return Some(Arc::clone(f));
-        }
-        let sprites_slot = SPRITES_SLOT.load(Ordering::Relaxed);
-        let fm_slot = FONT_METRICS_SLOT.load(Ordering::Relaxed);
-        if sprites_slot < 0 || fm_slot < 0 { return None; }
-        let mut reg = js5_net::LOADERS.lock().unwrap();
-        // Need to depack on the sprites archive (to populate the sprite
-        // state buffers PixFont uses) AND fetch metrics from the
-        // fontMetrics archive — but we can't borrow both loaders mutably
-        // at once, so do it in two steps with the populated sprite state
-        // still in PixLoader::STATE between the calls.
-        let sprite_ok = {
-            let loader = reg.get_mut(sprites_slot as usize).and_then(|o| o.as_mut())?;
-            pix_loader::depack_from(loader, self.font, 0)
-        };
-        if !sprite_ok { return None; }
-        let metrics = {
-            let loader = reg.get_mut(fm_slot as usize).and_then(|o| o.as_mut())?;
-            loader.fetch_file(self.font, 0)
-        };
-        drop(reg);
-        let font = pix_loader::make_pix_font_raw(metrics)?;
-        let arc = Arc::new(font);
-        FONT_CACHE.lock().unwrap().map.insert(self.font, Arc::clone(&arc));
-        Some(arc)
+        load_font(self.font)
     }
+}
+
+// Font load by id — the body of IfType.getFont, factored so the cs2
+// paraheight/parawidth opcodes (which take a font id off the stack)
+// share the same cache.
+pub fn load_font(font_id: i32) -> Option<Arc<PixFontGeneric>> {
+    if font_id < 0 { return None; }
+    if let Some(f) = FONT_CACHE.lock().unwrap().map.get(&font_id) {
+        return Some(Arc::clone(f));
+    }
+    let sprites_slot = SPRITES_SLOT.load(Ordering::Relaxed);
+    let fm_slot = FONT_METRICS_SLOT.load(Ordering::Relaxed);
+    if sprites_slot < 0 || fm_slot < 0 { return None; }
+    let mut reg = js5_net::LOADERS.lock().unwrap();
+    // Need to depack on the sprites archive (to populate the sprite
+    // state buffers PixFont uses) AND fetch metrics from the
+    // fontMetrics archive — but we can't borrow both loaders mutably
+    // at once, so do it in two steps with the populated sprite state
+    // still in PixLoader::STATE between the calls.
+    let sprite_ok = {
+        let loader = reg.get_mut(sprites_slot as usize).and_then(|o| o.as_mut())?;
+        pix_loader::depack_from(loader, font_id, 0)
+    };
+    if !sprite_ok { return None; }
+    let metrics = {
+        let loader = reg.get_mut(fm_slot as usize).and_then(|o| o.as_mut())?;
+        loader.fetch_file(font_id, 0)
+    };
+    drop(reg);
+    let font = pix_loader::make_pix_font_raw(metrics)?;
+    let arc = Arc::new(font);
+    FONT_CACHE.lock().unwrap().map.insert(font_id, Arc::clone(&arc));
+    Some(arc)
 }
 
 // @ObfuscatedName("ay.c(Lch;Lch;Lch;Lch;I)V") — IfType.init.

@@ -26,6 +26,7 @@ use winit::window::{Window, WindowAttributes, WindowId};
 mod applet;
 mod client;
 mod client_build;
+mod client_script;
 mod config;
 mod dash3d;
 mod datastruct;
@@ -57,6 +58,7 @@ mod string_constants;
 mod text;
 mod title_screen;
 mod util;
+mod wordpack;
 mod world_entry;
 
 use client::Client;

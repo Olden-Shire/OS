@@ -986,6 +986,147 @@ pub fn send_close_modal(c: &mut Client) {
     out.p1_enc(129, isaac);
 }
 
+// @ObfuscatedName(— Client.closeModal). Verbatim port of
+// Client.java:11791-11805: CLOSE_MODAL packet, then close every
+// modal-class subinterface (types 0 and 3) and release the pending
+// resume-pause component.
+pub fn close_modal(c: &mut Client) {
+    send_close_modal(c);
+
+    let keys: Vec<i32> = c.subinterfaces.iter()
+        .filter(|(_, sub)| sub.type_ == 0 || sub.type_ == 3)
+        .map(|(k, _)| *k)
+        .collect();
+    for key in keys {
+        close_sub_interface(c, key, true);
+    }
+
+    if c.resume_pause_com != -1 {
+        if let Some(com) = crate::config::if_type::get(c.resume_pause_com) {
+            component_updated(&com);
+        }
+        c.resume_pause_com = -1;
+    }
+}
+
+// @ObfuscatedName("ao.ec(ILjava/lang/String;I)V") — Client.opPlayer.
+// Verbatim port of Client.java:9298-9337: normalise the target name,
+// find the matching tracked player, path toward them, then send the
+// OPPLAYERn packet for the requested action. Unknown names report
+// "Unable to find <name>".
+pub fn op_player(c: &mut Client, action: i32, target: &str) {
+    let raw = crate::jstring::to_raw_username_str(target);
+    let display = crate::jstring::to_screen_name(crate::jstring::to_userhash(&raw))
+        .unwrap_or_default();
+
+    let mut found = false;
+    for i in 0..c.player_count as usize {
+        let pid = c.player_ids[i];
+        let dest = c.players.get(pid as usize)
+            .and_then(|o| o.as_ref())
+            .filter(|p| p.name.eq_ignore_ascii_case(&display))
+            .map(|p| (p.route_x[0], p.route_z[0]));
+        let Some((dst_x, dst_z)) = dest else { continue; };
+        let Some((src_x, src_z)) = c.local_player.as_ref()
+            .map(|lp| (lp.route_x[0], lp.route_z[0])) else { break; };
+
+        try_move(c, src_x, src_z, dst_x, dst_z, false, 0, 0, 1, 1, 0, 2);
+
+        let Some(isaac) = c.isaac_out.as_mut() else { return; };
+        let Some(out) = c.out_packet.as_mut() else { return; };
+        if action == 1 {
+            // OPPLAYER1
+            out.p1_enc(246, isaac);
+            out.p2(pid);
+        } else if action == 4 {
+            // OPPLAYER4
+            out.p1_enc(78, isaac);
+            out.p2(pid);
+        } else if action == 6 {
+            // OPPLAYER6
+            out.p1_enc(111, isaac);
+            out.p2_alt3(pid);
+        } else if action == 7 {
+            // OPPLAYER7
+            out.p1_enc(119, isaac);
+            out.p2_alt3(pid);
+        }
+
+        found = true;
+        break;
+    }
+    if !found {
+        add_chat(c, 0, Some(String::new()),
+                 Some(format!("Unable to find {display}")),
+                 Some(String::new()), 0);
+    }
+}
+
+// @ObfuscatedName("bs.fz(Leg;I)Leg;") — Client.getDragLayer. Verbatim
+// port of Client.java:11519-11547: walk serverDraggable(getActive)
+// levels up the layer chain; when that yields nothing fall back to
+// the component's cs2-assigned draggable target.
+pub fn get_drag_layer(c: &Client, com: crate::script_runner::ComRef)
+    -> crate::script_runner::ComRef
+{
+    use crate::script_runner::ComRef;
+    let Some(resolved) = com.resolve() else { return ComRef::None; };
+
+    let levels = crate::config::server_active::server_draggable(get_active(c, &resolved));
+    let mut walked = ComRef::None;
+    if levels != 0 {
+        let mut cur = resolved.clone();
+        let mut cur_ref = com;
+        let mut ok = true;
+        for _ in 0..levels {
+            let next_id = cur.layer_id;
+            match crate::config::if_type::get(next_id) {
+                Some(next) => {
+                    cur = next;
+                    cur_ref = ComRef::Com(next_id);
+                }
+                None => {
+                    ok = false;
+                    break;
+                }
+            }
+        }
+        if ok {
+            walked = cur_ref;
+        }
+    }
+
+    if walked == ComRef::None {
+        // Java: var5 = arg0.draggable (the IfType the cs2 set via
+        // cc_setdraggable; null stays null).
+        if resolved.draggable_sub != -2 && resolved.draggable != 0 {
+            return ComRef::from_pair(resolved.draggable, resolved.draggable_sub);
+        }
+        return ComRef::None;
+    }
+    walked
+}
+
+// @ObfuscatedName("ch.ff(Leg;IIB)V") — Client.dragTryPickup. Verbatim
+// port of Client.java:11357-11368.
+pub fn drag_try_pickup(c: &mut Client, com: crate::script_runner::ComRef, x: i32, y: i32) {
+    use crate::script_runner::ComRef;
+    if c.drag_com != ComRef::None || c.is_menu_open {
+        return;
+    }
+    let layer = get_drag_layer(c, com);
+    if com == ComRef::None || layer == ComRef::None {
+        return;
+    }
+
+    c.drag_com = com;
+    c.drag_layer = layer;
+    c.drag_pickup_x = x;
+    c.drag_pickup_y = y;
+    c.drag_time = 0;
+    c.drag_alive = false;
+}
+
 // @ObfuscatedName(— Client.dispatchOrbitCamera). Verbatim port of
 // Client.java:4103-4112. When not in cinema mode, route the orbit
 // position + macro angle + shake state through cam_follow to set the
@@ -4503,38 +4644,6 @@ pub fn if_anim_reset(interfaces_slot: i32, group: i32) {
     }
 }
 
-// @ObfuscatedName("bs.fz(Leg;I)Leg;") — Client.getDragLayer.
-// Verbatim port of Client.java:11519-11546. Walks `layer_id` up the
-// chain by ServerActive.server_draggable(activeFlags) hops, returning
-// the resulting ancestor IfType if found. Falls back to `com.draggable`
-// (a directly-bound drag layer if the server hasn't overridden).
-//
-// `server_draggable` extracts the drag-depth bitfield from the active
-// flags — masked to bits 24..27 per ServerActive.java.
-pub fn get_drag_layer(c: &Client, com: &crate::config::if_type::IfType) -> Option<crate::config::if_type::IfType> {
-    use crate::config::if_type;
-    let depth = (get_active(c, com) >> 24) & 0xF;
-    let mut walker = com.clone();
-    if depth == 0 {
-        if walker.draggable >= 0 {
-            return if_type::get(walker.draggable);
-        }
-        return None;
-    }
-    for _ in 0..depth {
-        match if_type::get(walker.layer_id) {
-            Some(parent) => walker = parent,
-            None => {
-                if com.draggable >= 0 {
-                    return if_type::get(com.draggable);
-                }
-                return None;
-            }
-        }
-    }
-    Some(walker)
-}
-
 // @ObfuscatedName("g.fn(B)V") — Client.legacyUpdated. Verbatim port
 // of Client.java:11490-11515. Walks every open sub-interface; for
 // any that uses the legacy (non-v3) format, marks its parent
@@ -5684,6 +5793,26 @@ pub struct Client {
     pub scroll_grabbed: bool,
     pub scroll_input_padding: i32,
 
+    // @ObfuscatedName("client.dragCom") family — IF3 component drag
+    // state (cs2 if_dragpickup / cc_dragpickup). dragCom is the
+    // component being dragged, dragLayer the clamping ancestor layer
+    // resolved by getDragLayer, dragPickup the mouse-down offset
+    // within the component, dropCom the hover target under the cursor
+    // collected by the loopInterface pass. Java Client.java:853-889.
+    pub drag_com: crate::script_runner::ComRef,
+    pub drag_layer: crate::script_runner::ComRef,
+    pub drag_pickup_x: i32,
+    pub drag_pickup_y: i32,
+    pub drag_time: i32,
+    pub drag_alive: bool,
+    pub dragging: bool,
+    pub drag_parent_found: bool,
+    pub drop_com: crate::script_runner::ComRef,
+    pub drag_current_x: i32,
+    pub drag_current_y: i32,
+    pub drag_parent_x: i32,
+    pub drag_parent_y: i32,
+
 
     // @ObfuscatedName("client.macroCameraX/Z") — auto-camera offset
     // applied on top of the local-player position. Used during
@@ -6222,6 +6351,19 @@ impl Client {
             mouse_wheel_rotation: 0,
             scroll_grabbed: false,
             scroll_input_padding: 0,
+            drag_com: crate::script_runner::ComRef::None,
+            drag_layer: crate::script_runner::ComRef::None,
+            drag_pickup_x: 0,
+            drag_pickup_y: 0,
+            drag_time: 0,
+            drag_alive: false,
+            dragging: false,
+            drag_parent_found: false,
+            drop_com: crate::script_runner::ComRef::None,
+            drag_current_x: 0,
+            drag_current_y: 0,
+            drag_parent_x: 0,
+            drag_parent_y: 0,
             macro_camera_x: 0,
             macro_camera_z: 0,
             key_held_96: false,
@@ -6598,6 +6740,22 @@ impl GameShellLifecycle for Client {
             }
         }
 
+        // Java loadingStep 120 (Client.java:1967-1972): build the chat
+        // Huffman table from the binary archive's "huffman" group. Our
+        // load steps skip 90-130, so retry here each tick until the
+        // group streams in.
+        if !crate::wordpack::huffman_loaded() && self.binary >= 0 && self.loading_step >= 60 {
+            let mut reg = js5_net::LOADERS.lock().unwrap();
+            let table = reg.get_mut(self.binary as usize)
+                .and_then(|o| o.as_mut())
+                .and_then(|l| l.get_file_by_name("huffman", ""));
+            drop(reg);
+            if let Some(table) = table {
+                crate::wordpack::set_huffman(crate::wordpack::Huffman::new(&table));
+                eprintln!("[wordpack] huffman table installed ({} symbols)", table.len());
+            }
+        }
+
         // Java: state==0 → mainLoad; state==5 → TitleScreen.loop + mainLoad;
         // state==10/20 → TitleScreen.loop. Higher states (25/30/40) belong
         // to the world+login flows which aren't wired yet.
@@ -6863,6 +7021,7 @@ impl Client {
                 self.binary = self.open_js5(10, false, true, true);
                 self.jingles = self.open_js5(11, false, true, true);
                 self.scripts = self.open_js5(12, false, true, true);
+                crate::client_script::install_archive(self.scripts);
                 self.font_metrics = self.open_js5(13, true, false, true);
                 self.vorbis = self.open_js5(14, false, true, false);
                 self.patches = self.open_js5(15, false, true, true);
