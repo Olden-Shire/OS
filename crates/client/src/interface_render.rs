@@ -47,14 +47,9 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
         crate::client::add_menu_option(c, crate::text::CANCEL, "", 1006, 0, 0, 0);
     }
 
-    // Java updateGame 2514-2517 snapshots overCom/tooltipCom and
-    // clears them before loopInterface re-detects the hover. Our
-    // detection runs inside this draw walk, so promote last frame's
-    // hits to the comparison slots and clear the collectors.
-    c.over_com_id = c.over_com_next;
-    c.over_com_next = -1;
-    c.tooltip_com_id = c.tooltip_com_next;
-    c.tooltip_com_next = -1;
+    // overCom/tooltipCom are maintained per tick by the
+    // interface_loop pass (Java's loopInterface), exactly like Java —
+    // the draw below just reads c.over_com_id / c.tooltip_com_id.
 
     {
         let mut pix = pix2d::STATE.lock().unwrap();
@@ -209,8 +204,24 @@ pub fn draw_interface(
             None => return,
         }
     };
+    // Java drawInterface 10020-10026: a dragged IF3 component is
+    // deferred out of its layer and re-drawn last (over everything)
+    // with the 0xabcdabcd sentinel unlocking it in drawLayer's
+    // filter.
+    *DRAG_CHILDREN.lock().unwrap() = None;
     draw_layer(&components, -1, x, y, w, h, child_x, child_y, p11, subinterfaces, client);
+    let deferred = DRAG_CHILDREN.lock().unwrap().take();
+    if let Some((drag_children, drag_x, drag_y)) = deferred {
+        draw_layer(&drag_children, DRAG_LAYER_ID, x, y, w, h, drag_x, drag_y,
+                   p11, subinterfaces, client);
+    }
 }
+
+// Java's dragChildren/dragChildX/dragChildY statics + the layerid
+// sentinel that re-admits only the dragged component.
+pub const DRAG_LAYER_ID: i32 = 0xabcdabcd_u32 as i32;
+static DRAG_CHILDREN: std::sync::Mutex<Option<(Vec<IfType>, i32, i32)>> =
+    std::sync::Mutex::new(None);
 
 // @ObfuscatedName("g.fv([Leg;IIIIIIIIB)V") — jag::oldscape::Client::DrawLayer
 //
@@ -233,13 +244,71 @@ fn draw_layer(
     pix2d::set_clipping(x, y, w, h);
 
     for com in children {
-        // Java's filter: skip if layerId != layer_id (drag-layer branch
-        // not yet wired).
-        if com.layer_id != layer_id { continue; }
+        // Java drawLayer 10044: skip components outside this layer —
+        // unless this is the deferred drag pass and the component is
+        // the dragged one.
+        if com.layer_id != layer_id {
+            let drag_pass = layer_id == DRAG_LAYER_ID
+                && client.as_deref().map_or(false, |c| {
+                    c.drag_com != crate::script_runner::ComRef::None
+                        && c.drag_com == crate::interface_loop::com_ref_of(com)
+                });
+            if !drag_pass { continue; }
+        }
         if com.v3 && com.hide { continue; }
 
-        let renderx = com.x + child_x;
-        let rendery = com.y + child_y;
+        let mut renderx = com.x + child_x;
+        let mut rendery = com.y + child_y;
+
+        // Java drawLayer 10074-10112 — the dragged IF3 component:
+        // non-draggablebehavior drags defer to the end-of-interface
+        // pass (so they draw over everything) and render half-trans
+        // at the clamped mouse position.
+        let mut drag_owned: Option<IfType> = None;
+        if let Some(c) = client.as_deref() {
+            use crate::script_runner::ComRef;
+            if c.drag_com != ComRef::None
+                && c.drag_com == crate::interface_loop::com_ref_of(com)
+            {
+                if layer_id != DRAG_LAYER_ID && !com.draggable_behavior {
+                    *DRAG_CHILDREN.lock().unwrap() =
+                        Some((children.to_vec(), child_x, child_y));
+                    continue;
+                }
+
+                if c.drag_alive && c.drag_parent_found {
+                    if let Some(drag_layer) = c.drag_layer.resolve() {
+                        let (mouse_x, mouse_y) = {
+                            let m = crate::input::MOUSE.lock().unwrap();
+                            (m.mouse_x, m.mouse_y)
+                        };
+                        let mut dx = mouse_x - c.drag_pickup_x;
+                        let mut dy = mouse_y - c.drag_pickup_y;
+                        if dx < c.drag_parent_x {
+                            dx = c.drag_parent_x;
+                        }
+                        if com.width + dx > c.drag_parent_x + drag_layer.width {
+                            dx = c.drag_parent_x + drag_layer.width - com.width;
+                        }
+                        if dy < c.drag_parent_y {
+                            dy = c.drag_parent_y;
+                        }
+                        if com.height + dy > c.drag_parent_y + drag_layer.height {
+                            dy = c.drag_parent_y + drag_layer.height - com.height;
+                        }
+                        renderx = dx;
+                        rendery = dy;
+                    }
+                }
+
+                if !com.draggable_behavior {
+                    let mut clone = com.clone();
+                    clone.trans = 128;
+                    drag_owned = Some(clone);
+                }
+            }
+        }
+        let com: &IfType = drag_owned.as_ref().unwrap_or(com);
 
         // jagex3.Client.clientComponent — special-case render targets.
         // 1337 = main 3D viewport, 1338 = minimap. Both replace the
@@ -295,37 +364,9 @@ fn draw_layer(
                                                      mouse_y - rendery);
             }
 
-            // Java loopInterface 11279-11294: v1 hover tracking —
-            // overCom for components requesting hover colours (or
-            // redirecting via overLayerId into a sibling), tooltipCom
-            // for type-8 tooltips. Java aborts the whole pass when a
-            // drag is live or the menu is open.
-            if !com.v3 && c.obj_drag_com == -1 && !c.is_menu_open {
-                let hovered = mouse_x >= var19 && mouse_y >= var20
-                    && mouse_x < var21 && mouse_y < var22;
-                if (com.over_layer_id >= 0 || com.colour_over != 0) && hovered {
-                    c.over_com_next = if com.over_layer_id >= 0 {
-                        children
-                            .get(com.over_layer_id as usize)
-                            .map_or(com.parent_id, |o| o.parent_id)
-                    } else {
-                        com.parent_id
-                    };
-                }
-                if com.type_ == 8 && hovered {
-                    c.tooltip_com_next = com.parent_id;
-                }
-
-                // Java loopInterface 11296-11298: scrollbar input for
-                // legacy scrolling layers — arrow caps, grip drag,
-                // wheel.
-                if com.scroll_height > com.height {
-                    crate::client::do_scrollbar(
-                        c, com, com.width + renderx, rendery,
-                        com.height, com.scroll_height,
-                        mouse_x, mouse_y);
-                }
-            }
+            // v1 hover (overCom/tooltipCom) and scrollbar input moved
+            // to interface_loop's per-tick pass — Java handles them in
+            // loopInterface, not drawLayer.
         }
 
         match com.type_ {

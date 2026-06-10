@@ -34,6 +34,7 @@ mod game_canvas;
 mod game_shell;
 mod graphics;
 mod input;
+mod interface_loop;
 mod interface_render;
 mod io;
 mod client_inv_cache;

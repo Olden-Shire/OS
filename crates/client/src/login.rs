@@ -433,6 +433,8 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             eprintln!("[game] IfOpenTop: toplevel={id}");
             c.toplevelinterface = id;
             if_type::open_interface(id, c.interfaces);
+            // Java Client.java:6059 — fire the group's onload hooks.
+            crate::script_runner::execute_onload(c, id);
         }
         184 => { // IF_OPENSUB
             let kind = p.g1_alt2();
@@ -633,12 +635,16 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             let value = p.g4();
             var_cache::set_varp(varp_id, value);
             crate::client::client_var(c, varp_id);
+            c.var_transmit[(c.var_transmit_num & 0x1F) as usize] = varp_id;
+            c.var_transmit_num += 1;
         }
         88 => { // VARP_SMALL — varp_id + i8 value
             let varp_id = p.g2_alt1();
             let value = p.g1b_alt3() as i32;
             var_cache::set_varp(varp_id, value);
             crate::client::client_var(c, varp_id);
+            c.var_transmit[(c.var_transmit_num & 0x1F) as usize] = varp_id;
+            c.var_transmit_num += 1;
         }
         111 => { // VARP_SYNC — verbatim port of Client.java:7143-7150.
                  // Walks VAR vs VAR_SERV; for every delta, copy server
@@ -649,6 +655,8 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 let serv = var_cache::get_var_serv(id);
                 if serv != var_cache::get_varp(id) {
                     var_cache::set_varp(id, serv);
+                    c.var_transmit[(c.var_transmit_num & 0x1F) as usize] = id;
+                    c.var_transmit_num += 1;
                 }
             }
         }
@@ -765,6 +773,8 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 }
                 crate::client_inv_cache::set(inv_id, slot, id - 1, qty);
             }
+            c.inv_transmit[(c.inv_transmit_num & 0x1F) as usize] = inv_id & 0x7FFF;
+            c.inv_transmit_num += 1;
             c.misc_transmit_num += 1;
         }
         222 => { // UPDATE_INV_PARTIAL — verbatim port of Client.java:6213-6254.
@@ -789,11 +799,15 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 }
                 crate::client_inv_cache::set(inv_id, slot, id - 1, qty);
             }
+            c.inv_transmit[(c.inv_transmit_num & 0x1F) as usize] = inv_id & 0x7FFF;
+            c.inv_transmit_num += 1;
             c.misc_transmit_num += 1;
         }
         172 => { // UPDATE_INV_STOPTRANSMIT (Java 6479-6486) — g2_alt2 invId.
             let inv_id = p.g2_alt2();
             crate::client_inv_cache::delete(inv_id);
+            c.inv_transmit[(c.inv_transmit_num & 0x1F) as usize] = inv_id & 0x7FFF;
+            c.inv_transmit_num += 1;
             c.misc_transmit_num += 1;
         }
         117 => { // UPDATE_INV_STOPTRANSMIT (Java 6463-6477) — g4_alt1 comId.
@@ -1045,30 +1059,24 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
 
         // ── Script + system ───────────────────────────────────────
         92 => { // RUNCLIENTSCRIPT — verbatim port of Client.java:6353-6371.
-                // Format: gjstr stackDesc, then per-char arg (s=gjstr,
-                // anything else=g4), then final g4 script_id. The
-                // executor is deferred; here we just drain the bytes
-                // and stamp the request on Client for later replay.
+                // Format: gjstr stackDesc, then per-char args read
+                // back-to-front (s=gjstr, anything else=g4), then the
+                // final g4 script id at onop[0].
+            use crate::config::if_type::HookArg;
             let stack_desc = p.gjstr();
-            // Java reverse-iterates stackDesc. The byte budget is
-            // typically 1-12 args.
             let chars: Vec<char> = stack_desc.chars().collect();
-            let mut int_args: Vec<i32> = Vec::new();
-            let mut string_args: Vec<String> = Vec::new();
-            for ch in chars.iter().rev() {
-                if *ch == 's' {
-                    string_args.push(p.gjstr());
+            let mut onop: Vec<HookArg> = vec![HookArg::Int(0); chars.len() + 1];
+            for i in (0..chars.len()).rev() {
+                if chars[i] == 's' {
+                    onop[i + 1] = HookArg::Str(p.gjstr());
                 } else {
-                    int_args.push(p.g4());
+                    onop[i + 1] = HookArg::Int(p.g4());
                 }
             }
-            let script_id = p.g4();
-            c.pending_client_scripts.push(crate::client::PendingClientScript {
-                script_id,
-                stack_desc: stack_desc.clone(),
-                int_args,
-                string_args,
-            });
+            onop[0] = HookArg::Int(p.g4());
+
+            let req = crate::script_runner::HookReq { onop, ..Default::default() };
+            crate::script_runner::execute_script(c, &req);
         }
         190 => { // MINIMAP_TOGGLE — Java: minimapState = in.g1()
             // (0 normal, 2/5 blacked map, ≥3 blacked compass).
@@ -1079,13 +1087,11 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
         }
         42 => {
             // TRIGGER_ONDIALOGABORT — server-side dialog timed out or
-            // was cancelled. Java fires the top-level interface's
-            // onclose script via runHookImmediate(toplevelinterface,
-            // 0). The script runner isn't yet ported, so we stamp the
-            // signal on Client for the interface render to consume.
+            // was cancelled; fire every ondialogabort hook on the
+            // top-level interface tree (runHookImmediate kind 0).
             if c.toplevelinterface != -1 {
-                let _ = c.toplevelinterface; // hook trigger pending
-                                              // ScriptRunner port.
+                let toplevel = c.toplevelinterface;
+                crate::client::run_hook_immediate(c, toplevel, 0);
             }
         }
         48 => {

@@ -363,7 +363,11 @@ pub fn add_chat(c: &mut Client, kind: i32, sender: Option<String>, message: Opti
     c.chat_text[0] = message;
     c.chat_screen_name[0] = screen_name;
     c.chat_history_length += 1;
-    c.chat_transmit_num = transmit_num;
+    // Java: chatTransmitNum = transmitNum — stamping the interface
+    // tick counter makes every onchattransmit component (whose own
+    // stamp predates this) fire once on the next loopInterface pass.
+    let _ = transmit_num;
+    c.chat_transmit_num = c.transmit_num;
 }
 
 // Custom type — represents a queued RUNCLIENTSCRIPT call. Java
@@ -1767,6 +1771,8 @@ pub fn open_sub_interface(c: &mut Client, parent_com_id: i32, sub_id: i32, kind:
     if interfaces_slot >= 0 {
         if_anim_reset(interfaces_slot, sub_id);
     }
+    // Java Client.java:11816 — onload hooks for the opened group.
+    crate::script_runner::execute_onload(c, sub_id);
     if let Some(com) = crate::config::if_type::get(parent_com_id) {
         component_updated(&com);
     }
@@ -1778,8 +1784,9 @@ pub fn open_sub_interface(c: &mut Client, parent_com_id: i32, sub_id: i32, kind:
     }
     c.is_menu_open = false;
     c.menu_num_entries = 0;
-    if c.toplevelinterface != -1 && interfaces_slot >= 0 {
-        run_hook_immediate(interfaces_slot, c.toplevelinterface, 1);
+    if c.toplevelinterface != -1 {
+        let toplevel = c.toplevelinterface;
+        run_hook_immediate(c, toplevel, 1);
     }
 }
 
@@ -2569,6 +2576,11 @@ pub fn game_input(c: &mut Client) {
             c.keypresses += 1;
         }
     }
+
+    // ── Interface update pass (Client.java:2514-2597) ───────────────
+    // loopInterface hook collection → queue drain → IF3 drag step.
+    // Runs after the key buffer (onkey hooks read it).
+    crate::interface_loop::interface_tick(c);
 
     // ── Walk-here ground pick consumption (Client.java:2599-2611) ──
     // doAction 23 arms World.updateMousePicking; renderQuickGround /
@@ -5042,20 +5054,63 @@ pub fn prepend_op_index(op: Option<&[Option<String>]>) -> Vec<String> {
 }
 
 // @ObfuscatedName("ai.fs(III)V") — Client.runHookImmediate. Verbatim
-// port of Client.java:11306-11310. Opens the requested interface (if
-// not already) and dispatches the per-layer onclose/onload script
-// for every child component.
-//
-// The actual script execution (`run_hook_layer`) is gated on the cs2
-// dispatcher landing — for now we only walk the interface to make
-// sure its files are loaded.
-pub fn run_hook_immediate(interfaces_slot: i32, group: i32, _hook_kind: i32) {
+// port of Client.java:11306-11353: opens the group (if not already)
+// then walks every component — recursing through layer subcomponents
+// and attached sub-interfaces — executing ondialogabort (kind 0) or
+// onsubchange (kind 1) hooks synchronously. ccs (subId >= 0) only
+// fire while still attached to their parent slot.
+pub fn run_hook_immediate(c: &mut Client, group: i32, hook_kind: i32) {
     use crate::config::if_type;
+    let interfaces_slot = if_type::INTERFACES_SLOT
+        .load(std::sync::atomic::Ordering::Relaxed);
     if !if_type::open_interface(group, interfaces_slot) { return; }
-    // Java iterates `IfType.list[group]` and calls `runHookLayer`. The
-    // ScriptRunner isn't ported yet; reaching every child to flush
-    // dirty bits is sufficient for the renderer to repaint.
-    redraw_all_components();
+    let components: Vec<crate::config::if_type::IfType> = {
+        let s = if_type::STORE.lock().unwrap();
+        match s.list.get(group as usize).and_then(|o| o.as_ref()) {
+            Some(v) => v.iter().filter_map(|o| o.clone()).collect(),
+            None => return,
+        }
+    };
+    run_hook_layer(c, &components, hook_kind);
+}
+
+// @ObfuscatedName("ao.fh([Leg;IB)V") — Client.runHookLayer.
+fn run_hook_layer(c: &mut Client, children: &[crate::config::if_type::IfType], hook_kind: i32) {
+    use crate::script_runner::{ComRef, HookReq};
+    for com in children {
+        let cref = crate::interface_loop::com_ref_of(com);
+
+        if com.type_ == 0 {
+            if !com.subcomponents.is_empty() {
+                let subs: Vec<crate::config::if_type::IfType> =
+                    com.subcomponents.iter().filter_map(|o| o.clone()).collect();
+                run_hook_layer(c, &subs, hook_kind);
+            }
+            if let Some(sub) = c.subinterfaces.get(&com.parent_id).cloned() {
+                if sub.id >= 0 {
+                    run_hook_immediate(c, sub.id, hook_kind);
+                }
+            }
+        }
+
+        if hook_kind == 0 {
+            if let Some(hook) = com.hook_ondialogabort.clone() {
+                let req = HookReq { component: cref, onop: hook, ..Default::default() };
+                crate::script_runner::execute_script(c, &req);
+            }
+        }
+
+        if hook_kind == 1 {
+            if let Some(hook) = com.hook_onsubchange.clone() {
+                // Java 11340-11345 — detached ccs are skipped.
+                if matches!(cref, ComRef::Cc { .. }) && cref.resolve().is_none() {
+                    continue;
+                }
+                let req = HookReq { component: cref, onop: hook, ..Default::default() };
+                crate::script_runner::execute_script(c, &req);
+            }
+        }
+    }
 }
 
 // @ObfuscatedName("client.fy") — Client.animateInterface. Verbatim
@@ -5762,19 +5817,15 @@ pub struct Client {
 
     // @ObfuscatedName("client.overCom") — the v1 component the mouse
     // is hovering whose overLayerId/colourOver requests hover state.
-    // Java rebuilds it in loopInterface each tick (Client.java:
-    // 11279-11290); we rebuild during the interface draw walk, so
-    // `over_com_next` collects this frame's hit and the swap at the
-    // top of draw_chrome promotes it to `over_com_id` (the value the
-    // colour comparisons read), mirroring Java's snapshot at :2514.
-    // -1 = none. Identified by the component id (IfType.parent_id).
+    // Rebuilt by interface_loop's per-tick pass (Java loopInterface,
+    // Client.java:11279-11290); the draw walk reads it for the hover
+    // colour comparisons. -1 = none; identified by the component id
+    // (IfType.parent_id).
     pub over_com_id: i32,
-    pub over_com_next: i32,
 
     // @ObfuscatedName("client.tooltipCom") — the hovered type-8
-    // tooltip component, same two-phase tracking as over_com.
+    // tooltip component, same per-tick tracking as over_com.
     pub tooltip_com_id: i32,
-    pub tooltip_com_next: i32,
     // @ObfuscatedName("client.tooltipNum") + tooltipRedraw — hover
     // dwell counter; the tooltip box only draws once tooltip_num has
     // climbed to tooltip_redraw (50 ticks). Java Client.java:2633-2642.
@@ -5812,6 +5863,27 @@ pub struct Client {
     pub drag_current_y: i32,
     pub drag_parent_x: i32,
     pub drag_parent_y: i32,
+
+    // @ObfuscatedName("client.transmitNum") — the loopInterface tick
+    // counter; components stamp it on visit so the *transmit hook
+    // comparisons fire exactly once per event (Client.java:2530).
+    pub transmit_num: i32,
+    // @ObfuscatedName("client.varTransmit") + varTransmitNum — 32-deep
+    // ring of recently changed varp ids; onvartransmit subscription
+    // lists are filtered against it (Client.java:5794).
+    pub var_transmit: [i32; 32],
+    pub var_transmit_num: i32,
+    // @ObfuscatedName("client.invTransmit") + invTransmitNum — same
+    // ring for inventory updates (Client.java:6251).
+    pub inv_transmit: [i32; 32],
+    pub inv_transmit_num: i32,
+
+    // @ObfuscatedName("client.hookRequests") family — the three hook
+    // queues loopInterface fills and updateGame drains, in priority
+    // order timer → mouseStop → general (Client.java:2533-2593).
+    pub hook_requests: std::collections::VecDeque<crate::script_runner::HookReq>,
+    pub hook_requests_timer: std::collections::VecDeque<crate::script_runner::HookReq>,
+    pub hook_requests_mouse_stop: std::collections::VecDeque<crate::script_runner::HookReq>,
 
 
     // @ObfuscatedName("client.macroCameraX/Z") — auto-camera offset
@@ -6122,6 +6194,15 @@ pub fn close_sub_interface(c: &mut Client, sub_key: i32, also_purge_archive: boo
     if let Some(com) = crate::config::if_type::get(var3) {
         component_updated(&com);
     }
+
+    // Java 11877-11883 — closing a sub also closes any open menu and
+    // notifies the top-level tree's onsubchange hooks.
+    c.is_menu_open = false;
+    c.menu_num_entries = 0;
+    if c.toplevelinterface != -1 {
+        let toplevel = c.toplevelinterface;
+        run_hook_immediate(c, toplevel, 1);
+    }
 }
 
 // custom — keeps re-creating mainLoad state across mainloop calls without
@@ -6343,9 +6424,7 @@ impl Client {
             target_op: String::new(),
             resume_pause_com: -1,
             over_com_id: -1,
-            over_com_next: -1,
             tooltip_com_id: -1,
-            tooltip_com_next: -1,
             tooltip_num: 0,
             tooltip_redraw: 50,
             mouse_wheel_rotation: 0,
@@ -6364,6 +6443,14 @@ impl Client {
             drag_current_y: 0,
             drag_parent_x: 0,
             drag_parent_y: 0,
+            transmit_num: 0,
+            var_transmit: [0; 32],
+            var_transmit_num: 0,
+            inv_transmit: [0; 32],
+            inv_transmit_num: 0,
+            hook_requests: std::collections::VecDeque::new(),
+            hook_requests_timer: std::collections::VecDeque::new(),
+            hook_requests_mouse_stop: std::collections::VecDeque::new(),
             macro_camera_x: 0,
             macro_camera_z: 0,
             key_held_96: false,
