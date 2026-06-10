@@ -882,6 +882,106 @@ impl IfType {
     }
 }
 
+// @ObfuscatedName("eg.j") — IfType model cache, keyed (type << 16) + id
+// like Java's modelCache.find((type << 16) + id).
+pub struct ModelCache {
+    pub map: HashMap<i32, Arc<crate::dash3d::model_lit::ModelLit>>,
+}
+pub static MODEL_CACHE: std::sync::LazyLock<Mutex<ModelCache>> =
+    std::sync::LazyLock::new(|| Mutex::new(ModelCache { map: HashMap::new() }));
+
+impl IfType {
+    // @ObfuscatedName("eg.b(Leo;IZLct;I)Lfo;") — IfType.getTempModel.
+    // Verbatim port of IfType.java:1071-1149: resolves the type-6
+    // component's base model (secondary picks model2Type/model2Id) —
+    // type 1 = raw model archive file, 2 = npc chathead, 3 = player
+    // chathead, 4 = obj model — lights it 64/768/-50/-10/-50 (objs use
+    // their own ambient/contrast offsets), caches by (type<<16)+id,
+    // then applies the seq animation when one is supplied. The player
+    // arg is None until the PlayerModel appearance port lands — Java
+    // returns null for type 3 with a null player, so player-head
+    // components stay empty rather than wrong.
+    pub fn get_temp_model(
+        &self,
+        seq: Option<&crate::config::seq_type::SeqType>,
+        seq_frame: i32,
+        secondary: bool,
+    ) -> Option<Arc<crate::dash3d::model_lit::ModelLit>> {
+        use crate::dash3d::model_lit::ModelLit;
+        use crate::dash3d::model_unlit::ModelUnlit;
+
+        let (model_type, model_id) = if secondary {
+            (self.model2_type, self.model2_id)
+        } else {
+            (self.model1_type, self.model1_id)
+        };
+
+        if model_type == 0 {
+            return None;
+        }
+        if model_type == 1 && model_id == -1 {
+            return None;
+        }
+
+        let key = (model_type << 16) + model_id;
+        let cached = MODEL_CACHE.lock().unwrap().map.get(&key).map(Arc::clone);
+        let base = match cached {
+            Some(m) => m,
+            None => {
+                let mut lit = match model_type {
+                    1 => {
+                        // basic — straight model-archive load.
+                        let bytes = {
+                            let slot = MODELS_SLOT.load(Ordering::Relaxed);
+                            if slot < 0 { return None; }
+                            let mut reg = js5_net::LOADERS.lock().unwrap();
+                            let loader = reg.get_mut(slot as usize).and_then(|o| o.as_mut())?;
+                            loader.fetch_file(model_id, 0)?
+                        };
+                        let mut unlit = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+                            ModelUnlit::from_bytes(bytes)
+                        })).ok()?;
+                        ModelLit::light(&mut unlit, 64, 768, -50, -10, -50)
+                    }
+                    2 => {
+                        // npc_head
+                        let mut unlit = crate::config::npc_type::list(model_id).get_head()?;
+                        ModelLit::light(&mut unlit, 64, 768, -50, -10, -50)
+                    }
+                    3 => {
+                        // player_head — needs the PlayerModel appearance
+                        // port; Java returns null when player == null.
+                        return None;
+                    }
+                    4 => {
+                        // object
+                        let obj = crate::config::obj_type::list(model_id)?;
+                        let mut unlit = obj.get_model_unlit(10)?;
+                        ModelLit::light(&mut unlit, obj.ambient + 64, obj.contrast + 768,
+                                        -50, -10, -50)
+                    }
+                    _ => return None,
+                };
+                // Pre-compute bounds while we own the model — the
+                // type-6 draw reads minY and Java's per-frame
+                // calcBoundingCylinder call becomes a no-op.
+                lit.calc_bounding_cylinder();
+                let arc = Arc::new(lit);
+                MODEL_CACHE.lock().unwrap().map.insert(key, Arc::clone(&arc));
+                arc
+            }
+        };
+
+        if let Some(seq) = seq {
+            let mut animated = seq.animate_model_with_extra(&base, seq_frame);
+            animated.calc_bounding_cylinder();
+            return Some(Arc::new(animated));
+        }
+
+        Some(base)
+    }
+}
+
 // @ObfuscatedName("eg.q") — IfType font cache, indexed by font id.
 use crate::graphics::pix_font_generic::PixFontGeneric;
 

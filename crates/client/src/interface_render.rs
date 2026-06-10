@@ -47,6 +47,15 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
         crate::client::add_menu_option(c, crate::text::CANCEL, "", 1006, 0, 0, 0);
     }
 
+    // Java updateGame 2514-2517 snapshots overCom/tooltipCom and
+    // clears them before loopInterface re-detects the hover. Our
+    // detection runs inside this draw walk, so promote last frame's
+    // hits to the comparison slots and clear the collectors.
+    c.over_com_id = c.over_com_next;
+    c.over_com_next = -1;
+    c.tooltip_com_id = c.tooltip_com_next;
+    c.tooltip_com_next = -1;
+
     {
         let mut pix = pix2d::STATE.lock().unwrap();
         let shell = SHELL.lock().unwrap();
@@ -281,6 +290,28 @@ fn draw_layer(
                                                      mouse_x - renderx,
                                                      mouse_y - rendery);
             }
+
+            // Java loopInterface 11279-11294: v1 hover tracking —
+            // overCom for components requesting hover colours (or
+            // redirecting via overLayerId into a sibling), tooltipCom
+            // for type-8 tooltips. Java aborts the whole pass when a
+            // drag is live or the menu is open.
+            if !com.v3 && c.obj_drag_com == -1 && !c.is_menu_open {
+                let hovered = mouse_x >= var19 && mouse_y >= var20
+                    && mouse_x < var21 && mouse_y < var22;
+                if (com.over_layer_id >= 0 || com.colour_over != 0) && hovered {
+                    c.over_com_next = if com.over_layer_id >= 0 {
+                        children
+                            .get(com.over_layer_id as usize)
+                            .map_or(com.parent_id, |o| o.parent_id)
+                    } else {
+                        com.parent_id
+                    };
+                }
+                if com.type_ == 8 && hovered {
+                    c.tooltip_com_next = com.parent_id;
+                }
+            }
         }
 
         match com.type_ {
@@ -330,16 +361,24 @@ fn draw_layer(
                 }
             }
             3 => {
-                // rect — colour + optional alpha (trans 0..255, 0 = opaque).
-                // Java's drawComponent picks colour2/colourOver via active +
-                // hover state. We don't yet track per-frame hover state,
-                // so we approximate: when colour2 is set and the component
-                // appears "active" via a non-zero anim_frame, pick colour2.
-                // The full active/hover dispatch (overCom + getIfActive)
-                // lands with the input layer.
-                let is_active = com.anim_frame != 0 && com.colour2 != 0;
-                let col = if is_active { com.colour2 & 0xFFFFFF }
-                          else { com.colour & 0xFFFFFF };
+                // rect — Java drawInterface 10321-10346: colour comes
+                // from the comparator scripts (getIfActive → colour2)
+                // with the overCom hover override on whichever side
+                // was picked.
+                let (active, over) = match client.as_deref() {
+                    Some(c) => (crate::client::get_if_active(c, com),
+                                c.over_com_id != -1 && c.over_com_id == com.parent_id),
+                    None => (false, false),
+                };
+                let col = if active {
+                    let mut col = com.colour2;
+                    if over && com.colour2_over != 0 { col = com.colour2_over; }
+                    col & 0xFFFFFF
+                } else {
+                    let mut col = com.colour;
+                    if over && com.colour_over != 0 { col = com.colour_over; }
+                    col & 0xFFFFFF
+                };
                 let trans = com.trans;
                 if trans == 0 {
                     if com.fill {
@@ -356,46 +395,100 @@ fn draw_layer(
                     }
                 }
             }
-            1 | 4 => {
-                // text — IfType.getFont depacks the per-component font
-                // from the sprites + fontMetrics archives. Multi-line via
-                // '|' (legacy) and '<br>' (v3). h_align: 0 left, 1 centre,
-                // 2 right. v_align: 0 top, 1 centre, 2 bot.
+            1 => {
+                // Java drawInterface 10224: type 1 has an empty branch
+                // — nothing is drawn.
+            }
+            4 => {
+                // text — Java drawInterface 10347-10396: active state
+                // swaps in colour2/text2, overCom applies the hover
+                // colour, v3 invobject components display the item
+                // name (+ "x <count>" for stacks), the resume-pause
+                // component shows "Please wait...", and v1 text runs
+                // the %1-%5/%dns variable substitution.
                 let font_arc = com.get_font();
                 let font_ref = font_arc.as_deref().or(p11);
                 if let Some(font) = font_ref {
-                    let text_src = if !com.text.is_empty() { &com.text } else { &com.text2 };
-                    let col = com.colour & 0xFFFFFF;
-                    let line_h = if com.line_height > 0 { com.line_height } else { font.base.ascent + 2 };
-                    let lines: Vec<String> = text_src
-                        .replace("<br>", "|")
-                        .split('|')
-                        .map(|s| s.to_string())
-                        .collect();
-                    let total_h = (lines.len() as i32) * line_h;
-                    let mut cy_top = match com.v_align {
-                        1 => rendery + (com.height - total_h) / 2 + line_h,
-                        2 => rendery + com.height - total_h + line_h,
-                        _ => rendery + line_h,
+                    let mut text = com.text.clone();
+                    let (active, over, resume) = match client.as_deref() {
+                        Some(c) => (crate::client::get_if_active(c, com),
+                                    c.over_com_id != -1 && c.over_com_id == com.parent_id,
+                                    c.resume_pause_com == com.parent_id),
+                        None => (false, false, false),
                     };
-                    for line in &lines {
-                        match com.h_align {
-                            1 => font.base.centre_string(line, renderx + com.width / 2, cy_top, col, 0),
-                            2 => {
-                                let wpx = font.base.string_wid(line);
-                                font.base.draw_string(line, renderx + com.width - wpx, cy_top, col, 0);
-                            }
-                            _ => font.base.draw_string(line, renderx, cy_top, col, 0),
+                    let mut colour;
+                    if active {
+                        colour = com.colour2;
+                        if over && com.colour2_over != 0 {
+                            colour = com.colour2_over;
                         }
-                        cy_top += line_h;
+                        if !com.text2.is_empty() {
+                            text = com.text2.clone();
+                        }
+                    } else {
+                        colour = com.colour;
+                        if over && com.colour_over != 0 {
+                            colour = com.colour_over;
+                        }
                     }
+
+                    if com.v3 && com.invobject != -1 {
+                        let obj = crate::config::obj_type::list(com.invobject);
+                        // Java: text = obj.name, "null" when unset.
+                        text = obj.as_ref()
+                            .map(|o| o.name.clone())
+                            .filter(|n| !n.is_empty())
+                            .unwrap_or_else(|| "null".to_string());
+                        if let Some(obj) = obj.as_ref() {
+                            if (obj.stackable == 1 || com.invcount != 1) && com.invcount != -1 {
+                                text = format!(
+                                    "{}{}{} x{}",
+                                    crate::string_constants::tag_colour(0xff9040),
+                                    text,
+                                    crate::string_constants::TAG_COLOURCLOSE,
+                                    crate::client::nice_number(com.invcount),
+                                );
+                            }
+                        }
+                    }
+
+                    if resume {
+                        text = crate::text::PLEASEWAIT.to_string();
+                        colour = com.colour;
+                    }
+
+                    if !com.v3 {
+                        if let Some(c) = client.as_deref() {
+                            text = crate::client::substitute_vars(c, &text, com);
+                        }
+                    }
+
+                    font.base.draw_string_multiline(
+                        &text, renderx, rendery, com.width, com.height,
+                        colour & 0xFFFFFF, if com.shadow { 0 } else { -1 },
+                        com.h_align, com.v_align, com.line_height,
+                    );
                 }
             }
             5 => {
-                // graphic — full v3 path: tiling × rotate × trans × scale.
-                // Java's branch also supports invobject (ObjType sprite)
-                // which we defer until ObjType decodes.
-                if let Some(pix) = com.get_graphic(false) {
+                // graphic — Java drawInterface 10397-10452. v3 sources
+                // the image from invobject (ObjType.getSprite) or the
+                // inactive graphic and applies tiling × rotate × trans
+                // × scale; v1 plots getGraphic(getIfActive) directly.
+                let image = if com.v3 {
+                    if com.invobject == -1 {
+                        com.get_graphic(false)
+                    } else {
+                        crate::config::obj_type::get_sprite(
+                            com.invobject, com.invcount,
+                            com.outline, com.shadow_colour, false)
+                    }
+                } else {
+                    let active = client.as_deref()
+                        .map_or(false, |c| crate::client::get_if_active(c, com));
+                    com.get_graphic(active)
+                };
+                if let Some(pix) = image {
                     let width = pix.owi.max(1);
                     let height = pix.ohi.max(1);
                     if com.v3 {
@@ -604,54 +697,117 @@ fn draw_layer(
                 }
             }
             8 => {
-                // tooltip — Java IfType.java/Client.java:10557. The
-                // tooltip surface is normally only rendered when
-                // `tooltipCom == com`, which our input layer hasn't
-                // wired yet. When rendered, Java:
-                //   * measures every <br>-separated line with the p12
-                //     font fallback,
-                //   * sizes the box to (maxWidth+6) x (lineCount*lineH+5),
-                //     positioned at mouseX..mouseY,
-                //   * fills 0xFFFFE0 (16777120), outlines 0x000000,
-                //   * draws each line in 0x000000 with 1-px shadow.
-                //
-                // Until tooltipCom tracking lands, we draw the box
-                // in-place at the component's own (x, y) so cs2-
-                // triggered tooltips (set via SET_TOOLTIP_TEXT op)
-                // still appear. The box auto-sizes to text content.
-                let text_src = if !com.text.is_empty() { &com.text } else { &com.text2 };
-                if !text_src.is_empty() {
-                    let font_arc = com.get_font();
-                    let font_ref = font_arc.as_deref().or(p11);
+                // tooltip — Java drawInterface 10557-10613: only drawn
+                // for the hovered tooltipCom once the dwell counter has
+                // saturated (tooltipNum == tooltipRedraw). The box is
+                // measured with the p12 font over <br>-separated lines
+                // of the var-substituted text, sized (maxWidth+6) ×
+                // (lines*(ascent+1)+7), right-anchored under the
+                // component and clamped to the clip rect, filled
+                // 0xFFFFE0 with a black outline and black 13px lines.
+                let (gate, text) = match client.as_deref() {
+                    Some(c) => (
+                        c.tooltip_com_id != -1
+                            && c.tooltip_com_id == com.parent_id
+                            && c.tooltip_num == c.tooltip_redraw,
+                        crate::client::substitute_vars(c, &com.text, com),
+                    ),
+                    None => (false, com.text.clone()),
+                };
+                let p12_owned = client.as_deref().and_then(|c| c.p12.clone());
+                let font_ref = p12_owned.as_ref().or(p11);
+                if gate && !text.is_empty() {
                     if let Some(font) = font_ref {
-                        let lines: Vec<String> = text_src
-                            .replace("<br>", "|")
-                            .split('|')
-                            .map(|s| s.to_string())
-                            .collect();
-                        let line_h = font.base.ascent + 2;
-                        let mut max_w = 0i32;
+                        let line_h = font.base.ascent + 1;
+                        let lines: Vec<&str> =
+                            text.split(crate::string_constants::TAG_BREAK).collect();
+                        let mut box_w = 0i32;
                         for line in &lines {
-                            let w = font.base.string_wid(line);
-                            if w > max_w { max_w = w; }
+                            let wid = font.base.string_wid(line);
+                            if wid > box_w { box_w = wid; }
                         }
-                        let box_w = (max_w + 6).max(com.width);
-                        let box_h = (lines.len() as i32 * line_h + 5).max(com.height);
-                        pix2d::fill_rect(renderx, rendery, box_w, box_h, 0xFFFFE0);
-                        pix2d::draw_rect(renderx, rendery, box_w, box_h, 0x000000);
-                        let mut y_off = rendery + line_h;
+                        box_w += 6;
+                        let box_h = lines.len() as i32 * line_h + 7;
+                        let (bx, by) = tooltip_box_pos(
+                            renderx, rendery, com.width, com.height,
+                            box_w, box_h, w, h);
+                        pix2d::fill_rect(bx, by, box_w, box_h, 16777120);
+                        pix2d::draw_rect(bx, by, box_w, box_h, 0);
+                        let mut ty = by + font.base.ascent + 2;
                         for line in &lines {
-                            font.base.draw_string(line, renderx + 3, y_off, 0x000000, 0);
-                            y_off += line_h;
+                            font.base.draw_string(line, bx + 3, ty, 0, -1);
+                            ty += line_h;
                         }
                     }
                 }
             }
-            _ => {
-                // Type 1 / 6 (unknown / model). Model rendering needs
-                // Pix3D + ModelUnlit/Lit which haven't landed yet.
-                pix2d::draw_rect(renderx, rendery, com.width.max(1), com.height.max(1), 0x202040);
+            6 => {
+                // model — Java drawInterface 10453-10517: resolve the
+                // base model (invobject item model, or the component's
+                // own type-6 model via getTempModel with the active
+                // variant + optional seq animation), centre the Pix3D
+                // origin in the component, then objRender with the
+                // model orbit derived from modelZoom/modelXAn. The
+                // model1Type == 5 player-avatar branch (idkDesign /
+                // localPlayer.getTempModel) needs the PlayerModel
+                // appearance port and renders nothing until it lands,
+                // matching Java's null-model fall-through.
+                let active = client.as_deref()
+                    .map_or(false, |c| crate::client::get_if_active(c, com));
+                let anim = if active { com.model_anim2 } else { com.model_anim };
+
+                let mut model = None;
+                let mut min_y_off = 0i32;
+                if com.invobject != -1 {
+                    if let Some(obj) = crate::config::obj_type::list(com.invobject) {
+                        let counted = obj.get_stack_size_alt(com.invcount).unwrap_or(obj);
+                        model = counted.get_model_lit(1);
+                        if let Some(m) = model.as_ref() {
+                            // bounds pre-computed by get_model_lit
+                            min_y_off = m.min_y / 2;
+                        }
+                    }
+                } else if com.model1_type == 5 {
+                    // player avatar / idk design — pending PlayerModel.
+                } else if anim == -1 {
+                    model = com.get_temp_model(None, -1, active);
+                } else {
+                    let seq = crate::config::seq_type::list(anim);
+                    model = com.get_temp_model(Some(&seq), com.anim_frame, active);
+                }
+
+                crate::dash3d::pix3d::set_origin(com.width / 2 + renderx,
+                                                 com.height / 2 + rendery);
+                let sin_t = crate::dash3d::pix3d::sin_table();
+                let cos_t = crate::dash3d::pix3d::cos_table();
+                let eye_y = com.model_zoom * sin_t[(com.model_x_an & 0x7FF) as usize] >> 16;
+                let eye_z = com.model_zoom * cos_t[(com.model_x_an & 0x7FF) as usize] >> 16;
+
+                if let Some(model) = model {
+                    if com.v3 {
+                        if com.orthog {
+                            model.obj_render_icon_orthog(
+                                0, com.model_y_an, com.model_z_an, com.model_x_an,
+                                com.model_x_of,
+                                com.model_y_of + min_y_off + eye_y,
+                                com.model_y_of + eye_z,
+                                com.model_zoom);
+                        } else {
+                            model.obj_render_icon(
+                                0, com.model_y_an, com.model_z_an, com.model_x_an,
+                                com.model_x_of,
+                                com.model_y_of + min_y_off + eye_y,
+                                com.model_y_of + eye_z);
+                        }
+                    } else {
+                        model.obj_render_icon(
+                            0, com.model_y_an, 0, com.model_x_an,
+                            0, eye_y, eye_z);
+                    }
+                }
+                crate::dash3d::pix3d::reset_origin();
             }
+            _ => {}
         }
     }
 }

@@ -2454,6 +2454,17 @@ pub fn game_input(c: &mut Client) {
     // ── Menu routing (Java updateGame → Minimenu.GameLoop) ──────────
     mouse_loop(c);
 
+    // Java updateGame 2633-2642: tooltip hover dwell — count up while
+    // a type-8 component is hovered, decay while not; the tooltip box
+    // draws only at tooltip_num == tooltip_redraw.
+    if c.tooltip_com_id == -1 {
+        if c.tooltip_num > 0 {
+            c.tooltip_num -= 1;
+        }
+    } else if c.tooltip_num < c.tooltip_redraw {
+        c.tooltip_num += 1;
+    }
+
     // The click event is once-per-cycle: Java's GameShell clears
     // mouseClickButton at the end of every cycle; we clear after the
     // last consumer in the tick.
@@ -2811,6 +2822,215 @@ pub fn minimenu_build_scene_actions(c: &mut Client, vx: i32, vy: i32,
             }
         }
     }
+}
+
+// @ObfuscatedName("n.fa(Leg;I)Z") — Client.getIfActive. Verbatim port
+// of Client.java:10789-10816: a component is "active" only when every
+// comparator row passes against its evaluated script value.
+// Comparator 2 = active while value < operand, 3 = while value >
+// operand, 4 = while value != operand, anything else = while value ==
+// operand (each clause is written as its failure condition, like
+// Java's early-return-false form).
+pub fn get_if_active(c: &Client, com: &crate::config::if_type::IfType) -> bool {
+    if com.script_comparator.is_empty() {
+        return false;
+    }
+
+    for i in 0..com.script_comparator.len() {
+        let value = get_if_var(c, com, i);
+        let operand = com.script_operand[i];
+
+        if com.script_comparator[i] == 2 {
+            if value >= operand {
+                return false;
+            }
+        } else if com.script_comparator[i] == 3 {
+            if value <= operand {
+                return false;
+            }
+        } else if com.script_comparator[i] == 4 {
+            if value == operand {
+                return false;
+            }
+        } else if value != operand {
+            return false;
+        }
+    }
+
+    true
+}
+
+// @ObfuscatedName("ba.fq(Leg;IB)I") — Client.getIfVar. Verbatim port
+// of Client.java:10820-10930: interprets one inline component
+// bytecode script (opcode 0 = return accumulator; 1-14/18-20 load a
+// register; 15-17 set the pending -, /, * operator applied when the
+// NEXT register lands). Returns -2 for a missing script (Java's
+// null/length guard) and -1 for any interpreter error (Java wraps the
+// whole loop in try/catch — bad reads, out-of-range stat indices and
+// missing configs all land there, which the Option pipeline in
+// run_if_script reproduces).
+pub fn get_if_var(c: &Client, com: &crate::config::if_type::IfType, script_id: usize) -> i32 {
+    if com.scripts.is_empty() || script_id >= com.scripts.len() {
+        return -2;
+    }
+    run_if_script(c, &com.scripts[script_id]).unwrap_or(-1)
+}
+
+fn run_if_script(c: &Client, script: &[i32]) -> Option<i32> {
+    let mut acc: i32 = 0;
+    let mut pc: usize = 0;
+    let mut arithmetic: u8 = 0;
+
+    loop {
+        let opcode = *script.get(pc)?;
+        pc += 1;
+        let mut register: i32 = 0;
+        let mut next_arithmetic: u8 = 0;
+
+        if opcode == 0 {
+            return Some(acc);
+        }
+
+        if opcode == 1 {
+            let idx = usize::try_from(*script.get(pc)?).ok()?;
+            pc += 1;
+            register = *c.stat_effective_level.get(idx)?;
+        } else if opcode == 2 {
+            let idx = usize::try_from(*script.get(pc)?).ok()?;
+            pc += 1;
+            register = *c.stat_base_level.get(idx)?;
+        } else if opcode == 3 {
+            let idx = usize::try_from(*script.get(pc)?).ok()?;
+            pc += 1;
+            register = *c.stat_xp.get(idx)?;
+        } else if opcode == 4 {
+            let var9 = script.get(pc)?.wrapping_shl(16);
+            pc += 1;
+            let var10 = var9 + *script.get(pc)?;
+            pc += 1;
+            let var11 = crate::config::if_type::get(var10)?;
+            let var12 = *script.get(pc)?;
+            pc += 1;
+            if var12 != -1
+                && (!crate::config::obj_type::list(var12)?.members || c.mem_server)
+            {
+                for var13 in 0..var11.link_obj_type.len() {
+                    if var12 + 1 == var11.link_obj_type[var13] {
+                        register =
+                            register.wrapping_add(*var11.link_obj_number.get(var13)?);
+                    }
+                }
+            }
+        } else if opcode == 5 {
+            register = crate::config::var_cache::get_varp(*script.get(pc)?);
+            pc += 1;
+        } else if opcode == 6 {
+            let idx = usize::try_from(*script.get(pc)?).ok()?;
+            pc += 1;
+            let base = *c.stat_base_level.get(idx)?;
+            register = *crate::skills::SKILLXP.get(usize::try_from(base - 1).ok()?)?;
+        } else if opcode == 7 {
+            register = crate::config::var_cache::get_varp(*script.get(pc)?) * 100 / 46875;
+            pc += 1;
+        } else if opcode == 8 {
+            register = c.local_player.as_ref()?.combat_level;
+        } else if opcode == 9 {
+            for var14 in 0..25 {
+                if crate::skills::USED[var14] {
+                    register = register.wrapping_add(c.stat_base_level[var14]);
+                }
+            }
+        } else if opcode == 10 {
+            let var15 = script.get(pc)?.wrapping_shl(16);
+            pc += 1;
+            let var16 = var15 + *script.get(pc)?;
+            pc += 1;
+            let var17 = crate::config::if_type::get(var16)?;
+            let var18 = *script.get(pc)?;
+            pc += 1;
+            if var18 != -1
+                && (!crate::config::obj_type::list(var18)?.members || c.mem_server)
+            {
+                for var19 in 0..var17.link_obj_type.len() {
+                    if var18 + 1 == var17.link_obj_type[var19] {
+                        register = 999999999;
+                        break;
+                    }
+                }
+            }
+        } else if opcode == 11 {
+            register = c.run_energy;
+        } else if opcode == 12 {
+            register = c.run_weight;
+        } else if opcode == 13 {
+            let var20 = crate::config::var_cache::get_varp(*script.get(pc)?);
+            pc += 1;
+            let var21 = *script.get(pc)?;
+            pc += 1;
+            // Java's `0x1 << var21` masks the shift count to &31;
+            // wrapping_shl matches that.
+            register = if (var20 & 1i32.wrapping_shl(var21 as u32)) == 0 { 0 } else { 1 };
+        } else if opcode == 14 {
+            let var22 = *script.get(pc)?;
+            pc += 1;
+            register = crate::config::var_cache::get_varbit(var22);
+        } else if opcode == 15 {
+            next_arithmetic = 1;
+        } else if opcode == 16 {
+            next_arithmetic = 2;
+        } else if opcode == 17 {
+            next_arithmetic = 3;
+        } else if opcode == 18 {
+            register = (c.local_player.as_ref()?.x >> 7) + c.map_build_base_x;
+        } else if opcode == 19 {
+            register = (c.local_player.as_ref()?.z >> 7) + c.map_build_base_z;
+        } else if opcode == 20 {
+            register = *script.get(pc)?;
+            pc += 1;
+        }
+
+        if next_arithmetic == 0 {
+            if arithmetic == 0 {
+                acc = acc.wrapping_add(register);
+            } else if arithmetic == 1 {
+                acc = acc.wrapping_sub(register);
+            } else if arithmetic == 2 && register != 0 {
+                acc = acc.wrapping_div(register);
+            } else if arithmetic == 3 {
+                acc = acc.wrapping_mul(register);
+            }
+
+            arithmetic = 0;
+        } else {
+            arithmetic = next_arithmetic;
+        }
+    }
+}
+
+// @ObfuscatedName("ez.fu(Ljava/lang/String;Leg;S)Ljava/lang/String;")
+// — Client.substituteVars. Verbatim port of Client.java:10660-10694:
+// replaces %1..%5 with the component's script values (inf-formatted)
+// and %dns with the resolved last-login host (Java falls back to the
+// formatted IPv4 while the reverse lookup is pending; our
+// last_address field already holds the final display string).
+pub fn substitute_vars(c: &Client, text: &str, com: &crate::config::if_type::IfType) -> String {
+    let mut text = text.to_string();
+    if text.contains('%') {
+        for i in 1..=5 {
+            let needle = format!("%{}", i);
+            while let Some(at) = text.find(&needle) {
+                text = format!("{}{}{}",
+                               &text[..at],
+                               inf(get_if_var(c, com, i - 1)),
+                               &text[at + 2..]);
+            }
+        }
+
+        while let Some(at) = text.find("%dns") {
+            text = format!("{}{}{}", &text[..at], c.last_address, &text[at + 4..]);
+        }
+    }
+    text
 }
 
 // @ObfuscatedName(— Client.addComponentOptions). Verbatim port of
@@ -5374,6 +5594,27 @@ pub struct Client {
     // resume. Cleared by close_sub_interface + open_sub_interface.
     pub resume_pause_com: i32,
 
+    // @ObfuscatedName("client.overCom") — the v1 component the mouse
+    // is hovering whose overLayerId/colourOver requests hover state.
+    // Java rebuilds it in loopInterface each tick (Client.java:
+    // 11279-11290); we rebuild during the interface draw walk, so
+    // `over_com_next` collects this frame's hit and the swap at the
+    // top of draw_chrome promotes it to `over_com_id` (the value the
+    // colour comparisons read), mirroring Java's snapshot at :2514.
+    // -1 = none. Identified by the component id (IfType.parent_id).
+    pub over_com_id: i32,
+    pub over_com_next: i32,
+
+    // @ObfuscatedName("client.tooltipCom") — the hovered type-8
+    // tooltip component, same two-phase tracking as over_com.
+    pub tooltip_com_id: i32,
+    pub tooltip_com_next: i32,
+    // @ObfuscatedName("client.tooltipNum") + tooltipRedraw — hover
+    // dwell counter; the tooltip box only draws once tooltip_num has
+    // climbed to tooltip_redraw (50 ticks). Java Client.java:2633-2642.
+    pub tooltip_num: i32,
+    pub tooltip_redraw: i32,
+
 
     // @ObfuscatedName("client.macroCameraX/Z") — auto-camera offset
     // applied on top of the local-player position. Used during
@@ -5903,6 +6144,12 @@ impl Client {
             target_verb: String::new(),
             target_op: String::new(),
             resume_pause_com: -1,
+            over_com_id: -1,
+            over_com_next: -1,
+            tooltip_com_id: -1,
+            tooltip_com_next: -1,
+            tooltip_num: 0,
+            tooltip_redraw: 50,
             macro_camera_x: 0,
             macro_camera_z: 0,
             key_held_96: false,
