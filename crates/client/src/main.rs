@@ -161,6 +161,9 @@ impl ApplicationHandler for App {
                 }
                 m.mouse_x = new_x;
                 m.mouse_y = new_y;
+                drop(m);
+                // MouseTracking daemon sample (anti-bot op-72 feed).
+                crate::input::mouse_tracking::sample(new_x, new_y);
             }
             WindowEvent::MouseInput { state, button, .. } => {
                 let mut m = crate::input::MOUSE.lock().unwrap();
@@ -173,14 +176,22 @@ impl ApplicationHandler for App {
                         }
                     }
                     _ => {
+                        let id = match button {
+                            MouseButton::Left => 1,
+                            MouseButton::Right => 2,
+                            _ => 0,
+                        };
                         if state == ElementState::Pressed {
-                            m.mouse_click_button = match button {
-                                MouseButton::Left => 1,
-                                MouseButton::Right => 2,
-                                _ => 0,
-                            };
+                            m.mouse_click_button = id;
                             m.mouse_click_x = m.mouse_x;
                             m.mouse_click_y = m.mouse_y;
+                            m.mouse_button = id;
+                            m.mouse_click_time = std::time::SystemTime::now()
+                                .duration_since(std::time::UNIX_EPOCH)
+                                .map(|d| d.as_millis() as i64)
+                                .unwrap_or(0);
+                        } else if m.mouse_button == id {
+                            m.mouse_button = 0;
                         }
                     }
                 }

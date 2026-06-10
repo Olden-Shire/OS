@@ -2192,6 +2192,238 @@ pub fn send_camera_position(c: &mut Client) {
     out.p2_alt2(c.orbit_cam_yaw);
 }
 
+// @ObfuscatedName(— Client.gameLoop input head). Verbatim port of
+// Client.java:2290-2530 (minus the loopInterface/hook dispatch which
+// lands with the interface input routing): the anti-bot mouse-track
+// packet, the click packet, camera-key + focus events, the minimap
+// walk click, crosshair/selection timers, the inventory drag
+// state machine, and the per-tick key event buffer.
+pub fn game_input(c: &mut Client) {
+    use crate::input::{KEYBOARD, MOUSE};
+
+    // Snapshot the listener state once (Java reads the volatile
+    // listener fields directly).
+    let (click_button, click_x, click_y, click_time, mouse_x, mouse_y, mouse_button) = {
+        let m = MOUSE.lock().unwrap();
+        (m.mouse_click_button, m.mouse_click_x, m.mouse_click_y,
+         m.mouse_click_time, m.mouse_x, m.mouse_y, m.mouse_button)
+    };
+
+    // ── EVENT_MOUSE_MOVE (72) — drain the tracking buffer ──────────
+    {
+        let mut t = crate::input::mouse_tracking::TRACKING.lock().unwrap();
+        if !t.tracked {
+            t.length = 0;
+        } else if click_button != 0 || t.length >= 40 {
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(72, isaac);
+                out.p1(0);
+                let start = out.pos;
+                let mut consumed = 0usize;
+                for i in 0..t.length {
+                    if out.pos - start >= 240 {
+                        break;
+                    }
+                    consumed += 1;
+                    let mut sy = t.y[i].clamp(0, 502);
+                    let mut sx = t.x[i].clamp(0, 764);
+                    let mut packed = sy * 765 + sx;
+                    if t.y[i] == -1 && t.x[i] == -1 {
+                        sx = -1;
+                        sy = -1;
+                        packed = 524287;
+                    }
+                    if c.mouse_tracked_x != sx || c.mouse_tracked_y != sy {
+                        let dx = sx - c.mouse_tracked_x;
+                        c.mouse_tracked_x = sx;
+                        let dy = sy - c.mouse_tracked_y;
+                        c.mouse_tracked_y = sy;
+                        if c.mouse_tracked_delta < 8
+                            && (-32..=31).contains(&dx) && (-32..=31).contains(&dy)
+                        {
+                            out.p2((c.mouse_tracked_delta << 12) + ((dx + 32) << 6) + (dy + 32));
+                            c.mouse_tracked_delta = 0;
+                        } else if c.mouse_tracked_delta < 8 {
+                            out.p3((c.mouse_tracked_delta << 19) + 8388608 + packed);
+                            c.mouse_tracked_delta = 0;
+                        } else {
+                            out.p4((c.mouse_tracked_delta << 19) - 1073741824 + packed);
+                            c.mouse_tracked_delta = 0;
+                        }
+                    } else if c.mouse_tracked_delta < 2047 {
+                        c.mouse_tracked_delta += 1;
+                    }
+                }
+                let written = out.pos - start;
+                out.psize1(written);
+                if consumed >= t.length {
+                    t.length = 0;
+                } else {
+                    let remaining = t.length - consumed;
+                    for i in 0..remaining {
+                        t.x[i] = t.x[consumed + i];
+                        t.y[i] = t.y[consumed + i];
+                    }
+                    t.length = remaining;
+                }
+            }
+        }
+    }
+
+    // ── EVENT_MOUSE_CLICK (161) ─────────────────────────────────────
+    if click_button != 0 {
+        let dt = click_time - c.prev_mouse_click_time;
+        c.prev_mouse_click_time = click_time;
+        send_mouse_click(c, click_button, click_x, click_y, dt);
+    }
+
+    // ── EVENT_CAMERA_POSITION (79) — arrow-key rate limit ──────────
+    if c.send_camera_delay > 0 {
+        c.send_camera_delay -= 1;
+    }
+    {
+        let kb = KEYBOARD.lock().unwrap();
+        if kb.is_key_held(crate::input::KEY_LEFT)
+            || kb.is_key_held(crate::input::KEY_RIGHT)
+            || kb.is_key_held(crate::input::KEY_UP)
+            || kb.is_key_held(crate::input::KEY_DOWN)
+        {
+            c.send_camera = true;
+        }
+    }
+    if c.send_camera && c.send_camera_delay <= 0 {
+        c.send_camera_delay = 20;
+        c.send_camera = false;
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(79, isaac);
+            out.p2_alt1(c.orbit_cam_pitch);
+            out.p2_alt2(c.orbit_cam_yaw);
+        }
+    }
+
+    // ── EVENT_APPLET_FOCUS (178) edge detection ─────────────────────
+    let focus = crate::game_shell::SHELL.lock().unwrap().focus_in;
+    if focus && !c.focus_in_sent {
+        c.focus_in_sent = true;
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(178, isaac);
+            out.p1(1);
+        }
+    }
+    if !focus && c.focus_in_sent {
+        c.focus_in_sent = false;
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(178, isaac);
+            out.p1(0);
+        }
+    }
+
+    // ── Minimap walk click ───────────────────────────────────────────
+    minimap_loop(c, click_button, click_x, click_y);
+
+    // ── Click crosshair decay (Client.java:2434-2438) ───────────────
+    {
+        let mut o = crate::overlays::OVERLAYS.lock().unwrap();
+        if o.cross_mode != 0 {
+            o.cross_cycle += 20;
+            if o.cross_cycle >= 400 {
+                o.cross_mode = 0;
+            }
+        }
+    }
+
+    // ── Selected-component flash decay (Client.java:2441-2447) ─────
+    if c.selected_com != -1 {
+        c.selected_cycle += 1;
+        if c.selected_cycle >= 15 {
+            c.selected_com = -1;
+        }
+    }
+
+    // ── Inventory drag state machine (Client.java:2449-2512) ───────
+    // The release path dispatches into doAction / openMenu — it lands
+    // as one unit with the menu pipeline port (doAction + the
+    // addNpc/Player/Loc/ObjOptions builders). The threshold tracking
+    // itself runs now so obj_grab_threshold/obj_drag_cycles carry the
+    // Java semantics the moment the interface layer starts setting
+    // obj_drag_com.
+    if c.obj_drag_com != -1 {
+        c.obj_drag_cycles += 1;
+        if mouse_x > c.obj_grab_x + 5 || mouse_x < c.obj_grab_x - 5
+            || mouse_y > c.obj_grab_y + 5 || mouse_y < c.obj_grab_y - 5
+        {
+            c.obj_grab_threshold = true;
+        }
+        let _ = mouse_button;
+    }
+
+    // ── Key event buffer (Client.java:2522-2527) ────────────────────
+    c.keypresses = 0;
+    {
+        let mut kb = KEYBOARD.lock().unwrap();
+        while c.keypresses < 128 {
+            let Some(evt) = kb.poll_key() else { break };
+            c.keypress_codes[c.keypresses as usize] = evt.code;
+            c.keypress_chars[c.keypresses as usize] = evt.ch;
+            c.keypresses += 1;
+        }
+    }
+}
+
+// @ObfuscatedName("p.dh(III)V") — Client.minimapLoop. Verbatim port of
+// Client.java:3225-3272: a left click inside the 146×151 minimap
+// ellipse un-rotates / un-zooms the offset into a world tile and walks
+// there (tryMove click_kind 1 = minimap), then appends the anti-cheat
+// suffix Java has carried since 2004.
+pub fn minimap_loop(c: &mut Client, click_button: i32, click_x: i32, click_y: i32) {
+    let (state, last_x, last_y, macro_angle, macro_zoom) = {
+        let mm = crate::minimap::MINIMAP.lock().unwrap();
+        (mm.state, mm.last_draw_x, mm.last_draw_y, mm.macro_angle, mm.macro_zoom)
+    };
+    if state != 0 && state != 3 {
+        return;
+    }
+    if click_button != 1 || last_x < 0 {
+        return;
+    }
+    let x = click_x - 25 - last_x;
+    let y = click_y - 5 - last_y;
+    if x < 0 || y < 0 || x >= 146 || y >= 151 {
+        return;
+    }
+    let x = x - 73;
+    let y = y - 75;
+    let yaw = ((c.orbit_cam_yaw + macro_angle) & 0x7FF) as usize;
+    let sin_t = crate::dash3d::pix3d::sin_table();
+    let cos_t = crate::dash3d::pix3d::cos_table();
+    let zoom_sin = ((macro_zoom + 256) * sin_t[yaw]) >> 8;
+    let zoom_cos = ((macro_zoom + 256) * cos_t[yaw]) >> 8;
+    let rel_x = (x * zoom_cos + y * zoom_sin) >> 11;
+    let rel_y = (y * zoom_cos - x * zoom_sin) >> 11;
+    let (lp_fine_x, lp_fine_z, src_x, src_z) = match c.local_player.as_ref() {
+        Some(lp) => (lp.entity.x, lp.entity.z, lp.route_x[0], lp.route_z[0]),
+        None => return,
+    };
+    let tile_x = (lp_fine_x + rel_x) >> 7;
+    let tile_z = (lp_fine_z - rel_y) >> 7;
+    let moved = try_move(c, src_x, src_z, tile_x, tile_z, true, 0, 0, 0, 0, 0, 1);
+    if moved {
+        if let Some(out) = c.out_packet.as_mut() {
+            out.p1(x);
+            out.p1(y);
+            out.p2(c.orbit_cam_yaw);
+            out.p1(57);
+            out.p1(macro_angle);
+            out.p1(macro_zoom);
+            out.p1(89);
+            out.p2(lp_fine_x);
+            out.p2(lp_fine_z);
+            out.p1(c.try_move_nearest);
+            out.p1(63);
+        }
+    }
+}
+
 // @ObfuscatedName(— Client.sendMouseClick). Verbatim port of
 // Client.java:2354-2381. Packs (button-flag, time-ms, screen-pos)
 // into a single g4_alt2.
@@ -3781,9 +4013,34 @@ pub struct Client {
     pub obj_drag_slot: i32,
     pub obj_drag_com: i32,
     pub obj_drag_cycles: i32,
-    pub obj_grab_threshold: i32,
+    // @ObfuscatedName("client.hp") — objGrabThreshold: set once the
+    // cursor moves 5+ px from the grab point (Java boolean).
+    pub obj_grab_threshold: bool,
     pub hovered_slot: i32,
     pub hovered_com: i32,
+    // @ObfuscatedName("client.hh" / "client.ht") — objGrabX/Y, the
+    // press position the 5px drag threshold measures from.
+    pub obj_grab_x: i32,
+    pub obj_grab_y: i32,
+    // @ObfuscatedName("client.??") — sendCamera + sendCameraDelay
+    // (EVENT_CAMERA_POSITION rate limiting, Client.java:2383-2398).
+    pub send_camera: bool,
+    pub send_camera_delay: i32,
+    // @ObfuscatedName("client.??") — focusIn (EVENT_APPLET_FOCUS edge
+    // detect, Client.java:2400-2411).
+    pub focus_in_sent: bool,
+    // @ObfuscatedName("client.ax") — prevMouseClickTime.
+    pub prev_mouse_click_time: i64,
+    // @ObfuscatedName("client.aj"/"client.aw"/"client.af") — the
+    // EVENT_MOUSE_MOVE delta-encoder state.
+    pub mouse_tracked_x: i32,
+    pub mouse_tracked_y: i32,
+    pub mouse_tracked_delta: i32,
+    // @ObfuscatedName("client.??") — the per-tick key event buffer
+    // (Client.java:2522-2527) the interface loop consumes.
+    pub keypresses: i32,
+    pub keypress_codes: [i32; 128],
+    pub keypress_chars: [char; 128],
     // @ObfuscatedName("client.objSelected*") — use-with target state.
     pub obj_selected_name: String,
     pub obj_selected_com_id: i32,
@@ -4219,9 +4476,21 @@ impl Client {
             obj_drag_slot: -1,
             obj_drag_com: -1,
             obj_drag_cycles: 0,
-            obj_grab_threshold: 5,
+            obj_grab_threshold: false,
             hovered_slot: -1,
             hovered_com: -1,
+            obj_grab_x: 0,
+            obj_grab_y: 0,
+            send_camera: false,
+            send_camera_delay: 0,
+            focus_in_sent: false,
+            prev_mouse_click_time: 0,
+            mouse_tracked_x: 0,
+            mouse_tracked_y: 0,
+            mouse_tracked_delta: 0,
+            keypresses: 0,
+            keypress_codes: [0; 128],
+            keypress_chars: ['\0'; 128],
             obj_selected_name: String::new(),
             obj_selected_com_id: -1,
             obj_selected_slot: -1,
@@ -4555,6 +4824,9 @@ impl GameShellLifecycle for Client {
             update_orbit_camera(self);
         } else if self.state == 30 {
             crate::login::game_tick(self);
+            // Java gameLoop's input head (mouse-track/click/camera/
+            // focus packets, minimap walk click, timers, key buffer).
+            game_input(self);
             update_orbit_camera(self);
             // Java updateWorld's minimap section: anti-macro drift,
             // image rebuild on level change, and the dots snapshot the

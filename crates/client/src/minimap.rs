@@ -77,6 +77,10 @@ pub struct Minimap {
     // (tile_x, tile_z, mapfunction sprite index).
     pub active_fn: Vec<(i32, i32, usize)>,
     pub dots: Dots,
+    // The component top-left of the last draw — minimapLoop's click
+    // test needs the same offsets Java threads through drawLayer.
+    pub last_draw_x: i32,
+    pub last_draw_y: i32,
 }
 
 pub static MINIMAP: std::sync::LazyLock<Mutex<Minimap>> = std::sync::LazyLock::new(|| {
@@ -104,6 +108,8 @@ pub static MINIMAP: std::sync::LazyLock<Mutex<Minimap>> = std::sync::LazyLock::n
         minimap_mask_offsets: Vec::new(),
         minimap_mask_lengths: Vec::new(),
         active_fn: Vec::new(),
+        last_draw_x: -1,
+        last_draw_y: -1,
         dots: Dots {
             local_x: 0, local_z: 0,
             obj_tiles: Vec::new(),
@@ -447,6 +453,11 @@ pub fn update(c: &mut Client) {
 // Verbatim port of Client.java:11918-12032. (x, y) is the minimap
 // component's top-left, exactly Java's arg0/arg1.
 pub fn draw(x: i32, y: i32) {
+    {
+        let mut mm = MINIMAP.lock().unwrap();
+        mm.last_draw_x = x;
+        mm.last_draw_y = y;
+    }
     let mm = MINIMAP.lock().unwrap();
     let Some(mapback) = mm.mapback.as_ref() else {
         // Sprites not streamed yet — black panel until they land.
