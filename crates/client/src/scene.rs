@@ -877,4 +877,12 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
             pix3d::fill_triangle(a.0, a.1, cc.0, cc.1, d.0, d.1, col);
         }
     }
+
+    // Publish the camera this frame rendered with, bump sceneCycle,
+    // and run the post-scene overlay pass (Java gameDrawMain order:
+    // renderAll → entityOverlays → coordArrow → otherOverlays).
+    crate::overlays::set_frame_camera(cam_world_x, cam_world_y, cam_world_z,
+                                      cam_pitch.clamp(128, 383), cam_yaw & 0x7FF);
+    crate::overlays::SCENE_CYCLE.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+    crate::overlays::draw(x, y, w, h);
 }

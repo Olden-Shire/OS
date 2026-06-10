@@ -46,6 +46,7 @@ mod midi2;
 mod minimap;
 mod namespace;
 mod obfuscation;
+mod overlays;
 mod reflection_checker;
 mod scene;
 mod script_runner;
