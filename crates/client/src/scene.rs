@@ -825,6 +825,29 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
     let cam_world_y = pivot_y - ((orbit_radius * sin_pitch) >> 16);
     drop(state);
 
+    // Arm the scene mouse pick (Java gameDrawMain 4156-4167): models
+    // hovering under the cursor push their typecodes into MOUSE_PICK
+    // during renderAll; the menu build consumes them after the draw.
+    {
+        let (mx, my) = {
+            let m = crate::input::MOUSE.lock().unwrap();
+            (m.mouse_x, m.mouse_y)
+        };
+        let mut p = crate::dash3d::model_lit::MOUSE_PICK.lock().unwrap();
+        p.picked.clear();
+        if mx >= x && mx < x + w && my >= y && my < y + h {
+            p.mouse_check = true;
+            // Our projection works in absolute screen coords (origin
+            // at the viewport centre, absolute), so the pick point
+            // stays absolute too — Java subtracts the viewport origin
+            // because its Pix3D origin is viewport-relative.
+            p.mouse_x = mx;
+            p.mouse_y = my;
+        } else {
+            p.mouse_check = false;
+        }
+    }
+
     // Hand the frame to the 1:1 World renderer (renderAll -> fill).
     // Java: Client.gameDrawMain line 4173 `world.renderAll(camX, camY,
     // camZ, camPitch, camYaw, topLevel)`. Top level fixed at 3 until

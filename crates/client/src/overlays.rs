@@ -88,6 +88,13 @@ pub struct Overlays {
     pub fps: i32,
     // Client.minusedlevel mirror for the height sampling.
     pub minusedlevel: i32,
+    // The viewport component's top-left from the last frame — the
+    // minimenu feedback line anchors here (Java passes the viewport
+    // x/y into drawFeedback).
+    pub viewport_x: i32,
+    pub viewport_y: i32,
+    pub viewport_w: i32,
+    pub viewport_h: i32,
     // @ObfuscatedName("client.??") — chatDisabled (Tutorial Island
     // region gate computed in otherOverlays).
     pub chat_disabled: bool,
@@ -115,6 +122,10 @@ pub static OVERLAYS: std::sync::LazyLock<Mutex<Overlays>> = std::sync::LazyLock:
         show_fps: false,
         fps: 0,
         minusedlevel: 0,
+        viewport_x: 8,
+        viewport_y: 11,
+        viewport_w: 512,
+        viewport_h: 334,
         chat_disabled: false,
     })
 });
@@ -342,6 +353,10 @@ fn get_overlay_pos(world_x: i32, world_z: i32, height_off: i32,
 pub fn draw(vx: i32, vy: i32, vw: i32, vh: i32) {
     let mut o = OVERLAYS.lock().unwrap();
     let o = &mut *o;
+    o.viewport_x = vx;
+    o.viewport_y = vy;
+    o.viewport_w = vw;
+    o.viewport_h = vh;
     let minusedlevel = o.minusedlevel;
     let scene_cycle = SCENE_CYCLE.load(std::sync::atomic::Ordering::Relaxed);
     let half_w = vw / 2;

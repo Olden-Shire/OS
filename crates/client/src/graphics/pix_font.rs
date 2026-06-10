@@ -98,6 +98,22 @@ impl PixFontStatics {
 
 pub static STATICS: Mutex<PixFontStatics> = Mutex::new(PixFontStatics::new());
 
+// java.util.Random's 48-bit LCG — drawStringAntiMacro's jitter must
+// match Java bit-for-bit so the rendered feedback line diffs clean.
+pub struct JavaRandom {
+    seed: i64,
+}
+
+impl JavaRandom {
+    pub fn new(seed: i64) -> Self {
+        Self { seed: (seed ^ 0x5DEECE66D) & ((1 << 48) - 1) }
+    }
+    pub fn next_int(&mut self) -> i32 {
+        self.seed = self.seed.wrapping_mul(0x5DEECE66D).wrapping_add(0xB) & ((1 << 48) - 1);
+        (self.seed >> 16) as i32
+    }
+}
+
 impl PixFont {
     pub fn new() -> Self {
         Self {
@@ -517,6 +533,28 @@ impl PixFont {
             .collect();
         self.draw_string_inner_offsets(str, x - self.string_wid(str) / 2, y,
                                        Some(&x_off), Some(&y_off));
+    }
+
+    // @ObfuscatedName("fs.co(Ljava/lang/String;IIIII)V") —
+    // PixFont.drawStringAntiMacro. Verbatim port of PixFont.java:
+    // 540-556: java.util.Random seeded with `seed` jitters the alpha
+    // (192..223) and accumulates 1px x-drift on ~25% of glyphs — the
+    // anti-OCR treatment on the top-left minimenu feedback line.
+    pub fn draw_string_anti_macro(&self, str: &str, x: i32, y: i32, rgb: i32, shadow: i32,
+                                  seed: i32) {
+        self.reset_state(rgb, shadow);
+        let mut rng = JavaRandom::new(seed as i64);
+        STATICS.lock().unwrap().alpha = (rng.next_int() & 0x1F) + 192;
+        let n = str.chars().count();
+        let mut x_off = vec![0i32; n];
+        let mut drift = 0;
+        for slot in x_off.iter_mut() {
+            *slot = drift;
+            if (rng.next_int() & 0x3) == 0 {
+                drift += 1;
+            }
+        }
+        self.draw_string_inner_offsets(str, x, y, Some(&x_off), None);
     }
 
     // @ObfuscatedName("fs.ca(Ljava/lang/String;IIIIII)V") —

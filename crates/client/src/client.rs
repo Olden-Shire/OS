@@ -1,4 +1,4 @@
-// @ObfuscatedName("client")
+﻿// @ObfuscatedName("client")
 //
 // jagex3.client.Client — top-of-stack state machine. The JS5 path is
 // ported verbatim: maininit allocates the per-archive loaders, mainloop
@@ -1563,12 +1563,13 @@ pub fn enter_target_mode(c: &mut Client, parent_com: i32, sub_id: i32) {
     let Some(com) = if_type::get_sub(parent_com, sub_id) else { return; };
     end_target_mode(c);
     let active_flags = get_active(c, &com);
-    let target_mask = (active_flags >> 28) & 0xF;
+    let target_mask = crate::config::server_active::target_mask(active_flags);
     // ontargetenter hook fires through ScriptRunner — deferred.
     let _ = com.hook_ontargetenter.as_ref();
     c.target_mode = true;
     c.target_com = parent_com;
     c.target_sub = sub_id;
+    c.target_mask = target_mask;
     // Re-fetch to grab the v3/legacy classification and verb.
     let verb = if target_mask == 0 || com.target_verb.trim().is_empty() {
         "Null".to_string()
@@ -1731,6 +1732,14 @@ pub fn get_menu_line(verb: &str, subject: &str) -> String {
     }
 }
 
+// Bounds-checked menu_action[index] read for the Java idiom
+// `isAddFriendOption(menuNumEntries - 1)`.
+pub fn menu_action_at(c: &Client, index: i32) -> i32 {
+    if index < 0 || index as usize >= c.menu_action.len() {
+        return -1;
+    }
+    c.menu_action[index as usize]
+}
 // @ObfuscatedName("br.em(II)Z") — Client.isAddFriendOption. Verbatim
 // port of Client.java:8423-8432. The menu action 1007 (and its
 // +2000 shifted variant) is the "Add friend" entry.
@@ -2341,12 +2350,6 @@ pub fn game_input(c: &mut Client) {
     }
 
     // ── Inventory drag state machine (Client.java:2449-2512) ───────
-    // The release path dispatches into doAction / openMenu — it lands
-    // as one unit with the menu pipeline port (doAction + the
-    // addNpc/Player/Loc/ObjOptions builders). The threshold tracking
-    // itself runs now so obj_grab_threshold/obj_drag_cycles carry the
-    // Java semantics the moment the interface layer starts setting
-    // obj_drag_com.
     if c.obj_drag_com != -1 {
         c.obj_drag_cycles += 1;
         if mouse_x > c.obj_grab_x + 5 || mouse_x < c.obj_grab_x - 5
@@ -2354,7 +2357,59 @@ pub fn game_input(c: &mut Client) {
         {
             c.obj_grab_threshold = true;
         }
-        let _ = mouse_button;
+        if mouse_button == 0 {
+            if c.obj_grab_threshold && c.obj_drag_cycles >= 5 {
+                if c.obj_drag_com == c.hovered_com && c.hovered_slot != c.obj_drag_slot {
+                    if let Some(com) = crate::config::if_type::get(c.obj_drag_com) {
+                        let mut mode = 0;
+                        if c.bank_arrange_mode == 1 && com.client_code == 206 {
+                            mode = 1;
+                        }
+                        if com.link_obj_type.get(c.hovered_slot.max(0) as usize)
+                            .copied().unwrap_or(0) <= 0
+                        {
+                            mode = 0;
+                        }
+                        if crate::config::server_active::is_obj_replace_enabled(
+                            get_active(c, &com))
+                        {
+                            crate::config::if_type::replace_slot(
+                                c.obj_drag_com, c.obj_drag_slot, c.hovered_slot);
+                        } else if mode == 1 {
+                            let mut src = c.obj_drag_slot;
+                            let dst = c.hovered_slot;
+                            while src != dst {
+                                if src > dst {
+                                    crate::config::if_type::swap_slots(c.obj_drag_com, src - 1, src);
+                                    src -= 1;
+                                } else {
+                                    crate::config::if_type::swap_slots(c.obj_drag_com, src + 1, src);
+                                    src += 1;
+                                }
+                            }
+                        } else {
+                            crate::config::if_type::swap_slots(
+                                c.obj_drag_com, c.hovered_slot, c.obj_drag_slot);
+                        }
+                        send_inv_button_d(c, com.parent_id, c.hovered_slot,
+                                          c.obj_drag_slot, mode);
+                    }
+                }
+            } else if (c.one_mouse_button == 1
+                || is_add_friend_option(menu_action_at(c, c.menu_num_entries - 1)))
+                && c.menu_num_entries > 2
+            {
+                let b12 = c.b12.clone();
+                open_menu(c, mouse_x, mouse_y, |s: &str| {
+                    b12.as_ref().map_or(s.len() as i32 * 8, |f| f.base.string_wid(s))
+                });
+            } else if c.menu_num_entries > 0 {
+                do_action(c, c.menu_num_entries - 1);
+            }
+            c.selected_cycle = 10;
+            MOUSE.lock().unwrap().mouse_click_button = 0;
+            c.obj_drag_com = -1;
+        }
     }
 
     // ── Key event buffer (Client.java:2522-2527) ────────────────────
@@ -2367,6 +2422,1259 @@ pub fn game_input(c: &mut Client) {
             c.keypress_chars[c.keypresses as usize] = evt.ch;
             c.keypresses += 1;
         }
+    }
+
+    // ── Walk-here ground pick consumption (Client.java:2599-2611) ──
+    // doAction 23 arms World.updateMousePicking; renderQuickGround /
+    // renderGround resolve it to a tile during the draw; the next
+    // tick walks there (click_kind 0 = game-world click).
+    {
+        let picked = {
+            let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
+            match cache.world.as_mut() {
+                Some(w) if w.ground_x != -1 => {
+                    let t = (w.ground_x, w.ground_z);
+                    w.ground_x = -1;
+                    Some(t)
+                }
+                _ => None,
+            }
+        };
+        if let Some((gx, gz)) = picked {
+            let src = c.local_player.as_ref().map(|lp| (lp.route_x[0], lp.route_z[0]));
+            if let Some((src_x, src_z)) = src {
+                let success = try_move(c, src_x, src_z, gx, gz, true, 0, 0, 0, 0, 0, 0);
+                if success {
+                    set_cross(1);
+                }
+            }
+        }
+    }
+
+    // ── Menu routing (Java updateGame → Minimenu.GameLoop) ──────────
+    mouse_loop(c);
+
+    // The click event is once-per-cycle: Java's GameShell clears
+    // mouseClickButton at the end of every cycle; we clear after the
+    // last consumer in the tick.
+    MOUSE.lock().unwrap().mouse_click_button = 0;
+}
+
+// @ObfuscatedName(Client.MENUACTION_PLAYER) — Client.java:690.
+const MENUACTION_PLAYER: [i32; 8] = [44, 45, 46, 47, 48, 49, 50, 51];
+
+// @ObfuscatedName(— Client.combatColourCode, inlined in Java at the
+// addNpcOptions / addPlayerOptions sites). Colour tag for a combat
+// level delta between the viewer and the target.
+fn combat_colour_tag(viewer_level: i32, other_level: i32) -> String {
+    let delta = viewer_level - other_level;
+    let rgb = if delta < -9 {
+        16711680
+    } else if delta < -6 {
+        16723968
+    } else if delta < -3 {
+        16740352
+    } else if delta < 0 {
+        16756736
+    } else if delta > 9 {
+        65280
+    } else if delta > 6 {
+        4259584
+    } else if delta > 3 {
+        8453888
+    } else if delta > 0 {
+        12648192
+    } else {
+        16776960
+    };
+    crate::string_constants::tag_colour(rgb)
+}
+
+// @ObfuscatedName("z.fc(Lem;IIII)V") — Client.addNpcOptions. Verbatim
+// port of Client.java:9627-9743: multinpc resolve, combat-level tag,
+// use/target prompts, non-Attack ops first then Attack ops (with the
+// +2000 priority demotion when the npc outlevels you), then Examine.
+pub fn add_npc_options(c: &mut Client, npc_type_id: i32, slot: i32, x: i32, z: i32) {
+    use crate::string_constants::{tag_colour, CLOSE_BRACKET, OPEN_BRACKET, TAG_ARROW};
+    if c.menu_num_entries >= 400 {
+        return;
+    }
+    let mut t = crate::config::npc_type::list(npc_type_id);
+    if t.multinpc.is_some() {
+        match t.get_multi_npc() {
+            Some(resolved) => t = resolved,
+            None => return,
+        }
+    }
+    if !t.active {
+        return;
+    }
+    let viewer_level = c.local_player.as_ref().map_or(0, |lp| lp.combat_level);
+    let mut name = t.name.clone();
+    if t.vislevel != 0 {
+        name = format!("{}{} {}{}{}{}", name,
+                       combat_colour_tag(viewer_level, t.vislevel),
+                       OPEN_BRACKET, crate::text::LEVEL, t.vislevel, CLOSE_BRACKET);
+    }
+    if c.use_mode == 1 {
+        let subject = format!("{} {} {}{}", c.obj_selected_name, TAG_ARROW,
+                              tag_colour(16776960), name);
+        add_menu_option(c, crate::text::USE, &subject, 7, slot, x, z);
+    } else if c.target_mode {
+        if (c.target_mask & 0x2) == 2 {
+            let subject = format!("{} {} {}{}", c.target_op, TAG_ARROW,
+                                  tag_colour(16776960), name);
+            let verb = c.target_verb.clone();
+            add_menu_option(c, &verb, &subject, 8, slot, x, z);
+        }
+    } else {
+        let subject = format!("{}{}", tag_colour(16776960), name);
+        for index in (0..=4).rev() {
+            let Some(op) = t.op[index].as_ref() else { continue };
+            if op.eq_ignore_ascii_case(crate::text::ATTACK) {
+                continue;
+            }
+            let action = [9, 10, 11, 12, 13][index];
+            let op = op.clone();
+            add_menu_option(c, &op, &subject, action, slot, x, z);
+        }
+        for index in (0..=4).rev() {
+            let Some(op) = t.op[index].as_ref() else { continue };
+            if !op.eq_ignore_ascii_case(crate::text::ATTACK) {
+                continue;
+            }
+            let mut priority = 0;
+            if t.vislevel > viewer_level {
+                priority = 2000;
+            }
+            let action = priority + [9, 10, 11, 12, 13][index];
+            let op = op.clone();
+            add_menu_option(c, &op, &subject, action, slot, x, z);
+        }
+        add_menu_option(c, crate::text::EXAMINE, &subject, 1003, slot, x, z);
+    }
+}
+
+// @ObfuscatedName("cr.fe(Lfi;IIII)V") — Client.addPlayerOptions.
+// Verbatim port of Client.java:9747-9825: combat/skill level suffix,
+// use/target prompts, the 8 server-set player ops with Attack/team
+// priority demotion, and the "Walk here" subject takeover.
+pub fn add_player_options(c: &mut Client, player_slot: i32, x: i32, z: i32) {
+    use crate::string_constants::{tag_colour, CLOSE_BRACKET, OPEN_BRACKET, TAG_ARROW};
+    if c.menu_num_entries >= 400 {
+        return;
+    }
+    let Some(p) = c.players.get(player_slot.max(0) as usize).and_then(|o| o.as_ref()) else {
+        return;
+    };
+    let (p_name, p_combat, p_skill, p_team) =
+        (p.name.clone(), p.combat_level, p.skill_level, p.team);
+    let (viewer_level, viewer_team) = c.local_player.as_ref()
+        .map_or((0, 0), |lp| (lp.combat_level, lp.team));
+    let name = if p_skill == 0 {
+        format!("{}{} {}{}{}{}", p_name,
+                combat_colour_tag(viewer_level, p_combat),
+                OPEN_BRACKET, crate::text::LEVEL, p_combat, CLOSE_BRACKET)
+    } else {
+        format!("{} {}{}{}{}", p_name,
+                OPEN_BRACKET, crate::text::SKILL, p_skill, CLOSE_BRACKET)
+    };
+    if c.use_mode == 1 {
+        let subject = format!("{} {} {}{}", c.obj_selected_name, TAG_ARROW,
+                              tag_colour(16777215), name);
+        add_menu_option(c, crate::text::USE, &subject, 14, player_slot, x, z);
+    } else if c.target_mode {
+        if (c.target_mask & 0x8) == 8 {
+            let subject = format!("{} {} {}{}", c.target_op, TAG_ARROW,
+                                  tag_colour(16777215), name);
+            let verb = c.target_verb.clone();
+            add_menu_option(c, &verb, &subject, 15, player_slot, x, z);
+        }
+    } else {
+        let subject = format!("{}{}", tag_colour(16777215), name);
+        for i in (0..8usize).rev() {
+            let Some(op) = c.player_op[i].clone() else { continue };
+            let mut priority = 0;
+            if op.eq_ignore_ascii_case(crate::text::ATTACK) {
+                if p_combat > viewer_level {
+                    priority = 2000;
+                }
+                if viewer_team != 0 && p_team != 0 {
+                    priority = if viewer_team == p_team { 2000 } else { 0 };
+                }
+            } else if c.player_op_priority[i] {
+                priority = 2000;
+            }
+            let action = MENUACTION_PLAYER[i] + priority;
+            add_menu_option(c, &op, &subject, action, player_slot, x, z);
+        }
+    }
+    // "Walk here" inherits the hovered player's name as its subject.
+    let subject = format!("{}{}", tag_colour(16777215), name);
+    for i in 0..(c.menu_num_entries as usize) {
+        if c.menu_action[i] == 23 {
+            c.menu_subject[i] = subject;
+            break;
+        }
+    }
+}
+
+// @ObfuscatedName(— Client.minimenuBuildSceneActions). Verbatim port
+// of Client.java:9459-9623: turns the frame's scene mouse-pick results
+// (ModelLit.pickedEntityTypecode) into menu entries — Walk here, loc
+// ops, npc/player ops (including the same-tile stack expansion), and
+// ground-obj piles.
+pub fn minimenu_build_scene_actions(c: &mut Client, vx: i32, vy: i32,
+                                    mouse_x: i32, mouse_y: i32) {
+    use crate::string_constants::{tag_colour, TAG_ARROW};
+    if c.use_mode == 0 && !c.target_mode {
+        add_menu_option(c, crate::text::WALKHERE, "", 23, 0,
+                        mouse_x - vx, mouse_y - vy);
+    }
+
+    let picked: Vec<i32> = {
+        let p = crate::dash3d::model_lit::MOUSE_PICK.lock().unwrap();
+        p.picked.clone()
+    };
+    let minused = c.minusedlevel.clamp(0, 3);
+    let mut last_typecode = -1;
+    for typecode in picked {
+        if typecode == last_typecode {
+            continue;
+        }
+        last_typecode = typecode;
+        let x = typecode & 0x7F;
+        let z = (typecode >> 7) & 0x7F;
+        let entity_type = (typecode >> 29) & 0x3;
+        let id = (typecode >> 14) & 0x7FFF;
+
+        if entity_type == 2 {
+            let tc2 = {
+                let cache = crate::scene::WORLD_CACHE.lock().unwrap();
+                cache.world.as_ref()
+                    .map_or(-1, |w| w.typecode2(minused, x, z, typecode))
+            };
+            if tc2 >= 0 {
+                let Some(mut lt) = crate::config::loc_type::list(id) else { continue };
+                if lt.multiloc.is_some() {
+                    match lt.get_multi_loc() {
+                        Some(resolved) => lt = resolved,
+                        None => continue,
+                    }
+                }
+                if c.use_mode == 1 {
+                    let subject = format!("{} {} {}{}", c.obj_selected_name, TAG_ARROW,
+                                          tag_colour(65535), lt.name);
+                    add_menu_option(c, crate::text::USE, &subject, 1, typecode, x, z);
+                } else if c.target_mode {
+                    if (c.target_mask & 0x4) == 4 {
+                        let subject = format!("{} {} {}{}", c.target_op, TAG_ARROW,
+                                              tag_colour(65535), lt.name);
+                        let verb = c.target_verb.clone();
+                        add_menu_option(c, &verb, &subject, 2, typecode, x, z);
+                    }
+                } else {
+                    let subject = format!("{}{}", tag_colour(65535), lt.name);
+                    for index in (0..=4usize).rev() {
+                        let Some(op) = lt.op[index].as_ref() else { continue };
+                        let action = [3, 4, 5, 6, 1001][index];
+                        let op = op.clone();
+                        add_menu_option(c, &op, &subject, action, typecode, x, z);
+                    }
+                    add_menu_option(c, crate::text::EXAMINE, &subject, 1002,
+                                    lt.id << 14, x, z);
+                }
+            }
+        }
+
+        if entity_type == 1 {
+            let npc_info = c.npcs.get(id.max(0) as usize)
+                .and_then(|o| o.as_ref())
+                .map(|n| (n.type_id, n.entity.x, n.entity.z));
+            let Some((type_id, nx, nz)) = npc_info else { continue };
+            let size_one = crate::config::npc_type::list(type_id).size == 1;
+            if size_one && (nx & 0x7F) == 64 && (nz & 0x7F) == 64 {
+                // Same-tile stack expansion: other npcs + players
+                // sharing this exact fine position get their options
+                // appended too.
+                let other_npcs: Vec<(i32, i32)> = (0..c.npc_count as usize)
+                    .filter_map(|i| {
+                        let oid = c.npc_ids.get(i).copied()?;
+                        if oid == id { return None; }
+                        let o = c.npcs.get(oid.max(0) as usize)?.as_ref()?;
+                        if crate::config::npc_type::list(o.type_id).size == 1
+                            && o.entity.x == nx && o.entity.z == nz
+                        {
+                            Some((o.type_id, oid))
+                        } else {
+                            None
+                        }
+                    })
+                    .collect();
+                for (otype, oid) in other_npcs {
+                    add_npc_options(c, otype, oid, x, z);
+                }
+                let other_players: Vec<i32> = (0..c.player_count as usize)
+                    .filter_map(|i| {
+                        let pid = c.player_ids.get(i).copied()?;
+                        let p = c.players.get(pid.max(0) as usize)?.as_ref()?;
+                        if p.entity.x == nx && p.entity.z == nz {
+                            Some(pid)
+                        } else {
+                            None
+                        }
+                    })
+                    .collect();
+                for pid in other_players {
+                    add_player_options(c, pid, x, z);
+                }
+            }
+            add_npc_options(c, type_id, id, x, z);
+        }
+
+        if entity_type == 0 {
+            let player_pos = c.players.get(id.max(0) as usize)
+                .and_then(|o| o.as_ref())
+                .map(|p| (p.entity.x, p.entity.z));
+            let Some((px, pz)) = player_pos else { continue };
+            if (px & 0x7F) == 64 && (pz & 0x7F) == 64 {
+                let other_npcs: Vec<(i32, i32)> = (0..c.npc_count as usize)
+                    .filter_map(|i| {
+                        let oid = c.npc_ids.get(i).copied()?;
+                        let o = c.npcs.get(oid.max(0) as usize)?.as_ref()?;
+                        if crate::config::npc_type::list(o.type_id).size == 1
+                            && o.entity.x == px && o.entity.z == pz
+                        {
+                            Some((o.type_id, oid))
+                        } else {
+                            None
+                        }
+                    })
+                    .collect();
+                for (otype, oid) in other_npcs {
+                    add_npc_options(c, otype, oid, x, z);
+                }
+                let other_players: Vec<i32> = (0..c.player_count as usize)
+                    .filter_map(|i| {
+                        let pid = c.player_ids.get(i).copied()?;
+                        if pid == id { return None; }
+                        let p = c.players.get(pid.max(0) as usize)?.as_ref()?;
+                        if p.entity.x == px && p.entity.z == pz {
+                            Some(pid)
+                        } else {
+                            None
+                        }
+                    })
+                    .collect();
+                for pid in other_players {
+                    add_player_options(c, pid, x, z);
+                }
+            }
+            add_player_options(c, id, x, z);
+        }
+
+        if entity_type == 3 {
+            let pile: Vec<(i32, i32)> = c.ground_obj
+                .get(minused as usize)
+                .and_then(|l| l.get(x.max(0) as usize))
+                .and_then(|col| col.get(z.max(0) as usize))
+                .map(|objs| objs.iter().map(|o| (o.id, o.count)).collect())
+                .unwrap_or_default();
+            // Java iterates the LinkList tail → head.
+            for (obj_id, _count) in pile.into_iter().rev() {
+                let Some(t) = crate::config::obj_type::list(obj_id) else { continue };
+                if c.use_mode == 1 {
+                    let subject = format!("{} {} {}{}", c.obj_selected_name, TAG_ARROW,
+                                          tag_colour(16748608), t.name);
+                    add_menu_option(c, crate::text::USE, &subject, 16, obj_id, x, z);
+                } else if c.target_mode {
+                    if (c.target_mask & 0x1) == 1 {
+                        let subject = format!("{} {} {}{}", c.target_op, TAG_ARROW,
+                                              tag_colour(16748608), t.name);
+                        let verb = c.target_verb.clone();
+                        add_menu_option(c, &verb, &subject, 17, obj_id, x, z);
+                    }
+                } else {
+                    let subject = format!("{}{}", tag_colour(16748608), t.name);
+                    let ops = t.op.clone();
+                    for index in (0..=4usize).rev() {
+                        let op = ops.as_ref().and_then(|arr| arr[index].clone());
+                        if let Some(op) = op {
+                            let action = [18, 19, 20, 21, 22][index];
+                            add_menu_option(c, &op, &subject, action, obj_id, x, z);
+                        } else if index == 2 {
+                            add_menu_option(c, crate::text::TAKE, &subject, 20, obj_id, x, z);
+                        }
+                    }
+                    add_menu_option(c, crate::text::EXAMINE, &subject, 1004, obj_id, x, z);
+                }
+            }
+        }
+    }
+}
+
+// @ObfuscatedName("Minimenu.GameLoop") — Client.mouseLoop. Verbatim
+// port of Client.java:8210-8286: routes the frame's click either into
+// the open right-click menu (option pick / outside-dismiss) or into
+// the topmost menu entry (with the obj-drag grab and the
+// one-mouse-button / add-friend promotions to a full menu).
+pub fn mouse_loop(c: &mut Client) {
+    use crate::config::if_type;
+    if c.obj_drag_com != -1 {
+        return;
+    }
+    let (mut button, click_x, click_y, mouse_x, mouse_y) = {
+        let m = crate::input::MOUSE.lock().unwrap();
+        (m.mouse_click_button, m.mouse_click_x, m.mouse_click_y, m.mouse_x, m.mouse_y)
+    };
+
+    if c.is_menu_open {
+        if button == 1 {
+            let x = c.menu_x;
+            let y = c.menu_y;
+            let width = c.menu_width;
+            let mut option = -1;
+            for i in 0..c.menu_num_entries {
+                let line_y = (c.menu_num_entries - 1 - i) * 15 + y + 31;
+                if click_x > x && click_x < x + width
+                    && click_y > line_y - 13 && click_y < line_y + 3
+                {
+                    option = i;
+                }
+            }
+            if option != -1 {
+                do_action(c, option);
+            }
+            c.is_menu_open = false;
+        } else if mouse_x < c.menu_x - 10
+            || mouse_x > c.menu_width + c.menu_x + 10
+            || mouse_y < c.menu_y - 10
+            || mouse_y > c.menu_y + c.menu_height + 10
+        {
+            c.is_menu_open = false;
+        }
+        return;
+    }
+
+    if button == 1 && c.menu_num_entries > 0 {
+        let top = (c.menu_num_entries - 1) as usize;
+        let action = c.menu_action[top];
+        if matches!(action, 39 | 40 | 41 | 42 | 43 | 33 | 34 | 35 | 36 | 37 | 38 | 1005) {
+            let slot = c.menu_param_b[top];
+            let com_id = c.menu_param_c[top];
+            if let Some(com) = if_type::get(com_id) {
+                let active = get_active(c, &com);
+                if crate::config::server_active::is_obj_swap_enabled(active)
+                    || crate::config::server_active::is_obj_replace_enabled(active)
+                {
+                    c.obj_grab_threshold = false;
+                    c.obj_drag_cycles = 0;
+                    c.obj_drag_com = com_id;
+                    c.obj_drag_slot = slot;
+                    c.obj_grab_x = click_x;
+                    c.obj_grab_y = click_y;
+                    return;
+                }
+            }
+        }
+    }
+
+    if button == 1
+        && ((c.one_mouse_button == 1 && c.menu_num_entries > 2)
+            || is_add_friend_option(menu_action_at(c, c.menu_num_entries - 1)))
+    {
+        button = 2;
+    }
+
+    if button == 1 && c.menu_num_entries > 0 {
+        do_action(c, c.menu_num_entries - 1);
+    } else if button == 2 && c.menu_num_entries > 0 {
+        let b12 = c.b12.clone();
+        open_menu(c, click_x, click_y, |s: &str| {
+            b12.as_ref().map_or(s.len() as i32 * 8, |f| f.base.string_wid(s))
+        });
+    }
+}
+
+// @ObfuscatedName("Minimenu.drawMinimenu") — Client.drawMinimenu.
+// Verbatim port of Client.java:8339-8360: the brown "Choose Option"
+// box with the hover-highlight option list (bottom entry first).
+pub fn draw_minimenu(c: &Client) {
+    use crate::graphics::pix2d;
+    let Some(b12) = c.b12.as_ref() else { return };
+    let x = c.menu_x;
+    let y = c.menu_y;
+    let w = c.menu_width;
+    let h = c.menu_height;
+    let brown = 0x5d5447;
+    pix2d::fill_rect(x, y, w, h, brown);
+    pix2d::fill_rect(x + 1, y + 1, w - 2, 16, 0);
+    pix2d::draw_rect(x + 1, y + 18, w - 2, h - 19, 0);
+    b12.base.draw_string(crate::text::CHOOSEOPTION, x + 3, y + 14, brown, -1);
+    let (mouse_x, mouse_y) = {
+        let m = crate::input::MOUSE.lock().unwrap();
+        (m.mouse_x, m.mouse_y)
+    };
+    for i in 0..c.menu_num_entries {
+        let line_y = (c.menu_num_entries - 1 - i) * 15 + y + 31;
+        let mut rgb = 0xFFFFFF;
+        if mouse_x > x && mouse_x < x + w && mouse_y > line_y - 13 && mouse_y < line_y + 3 {
+            rgb = 0xFFFF00;
+        }
+        let line = get_menu_line(&c.menu_verb[i as usize], &c.menu_subject[i as usize]);
+        b12.base.draw_string(&line, x + 3, line_y, rgb, 0);
+    }
+}
+
+// @ObfuscatedName("Minimenu.DrawFeedback") — Client.drawFeedback.
+// Verbatim port of Client.java:8364-8383: the anti-macro top-left
+// line showing the default action (or use/target prompt) plus the
+// "/ N more options" suffix.
+pub fn draw_feedback(c: &Client, x: i32, y: i32) {
+    let Some(b12) = c.b12.as_ref() else { return };
+    if c.menu_num_entries < 2 && c.use_mode == 0 && !c.target_mode {
+        return;
+    }
+    let mut line = if c.use_mode == 1 && c.menu_num_entries < 2 {
+        format!("{}{}{} {}", crate::text::USE, crate::text::MINISEPARATOR,
+                c.obj_selected_name, crate::string_constants::TAG_ARROW)
+    } else if c.target_mode && c.menu_num_entries < 2 {
+        format!("{}{}{} {}", c.target_verb, crate::text::MINISEPARATOR,
+                c.target_op, crate::string_constants::TAG_ARROW)
+    } else {
+        let top = (c.menu_num_entries - 1) as usize;
+        get_menu_line(&c.menu_verb[top], &c.menu_subject[top])
+    };
+    if c.menu_num_entries > 2 {
+        line = format!("{}{} / {}{}",
+                       line,
+                       crate::string_constants::tag_colour(0xFFFFFF),
+                       c.menu_num_entries - 2,
+                       " more options");
+    }
+    b12.base.draw_string_anti_macro(&line, x + 4, y + 15, 0xFFFFFF, 0,
+                                    c.loop_cycle / 1000);
+}
+
+// Java's `crossX = mouseClickX; crossY = mouseClickY; crossMode = N;
+// crossCycle = 0;` quadruple — the click crosshair feedback. The
+// fields live on overlays::OVERLAYS (otherOverlays draws them).
+fn set_cross(mode: i32) {
+    let (cx, cy) = {
+        let m = crate::input::MOUSE.lock().unwrap();
+        (m.mouse_click_x, m.mouse_click_y)
+    };
+    let mut o = crate::overlays::OVERLAYS.lock().unwrap();
+    o.cross_x = cx;
+    o.cross_y = cy;
+    o.cross_mode = mode;
+    o.cross_cycle = 0;
+}
+
+// @ObfuscatedName("cz.eg(IIII)Z") — Client.interactWithLoc. Verbatim
+// port of Client.java:5488-5526: route toward a clicked loc using its
+// footprint (scenery) or wall shape (everything else), then arm the
+// red crosshair. Returns false when the loc no longer exists.
+pub fn interact_with_loc(c: &mut Client, tile_x: i32, tile_z: i32, typecode: i32) -> bool {
+    let loc_id = (typecode >> 14) & 0x7FFF;
+    let tc2 = {
+        let cache = crate::scene::WORLD_CACHE.lock().unwrap();
+        match cache.world.as_ref() {
+            Some(w) => w.typecode2(c.minusedlevel.clamp(0, 3), tile_x, tile_z, typecode),
+            None => -1,
+        }
+    };
+    if tc2 == -1 {
+        return false;
+    }
+    let shape = tc2 & 0x1F;
+    let angle = (tc2 >> 6) & 0x3;
+    let (src_x, src_z) = match c.local_player.as_ref() {
+        Some(lp) => (lp.route_x[0], lp.route_z[0]),
+        None => return false,
+    };
+    if shape == 10 || shape == 11 || shape == 22 {
+        let lt = crate::config::loc_type::list(loc_id);
+        let (mut width, mut length, mut forceapproach) = (1, 1, 0);
+        if let Some(lt) = lt.as_ref() {
+            if angle == 0 || angle == 2 {
+                width = lt.width;
+                length = lt.length;
+            } else {
+                width = lt.length;
+                length = lt.width;
+            }
+            forceapproach = lt.forceapproach;
+            if angle != 0 {
+                forceapproach = (forceapproach >> (4 - angle))
+                    + ((forceapproach << angle) & 0xF);
+            }
+        }
+        try_move(c, src_x, src_z, tile_x, tile_z, true, 0, 0, width, length,
+                 forceapproach, 2);
+    } else {
+        try_move(c, src_x, src_z, tile_x, tile_z, true, shape + 1, angle, 0, 0, 0, 2);
+    }
+    set_cross(2);
+    true
+}
+
+// Route toward another entity's current route head (the shared
+// "tryMove(localPlayer.route[0], target.route[0], false, 0,0,1,1,0, 2)"
+// idiom every entity op in doAction uses) and arm the red crosshair.
+fn walk_to_entity(c: &mut Client, dst_x: i32, dst_z: i32) {
+    let (src_x, src_z) = match c.local_player.as_ref() {
+        Some(lp) => (lp.route_x[0], lp.route_z[0]),
+        None => return,
+    };
+    try_move(c, src_x, src_z, dst_x, dst_z, false, 0, 0, 1, 1, 0, 2);
+    set_cross(2);
+}
+
+// The shared ground-obj walk: exact tile first, settle for adjacent
+// second (Java's two-call pattern in actions 16-22).
+fn walk_to_obj(c: &mut Client, tile_x: i32, tile_z: i32) {
+    let (src_x, src_z) = match c.local_player.as_ref() {
+        Some(lp) => (lp.route_x[0], lp.route_z[0]),
+        None => return,
+    };
+    let moved = try_move(c, src_x, src_z, tile_x, tile_z, false, 0, 0, 0, 0, 0, 2);
+    if !moved {
+        try_move(c, src_x, src_z, tile_x, tile_z, false, 0, 0, 1, 1, 0, 2);
+    }
+    set_cross(2);
+}
+
+// @ObfuscatedName("m.ey(II)V") — Client.doAction. Verbatim port of
+// Client.java:8437-9294: dispatches one menu entry. `entry` is the
+// menu index (Java arg0). Actions ≥2000 are the "examine variant"
+// duplicates and fold down by 2000 first. The flat `if action == N`
+// blocks keep Java's order so multi-match side effects (none in
+// practice — actions are disjoint) stay byte-equivalent.
+pub fn do_action(c: &mut Client, entry: i32) {
+    use crate::config::if_type;
+    if entry < 0 {
+        return;
+    }
+    let idx = entry as usize;
+    let b = c.menu_param_b[idx];
+    let cc = c.menu_param_c[idx];
+    let mut action = c.menu_action[idx];
+    let a = c.menu_param_a[idx];
+    if action >= 2000 {
+        action -= 2000;
+    }
+
+    // Macro for "player[a]'s route head" lookups.
+    let player_route = |c: &Client, slot: i32| -> Option<(i32, i32)> {
+        c.players.get(slot.max(0) as usize)
+            .and_then(|o| o.as_ref())
+            .map(|p| (p.route_x[0], p.route_z[0]))
+    };
+    let npc_route = |c: &Client, slot: i32| -> Option<(i32, i32)> {
+        c.npcs.get(slot.max(0) as usize)
+            .and_then(|o| o.as_ref())
+            .map(|n| (n.entity.route_x[0], n.entity.route_z[0]))
+    };
+
+    if action == 45 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(146, isaac); // OPPLAYER2
+                out.p2(a);
+            }
+        }
+    }
+    if action == 35 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(76, isaac); // OPHELD3
+            out.p2_alt1(b);
+            out.p4_alt2(cc);
+            out.p2_alt1(a);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 8 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(190, isaac); // OPNPCT
+                out.p4(c.target_com);
+                out.p2_alt2(a);
+                out.p2_alt2(c.target_sub);
+            }
+        }
+    }
+    if action == 51 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(145, isaac); // OPPLAYER8
+                out.p2_alt1(a);
+            }
+        }
+    }
+    if action == 28 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(155, isaac); // IF_BUTTON
+            out.p4(cc);
+        }
+        if let Some(com) = if_type::get(cc) {
+            if com.scripts.first().map_or(false, |s| s.first() == Some(&5)) {
+                let varp = com.scripts[0][1];
+                let cur = crate::config::var_cache::get_varp(varp);
+                crate::config::var_cache::set_varp(varp, 1 - cur);
+                client_var(c, varp);
+            }
+        }
+    }
+    if action == 1002 {
+        set_cross(2);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(162, isaac); // OPLOCE
+            out.p2_alt2((a >> 14) & 0x7FFF);
+        }
+    }
+    if action == 31 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(70, isaac); // OPHELDU
+            out.p2_alt1(a);
+            out.p2_alt1(c.obj_com_id);
+            out.p2(c.obj_selected_slot);
+            out.p4(cc);
+            out.p2_alt1(b);
+            out.p4_alt1(c.obj_selected_com_id);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 1004 {
+        set_cross(2);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(49, isaac); // OPOBJE
+            out.p2_alt1(a);
+        }
+    }
+    if action == 47 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(78, isaac); // OPPLAYER4
+                out.p2(a);
+            }
+        }
+    }
+    if action == 32 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(218, isaac); // OPHELDT
+            out.p2_alt1(c.target_sub);
+            out.p2(b);
+            out.p2(a);
+            out.p4_alt2(cc);
+            out.p4_alt2(c.target_com);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 46 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(102, isaac); // OPPLAYER3
+                out.p2_alt1(a);
+            }
+        }
+    }
+    if action == 20 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(224, isaac); // OPOBJ3
+            out.p2_alt2(a);
+            out.p2_alt3(c.map_build_base_x + b);
+            out.p2_alt2(c.map_build_base_z + cc);
+        }
+    }
+    if action == 12 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(95, isaac); // OPNPC4
+                out.p2_alt1(a);
+            }
+        }
+    }
+    if action == 14 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(226, isaac); // OPPLAYERU
+                out.p2_alt2(c.obj_com_id);
+                out.p2_alt1(c.obj_selected_slot);
+                out.p2_alt2(a);
+                out.p4_alt2(c.obj_selected_com_id);
+            }
+        }
+    }
+    if action == 2 {
+        if interact_with_loc(c, b, cc, a) {
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(247, isaac); // OPLOCT
+                out.p4_alt3(c.target_com);
+                out.p2(c.map_build_base_z + cc);
+                out.p2_alt1(c.target_sub);
+                out.p2_alt2((a >> 14) & 0x7FFF);
+                out.p2_alt1(c.map_build_base_x + b);
+            }
+        }
+    }
+    if action == 41 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(6, isaac); // INV_BUTTON3
+            out.p2_alt1(b);
+            out.p4_alt1(cc);
+            out.p2_alt3(a);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 50 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(119, isaac); // OPPLAYER7
+                out.p2_alt3(a);
+            }
+        }
+    }
+    if action == 29 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(155, isaac); // IF_BUTTON
+            out.p4(cc);
+        }
+        if let Some(com) = if_type::get(cc) {
+            if com.scripts.first().map_or(false, |s| s.first() == Some(&5)) {
+                let varp = com.scripts[0][1];
+                let operand = com.script_operand.first().copied().unwrap_or(0);
+                if crate::config::var_cache::get_varp(varp) != operand {
+                    crate::config::var_cache::set_varp(varp, operand);
+                    client_var(c, varp);
+                }
+            }
+        }
+    }
+    if action == 48 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(117, isaac); // OPPLAYER5
+                out.p2_alt2(a);
+            }
+        }
+    }
+    if action == 33 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(135, isaac); // OPHELD1
+            out.p4_alt2(cc);
+            out.p2_alt3(a);
+            out.p2_alt3(b);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 1 {
+        if interact_with_loc(c, b, cc, a) {
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(241, isaac); // OPLOCU
+                out.p4_alt1(c.obj_selected_com_id);
+                out.p2(c.obj_selected_slot);
+                out.p2((a >> 14) & 0x7FFF);
+                out.p2_alt2(c.map_build_base_x + b);
+                out.p2_alt1(c.obj_com_id);
+                out.p2_alt2(c.map_build_base_z + cc);
+            }
+        }
+    }
+    if action == 6 {
+        interact_with_loc(c, b, cc, a);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(83, isaac); // OPLOC4
+            out.p2_alt2(c.map_build_base_x + b);
+            out.p2_alt3(c.map_build_base_z + cc);
+            out.p2_alt3((a >> 14) & 0x7FFF);
+        }
+    }
+    if action == 15 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(183, isaac); // OPPLAYERT
+                out.p2_alt2(c.target_sub);
+                out.p4(c.target_com);
+                out.p2_alt1(a);
+            }
+        }
+    }
+    if action == 18 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(243, isaac); // OPOBJ1
+            out.p2_alt1(a);
+            out.p2(c.map_build_base_x + b);
+            out.p2_alt3(c.map_build_base_z + cc);
+        }
+    }
+    if action == 5 {
+        interact_with_loc(c, b, cc, a);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(133, isaac); // OPLOC3
+            out.p2_alt2(c.map_build_base_x + b);
+            out.p2_alt2(c.map_build_base_z + cc);
+            out.p2_alt3((a >> 14) & 0x7FFF);
+        }
+    }
+    if action == 16 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(235, isaac); // OPOBJU
+            out.p2(c.map_build_base_z + cc);
+            out.p2_alt2(c.obj_com_id);
+            out.p2_alt1(c.map_build_base_x + b);
+            out.p4(c.obj_selected_com_id);
+            out.p2_alt1(a);
+            out.p2_alt1(c.obj_selected_slot);
+        }
+    }
+    if action == 1001 {
+        interact_with_loc(c, b, cc, a);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(56, isaac); // OPLOC5
+            out.p2(c.map_build_base_x + b);
+            out.p2_alt1((a >> 14) & 0x7FFF);
+            out.p2_alt2(c.map_build_base_z + cc);
+        }
+    }
+    if action == 26 {
+        send_close_modal(c);
+    }
+    if action == 37 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(19, isaac); // OPHELD5
+            out.p2(a);
+            out.p4(cc);
+            out.p2_alt2(b);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 57 || action == 1007 {
+        let op_base = c.menu_subject[idx].clone();
+        if_button_x(c, a, cc, b, &op_base);
+    }
+    if action == 44 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(246, isaac); // OPPLAYER1
+                out.p2(a);
+            }
+        }
+    }
+    if action == 22 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(77, isaac); // OPOBJ5
+            out.p2(c.map_build_base_x + b);
+            out.p2_alt2(c.map_build_base_z + cc);
+            out.p2_alt3(a);
+        }
+    }
+    if action == 24 {
+        let mut transmit = true;
+        if let Some(com) = if_type::get(cc) {
+            if com.client_code > 0 {
+                transmit = client_button(c, &com);
+            }
+        }
+        if transmit {
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(155, isaac); // IF_BUTTON
+                out.p4(cc);
+            }
+        }
+    }
+    if action == 9 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(84, isaac); // OPNPC1
+                out.p2_alt3(a);
+            }
+        }
+    }
+    if action == 49 {
+        if let Some((dx, dz)) = player_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(111, isaac); // OPPLAYER6
+                out.p2_alt3(a);
+            }
+        }
+    }
+    if action == 25 {
+        if if_type::get_sub(cc, b).is_some() {
+            end_target_mode(c);
+            enter_target_mode(c, cc, b);
+        }
+        return;
+    }
+    if action == 42 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(186, isaac); // INV_BUTTON4
+            out.p2(b);
+            out.p4(cc);
+            out.p2(a);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 10 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(13, isaac); // OPNPC2
+                out.p2_alt2(a);
+            }
+        }
+    }
+    if action == 34 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(179, isaac); // OPHELD2
+            out.p2_alt3(b);
+            out.p2_alt2(a);
+            out.p4_alt1(cc);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 43 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(40, isaac); // INV_BUTTON5
+            out.p2_alt1(a);
+            out.p4_alt1(cc);
+            out.p2_alt2(b);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 1003 {
+        set_cross(2);
+        let npc_type_id = c.npcs.get(a.max(0) as usize)
+            .and_then(|o| o.as_ref())
+            .map(|n| n.type_id);
+        if let Some(type_id) = npc_type_id {
+            let mut t = crate::config::npc_type::list(type_id);
+            if t.multinpc.is_some() {
+                match t.get_multi_npc() {
+                    Some(resolved) => t = resolved,
+                    None => return,
+                }
+            }
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(52, isaac); // OPNPCE
+                out.p2(t.id);
+            }
+        }
+    }
+    if action == 13 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(88, isaac); // OPNPC5
+                out.p2(a);
+            }
+        }
+    }
+    if action == 11 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(67, isaac); // OPNPC3
+                out.p2_alt1(a);
+            }
+        }
+    }
+    if action == 17 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(81, isaac); // OPOBJT
+            out.p2_alt3(a);
+            out.p2(c.map_build_base_z + cc);
+            out.p4_alt3(c.target_com);
+            out.p2_alt2(c.map_build_base_x + b);
+            out.p2_alt2(c.target_sub);
+        }
+    }
+    if action == 3 {
+        interact_with_loc(c, b, cc, a);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(73, isaac); // OPLOC1
+            out.p2_alt2((a >> 14) & 0x7FFF);
+            out.p2(c.map_build_base_x + b);
+            out.p2(c.map_build_base_z + cc);
+        }
+    }
+    if action == 38 {
+        end_target_mode(c);
+        c.use_mode = 1;
+        c.obj_selected_slot = b;
+        c.obj_selected_com_id = cc;
+        c.obj_com_id = a;
+        let name = crate::config::obj_type::list(a)
+            .map(|t| t.name)
+            .unwrap_or_else(|| "null".to_string());
+        c.obj_selected_name = format!("{}{}{}",
+            crate::string_constants::tag_colour(16748608),
+            name,
+            crate::string_constants::tag_colour(16777215));
+        return;
+    }
+    if action == 58 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(251, isaac); // IF_BUTTONT
+            out.p2_alt2(c.target_sub);
+            out.p2_alt2(b);
+            out.p4(c.target_com);
+            out.p4_alt2(cc);
+        }
+    }
+    if action == 30 {
+        if c.resume_pause_com == -1 {
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(242, isaac); // RESUME_PAUSEBUTTON
+                out.p2_alt2(b);
+                out.p4(cc);
+            }
+            c.resume_pause_com = cc;
+        }
+    }
+    if action == 23 {
+        // "Walk here" — arm the scene ground pick for the next frame.
+        let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
+        if let Some(world) = cache.world.as_mut() {
+            world.update_mouse_picking(c.minusedlevel.clamp(0, 3), b, cc);
+        }
+    }
+    if action == 4 {
+        interact_with_loc(c, b, cc, a);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(90, isaac); // OPLOC2
+            out.p2_alt3(c.map_build_base_z + cc);
+            out.p2_alt3(c.map_build_base_x + b);
+            out.p2_alt2((a >> 14) & 0x7FFF);
+        }
+    }
+    if action == 36 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(220, isaac); // OPHELD4
+            out.p4_alt3(cc);
+            out.p2_alt2(b);
+            out.p2_alt1(a);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 19 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(177, isaac); // OPOBJ2
+            out.p2(c.map_build_base_z + cc);
+            out.p2_alt3(a);
+            out.p2(c.map_build_base_x + b);
+        }
+    }
+    if action == 40 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(202, isaac); // INV_BUTTON2
+            out.p2_alt1(a);
+            out.p4_alt2(cc);
+            out.p2_alt1(b);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 1005 {
+        let count = if_type::get(cc)
+            .and_then(|com| com.link_obj_number.get(b.max(0) as usize).copied());
+        match count {
+            Some(n) if n >= 100000 => {
+                let name = crate::config::obj_type::list(a)
+                    .map(|t| t.name)
+                    .unwrap_or_else(|| "null".to_string());
+                add_chat(c, 0, Some(String::new()),
+                         Some(format!("{} x {}", n, name)), None, 0);
+            }
+            _ => {
+                if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                    out.p1_enc(49, isaac);
+                    out.p2_alt1(a);
+                }
+            }
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+    if action == 7 {
+        if let Some((dx, dz)) = npc_route(c, a) {
+            walk_to_entity(c, dx, dz);
+            if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+                out.p1_enc(106, isaac); // OPNPCU
+                out.p2_alt2(c.obj_selected_slot);
+                out.p4(c.obj_selected_com_id);
+                out.p2_alt1(a);
+                out.p2_alt3(c.obj_com_id);
+            }
+        }
+    }
+    if action == 21 {
+        walk_to_obj(c, b, cc);
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(139, isaac); // OPOBJ4
+            out.p2_alt1(c.map_build_base_z + cc);
+            out.p2_alt1(c.map_build_base_x + b);
+            out.p2_alt3(a);
+        }
+    }
+    if action == 39 {
+        if let (Some(isaac), Some(out)) = (c.isaac_out.as_mut(), c.out_packet.as_mut()) {
+            out.p1_enc(21, isaac); // INV_BUTTON1
+            out.p2(b);
+            out.p4_alt2(cc);
+            out.p2_alt1(a);
+        }
+        c.selected_cycle = 0;
+        c.selected_com = cc;
+        c.selected_item = b;
+    }
+
+    if c.use_mode != 0 {
+        c.use_mode = 0;
+    }
+    if c.target_mode {
+        end_target_mode(c);
     }
 }
 
@@ -3894,6 +5202,10 @@ pub struct Client {
     pub target_mode: bool,
     pub target_com: i32,
     pub target_sub: i32,
+    // @ObfuscatedName("client.??") — targetMask: which scene entity
+    // classes the target verb accepts (0x1 obj, 0x2 npc, 0x4 loc,
+    // 0x8 player), from ServerActive.targetMask.
+    pub target_mask: i32,
     pub target_verb: String,
     pub target_op: String,
 
@@ -4045,6 +5357,9 @@ pub struct Client {
     pub obj_selected_name: String,
     pub obj_selected_com_id: i32,
     pub obj_selected_slot: i32,
+    // @ObfuscatedName("client.??") — objComId: the ObjType id of the
+    // selected held item (doAction 38 / the *U use-with packets).
+    pub obj_com_id: i32,
     pub use_mode: i32,
     // @ObfuscatedName("al.in")
     pub minusedlevel: i32,
@@ -4424,6 +5739,7 @@ impl Client {
             target_mode: false,
             target_com: -1,
             target_sub: -1,
+            target_mask: 0,
             target_verb: String::new(),
             target_op: String::new(),
             resume_pause_com: -1,
@@ -4492,6 +5808,7 @@ impl Client {
             keypress_codes: [0; 128],
             keypress_chars: ['\0'; 128],
             obj_selected_name: String::new(),
+            obj_com_id: -1,
             obj_selected_com_id: -1,
             obj_selected_slot: -1,
             use_mode: 0,
@@ -4859,16 +6176,7 @@ impl GameShellLifecycle for Client {
                 self.orbit_cam_pitch,
                 self.orbit_cam_zoom,
             );
-            crate::interface_render::draw_chrome(
-                fb,
-                self.p11.as_ref(),
-                self.toplevelinterface,
-                &self.subinterfaces,
-                self.local_player.as_ref(),
-                self.map_build_base_x,
-                self.map_build_base_z,
-                self.minusedlevel,
-            );
+            crate::interface_render::draw_chrome(fb, self);
         }
     }
 
