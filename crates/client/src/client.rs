@@ -4556,6 +4556,10 @@ impl GameShellLifecycle for Client {
         } else if self.state == 30 {
             crate::login::game_tick(self);
             update_orbit_camera(self);
+            // Java updateWorld's minimap section: anti-macro drift,
+            // image rebuild on level change, and the dots snapshot the
+            // chrome renderer reads.
+            crate::minimap::update(self);
         }
     }
 
@@ -4910,6 +4914,7 @@ impl Client {
                     crate::config::inv_type::install_archives(self.config);
                     crate::config::idk_type::install_archives(self.config, self.models);
                     crate::config::spot_type::install_archives(self.config, self.models);
+                    crate::minimap::install(self.sprites);
                     // Java: TitleScreen.open(canvas, binary, sprites)
                     // happens once during state-5 entry. Also wires the
                     // songs loader for the "scape main" intro music.
