@@ -67,6 +67,9 @@ pub struct Overlays {
     pub headicons_hint: Option<Vec<Pix32>>,
     pub hitmarks: Option<Vec<Pix32>>,
     pub cross: Option<Vec<Pix32>>,
+    // @ObfuscatedName(Client.scrollbar) — the two 16×16 arrow caps
+    // (Pix8) drawScrollbar blits at the track ends.
+    pub scrollbar: Option<Vec<crate::graphics::pix8::Pix8>>,
     // Fonts (cloned once from Client.b12 / p11 / p12).
     pub b12: Option<PixFontGeneric>,
     pub p11: Option<PixFontGeneric>,
@@ -108,6 +111,7 @@ pub static OVERLAYS: std::sync::LazyLock<Mutex<Overlays>> = std::sync::LazyLock:
         headicons_hint: None,
         hitmarks: None,
         cross: None,
+        scrollbar: None,
         b12: None,
         p11: None,
         p12: None,
@@ -175,6 +179,9 @@ fn try_load_sprites(o: &mut Overlays) {
     }
     if o.cross.is_none() {
         o.cross = pix_loader::make_pix32_array(loader, "cross", "");
+    }
+    if o.scrollbar.is_none() {
+        o.scrollbar = pix_loader::make_pix8_array(loader, "scrollbar", "");
     }
     // PixFont.modicons for `<img=N>` markup rides along here (Java
     // loads "mod_icons" in the same step block).

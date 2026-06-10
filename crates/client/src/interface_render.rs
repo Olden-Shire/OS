@@ -133,6 +133,44 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
     }
 }
 
+// @ObfuscatedName(— Client.drawScrollbar). Verbatim port of
+// Client.java:10754-10779: 16px track between two arrow caps, the
+// proportional grip (min 8px) with the bevel highlight/lowlight edges.
+fn draw_scrollbar(y: i32, x: i32, scroll_pos: i32, height: i32, scroll_height: i32) {
+    const TRACK: i32 = 2301979;
+    const GRIP: i32 = 5063219;
+    const LOWLIGHT: i32 = 3353893;
+    const HIGHLIGHT: i32 = 7759444;
+    {
+        let o = crate::overlays::OVERLAYS.lock().unwrap();
+        if let Some(caps) = o.scrollbar.as_ref() {
+            if let Some(top) = caps.first() {
+                top.plot_sprite(x, y);
+            }
+            if let Some(bottom) = caps.get(1) {
+                bottom.plot_sprite(x, y + height - 16);
+            }
+        }
+    }
+    pix2d::fill_rect(x, y + 16, 16, height - 32, TRACK);
+    let mut grip = (height - 32) * height / scroll_height.max(1);
+    if grip < 8 {
+        grip = 8;
+    }
+    let off = (height - 32 - grip) * scroll_pos / (scroll_height - height).max(1);
+    pix2d::fill_rect(x, y + 16 + off, 16, grip, GRIP);
+    // Bevel: light top/left, dark bottom/right (vline = 1-wide rect,
+    // hline = 1-tall rect; both clip).
+    pix2d::fill_rect(x, y + 16 + off, 1, grip, HIGHLIGHT);
+    pix2d::fill_rect(x + 1, y + 16 + off, 1, grip, HIGHLIGHT);
+    pix2d::fill_rect(x, y + 16 + off, 16, 1, HIGHLIGHT);
+    pix2d::fill_rect(x, y + 17 + off, 16, 1, HIGHLIGHT);
+    pix2d::fill_rect(x + 15, y + 16 + off, 1, grip, LOWLIGHT);
+    pix2d::fill_rect(x + 14, y + 17 + off, 1, grip - 1, LOWLIGHT);
+    pix2d::fill_rect(x, y + 15 + off + grip, 16, 1, LOWLIGHT);
+    pix2d::fill_rect(x + 1, y + 14 + off + grip, 15, 1, LOWLIGHT);
+}
+
 // @ObfuscatedName("fg.fj(IIIIIIIII)V") — jag::oldscape::Client::DrawInterface
 //
 // x/y/w/h are clip-rect bounds (Java's setClipping(x,y,w,h) where w/h are
@@ -283,6 +321,12 @@ fn draw_layer(
                     }
                 }
                 pix2d::set_clipping(x, y, w, h);
+                // Java drawLayer 10221-10223: legacy scrolling layers
+                // get the 16px scrollbar on their right edge.
+                if !com.v3 && com.scroll_height > com.height {
+                    draw_scrollbar(rendery, com.width + renderx,
+                                   com.scroll_pos_y, com.height, com.scroll_height);
+                }
             }
             3 => {
                 // rect — colour + optional alpha (trans 0..255, 0 = opaque).
