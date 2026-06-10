@@ -114,8 +114,9 @@ impl ClientPlayer {
     }
 
     // Mirror entity state into the legacy shim fields. Called at the
-    // tail of teleport / move_code so existing readers stay in sync.
-    fn sync_from_entity(&mut self) {
+    // tail of teleport / move_code (and after move_entity mutates the
+    // entity directly) so existing readers stay in sync.
+    pub fn sync_from_entity(&mut self) {
         self.x = self.entity.x;
         self.z = self.entity.z;
         self.route_x = self.entity.route_x;

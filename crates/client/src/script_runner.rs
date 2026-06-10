@@ -1987,6 +1987,11 @@ fn run_script(c: &mut Client, req: &HookReq) {
                     comp.invcount = -1;
                     comp.over_layer_id = -1;
                     comp.font = -1;
+                    // Java IfType field initializers the Rust Default
+                    // derive zeroes:
+                    comp.graphic = -1;
+                    comp.graphic2 = -1;
+                    comp.line_width = 1;
                     parent.subcomponents[sub_id as usize] = Some(comp);
                     created = true;
                 });

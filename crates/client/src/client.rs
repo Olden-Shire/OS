@@ -2139,41 +2139,80 @@ pub fn loc_change_post_build_correct(c: &mut Client) {
     });
 }
 
+// Snapshot the active entities' positions for the entity_face target
+// lookups (Java aliases the live arrays; we can't while one entity is
+// mutably borrowed). Player slot 2047 is the local player.
+fn build_entity_pos_maps(c: &Client)
+    -> (std::collections::HashMap<i32, (i32, i32)>,
+        std::collections::HashMap<i32, (i32, i32)>)
+{
+    let mut npc_pos = std::collections::HashMap::new();
+    for i in 0..c.npc_count as usize {
+        let Some(&nid) = c.npc_ids.get(i) else { continue; };
+        if let Some(Some(n)) = c.npcs.get(nid as usize) {
+            npc_pos.insert(nid, (n.entity.x, n.entity.z));
+        }
+    }
+    let mut player_pos = std::collections::HashMap::new();
+    for i in 0..c.player_count as usize {
+        let Some(&pid) = c.player_ids.get(i) else { continue; };
+        if let Some(Some(p)) = c.players.get(pid as usize) {
+            player_pos.insert(pid, (p.entity.x, p.entity.z));
+        }
+    }
+    if let Some(lp) = c.local_player.as_ref() {
+        player_pos.insert(2047, (lp.entity.x, lp.entity.z));
+    }
+    (npc_pos, player_pos)
+}
+
 // @ObfuscatedName("eg.di(B)V") — Client.movePlayers. Verbatim port
 // of Client.java:3588-3601. Walks every active player (plus a
 // sentinel pass for the local player at slot 2047) and calls
 // move_entity on each. The size=1 hardcode matches Java.
 pub fn move_players(c: &mut Client) {
     let loop_cycle = c.loop_cycle;
+    let (npc_pos, player_pos) = build_entity_pos_maps(c);
+    let self_slot = c.self_slot;
+    let (bx, bz) = (c.map_build_base_x, c.map_build_base_z);
     // Local player first — Java does the -1 → 2047 dance to ensure
     // the local player ticks before remote players.
     if let Some(lp) = c.local_player.as_mut() {
-        move_entity(&mut lp.entity, 1, loop_cycle);
+        move_entity(&mut lp.entity, 1, loop_cycle, true, true,
+                    &npc_pos, &player_pos, self_slot, bx, bz);
+        lp.sync_from_entity();
     }
     let count = c.player_count as usize;
     for i in 0..count {
         let Some(&pid) = c.player_ids.get(i) else { continue; };
         if pid < 0 { continue; }
         let Some(Some(p)) = c.players.get_mut(pid as usize) else { continue; };
-        move_entity(&mut p.entity, 1, loop_cycle);
+        move_entity(&mut p.entity, 1, loop_cycle, false, true,
+                    &npc_pos, &player_pos, self_slot, bx, bz);
+        p.sync_from_entity();
     }
 }
 
 // @ObfuscatedName("l.db(I)V") — Client.moveNpcs. Verbatim port of
 // Client.java:3605-3613. Same shape but uses the NPC's type.size for
-// the entity bounding extent.
+// the entity bounding extent and the type's walksmoothing flag.
 pub fn move_npcs(c: &mut Client) {
     let loop_cycle = c.loop_cycle;
+    let (npc_pos, player_pos) = build_entity_pos_maps(c);
+    let self_slot = c.self_slot;
+    let (bx, bz) = (c.map_build_base_x, c.map_build_base_z);
     let count = c.npc_count as usize;
     for i in 0..count {
         let Some(&nid) = c.npc_ids.get(i) else { continue; };
         if nid < 0 { continue; }
-        let size = c.npcs.get(nid as usize)
+        let (size, smoothing) = c.npcs.get(nid as usize)
             .and_then(|o| o.as_ref())
-            .map(|n| n.entity.size)
-            .unwrap_or(1);
+            .map(|n| (n.entity.size,
+                      crate::config::npc_type::list(n.type_id).walksmoothing))
+            .unwrap_or((1, true));
         let Some(Some(n)) = c.npcs.get_mut(nid as usize) else { continue; };
-        move_entity(&mut n.entity, size, loop_cycle);
+        move_entity(&mut n.entity, size, loop_cycle, false, smoothing,
+                    &npc_pos, &player_pos, self_slot, bx, bz);
     }
 }
 
@@ -5320,8 +5359,8 @@ fn entity_anim_spotanim_then_primary(
 // Returns early if turnspeed == 0 (locked-yaw entity).
 pub fn entity_face(
     entity: &mut crate::dash3d::ClientEntity,
-    npcs: &[Option<crate::dash3d::ClientNpc>],
-    players: &[Option<crate::dash3d::ClientPlayer>],
+    npc_pos: &std::collections::HashMap<i32, (i32, i32)>,
+    player_pos: &std::collections::HashMap<i32, (i32, i32)>,
     self_slot: i32,
     map_build_base_x: i32,
     map_build_base_z: i32,
@@ -5329,9 +5368,9 @@ pub fn entity_face(
     if entity.turnspeed == 0 { return; }
 
     if entity.target_id != -1 && entity.target_id < 32768 {
-        if let Some(Some(target)) = npcs.get(entity.target_id as usize) {
-            let dx = entity.x - target.entity.x;
-            let dz = entity.z - target.entity.z;
+        if let Some(&(tx, tz)) = npc_pos.get(&entity.target_id) {
+            let dx = entity.x - tx;
+            let dz = entity.z - tz;
             if dx != 0 || dz != 0 {
                 entity.dst_yaw = (((dx as f64).atan2(dz as f64) * 325.949) as i32) & 0x7FF;
             }
@@ -5341,9 +5380,9 @@ pub fn entity_face(
     if entity.target_id >= 32768 {
         let mut idx = entity.target_id - 32768;
         if self_slot == idx { idx = 2047; }
-        if let Some(Some(target)) = players.get(idx as usize) {
-            let dx = entity.x - target.x;
-            let dz = entity.z - target.z;
+        if let Some(&(tx, tz)) = player_pos.get(&idx) {
+            let dx = entity.x - tx;
+            let dz = entity.z - tz;
             if dx != 0 || dz != 0 {
                 entity.dst_yaw = (((dx as f64).atan2(dz as f64) * 325.949) as i32) & 0x7FF;
             }
@@ -5407,47 +5446,258 @@ pub fn entity_face(
     entity.yaw &= 0x7FF;
 }
 
-// @ObfuscatedName("be.dq(Lfz;IB)V") — Client.moveEntity (free function
-// equivalent so callers can borrow distinct slots of the players /
-// npcs arrays without aliasing).
+// @ObfuscatedName("be.dq(Lfz;IB)V") — Client.moveEntity. Verbatim
+// port of Client.java:3617-3666: the per-tick motion dispatch —
+// exact-move phase 1 (server-timed glide toward the start tile),
+// exact-move phase 2 (animation-gated lerp between start/end), or
+// the route queue walk; then the out-of-bounds reset (stricter for
+// the local player) and the per-tick facing + animation passes.
 //
-// Verbatim port of the Java implementation — first handles exact-move
-// interpolation (server-driven walk paths set exact_move_start/end +
-// exact_start_x/z + exact_end_x/z), then advances the route queue
-// when the entity is on its destination tile.
-//
-// `size` is the entity's footprint side length (1 for player,
-// NpcType.size for NPCs); used to compute the tile-centre offset.
-pub fn move_entity(entity: &mut crate::dash3d::ClientEntity, size: i32, loop_cycle: i32) {
-    let _ = size;
+// `npc_pos`/`player_pos` are position snapshots of the active
+// entities (Java aliases the live arrays; we can't while one entity
+// is mutably borrowed). `walk_smoothing` is NpcType.walksmoothing
+// for NPCs, always true for players.
+#[allow(clippy::too_many_arguments)]
+pub fn move_entity(
+    entity: &mut crate::dash3d::ClientEntity,
+    _size: i32,
+    loop_cycle: i32,
+    is_local_player: bool,
+    walk_smoothing: bool,
+    npc_pos: &std::collections::HashMap<i32, (i32, i32)>,
+    player_pos: &std::collections::HashMap<i32, (i32, i32)>,
+    self_slot: i32,
+    map_build_base_x: i32,
+    map_build_base_z: i32,
+) {
     if entity.exact_move_end > loop_cycle {
+        // exactMove1 — glide toward the exact-start tile so the
+        // animation-locked phase begins from a known anchor.
         let remaining = entity.exact_move_end - loop_cycle;
-        let total_x = entity.exact_end_x.wrapping_sub(entity.exact_start_x);
-        let total_z = entity.exact_end_z.wrapping_sub(entity.exact_start_z);
-        let span = (entity.exact_move_end - entity.exact_move_start).max(1);
-        let progressed = span - remaining;
-        entity.x = entity.exact_start_x * 128
-            + (entity.size * 64)
-            + (total_x * 128 * progressed) / span;
-        entity.z = entity.exact_start_z * 128
-            + (entity.size * 64)
-            + (total_z * 128 * progressed) / span;
+        let tx = entity.size * 64 + entity.exact_start_x * 128;
+        let tz = entity.size * 64 + entity.exact_start_z * 128;
+        entity.x += (tx - entity.x) / remaining;
+        entity.z += (tz - entity.z) / remaining;
+        entity.anim_delay_move = 0;
+        match entity.exact_move_facing {
+            0 => entity.dst_yaw = 1024,
+            1 => entity.dst_yaw = 1536,
+            2 => entity.dst_yaw = 0,
+            3 => entity.dst_yaw = 512,
+            _ => {}
+        }
+    } else if entity.exact_move_start >= loop_cycle {
+        exact_move_2(entity, loop_cycle);
+    } else {
+        route_move(entity, walk_smoothing);
+    }
+
+    // Java 3644-3652 — wandered off the loaded map: snap back to the
+    // route origin and drop anim / spotanim / exact-move state.
+    if entity.x < 128 || entity.z < 128 || entity.x >= 13184 || entity.z >= 13184 {
+        entity.primary_seq_id = -1;
+        entity.spotanim_id = -1;
+        entity.exact_move_end = 0;
+        entity.exact_move_start = 0;
+        entity.x = entity.route_x[0] * 128 + entity.size * 64;
+        entity.z = entity.route_z[0] * 128 + entity.size * 64;
+        entity.abort_route();
+    }
+
+    // Java 3654-3662 — the local player keeps a stricter inner band.
+    if is_local_player
+        && (entity.x < 1536 || entity.z < 1536 || entity.x >= 11776 || entity.z >= 11776)
+    {
+        entity.primary_seq_id = -1;
+        entity.spotanim_id = -1;
+        entity.exact_move_end = 0;
+        entity.exact_move_start = 0;
+        entity.x = entity.route_x[0] * 128 + entity.size * 64;
+        entity.z = entity.route_z[0] * 128 + entity.size * 64;
+        entity.abort_route();
+    }
+
+    entity_face(entity, npc_pos, player_pos, self_slot,
+                map_build_base_x, map_build_base_z);
+    entity_anim(entity, loop_cycle);
+}
+
+// @ObfuscatedName("ap.dr(Lfz;I)V") — Client.exactMove2. Verbatim port
+// of Client.java:3670-3695: the animation-gated lerp between the
+// exact start/end tiles, stepping only when the primary seq has
+// finished its current frame (or no anim gates it).
+fn exact_move_2(entity: &mut crate::dash3d::ClientEntity, loop_cycle: i32) {
+    let gate = loop_cycle == entity.exact_move_start
+        || entity.primary_seq_id == -1
+        || entity.primary_seq_delay != 0
+        || entity.primary_seq_cycle + 1
+            > crate::config::seq_type::list(entity.primary_seq_id)
+                .frame_duration(entity.primary_seq_frame);
+    if gate {
+        let span = entity.exact_move_start - entity.exact_move_end;
+        let t = loop_cycle - entity.exact_move_end;
+        let sx = entity.size * 64 + entity.exact_start_x * 128;
+        let sz = entity.size * 64 + entity.exact_start_z * 128;
+        let ex = entity.size * 64 + entity.exact_end_x * 128;
+        let ez = entity.size * 64 + entity.exact_end_z * 128;
+        if span != 0 {
+            entity.x = ((span - t) * sx + t * ex) / span;
+            entity.z = ((span - t) * sz + t * ez) / span;
+        }
+    }
+    entity.anim_delay_move = 0;
+    match entity.exact_move_facing {
+        0 => entity.dst_yaw = 1024,
+        1 => entity.dst_yaw = 1536,
+        2 => entity.dst_yaw = 0,
+        3 => entity.dst_yaw = 512,
+        _ => {}
+    }
+    entity.yaw = entity.dst_yaw;
+}
+
+// @ObfuscatedName("eu.du(Lfz;B)V") — Client.routeMove. Verbatim port
+// of Client.java:3699-3841: pick the secondary (movement) animation
+// from the heading delta, derive the per-tick step (2/4/6/8, doubled
+// when running, swapped to runanim at 8+), step toward the current
+// waypoint (routeX[routeLength-1] — the queue is a stack with [0] as
+// the final destination), and pop the waypoint on arrival.
+fn route_move(entity: &mut crate::dash3d::ClientEntity, walk_smoothing: bool) {
+    entity.secondary_seq_id = entity.readyanim;
+    if entity.route_length == 0 {
+        entity.anim_delay_move = 0;
         return;
     }
-    // Free-route step: when the entity is at routeX[0] on its current
-    // (x/z) and the queue has more waypoints, drop the head so the
-    // next tick walks toward routeX[1].
-    if entity.route_length > 0 {
-        let target_x = entity.route_x[0] * 128 + entity.size * 64;
-        let target_z = entity.route_z[0] * 128 + entity.size * 64;
-        if entity.x == target_x && entity.z == target_z {
-            // Java shifts the route down by one.
-            for i in 0..entity.route_length as usize {
-                entity.route_x[i] = entity.route_x[i + 1];
-                entity.route_z[i] = entity.route_z[i + 1];
-                entity.route_run[i] = entity.route_run[i + 1];
-            }
-            entity.route_length -= 1;
+
+    if entity.primary_seq_id != -1 && entity.primary_seq_delay == 0 {
+        let seq = crate::config::seq_type::list(entity.primary_seq_id);
+        if entity.preanim_route_length > 0 && seq.preanim_move == 0 {
+            entity.anim_delay_move += 1;
+            return;
+        }
+        if entity.preanim_route_length <= 0 && seq.postanim_move == 0 {
+            entity.anim_delay_move += 1;
+            return;
+        }
+    }
+
+    let x = entity.x;
+    let z = entity.z;
+    let target_x = entity.route_x[(entity.route_length - 1) as usize] * 128
+        + entity.size * 64;
+    let target_z = entity.route_z[(entity.route_length - 1) as usize] * 128
+        + entity.size * 64;
+
+    // Java 3725-3729 — more than two tiles out: teleport-snap.
+    if target_x - x > 256 || target_x - x < -256 || target_z - z > 256 || target_z - z < -256 {
+        entity.x = target_x;
+        entity.z = target_z;
+        return;
+    }
+
+    if x < target_x {
+        if z < target_z {
+            entity.dst_yaw = 1280;
+        } else if z > target_z {
+            entity.dst_yaw = 1792;
+        } else {
+            entity.dst_yaw = 1536;
+        }
+    } else if x > target_x {
+        if z < target_z {
+            entity.dst_yaw = 768;
+        } else if z > target_z {
+            entity.dst_yaw = 256;
+        } else {
+            entity.dst_yaw = 512;
+        }
+    } else if z < target_z {
+        entity.dst_yaw = 1024;
+    } else if z > target_z {
+        entity.dst_yaw = 0;
+    }
+
+    let mut delta = (entity.dst_yaw - entity.yaw) & 0x7FF;
+    if delta > 1024 {
+        delta -= 2048;
+    }
+
+    let mut seq = entity.walkanim_b;
+    if (-256..=256).contains(&delta) {
+        seq = entity.walkanim;
+    } else if (256..768).contains(&delta) {
+        seq = entity.walkanim_r;
+    } else if (-768..=-256).contains(&delta) {
+        seq = entity.walkanim_l;
+    }
+    if seq == -1 {
+        seq = entity.walkanim;
+    }
+    entity.secondary_seq_id = seq;
+
+    let mut step = 4;
+    if walk_smoothing {
+        if entity.yaw != entity.dst_yaw && entity.target_id == -1 && entity.turnspeed != 0 {
+            step = 2;
+        }
+        if entity.route_length > 2 {
+            step = 6;
+        }
+        if entity.route_length > 3 {
+            step = 8;
+        }
+        if entity.anim_delay_move > 0 && entity.route_length > 1 {
+            step = 8;
+            entity.anim_delay_move -= 1;
+        }
+    } else {
+        if entity.route_length > 1 {
+            step = 6;
+        }
+        if entity.route_length > 2 {
+            step = 8;
+        }
+        if entity.anim_delay_move > 0 && entity.route_length > 1 {
+            step = 8;
+            entity.anim_delay_move -= 1;
+        }
+    }
+    if entity.route_run[(entity.route_length - 1) as usize] {
+        step <<= 1;
+    }
+
+    if step >= 8 && entity.secondary_seq_id == entity.walkanim && entity.runanim != -1 {
+        entity.secondary_seq_id = entity.runanim;
+    }
+
+    if x < target_x {
+        entity.x += step;
+        if entity.x > target_x {
+            entity.x = target_x;
+        }
+    } else if x > target_x {
+        entity.x -= step;
+        if entity.x < target_x {
+            entity.x = target_x;
+        }
+    }
+
+    if z < target_z {
+        entity.z += step;
+        if entity.z > target_z {
+            entity.z = target_z;
+        }
+    } else if z > target_z {
+        entity.z -= step;
+        if entity.z < target_z {
+            entity.z = target_z;
+        }
+    }
+
+    if entity.x == target_x && entity.z == target_z {
+        entity.route_length -= 1;
+        if entity.preanim_route_length > 0 {
+            entity.preanim_route_length -= 1;
         }
     }
 }
@@ -7415,38 +7665,6 @@ impl Client {
             e.primary_seq_delay = delay;
             e.primary_seq_loop = 0;
             e.preanim_route_length = e.route_length;
-        }
-    }
-
-    // @ObfuscatedName("ek.da(I)V") — Client.movePlayers.
-    //
-    // Per-tick dispatch — iterates the visible player slots and asks
-    // each to advance its route queue by one step. Java reserves slot
-    // 2047 for the local player; `var0 == -1` is the conventional
-    // sentinel that pulls localPlayer first.
-    pub fn move_players(&mut self) {
-        // Local player first (Java's `var1 = 2047`).
-        if let Some(lp) = self.local_player.as_mut() {
-            move_entity(&mut lp.entity, 1, self.loop_cycle);
-        }
-        for i in 0..self.player_count as usize {
-            let id = self.player_ids[i];
-            if id < 0 || id as usize >= self.players.len() { continue; }
-            if let Some(p) = self.players[id as usize].as_mut() {
-                move_entity(&mut p.entity, 1, self.loop_cycle);
-            }
-        }
-    }
-
-    // @ObfuscatedName("l.db(I)V") — Client.moveNpcs.
-    pub fn move_npcs(&mut self) {
-        for i in 0..self.npc_count as usize {
-            let id = self.npc_ids[i];
-            if id < 0 || id as usize >= self.npcs.len() { continue; }
-            if let Some(n) = self.npcs[id as usize].as_mut() {
-                let size = n.entity.size;
-                move_entity(&mut n.entity, size, self.loop_cycle);
-            }
         }
     }
 

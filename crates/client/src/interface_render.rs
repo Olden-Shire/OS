@@ -446,6 +446,28 @@ fn draw_layer(
                     );
                 }
                 if let Some(sub) = subinterfaces.get(&com.parent_id) {
+                    // Java drawLayer 10202-10208 — hovering a modal
+                    // (type 0) subinterface resets the menu being
+                    // built to just Cancel, so options accumulated
+                    // from the interfaces underneath don't leak into
+                    // the right-click menu.
+                    if sub.type_ == 0 {
+                        if let Some(c) = client.as_deref_mut() {
+                            let (mx, my) = {
+                                let m = crate::input::MOUSE.lock().unwrap();
+                                (m.mouse_x, m.mouse_y)
+                            };
+                            if mx >= var19 && my >= var20
+                                && mx < var21 && my < var22
+                                && !c.is_menu_open
+                            {
+                                c.menu_verb[0] = crate::text::CANCEL.to_string();
+                                c.menu_subject[0] = String::new();
+                                c.menu_action[0] = 1006;
+                                c.menu_num_entries = 1;
+                            }
+                        }
+                    }
                     if sub.id >= 0 {
                         draw_interface(
                             sub.id,
