@@ -1,4 +1,4 @@
-// Port of jagex3.client.Client::drawInterface + drawLayer. Walks the
+﻿// Port of jagex3.client.Client::drawInterface + drawLayer. Walks the
 // IfType.list components for an open interface group, filtering by
 // layerId so the layer-tree recursion matches Java exactly. Layers
 // (type 0) recurse into same-list components whose layerId points at
@@ -65,15 +65,22 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
     pix2d::fill_rect(0, 0, 765, 503, 0x000000);
 
     {
-        let p11 = c.p11.as_ref();
+        // The interface walk needs &mut Client for the hover menu
+        // options while also reading fonts/subinterfaces — clone the
+        // cheap bits out first (the font clone is glyph-vec copies;
+        // acceptable per frame until fonts move behind Arc).
+        let p11_owned = c.p11.clone();
+        let subs_owned = c.subinterfaces.clone();
         if toplevel >= 0 {
             // Java: drawInterface(toplevelinterface, 0, 0, 765, 503, 0, 0, -1)
-            draw_interface(toplevel, 0, 0, 765, 503, 0, 0, p11, &c.subinterfaces);
+            let mut client_opt: Option<&mut crate::client::Client> = Some(c);
+            draw_interface(toplevel, 0, 0, 765, 503, 0, 0,
+                           p11_owned.as_ref(), &subs_owned, &mut client_opt);
         }
 
         // Position overlay so the localPlayer state is visible even
         // though entities don't render in the scene yet.
-        if let (Some(lp), Some(font)) = (c.local_player.as_ref(), p11) {
+        if let (Some(lp), Some(font)) = (c.local_player.as_ref(), p11_owned.as_ref()) {
             pix2d::set_clipping(0, 0, 765, 503);
             let tile_x = c.map_build_base_x + lp.x;
             let tile_z = c.map_build_base_z + lp.z;
@@ -141,6 +148,7 @@ pub fn draw_interface(
     child_y: i32,
     p11: Option<&PixFontGeneric>,
     subinterfaces: &HashMap<i32, SubInterface>,
+    client: &mut Option<&mut crate::client::Client>,
 ) {
     let components: Vec<IfType> = {
         let s = if_type::STORE.lock().unwrap();
@@ -149,7 +157,7 @@ pub fn draw_interface(
             None => return,
         }
     };
-    draw_layer(&components, -1, x, y, w, h, child_x, child_y, p11, subinterfaces);
+    draw_layer(&components, -1, x, y, w, h, child_x, child_y, p11, subinterfaces, client);
 }
 
 // @ObfuscatedName("g.fv([Leg;IIIIIIIIB)V") — jag::oldscape::Client::DrawLayer
@@ -168,6 +176,7 @@ fn draw_layer(
     child_y: i32,
     p11: Option<&PixFontGeneric>,
     subinterfaces: &HashMap<i32, SubInterface>,
+    client: &mut Option<&mut crate::client::Client>,
 ) {
     pix2d::set_clipping(x, y, w, h);
 
@@ -217,6 +226,24 @@ fn draw_layer(
 
         if com.v3 && (var19 >= var21 || var20 >= var22) { continue; }
 
+        // Java drawLayer 10173-10177: hovering a component adds its
+        // menu options (and the type-2 hovered-slot tracking) to the
+        // right-click menu being rebuilt this frame.
+        if let Some(c) = client.as_deref_mut() {
+            let (mouse_x, mouse_y) = {
+                let m = crate::input::MOUSE.lock().unwrap();
+                (m.mouse_x, m.mouse_y)
+            };
+            if !c.is_menu_open
+                && mouse_x >= var19 && mouse_y >= var20
+                && mouse_x < var21 && mouse_y < var22
+            {
+                crate::client::add_component_options(c, com,
+                                                     mouse_x - renderx,
+                                                     mouse_y - rendery);
+            }
+        }
+
         match com.type_ {
             0 => {
                 // layer — recurse into siblings with this layer as parent,
@@ -229,6 +256,7 @@ fn draw_layer(
                     rendery - com.scroll_pos_y,
                     p11,
                     subinterfaces,
+                    client,
                 );
                 if !com.subcomponents.is_empty() {
                     let subs: Vec<IfType> = com.subcomponents.iter().filter_map(|c| c.clone()).collect();
@@ -240,6 +268,7 @@ fn draw_layer(
                         rendery - com.scroll_pos_y,
                         p11,
                         subinterfaces,
+                        client,
                     );
                 }
                 if let Some(sub) = subinterfaces.get(&com.parent_id) {
@@ -249,6 +278,7 @@ fn draw_layer(
                             var19, var20, var21, var22,
                             renderx, rendery,
                             p11, subinterfaces,
+                            client,
                         );
                     }
                 }
@@ -422,11 +452,20 @@ fn draw_layer(
                     }
                 }
                 // Item sprites (Java drawLayer type-2, Client.java:
-                // 10227-10268): ObjType.getSprite per filled slot with
-                // the use-selected highlight variant; empty slots show
-                // nothing (the background sprites above carry the
-                // chrome). The drag-offset ghost render lands with the
-                // hovered-slot wiring.
+                // 10227-10268): ObjType.getSprite per filled slot —
+                // the use-selected white-outline variant, the dragged
+                // item rendered half-translucent at the mouse offset
+                // (5px dead zone, 5-cycle delay), the selection flash,
+                // or the plain blit.
+                let drag_state = client.as_deref().map(|c| {
+                    (c.use_mode, c.obj_selected_slot, c.obj_selected_com_id,
+                     c.obj_drag_com, c.obj_drag_slot, c.obj_grab_x, c.obj_grab_y,
+                     c.obj_drag_cycles, c.selected_com, c.selected_item)
+                });
+                let (mouse_x, mouse_y) = {
+                    let m = crate::input::MOUSE.lock().unwrap();
+                    (m.mouse_x, m.mouse_y)
+                };
                 let mut slot = 0usize;
                 for row in 0..com.height {
                     for col in 0..com.width {
@@ -439,10 +478,43 @@ fn draw_layer(
                         let obj_id = com.link_obj_type.get(slot).copied().unwrap_or(0);
                         if obj_id > 0 {
                             let count = com.link_obj_number.get(slot).copied().unwrap_or(0);
-                            if let Some(sprite) = crate::config::obj_type::get_sprite(
-                                obj_id - 1, count, 1, 0x302020, false)
-                            {
-                                sprite.plot_sprite(slot_x, slot_y);
+                            let (use_sel, dragged, sel_flash, drag_dx, drag_dy) =
+                                match drag_state {
+                                    Some((use_mode, sel_slot, sel_com,
+                                          drag_com, drag_slot, grab_x, grab_y,
+                                          drag_cycles, selected_com, selected_item)) => {
+                                        let use_sel = use_mode == 1
+                                            && sel_slot == slot as i32
+                                            && sel_com == com.parent_id;
+                                        let dragged = drag_com == com.parent_id
+                                            && drag_slot == slot as i32;
+                                        let sel_flash = selected_com == com.parent_id
+                                            && selected_item == slot as i32;
+                                        let mut dx = mouse_x - grab_x;
+                                        let mut dy = mouse_y - grab_y;
+                                        if dx < 5 && dx > -5 { dx = 0; }
+                                        if dy < 5 && dy > -5 { dy = 0; }
+                                        if drag_cycles < 5 { dx = 0; dy = 0; }
+                                        (use_sel, dragged, sel_flash, dx, dy)
+                                    }
+                                    None => (false, false, false, 0, 0),
+                                };
+                            let sprite = if use_sel {
+                                crate::config::obj_type::get_sprite(
+                                    obj_id - 1, count, 2, 0, false)
+                            } else {
+                                crate::config::obj_type::get_sprite(
+                                    obj_id - 1, count, 1, 0x302020, false)
+                            };
+                            if let Some(sprite) = sprite {
+                                if dragged {
+                                    sprite.trans_plot_sprite(slot_x + drag_dx,
+                                                             slot_y + drag_dy, 128);
+                                } else if sel_flash {
+                                    sprite.trans_plot_sprite(slot_x, slot_y, 128);
+                                } else {
+                                    sprite.plot_sprite(slot_x, slot_y);
+                                }
                             }
                         }
                         slot += 1;

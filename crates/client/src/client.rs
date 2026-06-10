@@ -2813,6 +2813,166 @@ pub fn minimenu_build_scene_actions(c: &mut Client, vx: i32, vy: i32,
     }
 }
 
+// @ObfuscatedName(— Client.addComponentOptions). Verbatim port of
+// Client.java:9829-10014: hover ops for the component under the
+// cursor — button types 1-6, the type-2 inventory slot scan (sets
+// hoveredSlot/hoveredSlotCom and adds held-item ops with the
+// ServerActive gating), and the v3 component ops 1-10 + target verb +
+// pause button. (mx, my) are component-relative like Java's args.
+pub fn add_component_options(c: &mut Client, com: &crate::config::if_type::IfType,
+                             mx: i32, my: i32) {
+    use crate::string_constants::{tag_colour, TAG_ARROW};
+    let active = get_active(c, com);
+
+    if com.button_type == 1 {
+        let text = com.button_text.clone();
+        add_menu_option(c, &text, "", 24, 0, 0, com.parent_id);
+    }
+    if com.button_type == 2 && !c.target_mode {
+        if let Some(verb) = target_verb(c, com) {
+            let subject = format!("{}{}", tag_colour(65280), com.target_base);
+            add_menu_option(c, &verb, &subject, 25, 0, -1, com.parent_id);
+        }
+    }
+    if com.button_type == 3 {
+        add_menu_option(c, crate::text::CLOSE, "", 26, 0, 0, com.parent_id);
+    }
+    if com.button_type == 4 {
+        let text = com.button_text.clone();
+        add_menu_option(c, &text, "", 28, 0, 0, com.parent_id);
+    }
+    if com.button_type == 5 {
+        let text = com.button_text.clone();
+        add_menu_option(c, &text, "", 29, 0, 0, com.parent_id);
+    }
+    if com.button_type == 6 && c.resume_pause_com == -1 {
+        let text = com.button_text.clone();
+        add_menu_option(c, &text, "", 30, 0, -1, com.parent_id);
+    }
+
+    if com.type_ == 2 {
+        let mut slot = 0usize;
+        for row in 0..com.height {
+            for col in 0..com.width {
+                let mut slot_x = (com.margin_x + 32) * col;
+                let mut slot_y = (com.margin_y + 32) * row;
+                if slot < 20 {
+                    slot_x += com.inv_background_x.get(slot).copied().unwrap_or(0);
+                    slot_y += com.inv_background_y.get(slot).copied().unwrap_or(0);
+                }
+                if mx < slot_x || my < slot_y || mx >= slot_x + 32 || my >= slot_y + 32 {
+                    slot += 1;
+                    continue;
+                }
+                c.hovered_slot = slot as i32;
+                c.hovered_com = com.parent_id;
+                let obj_link = com.link_obj_type.get(slot).copied().unwrap_or(0);
+                if obj_link <= 0 {
+                    slot += 1;
+                    continue;
+                }
+                let Some(obj) = crate::config::obj_type::list(obj_link - 1) else {
+                    slot += 1;
+                    continue;
+                };
+                if c.use_mode == 1 && crate::config::server_active::is_obj_ops_enabled(active) {
+                    if c.obj_selected_com_id != com.parent_id || c.obj_selected_slot != slot as i32 {
+                        let subject = format!("{} {} {}{}", c.obj_selected_name, TAG_ARROW,
+                                              tag_colour(16748608), obj.name);
+                        add_menu_option(c, crate::text::USE, &subject, 31, obj.id,
+                                        slot as i32, com.parent_id);
+                    }
+                } else if c.target_mode && crate::config::server_active::is_obj_ops_enabled(active) {
+                    if (c.target_mask & 0x10) == 16 {
+                        let subject = format!("{} {} {}{}", c.target_op, TAG_ARROW,
+                                              tag_colour(16748608), obj.name);
+                        let verb = c.target_verb.clone();
+                        add_menu_option(c, &verb, &subject, 32, obj.id,
+                                        slot as i32, com.parent_id);
+                    }
+                } else {
+                    let subject = format!("{}{}", tag_colour(16748608), obj.name);
+                    let iop = obj.iop.clone();
+                    if crate::config::server_active::is_obj_ops_enabled(active) {
+                        for index in (3..=4usize).rev() {
+                            let op = iop.as_ref().and_then(|arr| arr[index].clone());
+                            if let Some(op) = op {
+                                let action = if index == 3 { 36 } else { 37 };
+                                add_menu_option(c, &op, &subject, action, obj.id,
+                                                slot as i32, com.parent_id);
+                            } else if index == 4 {
+                                add_menu_option(c, crate::text::DROP, &subject, 37, obj.id,
+                                                slot as i32, com.parent_id);
+                            }
+                        }
+                    }
+                    if crate::config::server_active::is_obj_use_enabled(active) {
+                        add_menu_option(c, crate::text::USE, &subject, 38, obj.id,
+                                        slot as i32, com.parent_id);
+                    }
+                    if crate::config::server_active::is_obj_ops_enabled(active) {
+                        for index in (0..=2usize).rev() {
+                            let op = iop.as_ref().and_then(|arr| arr[index].clone());
+                            if let Some(op) = op {
+                                let action = [33, 34, 35][index];
+                                add_menu_option(c, &op, &subject, action, obj.id,
+                                                slot as i32, com.parent_id);
+                            }
+                        }
+                    }
+                    for index in (0..=4usize).rev() {
+                        let op = com.iop.get(index).cloned().unwrap_or_default();
+                        if !op.is_empty() {
+                            let action = [39, 40, 41, 42, 43][index];
+                            add_menu_option(c, &op, &subject, action, obj.id,
+                                            slot as i32, com.parent_id);
+                        }
+                    }
+                    add_menu_option(c, crate::text::EXAMINE, &subject, 1005, obj.id,
+                                    slot as i32, com.parent_id);
+                }
+                slot += 1;
+            }
+        }
+        // Account for slots the inner `continue`s skipped — Java
+        // increments at the loop tail in all paths.
+        let _ = slot;
+    }
+
+    if com.v3 {
+        if c.target_mode {
+            if crate::config::server_active::is_use_target(active)
+                && (c.target_mask & 0x20) == 32
+            {
+                let subject = format!("{} {} {}", c.target_op, TAG_ARROW, com.base_op_name);
+                let verb = c.target_verb.clone();
+                add_menu_option(c, &verb, &subject, 58, 0, com.sub_id, com.parent_id);
+            }
+        } else {
+            let base = com.base_op_name.clone();
+            for opindex in (5..=9i32).rev() {
+                if let Some(op) = get_if_type_op_name(c, com, opindex) {
+                    add_menu_option(c, &op, &base, 1007, opindex + 1,
+                                    com.sub_id, com.parent_id);
+                }
+            }
+            if let Some(verb) = target_verb(c, com) {
+                add_menu_option(c, &verb, &base, 25, 0, com.sub_id, com.parent_id);
+            }
+            for opindex in (0..=4i32).rev() {
+                if let Some(op) = get_if_type_op_name(c, com, opindex) {
+                    add_menu_option(c, &op, &base, 57, opindex + 1,
+                                    com.sub_id, com.parent_id);
+                }
+            }
+            if crate::config::server_active::pause_button(active) {
+                add_menu_option(c, crate::text::CONTINUE, "", 30, 0,
+                                com.sub_id, com.parent_id);
+            }
+        }
+    }
+}
+
 // @ObfuscatedName("Minimenu.GameLoop") — Client.mouseLoop. Verbatim
 // port of Client.java:8210-8286: routes the frame's click either into
 // the open right-click menu (option pick / outside-dismiss) or into
