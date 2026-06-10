@@ -115,6 +115,131 @@ pub struct ModelLit {
 }
 
 impl ModelLit {
+    // @ObfuscatedName("fo.<init>([Lfo;I)") — ModelLit merge constructor.
+    // Verbatim port of ModelLit.java:217-326: concatenates several lit
+    // models (player avatar + spotanim, player + carried loc) into one,
+    // offsetting vertex / texture-triplet indices and widening the
+    // per-face priority / alpha / texture arrays when any input has
+    // them.
+    pub fn merge(models: &[&ModelLit]) -> ModelLit {
+        let mut copy_priority = false;
+        let mut copy_alpha = false;
+        let mut copy_texture_id = false;
+        let mut copy_texture_axis = false;
+
+        let mut out = ModelLit::default();
+        out.priority = -1;
+
+        let mut total_points = 0usize;
+        let mut total_faces = 0usize;
+        let mut total_t = 0usize;
+        for m in models {
+            total_points += m.num_points as usize;
+            total_faces += m.num_faces as usize;
+            total_t += m.num_t as usize;
+            if m.face_priority.is_none() {
+                if out.priority == -1 {
+                    out.priority = m.priority;
+                }
+                if out.priority != m.priority {
+                    copy_priority = true;
+                }
+            } else {
+                copy_priority = true;
+            }
+            copy_alpha |= m.face_alpha.is_some();
+            copy_texture_id |= m.face_texture_id.is_some();
+            copy_texture_axis |= m.face_texture_axis.is_some();
+        }
+
+        out.point_x = vec![0; total_points];
+        out.point_y = vec![0; total_points];
+        out.point_z = vec![0; total_points];
+        out.face_vertex_a = vec![0; total_faces];
+        out.face_vertex_b = vec![0; total_faces];
+        out.face_vertex_c = vec![0; total_faces];
+        out.face_colour_a = vec![0; total_faces];
+        out.face_colour_b = vec![0; total_faces];
+        out.face_colour_c = vec![0; total_faces];
+        if copy_priority {
+            out.face_priority = Some(vec![0; total_faces]);
+        }
+        if copy_alpha {
+            out.face_alpha = Some(vec![0; total_faces]);
+        }
+        if copy_texture_id {
+            out.face_texture_id = Some(vec![-1; total_faces]);
+        }
+        if copy_texture_axis {
+            out.face_texture_axis = Some(vec![-1; total_faces]);
+        }
+        if total_t > 0 {
+            out.face_texture_p = Some(vec![0; total_t]);
+            out.face_texture_m = Some(vec![0; total_t]);
+            out.face_texture_n = Some(vec![0; total_t]);
+        }
+
+        let mut np = 0usize;
+        let mut nf = 0usize;
+        let mut nt = 0usize;
+        for m in models {
+            for f in 0..m.num_faces as usize {
+                out.face_vertex_a[nf] = m.face_vertex_a[f] + np as i32;
+                out.face_vertex_b[nf] = m.face_vertex_b[f] + np as i32;
+                out.face_vertex_c[nf] = m.face_vertex_c[f] + np as i32;
+                out.face_colour_a[nf] = m.face_colour_a[f];
+                out.face_colour_b[nf] = m.face_colour_b[f];
+                out.face_colour_c[nf] = m.face_colour_c[f];
+                if copy_priority {
+                    out.face_priority.as_mut().unwrap()[nf] = match m.face_priority.as_ref() {
+                        Some(p) => p[f],
+                        None => m.priority,
+                    };
+                }
+                if copy_alpha {
+                    if let Some(a) = m.face_alpha.as_ref() {
+                        out.face_alpha.as_mut().unwrap()[nf] = a[f];
+                    }
+                }
+                if copy_texture_id {
+                    out.face_texture_id.as_mut().unwrap()[nf] = match m.face_texture_id.as_ref() {
+                        Some(t) => t[f],
+                        None => -1,
+                    };
+                }
+                if copy_texture_axis {
+                    let axis = m.face_texture_axis.as_ref().map_or(-1, |a| a[f]);
+                    out.face_texture_axis.as_mut().unwrap()[nf] = if axis == -1 {
+                        -1
+                    } else {
+                        (axis as i32 + nt as i32) as i8
+                    };
+                }
+                nf += 1;
+            }
+            for t in 0..m.num_t as usize {
+                out.face_texture_p.as_mut().unwrap()[nt] =
+                    m.face_texture_p.as_ref().map_or(0, |v| v[t]) + np as i16;
+                out.face_texture_m.as_mut().unwrap()[nt] =
+                    m.face_texture_m.as_ref().map_or(0, |v| v[t]) + np as i16;
+                out.face_texture_n.as_mut().unwrap()[nt] =
+                    m.face_texture_n.as_ref().map_or(0, |v| v[t]) + np as i16;
+                nt += 1;
+            }
+            for v in 0..m.num_points as usize {
+                out.point_x[np] = m.point_x[v];
+                out.point_y[np] = m.point_y[v];
+                out.point_z[np] = m.point_z[v];
+                np += 1;
+            }
+        }
+
+        out.num_points = np as i32;
+        out.num_faces = nf as i32;
+        out.num_t = nt as i32;
+        out
+    }
+
     // @ObfuscatedName("fo.ay(IIIIIIII)Z") — ModelLit.isMouseRoughlyInsideTriangle.
     // Verbatim port of ModelLit.java:1514-1526. Cheap bbox-only
     // point-in-triangle reject used during render2 mouse picking

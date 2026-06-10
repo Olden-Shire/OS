@@ -53,6 +53,28 @@ pub struct ClientPlayer {
     pub skill_level: i32,
     // @ObfuscatedName("fi.cp")
     pub team: i32,
+
+    // @ObfuscatedName("fi.bn") — render height (getAvH at the fine
+    // coords), stamped by addPlayers each frame.
+    pub y: i32,
+    // @ObfuscatedName("fi.cl") — crowd LOD: drop the secondary anim
+    // when too many players are on screen.
+    pub low_mem: bool,
+    // @ObfuscatedName("fi.bb") family — the carried/animated loc model
+    // (agility obstacles etc.) merged into the avatar between
+    // locStartCycle and locEndCycle.
+    pub loc_model: Option<crate::dash3d::model_lit::ModelLit>,
+    pub loc_start_cycle: i32,
+    pub loc_end_cycle: i32,
+    pub loc_offset_x: i32,
+    pub loc_offset_y: i32,
+    pub loc_offset_z: i32,
+    // @ObfuscatedName("fi.bd") family — the loc's tile span, used by
+    // the addDynamic span variant while the loc anim runs.
+    pub min_tile_x: i32,
+    pub min_tile_z: i32,
+    pub max_tile_x: i32,
+    pub max_tile_z: i32,
 }
 
 impl ClientPlayer {
@@ -76,6 +98,18 @@ impl ClientPlayer {
             combat_level: 0,
             skill_level: 0,
             team: 0,
+            y: 0,
+            low_mem: false,
+            loc_model: None,
+            loc_start_cycle: 0,
+            loc_end_cycle: 0,
+            loc_offset_x: 0,
+            loc_offset_y: 0,
+            loc_offset_z: 0,
+            min_tile_x: 0,
+            min_tile_z: 0,
+            max_tile_x: 0,
+            max_tile_z: 0,
         }
     }
 
@@ -113,6 +147,92 @@ impl ClientPlayer {
     // @ObfuscatedName("fz.k(IIIB)V") — ClientEntity.addHitmark.
     pub fn add_hitmark(&mut self, value: i32, kind: i32, current_cycle: i32) {
         self.entity.add_hitmark(value, kind, current_cycle);
+    }
+
+    // @ObfuscatedName("fi.g(I)Lfo;") — ClientPlayer.getTempModel.
+    // Verbatim port of ClientPlayer.java:152-206: resolve the avatar
+    // model through PlayerModel with the entity's primary/secondary
+    // seq state, stamp height from the bounding cylinder, stack the
+    // spotanim (translated up by its height), merge the carried loc
+    // model while its cycle window is live (rotated to the entity's
+    // destination yaw), and flag AABB mouse picking.
+    pub fn get_temp_model(&mut self, loop_cycle: i32) -> Option<crate::dash3d::model_lit::ModelLit> {
+        use crate::dash3d::model_lit::ModelLit;
+        if !self.model.applied {
+            return None;
+        }
+        let primary = if self.entity.primary_seq_id != -1 && self.entity.primary_seq_delay == 0 {
+            Some(crate::config::seq_type::list(self.entity.primary_seq_id))
+        } else {
+            None
+        };
+        let secondary = if self.entity.secondary_seq_id == -1
+            || self.low_mem
+            || (self.entity.secondary_seq_id == self.entity.readyanim && primary.is_some())
+        {
+            None
+        } else {
+            Some(crate::config::seq_type::list(self.entity.secondary_seq_id))
+        };
+
+        let mut model = self.model.get_temp_model(
+            primary.as_ref(), self.entity.primary_seq_frame,
+            secondary.as_ref(), self.entity.secondary_seq_frame)?;
+
+        model.calc_bounding_cylinder();
+        self.entity.height = model.min_y;
+
+        if !self.low_mem
+            && self.entity.spotanim_id != -1
+            && self.entity.spotanim_frame != -1
+        {
+            let spot = crate::config::spot_type::list(self.entity.spotanim_id)
+                .get_temp_model2(self.entity.spotanim_frame);
+            if let Some(mut spot) = spot {
+                spot.translate(0, -self.entity.spotanim_height, 0);
+                model = ModelLit::merge(&[&model, &spot]);
+            }
+        }
+
+        if !self.low_mem && self.loc_model.is_some() {
+            if loop_cycle >= self.loc_end_cycle {
+                self.loc_model = None;
+            }
+            if loop_cycle >= self.loc_start_cycle && loop_cycle < self.loc_end_cycle {
+                if let Some(loc) = self.loc_model.as_mut() {
+                    loc.translate(self.loc_offset_x - self.entity.x,
+                                  self.loc_offset_y - self.y,
+                                  self.loc_offset_z - self.entity.z);
+                    if self.entity.dst_yaw == 512 {
+                        loc.rotate90();
+                        loc.rotate90();
+                        loc.rotate90();
+                    } else if self.entity.dst_yaw == 1024 {
+                        loc.rotate90();
+                        loc.rotate90();
+                    } else if self.entity.dst_yaw == 1536 {
+                        loc.rotate90();
+                    }
+                    model = ModelLit::merge(&[&model, loc]);
+                    if self.entity.dst_yaw == 512 {
+                        loc.rotate90();
+                    } else if self.entity.dst_yaw == 1024 {
+                        loc.rotate90();
+                        loc.rotate90();
+                    } else if self.entity.dst_yaw == 1536 {
+                        loc.rotate90();
+                        loc.rotate90();
+                        loc.rotate90();
+                    }
+                    loc.translate(self.entity.x - self.loc_offset_x,
+                                  self.y - self.loc_offset_y,
+                                  self.entity.z - self.loc_offset_z);
+                }
+            }
+        }
+
+        model.use_aabb_mouse_check = true;
+        Some(model)
     }
 
     // @ObfuscatedName("fi.am(Lev;I)V") — ClientPlayer.setAppearance.

@@ -5885,6 +5885,11 @@ pub struct Client {
     pub hook_requests_timer: std::collections::VecDeque<crate::script_runner::HookReq>,
     pub hook_requests_mouse_stop: std::collections::VecDeque<crate::script_runner::HookReq>,
 
+    // @ObfuscatedName("client.tileLastOccupiedCycle") — per-tile
+    // sceneCycle stamp so two tile-centred entities on the same tile
+    // only draw one model per frame (Client.java:4237-4241).
+    pub tile_last_occupied: Vec<Vec<i32>>,
+
 
     // @ObfuscatedName("client.macroCameraX/Z") — auto-camera offset
     // applied on top of the local-player position. Used during
@@ -6451,6 +6456,7 @@ impl Client {
             hook_requests: std::collections::VecDeque::new(),
             hook_requests_timer: std::collections::VecDeque::new(),
             hook_requests_mouse_stop: std::collections::VecDeque::new(),
+            tile_last_occupied: vec![vec![0; 104]; 104],
             macro_camera_x: 0,
             macro_camera_z: 0,
             key_held_96: false,

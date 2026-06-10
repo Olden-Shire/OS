@@ -322,8 +322,9 @@ pub fn game_tick_housekeeping(c: &mut Client) {
     crate::client::move_npcs(c);
     crate::client::timeout_chat(c);
     crate::client::loc_change_do_queue(c);
-    crate::client::add_projectiles(c);
-    crate::client::add_map_anims(c);
+    // Projectile / map-anim motion advances per FRAME in Java's
+    // addProjectiles/addMapAnim (scaled by worldUpdateNum); it now
+    // runs from scene::push_entities like Java's drawScene prologue.
     if c.cinema_cam {
         crate::client::cinema_camera(c);
     } else {
@@ -1050,8 +1051,8 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
         21 => rebuild_packet(c, &mut p, buf.len() as i32, false),
         73 => rebuild_packet(c, &mut p, buf.len() as i32, true),
         113 => get_player_pos(c, &mut p, buf.len() as i32),
-        167 => { // NPC_INFO
-            eprintln!("[game] NpcInfo ({} bytes)", buf.len());
+        167 => { // NPC_INFO — verbatim port of Client.java:7977-8196.
+            get_npc_pos(c, &mut p, buf.len() as i32);
         }
 
         // ── Hint arrow ────────────────────────────────────────────
@@ -1423,57 +1424,723 @@ fn start_rebuild(c: &mut Client, zone_x: i32, zone_z: i32, level: i32) {
     c.set_main_state(25);
 }
 
-// @ObfuscatedName("as.ic(B)V") — Client.getPlayerPos
-//
-// PLAYER_INFO (server prot 113) drives every player's state each tick.
-// Only the local-player branch is ported here; OldVis / NewVis / extended
-// updates are left as bytes-consumed-by-discard.
+// Resolve a player-info slot: Java reserves 2047 for localPlayer
+// (players[2047] IS localPlayer); we keep the local player in its own
+// field.
+fn player_slot_mut(c: &mut Client, id: i32) -> Option<&mut crate::dash3d::ClientPlayer> {
+    if id == 2047 {
+        c.local_player.as_mut()
+    } else {
+        c.players.get_mut(id as usize).and_then(|o| o.as_mut())
+    }
+}
+
+// @ObfuscatedName("as.ic(B)V") — Client.getPlayerPos (PLAYER_INFO 113).
+// Verbatim port of Client.java:7693-7714: local movement, old-vis
+// re-walk, new-vis adds, extended-info masks, then the removal sweep
+// (slots whose cycle stamp wasn't refreshed this tick).
 fn get_player_pos(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32) {
-    get_player_pos_local(c, p);
-    // The remaining bit-stream + extended-update bytes are not yet
-    // parsed; discarding is safe because each packet has its own buffer.
-    let _ = psize;
+    let mut removal_ids: Vec<i32> = Vec::new();
+    let mut update_ids: Vec<i32> = Vec::new();
+
+    get_player_pos_local(c, p, &mut update_ids);
+    get_player_pos_old_vis(c, p, &mut removal_ids, &mut update_ids);
+    get_player_pos_new_vis(c, p, psize, &mut update_ids);
+    get_player_pos_extended(c, p, &update_ids);
+
+    for &id in &removal_ids {
+        if id == 2047 { continue; }
+        if let Some(slot) = c.players.get_mut(id as usize) {
+            let stale = slot.as_ref().map_or(false, |pl| pl.cycle != c.loop_cycle);
+            if stale {
+                *slot = None;
+            }
+        }
+    }
+    // Java throws "gpp1" on a size mismatch; log instead so a desync
+    // is diagnosable without killing the session.
+    if psize != p.pos {
+        eprintln!("[game] PLAYER_INFO desync pos={} size={psize}", p.pos);
+    }
 }
 
 // @ObfuscatedName("as.iv(B)V") — Client.getPlayerPosLocal
-fn get_player_pos_local(c: &mut Client, p: &mut crate::io::packet::Packet) {
+// (Client.java:7717-7753). Opens bit mode — it stays open through the
+// old-vis and new-vis passes; new-vis closes it.
+fn get_player_pos_local(c: &mut Client, p: &mut crate::io::packet::Packet,
+                        update_ids: &mut Vec<i32>) {
     p.g_bit_start();
     if p.g_bit(1) == 0 {
-        p.g_bit_end();
         return;
     }
     let mode = p.g_bit(2);
-    let lp = c.local_player.as_mut();
-    let Some(lp) = lp else { p.g_bit_end(); return };
     match mode {
-        0 => { /* appearance flag handled by extended pass */ }
+        0 => {
+            update_ids.push(2047);
+        }
         1 => {
             let dir = p.g_bit(3);
-            lp.move_code(dir, false);
-            let _appearance = p.g_bit(1);
+            if let Some(lp) = c.local_player.as_mut() {
+                lp.move_code(dir, false);
+            }
+            if p.g_bit(1) == 1 {
+                update_ids.push(2047);
+            }
         }
         2 => {
             let dir1 = p.g_bit(3);
-            lp.move_code(dir1, true);
+            if let Some(lp) = c.local_player.as_mut() {
+                lp.move_code(dir1, true);
+            }
             let dir2 = p.g_bit(3);
-            lp.move_code(dir2, true);
-            let _appearance = p.g_bit(1);
+            if let Some(lp) = c.local_player.as_mut() {
+                lp.move_code(dir2, true);
+            }
+            if p.g_bit(1) == 1 {
+                update_ids.push(2047);
+            }
         }
         3 => {
             let level = p.g_bit(2);
             let x = p.g_bit(7);
-            let _appearance = p.g_bit(1);
+            if p.g_bit(1) == 1 {
+                update_ids.push(2047);
+            }
             let z = p.g_bit(7);
             let jump = p.g_bit(1) == 1;
             c.minusedlevel = level;
-            lp.level = level;
-            lp.teleport(x, z, jump);
-            eprintln!("[game] localPlayer teleport: tile=({}, {}) level={} jump={}",
-                c.map_build_base_x + x, c.map_build_base_z + z, level, jump);
+            if let Some(lp) = c.local_player.as_mut() {
+                lp.level = level;
+                lp.teleport(x, z, jump);
+            }
+            eprintln!("[game] localPlayer teleport: tile=({}, {}) level={level} jump={jump}",
+                c.map_build_base_x + x, c.map_build_base_z + z);
         }
         _ => {}
     }
+}
+
+// @ObfuscatedName(— Client.getPlayerPosOldVis, Client.java:7756-7805).
+fn get_player_pos_old_vis(c: &mut Client, p: &mut crate::io::packet::Packet,
+                          removal_ids: &mut Vec<i32>, update_ids: &mut Vec<i32>) {
+    let visible = p.g_bit(8);
+    let prev_count = c.player_count;
+    if visible < prev_count {
+        for i in visible..prev_count {
+            removal_ids.push(c.player_ids[i as usize]);
+        }
+    }
+    if visible > prev_count {
+        eprintln!("[game] PLAYER_INFO gppov1 visible={visible} count={prev_count}");
+        return;
+    }
+    c.player_count = 0;
+    let loop_cycle = c.loop_cycle;
+    for i in 0..visible as usize {
+        let id = c.player_ids[i];
+        if p.g_bit(1) == 0 {
+            let count = c.player_count as usize;
+            c.player_ids[count] = id;
+            c.player_count += 1;
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.cycle = loop_cycle;
+                pl.cycle = loop_cycle;
+            }
+            continue;
+        }
+        let mode = p.g_bit(2);
+        match mode {
+            0 => {
+                let count = c.player_count as usize;
+                c.player_ids[count] = id;
+                c.player_count += 1;
+                if let Some(pl) = player_slot_mut(c, id) {
+                    pl.entity.cycle = loop_cycle;
+                    pl.cycle = loop_cycle;
+                }
+                update_ids.push(id);
+            }
+            1 => {
+                let count = c.player_count as usize;
+                c.player_ids[count] = id;
+                c.player_count += 1;
+                let dir = p.g_bit(3);
+                if let Some(pl) = player_slot_mut(c, id) {
+                    pl.entity.cycle = loop_cycle;
+                    pl.cycle = loop_cycle;
+                    pl.move_code(dir, false);
+                }
+                if p.g_bit(1) == 1 {
+                    update_ids.push(id);
+                }
+            }
+            2 => {
+                let count = c.player_count as usize;
+                c.player_ids[count] = id;
+                c.player_count += 1;
+                let dir1 = p.g_bit(3);
+                let dir2 = p.g_bit(3);
+                if let Some(pl) = player_slot_mut(c, id) {
+                    pl.entity.cycle = loop_cycle;
+                    pl.cycle = loop_cycle;
+                    pl.move_code(dir1, true);
+                    pl.move_code(dir2, true);
+                }
+                if p.g_bit(1) == 1 {
+                    update_ids.push(id);
+                }
+            }
+            3 => {
+                removal_ids.push(id);
+            }
+            _ => {}
+        }
+    }
+}
+
+// @ObfuscatedName(— Client.getPlayerPosNewVis, Client.java:7808-7845).
+fn get_player_pos_new_vis(c: &mut Client, p: &mut crate::io::packet::Packet,
+                          psize: i32, update_ids: &mut Vec<i32>) {
+    let loop_cycle = c.loop_cycle;
+    while p.bits_left(psize) >= 11 {
+        let id = p.g_bit(11);
+        if id == 2047 {
+            break;
+        }
+
+        let mut fresh = false;
+        if c.players.get(id as usize).map_or(true, |o| o.is_none()) {
+            let mut pl = crate::dash3d::ClientPlayer::new();
+            if let Some(buf) = c.player_appearance_buffer
+                .get(id as usize).and_then(|o| o.clone())
+            {
+                let mut ap = crate::io::packet::Packet::from_vec(buf);
+                pl.set_appearance(&mut ap, false);
+            }
+            if let Some(slot) = c.players.get_mut(id as usize) {
+                *slot = Some(pl);
+            }
+            fresh = true;
+        }
+
+        let count = c.player_count as usize;
+        c.player_ids[count] = id;
+        c.player_count += 1;
+
+        let mut dz = p.g_bit(5);
+        if dz > 15 {
+            dz -= 32;
+        }
+        let yaw = crate::client::ANGLE_TO_DIR[p.g_bit(3) as usize];
+        let mut dx = p.g_bit(5);
+        if dx > 15 {
+            dx -= 32;
+        }
+        let jump = p.g_bit(1) == 1;
+        if p.g_bit(1) == 1 {
+            update_ids.push(id);
+        }
+
+        let (route_x, route_z) = match c.local_player.as_ref() {
+            Some(lp) => (lp.route_x[0], lp.route_z[0]),
+            None => (0, 0),
+        };
+        if let Some(pl) = c.players.get_mut(id as usize).and_then(|o| o.as_mut()) {
+            pl.entity.cycle = loop_cycle;
+            pl.cycle = loop_cycle;
+            if fresh {
+                pl.entity.dst_yaw = yaw;
+                pl.entity.yaw = yaw;
+            }
+            pl.teleport(route_x + dx, route_z + dz, jump);
+        }
+    }
     p.g_bit_end();
+}
+
+// @ObfuscatedName(— Client.getPlayerPosExtended, Client.java:7848-7974).
+fn get_player_pos_extended(c: &mut Client, p: &mut crate::io::packet::Packet,
+                           update_ids: &[i32]) {
+    let loop_cycle = c.loop_cycle;
+    for &id in update_ids {
+        let mut flags = p.g1();
+        if (flags & 0x40) != 0 {
+            flags += p.g1() << 8;
+        }
+
+        if (flags & 0x4) != 0 {
+            // Public chat with colour/effect.
+            let colour_effect = p.g2();
+            let mod_level = p.g1();
+            let len = p.g1();
+            let start = p.pos as usize;
+            let (name, ready) = match player_slot_mut(c, id) {
+                Some(pl) => (pl.name.clone(), pl.model.applied),
+                None => (String::new(), false),
+            };
+            if !name.is_empty() && ready {
+                let ignored = mod_level <= 1
+                    && crate::client::is_ignored(c, Some(&name));
+                if !ignored {
+                    let bytes = p.data[start..start + len as usize].to_vec();
+                    let mut tmp = crate::io::packet::Packet::from_vec(bytes);
+                    let text = crate::graphics::pix_font::PixFont::escape(
+                        &crate::jstring::force_capitalisation_of_words(
+                            &crate::wordpack::unpack(&mut tmp)));
+                    if let Some(pl) = player_slot_mut(c, id) {
+                        pl.entity.chat = Some(text.trim().to_string());
+                        pl.entity.chat_colour = colour_effect >> 8;
+                        pl.entity.chat_effect = colour_effect & 0xFF;
+                        pl.entity.chat_timer = 150;
+                    }
+                    if mod_level == 2 || mod_level == 3 {
+                        crate::client::add_chat(c, 1,
+                            Some(format!("{}{name}", crate::string_constants::tag_img(1))),
+                            Some(text), None, 0);
+                    } else if mod_level == 1 {
+                        crate::client::add_chat(c, 1,
+                            Some(format!("{}{name}", crate::string_constants::tag_img(0))),
+                            Some(text), None, 0);
+                    } else {
+                        crate::client::add_chat(c, 2, Some(name), Some(text), None, 0);
+                    }
+                }
+            }
+            p.pos = (start + len as usize) as i32;
+        }
+
+        if (flags & 0x2) != 0 {
+            // Appearance block — buffered so re-adds skip a re-send.
+            let len = p.g1_alt3();
+            let mut bytes = vec![0u8; len as usize];
+            p.gdata_alt1(&mut bytes, 0, len);
+            if let Some(slot) = c.player_appearance_buffer.get_mut(id as usize) {
+                *slot = Some(bytes.clone());
+            }
+            let is_local = id == 2047;
+            if let Some(pl) = player_slot_mut(c, id) {
+                let mut ap = crate::io::packet::Packet::from_vec(bytes);
+                pl.set_appearance(&mut ap, is_local);
+            }
+        }
+
+        if (flags & 0x100) != 0 {
+            let sx = p.g1();
+            let sz = p.g1_alt2();
+            let ex = p.g1();
+            let ez = p.g1_alt1();
+            let move_end = p.g2_alt2() + loop_cycle;
+            let move_start = p.g2() + loop_cycle;
+            let facing = p.g1_alt2();
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.exact_start_x = sx;
+                pl.entity.exact_start_z = sz;
+                pl.entity.exact_end_x = ex;
+                pl.entity.exact_end_z = ez;
+                pl.entity.exact_move_end = move_end;
+                pl.entity.exact_move_start = move_start;
+                pl.entity.exact_move_facing = facing;
+                pl.entity.route_length = 1;
+                pl.entity.preanim_route_length = 0;
+            }
+        }
+
+        if (flags & 0x20) != 0 {
+            let mut target = p.g2_alt3();
+            if target == 65535 {
+                target = -1;
+            }
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.target_id = target;
+            }
+        }
+
+        if (flags & 0x80) != 0 {
+            let tx = p.g2_alt2();
+            let tz = p.g2_alt1();
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.target_tile_x = tx;
+                pl.entity.target_tile_z = tz;
+            }
+        }
+
+        if (flags & 0x10) != 0 {
+            let mut anim = p.g2_alt2();
+            if anim == 65535 {
+                anim = -1;
+            }
+            let delay = p.g1_alt2();
+            if let Some(pl) = player_slot_mut(c, id) {
+                Client::trigger_player_anim(pl, anim, delay);
+            }
+        }
+
+        if (flags & 0x200) != 0 {
+            let mut spot = p.g2_alt1();
+            let packed = p.g4();
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.spotanim_height = packed >> 16;
+                pl.entity.spotanim_last_cycle = (packed & 0xFFFF) + loop_cycle;
+                pl.entity.spotanim_frame = 0;
+                pl.entity.spotanim_cycle = 0;
+                if pl.entity.spotanim_last_cycle > loop_cycle {
+                    pl.entity.spotanim_frame = -1;
+                }
+                if spot == 65535 {
+                    spot = -1;
+                }
+                pl.entity.spotanim_id = spot;
+            }
+        }
+
+        if (flags & 0x400) != 0 {
+            let value = p.g1_alt1();
+            let kind = p.g1_alt3();
+            let health = p.g1();
+            let total = p.g1_alt2();
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.add_hitmark(value, kind, loop_cycle);
+                pl.entity.combat_cycle = loop_cycle + 300;
+                pl.entity.health = health;
+                pl.entity.total_health = total;
+            }
+        }
+
+        if (flags & 0x1) != 0 {
+            // Forced chat — '~' prefix (and the local player's own
+            // lines) also land in the chatbox.
+            let mut text = p.gjstr();
+            let mut to_chatbox = id == 2047;
+            if text.starts_with('~') {
+                text = text[1..].to_string();
+                to_chatbox = true;
+            }
+            let name = player_slot_mut(c, id).map(|pl| {
+                pl.entity.chat = Some(text.clone());
+                pl.entity.chat_colour = 0;
+                pl.entity.chat_effect = 0;
+                pl.entity.chat_timer = 150;
+                pl.name.clone()
+            });
+            if to_chatbox {
+                if let Some(name) = name {
+                    crate::client::add_chat(c, 2, Some(name), Some(text), None, 0);
+                }
+            }
+        }
+
+        if (flags & 0x8) != 0 {
+            let value = p.g1_alt1();
+            let kind = p.g1_alt3();
+            let health = p.g1_alt1();
+            let total = p.g1();
+            if let Some(pl) = player_slot_mut(c, id) {
+                pl.entity.add_hitmark(value, kind, loop_cycle);
+                pl.entity.combat_cycle = loop_cycle + 300;
+                pl.entity.health = health;
+                pl.entity.total_health = total;
+            }
+        }
+    }
+}
+
+// @ObfuscatedName(— Client.getNpcPos, Client.java:7977-7998).
+fn get_npc_pos(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32) {
+    let mut removal_ids: Vec<i32> = Vec::new();
+    let mut update_ids: Vec<i32> = Vec::new();
+
+    get_npc_pos_old_vis(c, p, &mut removal_ids, &mut update_ids);
+    get_npc_pos_new_vis(c, p, psize, &mut update_ids);
+    get_npc_pos_extended(c, p, &update_ids);
+
+    for &id in &removal_ids {
+        if let Some(slot) = c.npcs.get_mut(id as usize) {
+            let stale = slot.as_ref().map_or(false, |n| n.entity.cycle != c.loop_cycle);
+            if stale {
+                *slot = None;
+            }
+        }
+    }
+    if psize != p.pos {
+        eprintln!("[game] NPC_INFO desync pos={} size={psize}", p.pos);
+    }
+}
+
+// @ObfuscatedName(— Client.getNpcPosOldVis, Client.java:8001-8051).
+fn get_npc_pos_old_vis(c: &mut Client, p: &mut crate::io::packet::Packet,
+                       removal_ids: &mut Vec<i32>, update_ids: &mut Vec<i32>) {
+    p.g_bit_start();
+    let visible = p.g_bit(8);
+    let prev_count = c.npc_count;
+    if visible < prev_count {
+        for i in visible..prev_count {
+            removal_ids.push(c.npc_ids[i as usize]);
+        }
+    }
+    if visible > prev_count {
+        eprintln!("[game] NPC_INFO gnpov1 visible={visible} count={prev_count}");
+        return;
+    }
+    c.npc_count = 0;
+    let loop_cycle = c.loop_cycle;
+    for i in 0..visible as usize {
+        let id = c.npc_ids[i];
+        if p.g_bit(1) == 0 {
+            let count = c.npc_count as usize;
+            c.npc_ids[count] = id;
+            c.npc_count += 1;
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.cycle = loop_cycle;
+            }
+            continue;
+        }
+        let mode = p.g_bit(2);
+        match mode {
+            0 => {
+                let count = c.npc_count as usize;
+                c.npc_ids[count] = id;
+                c.npc_count += 1;
+                if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                    n.entity.cycle = loop_cycle;
+                }
+                update_ids.push(id);
+            }
+            1 => {
+                let count = c.npc_count as usize;
+                c.npc_ids[count] = id;
+                c.npc_count += 1;
+                let dir = p.g_bit(3);
+                if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                    n.entity.cycle = loop_cycle;
+                    n.entity.move_code(dir, false);
+                }
+                if p.g_bit(1) == 1 {
+                    update_ids.push(id);
+                }
+            }
+            2 => {
+                let count = c.npc_count as usize;
+                c.npc_ids[count] = id;
+                c.npc_count += 1;
+                let dir1 = p.g_bit(3);
+                let dir2 = p.g_bit(3);
+                if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                    n.entity.cycle = loop_cycle;
+                    n.entity.move_code(dir1, true);
+                    n.entity.move_code(dir2, true);
+                }
+                if p.g_bit(1) == 1 {
+                    update_ids.push(id);
+                }
+            }
+            3 => {
+                removal_ids.push(id);
+            }
+            _ => {}
+        }
+    }
+}
+
+// @ObfuscatedName("dm.ed(I)V") — Client.getNpcPosNewVis
+// (Client.java:8055-8104).
+fn get_npc_pos_new_vis(c: &mut Client, p: &mut crate::io::packet::Packet,
+                       psize: i32, update_ids: &mut Vec<i32>) {
+    let loop_cycle = c.loop_cycle;
+    while p.bits_left(psize) >= 27 {
+        let id = p.g_bit(15);
+        if id == 32767 {
+            break;
+        }
+
+        let fresh = c.npcs.get(id as usize).map_or(true, |o| o.is_none());
+        if fresh {
+            if let Some(slot) = c.npcs.get_mut(id as usize) {
+                *slot = Some(crate::dash3d::client_npc::ClientNpc::default());
+            }
+        }
+
+        let count = c.npc_count as usize;
+        c.npc_ids[count] = id;
+        c.npc_count += 1;
+
+        let yaw = crate::client::ANGLE_TO_DIR[p.g_bit(3) as usize];
+        let mut dz = p.g_bit(5);
+        if dz > 15 {
+            dz -= 32;
+        }
+        if p.g_bit(1) == 1 {
+            update_ids.push(id);
+        }
+        let jump = p.g_bit(1) == 1;
+        let type_id = p.g_bit(14);
+        let mut dx = p.g_bit(5);
+        if dx > 15 {
+            dx -= 32;
+        }
+
+        let t = crate::config::npc_type::list(type_id);
+        let (route_x, route_z) = match c.local_player.as_ref() {
+            Some(lp) => (lp.route_x[0], lp.route_z[0]),
+            None => (0, 0),
+        };
+        if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+            n.entity.cycle = loop_cycle;
+            n.type_id = type_id;
+            if fresh {
+                n.entity.dst_yaw = yaw;
+                n.entity.yaw = yaw;
+            }
+            n.entity.size = t.size;
+            n.entity.turnspeed = t.turnspeed;
+            if n.entity.turnspeed == 0 {
+                n.entity.yaw = 0;
+            }
+            n.entity.walkanim = t.walkanim;
+            n.entity.walkanim_b = t.walkanim_b;
+            // Java swaps l/r when copying from the type.
+            n.entity.walkanim_l = t.walkanim_r;
+            n.entity.walkanim_r = t.walkanim_l;
+            n.entity.readyanim = t.readyanim;
+            n.entity.turnleftanim = t.turnleftanim;
+            n.entity.turnrightanim = t.turnrightanim;
+            n.entity.teleport(route_x + dx, route_z + dz, jump);
+        }
+    }
+    p.g_bit_end();
+}
+
+// @ObfuscatedName("ag.ex(B)V") — Client.getNpcPosExtended
+// (Client.java:8108-8196).
+fn get_npc_pos_extended(c: &mut Client, p: &mut crate::io::packet::Packet,
+                        update_ids: &[i32]) {
+    let loop_cycle = c.loop_cycle;
+    for &id in update_ids {
+        let flags = p.g1();
+
+        if (flags & 0x80) != 0 {
+            let value = p.g1();
+            let kind = p.g1_alt2();
+            let health = p.g1_alt1();
+            let total = p.g1_alt1();
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.add_hitmark(value, kind, loop_cycle);
+                n.entity.combat_cycle = loop_cycle + 300;
+                n.entity.health = health;
+                n.entity.total_health = total;
+            }
+        }
+
+        if (flags & 0x4) != 0 {
+            let mut target = p.g2_alt1();
+            if target == 65535 {
+                target = -1;
+            }
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.target_id = target;
+            }
+        }
+
+        if (flags & 0x2) != 0 {
+            let tx = p.g2_alt3();
+            let tz = p.g2_alt3();
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.target_tile_x = tx;
+                n.entity.target_tile_z = tz;
+            }
+        }
+
+        if (flags & 0x1) != 0 {
+            let mut spot = p.g2_alt1();
+            let packed = p.g4();
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.spotanim_height = packed >> 16;
+                n.entity.spotanim_last_cycle = (packed & 0xFFFF) + loop_cycle;
+                n.entity.spotanim_frame = 0;
+                n.entity.spotanim_cycle = 0;
+                if n.entity.spotanim_last_cycle > loop_cycle {
+                    n.entity.spotanim_frame = -1;
+                }
+                if spot == 65535 {
+                    spot = -1;
+                }
+                n.entity.spotanim_id = spot;
+            }
+        }
+
+        if (flags & 0x8) != 0 {
+            let mut anim = p.g2_alt3();
+            if anim == 65535 {
+                anim = -1;
+            }
+            let delay = p.g1_alt1();
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                // Java inlines triggerPlayerAnim's duplicatebehaviour
+                // rules for NPCs (Client.java:8151-8169).
+                let e = &mut n.entity;
+                if e.primary_seq_id == anim && anim != -1 {
+                    let dup = crate::config::seq_type::list(anim).duplicatebehaviour;
+                    if dup == 1 {
+                        e.primary_seq_frame = 0;
+                        e.primary_seq_cycle = 0;
+                        e.primary_seq_delay = delay;
+                        e.primary_seq_loop = 0;
+                    }
+                    if dup == 2 {
+                        e.primary_seq_loop = 0;
+                    }
+                } else if anim == -1
+                    || e.primary_seq_id == -1
+                    || crate::config::seq_type::list(anim).priority
+                        >= crate::config::seq_type::list(e.primary_seq_id).priority
+                {
+                    e.primary_seq_id = anim;
+                    e.primary_seq_frame = 0;
+                    e.primary_seq_cycle = 0;
+                    e.primary_seq_delay = delay;
+                    e.primary_seq_loop = 0;
+                    e.preanim_route_length = e.route_length;
+                }
+            }
+        }
+
+        if (flags & 0x40) != 0 {
+            let type_id = p.g2();
+            let t = crate::config::npc_type::list(type_id);
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.type_id = type_id;
+                n.entity.size = t.size;
+                n.entity.turnspeed = t.turnspeed;
+                n.entity.walkanim = t.walkanim;
+                n.entity.walkanim_b = t.walkanim_b;
+                n.entity.walkanim_l = t.walkanim_r;
+                n.entity.walkanim_r = t.walkanim_l;
+                n.entity.readyanim = t.readyanim;
+                n.entity.turnleftanim = t.turnleftanim;
+                n.entity.turnrightanim = t.turnrightanim;
+            }
+        }
+
+        if (flags & 0x20) != 0 {
+            let text = p.gjstr();
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.chat = Some(text);
+                n.entity.chat_timer = 100;
+            }
+        }
+
+        if (flags & 0x10) != 0 {
+            let value = p.g1_alt3();
+            let kind = p.g1_alt3();
+            let health = p.g1_alt3();
+            let total = p.g1_alt1();
+            if let Some(Some(n)) = c.npcs.get_mut(id as usize) {
+                n.entity.add_hitmark(value, kind, loop_cycle);
+                n.entity.combat_cycle = loop_cycle + 300;
+                n.entity.health = health;
+                n.entity.total_health = total;
+            }
+        }
+    }
 }
 
 fn login_done(c: &mut Client, first_packet: Vec<u8>) {

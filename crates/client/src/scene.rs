@@ -925,54 +925,19 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
     // Java: Client.gameDrawMain line 4173 `world.renderAll(camX, camY,
     // camZ, camPitch, camYaw, topLevel)`. Top level fixed at 3 until
     // the roof-check port (Client.roofCheck2) wires minusedlevel.
+    // Entities (players/NPCs/projectiles/spotanims) were pushed into
+    // the sprite grid by push_entities; Java removes them right after
+    // renderAll (Client.java:4176).
     {
         let mut cache = WORLD_CACHE.lock().unwrap();
         if let Some(world) = cache.world.as_mut() {
             world.render_all(cam_world_x, cam_world_y, cam_world_z,
                              cam_pitch.clamp(128, 383), cam_yaw & 0x7FF, 3);
+            world.remove_sprites();
         }
     }
     pix3d::set_trans(0);
-
-    // Player avatar — until the ClientPlayer/IDK avatar pipeline lands
-    // we draw a capsule-stick placeholder so position + facing stay
-    // visible. (Entities enter the scene via World.addDynamic once the
-    // appearance decoder is ported.)
-    let (origin_x, origin_y) = pix3d::origin();
-    let h_val = pivot_y;
-    let cx = pivot_x;
-    let cz = pivot_z;
-    let body_segments: [(i32, i32, i32, i32, i32, i32, i32); 3] = [
-        // (x_off, y_top_off, y_bot_off, half_w, half_d, colour, alt_colour)
-        (0, 240, 160, 22, 22, 0xFFCCAA, 0xFFCCAA), // head
-        (0, 160, 80, 28, 18, 0x3060A0, 0x4080C0),  // torso
-        (0, 80, 0, 22, 18, 0x202848, 0x303860),    // legs
-    ];
-    let cam_zoom = FOCAL_LENGTH;
-    for &(_dx, top, bot, hw, hd, c1, c2) in &body_segments {
-        let y_top = h_val - cam_world_y - top;
-        let y_bot = h_val - cam_world_y - bot;
-        let corners = [
-            (cx - hw - cam_world_x, cz - hd - cam_world_z),
-            (cx + hw - cam_world_x, cz - hd - cam_world_z),
-            (cx + hw - cam_world_x, cz + hd - cam_world_z),
-            (cx - hw - cam_world_x, cz + hd - cam_world_z),
-        ];
-        let proj = |x: i32, y: i32, z: i32| pix3d::project_with_origin(x, y, z, cam_pitch, cam_yaw, cam_zoom, origin_x, origin_y);
-        let tl = corners.map(|(x, z)| proj(x, y_top, z));
-        let bl = corners.map(|(x, z)| proj(x, y_bot, z));
-        for i in 0..4 {
-            let j = (i + 1) & 0x3;
-            let (a, az) = (tl[i], tl[i].2);
-            let (b, bz) = (tl[j], tl[j].2);
-            let (cc, ccz) = (bl[j], bl[j].2);
-            let (d, dz) = (bl[i], bl[i].2);
-            if az < 1 || bz < 1 || ccz < 1 || dz < 1 { continue; }
-            let col = if i & 0x1 == 0 { c1 } else { c2 };
-            pix3d::fill_triangle(a.0, a.1, b.0, b.1, cc.0, cc.1, col);
-            pix3d::fill_triangle(a.0, a.1, cc.0, cc.1, d.0, d.1, col);
-        }
-    }
+    let _ = (pivot_x, pivot_y, pivot_z);
 
     // Publish the camera this frame rendered with, bump sceneCycle,
     // and run the post-scene overlay pass (Java gameDrawMain order:
@@ -981,4 +946,221 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
                                       cam_pitch.clamp(128, 383), cam_yaw & 0x7FF);
     crate::overlays::SCENE_CYCLE.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
     crate::overlays::draw(x, y, w, h);
+}
+
+// ══════════════════════════════════════════════════════════════════
+// Entity push — Java gameDrawMain 4096-4101: addPlayers(true),
+// addNpcs(true), addPlayers(false), addNpcs(false), addProjectiles(),
+// addMapAnim(). Runs once per frame before renderAll; the dynamic
+// sprites are removed again right after the render.
+// ══════════════════════════════════════════════════════════════════
+
+pub fn push_entities(c: &mut crate::client::Client) {
+    let mut cache = WORLD_CACHE.lock().unwrap();
+    let Some(world) = cache.world.as_mut() else { return; };
+    let scene_cycle = crate::overlays::SCENE_CYCLE
+        .load(std::sync::atomic::Ordering::Relaxed);
+
+    push_players(c, world, scene_cycle, true);
+    push_npcs(c, world, scene_cycle, true);
+    push_players(c, world, scene_cycle, false);
+    push_npcs(c, world, scene_cycle, false);
+    push_projectiles(c, world);
+    push_map_anims(c, world);
+}
+
+// @ObfuscatedName("dl.dn(ZI)V") — Client.addPlayers. Verbatim port of
+// Client.java:4205-4250. `local` draws only the local player (with
+// the reserved 2047<<14 typecode); otherwise the tracked-player list.
+fn push_players(c: &mut crate::client::Client,
+                world: &mut crate::dash3d::world::World,
+                scene_cycle: i32, local: bool) {
+    use crate::dash3d::model_source::ModelSource;
+
+    let level = c.minusedlevel;
+    let loop_cycle = c.loop_cycle;
+    let player_count = c.player_count;
+
+    // Java 4206-4208 — arriving at the flagged tile clears the flag.
+    if local {
+        if let Some(lp) = c.local_player.as_ref() {
+            if lp.entity.x >> 7 == c.minimap_flag_x && lp.entity.z >> 7 == c.minimap_flag_z {
+                c.minimap_flag_x = 0;
+            }
+        }
+    }
+
+    let count = if local { 1 } else { c.player_count as usize };
+    for i in 0..count {
+        let (typecode, pid) = if local {
+            (0x1ffc000, -1)
+        } else {
+            let pid = c.player_ids[i];
+            (pid << 14, pid)
+        };
+
+        // Immutable pre-pass: position, readiness, crowd LOD inputs.
+        let snapshot = {
+            let player = if local {
+                c.local_player.as_ref()
+            } else {
+                c.players.get(pid as usize).and_then(|o| o.as_ref())
+            };
+            let Some(p) = player else { continue; };
+            if !p.ready() {
+                continue;
+            }
+            (p.entity.x, p.entity.z,
+             p.entity.secondary_seq_id == p.entity.readyanim,
+             p.loc_model.is_some(),
+             p.loc_start_cycle, p.loc_end_cycle,
+             p.entity.yaw, p.entity.needs_forward_draw_padding,
+             p.min_tile_x, p.min_tile_z, p.max_tile_x, p.max_tile_z)
+        };
+        let (px, pz, idle, has_loc, loc_start, loc_end, yaw, padding,
+             min_tx, min_tz, max_tx, max_tz) = snapshot;
+
+        // Java 4227-4229 — crowd LOD (rev1 lowMem clients also trigger
+        // at >50; we run high-detail so only the hard 200 cap applies).
+        let low_mem = player_count > 200 && !local && idle;
+
+        let tx = px >> 7;
+        let tz = pz >> 7;
+        if !(0..104).contains(&tx) || !(0..104).contains(&tz) {
+            continue;
+        }
+
+        let loc_window = has_loc && loop_cycle >= loc_start && loop_cycle < loc_end;
+
+        if !loc_window {
+            // Java 4236-4241 — tile-centred entities share one model
+            // per tile per frame.
+            if (px & 0x7F) == 64 && (pz & 0x7F) == 64 {
+                if c.tile_last_occupied[tx as usize][tz as usize] == scene_cycle {
+                    continue;
+                }
+                c.tile_last_occupied[tx as usize][tz as usize] = scene_cycle;
+            }
+        }
+
+        let y = crate::client::get_av_h(px, pz, level);
+        let model = {
+            let player = if local {
+                c.local_player.as_mut()
+            } else {
+                c.players.get_mut(pid as usize).and_then(|o| o.as_mut())
+            };
+            let Some(p) = player else { continue; };
+            p.low_mem = if loc_window { false } else { low_mem };
+            p.y = y;
+            p.get_temp_model(loop_cycle)
+        };
+        let Some(model) = model else { continue; };
+
+        let source = ModelSource::lit(std::sync::Arc::new(model));
+        if loc_window {
+            world.add_dynamic_span(level, px, pz, y, Some(source), yaw, typecode,
+                                   min_tx, min_tz, max_tx, max_tz);
+        } else {
+            world.add_dynamic(level, px, pz, y, 60, Some(source), yaw, typecode,
+                              padding);
+        }
+    }
+}
+
+// @ObfuscatedName("dw.do(ZB)V") — Client.addNpcs. Verbatim port of
+// Client.java:4254-4277; `on_top` selects the alwaysontop pass.
+fn push_npcs(c: &mut crate::client::Client,
+             world: &mut crate::dash3d::world::World,
+             scene_cycle: i32, on_top: bool) {
+    use crate::dash3d::model_source::ModelSource;
+
+    let level = c.minusedlevel;
+    for i in 0..c.npc_count as usize {
+        let Some(&nid) = c.npc_ids.get(i) else { continue; };
+        let mut typecode = (nid << 14) + 0x20000000;
+
+        let snapshot = {
+            let Some(Some(n)) = c.npcs.get(nid as usize) else { continue; };
+            if !n.ready() {
+                continue;
+            }
+            let t = crate::config::npc_type::list(n.type_id);
+            if t.alwaysontop != on_top || !t.is_multi_npc_visible() {
+                continue;
+            }
+            (n.entity.x, n.entity.z, n.entity.size.max(1),
+             n.entity.yaw, n.entity.needs_forward_draw_padding, t.active)
+        };
+        let (nx, nz, size, yaw, padding, active) = snapshot;
+
+        let tx = nx >> 7;
+        let tz = nz >> 7;
+        if !(0..104).contains(&tx) || !(0..104).contains(&tz) {
+            continue;
+        }
+
+        if size == 1 && (nx & 0x7F) == 64 && (nz & 0x7F) == 64 {
+            if c.tile_last_occupied[tx as usize][tz as usize] == scene_cycle {
+                continue;
+            }
+            c.tile_last_occupied[tx as usize][tz as usize] = scene_cycle;
+        }
+
+        if !active {
+            // Java: var3 -= Integer.MIN_VALUE — flips the top bit so
+            // the pick pass knows the npc has no ops.
+            typecode = typecode.wrapping_sub(i32::MIN);
+        }
+
+        let model = {
+            let Some(Some(n)) = c.npcs.get_mut(nid as usize) else { continue; };
+            n.get_temp_model()
+        };
+        let Some(model) = model else { continue; };
+
+        let off = size * 64 - 64;
+        let y = crate::client::get_av_h(nx + off, nz + off, level);
+        world.add_dynamic(level, nx, nz, y, off + 60,
+                          Some(ModelSource::lit(std::sync::Arc::new(model))),
+                          yaw, typecode, padding);
+    }
+}
+
+// @ObfuscatedName("r.dx(I)V") — Client.addProjectiles (the addDynamic
+// half; the retarget + cubic-arc motion runs in
+// crate::client::add_projectiles, called here per frame like Java).
+fn push_projectiles(c: &mut crate::client::Client,
+                    world: &mut crate::dash3d::world::World) {
+    use crate::dash3d::model_source::ModelSource;
+    crate::client::add_projectiles(c);
+    let level = c.minusedlevel;
+    let loop_cycle = c.loop_cycle;
+    for proj in &c.projectiles {
+        if loop_cycle < proj.t1 {
+            continue;
+        }
+        let Some(model) = proj.get_temp_model() else { continue; };
+        world.add_dynamic(level, proj.x as i32, proj.z as i32, proj.y as i32, 60,
+                          Some(ModelSource::lit(std::sync::Arc::new(model))),
+                          proj.yaw, -1, false);
+    }
+}
+
+// @ObfuscatedName("bf.dt(I)V") — Client.addMapAnim (the addDynamic
+// half; lifecycle + frame stepping runs in crate::client::add_map_anims).
+fn push_map_anims(c: &mut crate::client::Client,
+                  world: &mut crate::dash3d::world::World) {
+    use crate::dash3d::model_source::ModelSource;
+    crate::client::add_map_anims(c);
+    let loop_cycle = c.loop_cycle;
+    for spot in &c.spotanims {
+        if loop_cycle < spot.start_cycle {
+            continue;
+        }
+        let Some(model) = spot.get_temp_model() else { continue; };
+        world.add_dynamic(spot.level, spot.x, spot.z, spot.y, 60,
+                          Some(ModelSource::lit(std::sync::Arc::new(model))),
+                          0, -1, false);
+    }
 }

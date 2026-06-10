@@ -181,6 +181,11 @@ impl NpcType {
     }
 }
 
+// @ObfuscatedName("em.ag") — NpcType model cache (Java LruCache(50);
+// plain map per the loc/obj cache convention).
+pub static MODEL_CACHE: std::sync::LazyLock<Mutex<std::collections::HashMap<i32, std::sync::Arc<crate::dash3d::model_lit::ModelLit>>>> =
+    std::sync::LazyLock::new(|| Mutex::new(std::collections::HashMap::new()));
+
 pub struct NpcStore {
     pub map: std::collections::HashMap<i32, NpcType>,
 }
@@ -217,6 +222,80 @@ impl NpcType {
     // Used by the scene render to cull invisible multinpc variants.
     pub fn is_multi_npc_visible(&self) -> bool {
         self.get_multi_npc().is_some()
+    }
+
+    // @ObfuscatedName("em.u(Leo;ILeo;IB)Lfo;") — NpcType.getTempModel.
+    // Verbatim port of NpcType.java:274-337: multinpc redirect, merged
+    // + recoloured body model lit (ambient+64, contrast+850, -30/-50/
+    // -30) into the cache, then per call the primary/secondary seq
+    // animation (split when both run) and the h/v resize.
+    pub fn get_temp_model(
+        &self,
+        primary: Option<&crate::config::seq_type::SeqType>,
+        primary_frame: i32,
+        secondary: Option<&crate::config::seq_type::SeqType>,
+        secondary_frame: i32,
+    ) -> Option<crate::dash3d::model_lit::ModelLit> {
+        use crate::dash3d::model_lit::ModelLit;
+        use crate::dash3d::model_unlit::ModelUnlit;
+
+        if self.multinpc.is_some() {
+            let npc = self.get_multi_npc()?;
+            return npc.get_temp_model(primary, primary_frame, secondary, secondary_frame);
+        }
+
+        let base = {
+            let cached = MODEL_CACHE.lock().unwrap().get(&self.id).cloned();
+            match cached {
+                Some(m) => m,
+                None => {
+                    let model_ids = self.model.as_ref()?;
+                    let mut parts: Vec<ModelUnlit> = Vec::with_capacity(model_ids.len());
+                    for &id in model_ids {
+                        let bytes = {
+                            let slot = MODELS_SLOT.load(Ordering::Relaxed);
+                            if slot < 0 { return None; }
+                            let mut reg = js5_net::LOADERS.lock().unwrap();
+                            let loader = reg.get_mut(slot as usize).and_then(|o| o.as_mut())?;
+                            loader.fetch_file(id, 0)?
+                        };
+                        let part = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+                            ModelUnlit::from_bytes(bytes)
+                        })).ok()?;
+                        parts.push(part);
+                    }
+                    let mut unlit = if parts.len() == 1 {
+                        parts.remove(0)
+                    } else {
+                        ModelUnlit::merge(&parts.iter().collect::<Vec<_>>())
+                    };
+                    for i in 0..self.recol_s.len() {
+                        unlit.recolour(self.recol_s[i], self.recol_d[i]);
+                    }
+                    for i in 0..self.retex_s.len() {
+                        unlit.retexture(self.retex_s[i], self.retex_d[i]);
+                    }
+                    let lit = ModelLit::light(&mut unlit, self.ambient + 64,
+                                              self.contrast + 850, -30, -50, -30);
+                    let arc = std::sync::Arc::new(lit);
+                    MODEL_CACHE.lock().unwrap().insert(self.id, std::sync::Arc::clone(&arc));
+                    arc
+                }
+            }
+        };
+
+        let mut model = match (primary, secondary) {
+            (Some(p), Some(s)) => p.split_animate_model(&base, primary_frame, s, secondary_frame),
+            (Some(p), None) => p.animate_model(&base, primary_frame),
+            (None, Some(s)) => s.animate_model(&base, secondary_frame),
+            (None, None) => base.copy_for_anim(true),
+        };
+
+        if self.resizeh != 128 || self.resizev != 128 {
+            model.resize(self.resizeh, self.resizev, self.resizeh);
+        }
+
+        Some(model)
     }
 
     // @ObfuscatedName("em.v(I)Lfw;") — NpcType.getHead. Verbatim port

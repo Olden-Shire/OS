@@ -330,6 +330,100 @@ impl ObjType {
         status
     }
 
+    // @ObfuscatedName("fj.t(ZI)Lfw;") — ObjType.getWearModelNoCheck.
+    // Verbatim port of ObjType.java:584-630: merge the 1-3 worn-
+    // equipment models for the gender, apply the wear Y offset, then
+    // recolour/retexture.
+    pub fn get_wear_model_no_check(&self, gender: bool) -> Option<ModelUnlit> {
+        let (w1, w2, w3) = if gender {
+            (self.womanwear, self.womanwear2, self.womanwear3)
+        } else {
+            (self.manwear, self.manwear2, self.manwear3)
+        };
+        if w1 == -1 {
+            return None;
+        }
+
+        let load = |id: i32| -> Option<ModelUnlit> {
+            let bytes = {
+                let slot = MODELS_SLOT.load(Ordering::Relaxed);
+                if slot < 0 { return None; }
+                let mut reg = js5_net::LOADERS.lock().unwrap();
+                let loader = reg.get_mut(slot as usize).and_then(|o| o.as_mut())?;
+                loader.fetch_file(id, 0)?
+            };
+            std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+                ModelUnlit::from_bytes(bytes)
+            })).ok()
+        };
+
+        let mut model = load(w1)?;
+        if w2 != -1 {
+            let m2 = load(w2)?;
+            if w3 == -1 {
+                model = ModelUnlit::merge(&[&model, &m2]);
+            } else {
+                let m3 = load(w3)?;
+                model = ModelUnlit::merge(&[&model, &m2, &m3]);
+            }
+        }
+
+        if !gender && self.manwear_offset_y != 0 {
+            model.translate(0, self.manwear_offset_y, 0);
+        } else if gender && self.womanwear_offset_y != 0 {
+            model.translate(0, self.womanwear_offset_y, 0);
+        }
+
+        for i in 0..self.recol_s.len() {
+            model.recolour(self.recol_s[i], self.recol_d[i]);
+        }
+        for i in 0..self.retex_s.len() {
+            model.retexture(self.retex_s[i], self.retex_d[i]);
+        }
+        Some(model)
+    }
+
+    // @ObfuscatedName("fj.k(ZI)Lfw;") — ObjType.getHeadModelNoCheck.
+    // Verbatim port of ObjType.java:656-687: merge the 1-2 chathead
+    // models then recolour/retexture.
+    pub fn get_head_model_no_check(&self, gender: bool) -> Option<ModelUnlit> {
+        let (h1, h2) = if gender {
+            (self.womanhead, self.womanhead2)
+        } else {
+            (self.manhead, self.manhead2)
+        };
+        if h1 == -1 {
+            return None;
+        }
+
+        let load = |id: i32| -> Option<ModelUnlit> {
+            let bytes = {
+                let slot = MODELS_SLOT.load(Ordering::Relaxed);
+                if slot < 0 { return None; }
+                let mut reg = js5_net::LOADERS.lock().unwrap();
+                let loader = reg.get_mut(slot as usize).and_then(|o| o.as_mut())?;
+                loader.fetch_file(id, 0)?
+            };
+            std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+                ModelUnlit::from_bytes(bytes)
+            })).ok()
+        };
+
+        let mut model = load(h1)?;
+        if h2 != -1 {
+            let m2 = load(h2)?;
+            model = ModelUnlit::merge(&[&model, &m2]);
+        }
+
+        for i in 0..self.recol_s.len() {
+            model.recolour(self.recol_s[i], self.recol_d[i]);
+        }
+        for i in 0..self.retex_s.len() {
+            model.retexture(self.retex_s[i], self.retex_d[i]);
+        }
+        Some(model)
+    }
+
     // @ObfuscatedName("fj.u(II)Lfw;") — ObjType.getModelUnlit.
     // Verbatim port of ObjType.java:341-377: countobj redirect, model
     // load, resize, recolour, retexture — stops before lighting so

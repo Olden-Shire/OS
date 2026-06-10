@@ -314,6 +314,11 @@ fn draw_layer(
         // 1337 = main 3D viewport, 1338 = minimap. Both replace the
         // normal component draw entirely.
         if com.client_code == crate::scene::CLIENT_CODE_VIEWPORT {
+            // Java gameDrawMain 4096-4101 — players/NPCs/projectiles/
+            // spotanims enter the sprite grid before renderAll.
+            if let Some(c) = client.as_deref_mut() {
+                crate::scene::push_entities(c);
+            }
             crate::scene::draw_viewport(renderx, rendery, com.width, com.height);
             pix2d::set_clipping(x, y, w, h);
             continue;
