@@ -923,16 +923,22 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
 
     // Hand the frame to the 1:1 World renderer (renderAll -> fill).
     // Java: Client.gameDrawMain line 4173 `world.renderAll(camX, camY,
-    // camZ, camPitch, camYaw, topLevel)`. Top level fixed at 3 until
-    // the roof-check port (Client.roofCheck2) wires minusedlevel.
-    // Entities (players/NPCs/projectiles/spotanims) were pushed into
-    // the sprite grid by push_entities; Java removes them right after
-    // renderAll (Client.java:4176).
+    // camZ, camPitch, camYaw, topLevel)` where topLevel comes from the
+    // roofCheck camera→player walk. Entities (players/NPCs/
+    // projectiles/spotanims) were pushed into the sprite grid by
+    // push_entities; Java removes them right after renderAll
+    // (Client.java:4176).
+    let minusedlevel = {
+        let o = crate::overlays::OVERLAYS.lock().unwrap();
+        o.minusedlevel
+    };
+    let top_level = roof_check(cam_world_x, cam_world_z, cam_pitch.clamp(128, 383),
+                               lp_x, lp_z, minusedlevel);
     {
         let mut cache = WORLD_CACHE.lock().unwrap();
         if let Some(world) = cache.world.as_mut() {
             world.render_all(cam_world_x, cam_world_y, cam_world_z,
-                             cam_pitch.clamp(128, 383), cam_yaw & 0x7FF, 3);
+                             cam_pitch.clamp(128, 383), cam_yaw & 0x7FF, top_level);
             world.remove_sprites();
         }
     }
@@ -946,6 +952,98 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
                                       cam_pitch.clamp(128, 383), cam_yaw & 0x7FF);
     crate::overlays::SCENE_CYCLE.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
     crate::overlays::draw(x, y, w, h);
+}
+
+// @ObfuscatedName(— Client.roofCheck, Client.java:4376-4454). Walks
+// the camera-tile → player-tile line (16.16 fixed-point Bresenham);
+// any tile flagged "inside" (mapl & 0x4) on the way — or under the
+// camera or player — drops the top render level to minusedlevel so
+// roofs above the player hide. Pitches of 310+ look down steeply
+// enough that roofs stay visible. The cinema-cam variant (roofCheck2,
+// :4365-4373) applies when the cs2 cinema camera drives the view —
+// the local orbit camera always takes this path, like Java's
+// !cinemaCam branch.
+fn roof_check(cam_x: i32, cam_z: i32, cam_pitch: i32,
+              player_tx: i32, player_tz: i32, minusedlevel: i32) -> i32 {
+    let mut top = 3;
+    if cam_pitch >= 310 {
+        return top;
+    }
+    let cb = client_build::STATE.lock().unwrap();
+    let lvl = minusedlevel.clamp(0, 3) as usize;
+    let mapl = &cb.mapl[lvl];
+    let flag = |x: i32, z: i32| -> bool {
+        (0..104).contains(&x) && (0..104).contains(&z)
+            && (mapl[x as usize][z as usize] & 0x4) != 0
+    };
+
+    let mut cx = cam_x >> 7;
+    let mut cz = cam_z >> 7;
+    let px = player_tx;
+    let pz = player_tz;
+
+    if flag(cx, cz) {
+        top = minusedlevel;
+    }
+
+    let dx = (px - cx).abs();
+    let dz = (pz - cz).abs();
+    if dx > dz {
+        let step = dz * 65536 / dx;
+        let mut acc = 32768;
+        while cx != px {
+            if cx < px {
+                cx += 1;
+            } else {
+                cx -= 1;
+            }
+            if flag(cx, cz) {
+                top = minusedlevel;
+            }
+            acc += step;
+            if acc >= 65536 {
+                acc -= 65536;
+                if cz < pz {
+                    cz += 1;
+                } else if cz > pz {
+                    cz -= 1;
+                }
+                if flag(cx, cz) {
+                    top = minusedlevel;
+                }
+            }
+        }
+    } else if dz > 0 {
+        let step = dx * 65536 / dz;
+        let mut acc = 32768;
+        while cz != pz {
+            if cz < pz {
+                cz += 1;
+            } else {
+                cz -= 1;
+            }
+            if flag(cx, cz) {
+                top = minusedlevel;
+            }
+            acc += step;
+            if acc >= 65536 {
+                acc -= 65536;
+                if cx < px {
+                    cx += 1;
+                } else if cx > px {
+                    cx -= 1;
+                }
+                if flag(cx, cz) {
+                    top = minusedlevel;
+                }
+            }
+        }
+    }
+
+    if flag(px, pz) {
+        top = minusedlevel;
+    }
+    top
 }
 
 // ══════════════════════════════════════════════════════════════════
