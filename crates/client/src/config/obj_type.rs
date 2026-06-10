@@ -241,7 +241,7 @@ pub fn reset_cache() {
 // @ObfuscatedName("bb.b(II)Ljava/lang/String;") — ObjType.invNumber.
 // Verbatim port of ObjType.java:543-552. Formats an inventory cost
 // (gp) with a color-coded short-suffix: yellow for <100k, white K
-// for <10M, green M for â‰¥10M. Used by tooltip + price-check UIs.
+// for <10M, green M for ≥10M. Used by tooltip + price-check UIs.
 pub fn inv_number(cost: i32) -> String {
     if cost < 100_000 {
         format!("<col=ffff00>{}</col>", cost)
@@ -256,7 +256,7 @@ pub fn inv_number(cost: i32) -> String {
 impl ObjType {
     // @ObfuscatedName("fj.w(II)Lfj;") — ObjType.getStackSizeAlt.
     // Verbatim port of ObjType.java:429-444. Walks countobj/countco
-    // pairs: the largest threshold whose `count` is â‰¥ countco[i]
+    // pairs: the largest threshold whose `count` is ≥ countco[i]
     // wins. Used for coin piles and other stack-sized inventory
     // icons; returns `self` (no alt) when count == 1 or no rules
     // match.
@@ -437,6 +437,153 @@ impl ObjType {
 // @ObfuscatedName("fj.r") — ObjType.modelCache.
 pub static MODEL_CACHE: std::sync::LazyLock<Mutex<std::collections::HashMap<i32, Arc<ModelLit>>>> =
     std::sync::LazyLock::new(|| Mutex::new(std::collections::HashMap::new()));
+
+// @ObfuscatedName("eg.q") — ObjType.spriteCache (Java LruCache(100)).
+pub static SPRITE_CACHE: std::sync::LazyLock<Mutex<std::collections::HashMap<i64, Arc<crate::graphics::pix32::Pix32>>>> =
+    std::sync::LazyLock::new(|| Mutex::new(std::collections::HashMap::new()));
+
+// @ObfuscatedName("fj.??") — ObjType.countFont: the small font the
+// stack count renders with. Installed from Client's p11 once fonts
+// load.
+pub static COUNT_FONT: Mutex<Option<crate::graphics::pix_font_generic::PixFontGeneric>> =
+    Mutex::new(None);
+
+pub fn install_count_font(font: crate::graphics::pix_font_generic::PixFontGeneric) {
+    *COUNT_FONT.lock().unwrap() = Some(font);
+}
+
+// @ObfuscatedName("eg.e(IIIIZI)Lfq;") — ObjType.getSprite. Verbatim
+// port of ObjType.java:448-540: renders the item's lit model into a
+// 36×32 icon through a temporarily-bound Pix2D surface — countobj
+// stack-variant redirect, cert-note paper underlay, black + white
+// outlines, drop shadow, and the stack-count text.
+// `outline_pass` is Java's recursive cert-underlay call flag.
+pub fn get_sprite(id: i32, count: i32, outline: i32, shadow: i32,
+                  outline_pass: bool) -> Option<Arc<crate::graphics::pix32::Pix32>> {
+    use crate::dash3d::pix3d;
+    use crate::graphics::pix2d;
+    use crate::graphics::pix32::Pix32;
+
+    let key = ((shadow as i64) << 40) + ((outline as i64) << 38)
+        + ((count as i64) << 16) + id as i64;
+    if !outline_pass {
+        if let Some(cached) = SPRITE_CACHE.lock().unwrap().get(&key) {
+            return Some(Arc::clone(cached));
+        }
+    }
+
+    let mut obj = list(id)?;
+    if count > 1 {
+        if let (Some(countobj), Some(countco)) = (obj.countobj.as_ref(), obj.countco.as_ref()) {
+            let mut real = -1;
+            for i in 0..10 {
+                if count >= countco[i] && countco[i] != 0 {
+                    real = countobj[i];
+                }
+            }
+            if real != -1 {
+                obj = list(real)?;
+            }
+        }
+    }
+
+    let model = obj.get_model_lit(1)?;
+    let cert_icon = if obj.certtemplate != -1 {
+        Some(get_sprite(obj.certlink, 10, 1, 0, true)?)
+    } else {
+        None
+    };
+
+    // Bind a private 36×32 surface (Java Pix2D.setPixels with the
+    // sprite's array by reference; we swap the buffers and copy back).
+    let (saved_pixels, saved_w, saved_h, saved_clip) = {
+        let mut s = pix2d::STATE.lock().unwrap();
+        let saved = (std::mem::take(&mut s.pixels), s.width, s.height,
+                     (s.clip_min_x, s.clip_min_y, s.clip_max_x, s.clip_max_y));
+        s.pixels = vec![0i32; 36 * 32];
+        s.width = 36;
+        s.height = 32;
+        s.clip_min_x = 0;
+        s.clip_min_y = 0;
+        s.clip_max_x = 36;
+        s.clip_max_y = 32;
+        saved
+    };
+    pix3d::set_render_clipping();
+    pix3d::set_origin(16, 16);
+    {
+        let mut s3 = pix3d::STATE.lock().unwrap();
+        s3.low_detail = false;
+    }
+
+    let mut zoom = obj.zoom2d;
+    if outline_pass {
+        zoom = (zoom as f64 * 1.5) as i32;
+    } else if outline == 2 {
+        zoom = (zoom as f64 * 1.04) as i32;
+    }
+    let sin_t = pix3d::sin_table();
+    let cos_t = pix3d::cos_table();
+    let zoom_sin = (sin_t[(obj.xan2d & 0x7FF) as usize] * zoom) >> 16;
+    let zoom_cos = (cos_t[(obj.xan2d & 0x7FF) as usize] * zoom) >> 16;
+    model.obj_render_icon(0, obj.yan2d, obj.zan2d, obj.xan2d,
+                          obj.xof2d,
+                          obj.yof2d + model.min_y / 2 + zoom_sin,
+                          obj.yof2d + zoom_cos);
+
+    // Pull the rendered icon out of the bound surface.
+    let mut icon = Pix32 {
+        data: pix2d::STATE.lock().unwrap().pixels.clone(),
+        wi: 36, hi: 32, owi: 36, ohi: 32, xof: 0, yof: 0,
+    };
+    if outline >= 1 {
+        icon.add_outline(0x000001);
+    }
+    if outline >= 2 {
+        icon.add_outline(0xFFFFFF);
+    }
+    if shadow != 0 {
+        icon.add_shadow(shadow);
+    }
+
+    // Re-bind to composite the cert underlay + stack count text.
+    {
+        let mut s = pix2d::STATE.lock().unwrap();
+        s.pixels = icon.data.clone();
+    }
+    if let Some(cert) = cert_icon.as_ref() {
+        cert.plot_sprite(0, 0);
+    }
+    if !outline_pass && (obj.stackable == 1 || count != 1) && count != -1 {
+        if let Some(font) = COUNT_FONT.lock().unwrap().as_ref() {
+            font.base.draw_string(&inv_number(count), 0, 9, 0xFFFF00, 1);
+        }
+    }
+    icon.data = pix2d::STATE.lock().unwrap().pixels.clone();
+
+    // Restore the real surface + clip + render state.
+    {
+        let mut s = pix2d::STATE.lock().unwrap();
+        s.pixels = saved_pixels;
+        s.width = saved_w;
+        s.height = saved_h;
+        s.clip_min_x = saved_clip.0;
+        s.clip_min_y = saved_clip.1;
+        s.clip_max_x = saved_clip.2;
+        s.clip_max_y = saved_clip.3;
+    }
+    pix3d::set_render_clipping();
+    {
+        let mut s3 = pix3d::STATE.lock().unwrap();
+        s3.low_detail = true;
+    }
+
+    let arc = Arc::new(icon);
+    if !outline_pass {
+        SPRITE_CACHE.lock().unwrap().insert(key, Arc::clone(&arc));
+    }
+    Some(arc)
+}
 
 pub fn list(id: i32) -> Option<ObjType> {
     {

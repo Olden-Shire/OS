@@ -6499,6 +6499,9 @@ impl Client {
                     crate::config::spot_type::install_archives(self.config, self.models);
                     crate::minimap::install(self.sprites);
                     crate::overlays::install(self.sprites);
+                    if let Some(p11) = self.p11.clone() {
+                        crate::config::obj_type::install_count_font(p11);
+                    }
                     // Java: TitleScreen.open(canvas, binary, sprites)
                     // happens once during state-5 entry. Also wires the
                     // songs loader for the "scape main" intro music.

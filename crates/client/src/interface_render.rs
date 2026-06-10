@@ -421,13 +421,31 @@ fn draw_layer(
                         );
                     }
                 }
-                // ObjType sprites aren't wired yet; draw the grid cells
-                // so the inventory chrome is visible.
+                // Item sprites (Java drawLayer type-2, Client.java:
+                // 10227-10268): ObjType.getSprite per filled slot with
+                // the use-selected highlight variant; empty slots show
+                // nothing (the background sprites above carry the
+                // chrome). The drag-offset ghost render lands with the
+                // hovered-slot wiring.
+                let mut slot = 0usize;
                 for row in 0..com.height {
                     for col in 0..com.width {
-                        let slot_x = renderx + col * (com.margin_x + 32);
-                        let slot_y = rendery + row * (com.margin_y + 32);
-                        pix2d::draw_rect(slot_x, slot_y, 32, 32, 0x4a4a4a);
+                        let mut slot_x = renderx + col * (com.margin_x + 32);
+                        let mut slot_y = rendery + row * (com.margin_y + 32);
+                        if slot < 20 {
+                            slot_x += com.inv_background_x.get(slot).copied().unwrap_or(0);
+                            slot_y += com.inv_background_y.get(slot).copied().unwrap_or(0);
+                        }
+                        let obj_id = com.link_obj_type.get(slot).copied().unwrap_or(0);
+                        if obj_id > 0 {
+                            let count = com.link_obj_number.get(slot).copied().unwrap_or(0);
+                            if let Some(sprite) = crate::config::obj_type::get_sprite(
+                                obj_id - 1, count, 1, 0x302020, false)
+                            {
+                                sprite.plot_sprite(slot_x, slot_y);
+                            }
+                        }
+                        slot += 1;
                     }
                 }
             }

@@ -1283,6 +1283,68 @@ impl ModelLit {
         }
     }
 
+    // @ObfuscatedName("fo.av(IIIIIII)V") — ModelLit.objRender: the
+    // orthographic-ish icon/interface render. Euler rotates (Z, X, Y
+    // in that order), translates, then pitches around X by `view_x_an`
+    // for the final view and projects with the fixed << 9 focal
+    // length through the current Pix3D origin. Used by
+    // ObjType.getSprite and the type-6 interface model component.
+    // Args positionally mirror Java: (xan, yan, zan, view_xan, x, y, z).
+    pub fn obj_render_icon(&self, rot_x: i32, rot_y: i32, rot_z: i32,
+                           view_x_an: i32, tx: i32, ty: i32, tz: i32) {
+        let sin_t = pix3d::sin_table();
+        let cos_t = pix3d::cos_table();
+        let (origin_x, origin_y) = pix3d::origin();
+        let sin_x = sin_t[(rot_x & 0x7FF) as usize];
+        let cos_x = cos_t[(rot_x & 0x7FF) as usize];
+        let sin_y = sin_t[(rot_y & 0x7FF) as usize];
+        let cos_y = cos_t[(rot_y & 0x7FF) as usize];
+        let sin_z = sin_t[(rot_z & 0x7FF) as usize];
+        let cos_z = cos_t[(rot_z & 0x7FF) as usize];
+        let sin_v = sin_t[(view_x_an & 0x7FF) as usize];
+        let cos_v = cos_t[(view_x_an & 0x7FF) as usize];
+        let n = self.num_points as usize;
+        let mut screen_x = vec![i32::MIN; n];
+        let mut screen_y = vec![i32::MIN; n];
+        let mut view_x = vec![0i32; n];
+        let mut view_y = vec![0i32; n];
+        let mut view_z = vec![0i32; n];
+        for i in 0..n {
+            let mut vx = self.point_x[i];
+            let mut vy = self.point_y[i];
+            let mut vz = self.point_z[i];
+            if rot_z != 0 {
+                let t = (sin_z * vy + cos_z * vx) >> 16;
+                vy = (cos_z * vy - sin_z * vx) >> 16;
+                vx = t;
+            }
+            if rot_x != 0 {
+                let t = (cos_x * vy - sin_x * vz) >> 16;
+                vz = (sin_x * vy + cos_x * vz) >> 16;
+                vy = t;
+            }
+            if rot_y != 0 {
+                let t = (sin_y * vz + cos_y * vx) >> 16;
+                vz = (cos_y * vz - sin_y * vx) >> 16;
+                vx = t;
+            }
+            let wx = tx + vx;
+            let wy = ty + vy;
+            let wz = tz + vz;
+            let vy2 = (cos_v * wy - sin_v * wz) >> 16;
+            let vz2 = (sin_v * wy + cos_v * wz) >> 16;
+            if vz2 >= 50 {
+                screen_x[i] = (wx << 9) / vz2 + origin_x;
+                screen_y[i] = (vy2 << 9) / vz2 + origin_y;
+            }
+            view_x[i] = wx;
+            view_y[i] = vy2;
+            view_z[i] = vz2;
+        }
+        self.render_faces(&screen_x, &screen_y, &view_x, &view_y, &view_z,
+                          512, origin_x, origin_y, false, 0);
+    }
+
     // @ObfuscatedName("fo.z(IIIIIIIII)V") — ModelLit.worldRender.
     // Verbatim port of ModelLit.java:915-1050: the scene-render entry
     // used by World.fill for every wall / decor / ground-decor /
