@@ -705,16 +705,85 @@ pub struct WorldCache {
 pub static WORLD_CACHE: std::sync::LazyLock<Mutex<WorldCache>> =
     std::sync::LazyLock::new(|| Mutex::new(WorldCache { generation: usize::MAX, world: None }));
 
+// Drop the built scene so the next frame rebuilds from the new map
+// data. Java's startRebuild replaces `Client.world` outright; we
+// invalidate and let ensure_world_built reconstruct once the assets
+// are ready.
+pub fn invalidate_world() {
+    let mut cache = WORLD_CACHE.lock().unwrap();
+    cache.generation = usize::MAX;
+    cache.world = None;
+}
+
+// The colour bake in finishBuild reads FluType / FloType HSL fields
+// and overlay textures ONCE — Java's loading steps guarantee those
+// archives streamed in before finishBuild runs. Our config fetches
+// are lazy per-id, so the build must wait until every floor id the
+// map references actually decodes; baking earlier freezes get_table(0,
+// 0, 0) = palette-index-0 BLACK into every tile permanently. Each
+// probe also queues the JS5 fetch, so this self-heals within a few
+// frames of login.
+fn scene_assets_ready() -> bool {
+    let (flu_ids, flo_ids) = {
+        let state = client_build::STATE.lock().unwrap();
+        let mut flu = std::collections::HashSet::new();
+        let mut flo = std::collections::HashSet::new();
+        for level in 0..4usize {
+            for x in 0..104usize {
+                for z in 0..104usize {
+                    let t1 = state.floor_t1[level][x][z] as i32 & 0xFF;
+                    if t1 > 0 {
+                        flu.insert(t1 - 1);
+                    }
+                    let t2 = state.floor_t2[level][x][z] as i32 & 0xFF;
+                    if t2 > 0 {
+                        flo.insert((t2 - 1) & 0xFF);
+                    }
+                }
+            }
+        }
+        (flu, flo)
+    };
+    let mut ready = true;
+    for id in flu_ids {
+        if !flu_type::is_loaded(id) {
+            ready = false;
+        }
+    }
+    for id in flo_ids {
+        if !flo_type::is_loaded(id) {
+            ready = false;
+        }
+        // Overlay textures feed both the tile rasterizer and the
+        // baked minimap colour (getAverageRgb) — require their texels.
+        let fl = flo_type::list(id);
+        if fl.texture >= 0
+            && crate::dash3d::texture_manager::get_texels(fl.texture).is_none()
+        {
+            ready = false;
+        }
+    }
+    ready
+}
+
 // Build the World scene graph from the decoded map state. Mirrors
 // Java Client loadingStep 20 (resetVisCalc with the per-pitch camera
 // height table, Client.java:1692-1700) + ClientBuild.finishBuild.
 fn ensure_world_built() {
     let target_gen = client_build::STATE.lock().unwrap().locs.len();
+    if target_gen == 0 {
+        return;
+    }
     {
         let cache = WORLD_CACHE.lock().unwrap();
         if cache.generation == target_gen && cache.world.is_some() {
             return;
         }
+    }
+    // Wait for the floor configs + overlay textures the bake reads;
+    // retry next frame while JS5 streams them in.
+    if !scene_assets_ready() {
+        return;
     }
     let ground_h = client_build::STATE.lock().unwrap().ground_h.clone();
     let mut world = crate::dash3d::world::World::new(4, 104, 104, ground_h);
@@ -729,6 +798,10 @@ fn ensure_world_built() {
     }
     world.reset_vis_calc(&heights, 500, 800, 512, 334);
     client_build::finish_build(&mut world, None, false, 0);
+    eprintln!("[scene] world built: {} locs, floor configs + textures ready", target_gen);
+    // The minimap bakes from the same Ground colour fields — force its
+    // 512×512 image to rebuild against the fresh world.
+    crate::minimap::MINIMAP.lock().unwrap().minimap_level = -1;
     let mut cache = WORLD_CACHE.lock().unwrap();
     cache.generation = target_gen;
     cache.world = Some(world);

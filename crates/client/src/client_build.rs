@@ -269,9 +269,16 @@ pub fn check_locations(bytes: &[u8], base_x: i32, base_z: i32) -> bool {
                 let world_x = base_x + local_x;
                 let world_z = base_z + local_z;
                 if world_x > 0 && world_z > 0 && world_x < 103 && world_z < 103 {
-                    let lt = loc_type::list(loc_id);
-                    if let Some(t) = lt {
-                        if !t.check_model_all() {
+                    match loc_type::list(loc_id) {
+                        Some(t) => {
+                            if !t.check_model_all() {
+                                all_ready = false;
+                            }
+                        }
+                        // Loc config itself hasn't streamed yet — the
+                        // build would silently skip this loc forever,
+                        // so hold the map load until it decodes.
+                        None => {
                             all_ready = false;
                         }
                     }

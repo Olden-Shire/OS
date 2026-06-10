@@ -1373,8 +1373,11 @@ fn start_rebuild(c: &mut Client, zone_x: i32, zone_z: i32, level: i32) {
     c.map_load_count = 0;
     c.map_load_prev_count = 1;
     // Java startRebuild (Client.java:4985): minimapLevel = -1 forces
-    // the 512×512 minimap image to rebuild for the new map.
+    // the 512×512 minimap image to rebuild for the new map, and the
+    // scene graph is replaced outright — invalidate so the next frame
+    // rebuilds from the new region's data.
     crate::minimap::MINIMAP.lock().unwrap().minimap_level = -1;
+    crate::scene::invalidate_world();
     // Java: setMainState(25); messageBox(Text.LOADING, true);
     c.set_main_state(25);
 }
