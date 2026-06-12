@@ -22,3 +22,23 @@ hs_err_pid*.log
 **/*.rs.bk
 Cargo.lock.bak
 
+
+# Reference trees (local-only)
+/Engine2007/
+/RuneScriptTS-main/
+
+# Derived cache unpack output
+/unpacked/
+
+# Gradle state anywhere (runescript/)
+.gradle/
+
+# wasm-bindgen output (rebuilt from source; see crates/client/web/index.html)
+crates/client/web/pkg/
+
+# Root-level dev scratch: run logs, screenshots, one-off scripts
+/*.log
+/*.png
+/*.ps1
+/sanity_stacks.txt
+/cdp_targets.json

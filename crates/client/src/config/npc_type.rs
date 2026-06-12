@@ -138,13 +138,27 @@ impl NpcType {
             }
             40 => {
                 let n = p.g1() as usize;
-                self.recol_s = (0..n).map(|_| p.g2() as i16).collect();
-                self.recol_d = (0..n).map(|_| p.g2() as i16).collect();
+                // Interleaved (src, dst) pairs on the wire (Java reads
+                // g2 src then g2 dst per iteration) - a split read
+                // scrambles multi-pair recolours.
+                self.recol_s = Vec::with_capacity(n);
+                self.recol_d = Vec::with_capacity(n);
+                for _ in 0..n {
+                    self.recol_s.push(p.g2() as i16);
+                    self.recol_d.push(p.g2() as i16);
+                }
             }
             41 => {
                 let n = p.g1() as usize;
-                self.retex_s = (0..n).map(|_| p.g2() as i16).collect();
-                self.retex_d = (0..n).map(|_| p.g2() as i16).collect();
+                // Interleaved (src, dst) pairs on the wire (Java reads
+                // g2 src then g2 dst per iteration) - a split read
+                // scrambles multi-pair retexours.
+                self.retex_s = Vec::with_capacity(n);
+                self.retex_d = Vec::with_capacity(n);
+                for _ in 0..n {
+                    self.retex_s.push(p.g2() as i16);
+                    self.retex_d.push(p.g2() as i16);
+                }
             }
             60 => {
                 let n = p.g1() as usize;

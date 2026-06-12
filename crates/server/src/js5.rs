@@ -15,17 +15,30 @@ pub const JS5_PRIORITY_LOW: u8 = 3;
 pub const JS5_XOR: u8 = 4;
 
 /// Build the 255/255 checksum table: per archive, the CRC32 of its
-/// master index group. The client compares these against its cached
-/// indexes to decide what to refetch.
-pub fn build_checksum_table(cache: &mut Cache, archives: u8) -> Vec<u8> {
-    let mut p = Packet::new(archives as usize * 4);
+/// master index group (the 255/255 response). The client decodes this
+/// in `read_master_index_at` as an uncompressed group container —
+/// `compression_type(1) + length(4)` header, then `crc(4) + version(4)`
+/// per archive at offset `archive*8 + 5`. So we emit a complete
+/// uncompressed container here; `group_response` sends it verbatim.
+pub fn build_checksum_table(cache: &Cache, archives: u8) -> Vec<u8> {
+    // Payload: per-archive (index crc, index revision). These are the
+    // exact values the client validates the downloaded indexes against
+    // (Js5Index.crc = crc32 of the same idx255 bytes the client later
+    // fetches for archive X; revision is the index version number).
+    let mut payload = Packet::new(archives as usize * 8);
     for archive in 0..archives {
-        let crc = match cache.read_master_raw(archive) {
-            Ok(Some(raw)) => io::crc32::checksum(&raw, 0, raw.len()) as i32,
-            _ => 0,
-        };
-        p.p4(crc);
+        let index = cache.index(archive);
+        payload.p4(index.crc as i32);
+        payload.p4(index.revision);
     }
+    let payload_len = payload.pos;
+
+    // Wrap as an uncompressed JS5 container: compression_type 0 + the
+    // 4-byte payload length, then the payload.
+    let mut p = Packet::new(payload_len + 5);
+    p.p1(0);
+    p.p4(payload_len as i32);
+    p.pdata(&payload.data, 0, payload_len);
     let mut data = p.data;
     data.truncate(p.pos);
     data

@@ -166,14 +166,31 @@ pub fn init() {
 // @ObfuscatedName("ck.r([BIIII[Lck;I)V") — ClientBuild.loadGround
 //
 // Decodes one 64×64 ground chunk into ground_h + floor_* + mapl at
-// (base_x..base_x+64, base_z..base_z+64).
+// (base_x..base_x+64, base_z..base_z+64). Clears the 0x1000000
+// "unloaded" collision bit for every in-bounds tile of the chunk
+// first (ClientBuild.java:155-163) — tryMove's block masks include
+// that bit, so tiles never touched here stay unwalkable.
 pub fn load_ground(
     bytes: &[u8],
     base_x: i32,
     base_z: i32,
     perlin_off_x: i32,
     perlin_off_z: i32,
+    collision: Option<&mut [Option<crate::dash3d::CollisionMap>; 4]>,
 ) {
+    if let Some(cms) = collision {
+        for cm in cms.iter_mut().flatten() {
+            for x in 0..64 {
+                for z in 0..64 {
+                    let tx = base_x + x;
+                    let tz = base_z + z;
+                    if tx > 0 && tx < 103 && tz > 0 && tz < 103 {
+                        cm.flags[tx as usize][tz as usize] &= 0xFEFFFFFFu32 as i32;
+                    }
+                }
+            }
+        }
+    }
     let mut p = Packet::from_vec(bytes.to_vec());
     let mut s = STATE.lock().unwrap();
     for level in 0..4 {
@@ -315,20 +332,22 @@ pub fn load_locations(bytes: &[u8], base_x: i32, base_z: i32) {
             let world_x = base_x + local_x;
             let world_z = base_z + local_z;
             if world_x > 0 && world_z > 0 && world_x < 103 && world_z < 103 {
-                let mut eff_level = level;
-                if (s.mapl[1][world_x as usize][world_z as usize] & 0x2) == 2 {
-                    eff_level = level - 1;
-                }
-                if eff_level >= 0 {
-                    s.locs.push(Loc {
-                        level: eff_level,
-                        x: world_x,
-                        z: world_z,
-                        id: loc_id,
-                        rotation,
-                        kind,
-                    });
-                }
+                // Java (ClientBuild.java:352-361) keeps the RAW level for
+                // placement + heights — the bridge `-1` adjustment picks
+                // only WHICH COLLISION MAP gets the loc (and skips
+                // collision when it goes negative). World.pushDown later
+                // shifts bridge squares into the level-0 render slot.
+                // Decrementing the placement level here put bridge
+                // parapets at level 0 with riverbed heights (walls flat
+                // on the water) and dropped level-0 locs on bridge tiles.
+                s.locs.push(Loc {
+                    level,
+                    x: world_x,
+                    z: world_z,
+                    id: loc_id,
+                    rotation,
+                    kind,
+                });
             }
         }
     }
@@ -502,7 +521,16 @@ fn loc_anim_source(loc_id: i32, shape: i32, rotation: i32,
 pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32,
                world: &mut crate::dash3d::world::World,
                collision: Option<&mut crate::dash3d::CollisionMap>,
-               low_mem: bool, last_built_level: i32) {
+               low_mem: bool, last_built_level: i32,
+               ground_level: i32, with_bgsound: bool, bake_lighting: bool) {
+    // `ground_level` is the level whose ground-height grid is sampled for the
+    // model anchor (== `level` during the build replay, but `level`+1 on bridge
+    // tiles via changeLocUnchecked). `with_bgsound` is false on the loc-change
+    // path so a re-placement doesn't double-register an ambient emitter.
+    // `bake_lighting` writes the shadow/occlusion (mapo) arrays — true at build
+    // time, false on the loc-change path (changeLocUnchecked skips them; the
+    // lighting bake already happened). These unify ClientBuild.addLoc +
+    // ClientBuild.changeLocUnchecked (both place a loc).
     use crate::config::loc_type;
     use crate::dash3d::model_source::ModelSource;
     use std::sync::Arc;
@@ -543,7 +571,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         (z, z + 1)
     };
     let h_val = {
-        let gh = &s.ground_h[level as usize];
+        let gh = &s.ground_h[ground_level as usize];
         (gh[hx0 as usize][hz0 as usize] + gh[hx1 as usize][hz0 as usize]
             + gh[hx0 as usize][hz1 as usize] + gh[hx1 as usize][hz1 as usize]) >> 2
     };
@@ -558,7 +586,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
     if lt.raiseobject == 1 {
         typecode2 += 256;
     }
-    if lt.has_bg_sound() {
+    if with_bgsound && lt.has_bg_sound() {
         crate::sound::bg_sound::add_sound(level, x, z, &lt, rotation);
     }
     // Model factory shared by the per-kind arms: lit static model when
@@ -569,7 +597,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
             Some(loc_anim_source(loc_id, shape, rot, level, x, z,
                                  anchor_x, h_val, anchor_z))
         } else {
-            lt.get_model(shape, rot, &s.ground_h[level as usize],
+            lt.get_model(shape, rot, &s.ground_h[ground_level as usize],
                          anchor_x, h_val, anchor_z)
         }
     };
@@ -592,7 +620,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         let placed = world.add_scenery(level, x, z, h_val, lw, ll, model.clone(),
                                        if kind == 11 { 256 } else { 0 },
                                        typecode, typecode2);
-        if model.is_some() && placed && lt.shadow {
+        if bake_lighting && model.is_some() && placed && lt.shadow {
             // Java: ModelLit radius/4 clamped 30, else 15 for anim'd.
             let strength = model.as_ref()
                 .and_then(|m| m.lit_radius_cylinder())
@@ -615,7 +643,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         }
     } else if kind >= 12 {
         let model = make_model(&s, kind, rotation);
-        if kind <= 17 && kind != 13 && level > 0 {
+        if bake_lighting && kind <= 17 && kind != 13 && level > 0 {
             s.mapo[lvl][xu][zu] |= 0x924;
         }
         drop(s);
@@ -629,38 +657,38 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         let model = make_model(&s, 0, rotation);
         match rotation {
             0 => {
-                if lt.shadow {
+                if bake_lighting && lt.shadow {
                     s.shadow[lvl][xu][zu] = 50;
                     s.shadow[lvl][xu][zu + 1] = 50;
                 }
-                if lt.occlude {
+                if bake_lighting && lt.occlude {
                     s.mapo[lvl][xu][zu] |= 0x249;
                 }
             }
             1 => {
-                if lt.shadow {
+                if bake_lighting && lt.shadow {
                     s.shadow[lvl][xu][zu + 1] = 50;
                     s.shadow[lvl][xu + 1][zu + 1] = 50;
                 }
-                if lt.occlude {
+                if bake_lighting && lt.occlude {
                     s.mapo[lvl][xu][zu + 1] |= 0x492;
                 }
             }
             2 => {
-                if lt.shadow {
+                if bake_lighting && lt.shadow {
                     s.shadow[lvl][xu + 1][zu] = 50;
                     s.shadow[lvl][xu + 1][zu + 1] = 50;
                 }
-                if lt.occlude {
+                if bake_lighting && lt.occlude {
                     s.mapo[lvl][xu + 1][zu] |= 0x249;
                 }
             }
             3 => {
-                if lt.shadow {
+                if bake_lighting && lt.shadow {
                     s.shadow[lvl][xu][zu] = 50;
                     s.shadow[lvl][xu + 1][zu] = 50;
                 }
-                if lt.occlude {
+                if bake_lighting && lt.occlude {
                     s.mapo[lvl][xu][zu] |= 0x492;
                 }
             }
@@ -679,7 +707,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         }
     } else if kind == 1 {
         let model = make_model(&s, 1, rotation);
-        if lt.shadow {
+        if bake_lighting && lt.shadow {
             match rotation {
                 0 => s.shadow[lvl][xu][zu + 1] = 50,
                 1 => s.shadow[lvl][xu + 1][zu + 1] = 50,
@@ -700,7 +728,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         let rot2 = (rotation + 1) & 0x3;
         let model_a = make_model(&s, 2, rotation + 4);
         let model_b = make_model(&s, 2, rot2);
-        if lt.occlude {
+        if bake_lighting && lt.occlude {
             match rotation {
                 0 => {
                     s.mapo[lvl][xu][zu] |= 0x249;
@@ -735,7 +763,7 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
         }
     } else if kind == 3 {
         let model = make_model(&s, 3, rotation);
-        if lt.shadow {
+        if bake_lighting && lt.shadow {
             match rotation {
                 0 => s.shadow[lvl][xu][zu + 1] = 50,
                 1 => s.shadow[lvl][xu + 1][zu + 1] = 50,
@@ -822,6 +850,33 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
     }
 }
 
+// @ObfuscatedName(— ClientBuild.changeLocUnchecked, ClientBuild.java:1241).
+// Places a single new loc (the apply half of a queued loc change). Java keeps
+// this as a near-duplicate of addLoc; we reuse `add_loc`'s proven per-shape
+// placement, sampling ground height at `eff_level` (bridge tiles) and skipping
+// the bgsound registration. lowMem is gated by the caller (loc_change_unchecked)
+// so `low_mem=false` here — which also makes the kind==22 ground-decor arm
+// unconditional, matching changeLocUnchecked. (Java uses getModelLit vs addLoc's
+// getModel; the Rust ModelSource the build path produces is already scene-lit, so
+// reusing add_loc's get_model yields the same placement.)
+// Read a build `mapl` flag bitmask for a tile (Java `ClientBuild.mapl[l][x][z]`).
+// Used by loc_change_unchecked's bridge-tile effective-level calc.
+#[must_use]
+pub fn mapl_flag(level: i32, x: i32, z: i32) -> i32 {
+    i32::from(STATE.lock().unwrap().mapl[level as usize][x as usize][z as usize])
+}
+
+#[allow(clippy::too_many_arguments)]
+pub fn change_loc_unchecked(level: i32, eff_level: i32, x: i32, z: i32,
+                            loc_id: i32, angle: i32, shape: i32,
+                            world: &mut crate::dash3d::world::World,
+                            collision: Option<&mut crate::dash3d::CollisionMap>) {
+    add_loc(level, x, z, loc_id, angle, shape, world, collision,
+            /* low_mem = */ false, /* last_built_level = */ 0,
+            /* ground_level = */ eff_level, /* with_bgsound = */ false,
+            /* bake_lighting = */ false);
+}
+
 // @ObfuscatedName("fp.q(Laq;[Lck;I)V") — ClientBuild.finishBuild.
 // Verbatim port of ClientBuild.java:734-1118 with one structural
 // difference: Java runs addLoc inline while decoding l_X_Z groups;
@@ -829,18 +884,36 @@ pub fn add_loc(level: i32, x: i32, z: i32, loc_id: i32, rotation: i32, kind: i32
 // addLoc replay happens here first (same stream order, so the
 // wallType lookups for decor kinds 5/6/8 still see their walls).
 pub fn finish_build(world: &mut crate::dash3d::world::World,
-                    mut collision: Option<&mut Vec<crate::dash3d::CollisionMap>>,
+                    mut collision: Option<&mut [Option<crate::dash3d::CollisionMap>; 4]>,
                     low_mem: bool, last_built_level: i32) {
     use crate::config::{flo_type, flu_type};
     use crate::dash3d::pix3d;
 
-    // addLoc replay (Java: loadLocations → addLoc inline).
+    // addLoc replay (Java: loadLocations → addLoc inline). The bridge
+    // `-1` (Java ClientBuild.java:353-360) applies ONLY to the collision
+    // map pick: a level-1 loc on a bridge tile clips on the level-0 map,
+    // and a level-0 loc there clips nowhere (var18 < 0 → null map). The
+    // placement level and height sampling stay RAW.
     let locs: Vec<Loc> = STATE.lock().unwrap().locs.clone();
+    let bridge_mask: Vec<Vec<bool>> = {
+        let s = STATE.lock().unwrap();
+        (0..104).map(|x| (0..104).map(|z| (s.mapl[1][x][z] & 0x2) == 2).collect()).collect()
+    };
     for loc in &locs {
-        let cm = collision.as_deref_mut()
-            .and_then(|cms| cms.get_mut(loc.level.clamp(0, 3) as usize));
+        let mut collision_level = loc.level;
+        if bridge_mask[loc.x as usize][loc.z as usize] {
+            collision_level -= 1;
+        }
+        let cm = if collision_level >= 0 {
+            collision.as_deref_mut()
+                .and_then(|cms| cms[collision_level.clamp(0, 3) as usize].as_mut())
+        } else {
+            None
+        };
         add_loc(loc.level, loc.x, loc.z, loc.id, loc.rotation, loc.kind,
-                world, cm, low_mem, last_built_level);
+                world, cm, low_mem, last_built_level,
+                /* ground_level = */ loc.level, /* with_bgsound = */ true,
+                /* bake_lighting = */ true);
     }
 
     // Blocked-ground collision pass (Java 735-749).
@@ -856,7 +929,7 @@ pub fn finish_build(world: &mut crate::dash3d::world::World,
                                 eff = level - 1;
                             }
                             if eff >= 0 {
-                                if let Some(cm) = cms.get_mut(eff as usize) {
+                                if let Some(cm) = cms[eff as usize].as_mut() {
                                     cm.block_ground(x, z);
                                 }
                             }

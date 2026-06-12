@@ -10,7 +10,10 @@ members = [
     "crates/db",
     "crates/server",
     "crates/app",
+    "crates/synth",
+    "crates/pix",
     "crates/jaged",
+    "crates/client",
 ]
 
 [workspace.package]
@@ -29,8 +32,32 @@ protocol = { path = "crates/protocol" }
 engine = { path = "crates/engine" }
 db = { path = "crates/db" }
 server = { path = "crates/server" }
+synth = { path = "crates/synth" }
+pix = { path = "crates/pix" }
 
 [profile.release]
 lto = "thin"
 codegen-units = 1
 strip = "symbols"
+
+# The client crate is a verbatim Java port. Java's int arithmetic
+# silently wraps on overflow; the rasterizers (texture_triangle_affine
+# etc.) and fixed-point inner loops rely on that. Match Java's
+# semantics in debug builds too so the port behaves identically.
+#
+# opt-level 3 even in dev: the client is a software 3D rasterizer
+# (per-pixel gouraud/texture inner loops). At opt-level 0 those loops
+# are ~40% slower than Java's JIT and cap the frame rate well below the
+# 50 Hz target; with optimization a debug build keeps up. overflow-checks
+# stays off so Java's silent int wrap is preserved. Trade-off: the client
+# crate compiles slower on each edit — dial back to opt-level 1 if the
+# edit-compile loop hurts more than the frame rate helps.
+[profile.dev.package.client]
+overflow-checks = false
+opt-level = 3
+
+# Optimize all dependencies in dev as well (softbuffer present, image
+# decode, audio mixing). One-time cost; keeps per-frame host glue off the
+# critical path.
+[profile.dev.package."*"]
+opt-level = 3

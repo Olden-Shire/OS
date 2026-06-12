@@ -7,8 +7,15 @@ use std::path::Path;
 use io::{Packet, cp1252, xtea};
 
 use crate::content::extensions;
+use crate::content::hash_names::ArchiveNameMap;
 use crate::content::manifest::{ArchiveManifest, GroupMeta, MasterManifest};
 use crate::content::pack_file;
+use crate::cs2::ClientScript;
+use crate::cs2_asm::{self, NameMaps};
+use crate::cs2_compile;
+use crate::cs2_decompile;
+use crate::cs2_sig::{self, ScriptSig};
+use crate::cs2_source;
 use crate::maps::XteaKeys;
 use crate::{ARCHIVE_COUNT, ARCHIVE_NAMES, Cache, MASTER_ARCHIVE, MAPS_ARCHIVE, decode_packet};
 use crate::config::group as config_group;
@@ -25,6 +32,18 @@ pub struct UnpackStats {
 /// encrypted map loc files; pass `XteaKeys::default()` if you don't need to decrypt them
 /// (the encrypted bytes will be written verbatim).
 pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Result<UnpackStats> {
+    unpack_with_names(cache, keys, dest, &ArchiveNameMap::new())
+}
+
+/// Like [`unpack`] but consults `name_map` for the on-disk stem of every group whose
+/// `name_hash` has a match. Build the map from a reference pack directory via
+/// [`crate::content::hash_names::load_from_pack_dir`].
+pub fn unpack_with_names(
+    cache: &mut Cache,
+    keys: &XteaKeys,
+    dest: &Path,
+    name_map: &ArchiveNameMap,
+) -> std::io::Result<UnpackStats> {
     fs::create_dir_all(dest)?;
     let mut stats = UnpackStats::default();
     let map_names = build_map_name_table();
@@ -33,6 +52,11 @@ pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Resul
 
     for archive in 0..ARCHIVE_COUNT {
         let archive_dir = dest.join(ARCHIVE_NAMES[archive as usize]);
+        // Wipe stale files from prior unpacks (a re-run with a new name source will write
+        // `scape_main.mid` but the previous run's `song_42.mid` would otherwise linger).
+        if archive_dir.exists() {
+            fs::remove_dir_all(&archive_dir)?;
+        }
         fs::create_dir_all(&archive_dir)?;
         let group_ids: Vec<i32> = cache.index(archive).group_ids.clone();
         let mut manifest = ArchiveManifest {
@@ -41,6 +65,19 @@ pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Resul
             groups: Vec::with_capacity(group_ids.len()),
         };
 
+        let archive_name_lookup = name_map.get(&archive);
+        // Clientscripts decompile to `.cs2` structured source; build the id→name
+        // tables (own scripts + varp/varbit from the already-unpacked config archive)
+        // and the cross-script signature table (gosub arity + returns) up front so
+        // every reference resolves regardless of group order.
+        let (names, cs2_sigs) = if extensions::is_clientscript_archive(archive) {
+            (
+                build_clientscript_names(archive, &group_ids, cache, &map_names, archive_name_lookup, &pack_data),
+                build_clientscript_sigs(archive, &group_ids, cache),
+            )
+        } else {
+            (NameMaps::new(), BTreeMap::new())
+        };
         for gid in group_ids {
             let gid = gid as u32;
             let raw = cache
@@ -53,8 +90,11 @@ pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Resul
                 &raw,
                 keys,
                 &map_names,
+                archive_name_lookup,
                 &archive_dir,
                 &mut pack_data,
+                &names,
+                &cs2_sigs,
             )?;
             stats.total_groups += 1;
             manifest.groups.push(meta);
@@ -99,6 +139,7 @@ pub fn unpack(cache: &mut Cache, keys: &XteaKeys, dest: &Path) -> std::io::Resul
     Ok(stats)
 }
 
+#[allow(clippy::too_many_arguments)]
 fn unpack_one_group(
     cache: &mut Cache,
     archive: u8,
@@ -106,8 +147,11 @@ fn unpack_one_group(
     raw: &[u8],
     keys: &XteaKeys,
     map_names: &HashMap<i32, String>,
+    name_lookup: Option<&HashMap<i32, String>>,
     archive_dir: &Path,
     pack_data: &mut HashMap<&'static str, BTreeMap<u32, String>>,
+    names: &NameMaps,
+    cs2_sigs: &BTreeMap<u32, ScriptSig>,
 ) -> std::io::Result<GroupMeta> {
     // For map loc files (archive 5, l*_* name hash), decrypt before decompressing.
     let mut owned: Vec<u8>;
@@ -141,7 +185,13 @@ fn unpack_one_group(
     let version = [bytes[bytes.len() - 2], bytes[bytes.len() - 1]];
 
     // Resolve on-disk name for this group.
-    let group_name = group_path(archive, group_id, cache.index(archive).group_name_hashes.as_deref(), map_names);
+    let group_name = group_path(
+        archive,
+        group_id,
+        cache.index(archive).group_name_hashes.as_deref(),
+        map_names,
+        name_lookup,
+    );
     let file_ids = cache.index(archive).file_ids[group_id as usize].clone();
 
     let (path, stored_file_ids, chunks) = if file_ids.len() > 1 {
@@ -176,13 +226,25 @@ fn unpack_one_group(
 
         (group_name, Some(file_ids), chunks)
     } else {
-        let ext = extensions::single_file_ext(archive, &payload);
-        let path = format!("{group_name}.{ext}");
-        let on_disk: Vec<u8> = if extensions::is_midi_archive(archive) {
-            io::midi::decode(&payload)
+        // Clientscripts decompile to structured `.cs2` source when the full
+        // decompile → recompile → byte-compare verification passes; otherwise to
+        // faithful `.cs2asm` assembly. A script that fails to decode (never for
+        // vanilla) falls back to raw `.dat` so nothing is lost. Other archives keep
+        // their MIDI/raw handling.
+        let (ext, on_disk): (&str, Vec<u8>) = if extensions::is_clientscript_archive(archive) {
+            match ClientScript::decode(&payload) {
+                Some(script) => match try_decompile_source(group_id, &script, names, cs2_sigs, &payload) {
+                    Some(text) => ("cs2", text.into_bytes()),
+                    None => ("cs2asm", cs2_asm::disassemble(&script, names).into_bytes()),
+                },
+                None => ("dat", payload.clone()),
+            }
+        } else if extensions::is_midi_archive(archive) {
+            (extensions::single_file_ext(archive, &payload), io::midi::decode(&payload))
         } else {
-            payload.clone()
+            (extensions::single_file_ext(archive, &payload), payload.clone())
         };
+        let path = format!("{group_name}.{ext}");
         fs::write(archive_dir.join(&path), &on_disk)?;
 
         // Single-file group: pack entry maps group_id → file stem (no .dat).
@@ -196,6 +258,50 @@ fn unpack_one_group(
     };
 
     Ok(GroupMeta { id: group_id, ctype, version, path, xtea_key, file_ids: stored_file_ids, chunks })
+}
+
+/// Decode every script of the clientscript archive and infer the cross-script
+/// signature table (gosub arg/return counts) the structured decompiler needs.
+/// Scripts that fail analysis simply stay out of the table — anything that calls them
+/// then falls back to `.cs2asm` via [`try_decompile_source`].
+fn build_clientscript_sigs(
+    archive: u8,
+    group_ids: &[i32],
+    cache: &mut Cache,
+) -> BTreeMap<u32, ScriptSig> {
+    let mut scripts: BTreeMap<u32, ClientScript> = BTreeMap::new();
+    for &gid in group_ids {
+        let gid = gid as u32;
+        if let Ok(Some(bytes)) = cache.read_group(archive, gid)
+            && let Some(script) = ClientScript::decode(&bytes)
+        {
+            scripts.insert(gid, script);
+        }
+    }
+    cs2_sig::analyze_all(&scripts).sigs
+}
+
+/// Structured decompile with full verification: the lifted IR must recompile to the
+/// exact original payload, and the printed source must reparse to the identical IR.
+/// Any failure returns `None` and the caller writes `.cs2asm` instead — the cache
+/// round-trips either way.
+fn try_decompile_source(
+    id: u32,
+    script: &ClientScript,
+    names: &NameMaps,
+    sigs: &BTreeMap<u32, ScriptSig>,
+    payload: &[u8],
+) -> Option<String> {
+    let ir = cs2_decompile::lift(id, script, sigs).ok()?;
+    let back = cs2_compile::compile(&ir).ok()?;
+    if back.encode() != payload {
+        return None;
+    }
+    let text = cs2_source::print(&ir, names);
+    match cs2_source::parse(&text, names, sigs) {
+        Ok(reparsed) if reparsed == ir => Some(text),
+        _ => None,
+    }
 }
 
 /// Parse the multi-file group trailer to recover per-chunk per-file byte sizes. Returns
@@ -273,13 +379,53 @@ fn parse_map_xy(name: &str) -> (u32, u32) {
     (x, y)
 }
 
+/// Build the [`NameMaps`] used to render clientscript operands symbolically. Script names
+/// are the on-disk stems of every archive-12 group (same resolution as the file names, so
+/// pack reads them back via `script.pack`); varp/varbit names come from the config
+/// archive's already-populated `.pack` data.
+fn build_clientscript_names(
+    archive: u8,
+    group_ids: &[i32],
+    cache: &Cache,
+    map_names: &HashMap<i32, String>,
+    name_lookup: Option<&HashMap<i32, String>>,
+    pack_data: &HashMap<&'static str, BTreeMap<u32, String>>,
+) -> NameMaps {
+    let name_hashes = cache.index(archive).group_name_hashes.as_deref();
+    let mut scripts: BTreeMap<u32, String> = BTreeMap::new();
+    for &gid in group_ids {
+        let gid = gid as u32;
+        scripts.insert(gid, group_path(archive, gid, name_hashes, map_names, name_lookup));
+    }
+    let mut names = NameMaps::new();
+    names.set_scripts(&scripts);
+    if let Some(m) = pack_data.get("varp") {
+        names.set_varps(m);
+    }
+    if let Some(m) = pack_data.get("varbit") {
+        names.set_varbits(m);
+    }
+    names
+}
+
 /// Compute the on-disk path stem (no extension) for a group.
 fn group_path(
     archive: u8,
     group_id: u32,
     name_hashes: Option<&[i32]>,
     map_names: &HashMap<i32, String>,
+    name_lookup: Option<&HashMap<i32, String>>,
 ) -> String {
+    // For archives that carry name hashes AND we have a reference name map, try the hash
+    // match first. Lowercased to match Lost City convention. Falls through to the numeric
+    // default if no match.
+    if let (Some(hashes), Some(lookup)) = (name_hashes, name_lookup) {
+        if let Some(hash) = hashes.get(group_id as usize) {
+            if let Some(name) = lookup.get(hash) {
+                return name.to_lowercase();
+            }
+        }
+    }
     match archive {
         0 => format!("anim_{group_id}"),
         1 => format!("base_{group_id}"),

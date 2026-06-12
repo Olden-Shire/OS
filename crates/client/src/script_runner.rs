@@ -64,25 +64,23 @@ pub fn op_modulo(a: i32, b: i32) -> i32 {
     if b == 0 { 0 } else { a.wrapping_rem(b) }
 }
 
-// @ObfuscatedName(— opcode 4012) — pow. Java's `Math.pow` rounds to
-// int; we mirror with f64 pow + cast (saturates on overflow).
+// @ObfuscatedName(— opcode 4012) — pow. Java: a==0 ⇒ 0, else
+// (int)Math.pow(a, b). Rust's `as i32` is a saturating cast that
+// matches Java's (int) double-narrowing exactly (NaN→0, +∞→MAX,
+// −∞→MIN), so no explicit non-finite branch is needed.
 pub fn op_pow(a: i32, b: i32) -> i32 {
     if a == 0 { return 0; }
-    let r = (a as f64).powf(b as f64);
-    if !r.is_finite() {
-        i32::MAX
-    } else {
-        r as i32
-    }
+    (a as f64).powf(b as f64) as i32
 }
 
 // @ObfuscatedName(— opcode 4013) — invpow. nth-root via Math.pow with
-// reciprocal. b==0 ⇒ Integer.MAX_VALUE; a==0 ⇒ 0.
+// reciprocal. Java: a==0 ⇒ 0, b==0 ⇒ Integer.MAX_VALUE, else
+// (int)Math.pow(a, 1/b). The `as i32` saturating cast matches Java's
+// (int) of the NaN that Math.pow yields for a<0 (→ 0).
 pub fn op_invpow(a: i32, b: i32) -> i32 {
     if a == 0 { return 0; }
     if b == 0 { return i32::MAX; }
-    let r = (a as f64).powf(1.0 / (b as f64));
-    if !r.is_finite() { i32::MAX } else { r as i32 }
+    (a as f64).powf(1.0 / (b as f64)) as i32
 }
 
 // @ObfuscatedName(— opcode 4014) — and.
@@ -115,15 +113,145 @@ pub fn op_lowercase(s: &str) -> String { s.to_lowercase() }
 // opcode 4106 — tostring. Java's `Integer.toString(n)`.
 pub fn op_tostring(n: i32) -> String { n.to_string() }
 
-// opcode 4107 — compare. Java's `StringTools.compare` is just
-// String.compareToIgnoreCase semantics returning the signed delta.
-pub fn op_compare(a: &str, b: &str) -> i32 {
-    use std::cmp::Ordering as O;
-    match a.to_lowercase().cmp(&b.to_lowercase()) {
-        O::Less => -1,
-        O::Equal => 0,
-        O::Greater => 1,
+// Java Character.toLowerCase/toUpperCase return a single char; Rust's
+// iterators expand a few code points (ß→SS) but the cp1252 chars that
+// reach the un-folded paths here map 1:1, so first-of-iterator matches.
+fn java_to_lower(c: char) -> char { c.to_lowercase().next().unwrap_or(c) }
+fn java_to_upper(c: char) -> char { c.to_uppercase().next().unwrap_or(c) }
+
+// @ObfuscatedName("p.r(CII)C") — StringComparator.removeAccents.
+// Verbatim port of StringComparator.java:13-70 (lang arg unused).
+fn remove_accents(c: char) -> char {
+    let n = c as u32;
+    if (192..=255).contains(&n) {
+        if (192..=198).contains(&n) { return 'A'; }
+        if n == 199 { return 'C'; }
+        if (200..=203).contains(&n) { return 'E'; }
+        if (204..=207).contains(&n) { return 'I'; }
+        if (210..=214).contains(&n) { return 'O'; }
+        if (217..=220).contains(&n) { return 'U'; }
+        if n == 221 { return 'Y'; }
+        if n == 223 { return 's'; }
+        if (224..=230).contains(&n) { return 'a'; }
+        if n == 231 { return 'c'; }
+        if (232..=235).contains(&n) { return 'e'; }
+        if (236..=239).contains(&n) { return 'i'; }
+        if (242..=246).contains(&n) { return 'o'; }
+        if (249..=252).contains(&n) { return 'u'; }
+        if n == 253 || n == 255 { return 'y'; }
     }
+    match n {
+        338 => 'O',
+        339 => 'o',
+        376 => 'Y',
+        _ => c,
+    }
+}
+
+// @ObfuscatedName("cl.d(CIB)I") — StringComparator.getCharSortKey.
+// Verbatim port of StringComparator.java:73-80 (lang arg unused).
+fn char_sort_key(c: char) -> i32 {
+    let mut key = (c as i32) << 4;
+    // Java: isUpperCase(c) || isTitleCase(c); titlecase (Lt) chars don't
+    // occur in cp1252 content, so is_uppercase suffices.
+    if c.is_uppercase() {
+        key = ((java_to_lower(c) as i32) << 4) + 1;
+    }
+    key
+}
+
+// The second expansion char of a ligature (StringTools.java:344-372):
+// Æ→…E, æ→…e, ß→…s, Œ→…E, œ→…e. removeAccents handles the first char;
+// this returns the pending second char (0 = not a ligature).
+fn ligature_second(c: char) -> u32 {
+    match c as u32 {
+        198 | 338 => 69,  // 'E'
+        230 | 339 => 101, // 'e'
+        223 => 115,       // 's'
+        _ => 0,
+    }
+}
+
+// @ObfuscatedName("eh.eb(...)") — opcode 4107 compare. Verbatim port of
+// StringTools.compare (StringTools.java:279-396): per-char natural
+// collation with ligature expansion + accent folding, result clamped to
+// its sign. NOT compareToIgnoreCase — it folds Æ/ß/Œ and orders via
+// getCharSortKey (lowercase before uppercase). `lang` (Client.lang) is
+// ignored by both helpers so we omit it.
+pub fn op_compare(a: &str, b: &str) -> i32 {
+    let s1: Vec<char> = a.chars().collect();
+    let s2: Vec<char> = b.chars().collect();
+    let len1 = s1.len() as i32;
+    let len2 = s2.len() as i32;
+    let mut i1 = 0i32; // var252
+    let mut i2 = 0i32; // var253
+    let mut pend1 = 0u32; // var254 — pending ligature second char
+    let mut pend2 = 0u32; // var255
+    let result: i32;
+    loop {
+        if i1 - pend1 as i32 >= len1 && i2 - pend2 as i32 >= len2 {
+            // Both consumed — case-sensitive + length tiebreak.
+            let minlen = len1.min(len2) as usize;
+            let mut diff = None;
+            for k in 0..minlen {
+                let (c1, c2) = (s1[k], s2[k]);
+                if c1 != c2 && java_to_upper(c1) != java_to_upper(c2) {
+                    let (l1, l2) = (java_to_lower(c1), java_to_lower(c2));
+                    if l1 != l2 {
+                        diff = Some(char_sort_key(l1) - char_sort_key(l2));
+                        break;
+                    }
+                }
+            }
+            if let Some(d) = diff {
+                result = d;
+                break;
+            }
+            let dl = len1 - len2;
+            if dl == 0 {
+                let mut d2 = 0;
+                for k in 0..minlen {
+                    if s1[k] != s2[k] {
+                        d2 = char_sort_key(s1[k]) - char_sort_key(s2[k]);
+                        break;
+                    }
+                }
+                result = d2;
+            } else {
+                result = dl;
+            }
+            break;
+        }
+        if i1 - pend1 as i32 >= len1 { result = -1; break; }
+        if i2 - pend2 as i32 >= len2 { result = 1; break; }
+
+        let c1 = if pend1 == 0 {
+            let c = s1[i1 as usize];
+            i1 += 1;
+            c
+        } else {
+            char::from_u32(pend1).unwrap_or('\0')
+        };
+        let c2 = if pend2 == 0 {
+            let c = s2[i2 as usize];
+            i2 += 1;
+            c
+        } else {
+            char::from_u32(pend2).unwrap_or('\0')
+        };
+        pend1 = ligature_second(c1);
+        pend2 = ligature_second(c2);
+        let r1 = remove_accents(c1);
+        let r2 = remove_accents(c2);
+        if r1 != r2 && java_to_upper(r1) != java_to_upper(r2) {
+            let (l1, l2) = (java_to_lower(r1), java_to_lower(r2));
+            if l1 != l2 {
+                result = char_sort_key(l1) - char_sort_key(l2);
+                break;
+            }
+        }
+    }
+    result.signum()
 }
 
 // opcode 4110 — text_switch. Ternary helper.
@@ -849,7 +977,7 @@ pub fn op_cc_deleteall(parent_com_id: i32) {
 pub fn op_cc_find(parent: i32, sub: i32) -> i32 {
     use crate::config::if_type;
     if sub == -1 { return 0; }
-    let exists = if_type::get_sub(parent, sub).is_some();
+    let exists = if_type::get2(parent, sub).is_some();
     if exists { 1 } else { 0 }
 }
 
@@ -1625,11 +1753,16 @@ pub fn execute_script(c: &mut Client, req: &HookReq) {
     }));
     if result.is_err() {
         eprintln!("[cs2] CS2 - scr:{script_id} errored");
-        crate::client::add_chat(
-            c, 0, Some(String::new()),
-            Some("Clientscript error - check log for details".to_string()),
-            Some(String::new()), 0,
-        );
+        // Java ScriptRunner.java:2738-2740 — the chat error only surfaces
+        // in live mode (modewhere == 0); dev mode reports via the log
+        // (our eprintln above) only. 3-arg addChat → null screenName.
+        if c.modewhere == 0 {
+            crate::client::add_chat(
+                c, 0, Some(String::new()),
+                Some("Clientscript error - check log for details".to_string()),
+                None, 0,
+            );
+        }
     }
 }
 
@@ -1925,9 +2058,13 @@ fn run_script(c: &mut Client, req: &HookReq) {
                     continue;
                 }
                 47 => {
-                    // push_varc_str — Java maps null to "null".
-                    let s = crate::config::var_cache::get_varc_str(script.int_operands[pcu]);
-                    string_stack[ssp] = if s.is_empty() { "null".to_string() } else { s };
+                    // push_varc_str — get_varc_str already returns "null" for
+                    // an unset (None) varc, matching Java's null→"null"
+                    // stringification. A varc deliberately set to "" (e.g. the
+                    // empty chat input buffer) must stay "" — don't re-map it
+                    // to "null" here, or the chatbox renders the literal "null".
+                    string_stack[ssp] =
+                        crate::config::var_cache::get_varc_str(script.int_operands[pcu]);
                     ssp += 1;
                     continue;
                 }
@@ -2489,11 +2626,12 @@ fn run_script(c: &mut Client, req: &HookReq) {
         if opcode < 3200 {
             match opcode {
                 3100 => {
-                    // mes
+                    // mes — Java ScriptRunner.java:1322 addChat(0, "", var94)
+                    // (3-arg overload → null screenName).
                     ssp -= 1;
                     let msg = std::mem::take(&mut string_stack[ssp]);
                     crate::client::add_chat(c, 0, Some(String::new()), Some(msg),
-                                            Some(String::new()), 0);
+                                            None, 0);
                 }
                 3101 => {
                     // anim
@@ -3251,6 +3389,27 @@ mod tests {
         assert_eq!(op_invpow(1024, 10), 2);
         assert_eq!(op_invpow(0, 5), 0);
         assert_eq!(op_invpow(5, 0), i32::MAX);
+    }
+
+    #[test]
+    fn compare_collation() {
+        // Basic ordering + equality.
+        assert_eq!(op_compare("abc", "abc"), 0);
+        assert_eq!(op_compare("abc", "abd"), -1);
+        assert_eq!(op_compare("abd", "abc"), 1);
+        // Shorter string sorts first.
+        assert_eq!(op_compare("abc", "abcd"), -1);
+        assert_eq!(op_compare("abcd", "abc"), 1);
+        // Case-insensitive in the collation pass, but the case-sensitive
+        // tiebreak puts lowercase before uppercase (getCharSortKey +1).
+        assert_eq!(op_compare("apple", "Apple"), -1);
+        assert_eq!(op_compare("Apple", "apple"), 1);
+        // Accent folding: é (233) collates as 'e'.
+        assert_eq!(op_compare("caf\u{e9}", "cafe"), 1); // tiebreak: é > e raw
+        assert_eq!(op_compare("r\u{e9}sum", "resume"), -1); // 'm' < 'm'+'e'? folds equal then len
+        // Ligature expansion: æ (230) → "ae".
+        assert_eq!(op_compare("\u{e6}", "ae"), 1); // collate-equal, tiebreak raw æ > a
+        assert_eq!(op_compare("\u{e6}b", "aec"), -1); // ae[b] vs ae[c] → b<c
     }
 
     #[test]

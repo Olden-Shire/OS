@@ -7,6 +7,7 @@
 use std::path::PathBuf;
 
 use cache::Cache;
+use cache::maps::text::RawRegion;
 use cache::maps::{XteaKeys, mapsquare};
 
 fn cache_dir() -> PathBuf {
@@ -65,6 +66,60 @@ fn decodes_every_keyed_region() {
 
     assert_eq!(regions_loaded, keys.by_mapsquare.len());
     assert!(total_locs > 1_000_000, "only {total_locs} loc placements");
+}
+
+#[test]
+fn every_region_round_trips_binary_and_text_byte_exact() {
+    // The acid test for the .jm2 codec: for every real region, decoding the raw
+    // land/loc streams and re-encoding them must reproduce the original bytes
+    // exactly — and so must a full trip through the editable text form.
+    let dir = cache_dir();
+    let keys = XteaKeys::load(&dir.join("keys.json")).expect("load keys.json");
+    let mut c = Cache::open(&dir).expect("open cache");
+
+    let mut checked = 0usize;
+    let mut land_mismatches = 0usize;
+    let mut loc_mismatches = 0usize;
+    let mut text_mismatches = 0usize;
+
+    for &mapsquare_id in keys.by_mapsquare.keys() {
+        let x = mapsquare_id >> 8;
+        let y = mapsquare_id & 0xFF;
+        let Some((terrain, locs)) = c.region_raw(x, y, &keys).expect("region io") else {
+            continue;
+        };
+        checked += 1;
+
+        let raw = RawRegion::decode(&terrain, locs.as_deref());
+
+        // 1. Binary re-encode is byte-identical to the original streams.
+        if raw.encode_land() != terrain {
+            land_mismatches += 1;
+        }
+        if let Some(ref loc_bytes) = locs {
+            if raw.encode_locs() != *loc_bytes {
+                loc_mismatches += 1;
+            }
+        }
+
+        // 2. A full trip through text re-encodes to the same bytes.
+        let reparsed = RawRegion::from_text(&raw.to_text()).expect("parse own text");
+        if reparsed.encode_land() != terrain
+            || locs.as_deref().is_some_and(|b| reparsed.encode_locs() != b)
+        {
+            text_mismatches += 1;
+        }
+    }
+
+    eprintln!("  regions checked:   {checked}");
+    eprintln!("  land mismatches:   {land_mismatches}");
+    eprintln!("  loc mismatches:    {loc_mismatches}");
+    eprintln!("  text mismatches:   {text_mismatches}");
+
+    assert!(checked > 500, "only {checked} regions checked");
+    assert_eq!(land_mismatches, 0, "{land_mismatches} regions had a non-byte-exact land re-encode");
+    assert_eq!(loc_mismatches, 0, "{loc_mismatches} regions had a non-byte-exact loc re-encode");
+    assert_eq!(text_mismatches, 0, "{text_mismatches} regions failed the text round-trip");
 }
 
 #[test]

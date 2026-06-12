@@ -117,7 +117,9 @@ pub fn poll(c: &mut Client) {
         // rsa_len + rsa_len bytes (empty in NO_RSA mode), then the
         // XTEA-wrapped block (also flat in NO_TINYENC mode).
         let mut out = Packet::from_vec(vec![0u8; 8192]);
-        out.p1(16);
+        // Java loginPoll:2130-2134 — opcode 18 (RECONNECT) when re-establishing
+        // a dropped session (state 40), else 16 (GAMELOGIN) for a fresh login.
+        out.p1(if c.state == 40 { 18 } else { 16 });
         out.p2(0); // size placeholder
         let start = out.pos as i32;
         out.p4(1); // revision
@@ -193,6 +195,12 @@ pub fn poll(c: &mut Client) {
             c.login_step = 7;
         } else if var5 == 2 {
             c.login_step = 9;
+        } else if var5 == 15 && c.state == 40 {
+            // Java loginPoll:2181-2183 — RECONNECT_OK: the server accepted
+            // the reconnect; restore the session and resume the game with
+            // the world still loaded (no full rebuild/login).
+            crate::client::reconnect_done(c);
+            return;
         } else if var5 == 23 && c.login_fail_count < 1 {
             c.login_fail_count += 1;
             c.login_step = 0;
@@ -303,6 +311,7 @@ pub fn game_tick(c: &mut Client) {
         c.psize = 0;
         // Each successful packet resets the server-silence timer.
         c.timeout_timer = 0;
+        eprintln!("[net-in] op={ptype} sz={}", buf.len());
         handle_packet(c, ptype, &buf);
     }
 }
@@ -315,6 +324,7 @@ pub fn game_tick(c: &mut Client) {
 pub fn game_tick_housekeeping(c: &mut Client) {
     c.timeout_timer += 1;
     if c.timeout_timer > 750 {
+        eprintln!("[net] TIMEOUT (timeout_timer>750, server silent ~15s) -> lost_con");
         crate::client::lost_con(c);
         return;
     }
@@ -328,10 +338,12 @@ pub fn game_tick_housekeeping(c: &mut Client) {
     if c.cinema_cam {
         crate::client::cinema_camera(c);
     } else {
-        // Non-cinema path: follow_camera tracks toward the player and
-        // dispatch_orbit_camera projects the orbit through cam_follow.
+        // followCamera eases the orbit centre toward the player each
+        // tick (Java updateGame 3337); the projection through
+        // cam_follow happens at DRAW time (gameDrawMain 4103-4112,
+        // our mainredraw) so the rendered camera tracks the eased
+        // centre every frame.
         crate::client::follow_camera(c);
-        crate::client::dispatch_orbit_camera(c, 0);
     }
     crate::client::apply_cam_shake(c);
     crate::client::bump_cam_shake_cycles(c);
@@ -345,6 +357,35 @@ pub fn game_tick_housekeeping(c: &mut Client) {
             crate::client::logout(c);
         }
     }
+
+    // Java updateGame tail (Client.java:2728-2742): NO_TIMEOUT keepalive +
+    // THE outbound flush — everything written to `out` this tick
+    // (clicks, walks, chat, IF_BUTTON, ...) hits the socket here. In
+    // Java this is the last thing updateGame does; here it runs in
+    // both mainloop states 25 and 30, so packets queued by game_input
+    // (which runs after this in the same tick) flush on the next
+    // 20ms tick — same wire behavior, one-tick skew.
+    c.no_timeout_timer += 1;
+    if c.no_timeout_timer > 50 {
+        if let (Some(out), Some(isaac)) = (c.out_packet.as_mut(), c.isaac_out.as_mut()) {
+            out.p1_enc(228, isaac); // NO_TIMEOUT
+        }
+    }
+    let mut flush_failed = false;
+    if let (Some(stream), Some(out)) = (c.login_stream.as_mut(), c.out_packet.as_mut()) {
+        if out.pos > 0 {
+            if stream.write(&out.data, 0, out.pos as i32).is_err() {
+                flush_failed = true;
+            } else {
+                out.pos = 0;
+                c.no_timeout_timer = 0;
+            }
+        }
+    }
+    if flush_failed {
+        eprintln!("[net] FLUSH-FAILED (out_packet write err / ring full) -> lost_con");
+        crate::client::lost_con(c);
+    }
 }
 
 // Decoders for the packets Engine2007 sends post-login. Tags lifted from
@@ -353,10 +394,22 @@ pub fn game_tick_housekeeping(c: &mut Client) {
 // proves the wire protocol is intact.
 fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
     use crate::io::packet::Packet;
-    use crate::client::SubInterface;
     use crate::config::if_type;
     use crate::config::var_cache;
     let mut p = Packet::from_vec(buf.to_vec());
+    // chatDisabled (Client.java:4694) — a per-tick flag derived from the
+    // local player's world tile (chat suppressed in the wilderness /
+    // Edgeville dungeon, minus the gnome-agility exclusion). Java reads it
+    // in the MESSAGE_GAME (100) and MESSAGE_PRIVATE (86) handlers; the
+    // player position is stable across packet processing so deriving it
+    // here matches the value Java set on the prior tick.
+    let chat_disabled = if let Some(lp) = c.local_player.as_ref() {
+        let wx = (lp.entity.x >> 7) + c.map_build_base_x;
+        let wz = (lp.entity.z >> 7) + c.map_build_base_z;
+        crate::client::chat_disabled_for_tile(wx, wz) != 0
+    } else {
+        false
+    };
     match opcode {
         // ── Chat / message ────────────────────────────────────────
         100 => { // MESSAGE_GAME — verbatim port of Client.java:5842-5897.
@@ -365,9 +418,6 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                  // chat messages with magic `:tag:` suffixes the client
                  // pulls apart for special handling.
             let msg = p.gjstr();
-            let chat_disabled = false; // mute-all toggle isn't yet
-                                        // surfaced; chatDisabled defaults
-                                        // to 0 (allow).
             if let Some(sender_end) = msg.find(':') {
                 let sender = &msg[..sender_end];
                 if msg.ends_with(":tradereq:") {
@@ -427,7 +477,9 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             if crate::client::is_ignored(c, Some(&sender)) {
                 dupe = true;
             }
-            if !dupe {
+            // Java 5994 — gated on `!dupe && chatDisabled == 0`; both the
+            // dedup-ring update and the display sit inside that guard.
+            if !dupe && !chat_disabled {
                 c.message_ids[c.private_message_count as usize] = msg_id;
                 c.private_message_count = (c.private_message_count + 1) % 100;
                 let text = crate::graphics::pix_font::PixFont::escape(
@@ -456,26 +508,63 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                     &crate::wordpack::unpack(&mut p)));
             crate::client::add_chat(c, 6, Some(recipient), Some(text), None, 0);
         }
-        57 => { // MESSAGE_FRIENDCHANNEL
-            let _channel = p.gjstr();
-            eprintln!("[game] MessageFriendChannel");
+        57 => { // MESSAGE_FRIENDCHANNEL — verbatim port of Client.java:6675-6707.
+                // A clan-chat message: deduped against the same 100-deep ring as
+                // private messages; type 9 with the channel screen name.
+            let sender = p.gjstr();
+            let channel_uid = p.g8();
+            let id_hi = p.g2() as i64;
+            let id_lo = p.g3() as i64;
+            let mode = p.g1();
+            let msg_id = (id_hi << 32) + id_lo;
+            let mut dupe = c.message_ids.contains(&msg_id);
+            // Clan ignores only apply to regular users (mode <= 1), not mods.
+            if mode <= 1 && crate::client::is_ignored(c, Some(&sender)) {
+                dupe = true;
+            }
+            if !dupe {
+                c.message_ids[c.private_message_count as usize] = msg_id;
+                c.private_message_count = (c.private_message_count + 1) % 100;
+                let text = crate::graphics::pix_font::PixFont::escape(
+                    &crate::jstring::force_capitalisation_of_words(
+                        &crate::wordpack::unpack(&mut p)));
+                let screen = crate::jstring::to_screen_name(channel_uid);
+                let named = if mode == 2 || mode == 3 {
+                    Some(format!("{}{sender}", crate::string_constants::tag_img(1)))
+                } else if mode == 1 {
+                    Some(format!("{}{sender}", crate::string_constants::tag_img(0)))
+                } else {
+                    Some(sender)
+                };
+                crate::client::add_chat(c, 9, named, Some(text), screen, 0);
+            }
         }
 
         // ── Interface dispatch ────────────────────────────────────
-        147 => { // IF_OPENTOP
+        147 => { // IF_OPENTOP — verbatim port of Client.java:6054-6062. Sets the
+                 // toplevel, resets its interface anims, fires onload, and marks
+                 // every component dirty for a full redraw.
             let id = p.g2_alt1();
-            eprintln!("[game] IfOpenTop: toplevel={id}");
             c.toplevelinterface = id;
-            if_type::open_interface(id, c.interfaces);
-            // Java Client.java:6059 — fire the group's onload hooks.
+            let slot = if_type::INTERFACES_SLOT
+                .load(std::sync::atomic::Ordering::Relaxed);
+            if slot >= 0 {
+                crate::client::if_anim_reset(slot, id);
+            }
             crate::script_runner::execute_onload(c, id);
+            crate::client::redraw_all_components();
         }
-        184 => { // IF_OPENSUB
+        184 => { // IF_OPENSUB — verbatim port of Client.java:6012-6022. Closes any
+                 // existing sub at this component, then opens the new one via
+                 // open_sub_interface (which fires executeOnLoad + the toplevel
+                 // runHookImmediate) — NOT a raw insert.
             let kind = p.g1_alt2();
             let sub = p.g2_alt2();
             let component = p.g4_alt1();
-            c.subinterfaces.insert(component, SubInterface { id: sub, type_: kind, key: component, field1599: false });
-            if_type::open_interface(sub, c.interfaces);
+            if let Some(existing) = c.subinterfaces.get(&component).cloned() {
+                crate::client::close_sub_interface(c, component, existing.id != sub);
+            }
+            crate::client::open_sub_interface(c, component, sub, kind);
         }
         87 => { // IF_CLOSESUB
             let component = p.g4();
@@ -496,6 +585,7 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 if interfaces_slot >= 0 {
                     crate::client::if_anim_reset(interfaces_slot, toplevel);
                 }
+                crate::script_runner::execute_onload(c, toplevel);
                 crate::client::redraw_all_components();
             }
             // Per-sub touch — gather keys we see this resync so we can
@@ -507,19 +597,21 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 let sub_id = p.g2();
                 let kind = p.g1();
                 seen.insert(component);
-                // Replace divergent kind/id; otherwise leave alone.
+                // Java 6273-6280: close a divergent sub then (re)open via
+                // openSubInterface (fires onload + runHookImmediate); leave a
+                // sub with the matching id untouched. NOT a raw insert.
                 let existing = c.subinterfaces.get(&component).cloned();
-                if let Some(prev) = &existing {
-                    if prev.id != sub_id {
+                let need_open = match &existing {
+                    Some(prev) if prev.id != sub_id => {
                         crate::client::close_sub_interface(c, component, true);
+                        true
                     }
+                    Some(_) => false,
+                    None => true,
+                };
+                if need_open {
+                    crate::client::open_sub_interface(c, component, sub_id, kind);
                 }
-                c.subinterfaces.insert(component, SubInterface {
-                    id: sub_id,
-                    type_: kind,
-                    key: component,
-                    field1599: false,
-                });
                 count -= 1;
             }
             // Close any sub the resync didn't mention.
@@ -597,36 +689,68 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 c.model1_id = npc_id;
             });
         }
-        171 => { // IF_SETPLAYERHEAD — g4 component, model_type 3 (no extra id).
-            let component = p.g4();
+        171 => { // IF_SETPLAYERHEAD — verbatim port of Client.java:7094-7104.
+                 // Component id is g4_alt3 (not plain g4), and model1_id is the
+                 // local player's head-model hash (Java method1176), not -1.
+            let component = p.g4_alt3();
+            let hash = c.local_player.as_ref().map_or(-1, |lp| lp.model.head_hash());
             if_type::modify(component, |c| {
                 c.model1_type = 3;
-                c.model1_id = -1;
+                c.model1_id = hash;
             });
         }
-        102 => { // IF_SETOBJECT — g4 component + g2_alt2 obj + g4_alt1 count.
-                 // v3 branch sets invobject/invcount; else legacy
-                 // model1 path with type 4.
+        102 => { // IF_SETOBJECT — verbatim port of Client.java:6634-6669. v3
+                 // components show the obj as a model preview (angles/offsets/
+                 // zoom from ObjType, zoom scaled by component width); legacy
+                 // components use the model1 path (type 4, or 0 when cleared).
             let component = p.g4();
-            let obj_id = p.g2_alt2();
+            let mut obj_id = p.g2_alt2();
+            if obj_id == 65535 {
+                obj_id = -1;
+            }
             let count = p.g4_alt1();
+            // Hoist the config lookup out of the modify closure (a panic inside
+            // would poison the STORE mutex).
+            let obj = crate::config::obj_type::list(obj_id);
             if_type::modify(component, |c| {
                 if c.v3 {
                     c.invobject = obj_id;
                     c.invcount = count;
+                    if let Some(t) = &obj {
+                        c.model_x_an = t.xan2d;
+                        c.model_y_an = t.yan2d;
+                        c.model_z_an = t.zan2d;
+                        c.model_x_of = t.xof2d;
+                        c.model_y_of = t.yof2d;
+                        c.model_zoom = t.zoom2d;
+                    }
+                    if c.width > 0 {
+                        c.model_zoom = c.model_zoom * 32 / c.width;
+                    }
+                } else if obj_id == -1 {
+                    c.model1_type = 0;
                 } else {
                     c.model1_type = 4;
                     c.model1_id = obj_id;
+                    if let Some(t) = &obj {
+                        c.model_x_an = t.xan2d;
+                        c.model_y_an = t.yan2d;
+                        c.model_zoom = t.zoom2d * 100 / count;
+                    }
                 }
             });
         }
-        176 => { // IF_SETANIM — g2b_alt3 anim + g4 component.
+        176 => { // IF_SETANIM — verbatim port of Client.java:5827-5836. Only
+                 // (re)start the anim when it actually changes (or is cleared to
+                 // -1); re-sending the same anim must NOT restart its frame.
             let anim = p.g2b_alt3();
             let component = p.g4();
             if_type::modify(component, |c| {
-                c.model_anim = anim;
-                c.anim_frame = 0;
-                c.anim_cycle = 0;
+                if c.model_anim != anim || anim == -1 {
+                    c.model_anim = anim;
+                    c.anim_frame = 0;
+                    c.anim_cycle = 0;
+                }
             });
         }
         26 => { // IF_SETANGLE — g2_alt2 x + g2 zoom + g4_alt1 component + g2 y.
@@ -640,18 +764,16 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 c.model_zoom = zoom;
             });
         }
-        50 => { // IF_SETSCROLLPOS — g4_alt3 component + g2 pos. Java
-                // clamps to [0, scroll_height - height] when type==0.
+        50 => { // IF_SETSCROLLPOS — verbatim port of Client.java:6981-6997.
+                // Java only touches scrollPosY for type==0 layers, clamped to
+                // [0, scroll_height - height]; non-layer components are left alone.
             let component = p.g4_alt3();
             let pos = p.g2();
             if_type::modify(component, |c| {
-                let clamped = if c.type_ == 0 {
+                if c.type_ == 0 {
                     let max = (c.scroll_height - c.height).max(0);
-                    pos.clamp(0, max)
-                } else {
-                    pos
-                };
-                c.scroll_pos_y = clamped;
+                    c.scroll_pos_y = pos.clamp(0, max);
+                }
             });
         }
         217 => { // IF_SETROTATESPEED — g4_alt1 component + g2_alt3 x + g2_alt3 y.
@@ -664,31 +786,41 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
         }
 
         // ── Var sync ──────────────────────────────────────────────
-        180 => { // VARP_LARGE — varp_id + i32 value
+        180 => { // VARP_LARGE — verbatim port of Client.java:5785-5797. g2_alt3
+                 // varp + g4 value. Always shadow varServ; only update the client
+                 // value + run clientVar when it actually changed (re-sending the
+                 // same value must NOT re-fire clientcode); always stamp the ring.
             let varp_id = p.g2_alt3();
             let value = p.g4();
-            var_cache::set_varp(varp_id, value);
-            crate::client::client_var(c, varp_id);
+            var_cache::set_var_serv(varp_id, value);
+            if var_cache::get_varp(varp_id) != value {
+                var_cache::set_varp(varp_id, value);
+                crate::client::client_var(c, varp_id);
+            }
             c.var_transmit[(c.var_transmit_num & 0x1F) as usize] = varp_id;
             c.var_transmit_num += 1;
         }
-        88 => { // VARP_SMALL — varp_id + i8 value
+        88 => { // VARP_SMALL — verbatim port of Client.java:5924-5936. g2_alt1
+                // varp + g1b_alt3 value; same shadow/conditional-update/stamp as 180.
             let varp_id = p.g2_alt1();
             let value = p.g1b_alt3() as i32;
-            var_cache::set_varp(varp_id, value);
-            crate::client::client_var(c, varp_id);
+            var_cache::set_var_serv(varp_id, value);
+            if var_cache::get_varp(varp_id) != value {
+                var_cache::set_varp(varp_id, value);
+                crate::client::client_var(c, varp_id);
+            }
             c.var_transmit[(c.var_transmit_num & 0x1F) as usize] = varp_id;
             c.var_transmit_num += 1;
         }
-        111 => { // VARP_SYNC — verbatim port of Client.java:7143-7150.
-                 // Walks VAR vs VAR_SERV; for every delta, copy server
-                 // → client and stamp the change in the transmit ring
-                 // so the next-tick poll knows to fire clientVar
-                 // callbacks.
+        111 => { // VARP_SYNC — verbatim port of Client.java:7142-7150. Walks VAR
+                 // vs VAR_SERV; for every delta, copy server → client, run
+                 // clientVar INLINE (applies clientcode/varbit effects — Java
+                 // 7147, not deferred), then stamp the var transmit ring.
             for id in 0..2000 {
                 let serv = var_cache::get_var_serv(id);
                 if serv != var_cache::get_varp(id) {
                     var_cache::set_varp(id, serv);
+                    crate::client::client_var(c, id);
                     c.var_transmit[(c.var_transmit_num & 0x1F) as usize] = id;
                     c.var_transmit_num += 1;
                 }
@@ -707,14 +839,19 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
         }
 
         // ── Movement / camera ─────────────────────────────────────
-        246 => { // TELEPORT
-            let x = p.g1_alt2() as i32;
-            let z = p.g1_alt1() as i32;
-            let jump = p.g1_alt3() != 0;
+        246 => { // TELEPORT — verbatim port of Client.java:5912-5921. Reads
+                 // z (g1_alt2), x (g1_alt1), then a packed byte = (level << 1) |
+                 // jump. teleport(x, z, jump); minusedlevel = level.
+            let z = p.g1_alt2();
+            let x = p.g1_alt1();
+            let packed = p.g1_alt3();
+            let level = packed >> 1;
+            let jump = (packed & 0x1) == 1;
+            c.minusedlevel = level;
             if let Some(lp) = c.local_player.as_mut() {
+                lp.level = level;
                 lp.teleport(x, z, jump);
             }
-            eprintln!("[game] Teleport tile=({x},{z}) jump={jump}");
         }
         225 => { // CAM_LOOKAT — verbatim port of Client.java:6078-6104.
             c.cinema_cam = true;
@@ -809,7 +946,6 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             }
             c.inv_transmit[(c.inv_transmit_num & 0x1F) as usize] = inv_id & 0x7FFF;
             c.inv_transmit_num += 1;
-            c.misc_transmit_num += 1;
         }
         222 => { // UPDATE_INV_PARTIAL — verbatim port of Client.java:6213-6254.
             let com_id = p.g4();
@@ -835,14 +971,12 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             }
             c.inv_transmit[(c.inv_transmit_num & 0x1F) as usize] = inv_id & 0x7FFF;
             c.inv_transmit_num += 1;
-            c.misc_transmit_num += 1;
         }
         172 => { // UPDATE_INV_STOPTRANSMIT (Java 6479-6486) — g2_alt2 invId.
             let inv_id = p.g2_alt2();
             crate::client_inv_cache::delete(inv_id);
             c.inv_transmit[(c.inv_transmit_num & 0x1F) as usize] = inv_id & 0x7FFF;
             c.inv_transmit_num += 1;
-            c.misc_transmit_num += 1;
         }
         117 => { // UPDATE_INV_STOPTRANSMIT (Java 6463-6477) — g4_alt1 comId.
             let com_id = p.g4_alt1();
@@ -853,198 +987,60 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
         }
 
         // ── Zone packets ──────────────────────────────────────────
-        89 => { // UPDATE_ZONE_PARTIAL_FOLLOWS — sets zone base for
-                // subsequent LOC/OBJ/MAP packets.
-            c.zone_update_x = p.g1();
-            c.zone_update_z = p.g1_alt3();
-        }
-        67 => { // UPDATE_ZONE_FULL_FOLLOWS.
-            c.zone_update_x = p.g1();
+        89 => { // UPDATE_ZONE_PARTIAL_FOLLOWS — verbatim port of Client.java:
+                // 5903-5906. Sets the zone base for subsequent LOC/OBJ/MAP/zone
+                // packets. NOTE the order: g1 → Z, g1_alt3 → X (the sub-packets
+                // add zone_update_x to tile_x, so the X/Z mapping must match Java).
             c.zone_update_z = p.g1();
+            c.zone_update_x = p.g1_alt3();
         }
-        131 => { // UPDATE_ZONE_PARTIAL_ENCLOSED — nested packet wrapper.
-                 // Java reads zoneX + zoneZ, then loops over the body
-                 // dispatching sub-opcodes (LOC_ADD_CHANGE etc) inline.
-                 // The full nested dispatcher is too tied to the outer
-                 // dispatcher loop for a clean lift; we record the zone
-                 // base and walk the body so the cursor stays aligned.
-            c.zone_update_x = p.g1();
-            c.zone_update_z = p.g1();
-            // Drain remaining bytes — proper nested dispatch is a TODO.
-            while p.pos < buf.len() as i32 { let _ = p.g1(); }
-        }
-        173 => { // OBJ_ADD — verbatim port of Client.java:7368-7382.
-            let slot = p.g1_alt1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let count = p.g2_alt2();
-            let obj_id = p.g2_alt3();
-            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
-                let _ = crate::dash3d::client_obj::ClientObj::new(
-                    obj_id, count, c.minusedlevel, tile_x, tile_z,
-                );
-                // The per-tile groundObj LinkList isn't yet wired
-                // into scene.rs; the ClientObj is constructed for the
-                // future drain.
-            }
-        }
-        207 => { // OBJ_DEL — Java:7383-7402 inverse. g1 slot + g2 id.
-            let slot = p.g1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let _obj_id = p.g2();
-            if !((0..104).contains(&tile_x) && (0..104).contains(&tile_z)) {
-                // skipped — bounds check failed; no further state.
-            }
-        }
-        106 => { // OBJ_COUNT — Java:7383-7402.
-            let slot = p.g1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let _obj_id = p.g2();
-            let _old_count = p.g2();
-            let _new_count = p.g2();
-            let _ = (tile_x, tile_z);
-        }
-        215 => { // OBJ_REVEAL — Java:7454-7471. Like OBJ_ADD but
-                 // requires the "owner" slot to be different from this
-                 // player (so other players see your drops once they
-                 // become public).
-            let slot = p.g1_alt2();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let owner_player_slot = p.g2();
-            let count = p.g2_alt2();
-            let obj_id = p.g2();
-            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z)
-                && owner_player_slot != c.self_slot {
-                let _ = crate::dash3d::client_obj::ClientObj::new(
-                    obj_id, count, c.minusedlevel, tile_x, tile_z,
-                );
-            }
-        }
-        154 => { // LOC_ADD_CHANGE — verbatim port of Client.java:7403-7415.
-            let loc_id = p.g2_alt3();
-            let shape_angle = p.g1_alt1();
-            let shape = shape_angle >> 2;
-            let angle = shape_angle & 0x3;
-            let slot = p.g1_alt2();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
-                // LOC_SHAPE_TO_LAYER + locChangeCreate land with the
-                // World mutation pipeline; we record the change as a
-                // pending LocChange entry so the scene rebuild can
-                // pick it up.
-                let _ = (loc_id, shape, angle);
-            }
-        }
-        7 => { // LOC_DEL — Java:7472-7483. Symmetric to LOC_ADD_CHANGE
-                // but uses -1 for new_id.
-            let shape_angle = p.g1_alt3();
-            let shape = shape_angle >> 2;
-            let angle = shape_angle & 0x3;
-            let slot = p.g1_alt1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let _ = (shape, angle, tile_x, tile_z);
-        }
-        6 => { // LOC_ANIM — Java:7311-7365. Per-layer animation kick.
-                // The full per-layer (wall/decor/scene/grounddec) dispatch
-                // requires World mutation that the scene rebuild path
-                // owns. We decode all 4 fields so the cursor advances.
-            let anim_seq = p.g2_alt2();
-            let slot = p.g1_alt2();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let shape_angle = p.g1_alt3();
-            let _ = (anim_seq, tile_x, tile_z, shape_angle);
-        }
-        245 => { // LOC_MERGE — Java:7197-7268. Player-aligned loc swap
-                 // with an animated overlay (e.g. opening a coffin while
-                 // standing on the tile). 9 fields total — decode then
-                 // defer the player-pinned overlay until the world
-                 // rebuild pipeline lands.
-            let player_id = p.g2_alt2();
-            let loc_id = p.g2();
-            let slot = p.g1_alt1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let shape_angle = p.g1_alt3();
-            let start_cycle = p.g2();
-            let end_cycle = p.g2_alt3();
-            let owner_loc_x = p.g1_alt2();
-            let owner_loc_z = p.g1();
-            let _ = (player_id, loc_id, tile_x, tile_z, shape_angle,
-                     start_cycle, end_cycle, owner_loc_x, owner_loc_z);
-        }
-        20 => { // MAP_ANIM — verbatim port of Client.java:7416-7429.
-                // Spawns a MapSpotAnim at the indicated tile + height.
-            let slot = p.g1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let spot_anim_id = p.g2();
-            let height = p.g1();
-            let delay = p.g2();
-            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
-                let world_x = tile_x * 128 + 64;
-                let world_z = tile_z * 128 + 64;
-                let avg_h = crate::client::get_av_h(world_x, world_z, c.minusedlevel) - height;
-                let _spot = crate::dash3d::map_spot_anim::MapSpotAnim::new(
-                    spot_anim_id, c.minusedlevel, world_x, world_z,
-                    avg_h, c.loop_cycle, delay,
-                );
-            }
-        }
-        32 => { // MAP_PROJANIM — Java:7430-7453. Spawn projectile from
-                // (tile_x, tile_z) to (tile_x + dx, tile_z + dz) with
-                // SpotType animation. Full ClientProj wiring lands with
-                // the world scene; we decode all 11 fields here so the
-                // cursor advances correctly.
-            let slot = p.g1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let dst_x = tile_x + p.g1b() as i32;
-            let dst_z = tile_z + p.g1b() as i32;
-            let src_height = p.g2b();
-            let spot_anim = p.g2();
-            let dst_height = p.g1() * 4;
-            let _start_height = p.g1() * 4;
-            let _start_cycle = p.g2();
-            let _end_cycle = p.g2();
-            let _pitch = p.g1();
-            let _start_pos = p.g1();
-            let _ = (tile_x, tile_z, dst_x, dst_z, src_height, spot_anim, dst_height);
-        }
-        205 => { // SOUND_AREA — verbatim port of Client.java:7290-7310.
-                 // Decodes a zoned area sound; only enqueues when the
-                 // local player is inside the (radius+1) area, ambient
-                 // is non-mute, and the loop count is positive.
-            let slot = p.g1();
-            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
-            let tile_z = (slot & 0x7) + c.zone_update_z;
-            let sound_id = p.g2();
-            let packed = p.g1();
-            let radius = (packed >> 4) & 0xF;
-            let loops = packed & 0x7;
-            let delay = p.g1();
-            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
-                let r = radius + 1;
-                let lp_x = c.local_player.as_ref().map(|p| p.route_x[0]).unwrap_or(0);
-                let lp_z = c.local_player.as_ref().map(|p| p.route_z[0]).unwrap_or(0);
-                let ambient = c.wave_volume; // Java's `ambientVolume`.
-                if lp_x >= tile_x - r && lp_x <= tile_x + r
-                    && lp_z >= tile_z - r && lp_z <= tile_z + r
-                    && ambient != 0 && loops > 0
-                    && c.wave_count < 50
-                {
-                    let idx = c.wave_count as usize;
-                    c.wave_sound_ids[idx] = sound_id;
-                    c.wave_loops[idx] = loops;
-                    c.wave_delay[idx] = delay;
-                    c.wave_count += 1;
+        67 => { // UPDATE_ZONE_FULL_FOLLOWS — verbatim port of Client.java:6374-6395.
+                // Sets the zone base (Z=g1_alt1, X=g1_alt3), then CLEARS the 8×8
+                // zone: removes ground items (re-rendering each) and expires any
+                // pending loc changes in the zone.
+            c.zone_update_z = p.g1_alt1();
+            c.zone_update_x = p.g1_alt3();
+            let level = c.minusedlevel;
+            let (zx, zz) = (c.zone_update_x, c.zone_update_z);
+            for x in zx..zx + 8 {
+                for z in zz..zz + 8 {
+                    let has_objs = c.ground_obj
+                        .get(level as usize)
+                        .and_then(|l| l.get(x as usize))
+                        .and_then(|r| r.get(z as usize))
+                        .is_some_and(|pile| !pile.is_empty());
+                    if has_objs {
+                        c.ground_obj[level as usize][x as usize][z as usize].clear();
+                        crate::client::show_object_at(c, level, x, z);
+                    }
                 }
             }
+            for loc in c.loc_changes.iter_mut() {
+                if loc.x >= zx && loc.x < zx + 8
+                    && loc.z >= zz && loc.z < zz + 8
+                    && loc.level == level
+                {
+                    loc.end_time = 0;
+                }
+            }
+        }
+        131 => { // UPDATE_ZONE_PARTIAL_ENCLOSED — verbatim port of
+                 // Client.java:6931-6943. Sets the zone base (Z via
+                 // g1_alt2, X via g1_alt1 — note the order), then loops
+                 // the body dispatching each sub-opcode through the same
+                 // zone_packet handler the top-level zone opcodes use.
+            c.zone_update_z = p.g1_alt2();
+            c.zone_update_x = p.g1_alt1();
+            while p.pos < buf.len() as i32 {
+                let sub = p.g1();
+                zone_packet(c, sub, &mut p);
+            }
+        }
+        // Zone sub-packets — dispatched here when they arrive standalone
+        // and, batched, by UPDATE_ZONE_PARTIAL_ENCLOSED (131). Mirrors
+        // Java routing these opcodes through zonePacket().
+        173 | 207 | 106 | 215 | 154 | 7 | 6 | 245 | 20 | 32 | 205 => {
+            zone_packet(c, opcode, &mut p);
         }
 
         // ── Player + NPC info ─────────────────────────────────────
@@ -1116,8 +1112,10 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             // (0 normal, 2/5 blacked map, ≥3 blacked compass).
             crate::minimap::MINIMAP.lock().unwrap().state = p.g1();
         }
-        97 => { // UPDATE_REBOOT_TIMER
-            let _t = p.g2();
+        97 => { // UPDATE_REBOOT_TIMER — verbatim port of Client.java:7021-7025.
+                // g2_alt2 ticks × 30; bumps the misc transmit ring.
+            c.reboot_timer = p.g2_alt2() * 30;
+            c.misc_transmit_num = c.transmit_num;
         }
         42 => {
             // TRIGGER_ONDIALOGABORT — server-side dialog timed out or
@@ -1146,7 +1144,19 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 sub += 1;
             }
         }
-        72 => { eprintln!("[game] ResetAnims"); }
+        72 => { // RESET_ANIMS — verbatim port of Client.java:6963-6978.
+                // Clears the primary seq on every player and NPC (the
+                // server uses this when a region/instance reloads).
+            if let Some(lp) = c.local_player.as_mut() {
+                lp.entity.primary_seq_id = -1;
+            }
+            for player in c.players.iter_mut().flatten() {
+                player.entity.primary_seq_id = -1;
+            }
+            for npc in c.npcs.iter_mut().flatten() {
+                npc.entity.primary_seq_id = -1;
+            }
+        }
         241 => {
             // LAST_LOGIN_INFO — Java reads 4 bytes (g4_alt1) of the
             // previous-login IP and resolves it via signlink.dnsreq()
@@ -1187,60 +1197,223 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             // FRIENDLIST_LOADED — zero-body; flips the "friends
             // service is online" flag and stamps the transmit counter.
             c.friend_server_status = 1;
-            c.friend_transmit_num += 1;
+            c.friend_transmit_num = c.transmit_num;
         }
         80 => {
-            // UPDATE_FRIENDLIST — variable-count add/update entries.
-            // Each: g1 add-flag, gjstr name, gjstr previous-name (or
-            // empty), g2 world id, g1 rank, g1 flags, then optional
-            // (gjstr + g1 + g4) if world > 0.
+            // UPDATE_FRIENDLIST — verbatim port of Client.java:6710-6814.
+            // Add/update/rename friend entries, then sort by your-world →
+            // online → referrer → referred. (The messageTimestamp dedup ring
+            // for login/logout notifications is omitted — those notifications
+            // aren't generated in this port, so the ring would be dead.)
             while p.pos < buf.len() as i32 {
-                let _add_flag = p.g1() == 1;
-                let _name = p.gjstr();
-                let _prev_name = p.gjstr();
+                let rename = p.g1() == 1;
+                let name = p.gjstr();
+                let prev_name = p.gjstr();
                 let world = p.g2();
-                let _rank = p.g1();
-                let _flags = p.g1();
+                let rank = p.g1();
+                let flags = p.g1();
+                let referrer = (flags & 0x2) != 0;
+                let referred = (flags & 0x1) != 0;
                 if world > 0 {
                     let _ = p.gjstr();
                     let _ = p.g1();
                     let _ = p.g4();
                 }
+                let _ = p.gjstr(); // trailing world name, discarded (Java 6726)
+
+                let mut handled = false;
+                for entry in c.friend_list.iter_mut().take(c.friend_count as usize) {
+                    if rename {
+                        if prev_name == entry.name {
+                            entry.name = name.clone();
+                            entry.previous_name = prev_name.clone();
+                            handled = true;
+                            break;
+                        }
+                    } else if name == entry.name {
+                        entry.world_id = world;
+                        entry.previous_name = prev_name.clone();
+                        entry.rank = rank;
+                        entry.referrer = i32::from(referrer);
+                        entry.referred = referred;
+                        handled = true;
+                        break;
+                    }
+                }
+                if !handled && c.friend_count < 200 {
+                    let idx = c.friend_count as usize;
+                    if idx >= c.friend_list.len() {
+                        c.friend_list.push(crate::friend::FriendListEntry::default());
+                    }
+                    let entry = &mut c.friend_list[idx];
+                    entry.name = name;
+                    entry.previous_name = prev_name;
+                    entry.world_id = world;
+                    entry.rank = rank;
+                    entry.referrer = i32::from(referrer);
+                    entry.referred = referred;
+                    c.friend_count += 1;
+                }
             }
-            c.friend_transmit_num += 1;
+            c.friend_server_status = 2;
+            c.friend_transmit_num = c.transmit_num;
+
+            // Bubble sort (Java 6780-6811): swap when the right entry ranks
+            // higher on the first differing criterion. Stable, early-exit.
+            let worldid = c.worldid;
+            let mut end = c.friend_count as usize;
+            while end > 0 {
+                let mut swapped = false;
+                end -= 1;
+                for i in 0..end {
+                    let (aw, ar, ad) = {
+                        let a = &c.friend_list[i];
+                        (a.world_id, a.referrer != 0, a.referred)
+                    };
+                    let (bw, br, bd) = {
+                        let b = &c.friend_list[i + 1];
+                        (b.world_id, b.referrer != 0, b.referred)
+                    };
+                    let swap = (worldid != aw && worldid == bw)
+                        || (aw == 0 && bw != 0)
+                        || (!ar && br)
+                        || (!ad && bd);
+                    if swap {
+                        c.friend_list.swap(i, i + 1);
+                        swapped = true;
+                    }
+                }
+                if !swapped {
+                    break;
+                }
+            }
         }
         120 => {
-            // UPDATE_FRIENDCHAT_CHANNEL_FULL — empty payload means
-            // "left the channel". Non-empty payload follows the format
-            // gjstr(owner) g8(channel_uid) g1b(min_kick) g1(count)
-            // then N × (gjstr(name) g2(world) g1(rank) g1(unused)
-            // gjstr(world_name)). Full port deferred; we treat empty
-            // payload only.
-            c.clan_transmit_num += 1;
+            // UPDATE_FRIENDCHAT_CHANNEL_FULL — verbatim port of
+            // Client.java:6817-6870. Empty payload = left the channel;
+            // otherwise decode owner/uid/min-kick + the member list,
+            // lowercase display names, and sort ascending by display name.
+            c.clan_transmit_num = c.transmit_num;
             if buf.is_empty() {
                 c.chat_display_name = None;
                 c.chat_owner_name = None;
                 c.friend_chat_count = 0;
                 c.friend_chat_list.clear();
+            } else {
+                c.chat_owner_name = Some(p.gjstr());
+                let uid = p.g8();
+                c.chat_display_name = crate::jstring::to_raw_username(uid);
+                c.chat_min_kick = p.g1b() as i32;
+                let count = p.g1();
+                if count != 255 {
+                    let local_name = c.local_player.as_ref().map(|lp| lp.name.clone());
+                    let mut list: Vec<crate::friend::FriendChatUser> =
+                        Vec::with_capacity(count as usize);
+                    for _ in 0..count {
+                        let username = p.gjstr();
+                        let display_name = username.to_lowercase(); // toBaseDisplayName
+                        let world = p.g2();
+                        let rank = p.g1b() as i32;
+                        let _ = p.gjstr(); // unused world name
+                        if local_name.as_deref() == Some(username.as_str()) {
+                            c.chat_rank = rank;
+                        }
+                        list.push(crate::friend::FriendChatUser { username, display_name, world, rank });
+                    }
+                    // Java bubble-sorts ascending by display name (stable).
+                    list.sort_by(|a, b| a.display_name.cmp(&b.display_name));
+                    c.friend_chat_count = list.len() as i32;
+                    c.friend_chat_list = list;
+                }
             }
         }
         140 => {
-            // UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER — one add/remove.
-            // gjstr name, g2 world, g1b flag (-128 = remove). Sized
-            // 1:1; we just walk the bytes for now.
-            let _name = p.gjstr();
-            let _world = p.g2();
-            let _flag = p.g1b();
+            // UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER — verbatim port of
+            // Client.java:6497-6566. flag == -128 removes a member; else
+            // it inserts/updates one, keeping the list sorted by display
+            // name (the search compares existing display_name to the raw
+            // new username, matching Java's compareTo quirk).
+            let name = p.gjstr();
+            let world = p.g2();
+            let flag = p.g1b() as i32;
+            let local_name = c.local_player.as_ref().map(|lp| lp.name.clone());
+            if flag == -128 {
+                if c.friend_chat_count != 0 {
+                    if let Some(idx) = c.friend_chat_list.iter()
+                        .position(|u| u.username == name && u.world == world)
+                    {
+                        c.friend_chat_list.remove(idx);
+                        c.friend_chat_count -= 1;
+                    }
+                    c.clan_transmit_num = c.transmit_num; // Java reaches 6563 found or not
+                }
+            } else {
+                let _ = p.gjstr(); // unused world name
+                let display_name = name.to_lowercase();
+                let mut insert_at: i32 = -1;
+                let mut updated = false;
+                for j in (0..c.friend_chat_list.len()).rev() {
+                    match c.friend_chat_list[j].display_name.cmp(&name) {
+                        std::cmp::Ordering::Equal => {
+                            c.friend_chat_list[j].world = world;
+                            c.friend_chat_list[j].rank = flag;
+                            if local_name.as_deref() == Some(name.as_str()) {
+                                c.chat_rank = flag;
+                            }
+                            c.clan_transmit_num = c.transmit_num;
+                            updated = true;
+                            break;
+                        }
+                        std::cmp::Ordering::Less => { insert_at = j as i32; break; }
+                        std::cmp::Ordering::Greater => {}
+                    }
+                }
+                if !updated && c.friend_chat_count < 100 {
+                    c.friend_chat_list.insert(
+                        (insert_at + 1) as usize,
+                        crate::friend::FriendChatUser {
+                            username: name.clone(), display_name, world, rank: flag,
+                        },
+                    );
+                    c.friend_chat_count += 1;
+                    if local_name.as_deref() == Some(name.as_str()) {
+                        c.chat_rank = flag;
+                    }
+                    c.clan_transmit_num = c.transmit_num;
+                }
+            }
         }
         142 => {
-            // UPDATE_IGNORELIST — same loop structure as 80 but for
-            // ignore entries. Skip-walk the payload until pos == size.
+            // UPDATE_IGNORELIST — verbatim port of Client.java:7056-7091.
+            // Add/update/rename ignore entries.
             while p.pos < buf.len() as i32 {
-                let _flag_byte = p.g1();
-                let _name = p.gjstr();
-                let _prev = p.gjstr();
-                let _world_name = p.gjstr();
+                let flags = p.g1();
+                let rename = (flags & 0x1) == 1;
+                let name = p.gjstr();
+                let display_name = p.gjstr();
+                let _ = p.gjstr(); // trailing, discarded (Java 7063)
+                let mut handled = false;
+                for entry in c.ignore_list.iter_mut().take(c.ignore_count as usize) {
+                    let key_match = if rename { display_name == entry.name } else { name == entry.name };
+                    if key_match {
+                        entry.name = name.clone();
+                        entry.display_name = display_name.clone();
+                        handled = true;
+                        break;
+                    }
+                }
+                if !handled && c.ignore_count < 100 {
+                    let idx = c.ignore_count as usize;
+                    if idx >= c.ignore_list.len() {
+                        c.ignore_list.push(crate::friend::IgnoreListEntry::default());
+                    }
+                    let entry = &mut c.ignore_list[idx];
+                    entry.name = name;
+                    entry.display_name = display_name;
+                    c.ignore_count += 1;
+                }
             }
+            c.friend_transmit_num = c.transmit_num;
         }
 
         // ── Audio ─────────────────────────────────────────────────
@@ -1268,20 +1441,26 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
 
         // ── Stat / meta ───────────────────────────────────────────
         41 => {
-            // UPDATE_RUNENERGY — 1 byte 0..100.
+            // UPDATE_RUNENERGY — Client.java:5967-5972. legacyUpdated() nudges
+            // legacy interfaces; g1 energy 0..100; bumps the misc transmit ring.
+            crate::client::legacy_updated(c);
             c.run_energy = p.g1();
-            c.misc_transmit_num += 1;
+            c.misc_transmit_num = c.transmit_num;
         }
         1 => {
-            // UPDATE_RUNWEIGHT — i16 (signed; negative = "very light").
+            // UPDATE_RUNWEIGHT — Client.java:6143-6147. legacyUpdated(); g2b
+            // weight (signed; negative = "very light"); bumps the misc ring.
+            crate::client::legacy_updated(c);
             c.run_weight = p.g2b();
-            c.misc_transmit_num += 1;
+            c.misc_transmit_num = c.transmit_num;
         }
         208 => {
-            // UPDATE_STAT — single skill update. g1_alt1 level,
-            // g1_alt1 stat slot, g4 xp. Rebuild base level from the
-            // skill XP table (Skills.skillxp[]) — until that LUT is
-            // ported we leave base_level synced to effective_level.
+            // UPDATE_STAT — verbatim port of Client.java:6414-6432. Single skill
+            // update: g1_alt1 level, g1_alt1 stat slot, g4 xp. base_level is
+            // recomputed from the skill XP table. Java calls legacyUpdated()
+            // first (nudges legacy interfaces) and bumps ONLY the STAT transmit
+            // ring (firing onstattransmit) — it does NOT touch the misc ring.
+            crate::client::legacy_updated(c);
             let level = p.g1_alt1();
             let stat = p.g1_alt1();
             let xp = p.g4();
@@ -1294,7 +1473,6 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 c.stat_transmit[slot] = stat;
                 c.stat_transmit_num += 1;
             }
-            c.misc_transmit_num += 1;
         }
         137 => {
             // CHAT_FILTER_SETTINGS — public + trade modes.
@@ -1306,7 +1484,10 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
             // mapped through PrivateChatFilter::get.
             c.chat_private_mode = crate::friend::PrivateChatFilter::from_i32(p.g1());
         }
-        224 => { eprintln!("[game] Logout"); }
+        224 => { // LOGOUT — Java:6046-6052 calls logout() (teardown +
+                 // return to the title screen, mainstate 10).
+            crate::client::logout(c);
+        }
 
         _ => {
             eprintln!("[game] opcode={opcode} size={} (no decoder)", buf.len());
@@ -1321,6 +1502,292 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
 // archives, and triggers startRebuild → setMainState(25). For now we
 // kick off the JS5 fetches for the m_X_Z / l_X_Z groups and store the
 // zone so the renderer can offset the local player.
+// @ObfuscatedName(— Client.zonePacket, Client.java:7196-7489). Shared
+// dispatcher for the zone sub-opcodes. Called both at top level (when the
+// dispatcher sees a standalone zone opcode) and, batched, from
+// UPDATE_ZONE_PARTIAL_ENCLOSED (131). All reads advance the caller's cursor
+// `p` so the enclosed wrapper stays aligned across sub-packets.
+fn zone_packet(c: &mut Client, opcode: i32, p: &mut crate::io::packet::Packet) {
+    match opcode {
+        173 => { // OBJ_ADD — verbatim port of Client.java:7366-7382.
+            let slot = p.g1_alt1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let count = p.g2_alt2();
+            let obj_id = p.g2_alt3();
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let level = c.minusedlevel;
+                c.ground_obj[level as usize][tile_x as usize][tile_z as usize].push(
+                    crate::dash3d::client_obj::ClientObj::new(obj_id, count, level, tile_x, tile_z),
+                );
+                crate::client::show_object_at(c, level, tile_x, tile_z);
+            }
+        }
+        207 => { // OBJ_DEL — verbatim port of Client.java:7269-7289. Removes the
+                 // first obj on the tile whose id matches (id read FIRST, g2_alt3).
+            let obj_id = p.g2_alt3();
+            let slot = p.g1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let level = c.minusedlevel;
+                let had_objs = {
+                    let pile = &mut c.ground_obj[level as usize][tile_x as usize][tile_z as usize];
+                    if pile.is_empty() {
+                        false
+                    } else {
+                        if let Some(idx) = pile.iter().position(|o| (obj_id & 0x7FFF) == o.id) {
+                            pile.remove(idx);
+                        }
+                        true
+                    }
+                };
+                if had_objs {
+                    crate::client::show_object_at(c, level, tile_x, tile_z);
+                }
+            }
+        }
+        106 => { // OBJ_COUNT — verbatim port of Client.java:7383-7402.
+            let slot = p.g1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let obj_id = p.g2();
+            let old_count = p.g2();
+            let new_count = p.g2();
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let level = c.minusedlevel;
+                let had_objs = {
+                    let pile = &mut c.ground_obj[level as usize][tile_x as usize][tile_z as usize];
+                    if pile.is_empty() {
+                        false
+                    } else {
+                        for o in pile.iter_mut() {
+                            if (obj_id & 0x7FFF) == o.id && o.count == old_count {
+                                o.count = new_count;
+                                break;
+                            }
+                        }
+                        true
+                    }
+                };
+                if had_objs {
+                    crate::client::show_object_at(c, level, tile_x, tile_z);
+                }
+            }
+        }
+        215 => { // OBJ_REVEAL — verbatim port of Client.java:7454-7471. Like
+                 // OBJ_ADD but only when the owner slot differs from us (other
+                 // players see a drop once it becomes public).
+            let slot = p.g1_alt2();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let owner_player_slot = p.g2();
+            let count = p.g2_alt2();
+            let obj_id = p.g2();
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z)
+                && owner_player_slot != c.self_slot {
+                let level = c.minusedlevel;
+                c.ground_obj[level as usize][tile_x as usize][tile_z as usize].push(
+                    crate::dash3d::client_obj::ClientObj::new(obj_id, count, level, tile_x, tile_z),
+                );
+                crate::client::show_object_at(c, level, tile_x, tile_z);
+            }
+        }
+        154 => { // LOC_ADD_CHANGE — verbatim port of Client.java:7403-7415.
+            let loc_id = p.g2_alt3();
+            let shape_angle = p.g1_alt1();
+            let shape = shape_angle >> 2;
+            let angle = shape_angle & 0x3;
+            let layer = crate::client::LOC_SHAPE_TO_LAYER[shape as usize];
+            let slot = p.g1_alt2();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let level = c.minusedlevel;
+                crate::client::loc_change_create(
+                    c, level, tile_x, tile_z, layer, loc_id, shape, angle, 0, -1);
+            }
+        }
+        7 => { // LOC_DEL — Java:7472-7483. Symmetric to LOC_ADD_CHANGE
+                // but uses -1 for new_type (remove the loc).
+            let shape_angle = p.g1_alt3();
+            let shape = shape_angle >> 2;
+            let angle = shape_angle & 0x3;
+            let layer = crate::client::LOC_SHAPE_TO_LAYER[shape as usize];
+            let slot = p.g1_alt1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let level = c.minusedlevel;
+                crate::client::loc_change_create(
+                    c, level, tile_x, tile_z, layer, -1, shape, angle, 0, -1);
+            }
+        }
+        6 => { // LOC_ANIM — Java:7311-7365. Per-layer animation kick.
+                // The full per-layer (wall/decor/scene/grounddec) dispatch
+                // requires World mutation that the scene rebuild path
+                // owns. We decode all 4 fields so the cursor advances.
+            let anim_seq = p.g2_alt2();
+            let slot = p.g1_alt2();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let shape_angle = p.g1_alt3();
+            let _ = (anim_seq, tile_x, tile_z, shape_angle);
+        }
+        245 => { // LOC_MERGE — verbatim port of Client.java:7197-7268. A loc the
+                 // player merges with (e.g. climbing into a coffin): the loc is
+                 // hidden for the animation window via a timed loc-delete, and its
+                 // model is pinned to the player (loc_model + offsets + bbox).
+            let var0 = p.g2();              // end-cycle delta
+            let var1 = p.g1b_alt1() as i32; // bbox bound (z-max source)
+            let shape_angle = p.g1_alt2();
+            let shape = shape_angle >> 2;
+            let angle = shape_angle & 0x3;
+            let layer = crate::client::LOC_SHAPE_TO_LAYER[shape as usize];
+            let loc_id = p.g2_alt2();
+            let var7 = p.g2_alt1();          // start-cycle delta
+            let pid = p.g2();
+            let slot = p.g1_alt3();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let var12 = p.g1b_alt1() as i32; // bbox bound (x-max source)
+            let var13 = p.g1b() as i32;      // bbox bound (z-min source)
+            let var14 = p.g1b() as i32;      // bbox bound (x-min source)
+
+            let is_local = c.self_slot == pid;
+            let player_exists = if is_local {
+                c.local_player.is_some()
+            } else {
+                c.players.get(pid as usize).map(Option::is_some).unwrap_or(false)
+            };
+            if player_exists
+                && let Some(lt) = crate::config::loc_type::list(loc_id)
+            {
+                let (width, length) = if angle == 1 || angle == 3 {
+                    (lt.length, lt.width)
+                } else {
+                    (lt.width, lt.length)
+                };
+                let minused = c.minusedlevel;
+                let loop_cycle = c.loop_cycle;
+                // Ground height + lit model under the build STATE lock.
+                let built = {
+                    let s = crate::client_build::STATE.lock().unwrap();
+                    let gh = &s.ground_h[minused as usize];
+                    let hx0 = (width >> 1) + tile_x;
+                    let hx1 = ((width + 1) >> 1) + tile_x;
+                    let hz0 = (length >> 1) + tile_z;
+                    let hz1 = ((length + 1) >> 1) + tile_z;
+                    let loc_offset_y = (gh[hx0 as usize][hz0 as usize]
+                        + gh[hx1 as usize][hz0 as usize]
+                        + gh[hx0 as usize][hz1 as usize]
+                        + gh[hx1 as usize][hz1 as usize]) >> 2;
+                    let anchor_x = (tile_x << 7) + (width << 6);
+                    let anchor_z = (tile_z << 7) + (length << 6);
+                    lt.get_temp_model(shape, angle, gh, anchor_x, loc_offset_y, anchor_z, None, 0)
+                        .map(|m| (m, loc_offset_y))
+                };
+                if let Some((model, loc_offset_y)) = built {
+                    // Hide the real loc for the merge window (timed delete).
+                    crate::client::loc_change_create(
+                        c, minused, tile_x, tile_z, layer, -1, 0, 0, var7 + 1, var0 + 1);
+                    // bbox bounds: ensure min <= max (Java 7253-7262).
+                    let (mut x_min, mut x_max) = (var14, var12);
+                    if x_min > x_max { std::mem::swap(&mut x_min, &mut x_max); }
+                    let (mut z_min, mut z_max) = (var13, var1);
+                    if z_min > z_max { std::mem::swap(&mut z_min, &mut z_max); }
+                    let player = if is_local {
+                        c.local_player.as_mut()
+                    } else {
+                        c.players.get_mut(pid as usize).and_then(Option::as_mut)
+                    };
+                    if let Some(player) = player {
+                        player.loc_start_cycle = loop_cycle + var7;
+                        player.loc_end_cycle = loop_cycle + var0;
+                        player.loc_model = Some((*model).clone());
+                        player.loc_offset_x = tile_x * 128 + width * 64;
+                        player.loc_offset_z = tile_z * 128 + length * 64;
+                        player.loc_offset_y = loc_offset_y;
+                        player.min_tile_x = tile_x + x_min;
+                        player.max_tile_x = tile_x + x_max;
+                        player.min_tile_z = tile_z + z_min;
+                        player.max_tile_z = z_max + tile_z;
+                    }
+                }
+            }
+        }
+        20 => { // MAP_ANIM — verbatim port of Client.java:7416-7429.
+                // Spawns a MapSpotAnim at the indicated tile + height.
+            let slot = p.g1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let spot_anim_id = p.g2();
+            let height = p.g1();
+            let delay = p.g2();
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let world_x = tile_x * 128 + 64;
+                let world_z = tile_z * 128 + 64;
+                let avg_h = crate::client::get_av_h(world_x, world_z, c.minusedlevel) - height;
+                let _spot = crate::dash3d::map_spot_anim::MapSpotAnim::new(
+                    spot_anim_id, c.minusedlevel, world_x, world_z,
+                    avg_h, c.loop_cycle, delay,
+                );
+            }
+        }
+        32 => { // MAP_PROJANIM — Java:7430-7453. Spawn projectile from
+                // (tile_x, tile_z) to (tile_x + dx, tile_z + dz) with
+                // SpotType animation. Full ClientProj wiring lands with
+                // the world scene; we decode all 11 fields here so the
+                // cursor advances correctly.
+            let slot = p.g1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let dst_x = tile_x + p.g1b() as i32;
+            let dst_z = tile_z + p.g1b() as i32;
+            let src_height = p.g2b();
+            let spot_anim = p.g2();
+            let dst_height = p.g1() * 4;
+            let _start_height = p.g1() * 4;
+            let _start_cycle = p.g2();
+            let _end_cycle = p.g2();
+            let _pitch = p.g1();
+            let _start_pos = p.g1();
+            let _ = (tile_x, tile_z, dst_x, dst_z, src_height, spot_anim, dst_height);
+        }
+        205 => { // SOUND_AREA — verbatim port of Client.java:7290-7310.
+                 // Decodes a zoned area sound; only enqueues when the
+                 // local player is inside the (radius+1) area, ambient
+                 // is non-mute, and the loop count is positive.
+            let slot = p.g1();
+            let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
+            let tile_z = (slot & 0x7) + c.zone_update_z;
+            let sound_id = p.g2();
+            let packed = p.g1();
+            let radius = (packed >> 4) & 0xF;
+            let loops = packed & 0x7;
+            let delay = p.g1();
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z) {
+                let r = radius + 1;
+                let lp_x = c.local_player.as_ref().map(|p| p.route_x[0]).unwrap_or(0);
+                let lp_z = c.local_player.as_ref().map(|p| p.route_z[0]).unwrap_or(0);
+                let ambient = c.ambient_volume; // Java gates SOUND_AREA on ambientVolume.
+                if lp_x >= tile_x - r && lp_x <= tile_x + r
+                    && lp_z >= tile_z - r && lp_z <= tile_z + r
+                    && ambient != 0 && loops > 0
+                    && c.wave_count < 50
+                {
+                    let idx = c.wave_count as usize;
+                    c.wave_sound_ids[idx] = sound_id;
+                    c.wave_loops[idx] = loops;
+                    c.wave_delay[idx] = delay;
+                    c.wave_count += 1;
+                }
+            }
+        }
+        _ => {}
+    }
+}
+
 fn rebuild_packet(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32, region: bool) {
     if region {
         // The dynamic-region branch is not yet wired; bail and log so
@@ -1404,8 +1871,14 @@ fn start_rebuild(c: &mut Client, zone_x: i32, zone_z: i32, level: i32) {
         c.map_build_ground_file.iter().filter(|&&v| v >= 0).count(),
         c.map_build_location_file.iter().filter(|&&v| v >= 0).count(),
     );
+    let old_base_x = c.map_build_base_x;
+    let old_base_z = c.map_build_base_z;
     c.map_build_base_x = (zone_x - 6) * 8;
     c.map_build_base_z = (zone_z - 6) * 8;
+    // Re-anchor all dynamic state to the new map base (Java startRebuild
+    // 4910-4987) so entities/ground-items/loc-changes keep their world
+    // position after the base shifts by (dx, dz) tiles.
+    reanchor_on_rebuild(c, c.map_build_base_x - old_base_x, c.map_build_base_z - old_base_z);
     // Reset the per-chunk download caches so we re-fetch the new
     // surrounding zones.
     let n = c.map_build_index.len();
@@ -1422,6 +1895,69 @@ fn start_rebuild(c: &mut Client, zone_x: i32, zone_z: i32, level: i32) {
     crate::scene::invalidate_world();
     // Java: setMainState(25); messageBox(Text.LOADING, true);
     c.set_main_state(25);
+}
+
+// Shift every dynamic entity / ground item / loc change by the map-base delta
+// (dx, dz) tiles when the build re-centres (Java startRebuild, Client.java:
+// 4910-4987). The local player is re-seeded separately by the caller, so it is
+// intentionally not shifted here (Java overwrites it via localPlayer.teleport).
+fn reanchor_on_rebuild(c: &mut Client, dx: i32, dz: i32) {
+    // NPCs (Java 4910-4922).
+    for n in c.npcs.iter_mut().flatten() {
+        for i in 0..10 {
+            n.entity.route_x[i] -= dx;
+            n.entity.route_z[i] -= dz;
+        }
+        n.entity.x -= dx * 128;
+        n.entity.z -= dz * 128;
+    }
+    // Remote players (Java 4924-4934).
+    for pl in c.players.iter_mut().flatten() {
+        for i in 0..10 {
+            pl.entity.route_x[i] -= dx;
+            pl.entity.route_z[i] -= dz;
+        }
+        pl.entity.x -= dx * 128;
+        pl.entity.z -= dz * 128;
+    }
+    // Ground-item grid (Java 4939-4968). Iterate in the direction that reads each
+    // source tile before it is overwritten as a destination (overlapping shift).
+    let (xs, xe, xstep) = if dx < 0 { (103i32, -1i32, -1i32) } else { (0, 104, 1) };
+    let (zs, ze, zstep) = if dz < 0 { (103i32, -1i32, -1i32) } else { (0, 104, 1) };
+    for level in 0..4usize {
+        let mut dest_x = xs;
+        while dest_x != xe {
+            let mut dest_z = zs;
+            while dest_z != ze {
+                let src_x = dx + dest_x;
+                let src_z = dz + dest_z;
+                let val = if (0..104).contains(&src_x) && (0..104).contains(&src_z) {
+                    std::mem::take(&mut c.ground_obj[level][src_x as usize][src_z as usize])
+                } else {
+                    Vec::new()
+                };
+                c.ground_obj[level][dest_x as usize][dest_z as usize] = val;
+                dest_z += zstep;
+            }
+            dest_x += xstep;
+        }
+    }
+    // Pending loc changes (Java 4970-4976) — shift, drop those off the new map.
+    c.loc_changes.retain_mut(|loc| {
+        loc.x -= dx;
+        loc.z -= dz;
+        (0..104).contains(&loc.x) && (0..104).contains(&loc.z)
+    });
+    // Minimap walk flag (Java 4978-4981).
+    if c.minimap_flag_x != 0 {
+        c.minimap_flag_x -= dx;
+        c.minimap_flag_z -= dz;
+    }
+    // Java 4983-4987.
+    c.wave_count = 0;
+    c.cinema_cam = false;
+    c.spotanims.clear();
+    c.projectiles.clear();
 }
 
 // Resolve a player-info slot: Java reserves 2047 for localPlayer

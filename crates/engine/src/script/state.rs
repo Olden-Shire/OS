@@ -59,6 +59,9 @@ pub struct ScriptState {
     pub script: Arc<ScriptFile>,
     pub trigger: Trigger,
     pub execution: Execution,
+    /// Ticks requested by the P_DELAY that suspended this script (Engine-TS
+    /// `state.delay`); the world resumes the script after they elapse.
+    pub delay: i32,
 
     pub pc: i32,
     pub opcount: u32,
@@ -79,10 +82,34 @@ pub struct ScriptState {
     pub active_npc: Option<usize>,
     pub active_npc2: Option<usize>,
 
+    /// Active ground-item handle (Engine-TS `activeObj`) as an `(x, z, level,
+    /// id)` locator — set by OBJ_FIND, read by OBJ_COORD/OBJ_TYPE/OBJ_COUNT.
+    pub active_obj: Option<(i32, i32, i32, i32)>,
+
+    /// Active map-object handle (Engine-TS `activeLoc`) as `(x, z, level, id,
+    /// shape, angle)` — set by LOC_FIND, read by LOC_COORD/TYPE/SHAPE/ANGLE.
+    pub active_loc: Option<(i32, i32, i32, i32, i32, i32)>,
+
+    /// The "active value" for this script invocation (Engine-TS `state.lastInt`):
+    /// the resume value from a pause-button / count dialog, read by LAST_INT.
+    pub last_int: i32,
+
     /// define_array storage (5 arrays like the cs2 VM; the reference
     /// leaves these unimplemented server-side but the state slot
     /// exists for parity).
     pub arrays: HashMap<i32, Vec<i32>>,
+
+    /// Pending npc-search results (Engine-TS `npcIterator`): NPC_FINDALL fills
+    /// it (nearest last, so NPC_FINDNEXT pops nearest first).
+    pub npc_iterator: Vec<usize>,
+
+    /// Pending ground-item search results (Engine-TS `objIterator`) as
+    /// `(x, z, level, id)` locators: OBJ_FINDALLZONE fills it, OBJ_FINDNEXT pops.
+    pub obj_iterator: Vec<(i32, i32, i32, i32)>,
+
+    /// Pending map-object search results (Engine-TS `locIterator`) as
+    /// `(x, z, level, id, shape, angle)`: LOC_FINDALLZONE fills, LOC_FINDNEXT pops.
+    pub loc_iterator: Vec<(i32, i32, i32, i32, i32, i32)>,
 }
 
 impl ScriptState {
@@ -104,6 +131,7 @@ impl ScriptState {
             script,
             trigger,
             execution: Execution::Running,
+            delay: 0,
             pc: -1,
             opcount: 0,
             frames: Vec::new(),
@@ -115,9 +143,15 @@ impl ScriptState {
             pointers: 0,
             active_player: None,
             active_player2: None,
+            last_int: 0,
             active_npc: None,
             active_npc2: None,
+            active_obj: None,
+            active_loc: None,
             arrays: HashMap::new(),
+            npc_iterator: Vec::new(),
+            obj_iterator: Vec::new(),
+            loc_iterator: Vec::new(),
         }
     }
 

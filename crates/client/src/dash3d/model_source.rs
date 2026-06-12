@@ -45,10 +45,32 @@ pub struct ModelSource {
 }
 
 impl ModelSource {
+    // Java's ModelLit.calcBoundingCylinder minY: the model's height
+    // above its origin (max of -y, clamped >= 0; y is negative-up).
+    // Java computes it lazily inside worldRender and caches it ON the
+    // model; our ModelLit is immutable behind an Arc, so the cached
+    // field is 0 unless someone ran calc_bounding_cylinder pre-Arc —
+    // compute it here instead. Feeding 0 into spriteOccluded makes the
+    // occluder test sample at GROUND height instead of the model top,
+    // culling everything behind a wall run even when it should tower
+    // over it.
+    fn lit_height(m: &ModelLit) -> i32 {
+        if m.bounding_calc == 1 {
+            return m.min_y;
+        }
+        let mut min_y = 0i32;
+        for i in 0..m.num_points as usize {
+            if -m.point_y[i] > min_y {
+                min_y = -m.point_y[i];
+            }
+        }
+        min_y
+    }
+
     pub fn lit(m: Arc<ModelLit>) -> Arc<Self> {
         // ModelLit IS-A ModelSource in Java, so its own minY is live
         // immediately (the Temp path only refreshes at render time).
-        let min_y = m.min_y;
+        let min_y = Self::lit_height(&m);
         Arc::new(Self {
             kind: Mutex::new(ModelSourceKind::Lit(m)),
             min_y: AtomicI32::new(min_y),
@@ -98,7 +120,10 @@ impl ModelSource {
             }
         };
         if let Some(m) = model {
-            self.min_y.store(m.min_y, Ordering::Relaxed);
+            // Java: composed.worldRender runs calcBoundingCylinder, then
+            // `this.minY = composed.minY` reads the COMPUTED height. The
+            // raw field is stale 0 on Arc-shared models — recompute.
+            self.min_y.store(Self::lit_height(&m), Ordering::Relaxed);
             m.world_render(yaw, sin_pitch, cos_pitch, sin_yaw, cos_yaw,
                            rel_x, rel_y, rel_z, typecode);
         }
@@ -167,7 +192,7 @@ impl ModelSource {
             let ambient = u.ambient as i32;
             let contrast = u.contrast as i32;
             let lit = ModelLit::light(u, ambient, contrast, light_x, light_y, light_z);
-            let min_y = lit.min_y;
+            let min_y = Self::lit_height(&lit);
             *kind = ModelSourceKind::Lit(Arc::new(lit));
             self.min_y.store(min_y, Ordering::Relaxed);
         }

@@ -98,6 +98,12 @@ pub struct Overlays {
     pub viewport_y: i32,
     pub viewport_w: i32,
     pub viewport_h: i32,
+    // True only on frames where the 3D viewport component (client_code
+    // 1337) actually drew. The welcome screen and other model-only
+    // interfaces have no viewport, so the stored viewport rect is stale;
+    // scene-action menu building ("Walk here" etc.) must be gated on
+    // this so it doesn't fire when there's no scene.
+    pub viewport_present: bool,
     // @ObfuscatedName("client.??") — chatDisabled (Tutorial Island
     // region gate computed in otherOverlays).
     pub chat_disabled: bool,
@@ -130,6 +136,7 @@ pub static OVERLAYS: std::sync::LazyLock<Mutex<Overlays>> = std::sync::LazyLock:
         viewport_y: 11,
         viewport_w: 512,
         viewport_h: 334,
+        viewport_present: false,
         chat_disabled: false,
     })
 });
@@ -366,10 +373,13 @@ pub fn draw(vx: i32, vy: i32, vw: i32, vh: i32) {
     o.viewport_h = vh;
     let minusedlevel = o.minusedlevel;
     let scene_cycle = SCENE_CYCLE.load(std::sync::atomic::Ordering::Relaxed);
-    let half_w = vw / 2;
-    let half_h = vh / 2;
-    // Centre-relative → viewport-relative, Java's `projectX + var12`.
-    let to_screen = |p: (i32, i32)| (p.0 + half_w, p.1 + half_h);
+    // Centre-relative → viewport-relative. Java's getOverlayPos
+    // (Client.java:4754-4755) HARDCODES the projection centre at
+    // (256, 167) — half of the fixed 512×334 3D viewport — rather than
+    // deriving it from the component bounds. Mirror that exactly so the
+    // overlay centre matches Java even if the viewport rect ever differs
+    // (for the standard 512×334 viewport these equal vw/2, vh/2).
+    let to_screen = |p: (i32, i32)| (p.0 + 256, p.1 + 167);
 
     let mut chats: Vec<(i32, i32, i32, i32, i32, i32, i32, String)> = Vec::new();
     // (x, y, half_width, height, colour, effect, timer, text)
@@ -621,8 +631,18 @@ pub fn draw(vx: i32, vy: i32, vw: i32, vh: i32) {
     }
     if o.show_fps {
         if let Some(p12) = o.p12.as_ref() {
-            p12.base.right_string(&format!("Fps:{}", o.fps),
-                                  vx + 512 - 5, vy + 20, 0xFFFF00, -1);
+            // Client.java:4707-4724 — `if (showFps)`. Java prints Fps plus
+            // the GC heap in kb with red high-water thresholds; our heap
+            // (counting allocator, perf.rs) is far more stable than the
+            // JVM's sawtooth, so we render plain MB and skip the red.
+            let x = vx + 512 - 5;
+            let y = vy + 20;
+            p12.base.right_string(&format!("Fps:{}", o.fps), x, y, 0xFFFF00, -1);
+
+            let y2 = y + 15;
+            let mb = crate::perf::HEAP_BYTES.load(std::sync::atomic::Ordering::Relaxed) as f64
+                / (1024.0 * 1024.0);
+            p12.base.right_string(&format!("Mem:{mb:.2} MB"), x, y2, 0xFFFF00, -1);
         }
     }
 }

@@ -25,6 +25,12 @@ pub struct Connection {
     // Game packet pump state.
     pub packet_type: i32,
     pub packet_size: i32,
+    /// Some(..) once the connection is identified as WebSocket (the wasm
+    /// client — browsers can't open raw TCP). None = plain TCP. Unset
+    /// until the first bytes arrive.
+    pub ws: Option<crate::websocket::WsState>,
+    /// First-bytes sniff done (TCP vs WS decided).
+    sniffed: bool,
 }
 
 impl Connection {
@@ -38,10 +44,13 @@ impl Connection {
             outbuf: Vec::new(),
             packet_type: -1,
             packet_size: 0,
+            ws: None,
+            sniffed: false,
         }
     }
 
-    /// Pull whatever's available off the socket into `inbuf`.
+    /// Pull whatever's available off the socket into `inbuf`. WebSocket
+    /// connections de-frame through WsState; plain TCP appends directly.
     pub fn fill(&mut self) {
         let mut tmp = [0u8; 8192];
         loop {
@@ -50,7 +59,29 @@ impl Connection {
                     self.state = ConnState::Closed;
                     return;
                 }
-                Ok(n) => self.inbuf.extend_from_slice(&tmp[..n]),
+                Ok(n) => {
+                    let bytes = &tmp[..n];
+                    if !self.sniffed {
+                        self.sniffed = true;
+                        // No game/js5 handshake opcode is 'G' (0x47), so a
+                        // leading "GET " can only be an HTTP/WS upgrade.
+                        if bytes.starts_with(b"G") {
+                            self.ws = Some(crate::websocket::WsState::default());
+                        }
+                    }
+                    match self.ws.as_mut() {
+                        Some(ws) => {
+                            let payload = ws.ingest(bytes, &mut self.outbuf);
+                            self.inbuf.extend_from_slice(&payload);
+                            if ws.closed {
+                                self.flush();
+                                self.state = ConnState::Closed;
+                                return;
+                            }
+                        }
+                        None => self.inbuf.extend_from_slice(bytes),
+                    }
+                }
                 Err(e) if e.kind() == ErrorKind::WouldBlock => return,
                 Err(_) => {
                     self.state = ConnState::Closed;
@@ -81,7 +112,17 @@ impl Connection {
     }
 
     pub fn write(&mut self, data: &[u8]) {
-        self.outbuf.extend_from_slice(data);
+        // outbuf holds final wire bytes (ingest queues the HTTP 101 reply
+        // there directly), so payload writes frame here. The server never
+        // writes before the client's first protocol bytes arrive, so the
+        // handshake is always done by the time this runs in WS mode.
+        match self.ws.as_ref() {
+            Some(ws) if ws.active => {
+                let framed = ws.frame_out(data);
+                self.outbuf.extend_from_slice(&framed);
+            }
+            _ => self.outbuf.extend_from_slice(data),
+        }
     }
 
     fn consume(&mut self, n: usize) -> Vec<u8> {
@@ -152,12 +193,12 @@ impl Connection {
                     let rsa_len = p.g2() as usize;
                     p.pos += rsa_len;
                     let username = p.gjstr();
-                    let _low_memory = p.g1();
+                    let low_memory = p.g1() == 1; // 1 = low-detail client
                     p.pos += 24; // uid dat
                     // 16 per-archive client CRCs follow — unchecked
                     // like the reference.
 
-                    return Some(LoginRequest { username, password, reconnect, seeds });
+                    return Some(LoginRequest { username, password, reconnect, seeds, low_memory });
                 }
                 _ => {
                     self.state = ConnState::Closed;
@@ -173,4 +214,5 @@ pub struct LoginRequest {
     pub password: String,
     pub reconnect: bool,
     pub seeds: [i32; 4],
+    pub low_memory: bool,
 }

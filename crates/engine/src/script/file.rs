@@ -12,7 +12,9 @@ use crate::script::opcode;
 pub struct ScriptInfo {
     pub script_name: String,
     pub source_file_path: String,
-    pub lookup_key: i32,
+    /// i64 since pack v27: component subjects pack (interface<<16)|child,
+    /// which shifted <<10 into the key exceeds 32 bits.
+    pub lookup_key: i64,
     pub parameter_types: Vec<u8>,
     pub pcs: Vec<i32>,
     pub lines: Vec<i32>,
@@ -97,7 +99,7 @@ impl ScriptFile {
         let mut info = ScriptInfo {
             script_name: stream.gjstr(),
             source_file_path: stream.gjstr(),
-            lookup_key: stream.g4(),
+            lookup_key: stream.g8(),
             ..Default::default()
         };
         let parameter_type_count = stream.g1();

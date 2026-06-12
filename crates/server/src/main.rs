@@ -23,9 +23,31 @@ fn main() -> std::io::Result<()> {
                 config.script_dir = Some(args[i + 1].clone());
                 i += 2;
             }
+            "--content" if i + 1 < args.len() => {
+                config.content_dir = Some(args[i + 1].clone());
+                i += 2;
+            }
+            "--baseline" if i + 1 < args.len() => {
+                config.baseline_path = Some(args[i + 1].clone());
+                i += 2;
+            }
+            "--worldid" if i + 1 < args.len() => {
+                config.worldid = args[i + 1].parse().unwrap_or_else(|_| {
+                    eprintln!("--worldid expects a number, got {}", args[i + 1]);
+                    std::process::exit(2);
+                });
+                i += 2;
+            }
+            "--adv-host" if i + 1 < args.len() => {
+                config.adv_host = args[i + 1].clone();
+                i += 2;
+            }
             other => {
                 eprintln!("unknown flag: {other}");
-                eprintln!("usage: server [--addr HOST:PORT] [--cache DIR] [--scripts DIR]");
+                eprintln!(
+                    "usage: server [--addr HOST:PORT] [--cache DIR] [--scripts DIR] \
+                     [--content DIR] [--baseline FILE] [--worldid N] [--adv-host HOST]"
+                );
                 std::process::exit(2);
             }
         }

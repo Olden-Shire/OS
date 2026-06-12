@@ -315,10 +315,16 @@ impl ModelUnlit {
     pub fn hill_skew_in_place(&mut self, groundh: &[Vec<i32>], x: i32, y: i32, z: i32,
                               blend: i32) -> bool {
         self.calc_bounding_cube();
+        // Java reads `this.maxZ + z` / `this.minZ + z` here
+        // (ModelUnlit.java:1154-1155), but the deob's Z field names are
+        // SWAPPED — calcBoundingCube (1515-1521) stores the smallest z
+        // in `maxZ` and the largest in `minZ`. Our calc_bounding_cube
+        // uses conventional names, so the semantic mapping is
+        // var9 = lowest z + z, var10 = highest z + z.
         let var7 = self.min_x + x;
         let var8 = self.max_x + x;
-        let var9 = self.max_z + z;
-        let var10 = self.min_z + z;
+        let var9 = self.min_z + z;
+        let var10 = self.max_z + z;
         if var7 < 0
             || ((var8 + 128) >> 7) as usize >= groundh.len()
             || var9 < 0
@@ -349,12 +355,17 @@ impl ModelUnlit {
                 self.point_y[i] += h - y;
             }
         } else {
-            let min_y = self.min_y;
-            if min_y == 0 {
+            // Java divides by `this.minY` (ModelUnlit.java:1225) — but
+            // the deob's minY is NOT min(y): calcBoundingCube (1523-25)
+            // initialises it to 0 and tracks max(-y), i.e. the model's
+            // height above its origin (y is negative-up). Guard height
+            // 0 explicitly — Java would throw ArithmeticException.
+            let height = (-self.min_y).max(0);
+            if height == 0 {
                 return false;
             }
             for i in 0..self.num_points as usize {
-                let var27 = (-self.point_y[i] << 16) / min_y;
+                let var27 = (-self.point_y[i] << 16) / height;
                 if var27 < blend {
                     let wx = self.point_x[i] + x;
                     let wz = self.point_z[i] + z;
@@ -760,16 +771,15 @@ impl ModelUnlit {
             let x_in2 = model1.point_x[p1] - ax;
             if x_in2 < m2_min_x || x_in2 > m2_max_x { continue; }
             let z_in2 = model1.point_z[p1] - az;
-            // VERBATIM PORT of Java's `var13 < model2.maxZ ||
-            // var13 > model2.minZ` (ModelUnlit.java:1562). The operators
-            // look inverted compared to the X check on the line above
-            // (which uses min < ... > max) — almost certainly a Jagex
-            // bug: with normal min<max bounds, this condition rejects
-            // EVERY vertex except those at exactly min_z == max_z (a
-            // degenerate model). Net effect: most calls to share_light
-            // contribute nothing to shared normals. We mirror this
-            // faithfully so the lit output matches Java 1:1; revisit
-            // after the rev1 client has been verified against gamepacks.
+            // Java's `var13 < model2.maxZ || var13 > model2.minZ`
+            // (ModelUnlit.java:1562) LOOKS inverted, but the deob's Z
+            // field names are swapped — calcBoundingCube (1515-1521)
+            // stores the smallest z in `maxZ` and the largest in
+            // `minZ` — so it is a plain out-of-bounds rejection,
+            // identical to the conventional check below. (Java's
+            // maxY is also clamped to >= 0 by its init; ours is the
+            // raw max, but as the inner loop demands exact vertex
+            // equality the early-outs can't change which pairs match.)
 
             for p2 in 0..n2 {
                 let n2_p = model2_normals[p2];
@@ -911,6 +921,8 @@ impl ModelUnlit {
             self.face_vertex_a[i] = self.face_vertex_c[i];
             self.face_vertex_c[i] = a;
         }
+        // Java ModelUnlit.mirror:1385 — invalidate cached normals/bounds.
+        self.geometry_changed();
     }
 
     // @ObfuscatedName("fw.ak()V") — ModelUnlit.geometryChanged.
@@ -979,6 +991,7 @@ impl ModelUnlit {
             self.point_x[i] = self.point_z[i];
             self.point_z[i] = -temp;
         }
+        self.geometry_changed();
     }
     // @ObfuscatedName("fw.x()V") — ModelUnlit.rotate180.
     pub fn rotate180(&mut self) {
@@ -986,6 +999,7 @@ impl ModelUnlit {
             self.point_x[i] = -self.point_x[i];
             self.point_z[i] = -self.point_z[i];
         }
+        self.geometry_changed();
     }
     // @ObfuscatedName("fw.p()V") — ModelUnlit.rotate270.
     pub fn rotate270(&mut self) {
@@ -994,6 +1008,7 @@ impl ModelUnlit {
             self.point_x[i] = -self.point_z[i];
             self.point_z[i] = temp;
         }
+        self.geometry_changed();
     }
     // @ObfuscatedName("fw.ac(III)V") — ModelUnlit.translate.
     pub fn translate(&mut self, dx: i32, dy: i32, dz: i32) {
@@ -1002,6 +1017,7 @@ impl ModelUnlit {
             self.point_y[i] += dy;
             self.point_z[i] += dz;
         }
+        self.geometry_changed();
     }
     // @ObfuscatedName("fw.ad(I)V") — ModelUnlit.rotateXAxis.
     //
@@ -1022,6 +1038,7 @@ impl ModelUnlit {
             self.point_z[i] = (self.point_z[i] * c - self.point_x[i] * s) >> 16;
             self.point_x[i] = new_x;
         }
+        self.geometry_changed();
     }
 
     // @ObfuscatedName("fw.ap(III)V") — ModelUnlit.resize
@@ -1031,6 +1048,7 @@ impl ModelUnlit {
             self.point_y[i] = self.point_y[i] * sy / 128;
             self.point_z[i] = self.point_z[i] * sz / 128;
         }
+        self.geometry_changed();
     }
 
     // @ObfuscatedName("fw.t([B)V") — ModelUnlit.loadOb2Engine200
@@ -1340,5 +1358,164 @@ impl ModelUnlit {
         if var2 < 2 { var2 = 2; }
         else if var2 > 126 { var2 = 126; }
         (arg0 & 0xFF80) + var2
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::dash3d::model_lit::ModelLit;
+
+    // A 128x128 wall quad in the XZ... rather XY plane (z = 0),
+    // matching how a 1-tile wall segment sits in model space: x spans
+    // [-64, 64], y spans [-128, 0] (y is negative-up).
+    fn wall_quad() -> ModelUnlit {
+        let mut m = ModelUnlit::default();
+        m.num_points = 4;
+        m.point_x = vec![-64, 64, 64, -64];
+        m.point_y = vec![0, 0, -128, -128];
+        m.point_z = vec![0, 0, 0, 0];
+        m.num_faces = 2;
+        m.face_vertex_a = vec![0, 0];
+        m.face_vertex_b = vec![1, 2];
+        m.face_vertex_c = vec![2, 3];
+        m.face_colour = vec![0x1234u16 as i16; 2];
+        m
+    }
+
+    // A perpendicular quad meeting wall_quad's (64, *, 0) edge:
+    // x = 64, z spans [0, 128].
+    fn corner_quad() -> ModelUnlit {
+        let mut m = ModelUnlit::default();
+        m.num_points = 4;
+        m.point_x = vec![64, 64, 64, 64];
+        m.point_y = vec![0, 0, -128, -128];
+        m.point_z = vec![0, 128, 128, 0];
+        m.num_faces = 2;
+        m.face_vertex_a = vec![0, 0];
+        m.face_vertex_b = vec![1, 2];
+        m.face_vertex_c = vec![2, 3];
+        m.face_colour = vec![0x1234u16 as i16; 2];
+        m
+    }
+
+    #[test]
+    fn share_light_pairs_adjacent_wall_segments() {
+        // Two identical segments on neighbouring +X tiles: model1's
+        // x = 64 edge coincides with model2's x = -64 edge once the
+        // 128-unit tile offset is applied.
+        let mut a = wall_quad();
+        let mut b = wall_quad();
+        ModelUnlit::share_light(&mut a, &mut b, 128, 0, 0, false);
+        let sa = a.shared_point_normal.as_ref().unwrap();
+        let sb = b.shared_point_normal.as_ref().unwrap();
+        // a's right edge (v1, v2) pairs with b's left edge (v0, v3).
+        for (av, bv) in [(1usize, 0usize), (2, 3)] {
+            let na = sa[av].expect("a edge vertex must be shared");
+            let nb = sb[bv].expect("b edge vertex must be shared");
+            assert_eq!((na.x, na.y, na.z, na.w), (nb.x, nb.y, nb.z, nb.w),
+                       "merged normals must agree on both sides of the seam");
+        }
+        // Interior vertices stay unshared.
+        assert!(sa[0].is_none() && sa[3].is_none());
+        assert!(sb[1].is_none() && sb[2].is_none());
+    }
+
+    // The gouraud corner colours at a merged seam must agree on both
+    // models — this is the "even lighting along long walls" property.
+    // Run it for the untextured AND textured paths (the textured path
+    // regressed once by reading raw point_normals; Java ModelUnlit.java
+    // 1754-1780 reads sharedPointNormal there too).
+    fn seam_colours_agree(textured: bool) {
+        let mut a = wall_quad();
+        let mut b = corner_quad();
+        if textured {
+            a.face_texture_id = Some(vec![1, 1]);
+            b.face_texture_id = Some(vec![1, 1]);
+        }
+        // Unshared baselines (fresh copies lit without pairing).
+        let mut a0 = a.clone();
+        let mut b0 = b.clone();
+        let lit_a0 = ModelLit::light(&mut a0, 64, 768, -50, -10, -50);
+        let lit_b0 = ModelLit::light(&mut b0, 64, 768, -50, -10, -50);
+
+        // Same-tile pairing (like a kind-2 corner wall's A/B models).
+        ModelUnlit::share_light(&mut a, &mut b, 0, 0, 0, false);
+        let lit_a = ModelLit::light(&mut a, 64, 768, -50, -10, -50);
+        let lit_b = ModelLit::light(&mut b, 64, 768, -50, -10, -50);
+
+        // a.v1 == b.v0 == (64, 0, 0): a face 0 corner B, b face 0
+        // corner A. The two quads face different directions, so their
+        // raw vertex normals differ — without merging the corner
+        // colours disagree; with merging they must match.
+        assert_ne!(lit_a0.face_colour_b[0], lit_b0.face_colour_a[0],
+                   "test geometry must light unevenly without merging");
+        assert_eq!(lit_a.face_colour_b[0], lit_b.face_colour_a[0],
+                   "merged seam corners must light identically");
+        // And the merged result actually differs from the unshared one
+        // (i.e. light() really consulted shared_point_normal).
+        assert_ne!(lit_a.face_colour_b[0], lit_a0.face_colour_b[0],
+                   "light() must read the merged normal at the seam");
+    }
+
+    #[test]
+    fn seam_colours_agree_untextured() {
+        seam_colours_agree(false);
+    }
+
+    #[test]
+    fn seam_colours_agree_textured() {
+        seam_colours_agree(true);
+    }
+
+    fn slope_groundh() -> Vec<Vec<i32>> {
+        // 4x4 corner heights: 100 on the west half, 228 east of x=2.
+        (0..4).map(|x| vec![if x >= 2 { 228 } else { 100 }; 4]).collect()
+    }
+
+    #[test]
+    fn hill_skew_applies_terrain_offsets() {
+        let gh = slope_groundh();
+        let mut m = wall_quad();
+        // Anchor at tile (1, 1) centre: world x/z = 192.
+        let skewed = m.hill_skew_in_place(&gh, 192, 100, 192, 0);
+        assert!(skewed);
+        // v0 at world x 128 sits on height 100 (anchor height): no move.
+        assert_eq!(m.point_y[0], 0);
+        // v1 at world x 256 sits on height 228: pushed down by 128.
+        assert_eq!(m.point_y[1], 128);
+    }
+
+    #[test]
+    fn hill_skew_bails_at_heightmap_edge() {
+        // Model whose +Z edge rides past the heightmap: Java's guard
+        // reads the deob-swapped `minZ` field (the actual MAX z) for
+        // the upper-bound check (ModelUnlit.java:1155-1157). Reading
+        // the actual min here lets the skew run and index out of
+        // bounds.
+        let gh = slope_groundh();
+        let mut m = wall_quad();
+        // Rotate footprint into Z so the model spans z [-64, 64].
+        std::mem::swap(&mut m.point_x, &mut m.point_z);
+        // world z spans [256, 384] → (384 + 128) >> 7 == 4 >= len(4).
+        let skewed = m.hill_skew_in_place(&gh, 192, 100, 320, 0);
+        assert!(!skewed, "edge guard must reject, matching Java");
+    }
+
+    #[test]
+    fn hill_skew_blend_uses_model_height() {
+        let gh = slope_groundh();
+        let mut m = wall_quad();
+        // blend = half of the 16.16 range: only the lower half of the
+        // model (var27 < blend) skews. Java divides -y << 16 by the
+        // deob `minY` field = model HEIGHT (max(-y), here 128).
+        let skewed = m.hill_skew_in_place(&gh, 192, 100, 192, 32768);
+        assert!(skewed);
+        // v2 top corner above height 228 ground: var27 = 65536, no move.
+        assert_eq!(m.point_y[2], -128);
+        // v1 bottom corner there: var27 = 0 → full offset (228 - 100).
+        assert_eq!(m.point_y[1], 128);
+        // v0 bottom corner on flat 100 ground: offset 0 either way.
+        assert_eq!(m.point_y[0], 0);
     }
 }

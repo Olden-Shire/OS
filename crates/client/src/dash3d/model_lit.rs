@@ -308,14 +308,67 @@ impl ModelLit {
         lit.face_alpha = src.face_alpha.clone();
         lit.priority = src.priority;
         lit.face_texture_id = src.face_texture_id.clone();
-        // TODO: re-enable texture compaction (Java's ModelUnlit.light
-        // at 1642-1681) once the regression hunting completes. Plain
-        // clone preserves the prior renderer's behavior.
-        lit.face_texture_axis = src.face_texture_axis.clone();
-        lit.face_texture_p = src.face_texture_p.clone();
-        lit.face_texture_m = src.face_texture_m.clone();
-        lit.face_texture_n = src.face_texture_n.clone();
-        lit.num_t = src.num_t;
+        // Texture-table compaction (Java ModelUnlit.light 1642-1681).
+        // Keeps only the (P, M, N) anchor triples that are BOTH
+        // referenced by some face AND have textureRenderType == 0
+        // (plain vertex-anchored mapping), renumbering faceTextureAxis
+        // to match. Crucially, faces whose texture has renderType != 0
+        // (scaled / rotated types) get axis -1 — the renderer then
+        // anchors UVs on the face's own vertices. Without this remap,
+        // their raw axis points at anchor data that isn't a plain
+        // vertex triple, producing garbage UVs (black rug centres,
+        // garbled banners / wall shields).
+        if src.num_t > 0 && src.face_texture_axis.is_some() {
+            let num_t = src.num_t as usize;
+            let num_faces = src.num_faces as usize;
+            let fta = src.face_texture_axis.as_ref().unwrap();
+            let trt = src.texture_render_type.as_ref();
+            let render_type = |t: usize| trt.map_or(0, |v| v[t]);
+            let mut axis = vec![0i32; num_t];
+            for f in 0..num_faces {
+                if fta[f] != -1 {
+                    axis[(fta[f] as i32 & 0xFF) as usize] += 1;
+                }
+            }
+            let mut count = 0usize;
+            for t in 0..num_t {
+                if axis[t] > 0 && render_type(t) == 0 {
+                    count += 1;
+                }
+            }
+            let mut p = vec![0i16; count];
+            let mut m = vec![0i16; count];
+            let mut n = vec![0i16; count];
+            let mut cursor = 0usize;
+            for t in 0..num_t {
+                if axis[t] > 0 && render_type(t) == 0 {
+                    p[cursor] = src.face_texture_p.as_ref().map_or(0, |v| v[t]);
+                    m[cursor] = src.face_texture_m.as_ref().map_or(0, |v| v[t]);
+                    n[cursor] = src.face_texture_n.as_ref().map_or(0, |v| v[t]);
+                    axis[t] = cursor as i32;
+                    cursor += 1;
+                } else {
+                    axis[t] = -1;
+                }
+            }
+            lit.num_t = count as i32;
+            lit.face_texture_p = Some(p);
+            lit.face_texture_m = Some(m);
+            lit.face_texture_n = Some(n);
+            let mut new_axis = vec![-1i8; num_faces];
+            for f in 0..num_faces {
+                if fta[f] != -1 {
+                    new_axis[f] = axis[(fta[f] as i32 & 0xFF) as usize] as i8;
+                }
+            }
+            lit.face_texture_axis = Some(new_axis);
+        } else {
+            lit.face_texture_axis = src.face_texture_axis.clone();
+            lit.face_texture_p = src.face_texture_p.clone();
+            lit.face_texture_m = src.face_texture_m.clone();
+            lit.face_texture_n = src.face_texture_n.clone();
+            lit.num_t = src.num_t;
+        }
         // Build label_vertices / label_faces — Java does this in
         // ModelUnlit.light at line 1660-1680 by transposing the
         // vertex_label[] / face_label[] arrays.
@@ -393,16 +446,16 @@ impl ModelLit {
                     lit.face_colour_c[f] = -2;
                 }
             } else if effective_type == 0 {
-                // Textured gouraud (Java 1754-1780). TEMP REVERT to
-                // raw point_normals while bisecting a regression — Java
-                // does use shared here, but our textured path appears
-                // to need a separate investigation.
+                // Textured gouraud (Java 1754-1780) — same shared-first
+                // normal lookup as the untextured branch; without it,
+                // textured wall/fence runs light each segment from its
+                // own normals and the seams show as brightness steps.
                 let a = src.face_vertex_a[f] as usize;
                 let b = src.face_vertex_b[f] as usize;
                 let c = src.face_vertex_c[f] as usize;
-                let na = point_normals[a];
-                let nb = point_normals[b];
-                let nc = point_normals[c];
+                let na = normal_at(a);
+                let nb = normal_at(b);
+                let nc = normal_at(c);
                 let denom_a = (na.w * scale).max(1);
                 let denom_b = (nb.w * scale).max(1);
                 let denom_c = (nc.w * scale).max(1);
@@ -1573,18 +1626,22 @@ impl ModelLit {
         // Java's Pix3D.minX/maxX/minY/maxY are origin-relative clip
         // bounds (minX = -originX, maxX = sizeX - originX); our State
         // stores absolute screen coords, so re-derive.
-        let (origin_x, origin_y, j_min_x, j_max_x, j_min_y, j_max_y) = {
+        let (origin_x, origin_y, j_min_x, j_max_x, j_min_y, j_max_y, far_clip) = {
             let s = pix3d::STATE.lock().unwrap();
             (s.origin_x, s.origin_y,
              s.min_x - s.origin_x, s.max_x - s.origin_x,
-             s.min_y - s.origin_y, s.max_y - s.origin_y)
+             s.min_y - s.origin_y, s.max_y - s.origin_y,
+             s.model_far_clip)
         };
 
         let var10 = (cos_yaw * rel_z - sin_yaw * rel_x) >> 16;
         let var11 = (sin_pitch * rel_y + cos_pitch * var10) >> 16;
         let var12 = (radius * cos_pitch) >> 16;
         let var13 = var11 + var12;
-        if var13 <= 50 || var11 >= 3500 {
+        // Java: `var11 >= 3500` (ModelLit.java:927) — far_clip is 3500
+        // plus the camera's extra zoom pull-back so models on rendered
+        // tiles don't pop out when zoomed past Java's fixed distance.
+        if var13 <= 50 || var11 >= far_clip {
             return;
         }
         let var14 = (sin_yaw * rel_z + cos_yaw * rel_x) >> 16;

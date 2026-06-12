@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- Web shell for the wasm client.
+
+     Build:
+       rustup target add wasm32-unknown-unknown
+       cargo build -p client --release --target wasm32-unknown-unknown
+       wasm-bindgen target/wasm32-unknown-unknown/release/client.wasm \
+           --target web --no-typescript --out-dir crates/client/web/pkg
+     Serve crates/client/web/ over plain HTTP (any static server) and run
+     the game server normally — the client connects via WebSocket to the
+     same host/ports it uses natively (the server sniffs WS upgrades on
+     its TCP port). -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jagex</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+    #game { display: flex; height: 100%; align-items: center; justify-content: center; }
+    #game canvas { width: 100vw; height: 100vh; outline: none; }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+  <script type="module">
+    import init from "./pkg/client.js";
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[package]
+name = "client"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+# 1:1 Rust port of src/main/java/jagex3 + deob.
+# Each member is annotated with its Java origin (package.Class.member and
+# the @ObfuscatedName / jag::oldscape:: deob symbol when known).
+
+[[bin]]
+name = "client"
+path = "src/main.rs"
+
+[dependencies]
+winit = "0.30"
+ab_glyph = "0.2"
+crc32fast = "1.4"
+flate2 = "1.0"
+bzip2-rs = "0.1"
+image = { version = "0.25", default-features = false, features = ["jpeg"] }
+parking_lot = "0.12"
+lewton = "0.10"
+byteorder = "1.5"
+glow = "0.16"
+
+# Native-only: GL context via glutin, CPU present via softbuffer, audio via
+# cpal, perf overlay via imgui (imgui-sys is C++ and needs clang for wasm;
+# the overlay is desktop dev tooling, so the browser build stubs it out).
+# The wasm target gets WebGL2 from the canvas, no soft path, and (for now)
+# no audio device.
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+softbuffer = "0.4"
+cpal = "0.15"
+glutin = "0.32"
+glutin-winit = "0.5"
+imgui = "0.12"
+
+# Web: WebSocket transport, fetch, canvas/WebGL2 context, monotonic time.
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+web-time = "1"
+console_error_panic_hook = "0.1"
+web-sys = { version = "0.3", features = [
+    "BinaryType",
+    "CloseEvent",
+    "console",
+    "Document",
+    "ErrorEvent",
+    "Headers",
+    "HtmlCanvasElement",
+    "MessageEvent",
+    "Request",
+    "RequestInit",
+    "Response",
+    "WebGl2RenderingContext",
+    "WebSocket",
+    "Window",
+] }

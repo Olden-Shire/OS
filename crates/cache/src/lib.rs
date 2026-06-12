@@ -8,11 +8,22 @@ pub mod anim;
 pub mod config;
 pub mod configs;
 pub mod content;
+pub mod cs2;
+pub mod cs2_asm;
+pub mod cs2_compile;
+pub mod cs2_decompile;
+pub mod cs2_ir;
+pub mod cs2_opcodes;
+pub mod cs2_pretty;
+pub mod cs2_sig;
+pub mod cs2_source;
 pub mod data_file;
 pub mod iftype;
 pub mod js5;
 pub mod maps;
 pub mod model;
+pub mod sprite;
+pub mod verify;
 
 use std::fs::File;
 use std::path::Path;
@@ -185,6 +196,21 @@ impl Cache {
     /// Returns `None` if the terrain group is missing (i.e. the region doesn't exist in
     /// this cache). A missing loc file is silently treated as "no locs in this region".
     pub fn region(&mut self, x: u32, y: u32, keys: &XteaKeys) -> std::io::Result<Option<Region>> {
+        Ok(self
+            .region_raw(x, y, keys)?
+            .map(|(terrain, locs)| Region::decode(x, y, &terrain, locs.as_deref())))
+    }
+
+    /// Read a region's raw terrain bytes and its (XTEA-decrypted) loc bytes without
+    /// decoding them — the input for the [`maps::text`] round-trip tooling, which
+    /// decodes/re-encodes them to and from editable `.jm2` text. `None` if the region's
+    /// terrain group is missing; the loc bytes are `None` for a region with no loc file.
+    pub fn region_raw(
+        &mut self,
+        x: u32,
+        y: u32,
+        keys: &XteaKeys,
+    ) -> std::io::Result<Option<(Vec<u8>, Option<Vec<u8>>)>> {
         let m_name = format!("m{x}_{y}");
         let l_name = format!("l{x}_{y}");
         let index = self.index(MAPS_ARCHIVE);
@@ -201,7 +227,7 @@ impl Cache {
         } else {
             None
         };
-        Ok(Some(Region::decode(x, y, &terrain, locs.as_deref())))
+        Ok(Some((terrain, locs)))
     }
 
     /// Read every file inside a group and pair each with its file id. The order matches

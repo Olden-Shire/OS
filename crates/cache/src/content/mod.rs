@@ -55,6 +55,7 @@
 //! `Cache::read_group_with_key` for the read side.
 
 pub mod extensions;
+pub mod hash_names;
 pub mod import_names;
 pub mod manifest;
 pub mod pack;
@@ -63,4 +64,4 @@ pub mod unpack;
 
 pub use manifest::{ArchiveManifest, GroupMeta, MasterManifest};
 pub use pack::{PackStats, pack};
-pub use unpack::{UnpackStats, unpack};
+pub use unpack::{UnpackStats, unpack, unpack_with_names};

@@ -113,6 +113,7 @@ pub fn loop_interface(c: &mut Client, id: i32, x: i32, y: i32, w: i32, h: i32,
 fn loop_layer(c: &mut Client, children: &[IfType], layer_id: i32,
               x: i32, y: i32, w: i32, h: i32,
               child_x: i32, child_y: i32) -> bool {
+    let _g = crate::debug_depth::DepthGuard::enter("loop_layer", 400);
     let (mouse_x, mouse_y, mouse_button, click_button, click_x, click_y) = {
         let m = crate::input::MOUSE.lock().unwrap();
         (m.mouse_x, m.mouse_y, m.mouse_button,

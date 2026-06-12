@@ -26,8 +26,8 @@ use crate::title_screen;
 // frame list end, the loop wrap is applied via `frames -= loops`;
 // max_loops gates the seq from looping forever.
 //
-// `triggerSeqSound` is stubbed (would route to the sound subsystem;
-// no-op here matches the audio bridge that's still pending).
+// `triggerSeqSound` is ported as `collect_seq_sound` + the `drain_seq_sounds`
+// path in move_players/move_npcs (enqueues seq SFX into the wave queue).
 // @ObfuscatedName("client.t(IIIIZIIIIII)Z") — Client.tryMove.
 // Verbatim port of Client.java:5529-5734. BFS over the active level's
 // CollisionMap. arg0/arg1 are the source tile, arg2/arg3 the target.
@@ -388,8 +388,12 @@ pub struct PendingClientScript {
 // cache, resets the collision maps + scene, stops audio, then
 // returns to mainstate 10 (title screen).
 pub fn logout(c: &mut Client) {
-    // Close the inbound/outbound packet stream and Isaac state.
-    c.out_packet = None;
+    // Close the Isaac state. Java keeps the `out` buffer allocated
+    // across sessions (only `stream` is nulled); drop any unsent
+    // bytes so they can't leak into the next login.
+    if let Some(out) = c.out_packet.as_mut() {
+        out.pos = 0;
+    }
     c.isaac_out = None;
     c.isaac_in = None;
 
@@ -449,11 +453,69 @@ pub fn lost_con(c: &mut Client) {
         logout(c);
         return;
     }
-    c.state = 40;
-    // Java's `prevStream = stream; stream = null;` — we mirror by
-    // shifting out_packet to None; the prev_stream field already
-    // captures the legacy slot.
-    c.out_packet = None;
+    // Java: setMainState(40); prevStream = stream; stream = null;
+    // set_main_state(40) resets login_step to 0 so login_poll restarts
+    // the handshake from scratch (this time as a reconnect — opcode 18).
+    // Stash the dead stream as prev_stream; the `out` buffer is left
+    // untouched so any queued bytes flush after the reconnect.
+    c.prev_stream = c.login_stream.take();
+    c.set_main_state(40);
+}
+
+// @ObfuscatedName(— Client.messageBox). Verbatim port of Client.java:
+// 4055-4087. Draws a black box + white border with centred multiline
+// text in the top-left corner, OVER whatever's already in the draw
+// area (so the state-40 reconnect screen overlays the frozen frame).
+// `arg1` (the immediate-blit flag) is the caller's job here.
+pub fn message_box(p12: &crate::graphics::pix_font_generic::PixFontGeneric, text: &str) {
+    let pad = 4i32;
+    let x = pad + 6;
+    let y = pad + 6;
+    let w = p12.base.predict_width_multiline(text, 250);
+    let h = p12.base.predict_lines_multiline(text, 250) * 13;
+    crate::graphics::pix2d::fill_rect(x - pad, y - pad, pad + w + pad, pad + h + pad, 0);
+    crate::graphics::pix2d::draw_rect(x - pad, y - pad, pad + w + pad, pad + h + pad, 0xFFFFFF);
+    p12.base.draw_string_multiline(text, x, y, w, h, 0xFFFFFF, -1, 1, 1, 0);
+}
+
+// @ObfuscatedName(— Client.reconnectDone). Verbatim port of
+// Client.java:3023-3059. Runs when the reconnect handshake succeeds
+// (loginPoll reads opcode 15 while in state 40): resets the packet
+// stream + per-session timers/menus, clears every entity's interaction
+// target, drops the inventory cache, and returns to mainstate 30 with
+// the (still-loaded) world. Java also clears minimapState — we don't
+// carry that field, so only minimap_flag_x is reset.
+pub fn reconnect_done(c: &mut Client) {
+    if let Some(out) = c.out_packet.as_mut() {
+        out.pos = 0;
+    }
+    c.ptype = -1;
+    c.ptype0 = -1;
+    c.ptype1 = -1;
+    c.ptype2 = -1;
+    c.psize = 0;
+
+    c.timeout_timer = 0;
+    c.reboot_timer = 0;
+
+    c.menu_num_entries = 0;
+    c.is_menu_open = false;
+
+    c.minimap_flag_x = 0;
+
+    for p in c.players.iter_mut() {
+        if let Some(p) = p.as_mut() {
+            p.entity.target_id = -1;
+        }
+    }
+    for n in c.npcs.iter_mut() {
+        if let Some(n) = n.as_mut() {
+            n.entity.target_id = -1;
+        }
+    }
+
+    crate::client_inv_cache::delete_all();
+    c.set_main_state(30);
 }
 
 // ── OPLOC[1..5] outbound packet builders ──────────────────────────
@@ -858,7 +920,6 @@ pub fn send_op_npc_examine(c: &mut Client, npc_slot: i32) {
 // codes — Java's `Text.CHATCOL_*` / `Text.CHATEFFECT_*` table. If
 // you're calling from cs2, prefer letting the caller parse them.
 pub fn send_message_public(c: &mut Client, color: i32, effect: i32, message: &str) {
-    use crate::io::packet::Packet;
     let Some(isaac) = c.isaac_out.as_mut() else { return; };
     let Some(out) = c.out_packet.as_mut() else { return; };
     out.p1_enc(205, isaac);
@@ -866,10 +927,7 @@ pub fn send_message_public(c: &mut Client, color: i32, effect: i32, message: &st
     let start = out.pos;
     out.p1(color);
     out.p1(effect);
-    // WordPack compression isn't yet ported; until it lands, send as
-    // a length-prefixed pjstr. Dev servers tolerate both forms.
-    out.p1(Packet::pjstrlen(message));
-    out.pjstr(message);
+    crate::wordpack::pack(out, message); // Java: WordPack.pack(out, message)
     out.psize1(out.pos - start);
 }
 
@@ -942,10 +1000,6 @@ pub fn send_chat_filter_settings(c: &mut Client, public_mode: i32, private_mode_
 // ScriptRunner.java:2619-2627. Variable-length packet: opcode 211 +
 // u16 size placeholder + (pjstr recipient + WordPack-compressed
 // message), then back-fill the size.
-//
-// WordPack compression isn't yet ported; until it lands, we send the
-// raw message bytes as a pjstr — the server-side handler in dev
-// builds tolerates both forms.
 pub fn send_message_private(c: &mut Client, recipient: &str, message: &str) {
     let Some(isaac) = c.isaac_out.as_mut() else { return; };
     let Some(out) = c.out_packet.as_mut() else { return; };
@@ -953,7 +1007,7 @@ pub fn send_message_private(c: &mut Client, recipient: &str, message: &str) {
     out.p2(0);
     let start = out.pos;
     out.pjstr(recipient);
-    out.pjstr(message);
+    crate::wordpack::pack(out, message); // Java: WordPack.pack(out, message)
     out.psize2(out.pos - start);
 }
 
@@ -1068,9 +1122,11 @@ pub fn op_player(c: &mut Client, action: i32, target: &str) {
         break;
     }
     if !found {
+        // Java 9335 — addChat(0, "", ...) 3-arg overload passes null
+        // for screenName (only clan chat sets it).
         add_chat(c, 0, Some(String::new()),
                  Some(format!("Unable to find {display}")),
-                 Some(String::new()), 0);
+                 None, 0);
     }
 }
 
@@ -1159,7 +1215,13 @@ pub fn dispatch_orbit_camera(c: &mut Client, camera_pitch_clamp: i32) {
     }
     let yaw = (c.orbit_cam_yaw + c.macro_camera_angle) & 0x7FF;
     let anchor_y = get_av_h(lp_x, lp_z, lp_level) - 50;
-    let distance = pitch * 3 + 600;
+    // Java: distance = pitch * 3 + 600. The (orbit_cam_zoom - 1100)
+    // delta is OUR mouse-wheel zoom (rev1 has none) — zero at the
+    // default zoom, so the stock camera is byte-identical to Java.
+    // The "vanilla camera" debug toggle pins the delta to zero for
+    // accuracy testing against the reference client.
+    let zoom = if crate::debug_opts::vanilla_camera() { 1100 } else { c.orbit_cam_zoom };
+    let distance = pitch * 3 + 600 + (zoom - 1100);
     cam_follow(c, pitch, yaw, c.orbit_cam_x, anchor_y, c.orbit_cam_z, distance);
 }
 
@@ -1390,6 +1452,16 @@ pub fn show_object(
     true
 }
 
+// Lock the built scene World (if any) and (re-)render the ground-obj pile at a
+// tile via show_object. No-op when the world isn't built yet — the pile data
+// still lives in c.ground_obj and renders on the next build.
+pub fn show_object_at(c: &Client, level: i32, tile_x: i32, tile_z: i32) {
+    let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
+    let Some(world) = cache.world.as_mut() else { return };
+    let pile = &c.ground_obj[level as usize][tile_x as usize][tile_z as usize];
+    show_object(world, level, tile_x, tile_z, pile);
+}
+
 // @ObfuscatedName(— Client.roofCheck2). Verbatim port of
 // Client.java:4365-4372. Used during cinema mode to clamp the
 // minimum visible level (Java's `var62`): if the camera is inside a
@@ -1457,9 +1529,11 @@ fn rand_unit_local() -> f64 {
 }
 
 // @ObfuscatedName(— Client.followCamera). Verbatim port of
-// Client.java:3337-3371. Smooth-tracks the orbit centre toward the
-// local-player position with a +/-500 snap clamp, then applies the
-// arrow-key-driven yaw/pitch velocities with /2 damping.
+// Client.java:3337-3401. Smooth-tracks the orbit centre toward the
+// local-player position with a +/-500 snap clamp, applies the
+// arrow-key-driven yaw/pitch velocities with /2 damping, then raises
+// camera_pitch_clamp from the tallest terrain within 4 tiles so the
+// camera tilts up near walls/cliffs.
 pub fn follow_camera(c: &mut Client) {
     let Some(lp) = c.local_player.as_ref() else { return; };
     let target_x = c.macro_camera_x + lp.entity.x;
@@ -1495,6 +1569,42 @@ pub fn follow_camera(c: &mut Client) {
     c.orbit_cam_pitch += c.orbit_cam_pitch_velocity / 2;
     if c.orbit_cam_pitch < 128 { c.orbit_cam_pitch = 128; }
     if c.orbit_cam_pitch > 383 { c.orbit_cam_pitch = 383; }
+
+    // Java 3372-3401 — terrain-driven pitch clamp. Scan the 9×9 tile
+    // block centred on the orbit position, find the greatest drop from
+    // the camera's interpolated ground height to a tile's ground height
+    // (using the bridge level when mapl[1] bit 0x2 is set), scale ×192,
+    // clamp to [32768, 98048], then ease camera_pitch_clamp toward it
+    // (faster rising /24, slower falling /80).
+    let tile_x = c.orbit_cam_x >> 7;
+    let tile_z = c.orbit_cam_z >> 7;
+    let cam_h = get_av_h(c.orbit_cam_x, c.orbit_cam_z, c.minusedlevel);
+    let mut max_drop = 0;
+    if tile_x > 3 && tile_z > 3 && tile_x < 100 && tile_z < 100 {
+        let cb = crate::client_build::STATE.lock().unwrap();
+        for sx in (tile_x - 4)..=(tile_x + 4) {
+            for sz in (tile_z - 4)..=(tile_z + 4) {
+                let mut sample_level = c.minusedlevel;
+                if sample_level < 3
+                    && (cb.mapl[1][sx as usize][sz as usize] & 0x2) == 2
+                {
+                    sample_level += 1;
+                }
+                let drop = cam_h - cb.ground_h[sample_level as usize][sx as usize][sz as usize];
+                if drop > max_drop {
+                    max_drop = drop;
+                }
+            }
+        }
+    }
+    let mut target = max_drop * 192;
+    if target > 98048 { target = 98048; }
+    if target < 32768 { target = 32768; }
+    if target > c.camera_pitch_clamp {
+        c.camera_pitch_clamp += (target - c.camera_pitch_clamp) / 24;
+    } else if target < c.camera_pitch_clamp {
+        c.camera_pitch_clamp += (target - c.camera_pitch_clamp) / 80;
+    }
 }
 
 // @ObfuscatedName(— Client.camFollow). Verbatim port of
@@ -1541,24 +1651,22 @@ pub fn cam_follow(c: &mut Client, pitch: i32, yaw: i32, anchor_x: i32, anchor_y:
 //             to -1 / 0 / 0 here.
 //   layer 3 — GroundDecor.
 pub fn loc_change_set_old(world: &crate::dash3d::world::World, loc: &mut crate::dash3d::LocChange) {
-    let mut typecode = 0i32;
+    // Java locChangeSetOld (Client.java:7528-7553): the typecode comes from the
+    // layer-specific accessor (0 wall, 1 decor, 2 scene, 3 ground-decor), and the
+    // shape/angle from world.typecode2 — which matches the typecode and masks to
+    // the low byte (so `(tc2 >> 6) & 0x3` can't pick up stray high bits).
+    let typecode = match loc.layer {
+        0 => world.wall_type(loc.level, loc.x, loc.z),
+        1 => world.decor_type(loc.level, loc.x, loc.z),
+        2 => world.scene_type(loc.level, loc.x, loc.z),
+        3 => world.gd_type(loc.level, loc.x, loc.z),
+        _ => 0,
+    };
     let mut old_type = -1i32;
     let mut old_shape = 0i32;
     let mut old_angle = 0i32;
-    match loc.layer {
-        0 => typecode = world.wall_type(loc.level, loc.x, loc.z),
-        1 => typecode = world.decor_type(loc.level, loc.x, loc.z),
-        3 => typecode = world.gd_type(loc.level, loc.x, loc.z),
-        _ => {}
-    }
     if typecode != 0 {
-        // shape = low 5 bits of typecode2; angle = bits 6..7.
-        let tc2 = match loc.layer {
-            0 => world.get_wall(loc.level, loc.x, loc.z).map(|w| w.typecode2).unwrap_or(0),
-            1 => world.get_decor(loc.level, loc.x, loc.z).map(|d| d.typecode2).unwrap_or(0),
-            3 => world.get_gd(loc.level, loc.x, loc.z).map(|g| g.typecode2).unwrap_or(0),
-            _ => 0,
-        };
+        let tc2 = world.typecode2(loc.level, loc.x, loc.z, typecode);
         old_type = (typecode >> 14) & 0x7FFF;
         old_shape = tc2 & 0x1F;
         old_angle = (tc2 >> 6) & 0x3;
@@ -1566,6 +1674,135 @@ pub fn loc_change_set_old(world: &crate::dash3d::world::World, loc: &mut crate::
     loc.old_type = old_type;
     loc.old_shape = old_shape;
     loc.old_angle = old_angle;
+}
+
+// @ObfuscatedName("Client.LOC_SHAPE_TO_LAYER") — Client.java:372-376. Maps a loc
+// shape (0..22) to its world layer: 0..3 wall, 4..8 wall-decor, 9..21 scenery,
+// 22 ground-decor.
+pub const LOC_SHAPE_TO_LAYER: [i32; 23] = [
+    0, 0, 0, 0,
+    1, 1, 1, 1, 1,
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    3,
+];
+
+// @ObfuscatedName(— Client.locChangeCreate, Client.java:7489-7511). Find-or-create
+// the pending LocChange for (level, x, z, layer); on a new entry capture the
+// existing geometry via loc_change_set_old (needs the built World), then stamp the
+// requested new type/shape/angle and the start/end timers. The per-tick
+// loc_change_do_queue applies it.
+#[allow(clippy::too_many_arguments)]
+pub fn loc_change_create(c: &mut Client, level: i32, x: i32, z: i32, layer: i32,
+                         new_type: i32, new_shape: i32, new_angle: i32,
+                         start_time: i32, end_time: i32) {
+    let idx = c.loc_changes.iter().position(|l|
+        l.level == level && l.x == x && l.z == z && l.layer == layer);
+    let idx = match idx {
+        Some(i) => i,
+        None => {
+            let mut loc = crate::dash3d::LocChange { level, layer, x, z, ..Default::default() };
+            if let Some(world) = crate::scene::WORLD_CACHE.lock().unwrap().world.as_ref() {
+                loc_change_set_old(world, &mut loc);
+            }
+            c.loc_changes.push(loc);
+            c.loc_changes.len() - 1
+        }
+    };
+    let loc = &mut c.loc_changes[idx];
+    loc.new_type = new_type;
+    loc.new_shape = new_shape;
+    loc.new_angle = new_angle;
+    loc.start_time = start_time;
+    loc.end_time = end_time;
+}
+
+// @ObfuscatedName("f.eq(IIIIIIII)V") — Client.locChangeUnchecked. Verbatim port
+// of Client.java:7585-7648. Removes the existing loc geometry (+ its collision)
+// on `layer` at the tile, then places the new loc via change_loc_unchecked when
+// `new_type >= 0`. `world` is the built scene World (from WORLD_CACHE); `collision`
+// is the level's CollisionMap (from c.collision). `low_mem`/`minusedlevel` gate the
+// low-memory off-level skip.
+#[allow(clippy::too_many_arguments)]
+pub fn loc_change_unchecked(
+    world: &mut crate::dash3d::world::World,
+    mut collision: Option<&mut crate::dash3d::CollisionMap>,
+    low_mem: bool,
+    minusedlevel: i32,
+    level: i32, layer: i32, x: i32, z: i32,
+    new_type: i32, new_angle: i32, new_shape: i32,
+) {
+    use crate::config::loc_type;
+    if x < 1 || z < 1 || x > 102 || z > 102 {
+        return;
+    }
+    if low_mem && minusedlevel != level {
+        return;
+    }
+    let typecode = match layer {
+        0 => world.wall_type(level, x, z),
+        1 => world.decor_type(level, x, z),
+        2 => world.scene_type(level, x, z),
+        3 => world.gd_type(level, x, z),
+        _ => 0,
+    };
+    if typecode != 0 {
+        let tc2 = world.typecode2(level, x, z, typecode);
+        let old_type = (typecode >> 14) & 0x7FFF;
+        let old_shape = tc2 & 0x1F;
+        let old_angle = (tc2 >> 6) & 0x3;
+        match layer {
+            0 => {
+                world.del_wall(level, x, z);
+                if let Some(lt) = loc_type::list(old_type)
+                    && lt.blockwalk != 0
+                    && let Some(cm) = collision.as_deref_mut()
+                {
+                    cm.del_wall(x, z, old_shape, old_angle, lt.blockrange);
+                }
+            }
+            1 => world.del_decor(level, x, z),
+            2 => {
+                world.del_loc(level, x, z);
+                if let Some(lt) = loc_type::list(old_type) {
+                    // Java 7626 — abort the whole change if the old loc straddles
+                    // the loaded edge (delLoc already ran; new loc is skipped).
+                    if lt.width + x > 103 || lt.width + z > 103
+                        || lt.length + x > 103 || lt.length + z > 103
+                    {
+                        return;
+                    }
+                    if lt.blockwalk != 0
+                        && let Some(cm) = collision.as_deref_mut()
+                    {
+                        cm.del_loc(x, z, lt.width, lt.length, old_angle, lt.blockrange);
+                    }
+                }
+            }
+            3 => {
+                world.del_ground_decor(level, x, z);
+                if let Some(lt) = loc_type::list(old_type)
+                    && lt.blockwalk == 1
+                    && let Some(cm) = collision.as_deref_mut()
+                {
+                    cm.unblock_ground_decor(x, z);
+                }
+            }
+            _ => {}
+        }
+    }
+    if new_type >= 0 {
+        // Java 7643 — bridge tiles render the loc one level up.
+        let eff_level = if level < 3
+            && (crate::client_build::mapl_flag(1, x, z) & 0x2) == 2
+        {
+            level + 1
+        } else {
+            level
+        };
+        crate::client_build::change_loc_unchecked(
+            level, eff_level, x, z, new_type, new_angle, new_shape, world, collision,
+        );
+    }
 }
 
 // @ObfuscatedName("ez.dm(B)V") — Client.cinemaCamera. Verbatim port
@@ -1670,10 +1907,8 @@ pub fn cinema_camera(c: &mut Client) {
 // + savedesign); false means the caller (if_button_x) should still
 // emit the normal IF_BUTTON packet.
 //
-// The full IdkDesign struct (player kit composer) isn't ported yet
-// so the change_part / change_colour / change_gender arms are stubs
-// recording the requested change so the eventual idk_design pass can
-// drain them.
+// The change_part / change_colour / change_gender arms drive the ported
+// IdkDesign (player kit composer) directly; 326 emits IDK_SAVEDESIGN.
 pub fn client_button(c: &mut Client, com: &crate::config::if_type::IfType) -> bool {
     let code = com.client_code;
     if code == 205 {
@@ -1755,16 +1990,25 @@ pub fn client_component(c: &mut Client, com: &mut crate::config::if_type::IfType
 // "Use X with..." cursor overlay.
 pub fn enter_target_mode(c: &mut Client, parent_com: i32, sub_id: i32) {
     use crate::config::if_type;
-    let Some(com) = if_type::get_sub(parent_com, sub_id) else { return; };
+    let Some(com) = if_type::get2(parent_com, sub_id) else { return; };
     end_target_mode(c);
     let active_flags = get_active(c, &com);
     let target_mask = crate::config::server_active::target_mask(active_flags);
-    // ontargetenter hook fires through ScriptRunner — deferred.
-    let _ = com.hook_ontargetenter.as_ref();
+    // Java 8952-8957 — fire the ontargetenter hook before entering target mode.
+    if let Some(hook) = com.hook_ontargetenter.clone() {
+        let cref = crate::interface_loop::com_ref_of(&com);
+        let req = crate::script_runner::HookReq {
+            component: cref,
+            onop: hook,
+            ..Default::default()
+        };
+        crate::script_runner::execute_script(c, &req);
+    }
     c.target_mode = true;
     c.target_com = parent_com;
     c.target_sub = sub_id;
     c.target_mask = target_mask;
+    c.use_mode = 0; // Java 8964 — entering spell-target mode clears use-item mode.
     // Re-fetch to grab the v3/legacy classification and verb.
     let verb = if target_mask == 0 || com.target_verb.trim().is_empty() {
         "Null".to_string()
@@ -1773,13 +2017,13 @@ pub fn enter_target_mode(c: &mut Client, parent_com: i32, sub_id: i32) {
     };
     c.target_verb = verb;
     c.target_op = if com.v3 {
+        // Java 8982 — v3 uses baseOpName.
         format!("{}{}", com.base_op_name, crate::string_constants::tag_colour(0xFFFFFF))
     } else {
-        // The legacy branch uses target_base + green colour code.
-        // base_op_name doubles for both forms in our model.
+        // Java 8984 — the legacy branch uses targetBase + green colour code.
         format!("{}{}{}",
             crate::string_constants::tag_colour(0x00FF00),
-            com.base_op_name,
+            com.target_base,
             crate::string_constants::tag_colour(0xFFFFFF))
     };
     component_updated(&com);
@@ -1792,11 +2036,17 @@ pub fn end_target_mode(c: &mut Client) {
     if !c.target_mode { return; }
     let target_id = (c.target_com << 16) | (c.target_sub & 0xFFFF);
     let com = crate::config::if_type::get(target_id);
-    if let Some(ref c2) = com {
-        if c2.hook_ontargetleave.is_some() {
-            // Hook trigger — defer until the ScriptRunner dispatcher
-            // ships.
-        }
+    // Java 9347-9352 — fire the ontargetleave hook before clearing target mode.
+    if let Some(com) = com.as_ref()
+        && let Some(hook) = com.hook_ontargetleave.clone()
+    {
+        let cref = crate::interface_loop::com_ref_of(com);
+        let req = crate::script_runner::HookReq {
+            component: cref,
+            onop: hook,
+            ..Default::default()
+        };
+        crate::script_runner::execute_script(c, &req);
     }
     c.target_mode = false;
     if let Some(com) = com {
@@ -1810,9 +2060,9 @@ pub fn end_target_mode(c: &mut Client) {
 // resets interface anims, fires the onload hook, marks the parent
 // component dirty, and clears the menu.
 //
-// Java additionally calls `runHookImmediate(toplevelinterface, 1)`
-// once the new sub is mounted — when the ScriptRunner dispatcher
-// lands the hook re-fires on every sub open.
+// Fires both `executeOnLoad(sub)` and, when a toplevel interface is mounted,
+// `runHookImmediate(toplevelinterface, 1)` (Java 11816 + 11832-11834). The
+// `dirtyArea(menu…)` call (11830) is omitted (dirty-rect tracking is skipped).
 pub fn open_sub_interface(c: &mut Client, parent_com_id: i32, sub_id: i32, kind: i32) {
     let interfaces_slot = crate::config::if_type::INTERFACES_SLOT
         .load(std::sync::atomic::Ordering::Relaxed);
@@ -1845,6 +2095,21 @@ pub fn open_sub_interface(c: &mut Client, parent_com_id: i32, sub_id: i32, kind:
 // Appends a single menu entry to the buffer. Java rejects when the
 // menu is already open (so right-clicks during menu display don't
 // stack) or once the 500-entry cap is reached.
+// @ObfuscatedName("ai.fw([Ljava/lang/String;B)[Ljava/lang/String;") —
+// Client.prependOpIndex. Verbatim port of Client.java:11550-11561.
+// Returns a 5-slot op array where slot `i` becomes "i: " (always
+// present) plus the original op text when set. Used only when
+// `show_op_index` is on; the result has no `None` slots, so every
+// index yields a menu entry.
+pub fn prepend_op_index(op: &[Option<String>; 5]) -> [Option<String>; 5] {
+    std::array::from_fn(|i| {
+        Some(match op[i].as_ref() {
+            Some(s) => format!("{i}: {s}"),
+            None => format!("{i}: "),
+        })
+    })
+}
+
 pub fn add_menu_option(c: &mut Client, verb: &str, subject: &str, action: i32, a: i32, b: i32, d: i32) {
     if c.is_menu_open || c.menu_num_entries >= 500 { return; }
     let idx = c.menu_num_entries as usize;
@@ -2087,37 +2352,65 @@ pub fn timeout_chat(c: &mut Client) {
 // the scene rebuild path does; the queue advancement above is the
 // driver that makes any of it happen.
 pub fn loc_change_do_queue(c: &mut Client) {
+    // The scene World lives behind WORLD_CACHE (built lazily in the draw path);
+    // if it isn't built yet, leave the queue untouched so it applies once it is.
+    let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
+    let Some(world) = cache.world.as_mut() else { return };
+    let low_mem = c.low_mem;
+    let minusedlevel = c.minusedlevel;
+
     let mut i = 0;
     while i < c.loc_changes.len() {
-        let loc = &mut c.loc_changes[i];
-        if loc.end_time > 0 {
-            loc.end_time -= 1;
+        // Snapshot the entry (and decrement end_time) so the loc_changes borrow
+        // is released before we touch c.collision / the World.
+        let (level, layer, x, z, new_type, new_angle, new_shape,
+             old_type, old_angle, old_shape, end_time, mut start_time);
+        {
+            let loc = &mut c.loc_changes[i];
+            if loc.end_time > 0 {
+                loc.end_time -= 1;
+            }
+            level = loc.level; layer = loc.layer; x = loc.x; z = loc.z;
+            new_type = loc.new_type; new_angle = loc.new_angle; new_shape = loc.new_shape;
+            old_type = loc.old_type; old_angle = loc.old_angle; old_shape = loc.old_shape;
+            end_time = loc.end_time; start_time = loc.start_time;
         }
-        if loc.end_time != 0 {
-            if loc.start_time > 0 {
-                loc.start_time -= 1;
+        let cm_idx = level.clamp(0, 3) as usize;
+
+        if end_time != 0 {
+            if start_time > 0 {
+                start_time -= 1;
             }
-            if loc.start_time == 0
-                && loc.x >= 1 && loc.z >= 1 && loc.x <= 102 && loc.z <= 102
-                && (loc.new_type < 0
-                    || crate::client_build::change_loc_available(loc.new_type, loc.new_shape))
+            let mut remove = false;
+            if start_time == 0
+                && x >= 1 && z >= 1 && x <= 102 && z <= 102
+                && (new_type < 0
+                    || crate::client_build::change_loc_available(new_type, new_shape))
             {
-                // Apply new type — loc_change_unchecked lands later.
-                loc.start_time = -1;
-                let revert = (loc.new_type == loc.old_type
-                    && loc.old_type == -1)
-                    || (loc.new_type == loc.old_type
-                        && loc.new_angle == loc.old_angle
-                        && loc.old_shape == loc.new_shape);
-                if revert {
-                    c.loc_changes.remove(i);
-                    continue;
-                }
+                loc_change_unchecked(world, c.collision[cm_idx].as_mut(), low_mem,
+                    minusedlevel, level, layer, x, z, new_type, new_angle, new_shape);
+                start_time = -1;
+                // No-op swap (new == old) → drop the entry (Java 7570-7574).
+                remove = (new_type == old_type && old_type == -1)
+                    || (new_type == old_type && new_angle == old_angle
+                        && old_shape == new_shape);
             }
-            i += 1;
-        } else {
-            // Countdown hit zero — revert to old.
+            if remove {
+                c.loc_changes.remove(i);
+            } else {
+                c.loc_changes[i].start_time = start_time;
+                i += 1;
+            }
+        } else if old_type < 0
+            || crate::client_build::change_loc_available(old_type, old_shape)
+        {
+            // Countdown expired and the old geometry is loadable — revert + drop.
+            loc_change_unchecked(world, c.collision[cm_idx].as_mut(), low_mem,
+                minusedlevel, level, layer, x, z, old_type, old_angle, old_shape);
             c.loc_changes.remove(i);
+        } else {
+            // Old geometry not streamed yet — keep and retry next tick (Java 7576).
+            i += 1;
         }
     }
 }
@@ -2175,11 +2468,15 @@ pub fn move_players(c: &mut Client) {
     let (npc_pos, player_pos) = build_entity_pos_maps(c);
     let self_slot = c.self_slot;
     let (bx, bz) = (c.map_build_base_x, c.map_build_base_z);
+    let ambient_on = c.ambient_volume != 0;
+    // Seq-triggered SFX accumulate here (can't touch c.wave_* while an
+    // entity is borrowed from c.players); drained into the wave queue below.
+    let mut sounds: Vec<(i32, i32)> = Vec::new();
     // Local player first — Java does the -1 → 2047 dance to ensure
     // the local player ticks before remote players.
     if let Some(lp) = c.local_player.as_mut() {
         move_entity(&mut lp.entity, 1, loop_cycle, true, true,
-                    &npc_pos, &player_pos, self_slot, bx, bz);
+                    &npc_pos, &player_pos, self_slot, bx, bz, ambient_on, &mut sounds);
         lp.sync_from_entity();
     }
     let count = c.player_count as usize;
@@ -2188,8 +2485,25 @@ pub fn move_players(c: &mut Client) {
         if pid < 0 { continue; }
         let Some(Some(p)) = c.players.get_mut(pid as usize) else { continue; };
         move_entity(&mut p.entity, 1, loop_cycle, false, true,
-                    &npc_pos, &player_pos, self_slot, bx, bz);
+                    &npc_pos, &player_pos, self_slot, bx, bz, ambient_on, &mut sounds);
         p.sync_from_entity();
+    }
+    drain_seq_sounds(c, &sounds);
+}
+
+// Drain accumulated seq SFX into the 50-slot wave queue, honouring Java's
+// `waveCount >= 50` cap (excess dropped in order). delay = 0; positional
+// data is not modelled (see `collect_seq_sound`).
+fn drain_seq_sounds(c: &mut Client, sounds: &[(i32, i32)]) {
+    for &(sound_id, loops) in sounds {
+        if c.wave_count >= 50 {
+            break;
+        }
+        let idx = c.wave_count as usize;
+        c.wave_sound_ids[idx] = sound_id;
+        c.wave_loops[idx] = loops;
+        c.wave_delay[idx] = 0;
+        c.wave_count += 1;
     }
 }
 
@@ -2201,6 +2515,8 @@ pub fn move_npcs(c: &mut Client) {
     let (npc_pos, player_pos) = build_entity_pos_maps(c);
     let self_slot = c.self_slot;
     let (bx, bz) = (c.map_build_base_x, c.map_build_base_z);
+    let ambient_on = c.ambient_volume != 0;
+    let mut sounds: Vec<(i32, i32)> = Vec::new();
     let count = c.npc_count as usize;
     for i in 0..count {
         let Some(&nid) = c.npc_ids.get(i) else { continue; };
@@ -2212,8 +2528,9 @@ pub fn move_npcs(c: &mut Client) {
             .unwrap_or((1, true));
         let Some(Some(n)) = c.npcs.get_mut(nid as usize) else { continue; };
         move_entity(&mut n.entity, size, loop_cycle, false, smoothing,
-                    &npc_pos, &player_pos, self_slot, bx, bz);
+                    &npc_pos, &player_pos, self_slot, bx, bz, ambient_on, &mut sounds);
     }
+    drain_seq_sounds(c, &sounds);
 }
 
 // ── IF_BUTTON[1..10] outbound packets ─────────────────────────────
@@ -2241,17 +2558,28 @@ fn send_if_button_simple(c: &mut Client, opcode: i32, parent_com_id: i32, child_
 // client-script for the eventual dispatcher.
 pub fn if_button_x(c: &mut Client, op_index: i32, parent: i32, child: i32, op_base: &str) {
     use crate::config::if_type;
-    let Some(com) = if_type::get_sub(parent, child) else { return; };
-    // Hook trigger — queue if the onop array is present.
-    if let Some(hook) = com.hook_onop.as_ref() {
-        let _ = hook;
-        // Defer until ScriptRunner dispatcher lands; record the
-        // request for the next-tick drain.
+    let Some(com) = if_type::get2(parent, child) else { return; };
+    // Java 9365-9372: fire the cs2 onop hook immediately via the
+    // ScriptRunner — BEFORE (and independent of) the server-op gate.
+    // Client-side buttons like the chat-tab stones carry an onop hook
+    // but no server op bit, so the hook is the only thing that runs;
+    // gating it on server_op_bit (as the old stub did via the early
+    // return below) left the chat tabs dead.
+    if let Some(hook) = com.hook_onop.clone() {
+        let req = crate::script_runner::HookReq {
+            component: crate::script_runner::ComRef::Com(com.parent_id),
+            opindex: op_index,
+            opbase: op_base.to_string(),
+            onop: hook,
+            ..Default::default()
+        };
+        crate::script_runner::execute_script(c, &req);
     }
     // Java's "clientCode > 0" gate (e.g. minimap/inventory toggles).
     // We don't yet have the client-code button registry, so the
-    // gate always passes.
-    let _ = op_base;
+    // gate always passes (transmit = true).
+    // Java 9382: only transmit the IF_BUTTON packet when the server op
+    // bit is set; the onop hook above already ran regardless.
     let active = get_active(c, &com);
     let server_op_bit = active & (1 << (op_index + 15));
     if server_op_bit == 0 {
@@ -2691,6 +3019,17 @@ pub fn game_input(c: &mut Client) {
             let src = c.local_player.as_ref().map(|lp| (lp.route_x[0], lp.route_z[0]));
             if let Some((src_x, src_z)) = src {
                 let success = try_move(c, src_x, src_z, gx, gz, true, 0, 0, 0, 0, 0, 0);
+                eprintln!("[dbg-walk] ground pick ({gx},{gz}) src ({src_x},{src_z}) try_move={success}");
+                if let Some(map) = c.collision[c.minusedlevel.clamp(0, 3) as usize].as_ref() {
+                    for dz in -1..=1i32 {
+                        let row: Vec<String> = (-1..=1i32).map(|dx| {
+                            let x = (src_x + dx).clamp(0, 103) as usize;
+                            let z = (src_z + dz).clamp(0, 103) as usize;
+                            format!("{:#x}", map.flags[x][z])
+                        }).collect();
+                        eprintln!("[dbg-walk] flags z{dz:+}: {}", row.join(" "));
+                    }
+                }
                 if success {
                     set_cross(1);
                 }
@@ -2787,8 +3126,13 @@ pub fn add_npc_options(c: &mut Client, npc_type_id: i32, slot: i32, x: i32, z: i
         }
     } else {
         let subject = format!("{}{}", tag_colour(16776960), name);
+        let op_arr = if c.show_op_index {
+            prepend_op_index(&t.op)
+        } else {
+            t.op.clone()
+        };
         for index in (0..=4).rev() {
-            let Some(op) = t.op[index].as_ref() else { continue };
+            let Some(op) = op_arr[index].as_ref() else { continue };
             if op.eq_ignore_ascii_case(crate::text::ATTACK) {
                 continue;
             }
@@ -2797,7 +3141,7 @@ pub fn add_npc_options(c: &mut Client, npc_type_id: i32, slot: i32, x: i32, z: i
             add_menu_option(c, &op, &subject, action, slot, x, z);
         }
         for index in (0..=4).rev() {
-            let Some(op) = t.op[index].as_ref() else { continue };
+            let Some(op) = op_arr[index].as_ref() else { continue };
             if !op.eq_ignore_ascii_case(crate::text::ATTACK) {
                 continue;
             }
@@ -2933,8 +3277,13 @@ pub fn minimenu_build_scene_actions(c: &mut Client, vx: i32, vy: i32,
                     }
                 } else {
                     let subject = format!("{}{}", tag_colour(65535), lt.name);
+                    let op_arr = if c.show_op_index {
+                        prepend_op_index(&lt.op)
+                    } else {
+                        lt.op.clone()
+                    };
                     for index in (0..=4usize).rev() {
-                        let Some(op) = lt.op[index].as_ref() else { continue };
+                        let Some(op) = op_arr[index].as_ref() else { continue };
                         let action = [3, 4, 5, 6, 1001][index];
                         let op = op.clone();
                         add_menu_option(c, &op, &subject, action, typecode, x, z);
@@ -3054,7 +3403,11 @@ pub fn minimenu_build_scene_actions(c: &mut Client, vx: i32, vy: i32,
                     }
                 } else {
                     let subject = format!("{}{}", tag_colour(16748608), t.name);
-                    let ops = t.op.clone();
+                    let ops: Option<[Option<String>; 5]> = if c.show_op_index {
+                        Some(prepend_op_index(t.op.as_ref().unwrap_or(&Default::default())))
+                    } else {
+                        t.op.clone()
+                    };
                     for index in (0..=4usize).rev() {
                         let op = ops.as_ref().and_then(|arr| arr[index].clone());
                         if let Some(op) = op {
@@ -3411,7 +3764,11 @@ pub fn add_component_options(c: &mut Client, com: &crate::config::if_type::IfTyp
                     }
                 } else {
                     let subject = format!("{}{}", tag_colour(16748608), obj.name);
-                    let iop = obj.iop.clone();
+                    let iop: Option<[Option<String>; 5]> = if c.show_op_index {
+                        Some(prepend_op_index(obj.iop.as_ref().unwrap_or(&Default::default())))
+                    } else {
+                        obj.iop.clone()
+                    };
                     if crate::config::server_active::is_obj_ops_enabled(active) {
                         for index in (3..=4usize).rev() {
                             let op = iop.as_ref().and_then(|arr| arr[index].clone());
@@ -3439,8 +3796,16 @@ pub fn add_component_options(c: &mut Client, com: &crate::config::if_type::IfTyp
                             }
                         }
                     }
+                    let com_iop: Vec<String> = if c.show_op_index {
+                        (0..5).map(|i| {
+                            let base = com.iop.get(i).map(String::as_str).unwrap_or("");
+                            format!("{i}: {base}")
+                        }).collect()
+                    } else {
+                        com.iop.clone()
+                    };
                     for index in (0..=4usize).rev() {
-                        let op = com.iop.get(index).cloned().unwrap_or_default();
+                        let op = com_iop.get(index).cloned().unwrap_or_default();
                         if !op.is_empty() {
                             let action = [39, 40, 41, 42, 43][index];
                             add_menu_option(c, &op, &subject, action, obj.id,
@@ -3565,6 +3930,13 @@ pub fn mouse_loop(c: &mut Client) {
         button = 2;
     }
 
+    if button == 1 {
+        let top = (c.menu_num_entries - 1).max(0) as usize;
+        eprintln!("[dbg-walk] left click entries={} top_action={} top='{}'",
+                  c.menu_num_entries,
+                  c.menu_action.get(top).copied().unwrap_or(-1),
+                  c.menu_verb.get(top).cloned().unwrap_or_default());
+    }
     if button == 1 && c.menu_num_entries > 0 {
         do_action(c, c.menu_num_entries - 1);
     } else if button == 2 && c.menu_num_entries > 0 {
@@ -4108,7 +4480,7 @@ pub fn do_action(c: &mut Client, entry: i32) {
         }
     }
     if action == 25 {
-        if if_type::get_sub(cc, b).is_some() {
+        if if_type::get2(cc, b).is_some() {
             end_target_mode(c);
             enter_target_mode(c, cc, b);
         }
@@ -4219,6 +4591,10 @@ pub fn do_action(c: &mut Client, entry: i32) {
         c.obj_selected_slot = b;
         c.obj_selected_com_id = cc;
         c.obj_com_id = a;
+        // Java 9132 — mark the source inventory component dirty.
+        if let Some(com) = if_type::get(cc) {
+            component_updated(&com);
+        }
         let name = crate::config::obj_type::list(a)
             .map(|t| t.name)
             .unwrap_or_else(|| "null".to_string());
@@ -4245,13 +4621,30 @@ pub fn do_action(c: &mut Client, entry: i32) {
                 out.p4(cc);
             }
             c.resume_pause_com = cc;
+            // Java 9158-9159 — resumePauseCom = IfType.get(c, b); mark it dirty.
+            if let Some(com) = if_type::get2(cc, b) {
+                component_updated(&com);
+            }
         }
     }
     if action == 23 {
         // "Walk here" — arm the scene ground pick for the next frame.
+        // The WALKHERE menu option stores viewport-RELATIVE coords
+        // (mouse - viewportX/Y, matching Java's addMenuOption), but our
+        // 3D projection uses an ABSOLUTE origin (Pix3D origin =
+        // clip_min_x + size/2, unlike Java's viewport-relative origin),
+        // so inside_triangle in renderAll compares against absolute sx/sy.
+        // Add the viewport offset back so the ground pick matches the
+        // entity pick (scene.rs uses absolute coords too); without this
+        // the pick never resolves and no walk-flag / yellow cross shows.
+        let (vx, vy) = {
+            let o = crate::overlays::OVERLAYS.lock().unwrap();
+            (o.viewport_x, o.viewport_y)
+        };
         let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
         if let Some(world) = cache.world.as_mut() {
-            world.update_mouse_picking(c.minusedlevel.clamp(0, 3), b, cc);
+            eprintln!("[dbg-walk] action23 arm pick at ({}, {})", b + vx, cc + vy);
+            world.update_mouse_picking(c.minusedlevel.clamp(0, 3), b + vx, cc + vy);
         }
     }
     if action == 4 {
@@ -4349,11 +4742,21 @@ pub fn do_action(c: &mut Client, entry: i32) {
         c.selected_item = b;
     }
 
+    // Java 9282-9293 — post-dispatch cleanup. Clearing use-item mode and
+    // the selected-component highlight both mark their components dirty.
     if c.use_mode != 0 {
         c.use_mode = 0;
+        if let Some(com) = if_type::get(c.obj_selected_com_id) {
+            component_updated(&com);
+        }
     }
     if c.target_mode {
         end_target_mode(c);
+    }
+    if c.selected_com != -1 && c.selected_cycle == 0 {
+        if let Some(com) = if_type::get(c.selected_com) {
+            component_updated(&com);
+        }
     }
 }
 
@@ -4567,13 +4970,25 @@ pub fn play_synth(c: &mut Client, sound: i32, loops: i32, delay: i32) {
 // Local commands:
 //   ::gc          — force GC (no-op in Rust)
 //   ::clientdrop  — simulate connection loss
-//   ::fpson/off   — toggle FPS overlay
+//   ::fpson/off   — Fps/Mem text on / off
 //   ::noclip      — clear collision flags on the active level
 //   ::errortest   — panic test (only when modewhere == 2)
+//   ::perf        — custom (not in Java): toggle the imgui benchmark overlay
 pub fn do_cheat(c: &mut Client, message: &str) {
     use crate::io::packet::Packet;
+    let lower = message.to_ascii_lowercase();
+    // custom — the imgui frame-time overlay is host-side dev tooling, not a
+    // gamepack cheat, so it isn't staff-gated or echoed to the server.
+    if lower == "::perf" {
+        crate::perf::toggle_overlay();
+        return;
+    }
+    // custom — dump a per-subsystem heap breakdown to stderr.
+    if lower == "::mem" {
+        crate::mem_report::report();
+        return;
+    }
     if c.staffmodlevel >= 2 {
-        let lower = message.to_ascii_lowercase();
         if lower == "::gc" {
             // Rust: no manual GC; touch some allocator-friendly state.
         } else if lower == "::clientdrop" {
@@ -4793,18 +5208,38 @@ pub fn legacy_updated(c: &mut Client) {
 // effectively `.to_lowercase()`.
 pub fn add_friend(c: &mut Client, name: &str) {
     use crate::io::packet::Packet;
-    if c.friend_count >= 200 { return; }
+    // Java 12146-12148 — capacity (the `&& membersAccount` clause folds
+    // away; effective cap is 200). Emits FRIENDLISTFULL feedback.
+    if c.friend_count >= 200 {
+        add_chat(c, 0, Some(String::new()),
+                 Some(crate::text::FRIENDLISTFULL.to_string()), None, 0);
+        return;
+    }
     let normalised = name.to_lowercase();
-    for f in c.friend_list.iter().take(c.friend_count as usize) {
-        if f.name.to_lowercase() == normalised { return; }
-        if f.previous_name.to_lowercase() == normalised { return; }
+    // Java 12154-12168 — already a friend (current or previous name).
+    let dupe = c.friend_list.iter().take(c.friend_count as usize).any(|f|
+        f.name.to_lowercase() == normalised || f.previous_name.to_lowercase() == normalised);
+    if dupe {
+        add_chat(c, 0, Some(String::new()),
+                 Some(format!("{name}{}", crate::text::FRIENDLISTDUPE)), None, 0);
+        return;
     }
-    for g in c.ignore_list.iter().take(c.ignore_count as usize) {
-        if g.name.to_lowercase() == normalised { return; }
-        if g.display_name.to_lowercase() == normalised { return; }
+    // Java 12169-12183 — on the ignore list; must remove there first.
+    let ignored = c.ignore_list.iter().take(c.ignore_count as usize).any(|g|
+        g.name.to_lowercase() == normalised || g.display_name.to_lowercase() == normalised);
+    if ignored {
+        add_chat(c, 0, Some(String::new()),
+                 Some(format!("{}{name}{}", crate::text::REMOVEIGNORE1, crate::text::REMOVEIGNORE2)),
+                 None, 0);
+        return;
     }
-    if let Some(lp) = &c.local_player {
-        if lp.name.to_lowercase() == normalised { return; }
+    // Java 12184-12191 — self-add guard, else FRIENDLIST_ADD.
+    let is_self = c.local_player.as_ref()
+        .is_some_and(|lp| lp.name.to_lowercase() == normalised);
+    if is_self {
+        add_chat(c, 0, Some(String::new()),
+                 Some(crate::text::FRIENDCANTADDSELF.to_string()), None, 0);
+        return;
     }
     let Some(isaac) = c.isaac_out.as_mut() else { return; };
     let Some(out) = c.out_packet.as_mut() else { return; };
@@ -4819,18 +5254,37 @@ pub fn add_friend(c: &mut Client, name: &str) {
 // guard, then IGNORELIST_ADD (opcode 231).
 pub fn add_ignore(c: &mut Client, name: &str) {
     use crate::io::packet::Packet;
-    if c.ignore_count >= 100 { return; }
+    // Java 12200-12203 — capacity. Emits IGNORELISTFULL feedback.
+    if c.ignore_count >= 100 {
+        add_chat(c, 0, Some(String::new()),
+                 Some(crate::text::IGNORELISTFULL.to_string()), None, 0);
+        return;
+    }
     let normalised = name.to_lowercase();
-    for g in c.ignore_list.iter().take(c.ignore_count as usize) {
-        if g.name.to_lowercase() == normalised { return; }
-        if g.display_name.to_lowercase() == normalised { return; }
+    // Java 12208-12222 — already ignored (current or display name).
+    let dupe = c.ignore_list.iter().take(c.ignore_count as usize).any(|g|
+        g.name.to_lowercase() == normalised || g.display_name.to_lowercase() == normalised);
+    if dupe {
+        add_chat(c, 0, Some(String::new()),
+                 Some(format!("{name}{}", crate::text::IGNORELISTDUPE)), None, 0);
+        return;
     }
-    for f in c.friend_list.iter().take(c.friend_count as usize) {
-        if f.name.to_lowercase() == normalised { return; }
-        if f.previous_name.to_lowercase() == normalised { return; }
+    // Java 12223-12237 — on the friend list; must remove there first.
+    let befriended = c.friend_list.iter().take(c.friend_count as usize).any(|f|
+        f.name.to_lowercase() == normalised || f.previous_name.to_lowercase() == normalised);
+    if befriended {
+        add_chat(c, 0, Some(String::new()),
+                 Some(format!("{}{name}{}", crate::text::REMOVEFRIEND1, crate::text::REMOVEFRIEND2)),
+                 None, 0);
+        return;
     }
-    if let Some(lp) = &c.local_player {
-        if lp.name.to_lowercase() == normalised { return; }
+    // Java 12238-12245 — self-add guard, else IGNORELIST_ADD.
+    let is_self = c.local_player.as_ref()
+        .is_some_and(|lp| lp.name.to_lowercase() == normalised);
+    if is_self {
+        add_chat(c, 0, Some(String::new()),
+                 Some(crate::text::IGNORECANTADDSELF.to_string()), None, 0);
+        return;
     }
     let Some(isaac) = c.isaac_out.as_mut() else { return; };
     let Some(out) = c.out_packet.as_mut() else { return; };
@@ -4859,7 +5313,7 @@ pub fn del_friend(c: &mut Client, name: &str) {
             for j in i..(c.friend_count as usize) {
                 c.friend_list[j] = c.friend_list[j + 1].clone();
             }
-            c.friend_transmit_num += 1;
+            c.friend_transmit_num = c.transmit_num;
             let Some(isaac) = c.isaac_out.as_mut() else { return; };
             let Some(out) = c.out_packet.as_mut() else { return; };
             out.p1_enc(41, isaac);
@@ -4889,7 +5343,7 @@ pub fn del_ignore(c: &mut Client, name: &str) {
             for j in i..(c.ignore_count as usize) {
                 c.ignore_list[j] = c.ignore_list[j + 1].clone();
             }
-            c.friend_transmit_num += 1;
+            c.friend_transmit_num = c.transmit_num;
             let Some(isaac) = c.isaac_out.as_mut() else { return; };
             let Some(out) = c.out_packet.as_mut() else { return; };
             out.p1_enc(248, isaac);
@@ -5123,25 +5577,6 @@ pub fn nice_number(cost: i32) -> String {
     }
 }
 
-// @ObfuscatedName("ai.fw([Ljava/lang/String;B)[Ljava/lang/String;") —
-// Client.prependOpIndex. Verbatim port of Client.java:11550-11560.
-// Builds a 5-slot debug-overlay array prefixing each op name with
-// its index ("0: ", "1: " …). Used when showOpIndex is enabled.
-// Pure: Option<&[Option<String>]> in, Vec<String> out.
-pub fn prepend_op_index(op: Option<&[Option<String>]>) -> Vec<String> {
-    let mut tmp: Vec<String> = Vec::with_capacity(5);
-    for i in 0..5 {
-        let mut s = format!("{}: ", i);
-        if let Some(arr) = op {
-            if let Some(Some(slot)) = arr.get(i) {
-                s.push_str(slot);
-            }
-        }
-        tmp.push(s);
-    }
-    tmp
-}
-
 // @ObfuscatedName("ai.fs(III)V") — Client.runHookImmediate. Verbatim
 // port of Client.java:11306-11353: opens the group (if not already)
 // then walks every component — recursing through layer subcomponents
@@ -5149,6 +5584,7 @@ pub fn prepend_op_index(op: Option<&[Option<String>]>) -> Vec<String> {
 // onsubchange (kind 1) hooks synchronously. ccs (subId >= 0) only
 // fire while still attached to their parent slot.
 pub fn run_hook_immediate(c: &mut Client, group: i32, hook_kind: i32) {
+    let _g = crate::debug_depth::DepthGuard::enter("run_hook_immediate", 400);
     use crate::config::if_type;
     let interfaces_slot = if_type::INTERFACES_SLOT
         .load(std::sync::atomic::Ordering::Relaxed);
@@ -5205,15 +5641,145 @@ fn run_hook_layer(c: &mut Client, children: &[crate::config::if_type::IfType], h
 // @ObfuscatedName("client.fy") — Client.animateInterface. Verbatim
 // port of Client.java:11582-11586. Counterpart to runHookImmediate
 // but advances every child's anim_frame.
-pub fn animate_interface(interfaces_slot: i32, group: i32) {
+// @ObfuscatedName("cz.fm / animateInterface") — Verbatim port of
+// Client.animateInterface (Client.java:11582-11585) + animateLayer
+// (11591-11659): per-frame advance of type-6 interface model
+// animations (anim_cycle/anim_frame by the SeqType frame delays) and
+// the modelSpin rotation drift, recursing through layer children and
+// attached sub-interfaces. `visited` dedupes so a sub-interface
+// reached both from the toplevel tree and the standalone map only
+// advances once per frame.
+pub fn animate_interface(
+    c: &Client,
+    slot: i32,
+    group: i32,
+    subinterfaces: &std::collections::HashMap<i32, SubInterface>,
+    visited: &mut std::collections::HashSet<i32>,
+) {
     use crate::config::if_type;
-    if !if_type::open_interface(group, interfaces_slot) { return; }
-    // Real Java animateLayer walks every IfType in the group + each
-    // sub-component, advancing `anim_frame` per its SeqType. The
-    // per-component anim driver lands with the full IfType render
-    // loop refactor; for now we mark all components dirty so the
-    // renderer picks up any other state changes.
-    redraw_all_components();
+    if group < 0 || !visited.insert(group) {
+        return;
+    }
+    if !if_type::open_interface(group, slot) {
+        return;
+    }
+    let children: Vec<Option<if_type::IfType>> = {
+        let s = if_type::STORE.lock().unwrap();
+        s.list.get(group as usize).and_then(|o| o.clone()).unwrap_or_default()
+    };
+    if children.is_empty() {
+        return;
+    }
+
+    // (index, anim_frame, anim_cycle, model_x_an, model_y_an).
+    let mut updates: Vec<(usize, i32, i32, i32, i32)> = Vec::new();
+    let mut sub_groups: Vec<i32> = Vec::new();
+    let wun = c.world_update_num;
+    animate_layer(c, &children, -1, group, wun, &mut updates, &mut sub_groups, subinterfaces);
+
+    if !updates.is_empty() {
+        let mut s = if_type::STORE.lock().unwrap();
+        if let Some(Some(list)) = s.list.get_mut(group as usize) {
+            for (idx, af, ac, xa, ya) in updates {
+                if let Some(Some(com)) = list.get_mut(idx) {
+                    com.anim_frame = af;
+                    com.anim_cycle = ac;
+                    com.model_x_an = xa;
+                    com.model_y_an = ya;
+                    component_updated(com);
+                }
+            }
+        }
+    }
+
+    for sg in sub_groups {
+        animate_interface(c, slot, sg, subinterfaces, visited);
+    }
+}
+
+// Java animateLayer body (Client.java:11591-11659). Walks `children`
+// for the active `layer`, recursing into type-0 layers + attached
+// sub-interfaces, advancing the type-6 model anim + spin. Computes
+// updates against a snapshot (no STORE lock held) so the recursion
+// stays borrow-clean.
+#[allow(clippy::too_many_arguments)]
+fn animate_layer(
+    c: &Client,
+    children: &[Option<crate::config::if_type::IfType>],
+    layer: i32,
+    group: i32,
+    wun: i32,
+    updates: &mut Vec<(usize, i32, i32, i32, i32)>,
+    sub_groups: &mut Vec<i32>,
+    subinterfaces: &std::collections::HashMap<i32, SubInterface>,
+) {
+    for (idx, slot) in children.iter().enumerate() {
+        let Some(com) = slot.as_ref() else { continue };
+        if com.layer_id != layer || (com.v3 && com.hide) {
+            continue;
+        }
+
+        if com.type_ == 0 {
+            let com_id = (group << 16) | idx as i32;
+            // Java 11599: hidden v1 layers skip unless hovered.
+            if !com.v3 && com.hide && c.over_com_id != com_id {
+                continue;
+            }
+            animate_layer(c, children, com.parent_id, group, wun, updates, sub_groups, subinterfaces);
+            if let Some(sub) = subinterfaces.get(&com.parent_id) {
+                sub_groups.push(sub.id);
+            }
+        }
+
+        if com.type_ == 6 {
+            let mut af = com.anim_frame;
+            let mut ac = com.anim_cycle;
+            let mut xa = com.model_x_an;
+            let mut ya = com.model_y_an;
+            let mut changed = false;
+
+            if com.model_anim != -1 || com.model_anim2 != -1 {
+                let active = get_if_active(c, com);
+                let anim = if active { com.model_anim2 } else { com.model_anim };
+                if anim != -1 {
+                    let seq = crate::config::seq_type::list(anim);
+                    if let (Some(delays), Some(frames)) = (seq.delay.as_ref(), seq.frames.as_ref()) {
+                        ac += wun;
+                        let mut guard = 0;
+                        while (af as usize) < delays.len() && ac > delays[af as usize] {
+                            let d = delays[af as usize];
+                            if d <= 0 { break; } // guard against malformed 0-delay frames
+                            ac -= d;
+                            af += 1;
+                            if af as usize >= frames.len() {
+                                af -= seq.loops;
+                                if af < 0 || af as usize >= frames.len() {
+                                    af = 0;
+                                }
+                            }
+                            guard += 1;
+                            if guard > 1000 { break; }
+                        }
+                        changed = true;
+                    }
+                }
+            }
+
+            // Java 11646-11656 — modelSpin drift (non-v3 only). High 16
+            // bits = x-an delta/tick, low 16 (sign-extended) = y-an delta.
+            if com.model_spin != 0 && !com.v3 {
+                let spin_x = com.model_spin >> 16;
+                let spin_y = (com.model_spin << 16) >> 16;
+                xa = (com.model_x_an + wun * spin_x) & 0x7FF;
+                ya = (com.model_y_an + wun * spin_y) & 0x7FF;
+                changed = true;
+            }
+
+            if changed {
+                updates.push((idx, af, ac, xa, ya));
+            }
+        }
+    }
 }
 
 // @ObfuscatedName("bi.gx(Ljava/lang/String;I)Z") — Client.isIgnored.
@@ -5232,7 +5798,38 @@ pub fn is_ignored(c: &Client, who: Option<&str>) -> bool {
     false
 }
 
-pub fn entity_anim(entity: &mut crate::dash3d::ClientEntity, loop_cycle: i32) {
+// @ObfuscatedName(— Client.triggerSeqSound, Client.java:3159-3183). Decodes
+// `seq.sound[frame]` into (sound_id, loops) and appends it to `out`. Java's
+// per-call `ambientVolume == 0` guard is `ambient_on`; the `waveCount >= 50`
+// cap is applied by the caller when draining `out` into the wave queue. The
+// positional `waveAmbient` channel (var8/var9/var7) is dropped — the Rust wave
+// mixer has no positional SFX path (same simplification as `play_synth`).
+fn collect_seq_sound(
+    seq: &crate::config::seq_type::SeqType,
+    frame: i32,
+    ambient_on: bool,
+    out: &mut Vec<(i32, i32)>,
+) {
+    if !ambient_on {
+        return;
+    }
+    let Some(sound) = seq.sound.as_ref() else { return };
+    if frame < 0 || frame as usize >= sound.len() {
+        return;
+    }
+    let packed = sound[frame as usize];
+    if packed == 0 {
+        return;
+    }
+    out.push((packed >> 8, (packed >> 4) & 0x7));
+}
+
+pub fn entity_anim(
+    entity: &mut crate::dash3d::ClientEntity,
+    loop_cycle: i32,
+    ambient_on: bool,
+    sounds: &mut Vec<(i32, i32)>,
+) {
     use crate::config::seq_type;
     entity.needs_forward_draw_padding = false;
 
@@ -5241,29 +5838,34 @@ pub fn entity_anim(entity: &mut crate::dash3d::ClientEntity, loop_cycle: i32) {
         let seq = seq_type::list(entity.secondary_seq_id);
         let Some(frames) = seq.frames.as_ref() else {
             entity.secondary_seq_id = -1;
-            return entity_anim_spotanim_then_primary(entity, loop_cycle);
+            return entity_anim_spotanim_then_primary(entity, loop_cycle, ambient_on, sounds);
         };
         let Some(delays) = seq.delay.as_ref() else {
             entity.secondary_seq_id = -1;
-            return entity_anim_spotanim_then_primary(entity, loop_cycle);
+            return entity_anim_spotanim_then_primary(entity, loop_cycle, ambient_on, sounds);
         };
         entity.secondary_seq_cycle += 1;
         let f = entity.secondary_seq_frame as usize;
         if f < frames.len() && entity.secondary_seq_cycle > delays[f] {
             entity.secondary_seq_cycle = 1;
             entity.secondary_seq_frame += 1;
+            collect_seq_sound(&seq, entity.secondary_seq_frame, ambient_on, sounds);
         }
         if (entity.secondary_seq_frame as usize) >= frames.len() {
             entity.secondary_seq_cycle = 0;
             entity.secondary_seq_frame = 0;
+            collect_seq_sound(&seq, entity.secondary_seq_frame, ambient_on, sounds);
         }
     }
 
-    entity_anim_spotanim_then_primary(entity, loop_cycle);
+    entity_anim_spotanim_then_primary(entity, loop_cycle, ambient_on, sounds);
 }
 
 fn entity_anim_spotanim_then_primary(
-    entity: &mut crate::dash3d::ClientEntity, loop_cycle: i32,
+    entity: &mut crate::dash3d::ClientEntity,
+    loop_cycle: i32,
+    ambient_on: bool,
+    sounds: &mut Vec<(i32, i32)>,
 ) {
     use crate::config::{seq_type, spot_type};
 
@@ -5287,6 +5889,7 @@ fn entity_anim_spotanim_then_primary(
                 if f < frames.len() && entity.spotanim_cycle > delays[f] {
                     entity.spotanim_cycle = 1;
                     entity.spotanim_frame += 1;
+                    collect_seq_sound(&spot_seq, entity.spotanim_frame, ambient_on, sounds);
                 }
                 if (entity.spotanim_frame as usize) >= frames.len()
                     && (entity.spotanim_frame < 0
@@ -5328,6 +5931,7 @@ fn entity_anim_spotanim_then_primary(
         if f < frames.len() && entity.primary_seq_cycle > delays[f] {
             entity.primary_seq_cycle = 1;
             entity.primary_seq_frame += 1;
+            collect_seq_sound(&seq, entity.primary_seq_frame, ambient_on, sounds);
         }
         if (entity.primary_seq_frame as usize) >= frames.len() {
             entity.primary_seq_frame -= seq.loops;
@@ -5337,6 +5941,9 @@ fn entity_anim_spotanim_then_primary(
                 || (entity.primary_seq_frame as usize) >= frames.len()
             {
                 entity.primary_seq_id = -1;
+            } else {
+                // Java 4016 — sound fires on the post-loop frame too.
+                collect_seq_sound(&seq, entity.primary_seq_frame, ambient_on, sounds);
             }
         }
         entity.needs_forward_draw_padding = seq.reachforward;
@@ -5458,6 +6065,7 @@ pub fn entity_face(
 // is mutably borrowed). `walk_smoothing` is NpcType.walksmoothing
 // for NPCs, always true for players.
 #[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments)]
 pub fn move_entity(
     entity: &mut crate::dash3d::ClientEntity,
     _size: i32,
@@ -5469,6 +6077,8 @@ pub fn move_entity(
     self_slot: i32,
     map_build_base_x: i32,
     map_build_base_z: i32,
+    ambient_on: bool,
+    sounds: &mut Vec<(i32, i32)>,
 ) {
     if entity.exact_move_end > loop_cycle {
         // exactMove1 — glide toward the exact-start tile so the
@@ -5519,7 +6129,7 @@ pub fn move_entity(
 
     entity_face(entity, npc_pos, player_pos, self_slot,
                 map_build_base_x, map_build_base_z);
-    entity_anim(entity, loop_cycle);
+    entity_anim(entity, loop_cycle, ambient_on, sounds);
 }
 
 // @ObfuscatedName("ap.dr(Lfz;I)V") — Client.exactMove2. Verbatim port
@@ -6092,6 +6702,11 @@ pub struct Client {
     pub menu_param_c: Vec<i32>,
     pub menu_num_entries: i32,
     pub is_menu_open: bool,
+    // @ObfuscatedName("Client.showOpIndex") — Client.java:850. Debug
+    // toggle (always false in vanilla, never assigned true) that, when
+    // set, prepends "N: " to every menu op via prependOpIndex so each
+    // op-slot index is visible. Ported for 1:1 fidelity.
+    pub show_op_index: bool,
     pub menu_x: i32,
     pub menu_y: i32,
     pub menu_width: i32,
@@ -6409,6 +7024,10 @@ pub struct Client {
     pub orbit_cam_pitch: i32,
     // @ObfuscatedName("client.gp") — orbitCameraPitchVelocity
     pub orbit_cam_pitch_velocity: i32,
+    // @ObfuscatedName("client.dummy") — cameraPitchClamp. Terrain-driven
+    // floor on the camera pitch (Client.java:559); follow_camera raises
+    // it near tall terrain so the camera tilts up to keep the view clear.
+    pub camera_pitch_clamp: i32,
     // custom — viewport zoom (Java uses cameraDistance + sin/cos pull-back).
     pub orbit_cam_zoom: i32,
 
@@ -6593,6 +7212,8 @@ impl Client {
             state: 0,
             js5_loading: true,
             loop_cycle: 0,
+            // @ObfuscatedName("client.??") — showFps = false (Client.java:115);
+            // maininit flips it on when modewhere != 0 (Client.java:1360-1362).
             show_fps: false,
             js5_socket_req: None,
             js5_stream: None,
@@ -6642,7 +7263,12 @@ impl Client {
             prev_stream: None,
             isaac_out: None,
             isaac_in: None,
-            out_packet: None,
+            // @ObfuscatedName("client.out") — Java allocates the outbound
+            // game buffer as a field initializer (`new PacketBit(5000)`,
+            // Client.java:267) and NEVER nulls it; packet builders bail
+            // when it's None, so leaving this unallocated silently
+            // swallowed every outbound game packet.
+            out_packet: Some(crate::io::packet::Packet::with_size(5000)),
             key_ctrl_held: false,
             network_error: false,
             heartbeat_ticker: 0,
@@ -6725,6 +7351,7 @@ impl Client {
             menu_param_c: vec![0i32; 500],
             menu_num_entries: 0,
             is_menu_open: false,
+            show_op_index: false,
             menu_x: 0,
             menu_y: 0,
             menu_width: 0,
@@ -6756,7 +7383,17 @@ impl Client {
             drag_current_y: 0,
             drag_parent_x: 0,
             drag_parent_y: 0,
-            transmit_num: 0,
+            // Start at 1, not 0. transmit_num only advances inside
+            // interface_tick (in-world), but the server's first MESSAGE_GAME
+            // ("Welcome to RuneScape") is processed on the very first in-world
+            // frame, before interface_tick has ticked. With transmit_num==0 the
+            // message stamps chat_transmit_num=0, which never exceeds a
+            // component's default transmit_num stamp (also 0), so onchattransmit
+            // never fires and the chatbox doesn't repaint until the next message
+            // bumps the counter. Seeding at 1 lets that first message outrank
+            // the default stamp; all other comparisons are relative so the
+            // offset is invisible.
+            transmit_num: 1,
             var_transmit: [0; 32],
             var_transmit_num: 0,
             inv_transmit: [0; 32],
@@ -6864,6 +7501,7 @@ impl Client {
             orbit_cam_yaw_velocity: 0,
             orbit_cam_pitch: 256,
             orbit_cam_pitch_velocity: 0,
+            camera_pitch_clamp: 0,
             orbit_cam_zoom: 1100,
             map_build_ground_data: Vec::new(),
             map_build_location_data: Vec::new(),
@@ -6991,7 +7629,13 @@ impl Client {
                 Ok(n) => n > 0,
                 Err(_) => false,
             };
-            if self.state <= 5 || have_data {
+            // Java blocks in read() while the title screen is up (state <= 5)
+            // and only polls availability in-game. A wasm WebSocket can't
+            // block, so there we always wait for the byte to arrive — the
+            // 30s timeout below covers the never-arrives case, making this
+            // behaviourally identical to Java's blocking read.
+            let blocking_ok = cfg!(not(target_arch = "wasm32")) && self.state <= 5;
+            if blocking_ok || have_data {
                 let response = match stream.read_byte() {
                     Ok(r) => r,
                     Err(_) => {
@@ -7103,6 +7747,22 @@ impl GameShellLifecycle for Client {
         // worldid+40000 GAME port (same as game traffic; the protocol byte
         // distinguishes them). Keep login_port == login_game_port.
         self.login_port = self.login_game_port;
+        // Java: javconfig param 9 supplies TitleScreen.worldlistUrl. The
+        // standalone shell has no jav_config.ws, so default to the dev
+        // website port (worldid + 7000 — the same convention TitleScreen.
+        // worldSwitchLoop's redirect uses) on the login host. The Rust
+        // server hosts /worldlist.ws there.
+        {
+            let mut ts = crate::title_screen::STATE.lock().unwrap();
+            if ts.worldlist_url.is_none() {
+                ts.worldlist_url = Some(format!(
+                    "http://{}:{}/worldlist.ws", self.login_host, self.worldid + 7000));
+            }
+        }
+        // Client.java:1360-1362 — `if (modewhere != 0) showFps = true;`
+        if self.modewhere != 0 {
+            self.show_fps = true;
+        }
         self.state = 0;
     }
 
@@ -7166,24 +7826,31 @@ impl GameShellLifecycle for Client {
         if self.state == 0 {
             self.main_load();
         } else if self.state == 5 {
-            let _ = crate::title_screen::loop_tick(self.state, self.lang);
+            let _ = crate::title_screen::loop_tick(self);
             self.main_load();
         } else if self.state == 10 {
             crate::title_screen::try_load_sl_button(self.sprites);
-            if let Some(next) = crate::title_screen::loop_tick(self.state, self.lang) {
+            crate::title_screen::try_load_sl_assets(self.sprites);
+            if let Some(next) = crate::title_screen::loop_tick(self) {
                 self.set_main_state(next);
             }
         } else if self.state == 20 {
             // Java: TitleScreen.loop(this); loginPoll();
             crate::title_screen::try_load_sl_button(self.sprites);
-            let _ = crate::title_screen::loop_tick(self.state, self.lang);
+            crate::title_screen::try_load_sl_assets(self.sprites);
+            let _ = crate::title_screen::loop_tick(self);
             crate::login::poll(self);
         } else if self.state == 25 {
             crate::login::game_tick(self);
+            // Java updateGame per-tick block (Client.java:2422-2429):
+            // entity interpolation, chat decay, loc-change queue, and the
+            // worldUpdateNum bump the interface/entity animations scale by.
+            crate::login::game_tick_housekeeping(self);
             map_build_loop(self);
             update_orbit_camera(self);
         } else if self.state == 30 {
             crate::login::game_tick(self);
+            crate::login::game_tick_housekeeping(self);
             // Java gameLoop's input head (mouse-track/click/camera/
             // focus packets, minimap walk click, timers, key buffer).
             game_input(self);
@@ -7195,6 +7862,11 @@ impl GameShellLifecycle for Client {
             // entityOverlays' per-tick entity snapshot (head icons,
             // chat, health bars, hit splats read it at draw time).
             crate::overlays::snapshot(self);
+        } else if self.state == 40 {
+            // Java mainloop:1399-1400 — the reconnect screen drives the
+            // same login poll as state 20; loginPoll re-establishes the
+            // socket and (on opcode 15) calls reconnect_done -> state 30.
+            crate::login::poll(self);
         }
     }
 
@@ -7209,7 +7881,7 @@ impl GameShellLifecycle for Client {
         } else if self.state == 5 || self.state == 10 || self.state == 20 {
             // Java: TitleScreen.draw(b12, p11). State 20 still renders the
             // title screen while loginPoll runs in the background.
-            title_screen::draw(fb, self.b12.as_ref(), self.p11.as_ref(), self.state, self.loop_cycle);
+            title_screen::draw(fb, self.b12.as_ref(), self.p11.as_ref(), self.state, self.loop_cycle, self.lang);
         } else if self.state == 30 {
             // Stash the live camera state where the scene renderer can
             // read it without us threading it through every interface_*
@@ -7217,9 +7889,49 @@ impl GameShellLifecycle for Client {
             crate::scene::CAMERA.lock().unwrap().update(
                 self.orbit_cam_yaw,
                 self.orbit_cam_pitch,
-                self.orbit_cam_zoom,
+                if crate::debug_opts::vanilla_camera() { 1100 } else { self.orbit_cam_zoom },
             );
+            // Java gameDrawMain 4103-4112: the frame camera is computed
+            // at DRAW time from the eased orbit centre followCamera
+            // maintains each tick (or cinemaCamera's output) — that's
+            // where the smoothing comes from. Publish cameraX/Y/Z +
+            // pitch/yaw for draw_viewport's renderAll.
+            crate::client::dispatch_orbit_camera(self, self.camera_pitch_clamp);
+            crate::scene::CAMERA.lock().unwrap().update_world(
+                self.cam_x, self.cam_y, self.cam_z,
+                self.cam_pitch, self.cam_yaw,
+            );
+            let _t = crate::perf::scope(crate::perf::Scope::Chrome);
             crate::interface_render::draw_chrome(fb, self);
+        } else if self.state == 40 {
+            // Java mainredraw:1456-1457 — the reconnect screen overlays a
+            // "Connection lost / please wait - attempting to reestablish"
+            // message box on top of the frozen final frame, then blits the
+            // shared draw area to the canvas. Without this branch state 40
+            // rendered nothing, leaving a black "hard hang".
+            crate::graphics::pix2d::set_clipping(0, 0, 765, 503);
+            if let Some(p12) = self.p12.as_ref() {
+                let msg = format!(
+                    "{}{}{}",
+                    crate::text::CONLOST,
+                    crate::string_constants::TAG_BREAK,
+                    crate::text::ATTEMPT_TO_REESTABLISH,
+                );
+                message_box(p12, &msg);
+            }
+            // Blit pix2d -> framebuffer (same tail as draw_chrome).
+            let pix = crate::graphics::pix2d::STATE.lock().unwrap();
+            let copy_w = pix.width.min(fb.width);
+            let copy_h = pix.height.min(fb.height);
+            for y in 0..copy_h {
+                for x in 0..copy_w {
+                    let src_idx = (y * pix.width + x) as usize;
+                    let dst_idx = (y * fb.width + x) as usize;
+                    if let (Some(&p), Some(d)) = (pix.pixels.get(src_idx), fb.pixels.get_mut(dst_idx)) {
+                        *d = (p as u32) | 0xFF00_0000;
+                    }
+                }
+            }
         }
     }
 
@@ -7361,14 +8073,21 @@ fn map_build_loop(c: &mut Client) {
 
     eprintln!("[game] mapBuildLoop: all map data fetched, building {} chunk(s)", n);
     crate::client_build::init();
+    // Java's map-load flow resets every CollisionMap before the ground
+    // decode re-marks loaded tiles (Client.java:5169-5171).
+    for cm in c.collision.iter_mut().flatten() {
+        cm.reset();
+    }
     for i in 0..n {
         let local_x = (c.map_build_index[i] >> 8) * 64 - c.map_build_base_x;
         let local_z = (c.map_build_index[i] & 0xFF) * 64 - c.map_build_base_z;
-        if let Some(ref ground) = c.map_build_ground_data[i] {
+        let ground = c.map_build_ground_data[i].clone();
+        if let Some(ground) = ground {
             crate::client_build::load_ground(
-                ground, local_x, local_z,
+                &ground, local_x, local_z,
                 c.map_build_center_zone_x * 8 - 48,
                 c.map_build_center_zone_z * 8 - 48,
+                Some(&mut c.collision),
             );
         }
     }
@@ -7396,6 +8115,14 @@ impl Client {
         }
         match self.loading_step {
             0 => {
+                // Java mainLoad step 0 (Client.java:1682-1685): the World
+                // is created lazily by scene::ensure_world_built, but the
+                // CollisionMaps must exist here — tryMove and the zone
+                // loc-change pipeline read Client.collision directly.
+                for level in 0..4 {
+                    self.collision[level] =
+                        Some(crate::dash3d::CollisionMap::new(104, 104));
+                }
                 {
                     let mut ts = title_screen::STATE.lock().unwrap();
                     ts.load_string = "Starting up".to_string();
@@ -7585,15 +8312,34 @@ impl Client {
                 }
             }
             70 => {
-                // Java step 70: config.requestFullDownload(), then init all
-                // Type classes (FloType, LocType, NpcType, ...). With our
-                // stubbed Type::init this is instant.
-                let reg = js5_net::LOADERS.lock().unwrap();
-                let config_loader = reg.get(self.config as usize).and_then(|o| o.as_ref());
-                let Some(config_loader) = config_loader else {
-                    return;
+                // Java step 70 (Client.java:1812): config.requestFullDownload()
+                // — block here until EVERY config group is resident, then init
+                // all Type classes. This gate is load-bearing: IdkType/ObjType
+                // model composition for the local player runs straight after
+                // login and caches a 0-face model permanently if the idk config
+                // (group 3) isn't present yet (Java caches the empty model too;
+                // it only stays correct because this gate guarantees the config
+                // is fully downloaded first).
+                let mut reg = js5_net::LOADERS.lock().unwrap();
+                let done = match reg.get_mut(self.config as usize).and_then(|o| o.as_mut()) {
+                    Some(loader) => loader.request_full_download(),
+                    None => return,
                 };
-                if !config_loader.base.packed.is_empty() {
+                if !done {
+                    let prog = reg
+                        .get(self.config as usize)
+                        .and_then(|o| o.as_ref())
+                        .map(|l| l.index_load_progress())
+                        .unwrap_or(0);
+                    drop(reg);
+                    let mut ts = title_screen::STATE.lock().unwrap();
+                    ts.load_string = format!("Loading config - {prog}%");
+                    ts.load_pos = 60;
+                    return;
+                }
+                if let Some(config_loader) =
+                    reg.get(self.config as usize).and_then(|o| o.as_ref())
+                {
                     crate::config::flo_type::init(config_loader);
                     crate::config::flu_type::init(config_loader);
                     crate::config::idk_type::init(config_loader);
@@ -7612,14 +8358,44 @@ impl Client {
                 let mut ts = title_screen::STATE.lock().unwrap();
                 ts.load_string = "Loaded config".to_string();
                 ts.load_pos = 60;
-                self.loading_step = 80;
+                self.loading_step = 130;
             }
-            80 => {
-                // Java step 80+: sprite loading (compass, mapedge, hitmarks,
-                // etc.) + region downloads. Skipped — the remaining
-                // archives stream in opportunistically. Java's step 140
-                // is `setMainState(10)`; we jump straight there so the
-                // login screen / title-box renders.
+            130 => {
+                // Java step 130 (Client.java:1979): interfaces, then scripts,
+                // then fontMetrics requestFullDownload(). Short-circuited in the
+                // same order as Java. Without the scripts (clientscript) archive
+                // fully resident, interface onload/onop hooks silently no-op
+                // (execute_script bails when client_script::get() is None), so
+                // side-tab stones keep their raw red fill and the chat-tab
+                // select/filter scripts never run. Sprite/texture/minimap
+                // sub-steps (Java 80-120) aren't wired yet, so they're skipped.
+                //
+                // fontMetrics is deliberately NOT hard-gated here: that archive
+                // is opened discard_packed, and our loading screen renders text
+                // (which fetches a font-metric file) while the gate is spinning.
+                // The fetch unpacks the group and frees its `packed`, so a
+                // packed-based request_full_download would re-request it forever
+                // and deadlock the loading screen. Java's loader doesn't read
+                // fontMetrics during this step, so it never hits the race. Font
+                // metrics stream in on demand via the fetch_file miss path.
+                //
+                // We do NOT hard-block on 100% completion of interfaces/scripts
+                // either: our JS5 net layer occasionally leaves the last 1-2
+                // groups of a large burst undelivered, which would hang the
+                // loading screen forever. Instead we kick off the full-download
+                // (queueing every missing group) and proceed to the login
+                // screen; the urgent queue keeps draining via the per-frame JS5
+                // pump while the player is on the login screen and in-world, so
+                // the clientscripts are resident long before any hook fires.
+                {
+                    let mut reg = js5_net::LOADERS.lock().unwrap();
+                    if let Some(l) = reg.get_mut(self.interfaces as usize).and_then(|o| o.as_mut()) {
+                        l.request_full_download();
+                    }
+                    if let Some(l) = reg.get_mut(self.scripts as usize).and_then(|o| o.as_mut()) {
+                        l.request_full_download();
+                    }
+                }
                 let mut ts = title_screen::STATE.lock().unwrap();
                 ts.load_string = "Welcome to RuneScape".to_string();
                 ts.load_pos = 100;
@@ -7689,15 +8465,22 @@ impl Client {
                 self.login_step = 0;
                 self.login_waiting_time = 0;
                 self.login_fail_count = 0;
-                // Drop a stale prev_stream — successful reconnect path
-                // already cleared it, this is the fallback.
-                self.prev_stream = None;
                 // Reset map-build to "no zone loaded" so the next
                 // RebuildNormal triggers a fresh fetch.
                 self.map_build_center_zone_x = -1;
                 self.map_build_center_zone_z = -1;
             }
             _ => {}
+        }
+        // Java setMainState:1535-1537 — prevStream (the dead pre-reconnect
+        // socket stashed by lost_con) is kept alive across the 20/40
+        // login/reconnect states and only closed once we settle into any
+        // other state.
+        if !matches!(state, 20 | 40) {
+            if let Some(s) = self.prev_stream.as_mut() {
+                s.close();
+            }
+            self.prev_stream = None;
         }
 
         // Leaving the title-screen states releases their assets.

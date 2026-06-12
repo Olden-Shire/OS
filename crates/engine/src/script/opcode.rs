@@ -101,8 +101,10 @@ pub const IF_CLOSE: u16 = 2033;
 pub const IF_OPENCHAT: u16 = 2034;
 pub const IF_OPENFULL: u16 = 2035;
 pub const IF_OPENMAIN_SIDE: u16 = 2036;
-pub const IF_OPENMAIN: u16 = 2037;
-pub const IF_OPENOVERLAY: u16 = 2038;
+/// rev1 IF_OPENTOP — set the fullscreen/root toplevel interface.
+pub const IF_OPENTOP: u16 = 2037;
+/// rev1 IF_OPENSUB — open an interface as a child at a packed component.
+pub const IF_OPENSUB: u16 = 2038;
 pub const IF_OPENSIDE: u16 = 2039;
 pub const IF_SETANGLE: u16 = 2040;
 pub const IF_SETANIM: u16 = 2041;

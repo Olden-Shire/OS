@@ -261,12 +261,20 @@ impl PlayerModel {
         let mut slots = self.appearance;
         if let Some(p) = primary {
             if p.replaceheldleft >= 0 || p.replaceheldright >= 0 {
+                // Java PlayerModel.java:202/206 — `replaceheldX - appearance[n]`
+                // is an int, and `int << 40` / `int << 48` mask the shift to
+                // its low 5 bits (40&31=8, 48&31=16), computed in 32-bit then
+                // sign-extended to long for `var5 +=`. wrapping_shl replicates
+                // that masking exactly; casting to i64 first (as the old code
+                // did) would shift the full 40/48 and diverge the cache key.
                 if p.replaceheldleft >= 0 {
-                    hash += ((p.replaceheldleft - self.appearance[5]) as i64) << 40;
+                    hash += p.replaceheldleft.wrapping_sub(self.appearance[5])
+                        .wrapping_shl(40) as i64;
                     slots[5] = p.replaceheldleft;
                 }
                 if p.replaceheldright >= 0 {
-                    hash += ((p.replaceheldright - self.appearance[3]) as i64) << 48;
+                    hash += p.replaceheldright.wrapping_sub(self.appearance[3])
+                        .wrapping_shl(48) as i64;
                     slots[3] = p.replaceheldright;
                 }
             }
@@ -316,6 +324,10 @@ impl PlayerModel {
                             parts.push(m);
                         }
                     }
+                }
+                if parts.is_empty() {
+                    eprintln!("[dbg-walk] PlayerModel parts EMPTY: slots={:?} gender={}",
+                              slots, self.gender);
                 }
                 let mut unlit = ModelUnlit::merge(&parts.iter().collect::<Vec<_>>());
                 for i in 0..5 {

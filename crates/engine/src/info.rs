@@ -37,6 +37,8 @@ pub fn build_player_info(world: &mut World, pid: usize) -> ServerPacket {
 
     let me = world.players[pid].as_ref().expect("observer");
     let (my_x, my_z, my_level) = (me.entity.x, me.entity.z, me.entity.level);
+    // Build-area origin of *this* observer — exact-move coords are scene-local.
+    let (my_origin_x, my_origin_z) = (me.origin_x, me.origin_z);
 
     let mut buf = Packet::new(512);
     buf.bit_start();
@@ -126,12 +128,14 @@ pub fn build_player_info(world: &mut World, pid: usize) -> ServerPacket {
     view = kept;
 
     // ── New vis ───────────────────────────────────────────────────
+    // Candidates come from the build-area zones around the observer, not a
+    // full 2047-slot scan; `within_view` still narrows to the exact range.
     let mut adds = 0usize;
-    for tid in 0..MAX_PLAYERS - 1 {
+    for tid in world.nearby_player_ids(my_x, my_z, my_level) {
         if adds >= MAX_ADDS_PER_TICK || view.len() >= 255 {
             break;
         }
-        if tid == pid || view.contains(&tid) {
+        if tid == pid || tid >= MAX_PLAYERS - 1 || view.contains(&tid) {
             continue;
         }
         let Some(t) = world.players[tid].as_ref() else { continue; };
@@ -142,7 +146,7 @@ pub fn build_player_info(world: &mut World, pid: usize) -> ServerPacket {
         buf.p_bit(11, tid as i32);
         // Client read order: dz(5), dir(3), dx(5), jump(1), flag(1).
         buf.p_bit(5, (t.entity.z - my_z) & 0x1F);
-        buf.p_bit(3, 6); // ANGLE_TO_DIR[6] = yaw 0 initial facing
+        buf.p_bit(3, t.entity.orientation_dir()); // current facing (ANGLE_TO_DIR idx)
         buf.p_bit(5, (t.entity.x - my_x) & 0x1F);
         buf.p_bit(1, 1); // snap (no walk interpolation on entry)
         buf.p_bit(1, 1); // extended follows — appearance at minimum
@@ -157,7 +161,7 @@ pub fn build_player_info(world: &mut World, pid: usize) -> ServerPacket {
     // ── Extended info ─────────────────────────────────────────────
     for entry in &extended {
         let t = world.players[entry.pid].as_ref().expect("extended target");
-        write_player_extended(&mut buf, t, entry.force_appearance);
+        write_player_extended(&mut buf, t, entry.force_appearance, my_origin_x, my_origin_z);
         if entry.force_appearance || (t.entity.masks & player::MASK_APPEARANCE) != 0 {
             seen[entry.pid] = t.appearance_seq;
         }
@@ -173,7 +177,13 @@ pub fn build_player_info(world: &mut World, pid: usize) -> ServerPacket {
     ServerPacket { opcode: 113, size: SizeKind::Var2, body }
 }
 
-fn write_player_extended(buf: &mut Packet, t: &player::Player, force_appearance: bool) {
+fn write_player_extended(
+    buf: &mut Packet,
+    t: &player::Player,
+    force_appearance: bool,
+    obs_origin_x: i32,
+    obs_origin_z: i32,
+) {
     let e = &t.entity;
     let mut flags = e.masks;
     if force_appearance {
@@ -191,9 +201,12 @@ fn write_player_extended(buf: &mut Packet, t: &player::Player, force_appearance:
 
     // Client mask processing order — getPlayerPosExtended.
     if (flags & player::MASK_PUBLIC_CHAT) != 0 {
-        // Not generated yet (needs WordPack on the server); the mask
-        // bit is never set without this branch being implemented.
-        unreachable!("public chat mask queued without encoder");
+        // getPlayerPosExtended reads: g2(colour<<8 | effect), g1(rights),
+        // g1(length), then the WordPack-packed message bytes.
+        buf.p2((t.chat_colour << 8) | (t.chat_effect & 0xff));
+        buf.p1(t.chat_rights);
+        buf.p1(t.chat_message.len() as i32);
+        buf.pdata(&t.chat_message, 0, t.chat_message.len());
     }
 
     if (flags & player::MASK_APPEARANCE) != 0 {
@@ -203,7 +216,15 @@ fn write_player_extended(buf: &mut Packet, t: &player::Player, force_appearance:
     }
 
     if (flags & player::MASK_EXACT_MOVE) != 0 {
-        unreachable!("exact move mask queued without encoder");
+        // Scene-local tile coords (absolute − observer build-area origin), then
+        // the end/start cycle deltas and the facing — getPlayerPosExtended order.
+        buf.p1(e.exact_start_x - obs_origin_x);
+        buf.p1_alt2(e.exact_start_z - obs_origin_z);
+        buf.p1(e.exact_end_x - obs_origin_x);
+        buf.p1_alt1(e.exact_end_z - obs_origin_z);
+        buf.p2_alt2(e.exact_move_end);
+        buf.p2(e.exact_move_start);
+        buf.p1_alt2(e.exact_move_facing);
     }
 
     if (flags & player::MASK_FACE_ENTITY) != 0 {
@@ -229,8 +250,8 @@ fn write_player_extended(buf: &mut Packet, t: &player::Player, force_appearance:
     if (flags & player::MASK_DAMAGE) != 0 {
         buf.p1_alt1(e.damage_taken);
         buf.p1_alt3(e.damage_type);
-        buf.p1(e.health);
-        buf.p1_alt2(e.total_health);
+        buf.p1(t.levels[player::STAT_HITPOINTS]);
+        buf.p1_alt2(t.base_levels[player::STAT_HITPOINTS]);
     }
 
     if (flags & player::MASK_SAY) != 0 {
@@ -238,10 +259,10 @@ fn write_player_extended(buf: &mut Packet, t: &player::Player, force_appearance:
     }
 
     if (flags & player::MASK_DAMAGE2) != 0 {
-        buf.p1_alt1(e.damage_taken);
-        buf.p1_alt3(e.damage_type);
-        buf.p1_alt1(e.health);
-        buf.p1(e.total_health);
+        buf.p1_alt1(e.damage_taken2);
+        buf.p1_alt3(e.damage_type2);
+        buf.p1_alt1(t.levels[player::STAT_HITPOINTS]);
+        buf.p1(t.base_levels[player::STAT_HITPOINTS]);
     }
 }
 
@@ -308,8 +329,9 @@ pub fn build_npc_info(world: &mut World, pid: usize) -> ServerPacket {
     view = kept;
 
     // ── New vis ───────────────────────────────────────────────────
+    // Candidates from the build-area zones, not a full NPC-slot scan.
     let mut adds = 0usize;
-    for nid in 0..world.npcs.len() {
+    for nid in world.nearby_npc_ids(my_x, my_z, my_level) {
         if adds >= MAX_ADDS_PER_TICK || view.len() >= 255 {
             break;
         }
@@ -327,7 +349,7 @@ pub fn build_npc_info(world: &mut World, pid: usize) -> ServerPacket {
         buf.p_bit(15, nid as i32);
         // Client read order: dir(3), dz(5), flag(1), jump(1),
         // type(14), dx(5).
-        buf.p_bit(3, 6);
+        buf.p_bit(3, n.entity.orientation_dir()); // current facing (ANGLE_TO_DIR idx)
         buf.p_bit(5, (n.entity.z - my_z) & 0x1F);
         buf.p_bit(1, i32::from(flagged));
         buf.p_bit(1, 1); // snap
@@ -340,7 +362,11 @@ pub fn build_npc_info(world: &mut World, pid: usize) -> ServerPacket {
         view.push(nid);
         adds += 1;
     }
-    buf.p_bit(15, 32767);
+    // No 15-bit terminator here: the client's new-vis loop reads adds while
+    // `bitsLeft >= 27`, and a 15-bit end marker (the last thing in the packet)
+    // can never satisfy that — it would only inflate psize and leave the client
+    // consuming fewer bytes than sent (the fatal `gnp1 pos != psize` throw on
+    // the empty packet). The client stops naturally once <27 bits remain.
     buf.bit_end();
 
     // ── Extended info ─────────────────────────────────────────────
@@ -366,8 +392,8 @@ fn write_npc_extended(buf: &mut Packet, n: &npc::Npc) {
     if (flags & npc::MASK_DAMAGE) != 0 {
         buf.p1(e.damage_taken);
         buf.p1_alt2(e.damage_type);
-        buf.p1_alt1(e.health);
-        buf.p1_alt1(e.total_health);
+        buf.p1_alt1(n.levels[npc::NPC_STAT_HITPOINTS]);
+        buf.p1_alt1(n.base_levels[npc::NPC_STAT_HITPOINTS]);
     }
 
     if (flags & npc::MASK_FACE_ENTITY) != 0 {
@@ -398,9 +424,9 @@ fn write_npc_extended(buf: &mut Packet, n: &npc::Npc) {
     }
 
     if (flags & npc::MASK_DAMAGE2) != 0 {
-        buf.p1_alt3(e.damage_taken);
-        buf.p1_alt3(e.damage_type);
-        buf.p1_alt3(e.health);
-        buf.p1_alt1(e.total_health);
+        buf.p1_alt3(e.damage_taken2);
+        buf.p1_alt3(e.damage_type2);
+        buf.p1_alt3(n.levels[npc::NPC_STAT_HITPOINTS]);
+        buf.p1_alt1(n.base_levels[npc::NPC_STAT_HITPOINTS]);
     }
 }

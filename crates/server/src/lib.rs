@@ -5,6 +5,8 @@
 
 pub mod connection;
 pub mod js5;
+pub mod websocket;
+pub mod worldlist;
 
 use std::collections::HashMap;
 use std::net::TcpListener;
@@ -26,6 +28,16 @@ pub struct ServerConfig {
     pub addr: String,
     pub cache_dir: String,
     pub script_dir: Option<String>,
+    /// Content-shaped source tree to repack-verify before startup. Default `Content`.
+    pub content_dir: Option<String>,
+    /// Vanilla CRC baseline (`crc_baseline.json`). Default `{cache_dir}/crc_baseline.json`.
+    pub baseline_path: Option<String>,
+    /// World id advertised on the worldlist (dev convention: game port =
+    /// worldid+40000, js5 = worldid+50000, website/worldlist = worldid+7000).
+    pub worldid: i32,
+    /// Host advertised on the worldlist entry — what the client connects
+    /// to for game/js5 after switching to this world.
+    pub adv_host: String,
 }
 
 impl Default for ServerConfig {
@@ -34,13 +46,21 @@ impl Default for ServerConfig {
             addr: "0.0.0.0:43594".to_string(),
             cache_dir: "cache".to_string(),
             script_dir: None,
+            content_dir: None,
+            baseline_path: None,
+            worldid: 1,
+            adv_host: "127.0.0.1".to_string(),
         }
     }
 }
 
 pub fn run(config: ServerConfig) -> std::io::Result<()> {
+    // Hard pre-startup gate: prove the Content tree repacks to the vanilla cache
+    // (CRC-identical) before we serve anything. Refuses to start on mismatch.
+    verify_cache_gate(&config)?;
+
     let mut cache = Cache::open(Path::new(&config.cache_dir))?;
-    let checksum_table = js5::build_checksum_table(&mut cache, ARCHIVE_COUNT);
+    let checksum_table = js5::build_checksum_table(&cache, ARCHIVE_COUNT);
 
     // XTEA keys for map encryption — keys.json next to the cache.
     let xtea = cache::maps::XteaKeys::load(Path::new(&config.cache_dir).join("keys.json").as_path())
@@ -59,6 +79,19 @@ pub fn run(config: ServerConfig) -> std::io::Result<()> {
     let listener = TcpListener::bind(&config.addr)?;
     listener.set_nonblocking(true)?;
     eprintln!("[server] listening on {}", config.addr);
+
+    // Worldlist endpoint with a live player count, refreshed each tick.
+    let live_players = std::sync::Arc::new(std::sync::atomic::AtomicI32::new(0));
+    worldlist::spawn(
+        (7000 + config.worldid) as u16,
+        worldlist::WorldlistInfo {
+            worldid: config.worldid,
+            members: false,
+            host: config.adv_host.clone(),
+            country: 0,
+            players: std::sync::Arc::clone(&live_players),
+        },
+    );
 
     let mut connections: Vec<Connection> = Vec::new();
     let mut next_tick = Instant::now() + TICK;
@@ -123,6 +156,10 @@ pub fn run(config: ServerConfig) -> std::io::Result<()> {
         if Instant::now() >= next_tick {
             world.cycle();
             next_tick += TICK;
+            live_players.store(
+                world.players.iter().filter(|p| p.is_some()).count() as i32,
+                std::sync::atomic::Ordering::Relaxed,
+            );
 
             // Drain per-player outgoing queues onto their sockets.
             let mut to_remove: Vec<usize> = Vec::new();
@@ -156,6 +193,54 @@ pub fn run(config: ServerConfig) -> std::io::Result<()> {
     }
 }
 
+/// Repack the Content tree and verify every group CRC against the vanilla baseline.
+/// Returns `Err` (so the server refuses to start) on any mismatch. Bootstrapping cases
+/// — no baseline file, or `OS1_SKIP_CACHE_VERIFY=1` — log and continue.
+fn verify_cache_gate(config: &ServerConfig) -> std::io::Result<()> {
+    if std::env::var_os("OS1_SKIP_CACHE_VERIFY").is_some() {
+        eprintln!("[server] OS1_SKIP_CACHE_VERIFY set — skipping pre-startup pack-CRC verification");
+        return Ok(());
+    }
+
+    let baseline_path = config
+        .baseline_path
+        .clone()
+        .unwrap_or_else(|| format!("{}/crc_baseline.json", config.cache_dir));
+    let baseline_path = Path::new(&baseline_path);
+    if !baseline_path.exists() {
+        eprintln!(
+            "[server] no CRC baseline at {} — skipping verification \
+             (run `os1 gen-baseline` to enable the startup gate)",
+            baseline_path.display()
+        );
+        return Ok(());
+    }
+
+    let content_dir = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
+    let content_dir = Path::new(&content_dir);
+    if !content_dir.exists() {
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::NotFound,
+            format!("content dir {} not found; cannot verify cache before startup", content_dir.display()),
+        ));
+    }
+
+    let baseline = cache::verify::Baseline::load(baseline_path)?;
+    let tmp = std::env::temp_dir().join("os1_verify_repack");
+    eprintln!("[server] verifying pack CRCs ({} → repack vs {}) …", content_dir.display(), baseline_path.display());
+    let report = cache::verify::verify_repack(content_dir, &baseline, &tmp)?;
+    if report.is_ok() {
+        eprintln!("[server] {report}");
+        Ok(())
+    } else {
+        eprint!("{report}");
+        Err(std::io::Error::new(
+            std::io::ErrorKind::InvalidData,
+            "cache verification failed; refusing to start (set OS1_SKIP_CACHE_VERIFY=1 to override)",
+        ))
+    }
+}
+
 fn handle_login(conn: &mut Connection, login: connection::LoginRequest,
                 world: &mut World, xtea: &cache::maps::XteaKeys) {
     if login.reconnect {
@@ -168,6 +253,8 @@ fn handle_login(conn: &mut Connection, login: connection::LoginRequest,
         conn.state = ConnState::Closed;
         return;
     };
+    // Carry the client's low-detail flag so the music/sound ops can skip playback.
+    world.players[pid].as_mut().expect("fresh player").low_memory = login.low_memory;
 
     // Success reply: 2, staffmod 0, 0, pid16, members 0.
     let mut reply = Packet::new(6);
@@ -278,6 +365,7 @@ fn pump_game(conn: &mut Connection, pid: usize, world: &mut World) {
         let size = conn.packet_size as usize;
         conn.packet_type = -1;
 
+        eprintln!("[game] recv op={opcode} sz={size} body={:02x?}", &body[..body.len().min(16)]);
         let mut p = Packet::from_vec(body);
         let message = cproto::decode(opcode, &mut p, size);
         world.handle_message(pid, message);

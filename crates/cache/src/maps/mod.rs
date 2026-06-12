@@ -13,6 +13,7 @@
 //!   delta-encoded packed position inner loop; per-placement shape+rotation byte.
 
 mod perlin;
+pub mod text;
 
 use std::collections::HashMap;
 use std::path::Path;
@@ -57,7 +58,7 @@ pub struct Tile {
 }
 
 /// One placed loc instance within a region.
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct LocPlacement {
     pub id: i32,
     /// 0..=3
@@ -173,7 +174,7 @@ fn decode_tile(p: &mut Packet, tile: &mut Tile, explicit_height: &mut bool) {
     }
 }
 
-fn decode_locs(bytes: &[u8]) -> Vec<LocPlacement> {
+pub(crate) fn decode_locs(bytes: &[u8]) -> Vec<LocPlacement> {
     let mut out = Vec::new();
     let mut p = Packet::from_vec(bytes.to_vec());
     let mut loc_id: i32 = -1;

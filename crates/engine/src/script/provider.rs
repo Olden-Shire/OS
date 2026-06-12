@@ -11,7 +11,10 @@ use crate::script::file::ScriptFile;
 use crate::script::trigger::Trigger;
 
 /// The compiler version the runtime expects in script.dat's header.
-pub const COMPILER_VERSION: i32 = 26;
+/// v27: per-script lookup keys widened to i64 so component subjects
+/// (packed (interface<<16)|child, e.g. [if_button,if_378:6]) fit
+/// after the <<10 shift.
+pub const COMPILER_VERSION: i32 = 27;
 
 #[derive(Default)]
 pub struct ScriptProvider {
@@ -68,7 +71,7 @@ impl ScriptProvider {
                     // resolve by id/name instead).
                     if script.info.lookup_key != -1 {
                         provider.lookup.insert(
-                            script.info.lookup_key as u32 as i64,
+                            script.info.lookup_key,
                             Arc::clone(&script),
                         );
                     }
@@ -125,5 +128,42 @@ impl ScriptProvider {
             return self.lookup.get(&(t | (0x1 << 8) | ((category as i64) << 10))).map(Arc::clone);
         }
         self.lookup.get(&t).map(Arc::clone)
+    }
+}
+
+#[cfg(test)]
+impl ScriptProvider {
+    /// Empty provider for tests.
+    pub fn test_empty() -> Self {
+        ScriptProvider {
+            scripts: Vec::new(),
+            names: HashMap::new(),
+            lookup: HashMap::new(),
+        }
+    }
+
+    /// Register `script` for the specific (trigger, type_id) combo — the same
+    /// key `get_by_trigger_specific` / `get_by_trigger` look up.
+    pub fn test_insert_specific(&mut self, trigger: Trigger, type_id: i32, script: Arc<ScriptFile>) {
+        let t = trigger as i64;
+        self.lookup.insert(t | (0x2 << 8) | ((type_id as i64) << 10), script);
+    }
+}
+
+#[cfg(test)]
+impl ScriptProvider {
+    /// Register `script` for the trigger with no type/category (the plain key,
+    /// e.g. [logout,_] / [login,_]).
+    pub fn test_insert_global(&mut self, trigger: Trigger, script: Arc<ScriptFile>) {
+        self.lookup.insert(trigger as i64, script);
+    }
+
+    /// Register `script` under its id so `get(id)` resolves it (the lookup
+    /// SETTIMER / GETTIMER / gosub-by-id use).
+    pub fn test_insert_by_id(&mut self, id: i32, script: Arc<ScriptFile>) {
+        if self.scripts.len() <= id as usize {
+            self.scripts.resize(id as usize + 1, None);
+        }
+        self.scripts[id as usize] = Some(script);
     }
 }

@@ -68,6 +68,23 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
     pix2d::cls();
     pix2d::fill_rect(0, 0, 765, 503, 0x000000);
 
+    // Cleared each frame; the viewport component (client_code 1337) sets it
+    // true if it draws, so the scene-action menu gate below knows whether a
+    // 3D scene exists this frame (false on the welcome screen).
+    crate::overlays::OVERLAYS.lock().unwrap().viewport_present = false;
+
+    // Advance interface model animations before drawing them (Java gameDraw
+    // animateInterface(toplevelinterface), Client.java:2756). Uses the ticks
+    // accumulated since the last frame (world_update_num, reset at fn end).
+    if toplevel >= 0 {
+        let subs = c.subinterfaces.clone();
+        let mut visited = std::collections::HashSet::new();
+        crate::client::animate_interface(c, 3, toplevel, &subs, &mut visited);
+        for sub in subs.values() {
+            crate::client::animate_interface(c, 3, sub.id, &subs, &mut visited);
+        }
+    }
+
     {
         // The interface walk needs &mut Client for the hover menu
         // options while also reading fonts/subinterfaces — clone the
@@ -81,33 +98,25 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
             draw_interface(toplevel, 0, 0, 765, 503, 0, 0,
                            p11_owned.as_ref(), &subs_owned, &mut client_opt);
         }
-
-        // Position overlay so the localPlayer state is visible even
-        // though entities don't render in the scene yet.
-        if let (Some(lp), Some(font)) = (c.local_player.as_ref(), p11_owned.as_ref()) {
-            pix2d::set_clipping(0, 0, 765, 503);
-            // lp.x/z are fine coords (Java convention); >> 7 = tile.
-            let tile_x = c.map_build_base_x + (lp.x >> 7);
-            let tile_z = c.map_build_base_z + (lp.z >> 7);
-            let line = format!("You: ({tile_x}, {tile_z}) level {}", c.minusedlevel);
-            let y = 16;
-            font.base.draw_string(&line, 6, y, 0x000000, 0);
-            font.base.draw_string(&line, 5, y - 1, 0xFFFF00, 0);
-        }
     }
 
     // Java gameDrawMain tail (Client.java:4198-4200 + gameDraw 2781):
     // mouse over the 3D viewport adds the scene actions from this
     // frame's pick results, then the menu sorts game-ops-first.
-    let (vx, vy, vw, vh) = {
+    let (vx, vy, vw, vh, viewport_present) = {
         let o = crate::overlays::OVERLAYS.lock().unwrap();
-        (o.viewport_x, o.viewport_y, o.viewport_w, o.viewport_h)
+        (o.viewport_x, o.viewport_y, o.viewport_w, o.viewport_h, o.viewport_present)
     };
     let (mouse_x, mouse_y) = {
         let m = crate::input::MOUSE.lock().unwrap();
         (m.mouse_x, m.mouse_y)
     };
-    if !c.is_menu_open
+    // Only build scene actions ("Walk here" + loc/npc/obj ops) when the 3D
+    // viewport actually drew this frame. The welcome screen and other
+    // model-only interfaces have no viewport, so without this gate the
+    // stale viewport rect makes "Walk here" appear over a non-existent scene.
+    if viewport_present
+        && !c.is_menu_open
         && mouse_x >= vx && mouse_x < vx + vw
         && mouse_y >= vy && mouse_y < vy + vh
     {
@@ -123,6 +132,13 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
     } else {
         crate::client::draw_feedback(c, vx, vy);
     }
+
+    // Java gameDrawMain :4180 — advance animated textures by the ticks
+    // that elapsed this frame (worldUpdateNum). Runs after the viewport
+    // component drew the scene (its textures set their `used` flag), so
+    // only on-screen animated textures (water/lava/fire/teleports) get
+    // scrolled. Must precede the world_update_num reset below.
+    crate::dash3d::texture_manager::run_anims(c.world_update_num);
 
     // Java gameDraw :2799 — a completed draw resets the tick counter
     // the per-tick-unit motion scaled by.
@@ -197,6 +213,7 @@ pub fn draw_interface(
     subinterfaces: &HashMap<i32, SubInterface>,
     client: &mut Option<&mut crate::client::Client>,
 ) {
+    let _g = crate::debug_depth::DepthGuard::enter("draw_interface", 400);
     let components: Vec<IfType> = {
         let s = if_type::STORE.lock().unwrap();
         match s.list.get(id as usize).and_then(|o| o.as_ref()) {
@@ -241,7 +258,14 @@ fn draw_layer(
     subinterfaces: &HashMap<i32, SubInterface>,
     client: &mut Option<&mut crate::client::Client>,
 ) {
+    let _g = crate::debug_depth::DepthGuard::enter("draw_layer", 400);
     pix2d::set_clipping(x, y, w, h);
+    // Java drawLayer 10040: sync the Pix3D rasterizer clip from the Pix2D
+    // clip we just set. Type-6 model components rasterize through Pix3D,
+    // whose clip is otherwise stale (left at the 3D viewport or 0,0,0,0)
+    // — every model pixel would be clipped away and interface models
+    // render fully black even though the geometry projects correctly.
+    crate::dash3d::pix3d::set_render_clipping();
 
     for com in children {
         // Java drawLayer 10044: skip components outside this layer —
@@ -331,9 +355,14 @@ fn draw_layer(
             // Java gameDrawMain 4096-4101 — players/NPCs/projectiles/
             // spotanims enter the sprite grid before renderAll.
             if let Some(c) = client.as_deref_mut() {
+                // Build (or rebuild) the World scene graph first — it
+                // also registers walls/locs into c.collision, which
+                // tryMove's BFS reads (Java finishBuild does both).
+                crate::scene::ensure_world_built(&mut c.collision);
                 crate::scene::push_entities(c);
             }
             crate::scene::draw_viewport(renderx, rendery, com.width, com.height);
+            crate::overlays::OVERLAYS.lock().unwrap().viewport_present = true;
             pix2d::set_clipping(x, y, w, h);
             continue;
         }
@@ -478,7 +507,11 @@ fn draw_layer(
                         );
                     }
                 }
+                // Java drawLayer 10213-10214: the sub-component / sub-interface
+                // recursion above reset both clips to the child's bounds —
+                // restore this layer's Pix2D clip and re-sync Pix3D to match.
                 pix2d::set_clipping(x, y, w, h);
+                crate::dash3d::pix3d::set_render_clipping();
                 // Java drawLayer 10221-10223: legacy scrolling layers
                 // get the 16px scrollbar on their right edge.
                 if !com.v3 && com.scroll_height > com.height {
@@ -700,21 +733,14 @@ fn draw_layer(
             }
             2 => {
                 // Inventory grid — 32×32 slots with marginX/marginY gap.
-                // Pre-pass: blit any background sprites (Java's
-                // invBackground[20] / invBackgroundX[20] / invBackgroundY[20]
-                // pinned to the component's origin).
-                for i in 0..com.inv_background.len() {
-                    let bg_id = com.inv_background[i];
-                    if bg_id <= 0 { continue; }
-                    let mut bg_proxy = com.clone();
-                    bg_proxy.graphic = bg_id;
-                    if let Some(pix) = bg_proxy.get_graphic(false) {
-                        pix.plot_sprite(
-                            renderx + com.inv_background_x[i],
-                            rendery + com.inv_background_y[i],
-                        );
-                    }
-                }
+                // Background sprites are NOT a separate pre-pass: Java draws
+                // each invBackground[slot] inside the slot loop at the full
+                // slot position (grid col*(marginX+32) + invBackgroundX[slot]),
+                // as the `else` of the per-slot item draw. Drawing them in a
+                // pre-pass at `renderx + invBackgroundX[i]` (missing the grid
+                // term) collapses every slot's background onto a few origins —
+                // that was the equipment-panel pile-up.
+                //
                 // Item sprites (Java drawLayer type-2, Client.java:
                 // 10227-10268): ObjType.getSprite per filled slot —
                 // the use-selected white-outline variant, the dragged
@@ -838,6 +864,17 @@ fn draw_layer(
                                     sprite.trans_plot_sprite(slot_x, slot_y, 128);
                                 } else {
                                     sprite.plot_sprite(slot_x, slot_y);
+                                }
+                            }
+                        } else if slot < 20 {
+                            // Java 10309-10315 — empty slot: draw its
+                            // invBackground sprite at the full slot position.
+                            let bg_id = com.inv_background.get(slot).copied().unwrap_or(-1);
+                            if bg_id > 0 {
+                                let mut bg_proxy = com.clone();
+                                bg_proxy.graphic = bg_id;
+                                if let Some(pix) = bg_proxy.get_graphic(false) {
+                                    pix.plot_sprite(slot_x, slot_y);
                                 }
                             }
                         }
@@ -982,6 +1019,8 @@ fn draw_layer(
                     }
                 }
 
+                // Pix3D clip already synced to this layer at drawLayer entry
+                // (Java 10040); only the per-model origin changes here.
                 crate::dash3d::pix3d::set_origin(com.width / 2 + renderx,
                                                  com.height / 2 + rendery);
                 let sin_t = crate::dash3d::pix3d::sin_table();

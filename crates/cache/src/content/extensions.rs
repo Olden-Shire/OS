@@ -20,6 +20,7 @@ pub fn single_file_ext(archive: u8, payload: &[u8]) -> &'static str {
         7 => "ob2",     // models — raw cache bytes are the .ob2 format
         10 => sniff_binary(payload),
         11 => "mid",    // jingles — same codec as songs
+        12 => "cs2",    // clientscripts — structured source (or .cs2asm fallback), chosen in unpack
         _ => "dat",
     }
 }
@@ -29,6 +30,15 @@ pub fn single_file_ext(archive: u8, payload: &[u8]) -> &'static str {
 #[must_use]
 pub const fn is_midi_archive(archive: u8) -> bool {
     matches!(archive, 6 | 11)
+}
+
+/// `true` if a single-file scope holds CS2 clientscript bytecode, which unpacks to
+/// structured `.cs2` source (`cs2_decompile`/`cs2_source`, verified byte-exact per
+/// script) or a `.cs2asm` assembly fallback, and packs back to byte-identical
+/// bytecode either way.
+#[must_use]
+pub const fn is_clientscript_archive(archive: u8) -> bool {
+    archive == 12
 }
 
 /// Extension for a file *inside* a multi-file group directory (e.g. anim frames).

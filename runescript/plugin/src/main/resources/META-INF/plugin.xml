@@ -1,0 +1,78 @@
+<idea-plugin>
+    <id>com.os1.runescript</id>
+    <name>RuneScript (OS1)</name>
+    <vendor>OS1</vendor>
+
+    <description><![CDATA[
+        RuneScript language support for OS1 server scripts (.rs2) and
+        clientscripts (.cs2): syntax highlighting, pack-backed symbol
+        resolution, completion, Compile/Decompile actions, a .cs2asm
+        assembly-listing file type, and a side-by-side source/assembly
+        editor for clientscripts backed by the Rust toolchain.
+    ]]></description>
+
+    <dependencies>
+        <plugin id="com.intellij.modules.lang"/>
+    </dependencies>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+            name="RuneScript"
+            implementationClass="com.os1.runescript.plugin.lang.RuneScriptFileType"
+            fieldName="INSTANCE"
+            language="RuneScript"
+            extensions="rs2;cs2"/>
+
+        <lang.syntaxHighlighterFactory
+            language="RuneScript"
+            implementationClass="com.os1.runescript.plugin.highlight.RuneScriptSyntaxHighlighterFactory"/>
+
+        <lang.parserDefinition
+            language="RuneScript"
+            implementationClass="com.os1.runescript.plugin.psi.RuneScriptParserDefinition"/>
+
+        <annotator
+            language="RuneScript"
+            implementationClass="com.os1.runescript.plugin.annotate.RuneScriptAnnotator"/>
+
+        <completion.contributor
+            language="RuneScript"
+            implementationClass="com.os1.runescript.plugin.completion.RuneScriptCompletionContributor"/>
+
+        <!-- ClientScript assembly listings (.cs2asm) — the packer's faithful fallback
+             format and the right-hand pane of the side-by-side cs2 editor. -->
+        <fileType
+            name="Cs2Asm"
+            implementationClass="com.os1.runescript.plugin.asm.Cs2AsmFileType"
+            fieldName="INSTANCE"
+            language="Cs2Asm"
+            extensions="cs2asm"/>
+
+        <lang.syntaxHighlighterFactory
+            language="Cs2Asm"
+            implementationClass="com.os1.runescript.plugin.asm.Cs2AsmSyntaxHighlighterFactory"/>
+
+        <lang.parserDefinition
+            language="Cs2Asm"
+            implementationClass="com.os1.runescript.plugin.asm.Cs2AsmParserDefinition"/>
+
+        <!-- Side-by-side source + live assembly for structured .cs2 clientscripts. -->
+        <fileEditorProvider
+            implementation="com.os1.runescript.plugin.editor.Cs2PreviewEditorProvider"/>
+    </extensions>
+
+    <actions>
+        <action id="com.os1.runescript.CompileAction"
+                class="com.os1.runescript.plugin.action.CompileScriptsAction"
+                text="Compile RuneScript"
+                description="Compile the RuneScript source set to a pack">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="com.os1.runescript.DecompileAction"
+                class="com.os1.runescript.plugin.action.DecompileClientScriptAction"
+                text="Decompile ClientScript..."
+                description="Decompile a cs2 clientscript to source">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

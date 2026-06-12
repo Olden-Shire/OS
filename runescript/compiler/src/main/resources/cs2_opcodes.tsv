@@ -1,0 +1,313 @@
+op	name	mnemonic	kind	intDelta	strDelta
+0	push_constant_int	push	Int	1	0
+1	push_varp	push	VarpId	1	0
+2	pop_varp	pop	VarpId	-1	0
+3	push_constant_string	push	String	0	1
+6	branch	branch	BranchOffset	0	0
+7	branch_not	if	BranchOffset	-2	0
+8	branch_equals	if	BranchOffset	-2	0
+9	branch_less_than	if	BranchOffset	-2	0
+10	branch_greater_than	if	BranchOffset	-2	0
+21	return	return	Filler		
+25	push_varbit	push	VarbitId	1	0
+27	pop_varbit	pop	VarbitId	-1	0
+31	branch_le	if	BranchOffset	-2	0
+32	branch_ge	if	BranchOffset	-2	0
+33	push_int_local	push	LocalInt	1	0
+34	pop_int_local	pop	LocalInt	-1	0
+35	push_string_local	push	LocalStr	0	1
+36	pop_string_local	pop	LocalStr	0	-1
+37	join_string	join	JoinCount		
+38	pop_int_discard	drop	Filler	-1	0
+39	pop_string_discard	drop_s	Filler	0	-1
+40	gosub_with_params	gosub	ScriptId		
+42	push_varc_int	push	VarcIntId	1	0
+43	pop_varc_int	pop	VarcIntId	-1	0
+44	define_array	array_def	ArrayDef	-1	0
+45	push_array_int	push	ArraySlot	0	0
+46	pop_array_int	pop	ArraySlot	-2	0
+47	push_varc_str	push	VarcStrId	0	1
+48	pop_varc_str	pop	VarcStrId	0	-1
+100	cc_create	cc_create	SecondaryFlag	-3	0
+101	cc_delete	cc_delete	SecondaryFlag	0	0
+102	cc_deleteall	cc_deleteall	SecondaryFlag	-1	0
+200	cc_find	cc_find	SecondaryFlag	-1	0
+1000	cc_setposition	cc_setposition	SecondaryFlag	-2	0
+1001	cc_setsize	cc_setsize	SecondaryFlag	-2	0
+1003	cc_sethide	cc_sethide	SecondaryFlag	-1	0
+1100	cc_setscrollpos	cc_setscrollpos	SecondaryFlag	-2	0
+1101	cc_setcolour	cc_setcolour	SecondaryFlag	-1	0
+1102	cc_setfill	cc_setfill	SecondaryFlag	-1	0
+1103	cc_settrans	cc_settrans	SecondaryFlag	-1	0
+1104	cc_setlinewid	cc_setlinewid	SecondaryFlag	-1	0
+1105	cc_setgraphic	cc_setgraphic	SecondaryFlag	-1	0
+1106	cc_set2dangle	cc_set2dangle	SecondaryFlag	-1	0
+1107	cc_settiling	cc_settiling	SecondaryFlag	-1	0
+1108	cc_setmodel	cc_setmodel	SecondaryFlag	-1	0
+1109	cc_setmodelangle	cc_setmodelangle	SecondaryFlag	-6	0
+1110	cc_setmodelanim	cc_setmodelanim	SecondaryFlag	-1	0
+1111	cc_setmodelorthog	cc_setmodelorthog	SecondaryFlag	-1	0
+1112	cc_settext	cc_settext	SecondaryFlag	0	-1
+1113	cc_settextfont	cc_settextfont	SecondaryFlag	-1	0
+1114	cc_settextalign	cc_settextalign	SecondaryFlag	-3	0
+1115	cc_settextshadow	cc_settextshadow	SecondaryFlag	-1	0
+1116	cc_setoutline	cc_setoutline	SecondaryFlag	-1	0
+1117	cc_setgraphicshadow	cc_setgraphicshadow	SecondaryFlag	-1	0
+1118	cc_setvflip	cc_setvflip	SecondaryFlag	-1	0
+1119	cc_sethflip	cc_sethflip	SecondaryFlag	-1	0
+1120	cc_setscrollsize	cc_setscrollsize	SecondaryFlag	-2	0
+1200	cc_setobject	cc_setobject	SecondaryFlag	-2	0
+1201	cc_setnpchead	cc_setnpchead	SecondaryFlag	-1	0
+1202	cc_setplayerhead_self	cc_setplayerhead_self	SecondaryFlag	0	0
+1300	cc_setop	cc_setop	SecondaryFlag	-1	-1
+1301	cc_setdraggable	cc_setdraggable	SecondaryFlag	-2	0
+1302	cc_setdraggablebehavior	cc_setdraggablebehavior	SecondaryFlag	-1	0
+1303	cc_setdragdeadzone	cc_setdragdeadzone	SecondaryFlag	-1	0
+1304	cc_setdragdeadtime	cc_setdragdeadtime	SecondaryFlag	-1	0
+1305	cc_setopbase	cc_setopbase	SecondaryFlag	0	-1
+1306	cc_settargetverb	cc_settargetverb	SecondaryFlag	0	-1
+1307	cc_clearops	cc_clearops	SecondaryFlag	0	0
+1400	cc_setonclick	cc_setonclick	SecondaryFlag		
+1401	cc_setonhold	cc_setonhold	SecondaryFlag		
+1402	cc_setonrelease	cc_setonrelease	SecondaryFlag		
+1403	cc_setonmouseover	cc_setonmouseover	SecondaryFlag		
+1404	cc_setonmouseleave	cc_setonmouseleave	SecondaryFlag		
+1405	cc_setondrag	cc_setondrag	SecondaryFlag		
+1406	cc_setontargetleave	cc_setontargetleave	SecondaryFlag		
+1407	cc_setonvartransmit	cc_setonvartransmit	SecondaryFlag		
+1408	cc_setontimer	cc_setontimer	SecondaryFlag		
+1409	cc_setonop	cc_setonop	SecondaryFlag		
+1410	cc_setondragcomplete	cc_setondragcomplete	SecondaryFlag		
+1411	cc_setonclickrepeat	cc_setonclickrepeat	SecondaryFlag		
+1412	cc_setonmouserepeat	cc_setonmouserepeat	SecondaryFlag		
+1414	cc_setoninvtransmit	cc_setoninvtransmit	SecondaryFlag		
+1415	cc_setonstattransmit	cc_setonstattransmit	SecondaryFlag		
+1416	cc_setontargetenter	cc_setontargetenter	SecondaryFlag		
+1417	cc_setonscrollwheel	cc_setonscrollwheel	SecondaryFlag		
+1418	cc_setonchattransmit	cc_setonchattransmit	SecondaryFlag		
+1419	cc_setonkey	cc_setonkey	SecondaryFlag		
+1420	cc_setonfriendtransmit	cc_setonfriendtransmit	SecondaryFlag		
+1421	cc_setonclantransmit	cc_setonclantransmit	SecondaryFlag		
+1422	cc_setonmisctransmit	cc_setonmisctransmit	SecondaryFlag		
+1423	cc_setondialogabort	cc_setondialogabort	SecondaryFlag		
+1424	cc_setonsubchange	cc_setonsubchange	SecondaryFlag		
+1500	cc_getx	cc_getx	SecondaryFlag	1	0
+1501	cc_gety	cc_gety	SecondaryFlag	1	0
+1502	cc_getwidth	cc_getwidth	SecondaryFlag	1	0
+1503	cc_getheight	cc_getheight	SecondaryFlag	1	0
+1504	cc_gethide	cc_gethide	SecondaryFlag	1	0
+1505	cc_getlayer	cc_getlayer	SecondaryFlag	1	0
+1600	cc_getscrollx	cc_getscrollx	SecondaryFlag	1	0
+1601	cc_getscrolly	cc_getscrolly	SecondaryFlag	1	0
+1602	cc_gettext	cc_gettext	SecondaryFlag	0	1
+1603	cc_getscrollwidth	cc_getscrollwidth	SecondaryFlag	1	0
+1604	cc_getscrollheight	cc_getscrollheight	SecondaryFlag	1	0
+1605	cc_getmodelzoom	cc_getmodelzoom	SecondaryFlag	1	0
+1606	cc_getmodelangle_x	cc_getmodelangle_x	SecondaryFlag	1	0
+1607	cc_getmodelangle_z	cc_getmodelangle_z	SecondaryFlag	1	0
+1608	cc_getmodelangle_y	cc_getmodelangle_y	SecondaryFlag	1	0
+1700	cc_getinvobject	cc_getinvobject	SecondaryFlag	1	0
+1701	cc_getinvcount	cc_getinvcount	SecondaryFlag	1	0
+1702	cc_getid	cc_getid	SecondaryFlag	1	0
+1800	cc_gettargetmask	cc_gettargetmask	SecondaryFlag	1	0
+1801	cc_getop	cc_getop	SecondaryFlag	-1	1
+1802	cc_getopbase	cc_getopbase	SecondaryFlag	0	1
+2000	if_setposition	if_setposition	SecondaryFlag	-3	0
+2001	if_setsize	if_setsize	SecondaryFlag	-3	0
+2003	if_sethide	if_sethide	SecondaryFlag	-2	0
+2100	if_setscrollpos	if_setscrollpos	SecondaryFlag	-3	0
+2101	if_setcolour	if_setcolour	SecondaryFlag	-2	0
+2102	if_setfill	if_setfill	SecondaryFlag	-2	0
+2103	if_settrans	if_settrans	SecondaryFlag	-2	0
+2104	if_setlinewid	if_setlinewid	SecondaryFlag	-2	0
+2105	if_setgraphic	if_setgraphic	SecondaryFlag	-2	0
+2106	if_set2dangle	if_set2dangle	SecondaryFlag	-2	0
+2107	if_settiling	if_settiling	SecondaryFlag	-2	0
+2108	if_setmodel	if_setmodel	SecondaryFlag	-2	0
+2109	if_setmodelangle	if_setmodelangle	SecondaryFlag	-7	0
+2110	if_setmodelanim	if_setmodelanim	SecondaryFlag	-2	0
+2111	if_setmodelorthog	if_setmodelorthog	SecondaryFlag	-2	0
+2112	if_settext	if_settext	SecondaryFlag	-1	-1
+2113	if_settextfont	if_settextfont	SecondaryFlag	-2	0
+2114	if_settextalign	if_settextalign	SecondaryFlag	-4	0
+2115	if_settextshadow	if_settextshadow	SecondaryFlag	-2	0
+2116	if_setoutline	if_setoutline	SecondaryFlag	-2	0
+2117	if_setgraphicshadow	if_setgraphicshadow	SecondaryFlag	-2	0
+2118	if_setvflip	if_setvflip	SecondaryFlag	-2	0
+2119	if_sethflip	if_sethflip	SecondaryFlag	-2	0
+2120	if_setscrollsize	if_setscrollsize	SecondaryFlag	-3	0
+2200	if_setobject	if_setobject	SecondaryFlag	-3	0
+2201	if_setnpchead	if_setnpchead	SecondaryFlag	-2	0
+2202	if_setplayerhead_self	if_setplayerhead_self	SecondaryFlag	-1	0
+2300	if_setop	if_setop	SecondaryFlag	-2	-1
+2301	if_setdraggable	if_setdraggable	SecondaryFlag	-3	0
+2302	if_setdraggablebehavior	if_setdraggablebehavior	SecondaryFlag	-2	0
+2303	if_setdragdeadzone	if_setdragdeadzone	SecondaryFlag	-2	0
+2304	if_setdragdeadtime	if_setdragdeadtime	SecondaryFlag	-2	0
+2305	if_setopbase	if_setopbase	SecondaryFlag	-1	-1
+2306	if_settargetverb	if_settargetverb	SecondaryFlag	-1	-1
+2307	if_clearops	if_clearops	SecondaryFlag	-1	0
+2400	if_setonclick	if_setonclick	SecondaryFlag		
+2401	if_setonhold	if_setonhold	SecondaryFlag		
+2402	if_setonrelease	if_setonrelease	SecondaryFlag		
+2403	if_setonmouseover	if_setonmouseover	SecondaryFlag		
+2404	if_setonmouseleave	if_setonmouseleave	SecondaryFlag		
+2405	if_setondrag	if_setondrag	SecondaryFlag		
+2406	if_setontargetleave	if_setontargetleave	SecondaryFlag		
+2407	if_setonvartransmit	if_setonvartransmit	SecondaryFlag		
+2408	if_setontimer	if_setontimer	SecondaryFlag		
+2409	if_setonop	if_setonop	SecondaryFlag		
+2410	if_setondragcomplete	if_setondragcomplete	SecondaryFlag		
+2411	if_setonclickrepeat	if_setonclickrepeat	SecondaryFlag		
+2412	if_setonmouserepeat	if_setonmouserepeat	SecondaryFlag		
+2414	if_setoninvtransmit	if_setoninvtransmit	SecondaryFlag		
+2415	if_setonstattransmit	if_setonstattransmit	SecondaryFlag		
+2416	if_setontargetenter	if_setontargetenter	SecondaryFlag		
+2417	if_setonscrollwheel	if_setonscrollwheel	SecondaryFlag		
+2418	if_setonchattransmit	if_setonchattransmit	SecondaryFlag		
+2419	if_setonkey	if_setonkey	SecondaryFlag		
+2420	if_setonfriendtransmit	if_setonfriendtransmit	SecondaryFlag		
+2421	if_setonclantransmit	if_setonclantransmit	SecondaryFlag		
+2422	if_setonmisctransmit	if_setonmisctransmit	SecondaryFlag		
+2423	if_setondialogabort	if_setondialogabort	SecondaryFlag		
+2424	if_setonsubchange	if_setonsubchange	SecondaryFlag		
+2500	if_getx	if_getx	SecondaryFlag	0	0
+2501	if_gety	if_gety	SecondaryFlag	0	0
+2502	if_getwidth	if_getwidth	SecondaryFlag	0	0
+2503	if_getheight	if_getheight	SecondaryFlag	0	0
+2504	if_gethide	if_gethide	SecondaryFlag	0	0
+2505	if_getlayer	if_getlayer	SecondaryFlag	0	0
+2600	if_getscrollx	if_getscrollx	SecondaryFlag	0	0
+2601	if_getscrolly	if_getscrolly	SecondaryFlag	0	0
+2602	if_gettext	if_gettext	SecondaryFlag	-1	1
+2603	if_getscrollwidth	if_getscrollwidth	SecondaryFlag	0	0
+2604	if_getscrollheight	if_getscrollheight	SecondaryFlag	0	0
+2605	if_getmodelzoom	if_getmodelzoom	SecondaryFlag	0	0
+2606	if_getmodelangle_x	if_getmodelangle_x	SecondaryFlag	0	0
+2607	if_getmodelangle_z	if_getmodelangle_z	SecondaryFlag	0	0
+2608	if_getmodelangle_y	if_getmodelangle_y	SecondaryFlag	0	0
+2700	if_getinvobject	if_getinvobject	SecondaryFlag	0	0
+2701	if_getinvcount	if_getinvcount	SecondaryFlag	0	0
+2702	if_hassub	if_hassub	SecondaryFlag	0	0
+2800	if_gettargetmask	if_gettargetmask	SecondaryFlag	0	0
+2801	if_getop	if_getop	SecondaryFlag	-2	1
+2802	if_getopbase	if_getopbase	SecondaryFlag	-1	1
+3100	mes	mes	Filler	0	-1
+3101	anim	anim	Filler	-2	0
+3103	if_close	if_close	Filler	0	0
+3104	resume_countdialog	resume_countdialog	Filler	0	-1
+3105	resume_namedialog	resume_namedialog	Filler	0	-1
+3106	resume_stringdialog	resume_stringdialog	Filler	0	-1
+3107	opplayer	opplayer	Filler	-1	-1
+3108	if_dragpickup	if_dragpickup	Filler	-3	0
+3109	cc_dragpickup	cc_dragpickup	SecondaryFlag	-2	0
+3200	sound_synth	sound_synth	Filler	-3	0
+3201	sound_song	sound_song	Filler	-1	0
+3202	sound_jingle	sound_jingle	Filler	-2	0
+3300	clientclock	clientclock	Filler	1	0
+3301	inv_getobj	inv_getobj	Filler	-1	0
+3302	inv_getnum	inv_getnum	Filler	-1	0
+3303	inv_total	inv_total	Filler	-1	0
+3304	inv_size	inv_size	Filler	0	0
+3305	stat	stat	Filler	0	0
+3306	stat_base	stat_base	Filler	0	0
+3307	stat_xp	stat_xp	Filler	0	0
+3308	coord	coord	Filler	1	0
+3309	coordx	coordx	Filler	0	0
+3310	coordy	coordy	Filler	0	0
+3311	coordz	coordz	Filler	0	0
+3312	map_members	map_members	Filler	1	0
+3313	invother_getobj	invother_getobj	Filler	-1	0
+3314	invother_getnum	invother_getnum	Filler	-1	0
+3315	invother_total	invother_total	Filler	-1	0
+3316	staffmodlevel	staffmodlevel	Filler	1	0
+3317	reboottimer	reboottimer	Filler	1	0
+3318	map_world	map_world	Filler	1	0
+3321	runenergy_visible	runenergy_visible	Filler	1	0
+3322	runweight_visible	runweight_visible	Filler	1	0
+3323	playermod	playermod	Filler	1	0
+3400	enum_string	enum_string	Filler	-2	1
+3408	enum	enum	Filler		
+3600	friend_count	friend_count	Filler	1	0
+3601	friend_getname	friend_getname	Filler	-1	1
+3602	friend_getworld	friend_getworld	Filler	0	0
+3603	friend_getrank	friend_getrank	Filler	0	0
+3604	friend_setrank	friend_setrank	Filler	-1	-1
+3605	friend_add	friend_add	Filler	0	-1
+3606	friend_del	friend_del	Filler	0	-1
+3607	ignore_add	ignore_add	Filler	0	-1
+3608	ignore_del	ignore_del	Filler	0	-1
+3609	friend_test	friend_test	Filler	1	-1
+3611	clan_getchatdisplayname	clan_getchatdisplayname	Filler	0	1
+3612	clan_getchatcount	clan_getchatcount	Filler	1	0
+3613	clan_getchatusername	clan_getchatusername	Filler	-1	1
+3614	clan_getchatuserworld	clan_getchatuserworld	Filler	0	0
+3615	clan_getchatuserrank	clan_getchatuserrank	Filler	0	0
+3616	clan_getchatminkick	clan_getchatminkick	Filler	1	0
+3617	clan_kickuser	clan_kickuser	Filler	0	-1
+3618	clan_getchatrank	clan_getchatrank	Filler	1	0
+3619	clan_joinchat	clan_joinchat	Filler	0	-1
+3620	clan_leavechat	clan_leavechat	Filler	0	0
+3621	ignore_count	ignore_count	Filler	1	0
+3622	ignore_getname	ignore_getname	Filler	-1	1
+3623	ignore_test	ignore_test	Filler	1	-1
+3624	clan_isself	clan_isself	Filler	0	0
+3625	clan_getchatownername	clan_getchatownername	Filler	0	1
+4000	add	add	Filler	-1	0
+4001	sub	sub	Filler	-1	0
+4002	multiply	multiply	Filler	-1	0
+4003	divide	divide	Filler	-1	0
+4004	random	random	Filler	0	0
+4005	randominc	randominc	Filler	0	0
+4006	interpolate	interpolate	Filler	-4	0
+4007	addpercent	addpercent	Filler	-1	0
+4008	setbit	setbit	Filler	-1	0
+4009	clearbit	clearbit	Filler	-1	0
+4010	testbit	testbit	Filler	-1	0
+4011	modulo	modulo	Filler	-1	0
+4012	pow	pow	Filler	-1	0
+4013	invpow	invpow	Filler	-1	0
+4014	and	and	Filler	-1	0
+4015	or	or	Filler	-1	0
+4100	append_num	append_num	Filler	-1	0
+4101	append	append	Filler	0	-1
+4102	append_signnum	append_signnum	Filler	-1	0
+4103	lowercase	lowercase	Filler	0	0
+4104	fromdate	fromdate	Filler	-1	1
+4105	text_gender	text_gender	Filler	0	-1
+4106	tostring	tostring	Filler	-1	1
+4107	compare	compare	Filler	1	-2
+4108	paraheight	paraheight	Filler	-1	-1
+4109	parawidth	parawidth	Filler	-1	-1
+4110	text_switch	text_switch	Filler	-1	-1
+4111	escape	escape	Filler	0	0
+4112	append_char	append_char	Filler	-1	0
+4113	char_isprintable	char_isprintable	Filler	0	0
+4114	char_isalphanumeric	char_isalphanumeric	Filler	0	0
+4115	char_isalpha	char_isalpha	Filler	0	0
+4116	char_isnumeric	char_isnumeric	Filler	0	0
+4117	string_length	string_length	Filler	1	-1
+4118	substring	substring	Filler	-2	0
+4119	removetags	removetags	Filler	0	0
+4120	string_indexof_char	string_indexof_char	Filler	0	-1
+4200	oc_name	oc_name	Filler	-1	1
+4201	oc_op	oc_op	Filler	-2	1
+4202	oc_iop	oc_iop	Filler	-2	1
+4203	oc_cost	oc_cost	Filler	0	0
+4204	oc_stackable	oc_stackable	Filler	0	0
+4205	oc_cert	oc_cert	Filler	0	0
+4206	oc_uncert	oc_uncert	Filler	0	0
+4207	oc_members	oc_members	Filler	0	0
+5000	chat_getfilter_public	chat_getfilter_public	Filler	1	0
+5001	chat_setfilter	chat_setfilter	Filler	-3	0
+5002	chat_sendabusereport	chat_sendabusereport	Filler	-2	-1
+5003	chat_gethistory_bytypeandline	chat_gethistory_bytypeandline	Filler	-1	1
+5004	chat_gethistory_byuid	chat_gethistory_byuid	Filler	0	0
+5005	chat_getfilter_private	chat_getfilter_private	Filler	1	0
+5008	chat_sendpublic	chat_sendpublic	Filler	0	-1
+5009	chat_sendprivate	chat_sendprivate	Filler	0	-2
+5010	chat_sendclan	chat_sendclan	Filler	-1	1
+5011	chat_getscreenname	chat_getscreenname	Filler	-1	1
+5015	chat_playername	chat_playername	Filler	0	1
+5016	chat_getfilter_trade	chat_getfilter_trade	Filler	1	0
+5017	chat_gethistorylength	chat_gethistorylength	Filler	1	0

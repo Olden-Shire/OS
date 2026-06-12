@@ -689,14 +689,34 @@ pub fn get(component_id: i32) -> Option<IfType> {
     get_sub(group, sub)
 }
 
-// @ObfuscatedName("eg.s(IIB)Leg;") — IfType.get(group, sub). Java's
-// 2-arg overload; saves the `parent<<16 | child` packing at call sites
-// that already know the pair.
+// Raw `list[group][file_index]` accessor — used by `get()` after it has
+// unpacked a packed component id. NOT Java's 2-arg get overload (that is
+// `get2` below); callers that have a packed parent id + cc-sub must use
+// `get2`, not this.
 pub fn get_sub(group: i32, sub: i32) -> Option<IfType> {
     let s = STORE.lock().unwrap();
     s.list.get(group as usize)
         .and_then(|o| o.as_ref())
         .and_then(|v| v.get(sub as usize))
+        .and_then(|o| o.clone())
+}
+
+// @ObfuscatedName("eg.s(IIB)Leg;") — IfType.get(arg0, arg1). Verbatim
+// port of IfType.java:454-463. `arg0` is a PACKED component id
+// (group<<16 | child); `arg1` is a cc-subcomponent index, or -1 to mean
+// "the parent component itself". This is what the menu-op dispatch
+// (if_button_x), target-mode entry, resume-pause, and cc_find all use —
+// they pass `com.parentId` (packed) + `com.subId`. Calling the raw
+// `get_sub` with a packed id indexes list[packed][..] out of bounds and
+// silently returns None, which is why interface ops did nothing.
+pub fn get2(arg0: i32, arg1: i32) -> Option<IfType> {
+    let base = get(arg0);
+    if arg1 == -1 {
+        return base;
+    }
+    let base = base?;
+    base.subcomponents
+        .get(arg1 as usize)
         .and_then(|o| o.clone())
 }
 
@@ -938,7 +958,19 @@ impl IfType {
             None => {
                 let mut lit = match model_type {
                     1 => {
-                        // basic — straight model-archive load.
+                        // basic — straight model-archive load. Java
+                        // getTempModel does `ModelUnlit.load(models, id, 0)`,
+                        // i.e. `models.getFile(id, 0)` (ModelUnlit.java:166)
+                        // DIRECTLY — getFile self-triggers the group download
+                        // and returns null until it lands; the per-frame redraw
+                        // retries. The previous `request_download` gate here was
+                        // WRONG: request_download returns false (without queuing
+                        // the download) when `unpacked[id]` is None, so the
+                        // fetch_file that WOULD trigger the download was skipped
+                        // and the model never loaded — exactly why interface 23's
+                        // message-of-the-week models never rendered. fetch_file
+                        // (like getFile / the obj-model path) queues the download
+                        // itself, so call it directly.
                         let bytes = {
                             let slot = MODELS_SLOT.load(Ordering::Relaxed);
                             if slot < 0 { return None; }

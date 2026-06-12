@@ -93,22 +93,43 @@ const MODELS_SLOT: i32 = 7;
 // values into a Mutex so the renderer can read them without a Client
 // borrow.
 pub struct Camera {
-    pub yaw: i32,    // mirrors orbitCameraYaw, 0..2047
+    pub yaw: i32,    // mirrors orbitCameraYaw, 0..2047 (minimap reads this)
     pub pitch: i32,  // mirrors orbitCameraPitch, 128..383
     // Camera-to-player orbit radius. Java's mouse-wheel zoom adjusts
     // the camera distance (cameraDistance) rather than the focal
     // length. Default 1100 puts the camera at OSRS's standard
     // top-down angle.
     pub distance: i32,
+    // The frame camera Java's renderAll consumes (Client.cameraX/Y/Z +
+    // cameraPitch/cameraYaw) — produced per frame by
+    // dispatch_orbit_camera/cam_follow from the EASED orbit centre
+    // (followCamera's /16 easing), or by cinema_camera. draw_viewport
+    // renders from these; deriving its own orbit from the snapped
+    // player tile made the camera jump a full tile per step.
+    pub cam_x: i32,
+    pub cam_y: i32,
+    pub cam_z: i32,
+    pub cam_pitch: i32,
+    pub cam_yaw: i32,
 }
 impl Camera {
     pub const fn new() -> Self {
-        Self { yaw: 0, pitch: 256, distance: 1100 }
+        Self {
+            yaw: 0, pitch: 256, distance: 1100,
+            cam_x: -1, cam_y: 0, cam_z: 0, cam_pitch: 256, cam_yaw: 0,
+        }
     }
     pub fn update(&mut self, yaw: i32, pitch: i32, distance: i32) {
         self.yaw = yaw;
         self.pitch = pitch;
         self.distance = distance;
+    }
+    pub fn update_world(&mut self, x: i32, y: i32, z: i32, pitch: i32, yaw: i32) {
+        self.cam_x = x;
+        self.cam_y = y;
+        self.cam_z = z;
+        self.cam_pitch = pitch;
+        self.cam_yaw = yaw;
     }
 }
 
@@ -769,7 +790,11 @@ fn scene_assets_ready() -> bool {
 // Build the World scene graph from the decoded map state. Mirrors
 // Java Client loadingStep 20 (resetVisCalc with the per-pitch camera
 // height table, Client.java:1692-1700) + ClientBuild.finishBuild.
-fn ensure_world_built() {
+// `collision` is the Client's CollisionMap set — Java's finishBuild
+// registers walls/locs/blocked tiles into Client.collision while it
+// bakes; without it tryMove has no flags and every walk click fails.
+// Called from the viewport draw branch where &mut Client is in scope.
+pub fn ensure_world_built(collision: &mut [Option<crate::dash3d::CollisionMap>; 4]) {
     let target_gen = client_build::STATE.lock().unwrap().locs.len();
     if target_gen == 0 {
         return;
@@ -797,7 +822,13 @@ fn ensure_world_built() {
         *slot = (dist * sin[pitch as usize]) >> 16;
     }
     world.reset_vis_calc(&heights, 500, 800, 512, 334);
-    client_build::finish_build(&mut world, None, false, 0);
+    // No reset here — Java resets Client.collision at the START of the
+    // map-load flow (Client.java:5169-5171, our map_build_loop), and
+    // loadGround has since cleared the 0x1000000 bit on loaded tiles;
+    // resetting now would re-block everything. finish_build only ADDS
+    // wall/loc/blocked-ground flags, which is idempotent across
+    // repeated bakes of the same generation.
+    client_build::finish_build(&mut world, Some(collision), false, 0);
     eprintln!("[scene] world built: {} locs, floor configs + textures ready", target_gen);
     // The minimap bakes from the same Ground colour fields — force its
     // 512×512 image to rebuild against the fresh world.
@@ -808,6 +839,7 @@ fn ensure_world_built() {
 }
 
 pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
+    let _t = crate::perf::scope(crate::perf::Scope::Scene);
     pix2d::set_clipping(x, y, x + w, y + h);
     pix3d::set_clipping(x, y, x + w, y + h);
     // Reset trans — previous frame's loc render may have left it
@@ -825,7 +857,10 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
         pix2d::fill_rect(x, y + row, w, 1, (r << 16) | (g << 8) | b);
     }
 
-    ensure_world_built();
+    // World construction moved to the viewport branch in
+    // interface_render (it needs &mut Client for the collision maps);
+    // by the time draw_viewport runs, the world is built or this
+    // frame renders sky only.
     let state = client_build::STATE.lock().unwrap();
     // Player tile coords — Client mirrors the local ClientPlayer x/z
     // into the packed atomic each tick. Falls back to map centre when
@@ -850,52 +885,45 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
     // bridge bit gets baked into per-tile sampling via `tile_level`
     // instead of a global level constant.
 
-    // Live camera from input — orbit yaw + pitch + distance.
+    // Frame camera — Java gameDrawMain computes Client.cameraX/Y/Z +
+    // cameraPitch/cameraYaw at draw time (dispatchOrbitCamera over the
+    // EASED orbit centre, or cinemaCamera) and renderAll consumes them
+    // directly. mainredraw publishes them into CAMERA before the
+    // chrome draw. Falls back to a static orbit around the map centre
+    // until the first dispatch lands (cam_x sentinel -1).
     let cam = CAMERA.lock().unwrap();
-    let cam_yaw = cam.yaw;
-    let cam_pitch = cam.pitch;
-    let cam_distance = cam.distance;
+    // Far-cull tracks the zoom: Java's 3500 model cull (ModelLit.java:
+    // 927) assumes its fixed `pitch * 3 + 600` camera distance; our
+    // wheel zoom adds `distance - 1100` of extra pull-back, which adds
+    // the same amount to every model's view depth. Push the cull plane
+    // out in lockstep so anything on a rendered tile stays rendered.
+    // Extended draw renders the whole built map — park the plane past
+    // the worst-case scene diagonal so no model culls on depth at all.
+    pix3d::set_model_far_clip(if crate::debug_opts::extended_draw() {
+        32_000
+    } else {
+        cam.distance - 1100
+    });
+    let (cam_world_x, cam_world_y, cam_world_z, cam_pitch, cam_yaw) =
+        if cam.cam_x != -1 {
+            (cam.cam_x, cam.cam_y, cam.cam_z, cam.cam_pitch, cam.cam_yaw)
+        } else {
+            // Pre-login/pre-dispatch fallback: orbit the map centre.
+            let pivot_x = lp_x * TILE_UNIT + 64;
+            let pivot_z = lp_z * TILE_UNIT + 64;
+            let pivot_y = state.ground_h[0][lp_x as usize][lp_z as usize];
+            let sin = crate::dash3d::pix3d::sin_table();
+            let cos = crate::dash3d::pix3d::cos_table();
+            let yaw_idx = (cam.yaw & 0x7FF) as usize;
+            let pitch_idx = (cam.pitch & 0x7FF) as usize;
+            let h_radius = (cam.distance * cos[pitch_idx]) >> 16;
+            (pivot_x + ((h_radius * sin[yaw_idx]) >> 16),
+             pivot_y - ((cam.distance * sin[pitch_idx]) >> 16),
+             pivot_z - ((h_radius * cos[yaw_idx]) >> 16),
+             cam.pitch,
+             cam.yaw)
+        };
     drop(cam);
-    let cam_zoom = FOCAL_LENGTH;
-
-    // Camera orbits around the player at `cam_distance` units. Mouse-
-    // wheel scroll adjusts the distance; focal length stays at 512 so
-    // the texture rasterizer's pixel-space arithmetic is unaffected.
-    let orbit_radius = cam_distance;
-    let sin = crate::dash3d::pix3d::sin_table();
-    let cos = crate::dash3d::pix3d::cos_table();
-    // Java yaw runs 0..2047; sin/cos tables are 2048 entries already.
-    let yaw_idx = (cam_yaw & 0x7FF) as usize;
-    let pitch_idx = (cam_pitch & 0x7FF) as usize;
-    // Camera world position — proper spherical orbit around the pivot
-    // at (player_x, player_ground_y, player_z).
-    //
-    // The XZ orbit ring shrinks with pitch (cos_pitch factor): at
-    // pitch=0 the camera is at full `radius` distance in XZ; at
-    // pitch=90° it sits directly above the pivot with zero XZ offset.
-    // Without that factor the camera traced a V instead of a sphere
-    // (XZ distance stayed constant while only Y changed with pitch).
-    //
-    // For yaw direction conventions: the projection rotation maps a
-    // point at +Z (world north) to view_x = sin(yaw) when yaw > 0,
-    // which means yaw=0 → look NORTH, yaw increasing → look CCW from
-    // above. So for the player to stay in front of camera:
-    //   yaw=0    → camera SOUTH  of pivot  (cam_z = pivot_z − r)
-    //   yaw=90°  → camera EAST   of pivot  (cam_x = pivot_x + r)
-    //   yaw=180° → camera NORTH  of pivot
-    //   yaw=270° → camera WEST   of pivot
-    let pivot_x = lp_x * TILE_UNIT + 64;
-    let pivot_z = lp_z * TILE_UNIT + 64;
-    let pivot_y = state.ground_h[0][lp_x as usize][lp_z as usize];
-    let sin_yaw = sin[yaw_idx];
-    let cos_yaw = cos[yaw_idx];
-    let sin_pitch = sin[pitch_idx];
-    let cos_pitch = cos[pitch_idx];
-    // Horizontal radius after pitch projection.
-    let h_radius = (orbit_radius * cos_pitch) >> 16;
-    let cam_world_x = pivot_x + ((h_radius * sin_yaw) >> 16);
-    let cam_world_z = pivot_z - ((h_radius * cos_yaw) >> 16);
-    let cam_world_y = pivot_y - ((orbit_radius * sin_pitch) >> 16);
     drop(state);
 
     // Arm the scene mouse pick (Java gameDrawMain 4156-4167): models
@@ -943,7 +971,6 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
         }
     }
     pix3d::set_trans(0);
-    let _ = (pivot_x, pivot_y, pivot_z);
 
     // Publish the camera this frame rendered with, bump sceneCycle,
     // and run the post-scene overlay pass (Java gameDrawMain order:
@@ -965,6 +992,12 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
 // !cinemaCam branch.
 fn roof_check(cam_x: i32, cam_z: i32, cam_pitch: i32,
               player_tx: i32, player_tz: i32, minusedlevel: i32) -> i32 {
+    // Debug toggle: hide roofs everywhere — same drop the "inside"
+    // branch applies, but unconditional (and ignoring the steep-pitch
+    // exemption).
+    if crate::debug_opts::always_hide_roofs() {
+        return minusedlevel;
+    }
     let mut top = 3;
     if cam_pitch >= 310 {
         return top;
@@ -1058,6 +1091,13 @@ pub fn push_entities(c: &mut crate::client::Client) {
     let Some(world) = cache.world.as_mut() else { return; };
     let scene_cycle = crate::overlays::SCENE_CYCLE
         .load(std::sync::atomic::Ordering::Relaxed);
+
+    if c.loop_cycle % 100 == 0 {
+        let lp = c.local_player.as_ref();
+        eprintln!("[dbg-walk] cycle={} lp_present={} lp_ready={} player_count={}",
+                  c.loop_cycle, lp.is_some(),
+                  lp.map_or(false, |p| p.ready()), c.player_count);
+    }
 
     push_players(c, world, scene_cycle, true);
     push_npcs(c, world, scene_cycle, true);
@@ -1153,7 +1193,16 @@ fn push_players(c: &mut crate::client::Client,
             p.y = y;
             p.get_temp_model(loop_cycle)
         };
-        let Some(model) = model else { continue; };
+        let Some(model) = model else {
+            if local && loop_cycle % 100 == 0 {
+                eprintln!("[dbg-walk] local player get_temp_model = None");
+            }
+            continue;
+        };
+        if local && loop_cycle % 100 == 0 {
+            eprintln!("[dbg-walk] local player model: faces={} y={} tile=({},{})",
+                      model.num_faces, y, tx, tz);
+        }
 
         let source = ModelSource::lit(std::sync::Arc::new(model));
         if loc_window {

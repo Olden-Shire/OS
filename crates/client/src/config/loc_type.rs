@@ -200,14 +200,26 @@ impl LocType {
                 self.op[idx] = if s.eq_ignore_ascii_case("hidden") { None } else { Some(s) };
             }
             40 => {
+                // INTERLEAVED on the wire: (src, dst) per pair — reading
+                // all sources then all destinations scrambles multi-pair
+                // recolours (e.g. rugs / heraldic shields go black).
                 let count = p.g1() as usize;
-                self.recol_s = (0..count).map(|_| p.g2() as i16).collect();
-                self.recol_d = (0..count).map(|_| p.g2() as i16).collect();
+                self.recol_s = Vec::with_capacity(count);
+                self.recol_d = Vec::with_capacity(count);
+                for _ in 0..count {
+                    self.recol_s.push(p.g2() as i16);
+                    self.recol_d.push(p.g2() as i16);
+                }
             }
             41 => {
+                // Interleaved (src, dst) pairs, same as opcode 40.
                 let count = p.g1() as usize;
-                self.retex_s = (0..count).map(|_| p.g2() as i16).collect();
-                self.retex_d = (0..count).map(|_| p.g2() as i16).collect();
+                self.retex_s = Vec::with_capacity(count);
+                self.retex_d = Vec::with_capacity(count);
+                for _ in 0..count {
+                    self.retex_s.push(p.g2() as i16);
+                    self.retex_d.push(p.g2() as i16);
+                }
             }
             60 => { self.mapfunction = p.g2(); }
             62 => { self.mirror = true; }

@@ -1100,10 +1100,15 @@ impl World {
         self.gx = eye_x / 128;
         self.gz = eye_z / 128;
         self.max_level = top_level;
-        self.min_x = (self.gx - 25).max(0);
-        self.min_z = (self.gz - 25).max(0);
-        self.max_x = (self.gx + 25).min(self.max_tile_x);
-        self.max_z = (self.gz + 25).min(self.max_tile_z);
+        // Java draws a fixed 25-tile radius around the camera tile; the
+        // "extended draw" debug toggle widens it to the whole built map
+        // and skips the visibility-matrix gate (no tile culling).
+        let extended = crate::debug_opts::extended_draw();
+        let radius = if extended { 104 } else { 25 };
+        self.min_x = (self.gx - radius).max(0);
+        self.min_z = (self.gz - radius).max(0);
+        self.max_x = (self.gx + radius).min(self.max_tile_x);
+        self.max_z = (self.gz + radius).min(self.max_tile_z);
         self.calc_occlude();
         self.fill_left = 0;
 
@@ -1111,7 +1116,7 @@ impl World {
         for level in self.min_level..self.max_tile_level {
             for x in self.min_x..self.max_x {
                 for z in self.min_z..self.max_z {
-                    let visible = {
+                    let visible = extended || {
                         let dirty = self.vis_dirty;
                         let vis = if self.vis_backing.is_empty() {
                             true
@@ -1140,13 +1145,13 @@ impl World {
         for pass in 0..2 {
             let front_first = pass == 0;
             for level in self.min_level..self.max_tile_level {
-                for off_x in -25..=0i32 {
+                for off_x in -radius..=0i32 {
                     let far_x = self.gx + off_x;
                     let near_x = self.gx - off_x;
                     if far_x < self.min_x && near_x >= self.max_x {
                         continue;
                     }
-                    for off_z in -25..=0i32 {
+                    for off_z in -radius..=0i32 {
                         let far_z = self.gz + off_z;
                         let near_z = self.gz - off_z;
                         let mut tiles: [(i32, i32); 4] = [(-1, -1); 4];

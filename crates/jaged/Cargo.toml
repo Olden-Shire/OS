@@ -13,5 +13,9 @@ path = "src/main.rs"
 [dependencies]
 cache.workspace = true
 io.workspace = true
+pix.workspace = true
+synth.workspace = true
 eframe = { version = "0.31", default-features = false, features = ["default_fonts", "wgpu", "wayland", "x11"] }
 egui = "0.31"
+egui_extras = { version = "0.31", features = ["image"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }

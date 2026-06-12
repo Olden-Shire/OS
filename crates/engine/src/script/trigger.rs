@@ -59,6 +59,9 @@ pub const OPPLAYER4: Trigger = 97;
 pub const OPPLAYER5: Trigger = 98;
 
 pub const QUEUE: Trigger = 116;
+/// Npc AI queues 1..20 (Engine-TS `AI_QUEUE1`..): NPC_QUEUE fires
+/// `AI_QUEUE1 + queueId - 1`.
+pub const AI_QUEUE1: Trigger = 117;
 pub const SOFTTIMER: Trigger = 137;
 pub const TIMER: Trigger = 138;
 pub const AI_TIMER: Trigger = 139;

@@ -18,6 +18,10 @@ use io::xtea;
 use crate::content::extensions;
 use crate::content::manifest::{ArchiveManifest, GroupMeta, MasterManifest};
 use crate::content::pack_file;
+use crate::cs2_asm::{self, NameMaps};
+use crate::cs2_compile;
+use crate::cs2_sig::ScriptSig;
+use crate::cs2_source;
 use crate::data_file::{IDX_ENTRY_SIZE, SECTOR_HEADER, SECTOR_PAYLOAD, SECTOR_SIZE};
 use crate::{ARCHIVE_COUNT, ARCHIVE_NAMES, CONFIG_ARCHIVE, MASTER_ARCHIVE};
 
@@ -41,6 +45,23 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
     let pack_dir = src.join("pack");
     let packs = load_all_pack_files(&pack_dir)?;
 
+    // Name tables for symbolic clientscript operands — the exact inverse of the maps the
+    // unpack side rendered with, so `gosub login`/`push_varp world_var` resolve back to ids.
+    let mut names = NameMaps::new();
+    if let Some(m) = packs.get("script") {
+        names.set_scripts(m);
+    }
+    if let Some(m) = packs.get("varp") {
+        names.set_varps(m);
+    }
+    if let Some(m) = packs.get("varbit") {
+        names.set_varbits(m);
+    }
+
+    // Cross-script signature table for structured `.cs2` sources — every header is
+    // scanned before any body compiles, so gosub callees resolve regardless of order.
+    let cs2_sigs = scan_cs2_signatures(src, &names)?;
+
     for archive in 0..ARCHIVE_COUNT {
         let archive_dir = src.join(ARCHIVE_NAMES[archive as usize]);
         let manifest: ArchiveManifest = read_manifest(&archive_dir.join("_meta.json"))?;
@@ -52,6 +73,8 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
                 /* with_trailer = */ true,
                 archive,
                 &packs,
+                &names,
+                &cs2_sigs,
             )?;
             let first_sector = writer.write_group(archive, group.id, &group_bytes)?;
             idx.insert(group.id, (group_bytes.len() as u32, first_sector));
@@ -72,6 +95,8 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
             /* with_trailer = */ false,
             MASTER_ARCHIVE,
             &packs,
+            &names,
+            &cs2_sigs,
         )?;
         let first_sector = writer.write_group(MASTER_ARCHIVE, entry.id, &group_bytes)?;
         master_idx.insert(entry.id, (group_bytes.len() as u32, first_sector));
@@ -85,14 +110,17 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
 /// Build one group's full on-the-wire bytes. `with_trailer` controls whether the 2-byte
 /// version trailer is appended after the payload (true for game-archive groups, false for
 /// master-archive entries). `packs` carries the loaded .pack files for filename overrides.
+#[allow(clippy::too_many_arguments)]
 fn build_group(
     archive_dir: &Path,
     meta: &GroupMeta,
     with_trailer: bool,
     archive: u8,
     packs: &PackFiles,
+    names: &NameMaps,
+    cs2_sigs: &BTreeMap<u32, ScriptSig>,
 ) -> std::io::Result<Vec<u8>> {
-    let payload = read_group_payload(archive_dir, meta, archive, packs)?;
+    let payload = read_group_payload(archive_dir, meta, archive, packs, names, cs2_sigs)?;
     let compressed = match meta.ctype {
         0 => payload.clone(),
         1 => io::bzip2::compress(&payload),
@@ -131,6 +159,8 @@ fn read_group_payload(
     meta: &GroupMeta,
     archive: u8,
     packs: &PackFiles,
+    names: &NameMaps,
+    cs2_sigs: &BTreeMap<u32, ScriptSig>,
 ) -> std::io::Result<Vec<u8>> {
     if let Some(file_ids) = &meta.file_ids {
         // Multi-file group.
@@ -176,13 +206,70 @@ fn read_group_payload(
         };
         let bytes = fs::read(&dat)
             .map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))?;
-        // Reverse the unpack-side codec: MIDI files on disk need re-encoding to Jagex.
-        if extensions::is_midi_archive(archive) {
+        // Reverse the unpack-side codec. A `.cs2` file is structured clientscript
+        // source (parse → compile → encode); a `.cs2asm` is the faithful assembly
+        // fallback (assemble → encode); the decode-failure fallback stays `.dat` and
+        // falls through as raw bytes. MIDI files need re-encoding to Jagex.
+        let ext = std::path::Path::new(&meta.path)
+            .extension()
+            .and_then(|e| e.to_str())
+            .unwrap_or("");
+        if ext.eq_ignore_ascii_case("cs2") {
+            let text = String::from_utf8(bytes).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{dat:?}: not UTF-8: {e}"))
+            })?;
+            let ir = cs2_source::parse(&text, names, cs2_sigs).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{dat:?}: {e}"))
+            })?;
+            let script = cs2_compile::compile(&ir).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{dat:?}: {e}"))
+            })?;
+            Ok(script.encode())
+        } else if ext.eq_ignore_ascii_case("cs2asm") {
+            let text = String::from_utf8(bytes).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{dat:?}: not UTF-8: {e}"))
+            })?;
+            let script = cs2_asm::assemble(&text, names).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{dat:?}: {e}"))
+            })?;
+            Ok(script.encode())
+        } else if extensions::is_midi_archive(archive) {
             Ok(io::midi::encode(&bytes))
         } else {
             Ok(bytes)
         }
     }
+}
+
+/// Scan every structured `.cs2` source in the clientscript archives and collect the
+/// id → signature table needed to compile gosub call sites. `.cs2asm` fallbacks don't
+/// contribute (their callers, if any, would themselves be `.cs2asm` — the unpack side
+/// only emits structured source when the whole verification passed against this same
+/// table). Public so external tools (the IntelliJ plugin's preview CLI) can compile a
+/// single source file against the same table.
+pub fn scan_cs2_signatures(src: &Path, names: &NameMaps) -> std::io::Result<BTreeMap<u32, ScriptSig>> {
+    let mut sigs = BTreeMap::new();
+    for archive in 0..ARCHIVE_COUNT {
+        if !extensions::is_clientscript_archive(archive) {
+            continue;
+        }
+        let archive_dir = src.join(ARCHIVE_NAMES[archive as usize]);
+        if !archive_dir.exists() {
+            continue;
+        }
+        for entry in fs::read_dir(&archive_dir)? {
+            let path = entry?.path();
+            if !path.extension().is_some_and(|e| e.eq_ignore_ascii_case("cs2")) {
+                continue;
+            }
+            let text = fs::read_to_string(&path)?;
+            let (id, sig) = cs2_source::parse_signature(&text, names).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{path:?}: {e}"))
+            })?;
+            sigs.insert(id, sig);
+        }
+    }
+    Ok(sigs)
 }
 
 /// Map of pack-file stem (e.g. "model") → its loaded id→name table.

@@ -189,32 +189,81 @@ impl PixFont {
             var6[var8] = src[var3] as i32 & 0xFF;
             var3 += 1;
         }
-        // Kerning tables — Java builds a 65536-byte pair table from
-        // delta-encoded byte streams. We compute the deltas but skip the
-        // expensive kernPair calls; without them the title-screen text
-        // still spaces correctly (kerning just makes pairs like AV/To
-        // sit a pixel tighter).
-        for i in 0..256 {
-            let mut acc: i8 = 0;
-            for _ in 0..var5[i].max(0) as usize {
-                if var3 < src.len() {
-                    acc = acc.wrapping_add(src[var3] as i8);
-                    var3 += 1;
-                }
+        // Delta-decoded left/right glyph edge profiles (Java var9/var13),
+        // then the 65536-entry kerning pair table via kernPair.
+        let mut var9: Vec<Vec<i8>> = Vec::with_capacity(256);
+        for var10 in 0..256 {
+            let mut profile = vec![0i8; var5[var10].max(0) as usize];
+            let mut var11: i8 = 0;
+            for slot in profile.iter_mut() {
+                var11 = var11.wrapping_add(src[var3] as i8);
+                var3 += 1;
+                *slot = var11;
             }
-            let _ = acc;
+            var9.push(profile);
         }
-        for i in 0..256 {
-            let mut acc: i8 = 0;
-            for _ in 0..var5[i].max(0) as usize {
-                if var3 < src.len() {
-                    acc = acc.wrapping_add(src[var3] as i8);
-                    var3 += 1;
+        let mut var13: Vec<Vec<i8>> = Vec::with_capacity(256);
+        for var14 in 0..256 {
+            let mut profile = vec![0i8; var5[var14].max(0) as usize];
+            let mut var15: i8 = 0;
+            for slot in profile.iter_mut() {
+                var15 = var15.wrapping_add(src[var3] as i8);
+                var3 += 1;
+                *slot = var15;
+            }
+            var13.push(profile);
+        }
+        self.kerning_pairs = vec![0i8; 65536];
+        for var17 in 0..256 {
+            if var17 != 32 && var17 != 160 {
+                for var18 in 0..256 {
+                    if var18 != 32 && var18 != 160 {
+                        self.kerning_pairs[(var17 << 8) + var18] =
+                            Self::kern_pair(&var9, &var13, &var6, &self.char_advance, &var5, var17, var18) as i8;
+                    }
                 }
             }
-            let _ = acc;
         }
         self.ascent = var5[32] + var6[32];
+    }
+
+    // @ObfuscatedName("fs.bn([[B[[B[I[I[III)I") — PixFont.kernPair.
+    // arg0 = left-edge profiles, arg1 = right-edge profiles, arg2 = the
+    // per-char profile y-offsets (var6), arg3 = charAdvance, arg4 = the
+    // per-char profile lengths (var5).
+    fn kern_pair(
+        arg0: &[Vec<i8>], arg1: &[Vec<i8>], arg2: &[i32],
+        arg3: &[i32], arg4: &[i32], arg5: usize, arg6: usize,
+    ) -> i32 {
+        let var7 = arg2[arg5];
+        let var8 = arg4[arg5] + var7;
+        let var9 = arg2[arg6];
+        let var10 = arg4[arg6] + var9;
+        let mut var11 = var7;
+        if var9 > var7 {
+            var11 = var9;
+        }
+        let mut var12 = var8;
+        if var10 < var8 {
+            var12 = var10;
+        }
+        let mut var13 = arg3[arg5];
+        if arg3[arg6] < var13 {
+            var13 = arg3[arg6];
+        }
+        let var14 = &arg1[arg5];
+        let var15 = &arg0[arg6];
+        let mut var16 = (var11 - var7) as usize;
+        let mut var17 = (var11 - var9) as usize;
+        for _ in var11..var12 {
+            let var19 = var14[var16] as i32 + var15[var17] as i32;
+            var16 += 1;
+            var17 += 1;
+            if var19 < var13 {
+                var13 = var19;
+            }
+        }
+        -var13
     }
 
     // @ObfuscatedName("fs.be(I)I") — PixFont.charWid

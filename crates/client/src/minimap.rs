@@ -479,6 +479,7 @@ pub fn update(c: &mut Client) {
 // Verbatim port of Client.java:11918-12032. (x, y) is the minimap
 // component's top-left, exactly Java's arg0/arg1.
 pub fn draw(x: i32, y: i32) {
+    let _t = crate::perf::scope(crate::perf::Scope::Minimap);
     {
         let mut mm = MINIMAP.lock().unwrap();
         mm.last_draw_x = x;
