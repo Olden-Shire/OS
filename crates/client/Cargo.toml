@@ -16,6 +16,9 @@ path = "src/main.rs"
 
 [dependencies]
 winit = "0.30"
+# imgui-sys compiles dear imgui (C++) — for the wasm32 target this needs
+# clang (cc env: CXX_wasm32_unknown_unknown); see crates/client/web/build.ps1.
+imgui = "0.12"
 ab_glyph = "0.2"
 crc32fast = "1.4"
 flate2 = "1.0"
@@ -27,16 +30,13 @@ byteorder = "1.5"
 glow = "0.16"
 
 # Native-only: GL context via glutin, CPU present via softbuffer, audio via
-# cpal, perf overlay via imgui (imgui-sys is C++ and needs clang for wasm;
-# the overlay is desktop dev tooling, so the browser build stubs it out).
-# The wasm target gets WebGL2 from the canvas, no soft path, and (for now)
-# no audio device.
+# cpal. The wasm target gets WebGL2 from the canvas, no soft path, and (for
+# now) no audio device.
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 softbuffer = "0.4"
 cpal = "0.15"
 glutin = "0.32"
 glutin-winit = "0.5"
-imgui = "0.12"
 
 # Web: WebSocket transport, fetch, canvas/WebGL2 context, monotonic time.
 [target.'cfg(target_arch = "wasm32")'.dependencies]

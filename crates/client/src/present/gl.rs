@@ -228,7 +228,6 @@ impl GlPresent {
         }
     }
 
-    #[cfg(not(target_arch = "wasm32"))]
     unsafe fn draw_imgui(&self, draw_data: &imgui::DrawData, win_w: u32, win_h: u32) {
         let Some(font_tex) = self.font_tex else { return };
         let gl = &self.gl;
@@ -381,12 +380,9 @@ impl super::Present for GlPresent {
             gl.draw_arrays(glow::TRIANGLE_STRIP, 0, 4);
         }
 
-        #[cfg(not(target_arch = "wasm32"))]
         overlay.frame_with(win_w, win_h, mouse, buttons, |draw_data, _atlas| unsafe {
             self.draw_imgui(draw_data, win_w, win_h);
         });
-        #[cfg(target_arch = "wasm32")]
-        let _ = (overlay, mouse, buttons);
 
         // The browser presents the canvas after the rAF callback; only
         // native double-buffering needs an explicit flip.

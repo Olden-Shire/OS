@@ -43,25 +43,7 @@ mod game_canvas;
 mod game_shell;
 mod graphics;
 mod host;
-#[cfg(not(target_arch = "wasm32"))]
 mod imgui_overlay;
-// imgui-sys is C++ and needs a wasm-capable clang; the perf overlay is
-// desktop dev tooling, so the browser build gets an inert stand-in with
-// the same surface the present backends touch.
-#[cfg(target_arch = "wasm32")]
-mod imgui_overlay {
-    pub struct PerfOverlay {
-        pub want_mouse: bool,
-    }
-    impl PerfOverlay {
-        pub fn new(_scale_factor: f32) -> Self {
-            Self { want_mouse: false }
-        }
-        pub fn build_rgba_font_atlas(&mut self) -> (Vec<u8>, u32, u32) {
-            (Vec::new(), 0, 0)
-        }
-    }
-}
 mod input;
 mod interface_loop;
 mod interface_render;
@@ -93,6 +75,7 @@ mod string_constants;
 mod text;
 mod title_screen;
 mod util;
+mod wasm_libc;
 mod wordpack;
 mod world_entry;
 
@@ -355,19 +338,33 @@ impl ApplicationHandler for App {
     }
 
     fn about_to_wait(&mut self, event_loop: &ActiveEventLoop) {
-        // GameShell.run — `while (killtime == 0L || ... < killtime) { for each update mainloopwrapper(); mainredrawwrapper(); }`
+        // GameShell.run — `while (...) { for each update mainloopwrapper(); mainredrawwrapper(); }`
+        // Java runs MULTIPLE logic updates per cycle when the timer slipped,
+        // keeping the long-run cadence at exactly 50Hz. That catch-up
+        // matters especially on web, where setTimeout fires at-or-after the
+        // deadline and redraws snap to the rAF grid — rescheduling from the
+        // late wake time would leak ~5ms per frame (50 → 40 fps).
         let now = Instant::now();
         if now >= self.next_tick {
-            // @ObfuscatedName("dj.i(I)V") mainloopwrapper -> mainloop
-            {
-                let _t = perf::scope(perf::Scope::Logic);
-                self.client.mainloop();
+            let mut updates = 0;
+            while now >= self.next_tick && updates < 5 {
+                // @ObfuscatedName("dj.i(I)V") mainloopwrapper -> mainloop
+                {
+                    let _t = perf::scope(perf::Scope::Logic);
+                    self.client.mainloop();
+                }
+                self.next_tick += FRAME_INTERVAL;
+                updates += 1;
+            }
+            if self.next_tick <= now {
+                // Hopelessly behind (tab in background, breakpoint) —
+                // resync rather than burst-spin to catch up.
+                self.next_tick = now + FRAME_INTERVAL;
             }
             // @ObfuscatedName("dj.s(I)V") mainredrawwrapper -> mainredraw (we trigger via RedrawRequested)
             if let Some(w) = &self.window {
                 w.request_redraw();
             }
-            self.next_tick = now + FRAME_INTERVAL;
         }
         event_loop.set_control_flow(ControlFlow::WaitUntil(self.next_tick));
     }
