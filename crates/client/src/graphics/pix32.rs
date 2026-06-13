@@ -737,23 +737,123 @@ impl Pix32 {
     }
 
     // @ObfuscatedName("fq.ct(IIII)V") — Pix32.pixelPerfectRotateScalePlotSprite
-    // (4-arg overload). Forwards to the 6-arg variant using owi/ohi for
-    // anchor and shifts the args into Java's <<3 / <<4 fixed-point.
-    //
-    // The 6-arg variant itself (~444 lines, 9 clip-direction branches)
-    // remains a TODO; this wrapper at least makes the entry point
-    // callable so future caller code can compile.
+    // (4-arg overload, Pix32.java:737-739). The sprite pivots around its
+    // centre (owi/ohi halves in <<4 fixed point) at the given destination
+    // centre; `angle` is in 1/65536ths of a turn, `zoom` 4096 = 1:1.
     pub fn pixel_perfect_rotate_scale_plot_sprite_4(
-        &self, anchor_x: i32, anchor_y: i32, theta: i32, zoom: i32,
+        &self, centre_x: i32, centre_y: i32, angle: i32, zoom: i32,
     ) {
-        // Forward to the 6-arg overload with default owi/ohi-based
-        // anchors. The 6-arg path lives in `pixel_perfect_rotate_scale_plot_sprite_6`
-        // (TODO) — until that lands, fall back to the existing
-        // scale-plot path (no rotation) so callers don't render a
-        // black box.
-        let _ = (anchor_x, anchor_y, theta, zoom);
-        // Best-effort fallback so calls land *somewhere*.
-        self.scale_plot_sprite(0, 0, self.owi.max(1), self.ohi.max(1));
+        self.pixel_perfect_rotate_scale_plot_sprite_6(
+            self.owi << 3, self.ohi << 3, centre_x << 4, centre_y << 4, angle, zoom,
+        );
+    }
+
+    // @ObfuscatedName("fq.ck(IIIIII)V") — Pix32.pixelPerfectRotateScalePlotSprite
+    // (6-arg, Pix32.java:743-1283). All the fixed-point setup — rotated
+    // corner bbox, clip clamp, 24.8 source steps, row starts — is verbatim.
+    // Java then specialises the inner walk into 9 sign-cases (cos/sin each
+    // 0/neg/pos) whose prologs compute the in-bounds pixel span
+    // analytically; the sampling itself is identical in every case, so the
+    // port collapses them into one per-pixel-bounds-checked walk that
+    // touches exactly the same texels and writes exactly the same pixels.
+    //
+    // (arg0, arg1) = pivot in sprite space <<4, (arg2, arg3) = destination
+    // pivot <<4, arg4 = angle in 1/65536ths of a turn, arg5 = zoom
+    // (4096 = 1:1). Pixels with raw value 0 are transparent.
+    pub fn pixel_perfect_rotate_scale_plot_sprite_6(
+        &self, arg0: i32, arg1: i32, arg2: i32, arg3: i32, arg4: i32, arg5: i32,
+    ) {
+        if arg5 == 0 {
+            return;
+        }
+        let mut s = pix2d::STATE.lock().unwrap();
+
+        let var7 = arg0 - (self.xof << 4);
+        let var8 = arg1 - (self.yof << 4);
+        // 9.587379924285257e-5 == 2π / 65536.
+        let var9 = (arg4 & 0xFFFF) as f64 * 9.587379924285257e-5;
+        let var11 = (var9.sin() * arg5 as f64 + 0.5).floor() as i32;
+        let var12 = (var9.cos() * arg5 as f64 + 0.5).floor() as i32;
+
+        // Rotated corner coordinates (sprite bbox in <<12 dest space).
+        let var13 = -var7 * var12 + -var8 * var11;
+        let var14 = var7 * var11 + -var8 * var12;
+        let var15 = ((self.wi << 4) - var7) * var12 + -var8 * var11;
+        let var16 = -((self.wi << 4) - var7) * var11 + -var8 * var12;
+        let var17 = ((self.hi << 4) - var8) * var11 + -var7 * var12;
+        let var18 = ((self.hi << 4) - var8) * var12 + var7 * var11;
+        let var19 = ((self.wi << 4) - var7) * var12 + ((self.hi << 4) - var8) * var11;
+        let var20 = ((self.hi << 4) - var8) * var12 + -((self.wi << 4) - var7) * var11;
+
+        let (mut var21, mut var22) = if var13 < var15 { (var13, var15) } else { (var15, var13) };
+        if var17 < var21 { var21 = var17; }
+        if var19 < var21 { var21 = var19; }
+        if var17 > var22 { var22 = var17; }
+        if var19 > var22 { var22 = var19; }
+        let (mut var23, mut var24) = if var14 < var16 { (var14, var16) } else { (var16, var14) };
+        if var18 < var23 { var23 = var18; }
+        if var20 < var23 { var23 = var20; }
+        if var18 > var24 { var24 = var18; }
+        if var20 > var24 { var24 = var20; }
+
+        let var25 = var21 >> 12;
+        let var26 = (var22 + 4095) >> 12;
+        let var27 = var23 >> 12;
+        let var28 = (var24 + 4095) >> 12;
+        let var29 = arg2 + var25;
+        let var30 = arg2 + var26;
+        let var31 = arg3 + var27;
+        let var32 = arg3 + var28;
+        let mut var33 = var29 >> 4;
+        let mut var34 = (var30 + 15) >> 4;
+        let mut var35 = var31 >> 4;
+        let mut var36 = (var32 + 15) >> 4;
+        if var33 < s.clip_min_x { var33 = s.clip_min_x; }
+        if var34 > s.clip_max_x { var34 = s.clip_max_x; }
+        if var35 < s.clip_min_y { var35 = s.clip_min_y; }
+        if var36 > s.clip_max_y { var36 = s.clip_max_y; }
+        let var37 = var33 - var34;
+        if var37 >= 0 {
+            return;
+        }
+        let var38 = var35 - var36;
+        if var38 >= 0 {
+            return;
+        }
+
+        let mut var39 = s.width * var35 + var33;
+        // 16777216.0 / zoom — inverse scale in 12.12.
+        let var40 = 16777216.0 / arg5 as f64;
+        let var42 = (var9.sin() * var40 + 0.5).floor() as i32;
+        let var43 = (var9.cos() * var40 + 0.5).floor() as i32;
+        let var44 = (var33 << 4) + 8 - arg2;
+        let var45 = (var35 << 4) + 8 - arg3;
+        let mut var46 = (var7 << 8) - ((var42 * var45) >> 4);
+        let mut var47 = (var8 << 8) + ((var43 * var45) >> 4);
+
+        let w_fp = self.wi << 12;
+        let h_fp = self.hi << 12;
+        for _row in var38..0 {
+            let mut dst = var39;
+            let mut u = ((var43 * var44) >> 4) + var46;
+            let mut v = ((var42 * var44) >> 4) + var47;
+            for _px in var37..0 {
+                if u >= 0 && v >= 0 && u < w_fp && v < h_fp {
+                    let pixel = self.data[((u >> 12) + (v >> 12) * self.wi) as usize];
+                    if pixel != 0 {
+                        if (dst as usize) < s.pixels.len() {
+                            s.pixels[dst as usize] = pixel;
+                        }
+                    }
+                }
+                dst += 1;
+                u += var43;
+                v += var42;
+            }
+            var46 -= var42;
+            var47 += var43;
+            var39 += s.width;
+        }
     }
 
     // @ObfuscatedName("fq.cz(IIIIIIII[I[I)V") — Pix32.scanlineRotatePlotSprite

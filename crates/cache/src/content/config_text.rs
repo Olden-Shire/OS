@@ -1,0 +1,522 @@
+//! Config record ↔ readable text codec.
+//!
+//! Each config type (obj, loc, npc, …) is a stream of `opcode + operands`
+//! terminated by opcode 0. This module turns that stream into a readable
+//! `key = value` text file and back, BYTE-EXACTLY, driven from a per-type
+//! opcode SCHEMA rather than the lossy typed decoders: every opcode is
+//! emitted as its own line in stream order with its raw operands, so
+//! re-encoding the lines in order reproduces the original bytes by
+//! construction.
+//!
+//! `decode` self-verifies (re-encode → compare) and returns `None` on any
+//! mismatch or unknown opcode, so the unpack pipeline falls back to
+//! `.dat` per-record and nothing is ever lost. Opcodes whose wire layout
+//! this model can't express (e.g. the `n+1` multiloc lists) are simply
+//! left out of a schema; records that use them fall back to `.dat`.
+
+use io::Packet;
+
+/// A scalar wire primitive.
+#[derive(Clone, Copy)]
+pub enum Prim {
+    /// unsigned byte (g1 / p1)
+    U8,
+    /// unsigned short (g2 / p2)
+    U16,
+    /// signed short (g2b / p2)
+    I16,
+    /// signed int (g4 / p4)
+    I32,
+    /// signed byte (g1b / p1)
+    I8,
+    /// unsigned 3-byte (g3 / p3) — colours
+    U24,
+}
+
+impl Prim {
+    fn read(self, p: &mut Packet) -> i32 {
+        match self {
+            Prim::U8 => p.g1(),
+            Prim::U16 => p.g2(),
+            Prim::I16 => i32::from(p.g2b()),
+            Prim::I32 => p.g4(),
+            Prim::I8 => i32::from(p.g1b()),
+            Prim::U24 => p.g3(),
+        }
+    }
+    fn write(self, p: &mut Packet, v: i32) {
+        match self {
+            Prim::U8 | Prim::I8 => p.p1(v),
+            Prim::U16 | Prim::I16 => p.p2(v),
+            Prim::I32 => p.p4(v),
+            Prim::U24 => p.p3(v),
+        }
+    }
+}
+
+/// One operand of an opcode, in stream order.
+#[derive(Clone, Copy)]
+pub enum Operand {
+    /// a scalar
+    Num(Prim),
+    /// length-prefixed cp1252 string (gjstr / pjstr) — must be the LAST operand
+    Str,
+    /// `count` (a scalar) then `count` rows of `cols`. `col_major` reads all
+    /// of column 0, then all of column 1, … (seq frame tables); otherwise
+    /// rows are interleaved (recolour pairs, model+shape lists).
+    Counted { count: Prim, cols: &'static [Prim], col_major: bool },
+    /// Like `Counted` row-major but reads `count + 1` rows (the loc
+    /// multiloc / npc multivar lists, whose g1 count is one less than the
+    /// element count). Single-column only.
+    CountedP1 { count: Prim, col: Prim },
+}
+
+/// A single opcode's schema: wire code, readable field name, operands.
+pub struct OpDef {
+    pub code: u8,
+    pub name: &'static str,
+    pub operands: &'static [Operand],
+}
+
+pub type Schema = &'static [OpDef];
+
+/// Decode a config record to readable text iff it re-encodes BYTE-EXACTLY
+/// (else `None` → caller keeps `.dat`). First line is a `// <kind> <id>`
+/// context comment, ignored on encode.
+pub fn decode(schema: Schema, kind: &str, id: u32, bytes: &[u8]) -> Option<String> {
+    let lines = decode_lines(schema, bytes)?;
+    let mut text = format!("// {kind} {id}\n");
+    text.push_str(&lines.join("\n"));
+    if !lines.is_empty() {
+        text.push('\n');
+    }
+    match encode(schema, &text) {
+        Some(re) if re == bytes => Some(text),
+        _ => None,
+    }
+}
+
+fn decode_lines(schema: Schema, bytes: &[u8]) -> Option<Vec<String>> {
+    let mut p = Packet::from_vec(bytes.to_vec());
+    let mut lines = Vec::new();
+    loop {
+        if p.pos as usize >= bytes.len() {
+            return None; // no terminating 0
+        }
+        let code = p.g1() as u8;
+        if code == 0 {
+            if p.pos as usize != bytes.len() {
+                return None; // trailing bytes — we'd lose data
+            }
+            return Some(lines);
+        }
+        let def = schema.iter().find(|d| d.code == code)?;
+        let mut parts: Vec<String> = Vec::new();
+        for op in def.operands {
+            match op {
+                Operand::Num(prim) => parts.push(prim.read(&mut p).to_string()),
+                Operand::Str => parts.push(escape_str(&p.gjstr())),
+                Operand::Counted { count, cols, col_major } => {
+                    let n = count.read(&mut p) as usize;
+                    let mut rows = vec![Vec::with_capacity(cols.len()); n];
+                    if *col_major {
+                        for &col in *cols {
+                            for row in rows.iter_mut() {
+                                row.push(col.read(&mut p));
+                            }
+                        }
+                    } else {
+                        for row in rows.iter_mut() {
+                            for &col in *cols {
+                                row.push(col.read(&mut p));
+                            }
+                        }
+                    }
+                    let s = rows
+                        .iter()
+                        .map(|r| r.iter().map(i32::to_string).collect::<Vec<_>>().join("/"))
+                        .collect::<Vec<_>>()
+                        .join(" ");
+                    parts.push(s);
+                }
+                Operand::CountedP1 { count, col } => {
+                    let n = count.read(&mut p) as usize + 1;
+                    let vals: Vec<String> =
+                        (0..n).map(|_| col.read(&mut p).to_string()).collect();
+                    parts.push(vals.join(" "));
+                }
+            }
+        }
+        lines.push(format!("{} = {}", def.name, parts.join(", ")));
+    }
+}
+
+/// Re-encode readable text to the exact config byte stream. Lines run in
+/// order (opcode order preserved); blank/`//` lines skipped. `None` on any
+/// unparseable line.
+pub fn encode(schema: Schema, text: &str) -> Option<Vec<u8>> {
+    let mut p = Packet::from_vec(Vec::new());
+    for raw in text.lines() {
+        let line = raw.trim();
+        if line.is_empty() || line.starts_with("//") {
+            continue;
+        }
+        let (key, val) = line.split_once('=')?;
+        let def = schema.iter().find(|d| d.name == key.trim())?;
+        p.p1(i32::from(def.code));
+        let val = val.trim();
+
+        // A trailing Str operand consumes the remainder of the line, so we
+        // split the value into (operand_count) comma fields where the last
+        // field (if Str) is whatever's left after the prior commas.
+        let has_trailing_str = matches!(def.operands.last(), Some(Operand::Str));
+        let nfields = def.operands.len();
+        let fields: Vec<&str> = split_fields(val, nfields, has_trailing_str);
+        if fields.len() != nfields && !(nfields == 0 && val.is_empty()) {
+            return None;
+        }
+
+        for (op, field) in def.operands.iter().zip(fields.iter()) {
+            match op {
+                Operand::Num(prim) => prim.write(&mut p, field.trim().parse().ok()?),
+                Operand::Str => p.pjstr(&unescape_str(field)),
+                Operand::Counted { count, cols, col_major } => {
+                    let f = field.trim();
+                    let rows: Vec<Vec<i32>> = if f.is_empty() {
+                        Vec::new()
+                    } else {
+                        f.split_whitespace()
+                            .map(|row| {
+                                row.split('/').map(|c| c.parse::<i32>()).collect::<Result<Vec<_>, _>>()
+                            })
+                            .collect::<Result<Vec<_>, _>>()
+                            .ok()?
+                    };
+                    // Every row must have exactly `cols.len()` columns.
+                    if rows.iter().any(|r| r.len() != cols.len()) {
+                        return None;
+                    }
+                    count.write(&mut p, rows.len() as i32);
+                    if *col_major {
+                        for ci in 0..cols.len() {
+                            for row in &rows {
+                                cols[ci].write(&mut p, row[ci]);
+                            }
+                        }
+                    } else {
+                        for row in &rows {
+                            for (ci, &c) in row.iter().enumerate() {
+                                cols[ci].write(&mut p, c);
+                            }
+                        }
+                    }
+                }
+                Operand::CountedP1 { count, col } => {
+                    let f = field.trim();
+                    let vals: Vec<i32> = if f.is_empty() {
+                        Vec::new()
+                    } else {
+                        f.split_whitespace()
+                            .map(|v| v.parse::<i32>())
+                            .collect::<Result<Vec<_>, _>>()
+                            .ok()?
+                    };
+                    if vals.is_empty() {
+                        return None; // n+1 ≥ 1 always
+                    }
+                    count.write(&mut p, vals.len() as i32 - 1);
+                    for v in vals {
+                        col.write(&mut p, v);
+                    }
+                }
+            }
+        }
+    }
+    p.p1(0);
+    Some(p.data)
+}
+
+/// Split `val` into `n` comma-separated fields. When `trailing_str`, the
+/// last field keeps every remaining comma (strings may contain commas).
+fn split_fields(val: &str, n: usize, trailing_str: bool) -> Vec<&str> {
+    if n == 0 {
+        return Vec::new();
+    }
+    if trailing_str && n >= 1 {
+        // split into at most n parts: the first n-1 on commas, rest verbatim.
+        let mut out: Vec<&str> = val.splitn(n, ',').collect();
+        // splitn keeps the tail intact in the final element.
+        for f in out.iter_mut().take(n - 1) {
+            *f = f.trim();
+        }
+        return out;
+    }
+    val.split(',').map(str::trim).collect()
+}
+
+fn escape_str(s: &str) -> String {
+    s.replace('\\', "\\\\").replace('\n', "\\n").replace('\r', "\\r")
+}
+
+fn unescape_str(s: &str) -> String {
+    let mut out = String::with_capacity(s.len());
+    let mut chars = s.chars();
+    while let Some(c) = chars.next() {
+        if c == '\\' {
+            match chars.next() {
+                Some('n') => out.push('\n'),
+                Some('r') => out.push('\r'),
+                Some('\\') => out.push('\\'),
+                Some(other) => {
+                    out.push('\\');
+                    out.push(other);
+                }
+                None => out.push('\\'),
+            }
+        } else {
+            out.push(c);
+        }
+    }
+    out
+}
+
+// ── schema building blocks ──────────────────────────────────────────────
+use Operand::{Counted, CountedP1, Num, Str};
+use Prim::{I16, I32, I8, U16, U24, U8};
+
+const fn n(p: Prim) -> Operand {
+    Num(p)
+}
+/// recolour / retexture: g1 count, count × (g2 src, g2 dst).
+const PAIRS: Operand = Counted { count: U8, cols: &[U16, U16], col_major: false };
+/// g1 count, count × g2 (model / head lists).
+const U16_LIST: Operand = Counted { count: U8, cols: &[U16], col_major: false };
+
+// ── obj (group 10) ──────────────────────────────────────────────────────
+pub const OBJ: Schema = &[
+    OpDef { code: 1, name: "model", operands: &[n(U16)] },
+    OpDef { code: 2, name: "name", operands: &[Str] },
+    OpDef { code: 4, name: "zoom2d", operands: &[n(U16)] },
+    OpDef { code: 5, name: "xan2d", operands: &[n(U16)] },
+    OpDef { code: 6, name: "yan2d", operands: &[n(U16)] },
+    OpDef { code: 7, name: "xof2d", operands: &[n(I16)] },
+    OpDef { code: 8, name: "yof2d", operands: &[n(I16)] },
+    OpDef { code: 11, name: "stackable", operands: &[] },
+    OpDef { code: 12, name: "cost", operands: &[n(I32)] },
+    OpDef { code: 16, name: "members", operands: &[] },
+    OpDef { code: 23, name: "manwear", operands: &[n(U16), n(U8)] },
+    OpDef { code: 24, name: "manwear2", operands: &[n(U16)] },
+    OpDef { code: 25, name: "womanwear", operands: &[n(U16), n(U8)] },
+    OpDef { code: 26, name: "womanwear2", operands: &[n(U16)] },
+    OpDef { code: 30, name: "op1", operands: &[Str] },
+    OpDef { code: 31, name: "op2", operands: &[Str] },
+    OpDef { code: 32, name: "op3", operands: &[Str] },
+    OpDef { code: 33, name: "op4", operands: &[Str] },
+    OpDef { code: 34, name: "op5", operands: &[Str] },
+    OpDef { code: 35, name: "iop1", operands: &[Str] },
+    OpDef { code: 36, name: "iop2", operands: &[Str] },
+    OpDef { code: 37, name: "iop3", operands: &[Str] },
+    OpDef { code: 38, name: "iop4", operands: &[Str] },
+    OpDef { code: 39, name: "iop5", operands: &[Str] },
+    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
+    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+    OpDef { code: 78, name: "manwear3", operands: &[n(U16)] },
+    OpDef { code: 79, name: "womanwear3", operands: &[n(U16)] },
+    OpDef { code: 90, name: "manhead", operands: &[n(U16)] },
+    OpDef { code: 91, name: "womanhead", operands: &[n(U16)] },
+    OpDef { code: 92, name: "manhead2", operands: &[n(U16)] },
+    OpDef { code: 93, name: "womanhead2", operands: &[n(U16)] },
+    OpDef { code: 95, name: "zan2d", operands: &[n(U16)] },
+    OpDef { code: 97, name: "certlink", operands: &[n(U16)] },
+    OpDef { code: 98, name: "certtemplate", operands: &[n(U16)] },
+    OpDef { code: 100, name: "count1", operands: &[n(U16), n(U16)] },
+    OpDef { code: 101, name: "count2", operands: &[n(U16), n(U16)] },
+    OpDef { code: 102, name: "count3", operands: &[n(U16), n(U16)] },
+    OpDef { code: 103, name: "count4", operands: &[n(U16), n(U16)] },
+    OpDef { code: 104, name: "count5", operands: &[n(U16), n(U16)] },
+    OpDef { code: 105, name: "count6", operands: &[n(U16), n(U16)] },
+    OpDef { code: 106, name: "count7", operands: &[n(U16), n(U16)] },
+    OpDef { code: 107, name: "count8", operands: &[n(U16), n(U16)] },
+    OpDef { code: 108, name: "count9", operands: &[n(U16), n(U16)] },
+    OpDef { code: 109, name: "count10", operands: &[n(U16), n(U16)] },
+    OpDef { code: 110, name: "resizex", operands: &[n(U16)] },
+    OpDef { code: 111, name: "resizey", operands: &[n(U16)] },
+    OpDef { code: 112, name: "resizez", operands: &[n(U16)] },
+    OpDef { code: 113, name: "ambient", operands: &[n(I8)] },
+    OpDef { code: 114, name: "contrast", operands: &[n(I8)] },
+    OpDef { code: 115, name: "team", operands: &[n(U8)] },
+];
+
+// ── loc (group 6) ─ opcodes 77/79 (multiloc/bgsound n+1 lists) omitted ──
+pub const LOC: Schema = &[
+    OpDef { code: 1, name: "models", operands: &[Counted { count: U8, cols: &[U16, U8], col_major: false }] },
+    OpDef { code: 2, name: "name", operands: &[Str] },
+    OpDef { code: 5, name: "models_only", operands: &[U16_LIST] },
+    OpDef { code: 14, name: "width", operands: &[n(U8)] },
+    OpDef { code: 15, name: "length", operands: &[n(U8)] },
+    OpDef { code: 17, name: "nonsolid", operands: &[] },
+    OpDef { code: 18, name: "nonblockrange", operands: &[] },
+    OpDef { code: 19, name: "active", operands: &[n(U8)] },
+    OpDef { code: 21, name: "hillskew", operands: &[] },
+    OpDef { code: 22, name: "sharelight", operands: &[] },
+    OpDef { code: 23, name: "occlude", operands: &[] },
+    OpDef { code: 24, name: "anim", operands: &[n(U16)] },
+    OpDef { code: 27, name: "blockwalk", operands: &[] },
+    OpDef { code: 28, name: "wallwidth", operands: &[n(U8)] },
+    OpDef { code: 29, name: "ambient", operands: &[n(I8)] },
+    OpDef { code: 30, name: "op1", operands: &[Str] },
+    OpDef { code: 31, name: "op2", operands: &[Str] },
+    OpDef { code: 32, name: "op3", operands: &[Str] },
+    OpDef { code: 33, name: "op4", operands: &[Str] },
+    OpDef { code: 34, name: "op5", operands: &[Str] },
+    OpDef { code: 39, name: "contrast", operands: &[n(I8)] },
+    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
+    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+    OpDef { code: 60, name: "mapfunction", operands: &[n(U16)] },
+    OpDef { code: 62, name: "mirror", operands: &[] },
+    OpDef { code: 64, name: "noshadow", operands: &[] },
+    OpDef { code: 65, name: "resizex", operands: &[n(U16)] },
+    OpDef { code: 66, name: "resizey", operands: &[n(U16)] },
+    OpDef { code: 67, name: "resizez", operands: &[n(U16)] },
+    OpDef { code: 68, name: "mapscene", operands: &[n(U16)] },
+    OpDef { code: 69, name: "forceapproach", operands: &[n(U8)] },
+    OpDef { code: 70, name: "offsetx", operands: &[n(I16)] },
+    OpDef { code: 71, name: "offsety", operands: &[n(I16)] },
+    OpDef { code: 72, name: "offsetz", operands: &[n(I16)] },
+    OpDef { code: 73, name: "forcedecor", operands: &[] },
+    OpDef { code: 74, name: "breakroutefinding", operands: &[] },
+    OpDef { code: 75, name: "raiseobject", operands: &[n(U8)] },
+    OpDef { code: 77, name: "multiloc", operands: &[n(U16), n(U16), CountedP1 { count: U8, col: U16 }] },
+    OpDef { code: 78, name: "bgsound", operands: &[n(U16), n(U8)] },
+    OpDef { code: 79, name: "bgsound_random", operands: &[n(U16), n(U16), n(U8), U16_LIST] },
+];
+
+// ── npc (group 9) ─ opcode 106 (multivar n+1 list) omitted ──────────────
+pub const NPC: Schema = &[
+    OpDef { code: 1, name: "models", operands: &[U16_LIST] },
+    OpDef { code: 2, name: "name", operands: &[Str] },
+    OpDef { code: 12, name: "size", operands: &[n(U8)] },
+    OpDef { code: 13, name: "readyanim", operands: &[n(U16)] },
+    OpDef { code: 14, name: "walkanim", operands: &[n(U16)] },
+    OpDef { code: 15, name: "turnleftanim", operands: &[n(U16)] },
+    OpDef { code: 16, name: "turnrightanim", operands: &[n(U16)] },
+    OpDef { code: 17, name: "walkanims", operands: &[n(U16), n(U16), n(U16), n(U16)] },
+    OpDef { code: 30, name: "op1", operands: &[Str] },
+    OpDef { code: 31, name: "op2", operands: &[Str] },
+    OpDef { code: 32, name: "op3", operands: &[Str] },
+    OpDef { code: 33, name: "op4", operands: &[Str] },
+    OpDef { code: 34, name: "op5", operands: &[Str] },
+    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
+    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+    OpDef { code: 60, name: "headmodels", operands: &[U16_LIST] },
+    OpDef { code: 93, name: "nominimap", operands: &[] },
+    OpDef { code: 95, name: "vislevel", operands: &[n(U16)] },
+    OpDef { code: 97, name: "resizeh", operands: &[n(U16)] },
+    OpDef { code: 98, name: "resizev", operands: &[n(U16)] },
+    OpDef { code: 99, name: "alwaysontop", operands: &[] },
+    OpDef { code: 100, name: "ambient", operands: &[n(I8)] },
+    OpDef { code: 101, name: "contrast", operands: &[n(I8)] },
+    OpDef { code: 102, name: "headicon", operands: &[n(U16)] },
+    OpDef { code: 103, name: "turnspeed", operands: &[n(U16)] },
+    OpDef { code: 106, name: "multivar", operands: &[n(U16), n(U16), CountedP1 { count: U8, col: U16 }] },
+    OpDef { code: 107, name: "inactive", operands: &[] },
+    OpDef { code: 109, name: "nowalksmoothing", operands: &[] },
+];
+
+// ── seq (group 12) ──────────────────────────────────────────────────────
+pub const SEQ: Schema = &[
+    OpDef { code: 1, name: "frames", operands: &[Counted { count: U16, cols: &[U16, U16, U16], col_major: true }] },
+    OpDef { code: 2, name: "loops", operands: &[n(U16)] },
+    OpDef { code: 3, name: "walkmerge", operands: &[Counted { count: U8, cols: &[U8], col_major: false }] },
+    OpDef { code: 4, name: "reachforward", operands: &[] },
+    OpDef { code: 5, name: "priority", operands: &[n(U8)] },
+    OpDef { code: 6, name: "replaceheldleft", operands: &[n(U16)] },
+    OpDef { code: 7, name: "replaceheldright", operands: &[n(U16)] },
+    OpDef { code: 8, name: "maxloops", operands: &[n(U8)] },
+    OpDef { code: 9, name: "preanim_move", operands: &[n(U8)] },
+    OpDef { code: 10, name: "postanim_move", operands: &[n(U8)] },
+    OpDef { code: 11, name: "duplicatebehaviour", operands: &[n(U8)] },
+    OpDef { code: 12, name: "iframes", operands: &[Counted { count: U8, cols: &[U16, U16], col_major: true }] },
+    OpDef { code: 13, name: "sound", operands: &[Counted { count: U8, cols: &[U24], col_major: false }] },
+];
+
+// ── flo (group 4) ───────────────────────────────────────────────────────
+pub const FLO: Schema = &[
+    OpDef { code: 1, name: "colour", operands: &[n(U24)] },
+    OpDef { code: 2, name: "texture", operands: &[n(U8)] },
+    OpDef { code: 5, name: "noocclude", operands: &[] },
+    OpDef { code: 7, name: "mapcolour", operands: &[n(U24)] },
+];
+
+// ── flu (group 1) ───────────────────────────────────────────────────────
+pub const FLU: Schema = &[OpDef { code: 1, name: "colour", operands: &[n(U24)] }];
+
+// ── idk (group 3) ───────────────────────────────────────────────────────
+pub const IDK: Schema = &[
+    OpDef { code: 1, name: "type", operands: &[n(U8)] },
+    OpDef { code: 2, name: "models", operands: &[U16_LIST] },
+    OpDef { code: 3, name: "disable", operands: &[] },
+    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
+    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+    OpDef { code: 60, name: "head1", operands: &[n(U16)] },
+    OpDef { code: 61, name: "head2", operands: &[n(U16)] },
+    OpDef { code: 62, name: "head3", operands: &[n(U16)] },
+    OpDef { code: 63, name: "head4", operands: &[n(U16)] },
+    OpDef { code: 64, name: "head5", operands: &[n(U16)] },
+    OpDef { code: 65, name: "head6", operands: &[n(U16)] },
+    OpDef { code: 66, name: "head7", operands: &[n(U16)] },
+    OpDef { code: 67, name: "head8", operands: &[n(U16)] },
+    OpDef { code: 68, name: "head9", operands: &[n(U16)] },
+    OpDef { code: 69, name: "head10", operands: &[n(U16)] },
+];
+
+// ── inv (group 5) ───────────────────────────────────────────────────────
+pub const INV: Schema = &[OpDef { code: 2, name: "size", operands: &[n(U16)] }];
+
+// ── spot (group 13) ─────────────────────────────────────────────────────
+pub const SPOT: Schema = &[
+    OpDef { code: 1, name: "model", operands: &[n(U16)] },
+    OpDef { code: 2, name: "anim", operands: &[n(U16)] },
+    OpDef { code: 4, name: "resizeh", operands: &[n(U16)] },
+    OpDef { code: 5, name: "resizev", operands: &[n(U16)] },
+    OpDef { code: 6, name: "angle", operands: &[n(U16)] },
+    OpDef { code: 7, name: "ambient", operands: &[n(U8)] },
+    OpDef { code: 8, name: "contrast", operands: &[n(U8)] },
+    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
+    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+];
+
+// ── varbit (group 14) ───────────────────────────────────────────────────
+pub const VARBIT: Schema = &[OpDef { code: 1, name: "bits", operands: &[n(U16), n(U8), n(U8)] }];
+
+// ── varp (group 16) ─────────────────────────────────────────────────────
+pub const VARP: Schema = &[OpDef { code: 5, name: "clientcode", operands: &[n(U16)] }];
+
+// ── enum (group 8) ─ op5 (string-valued map) omitted; int maps convert ──
+pub const ENUM: Schema = &[
+    OpDef { code: 1, name: "inputtype", operands: &[n(U8)] },
+    OpDef { code: 2, name: "outputtype", operands: &[n(U8)] },
+    OpDef { code: 3, name: "default_string", operands: &[Str] },
+    OpDef { code: 4, name: "default_int", operands: &[n(I32)] },
+    OpDef { code: 6, name: "intmap", operands: &[Counted { count: U16, cols: &[I32, I32], col_major: false }] },
+];
+
+/// Schema + on-disk extension for a config archive group id.
+pub fn schema_for_group(group_id: u32) -> Option<(Schema, &'static str)> {
+    use crate::config::group;
+    Some(match group_id {
+        group::OBJ => (OBJ, "obj"),
+        group::LOC => (LOC, "loc"),
+        group::NPC => (NPC, "npc"),
+        group::SEQ => (SEQ, "seq"),
+        group::FLO => (FLO, "flo"),
+        group::FLU => (FLU, "flu"),
+        group::IDK => (IDK, "idk"),
+        group::INV => (INV, "inv"),
+        group::SPOT => (SPOT, "spot"),
+        group::VARBIT => (VARBIT, "varbit"),
+        group::VARP => (VARP, "varp"),
+        group::ENUM => (ENUM, "enum"),
+        _ => return None,
+    })
+}

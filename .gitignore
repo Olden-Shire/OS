@@ -19,6 +19,7 @@ hs_err_pid*.log
 
 # Rust
 /target/
+/target_audit/
 **/*.rs.bk
 Cargo.lock.bak
 
@@ -39,6 +40,9 @@ crates/client/web/pkg/
 # Root-level dev scratch: run logs, screenshots, one-off scripts
 /*.log
 /*.png
+/*.jpg
 /*.ps1
 /sanity_stacks.txt
 /cdp_targets.json
+/devnull.txt
+/audit_progress.md

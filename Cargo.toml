@@ -34,6 +34,7 @@ db = { path = "crates/db" }
 server = { path = "crates/server" }
 synth = { path = "crates/synth" }
 pix = { path = "crates/pix" }
+client = { path = "crates/client" }
 
 [profile.release]
 lto = "thin"

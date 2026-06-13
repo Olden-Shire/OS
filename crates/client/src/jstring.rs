@@ -29,7 +29,9 @@ const CP1252_EXTENDED: [i32; 32] = [
 
 pub fn wide_to_cp1252(ch: char) -> i32 {
     let c = ch as u32;
-    if c < 0x80 || (0xA0..=0xFF).contains(&c) {
+    // Java: `arg0 > 0 && arg0 < 128` — NUL is NOT passed through; it
+    // falls to the '?' fallback like any other unmappable char.
+    if (1..0x80).contains(&c) || (0xA0..=0xFF).contains(&c) {
         return c as i32;
     }
     // Search the extended block for a matching codepoint.
@@ -448,5 +450,92 @@ mod tests {
             let h = to_userhash(name);
             assert_eq!(to_raw_username(h).as_deref(), Some(name), "raw {name}");
         }
+    }
+}
+
+// ── DisplayNameTools (@ObfuscatedName("cp")) ────────────────────────────
+// jag::oldscape::rs2lib::social::DisplayNameTools — friend/clan name
+// normalisation. Verbatim port of DisplayNameTools.java.
+
+// @ObfuscatedName("cp.l") — ALLOWED (note: the first two entries are
+// space and NBSP, then underscore/hyphen, then the accent set).
+const DISPLAY_NAME_ALLOWED: &[char] = &[
+    ' ', '\u{a0}', '_', '-', 'à', 'á', 'â', 'ä', 'ã', 'À', 'Á', 'Â', 'Ä', 'Ã',
+    'è', 'é', 'ê', 'ë', 'È', 'É', 'Ê', 'Ë', 'í', 'î', 'ï', 'Í', 'Î', 'Ï',
+    'ò', 'ó', 'ô', 'ö', 'õ', 'Ò', 'Ó', 'Ô', 'Ö', 'Õ', 'ù', 'ú', 'û', 'ü',
+    'Ù', 'Ú', 'Û', 'Ü', 'ç', 'Ç', 'ÿ', 'Ÿ', 'ñ', 'Ñ', 'ß',
+];
+
+// @ObfuscatedName("cp.m") — SYSTEM_RESERVED.
+const DISPLAY_NAME_SYSTEM_RESERVED: &[char] = &['[', ']', '#'];
+
+// @ObfuscatedName("au.r(CI)Z") — DisplayNameTools.isValidChar.
+pub fn display_name_is_valid_char(c: char) -> bool {
+    // Java Character.isISOControl == Unicode Cc == Rust is_control.
+    if c.is_control() {
+        return false;
+    }
+    if c.is_ascii_alphanumeric() {
+        return true;
+    }
+    DISPLAY_NAME_ALLOWED.contains(&c) || DISPLAY_NAME_SYSTEM_RESERVED.contains(&c)
+}
+
+// @ObfuscatedName("bh.d(Ljava/lang/CharSequence;Lda;I)Ljava/lang/String;")
+// — DisplayNameTools.toBaseDisplayName. `namespace_ordinal` is the
+// NameSpace.ordinal (3 = TRANSFORMERS gets a 20-char cap; everything
+// else, including "null", caps at 12). Returns None where Java returns
+// null (empty after trim, too long, or nothing valid survives).
+pub fn to_base_display_name(s: &str, namespace_ordinal: i32) -> Option<String> {
+    let chars: Vec<char> = s.chars().collect();
+    let is_pad = |c: char| c == '\u{a0}' || c == ' ' || c == '_' || c == '-';
+
+    let mut from = 0usize;
+    let mut to = chars.len();
+    while from < to && is_pad(chars[from]) {
+        from += 1;
+    }
+    while to > from && is_pad(chars[to - 1]) {
+        to -= 1;
+    }
+
+    let len = to - from;
+    if len < 1 {
+        return None;
+    }
+    let cap = if namespace_ordinal == 3 { 20 } else { 12 };
+    if len > cap {
+        return None;
+    }
+
+    let mut out = String::with_capacity(len);
+    for &c in &chars[from..to] {
+        if !display_name_is_valid_char(c) {
+            continue;
+        }
+        // DisplayNameTools.toBase — the per-char folding switch.
+        let folded = match c {
+            ' ' | '-' | '_' | '\u{a0}' => '_',
+            '#' | '[' | ']' => c,
+            'À' | 'Á' | 'Â' | 'Ã' | 'Ä' | 'à' | 'á' | 'â' | 'ã' | 'ä' => 'a',
+            'Ç' | 'ç' => 'c',
+            'È' | 'É' | 'Ê' | 'Ë' | 'è' | 'é' | 'ê' | 'ë' => 'e',
+            'Í' | 'Î' | 'Ï' | 'í' | 'î' | 'ï' => 'i',
+            'Ñ' | 'ñ' => 'n',
+            'Ò' | 'Ó' | 'Ô' | 'Õ' | 'Ö' | 'ò' | 'ó' | 'ô' | 'õ' | 'ö' => 'o',
+            'Ù' | 'Ú' | 'Û' | 'Ü' | 'ù' | 'ú' | 'û' | 'ü' => 'u',
+            'ß' => 'b',
+            'ÿ' | 'Ÿ' => 'y',
+            other => other.to_lowercase().next().unwrap_or(other),
+        };
+        if folded != '\0' {
+            out.push(folded);
+        }
+    }
+
+    if out.is_empty() {
+        None
+    } else {
+        Some(out)
     }
 }

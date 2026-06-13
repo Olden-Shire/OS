@@ -47,6 +47,12 @@ pub struct MidiManager {
     // @ObfuscatedName("ad.n") — the pending song waiting for fade-out
     // to complete before swap_songs flips it active.
     pub queued_pending: Option<PendingSong>,
+    // custom — one-shot wave voices riding the same output as the song
+    // (jaged's vorbis audition today; the game's play_synth / SOUND_AREA
+    // drain can feed this later). Finished voices drop after each render.
+    pub sfx: Vec<crate::sound::wave_stream::WaveStream>,
+    // Output sample rate — needed to pitch a wave for 1:1 playback.
+    pub frequency: i32,
 }
 
 pub struct PendingSong {
@@ -67,30 +73,50 @@ impl MidiManager {
             fade_out_rate: 0,
             queued_volume: 256,
             queued_pending: None,
+            sfx: Vec::new(),
+            frequency,
         }
     }
 
-    // @ObfuscatedName("ad.r(I)V") — MidiManager.updateFadeOut. Called
-    // each game tick; drops the global volume by `fade_out_rate` until
-    // it hits zero, at which point the queued song (if any) is swapped
-    // in. Java's state machine:
-    //   state 1: fading out → state 0 when vol == 0.
-    //   queued song present at vol==0 → swap_songs(queued), state = 2.
+    // custom — start a one-shot wave voice at its native rate.
+    // `volume` is Java's 0..=255 scale (WaveStream shifts it to the
+    // 16384-based fine scale internally); returns false when the wave
+    // is empty.
+    pub fn play_wave(&mut self, wave: std::sync::Arc<crate::sound::wave::Wave>, volume: i32) -> bool {
+        use crate::sound::wave_stream::WaveStream;
+        match WaveStream::new_rate_percent_full(wave, 100, volume, self.frequency) {
+            Some(ws) => {
+                self.sfx.push(ws);
+                true
+            }
+            None => false,
+        }
+    }
+
+    // custom — drop every active one-shot voice immediately.
+    pub fn stop_waves(&mut self) {
+        self.sfx.clear();
+    }
+
+    // @ObfuscatedName("by.j(I)V") — MidiManager.updateFadeOut, Java-
+    // verbatim (MidiManager.java:117-149). Called every mainloop tick.
+    // state 1: while the player is loaded and volume > 0, drop volume
+    // by fade_out_rate; once silent (or nothing playing), stop + clear
+    // patches and move to state 2 (loading) if a song is queued, else
+    // state 0 (idle). Volume is restored to queued_volume when the
+    // load completes (Java updateLoading:169).
     pub fn update_fade_out(&mut self) {
         if self.state != 1 { return; }
         let cur = self.player.global_volume;
-        if cur > 0 {
+        if cur > 0 && self.player.loaded() {
             self.player.set_global_volume((cur - self.fade_out_rate).max(0));
             return;
         }
-        // Fade complete. Hand off the queued song.
+        self.player.stop();
+        self.wave_table.clear();
+        self.patch_table.clear();
         if let Some(pending) = self.queued_pending.take() {
-            self.player.stop();
-            self.wave_table.clear();
-            self.patch_table.clear();
-            self.player.set_global_volume(self.queued_volume);
             self.pending = Some(pending);
-            self.try_advance_loading();
             self.state = 2;
         } else {
             self.state = 0;
@@ -110,10 +136,13 @@ impl MidiManager {
     // Loads a song: decodes the MIDI bytes, discovers required patches,
     // fetches each patch from the patches archive, resolves its waves
     // through WaveCache, and queues them on the player.
-    pub fn swap_songs(&mut self, _priority: i32, raw_midi: Vec<u8>, loop_song: bool) {
-        eprintln!("[audio] swap_songs: raw={} bytes", raw_midi.len());
-        // Songs archive bytes are the column-oriented Jagex MIDI format —
-        // Java's MidiFile(Packet) constructor decodes to standard MIDI.
+    // Java swapSongs(fadeRate, songs, group, file, vol, loop) only
+    // records the pending song and enters state 1 — the OLD song keeps
+    // playing and fades by fade_rate per tick (updateFadeOut); the new
+    // one loads after the fade completes. (Java defers the MIDI decode
+    // to updateLoading; we decode up front — same bytes either way.)
+    pub fn swap_songs(&mut self, fade_rate: i32, raw_midi: Vec<u8>, loop_song: bool) {
+        eprintln!("[audio] swap_songs: raw={} bytes, fade_rate={fade_rate}", raw_midi.len());
         let midi = match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
             crate::midi2::jagex_codec::decode(&raw_midi)
         })) {
@@ -123,18 +152,17 @@ impl MidiManager {
                 return;
             }
         };
-        eprintln!("[audio] swap_songs: decoded={} bytes", midi.len());
         let mut file = MidiFile::from_standard(midi.clone());
         file.discover_patches();
-        if let Some(p) = file.patches.as_ref() {
-            eprintln!("[audio] swap_songs: {} distinct patches", p.len());
+        // pendingVolume: Java callers pass the midiVolume option; our
+        // callers don't carry it, so capture the pre-fade volume once
+        // (a re-queue mid-fade keeps the original target).
+        if self.state != 1 {
+            self.queued_volume = self.player.global_volume;
         }
-        self.player.stop();
-        self.wave_table.clear();
-        self.patch_table.clear();
-        self.pending = Some(PendingSong { midi, loop_song, file });
-        // First-pass load attempt — queues missing patch downloads.
-        self.try_advance_loading();
+        self.state = 1;
+        self.fade_out_rate = fade_rate;
+        self.queued_pending = Some(PendingSong { midi, loop_song, file });
     }
 
     // Called from mainloop each tick. Polls the cache for all patches and
@@ -205,7 +233,11 @@ impl MidiManager {
             let pending = self.pending.take().unwrap();
             eprintln!("[audio] try_advance: ALL READY — starting song ({} patches, {} waves)",
                 self.patch_table.len(), self.wave_table.len());
+            // Java updateLoading:168-171 — restore the pre-fade volume
+            // and return to idle once the song actually starts.
+            self.player.set_global_volume(self.queued_volume);
             self.player.start(pending.midi, pending.loop_song);
+            self.state = 0;
         } else {
             use std::sync::atomic::{AtomicUsize, Ordering};
             static LAST_PRINT: AtomicUsize = AtomicUsize::new(0);
@@ -217,43 +249,64 @@ impl MidiManager {
         }
     }
 
-    // @ObfuscatedName("ad.stop")
+    // @ObfuscatedName("bc.m(B)V") — MidiManager.stop: halt playback
+    // now, cancel any queued/in-flight song, and let state 1 fall
+    // through to idle on the next updateFadeOut tick (player is no
+    // longer loaded, so the fade is skipped). Patches clear there.
     pub fn stop(&mut self) {
         self.player.stop();
-        self.wave_table.clear();
-        self.patch_table.clear();
+        self.state = 1;
+        self.queued_pending = None;
+        self.pending = None;
     }
 
-    pub fn set_volume(&mut self, v: i32) { self.player.set_global_volume(v); }
+    // @ObfuscatedName("i.l(II)V") — MidiManager.setVolume: applies now
+    // when idle; mid-swap it retargets the post-fade restore volume.
+    pub fn set_volume(&mut self, v: i32) {
+        if self.state == 0 {
+            self.player.set_global_volume(v);
+        } else {
+            self.queued_volume = v;
+        }
+    }
 
     pub fn render(&mut self, out: &mut [i32], n: usize) {
         for v in out.iter_mut().take(n * 2) { *v = 0; }
-        if !self.player.loaded() { return; }
-        let samples_per_unit = self.player.samples_per_tempo_unit().max(1);
-        let mut remaining = n;
-        let mut offset = 0usize;
-        while remaining > 0 {
-            let proposed_time = remaining as i64 * samples_per_unit as i64 + self.player.track_previous_time;
-            if self.player.track_current_time - proposed_time >= 0 {
-                self.player.track_previous_time = proposed_time;
-                self.player.render(&mut out[offset * 2..], remaining);
-                return;
-            }
-            let chunk = ((self.player.track_current_time - self.player.track_previous_time
-                + samples_per_unit as i64 - 1) / samples_per_unit as i64) as i32;
-            self.player.track_previous_time += samples_per_unit as i64 * chunk as i64;
-            self.player.render(&mut out[offset * 2..], chunk as usize);
-            offset += chunk as usize;
-            remaining = remaining.saturating_sub(chunk as usize);
-            let note_ons = self.player.update_midi();
-            for (ch, key, vel, patch_id) in note_ons {
-                let patch = self.patch_table.get(&patch_id).cloned();
-                let wave = self.wave_table.get(&(patch_id, key)).cloned();
-                if let (Some(p), Some(w)) = (patch, wave) {
-                    self.player.play_note_with_wave(ch, key, vel, p, w);
+        if self.player.loaded() {
+            let samples_per_unit = self.player.samples_per_tempo_unit().max(1);
+            let mut remaining = n;
+            let mut offset = 0usize;
+            while remaining > 0 {
+                let proposed_time = remaining as i64 * samples_per_unit as i64 + self.player.track_previous_time;
+                if self.player.track_current_time - proposed_time >= 0 {
+                    self.player.track_previous_time = proposed_time;
+                    self.player.render(&mut out[offset * 2..], remaining);
+                    break;
                 }
+                let chunk = ((self.player.track_current_time - self.player.track_previous_time
+                    + samples_per_unit as i64 - 1) / samples_per_unit as i64) as i32;
+                self.player.track_previous_time += samples_per_unit as i64 * chunk as i64;
+                self.player.render(&mut out[offset * 2..], chunk as usize);
+                offset += chunk as usize;
+                remaining = remaining.saturating_sub(chunk as usize);
+                let note_ons = self.player.update_midi();
+                for (ch, key, vel, patch_id) in note_ons {
+                    let patch = self.patch_table.get(&patch_id).cloned();
+                    let wave = self.wave_table.get(&(patch_id, key)).cloned();
+                    if let (Some(p), Some(w)) = (patch, wave) {
+                        self.player.play_note_with_wave(ch, key, vel, p, w);
+                    }
+                }
+                if !self.player.loaded() { break; }
             }
-            if !self.player.loaded() { break; }
+        }
+        // One-shot wave voices mix on top of (or without) the song;
+        // finished voices drop here.
+        if !self.sfx.is_empty() {
+            for ws in &mut self.sfx {
+                ws.do_mix(out, 0, n);
+            }
+            self.sfx.retain(|ws| !ws.is_finished());
         }
     }
 }

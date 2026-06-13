@@ -259,11 +259,19 @@ class CodeGenerator(
                 return
             }
             if (e.name.contains(':')) {
+                // The interface symbol table holds the full component name
+                // (e.g. `if_549:com_2` → packed (549<<16)|2), so try a direct
+                // lookup first — that's the authoritative packed id.
+                symbols.config("interface", e.name)?.let { emit(pushInt(it.id)); return }
                 val (iface, comp) = e.name.split(':', limit = 2)
                 val ifaceSym = symbols.config("interface", iface)
                 if (ifaceSym != null) {
-                    val sub = comp.toIntOrNull() ?: symbols.config("interface", comp)?.id ?: 0
-                    emit(pushInt((ifaceSym.id shl 16) or sub))
+                    // Fallback: `iface:N` or `iface:com_N` → child index N.
+                    val child = comp.toIntOrNull()
+                        ?: comp.removePrefix("com_").toIntOrNull()
+                        ?: symbols.config("interface", comp)?.id
+                        ?: 0
+                    emit(pushInt((ifaceSym.id shl 16) or child))
                     return
                 }
             }

@@ -316,7 +316,8 @@ impl IfType {
             model_zoom: 100,
             // Java IfType.java:145 — lineWidth defaults to 1.
             line_width: 1,
-            invobject: -1, invcount: -1, model_spin: 0,
+            // Java IfType.java:391 — invcount defaults to 0 (invobject -1).
+            invobject: -1, invcount: 0, model_spin: 0,
             draggable: 0,
             draggable_sub: -2,
             ..Default::default()

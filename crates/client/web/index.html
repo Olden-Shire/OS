@@ -20,8 +20,13 @@
 <body>
   <div id="game"></div>
   <script type="module">
-    import init from "./pkg/client.js";
-    init();
+    // Dev cache-bust: python http.server sends no Cache-Control, so the
+    // browser heuristically caches the module + wasm and serves STALE
+    // builds after a rebuild. Re-fetch both every load (cheap on
+    // localhost; drop the query for a real deployment + proper headers).
+    const v = Date.now();
+    const { default: init } = await import(`./pkg/client.js?v=${v}`);
+    init(`./pkg/client_bg.wasm?v=${v}`);
   </script>
 </body>
 </html>

@@ -223,6 +223,14 @@ pub fn poll(c: &mut Client) {
 
     if c.login_step == 8 {
         c.login_waiting_time = 0;
+        // Java Client.java:2198-2204 — hop countdown message uses the
+        // PRE-decrement timer: loginMes(LOGINHOP_A, LOGINHOP_B,
+        // loginHopTimer / 60 + LOGINHOP_C).
+        crate::title_screen::set_login_messages(
+            "You have only just left another world.",
+            "Your profile will be transferred in:",
+            &format!("{} seconds.", c.login_hop_timer / 60),
+        );
         c.login_hop_timer -= 1;
         if c.login_hop_timer <= 0 {
             c.login_step = 0;
@@ -232,7 +240,26 @@ pub fn poll(c: &mut Client) {
 
     if c.login_step == 9 {
         let stream = c.login_stream.as_mut().unwrap();
-        if stream.available().unwrap_or(0) < 8 { return; }
+        if stream.available().unwrap_or(0) < 8 {
+            // Java Client.java:2223-2237 — loginWaitingTime: after 2000
+            // ticks without the post-login header, swap ports and retry
+            // once, then hard-fail with loginError(-3).
+            c.login_waiting_time += 1;
+            if c.login_waiting_time > 2000 {
+                if c.login_fail_count < 1 {
+                    if c.login_game_port == c.login_port {
+                        c.login_port = c.login_js5_port;
+                    } else {
+                        c.login_port = c.login_game_port;
+                    }
+                    c.login_fail_count += 1;
+                    c.login_step = 0;
+                } else {
+                    login_error(c, -3);
+                }
+            }
+            return;
+        }
         let mut buf = [0u8; 8];
         if stream.read(&mut buf, 0, 8).is_err() {
             login_retry_or_error(c, -2);
@@ -345,7 +372,9 @@ pub fn game_tick_housekeeping(c: &mut Client) {
         // centre every frame.
         crate::client::follow_camera(c);
     }
-    crate::client::apply_cam_shake(c);
+    // Java Client.java:2651 — the TICK only advances the shake phase; the
+    // jitter itself applies at DRAW time after the camera is computed
+    // (gameDrawMain :4127, our mainredraw).
     crate::client::bump_cam_shake_cycles(c);
     crate::client::macro_camera_drift(c);
     crate::client::decay_damage_cycles(c);
@@ -1311,7 +1340,13 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                         Vec::with_capacity(count as usize);
                     for _ in 0..count {
                         let username = p.gjstr();
-                        let display_name = username.to_lowercase(); // toBaseDisplayName
+                        // Java: DisplayNameTools.toBaseDisplayName(username, ns)
+                        // — null result keeps the raw name lowercased (Java
+                        // stores the null and renders the username; our list
+                        // type wants a String, so fall back the same way the
+                        // draw path would).
+                        let display_name = crate::jstring::to_base_display_name(&username, -1)
+                            .unwrap_or_else(|| username.to_lowercase());
                         let world = p.g2();
                         let rank = p.g1b() as i32;
                         let _ = p.gjstr(); // unused world name
@@ -1349,7 +1384,8 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                 }
             } else {
                 let _ = p.gjstr(); // unused world name
-                let display_name = name.to_lowercase();
+                let display_name = crate::jstring::to_base_display_name(&name, -1)
+                    .unwrap_or_else(|| name.to_lowercase());
                 let mut insert_at: i32 = -1;
                 let mut updated = false;
                 for j in (0..c.friend_chat_list.len()).rev() {
@@ -1623,16 +1659,18 @@ fn zone_packet(c: &mut Client, opcode: i32, p: &mut crate::io::packet::Packet) {
                     c, level, tile_x, tile_z, layer, -1, shape, angle, 0, -1);
             }
         }
-        6 => { // LOC_ANIM — Java:7311-7365. Per-layer animation kick.
-                // The full per-layer (wall/decor/scene/grounddec) dispatch
-                // requires World mutation that the scene rebuild path
-                // owns. We decode all 4 fields so the cursor advances.
+        6 => { // LOC_ANIM — Java:7311-7365. Per-layer animation kick:
+                // resolve the loc on the shape's layer and play the seq
+                // (scene::loc_anim_kick mirrors the getWall/getDecor/
+                // getScene/getGd typecode reads; the render closure then
+                // advances the server seq instead of the ambient one).
             let anim_seq = p.g2_alt2();
             let slot = p.g1_alt2();
             let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
             let tile_z = (slot & 0x7) + c.zone_update_z;
             let shape_angle = p.g1_alt3();
-            let _ = (anim_seq, tile_x, tile_z, shape_angle);
+            let shape = shape_angle >> 2;
+            crate::scene::loc_anim_kick(c.minusedlevel, tile_x, tile_z, shape, anim_seq);
         }
         245 => { // LOC_MERGE — verbatim port of Client.java:7197-7268. A loc the
                  // player merges with (e.g. climbing into a coffin): the loc is
@@ -1728,31 +1766,61 @@ fn zone_packet(c: &mut Client, opcode: i32, p: &mut crate::io::packet::Packet) {
                 let world_x = tile_x * 128 + 64;
                 let world_z = tile_z * 128 + 64;
                 let avg_h = crate::client::get_av_h(world_x, world_z, c.minusedlevel) - height;
-                let _spot = crate::dash3d::map_spot_anim::MapSpotAnim::new(
+                let spot = crate::dash3d::map_spot_anim::MapSpotAnim::new(
                     spot_anim_id, c.minusedlevel, world_x, world_z,
                     avg_h, c.loop_cycle, delay,
                 );
+                // Java: spotanims.push(...) — ticked by updateSpotAnims
+                // and pushed into the sprite grid each scene frame.
+                c.spotanims.push(spot);
             }
         }
-        32 => { // MAP_PROJANIM — Java:7430-7453. Spawn projectile from
-                // (tile_x, tile_z) to (tile_x + dx, tile_z + dz) with
-                // SpotType animation. Full ClientProj wiring lands with
-                // the world scene; we decode all 11 fields here so the
-                // cursor advances correctly.
+        32 => { // MAP_PROJANIM — verbatim port of Client.java:7430-7453.
+                // Field names follow the Java vars: var95 (the FIRST g2b)
+                // is the tracked-target slot (npc/player follow), var97 is
+                // the SOURCE height offset, var98 the target's.
             let slot = p.g1();
             let tile_x = ((slot >> 4) & 0x7) + c.zone_update_x;
             let tile_z = (slot & 0x7) + c.zone_update_z;
             let dst_x = tile_x + p.g1b() as i32;
             let dst_z = tile_z + p.g1b() as i32;
-            let src_height = p.g2b();
-            let spot_anim = p.g2();
-            let dst_height = p.g1() * 4;
-            let _start_height = p.g1() * 4;
-            let _start_cycle = p.g2();
-            let _end_cycle = p.g2();
-            let _pitch = p.g1();
-            let _start_pos = p.g1();
-            let _ = (tile_x, tile_z, dst_x, dst_z, src_height, spot_anim, dst_height);
+            let target = p.g2b();           // var95
+            let spot_anim = p.g2();         // var96
+            let src_height = p.g1() * 4;    // var97
+            let dst_height = p.g1() * 4;    // var98
+            let start_cycle = p.g2();       // var99
+            let end_cycle = p.g2();         // var100
+            let pitch = p.g1();             // var101
+            let start_pos = p.g1();         // var102
+            if (0..104).contains(&tile_x) && (0..104).contains(&tile_z)
+                && (0..104).contains(&dst_x) && (0..104).contains(&dst_z)
+                && spot_anim != 65535
+            {
+                let src_wx = tile_x * 128 + 64;
+                let src_wz = tile_z * 128 + 64;
+                let dst_wx = dst_x * 128 + 64;
+                let dst_wz = dst_z * 128 + 64;
+                let mut proj = crate::dash3d::ClientProj::new(
+                    spot_anim,
+                    c.minusedlevel,
+                    src_wx,
+                    src_wz,
+                    crate::client::get_av_h(src_wx, src_wz, c.minusedlevel) - src_height,
+                    c.loop_cycle + start_cycle,
+                    c.loop_cycle + end_cycle,
+                    pitch,
+                    start_pos,
+                    target,
+                    dst_height,
+                );
+                proj.set_target(
+                    dst_wx,
+                    dst_wz,
+                    crate::client::get_av_h(dst_wx, dst_wz, c.minusedlevel) - dst_height,
+                    c.loop_cycle + start_cycle,
+                );
+                c.projectiles.push(proj);
+            }
         }
         205 => { // SOUND_AREA — verbatim port of Client.java:7290-7310.
                  // Decodes a zoned area sound; only enqueues when the
@@ -2679,11 +2747,173 @@ fn get_npc_pos_extended(c: &mut Client, p: &mut crate::io::packet::Packet,
     }
 }
 
+// Cheap LCG standing in for Java's Math.random() — loginDone only uses it
+// to seed the anti-macro camera jitter, so quality is irrelevant.
+fn login_rand(n: f64) -> i32 {
+    use std::sync::atomic::{AtomicU64, Ordering};
+    static SEED: AtomicU64 = AtomicU64::new(0);
+    let mut s = SEED.load(Ordering::Relaxed);
+    if s == 0 {
+        s = crate::game_shell::monotonic_ms() as u64 | 1;
+    }
+    s = s.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
+    SEED.store(s, Ordering::Relaxed);
+    (((s >> 33) as f64 / 2147483648.0) * n) as i32
+}
+
 fn login_done(c: &mut Client, first_packet: Vec<u8>) {
-    // Java loginDone: players[2047] = localPlayer = new ClientPlayer(),
-    // ptype = -1, mapBuildCenterZoneX = -1, etc. We don't model the
-    // full players[2048] array yet — just the local slot.
+    // @ObfuscatedName(— Client.loginDone). Verbatim port of
+    // Client.java:2804-2948 — the full fresh-session reset, so nothing
+    // from a previous login leaks into this one.
+    c.prev_mouse_click_time = 0;
+    c.mouse_tracked_delta = 0;
+    crate::input::mouse_tracking::TRACKING.lock().unwrap().length = 0;
+    {
+        let mut shell = crate::game_shell::SHELL.lock().unwrap();
+        shell.focus_in = true;
+    }
+    crate::reflection_checker::CHECKS.lock().unwrap().clear();
+
+    if let Some(out) = c.out_packet.as_mut() {
+        out.pos = 0;
+    }
     c.ptype = -1;
+    c.ptype0 = -1;
+    c.ptype1 = -1;
+    c.ptype2 = -1;
+
+    c.timeout_timer = 0;
+    c.reboot_timer = 0;
+    c.logout_timer = 0;
+
+    c.hint_type = 0;
+    c.menu_num_entries = 0;
+    c.is_menu_open = false;
+    // Java: ClientMouseListener.setIdleTimer(0) — the mouse idle counter
+    // isn't carried in the port yet (keyboard idle lives on KeyboardState).
+
+    for slot in c.chat_text.iter_mut().take(100) {
+        *slot = None;
+    }
+    c.chat_history_length = 0;
+
+    c.use_mode = 0;
+    c.target_mode = false;
+    c.wave_count = 0;
+
+    // Anti-macro camera jitter seeds (Math.random in Java).
+    c.macro_camera_x = login_rand(100.0) - 50;
+    c.macro_camera_z = login_rand(110.0) - 55;
+    c.macro_camera_angle = login_rand(80.0) - 40;
+    c.orbit_cam_yaw = (login_rand(20.0) - 10) & 0x7FF;
+    {
+        let mut mm = crate::minimap::MINIMAP.lock().unwrap();
+        mm.macro_angle = login_rand(120.0) - 60;
+        mm.macro_zoom = login_rand(30.0) - 20;
+    }
+    crate::minimap::reset();
+    c.minimap_flag_x = 0;
+    c.minimap_flag_z = 0;
+
+    c.player_count = 0;
+    c.npc_count = 0;
+    for p in c.players.iter_mut() {
+        *p = None;
+    }
+    for b in c.player_appearance_buffer.iter_mut() {
+        *b = None;
+    }
+    for n in c.npcs.iter_mut() {
+        *n = None;
+    }
+
+    c.projectiles.clear();
+    c.spotanims.clear();
+    for level in c.ground_obj.iter_mut() {
+        for col in level.iter_mut() {
+            for cell in col.iter_mut() {
+                cell.clear();
+            }
+        }
+    }
+    c.loc_changes.clear();
+
+    c.friend_server_status = 0;
+    c.friend_count = 0;
+
+    // Varps with clientcode 0 reset to 0 (clientcoded ones persist).
+    {
+        let mut var = crate::config::var_cache::VAR.lock().unwrap();
+        let mut var_serv = crate::config::var_cache::VAR_SERV.lock().unwrap();
+        for id in 0..var.len() {
+            let keep = crate::config::varp_type::list(id as i32).clientcode != 0;
+            if !keep {
+                var[id] = 0;
+                var_serv[id] = 0;
+            }
+        }
+    }
+    crate::config::var_cache::VARC_INT.lock().unwrap().fill(-1);
+
+    // Close the toplevel (Client.java:2895-2917): discard its archive
+    // files and drop every non-inventory component; inventories survive
+    // so server-pushed contents persist across the title screen.
+    if c.toplevelinterface != -1 {
+        let id = c.toplevelinterface as usize;
+        let mut store = crate::config::if_type::STORE.lock().unwrap();
+        if store.open.get(id).copied().unwrap_or(false) {
+            {
+                let mut reg = js5_net::LOADERS.lock().unwrap();
+                if let Some(l) = reg.get_mut(c.interfaces as usize).and_then(|o| o.as_mut()) {
+                    l.base.discard_files(id as i32);
+                }
+            }
+            if let Some(Some(components)) = store.list.get_mut(id) {
+                let mut has_no_inv = true;
+                for comp in components.iter_mut() {
+                    if let Some(com) = comp {
+                        if com.type_ == 2 {
+                            has_no_inv = false;
+                        } else {
+                            *comp = None;
+                        }
+                    }
+                }
+                if has_no_inv {
+                    store.list[id] = None;
+                }
+                store.open[id] = false;
+            }
+        }
+    }
+    let sub_keys: Vec<i32> = c.subinterfaces.keys().copied().collect();
+    for key in sub_keys {
+        crate::client::close_sub_interface(c, key, true);
+    }
+    c.toplevelinterface = -1;
+    c.subinterfaces.clear();
+    c.resume_pause_com = -1;
+
+    c.is_menu_open = false;
+    c.menu_num_entries = 0;
+
+    // idkDesign.setAppearance(null, {0,0,0,0,0}, false, -1).
+    c.idk_design = crate::dash3d::player_model::PlayerModel::default();
+
+    for i in 0..8 {
+        c.player_op[i] = None;
+        c.player_op_priority[i] = false;
+    }
+
+    crate::client_inv_cache::delete_all();
+    c.js5_loading = true;
+    crate::client::redraw_all_components();
+
+    c.chat_display_name = None;
+    c.friend_chat_count = 0;
+    c.friend_chat_list.clear();
+
+    // (tail of the original port follows)
     c.local_player = Some(crate::dash3d::ClientPlayer::new());
     c.map_build_center_zone_x = -1;
     c.map_build_center_zone_z = -1;
@@ -2714,74 +2944,50 @@ pub fn lost_con(c: &mut Client) {
     c.state = 40;
 }
 
-// @ObfuscatedName("c.dn(II)V") — Client.reconnectDone.
-//
-// Java's reconnect path runs after the server accepts a state==40
-// reconnection. Clears the inbound opcode ring (ptype0/1/2 — the
-// "last three opcodes" used for crash reports), drops the target
-// hint state, then transitions to state 30 (in-game).
-pub fn reconnect_done(c: &mut Client) {
-    c.ptype = -1;
-    c.ptype0 = -1;
-    c.ptype1 = -1;
-    c.ptype2 = -1;
-    c.psize = 0;
-    c.hint_npc = -1;
-    c.hint_player = -1;
-    c.hint_tile_x = 0;
-    c.hint_tile_z = 0;
-    c.hint_type = 0;
-    // Mirror Java's "drop in-flight rebuild" behaviour.
-    c.map_build_center_zone_x = -1;
-    c.map_build_center_zone_z = -1;
-    // Java additionally drops every cached inv map + marks every UI
-    // component dirty so the server-driven repaint is a full refresh.
-    crate::client_inv_cache::delete_all();
-    crate::client::redraw_all_components();
-    // Reset target / selected-use state.
-    c.target_mode = false;
-    c.target_com = -1;
-    c.target_sub = -1;
-    c.selected_cycle = 0;
-    c.selected_com = -1;
-    c.selected_item = -1;
-    c.timeout_timer = 0;
-    c.state = 30;
-}
-
+// @ObfuscatedName("client.gn(II)V") — Client.loginError. Maps every
+// response code to its TitleScreen.loginMes three-line message
+// (Text.LOGIN*_A/B/C, Client.java:2952-3019) then setMainState(10).
 fn login_error(c: &mut Client, response: i32) {
-    // Java dispatches response codes to TitleScreen.loginMes which sets
-    // line1/line2/line3 strings. Until TitleScreen.loginMes is wired
-    // we print + bounce back to state 10.
-    let label = match response {
-        -3 => "out of memory",
-        -2 => "connection lost",
-        -1 => "couldn't connect",
-        3  => "invalid credentials",
-        4  => "account disabled",
-        5  => "already online",
-        6  => "client too old",
-        7  => "world full",
-        8  => "login server offline",
-        9  => "too many login attempts",
-        10 => "couldn't verify identity",
-        11 => "rejected session",
-        12 => "members only",
-        13 => "could not complete login",
-        14 => "server is updating",
-        16 => "too many login attempts (>5 in 5 min)",
-        17 => "members area",
-        18 => "account locked",
-        19 => "world full",
-        20 => "invalid login server",
-        21 => "transferred to another world",
-        _  => "login failed",
+    let (a, b, m3) = match response {
+        -3 => ("Connection timed out.", "Please try using a different world.", ""),
+        -2 => ("", "Error connecting to server.", ""),
+        -1 => ("No response from server.", "Please try using a different world.", ""),
+        3 => ("", "Invalid username/email or password.", ""),
+        4 => ("Your account has been disabled.", "Please check your message-centre for details.", ""),
+        5 => ("Your account is already logged in.", "Try again in 60 secs...", ""),
+        6 => ("RuneScape has been updated!", "Please reload this page.", ""),
+        7 => ("This world is full.", "Please use a different world.", ""),
+        8 => ("Unable to connect.", "Login server offline.", ""),
+        9 => ("Login limit exceeded.", "Too many connections from your address.", ""),
+        10 => ("Unable to connect.", "Bad session id.", ""),
+        11 => ("We suspect someone knows your password.", "Press 'change your password' on front page.", ""),
+        12 => ("You need a members account to login to this world.", "Please subscribe, or use a different world.", ""),
+        13 => ("Could not complete login.", "Please try using a different world.", ""),
+        14 => ("The server is being updated.", "Please wait 1 minute and try again.", ""),
+        16 => ("Too many incorrect logins from your address.", "Please wait 5 minutes before trying again.", ""),
+        17 => ("You are standing in a members-only area.", "To play on this world move to a free area first", ""),
+        18 => ("Account locked as we suspect it has been stolen.", "Press 'recover a locked account' on front page.", ""),
+        19 => ("This world is running a closed Beta.", "Sorry invited players only.", "Please use a different world."),
+        20 => ("Invalid loginserver requested.", "Please try using a different world.", ""),
+        22 => ("Malformed login packet.", "Please try again.", ""),
+        23 => ("No reply from loginserver.", "Please wait 1 minute and try again.", ""),
+        24 => ("Error loading your profile.", "Please contact customer support.", ""),
+        25 => ("Unexpected loginserver response.", "Please try using a different world.", ""),
+        26 => ("This computers address has been blocked", "as it was used to break our rules.", ""),
+        27 => ("", "Service unavailable.", ""),
+        31 => ("Your account must have a displayname set", "in order to play the game.  Please set it", "via the website, or the main game."),
+        32 => ("Your attempt to log into your account was", "unsuccessful.  Don't worry, you can sort", "this out by visiting the billing system."),
+        37 => ("Your account is currently inaccessible.", "Please try again in a few minutes.", ""),
+        38 => ("You need to vote to play!", "Visit runescape.com and vote,", "and then come back here!"),
+        55 => ("Sorry, but your account is not eligible to", "play this version of the game.  Please try", "playing the main game instead!"),
+        _ => ("Unexpected server response", "Please try using a different world.", ""),
     };
-    eprintln!("[login] {response}: {label}");
+    eprintln!("[login] error {response}: {a} {b} {m3}");
+    crate::title_screen::set_login_messages(a, b, m3);
     c.login_step = 0;
     c.login_stream = None;
     c.login_socket_req = None;
-    c.state = 10;
+    c.set_main_state(10);
 }
 
 fn login_retry_or_error(c: &mut Client, _response: i32) {

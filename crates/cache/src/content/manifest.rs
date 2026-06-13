@@ -40,6 +40,14 @@ pub struct GroupMeta {
     /// shape changes, breaking byte-identity.
     #[serde(skip_serializing_if = "Option::is_none", default)]
     pub chunks: Option<Vec<Vec<u32>>>,
+    /// `true` when every file in this multi-file group is an empty config
+    /// stub (a lone `0x00` terminator). Such groups (the rev1-unused
+    /// config types — params/struct/etc., all stripped to empties in this
+    /// cache) write NO files to disk: pack regenerates each `0x00` record
+    /// from `file_ids` + `chunks`, reproducing the group byte-identically
+    /// while saving ~1000 useless 1-byte files. `path` then has no dir.
+    #[serde(skip_serializing_if = "std::ops::Not::not", default)]
+    pub placeholder: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

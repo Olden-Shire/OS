@@ -53,7 +53,9 @@ pub const MIDDEP_64: [i32; 9] = [0, 4, 4, 8, 0, 0, 8, 0, 0];
 pub const MIDDEP_128: [i32; 9] = [1, 1, 0, 0, 0, 8, 0, 0, 8];
 
 // @ObfuscatedName("aq.bi") — MINIMAP_SHAPE. Per overlay shape, a 4×4
-// bit grid: 0 = overlay pixel, 1 = underlay pixel.
+// bit grid: 0 = underlay pixel, 1 = overlay pixel (row[1] = all 1s is
+// the full-overlay shape; the deob's Ground field names invert this —
+// see render_2d_ground).
 pub const MINIMAP_SHAPE: [[i32; 16]; 13] = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -236,6 +238,12 @@ impl World {
     }
 
     // @ObfuscatedName("aq.r()V") — World.resetMap.
+    // Read-only sprite-pool access for the LOC_ANIM packet's scenery
+    // lookup (Java World.getScene reads the tile's scenery sprite).
+    pub fn sprite(&self, idx: usize) -> Option<&Sprite> {
+        self.sprite_pool.get(idx).and_then(|s| s.as_ref())
+    }
+
     pub fn reset_map(&mut self) {
         for level in 0..self.max_tile_level as usize {
             for x in 0..self.max_tile_x as usize {
@@ -931,12 +939,20 @@ impl World {
             let shape_row = &MINIMAP_SHAPE[shape.min(MINIMAP_SHAPE.len() - 1)];
             let rot_row = &MINIMAP_ROTATE[rotation & 0x3];
             let mut i = 0;
-            if overlay != 0 {
+            // Java's Ground ctor stores these two SWAPPED (deob naming:
+            // `minimapOverlay` receives setGround's UNDERLAY rgb and vice
+            // versa, Ground.java:81-83), so render2DGround's `var14`/`var15`
+            // are really under/over. Unscrambled: shape-bit 0 = underlay
+            // pixel, 1 = overlay pixel (row[1] = all 1s = full overlay),
+            // and the filled branch is gated on the UNDERLAY colour.
+            // Painting it the "sensible" way swaps the two halves of every
+            // diagonal road/river edge tile on the minimap.
+            if underlay != 0 {
                 for _ in 0..4 {
-                    pixels[offset] = if shape_row[rot_row[i]] == 0 { overlay } else { underlay };
-                    pixels[offset + 1] = if shape_row[rot_row[i + 1]] == 0 { overlay } else { underlay };
-                    pixels[offset + 2] = if shape_row[rot_row[i + 2]] == 0 { overlay } else { underlay };
-                    pixels[offset + 3] = if shape_row[rot_row[i + 3]] == 0 { overlay } else { underlay };
+                    pixels[offset] = if shape_row[rot_row[i]] == 0 { underlay } else { overlay };
+                    pixels[offset + 1] = if shape_row[rot_row[i + 1]] == 0 { underlay } else { overlay };
+                    pixels[offset + 2] = if shape_row[rot_row[i + 2]] == 0 { underlay } else { overlay };
+                    pixels[offset + 3] = if shape_row[rot_row[i + 3]] == 0 { underlay } else { overlay };
                     i += 4;
                     offset += stride;
                 }
@@ -944,16 +960,16 @@ impl World {
             }
             for _ in 0..4 {
                 if shape_row[rot_row[i]] != 0 {
-                    pixels[offset] = underlay;
+                    pixels[offset] = overlay;
                 }
                 if shape_row[rot_row[i + 1]] != 0 {
-                    pixels[offset + 1] = underlay;
+                    pixels[offset + 1] = overlay;
                 }
                 if shape_row[rot_row[i + 2]] != 0 {
-                    pixels[offset + 2] = underlay;
+                    pixels[offset + 2] = overlay;
                 }
                 if shape_row[rot_row[i + 3]] != 0 {
-                    pixels[offset + 3] = underlay;
+                    pixels[offset + 3] = overlay;
                 }
                 i += 4;
                 offset += stride;

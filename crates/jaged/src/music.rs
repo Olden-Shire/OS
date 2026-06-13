@@ -1,16 +1,18 @@
 //! Music player widget for song / jingle inspector views.
 //!
 //! Shows: name (from a sibling `.pack` if present), track count, division (PPQN),
-//! event count, estimated duration. Play / Stop buttons exist but are disabled until the
-//! Jagex synth port lands (see queued task #39).
+//! event count, estimated duration. Playback runs through the CLIENT midi2 stack
+//! (PcmPlayer + MidiManager, booted at init) so it sounds exactly like in-game.
 
 use std::collections::BTreeMap;
 use std::path::Path;
 
 use cache::Cache;
 use cache::content::pack_file;
+use client::midi2::midi_file::MidiFile;
+use client::midi2::patch::Patch;
+use client::sound::pcm_player::PcmPlayer;
 use eframe::egui;
-use synth::{MidiFile, Patch};
 
 const PATCHES_ARCHIVE: u8 = 15;
 
@@ -111,17 +113,20 @@ pub fn pack_name(scope: &str, id: u32, default_name: &str) -> String {
     map.get(&id).cloned().unwrap_or_else(|| default_name.to_string())
 }
 
-/// Draw the music player card for a song or jingle. `midi_bytes` is the decoded standard
-/// MIDI (output of `io::midi::decode`); `name` is what to display under the icon.
-/// `cache` is used to decode required patches inline so the user sees which instruments
-/// the song needs and whether each one parses. `player` is lazy-initialised on first
-/// Play click — opening the cpal stream is what causes the audio device to claim itself.
+/// Draw the music player card for a song or jingle. `raw_bytes` is the
+/// Jagex-format group payload (what playback wants — the client's
+/// midi2 stack decodes it exactly like in-game); `midi_bytes` is the
+/// decoded standard MIDI (for the stats readout + patch discovery).
+/// `player` wraps the client's cpal PcmPlayer + MidiManager (claimed
+/// at init); the game loop in main.rs pumps the manager's fade/load
+/// state machine every frame, mirroring the game's mainloop.
 pub fn draw(
     ui: &mut egui::Ui,
     cache: &mut Cache,
     name: &str,
+    raw_bytes: &[u8],
     midi_bytes: &[u8],
-    player: &mut Option<synth::Player>,
+    player: Option<&PcmPlayer>,
     player_error: &mut Option<String>,
 ) {
     let stats = parse_stats(midi_bytes);
@@ -171,7 +176,7 @@ pub fn draw(
             ui.add_space(8.0);
             ui.horizontal(|ui| {
                 if ui.button("▶  Play").clicked() {
-                    play_song(cache, midi_bytes, player, player_error);
+                    play_song(raw_bytes, player, player_error);
                 }
                 if ui.button("⏹  Stop").clicked() {
                     if let Some(p) = player.as_ref() {
@@ -188,34 +193,25 @@ pub fn draw(
         });
 }
 
-/// Lazy-init the cpal player on first click, then load + play the song.
+/// Queue the song through the in-game state machine: swap_songs records
+/// it, the per-frame game loop (client_bridge::tick) fades any current
+/// song out, loads patches + waves from the bridged local loaders, and
+/// starts playback — the same path the game takes when a MIDI_SONG
+/// packet lands. The PcmPlayer was claimed at init; None means the
+/// audio device failed at startup (error already surfaced).
 fn play_song(
-    cache: &mut Cache,
-    midi_bytes: &[u8],
-    player: &mut Option<synth::Player>,
+    raw_bytes: &[u8],
+    player: Option<&PcmPlayer>,
     player_error: &mut Option<String>,
 ) {
-    if player.is_none() {
-        match synth::Player::open() {
-            Ok(p) => {
-                *player = Some(p);
-                *player_error = None;
-            }
-            Err(e) => {
-                *player_error = Some(format!("audio init failed: {e}"));
-                return;
-            }
+    let Some(p) = player else {
+        if player_error.is_none() {
+            *player_error = Some("audio device unavailable (failed at init)".into());
         }
-    }
-    let p = player.as_ref().unwrap();
-    let manager = p.manager();
-    let mut mgr = manager.lock();
-    let (mp, mw) = mgr.load_song(cache, midi_bytes.to_vec(), false);
-    if mp + mw > 0 {
-        *player_error = Some(format!("loaded with {mp} missing patches, {mw} missing waves"));
-    } else {
-        *player_error = None;
-    }
+        return;
+    };
+    p.manager().lock().swap_songs(2, raw_bytes.to_vec(), false);
+    *player_error = None;
 }
 
 /// Discover and render the patch list this song requires. Compact one-line-per-patch

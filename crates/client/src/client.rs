@@ -516,6 +516,9 @@ pub fn reconnect_done(c: &mut Client) {
 
     crate::client_inv_cache::delete_all();
     c.set_main_state(30);
+    // Client.java:3056-3058 — componentDirtyArea[0..99] = true: the
+    // post-reconnect repaint is a full refresh.
+    redraw_all_components();
 }
 
 // ── OPLOC[1..5] outbound packet builders ──────────────────────────
@@ -972,17 +975,10 @@ pub fn parse_chat_prefixes(raw: &str) -> (i32, i32, String) {
     (color, effect, message)
 }
 
-// @ObfuscatedName(— Client.sendSetVarClient). Verbatim port of
-// ScriptRunner.java:158-163 (opcode 2 pop_varp). After mutating a
-// client-side varp via cs2, this opcode tells the server to mirror
-// the new value. Outbound: opcode 181 + varp_id (g2) + value (g4).
-pub fn send_set_var_client(c: &mut Client, varp_id: i32, value: i32) {
-    let Some(isaac) = c.isaac_out.as_mut() else { return; };
-    let Some(out) = c.out_packet.as_mut() else { return; };
-    out.p1_enc(181, isaac);
-    out.p2(varp_id);
-    out.p4(value);
-}
+// NOTE: an earlier port draft invented an opcode-181 "SET_VARP_CLIENT"
+// here, claiming to mirror ScriptRunner pop_varp — Java's pop_varp
+// (ScriptRunner.java:158-163) only writes VarCache and sends NOTHING.
+// Removed for 1:1; cs2 varp writes are purely client-side.
 
 // @ObfuscatedName(— Client.sendChatFilterSettings). Verbatim port of
 // ScriptRunner.java:2404-2419 outbound. Emits opcode 167 with the
@@ -1220,7 +1216,7 @@ pub fn dispatch_orbit_camera(c: &mut Client, camera_pitch_clamp: i32) {
     // default zoom, so the stock camera is byte-identical to Java.
     // The "vanilla camera" debug toggle pins the delta to zero for
     // accuracy testing against the reference client.
-    let zoom = if crate::debug_opts::vanilla_camera() { 1100 } else { c.orbit_cam_zoom };
+    let zoom = if crate::debug_opts::wheel_zoom() { c.orbit_cam_zoom } else { 1100 };
     let distance = pitch * 3 + 600 + (zoom - 1100);
     cam_follow(c, pitch, yaw, c.orbit_cam_x, anchor_y, c.orbit_cam_z, distance);
 }
@@ -1513,7 +1509,9 @@ pub fn apply_cam_shake(c: &mut Client) {
             }
             _ => {}
         }
-        c.cam_shake_cycle[slot] += 1;
+        // No cycle bump here: Java's draw-time apply (4127-4153) reads
+        // the counter; only the TICK advances it (Client.java:2651 →
+        // bump_cam_shake_cycles).
     }
 }
 
@@ -1550,17 +1548,28 @@ pub fn follow_camera(c: &mut Client) {
     if c.orbit_cam_z != target_z {
         c.orbit_cam_z += (target_z - c.orbit_cam_z) / 16;
     }
-    // Arrow-key yaw/pitch (key codes 96..99 in Java's KeyEvent).
-    if c.key_held_96 {
+    // Arrow-key yaw/pitch — Java reads ClientKeyboardListener.keyHeld
+    // [96..99] (gamepack codes for left/right/up/down) with ±24 yaw /
+    // ±12 pitch velocity targets (Client.java:3350-3363). This is THE
+    // arrow-key camera path; update_orbit_camera only carries the
+    // custom mouse-drag/zoom extensions.
+    let (left, right, up, down) = {
+        let kb = crate::input::KEYBOARD.lock().unwrap();
+        (kb.key_held[crate::input::KEY_LEFT as usize],
+         kb.key_held[crate::input::KEY_RIGHT as usize],
+         kb.key_held[crate::input::KEY_UP as usize],
+         kb.key_held[crate::input::KEY_DOWN as usize])
+    };
+    if left {
         c.orbit_cam_yaw_velocity += (-24 - c.orbit_cam_yaw_velocity) / 2;
-    } else if c.key_held_97 {
+    } else if right {
         c.orbit_cam_yaw_velocity += (24 - c.orbit_cam_yaw_velocity) / 2;
     } else {
         c.orbit_cam_yaw_velocity /= 2;
     }
-    if c.key_held_98 {
+    if up {
         c.orbit_cam_pitch_velocity += (12 - c.orbit_cam_pitch_velocity) / 2;
-    } else if c.key_held_99 {
+    } else if down {
         c.orbit_cam_pitch_velocity += (-12 - c.orbit_cam_pitch_velocity) / 2;
     } else {
         c.orbit_cam_pitch_velocity /= 2;
@@ -2986,6 +2995,8 @@ pub fn game_input(c: &mut Client) {
     c.keypresses = 0;
     {
         let mut kb = KEYBOARD.lock().unwrap();
+        // ClientKeyboardListener.cycle() — idleTimer accrual once per tick.
+        kb.cycle();
         while c.keypresses < 128 {
             let Some(evt) = kb.poll_key() else { break };
             c.keypress_codes[c.keypresses as usize] = evt.code;
@@ -4634,17 +4645,14 @@ pub fn do_action(c: &mut Client, entry: i32) {
         // 3D projection uses an ABSOLUTE origin (Pix3D origin =
         // clip_min_x + size/2, unlike Java's viewport-relative origin),
         // so inside_triangle in renderAll compares against absolute sx/sy.
-        // Add the viewport offset back so the ground pick matches the
-        // entity pick (scene.rs uses absolute coords too); without this
-        // the pick never resolves and no walk-flag / yellow cross shows.
-        let (vx, vy) = {
-            let o = crate::overlays::OVERLAYS.lock().unwrap();
-            (o.viewport_x, o.viewport_y)
-        };
+        // The scene renders into its own image at origin now, so the
+        // ground pick takes the click in viewport-LOCAL coords —
+        // b/cc are already component-relative, no offset needed
+        // (matches Java, whose Pix3D frame is areaViewport-relative).
         let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
         if let Some(world) = cache.world.as_mut() {
-            eprintln!("[dbg-walk] action23 arm pick at ({}, {})", b + vx, cc + vy);
-            world.update_mouse_picking(c.minusedlevel.clamp(0, 3), b + vx, cc + vy);
+            eprintln!("[dbg-walk] action23 arm pick at ({}, {})", b, cc);
+            world.update_mouse_picking(c.minusedlevel.clamp(0, 3), b, cc);
         }
     }
     if action == 4 {
@@ -4973,13 +4981,13 @@ pub fn play_synth(c: &mut Client, sound: i32, loops: i32, delay: i32) {
 //   ::fpson/off   — Fps/Mem text on / off
 //   ::noclip      — clear collision flags on the active level
 //   ::errortest   — panic test (only when modewhere == 2)
-//   ::perf        — custom (not in Java): toggle the imgui benchmark overlay
+//   ::config      — custom (not in Java): toggle the imgui config/perf overlay
 pub fn do_cheat(c: &mut Client, message: &str) {
     use crate::io::packet::Packet;
     let lower = message.to_ascii_lowercase();
-    // custom — the imgui frame-time overlay is host-side dev tooling, not a
+    // custom — the imgui config/perf overlay is host-side dev tooling, not a
     // gamepack cheat, so it isn't staff-gated or echoed to the server.
-    if lower == "::perf" {
+    if lower == "::config" {
         crate::perf::toggle_overlay();
         return;
     }
@@ -6823,10 +6831,6 @@ pub struct Client {
     // @ObfuscatedName("ClientKeyboardListener.keyHeld[96..99]") —
     // arrow-key state used by follow_camera to drive yaw/pitch
     // velocity. 96/97 = left/right, 98/99 = up/down.
-    pub key_held_96: bool,
-    pub key_held_97: bool,
-    pub key_held_98: bool,
-    pub key_held_99: bool,
 
     // @ObfuscatedName("client.orbitCameraX/Z") — orbit centre that
     // followCamera smoothly tracks toward the local player.
@@ -7407,10 +7411,6 @@ impl Client {
             idk_design_button2: -1,
             macro_camera_x: 0,
             macro_camera_z: 0,
-            key_held_96: false,
-            key_held_97: false,
-            key_held_98: false,
-            key_held_99: false,
             orbit_cam_x: 0,
             orbit_cam_z: 0,
             macro_camera_angle: 0,
@@ -7783,10 +7783,16 @@ impl GameShellLifecycle for Client {
         // Always service the JS5 stream so loaders make progress.
         self.service_net_client();
 
-        // Java: MidiManager.updateLoading() runs each tick to advance the
-        // async patch+wave fetch for the pending song.
+        // Java mainloop (Client.java:1371): MidiManager.updateFadeOut()
+        // each tick drives the song-swap fade state machine, then
+        // updateLoading() advances the async patch+wave fetch.
         if let Some(player) = self.pcm_player.as_ref() {
-            player.manager().lock().try_advance_loading();
+            {
+                let manager = player.manager();
+                let mut mgr = manager.lock();
+                mgr.update_fade_out();
+                mgr.try_advance_loading();
+            }
             // Initial swap_songs needs to wait for the scape_main group to
             // arrive over JS5 — retry each tick until the loader returns
             // bytes, then kick off the load state machine.
@@ -7889,7 +7895,7 @@ impl GameShellLifecycle for Client {
             crate::scene::CAMERA.lock().unwrap().update(
                 self.orbit_cam_yaw,
                 self.orbit_cam_pitch,
-                if crate::debug_opts::vanilla_camera() { 1100 } else { self.orbit_cam_zoom },
+                if crate::debug_opts::wheel_zoom() { self.orbit_cam_zoom } else { 1100 },
             );
             // Java gameDrawMain 4103-4112: the frame camera is computed
             // at DRAW time from the eased orbit centre followCamera
@@ -7897,6 +7903,10 @@ impl GameShellLifecycle for Client {
             // where the smoothing comes from. Publish cameraX/Y/Z +
             // pitch/yaw for draw_viewport's renderAll.
             crate::client::dispatch_orbit_camera(self, self.camera_pitch_clamp);
+            // Java gameDrawMain :4127-4153 — the shake jitters the freshly
+            // computed camera (applying it at tick time would be clobbered
+            // right here by dispatch_orbit_camera).
+            crate::client::apply_cam_shake(self);
             crate::scene::CAMERA.lock().unwrap().update_world(
                 self.cam_x, self.cam_y, self.cam_z,
                 self.cam_pitch, self.cam_yaw,
@@ -7952,49 +7962,31 @@ impl GameShellLifecycle for Client {
 // we hoisted it into its own function so mainloop can call it
 // uniformly at both state 25 and 30.
 fn update_orbit_camera(c: &mut Client) {
-    use crate::input::{KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_UP, KEYBOARD, MOUSE};
-    let mut kb = KEYBOARD.lock().unwrap();
-    let left = kb.key_held[KEY_LEFT as usize];
-    let right = kb.key_held[KEY_RIGHT as usize];
-    let up = kb.key_held[KEY_UP as usize];
-    let down = kb.key_held[KEY_DOWN as usize];
-    drop(kb);
-
-    // Arrow-key velocity targets — Java rev1 caps at ±8 for yaw and ±5
-    // for pitch (Client.java around the orbitCameraYawVelocity step).
-    // Our previous ±24 / ±12 produced visibly twitchy rotation.
-    if left {
-        c.orbit_cam_yaw_velocity += (-8 - c.orbit_cam_yaw_velocity) / 2;
-    } else if right {
-        c.orbit_cam_yaw_velocity += (8 - c.orbit_cam_yaw_velocity) / 2;
-    } else {
-        c.orbit_cam_yaw_velocity /= 2;
-    }
-    if up {
-        c.orbit_cam_pitch_velocity += (5 - c.orbit_cam_pitch_velocity) / 2;
-    } else if down {
-        c.orbit_cam_pitch_velocity += (-5 - c.orbit_cam_pitch_velocity) / 2;
-    } else {
-        c.orbit_cam_pitch_velocity /= 2;
-    }
+    use crate::input::MOUSE;
+    // CUSTOM input extensions only — the verbatim arrow-key velocity
+    // handling lives in follow_camera (Client.java:3350-3363, ±24/±12);
+    // it used to be duplicated here at ±8/±5 based on a misread of the
+    // Java, double-applying every tick.
+    //
+    // Both extensions are individually toggleable, disabled by
+    // default (1:1). The drag state is always drained so enabling
+    // mid-session doesn't replay a stale accumulated delta.
 
     // Middle-mouse drag — natural "grab and pull" feel: dragging the
     // mouse right makes the world rotate right with the drag (camera
-    // orbits left). Sign was flipped from the original port which
-    // rotated the world opposite the drag direction.
+    // orbits left). No Java analogue (2007 client had no drag).
     let (dx, dy) = MOUSE.lock().unwrap().take_drag();
-    if dx != 0 {
-        c.orbit_cam_yaw = (c.orbit_cam_yaw - dx) & 0x7FF;
+    if crate::debug_opts::middle_drag_camera() {
+        if dx != 0 {
+            c.orbit_cam_yaw = (c.orbit_cam_yaw - dx) & 0x7FF;
+        }
+        if dy != 0 {
+            c.orbit_cam_pitch += dy / 2;
+            // Java's pitch clamp [128, 383] applies to the drag path too.
+            if c.orbit_cam_pitch < 128 { c.orbit_cam_pitch = 128; }
+            if c.orbit_cam_pitch > 383 { c.orbit_cam_pitch = 383; }
+        }
     }
-    if dy != 0 {
-        c.orbit_cam_pitch += dy / 2;
-    }
-
-    c.orbit_cam_yaw = (c.orbit_cam_yaw + c.orbit_cam_yaw_velocity / 2) & 0x7FF;
-    c.orbit_cam_pitch += c.orbit_cam_pitch_velocity / 2;
-    // Java clamps pitch to [128, 383].
-    if c.orbit_cam_pitch < 128 { c.orbit_cam_pitch = 128; }
-    if c.orbit_cam_pitch > 383 { c.orbit_cam_pitch = 383; }
 
     // Scroll wheel: positive = zoom in (decrease distance), negative
     // = zoom out (increase distance). orbit_cam_zoom is the orbit
@@ -8002,7 +7994,7 @@ fn update_orbit_camera(c: &mut Client) {
     // per-tick wheel snapshot (AWT sign: positive = down = zoom out)
     // and only while the mouse is over the 3D viewport, so wheel
     // input over side panels reaches the interface scrollbars instead.
-    if c.mouse_wheel_rotation != 0 {
+    if crate::debug_opts::wheel_zoom() && c.mouse_wheel_rotation != 0 {
         let (vx, vy, vw, vh) = {
             let o = crate::overlays::OVERLAYS.lock().unwrap();
             (o.viewport_x, o.viewport_y, o.viewport_w, o.viewport_h)

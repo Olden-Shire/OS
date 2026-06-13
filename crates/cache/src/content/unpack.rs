@@ -101,6 +101,27 @@ pub fn unpack_with_names(
         }
         manifest.groups.sort_by_key(|g| g.id);
         write_manifest(&archive_dir.join("_meta.json"), &manifest)?;
+
+        // Fold m/l map pairs into one editable .jm2 text per region (the
+        // pass verifies each pair round-trips byte-exact before touching
+        // it, and rewrites _meta.json itself).
+        if archive == crate::MAPS_ARCHIVE {
+            let s = crate::content::maps_jm2::convert_maps_dir(&archive_dir)?;
+            eprintln!(
+                "[unpack] maps → jm2: {} regions converted, {} kept as .dat",
+                s.converted, s.kept_dat
+            );
+        }
+
+        // Wrap vorbis samples as standard .ogg (group 0 — the shared
+        // setup header — stays .dat). Same verify-then-convert contract.
+        if archive == crate::VORBIS_ARCHIVE {
+            let s = crate::vorbis_ogg::convert_vorbis_dir(&archive_dir)?;
+            eprintln!(
+                "[unpack] vorbis → ogg: {} samples converted, {} kept as .dat",
+                s.converted, s.kept_dat
+            );
+        }
     }
 
     // Write accumulated .pack files.
@@ -108,6 +129,44 @@ pub fn unpack_with_names(
     fs::create_dir_all(&pack_dir)?;
     for (scope, map) in &pack_data {
         pack_file::write(&pack_dir.join(format!("{scope}.pack")), map)?;
+    }
+
+    // interface.order + interface.pack — the .rs2/.cs2 toolchain symbol
+    // table for interfaces. The compiler resolves `if_549` →
+    // `symbols.config("interface", name).id`, and the engine opens the
+    // REAL interface id (549) — so the pack key MUST be the real id, not a
+    // remapped flat-sequential one (Lost City uses flat ids because its
+    // engine renumbers; ours doesn't). Roots key on the interface id;
+    // components on the packed `(id << 16) | sub` the engine expects.
+    // `interface.order` lists the interface ids (ascending). AUXILIARY —
+    // not read back by pack (the cache rebuilds from .if + _meta.json).
+    {
+        let if_names = pack_data.get("interface");
+        let mut group_ids: Vec<i32> = cache.index(crate::INTERFACES_ARCHIVE).group_ids.clone();
+        group_ids.sort_unstable();
+        let mut order = String::new();
+        let mut pack = String::new();
+        for gid in group_ids {
+            let g = gid as u32;
+            // Symbol name for .rs2/.cs2: a real rename if present, else
+            // `if_{id}` — identifier-safe (a bare number isn't a valid
+            // RuneScript ident, same reason clientscripts keep `script_`).
+            // The on-disk FILENAME stays bare `{id}.if` (ext says the type).
+            let name = match if_names.and_then(|m| m.get(&g).cloned()) {
+                Some(n) if n != format!("{g}") => n,
+                _ => format!("if_{g}"),
+            };
+            order.push_str(&format!("{gid}\n"));
+            pack.push_str(&format!("{g}={name}\n"));
+            let mut subs = cache.index(crate::INTERFACES_ARCHIVE).file_ids[g as usize].clone();
+            subs.sort_unstable();
+            for sub in subs {
+                let packed = (g << 16) | (sub as u32);
+                pack.push_str(&format!("{packed}={name}:com_{sub}\n"));
+            }
+        }
+        fs::write(pack_dir.join("interface.order"), order)?;
+        fs::write(pack_dir.join("interface.pack"), pack)?;
     }
 
     // Master archive (idx255) — entries have NO 2-byte version trailer (the per-archive
@@ -130,6 +189,7 @@ pub fn unpack_with_names(
             xtea_key: None,
             file_ids: None,
             chunks: None,
+            placeholder: false,
         });
         stats.master_entries += 1;
         stats.total_payload_bytes += decompressed.len() as u64;
@@ -194,37 +254,108 @@ fn unpack_one_group(
     );
     let file_ids = cache.index(archive).file_ids[group_id as usize].clone();
 
+    // Sharded archives (models/anims/bases) write into a 1000-id bucket
+    // subdir; everything else writes directly under the archive dir.
+    let base_dir = extensions::group_base(archive_dir, archive, group_id);
+
+    let mut placeholder = false;
+    // Interfaces (archive 3): collapse the whole group's components into
+    // ONE readable `.if` file (Content-old style) when every component
+    // re-encodes byte-exact; otherwise fall through to the per-file
+    // `if_*/N.dat` layout. The `.if` extension on `path` tells pack to
+    // re-encode via interface_text.
+    if archive == crate::INTERFACES_ARCHIVE {
+        let files = crate::unpack_group(&payload, file_ids.len());
+        let chunks = extract_chunks(&payload, file_ids.len());
+        let comps: Vec<(i32, Vec<u8>)> =
+            file_ids.iter().copied().zip(files.iter().cloned()).collect();
+        if let Some(text) = crate::content::interface_text::decode_group(group_id, &comps) {
+            let path = format!("{group_name}.if");
+            fs::write(archive_dir.join(&path), text)?;
+            if let Some(scope) = pack_file::pack_name_for_archive(archive) {
+                pack_data.entry(scope).or_default().insert(group_id, group_name.clone());
+            }
+            return Ok(GroupMeta {
+                id: group_id, ctype, version, path, xtea_key,
+                file_ids: Some(file_ids), chunks, placeholder: false,
+            });
+        }
+        // else: fall through to the generic per-file layout below.
+    }
+
     let (path, stored_file_ids, chunks) = if file_ids.len() > 1 {
-        let group_dir = archive_dir.join(&group_name);
-        fs::create_dir_all(&group_dir)?;
         let inner_ext = extensions::multi_file_inner_ext(archive, group_id);
         let files = crate::unpack_group(&payload, file_ids.len());
-        for (i, file_bytes) in files.iter().enumerate() {
-            let fid = file_ids[i];
-            fs::write(group_dir.join(format!("{fid}.{inner_ext}")), file_bytes)?;
-        }
         let chunks = extract_chunks(&payload, file_ids.len());
 
-        // Config-archive groups (npc, obj, loc, …) put per-file entries into their
-        // type-specific .pack — default file stem is just the file id.
-        if archive == crate::CONFIG_ARCHIVE
-            && let Some(scope) = pack_file::pack_name_for_config_group(group_id)
-        {
-            let entry = pack_data.entry(scope).or_default();
-            for &fid in &file_ids {
-                entry.insert(fid as u32, fid.to_string());
+        // All-empty-stub groups (rev1-unused config types stripped to a
+        // lone 0x00 terminator each) write NO files — pack regenerates
+        // them from file_ids + chunks. Saves ~1000 useless 1-byte files.
+        if archive == crate::CONFIG_ARCHIVE && files.iter().all(|f| f.as_slice() == [0u8]) {
+            placeholder = true;
+            (group_name, Some(file_ids), chunks)
+        } else {
+            let group_dir = base_dir.join(&group_name);
+            fs::create_dir_all(&group_dir)?;
+            // Config-archive groups with a text codec write readable `.obj`,
+            // `.loc`, … per record (verified byte-exact); records the codec
+            // can't reproduce stay `.dat`. Pack probes both extensions.
+            let config_codec = if archive == crate::CONFIG_ARCHIVE {
+                crate::content::config_text::schema_for_group(group_id)
+            } else {
+                None
+            };
+            let nfiles = files.len();
+            for (i, file_bytes) in files.iter().enumerate() {
+                let fid = file_ids[i];
+                // Huge config types shard their files into id buckets.
+                let dir = match extensions::intra_group_shard(nfiles, fid) {
+                    Some(b) => {
+                        let d = group_dir.join(b);
+                        fs::create_dir_all(&d)?;
+                        d
+                    }
+                    None => group_dir.clone(),
+                };
+                let wrote_text = if let Some((schema, kind)) = config_codec {
+                    crate::content::config_text::decode(schema, kind, fid as u32, file_bytes)
+                        .map(|text| fs::write(dir.join(format!("{fid}.{kind}")), text))
+                        .transpose()?
+                        .is_some()
+                } else {
+                    false
+                };
+                if !wrote_text {
+                    fs::write(dir.join(format!("{fid}.{inner_ext}")), file_bytes)?;
+                }
             }
-        }
 
-        // Non-config multi-file archives (anim_*, interface_*) get per-group entries
-        // mapping group_id → dir stem.
-        if archive != crate::CONFIG_ARCHIVE
-            && let Some(scope) = pack_file::pack_name_for_archive(archive)
-        {
-            pack_data.entry(scope).or_default().insert(group_id, group_name.clone());
-        }
+            // Config-archive groups (npc, obj, loc, …) put per-file entries into their
+            // type-specific .pack — default file stem is just the file id.
+            if archive == crate::CONFIG_ARCHIVE
+                && let Some(scope) = pack_file::pack_name_for_config_group(group_id)
+            {
+                let entry = pack_data.entry(scope).or_default();
+                for &fid in &file_ids {
+                    entry.insert(fid as u32, fid.to_string());
+                }
+            }
 
-        (group_name, Some(file_ids), chunks)
+            // Non-config multi-file archives (anim_*, interface_*) get per-group entries
+            // mapping group_id → dir stem.
+            if archive != crate::CONFIG_ARCHIVE
+                && let Some(scope) = pack_file::pack_name_for_archive(archive)
+            {
+                pack_data.entry(scope).or_default().insert(group_id, group_name.clone());
+            }
+
+            (group_name, Some(file_ids), chunks)
+        }
+    } else if archive == crate::CONFIG_ARCHIVE && payload.as_slice() == [0u8] {
+        // Single-file empty config stub (e.g. group 25): write nothing,
+        // flag placeholder; pack regenerates the lone 0x00 record.
+        placeholder = true;
+        (group_name, None, None)
     } else {
         // Clientscripts decompile to structured `.cs2` source when the full
         // decompile → recompile → byte-compare verification passes; otherwise to
@@ -245,7 +376,8 @@ fn unpack_one_group(
             (extensions::single_file_ext(archive, &payload), payload.clone())
         };
         let path = format!("{group_name}.{ext}");
-        fs::write(archive_dir.join(&path), &on_disk)?;
+        fs::create_dir_all(&base_dir)?;
+        fs::write(base_dir.join(&path), &on_disk)?;
 
         // Single-file group: pack entry maps group_id → file stem (no .dat).
         if archive != crate::CONFIG_ARCHIVE
@@ -257,7 +389,7 @@ fn unpack_one_group(
         (path, None, None)
     };
 
-    Ok(GroupMeta { id: group_id, ctype, version, path, xtea_key, file_ids: stored_file_ids, chunks })
+    Ok(GroupMeta { id: group_id, ctype, version, path, xtea_key, file_ids: stored_file_ids, chunks, placeholder })
 }
 
 /// Decode every script of the clientscript archive and infer the cross-script
@@ -426,9 +558,16 @@ fn group_path(
             }
         }
     }
+    // Pure-asset archives use BARE ids ({id}.ext): the parent dir already
+    // names the type, so a `model_`/`sprite_`/… prefix is redundant (and
+    // jagfx/vorbis were already bare). The stem is the rename surface —
+    // a real name from the .pack replaces the bare id. Clientscripts (12)
+    // KEEP `script_` because the stem doubles as the symbolic name cs2
+    // sources reference via `gosub <name>` (a bare number isn't an ident).
     match archive {
-        0 => format!("anim_{group_id}"),
-        1 => format!("base_{group_id}"),
+        // 3 (interfaces) joins the bare-id set: the `.if` extension already
+        // says it's an interface, so an `if_` prefix is redundant.
+        0 | 1 | 3 | 6 | 7 | 8 | 9 | 10 | 11 | 13 | 15 => format!("{group_id}"),
         2 => match group_id {
             config_group::FLU => "flu".to_string(),
             config_group::IDK => "idk".to_string(),
@@ -444,8 +583,9 @@ fn group_path(
             config_group::VARP => "varp".to_string(),
             _ => format!("group_{group_id}"),
         },
-        3 => format!("if_{group_id}"),
-        4 => format!("jagfx_{group_id}"),
+        // Sound-effect synth records — bare ids so jagfx.pack can give
+        // them real names (same rationale as vorbis archive 14).
+        4 => format!("{group_id}"),
         MAPS_ARCHIVE => {
             let hash = name_hashes
                 .expect("maps archive must have name hashes")
@@ -457,17 +597,9 @@ fn group_path(
                 .cloned()
                 .unwrap_or_else(|| format!("group_{group_id}"))
         }
-        6 => format!("song_{group_id}"),
-        7 => format!("model_{group_id}"),
-        8 => format!("sprite_{group_id}"),
-        9 => format!("texture_{group_id}"),
-        10 => format!("binary_{group_id}"),
-        11 => format!("jingle_{group_id}"),
         12 => format!("script_{group_id}"),
-        13 => format!("font_{group_id}"),
-        14 => format!("vorbis_{group_id}"),
-        15 => format!("patch_{group_id}"),
-        _ => format!("group_{group_id}"),
+        // jagfx (4) and vorbis (14) were already bare; everything else.
+        _ => format!("{group_id}"),
     }
 }
 

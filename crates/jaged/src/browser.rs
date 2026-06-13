@@ -18,6 +18,35 @@ pub fn draw_groups(ui: &mut egui::Ui, cache: &Cache, sel: &mut Selection) {
         ui.label(egui::RichText::new("(select an archive below)").weak().italics());
         return;
     };
+    // Maps collapse to one REGION per entry (the m/l group pair is an
+    // encoding detail). Selection.group carries the mapsquare id.
+    if archive == cache::MAPS_ARCHIVE {
+        let regions = crate::client_bridge::REGIONS.lock().unwrap().clone();
+        ui.label(egui::RichText::new(format!("regions · {}", regions.len())).weak().small());
+        let row_h = ui.text_style_height(&egui::TextStyle::Body) + 4.0;
+        egui::ScrollArea::vertical()
+            .id_salt("col_regions")
+            .auto_shrink([false, false])
+            .show_rows(ui, row_h, regions.len(), |ui, range| {
+                for i in range {
+                    let (x, y) = regions[i];
+                    let ms = cache::maps::mapsquare(x, y);
+                    let selected = sel.group == Some(ms);
+                    let resp = ui.add_sized(
+                        egui::vec2(ui.available_width(), 0.0),
+                        egui::SelectableLabel::new(
+                            selected,
+                            egui::RichText::new(format!("{x}_{y}")).monospace(),
+                        ),
+                    );
+                    if resp.clicked() {
+                        sel.group = Some(ms);
+                        sel.file_id = None;
+                    }
+                }
+            });
+        return;
+    }
     let index = cache.index(archive);
     ui.label(egui::RichText::new(format!("groups · {}", index.size)).weak().small());
     let row_h = ui.text_style_height(&egui::TextStyle::Body) + 4.0;
@@ -70,6 +99,10 @@ pub fn draw_files(ui: &mut egui::Ui, cache: &Cache, sel: &mut Selection) {
 /// True when the selected group has >1 file (so the bottom-left files panel is useful).
 pub fn has_multi_file_selection(cache: &Cache, sel: &Selection) -> bool {
     let (Some(archive), Some(gid)) = (sel.archive, sel.group) else { return false };
+    // Maps browse by region (group = mapsquare id), never by sub-file.
+    if archive == cache::MAPS_ARCHIVE {
+        return false;
+    }
     cache
         .index(archive)
         .file_ids

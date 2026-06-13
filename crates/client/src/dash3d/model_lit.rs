@@ -1320,6 +1320,18 @@ impl ModelLit {
                         elements += 1;
                     }
                 }
+                // Java render3ZClip:1415-1450 — hclip starts false and
+                // is recomputed from the CLIPPED vertex set (3 or 4
+                // elements), then shared by every dispatch below
+                // (textured, flat and gouraud alike).
+                let mut zh = false;
+                for &cxi in cx.iter().take(elements) {
+                    if pix3d::face_x_clipped(cxi, cxi, cxi) {
+                        zh = true;
+                        break;
+                    }
+                }
+                pix3d::set_hclip(zh);
                 // Textured clipped path — Java's render3ZClip keeps
                 // (P, M, N) view-space coords UNCHANGED (lines 1422-1434);
                 // only screen X/Y interpolate to the near plane. The
@@ -1337,8 +1349,7 @@ impl ModelLit {
                         (p, m, n)
                     };
                     let render_tex_tri = |i0: usize, i1: usize, i2: usize| {
-                        pix3d::set_hclip(true);
-                        pix3d::texture_triangle_affine(
+                        pix3d::texture_triangle(
                             cy[i0], cy[i1], cy[i2],
                             cx[i0], cx[i1], cx[i2],
                             cc[i0], cc[i1], cc[i2],
@@ -1382,6 +1393,13 @@ impl ModelLit {
                 }
                 continue;
             }
+            // Java render3 line 1284: Pix3D.hclip = faceClippedX[face]
+            // for EVERY face — textured, flat AND gouraud — before the
+            // type dispatch. It was previously set only on the textured
+            // branch, so gouraud/flat faces inherited a stale flag from
+            // the last textured face or terrain tile and edge models
+            // rasterized unclamped spans into the UI area.
+            pix3d::set_hclip(pix3d::face_x_clipped(screen_x[a], screen_x[b], screen_x[c]));
             let tex_id = self.face_texture_id.as_ref().map_or(-1i32, |v| v[f] as i32);
             if tex_id >= 0 {
                 // Pick the texture mapping triangle (P, M, N). Java's
@@ -1399,9 +1417,6 @@ impl ModelLit {
                     let n = self.face_texture_n.as_ref().map_or(c as i16, |v| v[ai]) as usize;
                     (p, m, n)
                 };
-                // Java's ModelLit.draw line 1284: Pix3D.hclip is set
-                // per face from faceClippedX[face] before the call.
-                pix3d::set_hclip(pix3d::face_x_clipped(screen_x[a], screen_x[b], screen_x[c]));
                 // Java's faceColourC[face] == -1 branch (ModelLit.java:
                 // 1306-1310): type-1 flat-shaded textured faces store
                 // only colA; B/C retain their default of 0. The
@@ -1415,7 +1430,7 @@ impl ModelLit {
                 } else {
                     (self.face_colour_a[f], self.face_colour_b[f], self.face_colour_c[f])
                 };
-                pix3d::texture_triangle_affine(
+                pix3d::texture_triangle(
                     screen_y[a], screen_y[b], screen_y[c],
                     screen_x[a], screen_x[b], screen_x[c],
                     col_a, col_b, col_c,

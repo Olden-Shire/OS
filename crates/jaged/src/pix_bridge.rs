@@ -5,27 +5,24 @@
 //! for at least one frame after upload — required by egui's deferred composite).
 
 use eframe::egui;
-use pix::Pix2D;
 
-/// Upload `pix.pixels` as a fresh egui texture. Treats input alpha as opaque if it's 0
-/// (Pix3D doesn't bother writing alpha, so pixels appear as `0x00RRGGBB`).
-pub fn upload(ctx: &egui::Context, name: impl Into<String>, pix: &Pix2D) -> egui::TextureHandle {
-    let w = pix.width.max(0) as usize;
-    let h = pix.height.max(0) as usize;
+/// Upload a CLIENT-crate frame (`Vec<i32>` of `0x00RRGGBB`, no alpha —
+/// the client's Pix2D pixel format) as an opaque egui texture.
+pub fn upload_rgb(
+    ctx: &egui::Context,
+    name: impl Into<String>,
+    pixels: &[i32],
+    w: usize,
+    h: usize,
+) -> egui::TextureHandle {
     let mut rgba = Vec::with_capacity(w * h * 4);
-    for &p in &pix.pixels {
-        let a = ((p >> 24) & 0xFF) as u8;
-        let r = ((p >> 16) & 0xFF) as u8;
-        let g = ((p >> 8) & 0xFF) as u8;
-        let b = (p & 0xFF) as u8;
-        // If Pix2D never wrote alpha (clear color was 0), treat zero pixels as fully
-        // transparent and any non-zero pixel as opaque. Otherwise honor the alpha.
-        let alpha = if a == 0 {
-            if (r | g | b) == 0 { 0 } else { 0xFF }
-        } else {
-            a
-        };
-        rgba.extend_from_slice(&[r, g, b, alpha]);
+    for &p in pixels.iter().take(w * h) {
+        rgba.extend_from_slice(&[
+            ((p >> 16) & 0xFF) as u8,
+            ((p >> 8) & 0xFF) as u8,
+            (p & 0xFF) as u8,
+            0xFF,
+        ]);
     }
     let img = egui::ColorImage::from_rgba_unmultiplied([w, h], &rgba);
     ctx.load_texture(name, img, egui::TextureOptions::NEAREST)

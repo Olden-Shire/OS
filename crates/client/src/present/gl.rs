@@ -337,7 +337,15 @@ impl super::Present for GlPresent {
         let gl = &self.gl;
         unsafe {
             let _t = perf::scope(perf::Scope::Blit);
+            // Black borders for the vanilla (1:1 top-centre) layout.
             gl.viewport(0, 0, win_w as i32, win_h as i32);
+            gl.clear_color(0.0, 0.0, 0.0, 1.0);
+            gl.clear(glow::COLOR_BUFFER_BIT);
+            // Place the game quad via the viewport — the quad itself is a
+            // full-NDC strip, so the viewport IS the destination rect.
+            // GL's viewport origin is bottom-left; flip the y.
+            let (dx, dy, dw, dh) = super::layout_rect(fw, fh, win_w, win_h);
+            gl.viewport(dx, win_h as i32 - dy - dh as i32, dw as i32, dh as i32);
 
             // Upload the finished game frame and stretch it across the
             // window. (Re)allocate the texture only when the size changes.
@@ -378,6 +386,9 @@ impl super::Present for GlPresent {
             gl.enable_vertex_attrib_array(1);
             gl.vertex_attrib_pointer_f32(1, 2, glow::FLOAT, false, 16, 8);
             gl.draw_arrays(glow::TRIANGLE_STRIP, 0, 4);
+
+            // Overlay draws in window space — restore the full viewport.
+            gl.viewport(0, 0, win_w as i32, win_h as i32);
         }
 
         overlay.frame_with(win_w, win_h, mouse, buttons, |draw_data, _atlas| unsafe {

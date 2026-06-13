@@ -55,14 +55,20 @@ impl Default for ServerConfig {
 }
 
 pub fn run(config: ServerConfig) -> std::io::Result<()> {
-    // Hard pre-startup gate: prove the Content tree repacks to the vanilla cache
-    // (CRC-identical) before we serve anything. Refuses to start on mismatch.
-    verify_cache_gate(&config)?;
+    // Content is the editable source of truth. Pack it into a real cache and
+    // — when a CRC baseline exists — prove that generated cache is byte-for-byte
+    // CRC-identical to the vanilla cache before serving a single group. The
+    // vanilla `cache_dir` stays a read-only CRC reference (and holds keys.json).
+    // We then serve from the GENERATED cache, so edits/renames in Content flow
+    // straight through. Refuses to start on any CRC mismatch.
+    let serve_dir = prepare_served_cache(&config)?;
+    eprintln!("[server] serving cache from {}", serve_dir.display());
 
-    let mut cache = Cache::open(Path::new(&config.cache_dir))?;
+    let mut cache = Cache::open(&serve_dir)?;
     let checksum_table = js5::build_checksum_table(&cache, ARCHIVE_COUNT);
 
-    // XTEA keys for map encryption — keys.json next to the cache.
+    // XTEA keys for map encryption — keys.json lives with the vanilla cache
+    // (it isn't a packed group, so it never lands in the generated cache).
     let xtea = cache::maps::XteaKeys::load(Path::new(&config.cache_dir).join("keys.json").as_path())
         .unwrap_or_else(|e| {
             eprintln!("[server] keys.json not loaded ({e}); maps unencrypted");
@@ -193,15 +199,39 @@ pub fn run(config: ServerConfig) -> std::io::Result<()> {
     }
 }
 
-/// Repack the Content tree and verify every group CRC against the vanilla baseline.
-/// Returns `Err` (so the server refuses to start) on any mismatch. Bootstrapping cases
-/// — no baseline file, or `OS1_SKIP_CACHE_VERIFY=1` — log and continue.
-fn verify_cache_gate(config: &ServerConfig) -> std::io::Result<()> {
+/// Build the cache the server serves from. Packs the Content tree into a real
+/// cache directory (`main_file_cache.*`) and, when a CRC baseline exists,
+/// verifies it is CRC-identical to the vanilla cache — refusing to start (`Err`)
+/// on any mismatch. Returns the directory to open and serve.
+///
+/// Bootstrapping/fallback cases serve the vanilla `cache_dir` directly: when
+/// `OS1_SKIP_CACHE_VERIFY=1` is set, or no Content tree is present. A missing
+/// baseline is non-fatal — the generated cache is served unverified (with a
+/// warning to run `os1 gen-baseline`).
+fn prepare_served_cache(config: &ServerConfig) -> std::io::Result<std::path::PathBuf> {
+    let cache_dir = std::path::PathBuf::from(&config.cache_dir);
+
     if std::env::var_os("OS1_SKIP_CACHE_VERIFY").is_some() {
-        eprintln!("[server] OS1_SKIP_CACHE_VERIFY set — skipping pre-startup pack-CRC verification");
-        return Ok(());
+        eprintln!("[server] OS1_SKIP_CACHE_VERIFY set — serving vanilla cache (no Content repack)");
+        return Ok(cache_dir);
     }
 
+    let content_dir = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
+    let content_dir = Path::new(&content_dir);
+    if !content_dir.exists() {
+        eprintln!(
+            "[server] no Content tree at {} — serving vanilla cache",
+            content_dir.display()
+        );
+        return Ok(cache_dir);
+    }
+
+    // Pack Content → a real cache: these are the bytes we actually serve.
+    let gen_dir = std::env::temp_dir().join("os1_content_cache");
+    eprintln!("[server] packing Content ({}) → {} …", content_dir.display(), gen_dir.display());
+    cache::content::pack::pack(content_dir, &gen_dir)?;
+
+    // Prove the generated cache is CRC-identical to the vanilla baseline.
     let baseline_path = config
         .baseline_path
         .clone()
@@ -209,29 +239,19 @@ fn verify_cache_gate(config: &ServerConfig) -> std::io::Result<()> {
     let baseline_path = Path::new(&baseline_path);
     if !baseline_path.exists() {
         eprintln!(
-            "[server] no CRC baseline at {} — skipping verification \
+            "[server] no CRC baseline at {} — serving generated cache UNVERIFIED \
              (run `os1 gen-baseline` to enable the startup gate)",
             baseline_path.display()
         );
-        return Ok(());
-    }
-
-    let content_dir = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
-    let content_dir = Path::new(&content_dir);
-    if !content_dir.exists() {
-        return Err(std::io::Error::new(
-            std::io::ErrorKind::NotFound,
-            format!("content dir {} not found; cannot verify cache before startup", content_dir.display()),
-        ));
+        return Ok(gen_dir);
     }
 
     let baseline = cache::verify::Baseline::load(baseline_path)?;
-    let tmp = std::env::temp_dir().join("os1_verify_repack");
-    eprintln!("[server] verifying pack CRCs ({} → repack vs {}) …", content_dir.display(), baseline_path.display());
-    let report = cache::verify::verify_repack(content_dir, &baseline, &tmp)?;
+    eprintln!("[server] verifying generated cache → vs {} …", baseline_path.display());
+    let report = cache::verify::verify_cache(&gen_dir, &baseline)?;
     if report.is_ok() {
         eprintln!("[server] {report}");
-        Ok(())
+        Ok(gen_dir)
     } else {
         eprint!("{report}");
         Err(std::io::Error::new(

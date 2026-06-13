@@ -548,7 +548,13 @@ impl PixFont {
                                  advance, 1, strikeout);
             }
             if underline != -1 {
-                pix2d::fill_rect(x, self.ascent + base_y + 1, advance, 1, underline);
+                // Java's two inner walkers disagree by one pixel: plain
+                // drawStringInner underlines at ascent+y+1 (PixFont.java:702)
+                // while the custom-offsets variant — the one the wave/shake
+                // effects use — omits the +1 (PixFont.java:815).
+                let plain = x_offsets.is_none() && y_offsets.is_none();
+                pix2d::fill_rect(x, self.ascent + base_y + if plain { 1 } else { 0 },
+                                 advance, 1, underline);
             }
             x += advance;
             prev = ch;
@@ -879,10 +885,13 @@ impl PixFont {
     }
 
     // @ObfuscatedName("y.ay(Ljava/lang/String;IIIIIIIBI)V") —
-    // PixFont.drawStringMultiline. Verbatim port (simplified): splits
-    // via split_string, then draws each line per `h_align`. `v_align`
-    // = 0 top, 1 centre, 2 bottom. `line_h` overrides the default
-    // ascent + 2 line height; 0 = use default.
+    // PixFont.drawStringMultiline. Verbatim port of PixFont.java:
+    // 440-488. `v_align`: 0 top, 1 centre, 2 bottom, 3 spread;
+    // `h_align`: 0 left, 1 centre, 2 right, 3 justify. `line_h` 0 =
+    // default (ascent). Baselines anchor on max_ascent/max_descent —
+    // approximating with the line height sits centred text a few
+    // pixels low. State resets ONCE up front so markup (colour /
+    // underline) carries across wrapped lines like Java.
     pub fn draw_string_multiline(
         &self,
         s: &str,
@@ -891,24 +900,57 @@ impl PixFont {
         h_align: i32, v_align: i32,
         line_h: i32,
     ) {
-        let lines = self.split_string(s, w);
-        let lh = if line_h > 0 { line_h } else { self.ascent + 2 };
-        let total_h = lines.len() as i32 * lh;
-        let mut cy_top = match v_align {
-            1 => y + (h - total_h) / 2 + lh,
-            2 => y + h - total_h + lh,
-            _ => y + lh,
+        self.reset_state(colour, shadow);
+        let mut lh = if line_h == 0 { self.ascent } else { line_h };
+        // Java 449-451: when the component can't fit two lines, wrapping
+        // is disabled outright (splitString gets a null width array).
+        let wrap_width = if h < self.max_ascent + self.max_descent + lh && h < lh + lh {
+            i32::MAX
+        } else {
+            w
         };
-        for line in &lines {
-            match h_align {
-                1 => self.centre_string(line, x + w / 2, cy_top, colour, shadow),
-                2 => {
-                    let wpx = self.string_wid(line);
-                    self.draw_string(line, x + w - wpx, cy_top, colour, shadow);
-                }
-                _ => self.draw_string(line, x, cy_top, colour, shadow),
+        let lines = self.split_string(s, wrap_width);
+        let n = lines.len() as i32;
+        let mut v_align = v_align;
+        if v_align == 3 && n == 1 {
+            v_align = 1;
+        }
+        let mut baseline = match v_align {
+            0 => y + self.max_ascent,
+            1 => (h - self.max_ascent - self.max_descent - (n - 1) * lh) / 2
+                + self.max_ascent + y,
+            2 => y + h - self.max_descent - (n - 1) * lh,
+            _ => {
+                let pad = ((h - self.max_ascent - self.max_descent - (n - 1) * lh)
+                    / (n + 1)).max(0);
+                lh += pad;
+                y + self.max_ascent + pad
             }
-            cy_top += lh;
+        };
+        for (i, line) in lines.iter().enumerate() {
+            match h_align {
+                0 => self.draw_string_inner(line, x, baseline),
+                1 => self.draw_string_inner(
+                    line, x + (w - self.string_wid(line)) / 2, baseline),
+                2 => self.draw_string_inner(
+                    line, x + w - self.string_wid(line), baseline),
+                _ => {
+                    if i == lines.len() - 1 {
+                        // Last line of a justified block is drawn plain.
+                        self.draw_string_inner(line, x, baseline);
+                    } else {
+                        let extra = self.calc_extra_space_width(line, w);
+                        {
+                            let mut st = STATICS.lock().unwrap();
+                            st.extra_space_width = extra;
+                            st.extra_space_pos = 0;
+                        }
+                        self.draw_string_inner(line, x, baseline);
+                        STATICS.lock().unwrap().extra_space_width = 0;
+                    }
+                }
+            }
+            baseline += lh;
         }
     }
 }

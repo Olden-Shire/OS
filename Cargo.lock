@@ -1465,13 +1465,12 @@ name = "jaged"
 version = "0.1.0"
 dependencies = [
  "cache",
+ "client",
  "eframe",
  "egui",
  "egui_extras",
  "image",
  "io",
- "pix",
- "synth",
 ]
 
 [[package]]

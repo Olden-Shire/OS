@@ -76,11 +76,87 @@ struct OccluderCache {
 static OCCLUDER_CACHE: std::sync::LazyLock<Mutex<OccluderCache>> =
     std::sync::LazyLock::new(|| Mutex::new(OccluderCache { generation: usize::MAX, per_level: Vec::new() }));
 
+// Server-triggered loc anims (LOC_ANIM packet, opcode 6) keyed by
+// (level, x, z, loc_id) → seq id. Java wraps the Square's model in a
+// ClientLocAnim; our render closures already resolve per-instance anim
+// state through advance_loc_anim, so the packet just overrides which
+// seq the closure advances (advance_loc_anim restarts the state when
+// the seq id changes).
+static SERVER_LOC_ANIMS: std::sync::LazyLock<Mutex<HashMap<(i32, i32, i32, i32), i32>>> =
+    std::sync::LazyLock::new(|| Mutex::new(HashMap::new()));
+
+// @ObfuscatedName("client.ek") — Client.LOC_SHAPE_TO_LAYER.
+const LOC_SHAPE_TO_LAYER: [i32; 23] = [
+    0, 0, 0, 0,
+    1, 1, 1, 1, 1,
+    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    3,
+];
+
+// LOC_ANIM (Client.java:7311-7365): resolve the loc on the target layer
+// of the Square (wall / walldecor / scenery / grounddecor — typecode
+// >> 14 & 0x7FFF like Java's getWall/getDecor/getScene/getGd reads) and
+// register the server-driven seq for it.
+pub fn loc_anim_kick(level: i32, x: i32, z: i32, shape: i32, anim_id: i32) {
+    if !(0..103).contains(&x) || !(0..103).contains(&z) {
+        return;
+    }
+    let layer = match LOC_SHAPE_TO_LAYER.get(shape as usize) {
+        Some(&l) => l,
+        None => return,
+    };
+    let cache = WORLD_CACHE.lock().unwrap();
+    let Some(world) = cache.world.as_ref() else { return };
+    let Some(sq) = world
+        .squares
+        .get(level as usize)
+        .and_then(|l| l.get(x as usize))
+        .and_then(|c| c.get(z as usize))
+        .and_then(|s| s.as_ref())
+    else {
+        return;
+    };
+    let typecode = match layer {
+        0 => sq.wall.as_ref().map(|w| w.typecode),
+        1 => sq.decor.as_ref().map(|d| d.typecode),
+        // Java getScene: the scenery sprite on the tile (entity sprites
+        // carry typecode 0).
+        2 => sq
+            .sprites
+            .iter()
+            .filter_map(|&idx| world.sprite(idx))
+            .find(|s| s.typecode != 0)
+            .map(|s| s.typecode),
+        3 => sq.ground_decor.as_ref().map(|g| g.typecode),
+        _ => None,
+    };
+    drop(cache);
+    let Some(typecode) = typecode else { return };
+    let loc_id = (typecode >> 14) & 0x7FFF;
+    SERVER_LOC_ANIMS
+        .lock()
+        .unwrap()
+        .insert((level, x, z, loc_id), anim_id);
+    // Restart cleanly even if the same seq replays.
+    LOC_ANIM_STATE.lock().unwrap().remove(&(level, x, z, loc_id));
+}
+
+// Render-side lookup: the loc_anim_source closure prefers the server
+// override over the LocType's ambient anim.
+pub fn server_loc_anim(level: i32, x: i32, z: i32, loc_id: i32) -> Option<i32> {
+    SERVER_LOC_ANIMS
+        .lock()
+        .unwrap()
+        .get(&(level, x, z, loc_id))
+        .copied()
+}
+
 // Drop all per-loc anim state. Hooked into the ClientBuild reset path so
 // loading a new map doesn't leave us holding state for locs that don't
 // exist any more.
 pub fn clear_loc_anim_state() {
     LOC_ANIM_STATE.lock().unwrap().clear();
+    SERVER_LOC_ANIMS.lock().unwrap().clear();
 }
 
 // custom — JS5 slot for the models archive. Java holds it on
@@ -838,23 +914,69 @@ pub fn ensure_world_built(collision: &mut [Option<crate::dash3d::CollisionMap>; 
     cache.world = Some(world);
 }
 
+// Persistent offscreen image for the 3D viewport, reused per frame.
+static SCENE_IMAGE: Mutex<Vec<i32>> = Mutex::new(Vec::new());
+
+// Java renders the whole 3D pass into areaViewport — its own PixMap —
+// then blits it at (x, y); an escaped rasterizer span physically
+// cannot touch other UI areas. Mirror that: bind a scene-sized image,
+// render at origin (0, 0), blit the rect into the main frame.
 pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
+    // Publish the ON-SCREEN viewport rect for the absolute-coordinate
+    // consumers (wheel-zoom hover test, scene-menu hover test).
+    {
+        let mut o = crate::overlays::OVERLAYS.lock().unwrap();
+        o.viewport_x = x;
+        o.viewport_y = y;
+        o.viewport_w = w;
+        o.viewport_h = h;
+    }
+    let mut scene = std::mem::take(&mut *SCENE_IMAGE.lock().unwrap());
+    scene.clear();
+    scene.resize((w * h) as usize, 0);
+    let (main_px, main_w, main_h) = pix2d::swap_pixels(scene, w, h);
+    draw_viewport_inner(w, h, x, y);
+    let (scene_px, _, _) = pix2d::swap_pixels(main_px, main_w, main_h);
+    {
+        let mut s = pix2d::STATE.lock().unwrap();
+        let mw = main_w as usize;
+        let (wu, hu) = (w as usize, h as usize);
+        for row in 0..hu {
+            let dy = y as usize + row;
+            if dy >= main_h as usize { break; }
+            let dst0 = dy * mw + x as usize;
+            let take = wu.min(mw.saturating_sub(x as usize));
+            s.pixels[dst0..dst0 + take].copy_from_slice(&scene_px[row * wu..row * wu + take]);
+        }
+    }
+    *SCENE_IMAGE.lock().unwrap() = scene_px;
+}
+
+// The 3D pass proper, rendering into whatever image is bound, at
+// origin (0, 0). mouse_off_x/y = the viewport's on-screen position,
+// used only to translate the absolute cursor into scene-local space
+// for the model hover pick.
+fn draw_viewport_inner(w: i32, h: i32, mouse_off_x: i32, mouse_off_y: i32) {
     let _t = crate::perf::scope(crate::perf::Scope::Scene);
-    pix2d::set_clipping(x, y, x + w, y + h);
-    pix3d::set_clipping(x, y, x + w, y + h);
+    pix2d::set_clipping(0, 0, w, h);
+    pix3d::set_clipping(0, 0, w, h);
     // Reset trans — previous frame's loc render may have left it
     // non-zero, which would bleed translucency into the sky / tiles
     // / player avatar this frame.
     pix3d::set_trans(0);
 
-    // Sky gradient backdrop.
-    let split = h * 2 / 3;
-    for row in 0..split {
-        let t = row * 256 / split.max(1);
-        let r = 96 + (170 - 96) * t / 256;
-        let g = 132 + (198 - 132) * t / 256;
-        let b = 196 + (226 - 196) * t / 256;
-        pix2d::fill_rect(x, y + row, w, 1, (r << 16) | (g << 8) | b);
+    // Sky gradient backdrop — custom, OFF by default (Java's
+    // areaViewport is black; the scene image arrives zeroed, so the
+    // vanilla path just leaves it).
+    if crate::debug_opts::skybox() {
+        let split = h * 2 / 3;
+        for row in 0..split {
+            let t = row * 256 / split.max(1);
+            let r = 96 + (170 - 96) * t / 256;
+            let g = 132 + (198 - 132) * t / 256;
+            let b = 196 + (226 - 196) * t / 256;
+            pix2d::fill_rect(0, row, w, 1, (r << 16) | (g << 8) | b);
+        }
     }
 
     // World construction moved to the viewport branch in
@@ -932,16 +1054,15 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
     {
         let (mx, my) = {
             let m = crate::input::MOUSE.lock().unwrap();
-            (m.mouse_x, m.mouse_y)
+            // The scene now renders into its own image at origin —
+            // translate the absolute cursor into scene-local space
+            // (Java subtracts the viewport origin the same way).
+            (m.mouse_x - mouse_off_x, m.mouse_y - mouse_off_y)
         };
         let mut p = crate::dash3d::model_lit::MOUSE_PICK.lock().unwrap();
         p.picked.clear();
-        if mx >= x && mx < x + w && my >= y && my < y + h {
+        if mx >= 0 && mx < w && my >= 0 && my < h {
             p.mouse_check = true;
-            // Our projection works in absolute screen coords (origin
-            // at the viewport centre, absolute), so the pick point
-            // stays absolute too — Java subtracts the viewport origin
-            // because its Pix3D origin is viewport-relative.
             p.mouse_x = mx;
             p.mouse_y = my;
         } else {
@@ -978,7 +1099,9 @@ pub fn draw_viewport(x: i32, y: i32, w: i32, h: i32) {
     crate::overlays::set_frame_camera(cam_world_x, cam_world_y, cam_world_z,
                                       cam_pitch.clamp(128, 383), cam_yaw & 0x7FF);
     crate::overlays::SCENE_CYCLE.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
-    crate::overlays::draw(x, y, w, h);
+    // Scene-local: the overlay pass renders into the bound scene
+    // image with the same origin as the 3D projection.
+    crate::overlays::draw(0, 0, w, h);
 }
 
 // @ObfuscatedName(— Client.roofCheck, Client.java:4376-4454). Walks

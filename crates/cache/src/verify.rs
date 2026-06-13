@@ -134,7 +134,16 @@ pub fn verify_repack(
     tmp_dir: &Path,
 ) -> std::io::Result<VerifyReport> {
     pack::pack(content_dir, tmp_dir)?;
-    let mut cache = Cache::open(tmp_dir)?;
+    verify_cache(tmp_dir, baseline)
+}
+
+/// Verify an already-packed cache directory (`main_file_cache.*`) against the
+/// vanilla `baseline`, group by group, plus an independent cross-check against
+/// the cache's own JS5 index checksums. Use this when the cache has already
+/// been packed from Content (e.g. the served/browsed cache) so it isn't packed
+/// twice.
+pub fn verify_cache(cache_dir: &Path, baseline: &Baseline) -> std::io::Result<VerifyReport> {
+    let mut cache = Cache::open(cache_dir)?;
     let mut report = VerifyReport::default();
 
     for archive in 0..ARCHIVE_COUNT {

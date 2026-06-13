@@ -498,9 +498,13 @@ fn loc_anim_source(loc_id: i32, shape: i32, rotation: i32,
             lt0
         };
         let loop_cycle = crate::scene::LOOP_CYCLE.load(std::sync::atomic::Ordering::Relaxed);
-        let (seq, frame) = if lt.anim >= 0 {
-            match crate::scene::advance_loc_anim(level, x, z, loc_id, lt.anim, loop_cycle) {
-                Some(f) => (Some(crate::config::seq_type::list(lt.anim)), f),
+        // Server-driven LOC_ANIM (opcode 6) overrides the LocType's
+        // ambient anim — Java wraps the Square model in a ClientLocAnim;
+        // we swap which seq this closure advances.
+        let anim_id = crate::scene::server_loc_anim(level, x, z, loc_id).unwrap_or(lt.anim);
+        let (seq, frame) = if anim_id >= 0 {
+            match crate::scene::advance_loc_anim(level, x, z, loc_id, anim_id, loop_cycle) {
+                Some(f) => (Some(crate::config::seq_type::list(anim_id)), f),
                 None => (None, 0),
             }
         } else {

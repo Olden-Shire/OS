@@ -256,11 +256,27 @@ impl PerfOverlay {
                     }
                 }
 
-                // ── Renderer debug toggles ────────────────────────────
+                // ── Renderer debug toggles (defaults = vanilla 1:1) ──
                 ui.separator();
-                let mut vanilla = crate::debug_opts::vanilla_camera();
-                if ui.checkbox("vanilla camera (fixed zoom)", &mut vanilla) {
-                    crate::debug_opts::set_vanilla_camera(vanilla);
+                let mut drag = crate::debug_opts::middle_drag_camera();
+                if ui.checkbox("middle-mouse camera rotation", &mut drag) {
+                    crate::debug_opts::set_middle_drag_camera(drag);
+                }
+                let mut zoom = crate::debug_opts::wheel_zoom();
+                if ui.checkbox("scroll-wheel zoom", &mut zoom) {
+                    crate::debug_opts::set_wheel_zoom(zoom);
+                }
+                let mut sky = crate::debug_opts::skybox();
+                if ui.checkbox("skybox (blue sky gradient)", &mut sky) {
+                    crate::debug_opts::set_skybox(sky);
+                }
+                let mut int_scale = crate::debug_opts::integer_scale();
+                if ui.checkbox("integer scaling (lossless)", &mut int_scale) {
+                    crate::debug_opts::set_integer_scale(int_scale);
+                }
+                let mut stretched = crate::debug_opts::stretched();
+                if ui.checkbox("stretch frame to window", &mut stretched) {
+                    crate::debug_opts::set_stretched(stretched);
                 }
                 let mut roofs = crate::debug_opts::always_hide_roofs();
                 if ui.checkbox("always hide roofs", &mut roofs) {

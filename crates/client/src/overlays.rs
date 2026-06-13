@@ -367,10 +367,10 @@ fn get_overlay_pos(world_x: i32, world_z: i32, height_off: i32,
 pub fn draw(vx: i32, vy: i32, vw: i32, vh: i32) {
     let mut o = OVERLAYS.lock().unwrap();
     let o = &mut *o;
-    o.viewport_x = vx;
-    o.viewport_y = vy;
-    o.viewport_w = vw;
-    o.viewport_h = vh;
+    // NOTE: o.viewport_x/y/w/h (the ON-SCREEN rect used by the wheel
+    // zoom + scene-menu hover tests + ground pick) are recorded by
+    // scene::draw_viewport. The (vx, vy) args here are the DRAW
+    // origin — (0, 0) now that the scene renders into its own image.
     let minusedlevel = o.minusedlevel;
     let scene_cycle = SCENE_CYCLE.load(std::sync::atomic::Ordering::Relaxed);
     // Centre-relative → viewport-relative. Java's getOverlayPos
@@ -619,14 +619,18 @@ pub fn draw(vx: i32, vy: i32, vw: i32, vh: i32) {
     }
 
     // ── otherOverlays (Client.java:4685-4725) ───────────────────────
+    // Java plots the cross at the ABSOLUTE click (crossX - 8, crossY - 8)
+    // straight onto the shared canvas. We render into the scene-local
+    // image, so translate by the viewport's on-screen origin to land on
+    // the same screen pixel after the blit.
     if o.cross_mode == 1 {
         if let Some(c) = o.cross.as_ref().and_then(|v| v.get((o.cross_cycle / 100) as usize)) {
-            c.plot_sprite(o.cross_x - 8, o.cross_y - 8);
+            c.plot_sprite(o.cross_x - o.viewport_x - 8, o.cross_y - o.viewport_y - 8);
         }
     }
     if o.cross_mode == 2 {
         if let Some(c) = o.cross.as_ref().and_then(|v| v.get((o.cross_cycle / 100 + 4) as usize)) {
-            c.plot_sprite(o.cross_x - 8, o.cross_y - 8);
+            c.plot_sprite(o.cross_x - o.viewport_x - 8, o.cross_y - o.viewport_y - 8);
         }
     }
     if o.show_fps {

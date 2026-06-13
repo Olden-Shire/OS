@@ -19,11 +19,15 @@ $env:CC_wasm32_unknown_unknown = "$llvm\clang.exe"
 $env:CXX_wasm32_unknown_unknown = "$llvm\clang++.exe"
 $env:AR_wasm32_unknown_unknown = "$llvm\llvm-ar.exe"
 $env:CXXFLAGS_wasm32_unknown_unknown = "-isystem $include -DIMGUI_USE_STB_SPRINTF -DIMGUI_DISABLE_FILE_FUNCTIONS"
-# No C++ runtime on wasm32-unknown-unknown (imgui builds -fno-exceptions/-fno-rtti).
-$env:CXXSTDLIB_wasm32_unknown_unknown = ""
-
 Set-Location $root
-cargo build -p client --release --target wasm32-unknown-unknown
+# No C++ runtime on wasm32-unknown-unknown (imgui builds -fno-exceptions/
+# -fno-rtti): cc-rs skips `-lstdc++` only when CXXSTDLIB_* is present AND
+# empty — but PowerShell cannot set an empty env var ($env:X = "" DELETES
+# it on Windows), so the cargo step runs through bash, which can. The
+# CC/CXX/AR/CXXFLAGS vars above are inherited by the child shell.
+# Explicit Git Bash path — bare `bash` resolves to the Windows Store
+# WSL stub under PowerShell (REGDB_E_CLASSNOTREG when WSL is absent).
+& "C:\Program Files\Git\bin\bash.exe" -c 'CXXSTDLIB_wasm32_unknown_unknown= cargo build -p client --release --target wasm32-unknown-unknown'
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 wasm-bindgen target/wasm32-unknown-unknown/release/client.wasm `
     --target web --no-typescript --out-dir crates/client/web/pkg

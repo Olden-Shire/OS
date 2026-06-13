@@ -83,6 +83,12 @@ pub struct IfType {
     pub inv_background_x: Vec<i32>,
     pub inv_background_y: Vec<i32>,
     pub inv_background: Vec<i32>,
+    /// Whether each of the 20 inv background slots was present in the
+    /// stream. Needed because a *present* slot can carry bg == -1
+    /// (0xFFFFFFFF), which is indistinguishable from an *absent* slot by
+    /// the `inv_background == -1` value alone — encode would otherwise
+    /// drop those slots and break byte-identity.
+    pub inv_has_bg: Vec<bool>,
     pub iop: [Option<String>; 5],
     pub event_code: i32,
     pub base_op_name: String,
@@ -185,6 +191,7 @@ impl Default for IfType {
             inv_background_x: Vec::new(),
             inv_background_y: Vec::new(),
             inv_background: Vec::new(),
+            inv_has_bg: Vec::new(),
             iop: [const { None }; 5],
             event_code: 0,
             base_op_name: String::new(),
@@ -220,7 +227,7 @@ impl Default for IfType {
             script_operand: None,
             over_layer_id: -1,
             target_base: String::new(),
-            button_text: "OK".to_string(),
+            button_text: String::new(),
             link_obj_type: Vec::new(),
             link_obj_number: Vec::new(),
         }
@@ -238,6 +245,170 @@ impl IfType {
             t.decode_v1(bytes);
         }
         t
+    }
+
+    /// Byte-exact inverse of `decode`. Returns `None` when the record
+    /// can't be reproduced losslessly — the two known lossy v1 cases are
+    /// type-1 components (decode discards two reads) and button text that
+    /// was originally empty (decode substitutes a default). Callers
+    /// (interface text codec) keep `.dat` for those.
+    pub fn encode(&self) -> Option<Vec<u8>> {
+        let mut p = Packet::from_vec(Vec::new());
+        let layer_raw = |id: i32| -> i32 {
+            if id == -1 { 65535 } else { id - (self.parent_id & 0xFFFF_0000_u32 as i32) }
+        };
+        if self.v3 {
+            p.p1(255);
+            p.p1(self.type_);
+            p.p2(self.client_code);
+            p.p2(self.x);
+            p.p2(self.y);
+            p.p2(self.width);
+            p.p2(self.height);
+            p.p2(layer_raw(self.layer_id));
+            p.p1(self.hide as i32);
+            match self.type_ {
+                0 => { p.p2(self.scroll_width); p.p2(self.scroll_height); }
+                5 => {
+                    p.p4(self.graphic); p.p2(self.rotate); p.p1(self.tiling as i32);
+                    p.p1(self.trans); p.p1(self.outline); p.p4(self.shadow_colour);
+                    p.p1(self.v_flip as i32); p.p1(self.h_flip as i32);
+                }
+                6 => {
+                    p.p2(if self.model1_id == -1 { 65535 } else { self.model1_id });
+                    p.p2(self.model_x_of); p.p2(self.model_y_of);
+                    p.p2(self.model_x_an); p.p2(self.model_y_an); p.p2(self.model_z_an);
+                    p.p2(self.model_zoom);
+                    p.p2(if self.model_anim == -1 { 65535 } else { self.model_anim });
+                    p.p1(self.orthog as i32);
+                }
+                4 => {
+                    p.p2(if self.font == -1 { 65535 } else { self.font });
+                    p.pjstr(&self.text); p.p1(self.line_height); p.p1(self.h_align);
+                    p.p1(self.v_align); p.p1(self.shadow as i32); p.p4(self.colour);
+                }
+                3 => { p.p4(self.colour); p.p1(self.fill as i32); p.p1(self.trans); }
+                9 => { p.p1(self.line_width); p.p4(self.colour); }
+                _ => {}
+            }
+            p.p3(self.event_code);
+            p.pjstr(&self.base_op_name);
+            p.p1(self.op_names.len() as i32);
+            for op in &self.op_names {
+                p.pjstr(op.as_deref().unwrap_or(""));
+            }
+            p.p1(self.dragdeadzone);
+            p.p1(self.dragdeadtime);
+            p.p1(self.draggable_behavior as i32);
+            p.pjstr(&self.target_verb);
+            for hook in [
+                &self.onload, &self.onmouseover, &self.onmouseleave, &self.ontargetleave,
+                &self.ontargetenter, &self.onvartransmit, &self.oninvtransmit,
+                &self.onstattransmit, &self.ontimer, &self.onop, &self.onmouserepeat,
+                &self.onclick, &self.onclickrepeat, &self.onrelease, &self.onhold,
+                &self.ondrag, &self.ondragcomplete, &self.onscrollwheel,
+            ] {
+                encode_hook(&mut p, hook.as_deref());
+            }
+            for list in [&self.onvartransmitlist, &self.oninvtransmitlist, &self.onstattransmitlist] {
+                encode_int_list(&mut p, list.as_deref());
+            }
+            return Some(p.data);
+        }
+
+        // ── v1 ──────────────────────────────────────────────────────────
+        if self.type_ == 1 {
+            return None; // decode discards 3 bytes — not reproducible
+        }
+        p.p1(self.type_);
+        p.p1(self.button_type);
+        p.p2(self.client_code);
+        p.p2(self.x);
+        p.p2(self.y);
+        p.p2(self.width);
+        p.p2(self.height);
+        p.p1(self.trans);
+        p.p2(layer_raw(self.layer_id));
+        p.p2(if self.over_layer_id == -1 { 65535 } else { self.over_layer_id });
+        match (&self.script_comparator, &self.script_operand) {
+            (Some(cmps), Some(ops)) => {
+                p.p1(cmps.len() as i32);
+                for (c, o) in cmps.iter().zip(ops) { p.p1(*c); p.p2(*o); }
+            }
+            _ => p.p1(0),
+        }
+        match &self.scripts {
+            Some(scripts) => {
+                p.p1(scripts.len() as i32);
+                for s in scripts {
+                    p.p2(s.len() as i32);
+                    for &v in s { p.p2(if v == -1 { 65535 } else { v }); }
+                }
+            }
+            None => p.p1(0),
+        }
+        match self.type_ {
+            0 => { p.p2(self.scroll_height); p.p1(self.hide as i32); }
+            2 => {
+                let ec = self.event_code;
+                p.p1((ec & 0x1000_0000 != 0) as i32);
+                p.p1((ec & 0x4000_0000 != 0) as i32);
+                p.p1((ec & 0x8000_0000_u32 as i32 != 0) as i32);
+                p.p1((ec & 0x2000_0000 != 0) as i32);
+                p.p1(self.margin_x);
+                p.p1(self.margin_y);
+                for i in 0..20 {
+                    if self.inv_has_bg.get(i).copied().unwrap_or(false) {
+                        p.p1(1);
+                        p.p2(self.inv_background_x[i]);
+                        p.p2(self.inv_background_y[i]);
+                        p.p4(self.inv_background[i]);
+                    } else {
+                        p.p1(0);
+                    }
+                }
+                for i in 0..5 { p.pjstr(self.iop[i].as_deref().unwrap_or("")); }
+            }
+            3 => p.p1(self.fill as i32),
+            _ => {}
+        }
+        if self.type_ == 4 {
+            p.p1(self.h_align); p.p1(self.v_align); p.p1(self.line_height);
+            p.p2(if self.font == -1 { 65535 } else { self.font }); p.p1(self.shadow as i32);
+            p.pjstr(&self.text); p.pjstr(&self.text2);
+        }
+        if self.type_ == 3 || self.type_ == 4 {
+            p.p4(self.colour);
+            p.p4(self.colour2); p.p4(self.colour_over); p.p4(self.colour2_over);
+        }
+        if self.type_ == 5 { p.p4(self.graphic); p.p4(self.graphic2); }
+        if self.type_ == 6 {
+            p.p2(if self.model1_id == -1 { 65535 } else { self.model1_id });
+            p.p2(if self.model2_id == -1 { 65535 } else { self.model2_id });
+            p.p2(if self.model_anim == -1 { 65535 } else { self.model_anim });
+            p.p2(if self.model_anim2 == -1 { 65535 } else { self.model_anim2 });
+            p.p2(self.model_zoom); p.p2(self.model_x_an); p.p2(self.model_y_an);
+        }
+        if self.type_ == 7 {
+            p.p1(self.h_align);
+            p.p2(if self.font == -1 { 65535 } else { self.font });
+            p.p1(self.shadow as i32); p.p4(self.colour);
+            p.p2(self.margin_x); p.p2(self.margin_y);
+            p.p1((self.event_code & 0x4000_0000 != 0) as i32);
+            for i in 0..5 { p.pjstr(self.iop[i].as_deref().unwrap_or("")); }
+        }
+        if self.type_ == 8 { p.pjstr(&self.text); }
+        if self.button_type == 2 || self.type_ == 2 {
+            p.pjstr(&self.target_verb); p.pjstr(&self.target_base);
+            p.p2((self.event_code >> 11) & 0x3F);
+        }
+        if matches!(self.button_type, 1 | 4 | 5 | 6) {
+            // Lossy: decode replaced empty text with a type default — we
+            // can't know if the original was empty. Emit what we have; the
+            // verify step drops mismatches to .dat.
+            p.pjstr(&self.button_text);
+        }
+        Some(p.data)
     }
 
     fn decode_v1(&mut self, bytes: &[u8]) {
@@ -318,8 +489,10 @@ impl IfType {
                 self.inv_background_x = vec![0; 20];
                 self.inv_background_y = vec![0; 20];
                 self.inv_background = vec![0; 20];
+                self.inv_has_bg = vec![false; 20];
                 for i in 0..20 {
                     if buf.g1() == 1 {
+                        self.inv_has_bg[i] = true;
                         self.inv_background_x[i] = i32::from(buf.g2b());
                         self.inv_background_y[i] = i32::from(buf.g2b());
                         self.inv_background[i] = buf.g4();
@@ -411,16 +584,11 @@ impl IfType {
             self.event_code |= target_mask << 11;
         }
         if matches!(self.button_type, 1 | 4 | 5 | 6) {
+            // Store the RAW text (may be empty). The client substitutes a
+            // type default at render time, but that's a display concern of
+            // crates/client's own IfType — keeping the raw value here makes
+            // encode() byte-exact.
             self.button_text = buf.gjstr();
-            if self.button_text.is_empty() {
-                self.button_text = match self.button_type {
-                    1 => "OK",
-                    4 | 5 => "Select",
-                    6 => "Continue",
-                    _ => "",
-                }
-                .to_string();
-            }
         }
         if matches!(self.button_type, 1 | 4 | 5) {
             self.event_code |= 0x40_0000;
@@ -558,6 +726,31 @@ impl IfType {
         }
         self.hashook = true;
         Some(out)
+    }
+}
+
+fn encode_hook(p: &mut Packet, hook: Option<&[HookArg]>) {
+    match hook {
+        None => p.p1(0),
+        Some(args) => {
+            p.p1(args.len() as i32);
+            for a in args {
+                match a {
+                    HookArg::Int(v) => { p.p1(0); p.p4(*v); }
+                    HookArg::Str(s) => { p.p1(1); p.pjstr(s); }
+                }
+            }
+        }
+    }
+}
+
+fn encode_int_list(p: &mut Packet, list: Option<&[i32]>) {
+    match list {
+        None => p.p1(0),
+        Some(vs) => {
+            p.p1(vs.len() as i32);
+            for &v in vs { p.p4(v); }
+        }
     }
 }
 

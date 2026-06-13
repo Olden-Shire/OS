@@ -373,9 +373,16 @@ pub fn op_string_length(s: &str) -> i32 { s.chars().count() as i32 }
 
 // opcode 4118 — substring. Java's `String.substring(begin, end)`
 // uses UTF-16 indices; the cs2 world is ASCII / Cp1252 so we treat
-// char indices uniformly. Out-of-range falls back to empty.
+// char indices uniformly. Java THROWS StringIndexOutOfBoundsException
+// on begin<0 / end<begin / end>len, which the runner's catch turns
+// into a script abort — panic so the same catch_unwind path fires
+// (silently returning "" would let a buggy script keep running where
+// Java kills it).
 pub fn op_substring(s: &str, begin: i32, end: i32) -> String {
-    if begin < 0 || end < begin { return String::new(); }
+    let len = s.chars().count() as i32;
+    if begin < 0 || end < begin || end > len {
+        panic!("substring({begin}, {end}) out of bounds for len {len}");
+    }
     s.chars().skip(begin as usize).take((end - begin) as usize).collect()
 }
 

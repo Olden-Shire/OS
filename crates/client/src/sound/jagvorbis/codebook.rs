@@ -25,7 +25,10 @@ impl CodeBook {
             let mut current_entry = 0i32;
             let mut current_length = br.read_bits(5) + 1;
             while current_entry < entries {
-                let n = br.read_bits(bits_required(entries - current_entry - 1));
+                // CodeBook.java:70 — bitsRequired(entries - current_entry),
+                // NOT remaining-1: the spec's ilog(remaining) reads one more
+                // bit when remaining is a power of two.
+                let n = br.read_bits(bits_required(entries - current_entry));
                 for _ in 0..n {
                     lengths[current_entry as usize] = current_length;
                     current_entry += 1;

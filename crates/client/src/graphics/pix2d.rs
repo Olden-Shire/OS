@@ -61,6 +61,20 @@ pub fn set_pixels(arg0: Vec<i32>, arg1: i32, arg2: i32) {
     set_clipping(0, 0, arg1, arg2);
 }
 
+// Swap the bound pixel buffer (Java PixMap.bind equivalent): returns
+// the previously bound (pixels, width, height) and clips to the new
+// image. Lets the 3D viewport render into its own image like Java's
+// areaViewport PixMap, so rasterizer overdraw can never touch UI.
+pub fn swap_pixels(pixels: Vec<i32>, w: i32, h: i32) -> (Vec<i32>, i32, i32) {
+    let mut s = STATE.lock().unwrap();
+    let old = (std::mem::replace(&mut s.pixels, pixels), s.width, s.height);
+    s.width = w;
+    s.height = h;
+    drop(s);
+    set_clipping(0, 0, w, h);
+    old
+}
+
 // @ObfuscatedName("fv.g()V") — Pix2D.resetClipping
 pub fn reset_clipping() {
     let mut s = STATE.lock().unwrap();

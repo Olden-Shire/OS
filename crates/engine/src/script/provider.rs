@@ -41,7 +41,9 @@ impl ScriptProvider {
         idx.pos += 4;
 
         let version = dat.g4();
-        if version != COMPILER_VERSION {
+        // v26 (Engine-TS reference) and v27 (ours) differ only in the
+        // lookup-key width; decode() handles both. Reject anything else.
+        if version != COMPILER_VERSION && version != 26 {
             return Err(format!(
                 "scripts compiled with incompatible compiler (got {version}, want {COMPILER_VERSION})"
             ));
@@ -63,7 +65,7 @@ impl ScriptProvider {
             let mut blob = vec![0u8; size as usize];
             dat.gdata(&mut blob, 0, size as usize);
 
-            match ScriptFile::decode(id, blob) {
+            match ScriptFile::decode(id, blob, version) {
                 Ok(script) => {
                     let script = Arc::new(script);
                     provider.names.insert(script.info.script_name.clone(), id);

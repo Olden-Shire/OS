@@ -6,6 +6,51 @@
 //! — using a misleading extension would imply the file is in a standard format when it
 //! isn't.
 
+use std::path::{Path, PathBuf};
+
+/// Subdirectory (under the archive dir) a group's files live in, sharding
+/// the otherwise-flat huge archives into navigable 1000-id buckets:
+/// `models/07000/model_7123.ob2`, `anims/01000/anim_1042/…`. Only the
+/// archives the user reorganises (anims=0, bases=1, models=7) shard;
+/// everything else returns `None` (files stay directly under the archive
+/// dir). Derived purely from the group id so unpack and pack agree
+/// without storing the shard in `_meta.json`.
+#[must_use]
+pub fn shard_subdir(archive: u8, group_id: u32) -> Option<String> {
+    match archive {
+        // anims(0) bases(1) jagfx(4) models(7) sprites(8): big single-/
+        // multi-file archives sharded by group id.
+        0 | 1 | 4 | 7 | 8 => Some(format!("{:05}", group_id / 1000 * 1000)),
+        _ => None,
+    }
+}
+
+/// Bucket subdir for ONE file *inside* a multi-file group dir, sharding
+/// the huge config types (loc 26k, obj 12k, …) by file id. Only groups
+/// with more than `SHARD_THRESHOLD` files shard; smaller ones stay flat.
+/// Derived from file count + id so unpack and pack agree from the
+/// manifest alone.
+pub const SHARD_THRESHOLD: usize = 1000;
+
+#[must_use]
+pub fn intra_group_shard(file_count: usize, file_id: i32) -> Option<String> {
+    if file_count > SHARD_THRESHOLD && file_id >= 0 {
+        Some(format!("{:05}", file_id / 1000 * 1000))
+    } else {
+        None
+    }
+}
+
+/// The base directory a group's file(s) live in: the archive dir, plus the
+/// shard subdir for sharded archives.
+#[must_use]
+pub fn group_base(archive_dir: &Path, archive: u8, group_id: u32) -> PathBuf {
+    match shard_subdir(archive, group_id) {
+        Some(s) => archive_dir.join(s),
+        None => archive_dir.to_path_buf(),
+    }
+}
+
 /// Extension for a single-file group's payload, given its archive and a peek at the bytes.
 /// `payload` is the *raw cache bytes* (post-decompression, pre-codec).
 ///

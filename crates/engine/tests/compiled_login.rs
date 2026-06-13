@@ -1,20 +1,14 @@
 //! End-to-end check that the RuneScript compiler's output runs on the engine.
 //! Loads the pack produced by `runescript/` (compiled from
-//! `Content/scripts/login.rs2`), fires the `[login,_]` trigger via add_player,
-//! and asserts the welcome-screen flow: the mes() line, the interface opens,
-//! and the `[if_button,if_378:6]` "Click here to play" → IF_OPENTOP(548).
+//! `Content/scripts/login_logout/login.rs2`), fires the `[login,_]` trigger
+//! via add_player, and asserts the welcome-screen flow: `[login,_]` calls
+//! `~welcome_screen`, which IF_OPENTOPs the overlay holder (549) and docks
+//! the welcome-screen-top (378) and secondary panel (23) into it as overlay
+//! subcomponents at 549:com_2 / 549:com_3. Exercises the .rs2 if_opentop /
+//! if_opensub commands + interface.pack symbol resolution end to end.
 
 use engine::World;
-use protocol::client::ClientMessage;
 use protocol::server as msg;
-
-const MESSAGE_GAME: u8 = 100;
-
-fn message_text(body: &[u8]) -> String {
-    // pjstr: bytes up to the null terminator.
-    let end = body.iter().position(|&b| b == 0).unwrap_or(body.len());
-    String::from_utf8_lossy(&body[..end]).to_string()
-}
 
 #[test]
 fn compiled_login_script_runs() {
@@ -24,42 +18,21 @@ fn compiled_login_script_runs() {
     world.load_scripts(pack);
 
     let pid = world.add_player("tester".into(), 3222, 3222, 0).unwrap();
-
-    {
-        let player = world.players[pid].as_ref().expect("player");
-        let messages: Vec<String> = player
-            .out
-            .iter()
-            .filter(|m| m.opcode == MESSAGE_GAME)
-            .map(|m| message_text(&m.body))
-            .collect();
-        assert_eq!(
-            messages,
-            vec!["Welcome to RuneScape.".to_string()],
-            "compiled [login,_] should emit its mes() line",
-        );
-
-        // [login,_] opens the welcome holder (549), not the game frame.
-        let opentop = msg::if_opentop(549);
-        assert!(
-            player.out.iter().any(|m| m.opcode == opentop.opcode && m.body == opentop.body),
-            "login script should IF_OPENTOP the welcome holder 549",
-        );
-    }
-
-    // "Click here to play" — the rev1 client sends IF_BUTTON with the packed
-    // component (378 << 16) | 6; the [if_button,if_378:6] script answers with
-    // the game frame. This exercises the v27 i64 lookup keys end to end.
-    world.handle_message(pid, ClientMessage::IfButton {
-        op: 1,
-        component: (378 << 16) | 6,
-        sub: -1,
-    });
-
     let player = world.players[pid].as_ref().expect("player");
-    let opentop = msg::if_opentop(548);
+    let sent = |m: &msg::ServerPacket| {
+        player.out.iter().any(|o| o.opcode == m.opcode && o.body == m.body)
+    };
+
+    // [login,_] → ~welcome_screen: open the overlay holder toplevel.
+    assert!(sent(&msg::if_opentop(549)), "should IF_OPENTOP the overlay holder 549");
+    // Dock 378 (welcome top) and 23 (secondary) as overlay subcomponents.
+    // if_opensub(parent:child, sub, kind) → packed component (parent<<16)|child.
     assert!(
-        player.out.iter().any(|m| m.opcode == opentop.opcode && m.body == opentop.body),
-        "[if_button,if_378:6] should IF_OPENTOP the game frame 548",
+        sent(&msg::if_opensub((549 << 16) | 2, 378, 1)),
+        "should IF_OPENSUB 378 into 549:com_2 as overlay",
+    );
+    assert!(
+        sent(&msg::if_opensub((549 << 16) | 3, 23, 1)),
+        "should IF_OPENSUB 23 into 549:com_3 as overlay",
     );
 }

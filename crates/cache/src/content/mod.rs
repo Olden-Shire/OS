@@ -26,9 +26,10 @@
 //!     ...
 //!   maps/                   # archive 5 — named per region from name_hash
 //!     _meta.json            # carries per-loc-file XTEA keys
-//!     m40_55.dat            # terrain (decompressed)
-//!     l40_55.dat            # locs (decompressed + decrypted)
-//!     ...
+//!     40_55.jm2             # ONE text per region: land + locs (maps_jm2.rs);
+//!                           # the m/l group entries in _meta.json both point
+//!                           # at it as "m40_55.jm2" / "l40_55.jm2"
+//!     ...                   # (pairs that fail round-trip stay m*.dat/l*.dat)
 //!   models/                 # archive 7
 //!     _meta.json
 //!     model_0.dat  model_1.dat  ...
@@ -54,10 +55,13 @@
 //! is appended *after* encryption at pack time) — see
 //! `Cache::read_group_with_key` for the read side.
 
+pub mod config_text;
 pub mod extensions;
+pub mod interface_text;
 pub mod hash_names;
 pub mod import_names;
 pub mod manifest;
+pub mod maps_jm2;
 pub mod pack;
 pub mod pack_file;
 pub mod unpack;

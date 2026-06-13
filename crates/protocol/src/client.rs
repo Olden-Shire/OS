@@ -97,9 +97,6 @@ pub fn packet_size(opcode: u8) -> Option<i32> {
         // engine doesn't act on yet. Their SIZES must still be known or the
         // read pump desyncs and drops the connection (the bug the 167 note
         // above describes). decode() returns NoOp for each.
-        181 => 6,   // SET_VARP_CLIENT — p2(varp) + p4(value); cs2 mirrors a
-                    // client-side varp change to the server (very common,
-                    // fires from many settings/interface scripts).
         211 => -2,  // MESSAGE_PRIVATE — u16-length-prefixed (pjstr recipient
                     // + WordPack message).
         96 => -1,   // REPORT_ABUSE — u8-length-prefixed (name + reason + flag).

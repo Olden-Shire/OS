@@ -266,6 +266,20 @@ pub fn make_pix32_array(loader: &mut Js5Loader, group_name: &str, file_name: &st
     if !depack_from(loader, var3, var4) {
         return None;
     }
+    Some(drain_pix32_array())
+}
+
+// Decode a sprite-sheet group from its raw (decompressed) bytes into the
+// per-sprite Pix32 array — the byte-level entry point behind
+// `make_pix32_array`, for callers that already hold the group bytes
+// (e.g. tooling browsing the sprites archive directly).
+pub fn decode_pix32_array(bytes: &[u8]) -> Vec<Pix32> {
+    depack(bytes);
+    drain_pix32_array()
+}
+
+// Build the Pix32 array from the freshly-depacked STATE, then reset it.
+fn drain_pix32_array() -> Vec<Pix32> {
     let mut s = STATE.lock().unwrap();
     let mut var6 = Vec::with_capacity(s.count as usize);
     for var7 in 0..s.count as usize {
@@ -284,7 +298,7 @@ pub fn make_pix32_array(loader: &mut Js5Loader, group_name: &str, file_name: &st
         var6.push(var8);
     }
     s.reset();
-    Some(var6)
+    var6
 }
 
 // @ObfuscatedName("y.g([BI)Lfm;") — PixLoader.makePixFont from raw metrics.

@@ -162,9 +162,57 @@ fn read_group_payload(
     names: &NameMaps,
     cs2_sigs: &BTreeMap<u32, ScriptSig>,
 ) -> std::io::Result<Vec<u8>> {
+    // Sharded archives (models/anims/bases) store files in a 1000-id
+    // bucket subdir; group_base resolves to the archive dir otherwise.
+    let base_dir = extensions::group_base(archive_dir, archive, meta.id);
     if let Some(file_ids) = &meta.file_ids {
+        // All-empty placeholder group (unpack wrote no files): regenerate
+        // a lone 0x00 record per file and reassemble via the stored chunk
+        // layout — byte-identical to the original, zero disk reads.
+        if meta.placeholder {
+            let files: Vec<Vec<u8>> = file_ids.iter().map(|_| vec![0u8]).collect();
+            let (body, trailer) = match &meta.chunks {
+                None => single_chunk_layout(&files),
+                Some(chunks) => multi_chunk_layout(&files, chunks),
+            };
+            let mut out = Vec::with_capacity(body.len() + trailer.len());
+            out.extend_from_slice(&body);
+            out.extend_from_slice(&trailer);
+            return Ok(out);
+        }
+        // Interface group stored as one `.if` text: re-encode every
+        // component and reassemble in file-id order via the chunk layout.
+        if archive == crate::INTERFACES_ARCHIVE
+            && std::path::Path::new(&meta.path).extension().is_some_and(|e| e.eq_ignore_ascii_case("if"))
+        {
+            let p = base_dir.join(&meta.path);
+            let text = fs::read_to_string(&p)
+                .map_err(|e| std::io::Error::new(e.kind(), format!("read {p:?}: {e}")))?;
+            let parsed = crate::content::interface_text::encode_group(meta.id, &text).ok_or_else(|| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{p:?}: .if re-encode failed"))
+            })?;
+            let map: std::collections::HashMap<i32, Vec<u8>> = parsed.into_iter().collect();
+            let mut files: Vec<Vec<u8>> = file_ids.iter()
+                .map(|f| map.get(f).cloned())
+                .collect::<Option<_>>()
+                .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData,
+                    format!("{p:?}: .if missing a component")))?;
+            // A single-component group has NO multi-file chunk trailer —
+            // its payload is the component bytes verbatim.
+            if files.len() == 1 {
+                return Ok(files.pop().unwrap());
+            }
+            let (body, trailer) = match &meta.chunks {
+                None => single_chunk_layout(&files),
+                Some(chunks) => multi_chunk_layout(&files, chunks),
+            };
+            let mut out = Vec::with_capacity(body.len() + trailer.len());
+            out.extend_from_slice(&body);
+            out.extend_from_slice(&trailer);
+            return Ok(out);
+        }
         // Multi-file group.
-        let group_dir = archive_dir.join(group_dir_name(meta, archive, packs));
+        let group_dir = base_dir.join(group_dir_name(meta, archive, packs));
         let inner_ext = extensions::multi_file_inner_ext(archive, meta.id);
         // Files within: pack file (if config-type scope) overrides the default "{fid}" stem.
         let file_pack = if archive == CONFIG_ARCHIVE {
@@ -172,12 +220,42 @@ fn read_group_payload(
         } else {
             None
         };
-        let mut files: Vec<Vec<u8>> = Vec::with_capacity(file_ids.len());
+        // Config-archive groups may store records as readable text
+        // (`.obj`, `.loc`, …) — re-encode those to the exact bytes; a
+        // `.dat` sibling is the verbatim fallback (and all other archives).
+        let config_codec = if archive == CONFIG_ARCHIVE {
+            crate::content::config_text::schema_for_group(meta.id)
+        } else {
+            None
+        };
+        let nfiles = file_ids.len();
+        let mut files: Vec<Vec<u8>> = Vec::with_capacity(nfiles);
         for &fid in file_ids {
             let stem = file_pack
                 .and_then(|m| m.get(&(fid as u32)).map(String::as_str))
                 .map_or_else(|| fid.to_string(), str::to_string);
-            let p = group_dir.join(format!("{stem}.{inner_ext}"));
+            // Mirror unpack's intra-group id-bucket sharding for huge types.
+            let fdir = match extensions::intra_group_shard(nfiles, fid) {
+                Some(b) => group_dir.join(b),
+                None => group_dir.clone(),
+            };
+            if let Some((schema, kind)) = config_codec {
+                let text_path = fdir.join(format!("{stem}.{kind}"));
+                if text_path.exists() {
+                    let text = fs::read_to_string(&text_path).map_err(|e| {
+                        std::io::Error::new(e.kind(), format!("read {text_path:?}: {e}"))
+                    })?;
+                    let bytes = crate::content::config_text::encode(schema, &text).ok_or_else(|| {
+                        std::io::Error::new(
+                            std::io::ErrorKind::InvalidData,
+                            format!("{text_path:?}: config text re-encode failed"),
+                        )
+                    })?;
+                    files.push(bytes);
+                    continue;
+                }
+            }
+            let p = fdir.join(format!("{stem}.{inner_ext}"));
             files.push(fs::read(&p).map_err(|e| {
                 std::io::Error::new(e.kind(), format!("read {p:?}: {e}"))
             })?);
@@ -192,6 +270,43 @@ fn read_group_payload(
         out.extend_from_slice(&trailer);
         Ok(out)
     } else {
+        // Maps land/loc pair sharing one region text: meta.path is
+        // "m{r}.jm2" or "l{r}.jm2", the physical file is "{r}.jm2"
+        // (content::maps_jm2). Re-encode the half this group owns; the
+        // caller then compresses + appends the trailer + XTEA-encrypts
+        // exactly as for a .dat payload.
+        let meta_ext = std::path::Path::new(&meta.path)
+            .extension()
+            .and_then(|e| e.to_str())
+            .unwrap_or("");
+        if meta_ext.eq_ignore_ascii_case("jm2") {
+            let stem = std::path::Path::new(&meta.path)
+                .file_stem()
+                .and_then(|s| s.to_str())
+                .unwrap_or("");
+            let (half, region) = stem.split_at(1.min(stem.len()));
+            let file = archive_dir.join(format!("{region}.jm2"));
+            let text = fs::read_to_string(&file)
+                .map_err(|e| std::io::Error::new(e.kind(), format!("read {file:?}: {e}")))?;
+            let raw = crate::maps::text::RawRegion::from_text(&text).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{file:?}: {e}"))
+            })?;
+            return Ok(match half {
+                "m" => raw.encode_land(),
+                "l" => raw.encode_locs(),
+                _ => {
+                    return Err(std::io::Error::new(
+                        std::io::ErrorKind::InvalidData,
+                        format!("jm2 group path {:?} must start with m or l", meta.path),
+                    ));
+                }
+            });
+        }
+
+        // Single-file empty config stub — regenerate the lone 0x00 record.
+        if meta.placeholder {
+            return Ok(vec![0u8]);
+        }
         // Single-file group.
         let stem = single_file_stem(meta, archive, packs);
         let dat = match stem {
@@ -200,10 +315,24 @@ fn read_group_payload(
                     .extension()
                     .and_then(|e| e.to_str())
                     .unwrap_or("dat");
-                archive_dir.join(format!("{s}.{ext}"))
+                base_dir.join(format!("{s}.{ext}"))
             }
-            None => archive_dir.join(&meta.path),
+            None => base_dir.join(&meta.path),
         };
+        // Vorbis sample groups live as standard .ogg on disk
+        // (crate::vorbis_ogg) — rebuild the Jagex container from the ogg
+        // packets + comment fields. Group 0 (shared setup header) stays
+        // .dat and falls through as raw bytes.
+        if archive == crate::VORBIS_ARCHIVE
+            && dat.extension().and_then(|e| e.to_str()).is_some_and(|e| e.eq_ignore_ascii_case("ogg"))
+        {
+            let bytes = fs::read(&dat)
+                .map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))?;
+            let sample = crate::vorbis_ogg::from_ogg(&bytes).map_err(|e| {
+                std::io::Error::new(std::io::ErrorKind::InvalidData, format!("{dat:?}: {e}"))
+            })?;
+            return Ok(sample.encode());
+        }
         let bytes = fs::read(&dat)
             .map_err(|e| std::io::Error::new(e.kind(), format!("read {dat:?}: {e}")))?;
         // Reverse the unpack-side codec. A `.cs2` file is structured clientscript

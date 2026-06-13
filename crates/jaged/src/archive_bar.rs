@@ -1,100 +1,73 @@
-//! Bottom archive selector — fixed grid of cards, one per archive. Each card shows the
-//! archive's name + group count and is the entry point for navigating the cache.
+//! Left archive rail — a slim vertical list of the 16 archives, the
+//! primary navigation. Replaces the old bottom card grid: scannable,
+//! always visible, and frees the whole bottom + the cramped feel.
 //!
-//! 16 archives in OSRS rev1, laid out as 2 rows × 8 columns (tunable). Cards highlight
-//! the currently-selected archive. Clicking a card resets the group / file selection.
+//! Each row shows the archive name and its group count; the selected row
+//! gets an accent bar + tint. Clicking selects the archive and auto-picks
+//! its first group.
 
 use cache::{ARCHIVE_COUNT, Cache};
 use eframe::egui;
 
-use crate::{Selection, archive_label};
+use crate::{Selection, archive_label, theme};
 
-const ROWS: usize = 2;
-const COLS: usize = (ARCHIVE_COUNT as usize).div_ceil(ROWS);
-const CARD_HEIGHT: f32 = 54.0;
-const CARD_GAP: f32 = 6.0;
-
-/// Total height the panel wants — outer padding + 2 card rows + row gap.
-pub fn panel_height() -> f32 {
-    CARD_HEIGHT * ROWS as f32 + CARD_GAP * (ROWS as f32 - 1.0) + 18.0
-}
+const ROW_H: f32 = 30.0;
 
 pub fn draw(ui: &mut egui::Ui, cache: &Cache, sel: &mut Selection) {
-    let avail_w = ui.available_width();
-    let card_w = ((avail_w - CARD_GAP * (COLS as f32 - 1.0)) / COLS as f32).max(80.0);
+    ui.add_space(8.0);
+    ui.label(egui::RichText::new("ARCHIVES").size(11.0).weak().strong());
+    ui.add_space(4.0);
 
-    ui.add_space(2.0);
-    for row in 0..ROWS {
-        ui.horizontal(|ui| {
-            for col in 0..COLS {
-                let archive = (row * COLS + col) as u8;
-                if archive >= ARCHIVE_COUNT {
-                    break;
-                }
-                draw_card(ui, cache, archive, sel, card_w);
-                if col + 1 < COLS {
-                    ui.add_space(CARD_GAP);
-                }
-            }
-        });
-        if row + 1 < ROWS {
-            ui.add_space(CARD_GAP);
+    egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
+        ui.spacing_mut().item_spacing.y = 2.0;
+        for archive in 0..ARCHIVE_COUNT {
+            row(ui, cache, archive, sel);
         }
-    }
+    });
 }
 
-fn draw_card(ui: &mut egui::Ui, cache: &Cache, archive: u8, sel: &mut Selection, w: f32) {
+fn row(ui: &mut egui::Ui, cache: &Cache, archive: u8, sel: &mut Selection) {
     let index = cache.index(archive);
     let selected = sel.archive == Some(archive);
 
-    let (rect, resp) =
-        ui.allocate_exact_size(egui::vec2(w, CARD_HEIGHT), egui::Sense::click());
+    let w = ui.available_width();
+    let (rect, resp) = ui.allocate_exact_size(egui::vec2(w, ROW_H), egui::Sense::click());
 
-    let visuals = ui.visuals();
     let bg = if selected {
-        visuals.selection.bg_fill
+        theme::ACCENT.gamma_multiply(0.22)
     } else if resp.hovered() {
-        visuals.widgets.hovered.bg_fill
+        ui.visuals().widgets.hovered.bg_fill
     } else {
-        visuals.widgets.inactive.bg_fill
+        egui::Color32::TRANSPARENT
     };
-    let stroke = if selected {
-        egui::Stroke::new(1.5, visuals.selection.stroke.color)
-    } else {
-        egui::Stroke::new(1.0, visuals.widgets.inactive.bg_stroke.color)
-    };
-
     let painter = ui.painter_at(rect);
-    painter.rect(rect, 4.0, bg, stroke, egui::StrokeKind::Inside);
+    if bg != egui::Color32::TRANSPARENT {
+        painter.rect_filled(rect, 5.0, bg);
+    }
+    if selected {
+        // Accent bar on the leading edge.
+        let bar = egui::Rect::from_min_size(rect.left_top(), egui::vec2(3.0, rect.height()));
+        painter.rect_filled(bar, 2.0, theme::ACCENT);
+    }
 
-    let inner = rect.shrink2(egui::vec2(8.0, 6.0));
-    let name = archive_label(archive);
-    let name_color = if selected {
-        visuals.selection.stroke.color
-    } else {
-        visuals.text_color()
-    };
+    let name_color = if selected { theme::ACCENT_TEXT } else { ui.visuals().text_color() };
     painter.text(
-        inner.left_top(),
-        egui::Align2::LEFT_TOP,
-        name,
-        egui::FontId::proportional(13.0),
+        rect.left_center() + egui::vec2(12.0, 0.0),
+        egui::Align2::LEFT_CENTER,
+        archive_label(archive),
+        egui::FontId::proportional(13.5),
         name_color,
     );
     painter.text(
-        inner.left_bottom() - egui::vec2(0.0, 2.0),
-        egui::Align2::LEFT_BOTTOM,
-        format!("{} groups", index.size),
-        egui::FontId::monospace(10.0),
-        visuals.weak_text_color(),
+        rect.right_center() - egui::vec2(10.0, 0.0),
+        egui::Align2::RIGHT_CENTER,
+        index.size.to_string(),
+        egui::FontId::monospace(11.0),
+        ui.visuals().weak_text_color(),
     );
 
     if resp.clicked() {
         sel.archive = Some(archive);
-        // Auto-select the first group in this archive so the viewport + details have
-        // something to render immediately. For multi-file groups, also pick the first
-        // file. Falls back to None on empty archives (rare — most rev1 archives have
-        // at least one group).
         let first_group = index.group_ids.first().copied().map(|g| g as u32);
         sel.group = first_group;
         sel.file_id = match first_group {

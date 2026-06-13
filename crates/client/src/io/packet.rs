@@ -721,18 +721,10 @@ impl Packet {
         (self.data[i] as i32 - 128) as i8
     }
 
-    // @ObfuscatedName("ev.ay(I)B") — Packet.g1b_alt2. The middle of
-    // the three permutations: byte read with sign-bit flip (`128 - b`
-    // unsigned then re-cast). Java's @ObfuscatedName "ay" comes from
-    // a separate codepath that drops the high bit before negation.
-    pub fn g1b_alt2(&mut self) -> i8 {
-        if settings::NO_ALT_METHODS {
-            return self.g1b();
-        }
-        let i = self.pos as usize;
-        self.pos += 1;
-        (-(self.data[i] as i32)) as i8
-    }
+    // NOTE: Java's Packet has no g1b_alt2 — only g1b_alt1 ("ev.aw") and
+    // g1b_alt3 ("ev.au"). A negate-byte variant previously here carried
+    // @ObfuscatedName("ev.ay"), but ev.ay(II)I is actually addcrc; the
+    // method was invented during porting and had no callers. Removed.
 
     // @ObfuscatedName("ev.au(I)B")
     pub fn g1b_alt3(&mut self) -> i8 {

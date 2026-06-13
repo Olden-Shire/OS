@@ -600,8 +600,12 @@ pub fn draw(
 
             if loginscreen == 0 {
                 p.base.centre_string(text::WELCOMETORUNESCAPE, 382, 251, 0xFFFF00, 0);
-                p.base.centre_string(text::NEWUSER, 302, 296, 0xFFFFFF, 0);
-                p.base.centre_string(text::EXISTINGUSER, 462, 296, 0xFFFFFF, 0);
+                // Java TitleScreen.java:466-471 — multiline-justified inside
+                // the 144x40 button box (matters if a label ever wraps).
+                p.base.draw_string_multiline(text::NEWUSER, 302 - 73, 291 - 20, 144, 40,
+                                             0xFFFFFF, 0, 1, 1, 0);
+                p.base.draw_string_multiline(text::EXISTINGUSER, 462 - 73, 291 - 20, 144, 40,
+                                             0xFFFFFF, 0, 1, 1, 0);
             } else if loginscreen == 2 {
                 // Redraw title box + the two bottom buttons.
                 {
@@ -617,25 +621,40 @@ pub fn draw(
                 p.base.centre_string(&login_mes2, 382, y, 0xFFFF00, 0); y += 15;
                 p.base.centre_string(&login_mes3, 382, y, 0xFFFF00, 0); y += 15 + 10;
 
-                // Java hardcodes input at x=312/274 assuming the prompt
-                // fits in 40px. Position the input right after the prompt's
-                // actual end (our font renders the text slightly wider).
+                // TitleScreen.java:484-499 verbatim: prompt at 272, value
+                // at the FIXED 312 (the PixFont metrics are bit-faithful,
+                // so Java's hardcoded offsets hold); the username drops
+                // leading chars until it fits 200px; the blink caret is an
+                // inline yellow PIPE glyph, not a drawn line. The password
+                // line is ONE string (prompt + asterisks + caret) at 274.
                 p.base.draw_string(text::USERNAMEPROMPT, 272, y, 0xFFFFFF, 0);
-                let user_input_x = 272 + p.base.string_wid(text::USERNAMEPROMPT);
-                p.base.draw_string(&login_user, user_input_x, y, 0xFFFFFF, 0);
-                if login_select == 0 && (client_loop_cycle % 40) < 20 {
-                    let caret_x = user_input_x + p.base.string_wid(&login_user);
-                    crate::graphics::pix2d::vline(caret_x, y - p.base.ascent + 1, p.base.ascent, 0xFFFF00);
+                let mut user = login_user.clone();
+                while p.base.string_wid(&user) > 200 {
+                    user.remove(0);
                 }
+                let caret = |selected: bool| -> String {
+                    if selected && (client_loop_cycle % 40) < 20 {
+                        format!("{}{}",
+                                crate::string_constants::tag_colour(16776960),
+                                crate::string_constants::PIPE)
+                    } else {
+                        String::new()
+                    }
+                };
+                let user_line = format!(
+                    "{}{}",
+                    crate::graphics::pix_font::PixFont::escape(&user),
+                    caret(login_select == 0),
+                );
+                p.base.draw_string(&user_line, 312, y, 0xFFFFFF, 0);
                 y += 15;
-                let stars: String = "*".repeat(login_pass.len());
-                p.base.draw_string(text::PASSWORDPROMPT, 274, y, 0xFFFFFF, 0);
-                let pass_input_x = 274 + p.base.string_wid(text::PASSWORDPROMPT);
-                p.base.draw_string(&stars, pass_input_x, y, 0xFFFFFF, 0);
-                if login_select == 1 && (client_loop_cycle % 40) < 20 {
-                    let caret_x = pass_input_x + p.base.string_wid(&stars);
-                    crate::graphics::pix2d::vline(caret_x, y - p.base.ascent + 1, p.base.ascent, 0xFFFF00);
-                }
+                let pass_line = format!(
+                    "{}{}{}",
+                    text::PASSWORDPROMPT,
+                    "*".repeat(login_pass.len()),
+                    caret(login_select == 1),
+                );
+                p.base.draw_string(&pass_line, 274, y, 0xFFFFFF, 0);
 
                 p.base.centre_string(text::LOGIN, 302, 321 + 5, 0xFFFFFF, 0);
                 p.base.centre_string(text::CANCEL, 462, 321 + 5, 0xFFFFFF, 0);
@@ -665,9 +684,11 @@ pub fn draw(
             let y = 20;
             p.base.centre_string(text::LOADING_TITLE, 382, 245 - y, 0xFFFFFF, -1);
             let bar_y = 253 - y;
-            pix2d::draw_rect(230, bar_y, 304, 34, 0x8C1F11);
+            // Java: 9179409 == 0x8C1111 (an earlier transcription had the
+            // green channel wrong at 0x1F).
+            pix2d::draw_rect(230, bar_y, 304, 34, 0x8C1111);
             pix2d::draw_rect(231, bar_y + 1, 302, 32, 0);
-            pix2d::fill_rect(232, bar_y + 2, load_pos * 3, 30, 0x8C1F11);
+            pix2d::fill_rect(232, bar_y + 2, load_pos * 3, 30, 0x8C1111);
             pix2d::fill_rect(load_pos * 3 + 232, bar_y + 2, 300 - load_pos * 3, 30, 0);
             p.base.centre_string(&msg, 382, 276 - y, 0xFFFFFF, -1);
         }

@@ -667,12 +667,13 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             p.write(msg::if_opentop(interface));
         }
         op::IF_OPENSUB => {
-            // Open interface `sub` as a child at component `parent:child`,
-            // kind 0 = modal, 1 = overlay. The packet carries the packed
-            // (parent<<16)|child component.
-            let [parent, child, sub, kind] = state.pop_ints::<4>();
+            // Open interface `sub` as a child at `component`, kind 0 = modal,
+            // 1 = overlay. `component` is a single packed (parent<<16)|child
+            // int — the compiler resolves `if_549:com_2` to that packed form
+            // (matching component trigger subjects), so we pass it through.
+            let [component, sub, kind] = state.pop_ints::<3>();
             let p = active_player(state, world)?;
-            p.write(msg::if_opensub((parent << 16) | child, sub, kind));
+            p.write(msg::if_opensub(component, sub, kind));
         }
         op::IF_CLOSE => {
             // Engine-TS IF_CLOSE → closeModal: end any open dialog/modal

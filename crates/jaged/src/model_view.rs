@@ -1,22 +1,27 @@
-//! Software-rendered model viewer. Uses the ported `pix::ModelRenderer` + `Pix3D` exactly
-//! the way the rev1 Java client does, then uploads the resulting `Pix2D` buffer to an
-//! egui texture for display.
+//! Software-rendered model viewer — runs the CLIENT's 1:1 dash3d
+//! pipeline (ModelUnlit decode → ModelLit light → `world_render`), the
+//! exact path the in-game SCENE renders models with. The scene's
+//! perspective orbit camera gives every face a well-separated depth, so
+//! the painter sort is stable (the icon/`obj_render_icon` path collapses
+//! coplanar faces into depth ties and z-fights on arbitrary models).
+//! The finished client Pix2D frame uploads to an egui texture.
 
-use cache::model::Model;
+use client::dash3d::model_lit::ModelLit;
+use client::dash3d::model_unlit::ModelUnlit;
+use client::dash3d::pix3d;
+use client::graphics::pix2d;
 use eframe::egui;
-use pix::pix3d::{cos_table, sin_table};
-use pix::{model_light, ModelRenderer, Pix2D, Pix3D};
 
 use crate::pix_bridge;
 
-/// Viewer state. Angles are Jagex units (0..2047 = full turn); `zoom` is the camera
-/// distance term (multiplied by sin/cos of cam_pitch per Java's interface convention).
-///
-/// Drag-x orbits yaw, drag-y orbits camera pitch. The model's authored origin is shifted
-/// to its bounds centre so arbitrary cache models appear centred at all camera angles.
+/// Viewer state — a free turntable orbit. `yaw`/`pitch` 0..2047 (full
+/// rotation both axes), `zoom` is the camera distance (0 = auto from the
+/// model's extent). Drag-x orbits yaw, drag-y pitch. The model's authored
+/// origin is shifted to its bounds centre so it orbits around its middle.
+/// Rendering goes through the scene's `world_render` pipeline (not the
+/// icon path) for stable, scene-identical depth sorting.
 pub struct ModelView {
     pub yaw: i32,
-    pub roll: i32,
     pub camera_pitch: i32,
     pub zoom: i32,
     pub lighting: bool,
@@ -24,9 +29,9 @@ pub struct ModelView {
 
 impl Default for ModelView {
     fn default() -> Self {
-        // Head-on default (no camera tilt, no spin). Zoom = 0 → auto-fit to bounds at a
-        // slightly tighter framing than the original (set in `draw` from model extent).
-        Self { yaw: 0, roll: 0, camera_pitch: 0, zoom: 0, lighting: true }
+        // Tilted 3/4 view like the scene camera (never straight-on,
+        // where coplanar faces would tie in the painter sort).
+        Self { yaw: 0, camera_pitch: 280, zoom: 0, lighting: true }
     }
 }
 
@@ -35,57 +40,57 @@ pub fn draw(ui: &mut egui::Ui, group_id: u32, bytes: &[u8], state: &mut ModelVie
         ui.label("(empty)");
         return;
     }
-    let model = match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| Model::decode(bytes))) {
-        Ok(m) => m,
+    // Decode + light through the client pipeline. light() consumes the
+    // unlit normals, so build fresh per frame (cheap at tool scale —
+    // same as the old per-frame model_light bake).
+    let lit = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+        let mut unlit = ModelUnlit::from_bytes(bytes.to_vec());
+        unlit.calculate_normals();
+        if state.lighting {
+            // IfType model lighting params (IfType.java:1100).
+            ModelLit::light(&mut unlit, 64, 768, -50, -10, -50)
+        } else {
+            ModelLit::from_unlit_flat(&unlit, 64, 768, -50, -10, -50)
+        }
+    }));
+    let mut lit = match lit {
+        Ok(l) => l,
         Err(_) => {
             ui.colored_label(egui::Color32::LIGHT_RED, "model decode failed");
             return;
         }
     };
 
-    // Small toolbar above the canvas — keeps interactive controls (lighting/reset)
-    // attached to the viewport, but mesh stats (point/face counts) live in the right
-    // `details` panel next to the summary card.
     ui.horizontal(|ui| {
         ui.checkbox(&mut state.lighting, "lighting");
         if ui.button("reset view").clicked() {
             state.yaw = 0;
-            state.roll = 0;
-            state.camera_pitch = 0;
+            state.camera_pitch = 280;
             state.zoom = 0;
         }
         ui.label(
-            egui::RichText::new("· drag = orbit · scroll = zoom · software pix3d")
+            egui::RichText::new("· drag = orbit · scroll = zoom · client dash3d (1:1)")
                 .weak()
                 .small(),
         );
     });
 
-    // Fill the rest of the panel.
     let avail = ui.available_size_before_wrap();
     if avail.x < 16.0 || avail.y < 16.0 {
         return;
     }
-    let (rect, response) =
-        ui.allocate_exact_size(avail, egui::Sense::click_and_drag());
+    let (rect, response) = ui.allocate_exact_size(avail, egui::Sense::click_and_drag());
 
-    // Orbit input — drag to rotate, scroll to zoom. Convert pixel deltas to Jagex angle
-    // units (2048 = full turn).
     if response.dragged() {
         let drag = response.drag_delta();
+        // Free turntable orbit (full yaw + pitch). The model orbits its
+        // own centre at `zoom` distance, so it's always in front of the
+        // camera at any angle.
         state.yaw = (state.yaw + (drag.x * 4.0) as i32).rem_euclid(2048);
-        state.camera_pitch =
-            (state.camera_pitch + (drag.y * 4.0) as i32).clamp(-512, 512);
-    }
-    let scroll = ui.input(|i| i.smooth_scroll_delta.y);
-    if scroll != 0.0 && response.hovered() {
-        let (_mn, mx) = model.bounds().unwrap_or(((0, 0, 0), (1, 1, 1)));
-        let extent = mx.0.max(mx.1).max(mx.2).max(1);
-        let zoom_step = (extent as f32 * scroll * -0.5) as i32;
-        state.zoom = (state.zoom + zoom_step).max(extent * 2);
+        state.camera_pitch = (state.camera_pitch + (drag.y * 4.0) as i32).rem_euclid(2048);
     }
 
-    if model.num_points == 0 || model.num_faces == 0 {
+    if lit.num_points == 0 || lit.num_faces == 0 {
         ui.painter_at(rect).rect_filled(rect, 4.0, egui::Color32::from_rgb(28, 30, 36));
         ui.painter_at(rect).text(
             rect.center(),
@@ -97,60 +102,82 @@ pub fn draw(ui: &mut egui::Ui, group_id: u32, bytes: &[u8], state: &mut ModelVie
         return;
     }
 
-    // Bounds-centre so arbitrary models render centred regardless of their authored
-    // origin (the rev1 IfType-driven path assumes models are authored at origin; we
-    // can't assume that for a free cache browser).
-    let (mn, mx) = model.bounds().unwrap_or(((0, 0, 0), (1, 1, 1)));
-    let cx = (mn.0 + mx.0) / 2;
-    let cy = (mn.1 + mx.1) / 2;
-    let cz = (mn.2 + mx.2) / 2;
-    let extent = ((mx.0 - mn.0).max(mx.1 - mn.1).max(mx.2 - mn.2)).max(1);
-    // extent*3 → model ~67% of viewport; "a bit closer" than the old extent*4.
+    // Bounds-centre so arbitrary models render (and orbit) around their
+    // geometric middle regardless of authored origin.
+    let n = lit.num_points as usize;
+    let (mut mnx, mut mny, mut mnz) = (i32::MAX, i32::MAX, i32::MAX);
+    let (mut mxx, mut mxy, mut mxz) = (i32::MIN, i32::MIN, i32::MIN);
+    for i in 0..n {
+        mnx = mnx.min(lit.point_x[i]);
+        mny = mny.min(lit.point_y[i]);
+        mnz = mnz.min(lit.point_z[i]);
+        mxx = mxx.max(lit.point_x[i]);
+        mxy = mxy.max(lit.point_y[i]);
+        mxz = mxz.max(lit.point_z[i]);
+    }
+    let extent = ((mxx - mnx).max(mxy - mny).max(mxz - mnz)).max(1);
+    lit.translate(-(mnx + mxx) / 2, -(mny + mxy) / 2, -(mnz + mxz) / 2);
+
+    let scroll = ui.input(|i| i.smooth_scroll_delta.y);
+    if scroll != 0.0 && response.hovered() {
+        let zoom_step = (extent as f32 * scroll * -0.5) as i32;
+        let base = if state.zoom > 0 { state.zoom } else { extent * 3 };
+        state.zoom = (base + zoom_step).max(extent);
+    }
     let zoom = if state.zoom > 0 { state.zoom } else { extent * 3 };
 
-    // Allocate a Pix2D the same size as the viewport rect (in physical pixels).
     let ppp = ui.ctx().pixels_per_point();
     let tex_w = (rect.width() * ppp) as i32;
     let tex_h = (rect.height() * ppp) as i32;
     if tex_w < 4 || tex_h < 4 {
         return;
     }
-    let mut p2 = Pix2D::new(tex_w, tex_h);
-    p2.fill_rect(0, 0, tex_w, tex_h, 0xFF1C_1E24); // background
 
-    let mut p3 = Pix3D::new(&p2);
-    p3.set_origin(&p2, tex_w / 2, tex_h / 2);
+    // Render exactly as the scene does: a perspective orbit camera at
+    // `zoom` around the (recentred) model at the world origin, through
+    // ModelLit::world_render. The camera world position mirrors
+    // scene.rs's orbit fallback; rel = model(0) - cam = -cam.
+    let sin_t = pix3d::sin_table();
+    let cos_t = pix3d::cos_table();
+    let pitch = (state.camera_pitch & 0x7FF) as usize;
+    let yaw = (state.yaw & 0x7FF) as usize;
+    let sin_p = sin_t[pitch];
+    let cos_p = cos_t[pitch];
+    let sin_y = sin_t[yaw];
+    let cos_y = cos_t[yaw];
+    let h_radius = (zoom * cos_p) >> 16;
+    let rel_x = -((h_radius * sin_y) >> 16);
+    let rel_y = (zoom * sin_p) >> 16;
+    let rel_z = (h_radius * cos_y) >> 16;
 
-    // Java interface convention: origin = (0, zoom*sin(cam_pitch), zoom*cos(cam_pitch))
-    // places the model on the tilted camera's optical axis so the projection lands at
-    // Pix3D.origin (the viewport centre). We extend with -cx/-cy/-cz so the model's
-    // bounds centre — not its authored origin — is what the camera focuses on.
-    let var207 = (zoom * sin_table(state.camera_pitch)) >> 16;
-    let var208 = (zoom * cos_table(state.camera_pitch)) >> 16;
-    let mut renderer = ModelRenderer::new();
-    // Bake lighting per-frame with the standard interface params from
-    // `IfType.java:1100`. Cheap relative to render; can be cached on the model in
-    // future. When `lighting` is off, pass `None` for the unlit raw-colour path.
-    let lit_owned = if state.lighting {
-        Some(model_light(&model, 64, 768, -50, -10, -50))
-    } else {
-        None
-    };
-    renderer.obj_render(
-        &model,
-        lit_owned.as_ref(),
-        &mut p2,
-        &p3,
-        /*model_pitch=*/ 0,
-        state.yaw,
-        state.roll,
-        state.camera_pitch,
-        -cx,
-        -cy + var207,
-        -cz + var208,
+    // Bind a scratch frame on the client's global Pix2D, render, then
+    // swap the real buffer back (the client pipeline draws through its
+    // process-wide raster state; jaged is single-threaded here).
+    let (prev, pw, ph) = pix2d::swap_pixels(vec![0x001C1E24; (tex_w * tex_h) as usize], tex_w, tex_h);
+    pix2d::set_clipping(0, 0, tex_w, tex_h);
+    pix3d::set_origin(tex_w / 2, tex_h / 2);
+    pix3d::set_render_clipping();
+    // world_render culls past `model_far_clip` (the scene's distance
+    // cull); push it beyond this model's camera distance + reach so big
+    // or zoomed-out models aren't culled.
+    pix3d::set_model_far_clip((zoom + extent - 3500).max(0));
+    let render = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+        lit.world_render(0, sin_p, cos_p, sin_y, cos_y, rel_x, rel_y, rel_z, 0);
+    }));
+    pix3d::set_model_far_clip(0);
+    let (frame, _, _) = pix2d::swap_pixels(prev, pw, ph);
+    if render.is_err() {
+        ui.colored_label(egui::Color32::LIGHT_RED, "render panicked");
+        return;
+    }
+
+    let texture = pix_bridge::upload_rgb(
+        ui.ctx(),
+        format!("model_{group_id}"),
+        &frame,
+        tex_w as usize,
+        tex_h as usize,
     );
-
-    let texture = pix_bridge::upload(ui.ctx(), format!("model_{group_id}"), &p2);
     ui.painter_at(rect).image(
         texture.id(),
         rect,

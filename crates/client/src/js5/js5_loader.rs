@@ -319,13 +319,13 @@ impl Js5Loader {
         }
     }
 
-    // @ObfuscatedName("ch.a(I)I") — Js5.getFileIdLimit. Returns the
-    // number of files in `group_id` (Java reads `groupFileCount[group]`
-    // — same as our `group_sizes[group]`). Used by *Type::install to
-    // size the type definition tables (VarpType.numDefinitions etc.).
+    // @ObfuscatedName("ch.u(IS)I") — Js5.getFileIdLimit (Java does NOT
+    // override this in Js5Loader). Returns unpacked[group].length =
+    // maxFileId + 1, the sparse SLOT count — not the file count.
+    // A previous version returned group_sizes[gid], which undersizes
+    // *Type::install tables for any group with file-id gaps.
     pub fn get_file_id_limit(&self, group_id: i32) -> i32 {
-        let gid = group_id as usize;
-        self.base.group_sizes.get(gid).copied().unwrap_or(0)
+        self.base.get_file_id_limit(group_id)
     }
 
     // @ObfuscatedName("dq.bn(II)I")

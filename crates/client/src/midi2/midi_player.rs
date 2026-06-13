@@ -34,27 +34,20 @@ pub struct MidiPlayer {
     pub channel_effects: [i32; 16],
     pub channel_parameter_number: [i32; 16],
     pub channel_pitch_bend_range: [i32; 16],
-    // CC 6/38 Data Entry — value written to the currently-selected
-    // RPN or NRPN parameter.
-    pub channel_data_entry: [i32; 16],
     // CC 16/48 Custom1 — filter cutoff / RetrigEffect anchor; widely
     // re-purposed by the OSRS synth.
     pub channel_custom1: [i32; 16],
-    // CC 17/49 retrigger rate (10ms periods); paired with CC 81 ON
-    // bit in channel_effects.
-    pub channel_retrig_rate: [i32; 16],
-    // Companion lookup written by set_retrig_rate from channel_retrig_rate.
+    // CC 17/49 retrigger rate raw value; paired with CC 81 ON bit in
+    // channel_effects.
     // @ObfuscatedName("ed.channelCustom2/3") — Java's MidiPlayer.java:577
     // stores the retrig rate raw + a precomputed exp curve so the inner
     // mix loop doesn't recompute the pow each sample.
     pub channel_custom2: [i32; 16],
     pub channel_custom3: [i32; 16],
-    // CC 99/98 NRPN parameter select (coarse / fine). Most commonly
-    // OSRS uses NRPN 1:21 for the OSRS-only "custom synth" knob.
-    pub channel_nrpn: [i32; 16],
-    // CC 101/100 RPN parameter select (coarse / fine). RPN 0/0 is
-    // pitch-bend range; RPN 0/1 is fine tuning; CC 6/38 writes here.
-    pub channel_rpn: [i32; 16],
+    // Retrigger fade-outs detached from their note (MidiMixer keeps the
+    // ramped-out stream mixing via playStream; we hold them here and mix
+    // them per chunk until the ramp finishes).
+    pub orphan_streams: Vec<crate::sound::wave_stream::WaveStream>,
     pub channel_notes: Vec<[Option<usize>; 128]>,
     pub channel_secondary_notes: Vec<[Option<usize>; 128]>,
     pub notes: Vec<MidiNote>,
@@ -82,10 +75,9 @@ impl MidiPlayer {
             channel_pitch_bend: [0; 16], channel_modulation: [0; 16],
             channel_portamento_time: [0; 16], channel_effects: [0; 16],
             channel_parameter_number: [0; 16], channel_pitch_bend_range: [0; 16],
-            channel_data_entry: [0; 16], channel_custom1: [0; 16],
-            channel_retrig_rate: [0; 16],
+            channel_custom1: [0; 16],
             channel_custom2: [0; 16], channel_custom3: [0; 16],
-            channel_nrpn: [0; 16], channel_rpn: [0; 16],
+            orphan_streams: Vec::new(),
             channel_notes: (0..16).map(|_| [None; 128]).collect(),
             channel_secondary_notes: (0..16).map(|_| [None; 128]).collect(),
             notes: Vec::new(),
@@ -242,6 +234,8 @@ impl MidiPlayer {
         self.channel_effects[ch] = 0;
         self.channel_parameter_number[ch] = 32767;
         self.channel_pitch_bend_range[ch] = 256;
+        // Java resetChannel tail (MidiPlayer.java:370).
+        self.set_retrig_rate(ch, 8192);
     }
 
     fn set_inst(&mut self, ch: usize, prog: i32) {
@@ -292,6 +286,27 @@ impl MidiPlayer {
 
     pub fn play_note_with_wave(&mut self, ch: usize, key: usize, vel: i32, patch: Arc<Patch>, wave: Arc<Wave>) {
         self.stop_note(ch, key, 64);
+        // MidiPlayer.playNote :212-224 — with CC65 porta-glide held, the
+        // channel's newest still-held voice is STOLEN and glided to the
+        // new key instead of starting a fresh note: its sounding pitch is
+        // captured, the target pitch jumps to the new key, and the delta
+        // glides out over portamento_amount 4096 → 0.
+        if (self.channel_effects[ch] & 0x2) != 0 {
+            for idx in (0..self.notes.len()).rev() {
+                if self.notes[idx].channel == ch && self.notes[idx].release_progress < 0 {
+                    let old_key = self.notes[idx].note_key;
+                    self.channel_notes[ch][old_key] = None;
+                    self.channel_notes[ch][key] = Some(idx);
+                    let n = &mut self.notes[idx];
+                    let sounding = (n.portamento_amount * n.portamento_delta >> 12) + n.pitch;
+                    n.pitch += ((key as i32) - (old_key as i32)) << 8;
+                    n.portamento_delta = sounding - n.pitch;
+                    n.portamento_amount = 4096;
+                    n.note_key = key;
+                    return;
+                }
+            }
+        }
         let envelope = patch.envelopes.get(patch.note_envelope[key]).cloned().map(Arc::new);
         let mut note = MidiNote::new();
         note.channel = ch;
@@ -328,10 +343,26 @@ impl MidiPlayer {
         if let Some(sk) = secondary_key { self.channel_secondary_notes[ch][sk] = Some(idx); }
     }
 
+    // @ObfuscatedName("ed.al(IIII)V") — MidiPlayer.stopNote. With CC65
+    // portamento ON (channelEffects bit 0x2) the released note is HELD
+    // at pitch — it only enters release if another playing note exists
+    // on the channel for the glide to steal from (MidiPlayer.java:297-
+    // 306). cleanPorta releases held notes when the pedal lifts.
     fn stop_note(&mut self, ch: usize, key: usize, _vel: i32) {
         let Some(idx) = self.channel_notes[ch][key].take() else { return };
-        if let Some(n) = self.notes.get_mut(idx) {
-            n.release_progress = 0;
+        if (self.channel_effects[ch] & 0x2) == 0 {
+            if let Some(n) = self.notes.get_mut(idx) {
+                n.release_progress = 0;
+            }
+            return;
+        }
+        let steal = self.notes.iter().enumerate().any(|(i, n)| {
+            i != idx && n.channel == ch && n.release_progress < 0
+        });
+        if steal {
+            if let Some(n) = self.notes.get_mut(idx) {
+                n.release_progress = 0;
+            }
         }
     }
 
@@ -427,10 +458,21 @@ impl MidiPlayer {
             33 => self.channel_modulation[ch] = (self.channel_modulation[ch] & 0xFFFF_FF80u32 as i32) + val,
             5 => self.channel_portamento_time[ch] = (val << 7) + (self.channel_portamento_time[ch] & 0xFFFF_C07Fu32 as i32),
             37 => self.channel_portamento_time[ch] = (self.channel_portamento_time[ch] & 0xFFFF_FF80u32 as i32) + val,
-            // CC 6 / 38 — Data Entry coarse / fine. Java updates the
-            // currently-selected RPN (pitch-bend range / fine-tune).
-            6 => self.channel_data_entry[ch] = (val << 7) + (self.channel_data_entry[ch] & 0xFFFF_C07Fu32 as i32),
-            38 => self.channel_data_entry[ch] = (self.channel_data_entry[ch] & 0xFFFF_FF80u32 as i32) + val,
+            // CC 6 / 38 — Data Entry coarse / fine. Java writes the
+            // pitch-bend range when the selected parameter is RPN 0,0
+            // (channelParameterNumber == 16384; MidiPlayer.java:522-532).
+            6 => {
+                if self.channel_parameter_number[ch] == 16384 {
+                    self.channel_pitch_bend_range[ch] =
+                        (val << 7) + (self.channel_pitch_bend_range[ch] & 0xFFFF_C07Fu32 as i32);
+                }
+            }
+            38 => {
+                if self.channel_parameter_number[ch] == 16384 {
+                    self.channel_pitch_bend_range[ch] =
+                        (self.channel_pitch_bend_range[ch] & 0xFFFF_FF80u32 as i32) + val;
+                }
+            }
             7 => self.channel_expression[ch] = (val << 7) + (self.channel_expression[ch] & 0xFFFF_C07Fu32 as i32),
             39 => self.channel_expression[ch] = (self.channel_expression[ch] & 0xFFFF_C07Fu32 as i32) + val,
             10 => self.channel_pan[ch] = (val << 7) + (self.channel_pan[ch] & 0xFFFF_C07Fu32 as i32),
@@ -441,22 +483,31 @@ impl MidiPlayer {
             // by the OSRS synth for filter cutoff / RetrigEffect rate).
             16 => self.channel_custom1[ch] = (val << 7) + (self.channel_custom1[ch] & 0xFFFF_C07Fu32 as i32),
             48 => self.channel_custom1[ch] = (self.channel_custom1[ch] & 0xFFFF_FF80u32 as i32) + val,
-            // CC 17/49 — Retrigger rate (Java's CC 17 controls the
-            // RetrigEffect speed introduced by CC 81).
-            17 => self.channel_retrig_rate[ch] = (val << 7) + (self.channel_retrig_rate[ch] & 0xFFFF_C07Fu32 as i32),
-            49 => self.channel_retrig_rate[ch] = (self.channel_retrig_rate[ch] & 0xFFFF_FF80u32 as i32) + val,
+            // CC 17/49 — Retrigger rate. Java routes BOTH through
+            // setRetrigRate so channelCustom3 (the precomputed exp curve
+            // the mixer divides by) stays in sync (MidiPlayer.java:548-552).
+            17 => {
+                let v = (val << 7) + (self.channel_custom2[ch] & 0xFFFF_C07Fu32 as i32);
+                self.set_retrig_rate(ch, v);
+            }
+            49 => {
+                let v = (self.channel_custom2[ch] & 0xFFFF_FF80u32 as i32) + val;
+                self.set_retrig_rate(ch, v);
+            }
             64 => if val >= 64 { self.channel_effects[ch] |= 0x1; } else { self.channel_effects[ch] &= !0x1; },
-            65 => if val >= 64 { self.channel_effects[ch] |= 0x2; } else { self.channel_effects[ch] &= !0x2; },
+            // CC 65 — portamento. Java runs cleanPorta on the OFF edge
+            // (MidiPlayer.java:494-499) so in-flight glides settle.
+            65 => if val >= 64 { self.channel_effects[ch] |= 0x2; } else { self.clean_porta(ch); self.channel_effects[ch] &= !0x2; },
             // CC 81 — RetrigEffect on/off bit; CC 17/49 sets its rate.
             81 => if val >= 64 { self.channel_effects[ch] |= 0x4; } else { self.channel_effects[ch] &= !0x4; },
-            // CC 98/99/100/101 — NRPN/RPN parameter selection. We
-            // capture them into the per-channel state Java uses; the
-            // CC 6/38 data-entry pair above writes to the selected
-            // parameter.
-            98 => self.channel_nrpn[ch] = (self.channel_nrpn[ch] & 0xFFFF_FF80u32 as i32) | val,
-            99 => self.channel_nrpn[ch] = (val << 7) | (self.channel_nrpn[ch] & 0x7F),
-            100 => self.channel_rpn[ch] = (self.channel_rpn[ch] & 0xFFFF_FF80u32 as i32) | val,
-            101 => self.channel_rpn[ch] = (val << 7) | (self.channel_rpn[ch] & 0x7F),
+            // CC 98/99/100/101 — N/RPN parameter selection into one
+            // channelParameterNumber (MidiPlayer.java:501-512). The RPN
+            // pair carries +16384 so RPN 0,0 selects 16384, which the
+            // CC 6/38 arms above test for the pitch-bend range.
+            99 => self.channel_parameter_number[ch] = (val << 7) + (self.channel_parameter_number[ch] & 0x7F),
+            98 => self.channel_parameter_number[ch] = (self.channel_parameter_number[ch] & 0x3F80) + val,
+            101 => self.channel_parameter_number[ch] = (val << 7) + (self.channel_parameter_number[ch] & 0x7F) + 16384,
+            100 => self.channel_parameter_number[ch] = (self.channel_parameter_number[ch] & 0x3F80) + 16384 + val,
             120 => self.all_sound_off(Some(ch)),
             121 => self.all_controllers_off(Some(ch)),
             // CC 123 — All Notes Off (alias path; same target as
@@ -528,10 +579,20 @@ impl MidiPlayer {
             let this_chunk = (n - produced).min(chunk as usize);
             for note_idx in 0..self.notes.len() {
                 let (rate, vol, pan, finished_note) = {
-                    let tmp_note = std::mem::replace(&mut self.notes[note_idx], MidiNote::new());
+                    let mut tmp_note = std::mem::replace(&mut self.notes[note_idx], MidiNote::new());
                     let patch = tmp_note.patch.as_ref().cloned();
                     let mut finished = false;
                     if patch.is_none() || tmp_note.stream.is_none() { finished = true; }
+                    // MidiPlayer.updateNote :785-792 — the porta glide
+                    // steps toward 0 each update; rate below must see the
+                    // decremented amount.
+                    if tmp_note.portamento_amount > 0 {
+                        let step = (2f64.powf(
+                            self.channel_portamento_time[tmp_note.channel] as f64
+                                * 4.921_259_842_519_685e-4,
+                        ) * 16.0 + 0.5) as i32;
+                        tmp_note.portamento_amount = (tmp_note.portamento_amount - step).max(0);
+                    }
                     let (rate, vol, pan) = if let Some(patch) = patch.as_ref() {
                         (self.get_rate_raw(&tmp_note, patch), self.get_volume_for(&tmp_note, patch), self.get_pan_for(&tmp_note))
                     } else { (0, 0, 0) };
@@ -546,11 +607,80 @@ impl MidiPlayer {
                     self.channel_secondary_notes[self.notes[note_idx].channel][secondary as usize] != Some(note_idx)
                 } else { true };
 
+                let nch = self.notes[note_idx].channel;
+                let retrig_active = (self.channel_effects[nch] & 0x4) != 0;
+                let custom3 = self.channel_custom3[nch];
+                let custom1 = self.channel_custom1[nch];
+                let freq = self.frequency;
                 let note = &mut self.notes[note_idx];
-                if let Some(s) = note.stream.as_mut() {
-                    s.set_rate_raw(rate);
-                    s.ramp_vol_pan_fine(this_chunk as i32, vol, pan);
-                    s.do_mix(out, produced, this_chunk);
+                if note.stream.is_some() {
+                    note.stream.as_mut().unwrap().set_rate_raw(rate);
+                    note.stream.as_mut().unwrap().ramp_vol_pan_fine(this_chunk as i32, vol, pan);
+                    // MidiMixer.doMix2 (MidiMixer.java:106-153): with CC81
+                    // retrigger active on a held note, subdivide the chunk
+                    // at retrig points (field1766 is a 20.12-ish phase that
+                    // wraps at 0x100000); at each point the voice's stream
+                    // restarts (optionally re-offset via CC16/48 custom1)
+                    // while the old stream ramps out over <=10ms and keeps
+                    // mixing as an orphan until silent.
+                    let mut pos = produced;
+                    let mut remaining = this_chunk as i32;
+                    let region_end = produced + this_chunk;
+                    if retrig_active && note.release_progress < 0 {
+                        let period = custom3 / freq;
+                        if period > 0 {
+                            loop {
+                                let until = (period + 0xFFFFF - note.field1766) / period;
+                                if until > remaining {
+                                    note.field1766 += remaining * period;
+                                    break;
+                                }
+                                note.stream.as_mut().unwrap().do_mix(out, pos, until as usize);
+                                pos += until as usize;
+                                remaining -= until;
+                                note.field1766 += period * until - 0x100000;
+                                let mut ramp = freq / 100;
+                                let cap = 0x40000 / period;
+                                if cap < ramp {
+                                    ramp = cap;
+                                }
+                                let mut old = note.stream.take().unwrap();
+                                let sound = note.sound.clone().expect("retrig voice has a wave");
+                                let neg_pitch = note
+                                    .patch
+                                    .as_ref()
+                                    .map_or(false, |p| p.note_pitch[note.note_key] < 0);
+                                let mut new_stream = if custom1 == 0 {
+                                    WaveStream::new_rate_fine_vol_pan(
+                                        Arc::clone(&sound),
+                                        old.get_rate_raw(),
+                                        old.get_volume_fine(),
+                                        old.get_pan_fine(),
+                                    )
+                                } else {
+                                    let mut ns = WaveStream::new_rate_fine_vol_pan(
+                                        Arc::clone(&sound),
+                                        old.get_rate_raw(),
+                                        0,
+                                        old.get_pan_fine(),
+                                    );
+                                    retrig_sample_offset(&mut ns, &sound, custom1, neg_pitch);
+                                    ns.ramp_vol_pan_fine(ramp, old.get_volume_fine(), old.get_pan_fine());
+                                    ns
+                                };
+                                if neg_pitch {
+                                    new_stream.set_loop_count(-1);
+                                }
+                                old.ramp_out(ramp);
+                                old.do_mix(out, pos, region_end - pos);
+                                if old.is_ramping() {
+                                    self.orphan_streams.push(old);
+                                }
+                                note.stream = Some(new_stream);
+                            }
+                        }
+                    }
+                    note.stream.as_mut().unwrap().do_mix(out, pos, remaining as usize);
                 }
 
                 let mut envelope_done = false;
@@ -610,6 +740,17 @@ impl MidiPlayer {
                     self.notes[note_idx].finished = true;
                 }
             }
+            // Retrigger fade-outs keep mixing until their ramp completes
+            // (Java parks them back on the mixer via playStream).
+            let mut i = 0;
+            while i < self.orphan_streams.len() {
+                self.orphan_streams[i].do_mix(out, produced, this_chunk);
+                if self.orphan_streams[i].is_ramping() {
+                    i += 1;
+                } else {
+                    self.orphan_streams.swap_remove(i);
+                }
+            }
             produced += this_chunk;
         }
         // Drop finished notes
@@ -646,5 +787,29 @@ impl MidiPlayer {
 
     pub fn samples_per_tempo_unit(&self) -> i32 {
         self.tempo_us * self.parser.division / self.frequency.max(1)
+    }
+}
+
+// MidiPlayer.setSampleOffset (MidiPlayer.java:272-287) applied to a fresh
+// retrigger stream: CC16/48 custom1 picks the restart position inside the
+// wave; reversed-loop samples can wrap past the end and flip direction.
+fn retrig_sample_offset(
+    stream: &mut WaveStream,
+    sound: &Wave,
+    custom1: i32,
+    reverse_wrap: bool,
+) {
+    let len = sound.samples.len() as i32;
+    if reverse_wrap && sound.loop_reversed {
+        let span = len + len - sound.loop_start_position;
+        let mut p = ((custom1 as i64 * span as i64) >> 6) as i32;
+        let end = len << 8;
+        if p >= end {
+            p = end + end - 1 - p;
+            stream.set_reverse(true);
+        }
+        stream.set_position(p);
+    } else {
+        stream.set_position(((custom1 as i64 * len as i64) >> 6) as i32);
     }
 }

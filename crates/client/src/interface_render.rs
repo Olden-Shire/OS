@@ -651,51 +651,49 @@ fn draw_layer(
                     let width = pix.owi.max(1);
                     let height = pix.ohi.max(1);
                     if com.v3 {
+                        // Client.java:10411-10441 — verbatim branch order:
+                        // tiling handles rotation PER TILE (sub-clipped to
+                        // the component, which intersects rather than
+                        // replaces the clip); the non-tiled path rotates
+                        // with zoom scaled to the component width.
                         if com.tiling {
-                            pix2d::set_clipping(renderx, rendery, com.width + renderx, com.height + rendery);
+                            pix2d::set_sub_clipping(renderx, rendery, com.width + renderx, com.height + rendery);
                             let tiles_x = (com.width + (width - 1)) / width;
                             let tiles_z = (com.height + (height - 1)) / height;
                             for tx in 0..tiles_x {
                                 for tz in 0..tiles_z {
-                                    let plot_x = width * tx + renderx;
-                                    let plot_y = height * tz + rendery;
-                                    if com.trans != 0 {
-                                        pix.trans_plot_sprite(plot_x, plot_y, 256 - (com.trans & 0xFF));
+                                    if com.rotate != 0 {
+                                        pix.pixel_perfect_rotate_scale_plot_sprite_4(
+                                            width / 2 + width * tx + renderx,
+                                            height / 2 + height * tz + rendery,
+                                            com.rotate, 4096,
+                                        );
+                                    } else if com.trans != 0 {
+                                        pix.trans_plot_sprite(width * tx + renderx, height * tz + rendery,
+                                                              256 - (com.trans & 0xFF));
                                     } else {
-                                        pix.plot_sprite(plot_x, plot_y);
+                                        pix.plot_sprite(width * tx + renderx, height * tz + rendery);
                                     }
                                 }
                             }
                             pix2d::set_clipping(x, y, w, h);
-                        } else if com.rotate != 0 {
-                            // v3 rotated graphic — `rotate` is in Java's
-                            // 0..2047 brad units. Pix32.rotateTransPlotSprite
-                            // takes radians; convert and centre the sprite
-                            // in the component bbox.
-                            let theta = (com.rotate as f64) * std::f64::consts::TAU / 2048.0;
-                            let anchor_x = width / 2;
-                            let anchor_y = height / 2;
-                            pix.rotate_trans_plot_sprite(
-                                renderx, rendery, com.width, com.height,
-                                anchor_x, anchor_y,
-                                theta, 256,
-                            );
-                        } else if com.width != width || com.height != height {
-                            // Scaled — pick the translucent variant
-                            // when alpha is set. Pix32.transScalePlotSprite
-                            // was added in the round-12 pass.
-                            if com.trans != 0 {
+                        } else {
+                            let zoom = com.width * 4096 / width;
+                            if com.rotate != 0 {
+                                pix.pixel_perfect_rotate_scale_plot_sprite_4(
+                                    com.width / 2 + renderx, com.height / 2 + rendery,
+                                    com.rotate, zoom,
+                                );
+                            } else if com.trans != 0 {
                                 pix.trans_scale_plot_sprite(
                                     renderx, rendery, com.width, com.height,
                                     256 - (com.trans & 0xFF),
                                 );
-                            } else {
+                            } else if com.width != width || com.height != height {
                                 pix.scale_plot_sprite(renderx, rendery, com.width, com.height);
+                            } else {
+                                pix.plot_sprite(renderx, rendery);
                             }
-                        } else if com.trans != 0 {
-                            pix.trans_plot_sprite(renderx, rendery, 256 - (com.trans & 0xFF));
-                        } else {
-                            pix.plot_sprite(renderx, rendery);
                         }
                     } else {
                         // v1 graphic — just plot.
@@ -898,19 +896,31 @@ fn draw_layer(
                             if slot < com.link_obj_type.len() && com.link_obj_type[slot] > 0 {
                                 if let Some(obj) = obj_type::list(com.link_obj_type[slot] - 1) {
                                     let count = com.link_obj_number.get(slot).copied().unwrap_or(0);
-                                    let label = if obj.stackable == 1 || count != 1 {
-                                        format!("{} x{}", obj.name, count)
+                                    // Client.java:10536-10540 — the item name is
+                                    // wrapped orange (0xFF9040); non-singular
+                                    // stacks append " x" + niceNumber (which
+                                    // carries its own value-tier colour tag).
+                                    let name_tag = format!(
+                                        "{}{}{}",
+                                        crate::string_constants::tag_colour(16748608),
+                                        obj.name,
+                                        crate::string_constants::TAG_COLOURCLOSE,
+                                    );
+                                    let label = if obj.stackable != 1 && count == 1 {
+                                        name_tag
                                     } else {
-                                        obj.name.clone()
+                                        format!("{} x{}", name_tag, crate::client::nice_number(count))
                                     };
                                     let col_rgb = com.colour & 0xFFFFFF;
+                                    let shadow = if com.shadow { 0 } else { -1 };
+                                    // Java centres/right-aligns against
+                                    // com.width — the COLUMN COUNT, not a
+                                    // pixel width (Client.java:10546-10550,
+                                    // verbatim oddity).
                                     match com.h_align {
-                                        1 => font.base.centre_string(&label, cx + 115 / 2, cy + font.base.ascent, col_rgb, 0),
-                                        2 => {
-                                            let w_px = font.base.string_wid(&label);
-                                            font.base.draw_string(&label, cx + 115 - w_px - 1, cy + font.base.ascent, col_rgb, 0);
-                                        }
-                                        _ => font.base.draw_string(&label, cx, cy + font.base.ascent, col_rgb, 0),
+                                        1 => font.base.centre_string(&label, com.width / 2 + cx, cy + font.base.ascent, col_rgb, shadow),
+                                        2 => font.base.right_string(&label, com.width + cx - 1, cy + font.base.ascent, col_rgb, shadow),
+                                        _ => font.base.draw_string(&label, cx, cy + font.base.ascent, col_rgb, shadow),
                                     }
                                 }
                             }

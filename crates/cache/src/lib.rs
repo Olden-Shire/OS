@@ -24,6 +24,7 @@ pub mod maps;
 pub mod model;
 pub mod sprite;
 pub mod verify;
+pub mod vorbis_ogg;
 
 use std::fs::File;
 use std::path::Path;
@@ -59,6 +60,7 @@ pub const INTERFACES_ARCHIVE: u8 = 3;
 /// Archive 5 — holds per-region terrain (`m{x}_{y}`) and loc placement (`l{x}_{y}`,
 /// XTEA-encrypted) files, looked up by CP1252 name hash.
 pub const MAPS_ARCHIVE: u8 = 5;
+pub const VORBIS_ARCHIVE: u8 = 14;
 
 /// Archive 7 — 3D models (ModelUnlit), one group per model (file 0 is the mesh).
 pub const MODELS_ARCHIVE: u8 = 7;

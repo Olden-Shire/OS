@@ -59,7 +59,7 @@ pub fn for_group(archive: u8, group: u32, file_id: Option<i32>) -> TypeInfo {
         ANIMS_ARCHIVE => TypeInfo { ext: "anim",   color: C_ANIM,    kind: Kind::Anim },
         BASES_ARCHIVE => TypeInfo { ext: "base",   color: C_ANIM,    kind: Kind::AnimBase },
         INTERFACES_ARCHIVE => TypeInfo { ext: "if", color: C_UI,     kind: Kind::Interface },
-        JAGFX_ARCHIVE => TypeInfo { ext: "jagfx",  color: C_GENERIC, kind: Kind::Generic },
+        JAGFX_ARCHIVE => TypeInfo { ext: "synth",  color: C_MUSIC,   kind: Kind::Generic },
         MAPS_ARCHIVE => TypeInfo { ext: "map",     color: C_MAP,     kind: Kind::Map },
         SONGS_ARCHIVE => TypeInfo { ext: "mid",    color: C_MUSIC,   kind: Kind::Music },
         MODELS_ARCHIVE => TypeInfo { ext: "ob2",   color: C_MODEL,   kind: Kind::Model },
@@ -69,7 +69,7 @@ pub fn for_group(archive: u8, group: u32, file_id: Option<i32>) -> TypeInfo {
         JINGLES_ARCHIVE => TypeInfo { ext: "mid",  color: C_MUSIC,   kind: Kind::Music },
         CLIENTSCRIPTS_ARCHIVE => TypeInfo { ext: "cs2", color: C_SCRIPT, kind: Kind::Script },
         FONTS_ARCHIVE => TypeInfo { ext: "font",   color: C_IMAGE,   kind: Kind::Font },
-        VORBIS_ARCHIVE => TypeInfo { ext: "vorb",  color: C_MUSIC,   kind: Kind::Generic },
+        VORBIS_ARCHIVE => TypeInfo { ext: "ogg",   color: C_MUSIC,   kind: Kind::Generic },
         PATCHES_ARCHIVE => TypeInfo { ext: "patch", color: C_GENERIC, kind: Kind::Generic },
         _ => TypeInfo { ext: "dat", color: C_GENERIC, kind: Kind::Generic },
     }

@@ -58,8 +58,11 @@ impl ScriptFile {
         self.info.lines.last().copied().unwrap_or(0)
     }
 
-    /// Decode one script blob — ScriptFile.ts `decode`.
-    pub fn decode(id: i32, data: Vec<u8>) -> Result<ScriptFile, String> {
+    /// Decode one script blob — ScriptFile.ts `decode`. `version` is the
+    /// pack's compiler version: the lookup key widened from i32 to i64 in
+    /// v27 (component subjects pack (interface<<16)|child, which exceeds 32
+    /// bits once shifted into the key), so older packs read a 4-byte key.
+    pub fn decode(id: i32, data: Vec<u8>, version: i32) -> Result<ScriptFile, String> {
         let length = data.len();
         if length < 16 {
             return Err("invalid script file (minimum length)".to_string());
@@ -99,7 +102,7 @@ impl ScriptFile {
         let mut info = ScriptInfo {
             script_name: stream.gjstr(),
             source_file_path: stream.gjstr(),
-            lookup_key: stream.g8(),
+            lookup_key: if version >= 27 { stream.g8() } else { stream.g4() as i64 },
             ..Default::default()
         };
         let parameter_type_count = stream.g1();
