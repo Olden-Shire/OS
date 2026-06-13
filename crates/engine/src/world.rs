@@ -95,6 +95,29 @@ pub struct World {
     /// in spots the game logic needs entropy — currently only the AFK-event roll.
     /// Seeded from wall-clock at construction so each boot differs.
     rng_state: u64,
+    /// World collision map (terrain + loc footprints), built from the cache at
+    /// startup by [`World::load_map`]. Empty (permissive) in unit tests.
+    pub collision: crate::collision::WorldCollision,
+    /// Minimal loc config needed to mutate collision when scripts spawn/remove
+    /// locs (LOC_ADD / LOC_DEL / LOC_CHANGE), keyed by loc id. Populated by
+    /// [`World::load_configs`].
+    pub loc_config: std::collections::HashMap<i32, LocCollision>,
+    /// Animation length in ticks per seq id (sum of frame delays) — feeds the
+    /// SEQLENGTH op. Populated by [`World::load_configs`].
+    pub seq_lengths: std::collections::HashMap<i32, i32>,
+}
+
+/// The slice of a `LocType` collision needs: footprint + block flags. Mirrors
+/// the fields `crates/cache/.../config/loc.rs` decodes.
+#[derive(Debug, Clone, Copy)]
+pub struct LocCollision {
+    pub width: i32,
+    pub length: i32,
+    pub blockwalk: i32,
+    pub blockrange: bool,
+    /// LocType.active — 1 when the loc is interactive; MAP_LOCADDUNSAFE only
+    /// counts active locs as occupying a tile.
+    pub active: i32,
 }
 
 /// How often (in ticks) the world rolls each player's AFK-event flag — Engine-TS
@@ -140,7 +163,109 @@ impl World {
             world_queue: Vec::new(),
             npc_suspended: (0..MAX_NPCS).map(|_| None).collect(),
             rng_state: seed_rng(),
+            collision: crate::collision::WorldCollision::new(),
+            loc_config: std::collections::HashMap::new(),
+            seq_lengths: std::collections::HashMap::new(),
         }
+    }
+
+    /// Load the loc + seq config the engine needs (collision footprints +
+    /// SEQLENGTH). Loc config lives in the config archive group 6, seq in group
+    /// 12. Call BEFORE [`World::load_map`] — loc collision needs loc config.
+    pub fn load_configs(&mut self, cache: &mut cache::Cache) {
+        if let Ok(Some(files)) = cache.read_files(cache::CONFIG_ARCHIVE, 6) {
+            for (id, bytes) in files {
+                let lt = cache::config::loc::LocType::decode(id, &bytes);
+                self.loc_config.insert(
+                    id,
+                    LocCollision {
+                        width: lt.width,
+                        length: lt.length,
+                        blockwalk: lt.blockwalk,
+                        blockrange: lt.blockrange,
+                        active: lt.active,
+                    },
+                );
+            }
+        }
+        if let Ok(Some(files)) = cache.read_files(cache::CONFIG_ARCHIVE, 12) {
+            for (id, bytes) in files {
+                let st = cache::config::seq::SeqType::decode(id, &bytes);
+                // Engine-TS SeqType.duration: sum of per-frame delays, each 0
+                // floored to 1. (Engine-TS first falls back to the AnimFrame's
+                // own delay for a 0; we approximate with the 1-tick floor, which
+                // matches for the common case of explicit delays.)
+                let total: i32 = st.delay.iter().map(|&d| if d == 0 { 1 } else { d }).sum();
+                self.seq_lengths.insert(id, total);
+            }
+        }
+    }
+
+    /// Build the world collision map from every region in the cache — terrain
+    /// block/roof flags plus loc footprints — mirroring the client scene build
+    /// (`ClientBuild::add_loc` + the blocked-ground pass) but world-spanning.
+    /// Call AFTER [`World::load_configs`]. A loc on a bridge tile (level-1 map
+    /// flag bit 1) clips one level down, matching the client.
+    pub fn load_map(&mut self, cache: &mut cache::Cache, keys: &cache::maps::XteaKeys) {
+        use cache::maps::{REGION_LEVELS, REGION_SIZE};
+        let mut regions = 0u32;
+        for rx in 0..120u32 {
+            for ry in 0..256u32 {
+                let region = match cache.region(rx, ry, keys) {
+                    Ok(Some(r)) => r,
+                    _ => continue,
+                };
+                regions += 1;
+                let base_x = (rx * 64) as i32;
+                let base_z = (ry * 64) as i32;
+                for level in 0..REGION_LEVELS {
+                    for x in 0..REGION_SIZE {
+                        for z in 0..REGION_SIZE {
+                            let t = &region.tiles[level][x][z];
+                            let ax = base_x + x as i32;
+                            let az = base_z + z as i32;
+                            if t.mapflags & 0x4 != 0 {
+                                self.collision.set_roof(ax, az, level as i32, true);
+                            }
+                            if t.mapflags & 0x1 == 0x1 {
+                                let mut eff = level as i32;
+                                if region.tiles[1][x][z].mapflags & 0x2 == 0x2 {
+                                    eff -= 1;
+                                }
+                                if eff >= 0 {
+                                    self.collision.block_ground(ax, az, eff);
+                                }
+                            }
+                        }
+                    }
+                }
+                for loc in &region.locs {
+                    let (lx, lz) = (loc.x as usize, loc.z as usize);
+                    let mut eff = loc.level as i32;
+                    if region.tiles[1][lx][lz].mapflags & 0x2 == 0x2 {
+                        eff -= 1;
+                    }
+                    if eff < 0 {
+                        continue;
+                    }
+                    if let Some(cfg) = self.loc_config.get(&loc.id).copied() {
+                        self.collision.apply_loc(
+                            base_x + loc.x as i32,
+                            base_z + loc.z as i32,
+                            eff,
+                            loc.shape as i32,
+                            loc.rotation as i32,
+                            cfg.width,
+                            cfg.length,
+                            cfg.blockwalk,
+                            cfg.blockrange,
+                            true,
+                        );
+                    }
+                }
+            }
+        }
+        eprintln!("[engine] collision built from {regions} region(s)");
     }
 
     /// Next uniform `f64` in `[0, 1)` from the engine PRNG (xorshift64*), the
@@ -1256,7 +1381,20 @@ impl World {
         self.spawn_loc(id, shape, angle, x, z, level, duration);
     }
 
+    /// Add or remove a dynamic loc's collision footprint, using the loaded loc
+    /// config. No-op when configs aren't loaded (unit tests) or the loc id is
+    /// unknown. The base map's locs are already baked in by [`World::load_map`];
+    /// this keeps the collision map in sync as scripts spawn/remove locs.
+    fn update_loc_collision(&mut self, id: i32, shape: i32, angle: i32, x: i32, z: i32, level: i32, add: bool) {
+        if let Some(cfg) = self.loc_config.get(&id).copied() {
+            self.collision.apply_loc(
+                x, z, level, shape, angle, cfg.width, cfg.length, cfg.blockwalk, cfg.blockrange, add,
+            );
+        }
+    }
+
     fn spawn_loc(&mut self, id: i32, shape: i32, angle: i32, x: i32, z: i32, level: i32, despawn: i32) {
+        self.update_loc_collision(id, shape, angle, x, z, level, true);
         self.zones.add_loc(crate::zone::Loc { id, shape, angle, x, z, level, despawn });
         for pid in self.nearby_player_ids(x, z, level) {
             let Some(p) = self.players[pid].as_mut() else { continue; };
@@ -1284,6 +1422,7 @@ impl World {
     /// LOC_DEL to nearby players. Returns the removed change.
     pub fn del_loc(&mut self, x: i32, z: i32, level: i32, shape: i32) -> Option<crate::zone::Loc> {
         let loc = self.zones.remove_loc(x, z, level, shape)?;
+        self.update_loc_collision(loc.id, loc.shape, loc.angle, x, z, level, false);
         for pid in self.nearby_player_ids(x, z, level) {
             let Some(p) = self.players[pid].as_mut() else { continue; };
             if let Some((zx, zz, slot)) = local_zone_slot(p, x, z, level) {
@@ -1298,6 +1437,9 @@ impl World {
     /// the change (LOC_CHANGE). Reverts after `despawn` ticks (-1 = permanent).
     pub fn change_loc(&mut self, x: i32, z: i32, level: i32, shape: i32, new_id: i32, despawn: i32) {
         let Some(old) = self.zones.remove_loc(x, z, level, shape) else { return; };
+        // Swap the old footprint out before the new one goes in (the new id may
+        // have different block flags / size).
+        self.update_loc_collision(old.id, old.shape, old.angle, x, z, level, false);
         self.spawn_loc(new_id, shape, old.angle, x, z, level, despawn);
     }
 

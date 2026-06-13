@@ -46,3 +46,6 @@ crates/client/web/pkg/
 /cdp_targets.json
 /devnull.txt
 /audit_progress.md
+
+# IntelliJ Platform Gradle plugin build state
+/runescript/.intellijPlatform/

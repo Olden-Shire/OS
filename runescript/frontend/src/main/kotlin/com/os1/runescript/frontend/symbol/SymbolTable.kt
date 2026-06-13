@@ -48,15 +48,46 @@ class SymbolTable {
         /**
          * Load the global symbol environment.
          *
-         * @param commandPack the engine command table (`command.pack`).
+         * @param commandPack the engine command table (`command.pack`) — name→opcode.
          * @param packDirs    directories of config `.pack` files (our pack).
          * @param constantPack optional `constant.pack` (`name=value`).
+         * @param engineRs2   optional `engine.rs2` — the canonical command
+         *                    signatures (`[command,name](params)(returns)`).
+         *                    Attaches param/return types to the opcode-keyed
+         *                    commands so calls can be arity/type checked.
          */
-        fun load(commandPack: File, packDirs: List<File>, constantPack: File? = null): SymbolTable {
+        fun load(
+            commandPack: File,
+            packDirs: List<File>,
+            constantPack: File? = null,
+            engineRs2: File? = null,
+        ): SymbolTable {
             val table = SymbolTable()
 
             for (e in PackFile.read(commandPack)) {
                 table.commands[e.name] = CommandSymbol(e.name, e.id)
+            }
+
+            // Overlay signatures from engine.rs2 onto the opcode table.
+            engineRs2?.takeIf { it.isFile }?.let { f ->
+                var noOpcode = 0
+                for ((name, sig) in parseEngineCommands(f)) {
+                    val existing = table.commands[name]
+                    if (existing == null) {
+                        // Declared in engine.rs2 but the engine has no opcode
+                        // for it — a real mismatch (engine doesn't implement).
+                        noOpcode++
+                        continue
+                    }
+                    table.commands[name] = CommandSymbol(
+                        name, existing.opcode, sig.first, sig.second, hasSignature = true,
+                    )
+                }
+                if (noOpcode > 0) {
+                    System.err.println(
+                        "warning: $noOpcode command(s) in ${f.name} have no opcode in command.pack",
+                    )
+                }
             }
 
             for (dir in packDirs) {
@@ -92,6 +123,40 @@ class SymbolTable {
             }
 
             return table
+        }
+
+        private val COMMAND_DECL = Regex("""^\s*\[command,(\.?[A-Za-z0-9_]+)]\s*(.*)$""")
+        private val PAREN_GROUP = Regex("""\(([^)]*)\)""")
+
+        /**
+         * Parse `[command,name](params)(returns)` declarations from an
+         * engine.rs2. Returns name → (paramTypes, returnTypes). Declarations
+         * with no clean `(...)` signature (e.g. `// todo: signature`) are
+         * skipped — those commands stay untyped (no arity check).
+         */
+        private fun parseEngineCommands(file: File): Map<String, Pair<List<String>, List<String>>> {
+            val out = HashMap<String, Pair<List<String>, List<String>>>()
+            file.forEachLine { raw ->
+                val m = COMMAND_DECL.find(raw) ?: return@forEachLine
+                val name = m.groupValues[1]
+                val rest = m.groupValues[2].substringBefore("//").trim()
+                if (!rest.startsWith("(")) return@forEachLine // untyped declaration
+                val groups = PAREN_GROUP.findAll(rest).map { it.groupValues[1] }.toList()
+                val params = splitTypes(groups.getOrNull(0), stripVar = true)
+                val returns = splitTypes(groups.getOrNull(1), stripVar = false)
+                out[name] = params to returns
+            }
+            return out
+        }
+
+        /** Split a `coord $a, int $b` / `int, coord` list into bare type names. */
+        private fun splitTypes(group: String?, stripVar: Boolean): List<String> {
+            if (group.isNullOrBlank()) return emptyList()
+            return group.split(',').mapNotNull { tok ->
+                val t = tok.trim()
+                if (t.isEmpty()) return@mapNotNull null
+                if (stripVar) t.substringBefore('$').trim() else t
+            }.filter { it.isNotEmpty() }
         }
     }
 }

@@ -3,6 +3,7 @@
 //! reference `src/engine`; Engine2007/Engine-TS are reference only).
 
 pub mod base37;
+pub mod collision;
 pub mod entity;
 pub mod info;
 pub mod script;

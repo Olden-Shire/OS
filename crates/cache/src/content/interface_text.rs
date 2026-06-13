@@ -58,12 +58,18 @@ pub fn encode_group(group_id: u32, text: &str) -> Option<Vec<(i32, Vec<u8>)>> {
         if trimmed.is_empty() || trimmed.starts_with("//") {
             continue;
         }
-        if let Some(name) = trimmed.strip_prefix('[').and_then(|s| s.strip_suffix(']')) {
+        if let Some(inside) = trimmed.strip_prefix('[').and_then(|s| s.strip_suffix(']')) {
             if let Some(sub) = cur_sub.take() {
                 flush(sub, &fields, &mut comps)?;
                 fields.clear();
             }
-            let sub = name.strip_prefix("com_")?.parse::<i32>().ok()?;
+            // Header is `com_N` or, once a component is named, `com_N <name>`.
+            // The child index `com_N` is the structural key (used to encode the
+            // component's identity); the optional trailing token is a tooling-
+            // only display name (renamed from the IDE), ignored here — so the
+            // cache bytes never depend on it.
+            let idx_tok = inside.split_whitespace().next()?;
+            let sub = idx_tok.strip_prefix("com_")?.parse::<i32>().ok()?;
             cur_sub = Some(sub);
         } else {
             // Split on the FIRST '=' and keep the value VERBATIM (no trim):

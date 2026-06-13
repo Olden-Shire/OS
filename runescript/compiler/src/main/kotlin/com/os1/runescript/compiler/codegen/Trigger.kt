@@ -40,5 +40,8 @@ data class Trigger(
         )
         private val BY_NAME = ALL.associateBy { it.name }
         fun byName(name: String): Trigger? = BY_NAME[name]
+
+        /** Every known server trigger — for IDE validation + completion. */
+        fun all(): List<Trigger> = ALL
     }
 }

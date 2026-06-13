@@ -284,6 +284,14 @@ class CodeGenerator(
         fun genCommandCall(e: CommandCallExpression) {
             val cmd = symbols.command(e.name)
             if (cmd == null) { err(e.span, "unknown command '${e.name}'"); return }
+            // Arity check against the engine.rs2 signature (skipped for
+            // untyped commands — varargs / ones without a declared sig).
+            if (cmd.hasSignature && e.arguments.size != cmd.paramTypes.size) {
+                err(
+                    e.span,
+                    "command '${e.name}' expects ${cmd.paramTypes.size} argument(s), got ${e.arguments.size}",
+                )
+            }
             for (arg in e.arguments) genExpression(arg)
             emit(Instr.Command(cmd.opcode, secondary = false))
         }

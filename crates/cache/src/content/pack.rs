@@ -185,7 +185,10 @@ fn read_group_payload(
         if archive == crate::INTERFACES_ARCHIVE
             && std::path::Path::new(&meta.path).extension().is_some_and(|e| e.eq_ignore_ascii_case("if"))
         {
-            let p = base_dir.join(&meta.path);
+            // Resolve the `.if` by id, not by meta.path: a rename produces the
+            // hybrid filename `{id}_{name}.if`, and resolving by id lets pack
+            // find it without a _meta.json edit (matching the config model).
+            let p = resolve_interface_if(&base_dir, meta.id, &meta.path);
             let text = fs::read_to_string(&p)
                 .map_err(|e| std::io::Error::new(e.kind(), format!("read {p:?}: {e}")))?;
             let parsed = crate::content::interface_text::encode_group(meta.id, &text).ok_or_else(|| {
@@ -495,6 +498,28 @@ fn multi_chunk_layout(files: &[Vec<u8>], chunks: &[Vec<u32>]) -> (Vec<u8>, Vec<u
 fn read_manifest<T: serde::de::DeserializeOwned>(path: &Path) -> std::io::Result<T> {
     let bytes = fs::read(path)?;
     serde_json::from_slice(&bytes).map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, e))
+}
+
+/// Find the `.if` file for interface `id`, tolerating a rename. Prefers the
+/// bare `{id}.if` (default name), then the hybrid `{id}_{name}.if` (named via a
+/// rename), and finally the manifest path. The `{id}_` scan only runs when the
+/// bare file is absent — fresh (unnamed) Content never pays for it.
+fn resolve_interface_if(base_dir: &Path, id: u32, meta_path: &str) -> std::path::PathBuf {
+    let bare = base_dir.join(format!("{id}.if"));
+    if bare.exists() {
+        return bare;
+    }
+    let prefix = format!("{id}_");
+    if let Ok(rd) = std::fs::read_dir(base_dir) {
+        for entry in rd.flatten() {
+            let name = entry.file_name();
+            let name = name.to_string_lossy();
+            if name.starts_with(&prefix) && name.ends_with(".if") {
+                return entry.path();
+            }
+        }
+    }
+    base_dir.join(meta_path)
 }
 
 fn write_idx(path: &Path, entries: &BTreeMap<u32, (u32, u32)>) -> std::io::Result<()> {

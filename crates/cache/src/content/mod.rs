@@ -64,6 +64,7 @@ pub mod manifest;
 pub mod maps_jm2;
 pub mod pack;
 pub mod pack_file;
+pub mod rename;
 pub mod unpack;
 
 pub use manifest::{ArchiveManifest, GroupMeta, MasterManifest};

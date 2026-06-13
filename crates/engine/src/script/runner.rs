@@ -411,8 +411,37 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             let [value, bit] = state.pop_ints::<2>();
             state.push_int(value ^ 1i32.wrapping_shl(bit as u32));
         }
-        op::SETBIT_RANGE | op::CLEARBIT_RANGE | op::GETBIT_RANGE
-        | op::SETBIT_RANGE_TOINT | op::SIN_DEG | op::COS_DEG | op::ATAN2_DEG
+        op::SETBIT_RANGE => {
+            // Engine-TS setBitRange: OR a run of set bits [start..=end] into num.
+            let [num, start_bit, end_bit] = state.pop_ints::<3>();
+            let mask = bit_mask(end_bit - start_bit + 1);
+            state.push_int(num | mask.wrapping_shl(start_bit as u32));
+        }
+        op::CLEARBIT_RANGE => {
+            // Engine-TS clearBitRange: zero the bits [start..=end] in num.
+            let [num, start_bit, end_bit] = state.pop_ints::<3>();
+            let mask = bit_mask(end_bit - start_bit + 1);
+            state.push_int(num & !mask.wrapping_shl(start_bit as u32));
+        }
+        op::GETBIT_RANGE => {
+            // Engine-TS GETBIT_RANGE: extract bits [start..=end] of num as an
+            // unsigned field. `a = 31 - end` left-aligns the field to bit 31,
+            // then a logical (`>>>`) right shift drops the lower bits.
+            let [num, start_bit, end_bit] = state.pop_ints::<3>();
+            let a = 31 - end_bit;
+            let shifted = num.wrapping_shl(a as u32) as u32;
+            state.push_int(shifted.wrapping_shr((start_bit + a) as u32) as i32);
+        }
+        op::SETBIT_RANGE_TOINT => {
+            // Engine-TS SETBIT_RANGE_TOINT: clear bits [start..=end] then write
+            // `value` there, saturating at the field's max so it can't spill.
+            let [num, value, start_bit, end_bit] = state.pop_ints::<4>();
+            let mask = bit_mask(end_bit - start_bit + 1);
+            let cleared = num & !mask.wrapping_shl(start_bit as u32);
+            let assign = if value > mask { mask } else { value };
+            state.push_int(cleared | assign.wrapping_shl(start_bit as u32));
+        }
+        op::SIN_DEG | op::COS_DEG | op::ATAN2_DEG
         | op::DATE_MINUTES | op::DATE_RUNEDAY => {
             return Err("unimplemented".to_string());
         }
@@ -567,6 +596,119 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         }
         op::MAP_MEMBERS => {
             state.push_int(1);
+        }
+        op::MAP_LIVE => {
+            // Engine-TS MAP_LIVE: `NODE_PRODUCTION ? 1 : 0`. OS1 has no
+            // production/dev environment split (like MAP_MEMBERS, which is
+            // hardcoded above) and runs as a dev server, so it's never live.
+            state.push_int(0);
+        }
+        op::MAP_BLOCKED => {
+            // Engine-TS isMapBlocked: can't stand on the tile (floor / loc /
+            // ground-decor collision). Members-gate is omitted (members=1).
+            let coord = state.pop_int();
+            let (x, z, level) = unpack_coord(coord);
+            state.push_int(i32::from(world.collision.is_blocked(x, z, level)));
+        }
+        op::MAP_INDOORS => {
+            // Engine-TS isIndoors: the tile carries the ROOF flag.
+            let coord = state.pop_int();
+            let (x, z, level) = unpack_coord(coord);
+            state.push_int(i32::from(world.collision.is_indoors(x, z, level)));
+        }
+        op::MAP_MULTIWAY => {
+            // Engine-TS isMulti: the coord's 8×8 zone is flagged multiway. Our
+            // 2007 cache has no multiway data source yet, so this is always 0
+            // until `world.collision.multiway` is populated.
+            let coord = state.pop_int();
+            let (x, z, level) = unpack_coord(coord);
+            state.push_int(i32::from(world.collision.is_multiway(x, z, level)));
+        }
+        op::LINEOFSIGHT => {
+            // Engine-TS isLineOfSight: false across different levels; else a
+            // projectile-flag ray-walk between the two tiles.
+            let [c1, c2] = state.pop_ints::<2>();
+            let (x1, z1, l1) = unpack_coord(c1);
+            let (x2, z2, l2) = unpack_coord(c2);
+            let ok = l1 == l2 && world.collision.line_of_sight(l1, x1, z1, x2, z2);
+            state.push_int(i32::from(ok));
+        }
+        op::LINEOFWALK => {
+            // Engine-TS isLineOfWalk: false across levels; else a walk-flag
+            // ray-walk between the two tiles.
+            let [c1, c2] = state.pop_ints::<2>();
+            let (x1, z1, l1) = unpack_coord(c1);
+            let (x2, z2, l2) = unpack_coord(c2);
+            let ok = l1 == l2 && world.collision.line_of_walk(l1, x1, z1, x2, z2);
+            state.push_int(i32::from(ok));
+        }
+        op::SEQLENGTH => {
+            // Engine-TS SEQLENGTH: the seq's duration (sum of frame delays).
+            let seq = state.pop_int();
+            state.push_int(world.seq_lengths.get(&seq).copied().unwrap_or(0));
+        }
+        op::MAP_FINDSQUARE => {
+            // Engine-TS MAP_FINDSQUARE: a walkable tile in [minRadius, maxRadius]
+            // of the origin. kind 0 = any open tile, 1 = reachable by
+            // line-of-walk, 2 = by line-of-sight. maxRadius < 10 → 50 random
+            // tries; maxRadius >= 10 → a west-bias column scan (one random z per
+            // column, with an extra chebyshev >= minRadius gate). Falls back to
+            // the origin coord when nothing is found.
+            let [coord, min_radius, max_radius, kind] = state.pop_ints::<4>();
+            let (ox, oz, level) = unpack_coord(coord);
+            let pack = |x: i32, z: i32| ((level & 0x3) << 28) | ((x & 0x3fff) << 14) | (z & 0x3fff);
+            let reachable = |w: &World, rx: i32, rz: i32| match kind {
+                1 => w.collision.line_of_walk(level, rx, rz, ox, oz),
+                2 => w.collision.line_of_sight(level, rx, rz, ox, oz),
+                _ => true,
+            };
+            let mut result = coord;
+            if max_radius < 10 {
+                for _ in 0..50 {
+                    let dist_x = (rand_unit() * (2 * max_radius + 1) as f64) as i32 - max_radius;
+                    let dist_z = (rand_unit() * (2 * max_radius + 1) as f64) as i32 - max_radius;
+                    let dist = dist_x.abs().max(dist_z.abs());
+                    if dist < min_radius || dist > max_radius {
+                        continue;
+                    }
+                    let (rx, rz) = (ox + dist_x, oz + dist_z);
+                    if !world.collision.is_blocked(rx, rz, level) && reachable(world, rx, rz) {
+                        result = pack(rx, rz);
+                        break;
+                    }
+                }
+            } else {
+                // West-bias scan (Engine-TS "imps").
+                'scan: for rx in (ox - max_radius)..=(ox + max_radius) {
+                    let dist_x = rx - ox;
+                    let dist_z = (rand_unit() * (2 * max_radius + 1) as f64) as i32 - max_radius;
+                    let dist = dist_x.abs().max(dist_z.abs());
+                    if dist < min_radius || dist > max_radius {
+                        continue;
+                    }
+                    let rz = oz + dist_z;
+                    // !isWithinDistanceSW(..., minRadius): at least minRadius away.
+                    let within_min = (rx - ox).abs() <= min_radius && (rz - oz).abs() <= min_radius;
+                    if within_min {
+                        continue;
+                    }
+                    if !world.collision.is_blocked(rx, rz, level) && reachable(world, rx, rz) {
+                        result = pack(rx, rz);
+                        break 'scan;
+                    }
+                }
+            }
+            state.push_int(result);
+        }
+        op::MAP_LOCADDUNSAFE => {
+            // Engine-TS MAP_LOCADDUNSAFE: is any active loc's footprint already
+            // on this tile? We test the dynamic locs in the coord's zone against
+            // each loc's config footprint (rotation-swapped), matching the
+            // wall/ground/decor layer rules.
+            let coord = state.pop_int();
+            let (x, z, level) = unpack_coord(coord);
+            let occupied = loc_occupies_tile(world, x, z, level);
+            state.push_int(i32::from(occupied));
         }
 
         // ── Player ops ────────────────────────────────────────────
@@ -1740,11 +1882,24 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             p.set_var(player::VARP_RUN, run);
         }
         op::P_WALK => {
+            // Engine-TS P_WALK: queue the pathfinder's route to the coord. We
+            // run the collision BFS (move-near) and queue its waypoints; with no
+            // collision loaded the BFS returns empty and we queue the coord
+            // directly (the pre-collision behaviour, and what unit tests rely on).
             state.pointer_check(Pointer::ProtectedActivePlayer)?;
             let coord = state.pop_int();
+            let (dx, dz, _) = unpack_coord(coord);
+            let (sx, sz, level) = {
+                let p = active_player(state, world)?;
+                (p.entity.x, p.entity.z, p.entity.level)
+            };
+            let path = world.collision.find_path(level, sx, sz, dx, dz, true);
             let p = active_player(state, world)?;
-            let (x, z) = ((coord >> 14) & 0x3fff, coord & 0x3fff);
-            p.entity.queue_waypoints(&[(x, z)]);
+            if path.is_empty() {
+                p.entity.queue_waypoints(&[(dx, dz)]);
+            } else {
+                p.entity.queue_waypoints(&path);
+            }
         }
         op::P_LOGOUT => {
             // Engine-TS P_LOGOUT only *requests* a logout; process_logouts grants
@@ -1964,10 +2119,21 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             n.entity.teleport((coord >> 14) & 0x3fff, coord & 0x3fff, (coord >> 28) & 0x3, jump);
         }
         op::NPC_WALK => {
+            // Engine-TS NPC_WALK: pathfind to the coord (move-near), falling back
+            // to a direct waypoint when no collision is loaded (see P_WALK).
             let coord = state.pop_int();
+            let (dx, dz, _) = unpack_coord(coord);
+            let (sx, sz, level) = {
+                let n = active_npc(state, world)?;
+                (n.entity.x, n.entity.z, n.entity.level)
+            };
+            let path = world.collision.find_path(level, sx, sz, dx, dz, true);
             let n = active_npc(state, world)?;
-            let (x, z) = ((coord >> 14) & 0x3fff, coord & 0x3fff);
-            n.entity.queue_waypoints(&[(x, z)]);
+            if path.is_empty() {
+                n.entity.queue_waypoints(&[(dx, dz)]);
+            } else {
+                n.entity.queue_waypoints(&path);
+            }
         }
         op::SPOTANIM_NPC => {
             let [spot, height, delay] = state.pop_ints::<3>();
@@ -2002,6 +2168,62 @@ fn stat_random_value(level: i32, low: i32, high: i32) -> i32 {
     // level (> 99) makes `99 - level` negative, a level drained to 0 makes
     // `level - 1` negative. `div_euclid` floors for the positive divisor 98.
     (low * (99 - level)).div_euclid(98) + (high * (level - 1)).div_euclid(98) + 1
+}
+
+/// Unpack a RuneScript coord int into `(x, z, level)` — the layout used by
+/// COORDX/Y/Z and every map op.
+fn unpack_coord(coord: i32) -> (i32, i32, i32) {
+    let x = (coord >> 14) & 0x3fff;
+    let z = coord & 0x3fff;
+    let level = (coord >> 28) & 0x3;
+    (x, z, level)
+}
+
+/// Does any active dynamic loc's footprint already cover `(x, z, level)`? Backs
+/// MAP_LOCADDUNSAFE. Walls (shape 0..=3) and ground decor (22) occupy only
+/// their anchor tile; scenery/ground locs (9/10/11/≥12) occupy a rotation-
+/// swapped rectangle; wall decor (4..=8) occupies nothing. Only locs anchored
+/// in the coord's own zone are tested (Engine-TS has the same limitation).
+fn loc_occupies_tile(world: &World, x: i32, z: i32, level: i32) -> bool {
+    let zidx = crate::zone::zone_index(x, z, level);
+    for loc in world.zones.locs_in(zidx) {
+        if loc.level != level {
+            continue;
+        }
+        let Some(cfg) = world.loc_config.get(&loc.id).copied() else { continue };
+        if cfg.active != 1 {
+            continue;
+        }
+        let shape = loc.shape;
+        if (0..=3).contains(&shape) || shape == 22 {
+            if loc.x == x && loc.z == z {
+                return true;
+            }
+        } else if !(4..=8).contains(&shape) {
+            let (lw, ll) = if loc.angle == 1 || loc.angle == 3 {
+                (cfg.length, cfg.width)
+            } else {
+                (cfg.width, cfg.length)
+            };
+            if x >= loc.x && x < loc.x + lw && z >= loc.z && z < loc.z + ll {
+                return true;
+            }
+        }
+    }
+    false
+}
+
+/// Engine-TS `MASK[width]` = `(2^width − 1)` cast to i32: a run of `width` low
+/// bits set. `MASK[0] = 0`, `MASK[32] = -1` (every bit). Used by the bit-range
+/// ops (SETBIT_RANGE / CLEARBIT_RANGE / SETBIT_RANGE_TOINT).
+fn bit_mask(width: i32) -> i32 {
+    if width <= 0 {
+        0
+    } else if width >= 32 {
+        -1
+    } else {
+        ((1u32 << width) - 1) as i32
+    }
 }
 
 /// Convert a 24-bit RGB colour (`0xRRGGBB`) to the client's 15-bit 5/5/5 form —
@@ -2314,6 +2536,123 @@ mod tests {
         assert_eq!(rgb24_to_15(0x00FF00), 0x03E0);
         assert_eq!(rgb24_to_15(0x0000FF), 0x001F);
         assert_eq!(rgb24_to_15(0x000000), 0);
+    }
+
+    #[test]
+    fn bit_range_ops_match_engine_ts() {
+        let mut w = World::new();
+        // SETBIT_RANGE(num, start, end): OR a [start..=end] run into num.
+        // 0 | (MASK[3] << 4) = 0x70.
+        assert_eq!(pushed(&mut w, &[0, 4, 6], op::SETBIT_RANGE), 0x70);
+        // CLEARBIT_RANGE: 0xFF & ~(MASK[4] << 0) = 0xF0.
+        assert_eq!(pushed(&mut w, &[0xFF, 0, 3], op::CLEARBIT_RANGE), 0xF0);
+        // GETBIT_RANGE: pull bits [4..=7] of 0xAB (1010_1011) → 0xA.
+        assert_eq!(pushed(&mut w, &[0xAB, 4, 7], op::GETBIT_RANGE), 0xA);
+        // GETBIT_RANGE is unsigned (`>>>`): top bit of a full word reads back
+        // without sign extension. bit [31..=31] of i32::MIN → 1.
+        assert_eq!(pushed(&mut w, &[i32::MIN, 31, 31], op::GETBIT_RANGE), 1);
+        // SETBIT_RANGE_TOINT(num, value, start, end): write 5 into bits [4..=7]
+        // of 0xF0F → clear nibble then set: 0xF0F & ~0xF0 | (5<<4) = 0xF5F.
+        assert_eq!(pushed(&mut w, &[0xF0F, 5, 4, 7], op::SETBIT_RANGE_TOINT), 0xF5F);
+        // Saturates: value 0xFF into a 4-bit field clamps to 0xF.
+        assert_eq!(pushed(&mut w, &[0, 0xFF, 0, 3], op::SETBIT_RANGE_TOINT), 0xF);
+    }
+
+    #[test]
+    fn map_blocked_and_indoors_ops() {
+        let mut w = World::new();
+        // Unloaded collision is permissive.
+        assert_eq!(pushed(&mut w, &[coord(0, 3200, 3200)], op::MAP_BLOCKED), 0);
+        w.collision.block_ground(3200, 3200, 0);
+        assert_eq!(pushed(&mut w, &[coord(0, 3200, 3200)], op::MAP_BLOCKED), 1);
+        // A neighbouring open tile in the now-loaded region stays open.
+        assert_eq!(pushed(&mut w, &[coord(0, 3201, 3200)], op::MAP_BLOCKED), 0);
+        assert_eq!(pushed(&mut w, &[coord(0, 3201, 3200)], op::MAP_INDOORS), 0);
+        w.collision.set_roof(3201, 3200, 0, true);
+        assert_eq!(pushed(&mut w, &[coord(0, 3201, 3200)], op::MAP_INDOORS), 1);
+    }
+
+    #[test]
+    fn lineofsight_and_lineofwalk_ops() {
+        let mut w = World::new();
+        w.collision.set_roof(3200, 3200, 0, false); // mark the region loaded
+        assert_eq!(
+            pushed(&mut w, &[coord(0, 3200, 3200), coord(0, 3205, 3200)], op::LINEOFWALK),
+            1
+        );
+        // A walk-only loc (blockrange = false) blocks walk but not sight.
+        w.collision.apply_loc(3203, 3200, 0, 10, 0, 1, 1, 2, false, true);
+        assert_eq!(
+            pushed(&mut w, &[coord(0, 3200, 3200), coord(0, 3206, 3200)], op::LINEOFWALK),
+            0
+        );
+        assert_eq!(
+            pushed(&mut w, &[coord(0, 3200, 3200), coord(0, 3206, 3200)], op::LINEOFSIGHT),
+            1
+        );
+        // Different levels never have line of sight/walk.
+        assert_eq!(
+            pushed(&mut w, &[coord(0, 3200, 3200), coord(1, 3201, 3200)], op::LINEOFSIGHT),
+            0
+        );
+    }
+
+    #[test]
+    fn seqlength_op_reads_config() {
+        let mut w = World::new();
+        assert_eq!(pushed(&mut w, &[7], op::SEQLENGTH), 0); // unknown seq → 0
+        w.seq_lengths.insert(7, 42);
+        assert_eq!(pushed(&mut w, &[7], op::SEQLENGTH), 42);
+    }
+
+    #[test]
+    fn map_multiway_op() {
+        let mut w = World::new();
+        assert_eq!(pushed(&mut w, &[coord(0, 3200, 3200)], op::MAP_MULTIWAY), 0);
+        w.collision.multiway.insert(crate::collision::zone_index(3200, 3200, 0));
+        assert_eq!(pushed(&mut w, &[coord(0, 3200, 3200)], op::MAP_MULTIWAY), 1);
+    }
+
+    #[test]
+    fn map_findsquare_returns_tile_in_range() {
+        let mut w = World::new();
+        let out = pushed(&mut w, &[coord(0, 3200, 3200), 1, 3, 0], op::MAP_FINDSQUARE);
+        let (x, z, level) = ((out >> 14) & 0x3fff, out & 0x3fff, (out >> 28) & 0x3);
+        assert_eq!(level, 0);
+        assert!((x - 3200).abs() <= 3 && (z - 3200).abs() <= 3, "within max radius: {x},{z}");
+    }
+
+    #[test]
+    fn map_locaddunsafe_op() {
+        let mut w = World::new();
+        w.loc_config.insert(
+            99,
+            crate::world::LocCollision { width: 2, length: 2, blockwalk: 1, blockrange: true, active: 1 },
+        );
+        // Empty tile is safe.
+        assert_eq!(pushed(&mut w, &[coord(0, 3210, 3210)], op::MAP_LOCADDUNSAFE), 0);
+        // Spawn a 2×2 ground loc (shape 10); its footprint now occupies tiles.
+        w.add_loc(99, 10, 0, 3210, 3210, 0);
+        assert_eq!(pushed(&mut w, &[coord(0, 3210, 3210)], op::MAP_LOCADDUNSAFE), 1);
+        assert_eq!(pushed(&mut w, &[coord(0, 3211, 3211)], op::MAP_LOCADDUNSAFE), 1);
+        assert_eq!(pushed(&mut w, &[coord(0, 3212, 3212)], op::MAP_LOCADDUNSAFE), 0);
+    }
+
+    #[test]
+    fn loc_add_then_del_updates_collision() {
+        let mut w = World::new();
+        w.loc_config.insert(
+            50,
+            crate::world::LocCollision { width: 1, length: 1, blockwalk: 1, blockrange: true, active: 1 },
+        );
+        w.collision.set_roof(3220, 3220, 0, false); // load the region
+        assert!(!w.collision.is_blocked(3220, 3220, 0));
+        // A scenery loc (shape 10) blocks its tile when spawned…
+        w.add_loc(50, 10, 0, 3220, 3220, 0);
+        assert!(w.collision.is_blocked(3220, 3220, 0));
+        // …and unblocks it when removed.
+        w.del_loc(3220, 3220, 0, 10);
+        assert!(!w.collision.is_blocked(3220, 3220, 0));
     }
 
     #[test]

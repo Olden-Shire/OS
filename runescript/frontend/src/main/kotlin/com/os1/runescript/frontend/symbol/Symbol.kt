@@ -9,8 +9,19 @@ sealed interface Symbol {
     val name: String
 }
 
-/** A built-in engine command — `name` maps to a bytecode opcode. */
-class CommandSymbol(override val name: String, val opcode: Int) : Symbol
+/**
+ * A built-in engine command. `name` maps to a bytecode opcode (from
+ * `command.pack`); `paramTypes` / `returnTypes` are its signature (from
+ * `engine.rs2`). `hasSignature` is false for commands declared without a
+ * signature (or absent from engine.rs2) — those skip arity/type checks.
+ */
+class CommandSymbol(
+    override val name: String,
+    val opcode: Int,
+    val paramTypes: List<String> = emptyList(),
+    val returnTypes: List<String> = emptyList(),
+    val hasSignature: Boolean = false,
+) : Symbol
 
 /** A RuneScript proc/trigger/label. `id` is assigned during registration. */
 class ScriptSymbol(

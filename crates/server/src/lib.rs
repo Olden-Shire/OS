@@ -81,6 +81,11 @@ pub fn run(config: ServerConfig) -> std::io::Result<()> {
     } else {
         eprintln!("[server] no script dir configured; engine fallbacks active");
     }
+    // Build the server-side collision map: loc/seq config first, then every
+    // region's terrain + loc footprints. This powers the map ops (map_blocked,
+    // lineofsight/walk, map_findsquare, …) and script-driven pathfinding.
+    world.load_configs(&mut cache);
+    world.load_map(&mut cache, &xtea);
 
     let listener = TcpListener::bind(&config.addr)?;
     listener.set_nonblocking(true)?;

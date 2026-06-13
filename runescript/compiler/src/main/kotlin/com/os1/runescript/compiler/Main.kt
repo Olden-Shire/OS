@@ -9,7 +9,7 @@ import kotlin.system.exitProcess
  * CLI: compile a `.rs2` source set into `server/script.{dat,idx}`.
  *
  * Usage:
- *   runescript-compiler --src DIR --out DIR --commands FILE [--packs DIR[,DIR]] [--constants FILE]
+ *   runescript-compiler --src DIR --out DIR --commands FILE [--packs DIR[,DIR]] [--constants FILE] [--engine FILE]
  *
  * `--packs` points at our pack metadata (the `.pack` name<->id maps); the same
  * metadata the IntelliJ plugin will consume.
@@ -25,10 +25,18 @@ fun main(args: Array<String>) {
     if (!srcDir.isDirectory) fail("source dir not found: $srcDir")
     if (!commandPack.isFile) fail("command pack not found: $commandPack")
 
-    val sources = srcDir.walkTopDown().filter { it.isFile && it.extension == "rs2" }.sortedBy { it.path }.toList()
+    val allRs2 = srcDir.walkTopDown().filter { it.isFile && it.extension == "rs2" }.sortedBy { it.path }.toList()
+    // engine.rs2 holds [command,...] signature declarations, not scripts —
+    // it feeds the symbol table, never codegen.
+    val engineRs2 = allRs2.firstOrNull { it.name == "engine.rs2" }
+        ?: opts["engine"]?.let { File(it) }
+    val sources = allRs2.filter { it.name != "engine.rs2" }
     if (sources.isEmpty()) fail("no .rs2 sources under $srcDir")
+    if (engineRs2 == null) {
+        System.err.println("warning: no engine.rs2 found — engine commands will be untyped")
+    }
 
-    val symbols = SymbolTable.load(commandPack, packDirs, constantPack)
+    val symbols = SymbolTable.load(commandPack, packDirs, constantPack, engineRs2)
     val diagnostics = Diagnostics()
 
     val ok = Compiler(symbols, diagnostics).compile(sources, outDir)

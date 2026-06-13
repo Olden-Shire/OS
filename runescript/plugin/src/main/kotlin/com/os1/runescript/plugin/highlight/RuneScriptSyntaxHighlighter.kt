@@ -23,6 +23,7 @@ object RsColors {
     val GAME_VAR = key("RS_GAME_VAR", D.INSTANCE_FIELD)
     val CONSTANT = key("RS_CONSTANT", D.CONSTANT)
     val COMMAND = key("RS_COMMAND", D.FUNCTION_CALL)
+    val CONFIG = key("RS_CONFIG", D.STATIC_FIELD)
     val TRIGGER = key("RS_TRIGGER", D.METADATA)
     val OPERATOR = key("RS_OPERATOR", D.OPERATION_SIGN)
     val BRACES = key("RS_BRACES", D.BRACES)

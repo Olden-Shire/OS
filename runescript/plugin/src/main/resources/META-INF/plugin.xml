@@ -27,6 +27,10 @@
             language="RuneScript"
             implementationClass="com.os1.runescript.plugin.highlight.RuneScriptSyntaxHighlighterFactory"/>
 
+        <!-- Settings → Editor → Color Scheme → RuneScript (recolour all RS_* keys). -->
+        <colorSettingsPage
+            implementation="com.os1.runescript.plugin.highlight.RuneScriptColorSettingsPage"/>
+
         <lang.parserDefinition
             language="RuneScript"
             implementationClass="com.os1.runescript.plugin.psi.RuneScriptParserDefinition"/>
@@ -35,9 +39,45 @@
             language="RuneScript"
             implementationClass="com.os1.runescript.plugin.annotate.RuneScriptAnnotator"/>
 
+        <!-- Real syntax/error highlighting for .rs2 via the shared frontend parser. -->
+        <externalAnnotator
+            language="RuneScript"
+            implementationClass="com.os1.runescript.plugin.annotate.RuneScriptErrorAnnotator"/>
+
+        <!-- Hover docs: show a symbol's kind + id (interface/var/config/command). -->
+        <lang.documentationProvider
+            language="RuneScript"
+            implementationClass="com.os1.runescript.plugin.doc.RuneScriptDocumentationProvider"/>
+
+        <!-- Ctrl-click: ~proc / @label jump to their [proc,name] / [label,name] header. -->
+        <gotoDeclarationHandler
+            implementation="com.os1.runescript.plugin.nav.RuneScriptGotoDeclarationHandler"/>
+        <!-- Ctrl-click: a com_N value in a config jumps to its [com_N] section. -->
+        <gotoDeclarationHandler
+            implementation="com.os1.runescript.plugin.config.ConfigGotoDeclarationHandler"/>
+
         <completion.contributor
             language="RuneScript"
             implementationClass="com.os1.runescript.plugin.completion.RuneScriptCompletionContributor"/>
+
+        <!-- Config text (interfaces/npc/loc/obj/seq/…) — key=value + sections. -->
+        <fileType
+            name="RsConfig"
+            implementationClass="com.os1.runescript.plugin.config.ConfigFileType"
+            fieldName="INSTANCE"
+            language="RsConfig"
+            extensions="if;npc;loc;obj;seq;flo;flu;idk;inv;spot;varbit;varp;enum"/>
+        <lang.syntaxHighlighterFactory
+            language="RsConfig"
+            implementationClass="com.os1.runescript.plugin.config.ConfigSyntaxHighlighterFactory"/>
+        <lang.parserDefinition
+            language="RsConfig"
+            implementationClass="com.os1.runescript.plugin.config.ConfigParserDefinition"/>
+        <colorSettingsPage
+            implementation="com.os1.runescript.plugin.config.ConfigColorSettingsPage"/>
+        <completion.contributor
+            language="RsConfig"
+            implementationClass="com.os1.runescript.plugin.config.ConfigCompletionContributor"/>
 
         <!-- ClientScript assembly listings (.cs2asm) — the packer's faithful fallback
              format and the right-hand pane of the side-by-side cs2 editor. -->
@@ -59,6 +99,11 @@
         <!-- Side-by-side source + live assembly for structured .cs2 clientscripts. -->
         <fileEditorProvider
             implementation="com.os1.runescript.plugin.editor.Cs2PreviewEditorProvider"/>
+
+        <!-- Rename refactoring for interface symbols (if_549 / if_549:com_2):
+             updates interface.pack, the .if filename/section, and all refs. -->
+        <renameHandler
+            implementation="com.os1.runescript.plugin.refactor.RsInterfaceRenameHandler"/>
     </extensions>
 
     <actions>
