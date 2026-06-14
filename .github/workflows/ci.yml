@@ -1,0 +1,89 @@
+name: CI
+
+# Builds the whole OS project via build.ps1 (Rust client/server/panel/jaged +
+# wasm bundle + Java client + IntelliJ plugin) and runs the Rust test suite.
+# Windows runner because build.ps1 + the wasm build (LLVM, Git Bash) are Windows.
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build + test (windows)
+    runs-on: windows-latest
+    timeout-minutes: 120
+    steps:
+      # build.ps1 only compiles source, so skip Content/ (~474M of runtime data
+      # the build never reads). cache/ is small (~40M) and is checked out normally.
+      # Client-test workflows (stubbed/headless login) will need Content/, so they
+      # should checkout without this exclusion.
+      - name: Checkout (sparse, skip Content/)
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/Content/
+          sparse-checkout-cone-mode: false
+
+      - name: Rust toolchain (+ wasm target)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Gradle cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            runescript/.intellijPlatform
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle.kts', '**/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-
+
+      - name: Ensure LLVM (imgui-sys compiles C++ for the wasm target)
+        shell: pwsh
+        run: |
+          if (-not (Test-Path 'C:\Program Files\LLVM\bin\clang.exe')) {
+            choco install llvm -y --no-progress
+          }
+          & 'C:\Program Files\LLVM\bin\clang.exe' --version
+
+      - name: wasm-bindgen-cli (match Cargo.lock)
+        shell: pwsh
+        run: |
+          . "$env:GITHUB_WORKSPACE\_common.ps1"
+          $want = Get-LockedCrateVersion 'wasm-bindgen'
+          $have = ''
+          if (Get-Command wasm-bindgen -ErrorAction SilentlyContinue) {
+            $have = ((wasm-bindgen --version) -replace '[^0-9.]', '')
+          }
+          if ($have -ne $want) {
+            Write-Host "installing wasm-bindgen-cli $want (have '$have')"
+            cargo install wasm-bindgen-cli --version $want --locked
+          } else {
+            Write-Host "wasm-bindgen-cli $have already matches Cargo.lock"
+          }
+
+      - name: Build everything (build.ps1)
+        shell: pwsh
+        run: .\build.ps1
+
+      - name: Test (cargo)
+        shell: pwsh
+        run: cargo test --workspace --no-fail-fast
