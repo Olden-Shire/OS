@@ -32,6 +32,10 @@ Cargo.lock.bak
 # Derived cache unpack output
 /unpacked/
 
+# Baked worldmap data — regenerated on demand by the panel
+/cache/worldmap.bin
+/cache/worldmap_tiles.bin
+
 # Compiled RuneScript bundle (regenerated from Content\scripts by the server on
 # boot when JDK 21 is present; see compile_server_scripts / RUN.md).
 /data/pack/
