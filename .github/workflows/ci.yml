@@ -26,16 +26,19 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 120
     steps:
-      # build.ps1 only compiles source, so skip Content/ (~474M of runtime data
-      # the build never reads). cache/ is small (~40M) and is checked out normally.
-      # Client-test workflows (stubbed/headless login) will need Content/, so they
-      # should checkout without this exclusion.
-      - name: Checkout (sparse, skip Content/)
+      # Skip the bulk of Content/ (~474M of model/map/config runtime data the build
+      # never reads), but DO pull Content/scripts (.rs2 source, 41K) and
+      # Content/pack (symbol packs, 2M): build.ps1 compiles those into data/pack via
+      # :compiler:run, which engine's compiled_login test then loads. cache/ (~40M)
+      # is checked out normally.
+      - name: Checkout (sparse, skip bulk Content/)
         uses: actions/checkout@v4
         with:
           sparse-checkout: |
             /*
-            !/Content/
+            !/Content/*
+            /Content/scripts/
+            /Content/pack/
           sparse-checkout-cone-mode: false
 
       - name: Rust toolchain (+ wasm target)
