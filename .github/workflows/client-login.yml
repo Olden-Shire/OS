@@ -1,0 +1,41 @@
+name: Client login test
+
+# Boots the real game server (serving the vanilla cache, no Content repack) and
+# drives a rev1 login handshake at the protocol level, asserting login succeeds.
+# Pure Rust + the small cache/ tree, so it runs on Linux with no JDK/Content/wasm.
+# (Fuller client/gameplay tests that need Content/ + scripts will come as their own
+# workflows.)
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: login-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  login:
+    name: headless login (linux)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # The login test only needs cache/ (groups + keys.json); skip Content/ (474M).
+      - name: Checkout (sparse, skip Content/)
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/Content/
+          sparse-checkout-cone-mode: false
+
+      - name: Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Headless login test
+        run: cargo test -p server --test login -- --ignored --nocapture
