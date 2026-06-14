@@ -1,0 +1,10 @@
+// loc 21872
+length = 2
+width = 2
+ambient = 25
+contrast = 25
+mapscene = 7
+op1 = Climb-down
+forceapproach = 11
+models_only = 22680
+name = Stairs

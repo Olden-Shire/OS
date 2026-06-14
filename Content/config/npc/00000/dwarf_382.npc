@@ -1,0 +1,10 @@
+// npc 382
+size = 1
+vislevel = 0
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 5784/7050 28/5301 61/37 7054/61
+name = Dwarf
+models = 10321 2980 2977 7050 10326 2993 2988
+headmodels = 10236 8

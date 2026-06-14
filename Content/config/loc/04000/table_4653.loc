@@ -1,0 +1,6 @@
+// loc 4653
+active = 1
+op1 = View-game
+nonblockrange = true
+models_only = 4600
+name = Table

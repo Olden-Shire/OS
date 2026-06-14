@@ -1,0 +1,11 @@
+// npc 745
+readyanim = 6181
+walkanim = 6180
+op1 = Talk-to
+op2 = Attack
+ambient = 15
+alwaysontop = true
+vislevel = 2
+name = Wormbrain
+models = 24455 24485 24431 24476 24441 24449
+headmodels = 24209

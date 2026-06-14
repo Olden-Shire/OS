@@ -1,0 +1,9 @@
+// obj 8022
+model = obj_telekinetic_grab
+yof2d = -1
+zoom2d = 465
+xan2d = 373
+members = true
+iop1 = Break
+stackable = true
+name = Telekinetic grab

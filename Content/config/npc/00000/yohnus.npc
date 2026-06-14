@@ -1,0 +1,10 @@
+// npc 513
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/4785 6798/61 8741/4785 43072/4785 25238/0 54397/7070
+name = Yohnus
+models = 214 251 305 173 176 274 181
+headmodels = 52 83

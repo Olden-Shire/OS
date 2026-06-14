@@ -1,0 +1,15 @@
+// obj 4343
+cost = 50
+team = 15
+iop2 = Wear
+members = true
+model = obj_team_5_cape_4323
+manwear = obj_team_5_cape_4323_man, 0
+womanwear = obj_team_5_cape_4323_woman, 0
+xof2d = 3
+yof2d = 12
+zoom2d = 2130
+yan2d = 992
+xan2d = 364
+recol = 7756/8152 7845/6965
+name = Team-15 cape

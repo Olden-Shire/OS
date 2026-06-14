@@ -45,6 +45,22 @@ pub struct RawRegion {
     /// `tiles[level][x][z]`.
     pub tiles: Box<[[[RawTile; REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]>,
     pub locs: Vec<LocPlacement>,
+    /// NPC spawns from the `==== NPC ====` section (text-only; not in the binary
+    /// land/loc streams). Coords are region-local (0..63).
+    pub npcs: Vec<NpcPlacement>,
+}
+
+/// One NPC spawn placement parsed from a `.jm2` `==== NPC ====` line
+/// (`level x z: id`). Region-local tile coords.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct NpcPlacement {
+    pub id: i32,
+    /// 0..=3
+    pub level: u8,
+    /// 0..=63 (local tile x within the region)
+    pub x: u8,
+    /// 0..=63 (local tile z within the region)
+    pub z: u8,
 }
 
 /// The packed `(level, x, z)` key the loc stream delta-encodes against.
@@ -59,6 +75,7 @@ impl RawRegion {
         Self {
             tiles: decode_land(land_bytes),
             locs: loc_bytes.map(super::decode_locs).unwrap_or_default(),
+            npcs: Vec::new(), // binary streams carry no spawns
         }
     }
 
@@ -124,21 +141,32 @@ impl RawRegion {
                 ));
             }
         }
+
+        if !self.npcs.is_empty() {
+            s.push_str("\n==== NPC ====\n");
+            let mut npcs: Vec<&NpcPlacement> = self.npcs.iter().collect();
+            npcs.sort_by_key(|n| (n.level, n.x, n.z, n.id));
+            for n in npcs {
+                s.push_str(&format!("{} {} {}: {}\n", n.level, n.x, n.z, n.id));
+            }
+        }
         s
     }
 
-    /// Parse the `.jm2` text form. Unknown sections (e.g. `==== NPC ====`) are ignored.
+    /// Parse the `.jm2` text form, including the `==== NPC ====` spawn section.
     pub fn from_text(text: &str) -> Result<Self, String> {
         #[derive(PartialEq)]
         enum Section {
             None,
             Map,
             Loc,
+            Npc,
             Other,
         }
         let mut tiles: Box<[[[RawTile; REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]> =
             Box::new([[[RawTile::default(); REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]);
         let mut locs = Vec::new();
+        let mut npcs = Vec::new();
         let mut section = Section::None;
 
         for (n, raw) in text.lines().enumerate() {
@@ -150,6 +178,7 @@ impl RawRegion {
                 section = match header.trim_end_matches(" ====").trim() {
                     "MAP" => Section::Map,
                     "LOC" => Section::Loc,
+                    "NPC" => Section::Npc,
                     _ => Section::Other,
                 };
                 continue;
@@ -201,10 +230,18 @@ impl RawRegion {
                         rotation,
                     });
                 }
+                Section::Npc => {
+                    let (coord, rest) = line.split_once(':').ok_or_else(|| err("missing ':'"))?;
+                    let (level, x, z) = parse_coord(coord).map_err(|m| err(&m))?;
+                    let id = rest.split_whitespace().next()
+                        .and_then(|p| p.parse().ok())
+                        .ok_or_else(|| err("bad npc id"))?;
+                    npcs.push(NpcPlacement { id, level: level as u8, x: x as u8, z: z as u8 });
+                }
                 Section::None | Section::Other => {}
             }
         }
-        Ok(Self { tiles, locs })
+        Ok(Self { tiles, locs, npcs })
     }
 }
 
@@ -373,7 +410,7 @@ mod tests {
             LocPlacement { id: 50, level: 1, x: 20, z: 40, shape: 22, rotation: 1 },
             LocPlacement { id: 1200, level: 0, x: 5, z: 5, shape: 0, rotation: 2 },
         ];
-        RawRegion { tiles, locs }
+        RawRegion { tiles, locs, npcs: Vec::new() }
     }
 
     fn sorted_locs(r: &RawRegion) -> Vec<LocPlacement> {
@@ -422,6 +459,7 @@ mod tests {
         let empty = RawRegion {
             tiles: Box::new([[[RawTile::default(); REGION_SIZE]; REGION_SIZE]; REGION_LEVELS]),
             locs: Vec::new(),
+            npcs: Vec::new(),
         };
         let land = empty.encode_land();
         // Every tile emits a single 0 terminator.

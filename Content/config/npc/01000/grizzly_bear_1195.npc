@@ -1,0 +1,11 @@
+// npc 1195
+size = 2
+walkanim = 4923
+readyanim = 4919
+resizeh = 108
+resizev = 108
+op2 = Attack
+vislevel = 42
+recol = 7442/5268 5157/5272
+name = Grizzly bear
+models = 18884 18886

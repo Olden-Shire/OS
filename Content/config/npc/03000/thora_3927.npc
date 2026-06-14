@@ -1,0 +1,9 @@
+// npc 3927
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/2524 43072/2524 25238/7830 8741/4897 6798/268
+name = Thora
+models = 10078 470 9359 353 429 358 479
+headmodels = 10031

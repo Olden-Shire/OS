@@ -1,0 +1,14 @@
+// obj 5283
+model = obj_apple_tree_seed
+yof2d = 3
+zoom2d = 610
+yan2d = 100
+xan2d = 368
+members = true
+stackable = true
+count1 = 5228, 2
+count2 = 5229, 3
+count3 = 5230, 4
+count4 = 5231, 5
+cost = 13
+name = Apple tree seed

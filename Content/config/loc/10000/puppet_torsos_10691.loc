@@ -1,0 +1,10 @@
+// loc 10691
+resizex = 110
+resizey = 90
+resizez = 110
+width = 2
+active = 1
+op1 = Take
+recol = 43943/1686 6457/553 6573/920 5543/912
+models_only = 10478 10481
+name = Puppet torsos

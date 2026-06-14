@@ -1,0 +1,11 @@
+// obj 6721
+model = obj_rusty_scimitar
+manwear = obj_rusty_scimitar_wear, 0
+womanwear = obj_rusty_scimitar_wear, 6
+xof2d = 3
+yof2d = -3
+zoom2d = 1310
+yan2d = 696
+xan2d = 560
+members = true
+name = Rusty scimitar

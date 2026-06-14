@@ -1,0 +1,14 @@
+// obj 10904
+cost = 0
+stackable = true
+members = true
+count1 = 10905, 2
+count2 = 10906, 3
+count3 = 10907, 4
+count4 = 10908, 5
+model = obj_skull_staple
+yof2d = 1
+zoom2d = 400
+yan2d = 1715
+xan2d = 55
+name = Skull staple

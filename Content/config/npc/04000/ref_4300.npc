@@ -1,0 +1,14 @@
+// npc 4300
+vislevel = 0
+size = 1
+resizeh = 131
+resizev = 117
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Claim-Tokens
+alwaysontop = true
+recol = 8741/43146 25238/43146 5656/8 5904/4
+name = Ref
+models = 6848 10039 11811 10301 12138 9617
+headmodels = 5787 10030

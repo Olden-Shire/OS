@@ -1,0 +1,7 @@
+// npc 5907
+size = 1
+walkanim = 6339
+readyanim = 6350
+vislevel = 1
+name = The Illusive
+models = 24999

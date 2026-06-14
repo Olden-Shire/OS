@@ -1,0 +1,6 @@
+// loc 12032
+mirror = true
+hillskew = true
+sharelight = true
+active = 0
+models = 11922/0 11923/1 11924/9

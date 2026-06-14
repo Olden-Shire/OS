@@ -1,0 +1,12 @@
+// obj 9759
+cost = 99000
+members = true
+model = obj_prayer_cape_9759
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_prayer_cape_9759_man, 0
+womanwear = obj_prayer_cape_9759_woman, 0
+recol = 57280/127 54183/123 54503/111 960/127 22464/123 43968/119
+name = Prayer cape

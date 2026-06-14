@@ -1,0 +1,15 @@
+// obj 1017
+cost = 2
+model = obj_wizard_hat_579
+xof2d = 5
+yof2d = -10
+zoom2d = 800
+yan2d = 156
+xan2d = 152
+iop2 = Wear
+manwear = obj_wizard_hat_579_man, 0
+womanwear = obj_wizard_hat_579_woman, 0
+manhead = 44
+womanhead = 102
+recol = 38814/0
+name = Wizard hat

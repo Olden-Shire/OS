@@ -1,0 +1,5 @@
+// npc 1903
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 55
+multivar = 340, 65535, 1904 1904 1905

@@ -1,0 +1,36 @@
+[clientscript,script_171]()()
+
+if (%varcint40 = 0) {
+    if_settext("Show riddle", 25559048);
+    if_setop(1, "Show", 25559048);
+    if_sethide(0, 25559049);
+    if_sethide(0, 25559050);
+    if_sethide(0, 25559051);
+    if_sethide(0, 25559052);
+    if_sethide(0, 25559053);
+    if_sethide(0, 25559054);
+    if_sethide(0, 25559055);
+    if_sethide(0, 25559056);
+    if_sethide(1, 25559042);
+    if_sethide(1, 25559045);
+    %varcint40 = 1;
+} else {
+    if_settext("Hide riddle", 25559048);
+    if_setop(1, "Hide", 25559048);
+    if_settext(join("You seek the grail of old,", "<br>", "but no longer is it a goblet of gold.", "<br>", "Among these nine will you find what you seek,", "<br>", "but be careful and don't peek!", "<br>", "A wrong choice will expel you,", "<br>", "so consider carefully each clue.", "<br>", "<br>", "Three boxes contain only air,", "<br>", "beware of three boxes, for danger lurks there.", "<br>", "Two hold only rubbish but would fool you with disguise,", "<br>", "only one box holds your prize.", "<br>", "<br>", "Clues will give the information you need,", "<br>", "<br>", "rubbish always sits to the right of danger, pay heed.", "<br>", "There is nothing helpful in boxes great in height,", "<br>", "and boxes on either end will not end your plight.", "<br>", "A tall or small box will only bring you anger,", "<br>", "but a square box will not put you in danger."), 25559046);
+    if_setcolour(0, 25559046);
+    if_sethide(1, 25559049);
+    if_sethide(1, 25559050);
+    if_sethide(1, 25559051);
+    if_sethide(1, 25559052);
+    if_sethide(1, 25559053);
+    if_sethide(1, 25559054);
+    if_sethide(1, 25559055);
+    if_sethide(1, 25559056);
+    if_sethide(0, 25559042);
+    if_sethide(0, 25559045);
+    if_setscrollsize(190, 520, 25559047);
+    ~script_31(25559045, 25559047, 792, 789, 790, 791, 773, 788);
+    %varcint40 = 0;
+}
+return;

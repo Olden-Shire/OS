@@ -1,0 +1,10 @@
+// npc 649
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/17959 10004/6579 39145/17959 6024/6579 926/6579 123/6579
+name = Archer
+models = 390 414 477 3194 332 356 563 422
+headmodels = 113 131

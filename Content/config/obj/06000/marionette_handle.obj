@@ -1,0 +1,12 @@
+// obj 6864
+iop2 = Wear
+cost = 60000
+model = obj_marionette_handle
+xof2d = 42
+yof2d = 100
+zoom2d = 724
+yan2d = 180
+xan2d = 166
+manwear = obj_marionette_handle, 0
+womanwear = obj_marionette_handle, 0
+name = Marionette handle

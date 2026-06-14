@@ -1,0 +1,7 @@
+// loc 7164
+width = 3
+length = 2
+forceapproach = 11
+op1 = Squeeze-through
+models_only = 7429
+name = Gap

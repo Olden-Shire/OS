@@ -1,0 +1,7 @@
+// loc 192
+width = 2
+length = 2
+active = 0
+blockwalk = true
+mirror = true
+models_only = 1319

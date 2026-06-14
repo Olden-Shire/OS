@@ -1,0 +1,12 @@
+// npc 1308
+size = 1
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 48
+recol = 6798/4771 25238/5413 8741/5413 7952/5532 10351/10574 5018/1441
+name = Lanzig
+models = 208 252 292 170 176 265 185 317 4391 3711
+headmodels = 48 84

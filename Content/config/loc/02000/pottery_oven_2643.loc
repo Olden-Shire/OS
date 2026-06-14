@@ -1,0 +1,7 @@
+// loc 2643
+length = 2
+forceapproach = 13
+op1 = Fire
+bgsound = 2065, 3
+models_only = 1184
+name = Pottery Oven

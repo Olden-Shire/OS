@@ -1,0 +1,16 @@
+// obj 5104
+model = obj_redberry_seed
+xof2d = -1
+yof2d = -20
+zoom2d = 1040
+yan2d = 2036
+xan2d = 240
+members = true
+stackable = true
+count1 = 5216, 2
+count2 = 5217, 3
+count3 = 5218, 4
+count4 = 5219, 5
+cost = 60
+recol = 431/11579
+name = Jangerberry seed

@@ -1,0 +1,4 @@
+[clientscript,script_25](int $int0)()
+
+~script_26($int0, 535, 536);
+return;

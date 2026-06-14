@@ -1,0 +1,11 @@
+// obj 9602
+model = obj_a_red_triangle
+xof2d = 3
+yof2d = 1
+zoom2d = 620
+yan2d = 114
+xan2d = 603
+members = true
+stackable = true
+recol = 668/6831 916/6951 549/6711
+name = An orange triangle

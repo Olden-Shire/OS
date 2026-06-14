@@ -1,0 +1,8 @@
+// loc 2862
+active = 1
+op1 = Open
+contrast = 15
+ambient = 25
+recol = 7706/6430 7582/6435 7830/6554 7954/6550
+models = 26063/0
+name = Door

@@ -1,0 +1,10 @@
+// npc 83
+size = 3
+resizeh = 110
+resizev = 110
+walkanim = 63
+readyanim = 66
+op2 = Attack
+vislevel = 92
+name = Greater demon
+models = 17375 17391 17384 17399 17390

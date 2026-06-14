@@ -1,0 +1,8 @@
+// npc 1626
+size = 1
+walkanim = 1593
+readyanim = 1594
+op2 = Attack
+vislevel = 86
+name = Turoth
+models = 5086

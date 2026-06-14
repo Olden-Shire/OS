@@ -1,0 +1,12 @@
+// npc 5426
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Tuxedo-time
+op4 = Travel
+alwaysontop = true
+recol = 8741/7465 8860/6447 7585/6451 6798/5673 10407/7465 3226/7585
+name = Larry
+models = 10981 249 21813 14175 10980 21811 21812 19947
+headmodels = 10976 81

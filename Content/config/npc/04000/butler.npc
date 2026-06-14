@@ -1,0 +1,10 @@
+// npc 4241
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/920 25238/33030 4626/33030 6798/33030 10330/94
+name = Butler
+models = 6848 9620 12752 10301 12138 181
+headmodels = 5787 9449

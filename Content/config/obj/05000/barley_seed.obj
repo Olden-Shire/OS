@@ -1,0 +1,14 @@
+// obj 5305
+model = obj_barley_seed
+yof2d = 6
+zoom2d = 660
+yan2d = 1996
+xan2d = 276
+members = true
+stackable = true
+count1 = 5167, 2
+count2 = 5168, 3
+count3 = 5169, 4
+count4 = 5170, 5
+cost = 2
+name = Barley seed

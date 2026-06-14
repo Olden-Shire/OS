@@ -1,0 +1,9 @@
+// obj 5559
+model = obj_flash_powder
+yof2d = 5
+zoom2d = 740
+yan2d = 260
+xan2d = 124
+members = true
+stackable = true
+name = Flash powder

@@ -1,0 +1,15 @@
+// obj 4551
+cost = 650
+manwear = obj_spiny_helmet_4551_man, 0
+womanwear = obj_spiny_helmet_4551_woman, 0
+manhead = 5793
+womanhead = 5794
+model = obj_spiny_helmet_4551
+xof2d = 5
+yof2d = -3
+zoom2d = 660
+yan2d = 440
+xan2d = 444
+members = true
+iop2 = Wear
+name = Spiny helmet

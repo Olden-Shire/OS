@@ -1,0 +1,7 @@
+// loc 7941
+op1 = Chop-down
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7921 7767
+name = Apple tree

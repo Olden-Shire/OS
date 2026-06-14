@@ -1,0 +1,6 @@
+// npc 2404
+size = 1
+walkanim = 2154
+readyanim = 2155
+vislevel = 0
+multivar = 582, 65535, 2107

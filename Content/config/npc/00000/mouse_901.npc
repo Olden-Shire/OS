@@ -1,0 +1,8 @@
+// npc 901
+vislevel = 0
+size = 1
+walkanim = 239
+readyanim = 242
+recol = 61/5431
+name = Mouse
+models = 2927

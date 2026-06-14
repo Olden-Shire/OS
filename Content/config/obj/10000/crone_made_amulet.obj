@@ -1,0 +1,13 @@
+// obj 10500
+model = obj_crone_made_amulet
+zoom2d = 480
+yan2d = 97
+xan2d = 207
+cost = 20
+iop2 = Wear
+manwear = obj_crone_made_amulet_man, 0
+womanwear = obj_crone_made_amulet_woman, 0
+ambient = 40
+iop5 = Destroy
+members = true
+name = Crone-made amulet

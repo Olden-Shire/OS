@@ -1,0 +1,14 @@
+// obj 2952
+members = true
+model = obj_wolfbane
+cost = 350
+cost = 300
+members = true
+yof2d = -4
+zoom2d = 760
+yan2d = 1276
+xan2d = 472
+iop2 = Wield
+manwear = obj_wolfbane_wear, 0
+womanwear = obj_wolfbane_wear, 6
+name = Wolfbane

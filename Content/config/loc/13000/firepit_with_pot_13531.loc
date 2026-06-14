@@ -1,0 +1,9 @@
+// loc 13531
+length = 2
+anim = 3105
+op5 = Remove
+contrast = 25
+ambient = 25
+bgsound = 2200, 3
+models_only = 14101 12624 12628
+name = Firepit with pot

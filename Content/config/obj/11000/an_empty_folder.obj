@@ -1,0 +1,18 @@
+// obj 11003
+cost = 5
+members = true
+model = obj_an_empty_folder
+yof2d = 16
+zoom2d = 976
+yan2d = 222
+xan2d = 216
+contrast = 15
+ambient = 15
+members = true
+count1 = 11004, 2
+count2 = 11004, 3
+count3 = 11004, 4
+count4 = 11005, 5
+iop1 = Read
+iop5 = Destroy
+name = An empty folder

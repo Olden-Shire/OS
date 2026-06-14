@@ -1,0 +1,8 @@
+// npc 167
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+name = Gnome baller
+models = 2914 2905 2924
+headmodels = 21

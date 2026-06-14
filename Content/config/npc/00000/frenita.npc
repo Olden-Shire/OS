@@ -1,0 +1,12 @@
+// npc 593
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 43072/4550 6798/127 8741/57901 25238/11185 4626/57901 5652/11844
+name = Frenita
+models = 378 465 346 353 428 358
+headmodels = 103 137

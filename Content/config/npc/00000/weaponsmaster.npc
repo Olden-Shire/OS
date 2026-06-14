@@ -1,0 +1,12 @@
+// npc 643
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+alwaysontop = true
+vislevel = 23
+recol = 25238/10508 8741/6930
+name = Weaponsmaster
+models = 230 249 306 156 176 254 185 518
+headmodels = 63 81

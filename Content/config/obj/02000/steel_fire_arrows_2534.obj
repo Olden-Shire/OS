@@ -1,0 +1,14 @@
+// obj 2534
+members = true
+cost = 3
+stackable = true
+model = obj_bronze_fire_arrows_598
+zoom2d = 1580
+yan2d = 1832
+xan2d = 336
+iop2 = Wield
+count1 = 2542, 2
+count2 = 2543, 3
+count3 = 2544, 4
+count4 = 2545, 5
+name = Steel fire arrows

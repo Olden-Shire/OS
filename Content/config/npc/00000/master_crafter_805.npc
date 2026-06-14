@@ -1,0 +1,9 @@
+// npc 805
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/5532 8741/37159 54397/4769 43072/4550 6798/2155 9096/5532
+name = Master Crafter
+models = 6848 245 247 305 151 176 274 181 18926
+headmodels = 5787 79 78

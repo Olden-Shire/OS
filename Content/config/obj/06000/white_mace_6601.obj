@@ -1,0 +1,13 @@
+// obj 6601
+cost = 432
+iop2 = Wield
+manwear = obj_iron_mace_1420_wear, 0
+womanwear = obj_iron_mace_1420_wear, 6
+model = obj_iron_mace_1420
+yof2d = -1
+zoom2d = 1030
+yan2d = 1188
+xan2d = 392
+members = true
+recol = 61/99 8722/7073
+name = White mace

@@ -1,0 +1,10 @@
+// npc 3801
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+alwaysontop = true
+op1 = Talk-to
+recol = 43072/4550 22177/12 61/16 7073/6932
+name = Squire
+models = 388 464 351 10706 14589 14574 358
+headmodels = 111

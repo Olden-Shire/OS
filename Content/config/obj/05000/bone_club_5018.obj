@@ -1,0 +1,12 @@
+// obj 5018
+model = obj_bone_club_5018
+manwear = obj_bone_club_5018_wear, 0
+womanwear = obj_bone_club_5018_wear, 0
+members = true
+cost = 600
+xof2d = 14
+zoom2d = 1770
+yan2d = 464
+xan2d = 500
+iop2 = Wield
+name = Bone club

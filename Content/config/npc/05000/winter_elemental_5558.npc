@@ -1,0 +1,12 @@
+// npc 5558
+readyanim = 5803
+walkanim = 5802
+size = 1
+ambient = 20
+resizeh = 80
+resizev = 80
+vislevel = 0
+alwaysontop = true
+nowalksmoothing = true
+name = Winter Elemental
+models = 22272 22273 22274

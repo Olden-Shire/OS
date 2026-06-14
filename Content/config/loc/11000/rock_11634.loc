@@ -1,0 +1,6 @@
+// loc 11634
+hillskew = true
+ambient = 10
+nonblockrange = true
+models_only = 11587
+name = Rock

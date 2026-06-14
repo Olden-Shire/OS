@@ -1,0 +1,6 @@
+// npc 1611
+size = 3
+op2 = Attack
+vislevel = 111
+name = Gargoyle
+models = 5080 5079

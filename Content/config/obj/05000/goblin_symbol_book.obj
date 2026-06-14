@@ -1,0 +1,10 @@
+// obj 5009
+model = obj_goblin_symbol_book
+yof2d = 26
+zoom2d = 750
+yan2d = 124
+xan2d = 276
+iop1 = Read
+members = true
+cost = 1
+name = Goblin symbol book

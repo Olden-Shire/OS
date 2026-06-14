@@ -143,8 +143,22 @@ pub fn verify_repack(
 /// been packed from Content (e.g. the served/browsed cache) so it isn't packed
 /// twice.
 pub fn verify_cache(cache_dir: &Path, baseline: &Baseline) -> std::io::Result<VerifyReport> {
+    verify_cache_with_progress(cache_dir, baseline, &mut |_, _| {})
+}
+
+/// Like [`verify_cache`], but reports `(groups_done, groups_total)` as it goes —
+/// used by the control-panel splash for a verify progress bar.
+pub fn verify_cache_with_progress(
+    cache_dir: &Path,
+    baseline: &Baseline,
+    progress: &mut dyn FnMut(usize, usize),
+) -> std::io::Result<VerifyReport> {
     let mut cache = Cache::open(cache_dir)?;
     let mut report = VerifyReport::default();
+
+    // Pre-count groups across all archives for the progress total.
+    let total: usize = (0..ARCHIVE_COUNT).map(|a| cache.index(a).group_ids.len()).sum();
+    let mut done = 0usize;
 
     for archive in 0..ARCHIVE_COUNT {
         // Snapshot the index checksums once (avoids borrowing `cache` across read_raw).
@@ -154,6 +168,10 @@ pub fn verify_cache(cache_dir: &Path, baseline: &Baseline) -> std::io::Result<Ve
         let baseline_groups = baseline.groups.get(&archive).unwrap_or(&empty);
 
         for gid in group_ids {
+            done += 1;
+            if done % 512 == 0 || done == total {
+                progress(done, total);
+            }
             let gid = gid as u32;
             let Some(raw) = cache.read_raw(archive, gid)? else { continue };
             // Full-bytes CRC is the baseline fingerprint (catches any change, trailer

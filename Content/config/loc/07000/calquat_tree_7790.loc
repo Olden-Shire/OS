@@ -1,0 +1,7 @@
+// loc 7790
+ambient = 25
+op1 = Pick-fruit
+op2 = Inspect
+op4 = Guide
+models_only = 7960 7948 7961 7768
+name = Calquat Tree

@@ -1,0 +1,7 @@
+// loc 8113
+op1 = Pick-fruit
+ambient = 30
+op2 = Inspect
+op4 = Guide
+models_only = 8083 7767 8085
+name = Papaya tree

@@ -1,0 +1,9 @@
+// npc 2340
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/4391 25238/5400 43072/4550 6798/5027 908/8076 11844/8076
+name = Heskel
+models = 390 456 480 332 353 7368 433 7366
+headmodels = 113

@@ -1,0 +1,6 @@
+// seq 4278
+replaceheldright = 0
+replaceheldleft = 0
+preanim_move = 1
+postanim_move = 1
+frames = 4/355/215 4/358/215 4/359/215 6/360/215 7/361/215 1/362/215 10/363/215 8/364/215 7/365/215 4/356/215 4/357/215

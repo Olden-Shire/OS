@@ -1,0 +1,11 @@
+// loc 22721
+width = 2
+length = 2
+active = 1
+ambient = 20
+sharelight = true
+blockwalk = true
+bgsound = 2209, 5
+nonblockrange = true
+models_only = 23441 23440 23435
+name = Furnace

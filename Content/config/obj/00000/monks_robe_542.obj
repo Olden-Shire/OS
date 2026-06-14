@@ -1,0 +1,11 @@
+// obj 542
+model = obj_priest_gown_428
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+cost = 30
+iop2 = Wear
+manwear = obj_priest_gown_428_man, 0
+womanwear = obj_priest_gown_428_woman, 0
+recol = 25238/4769
+name = Monk's robe

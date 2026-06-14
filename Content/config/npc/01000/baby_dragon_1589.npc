@@ -1,0 +1,10 @@
+// npc 1589
+size = 2
+resizeh = 105
+resizev = 105
+walkanim = 21
+readyanim = 27
+op2 = Attack
+vislevel = 48
+name = Baby dragon
+models = 17411 17427 17421 17424

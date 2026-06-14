@@ -1,0 +1,6 @@
+// loc 2987
+nonsolid = true
+anim = 912
+recol = 48596/127 37196/127 53167/127
+models_only = 237
+name = Flowers

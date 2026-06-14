@@ -1,0 +1,10 @@
+// npc 1285
+vislevel = 0
+size = 1
+walkanims = 1323, 1324, 1325, 1326
+readyanim = 1322
+op1 = Talk-to
+recol = 6798/6722 25238/5272 8741/8483 8078/8478 906/4525
+name = Eldgrim
+models = 206 252 292 162 176 4226 4218 4396 326 4390
+headmodels = 46 84

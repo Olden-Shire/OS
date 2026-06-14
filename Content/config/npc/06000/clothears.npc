@@ -1,0 +1,6 @@
+// npc 6130
+readyanim = 6836
+vislevel = 0
+op1 = Talk-to
+name = Clothears
+models = 24427

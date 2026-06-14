@@ -1,0 +1,9 @@
+// loc 17980
+resizex = 128
+resizey = 160
+resizez = 128
+ambient = 10
+op4 = Search
+op5 = Push
+models = 17702/0
+name = Wall

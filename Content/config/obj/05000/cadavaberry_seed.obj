@@ -1,0 +1,16 @@
+// obj 5102
+model = obj_redberry_seed
+xof2d = -1
+yof2d = -20
+zoom2d = 1040
+yan2d = 2036
+xan2d = 240
+members = true
+stackable = true
+count1 = 5208, 2
+count2 = 5209, 3
+count3 = 5210, 4
+count4 = 5211, 5
+cost = 9
+recol = 431/54577
+name = Cadavaberry seed

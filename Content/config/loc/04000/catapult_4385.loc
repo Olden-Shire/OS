@@ -1,0 +1,10 @@
+// loc 4385
+width = 3
+length = 3
+active = 1
+op1 = Repair
+mapscene = 30
+nonblockrange = true
+recol = 7700/20 8076/12 5784/12
+models_only = 4447
+name = Catapult

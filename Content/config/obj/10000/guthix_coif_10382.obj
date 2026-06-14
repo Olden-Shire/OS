@@ -1,0 +1,20 @@
+// obj 10382
+model = obj_zamorak_coif_10374
+yof2d = -35
+zoom2d = 789
+yan2d = 1784
+zan2d = 2047
+xan2d = 194
+iop2 = Wear
+manhead = 63
+manhead2 = 20107
+womanhead = 120
+womanhead2 = 20107
+manwear = obj_zamorak_coif_10374_man, 0
+manwear2 = 230
+womanwear = obj_zamorak_coif_10374_woman, 0
+womanwear2 = 403
+members = true
+cost = 2000
+recol = 920/27210 912/24014 8070/19788
+name = Guthix coif

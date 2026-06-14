@@ -1,0 +1,6 @@
+// loc 8442
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8026 7768
+name = Maple Tree

@@ -30,33 +30,57 @@ pub const APOBJ2: Trigger = 32;
 pub const APOBJ3: Trigger = 33;
 pub const APOBJ4: Trigger = 34;
 pub const APOBJ5: Trigger = 35;
+pub const APOBJU: Trigger = 36;
+pub const APOBJT: Trigger = 37;
 pub const OPOBJ1: Trigger = 38;
 pub const OPOBJ2: Trigger = 39;
 pub const OPOBJ3: Trigger = 40;
 pub const OPOBJ4: Trigger = 41;
 pub const OPOBJ5: Trigger = 42;
+pub const OPOBJU: Trigger = 43;
+pub const OPOBJT: Trigger = 44;
 
 pub const APLOC1: Trigger = 59;
 pub const APLOC2: Trigger = 60;
 pub const APLOC3: Trigger = 61;
 pub const APLOC4: Trigger = 62;
 pub const APLOC5: Trigger = 63;
+pub const APLOCU: Trigger = 64;
+pub const APLOCT: Trigger = 65;
 pub const OPLOC1: Trigger = 66;
 pub const OPLOC2: Trigger = 67;
 pub const OPLOC3: Trigger = 68;
 pub const OPLOC4: Trigger = 69;
 pub const OPLOC5: Trigger = 70;
+pub const OPLOCU: Trigger = 71;
+pub const OPLOCT: Trigger = 72;
 
 pub const APPLAYER1: Trigger = 87;
 pub const APPLAYER2: Trigger = 88;
 pub const APPLAYER3: Trigger = 89;
 pub const APPLAYER4: Trigger = 90;
 pub const APPLAYER5: Trigger = 91;
+pub const APPLAYERU: Trigger = 92;
+pub const APPLAYERT: Trigger = 93;
 pub const OPPLAYER1: Trigger = 94;
 pub const OPPLAYER2: Trigger = 95;
 pub const OPPLAYER3: Trigger = 96;
 pub const OPPLAYER4: Trigger = 97;
 pub const OPPLAYER5: Trigger = 98;
+pub const OPPLAYERU: Trigger = 99;
+pub const OPPLAYERT: Trigger = 100;
+
+// Npc AI interaction triggers (Engine-TS ServerTriggerType). Each `*1` is the
+// base of a 5-op run; ap/op pairs are offset by 7 (ap before op). NPC_SETMODE's
+// NpcMode maps to these, fired by the npc AI turn when it reaches its target.
+pub const AI_APNPC1: Trigger = 17;
+pub const AI_OPNPC1: Trigger = 24;
+pub const AI_APOBJ1: Trigger = 45;
+pub const AI_OPOBJ1: Trigger = 52;
+pub const AI_APLOC1: Trigger = 73;
+pub const AI_OPLOC1: Trigger = 80;
+pub const AI_APPLAYER1: Trigger = 101;
+pub const AI_OPPLAYER1: Trigger = 108;
 
 pub const QUEUE: Trigger = 116;
 /// Npc AI queues 1..20 (Engine-TS `AI_QUEUE1`..): NPC_QUEUE fires

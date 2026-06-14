@@ -1,0 +1,12 @@
+// npc 168
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 1
+recol = 22422/51396 22418/51396
+name = Gnome woman
+models = 2911 2907 2917
+headmodels = 21

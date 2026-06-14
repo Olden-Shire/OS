@@ -1,0 +1,12 @@
+// obj 954
+cost = 18
+model = obj_rope_954
+manwear = obj_rope_954_wear, 0
+womanwear = obj_rope_954_wear, 6
+xof2d = -2
+yof2d = -30
+zoom2d = 1240
+yan2d = 1976
+xan2d = 188
+recol = 6558/7054
+name = Rope

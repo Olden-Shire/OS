@@ -1,0 +1,10 @@
+// npc 887
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/811 8741/43939
+name = Guard
+models = 225 301 162 179 274 185
+headmodels = 60

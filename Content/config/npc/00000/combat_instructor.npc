@@ -1,0 +1,11 @@
+// npc 944
+vislevel = 146
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 5442/4550 9104/41 4626/41 4684/49 11200/41 0/926
+name = Combat Instructor
+models = 231 252 315 165 565 268 185 546 328 290 201
+headmodels = 64 84

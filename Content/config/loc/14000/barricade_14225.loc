@@ -1,0 +1,10 @@
+// loc 14225
+hillskew = true
+ambient = 5
+noshadow = true
+blockwalk = true
+active = 1
+op2 = hidden
+nonblockrange = true
+models = 14449/9
+name = Barricade

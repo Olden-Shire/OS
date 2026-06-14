@@ -1,0 +1,12 @@
+// obj 10890
+model = obj_prayer_book_10890
+zoom2d = 854
+yan2d = 1936
+xan2d = 277
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop2 = Recite-prayer
+iop5 = Destroy
+name = Prayer book

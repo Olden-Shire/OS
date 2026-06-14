@@ -1,0 +1,7 @@
+// loc 5176
+width = 2
+length = 2
+blockwalk = true
+op1 = Repair
+models_only = 5173
+name = Lightning conductor

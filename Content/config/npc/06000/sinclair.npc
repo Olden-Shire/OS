@@ -1,0 +1,8 @@
+// npc 6198
+vislevel = 0
+nominimap = true
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+name = Sinclair
+models = 27192

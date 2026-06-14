@@ -1,0 +1,11 @@
+// npc 4563
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+turnspeed = 0
+recol = 33/5908 37/5784 8367/5660 7700/3980 10330/5908 5285/5665
+name = Hura
+models = 16947 16948 16946 7046 10326 16949
+headmodels = 16945

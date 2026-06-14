@@ -1,0 +1,7 @@
+// loc 24886
+active = 1
+blockwalk = true
+ambient = 25
+contrast = 25
+nonblockrange = true
+multiloc = 3721, 65535, 24780 24781

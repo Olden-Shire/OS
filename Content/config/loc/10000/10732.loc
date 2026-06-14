@@ -1,0 +1,8 @@
+// loc 10732
+hillskew = true
+forcedecor = true
+mirror = true
+ambient = 20
+contrast = 10
+active = 0
+models = 10608/10 10609/22

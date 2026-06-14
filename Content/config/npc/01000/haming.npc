@@ -1,0 +1,10 @@
+// npc 1362
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/2343 43072/2524 8741/32935 4550/2524 6798/7613 6587/32935
+name = Haming
+models = 4220 246 293 167 176 4226 4218 4219
+headmodels = 4210

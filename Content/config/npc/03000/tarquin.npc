@@ -1,0 +1,11 @@
+// npc 3328
+size = 1
+vislevel = 0
+contrast = 10
+ambient = 10
+readyanim = 808
+op1 = Talk-To
+recol = 8741/7273 25238/7502 10828/10698 10584/10580 10692/10576
+name = Tarquin
+models = 11330 6848 249 12084 163 177 12087 254 12082
+headmodels = 5787 81 11402

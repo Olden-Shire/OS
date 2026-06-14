@@ -1,0 +1,10 @@
+// npc 1093
+vislevel = 0
+size = 1
+walkanim = 5340
+readyanim = 5339
+resizeh = 100
+resizev = 100
+recol = 8390/7500 8384/7504 8371/8394 5268/10421 5388/8406 5392/8400
+name = Billy
+models = 20273 20281 20277

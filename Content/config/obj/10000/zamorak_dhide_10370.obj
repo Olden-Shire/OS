@@ -1,0 +1,15 @@
+// obj 10370
+model = obj_zamorak_dhide_10370
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_zamorak_dhide_10370_man, 0
+manwear2 = 20121
+womanwear = obj_zamorak_dhide_10370_woman, 0
+womanwear2 = 20177
+members = true
+cost = 13000
+recol = 22168/664 8070/962 24082/910 22156/652 920/962 912/1967
+name = Zamorak d'hide

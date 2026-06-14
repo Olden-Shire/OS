@@ -1,0 +1,5 @@
+// loc 15202
+op1 = Climb-down
+nonblockrange = true
+models_only = 15049 15052
+name = Hole

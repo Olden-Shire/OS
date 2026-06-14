@@ -1,0 +1,9 @@
+// obj 4206
+model = obj_consecration_seed_4205
+iop1 = Plant
+members = true
+resizex = 80
+resizey = 80
+resizez = 80
+zoom2d = 1450
+name = Consecration seed

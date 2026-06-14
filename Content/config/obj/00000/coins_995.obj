@@ -1,0 +1,17 @@
+// obj 995
+model = obj_coins_995
+stackable = true
+xof2d = 3
+zoom2d = 710
+yan2d = 2012
+xan2d = 184
+count1 = 996, 2
+count2 = 997, 3
+count3 = 998, 4
+count4 = 999, 5
+count5 = 1000, 25
+count6 = 1001, 100
+count7 = 1002, 250
+count8 = 1003, 1000
+count9 = 1004, 10000
+name = Coins

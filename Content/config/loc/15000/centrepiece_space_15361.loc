@@ -1,0 +1,11 @@
+// loc 15361
+resizex = 85
+resizey = 85
+resizez = 85
+active = 1
+op5 = Build
+nonsolid = true
+width = 2
+length = 2
+models_only = 12705
+name = Centrepiece space

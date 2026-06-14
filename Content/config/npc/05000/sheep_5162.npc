@@ -1,0 +1,9 @@
+// npc 5162
+vislevel = 0
+size = 1
+walkanim = 5344
+readyanim = 5345
+op1 = Shear
+recol = 8526/6356 8396/8394 7479/8386 7467/7353 7463/7331
+name = Sheep
+models = 20282 20288 20284

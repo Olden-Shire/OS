@@ -1,0 +1,9 @@
+// loc 9271
+sharelight = true
+offsetx = 0
+offsety = 240
+offsetz = 0
+mirror = true
+active = 0
+ambient = 25
+models_only = 9178

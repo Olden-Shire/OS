@@ -1,0 +1,8 @@
+// loc 18263
+ambient = 25
+contrast = 5
+length = 3
+mirror = true
+active = 0
+recol = 7500/8384 7494/8375 7490/8367 7483/8487 7475/8478
+models_only = 18250

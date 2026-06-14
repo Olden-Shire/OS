@@ -1,0 +1,11 @@
+// loc 5452
+active = 0
+sharelight = true
+occlude = true
+mapscene = 21
+hillskew = true
+resizez = 128
+resizex = 128
+resizey = 192
+recol = 21534/14494 21530/14490 21526/14614 21522/14610 21646/14734 21642/14858
+models = 4463/0 4464/1 4465/2 4466/3 4467/9

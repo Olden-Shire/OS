@@ -1,0 +1,13 @@
+// obj 1361
+model = obj_iron_axe_1349
+model = obj_iron_axe_1349
+xof2d = -15
+zoom2d = 1060
+yan2d = 1196
+xan2d = 520
+manwear = obj_iron_axe_1349_wear, 0
+womanwear = obj_iron_axe_1349_wear, 6
+cost = 384
+iop2 = Wield
+recol = 61/0
+name = Black axe

@@ -1,0 +1,11 @@
+// loc 24214
+width = 2
+length = 2
+ambient = 20
+noshadow = true
+resizex = 112
+resizey = 112
+resizez = 112
+bgsound = 2149, 5
+models_only = 24879
+name = Fountain

@@ -1,0 +1,7 @@
+// loc 22779
+active = 1
+op1 = Open
+raiseobject = 0
+ambient = 20
+models = 23499/0
+name = Gate

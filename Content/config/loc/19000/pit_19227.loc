@@ -1,0 +1,8 @@
+// loc 19227
+noshadow = true
+contrast = 0
+ambient = 0
+op3 = Trap
+active = 1
+models_only = 10772
+name = Pit

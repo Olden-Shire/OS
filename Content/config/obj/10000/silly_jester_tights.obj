@@ -1,0 +1,16 @@
+// obj 10838
+members = true
+cost = 100
+xof2d = -1
+yof2d = 12
+zoom2d = 1892
+yan2d = 1909
+xan2d = 456
+contrast = 15
+ambient = 15
+model = obj_silly_jester_tights
+iop2 = Wear
+manwear = obj_silly_jester_tights_man, 0
+womanwear = obj_silly_jester_tights_woman, 0
+iop5 = Destroy
+name = Silly jester tights

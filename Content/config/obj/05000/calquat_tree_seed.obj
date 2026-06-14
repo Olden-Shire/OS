@@ -1,0 +1,14 @@
+// obj 5290
+model = obj_palm_tree_seed
+zoom2d = 1010
+yan2d = 1952
+xan2d = 332
+members = true
+stackable = true
+count1 = 5256, 2
+count2 = 5257, 3
+count3 = 5258, 4
+count4 = 5259, 5
+cost = 340
+recol = 5716/5671 5572/5790
+name = Calquat tree seed

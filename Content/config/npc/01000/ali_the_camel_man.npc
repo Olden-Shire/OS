@@ -1,0 +1,12 @@
+// npc 1867
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 8741/10351 25238/10351 6798/127 4550/5555
+name = Ali the Camel Man
+models = 214 6087 292 162 265 181 176 323 280
+headmodels = 52 6081

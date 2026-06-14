@@ -1,0 +1,13 @@
+// npc 4544
+vislevel = 0
+size = 1
+resizeh = 134
+resizev = 117
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/10520 8741/6932 6798/10301
+name = 'Birds-Eye' Jack
+models = 193 6848 251 292 162 179 254 185 16835
+headmodels = 5787 83 36

@@ -1,0 +1,12 @@
+// npc 881
+vislevel = 107
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/38817 25238/39834 6798/10365 38814/39607 123/39607 43117/16
+name = Traiborn
+models = 202 215 245 251 292 3189 170 177 176 265 181
+headmodels = 53 83 78 44

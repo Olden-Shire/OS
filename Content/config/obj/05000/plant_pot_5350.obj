@@ -1,0 +1,9 @@
+// obj 5350
+model = obj_plant_pot_5350
+zoom2d = 1210
+yan2d = 2012
+xan2d = 104
+manwear = obj_plant_pot_5350_wear, 0
+womanwear = obj_plant_pot_5350_wear, 0
+members = true
+name = Plant pot

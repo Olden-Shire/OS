@@ -1,0 +1,9 @@
+// loc 9029
+op1 = Reinforce
+op3 = Hidden
+op4 = Hidden
+active = 1
+hillskew = true
+nonblockrange = true
+models = 8892/0 8893/9
+name = Village fence

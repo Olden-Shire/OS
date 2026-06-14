@@ -1,0 +1,7 @@
+// npc 5242
+vislevel = 0
+readyanim = 5104
+walkanim = 5107
+recol = 14391/14503 14395/14507 10425/10409 9403/9515 7485/8493 7481/8617
+name = Penance Healer
+models = 20698

@@ -1,0 +1,9 @@
+// loc 9039
+occlude = true
+contrast = 100
+ambient = 10
+mirror = true
+op1 = Open
+op2 = Quick-Pay(100)
+models = 2192/10 2202/0 2203/2 2204/3 2205/9
+name = Hardwood Grove Doors

@@ -1,0 +1,8 @@
+// npc 507
+size = 2
+op2 = Attack
+readyanim = 5572
+walkanim = 5582
+vislevel = 91
+name = Nazastarool
+models = 20950

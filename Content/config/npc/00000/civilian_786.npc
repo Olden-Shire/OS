@@ -1,0 +1,10 @@
+// npc 786
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/6709 25238/14234 4550/6709
+name = Civilian
+models = 214 299 173 176 263 185 246
+headmodels = 52

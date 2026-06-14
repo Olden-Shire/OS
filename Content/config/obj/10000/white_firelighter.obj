@@ -1,0 +1,12 @@
+// obj 10327
+model = obj_red_firelighter
+stackable = true
+xof2d = 3
+yof2d = -18
+zoom2d = 976
+yan2d = 470
+xan2d = 221
+members = true
+cost = 15
+recol = 2857/123 7370/111
+name = White firelighter

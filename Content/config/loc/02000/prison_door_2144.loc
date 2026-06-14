@@ -1,0 +1,6 @@
+// loc 2144
+op1 = Open
+mirror = true
+active = 1
+models = 609/0
+name = Prison door

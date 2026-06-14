@@ -1,0 +1,9 @@
+// npc 3035
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9019/5448 8741/5448 49054/5551 61/5551 25238/5559 4550/3499
+name = Meskhenet
+models = 390 9025 483 332 353 430 358
+headmodels = 113

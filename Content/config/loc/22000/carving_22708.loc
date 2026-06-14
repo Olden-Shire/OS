@@ -1,0 +1,6 @@
+// loc 22708
+active = 1
+ambient = 50
+nonsolid = true
+models = 23343/4
+name = Carving

@@ -1,0 +1,11 @@
+// npc 1328
+size = 2
+readyanim = 6374
+walkanim = 6373
+resizeh = 86
+resizev = 86
+op2 = Attack
+vislevel = 12
+recol = 119/9445 127/9449 111/8419
+name = Unicorn Foal
+models = 25755 25756

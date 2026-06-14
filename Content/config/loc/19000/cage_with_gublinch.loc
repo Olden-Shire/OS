@@ -1,0 +1,8 @@
+// loc 19037
+active = 1
+forceapproach = 11
+ambient = 20
+anim = 5073
+nonblockrange = true
+models_only = 20496 20495
+name = Cage with gublinch

@@ -1,0 +1,11 @@
+// obj 41
+model = obj_bronze_arrowtips
+xof2d = 4
+yof2d = 4
+zoom2d = 780
+yan2d = 176
+xan2d = 440
+members = true
+stackable = true
+cost = 6
+name = Steel arrowtips

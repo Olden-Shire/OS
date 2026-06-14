@@ -1,0 +1,10 @@
+// npc 200
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/4769 61/5268 57/5392 41/5388 5400/5640 5648/6020
+name = Lord Daquarius
+models = 217 246 3379 317 164 179 268 4954
+headmodels = 55

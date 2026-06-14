@@ -1,0 +1,10 @@
+// loc 25179
+width = 2
+length = 2
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+recol = 5210/13477 7380/13481 8390/13489
+models_only = 23479
+name = Flowering fern

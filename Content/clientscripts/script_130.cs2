@@ -1,0 +1,6 @@
+[clientscript,script_130](string $string0)()
+def_string $string1;
+
+$string1 = removetags($string0);
+ignore_del($string1);
+return;

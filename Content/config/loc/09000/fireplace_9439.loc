@@ -1,0 +1,7 @@
+// loc 9439
+anim = 477
+ambient = 25
+contrast = 25
+bgsound = 2065, 3
+models_only = 2249
+name = Fireplace

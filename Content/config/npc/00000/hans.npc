@@ -1,0 +1,10 @@
+// npc 0
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8078/792 8741/1950 43072/4550 9104/792 54397/5301 25238/28
+name = Hans
+models = 217 246 292 162 176 254 185 320
+headmodels = 55

@@ -1,0 +1,7 @@
+// loc 23307
+width = 3
+anim = 6162
+noshadow = true
+ambient = 30
+models_only = 24517 24519 24518 24516
+name = Goblin crowd

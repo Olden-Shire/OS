@@ -1,0 +1,8 @@
+// obj 3948
+model = obj_sliding_button_3948
+xof2d = -1
+yof2d = 1
+zoom2d = 2180
+xan2d = 520
+iop5 = Move
+name = Sliding button

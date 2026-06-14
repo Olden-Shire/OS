@@ -1,0 +1,8 @@
+// loc 20273
+width = 2
+anim = 459
+nonsolid = true
+hillskew = true
+active = 1
+models_only = 16424
+name = Speartrap

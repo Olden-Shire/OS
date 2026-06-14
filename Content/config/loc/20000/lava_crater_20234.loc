@@ -1,0 +1,13 @@
+// loc 20234
+blockwalk = true
+hillskew = true
+anim = 5415
+width = 2
+length = 2
+resizex = 256
+resizey = 256
+resizez = 256
+op1 = Dunk
+bgsound = 2144, 3
+models_only = 20655
+name = Lava crater

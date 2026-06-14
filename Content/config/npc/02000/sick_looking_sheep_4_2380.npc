@@ -1,0 +1,9 @@
+// npc 2380
+vislevel = 0
+size = 1
+walkanim = 5334
+readyanim = 5335
+alwaysontop = true
+recol = 127/7624 123/7622 115/8644 103/8642 99/8640 90/8765
+name = Sick-looking sheep (4)
+models = 20290 20291

@@ -1,0 +1,11 @@
+// obj 6733
+cost = 10000
+model = obj_archers_ring_6733
+iop2 = Wear
+members = true
+xof2d = 4
+yof2d = -14
+zoom2d = 630
+yan2d = 1904
+xan2d = 332
+name = Archers ring

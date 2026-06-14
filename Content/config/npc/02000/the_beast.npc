@@ -1,0 +1,13 @@
+// npc 2941
+size = 1
+resizeh = 85
+resizev = 80
+readyanim = 317
+walkanim = 314
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 16/61 127/68 64414/24472
+name = The Beast
+models = 3006 9388
+headmodels = 10036

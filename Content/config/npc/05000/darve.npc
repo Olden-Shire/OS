@@ -1,0 +1,9 @@
+// npc 5826
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 61/20 11200/59
+name = Darve
+models = 230 253 306 152 177 519 523 269 185
+headmodels = 63 85

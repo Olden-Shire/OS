@@ -1,0 +1,10 @@
+// npc 389
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 813
+recol = 8741/38814 25238/38814 43072/4550 6798/43100 7073/43914 43117/50130
+name = Thormac
+models = 202 214 250 292 170 176 256 283 553 567
+headmodels = 44 52 82

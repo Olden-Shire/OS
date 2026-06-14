@@ -1,0 +1,7 @@
+// loc 9100
+anim = 2437
+active = 1
+op1 = Put-ore-on
+blockwalk = true
+models_only = 9063
+name = Conveyor belt

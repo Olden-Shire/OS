@@ -1,0 +1,5 @@
+// loc 11413
+active = 1
+blockwalk = true
+models = 11442/22
+name = Rope

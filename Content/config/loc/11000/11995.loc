@@ -1,0 +1,8 @@
+// loc 11995
+sharelight = true
+mirror = true
+ambient = 20
+contrast = 15
+offsety = -28
+recol = 551/10330 916/10316
+models = 11841/18

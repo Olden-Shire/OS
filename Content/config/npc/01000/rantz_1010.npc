@@ -1,0 +1,9 @@
+// npc 1010
+vislevel = 0
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+name = Rantz
+models = 2878 3442
+headmodels = 141

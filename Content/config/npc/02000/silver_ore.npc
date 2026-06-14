@@ -1,0 +1,6 @@
+// npc 2560
+vislevel = 0
+size = 3
+recol = 7062/43096 45/43096
+name = Silver ore
+models = 9071

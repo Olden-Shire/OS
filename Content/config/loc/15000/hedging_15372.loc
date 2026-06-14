@@ -1,0 +1,6 @@
+// loc 15372
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 12707
+name = Hedging

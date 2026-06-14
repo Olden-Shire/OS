@@ -1,0 +1,7 @@
+// loc 25204
+width = 2
+length = 2
+blockwalk = true
+nonblockrange = true
+models_only = 26482
+name = A shabby tent

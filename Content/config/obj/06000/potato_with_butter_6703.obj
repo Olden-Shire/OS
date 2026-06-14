@@ -1,0 +1,11 @@
+// obj 6703
+model = obj_potato_with_butter_6703
+xof2d = 1
+yof2d = -6
+zoom2d = 860
+yan2d = 1856
+xan2d = 208
+iop1 = Eat
+members = true
+cost = 8
+name = Potato with butter

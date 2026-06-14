@@ -1,0 +1,10 @@
+// loc 2167
+width = 2
+anim = 464
+op1 = Fill
+nonsolid = true
+forceapproach = 11
+bgsound = 2150, 5
+recol = 12579/5553 12574/5553 12698/5553 12694/5553 12818/5673 12942/5793
+models_only = 2216
+name = Leak

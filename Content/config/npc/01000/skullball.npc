@@ -1,0 +1,13 @@
+// npc 1659
+size = 1
+readyanim = 1607
+walkanim = 1608
+alwaysontop = true
+op1 = Tap
+op3 = Kick
+op4 = Shoot
+op5 = Show-Goal
+vislevel = 0
+ambient = 20
+name = Skullball
+models = 5145

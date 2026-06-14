@@ -1,0 +1,9 @@
+// loc 18871
+op2 = Climb
+hillskew = true
+active = 1
+blockwalk = true
+nonblockrange = true
+recol = 24/7721
+models = 19306/22
+name = Rock

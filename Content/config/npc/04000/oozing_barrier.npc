@@ -1,0 +1,7 @@
+// npc 4379
+op1 = talk
+size = 1
+vislevel = 1
+name = Oozing barrier
+models = 10302
+headmodels = 15912

@@ -1,0 +1,12 @@
+// obj 4436
+model = obj_airtight_pot_4436
+cost = 10
+xof2d = -1
+yof2d = 2
+zoom2d = 990
+yan2d = 8
+xan2d = 112
+iop1 = Open
+members = true
+recol = 6445/4899 6453/4775
+name = Airtight pot

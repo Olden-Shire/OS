@@ -1,0 +1,11 @@
+// npc 4678
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+op2 = Attack
+vislevel = 79
+recol = 2469/18851 912/20364 1938/20240 1814/19988 2588/18970 910/22410
+name = Green dragon
+models = 17409 17425 17419 17423

@@ -1,0 +1,6 @@
+// loc 25011
+ambient = 50
+mirror = true
+nonsolid = true
+recol = 12702/8615 12587/8623 10675/9653 10683/9661
+models = 26356/22

@@ -1,0 +1,9 @@
+// obj 26
+model = obj_fishing_trophy
+members = true
+xof2d = -5
+yof2d = -11
+zoom2d = 1190
+yan2d = 1931
+xan2d = 210
+name = Fishing trophy

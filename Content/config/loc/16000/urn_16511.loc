@@ -1,0 +1,8 @@
+// loc 16511
+anim = 4335
+ambient = 10
+active = 1
+op1 = Search
+op3 = Charm Snake
+models_only = 16421 16418
+name = Urn

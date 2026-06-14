@@ -1,0 +1,6 @@
+// loc 17367
+blockwalk = true
+op1 = Take
+nonblockrange = true
+models_only = 2627
+name = Stone Tablet

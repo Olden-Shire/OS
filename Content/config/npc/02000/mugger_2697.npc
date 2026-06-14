@@ -1,0 +1,8 @@
+// npc 2697
+walkanims = 819, 820, 821, 822
+readyanim = 2701
+op2 = Attack
+vislevel = 6
+recol = 25238/6674 8741/1569 6798/5921 43072/4550
+name = Mugger
+models = 230 243 246 310 167 176 275 185

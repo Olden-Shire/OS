@@ -1,0 +1,6 @@
+// loc 23771
+sharelight = true
+ambient = 30
+contrast = 30
+models = 25263/13 25262/14
+models = 25233/13 25223/14

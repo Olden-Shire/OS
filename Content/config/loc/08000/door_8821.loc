@@ -1,0 +1,7 @@
+// loc 8821
+op1 = Close
+mirror = true
+active = 1
+raiseobject = 0
+models = 609/0
+name = Door

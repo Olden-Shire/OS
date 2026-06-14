@@ -1,0 +1,7 @@
+// loc 13406
+width = 2
+length = 2
+op5 = Remove
+nonblockrange = true
+models_only = 12917
+name = Rock

@@ -1,0 +1,9 @@
+// npc 1475
+walkanim = 6774
+readyanim = 6772
+ambient = 20
+turnspeed = 64
+op2 = Attack
+vislevel = 11
+name = Bird
+models = 26847 26844

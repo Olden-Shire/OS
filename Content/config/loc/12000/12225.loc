@@ -1,0 +1,8 @@
+// loc 12225
+blockwalk = true
+ambient = 20
+sharelight = true
+active = 0
+nonblockrange = true
+recol = 7461/7580
+models_only = 12072

@@ -1,0 +1,12 @@
+// obj 10648
+cost = 99000
+members = true
+model = obj_agility_cape_9771
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_agility_cape_9771_man, 0
+womanwear = obj_agility_cape_9771_woman, 0
+recol = 57280/43431 54183/43550 54503/43674 960/43431 22464/43550 43968/43674
+name = Agility cape

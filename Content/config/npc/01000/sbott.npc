@@ -1,0 +1,10 @@
+// npc 1041
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+name = Sbott
+models = 26122 26131 26115 26126 26119
+headmodels = 26269

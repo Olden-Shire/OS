@@ -1,0 +1,11 @@
+// npc 6165
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Hidden
+op1 = Talk-to
+vislevel = 124
+recol = 6798/5537
+name = Sir Kay
+models = 27130 27200 27203
+headmodels = 27211 27561

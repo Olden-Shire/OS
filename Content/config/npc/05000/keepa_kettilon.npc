@@ -1,0 +1,13 @@
+// npc 5487
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/107 8078/107 4626/107
+name = Keepa Kettilon
+models = 199 206 10039 14791 162 179 12765 12750 181
+headmodels = 46 9449 41

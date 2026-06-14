@@ -1,0 +1,13 @@
+// npc 3646
+size = 2
+vislevel = 45
+readyanim = 6374
+walkanim = 6373
+contrast = 30
+ambient = 30
+resizeh = 110
+resizev = 110
+op2 = Attack
+recol = 119/1730 111/1725 127/1734 6364/1841 6241/1965
+name = Angry unicorn
+models = 25755 14288

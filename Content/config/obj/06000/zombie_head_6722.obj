@@ -1,0 +1,15 @@
+// obj 6722
+model = obj_zombie_head_6722
+manwear = obj_zombie_head_6722_wear, 0
+womanwear = obj_zombie_head_6722_wear, 6
+iop1 = Talk-At
+iop2 = Display
+iop3 = Question
+xof2d = 4
+yof2d = 1
+zoom2d = 750
+yan2d = 140
+xan2d = 36
+cost = 0
+recol = 4550/14387 6798/41 127/914
+name = Zombie head

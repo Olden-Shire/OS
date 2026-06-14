@@ -1,0 +1,11 @@
+// obj 6749
+model = obj_demonic_tome
+xof2d = 2
+yof2d = 4
+zoom2d = 1090
+yan2d = 1944
+xan2d = 304
+members = true
+cost = 0
+iop1 = Read
+name = Demonic tome

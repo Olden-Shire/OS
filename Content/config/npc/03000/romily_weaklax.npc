@@ -1,0 +1,11 @@
+// npc 3205
+size = 1
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/7618 54397/8526 10659/6701 3123/10398 3127/8999 3131/5671
+name = Romily Weaklax
+models = 198 217 250 302 3707 162 176 274 8919
+headmodels = 55 40 82

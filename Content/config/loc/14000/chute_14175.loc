@@ -1,0 +1,9 @@
+// loc 14175
+active = 1
+width = 3
+length = 3
+ambient = 10
+contrast = 10
+op1 = Enter
+models_only = 14394
+name = Chute

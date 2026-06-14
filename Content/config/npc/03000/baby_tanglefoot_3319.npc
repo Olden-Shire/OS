@@ -1,0 +1,12 @@
+// npc 3319
+size = 1
+op2 = Attack
+walkanim = 3261
+readyanim = 3259
+resizeh = 80
+resizev = 50
+vislevel = 45
+recol = 6600/7607 7473/7603 7469/7599 7461/7723
+name = Baby tanglefoot
+models = 11979
+headmodels = 11987

@@ -1,0 +1,9 @@
+// loc 6549
+resizex = 256
+resizey = 190
+resizez = 256
+width = 2
+length = 2
+nonblockrange = true
+models_only = 1525
+name = Well

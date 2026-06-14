@@ -1,0 +1,8 @@
+// loc 20246
+active = 0
+width = 3
+length = 3
+anim = 5422
+nonsolid = true
+noshadow = true
+models_only = 20727

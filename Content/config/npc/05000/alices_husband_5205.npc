@@ -1,0 +1,10 @@
+// npc 5205
+walkanim = 5373
+readyanim = 5371
+ambient = 40
+contrast = 40
+vislevel = 0
+recol = 17467/18626
+name = Alice's husband
+models = 5212 20460 5219 20421 5209 20426 5216
+headmodels = 5203

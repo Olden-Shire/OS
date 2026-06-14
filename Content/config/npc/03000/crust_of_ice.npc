@@ -1,0 +1,8 @@
+// npc 3133
+vislevel = 0
+size = 2
+turnspeed = 0
+op2 = Melt
+nominimap = true
+name = Crust of ice
+models = 10884

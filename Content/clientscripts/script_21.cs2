@@ -1,0 +1,28 @@
+[clientscript,script_21](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7, int $int8, int $int9, int $int10, int $int11)()
+
+if (stat(6) < $int3) {
+    if_setgraphic($int2, $int0);
+    return;
+}
+if ($int4 ! -1 & ~script_19($int4) < $int5) {
+    if_setgraphic($int2, $int0);
+    return;
+}
+if ($int6 ! -1 & ~script_19($int6) < $int7) {
+    if_setgraphic($int2, $int0);
+    return;
+}
+if ($int8 ! -1 & ~script_19($int8) < $int9) {
+    if_setgraphic($int2, $int0);
+    return;
+}
+if ($int10 ! -1 & ~script_19($int10) < $int11) {
+    if_setgraphic($int2, $int0);
+    return;
+}
+if ($int0 = 12582915 & map_members() = 0) {
+    if_setgraphic($int2, $int0);
+    return;
+}
+if_setgraphic($int1, $int0);
+return;

@@ -1,0 +1,10 @@
+// loc 22533
+op1 = Search
+active = 1
+hillskew = true
+forcedecor = true
+mapscene = 46
+blockwalk = true
+recol = 6932/12698 6684/12818
+models = 23188/22
+name = Partially broken bridge

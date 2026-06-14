@@ -1,0 +1,9 @@
+// loc 22180
+active = 0
+sharelight = true
+hillskew = true
+contrast = 20
+ambient = 20
+nonsolid = true
+mapscene = 22
+models = 22859/0

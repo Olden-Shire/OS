@@ -1,0 +1,8 @@
+// obj 4575
+model = obj_schematic_4575
+xof2d = -1
+zoom2d = 1080
+xan2d = 516
+members = true
+iop1 = Assemble
+name = Schematic

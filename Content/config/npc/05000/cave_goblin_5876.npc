@@ -1,0 +1,9 @@
+// npc 5876
+vislevel = 0
+readyanim = 6040
+walkanim = 6041
+op1 = Talk-to
+recol = 187/32939 192/33065 179/33054 7475/24745 7479/27943
+name = Cave goblin
+models = 23636 23685 23626
+headmodels = 23237

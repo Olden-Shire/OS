@@ -1,0 +1,11 @@
+// obj 303
+model = obj_small_fishing_net_303
+xof2d = 3
+yof2d = 5
+zoom2d = 840
+yan2d = 132
+xan2d = 380
+cost = 5
+manwear = obj_small_fishing_net_303_wear, 0
+womanwear = obj_small_fishing_net_303_wear, 6
+name = Small fishing net

@@ -1,0 +1,11 @@
+// loc 24427
+ambient = 35
+active = 1
+sharelight = true
+op1 = Walk-up
+width = 3
+length = 3
+mapscene = 7
+recol = 37945/10287 37941/10283 37937/10279 37933/10275 37929/10270 37925/10266
+models_only = 25381 25382
+name = Stairs

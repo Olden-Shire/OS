@@ -1,0 +1,13 @@
+// obj 9684
+model = obj_page_1
+members = true
+xof2d = 7
+yof2d = 22
+zoom2d = 1744
+yan2d = 152
+xan2d = 304
+iop1 = Read
+iop2 = Shape-Earth
+iop3 = Shape-Air
+iop5 = Destroy
+name = Page 1

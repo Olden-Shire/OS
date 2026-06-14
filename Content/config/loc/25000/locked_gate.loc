@@ -1,0 +1,8 @@
+// loc 25981
+active = 1
+contrast = 15
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models = 27252/0
+name = Locked gate

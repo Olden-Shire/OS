@@ -1,0 +1,15 @@
+// obj 9379
+model = obj_bronze_bolts_unf
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+stackable = true
+members = true
+count1 = 9399, 2
+count2 = 9400, 3
+count3 = 9401, 4
+count4 = 9402, 5
+recol = 17971/43185 5537/43181 5532/43177 5656/43173 5652/43297
+name = Mithril bolts (unf)

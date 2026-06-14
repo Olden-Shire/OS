@@ -1,0 +1,6 @@
+// loc 12603
+op1 = Pick Nuts
+active = 1
+blockwalk = true
+models = 1565/10 20041/22
+name = Tchiki Monkey Nut Bush

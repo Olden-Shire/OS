@@ -1,0 +1,11 @@
+// npc 2226
+size = 1
+resizeh = 135
+resizev = 140
+walkanim = 98
+readyanim = 2152
+vislevel = 0
+recol = 5784/5582 4550/4539 61/6812 910/6812 53/6812
+name = Brown Engine Director
+models = 2971 7055 7036 7045 7068
+headmodels = 1

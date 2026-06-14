@@ -1,0 +1,13 @@
+// obj 6184
+model = obj_prince_tunic
+manwear = obj_prince_tunic_man, 0
+manwear2 = 162
+womanwear = obj_prince_tunic_woman, 0
+womanwear2 = 8846
+iop2 = Wear
+yof2d = 5
+zoom2d = 1530
+xan2d = 628
+cost = 0
+recol = 8741/48039
+name = Prince tunic

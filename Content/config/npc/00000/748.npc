@@ -1,0 +1,7 @@
+// npc 748
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+multivar = 65535, 176, 6085 6085 6085 6085 6085 6085 6085 6085

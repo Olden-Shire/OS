@@ -1,0 +1,6 @@
+// loc 2283
+op1 = Swing-on
+length = 6
+nonsolid = true
+models_only = 2269
+name = Ropeswing

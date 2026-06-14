@@ -1,0 +1,7 @@
+// loc 21022
+active = 1
+contrast = 25
+ambient = 25
+nonblockrange = true
+models_only = 21642
+name = Bed

@@ -1,0 +1,7 @@
+// loc 9626
+active = 0
+sharelight = true
+blockwalk = true
+occlude = true
+recol = 7465/6697 7461/6693 7585/6817 7580/6812 7704/6936
+models = 9563/0 9564/2 9565/3 9566/9

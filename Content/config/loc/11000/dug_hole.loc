@@ -1,0 +1,7 @@
+// loc 11417
+hillskew = true
+op1 = Climb-down
+active = 1
+blockwalk = true
+models = 11449/22
+name = Dug hole

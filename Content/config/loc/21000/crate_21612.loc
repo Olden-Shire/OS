@@ -1,0 +1,4 @@
+// loc 21612
+ambient = 10
+models_only = 22001 22007
+name = Crate

@@ -1,0 +1,11 @@
+// npc 5250
+op2 = Attack
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 140
+resizev = 140
+alwaysontop = true
+vislevel = 93
+recol = 43026/49938 49054/49938 8741/49938 8078/50698 7073/9019 4550/43034
+name = Scarab mage
+models = 6470 162 177 6135 6132

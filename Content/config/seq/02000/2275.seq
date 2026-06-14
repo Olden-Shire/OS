@@ -1,0 +1,7 @@
+// seq 2275
+loops = 11
+maxloops = 3
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 5841
+frames = 40/127/298 6/138/298 7/140/298 5/141/298 6/142/298 40/143/298 6/130/298 6/131/298 5/132/298 6/133/298 5/134/298

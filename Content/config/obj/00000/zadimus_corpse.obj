@@ -1,0 +1,10 @@
+// obj 610
+xof2d = -4
+yof2d = 12
+zoom2d = 1780
+yan2d = 436
+xan2d = 320
+model = obj_dwarf_remains
+iop1 = Bury
+members = true
+name = Zadimus corpse

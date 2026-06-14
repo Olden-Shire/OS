@@ -1,0 +1,11 @@
+// npc 4248
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 10659/21778 8485/21778 9635/21778 7473/21778 10330/5165
+name = Stonemason
+models = 2971 6019 7061 2979 2993 7046 7067
+headmodels = 1 6026

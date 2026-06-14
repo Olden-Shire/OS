@@ -1,0 +1,10 @@
+// npc 1679
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 16701/25145 9137/8 4550/7062
+name = Eluned
+models = 4030 4032 4028 4031 4029
+headmodels = 4013 8262

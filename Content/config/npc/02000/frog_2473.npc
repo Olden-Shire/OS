@@ -1,0 +1,10 @@
+// npc 2473
+resizeh = 64
+resizev = 64
+walkanim = 1797
+readyanim = 1796
+vislevel = 0
+ambient = 70
+name = Frog
+models = 6947
+headmodels = 8850

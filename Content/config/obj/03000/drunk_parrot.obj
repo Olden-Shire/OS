@@ -1,0 +1,12 @@
+// obj 3266
+members = true
+cost = 1
+model = obj_drunk_parrot
+xof2d = 15
+yof2d = -39
+zoom2d = 960
+yan2d = 304
+xan2d = 138
+ambient = 50
+contrast = 50
+name = Drunk parrot

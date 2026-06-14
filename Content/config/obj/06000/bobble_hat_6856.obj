@@ -1,0 +1,14 @@
+// obj 6856
+model = obj_bobble_hat_6856
+xof2d = 1
+yof2d = -1
+zoom2d = 512
+yan2d = 270
+xan2d = 99
+iop2 = Wear
+manwear = obj_bobble_hat_6856_man, 0
+womanwear = obj_bobble_hat_6856_woman, 0
+manhead = 10390
+womanhead = 10402
+iop5 = Destroy
+name = Bobble hat

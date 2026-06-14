@@ -1,0 +1,8 @@
+// npc 2344
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+name = Gileth
+models = 390 470 482 332 353 7368 428 7366
+headmodels = 113

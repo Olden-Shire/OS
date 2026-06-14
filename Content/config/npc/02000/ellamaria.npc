@@ -1,0 +1,10 @@
+// npc 2581
+walkanims = 819, 820, 821, 822
+readyanim = 2578
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 13248/939 8741/29204 25238/29204 6032/9026 12224/9026 43072/9026
+name = Ellamaria
+models = 9112 390 8786 481 8846 353 9113 358
+headmodels = 113 9231

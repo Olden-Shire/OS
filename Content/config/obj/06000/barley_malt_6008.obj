@@ -1,0 +1,12 @@
+// obj 6008
+model = obj_barley_6006
+xof2d = -3
+yof2d = 4
+zoom2d = 1520
+yan2d = 156
+xan2d = 408
+ambient = 15
+members = true
+cost = 4
+recol = 7605/4665 7481/4539 8635/4669
+name = Barley malt

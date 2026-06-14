@@ -1,0 +1,7 @@
+// npc 3130
+vislevel = 0
+size = 2
+op1 = Climb-over
+turnspeed = 0
+name = Pile of bones
+models = 10874

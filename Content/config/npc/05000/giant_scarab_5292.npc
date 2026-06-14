@@ -1,0 +1,8 @@
+// npc 5292
+size = 3
+readyanim = 5455
+walkanim = 5454
+vislevel = 0
+alwaysontop = true
+name = Giant scarab
+models = 20821

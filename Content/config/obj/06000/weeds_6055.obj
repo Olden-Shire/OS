@@ -1,0 +1,10 @@
+// obj 6055
+cost = 1
+model = obj_weeds_6055
+xof2d = 3
+yof2d = 5
+zoom2d = 1930
+zan2d = 2047
+xan2d = 595
+members = true
+name = Weeds

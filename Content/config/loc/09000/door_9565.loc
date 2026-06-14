@@ -1,0 +1,6 @@
+// loc 9565
+op1 = Open
+op4 = Hidden
+op5 = Pick-lock
+models = 9480/0
+name = Door

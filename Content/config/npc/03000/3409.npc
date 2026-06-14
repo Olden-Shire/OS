@@ -1,0 +1,5 @@
+// npc 3409
+turnspeed = 0
+ambient = 15
+vislevel = 1
+multivar = 1859, 65535, 65535 3410 3407

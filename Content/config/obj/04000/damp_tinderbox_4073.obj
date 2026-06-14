@@ -1,0 +1,12 @@
+// obj 4073
+model = obj_tinderbox_590
+manwear = obj_tinderbox_590_wear, 0
+womanwear = obj_tinderbox_590_wear, 0
+xof2d = 1
+yof2d = -10
+zoom2d = 660
+yan2d = 1968
+xan2d = 196
+members = true
+recol = 127/82
+name = Damp tinderbox

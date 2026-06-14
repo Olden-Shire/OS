@@ -1,0 +1,13 @@
+// obj 9433
+model = obj_bolt_pouch
+xof2d = 3
+yof2d = -3
+zoom2d = 854
+yan2d = 156
+xan2d = 264
+ambient = 10
+members = true
+iop1 = Open
+iop5 = Destroy
+cost = 5000
+name = Bolt pouch

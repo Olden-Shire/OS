@@ -1,0 +1,9 @@
+// loc 19842
+sharelight = true
+ambient = 30
+contrast = 30
+noshadow = true
+mapscene = 22
+mirror = true
+recol = 7442/36298 7446/36302 7322/34130 7326/34014 7331/37999 7335/43129
+models = 19364/0

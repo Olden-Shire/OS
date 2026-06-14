@@ -1,0 +1,6 @@
+// loc 13601
+op1 = Search
+forceapproach = 13
+op5 = Remove
+models_only = 12413 12411
+name = Scroll rack

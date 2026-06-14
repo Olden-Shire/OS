@@ -1,0 +1,10 @@
+// npc 3569
+vislevel = 0
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/12942 54397/10450 43072/10450 6798/10417 4550/10450 8741/19084
+name = Cornelius
+models = 6848 253 310 320 168 176 254 181 10037
+headmodels = 5787 85 9822 10026

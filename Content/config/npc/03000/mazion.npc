@@ -1,0 +1,10 @@
+// npc 3114
+walkanims = 819, 820, 821, 822
+readyanim = 808
+size = 1
+vislevel = 0
+op1 = Talk-to
+recol = 933/8891 40237/6808 25238/6808 8741/7469 40117/7469 908/6808
+name = Mazion
+models = 223 246 10705 10723 170 10218 260 185
+headmodels = 59

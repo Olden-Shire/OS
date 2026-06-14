@@ -1,0 +1,11 @@
+// npc 3084
+resizeh = 148
+resizev = 148
+readyanim = 3008
+walkanim = 3012
+vislevel = 0
+op1 = Talk-to
+recol = 42283/8656 25238/8656 1573/4550 15779/7265 4550/5561 127/32893
+name = Cait
+models = 10508 10521 10511 10514 10528
+headmodels = 10411 10406

@@ -1,0 +1,6 @@
+// loc 7410
+ambient = 15
+op1 = Drain
+nonblockrange = true
+models_only = 7775
+name = Barrel

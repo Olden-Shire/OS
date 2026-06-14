@@ -1,0 +1,7 @@
+// loc 20453
+active = 1
+noshadow = true
+nonsolid = true
+anim = 5603
+models_only = 21262
+name = Armour

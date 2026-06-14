@@ -1,0 +1,7 @@
+// loc 17362
+ambient = 30
+blockwalk = true
+width = 2
+length = 2
+models_only = 17317
+name = Urn

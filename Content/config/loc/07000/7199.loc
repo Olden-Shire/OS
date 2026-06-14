@@ -1,0 +1,10 @@
+// loc 7199
+sharelight = true
+hillskew = true
+blockwalk = true
+active = 0
+resizex = 128
+resizey = 150
+resizez = 128
+wallwidth = 16
+models = 7556/0 7557/1 7558/2 7559/3 7560/9

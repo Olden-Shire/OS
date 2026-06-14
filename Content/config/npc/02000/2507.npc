@@ -1,0 +1,6 @@
+// npc 2507
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 1
+multivar = 893, 65535, 65535 2508 2509 2509 2509 2509 2509 2509

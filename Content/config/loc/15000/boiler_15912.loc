@@ -1,0 +1,6 @@
+// loc 15912
+mirror = true
+length = 2
+width = 2
+models_only = 15801 15799
+name = Boiler

@@ -1,0 +1,12 @@
+// obj 1963
+cost = 2
+iop1 = Eat
+model = obj_banana_1963
+xof2d = 9
+yof2d = 10
+zoom2d = 930
+yan2d = 1944
+xan2d = 280
+manwear = obj_banana_1963_wear, 0
+womanwear = obj_banana_1963_wear, 6
+name = Banana

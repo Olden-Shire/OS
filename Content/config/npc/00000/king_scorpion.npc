@@ -1,0 +1,8 @@
+// npc 144
+size = 2
+walkanim = 6253
+readyanim = 6252
+op2 = Attack
+vislevel = 32
+name = King Scorpion
+models = 24611

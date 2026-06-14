@@ -1,0 +1,7 @@
+// loc 17849
+hillskew = true
+ambient = 35
+sharelight = true
+forcedecor = true
+models_only = 13254
+name = Rift

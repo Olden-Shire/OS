@@ -1,0 +1,11 @@
+// npc 1282
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 6798/4771 25238/5413 8741/5413 7952/5532
+name = Sigmund The Merchant
+models = 208 252 292 170 176 265 185 317 326
+headmodels = 48 84

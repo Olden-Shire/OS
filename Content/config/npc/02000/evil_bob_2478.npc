@@ -1,0 +1,11 @@
+// npc 2478
+vislevel = 0
+size = 1
+resizeh = 70
+resizev = 70
+walkanim = 314
+readyanim = 317
+recol = 61/12 16/12 64414/39717 4818/706
+name = Evil Bob
+models = 8838 3010
+headmodels = 8773

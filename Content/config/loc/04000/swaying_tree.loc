@@ -1,0 +1,11 @@
+// loc 4142
+width = 3
+length = 3
+resizez = 192
+resizex = 192
+resizey = 192
+op1 = Cut-branch
+bgsound = 3137, 3
+recol = 9106/5404
+models_only = 4293
+name = Swaying tree

@@ -1,0 +1,6 @@
+// loc 5095
+sharelight = true
+width = 4
+length = 3
+models_only = 4996
+name = Stairs

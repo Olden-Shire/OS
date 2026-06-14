@@ -1,0 +1,12 @@
+// npc 4602
+size = 1
+resizeh = 100
+resizev = 100
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/11592
+name = Froono
+models = 2909 2899 2918
+headmodels = 16

@@ -1,0 +1,14 @@
+// obj 10632
+model = obj_camo_top_6654
+yof2d = 3
+zoom2d = 1360
+yan2d = 92
+zan2d = 1932
+xan2d = 416
+iop2 = Wear
+manwear = obj_camo_top_6654_man, 0
+manwear2 = 151
+womanwear = obj_camo_top_6654_woman, 0
+womanwear2 = 332
+recol = 8741/12820
+name = Camo top

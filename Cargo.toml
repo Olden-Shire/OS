@@ -14,6 +14,7 @@ members = [
     "crates/pix",
     "crates/jaged",
     "crates/client",
+    "crates/panel",
 ]
 
 [workspace.package]

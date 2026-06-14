@@ -1,0 +1,12 @@
+// npc 4556
+size = 1
+resizev = 124
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/43313 7281/15454 10004/16 25238/6439 28318/65315 22177/20
+name = 'Lecherous' Lee
+models = 211 249 7611 170 179 5218
+headmodels = 50 81

@@ -1,0 +1,8 @@
+// npc 65
+size = 1
+walkanim = 189
+readyanim = 195
+op2 = Attack
+vislevel = 12
+name = Leprechaun
+models = 2909 2896 2915

@@ -1,0 +1,10 @@
+// npc 2250
+size = 1
+walkanim = 189
+readyanim = 195
+op2 = Attack
+vislevel = 1
+recol = 4550/5916 4541/5916 4537/5916
+name = Gnome
+models = 2909 2890 2915
+headmodels = 21

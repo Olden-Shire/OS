@@ -1,0 +1,10 @@
+// npc 2028
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+ambient = 50
+contrast = 50
+alwaysontop = true
+vislevel = 98
+name = Karil the Tainted
+models = 6675

@@ -1,0 +1,10 @@
+// obj 1129
+cost = 21
+model = obj_leather_body_1129
+yof2d = 2
+zoom2d = 750
+xan2d = 528
+iop2 = Wear
+manwear = obj_leather_body_1129_man, 0
+womanwear = obj_leather_body_1129_woman, 0
+name = Leather body

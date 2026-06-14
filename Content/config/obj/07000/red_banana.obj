@@ -1,0 +1,14 @@
+// obj 7572
+members = true
+model = obj_banana_1963
+xof2d = 9
+yof2d = 10
+zoom2d = 930
+yan2d = 1944
+xan2d = 280
+manwear = obj_banana_left_3177_wear, 0
+womanwear = obj_banana_left_3177_wear, 6
+cost = 5
+iop1 = Eat
+recol = 10952/2743 10939/2867 11055/2863 11173/2987
+name = Red banana

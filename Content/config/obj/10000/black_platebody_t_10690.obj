@@ -1,0 +1,14 @@
+// obj 10690
+cost = 3840
+model = obj_black_platebody_t_2583
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_black_platebody_t_2583_man, 0
+manwear2 = 164
+womanwear = obj_black_platebody_t_2583_woman, 0
+womanwear2 = 344
+recol = 24/24 61/8 41/0
+name = Black platebody (t)

@@ -1,0 +1,7 @@
+// loc 24072
+op1 = Operate
+forceapproach = 11
+ambient = 20
+contrast = 10
+models_only = 25318
+name = Hopper controls

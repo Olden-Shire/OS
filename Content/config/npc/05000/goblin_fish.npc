@@ -1,0 +1,8 @@
+// npc 5824
+size = 1
+walkanim = 6061
+readyanim = 6062
+nominimap = true
+vislevel = 0
+name = Goblin fish
+models = 23713 23714

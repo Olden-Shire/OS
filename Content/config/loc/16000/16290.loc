@@ -1,0 +1,7 @@
+// loc 16290
+sharelight = true
+ambient = 30
+hillskew = true
+active = 0
+mapscene = 22
+models = 16152/10 16153/0

@@ -1,0 +1,8 @@
+// loc 6
+length = 3
+width = 3
+op1 = Fire
+op2 = Pick-up
+nonsolid = true
+models_only = 2328
+name = Dwarf multicannon

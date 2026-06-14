@@ -1,0 +1,6 @@
+// loc 16376
+active = 1
+hillskew = true
+ambient = 20
+models = 16123/4
+name = Potion shelf

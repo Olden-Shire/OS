@@ -1,0 +1,8 @@
+// npc 3305
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 9447/7836
+name = Slim Louie
+models = 11881
+headmodels = 3179

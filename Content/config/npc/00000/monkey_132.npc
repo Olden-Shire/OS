@@ -1,0 +1,8 @@
+// npc 132
+size = 1
+walkanim = 219
+readyanim = 222
+op2 = Attack
+vislevel = 3
+name = Monkey
+models = 3004

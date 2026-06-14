@@ -1,0 +1,13 @@
+// obj 7732
+cost = 2
+model = obj_empty_cup_7728
+members = true
+xof2d = -1
+yof2d = -2
+zoom2d = 528
+yan2d = 1980
+xan2d = 156
+manwear = obj_empty_cup_7728_wear, 0
+womanwear = obj_empty_cup_7728_wear, 6
+recol = 6701/82 6589/99
+name = Porcelain cup

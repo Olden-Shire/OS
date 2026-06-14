@@ -1,0 +1,6 @@
+// loc 15256
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 15129
+name = Treasure space

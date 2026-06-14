@@ -1,0 +1,8 @@
+// loc 25666
+anim = 6914
+nonsolid = true
+ambient = 10
+contrast = 10
+op1 = Talk-to
+models_only = 27191
+name = Sir Lancelot

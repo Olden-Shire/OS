@@ -1,0 +1,11 @@
+// loc 16684
+width = 3
+length = 3
+sharelight = true
+active = 1
+nonsolid = true
+op1 = Mine
+op2 = Prospect
+op3 = hidden
+models_only = 16512
+name = Rock

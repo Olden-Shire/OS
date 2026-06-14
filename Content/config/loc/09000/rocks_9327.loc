@@ -1,0 +1,8 @@
+// loc 9327
+hillskew = true
+active = 1
+op1 = Climb
+blockwalk = true
+recol = 4892/7335 5921/7335 4899/7335
+models = 1127/22
+name = Rocks

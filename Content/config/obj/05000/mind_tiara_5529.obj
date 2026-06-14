@@ -1,0 +1,13 @@
+// obj 5529
+model = obj_mind_tiara_5529
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_mind_tiara_5529_man, 0
+womanwear = obj_mind_tiara_5529_woman, 0
+manhead = 7475
+womanhead = 7475
+cost = 100
+recol = 43096/1246
+name = Mind tiara

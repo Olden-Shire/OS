@@ -1,0 +1,7 @@
+// loc 18382
+sharelight = true
+noshadow = true
+active = 0
+ambient = 25
+contrast = 10
+models_only = 18460

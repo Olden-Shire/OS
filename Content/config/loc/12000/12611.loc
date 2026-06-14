@@ -1,0 +1,8 @@
+// loc 12611
+active = 0
+hillskew = true
+ambient = 30
+forcedecor = true
+nonblockrange = true
+recol = 43/1810 30/910 39/906 35/906
+models = 13564/22

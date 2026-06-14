@@ -1,0 +1,7 @@
+// loc 5631
+anim = 1732
+width = 2
+length = 2
+bgsound = 2199, 5
+models_only = 5504 5505
+name = Fire

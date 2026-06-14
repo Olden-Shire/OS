@@ -1,0 +1,11 @@
+// loc 15257
+active = 1
+op5 = Build
+nonsolid = true
+width = 2
+length = 2
+resizex = 65
+resizey = 65
+resizez = 65
+models_only = 17374 17383
+name = Monster space

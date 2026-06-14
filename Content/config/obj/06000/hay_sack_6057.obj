@@ -1,0 +1,10 @@
+// obj 6057
+model = obj_hay_sack_6057
+yof2d = -20
+zoom2d = 1220
+yan2d = 1920
+xan2d = 164
+members = true
+members = true
+ambient = 15
+name = Hay sack

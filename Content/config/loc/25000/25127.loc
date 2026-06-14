@@ -1,0 +1,5 @@
+// loc 25127
+ambient = 20
+sharelight = true
+nonsolid = true
+models = 26567/0

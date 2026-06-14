@@ -1,0 +1,8 @@
+// loc 3035
+width = 2
+length = 2
+mapscene = 6
+op1 = Chop down
+op3 = hidden
+models_only = 1715
+name = Tree

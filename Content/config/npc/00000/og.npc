@@ -1,0 +1,10 @@
+// npc 853
+vislevel = 0
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+vislevel = 0
+name = Og
+models = 20372 20383
+headmodels = 20415

@@ -1,0 +1,9 @@
+// npc 1424
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22424/6563 22426/14878
+name = Waymottin
+models = 2909 2915 4701
+headmodels = 21

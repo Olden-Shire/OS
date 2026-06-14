@@ -1,0 +1,7 @@
+// loc 20317
+active = 0
+hillskew = true
+sharelight = true
+nonsolid = true
+mirror = true
+models_only = 20781

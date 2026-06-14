@@ -1,0 +1,8 @@
+// loc 98
+width = 2
+length = 3
+op1 = Climb-down
+active = 1
+recol = 49/8 37/24 7064/7050
+models_only = 1211
+name = Stairs

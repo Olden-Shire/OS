@@ -1,0 +1,9 @@
+// npc 6030
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Nikolai
+models = 26124 26134 26118 26129 26119
+headmodels = 26271

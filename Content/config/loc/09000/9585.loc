@@ -1,0 +1,5 @@
+// loc 9585
+sharelight = true
+ambient = 20
+active = 0
+models = 9513/0 9514/3

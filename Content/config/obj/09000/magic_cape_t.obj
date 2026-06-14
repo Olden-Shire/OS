@@ -1,0 +1,12 @@
+// obj 9763
+cost = 99000
+members = true
+model = obj_magic_cape_9762
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_magic_cape_9762_man, 0
+womanwear = obj_magic_cape_9762_woman, 0
+recol = 57280/43569 54183/43685 54503/43804 960/6348 22464/6340 43968/6331
+name = Magic cape(t)

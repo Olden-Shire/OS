@@ -1,0 +1,15 @@
+// obj 5322
+model = obj_tomato_seed_5322
+xof2d = 1
+yof2d = 3
+zoom2d = 990
+yan2d = 72
+xan2d = 464
+members = true
+stackable = true
+count1 = 5151, 2
+count2 = 5152, 3
+count3 = 5153, 4
+count4 = 5154, 5
+cost = 4
+name = Tomato seed

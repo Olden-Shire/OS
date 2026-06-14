@@ -1,0 +1,7 @@
+// loc 12784
+resizex = 192
+resizey = 192
+resizez = 192
+nonblockrange = true
+models_only = 14028 14029
+name = Bucket

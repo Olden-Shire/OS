@@ -1,0 +1,7 @@
+// npc 4569
+vislevel = 0
+readyanim = 4594
+turnspeed = 0
+recol = 25238/33052 8741/3625 8860/3633 6798/10161
+name = Nick
+models = 217 246 292 10980 10218 17284 271 181

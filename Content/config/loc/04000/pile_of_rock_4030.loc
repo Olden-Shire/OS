@@ -1,0 +1,9 @@
+// loc 4030
+op1 = Mine
+op2 = Prospect
+resizex = 64
+resizey = 64
+resizez = 64
+recol = 37/8373 24/8373
+models_only = 3195
+name = Pile of Rock

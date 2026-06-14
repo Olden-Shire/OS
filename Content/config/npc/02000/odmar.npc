@@ -1,0 +1,9 @@
+// npc 2200
+op1 = Talk-to
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 61/19639 7473/19635 8485/12585 4550/5683
+name = Odmar
+models = 2974 7061 2978 7046 2985
+headmodels = 4

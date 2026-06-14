@@ -1,0 +1,9 @@
+// loc 18826
+ambient = 25
+active = 1
+op1 = Pick
+op2 = Inspect
+width = 2
+length = 2
+models_only = 19148 19152 19140
+name = Herbs

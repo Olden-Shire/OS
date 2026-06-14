@@ -1,0 +1,10 @@
+// npc 1039
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+name = Barker
+models = 26122 26134 26114 26129 26119
+headmodels = 26269

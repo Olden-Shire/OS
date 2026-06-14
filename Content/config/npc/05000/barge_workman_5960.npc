@@ -1,0 +1,8 @@
+// npc 5960
+readyanim = 6455
+turnspeed = 0
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+name = Barge workman
+models = 25811 25810 25817

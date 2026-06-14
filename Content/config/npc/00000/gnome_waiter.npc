@@ -1,0 +1,11 @@
+// npc 851
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op3 = Trade
+recol = 22426/24 6038/37 11162/12
+name = Gnome Waiter
+models = 2909 2900 2915
+headmodels = 23

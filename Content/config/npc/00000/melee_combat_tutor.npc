@@ -1,0 +1,10 @@
+// npc 705
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 61/40239 41/117 24/41282 7054/127 4626/41125 11200/41282
+name = Melee combat tutor
+models = 215 253 3379 164 177 519 18877 268 181 18927
+headmodels = 85 53

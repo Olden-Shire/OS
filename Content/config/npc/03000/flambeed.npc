@@ -1,0 +1,10 @@
+// npc 3494
+size = 5
+resizev = 90
+resizeh = 90
+walkanim = 1748
+readyanim = 1749
+op2 = Attack
+vislevel = 149
+name = Flambeed
+models = 13905 13906 13907

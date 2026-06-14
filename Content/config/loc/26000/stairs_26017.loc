@@ -1,0 +1,9 @@
+// loc 26017
+width = 2
+length = 3
+op1 = Climb-down
+mapscene = 7
+contrast = 15
+ambient = 20
+models_only = 27243
+name = Stairs

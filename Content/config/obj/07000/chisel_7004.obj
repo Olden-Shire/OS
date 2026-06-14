@@ -1,0 +1,6 @@
+// obj 7004
+model = obj_chisel_1755
+manwear = obj_chisel_7004_wear, 0
+womanwear = obj_chisel_7004_wear, 6
+members = true
+name = Chisel

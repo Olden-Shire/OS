@@ -1,0 +1,9 @@
+// loc 20233
+blockwalk = true
+hillskew = true
+anim = 5415
+op1 = Dunk
+bgsound = 3077, 3
+recol = 5964/25511 5819/23454 1942/20374 3992/18328 5018/18330 7068/16284
+models_only = 20655
+name = Poison crater

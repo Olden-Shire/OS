@@ -1,0 +1,7 @@
+// npc 5226
+vislevel = 0
+readyanim = 5099
+walkanim = 5100
+recol = 14387/14490 14391/14494 14395/14499 10427/10531 9403/9635 7485/8613
+name = Penance Runner
+models = 20721

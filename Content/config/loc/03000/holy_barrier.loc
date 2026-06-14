@@ -1,0 +1,9 @@
+// loc 3443
+sharelight = true
+hillskew = true
+op1 = Pass-through
+bgsound = 3139, 3
+recol = 6930/7566
+retex = 16/5
+models_only = 3501
+name = Holy barrier

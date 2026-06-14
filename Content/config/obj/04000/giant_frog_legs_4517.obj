@@ -1,0 +1,10 @@
+// obj 4517
+model = obj_giant_frog_legs_4517
+xof2d = -11
+yof2d = 15
+yan2d = 752
+xan2d = 472
+iop1 = Eat
+cost = 100
+members = true
+name = Giant frog legs

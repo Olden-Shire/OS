@@ -1,0 +1,11 @@
+// npc 2854
+resizeh = 118
+resizev = 122
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/10304 7281/10304 11162/16 4550/7510 28318/10304 39145/24730
+name = Brewer
+models = 230 250 7611 170 176 259
+headmodels = 63 82

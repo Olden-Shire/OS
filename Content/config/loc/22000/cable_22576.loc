@@ -1,0 +1,7 @@
+// loc 22576
+ambient = 20
+hillskew = true
+active = 1
+nonsolid = true
+models = 23271/22
+name = Cable

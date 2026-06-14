@@ -1,0 +1,5 @@
+// loc 16010
+ambient = 20
+op1 = Peer-Through
+models_only = 15783
+name = Telescope

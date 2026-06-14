@@ -1,0 +1,12 @@
+// loc 23627
+ambient = 20
+resizex = 64
+resizey = 64
+resizez = 64
+mapscene = 9
+blockwalk = true
+op1 = Pick-from
+nonblockrange = true
+recol = 14872/24873 8722/10520 6364/53698
+models_only = 7826
+name = Cadava bush

@@ -1,0 +1,10 @@
+// obj 2347
+model = obj_hammer_2347
+manwear = obj_hammer_2347_wear, 0
+womanwear = obj_hammer_2347_wear, 6
+xof2d = -3
+yof2d = -1
+zoom2d = 900
+yan2d = 2012
+xan2d = 356
+name = Hammer

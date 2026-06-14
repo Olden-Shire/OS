@@ -1,0 +1,7 @@
+// loc 21995
+active = 0
+sharelight = true
+blockwalk = true
+ambient = 20
+contrast = 20
+models_only = 23024

@@ -1,0 +1,12 @@
+// obj 9005
+model = obj_fancy_boots
+manwear = obj_fancy_boots_man, 0
+womanwear = obj_fancy_boots_woman, 0
+xof2d = -2
+yof2d = -4
+zoom2d = 784
+yan2d = 1829
+xan2d = 162
+iop2 = Wear
+iop5 = Destroy
+name = Fancy boots

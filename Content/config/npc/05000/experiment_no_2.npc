@@ -1,0 +1,9 @@
+// npc 5993
+size = 2
+walkanim = 6510
+readyanim = 6511
+op2 = Attack
+alwaysontop = true
+vislevel = 109
+name = Experiment No.2
+models = 26073

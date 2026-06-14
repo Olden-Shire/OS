@@ -1,0 +1,7 @@
+// loc 25685
+op1 = Open
+ambient = 25
+contrast = 15
+recol = 4510/5413 4502/5532 8128/41 7093/33
+models_only = 11204
+name = Chest

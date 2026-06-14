@@ -1,0 +1,8 @@
+// npc 5231
+readyanim = 5393
+walkanim = 5394
+op2 = Attack
+vislevel = 32
+recol = 14387/14507 14395/14387 10425/10417 12475/12467 10427/10419 7485/8501
+name = Penance Ranger
+models = 20719 20720

@@ -1,0 +1,10 @@
+// loc 21002
+active = 1
+anim = 5737
+length = 2
+width = 2
+contrast = 25
+ambient = 25
+bgsound = 3355, 5
+models_only = 21736
+name = Steam generator

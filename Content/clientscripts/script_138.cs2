@@ -1,0 +1,8 @@
+[clientscript,script_138]()()
+
+if (%varcint5 = 7 | %varcint5 = 8 | %varcint5 = 9) {
+    if_sethide(1, 35913816);
+    if_sethide(0, 35913817);
+    %varcint5 = 0;
+}
+return;

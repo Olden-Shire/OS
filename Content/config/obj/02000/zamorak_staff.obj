@@ -1,0 +1,13 @@
+// obj 2417
+cost = 80000
+members = true
+model = obj_zamorak_staff
+xof2d = -12
+yof2d = 50
+zoom2d = 1480
+yan2d = 916
+xan2d = 240
+manwear = obj_zamorak_staff_wear, 0
+womanwear = obj_zamorak_staff_wear, 6
+iop2 = Wield
+name = Zamorak staff

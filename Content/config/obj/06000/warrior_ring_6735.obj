@@ -1,0 +1,11 @@
+// obj 6735
+cost = 10000
+model = obj_warrior_ring_6735
+iop2 = Wear
+members = true
+xof2d = 2
+yof2d = -6
+zoom2d = 570
+yan2d = 1776
+xan2d = 348
+name = Warrior ring

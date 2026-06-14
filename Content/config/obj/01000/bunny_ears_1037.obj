@@ -1,0 +1,11 @@
+// obj 1037
+model = obj_bunny_ears_1037
+zoom2d = 550
+yan2d = 4
+xan2d = 360
+iop2 = Wear
+manwear = obj_bunny_ears_1037_man, 0
+womanwear = obj_bunny_ears_1037_woman, 0
+manhead = 33
+womanhead = 91
+name = Bunny ears

@@ -1,0 +1,10 @@
+// npc 1152
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/10450 8741/10529 25238/10529 43072/4655 4550/4655 4626/7475
+name = Weird Old Man
+models = 230 250 310 168 176 275 181
+headmodels = 63 82

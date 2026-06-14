@@ -1,0 +1,12 @@
+// obj 583
+cost = 10
+model = obj_bailing_bucket_583
+manwear = obj_bailing_bucket_583_wear, 0
+womanwear = obj_bailing_bucket_583_wear, 6
+yof2d = -18
+zoom2d = 1020
+yan2d = 1660
+xan2d = 204
+iop1 = Bail-with
+members = true
+name = Bailing bucket

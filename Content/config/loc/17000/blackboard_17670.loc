@@ -1,0 +1,7 @@
+// loc 17670
+width = 2
+blockwalk = true
+ambient = 10
+recol = 5537/8481 5532/7452 5656/8472
+models_only = 17860
+name = Blackboard

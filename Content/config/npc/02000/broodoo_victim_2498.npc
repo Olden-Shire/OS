@@ -1,0 +1,9 @@
+// npc 2498
+size = 1
+readyanim = 2400
+walkanims = 819, 820, 821, 822
+turnspeed = 1024
+vislevel = 1
+recol = 4550/13980 43072/13980 6585/13980 35047/15165 35047/17193 37394/10902
+name = Broodoo victim
+models = 8923 181 315 173 176 8926 230

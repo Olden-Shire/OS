@@ -1,0 +1,8 @@
+// npc 2341
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+name = Treznor
+models = 25671 25686
+headmodels = 25634

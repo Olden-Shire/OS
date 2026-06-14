@@ -1,0 +1,15 @@
+// obj 1722
+cost = 200
+model = obj_unpowered_symbol_1722
+yof2d = -5
+zoom2d = 630
+yan2d = 120
+xan2d = 412
+members = true
+manwear = obj_unblessed_symbol_1716_man, 0
+manwear2 = 286
+womanwear = obj_unblessed_symbol_1716_woman, 0
+womanwear2 = 450
+iop2 = Wear
+recol = 10163/94 5916/127 4882/127 11200/94
+name = Unpowered symbol

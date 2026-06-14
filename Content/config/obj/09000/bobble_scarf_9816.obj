@@ -1,0 +1,10 @@
+// obj 9816
+model = obj_bobble_scarf_6857
+xof2d = 3
+yof2d = -1
+zoom2d = 659
+yan2d = 207
+xan2d = 511
+manwear = obj_bobble_scarf_6857_man, 0
+womanwear = obj_bobble_scarf_6857_woman, 0
+name = Bobble scarf

@@ -1,0 +1,13 @@
+// obj 10024
+cost = 1
+model = obj_falconers_glove_10023
+xof2d = 2
+yof2d = -14
+zoom2d = 1010
+yan2d = 2000
+xan2d = 332
+members = true
+iop2 = Wear
+manwear = obj_falconers_glove_10024_man, 0
+womanwear = obj_falconers_glove_10024_woman, 0
+name = Falconer's glove

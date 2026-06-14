@@ -1,0 +1,8 @@
+// loc 10819
+mirror = true
+active = 1
+raiseobject = 0
+op1 = Open
+nonblockrange = true
+models = 609/0
+name = Locked door

@@ -1,0 +1,10 @@
+// npc 6003
+size = 1
+readyanim = 6534
+op1 = Talk-to
+turnspeed = 0
+vislevel = 0
+recol = 22426/61603 25238/175 22422/46265 11162/39
+name = Winkin
+models = 26110 26108
+headmodels = 21

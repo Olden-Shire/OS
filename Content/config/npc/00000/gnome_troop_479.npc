@@ -1,0 +1,10 @@
+// npc 479
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op2 = Attack
+vislevel = 1
+name = Gnome troop
+models = 2914 2903 2919
+headmodels = 22

@@ -1,0 +1,9 @@
+// npc 175
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 6
+recol = 17825/6674 8741/1569 10341/6554 10324/6554 19986/6554 10353/6674
+name = Mugger
+models = 20749 310 9450 176 25665

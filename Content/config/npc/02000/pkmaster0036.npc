@@ -1,0 +1,8 @@
+// npc 2589
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 87
+recol = 70/24 5532/10508 41/10508 61/24 57/24
+name = PKMaster0036
+models = 218 306 164 179 268 185 518

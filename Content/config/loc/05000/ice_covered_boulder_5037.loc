@@ -1,0 +1,9 @@
+// loc 5037
+width = 3
+length = 3
+resizex = 384
+resizey = 384
+resizez = 384
+noshadow = true
+models_only = 4956
+name = Ice covered boulder

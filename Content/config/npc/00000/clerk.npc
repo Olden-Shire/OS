@@ -1,0 +1,10 @@
+// npc 713
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/43072 5652/43072 8741/41 25238/20
+name = Clerk
+models = 230 247 245 292 327 151 176 254 181
+headmodels = 63 79 78

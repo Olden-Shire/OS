@@ -1,0 +1,12 @@
+// npc 569
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 9152/107 11183/107 43072/4550 54397/5555 25238/5584
+name = Silver merchant
+models = 214 302 252 159 179 274 185 281 238
+headmodels = 52 84 70

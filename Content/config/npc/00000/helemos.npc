@@ -1,0 +1,10 @@
+// npc 797
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8472/28325 8078/28325 8741/10419 25238/33306 4550/6709 6798/7075
+name = Helemos
+models = 217 162 291 274 176 185 251
+headmodels = 55 83

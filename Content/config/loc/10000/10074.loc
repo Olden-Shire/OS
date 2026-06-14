@@ -1,0 +1,6 @@
+// loc 10074
+forcedecor = true
+hillskew = true
+forceapproach = 11
+active = 0
+models_only = 9787 9792

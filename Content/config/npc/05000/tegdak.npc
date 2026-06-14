@@ -1,0 +1,9 @@
+// npc 5868
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+name = Tegdak
+models = 24525 24522 23633
+headmodels = 24535

@@ -1,0 +1,6 @@
+// loc 2580
+mapscene = 5
+hillskew = true
+recol = 4892/4750 4899/7056
+models_only = 1065
+name = Scorched earth

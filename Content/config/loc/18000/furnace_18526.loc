@@ -1,0 +1,8 @@
+// loc 18526
+width = 2
+length = 3
+active = 1
+bgsound = 2209, 5
+recol = 20/7566 142/7566 28/7566 16/7566 37/7442 18/7566
+models_only = 11546
+name = Furnace

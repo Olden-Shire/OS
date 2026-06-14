@@ -1,0 +1,8 @@
+// loc 18041
+active = 1
+blockwalk = true
+op5 = Walk-through
+resizey = 160
+nonblockrange = true
+models = 17665/0
+name = Slashed tapestry

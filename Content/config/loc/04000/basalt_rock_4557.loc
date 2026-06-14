@@ -1,0 +1,7 @@
+// loc 4557
+active = 1
+mapscene = 21
+nonsolid = true
+op1 = Jump-across
+models_only = 4556
+name = Basalt rock

@@ -1,0 +1,12 @@
+// npc 966
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 4550/6705 8741/7397 25238/7397 59515/7397
+name = Jadid
+models = 215 251 188 292 170 176 267 181
+headmodels = 53 82 30

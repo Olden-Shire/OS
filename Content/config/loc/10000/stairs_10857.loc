@@ -1,0 +1,7 @@
+// loc 10857
+width = 2
+length = 2
+op1 = Climb-up
+forceapproach = 11
+models_only = 10784
+name = Stairs

@@ -1,0 +1,8 @@
+// npc 2477
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/41 9104/33 25238/54307 4626/12 28318/43292
+name = Quiz Master
+models = 215 245 247 7611 163 176 254 181
+headmodels = 53 78 79

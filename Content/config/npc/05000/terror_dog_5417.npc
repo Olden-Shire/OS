@@ -1,0 +1,9 @@
+// npc 5417
+walkanim = 5622
+readyanim = 5623
+op2 = Attack
+size = 2
+alwaysontop = true
+vislevel = 110
+name = Terror dog
+models = 21382

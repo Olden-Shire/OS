@@ -1,0 +1,9 @@
+// obj 10515
+model = obj_worms
+xof2d = -4
+zoom2d = 1762
+xan2d = 456
+members = true
+iop1 = Drop
+iop5 = Destroy
+name = Worms

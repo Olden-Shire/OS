@@ -1,0 +1,10 @@
+// npc 1290
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op2 = Attack
+recol = 10004/61 25238/7566 8078/7609 6798/7087 4550/5442 937/914
+name = Koschei the deathless
+models = 203 252 315 165 3381 4226 4218 4236
+headmodels = 46 84

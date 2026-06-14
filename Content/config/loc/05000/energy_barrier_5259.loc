@@ -1,0 +1,13 @@
+// loc 5259
+length = 2
+active = 1
+raiseobject = 0
+anim = 1433
+ambient = 100
+contrast = 100
+op1 = Pass
+op4 = Pay-toll(2-Ecto)
+bgsound = 3139, 3
+recol = 61/20797
+models_only = 5397
+name = Energy Barrier

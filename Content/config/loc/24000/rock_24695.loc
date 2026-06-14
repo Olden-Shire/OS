@@ -1,0 +1,7 @@
+// loc 24695
+contrast = 20
+ambient = 30
+blockwalk = true
+recol = 7960/8503 7836/8507 7841/8512 7717/8516 7721/8520 7597/8524
+models_only = 17321
+name = Rock

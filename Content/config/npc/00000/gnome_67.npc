@@ -1,0 +1,12 @@
+// npc 67
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 1
+recol = 22422/6942
+name = Gnome
+models = 2909 2890 2915
+headmodels = 21

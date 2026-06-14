@@ -1,0 +1,14 @@
+// npc 958
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op3 = Bank
+op4 = Buy
+vislevel = 0
+recol = 25238/8720 4550/6705 43072/6705
+name = Fadli
+models = 210 249 296 173 179 254 185
+headmodels = 49 81

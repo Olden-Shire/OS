@@ -1,0 +1,10 @@
+// npc 2992
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 7473/61
+name = Vaeringk
+models = 2973 2986 2983 7040 2992 2991 2980 2985
+headmodels = 3 6

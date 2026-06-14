@@ -1,0 +1,9 @@
+// npc 3201
+size = 1
+walkanim = 3161
+readyanim = 3160
+turnspeed = 900
+op2 = Attack
+vislevel = 55
+name = Killerwatt
+models = 11264

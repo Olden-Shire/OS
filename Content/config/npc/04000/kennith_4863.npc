@@ -1,0 +1,9 @@
+// npc 4863
+vislevel = 0
+size = 1
+walkanim = 4789
+readyanim = 808
+op1 = Talk-to
+name = Kennith
+models = 18488 18492 18485 18491 18486
+headmodels = 14287

@@ -1,0 +1,8 @@
+// obj 6081
+model = obj_broken_device
+xof2d = -3
+zoom2d = 2290
+yan2d = 572
+members = true
+cost = 10
+name = Broken device

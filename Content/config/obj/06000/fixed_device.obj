@@ -1,0 +1,12 @@
+// obj 6082
+model = obj_fixed_device
+manwear = obj_fixed_device_wear, 0
+womanwear = obj_fixed_device_wear, 6
+xof2d = -26
+zoom2d = 2180
+yan2d = 1532
+members = true
+cost = 150
+iop2 = Wield
+iop1 = Empty
+name = Fixed device

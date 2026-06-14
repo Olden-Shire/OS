@@ -1,0 +1,11 @@
+// npc 827
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 10
+recol = 25238/8741 908/8741 4550/4645 10297/11187
+name = Rowdy slave
+models = 217 250 292 170 176 265 185 509
+headmodels = 55 82

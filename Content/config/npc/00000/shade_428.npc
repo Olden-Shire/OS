@@ -1,0 +1,11 @@
+// npc 428
+size = 1
+nominimap = true
+readyanim = 15
+walkanim = 13
+op2 = Attack
+alwaysontop = true
+vislevel = 79
+recol = 4550/0 8741/0 41/0 61/0 25238/0
+name = Shade
+models = 226 306 174 265

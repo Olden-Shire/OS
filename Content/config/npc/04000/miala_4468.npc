@@ -1,0 +1,10 @@
+// npc 4468
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+ambient = -25
+recol = 4550/21580 40229/16553 40237/16549 40241/16673 11138/16536 12/16536
+name = Miala
+models = 214 250 16342 16341 177 176 14044
+headmodels = 52 82 9822

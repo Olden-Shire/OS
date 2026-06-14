@@ -1,0 +1,10 @@
+// npc 187
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 15
+recol = 25238/10508 8741/5784 43072/4550
+name = Rogue
+models = 230 248 311 159 176 254 181 533

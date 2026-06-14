@@ -1,0 +1,8 @@
+// loc 6086
+sharelight = true
+active = 1
+mapscene = 7
+forceapproach = 14
+op1 = Climb-down
+models_only = 5883
+name = Stairs

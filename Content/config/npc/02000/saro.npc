@@ -1,0 +1,11 @@
+// npc 2153
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 803/38049 7473/10553 6356/41255 10659/40099
+name = Saro
+models = 2974 6019 2984 2978 2981 2985
+headmodels = 4 6026

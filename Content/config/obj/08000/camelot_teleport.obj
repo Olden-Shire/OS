@@ -1,0 +1,9 @@
+// obj 8010
+model = obj_camelot_teleport
+yof2d = -1
+zoom2d = 465
+xan2d = 373
+members = true
+iop1 = Break
+stackable = true
+name = Camelot teleport

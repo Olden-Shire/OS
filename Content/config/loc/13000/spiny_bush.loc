@@ -1,0 +1,9 @@
+// loc 13840
+width = 2
+length = 2
+ambient = 10
+active = 1
+nonblockrange = true
+recol = 5772/14742
+models_only = 14146
+name = Spiny bush

@@ -1,0 +1,16 @@
+// interface 386
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=248
+y=146
+width=32
+height=32
+trans=0
+model=com_i7128
+activemodel=-1
+zoom=150
+xan=0
+yan=0

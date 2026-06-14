@@ -1,0 +1,6 @@
+// loc 10699
+active = 1
+op1 = Climb-up
+forceapproach = 14
+models = 10485/4
+name = Trapdoor Steps

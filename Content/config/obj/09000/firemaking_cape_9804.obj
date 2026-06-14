@@ -1,0 +1,12 @@
+// obj 9804
+cost = 99000
+members = true
+model = obj_firemaking_cape_9804
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_firemaking_cape_9804_man, 0
+womanwear = obj_firemaking_cape_9804_woman, 0
+recol = 57280/5056 54183/4027 54503/4023 960/5056 22464/4027 43968/4023
+name = Firemaking cape

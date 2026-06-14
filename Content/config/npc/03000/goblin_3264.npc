@@ -1,0 +1,9 @@
+// npc 3264
+readyanim = 6186
+walkanim = 6187
+op2 = Attack
+ambient = 15
+vislevel = 5
+recol = 11941/14883 12060/15002 6331/2718 6323/2966
+name = Goblin
+models = 24466 24486 24433 24474 24444 24450 24507 24491

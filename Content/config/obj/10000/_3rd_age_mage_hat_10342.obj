@@ -1,0 +1,19 @@
+// obj 10342
+model = obj__3rd_age_mage_hat_10342
+manwear = obj__3rd_age_mage_hat_10342_man, 0
+womanwear = obj__3rd_age_mage_hat_10342_woman, 0
+manhead = 20108
+womanhead = 20108
+manhead2 = 63
+womanhead2 = 120
+iop2 = Wear
+cost = 10000
+xof2d = 7
+yof2d = -23
+zoom2d = 917
+yan2d = 1883
+zan2d = 2047
+xan2d = 212
+contrast = 20
+members = true
+name = 3rd age mage hat

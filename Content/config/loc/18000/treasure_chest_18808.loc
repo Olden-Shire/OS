@@ -1,0 +1,8 @@
+// loc 18808
+width = 2
+op1 = Open
+op5 = Remove
+ambient = 20
+forceapproach = 11
+models_only = 19041
+name = Treasure chest

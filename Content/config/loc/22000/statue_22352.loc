@@ -1,0 +1,9 @@
+// loc 22352
+active = 1
+length = 2
+contrast = 20
+ambient = 20
+blockwalk = true
+mapscene = 7
+models_only = 22919 22918
+name = Statue

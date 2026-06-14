@@ -1,0 +1,5 @@
+// npc 4913
+nominimap = true
+vislevel = 0
+name = Jig cart
+models = 18664

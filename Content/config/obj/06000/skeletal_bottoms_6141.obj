@@ -1,0 +1,11 @@
+// obj 6141
+cost = 40000
+model = obj_skeletal_bottoms_6141
+iop2 = Wear
+manwear = obj_skeletal_bottoms_6141_man, 0
+womanwear = obj_skeletal_bottoms_6141_woman, 0
+members = true
+yof2d = 6
+zoom2d = 1710
+xan2d = 536
+name = Skeletal bottoms

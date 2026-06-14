@@ -14,7 +14,46 @@
 //! this model can't express (e.g. the `n+1` multiloc lists) are simply
 //! left out of a schema; records that use them fall back to `.dat`.
 
+use std::collections::{BTreeMap, HashMap};
+
 use io::Packet;
+
+/// Resolves a model id ↔ its `model.pack` name for [`Operand::Model`] operands,
+/// so config text can reference models by name (`model = obj_cannonball`) instead
+/// of a raw id. Built from the model pack file; entries whose name is still the
+/// numeric stub (`995=995`) are ignored, so unnamed models render as their id and
+/// round-trip unchanged. The default (empty) resolver makes every `Model` operand
+/// behave exactly like a raw `U16`.
+#[derive(Default)]
+pub struct ModelRefs {
+    by_id: HashMap<u32, String>,
+    by_name: HashMap<String, u32>,
+}
+
+impl ModelRefs {
+    /// Build from a `model.pack` id→stem map (numeric stubs filtered out).
+    #[must_use]
+    pub fn from_pack(map: &BTreeMap<u32, String>) -> Self {
+        let mut by_id = HashMap::new();
+        let mut by_name = HashMap::new();
+        for (&id, name) in map {
+            if name.parse::<u32>().is_ok() {
+                continue; // bare-id stub, not a real name
+            }
+            by_id.insert(id, name.clone());
+            by_name.insert(name.clone(), id);
+        }
+        Self { by_id, by_name }
+    }
+
+    fn name_of(&self, id: i32) -> Option<&str> {
+        u32::try_from(id).ok().and_then(|i| self.by_id.get(&i)).map(String::as_str)
+    }
+
+    fn id_of(&self, name: &str) -> Option<i32> {
+        self.by_name.get(name).map(|&i| i as i32)
+    }
+}
 
 /// A scalar wire primitive.
 #[derive(Clone, Copy)]
@@ -59,6 +98,10 @@ impl Prim {
 pub enum Operand {
     /// a scalar
     Num(Prim),
+    /// a `U16` model id resolved through [`ModelRefs`]: rendered as its
+    /// `model.pack` name when one exists, else the raw id; parsed back from
+    /// either form on encode.
+    Model,
     /// length-prefixed cp1252 string (gjstr / pjstr) — must be the LAST operand
     Str,
     /// `count` (a scalar) then `count` rows of `cols`. `col_major` reads all
@@ -83,20 +126,20 @@ pub type Schema = &'static [OpDef];
 /// Decode a config record to readable text iff it re-encodes BYTE-EXACTLY
 /// (else `None` → caller keeps `.dat`). First line is a `// <kind> <id>`
 /// context comment, ignored on encode.
-pub fn decode(schema: Schema, kind: &str, id: u32, bytes: &[u8]) -> Option<String> {
-    let lines = decode_lines(schema, bytes)?;
+pub fn decode(schema: Schema, kind: &str, id: u32, bytes: &[u8], refs: &ModelRefs) -> Option<String> {
+    let lines = decode_lines(schema, bytes, refs)?;
     let mut text = format!("// {kind} {id}\n");
     text.push_str(&lines.join("\n"));
     if !lines.is_empty() {
         text.push('\n');
     }
-    match encode(schema, &text) {
+    match encode(schema, &text, refs) {
         Some(re) if re == bytes => Some(text),
         _ => None,
     }
 }
 
-fn decode_lines(schema: Schema, bytes: &[u8]) -> Option<Vec<String>> {
+fn decode_lines(schema: Schema, bytes: &[u8], refs: &ModelRefs) -> Option<Vec<String>> {
     let mut p = Packet::from_vec(bytes.to_vec());
     let mut lines = Vec::new();
     loop {
@@ -115,6 +158,10 @@ fn decode_lines(schema: Schema, bytes: &[u8]) -> Option<Vec<String>> {
         for op in def.operands {
             match op {
                 Operand::Num(prim) => parts.push(prim.read(&mut p).to_string()),
+                Operand::Model => {
+                    let id = p.g2();
+                    parts.push(refs.name_of(id).map_or_else(|| id.to_string(), str::to_string));
+                }
                 Operand::Str => parts.push(escape_str(&p.gjstr())),
                 Operand::Counted { count, cols, col_major } => {
                     let n = count.read(&mut p) as usize;
@@ -147,14 +194,21 @@ fn decode_lines(schema: Schema, bytes: &[u8]) -> Option<Vec<String>> {
                 }
             }
         }
-        lines.push(format!("{} = {}", def.name, parts.join(", ")));
+        // No-operand opcodes are presence flags (members, stackable): the byte
+        // stream just carries the opcode, so render `name = true` rather than a
+        // bare `name = `.
+        if def.operands.is_empty() {
+            lines.push(format!("{} = true", def.name));
+        } else {
+            lines.push(format!("{} = {}", def.name, parts.join(", ")));
+        }
     }
 }
 
 /// Re-encode readable text to the exact config byte stream. Lines run in
 /// order (opcode order preserved); blank/`//` lines skipped. `None` on any
 /// unparseable line.
-pub fn encode(schema: Schema, text: &str) -> Option<Vec<u8>> {
+pub fn encode(schema: Schema, text: &str, refs: &ModelRefs) -> Option<Vec<u8>> {
     let mut p = Packet::from_vec(Vec::new());
     for raw in text.lines() {
         let line = raw.trim();
@@ -172,13 +226,24 @@ pub fn encode(schema: Schema, text: &str) -> Option<Vec<u8>> {
         let has_trailing_str = matches!(def.operands.last(), Some(Operand::Str));
         let nfields = def.operands.len();
         let fields: Vec<&str> = split_fields(val, nfields, has_trailing_str);
-        if fields.len() != nfields && !(nfields == 0 && val.is_empty()) {
+        // No-operand flags carry a decorative value (`members = true`, or the
+        // legacy bare `members = `) we ignore — only the opcode is emitted.
+        // Everything else must supply exactly its operand count.
+        if nfields != 0 && fields.len() != nfields {
             return None;
         }
 
         for (op, field) in def.operands.iter().zip(fields.iter()) {
             match op {
                 Operand::Num(prim) => prim.write(&mut p, field.trim().parse().ok()?),
+                Operand::Model => {
+                    let f = field.trim();
+                    let id = match f.parse::<i32>() {
+                        Ok(n) => n,
+                        Err(_) => refs.id_of(f)?,
+                    };
+                    p.p2(id);
+                }
                 Operand::Str => p.pjstr(&unescape_str(field)),
                 Operand::Counted { count, cols, col_major } => {
                     let f = field.trim();
@@ -294,7 +359,7 @@ const U16_LIST: Operand = Counted { count: U8, cols: &[U16], col_major: false };
 
 // ── obj (group 10) ──────────────────────────────────────────────────────
 pub const OBJ: Schema = &[
-    OpDef { code: 1, name: "model", operands: &[n(U16)] },
+    OpDef { code: 1, name: "model", operands: &[Operand::Model] },
     OpDef { code: 2, name: "name", operands: &[Str] },
     OpDef { code: 4, name: "zoom2d", operands: &[n(U16)] },
     OpDef { code: 5, name: "xan2d", operands: &[n(U16)] },
@@ -304,9 +369,9 @@ pub const OBJ: Schema = &[
     OpDef { code: 11, name: "stackable", operands: &[] },
     OpDef { code: 12, name: "cost", operands: &[n(I32)] },
     OpDef { code: 16, name: "members", operands: &[] },
-    OpDef { code: 23, name: "manwear", operands: &[n(U16), n(U8)] },
+    OpDef { code: 23, name: "manwear", operands: &[Operand::Model, n(U8)] },
     OpDef { code: 24, name: "manwear2", operands: &[n(U16)] },
-    OpDef { code: 25, name: "womanwear", operands: &[n(U16), n(U8)] },
+    OpDef { code: 25, name: "womanwear", operands: &[Operand::Model, n(U8)] },
     OpDef { code: 26, name: "womanwear2", operands: &[n(U16)] },
     OpDef { code: 30, name: "op1", operands: &[Str] },
     OpDef { code: 31, name: "op2", operands: &[Str] },

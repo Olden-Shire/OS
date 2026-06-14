@@ -1,0 +1,5 @@
+// loc 17130
+anim = 4535
+nonblockrange = true
+models_only = 17144 17146 17147
+name = Office table

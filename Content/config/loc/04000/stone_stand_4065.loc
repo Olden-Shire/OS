@@ -1,0 +1,8 @@
+// loc 4065
+blockwalk = true
+raiseobject = 1
+occlude = true
+nonblockrange = true
+recol = 61/24
+models_only = 1537
+name = Stone stand

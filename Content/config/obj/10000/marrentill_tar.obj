@@ -1,0 +1,14 @@
+// obj 10143
+cost = 5
+model = obj_swamp_tar
+xof2d = 1
+yof2d = -22
+zoom2d = 710
+yan2d = 148
+xan2d = 224
+members = true
+stackable = true
+iop2 = Wield
+cost = 1
+recol = 16/6940
+name = Marrentill tar

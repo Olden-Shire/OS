@@ -1,0 +1,12 @@
+// loc 23117
+active = 1
+hillskew = true
+contrast = 20
+ambient = 20
+blockwalk = true
+width = 2
+length = 2
+op1 = Enter
+nonblockrange = true
+models_only = 24017
+name = Rabbit hole

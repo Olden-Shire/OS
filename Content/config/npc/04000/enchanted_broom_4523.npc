@@ -1,0 +1,9 @@
+// npc 4523
+walkanim = 4372
+readyanim = 4372
+contrast = 12
+ambient = 12
+vislevel = 0
+nominimap = true
+name = Enchanted Broom
+models = 16738

@@ -1,0 +1,14 @@
+// obj 5320
+model = obj_sweetcorn_seed
+yof2d = -4
+zoom2d = 540
+yan2d = 204
+xan2d = 228
+members = true
+stackable = true
+count1 = 5139, 2
+count2 = 5140, 3
+count3 = 5141, 4
+count4 = 5142, 5
+cost = 8
+name = Sweetcorn seed

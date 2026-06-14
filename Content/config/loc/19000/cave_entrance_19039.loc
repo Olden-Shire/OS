@@ -1,0 +1,7 @@
+// loc 19039
+width = 2
+length = 2
+op1 = Climb-down
+op2 = Search
+models_only = 20481
+name = Cave entrance

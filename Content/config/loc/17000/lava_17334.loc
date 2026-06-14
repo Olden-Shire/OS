@@ -1,0 +1,9 @@
+// loc 17334
+hillskew = true
+ambient = 35
+sharelight = true
+nonsolid = true
+forcedecor = true
+recol = 6040/5006
+models_only = 17306
+name = Lava

@@ -1,0 +1,11 @@
+// npc 575
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 5442/65441 926/25238 25238/25379 43072/6798 6798/900
+name = Hickton
+models = 230 274 247 173 179 185 307 323 322 18937
+headmodels = 63 79

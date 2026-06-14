@@ -1,0 +1,14 @@
+// obj 1833
+cost = 40
+members = true
+iop2 = Wear
+model = obj_priest_gown_426
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+manwear = obj_priest_gown_426_man, 0
+manwear2 = 170
+womanwear = obj_priest_gown_426_woman, 0
+womanwear2 = 348
+recol = 8741/127
+name = Desert shirt

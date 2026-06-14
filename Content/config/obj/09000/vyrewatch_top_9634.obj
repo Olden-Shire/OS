@@ -1,0 +1,17 @@
+// obj 9634
+cost = 500
+members = true
+iop2 = Wear
+model = obj_vyrewatch_top_9634
+xof2d = 2
+yof2d = 3
+zoom2d = 1420
+yan2d = 41
+zan2d = 2047
+xan2d = 443
+manwear = obj_vyrewatch_top_9634_man, 0
+manwear2 = 18076
+womanwear = obj_vyrewatch_top_9634_woman, 0
+womanwear2 = 14588
+recol = 8741/33 4550/16
+name = Vyrewatch top

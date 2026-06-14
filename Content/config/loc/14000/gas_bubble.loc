@@ -1,0 +1,7 @@
+// loc 14434
+anim = 523
+forcedecor = true
+resizey = 32
+bgsound = 3073, 3
+models_only = 2235
+name = Gas bubble

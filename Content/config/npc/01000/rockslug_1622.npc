@@ -1,0 +1,9 @@
+// npc 1622
+size = 1
+walkanim = 1564
+readyanim = 1566
+op2 = Attack
+vislevel = 29
+recol = 6829/21782
+name = Rockslug
+models = 5084

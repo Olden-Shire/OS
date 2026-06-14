@@ -1,0 +1,11 @@
+// npc 5051
+walkanims = 772, 772, 772, 772
+readyanim = 773
+op1 = Talk-to
+op4 = Fly
+vislevel = 0
+alwaysontop = true
+recol = 4626/0
+name = Auguste
+models = 19470 246 19476 19467 177 19472 181
+headmodels = 359

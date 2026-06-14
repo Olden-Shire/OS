@@ -1,0 +1,8 @@
+// npc 109
+size = 1
+walkanim = 6257
+readyanim = 6258
+op2 = Attack
+vislevel = 28
+name = Pit Scorpion
+models = 24612

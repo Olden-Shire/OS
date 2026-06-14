@@ -1,0 +1,6 @@
+// loc 18866
+ambient = 10
+blockwalk = true
+nonblockrange = true
+models_only = 19118
+name = Deckchair

@@ -1,0 +1,15 @@
+// npc 2952
+size = 1
+resizeh = 140
+resizev = 130
+contrast = 10
+ambient = 20
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8485/8481 61/32813 10330/10312 10347/10312
+name = Smokin' Joe
+models = 7026 7062 2979 7046 2985
+headmodels = 10025

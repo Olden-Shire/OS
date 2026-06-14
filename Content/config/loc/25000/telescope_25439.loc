@@ -1,0 +1,10 @@
+// loc 25439
+active = 1
+width = 2
+length = 6
+mirror = true
+ambient = 25
+op1 = View
+forceapproach = 13
+models_only = 26938 26942
+name = Telescope

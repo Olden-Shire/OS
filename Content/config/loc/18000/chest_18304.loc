@@ -1,0 +1,9 @@
+// loc 18304
+ambient = 20
+op1 = Open
+resizex = 100
+resizey = 100
+resizez = 100
+recol = 10586/10425 10471/10405 6715/8501
+models_only = 15567
+name = Chest

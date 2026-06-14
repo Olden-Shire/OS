@@ -1,0 +1,7 @@
+// loc 10639
+width = 2
+op1 = Pray-at
+nonblockrange = true
+recol = 7223/3261 7467/5553 6430/4517 6798/4882
+models_only = 1152 10386
+name = Altar

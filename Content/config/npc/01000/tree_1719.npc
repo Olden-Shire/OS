@@ -1,0 +1,11 @@
+// npc 1719
+size = 2
+walkanim = 5750
+readyanim = 5750
+vislevel = 0
+op1 = Chop down
+op3 = hidden
+turnspeed = 0
+recol = 3470/5665
+name = Tree
+models = 21840

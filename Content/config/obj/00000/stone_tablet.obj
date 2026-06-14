@@ -1,0 +1,9 @@
+// obj 699
+model = obj_stone_tablet
+yof2d = -16
+zoom2d = 1370
+yan2d = 1888
+xan2d = 180
+members = true
+iop2 = Read
+name = Stone tablet

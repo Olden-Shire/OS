@@ -1,0 +1,10 @@
+// npc 1275
+vislevel = 0
+size = 1
+walkanims = 1323, 1324, 1325, 1326
+readyanim = 1137
+op1 = Talk-to
+recol = 6798/6585 25238/7465 8741/5404 8078/5409 8084/7601
+name = Styrmir
+models = 206 252 292 162 176 3599 4391 4234
+headmodels = 46 84

@@ -1,0 +1,11 @@
+// npc 2472
+resizeh = 64
+resizev = 64
+walkanim = 1797
+readyanim = 1796
+vislevel = 0
+ambient = 70
+op1 = Talk-to
+name = Frog
+models = 6946 6948
+headmodels = 8853

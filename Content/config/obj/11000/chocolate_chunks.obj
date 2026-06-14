@@ -1,0 +1,13 @@
+// obj 11025
+model = obj_chocolate_chunks
+xof2d = -4
+yof2d = 5
+zoom2d = 1697
+yan2d = 927
+xan2d = 516
+contrast = 15
+ambient = 15
+ambient = 20
+contrast = 10
+stackable = true
+name = Chocolate chunks

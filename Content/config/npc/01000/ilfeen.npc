@@ -1,0 +1,10 @@
+// npc 1777
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 17864/7845 14517/8753 123/6478
+name = Ilfeen
+models = 4029 4030 4032 3194 4028 4031
+headmodels = 4013

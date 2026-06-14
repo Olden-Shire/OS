@@ -1,0 +1,7 @@
+// loc 2221
+active = 1
+op1 = Look-at
+op2 = Investigate
+blockwalk = true
+models = 1799/22
+name = Strange looking stone

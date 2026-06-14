@@ -1,0 +1,9 @@
+// loc 13852
+active = 0
+hillskew = true
+mapscene = 26
+ambient = 10
+raiseobject = 0
+nonblockrange = true
+recol = 22416/12942 22292/12818 22168/12694 22044/12698 22049/15774 21925/16805
+models_only = 3550

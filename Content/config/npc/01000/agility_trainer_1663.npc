@@ -1,0 +1,9 @@
+// npc 1663
+size = 1
+readyanim = 6539
+walkanim = 6541
+vislevel = 0
+recol = 9767/59 9771/64 9647/49218 9523/47172 9651/72
+name = Agility Trainer
+models = 26177 26190 26184
+headmodels = 26113

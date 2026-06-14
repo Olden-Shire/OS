@@ -1,0 +1,6 @@
+// loc 7873
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7852 7767 7783
+name = Marigold

@@ -1,0 +1,6 @@
+// loc 21662
+width = 3
+active = 0
+nonsolid = true
+ambient = 25
+models_only = 22182

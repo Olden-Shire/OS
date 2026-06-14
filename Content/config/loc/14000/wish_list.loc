@@ -1,0 +1,7 @@
+// loc 14010
+op1 = Read
+active = 1
+ambient = 40
+contrast = 40
+models = 13696/4
+name = Wish-list

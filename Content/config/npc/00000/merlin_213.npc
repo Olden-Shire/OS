@@ -1,0 +1,10 @@
+// npc 213
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 6798/103 8090/38814 25238/38814 4626/38814 43072/4550 8741/38814
+name = Merlin
+models = 214 292 170 176 265 183 250 553 567 202 324
+headmodels = 52 82 44

@@ -1,0 +1,12 @@
+// npc 3634
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/10450 6798/10299 8741/43072 41/43057 4626/5541 11200/43414
+name = Fyiona Fray
+models = 408 9361 332 353 519 432 361 14176
+headmodels = 125 11429

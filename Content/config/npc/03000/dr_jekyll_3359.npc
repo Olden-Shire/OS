@@ -1,0 +1,9 @@
+// npc 3359
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/8485 4626/0 25238/12 6798/10308
+name = Dr Jekyll
+models = 13335 13333 8970 6846 263 181 176 12758
+headmodels = 13871

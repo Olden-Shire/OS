@@ -1,0 +1,16 @@
+// obj 10627
+model = obj_wood_camo_top_10053
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+manwear = obj_druids_robe_540_man, 0
+manwear2 = 292
+manwear3 = 19984
+womanwear = obj_druids_robe_540_woman, 0
+womanwear2 = 471
+womanwear3 = 19985
+iop2 = Wear
+members = true
+cost = 20
+recol = 8741/7748 5532/7748 5413/7609 5417/7609
+name = Desert camo top

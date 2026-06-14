@@ -1,0 +1,7 @@
+// loc 17064
+noshadow = true
+blockwalk = true
+hillskew = true
+nonblockrange = true
+models_only = 16893
+name = Rocks

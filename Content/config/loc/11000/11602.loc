@@ -1,0 +1,6 @@
+// loc 11602
+length = 2
+nonsolid = true
+active = 0
+ambient = 60
+models_only = 11583

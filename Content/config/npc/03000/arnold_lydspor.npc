@@ -1,0 +1,12 @@
+// npc 3824
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+op4 = Bank
+recol = 25238/10508 8741/10508
+name = Arnold Lydspor
+models = 14852 14859 14840 176 14856 181
+headmodels = 14832 14835

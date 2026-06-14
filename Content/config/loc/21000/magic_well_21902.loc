@@ -1,0 +1,6 @@
+// loc 21902
+ambient = 10
+sharelight = true
+noshadow = true
+models_only = 22656 22660
+name = Magic well

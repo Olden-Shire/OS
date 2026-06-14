@@ -1,0 +1,9 @@
+// npc 2321
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+vislevel = 0
+recol = 5784/5338 10659/5551 61/5543 90/5662 5417/5910 10347/5431
+name = Blandebir
+models = 2970 6019 7062 7037 7044 2985
+headmodels = 0 6026

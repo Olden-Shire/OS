@@ -1,0 +1,9 @@
+// npc 2284
+vislevel = 0
+size = 1
+readyanim = 2253
+op1 = Talk-to
+recol = 70/99 5532/82 41/82 61/99 7700/103 6798/7073
+name = Sir Kuam Ferentse
+models = 217 253 306 323 164 179 546 7723 268 184
+headmodels = 55 85

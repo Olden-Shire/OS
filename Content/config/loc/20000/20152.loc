@@ -1,0 +1,9 @@
+// loc 20152
+active = 0
+hillskew = true
+sharelight = true
+ambient = 20
+raiseobject = 0
+nonblockrange = true
+recol = 7335/7603 7331/7599 7326/7723 7322/7719 7446/7843 7442/7838
+models = 4460/0 4461/1 4462/9

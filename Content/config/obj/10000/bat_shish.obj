@@ -1,0 +1,11 @@
+// obj 10964
+model = obj_bat_shish
+zoom2d = 1243
+yan2d = 1799
+xan2d = 595
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 10
+name = Bat shish

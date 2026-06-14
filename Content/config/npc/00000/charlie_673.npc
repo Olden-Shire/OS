@@ -1,0 +1,9 @@
+// npc 673
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/61 25238/61 6798/4913
+name = Charlie
+models = 215 246 292 151 176 254 181
+headmodels = 53

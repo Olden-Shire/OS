@@ -1,0 +1,11 @@
+// npc 5987
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 6798/5210 3868/5210
+name = Sylas
+models = 26092 230 15936 26094 26089 10218 26093 26090 26096
+headmodels = 63 26084 26085

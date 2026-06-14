@@ -1,0 +1,52 @@
+[clientscript,script_43](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0)()
+def_int $int5;
+def_int $int6;
+
+$int5 = 0;
+$int6 = 0;
+if (%varcint1 < calc(clientclock() + $int3)) {
+    if (%varcint1 < clientclock()) {
+        %varcint1 = clientclock();
+    }
+    %varcint1 = calc(%varcint1 + 2);
+    return;
+}
+%varcint1 = calc(clientclock() + $int3 + 10);
+if (%varcint2 = 0) {
+    if ($int4 > if_getwidth(if_getlayer($int2))) {
+        $int4 = if_getwidth(if_getlayer($int2));
+    }
+    $int4 = calc($int4 - 4);
+    if_setsize(calc(4 + parawidth($string0, $int4, 495)), calc(4 + 13 * paraheight($string0, $int4, 495)), $int2);
+    if (cc_find($int0, $int1) = 1) {
+        $int5 = calc(cc_getx() + 5);
+        $int6 = calc(cc_gety() + if_getheight($int0) + 5);
+        if (if_getlayer($int2) ! -1) {
+            if ($int5 > calc(if_getwidth(if_getlayer($int2)) - if_getwidth($int2))) {
+                $int5 = calc(if_getwidth(if_getlayer($int2)) - if_getwidth($int2));
+            }
+            if ($int6 > calc(if_getheight(if_getlayer($int2)) - if_getheight($int2))) {
+                $int6 = calc(cc_gety() - if_getheight($int2) - 5);
+            }
+        }
+    }
+    if_setposition($int5, $int6, $int2);
+    cc_deleteall($int2);
+    cc_create($int2, 3, 0);
+    cc_setsize(if_getwidth($int2), if_getheight($int2));
+    cc_setfill(1);
+    cc_setcolour(16777120);
+    cc_create($int2, 3, 1);
+    cc_setsize(if_getwidth($int2), if_getheight($int2));
+    cc_setfill(0);
+    cc_setcolour(0);
+    cc_create($int2, 4, 2);
+    cc_setsize($int4, if_getheight($int2));
+    cc_setposition(2, 0);
+    cc_settext($string0);
+    cc_settextalign(0, 1, 0);
+    cc_settextfont(495);
+    cc_setcolour(0);
+    %varcint2 = 1;
+}
+return;

@@ -1,0 +1,8 @@
+// loc 20460
+ambient = 15
+contrast = 15
+raiseobject = 1
+nonblockrange = true
+recol = 6451/6435 6443/6430 6439/6554 6563/6550
+models_only = 9590
+name = Small table

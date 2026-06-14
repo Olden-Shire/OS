@@ -1,0 +1,10 @@
+// npc 5513
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 64417/13716 6798/8293
+name = Lisse Isaakson
+models = 408 417 21914 21899 10706 21911 358
+headmodels = 125 136

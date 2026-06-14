@@ -1,0 +1,9 @@
+// npc 5420
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 69
+name = Tarn
+models = 20855 20860 20856

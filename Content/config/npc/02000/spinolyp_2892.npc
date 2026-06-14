@@ -1,0 +1,12 @@
+// npc 2892
+size = 1
+resizeh = 40
+resizev = 40
+contrast = 50
+ambient = 50
+walkanim = 2863
+readyanim = 2867
+op2 = Attack
+vislevel = 76
+name = Spinolyp
+models = 9947

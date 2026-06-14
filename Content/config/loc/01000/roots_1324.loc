@@ -1,0 +1,5 @@
+// loc 1324
+mapscene = 6
+nonblockrange = true
+models_only = 2173
+name = Roots

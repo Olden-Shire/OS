@@ -1,0 +1,6 @@
+// loc 15767
+sharelight = true
+ambient = 70
+op1 = Enter
+models_only = 15618
+name = Cave entrance

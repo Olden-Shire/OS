@@ -1,0 +1,12 @@
+// obj 4616
+model = obj_book_on_chemicals
+iop1 = Read
+members = true
+cost = 2
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+recol = 5018/8384 11177/61 10351/9694
+name = Varmen's notes

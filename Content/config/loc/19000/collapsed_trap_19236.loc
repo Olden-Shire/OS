@@ -1,0 +1,7 @@
+// loc 19236
+op2 = Dismantle
+active = 1
+contrast = 12
+ambient = 12
+models_only = 19377 10772
+name = Collapsed trap

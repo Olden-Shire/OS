@@ -1,0 +1,11 @@
+// obj 6468
+model = obj_strength_potion_4_113
+yof2d = -1
+zoom2d = 550
+yan2d = 1996
+xan2d = 84
+manwear = obj_holy_water_wear, 0
+womanwear = obj_holy_water_wear, 0
+members = true
+recol = 61/21803
+name = Plant cure

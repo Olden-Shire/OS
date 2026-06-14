@@ -1,0 +1,13 @@
+// obj 4161
+cost = 10
+model = obj_bag_of_salt
+xof2d = -4
+yof2d = -5
+zoom2d = 590
+yan2d = 1824
+xan2d = 120
+manwear = obj_bag_of_salt_wear, 0
+womanwear = obj_bag_of_salt_wear, 6
+stackable = true
+members = true
+name = Bag of salt

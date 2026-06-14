@@ -1,0 +1,11 @@
+// npc 4789
+op2 = Attack
+resizeh = 190
+resizev = 158
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 64
+recol = 25238/0 4626/94 4550/94 908/0 7236/94
+name = Angry vampyre
+models = 4089 16346 10133 16345 176 275 181
+headmodels = 6216

@@ -1,0 +1,15 @@
+// obj 4905
+members = true
+cost = 103000
+iop2 = Wear
+manwear = obj_guthans_helm_4724_man, 0
+womanwear = obj_guthans_helm_4724_woman, 0
+manhead = 6570
+womanhead = 6575
+model = obj_guthans_helm_4724
+xof2d = 17
+zoom2d = 860
+yan2d = 188
+xan2d = 2012
+recol = 10394/10388 6020/11140
+name = Guthans helm 75

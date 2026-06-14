@@ -1,0 +1,10 @@
+// loc 5842
+width = 2
+length = 2
+hillskew = true
+mapscene = 11
+op3 = Push
+nonblockrange = true
+recol = 6689/7331
+models_only = 818
+name = Boulder

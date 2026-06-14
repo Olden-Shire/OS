@@ -1,0 +1,5 @@
+// loc 15628
+anim = 4163
+op1 = Hit
+models_only = 15367 15368
+name = Dummy

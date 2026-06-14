@@ -1,0 +1,7 @@
+// obj 6101
+model = obj_consecration_seed_4205
+members = true
+xof2d = 1
+iop1 = Activate
+cost = 35
+name = Teleport crystal (2)

@@ -1,0 +1,9 @@
+// loc 13536
+length = 2
+anim = 3105
+op5 = Remove
+contrast = 25
+ambient = 25
+bgsound = 2209, 3
+models_only = 12629 12620
+name = Large oven

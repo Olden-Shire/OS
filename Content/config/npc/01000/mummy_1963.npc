@@ -1,0 +1,7 @@
+// npc 1963
+walkanim = 5552
+readyanim = 5548
+op2 = Attack
+vislevel = 103
+name = Mummy
+models = 20883 20896 20865 20878 20880 20887 20875 20893

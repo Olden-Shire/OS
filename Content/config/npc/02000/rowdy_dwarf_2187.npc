@@ -1,0 +1,11 @@
+// npc 2187
+resizeh = 145
+resizev = 120
+walkanim = 104
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 61/29991 10347/8390 5784/920 5417/4517 4550/3526
+name = Rowdy dwarf
+models = 2971 7072 7062 2978 7044 2985 7054 2992
+headmodels = 1 6997

@@ -1,0 +1,8 @@
+// loc 21873
+length = 2
+width = 2
+ambient = 10
+contrast = 10
+op1 = Fix
+models_only = 22673 22674 22675 22676
+name = Pressure machine

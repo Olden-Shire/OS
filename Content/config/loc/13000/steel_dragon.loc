@@ -1,0 +1,13 @@
+// loc 13375
+anim = 6496
+op5 = Remove
+nonsolid = true
+width = 3
+length = 3
+resizex = 96
+resizey = 96
+resizez = 96
+noshadow = true
+recol = 43280/5161 38172/3123 38177/3131 38057/3140 38065/3148 38090/5202
+models_only = 24578 24587 24583 24579
+name = Steel dragon

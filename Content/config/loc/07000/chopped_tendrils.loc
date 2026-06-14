@@ -1,0 +1,8 @@
+// loc 7163
+active = 1
+ambient = 15
+width = 3
+length = 2
+forceapproach = 11
+models_only = 7443 7444
+name = Chopped tendrils

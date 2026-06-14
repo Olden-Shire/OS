@@ -1,0 +1,6 @@
+// loc 6541
+sharelight = true
+nonsolid = true
+active = 0
+forcedecor = true
+models = 6248/10 6249/22

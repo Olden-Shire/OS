@@ -1,0 +1,4 @@
+// npc 5071
+nominimap = true
+vislevel = 0
+multivar = 3075, 65535, 65535 1

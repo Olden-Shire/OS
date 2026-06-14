@@ -1,0 +1,15 @@
+// loc 6254
+width = 2
+ambient = 60
+contrast = 60
+active = 0
+anim = 917
+resizex = 110
+resizey = 110
+resizez = 110
+offsetx = 30
+offsety = 0
+offsetz = 0
+nonblockrange = true
+recol = 8662/10339 7626/10339 6932/4750
+models_only = 3321

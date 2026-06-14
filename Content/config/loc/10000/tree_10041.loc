@@ -1,0 +1,10 @@
+// loc 10041
+width = 2
+length = 2
+mapscene = 1
+anim = 2749
+op1 = Chop down
+op2 = Talk to
+recol = 3470/5665
+models_only = 9746
+name = Tree

@@ -1,0 +1,7 @@
+// loc 22567
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+models_only = 23290
+name = Ladder

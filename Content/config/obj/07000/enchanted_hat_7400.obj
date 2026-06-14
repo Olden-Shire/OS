@@ -1,0 +1,15 @@
+// obj 7400
+model = obj_enchanted_hat_7400
+xof2d = 5
+yof2d = -10
+zoom2d = 800
+yan2d = 156
+xan2d = 152
+iop2 = Wear
+manwear = obj_enchanted_hat_7400_man, 0
+womanwear = obj_enchanted_hat_7400_woman, 0
+manhead = 11404
+womanhead = 11408
+cost = 15000
+members = true
+name = Enchanted hat

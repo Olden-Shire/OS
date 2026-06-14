@@ -1,0 +1,12 @@
+// npc 1315
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 8741/59437 25238/156 8078/59445 6798/6713 7952/13072 7073/5404
+name = Fish monger
+models = 230 252 292 162 179 4226 4218 326 317
+headmodels = 63 84

@@ -1,0 +1,9 @@
+// npc 2748
+vislevel = 0
+readyanim = 2256
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/5223 8741/7277 7952/5210 908/10341 4626/5318 43072/4550
+name = Savant
+models = 398 471 479 348 353 428 361
+headmodels = 106 9656

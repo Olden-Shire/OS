@@ -1,0 +1,16 @@
+// npc 3503
+vislevel = 0
+size = 1
+readyanim = 317
+walkanim = 314
+op1 = Pick-up
+op3 = Talk-to
+op4 = Interact-with
+nominimap = true
+resizeh = 80
+resizev = 65
+ambient = 40
+recol = 16/914
+name = Overgrown hellcat
+models = 13409 13405
+headmodels = 12742

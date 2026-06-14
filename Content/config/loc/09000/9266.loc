@@ -1,0 +1,6 @@
+// loc 9266
+width = 3
+sharelight = true
+active = 0
+ambient = 25
+models_only = 9174

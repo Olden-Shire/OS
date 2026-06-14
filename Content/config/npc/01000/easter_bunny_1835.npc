@@ -1,0 +1,11 @@
+// npc 1835
+walkanim = 3851
+readyanim = 3852
+alwaysontop = true
+vislevel = 0
+op1 = Talk-to
+ambient = 20
+contrast = 10
+name = Easter Bunny
+models = 23995
+headmodels = 23994

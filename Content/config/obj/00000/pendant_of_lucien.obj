@@ -1,0 +1,14 @@
+// obj 86
+model = obj_pendant_of_lucien
+members = true
+manwear = obj_pendant_of_lucien_man, 0
+womanwear = obj_pendant_of_lucien_woman, 0
+cost = 12
+xof2d = -1
+yof2d = -5
+zoom2d = 420
+yan2d = 80
+xan2d = 224
+iop2 = Wear
+recol = 926/22193
+name = Pendant of lucien

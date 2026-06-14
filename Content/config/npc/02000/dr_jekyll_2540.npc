@@ -1,0 +1,10 @@
+// npc 2540
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8741/8485 4626/0 25238/12 6798/10308
+name = Dr Jekyll
+models = 245 6848 8970 6846 263 181 176 249
+headmodels = 5787 78 81

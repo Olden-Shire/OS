@@ -1,0 +1,20 @@
+// obj 3755
+cost = 60000
+model = obj_farseer_helm_3755
+xof2d = 2
+zoom2d = 820
+yan2d = 104
+xan2d = 32
+iop2 = Wear
+manwear = obj_fremennik_helm_man, 0
+manwear2 = 4223
+manwear3 = 4219
+womanwear = obj_fremennik_helm_woman, 0
+womanwear2 = 4231
+womanwear3 = 4228
+manhead = 4210
+manhead2 = 4213
+womanhead = 4216
+womanhead2 = 4213
+members = true
+name = Farseer helm

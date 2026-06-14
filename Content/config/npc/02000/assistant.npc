@@ -1,0 +1,11 @@
+// npc 2166
+resizeh = 120
+resizev = 118
+walkanim = 2156
+readyanim = 2157
+vislevel = 0
+op1 = Talk-to
+recol = 910/8078 61/200 10347/8526 7062/5027
+name = Assistant
+models = 7035 7064 7038 7045 7068
+headmodels = 6994

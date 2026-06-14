@@ -1,0 +1,6 @@
+// loc 23946
+active = 0
+blockwalk = true
+ambient = 10
+nonblockrange = true
+models_only = 23882

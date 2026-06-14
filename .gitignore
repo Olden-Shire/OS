@@ -13,8 +13,8 @@ hs_err_pid*.log
 /Engine-TS/
 /Content-old/
 
-# Derived from /cache via `cargo run -p app -- unpack` / `pack` — large (~400MB)
-/Content/
+# Content/ IS tracked: it carries the curated names/renames that build the cache
+# (it stopped being derive-only once we started renaming). Repack scratch isn't.
 /cache_repacked/
 
 # Rust

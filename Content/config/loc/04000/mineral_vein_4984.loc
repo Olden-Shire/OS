@@ -1,0 +1,11 @@
+// loc 4984
+active = 1
+contrast = 100
+ambient = 25
+hillskew = true
+op1 = Mine
+op2 = Prospect
+op3 = Hidden
+recol = 22464/2576
+models = 4908/4
+name = Mineral vein

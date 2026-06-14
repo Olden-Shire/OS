@@ -1,0 +1,9 @@
+// npc 186
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 10
+recol = 25238/43420 8741/10508
+name = Thug
+models = 215 248 299 159 176 254 181 533

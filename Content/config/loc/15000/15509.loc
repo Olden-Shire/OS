@@ -1,0 +1,6 @@
+// loc 15509
+sharelight = true
+hillskew = true
+nonblockrange = true
+recol = 6550/7830 6430/7706 6439/7582
+models = 7373/0 7374/1 7375/2 7376/3 7377/9

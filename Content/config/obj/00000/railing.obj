@@ -1,0 +1,11 @@
+// obj 14
+model = obj_railing
+members = true
+stackable = true
+xof2d = 4
+yof2d = -3
+zoom2d = 1730
+yan2d = 1976
+zan2d = 212
+xan2d = 4
+name = Railing

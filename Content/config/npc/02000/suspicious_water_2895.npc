@@ -1,0 +1,6 @@
+// npc 2895
+size = 1
+nominimap = true
+vislevel = 34
+name = Suspicious water
+models = 6318

@@ -1,0 +1,11 @@
+// loc 22250
+active = 1
+sharelight = true
+hillskew = true
+blockwalk = true
+contrast = 20
+ambient = 20
+op1 = Climb-up
+mapscene = 7
+models_only = 22906
+name = Stairs

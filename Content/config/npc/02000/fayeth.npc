@@ -1,0 +1,9 @@
+// npc 2342
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/4645 25238/5400 908/7050 43072/4558 4550/4558 11844/7050
+name = Fayeth
+models = 393 470 480 332 353 7368 433 7366
+headmodels = 115

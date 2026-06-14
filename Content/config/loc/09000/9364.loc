@@ -1,0 +1,9 @@
+// loc 9364
+hillskew = true
+mirror = true
+ambient = 35
+contrast = 15
+active = 0
+noshadow = true
+recol = 3008/4044
+models = 9260/0 9261/9

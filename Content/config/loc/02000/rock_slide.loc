@@ -1,0 +1,8 @@
+// loc 2634
+width = 2
+length = 2
+op1 = Investigate
+op2 = Mine
+mapscene = 12
+models_only = 818
+name = Rock slide

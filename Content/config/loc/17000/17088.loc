@@ -1,0 +1,7 @@
+// loc 17088
+sharelight = true
+wallwidth = 32
+occlude = true
+ambient = 25
+contrast = 25
+models = 16919/0 16920/1 16921/2 16922/9

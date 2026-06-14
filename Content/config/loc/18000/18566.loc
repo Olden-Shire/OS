@@ -1,0 +1,6 @@
+// loc 18566
+mirror = true
+active = 0
+ambient = 20
+recol = 10258/7566
+models_only = 18646

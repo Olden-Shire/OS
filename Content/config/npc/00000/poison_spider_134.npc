@@ -1,0 +1,9 @@
+// npc 134
+size = 1
+walkanim = 5325
+readyanim = 5326
+op2 = Attack
+vislevel = 64
+recol = 960/16 33728/12 22443/8 11200/4 56256/933 50099/65459
+name = Poison spider
+models = 20315 20316

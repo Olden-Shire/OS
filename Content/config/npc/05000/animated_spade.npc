@@ -1,0 +1,8 @@
+// npc 5414
+size = 1
+walkanim = 5595
+readyanim = 5594
+op2 = Attack
+vislevel = 50
+name = Animated spade
+models = 21381

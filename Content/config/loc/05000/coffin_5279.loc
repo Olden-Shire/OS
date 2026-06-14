@@ -1,0 +1,8 @@
+// loc 5279
+width = 2
+length = 2
+op1 = Search
+op2 = Close
+nonblockrange = true
+models_only = 5255
+name = Coffin

@@ -1,0 +1,11 @@
+// npc 2902
+vislevel = 0
+size = 1
+resizev = 136
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 10353/5404 10351/5404 4663/7343 908/7343 8741/5404 6798/57
+name = Father Badden
+models = 223 253 6091 170 176 6089 8919 284
+headmodels = 59 85

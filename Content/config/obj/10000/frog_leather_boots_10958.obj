@@ -1,0 +1,15 @@
+// obj 10958
+model = obj_frog_leather_boots_10958
+xof2d = 1
+yof2d = -4
+zoom2d = 801
+yan2d = 1
+xan2d = 34
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_frog_leather_boots_10958_man, 0
+womanwear = obj_frog_leather_boots_10958_woman, 0
+iop2 = Wear
+cost = 200
+name = Frog-leather boots

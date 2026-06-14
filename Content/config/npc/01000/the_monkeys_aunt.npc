@@ -1,0 +1,10 @@
+// npc 1454
+walkanim = 1380
+readyanim = 1386
+resizeh = 160
+resizev = 160
+op1 = Talk-to
+vislevel = 0
+name = The Monkey's Aunt
+models = 4819 4826
+headmodels = 4658

@@ -1,0 +1,6 @@
+// loc 22905
+ambient = 35
+hillskew = true
+active = 0
+sharelight = true
+models = 23777/12 23782/13 23779/14 23780/16 23781/17 23784/18 23783/19 23778/20

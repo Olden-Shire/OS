@@ -1,0 +1,9 @@
+// loc 23073
+hillskew = true
+sharelight = true
+active = 0
+ambient = 15
+contrast = 15
+op1 = Climb
+recol = 21530/10266 21534/10270 21539/10275 21543/10279 21547/10283
+models = 23986/0

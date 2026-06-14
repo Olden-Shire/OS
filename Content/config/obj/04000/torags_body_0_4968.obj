@@ -1,0 +1,13 @@
+// obj 4968
+members = true
+cost = 280000
+manwear = obj_torags_platebody_4749_man, 0
+manwear2 = 6644
+womanwear = obj_torags_platebody_4749_woman, 0
+womanwear2 = 6684
+model = obj_torags_body_0_4968
+xof2d = 2
+zoom2d = 1310
+xan2d = 432
+recol = 10394/10388 10291/10508
+name = Torags body 0

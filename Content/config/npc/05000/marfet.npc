@@ -1,0 +1,9 @@
+// npc 5940
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+name = Marfet
+models = 4115 215 251 4117 4112 4113 534 3470 4116 4114
+headmodels = 53 4110 83

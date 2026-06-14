@@ -1,0 +1,13 @@
+// obj 1025
+model = obj_eye_patch_1025
+zoom2d = 800
+yan2d = 1952
+xan2d = 296
+iop2 = Wear
+cost = 2
+manwear = obj_eye_patch_1025_man, 0
+womanwear = obj_eye_patch_1025_woman, 0
+manhead = 68
+womanhead = 126
+members = true
+name = Eye patch

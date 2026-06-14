@@ -1,0 +1,13 @@
+// obj 66
+cost = 640
+members = true
+model = obj_longbow_u_48
+xof2d = 2
+yof2d = 15
+zoom2d = 1820
+yan2d = 1004
+xan2d = 460
+manwear = obj_longbow_u_48_wear, 0
+womanwear = obj_longbow_u_48_wear, 6
+recol = 6674/9135
+name = Yew longbow (u)

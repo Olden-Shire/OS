@@ -1,0 +1,11 @@
+// npc 1208
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 10004/61 4626/61 7566/61 7446/41 25238/61 54397/41410
+name = Quartermaster
+models = 164 185 176 215 246 3329 313
+headmodels = 53

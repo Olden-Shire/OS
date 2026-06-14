@@ -1,0 +1,10 @@
+// loc 15603
+active = 1
+sharelight = true
+hillskew = true
+ambient = 10
+contrast = 5
+mirror = true
+nonblockrange = true
+models = 15400/0
+name = Railing

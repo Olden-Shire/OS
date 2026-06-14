@@ -1,0 +1,10 @@
+// npc 6071
+walkanim = 6614
+readyanim = 6613
+vislevel = 0
+size = 1
+op1 = Talk-to
+alwaysontop = true
+name = Impling
+models = 26374
+headmodels = 26278

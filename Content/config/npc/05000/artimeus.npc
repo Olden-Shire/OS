@@ -1,0 +1,11 @@
+// npc 5109
+op1 = Talk-to
+op5 = Trade
+alwaysontop = true
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/4391
+name = Artimeus
+models = 19823 252 11759 14175 169 176 19333 181
+headmodels = 63 19796 84

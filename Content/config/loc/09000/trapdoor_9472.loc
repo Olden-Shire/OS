@@ -1,0 +1,6 @@
+// loc 9472
+active = 1
+op1 = Climb-down
+forceapproach = 14
+models_only = 9503
+name = Trapdoor

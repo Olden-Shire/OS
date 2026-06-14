@@ -1,0 +1,8 @@
+// loc 12569
+op1 = Climb-down
+active = 1
+forceapproach = 11
+blockwalk = true
+nonblockrange = true
+models = 13604/22
+name = Temp Stone 4 Zip

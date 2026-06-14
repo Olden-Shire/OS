@@ -1,0 +1,15 @@
+// obj 10810
+model = obj_logs_1511
+yof2d = -7
+zoom2d = 1180
+yan2d = 1852
+xan2d = 120
+ambient = 15
+manwear = obj_arctic_pine_logs_10810_wear, 0
+womanwear = obj_arctic_pine_logs_10810_wear, 0
+members = true
+cost = 35
+op4 = Light
+op5 = hidden
+recol = 5665/6699 5784/8097 5559/6585
+name = Arctic pine logs

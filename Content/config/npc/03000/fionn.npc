@@ -1,0 +1,11 @@
+// npc 3086
+resizeh = 160
+resizev = 150
+readyanim = 3008
+walkanim = 3012
+vislevel = 0
+op1 = Talk-to
+recol = 42283/4550 1573/4550 4550/4529 15779/7452 127/123
+name = Fionn
+models = 10507 10518 10510 10513 10528
+headmodels = 10399 10393

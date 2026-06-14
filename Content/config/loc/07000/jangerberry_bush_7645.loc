@@ -1,0 +1,8 @@
+// loc 7645
+ambient = 25
+op1 = Check-health
+op2 = Inspect
+op4 = Guide
+recol = 14872/15002 8722/9878 6364/14243
+models_only = 7826 7767 7815
+name = Jangerberry bush

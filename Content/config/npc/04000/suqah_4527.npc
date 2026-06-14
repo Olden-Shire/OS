@@ -1,0 +1,12 @@
+// npc 4527
+size = 2
+resizeh = 134
+resizev = 128
+walkanim = 4383
+readyanim = 4386
+op2 = Attack
+ambient = 14
+contrast = 8
+vislevel = 111
+name = Suqah
+models = 16589 16594 16588 16591

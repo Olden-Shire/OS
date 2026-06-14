@@ -1,0 +1,10 @@
+// loc 10283
+active = 1
+forcedecor = true
+noshadow = true
+hillskew = true
+nonsolid = true
+sharelight = true
+op1 = Swim
+models_only = 3951
+name = River

@@ -1,0 +1,10 @@
+// npc 3190
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+op2 = Attack
+vislevel = 57
+recol = 8741/530 9104/807 25238/16022 22177/530 39145/7834 11162/11138
+name = Pirate
+models = 211 236 249 292 3667 151 3660 555 259
+headmodels = 50 81 68

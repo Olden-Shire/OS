@@ -1,0 +1,10 @@
+// npc 726
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43072/4550 25238/3980 4550/7384 6798/7446 8741/8367 4661/7380
+name = Man
+models = 235 250 310 11431 177 275 185
+headmodels = 67 82 11427

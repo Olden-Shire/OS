@@ -1,0 +1,10 @@
+// npc 5694
+op2 = Attack
+size = 1
+contrast = 10
+ambient = 10
+readyanim = 5967
+walkanim = 5967
+vislevel = 40
+name = Undead Lumberjack
+models = 23213

@@ -1,0 +1,5 @@
+// loc 6909
+active = 1
+nonblockrange = true
+models = 6912/4
+name = Wall

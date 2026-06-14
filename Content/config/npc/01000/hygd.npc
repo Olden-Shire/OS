@@ -1,0 +1,11 @@
+// npc 1088
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 4
+recol = 25238/54331 8741/54331
+name = Hygd
+models = 398 470 348 356 421 361
+headmodels = 106

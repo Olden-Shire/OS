@@ -1,0 +1,15 @@
+// obj 4893
+members = true
+cost = 280000
+iop2 = Wear
+manwear = obj_dharoks_platebody_4720_man, 0
+manwear2 = 6639
+womanwear = obj_dharoks_platebody_4720_woman, 0
+womanwear2 = 6681
+model = obj_dharoks_platebody_4720
+xof2d = 1
+yof2d = 4
+zoom2d = 1260
+xan2d = 464
+recol = 10394/10388 10291/10508
+name = Dharoks body 75

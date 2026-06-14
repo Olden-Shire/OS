@@ -1,0 +1,10 @@
+// npc 3029
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 6798/10312 9019/8763 8741/8763 49054/43045 4550/6558 5018/4651
+name = Ghaslor the Elder
+models = 6130 250 9017 151 176 556 6132 181
+headmodels = 82 6128

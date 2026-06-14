@@ -1,0 +1,7 @@
+// loc 24708
+width = 2
+contrast = 20
+ambient = 30
+nonsolid = true
+models_only = 1080
+name = Skeleton

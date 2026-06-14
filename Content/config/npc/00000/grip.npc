@@ -1,0 +1,10 @@
+// npc 792
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 22
+recol = 39145/61 11142/9104 5442/4550
+name = Grip
+models = 218 294 246 165 259 550
+headmodels = 56

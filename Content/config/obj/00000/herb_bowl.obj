@@ -1,0 +1,9 @@
+// obj 797
+model = obj_herb_bowl
+manwear = obj_herb_bowl, 0
+womanwear = obj_herb_bowl, 6
+xof2d = -30
+yof2d = 33
+zoom2d = 470
+xan2d = 1896
+name = Herb bowl

@@ -1,0 +1,12 @@
+// npc 2151
+size = 1
+resizeh = 130
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 61/668 33/8119 12/668 8604/540
+name = Vigr
+models = 2974 7069 7059 2979 2980 2985
+headmodels = 4 6949

@@ -1,0 +1,11 @@
+// npc 1092
+size = 1
+walkanims = 2562, 2562, 2562, 2562
+readyanim = 2561
+op1 = Talk-to
+op2 = Attack
+vislevel = 36
+recol = 5400/5214 5648/5206 41/5206 61/5223 57/7269 10004/5206
+name = White Knight
+models = 11744 306 164 179 546 268 4954
+headmodels = 14336

@@ -1,0 +1,7 @@
+// loc 7513
+offsetx = -30
+offsety = 0
+offsetz = 0
+nonblockrange = true
+models_only = 7704
+name = Crate

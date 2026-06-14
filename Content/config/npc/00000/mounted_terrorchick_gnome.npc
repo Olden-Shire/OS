@@ -1,0 +1,8 @@
+// npc 136
+readyanim = 6798
+walkanim = 6799
+vislevel = 0
+op1 = Talk-to
+name = Mounted terrorchick gnome
+models = 26854
+headmodels = 16970

@@ -1,0 +1,12 @@
+// obj 10896
+model = obj_wolf_whistle
+xof2d = 4
+yof2d = 8
+zoom2d = 300
+yan2d = 1438
+xan2d = 290
+contrast = 15
+ambient = 15
+members = true
+iop1 = Blow
+name = Wolf whistle

@@ -1,0 +1,7 @@
+// loc 20241
+op2 = Take-Runes
+op3 = Take-Arrows
+ambient = 45
+forceapproach = 14
+models_only = 20692
+name = Attacker item machine

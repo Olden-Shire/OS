@@ -1,0 +1,7 @@
+// npc 3077
+vislevel = 0
+size = 2
+op1 = Search
+recol = 25238/4769 8741/4769 906/4888
+name = Dead Monk
+models = 230 246 292 9607 170 10218 260 8919 326

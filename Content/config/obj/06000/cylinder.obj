@@ -1,0 +1,12 @@
+// obj 6898
+model = obj_cylinder
+xof2d = -7
+yof2d = -9
+zoom2d = 1230
+yan2d = 1968
+zan2d = 1980
+xan2d = 300
+ambient = 10
+members = true
+cost = 0
+name = Cylinder

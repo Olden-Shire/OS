@@ -1,0 +1,6 @@
+// npc 151
+vislevel = 0
+size = 1
+nominimap = true
+name = Fly trap
+models = 14207

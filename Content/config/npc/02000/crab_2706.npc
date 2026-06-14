@@ -1,0 +1,10 @@
+// npc 2706
+resizeh = 42
+resizev = 42
+walkanim = 1311
+readyanim = 1310
+nominimap = true
+vislevel = 0
+recol = 7322/2725 7335/2605 7343/2609 61/2485
+name = Crab
+models = 4399 8744

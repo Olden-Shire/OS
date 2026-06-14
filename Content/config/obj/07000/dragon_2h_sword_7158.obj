@@ -1,0 +1,13 @@
+// obj 7158
+cost = 220000
+model = obj_dragon_2h_sword_7158
+iop2 = Wield
+manwear = obj_dragon_2h_sword_7158_wear, 0
+womanwear = obj_dragon_2h_sword_7158_wear, 6
+members = true
+yof2d = 3
+zoom2d = 2022
+yan2d = 1065
+zan2d = 124
+xan2d = 636
+name = Dragon 2h sword

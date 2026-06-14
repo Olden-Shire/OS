@@ -1,0 +1,7 @@
+// loc 881
+op1 = Open
+blockwalk = true
+forceapproach = 7
+nonblockrange = true
+models_only = 25033
+name = Manhole

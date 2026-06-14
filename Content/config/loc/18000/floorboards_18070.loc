@@ -1,0 +1,9 @@
+// loc 18070
+op5 = Jump-to
+hillskew = true
+sharelight = true
+active = 1
+nonsolid = true
+forcedecor = true
+models = 17618/22
+name = Floorboards

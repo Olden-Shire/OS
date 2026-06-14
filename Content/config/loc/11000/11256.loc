@@ -1,0 +1,5 @@
+// loc 11256
+sharelight = true
+active = 0
+recol = 12579/4510 12574/4515 12698/6930 12694/4391 12818/6930
+models_only = 1910

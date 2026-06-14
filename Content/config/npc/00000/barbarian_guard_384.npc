@@ -1,0 +1,10 @@
+// npc 384
+vislevel = 0
+size = 1
+resizeh = 137
+walkanim = 2064
+readyanim = 2065
+op1 = Talk-to
+name = Barbarian guard
+models = 11739 214 11747 252 11758 11762 11727 11732 11753 11733 11764 11788
+headmodels = 52 84 11804 11807

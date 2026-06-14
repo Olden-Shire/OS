@@ -1,0 +1,12 @@
+// obj 10414
+model = obj_black_ele_legs_10402
+yof2d = -1
+zoom2d = 1827
+xan2d = 444
+iop2 = Wear
+manwear = obj_black_ele_legs_10402_man, 0
+womanwear = obj_black_ele_legs_10402_woman, 0
+members = true
+cost = 2000
+recol = 105/21611 64/21675 47/21797 35/21921 26/26388 55172/22158
+name = Green ele' legs

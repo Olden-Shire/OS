@@ -1,0 +1,19 @@
+// obj 4611
+model = obj_karidian_disguise_4595
+iop2 = Wear
+members = true
+yof2d = -32
+zoom2d = 780
+yan2d = 2044
+xan2d = 296
+manwear = obj_desert_disguise_man, 0
+manwear2 = 188
+manwear3 = 6088
+womanwear = obj_desert_disguise_woman, 0
+womanwear2 = 364
+womanwear3 = 6096
+manhead = 6211
+manhead2 = 63
+womanhead = 6211
+womanhead2 = 120
+name = Desert disguise

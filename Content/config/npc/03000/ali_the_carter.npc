@@ -1,0 +1,10 @@
+// npc 3030
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/10353 43072/4537 4550/4525
+name = Ali the Carter
+models = 6085 247 292 326 173 176 6090 181
+headmodels = 79 6080 63

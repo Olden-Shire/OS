@@ -1,0 +1,13 @@
+// npc 2582
+ambient = 30
+walkanim = 2571
+op1 = Push
+op3 = Pull
+op4 = Big-push
+op5 = Place
+ambient = 10
+alwaysontop = true
+vislevel = 0
+recol = 8602/8722 8478/8598 8487/8478 8363/8483
+name = Trolley
+models = 9225 9226

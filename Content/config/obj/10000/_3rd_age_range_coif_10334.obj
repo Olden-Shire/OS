@@ -1,0 +1,19 @@
+// obj 10334
+model = obj__3rd_age_range_coif_10334
+manwear = obj__3rd_age_range_coif_10334_man, 0
+womanwear = obj__3rd_age_range_coif_10334_woman, 0
+manhead = 20106
+womanhead = 20106
+manhead2 = 63
+womanhead2 = 120
+iop2 = Wear
+cost = 10000
+xof2d = 2
+yof2d = -35
+zoom2d = 789
+yan2d = 1784
+zan2d = 2047
+xan2d = 194
+contrast = 20
+members = true
+name = 3rd age range coif

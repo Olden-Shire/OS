@@ -1,0 +1,15 @@
+// obj 9098
+cost = 100
+model = obj_lunar_legs
+iop2 = Wear
+manwear = obj_lunar_legs_man, 0
+womanwear = obj_lunar_legs_woman, 0
+members = true
+xof2d = -1
+yof2d = 12
+zoom2d = 1704
+yan2d = 3
+xan2d = 387
+iop5 = Destroy
+recol = 6573/40210 36007/16652 33300/20 410/61714
+name = Lunar legs

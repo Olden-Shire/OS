@@ -1,0 +1,8 @@
+// loc 11113
+width = 2
+length = 2
+mapscene = 6
+nonblockrange = true
+recol = 5392/6600 5388/7609 5640/7723
+models_only = 5524
+name = Bush

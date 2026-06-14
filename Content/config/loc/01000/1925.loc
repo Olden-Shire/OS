@@ -1,0 +1,6 @@
+// loc 1925
+sharelight = true
+ambient = 25
+contrast = 25
+retex = 6/44
+models = 617/12 622/13 618/14 619/15 620/16 621/17

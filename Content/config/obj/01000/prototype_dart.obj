@@ -1,0 +1,13 @@
+// obj 1849
+cost = 70
+stackable = true
+members = true
+cost = 2
+model = obj_bronze_dart
+xof2d = 8
+yof2d = 11
+zoom2d = 720
+yan2d = 336
+xan2d = 396
+recol = 82/5652
+name = Prototype dart

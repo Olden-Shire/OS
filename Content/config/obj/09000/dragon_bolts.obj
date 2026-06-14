@@ -1,0 +1,17 @@
+// obj 9341
+model = obj_opal_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+stackable = true
+members = true
+count1 = 9367, 2
+count2 = 9368, 3
+count3 = 9369, 4
+count4 = 9370, 5
+cost = 967
+recol = 17971/36141 5537/36141 5532/36137 5656/36133 5652/36257 10465/50752
+name = Dragon bolts

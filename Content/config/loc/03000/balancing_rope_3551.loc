@@ -1,0 +1,8 @@
+// loc 3551
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Walk-on
+models = 3625/22
+name = Balancing rope

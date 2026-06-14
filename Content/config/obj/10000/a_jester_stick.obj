@@ -1,0 +1,17 @@
+// obj 10840
+cost = 1000
+members = true
+model = obj_a_jester_stick
+xof2d = 4
+yof2d = 32
+zoom2d = 1892
+yan2d = 1770
+zan2d = 844
+xan2d = 415
+contrast = 15
+ambient = 15
+iop2 = Wield
+manwear = obj_a_jester_stick_man, 0
+womanwear = obj_a_jester_stick_woman, 6
+recol = 61/36133
+name = A jester stick

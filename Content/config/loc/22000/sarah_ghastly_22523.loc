@@ -1,0 +1,10 @@
+// loc 22523
+active = 1
+op1 = Talk-to
+blockwalk = true
+anim = 5985
+width = 2
+length = 2
+nonblockrange = true
+models_only = 23208 23196
+name = Sarah (ghastly!)

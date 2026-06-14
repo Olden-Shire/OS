@@ -1,0 +1,10 @@
+// npc 1378
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/8472 43072/8472 8741/1686 4550/2524 6798/7613
+name = Flower Girl
+models = 390 471 348 353 428 358
+headmodels = 113

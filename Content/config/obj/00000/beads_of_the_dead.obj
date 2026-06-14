@@ -1,0 +1,14 @@
+// obj 616
+cost = 1
+model = obj_beads_of_the_dead
+yof2d = -16
+zoom2d = 1020
+yan2d = 2020
+xan2d = 332
+iop2 = Wear
+iop5 = Destroy
+manwear = obj_beads_of_the_dead_man, 0
+womanwear = obj_beads_of_the_dead_woman, 0
+members = true
+recol = 28/4032
+name = Beads of the dead

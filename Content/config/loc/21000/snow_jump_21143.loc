@@ -1,0 +1,11 @@
+// loc 21143
+length = 3
+width = 3
+active = 1
+ambient = 25
+contrast = 25
+hillskew = true
+nonsolid = true
+op1 = Jump
+models_only = 21611
+name = Snow jump

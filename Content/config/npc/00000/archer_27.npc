@@ -1,0 +1,9 @@
+// npc 27
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 37
+recol = 6674/8111
+name = Archer
+models = 220 185 253 296 151 179 262 563

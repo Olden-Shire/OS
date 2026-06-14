@@ -1,0 +1,12 @@
+// npc 1596
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op4 = Trade
+alwaysontop = true
+recol = 8741/21671 25238/21782 4550/918 23442/21667 41/21776 61/21662
+name = Mazchna
+models = 221 306 174 176 278 182 5114 246
+headmodels = 58

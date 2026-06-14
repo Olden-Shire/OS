@@ -1,0 +1,15 @@
+// obj 5315
+model = obj_yew_seed
+xof2d = -6
+yof2d = -3
+zoom2d = 1040
+yan2d = 68
+xan2d = 236
+members = true
+stackable = true
+count1 = 5107, 2
+count2 = 5108, 3
+count3 = 5109, 4
+count4 = 5110, 5
+cost = 143
+name = Yew seed

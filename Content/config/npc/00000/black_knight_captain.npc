@@ -1,0 +1,12 @@
+// npc 610
+vislevel = 0
+size = 1
+resizeh = 145
+resizev = 135
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 70/24 5532/10508 41/10508 61/24 57/24 4550/5458
+name = Black Knight Captain
+models = 14340 9620 3379 8233 10298 15411 518 268 15410 15318
+headmodels = 14337 9449

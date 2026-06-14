@@ -1,0 +1,6 @@
+// loc 9090
+op1 = Operate
+forceapproach = 14
+nonsolid = true
+models_only = 9036
+name = Pump

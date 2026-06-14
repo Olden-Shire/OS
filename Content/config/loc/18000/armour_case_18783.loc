@@ -1,0 +1,7 @@
+// loc 18783
+op1 = Search
+op2 = Close
+ambient = 35
+forceapproach = 13
+models_only = 18992
+name = Armour case

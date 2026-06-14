@@ -1,0 +1,11 @@
+// npc 375
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/13592 25238/40235 43072/4550 6798/4913 11200/5425
+name = Redbeard Frank
+models = 215 15004 236 11190 15008 159 176 5218
+headmodels = 53 11188 68 14999

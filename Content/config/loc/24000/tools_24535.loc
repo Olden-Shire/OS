@@ -1,0 +1,7 @@
+// loc 24535
+active = 1
+ambient = 40
+contrast = 40
+op1 = Take
+models = 25341/4
+name = Tools

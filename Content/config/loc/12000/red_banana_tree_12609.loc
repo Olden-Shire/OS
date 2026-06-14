@@ -1,0 +1,11 @@
+// loc 12609
+active = 1
+width = 2
+length = 3
+ambient = 20
+blockwalk = true
+op1 = Pick
+forceapproach = 14
+nonblockrange = true
+models_only = 13614 13612 13610
+name = Red Banana Tree

@@ -1,0 +1,16 @@
+// obj 6453
+model = obj_white_rose_seed
+xof2d = -8
+yof2d = 7
+zoom2d = 1260
+yan2d = 2008
+xan2d = 280
+members = true
+iop5 = Destroy
+stackable = true
+count1 = 6480, 2
+count2 = 6481, 3
+count3 = 6482, 4
+count4 = 6483, 5
+recol = 61879/9445 59738/59503
+name = White rose seed

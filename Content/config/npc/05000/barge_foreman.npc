@@ -1,0 +1,8 @@
+// npc 5963
+readyanim = 6458
+turnspeed = 0
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+name = Barge foreman
+models = 25804 25805 25806 25807 25803

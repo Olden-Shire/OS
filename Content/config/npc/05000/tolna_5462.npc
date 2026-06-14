@@ -1,0 +1,10 @@
+// npc 5462
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/35732 25238/9007 4626/138 43072/138 6798/4382
+name = Tolna
+models = 217 11190 292 151 177 275 9823
+headmodels = 55 11188

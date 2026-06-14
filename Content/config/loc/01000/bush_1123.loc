@@ -1,0 +1,11 @@
+// loc 1123
+width = 2
+length = 2
+resizex = 80
+resizey = 80
+resizez = 80
+mapscene = 6
+nonblockrange = true
+recol = 5388/8483
+models_only = 1640
+name = Bush

@@ -1,0 +1,6 @@
+// loc 13469
+ambient = 20
+op5 = Remove
+nonblockrange = true
+models_only = 13169
+name = Hedge

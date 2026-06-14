@@ -1,0 +1,10 @@
+// loc 11102
+width = 2
+length = 2
+active = 0
+noshadow = true
+hillskew = true
+mapscene = 12
+nonblockrange = true
+recol = 6689/8656
+models_only = 821

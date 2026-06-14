@@ -1,0 +1,6 @@
+// loc 17891
+blockwalk = true
+ambient = 10
+nonblockrange = true
+models_only = 17868
+name = Bookshelf

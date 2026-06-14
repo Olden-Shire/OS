@@ -1,0 +1,10 @@
+// obj 10975
+model = obj_spanner
+xof2d = -9
+yof2d = 11
+zoom2d = 595
+yan2d = 270
+xan2d = 486
+members = true
+cost = 0
+name = Spanner

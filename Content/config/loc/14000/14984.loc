@@ -1,0 +1,9 @@
+// loc 14984
+sharelight = true
+hillskew = true
+ambient = 10
+contrast = 10
+blockwalk = true
+nonblockrange = true
+recol = 5532/3755 4506/3747 4750/4636
+models = 972/0 973/1 974/2 975/3 976/9

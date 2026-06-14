@@ -1,0 +1,11 @@
+// obj 5509
+cost = 150
+members = true
+model = obj_small_pouch
+zoom2d = 520
+yan2d = 108
+xan2d = 216
+iop1 = Fill
+iop2 = Empty
+iop3 = Check
+name = Small pouch

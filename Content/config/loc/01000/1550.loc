@@ -1,0 +1,7 @@
+// loc 1550
+mirror = true
+raiseobject = 0
+ambient = 35
+contrast = 35
+nonblockrange = true
+models = 645/0

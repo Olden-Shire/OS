@@ -1,0 +1,11 @@
+// obj 311
+model = obj_harpoon_311
+xof2d = 2
+yof2d = -85
+zoom2d = 1030
+yan2d = 416
+xan2d = 244
+cost = 5
+manwear = obj_harpoon_311_wear, 0
+womanwear = obj_harpoon_311_wear, 6
+name = Harpoon

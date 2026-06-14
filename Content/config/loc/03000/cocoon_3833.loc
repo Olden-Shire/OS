@@ -1,0 +1,7 @@
+// loc 3833
+width = 2
+length = 2
+blockwalk = true
+nonblockrange = true
+models_only = 3845
+name = Cocoon

@@ -1,0 +1,11 @@
+// npc 891
+size = 1
+op1 = Talk-to
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 13
+recol = 8741/24 25238/24 4550/5347 11200/10473
+name = Alomone
+models = 208 251 292 162 176 256 286
+headmodels = 48 83

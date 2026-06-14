@@ -1,0 +1,9 @@
+// obj 11027
+model = obj_easter_egg_11027
+zoom2d = 789
+yan2d = 41
+iop1 = Release
+manwear = obj_easter_egg_11027_wear, 0
+womanwear = obj_easter_egg_11027_wear, 6
+iop5 = Destroy
+name = Easter egg

@@ -1,0 +1,13 @@
+// obj 10966
+model = obj_grubs_la_mode
+xof2d = 2
+yof2d = 9
+zoom2d = 848
+yan2d = 1808
+xan2d = 396
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 50
+name = Grubs à la mode

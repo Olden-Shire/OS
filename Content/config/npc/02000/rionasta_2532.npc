@@ -1,0 +1,13 @@
+// npc 2532
+vislevel = 0
+size = 1
+op1 = Talk-to
+op3 = Send-parcel
+resizeh = 126
+resizev = 121
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+recol = 4550/4762 6443/5572 25238/5572 43072/4762 6798/7390
+name = Rionasta
+models = 6848 251 8845 173 8918 534 274 8919 8947
+headmodels = 5787 83

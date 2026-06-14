@@ -1,0 +1,9 @@
+// npc 3458
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/127 8741/90 43072/90
+name = ? ? ? ?
+models = 230 245 246 295 151 176 254 181 12771
+headmodels = 63 78

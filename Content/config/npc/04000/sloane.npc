@@ -1,0 +1,11 @@
+// npc 4297
+vislevel = 0
+op1 = Talk-to
+op3 = Claim-Tokens
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/19992 8472/7690 25238/8388 43072/7725 4550/4661
+name = Sloane
+models = 217 10304 311 18952 167 176 11788 11869 181
+headmodels = 15408

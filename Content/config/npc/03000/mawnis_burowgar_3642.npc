@@ -1,0 +1,10 @@
+// npc 3642
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 25238/10291 8741/6451 6798/123 7073/6817
+name = Mawnis Burowgar
+models = 4220 21873 252 292 4391 162 179 4226 4218 21890
+headmodels = 4210 4211 84

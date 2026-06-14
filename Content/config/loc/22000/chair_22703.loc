@@ -1,0 +1,7 @@
+// loc 22703
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23340
+name = Chair

@@ -1,0 +1,10 @@
+// npc 608
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 70/99 5532/82 41/82 61/99 7700/103 57/99
+name = Sir Amik Varze
+models = 215 306 164 179 268 184 518 517 201 249 323
+headmodels = 53 81 43

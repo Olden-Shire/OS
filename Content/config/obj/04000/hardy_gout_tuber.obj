@@ -1,0 +1,10 @@
+// obj 4001
+model = obj_hardy_gout_tuber
+yof2d = -30
+zoom2d = 2500
+yan2d = 384
+zan2d = 1964
+xan2d = 192
+cost = 5
+recol = 6705/7591 7725/8739 9769/12833 11819/13861 13871/16937 10467/13532
+name = Hardy gout tuber

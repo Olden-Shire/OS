@@ -1,0 +1,9 @@
+// npc 5253
+size = 3
+op2 = Attack
+readyanim = 5455
+walkanim = 5454
+alwaysontop = true
+vislevel = 191
+name = Giant scarab
+models = 20821

@@ -1,0 +1,10 @@
+// loc 21509
+hillskew = true
+active = 1
+ambient = 20
+contrast = 20
+forcedecor = true
+blockwalk = true
+nonblockrange = true
+models = 22104/0 22105/3 22103/22
+name = Rope bridge

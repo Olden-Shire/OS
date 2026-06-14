@@ -1,0 +1,8 @@
+// loc 24026
+ambient = 10
+contrast = 10
+anim = 4127
+nonsolid = true
+active = 1
+models_only = 24640
+name = Lantern

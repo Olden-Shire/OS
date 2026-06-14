@@ -1,0 +1,10 @@
+// npc 1452
+walkanim = 1380
+readyanim = 1386
+resizeh = 100
+resizev = 100
+op1 = Talk-to
+vislevel = 0
+name = Monkey Child
+models = 4818 4825
+headmodels = 4657

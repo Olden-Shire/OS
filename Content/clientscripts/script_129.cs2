@@ -1,0 +1,34 @@
+[clientscript,script_129]()()
+def_int $int0;
+
+$int0 = 0;
+cc_deleteall(36110336);
+if (ignore_count() < 0) {
+    if_settext(join("Loading ignore list", "<br>", "Please wait..."), 36110351);
+} else {
+    if_settext("", 36110351);
+    while ($int0 < ignore_count()) {
+        cc_create(36110336, 4, $int0);
+        cc_settext(ignore_getname($int0));
+        cc_setposition(1, calc($int0 * 15));
+        cc_setsize(100, 14);
+        cc_setcolour(16777215);
+        cc_settextfont(495);
+        cc_settextshadow(1);
+        cc_setopbase(join("<col=ffffff>", ignore_getname($int0)));
+        cc_setop(1, "Delete");
+        cc_setonop(130, "event_opbase", "s");
+        $int0 = calc($int0 + 1);
+    }
+    if ($int0 < 13) {
+        $int0 = 13;
+    }
+    if (ignore_count() >= 13) {
+        if_setscrollsize(158, calc($int0 * 15 + 5), 36110336);
+        ~script_72(36110337, 36110336, 0);
+    } else {
+        if_setscrollsize(158, calc($int0 * 15), 36110336);
+        ~script_72(36110337, 36110336, 0);
+    }
+}
+return;

@@ -1,0 +1,11 @@
+// npc 3238
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 2
+recol = 25238/7830 8741/908 6798/10673 8860/914
+name = Narf
+models = 208 246 292 3707 10980 10218 275 181
+headmodels = 48

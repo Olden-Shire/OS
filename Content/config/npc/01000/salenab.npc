@@ -1,0 +1,7 @@
+// npc 1430
+walkanim = 219
+readyanim = 222
+op1 = Talk-to
+vislevel = 0
+name = Salenab
+models = 3004

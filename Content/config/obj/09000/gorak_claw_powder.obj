@@ -1,0 +1,10 @@
+// obj 9018
+model = obj_gorak_claw_powder
+members = true
+xof2d = -8
+yof2d = -4
+zoom2d = 848
+yan2d = 1867
+xan2d = 429
+cost = 150
+name = Gorak claw powder

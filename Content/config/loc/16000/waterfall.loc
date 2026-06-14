@@ -1,0 +1,12 @@
+// loc 16302
+active = 1
+width = 3
+length = 4
+sharelight = true
+hillskew = true
+noshadow = true
+ambient = 45
+nonsolid = true
+resizey = 205
+models_only = 16078 16079 16080
+name = Waterfall

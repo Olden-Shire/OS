@@ -1,0 +1,8 @@
+// loc 879
+width = 2
+length = 2
+mapscene = 8
+bgsound = 2150, 7
+nonblockrange = true
+models_only = 1497
+name = Fountain

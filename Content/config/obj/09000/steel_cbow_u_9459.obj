@@ -1,0 +1,13 @@
+// obj 9459
+model = obj_bronze_cbow_u_9454
+xof2d = 3
+yof2d = 5
+zoom2d = 1049
+yan2d = 243
+xan2d = 420
+members = true
+cost = 327
+manwear = obj_bronze_cbow_u_9454_wear, 0
+womanwear = obj_bronze_cbow_u_9454_wear, 6
+recol = 6447/6602 6443/6594 6439/6585 5656/70 5652/61 5904/53
+name = Steel c'bow (u)

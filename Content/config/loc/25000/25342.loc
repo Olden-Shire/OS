@@ -1,0 +1,7 @@
+// loc 25342
+ambient = 30
+active = 0
+hillskew = true
+nonblockrange = true
+recol = 8478/32920 8602/32916 8598/32924 8722/32920 8846/32929 9098/32924
+models_only = 12040

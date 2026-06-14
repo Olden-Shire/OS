@@ -1,0 +1,13 @@
+// obj 3758
+model = obj_fremennik_shield_3758
+xof2d = 3
+yof2d = 9
+zoom2d = 2080
+yan2d = 252
+xan2d = 432
+iop2 = Wield
+manwear = obj_fremennik_shield_3758_wear, 0
+womanwear = obj_fremennik_shield_3758_wear, 6
+members = true
+cost = 5000
+name = Fremennik shield

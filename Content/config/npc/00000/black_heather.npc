@@ -1,0 +1,10 @@
+// npc 202
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 34
+recol = 8741/12 6024/10508 10138/12 7700/1950 11200/2749
+name = Black Heather
+models = 401 456 348 353 435 490 481

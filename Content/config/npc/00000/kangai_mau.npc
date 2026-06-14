@@ -1,0 +1,9 @@
+// npc 846
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/7062 25238/926 6798/12
+name = Kangai Mau
+models = 215 246 292 173 276 179 185 254 326
+headmodels = 53

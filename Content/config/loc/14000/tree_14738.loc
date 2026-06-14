@@ -1,0 +1,6 @@
+// loc 14738
+mapscene = 6
+hillskew = true
+mapscene = 6
+models_only = 14738
+name = Tree

@@ -1,0 +1,11 @@
+// npc 4684
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+op2 = Attack
+vislevel = 111
+recol = 910/45710 912/45586 1938/45462 1814/45466 2588/41502 2469/41383
+name = Blue dragon
+models = 17407 17425 17418 17423

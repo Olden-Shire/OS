@@ -1,0 +1,9 @@
+// loc 22591
+width = 2
+length = 2
+blockwalk = true
+sharelight = true
+forcedecor = true
+active = 1
+models_only = 23269
+name = Pylon

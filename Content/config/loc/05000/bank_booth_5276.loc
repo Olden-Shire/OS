@@ -1,0 +1,6 @@
+// loc 5276
+op1 = Use
+op2 = Use-quickly
+nonblockrange = true
+models_only = 5270
+name = Bank booth

@@ -1,0 +1,7 @@
+// seq 1129
+replaceheldleft = 0
+replaceheldright = 0
+priority = 2
+preanim_move = 1
+postanim_move = 1
+frames = 20/183/215 5/186/215 5/187/215 10/188/215 15/189/215 25/190/215 20/191/215 25/192/215 20/193/215 5/184/215 4/185/215

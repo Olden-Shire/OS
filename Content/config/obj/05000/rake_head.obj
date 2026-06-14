@@ -1,0 +1,9 @@
+// obj 5348
+model = obj_rake_head
+xof2d = 3
+yof2d = 8
+zoom2d = 1520
+yan2d = 1992
+xan2d = 372
+members = true
+name = Rake head

@@ -1,0 +1,6 @@
+// loc 18684
+ambient = 20
+active = 1
+op1 = Take
+models_only = 18842
+name = Cog

@@ -1,0 +1,6 @@
+// loc 4251
+op1 = Close
+nonsolid = true
+active = 1
+models = 4338/0
+name = Door

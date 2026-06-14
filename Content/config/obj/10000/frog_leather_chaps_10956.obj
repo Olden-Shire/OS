@@ -1,0 +1,15 @@
+// obj 10956
+model = obj_frog_leather_chaps_10956
+xof2d = 3
+yof2d = -3
+zoom2d = 1568
+yan2d = 10
+xan2d = 502
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_frog_leather_chaps_10956_man, 0
+womanwear = obj_frog_leather_chaps_10956_woman, 0
+iop2 = Wear
+cost = 900
+name = Frog-leather chaps

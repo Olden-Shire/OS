@@ -1,0 +1,10 @@
+// npc 3166
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8741/7461 25238/668
+name = Mike
+models = 208 236 252 5221 162 176 5218 11192
+headmodels = 48 68 84

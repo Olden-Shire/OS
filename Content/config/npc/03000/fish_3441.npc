@@ -1,0 +1,11 @@
+// npc 3441
+walkanim = 3441
+readyanim = 3442
+ambient = 25
+vislevel = 0
+resizeh = 80
+resizev = 80
+nominimap = true
+recol = 11224/5828 11212/5819 33/5968 24/5832 8664/7630 8505/5819
+name = Fish
+models = 13802

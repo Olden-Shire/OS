@@ -1,0 +1,11 @@
+// npc 3841
+walkanim = 3984
+readyanim = 3987
+op2 = Attack
+size = 1
+resizeh = 128
+resizev = 128
+vislevel = 65
+recol = 21681/28731 21673/32819
+name = Sea troll
+models = 14912 14908 14909

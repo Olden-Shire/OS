@@ -1,0 +1,6 @@
+// loc 22389
+mirror = true
+ambient = 35
+sharelight = true
+models_only = 22803
+name = Granary roof

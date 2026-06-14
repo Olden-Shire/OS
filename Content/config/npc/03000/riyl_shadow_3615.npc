@@ -1,0 +1,9 @@
+// npc 3615
+alwaysontop = true
+op2 = Attack
+walkanim = 1281
+readyanim = 1282
+vislevel = 80
+recol = 0/906 916/960
+name = Riyl shadow
+models = 4140 14167

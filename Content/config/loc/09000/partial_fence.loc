@@ -1,0 +1,9 @@
+// loc 9026
+op1 = Repair
+op3 = Hidden
+op4 = Hidden
+active = 1
+hillskew = true
+nonblockrange = true
+models = 8886/0 8887/9
+name = Partial fence

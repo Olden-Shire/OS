@@ -1,0 +1,8 @@
+// loc 18902
+width = 2
+ambient = 15
+op2 = Search
+nonblockrange = true
+recol = 6451/6340 6443/6331 6439/6327 6563/6451
+models_only = 14827
+name = Table

@@ -1,0 +1,13 @@
+// npc 5560
+size = 1
+vislevel = 0
+walkanim = 3396
+readyanim = 3396
+op1 = Talk-to
+vislevel = 0
+turnspeed = 0
+alwaysontop = true
+recol = 4550/4647 25238/10508 6798/7700 8741/10508
+name = Osman
+models = 208 254 249 170 176 181 292 12760
+headmodels = 48 81

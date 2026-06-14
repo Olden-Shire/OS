@@ -1,0 +1,12 @@
+// npc 581
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/5652 8741/5652 6798/61 54397/4769
+name = Wayne
+models = 215 254 252 305 159 176 181 491
+headmodels = 53 84

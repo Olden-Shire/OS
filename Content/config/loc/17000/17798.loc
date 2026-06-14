@@ -1,0 +1,7 @@
+// loc 17798
+resizex = 128
+resizey = 160
+resizez = 128
+mirror = true
+ambient = 15
+models = 17795/0

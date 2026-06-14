@@ -1,0 +1,11 @@
+// npc 3344
+size = 1
+walkanim = 3328
+readyanim = 3328
+turnspeed = 0
+turnspeed = 900
+op1 = Pick
+op3 = Hidden
+vislevel = 74
+name = Fungi
+models = 12640

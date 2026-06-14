@@ -1,0 +1,15 @@
+// obj 9377
+model = obj_bronze_bolts_unf
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+stackable = true
+members = true
+count1 = 9391, 2
+count2 = 9392, 3
+count3 = 9393, 4
+count4 = 9394, 5
+recol = 17971/45 5537/41 5532/37 5656/33 5652/28
+name = Iron bolts (unf)

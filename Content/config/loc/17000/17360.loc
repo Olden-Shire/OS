@@ -1,0 +1,5 @@
+// loc 17360
+sharelight = true
+active = 0
+ambient = 10
+models = 17329/12 17334/13 17330/14 17331/15 17332/16 17333/17

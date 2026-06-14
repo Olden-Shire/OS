@@ -1,0 +1,11 @@
+// npc 909
+vislevel = 0
+walkanim = 5317
+readyanim = 5318
+resizeh = 108
+resizev = 108
+size = 3
+op2 = Attack
+recol = 33228/43076 33104/43069 33098/43053 33088/43074 34223/43053 33112/43069
+name = Kolodion
+models = 20306 20305

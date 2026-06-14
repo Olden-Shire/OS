@@ -1,0 +1,10 @@
+// npc 1344
+vislevel = 100
+size = 2
+resizeh = 82
+resizev = 82
+walkanim = 1344
+readyanim = 1344
+recol = 10291/10293 10287/10289 10283/7343 10279/7339
+name = Dagannoth
+models = 4587

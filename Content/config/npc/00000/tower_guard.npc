@@ -1,0 +1,11 @@
+// npc 877
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 28
+recol = 25238/12 8741/12
+name = Tower guard
+models = 233 246 301 151 179 254 185 517 519
+headmodels = 66

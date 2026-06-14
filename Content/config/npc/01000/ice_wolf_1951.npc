@@ -1,0 +1,9 @@
+// npc 1951
+size = 2
+ambient = 65
+readyanim = 6580
+walkanim = 6556
+op2 = Attack
+vislevel = 132
+name = Ice wolf
+models = 26266

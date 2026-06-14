@@ -1,0 +1,10 @@
+// npc 4341
+size = 1
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+turnspeed = 0
+name = Zanik
+models = 23638 23693
+headmodels = 23243 15561

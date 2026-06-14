@@ -1,0 +1,11 @@
+// npc 2827
+resizeh = 134
+resizev = 145
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/8289 7281/8289 10004/16 25238/5421 28318/11034
+name = Captain Braindeath
+models = 193 215 244 250 14187 170 179 5218
+headmodels = 53 36 82 77

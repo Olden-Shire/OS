@@ -1,0 +1,10 @@
+// obj 1
+model = obj_toolkit_1
+xof2d = -3
+yof2d = 2
+zoom2d = 1164
+yan2d = 2026
+xan2d = 477
+members = true
+iop5 = Destroy
+name = Toolkit

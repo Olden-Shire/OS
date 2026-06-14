@@ -1,0 +1,8 @@
+// npc 4326
+size = 1
+readyanim = 6040
+walkanim = 6041
+vislevel = 0
+name = Zanik
+models = 23650
+headmodels = 23242

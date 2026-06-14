@@ -1,0 +1,11 @@
+// npc 5510
+vislevel = 0
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/2454 23326/8078 8741/2590 7741/5404 43569/2721
+name = Morten Holdstrom
+models = 206 21886 162 14380 253 19945 4391 176 194
+headmodels = 46 85 37

@@ -1,0 +1,6 @@
+// loc 9474
+sharelight = true
+occlude = true
+ambient = 25
+contrast = 25
+models = 9488/0

@@ -1,0 +1,17 @@
+// interface 226
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=226
+y=124
+width=32
+height=32
+trans=0
+model=com_i12027
+activemodel=-1
+anim=3320
+zoom=180
+xan=462
+yan=0

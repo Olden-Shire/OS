@@ -1,0 +1,8 @@
+// npc 4348
+size = 2
+walkanim = 4236
+readyanim = 4231
+op2 = Attack
+vislevel = 70
+name = Jungle horror
+models = 15653 15656

@@ -1,0 +1,10 @@
+// npc 62
+size = 1
+walkanim = 5325
+readyanim = 5326
+nominimap = true
+op2 = Attack
+vislevel = 44
+recol = 33728/16945 56256/8483 22443/22823 50099/22823 960/16937
+name = Jungle spider
+models = 20315 20313

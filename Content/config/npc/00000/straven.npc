@@ -1,0 +1,11 @@
+// npc 644
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+recol = 8741/16 25238/16 48010/16
+name = Straven
+models = 25659 10039 25676 25644 25653 176 25667 19948
+headmodels = 25636

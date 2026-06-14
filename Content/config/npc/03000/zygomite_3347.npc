@@ -1,0 +1,14 @@
+// npc 3347
+size = 2
+resizeh = 220
+resizev = 220
+walkanim = 3322
+readyanim = 3324
+turnspeed = 900
+op2 = Attack
+op3 = Hidden
+ambient = 10
+contrast = 10
+vislevel = 86
+name = Zygomite
+models = 12641

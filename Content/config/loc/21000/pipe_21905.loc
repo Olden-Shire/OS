@@ -1,0 +1,5 @@
+// loc 21905
+ambient = 10
+sharelight = true
+models_only = 22661
+name = Pipe

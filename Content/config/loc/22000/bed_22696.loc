@@ -1,0 +1,9 @@
+// loc 22696
+width = 2
+length = 2
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23360 23363
+name = Bed

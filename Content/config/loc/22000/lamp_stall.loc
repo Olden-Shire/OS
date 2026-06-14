@@ -1,0 +1,9 @@
+// loc 22772
+width = 2
+length = 2
+active = 1
+ambient = 15
+blockwalk = true
+nonblockrange = true
+models_only = 23468 23470 23469
+name = Lamp stall

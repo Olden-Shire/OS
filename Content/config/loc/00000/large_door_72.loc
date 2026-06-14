@@ -1,0 +1,6 @@
+// loc 72
+op1 = Open
+op2 = Knock-at
+mirror = true
+models = 639/0
+name = Large door

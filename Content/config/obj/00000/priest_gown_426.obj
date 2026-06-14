@@ -1,0 +1,13 @@
+// obj 426
+cost = 5
+model = obj_priest_gown_426
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+iop2 = Wear
+manwear = obj_priest_gown_426_man, 0
+manwear2 = 170
+womanwear = obj_priest_gown_426_woman, 0
+womanwear2 = 348
+recol = 8741/0
+name = Priest gown

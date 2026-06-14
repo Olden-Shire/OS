@@ -1,0 +1,10 @@
+// npc 3588
+size = 2
+resizeh = 110
+resizev = 110
+walkanim = 21
+readyanim = 27
+op2 = Attack
+vislevel = 65
+name = Baby red dragon
+models = 17411 17427 17421 17424 17417

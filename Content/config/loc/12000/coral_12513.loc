@@ -1,0 +1,8 @@
+// loc 12513
+active = 1
+sharelight = true
+hillskew = true
+ambient = 30
+recol = 9521/8375 9517/8371 9515/8367 8483/7335
+models_only = 13750
+name = Coral

@@ -1,0 +1,10 @@
+// obj 10980
+model = obj_empty_light_orb
+zoom2d = 740
+yan2d = 254
+xan2d = 45
+contrast = 15
+ambient = 15
+members = true
+cost = 250
+name = Empty light orb

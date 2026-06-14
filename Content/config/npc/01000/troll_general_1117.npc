@@ -1,0 +1,11 @@
+// npc 1117
+walkanim = 1139
+readyanim = 926
+size = 2
+resizeh = 200
+resizev = 200
+op2 = Attack
+vislevel = 113
+recol = 61/6435 21570/4510 6430/5404 926/7704
+name = Troll general
+models = 3753 3759 3755 3769 3770 3760 3757 3774

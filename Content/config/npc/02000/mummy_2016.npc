@@ -1,0 +1,7 @@
+// npc 2016
+walkanim = 5553
+readyanim = 5551
+op2 = Attack
+vislevel = 84
+name = Mummy
+models = 20925 20945 20916 20921 20924 20934 20919 20937

@@ -1,0 +1,9 @@
+// npc 3456
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 16701/16945 9152/111
+name = ? ? ? ?
+models = 4015 4020 4023 4025 12771
+headmodels = 4011

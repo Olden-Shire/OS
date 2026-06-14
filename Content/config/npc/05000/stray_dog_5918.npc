@@ -1,0 +1,10 @@
+// npc 5918
+size = 1
+walkanim = 4773
+readyanim = 4777
+ambient = 20
+vislevel = 0
+op5 = Shoo-away
+recol = 33/5652 49/5413 24/6028
+name = Stray dog
+models = 18168 18170 18167

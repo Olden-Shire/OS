@@ -1,0 +1,6 @@
+// loc 5790
+mirror = true
+ambient = 20
+contrast = 30
+models_only = 5575 1452
+name = Statue

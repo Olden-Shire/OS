@@ -1,0 +1,14 @@
+// obj 857
+members = true
+cost = 800
+model = obj_shortbow_841
+xof2d = 7
+yof2d = 2
+zoom2d = 1200
+yan2d = 124
+xan2d = 508
+iop2 = Wield
+manwear = obj_shortbow_841_wear, 0
+womanwear = obj_shortbow_841_wear, 6
+recol = 6674/9135
+name = Yew shortbow

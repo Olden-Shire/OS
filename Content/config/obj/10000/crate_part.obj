@@ -1,0 +1,13 @@
+// obj 10899
+cost = 0
+stackable = true
+members = true
+count1 = 10900, 2
+count2 = 10901, 3
+count3 = 10902, 4
+count4 = 10903, 5
+model = obj_crate_part
+zoom2d = 2256
+yan2d = 1967
+xan2d = 270
+name = Crate part

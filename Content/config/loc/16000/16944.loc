@@ -1,0 +1,9 @@
+// loc 16944
+active = 0
+sharelight = true
+contrast = 20
+ambient = 20
+offsety = -200
+nonsolid = true
+length = 7
+models_only = 16561

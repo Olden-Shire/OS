@@ -1,0 +1,7 @@
+// loc 23415
+active = 0
+contrast = 20
+ambient = 20
+mirror = true
+forcedecor = true
+models_only = 24362

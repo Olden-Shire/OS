@@ -1,0 +1,10 @@
+// obj 10562
+model = obj_queen_help_book
+members = true
+iop1 = Read
+iop5 = Destroy
+yof2d = 5
+zoom2d = 1744
+yan2d = 192
+xan2d = 249
+name = Queen help book

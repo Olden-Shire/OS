@@ -1,0 +1,8 @@
+// loc 23780
+ambient = 25
+contrast = 25
+resizey = 130
+wallwidth = 32
+hillskew = true
+sharelight = true
+models = 24681/0 24682/1 24683/2 24684/9

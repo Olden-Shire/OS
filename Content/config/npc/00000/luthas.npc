@@ -1,0 +1,10 @@
+// npc 379
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/5305 6798/6028 25238/6806 4550/7070
+name = Luthas
+models = 14340 11190 292 14935 10980 179 11339 276 181 4391
+headmodels = 14337 11188 15000

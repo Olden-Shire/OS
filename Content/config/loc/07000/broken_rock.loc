@@ -1,0 +1,9 @@
+// loc 7160
+active = 1
+ambient = 15
+width = 3
+length = 2
+nonsolid = true
+forceapproach = 11
+models_only = 7440
+name = Broken rock

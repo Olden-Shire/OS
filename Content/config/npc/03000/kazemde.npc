@@ -1,0 +1,10 @@
+// npc 3039
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 9019/6724 8741/6724 49054/54309 25238/54317 4550/4653
+name = Kazemde
+models = 9016 248 9017 326 151 176 6133 181 201
+headmodels = 9013 80

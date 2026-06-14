@@ -1,0 +1,10 @@
+// npc 1241
+size = 1
+walkanim = 1281
+readyanim = 1282
+op2 = Attack
+alwaysontop = true
+vislevel = 40
+recol = 0/22410 916/22464
+name = Loar Shade
+models = 4140

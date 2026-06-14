@@ -1,0 +1,9 @@
+// obj 9695
+model = obj_earth_rune_9695
+members = true
+xof2d = 4
+yof2d = -1
+zoom2d = 900
+xan2d = 498
+iop5 = Destroy
+name = Earth rune

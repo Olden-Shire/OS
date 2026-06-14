@@ -1,0 +1,8 @@
+// loc 8243
+op1 = Harvest
+ambient = 25
+op2 = Inspect
+op4 = Guide
+recol = 21813/6565 21821/6689 15822/15810
+models_only = 7881 7766
+name = Jute

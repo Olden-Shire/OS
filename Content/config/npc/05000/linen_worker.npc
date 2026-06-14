@@ -1,0 +1,11 @@
+// npc 5290
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 4550/6558 61/9015 4626/40334 54397/6435 25238/6435 8741/9015
+name = Linen worker
+models = 201 6130 247 6134 326 151 176 4047 265 185
+headmodels = 79 6128 43 6462

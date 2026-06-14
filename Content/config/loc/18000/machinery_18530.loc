@@ -1,0 +1,8 @@
+// loc 18530
+ambient = 20
+length = 2
+active = 1
+bgsound = 3142, 3
+recol = 5429/6682 61/7566
+models_only = 3467
+name = Machinery

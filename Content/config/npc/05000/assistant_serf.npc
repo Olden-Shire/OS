@@ -1,0 +1,11 @@
+// npc 5053
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op4 = Fly
+alwaysontop = true
+recol = 24/3346 4886/2328 9096/3346 99/8369 25238/10518 6798/6558
+name = Assistant Serf
+models = 12137 246 19474 326 19465 10218 274 185
+headmodels = 14371

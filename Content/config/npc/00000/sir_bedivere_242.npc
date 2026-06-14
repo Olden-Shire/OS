@@ -1,0 +1,10 @@
+// npc 242
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 5673/10328 6798/10328
+name = Sir Bedivere
+models = 27191 27202
+headmodels = 27209 27205

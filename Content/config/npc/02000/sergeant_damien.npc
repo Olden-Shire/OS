@@ -1,0 +1,12 @@
+// npc 2790
+resizev = 160
+resizeh = 160
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8741/13867 25238/22412 4550/918 918/4005 43072/7073
+name = Sergeant Damien
+models = 229 9762 6755 167 176 9761 182 9763
+headmodels = 140

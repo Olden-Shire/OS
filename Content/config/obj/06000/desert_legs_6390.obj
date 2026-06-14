@@ -1,0 +1,11 @@
+// obj 6390
+model = obj_desert_legs_6390
+manwear = obj_desert_legs_6390_man, 0
+womanwear = obj_desert_legs_6390_woman, 0
+iop2 = Wear
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+members = true
+cost = 25
+name = Desert legs

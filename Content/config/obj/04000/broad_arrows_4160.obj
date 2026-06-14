@@ -1,0 +1,17 @@
+// obj 4160
+cost = 60
+xof2d = 6
+yof2d = 30
+zoom2d = 1330
+yan2d = 128
+xan2d = 300
+stackable = true
+members = true
+model = obj_broad_arrows_4150
+iop2 = Wield
+count1 = 4175, 2
+count2 = 4174, 3
+count3 = 4173, 4
+count4 = 4172, 5
+recol = 5012/5404
+name = Broad arrows

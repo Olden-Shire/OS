@@ -1,0 +1,7 @@
+// loc 26047
+contrast = 15
+ambient = 20
+blockwalk = true
+anim = 6892
+models_only = 27307 27312
+name = Citizen

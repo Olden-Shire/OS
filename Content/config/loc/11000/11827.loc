@@ -1,0 +1,6 @@
+// loc 11827
+ambient = 20
+contrast = 15
+wallwidth = 32
+occlude = true
+models = 11656/4

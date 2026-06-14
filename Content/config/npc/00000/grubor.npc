@@ -1,0 +1,9 @@
+// npc 789
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/7070 25238/12 6798/6049 8078/5347 43072/4550 4550/6709
+name = Grubor
+models = 215 250 299 159 329 263 185 176
+headmodels = 53 82

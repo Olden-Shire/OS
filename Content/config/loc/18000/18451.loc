@@ -1,0 +1,8 @@
+// loc 18451
+active = 0
+hillskew = true
+sharelight = true
+mirror = true
+nonsolid = true
+recol = 10266/6689 10262/6808 10258/7056 10382/6028 10378/2952 10502/900
+models_only = 18281

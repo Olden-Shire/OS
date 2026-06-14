@@ -1,0 +1,14 @@
+// npc 552
+vislevel = 0
+size = 1
+resizeh = 120
+resizev = 120
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/152 8741/16916 6798/10508 54397/4769 43072/4550 8860/18062
+name = Shop assistant
+models = 14340 246 305 25856 10980 10218 12138 181
+headmodels = 14337

@@ -1,0 +1,6 @@
+// loc 18120
+active = 1
+forceapproach = 7
+nonsolid = true
+forcedecor = true
+multiloc = 2590, 65535, 17983 17984 17985

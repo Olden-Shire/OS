@@ -1,0 +1,8 @@
+// npc 1755
+vislevel = 0
+size = 1
+readyanim = 6786
+walkanim = 6784
+nominimap = true
+name = Crow
+models = 26851

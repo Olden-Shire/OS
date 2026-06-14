@@ -1,0 +1,9 @@
+// npc 668
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/43189 8741/43189 8078/43181 24/43181 43072/4550 6798/6461
+name = Johnathon
+models = 10981 246 281 292 9607 162 176 10982 181
+headmodels = 10976

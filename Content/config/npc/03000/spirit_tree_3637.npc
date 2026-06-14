@@ -1,0 +1,11 @@
+// npc 3637
+size = 4
+readyanim = 332
+turnspeed = 0
+nominimap = true
+alwaysontop = true
+op1 = Talk-to
+vislevel = 0
+name = Spirit tree
+models = 2851
+headmodels = 148

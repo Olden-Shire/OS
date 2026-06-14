@@ -1,0 +1,12 @@
+// obj 9748
+cost = 99000
+members = true
+model = obj_attack_cape_9747
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_attack_cape_9747_man, 0
+womanwear = obj_attack_cape_9747_woman, 0
+recol = 57280/9152 54183/7104 54503/7104 960/796 22464/920 43968/908
+name = Attack cape(t)

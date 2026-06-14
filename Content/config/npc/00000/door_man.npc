@@ -1,0 +1,10 @@
+// npc 33
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8090/37807 7700/9661 6798/99 16/11208 8741/37807
+name = Door man
+models = 214 252 295 323 283 170 176 268 183
+headmodels = 52 84

@@ -1,0 +1,11 @@
+// npc 1107
+walkanim = 283
+readyanim = 286
+size = 1
+resizeh = 128
+resizev = 128
+op2 = Attack
+vislevel = 69
+recol = 61/8363 21570/7465 6430/5409
+name = Mountain troll
+models = 3753 3759 3755 3763

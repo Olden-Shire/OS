@@ -1,0 +1,11 @@
+// loc 4263
+sharelight = true
+hillskew = true
+active = 0
+resizex = 98
+resizey = 98
+resizez = 98
+noshadow = true
+nonblockrange = true
+recol = 6932/5404 6684/6697 6930/6550
+models = 993/0 995/1 996/2 998/3 999/9

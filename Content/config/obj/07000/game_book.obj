@@ -1,0 +1,11 @@
+// obj 7681
+model = obj_game_book
+members = true
+cost = 1
+xof2d = -1
+yof2d = 3
+zoom2d = 919
+yan2d = 68
+xan2d = 415
+iop1 = Read
+name = Game book

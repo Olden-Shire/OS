@@ -1,0 +1,7 @@
+// loc 18649
+ambient = 20
+active = 1
+forceapproach = 14
+op1 = Turn
+models_only = 18741
+name = Corkscrew lever

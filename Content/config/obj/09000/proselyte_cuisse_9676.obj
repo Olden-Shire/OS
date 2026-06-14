@@ -1,0 +1,12 @@
+// obj 9676
+cost = 10000
+model = obj_iron_platelegs_1067
+yof2d = -8
+zoom2d = 1740
+xan2d = 444
+iop2 = Wear
+manwear = obj_iron_platelegs_1067_man, 0
+womanwear = obj_iron_platelegs_1067_woman, 0
+members = true
+recol = 61/99 41/82 57/6067
+name = Proselyte cuisse

@@ -1,0 +1,5 @@
+// loc 3139
+active = 0
+nonsolid = true
+sharelight = true
+models_only = 3306

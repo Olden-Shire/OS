@@ -1,0 +1,5 @@
+// seq 3891
+preanim_move = 2
+postanim_move = 2
+priority = 6
+frames = 5/0/135 5/1/135 7/2/135 2/3/135 2/4/135 5/5/135 8/6/135

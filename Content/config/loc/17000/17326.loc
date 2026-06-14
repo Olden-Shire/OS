@@ -1,0 +1,7 @@
+// loc 17326
+active = 0
+ambient = 20
+sharelight = true
+hillskew = true
+recol = 7335/6443 7331/6439 7326/6563 7322/6558 7446/6682 7442/6806
+models = 4460/0 4461/1 4462/9

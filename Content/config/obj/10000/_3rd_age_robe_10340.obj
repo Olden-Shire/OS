@@ -1,0 +1,12 @@
+// obj 10340
+model = obj__3rd_age_robe_10340
+manwear = obj__3rd_age_robe_10340_man, 0
+womanwear = obj__3rd_age_robe_10340_woman, 0
+iop2 = Wear
+cost = 40000
+yof2d = -1
+zoom2d = 2083
+xan2d = 438
+contrast = 20
+members = true
+name = 3rd age robe

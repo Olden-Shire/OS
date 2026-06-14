@@ -1,0 +1,16 @@
+// obj 10034
+model = obj_chinchompa_9976
+iop2 = Wield
+iop5 = Release
+manwear = obj_chinchompa_10033_wear, 0
+womanwear = obj_chinchompa_10033_wear, 6
+xof2d = 1
+yof2d = 27
+zoom2d = 1000
+yan2d = 1800
+xan2d = 284
+members = true
+stackable = true
+cost = 160
+recol = 5169/3988 7343/3988 7335/3982 7339/3986 7343/5014 5165/3988
+name = Red chinchompa

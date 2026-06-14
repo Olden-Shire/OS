@@ -1,0 +1,7 @@
+// loc 24195
+active = 1
+anim = 4132
+offsety = -60
+bgsound = 3142, 5
+models = 24969/4
+name = Smoking vent

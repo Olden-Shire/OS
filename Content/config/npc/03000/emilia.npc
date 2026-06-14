@@ -1,0 +1,11 @@
+// npc 3549
+vislevel = 0
+resizeh = 117
+resizev = 122
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/24850 8741/21665 61/10450 4626/10450 43072/10450 4550/10450
+name = Emilia
+models = 390 472 347 353 435
+headmodels = 113 11429

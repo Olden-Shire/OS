@@ -1,0 +1,9 @@
+// npc 3509
+vislevel = 0
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 127/528 43072/4323 25238/10388 8741/7834 4550/5334 933/43026
+name = Sorin
+models = 9452 246 310 326 163 176 274 185
+headmodels = 9448

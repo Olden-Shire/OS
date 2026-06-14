@@ -1,0 +1,14 @@
+// obj 5284
+model = obj_banana_tree_seed
+yof2d = -3
+zoom2d = 650
+yan2d = 2008
+xan2d = 272
+members = true
+stackable = true
+count1 = 5232, 2
+count2 = 5233, 3
+count3 = 5234, 4
+count4 = 5235, 5
+cost = 20
+name = Banana tree seed

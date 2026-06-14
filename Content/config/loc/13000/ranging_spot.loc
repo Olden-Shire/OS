@@ -1,0 +1,5 @@
+// loc 13147
+op5 = Remove
+nonsolid = true
+models = 13127/22
+name = Ranging spot

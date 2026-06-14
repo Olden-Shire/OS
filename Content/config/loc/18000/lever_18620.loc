@@ -1,0 +1,7 @@
+// loc 18620
+forceapproach = 14
+ambient = 20
+active = 1
+op1 = Pull
+models_only = 18783
+name = Lever

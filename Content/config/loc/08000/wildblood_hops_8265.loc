@@ -1,0 +1,8 @@
+// loc 8265
+ambient = 25
+op1 = Harvest
+op2 = Inspect
+op4 = Guide
+recol = 13210/2716 13214/2597 13095/2477
+models_only = 8205 7766
+name = Wildblood Hops

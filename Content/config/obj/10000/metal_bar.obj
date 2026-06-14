@@ -1,0 +1,9 @@
+// obj 10876
+model = obj_metal_bar
+members = true
+xof2d = 1
+yof2d = 3
+zoom2d = 1762
+yan2d = 332
+xan2d = 166
+name = Metal bar

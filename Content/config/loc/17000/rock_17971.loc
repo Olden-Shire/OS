@@ -1,0 +1,9 @@
+// loc 17971
+sharelight = true
+hillskew = true
+resizex = 128
+resizey = 160
+resizez = 128
+op1 = Climb-down
+models_only = 17338
+name = Rock

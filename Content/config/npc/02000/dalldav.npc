@@ -1,0 +1,13 @@
+// npc 2356
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 127
+resizev = 120
+op1 = Talk-to
+op3 = Trade
+recol = 8792/7634 7595/13867 8741/13867
+name = Dalldav
+models = 4021 6977 6975 8267
+headmodels = 4012

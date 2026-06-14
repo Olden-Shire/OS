@@ -1,0 +1,15 @@
+// obj 6529
+members = true
+model = obj_tokkul
+xof2d = -3
+yof2d = 7
+zoom2d = 740
+yan2d = 180
+xan2d = 192
+stackable = true
+count1 = 6530, 2
+count2 = 6531, 3
+count3 = 6532, 4
+count4 = 6533, 5
+count5 = 6534, 25
+name = Tokkul

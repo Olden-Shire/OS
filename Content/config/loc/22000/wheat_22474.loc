@@ -1,0 +1,10 @@
+// loc 22474
+resizex = 120
+resizey = 140
+resizez = 120
+contrast = 100
+ambient = 10
+op2 = Pick
+nonsolid = true
+models_only = 22799
+name = Wheat

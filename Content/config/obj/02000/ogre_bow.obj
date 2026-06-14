@@ -1,0 +1,12 @@
+// obj 2883
+cost = 500
+members = true
+model = obj_ogre_bow
+zoom2d = 2060
+yan2d = 544
+xan2d = 280
+manwear = obj_ogre_bow_wear, 0
+womanwear = obj_ogre_bow_wear, 6
+iop2 = Wield
+iop3 = Check kills
+name = Ogre bow

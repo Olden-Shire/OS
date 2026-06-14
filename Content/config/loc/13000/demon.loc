@@ -1,0 +1,10 @@
+// loc 13378
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+resizex = 65
+resizey = 65
+resizez = 65
+models_only = 17373 17372
+name = Demon

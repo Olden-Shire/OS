@@ -1,0 +1,10 @@
+// npc 4826
+op1 = Talk-to
+op2 = Attack
+readyanim = 4689
+walkanim = 4683
+size = 3
+vislevel = 110
+name = Vyrewatch
+models = 17956 17959 17950
+headmodels = 18057

@@ -1,0 +1,9 @@
+// loc 20036
+active = 1
+anim = 5350
+blockwalk = true
+bgsound = 3131, 3
+nonblockrange = true
+recol = 22336/127
+models_only = 20340 20339
+name = Pillar

@@ -1,0 +1,11 @@
+// obj 717
+members = true
+model = obj_scrawled_note
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+zoom2d = 940
+yan2d = 112
+xan2d = 248
+iop1 = Read
+recol = 0/926 898/926 898/8530 898/8530 904/8530 5351/8530
+name = Scrawled note

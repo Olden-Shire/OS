@@ -1,0 +1,8 @@
+// npc 1600
+size = 2
+walkanim = 225
+readyanim = 226
+op2 = Attack
+vislevel = 23
+name = Cave crawler
+models = 5066 5067 5069

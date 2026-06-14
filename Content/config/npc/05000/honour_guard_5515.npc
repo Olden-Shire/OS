@@ -1,0 +1,10 @@
+// npc 5515
+size = 1
+vislevel = 115
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 7952/13072 7741/3226
+name = Honour guard
+models = 4220 252 21883 317 156 179 4236 19335 21878 19945 4219
+headmodels = 4210 84

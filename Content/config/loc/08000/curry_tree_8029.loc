@@ -1,0 +1,8 @@
+// loc 8029
+op1 = Pick-leaf
+ambient = 25
+op2 = Inspect
+op4 = Guide
+recol = 10023/7975
+models_only = 7972 7767 7969
+name = Curry tree

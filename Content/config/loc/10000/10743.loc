@@ -1,0 +1,10 @@
+// loc 10743
+active = 0
+sharelight = true
+hillskew = true
+contrast = 30
+ambient = 30
+resizex = 128
+resizey = 192
+resizez = 128
+models = 10650/0

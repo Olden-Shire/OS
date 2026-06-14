@@ -1,0 +1,9 @@
+// npc 6029
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Joseph
+models = 26123 26133 26117 26128 26119
+headmodels = 26270

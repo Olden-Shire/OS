@@ -110,6 +110,10 @@ pub struct ScriptState {
     /// Pending map-object search results (Engine-TS `locIterator`) as
     /// `(x, z, level, id, shape, angle)`: LOC_FINDALLZONE fills, LOC_FINDNEXT pops.
     pub loc_iterator: Vec<(i32, i32, i32, i32, i32, i32)>,
+
+    /// Pending player-search results (Engine-TS `playerIterator`): HUNTALL fills
+    /// it (nearest last, so HUNTNEXT pops nearest first).
+    pub player_iterator: Vec<usize>,
 }
 
 impl ScriptState {
@@ -152,6 +156,7 @@ impl ScriptState {
             npc_iterator: Vec::new(),
             obj_iterator: Vec::new(),
             loc_iterator: Vec::new(),
+            player_iterator: Vec::new(),
         }
     }
 

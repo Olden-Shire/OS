@@ -1,0 +1,10 @@
+// obj 4950
+members = true
+cost = 47000
+manwear = obj_karils_leatherskirt_4738_man, 0
+womanwear = obj_karils_leatherskirt_4738_woman, 0
+zoom2d = 1120
+xan2d = 512
+model = obj_karils_skirt_0_4950
+recol = 10413/10438 14490/10388 10520/10512 10644/10508 10768/10760 10892/11140
+name = Karils skirt 0

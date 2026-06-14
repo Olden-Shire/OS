@@ -1,0 +1,12 @@
+// obj 7445
+cost = 14400
+iop2 = Wield
+manwear = obj_rolling_pin_7445_wear, 0
+womanwear = obj_rolling_pin_7445_wear, 6
+model = obj_rolling_pin_7445
+yof2d = -11
+zoom2d = 976
+yan2d = 183
+xan2d = 222
+members = true
+name = Rolling pin

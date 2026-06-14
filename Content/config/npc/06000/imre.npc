@@ -1,0 +1,9 @@
+// npc 6027
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Imre
+models = 26121 26131 26115 26126 26119
+headmodels = 26268

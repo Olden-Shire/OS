@@ -1,0 +1,6 @@
+// loc 15376
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 12704
+name = Small plant 2

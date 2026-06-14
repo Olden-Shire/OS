@@ -1,0 +1,9 @@
+// npc 3095
+size = 1
+walkanim = 3023
+readyanim = 3023
+nominimap = true
+vislevel = 0
+recol = 51864/6550 154/920
+name = Flying Book
+models = 10625

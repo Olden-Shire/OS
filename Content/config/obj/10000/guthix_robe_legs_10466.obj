@@ -1,0 +1,12 @@
+// obj 10466
+model = obj_saradomin_robe_leg_10464
+yof2d = -5
+zoom2d = 1957
+xan2d = 444
+iop2 = Wear
+manwear = obj_saradomin_robe_leg_10464_man, 0
+womanwear = obj_saradomin_robe_leg_10464_woman, 0
+members = true
+cost = 7000
+recol = 916/22420 908/22412 307/21811
+name = Guthix robe legs

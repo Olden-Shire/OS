@@ -1,0 +1,11 @@
+// npc 3327
+vislevel = 0
+size = 1
+readyanim = 3282
+turnspeed = 0
+ambient = 10
+contrast = 5
+recol = 8741/5297 25238/13592
+name = Jeremy Clerksin
+models = 6848 252 292 326 12136 274 181 12144
+headmodels = 5787 84

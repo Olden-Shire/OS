@@ -1,0 +1,6 @@
+// loc 13359
+active = 1
+op5 = Remove
+nonsolid = true
+models = 12718/22
+name = Marble trap

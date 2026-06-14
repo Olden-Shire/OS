@@ -1,0 +1,9 @@
+// npc 1044
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 22
+recol = 25238/805 8741/805 6798/127
+name = Monk of Zamorak
+models = 230 246 292 170 176 256

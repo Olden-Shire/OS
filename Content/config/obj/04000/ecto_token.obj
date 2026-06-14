@@ -1,0 +1,11 @@
+// obj 4278
+model = obj_ecto_token
+xof2d = 1
+zoom2d = 970
+yan2d = 88
+xan2d = 496
+count1 = 4279, 2
+count2 = 4281, 3
+stackable = true
+members = true
+name = Ecto-token

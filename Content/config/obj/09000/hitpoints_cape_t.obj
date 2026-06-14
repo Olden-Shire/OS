@@ -1,0 +1,12 @@
+// obj 9769
+cost = 99000
+members = true
+model = obj_hitpoints_cape_9768
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_hitpoints_cape_9768_man, 0
+womanwear = obj_hitpoints_cape_9768_woman, 0
+recol = 57280/941 54183/792 54503/792 960/8305 22464/8297 43968/8289
+name = Hitpoints cape(t)

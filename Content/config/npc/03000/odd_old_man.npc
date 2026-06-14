@@ -1,0 +1,11 @@
+// npc 3670
+walkanim = 1739
+readyanim = 1740
+size = 2
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 6798/94 6443/7331
+name = Odd Old Man
+models = 6848 11752 14321 4985 168 176 14320 7121
+headmodels = 13704 5787

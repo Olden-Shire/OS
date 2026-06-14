@@ -1,0 +1,8 @@
+// loc 15562
+blockwalk = true
+active = 1
+ambient = 25
+contrast = 25
+recol = 912/0 1814/12 1938/8
+models_only = 17480
+name = Dragon's head

@@ -1,0 +1,11 @@
+// loc 5309
+active = 0
+width = 2
+length = 2
+hillskew = true
+resizex = 256
+resizey = 256
+resizez = 256
+nonblockrange = true
+recol = 5276/13592 10396/13596 5281/13601 7335/13477
+models_only = 3722

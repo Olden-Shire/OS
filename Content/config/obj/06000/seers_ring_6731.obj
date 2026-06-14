@@ -1,0 +1,11 @@
+// obj 6731
+cost = 10000
+model = obj_seers_ring_6731
+iop2 = Wear
+members = true
+xof2d = 3
+yof2d = -13
+zoom2d = 620
+yan2d = 1940
+xan2d = 340
+name = Seers ring

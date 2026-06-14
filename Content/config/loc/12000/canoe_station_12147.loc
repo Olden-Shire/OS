@@ -1,0 +1,7 @@
+// loc 12147
+length = 2
+width = 5
+op1 = Float Log
+op3 = hidden
+models_only = 12001 12010
+name = Canoe Station

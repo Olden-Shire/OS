@@ -1,0 +1,10 @@
+// obj 7414
+model = obj_paddle_7414
+yof2d = 4
+zoom2d = 1616
+yan2d = 243
+xan2d = 438
+womanwear = obj_paddle_7414_wear, 6
+manwear = obj_paddle_7414_wear, 0
+iop2 = Wield
+name = Paddle

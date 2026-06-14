@@ -1,0 +1,6 @@
+// obj 8986
+model = obj_bailing_bucket_583
+manwear = obj_bucket_8986_wear, 0
+womanwear = obj_bucket_8986_wear, 0
+members = true
+name = Bucket

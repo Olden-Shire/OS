@@ -1,0 +1,7 @@
+// loc 9786
+blockwalk = true
+active = 1
+op1 = Pass
+raiseobject = 0
+noshadow = true
+multiloc = 1156, 65535, 65535 9774

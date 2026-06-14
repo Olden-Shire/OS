@@ -1,0 +1,9 @@
+// obj 3646
+model = obj_sliding_piece_3646
+xof2d = -1
+yof2d = 1
+zoom2d = 2180
+xan2d = 520
+iop5 = Move
+members = true
+name = Sliding piece

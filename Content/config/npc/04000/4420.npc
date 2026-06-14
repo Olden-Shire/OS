@@ -1,0 +1,9 @@
+// npc 4420
+size = 1
+readyanim = 663
+walkanim = 663
+nominimap = true
+inactive = true
+vislevel = 0
+recol = 960/119 6080/123 7104/115
+models = 3087

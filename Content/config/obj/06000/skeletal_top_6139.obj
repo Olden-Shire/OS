@@ -1,0 +1,10 @@
+// obj 6139
+cost = 45000
+model = obj_skeletal_top_6139
+iop2 = Wear
+manwear = obj_skeletal_top_6139_man, 0
+womanwear = obj_skeletal_top_6139_woman, 0
+members = true
+zoom2d = 1190
+xan2d = 544
+name = Skeletal top

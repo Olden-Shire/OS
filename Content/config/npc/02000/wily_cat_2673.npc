@@ -1,0 +1,16 @@
+// npc 2673
+vislevel = 0
+size = 1
+readyanim = 317
+walkanim = 314
+op1 = Pick-up
+op2 = hidden
+op3 = Talk-to
+op4 = Interact-with
+nominimap = true
+resizeh = 70
+resizev = 70
+recol = 61/43175 16/10304
+name = Wily cat
+models = 9428 9426
+headmodels = 9424

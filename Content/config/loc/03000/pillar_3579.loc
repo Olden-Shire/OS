@@ -1,0 +1,8 @@
+// loc 3579
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+recol = 6573/6449
+models_only = 3634
+name = Pillar

@@ -1,0 +1,9 @@
+// npc 1225
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 25
+recol = 61/64272 41/906 25238/908 8741/908 4550/5353 7236/5353
+name = Vampire
+models = 4089 306 174 176 265 546

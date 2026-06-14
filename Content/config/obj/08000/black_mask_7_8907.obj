@@ -1,0 +1,15 @@
+// obj 8907
+model = obj_black_mask_10_8901
+xof2d = -1
+yof2d = 3
+zoom2d = 854
+yan2d = 1892
+xan2d = 387
+members = true
+manwear = obj_black_mask_10_8901_man, 0
+womanwear = obj_black_mask_10_8901_woman, 0
+manhead = 15921
+womanhead = 15924
+cost = 3000
+iop2 = Wear
+name = Black mask (7)

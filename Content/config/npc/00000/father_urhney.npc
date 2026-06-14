@@ -1,0 +1,11 @@
+// npc 458
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/10508 8741/10508 22430/43309 280/16 6798/5330 8084/4550
+name = Father Urhney
+models = 9452 11190 292 4391 170 10218 10000 181
+headmodels = 9448 11188

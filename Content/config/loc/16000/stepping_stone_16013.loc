@@ -1,0 +1,7 @@
+// loc 16013
+active = 1
+blockwalk = true
+nonblockrange = true
+recol = 8856/41 8980/37 9104/33
+models = 13604/22
+name = Stepping stone

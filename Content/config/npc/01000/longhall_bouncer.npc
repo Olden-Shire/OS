@@ -1,0 +1,10 @@
+// npc 1278
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 8741/6554 25238/7566 8078/7609 6798/5815
+name = Longhall Bouncer
+models = 4220 252 291 162 179 4226 4218 550 4222 317 4219
+headmodels = 4210 84 4212

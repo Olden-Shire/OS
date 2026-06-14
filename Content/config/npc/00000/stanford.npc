@@ -1,0 +1,11 @@
+// npc 811
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 10128/8 43072/8 4626/8 25238/8 4550/7068
+name = Stanford
+models = 203 251 315 173 179 271 185 496 283
+headmodels = 45 83

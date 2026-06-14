@@ -1,0 +1,12 @@
+// obj 1540
+model = obj_anti_dragon_shield_1540
+cost = 20
+xof2d = 3
+yof2d = 37
+zoom2d = 1670
+yan2d = 64
+xan2d = 336
+iop2 = Wear
+manwear = obj_anti_dragon_shield_1540_wear, 0
+womanwear = obj_anti_dragon_shield_1540_wear, 6
+name = Anti-dragon shield

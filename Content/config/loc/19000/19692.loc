@@ -1,0 +1,10 @@
+// loc 19692
+sharelight = true
+hillskew = true
+resizez = 128
+resizex = 128
+resizey = 64
+ambient = 30
+contrast = 30
+recol = 6689/43131
+models = 16332/0 16333/1 16334/9

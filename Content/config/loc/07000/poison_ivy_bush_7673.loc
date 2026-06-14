@@ -1,0 +1,10 @@
+// loc 7673
+ambient = 25
+op1 = Pick-from
+op2 = Inspect
+op4 = Guide
+width = 2
+length = 2
+recol = 14872/21033 8722/21272 6364/6618
+models_only = 7826 7767 7814
+name = Poison Ivy bush

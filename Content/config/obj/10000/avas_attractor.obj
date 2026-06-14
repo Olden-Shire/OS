@@ -1,0 +1,15 @@
+// obj 10498
+model = obj_avas_attractor
+members = true
+cost = 769
+iop2 = Wear
+manwear = obj_avas_attractor_man, 0
+womanwear = obj_avas_attractor_woman, 0
+xof2d = -4
+yof2d = -1
+zoom2d = 976
+yan2d = 1120
+zan2d = 1923
+xan2d = 567
+iop5 = Destroy
+name = Ava's attractor

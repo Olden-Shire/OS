@@ -1,0 +1,8 @@
+// loc 21333
+ambient = 20
+contrast = 20
+active = 0
+hillskew = true
+sharelight = true
+forcedecor = true
+models = 22094/10 22095/22

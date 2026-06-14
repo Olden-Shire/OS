@@ -1,0 +1,10 @@
+// npc 2994
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8604/6327 61/6319 8485/17050
+name = Fior
+models = 2971 7072 7061 2979 2992 7046 2985
+headmodels = 1 6997

@@ -1,0 +1,13 @@
+// obj 68
+cost = 400
+members = true
+model = obj_shortbow_u_50
+xof2d = 7
+yof2d = 2
+zoom2d = 1200
+yan2d = 124
+xan2d = 508
+manwear = obj_shortbow_u_50_wear, 0
+womanwear = obj_shortbow_u_50_wear, 6
+recol = 6674/9135
+name = Yew shortbow (u)

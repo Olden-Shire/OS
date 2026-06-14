@@ -1,0 +1,17 @@
+// obj 6112
+model = obj_hammerstone_seed
+xof2d = 1
+yof2d = -31
+zoom2d = 1150
+yan2d = 8
+xan2d = 220
+members = true
+stackable = true
+count1 = 6114, 2
+count2 = 6115, 3
+count3 = 6116, 4
+count4 = 6117, 5
+cost = 2
+iop5 = Destroy
+recol = 12587/49205
+name = Kelda seed

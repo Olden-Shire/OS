@@ -1,0 +1,5 @@
+// loc 1397
+mapscene = 4
+nonblockrange = true
+models_only = 1604
+name = Cactus

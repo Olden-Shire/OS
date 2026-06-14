@@ -1,0 +1,7 @@
+// npc 4971
+readyanim = 5029
+walkanim = 5030
+op2 = Attack
+vislevel = 75
+name = Baby Roc
+models = 19139 19138

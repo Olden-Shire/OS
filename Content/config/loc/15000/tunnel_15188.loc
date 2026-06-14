@@ -1,0 +1,7 @@
+// loc 15188
+sharelight = true
+resizey = 64
+op1 = Enter
+recol = 7335/10398 7326/10394 7446/10518 7566/10514 8070/10638 0/10762
+models_only = 15060
+name = Tunnel

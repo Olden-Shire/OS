@@ -1,0 +1,10 @@
+// npc 18
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+op2 = Attack
+vislevel = 9
+recol = 25238/10508 8741/55194 4550/4657 6798/10508 43072/4657
+name = Al-Kharid warrior
+models = 215 490 251 292 151 176 254 181 541 191

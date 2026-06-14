@@ -1,0 +1,15 @@
+// obj 7319
+model = obj_red_boater_7319
+iop2 = Wear
+manwear = obj_red_boater_7319_man, 0
+womanwear = obj_red_boater_7319_woman, 0
+manhead = 11402
+womanhead = 11406
+yof2d = -11
+zoom2d = 724
+yan2d = 1784
+zan2d = 1978
+xan2d = 166
+members = true
+cost = 225
+name = Red boater

@@ -1,0 +1,10 @@
+// npc 3669
+size = 2
+resizev = 80
+resizeh = 80
+walkanim = 3825
+readyanim = 3822
+op2 = Attack
+vislevel = 71
+name = Hopeless beast
+models = 14283

@@ -1,0 +1,5 @@
+// loc 9563
+op1 = Open
+nonblockrange = true
+models = 9480/0
+name = Cell door

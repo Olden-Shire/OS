@@ -1,0 +1,11 @@
+// npc 2300
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Travel
+vislevel = 0
+alwaysontop = true
+recol = 39463/5916 8741/6470 25238/7390 7281/7390 4550/4544
+name = Rug Station Attendant
+models = 7743 230 247 280 5221 170 176 265 4955
+headmodels = 7741 63 79

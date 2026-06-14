@@ -1,0 +1,9 @@
+// loc 14073
+active = 1
+ambient = 20
+hillskew = true
+op1 = Use
+blockwalk = true
+recol = 24524/9891 24388/10010 37817/1331 38835/1323 957/6057 941/6053
+models = 11940/10 16232/22
+name = Fairy ring

@@ -1,0 +1,11 @@
+// obj 10991
+model = obj_lever_10991
+xof2d = -14
+yof2d = 30
+zoom2d = 1616
+yan2d = 2027
+xan2d = 468
+members = true
+cost = 0
+iop5 = Destroy
+name = Lever

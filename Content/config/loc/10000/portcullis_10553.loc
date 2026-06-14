@@ -1,0 +1,9 @@
+// loc 10553
+op1 = Open
+blockwalk = true
+forcedecor = true
+active = 1
+op1 = Open
+recol = 59/6344 47/6340
+models = 10259/0
+name = Portcullis

@@ -1,0 +1,12 @@
+// npc 4653
+readyanim = 808
+walkanims = 819, 820, 821, 822
+vislevel = 0
+op1 = Talk-To
+op3 = Trade
+op4 = Charter
+alwaysontop = true
+recol = 8741/42529 49420/42529 25238/42529 7446/42529
+name = Trader Crewmember
+models = 10038 17352 7611 151 177 267 181 248
+headmodels = 15970 10027

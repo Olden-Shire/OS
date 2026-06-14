@@ -1,0 +1,11 @@
+// npc 1894
+size = 1
+op1 = Talk-to
+op3 = Pickpocket
+op4 = Lure
+op5 = Knock-Out
+vislevel = 3
+recol = 8741/10351 25238/10351 4550/5555
+name = Villager
+models = 215 188 246 292 173 254 181 176
+headmodels = 30 53

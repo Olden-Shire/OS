@@ -1,0 +1,11 @@
+// obj 10976
+model = obj_long_bone
+xof2d = -4
+yof2d = 12
+zoom2d = 2128
+yan2d = 291
+xan2d = 540
+members = true
+cost = 5
+iop1 = Bury
+name = Long bone

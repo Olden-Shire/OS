@@ -1,0 +1,7 @@
+// loc 17872
+sharelight = true
+hillskew = true
+active = 0
+ambient = 10
+recol = 6689/21530
+models_only = 787

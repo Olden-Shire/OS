@@ -1,0 +1,12 @@
+[clientscript,script_120]()()
+def_int $int0;
+
+$int0 = ~script_121(calc(%varbit3756 - 1));
+if ($int0 ! -1) {
+    if (calc(clientclock() % 20) > 9) {
+        if_sethide(1, $int0);
+    } else {
+        if_sethide(0, $int0);
+    }
+}
+return;

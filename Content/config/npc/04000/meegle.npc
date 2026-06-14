@@ -1,0 +1,10 @@
+// npc 4597
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/679 22422/687 22040/80 5202/906 17170/906
+name = Meegle
+models = 17018 14824 14825 17032
+headmodels = 16977

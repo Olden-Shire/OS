@@ -1,0 +1,11 @@
+// obj 1419
+model = obj_scythe_1419
+xof2d = 1
+yof2d = 17
+zoom2d = 1930
+yan2d = 20
+xan2d = 336
+iop2 = Wield
+manwear = obj_scythe_1419_wear, 0
+womanwear = obj_scythe_1419_wear, 0
+name = Scythe

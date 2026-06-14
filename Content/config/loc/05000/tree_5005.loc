@@ -1,0 +1,7 @@
+// loc 5005
+forcedecor = true
+sharelight = true
+op1 = Climb up
+op2 = Climb down
+models_only = 4971
+name = Tree

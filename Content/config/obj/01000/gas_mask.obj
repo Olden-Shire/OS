@@ -1,0 +1,15 @@
+// obj 1506
+members = true
+cost = 2
+model = obj_gas_mask
+xof2d = -9
+yof2d = -7
+zoom2d = 720
+yan2d = 1676
+xan2d = 208
+iop2 = Wear
+manwear = obj_gas_mask_man, 0
+womanwear = obj_gas_mask_woman, 0
+manhead = 51
+womanhead = 112
+name = Gas mask

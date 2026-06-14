@@ -1,0 +1,9 @@
+// npc 5262
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 4550/6558 8741/6558 9763/7595 6439/7485 6798/3974 5002/3974
+name = Stone mason
+models = 14174 217 10561 299 11763 14587 10218 11112 181
+headmodels = 14173 55 10560

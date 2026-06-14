@@ -1,0 +1,10 @@
+// npc 1248
+size = 1
+walkanim = 1281
+readyanim = 1282
+op2 = Attack
+alwaysontop = true
+vislevel = 100
+recol = 0/43914 916/43968
+name = Asyn Shade
+models = 4140

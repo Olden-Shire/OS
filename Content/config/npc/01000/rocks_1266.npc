@@ -1,0 +1,8 @@
+// npc 1266
+vislevel = 0
+size = 1
+walkanim = 1311
+readyanim = 1315
+nominimap = true
+name = Rocks
+models = 4399 4400

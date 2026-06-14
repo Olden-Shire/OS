@@ -1,0 +1,6 @@
+// loc 11677
+anim = 3230
+ambient = 20
+bgsound = 3121, 10
+models_only = 11700
+name = Treadmill

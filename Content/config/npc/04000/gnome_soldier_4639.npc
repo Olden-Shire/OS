@@ -1,0 +1,8 @@
+// npc 4639
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 22426/21793 22422/21784 6798/1556 4550/5452
+name = Gnome soldier
+models = 2890 14805 2917
+headmodels = 21

@@ -1,0 +1,14 @@
+// obj 6889
+model = obj_mages_book_6889
+manwear = obj_mages_book_6889_man, 0
+womanwear = obj_mages_book_6889_woman, 0
+xof2d = 2
+yof2d = 10
+zoom2d = 950
+yan2d = 1948
+xan2d = 260
+ambient = 15
+iop2 = Wield
+members = true
+cost = 500
+name = Mage's book

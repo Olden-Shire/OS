@@ -1,0 +1,11 @@
+// obj 11010
+model = obj_suroks_letter
+zoom2d = 848
+yan2d = 1799
+xan2d = 387
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Surok's letter

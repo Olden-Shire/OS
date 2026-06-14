@@ -1,0 +1,10 @@
+// npc 2122
+resizeh = 134
+resizev = 134
+walkanim = 2156
+readyanim = 2157
+vislevel = 0
+recol = 61/6812 22/7060 910/10396
+name = Trader
+models = 7033 7060 7038 7045 7068
+headmodels = 6992

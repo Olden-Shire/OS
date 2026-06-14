@@ -1,0 +1,9 @@
+// loc 7159
+ambient = 15
+width = 3
+length = 2
+active = 1
+blockwalk = true
+forceapproach = 11
+models_only = 7439
+name = Rock

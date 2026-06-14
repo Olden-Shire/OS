@@ -1,0 +1,18 @@
+// obj 9238
+stackable = true
+members = true
+model = obj_opal_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+count1 = 9250, 2
+count2 = 9251, 3
+count3 = 9252, 4
+count4 = 9253, 5
+members = true
+cost = 15
+recol = 10465/39023 5537/57 5532/53 5656/49 5652/45
+name = Pearl bolts (e)

@@ -1,0 +1,10 @@
+// obj 9720
+model = obj_crane_claw
+xof2d = 4
+yof2d = 23
+zoom2d = 1114
+yan2d = 1438
+xan2d = 290
+members = true
+recol = 7062/50087
+name = Crane claw

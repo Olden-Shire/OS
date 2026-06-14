@@ -1,0 +1,5 @@
+// loc 10866
+sharelight = true
+forcedecor = true
+nonsolid = true
+models = 10778/22

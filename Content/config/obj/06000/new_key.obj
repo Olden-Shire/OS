@@ -1,0 +1,11 @@
+// obj 6104
+model = obj_shiny_key
+cost = 1
+members = true
+xof2d = -3
+yof2d = 9
+zoom2d = 840
+yan2d = 32
+xan2d = 344
+iop5 = Drop
+name = New key

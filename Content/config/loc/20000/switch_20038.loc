@@ -1,0 +1,7 @@
+// loc 20038
+active = 1
+blockwalk = true
+forceapproach = 14
+nonblockrange = true
+models_only = 20334
+name = Switch

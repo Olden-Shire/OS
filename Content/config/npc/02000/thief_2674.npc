@@ -1,0 +1,9 @@
+// npc 2674
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 16
+recol = 25238/3486 8741/8728
+name = Thief
+models = 215 228 246 292 326 170 179 254 185 317
+headmodels = 53 76

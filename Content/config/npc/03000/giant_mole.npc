@@ -1,0 +1,11 @@
+// npc 3340
+size = 3
+readyanim = 3309
+walkanim = 3313
+op2 = Attack
+resizeh = 118
+resizev = 118
+alwaysontop = true
+vislevel = 230
+name = Giant Mole
+models = 12076 12075 12074 12077

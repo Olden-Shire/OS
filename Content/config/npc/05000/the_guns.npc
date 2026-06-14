@@ -1,0 +1,16 @@
+// npc 5592
+resizeh = 129
+resizev = 129
+walkanims = 819, 820, 821, 822
+readyanim = 5818
+ambient = 25
+contrast = 25
+vislevel = 0
+op1 = Talk-to
+op3 = Pickpocket
+turnspeed = 0
+alwaysontop = true
+recol = 25238/7331 8741/4550
+name = 'The Guns'
+models = 230 22599 11190 315 19329 19332 271 19947 22607
+headmodels = 63 22592 11188

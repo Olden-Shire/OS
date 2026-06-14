@@ -1,0 +1,14 @@
+// obj 2651
+cost = 180
+members = true
+model = obj_pirates_hat_2651
+xof2d = -3
+zoom2d = 600
+yan2d = 1836
+xan2d = 136
+iop2 = Wear
+manwear = obj_pirates_hat_2651_man, 0
+womanwear = obj_pirates_hat_2651_woman, 0
+manhead = 31
+womanhead = 89
+name = Pirate's hat

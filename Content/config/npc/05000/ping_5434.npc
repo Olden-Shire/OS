@@ -1,0 +1,10 @@
+// npc 5434
+readyanim = 5668
+resizeh = 75
+resizev = 75
+size = 1
+vislevel = 0
+alwaysontop = true
+name = Ping
+models = 21547 21549
+headmodels = 21525

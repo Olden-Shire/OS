@@ -1,0 +1,8 @@
+// loc 4325
+wallwidth = 32
+sharelight = true
+hillskew = true
+active = 0
+nonblockrange = true
+retex = 47/46
+models = 1003/0 1004/1 1005/2 1006/3 1007/9

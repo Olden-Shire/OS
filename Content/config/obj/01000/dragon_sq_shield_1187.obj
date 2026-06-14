@@ -1,0 +1,13 @@
+// obj 1187
+cost = 500000
+members = true
+model = obj_dragon_sq_shield_1187
+xof2d = 1
+yof2d = 10
+zoom2d = 1730
+yan2d = 120
+xan2d = 352
+iop2 = Wield
+manwear = obj_dragon_sq_shield_1187_wear, 0
+womanwear = obj_dragon_sq_shield_1187_wear, 6
+name = Dragon sq shield

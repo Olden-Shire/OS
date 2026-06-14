@@ -1,0 +1,13 @@
+// obj 7637
+cost = 1
+model = obj_silvthrill_rod_7637
+zoom2d = 1838
+yan2d = 88
+zan2d = 300
+xan2d = 480
+members = true
+iop1 = Look-at
+manwear = obj_silvthrill_rod_7637_wear, 0
+womanwear = obj_silvthrill_rod_7637_wear, 0
+recol = 37970/39987 37958/37925 37949/32798
+name = Silvthrill rod

@@ -1,0 +1,9 @@
+// npc 2732
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/5532 8741/37159 54397/4769 43072/4550 6798/7479 9096/5532
+name = Master Crafter
+models = 235 253 305 163 176 274 181
+headmodels = 67 85

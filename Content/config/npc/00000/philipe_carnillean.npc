@@ -1,0 +1,10 @@
+// npc 888
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanim = 189
+readyanim = 195
+recol = 22424/947 6038/43955 54397/11200 6550/6057 11162/43955 6798/6057
+name = Philipe Carnillean
+models = 2894 2909 2918
+headmodels = 53

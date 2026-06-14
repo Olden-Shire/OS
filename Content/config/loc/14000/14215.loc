@@ -1,0 +1,10 @@
+// loc 14215
+active = 0
+hillskew = true
+sharelight = true
+mapscene = 22
+mirror = true
+ambient = 5
+noshadow = true
+nonblockrange = true
+models = 14464/3

@@ -1,0 +1,7 @@
+// loc 23918
+active = 1
+op1 = Close
+nonblockrange = true
+recol = 6439/5665 6430/5665 6554/5665
+models = 7371/0
+name = Gate

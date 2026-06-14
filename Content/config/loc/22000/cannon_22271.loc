@@ -1,0 +1,9 @@
+// loc 22271
+active = 1
+hillskew = true
+contrast = 20
+ambient = 20
+blockwalk = true
+length = 2
+models_only = 22913
+name = Cannon

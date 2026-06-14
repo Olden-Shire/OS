@@ -1,0 +1,14 @@
+// obj 10866
+model = obj_rivets
+cost = 0
+stackable = true
+members = true
+count1 = 10867, 2
+count2 = 10868, 3
+count3 = 10869, 4
+xof2d = 7
+yof2d = 7
+zoom2d = 789
+yan2d = 705
+xan2d = 500
+name = Rivets

@@ -1,0 +1,12 @@
+// npc 3162
+vislevel = 0
+resizeh = 145
+resizev = 130
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8741/1451 8078/64156 8741/64049 25238/8396 5231/7496
+name = Smith
+models = 193 214 236 250 11115 11106 10218 5218 11191
+headmodels = 52 82 36 68

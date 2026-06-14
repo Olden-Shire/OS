@@ -1,0 +1,7 @@
+// loc 16809
+sharelight = true
+active = 1
+width = 3
+length = 3
+models_only = 16678
+name = Ceremonial Brazier

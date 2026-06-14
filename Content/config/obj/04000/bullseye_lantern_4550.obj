@@ -1,0 +1,9 @@
+// obj 4550
+model = obj_bullseye_lantern_4550
+iop2 = Extinguish
+zoom2d = 1190
+yan2d = 120
+xan2d = 28
+cost = 420
+members = true
+name = Bullseye lantern

@@ -1,0 +1,9 @@
+// npc 6045
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Liliya
+models = 26146 26152 26136 26149 26141
+headmodels = 26275

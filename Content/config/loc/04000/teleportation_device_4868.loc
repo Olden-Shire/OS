@@ -1,0 +1,8 @@
+// loc 4868
+width = 3
+length = 3
+op1 = Operate
+nonsolid = true
+recol = 61/7566
+models_only = 4733
+name = Teleportation Device

@@ -1,0 +1,6 @@
+// loc 24589
+width = 2
+blockwalk = true
+ambient = 20
+models_only = 25792
+name = Button

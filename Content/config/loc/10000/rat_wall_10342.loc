@@ -1,0 +1,11 @@
+// loc 10342
+active = 1
+sharelight = true
+hillskew = true
+ambient = 7
+contrast = 7
+resizey = 90
+op1 = Spectate
+recol = 8478/10266 8602/10262 8598/10262 8722/10258 8846/10382
+models = 10067/0 10068/1 10069/9
+name = Rat Wall

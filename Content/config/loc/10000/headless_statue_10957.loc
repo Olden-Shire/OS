@@ -1,0 +1,8 @@
+// loc 10957
+width = 2
+length = 2
+active = 1
+hillskew = true
+ambient = 25
+models_only = 10905
+name = Headless statue

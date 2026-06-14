@@ -1,0 +1,13 @@
+// obj 6922
+model = obj_cooking_gauntlets
+manwear = obj_cooking_gauntlets_man, 0
+womanwear = obj_cooking_gauntlets_woman, 0
+xof2d = 8
+yof2d = -8
+zoom2d = 930
+yan2d = 828
+iop2 = Wear
+members = true
+cost = 12000
+recol = 10004/43299
+name = Infinity gloves

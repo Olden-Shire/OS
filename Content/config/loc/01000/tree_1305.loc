@@ -1,0 +1,10 @@
+// loc 1305
+width = 2
+length = 2
+mapscene = 5
+resizex = 170
+resizey = 170
+resizez = 170
+recol = 6693/6699
+models_only = 1702
+name = Tree

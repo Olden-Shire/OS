@@ -1,0 +1,7 @@
+// npc 5459
+size = 1
+vislevel = 0
+alwaysontop = true
+turnspeed = 0
+name = Crusher
+models = 21591

@@ -1,0 +1,8 @@
+// npc 2590
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+recol = 10644/1814 8741/1814 8078/10341 10768/10341 10892/5231
+name = King Roald
+models = 1808 215 249 23939 162 176 23931 181
+headmodels = 53 2938 81

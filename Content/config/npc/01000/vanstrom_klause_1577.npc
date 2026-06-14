@@ -1,0 +1,8 @@
+// npc 1577
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 8741/2714 25238/2714 4550/4822
+name = Vanstrom Klause
+models = 226 292 170 176 3599 26135
+headmodels = 61

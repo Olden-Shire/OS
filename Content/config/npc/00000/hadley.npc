@@ -1,0 +1,10 @@
+// npc 302
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 43072/4550 25238/6492
+name = Hadley
+models = 215 181 250 299 159 176 254 329 245
+headmodels = 53 82

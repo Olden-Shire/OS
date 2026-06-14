@@ -1,0 +1,4 @@
+// loc 6324
+nonsolid = true
+models_only = 6164
+name = Golem foot

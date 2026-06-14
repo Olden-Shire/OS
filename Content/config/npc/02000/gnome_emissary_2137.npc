@@ -1,0 +1,9 @@
+// npc 2137
+readyanim = 195
+walkanim = 189
+op1 = Talk-to
+vislevel = 0
+recol = 22418/687 22424/11160 22426/687 6038/926
+name = Gnome emissary
+models = 2900 2911 2922
+headmodels = 23

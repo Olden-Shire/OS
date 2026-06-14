@@ -1,0 +1,4 @@
+// loc 11316
+nonsolid = true
+models_only = 11171
+name = Fuse

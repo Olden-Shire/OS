@@ -1,0 +1,10 @@
+// npc 1287
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43059/7091 8596/4510 6798/4510 16/7091 8090/11185 25238/43173
+name = Council workman
+models = 230 247 295 151 179 254 185 509
+headmodels = 63 79

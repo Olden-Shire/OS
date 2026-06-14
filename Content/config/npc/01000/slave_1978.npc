@@ -1,0 +1,11 @@
+// npc 1978
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 4550/6558 61/9015 4626/6558 6798/6558 25238/42908 43072/6558
+name = Slave
+models = 6468 248 315 173 176 266 181
+headmodels = 80 6460 6462

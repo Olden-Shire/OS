@@ -1,0 +1,9 @@
+// npc 1415
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/13745 22422/8741
+name = Bunkdo
+models = 2914 4698 2919
+headmodels = 21

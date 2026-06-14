@@ -1,0 +1,8 @@
+// loc 23046
+active = 1
+anim = 3105
+ambient = 60
+contrast = 60
+blockwalk = true
+models = 23880/22
+name = Fire

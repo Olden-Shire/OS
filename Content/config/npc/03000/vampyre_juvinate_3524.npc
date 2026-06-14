@@ -1,0 +1,12 @@
+// npc 3524
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 145
+resizev = 147
+op2 = Attack
+ambient = -25
+vislevel = 54
+recol = 4550/8394 40241/40235 40237/40229 40229/40348 26698/26690
+name = Vampyre Juvinate
+models = 14042 14039 14046 14041 14044
+headmodels = 13943

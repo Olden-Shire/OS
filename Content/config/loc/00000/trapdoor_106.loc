@@ -1,0 +1,4 @@
+// loc 106
+nonsolid = true
+models_only = 1223
+name = Trapdoor

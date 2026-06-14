@@ -1,0 +1,6 @@
+// loc 24031
+active = 1
+blockwalk = true
+recol = 38554/38061 43156/6563 920/417 22422/16803 9521/6563
+models_only = 5561
+name = Cloth

@@ -1,0 +1,8 @@
+// npc 106
+size = 2
+walkanim = 4923
+readyanim = 4919
+op2 = Attack
+vislevel = 19
+name = Black bear
+models = 18882 18886

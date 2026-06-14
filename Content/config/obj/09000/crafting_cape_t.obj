@@ -1,0 +1,12 @@
+// obj 9781
+cost = 99000
+members = true
+model = obj_crafting_cape_9780
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_crafting_cape_9780_man, 0
+womanwear = obj_crafting_cape_9780_woman, 0
+recol = 57280/6067 54183/9152 54503/6067 960/4397 22464/4517 43968/4636
+name = Crafting cape(t)

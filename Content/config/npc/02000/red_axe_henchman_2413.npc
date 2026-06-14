@@ -1,0 +1,9 @@
+// npc 2413
+vislevel = 0
+walkanim = 2335
+readyanim = 2336
+op1 = Listen-to
+recol = 4626/43051 16/926 49/937
+name = Red Axe Henchman
+models = 8637 8639 8638 8640 2985 7073 8643
+headmodels = 8393

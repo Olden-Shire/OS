@@ -1,0 +1,12 @@
+// obj 2406
+model = obj_hazeels_mark
+members = true
+xof2d = -1
+yof2d = 12
+zoom2d = 430
+yan2d = 1764
+xan2d = 288
+iop2 = Wear
+manwear = obj_hazeels_mark_man, 0
+womanwear = obj_hazeels_mark_woman, 0
+name = Hazeel's mark

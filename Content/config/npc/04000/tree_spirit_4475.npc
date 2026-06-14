@@ -1,0 +1,11 @@
+// npc 4475
+size = 1
+readyanim = 96
+walkanim = 93
+op2 = Attack
+nominimap = true
+alwaysontop = true
+vislevel = 159
+recol = 7717/3470 4550/10638 4680/7566 127/22430
+name = Tree spirit
+models = 2856

@@ -1,0 +1,10 @@
+// npc 1364
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/29574 43072/8472 8741/2343 4550/2524 6798/9133 54397/8392
+name = Helga
+models = 393 467 348 353 421 358
+headmodels = 115

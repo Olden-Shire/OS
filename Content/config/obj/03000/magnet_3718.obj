@@ -1,0 +1,10 @@
+// obj 3718
+cost = 3
+model = obj_magnet_2410
+xof2d = 3
+yof2d = 7
+zoom2d = 1130
+yan2d = 132
+xan2d = 440
+members = true
+name = Magnet

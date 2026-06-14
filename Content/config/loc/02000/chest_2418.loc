@@ -1,0 +1,8 @@
+// loc 2418
+active = 1
+ambient = 20
+contrast = 15
+op2 = Deposit
+op3 = Shut
+models_only = 27575
+name = Chest

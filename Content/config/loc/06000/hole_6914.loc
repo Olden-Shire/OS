@@ -1,0 +1,5 @@
+// loc 6914
+width = 3
+op1 = Squeeze-through
+models_only = 6894
+name = Hole

@@ -1,0 +1,12 @@
+// obj 5329
+model = obj_secateurs_5329
+manwear = obj_secateurs_5329_wear, 0
+womanwear = obj_secateurs_5329_wear, 0
+xof2d = -1
+yof2d = 11
+zoom2d = 710
+yan2d = 320
+xan2d = 312
+members = true
+cost = 5
+name = Secateurs

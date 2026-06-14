@@ -1,0 +1,9 @@
+// obj 8012
+model = obj_watchtower_tport
+yof2d = -1
+zoom2d = 465
+xan2d = 373
+members = true
+iop1 = Break
+stackable = true
+name = Watchtower t'port

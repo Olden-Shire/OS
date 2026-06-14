@@ -1,0 +1,9 @@
+// loc 3497
+anim = 1072
+width = 2
+length = 2
+active = 1
+op1 = Study
+op2 = Take-from
+models_only = 3555
+name = Monument

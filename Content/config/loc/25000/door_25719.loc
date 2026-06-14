@@ -1,0 +1,9 @@
+// loc 25719
+active = 1
+op1 = Close
+raiseobject = 0
+contrast = 15
+ambient = 20
+recol = 5656/8099 7064/5421 6940/5413 6945/5532 6693/5413
+models = 14928/0 14929/9
+name = Door

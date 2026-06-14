@@ -1,0 +1,12 @@
+// obj 9065
+model = obj_bullseye_lantern_4550
+manwear = obj_emerald_lantern_9065_wear, 0
+womanwear = obj_emerald_lantern_9065_wear, 6
+iop3 = Extinguish
+zoom2d = 1190
+yan2d = 120
+xan2d = 28
+cost = 20
+members = true
+recol = 8146/17853
+name = Emerald lantern

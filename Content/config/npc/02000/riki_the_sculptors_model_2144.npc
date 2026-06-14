@@ -1,0 +1,12 @@
+// npc 2144
+size = 1
+resizeh = 135
+resizev = 135
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 2578/61 12/61 61/7473
+name = Riki the sculptor's model
+models = 2974 2983 2978 2980 7067
+headmodels = 4

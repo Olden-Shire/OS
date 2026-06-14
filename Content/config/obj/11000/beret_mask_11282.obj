@@ -1,0 +1,14 @@
+// obj 11282
+model = obj_beret_mask_11278
+members = true
+manwear = obj_beret_mask_11278_man, 0
+womanwear = obj_beret_mask_11278_woman, 0
+iop2 = Wear
+manhead = 25052
+womanhead = 25052
+xof2d = 1
+yof2d = -24
+zoom2d = 596
+xan2d = 194
+cost = 80
+name = Beret mask

@@ -1,0 +1,10 @@
+// npc 5801
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+recol = 32811/51 32807/47 32798/39 32794/35 32790/30
+name = Guard
+models = 23658 23700 23633 23676
+headmodels = 23228 23246

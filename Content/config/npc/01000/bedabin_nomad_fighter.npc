@@ -1,0 +1,11 @@
+// npc 1239
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 56
+recol = 8741/127 25238/127 4626/127 908/127 43072/127 4550/4645
+name = Bedabin Nomad Fighter
+models = 230 247 191 292 170 176 265 185 490
+headmodels = 63 34 79

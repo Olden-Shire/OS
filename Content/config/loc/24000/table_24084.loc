@@ -1,0 +1,9 @@
+// loc 24084
+width = 2
+contrast = 10
+ambient = 10
+raiseobject = 1
+nonblockrange = true
+recol = 6451/7587 6443/7582 6439/7706 6563/7830
+models_only = 14827
+name = Table

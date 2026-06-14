@@ -1,0 +1,11 @@
+// loc 10820
+length = 2
+active = 1
+raiseobject = 0
+anim = 1433
+ambient = 100
+contrast = 100
+bgsound = 2065, 3
+recol = 61/49
+models_only = 5397
+name = Energy Barrier

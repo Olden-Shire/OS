@@ -1,0 +1,7 @@
+// loc 20040
+anim = 5351
+blockwalk = true
+width = 2
+length = 2
+models_only = 20341 20342 20344 20345
+name = Machine

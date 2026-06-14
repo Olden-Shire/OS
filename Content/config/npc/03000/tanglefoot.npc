@@ -1,0 +1,11 @@
+// npc 3313
+size = 1
+resizev = 150
+op2 = Attack
+walkanim = 3261
+readyanim = 3259
+vislevel = 111
+recol = 6600/3484 7473/3608 7469/3604 7461/3856
+name = Tanglefoot
+models = 11979
+headmodels = 11987

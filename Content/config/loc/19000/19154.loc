@@ -1,0 +1,7 @@
+// loc 19154
+forcedecor = true
+hillskew = true
+mapscene = 46
+ambient = 15
+active = 0
+models = 19501/10 19502/22

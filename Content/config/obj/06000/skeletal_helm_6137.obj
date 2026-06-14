@@ -1,0 +1,18 @@
+// obj 6137
+cost = 10000
+model = obj_skeletal_helm_6137
+iop2 = Wear
+manwear = obj_fremennik_helm_man, 0
+manwear2 = 8729
+womanwear = obj_fremennik_helm_woman, 0
+womanwear2 = 8734
+manhead = 8722
+womanhead = 8724
+members = true
+yof2d = -46
+zoom2d = 800
+yan2d = 1004
+xan2d = 228
+ambient = 30
+contrast = 30
+name = Skeletal helm

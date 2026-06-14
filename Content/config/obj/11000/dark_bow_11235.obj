@@ -1,0 +1,11 @@
+// obj 11235
+members = true
+cost = 120002
+model = obj_dark_bow_11235
+iop2 = Wield
+manwear = obj_dark_bow_11235_wear, 0
+womanwear = obj_dark_bow_11235_wear, 6
+zoom2d = 2128
+yan2d = 1034
+xan2d = 591
+name = Dark bow

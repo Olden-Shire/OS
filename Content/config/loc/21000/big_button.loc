@@ -1,0 +1,7 @@
+// loc 21086
+ambient = 80
+contrast = 25
+active = 1
+op1 = Use
+models = 21751/4
+name = Big Button

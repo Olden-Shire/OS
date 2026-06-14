@@ -1,0 +1,10 @@
+// loc 19808
+hillskew = true
+mapscene = 12
+resizex = 64
+resizez = 64
+resizey = 64
+nonblockrange = true
+recol = 6689/61
+models_only = 819
+name = Rockslide

@@ -1,0 +1,13 @@
+// obj 6908
+model = obj_beginner_wand_6908
+manwear = obj_beginner_wand_6908_wear, 0
+womanwear = obj_beginner_wand_6908_wear, 0
+iop2 = Wield
+xof2d = 4
+yof2d = 1
+zoom2d = 680
+yan2d = 88
+xan2d = 1936
+cost = 1200
+members = true
+name = Beginner wand

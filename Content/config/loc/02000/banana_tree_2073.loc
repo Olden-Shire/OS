@@ -1,0 +1,8 @@
+// loc 2073
+width = 2
+length = 2
+op1 = Pick
+mapscene = 5
+ambient = 25
+models_only = 7935 7940
+name = Banana Tree

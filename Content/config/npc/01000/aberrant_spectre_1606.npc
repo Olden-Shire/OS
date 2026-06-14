@@ -1,0 +1,10 @@
+// npc 1606
+size = 2
+walkanim = 1505
+readyanim = 1506
+op2 = Attack
+resizeh = 80
+resizev = 80
+vislevel = 96
+name = Aberrant spectre
+models = 5085

@@ -1,0 +1,12 @@
+// obj 7668
+model = obj_gadderhammer_7668
+xof2d = -1
+yof2d = -45
+yan2d = 1985
+xan2d = 246
+manwear = obj_gadderhammer_7668_wear, 0
+womanwear = obj_gadderhammer_7668_wear, 6
+iop2 = Wield
+cost = 3000
+members = true
+name = Gadderhammer

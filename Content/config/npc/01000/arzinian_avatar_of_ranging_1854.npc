@@ -1,0 +1,11 @@
+// npc 1854
+walkanim = 1839
+readyanim = 1838
+vislevel = 125
+resizeh = 115
+resizev = 115
+op2 = Attack
+recol = 39388/18619
+name = Arzinian Avatar of Ranging
+models = 6011 6008
+headmodels = 5817

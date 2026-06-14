@@ -1,0 +1,6 @@
+// npc 5004
+vislevel = 0
+walkanim = 5069
+readyanim = 5070
+alwaysontop = true
+multivar = 3188, 65535, 5017 5018 5019

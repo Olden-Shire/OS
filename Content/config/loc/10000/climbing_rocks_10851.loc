@@ -1,0 +1,9 @@
+// loc 10851
+width = 2
+contrast = 100
+ambient = 50
+hillskew = true
+active = 1
+op1 = Climb
+models = 10765/4
+name = Climbing rocks

@@ -1,0 +1,15 @@
+// obj 9193
+model = obj_opal_bolt_tips
+xof2d = 1
+zoom2d = 300
+yan2d = 66
+xan2d = 453
+stackable = true
+members = true
+cost = 667
+count1 = 9227, 2
+count2 = 9228, 3
+count3 = 9229, 4
+count4 = 9230, 5
+recol = 10465/50752
+name = Dragon bolt tips

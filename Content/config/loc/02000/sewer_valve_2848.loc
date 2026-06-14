@@ -1,0 +1,6 @@
+// loc 2848
+active = 1
+op1 = Turn-left
+op2 = Turn-right
+models_only = 1746
+name = Sewer valve

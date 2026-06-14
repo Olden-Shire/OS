@@ -1,0 +1,15 @@
+// obj 5716
+members = true
+cost = 62400
+model = obj_dragon_spear_1249
+iop2 = Wield
+manwear = obj_dragon_spear_1249_wear, 0
+womanwear = obj_dragon_spear_1249_wear, 6
+xof2d = 7
+yof2d = -4
+zoom2d = 1490
+yan2d = 112
+zan2d = 144
+xan2d = 1960
+recol = 22457/13221
+name = Dragon spear(p+)

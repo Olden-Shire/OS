@@ -1,0 +1,7 @@
+// loc 15996
+width = 3
+anim = 3174
+op1 = Exit
+mapscene = 64
+models_only = 11233 15138
+name = Portal

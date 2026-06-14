@@ -1,0 +1,9 @@
+// npc 2957
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/6038 8741/7395 10128/7395 4550/5551
+name = Gem merchant
+models = 230 292 251 151 179 254 185 283 238 186 320
+headmodels = 63 70 28

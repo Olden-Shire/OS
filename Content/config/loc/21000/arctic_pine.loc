@@ -1,0 +1,13 @@
+// loc 21273
+op1 = Cut down
+op3 = hidden
+active = 1
+mapscene = 0
+ambient = 10
+contrast = 10
+width = 2
+length = 2
+blockwalk = true
+anim = 5773
+models_only = 16293 16294
+name = Arctic Pine

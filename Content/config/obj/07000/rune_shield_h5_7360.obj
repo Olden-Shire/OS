@@ -1,0 +1,13 @@
+// obj 7360
+model = obj_black_shield_h5_7356
+manwear = obj_black_shield_h5_7356_wear, 0
+womanwear = obj_black_shield_h5_7356_wear, 6
+xof2d = -6
+yof2d = -14
+zoom2d = 1560
+yan2d = 1104
+xan2d = 344
+cost = 54400
+iop2 = Wear
+recol = 61/36133 57/7054 935/55207 11187/6067
+name = Rune shield(h5)

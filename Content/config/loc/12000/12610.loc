@@ -1,0 +1,9 @@
+// loc 12610
+active = 1
+width = 2
+length = 3
+ambient = 20
+blockwalk = true
+forceapproach = 14
+nonblockrange = true
+multiloc = 1918, 65535, 12606 12607 12608 12609

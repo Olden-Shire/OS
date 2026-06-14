@@ -1,0 +1,8 @@
+// loc 10517
+op1 = Use
+op2 = Use-quickly
+ambient = 30
+nonblockrange = true
+recol = 12579/5541 12698/5665 12818/5784 21776/6032
+models_only = 5270
+name = Bank booth

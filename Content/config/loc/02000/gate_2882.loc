@@ -1,0 +1,5 @@
+// loc 2882
+op1 = Open
+op4 = Pay-toll(10gp)
+models = 1509/0 1511/9
+name = Gate

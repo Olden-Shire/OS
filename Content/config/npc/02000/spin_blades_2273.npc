@@ -1,0 +1,5 @@
+// npc 2273
+vislevel = 0
+walkanim = 2212
+name = Spin Blades
+models = 7575

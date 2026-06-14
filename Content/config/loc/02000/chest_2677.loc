@@ -1,0 +1,7 @@
+// loc 2677
+op1 = Open
+forceapproach = 11
+ambient = 15
+recol = 82/8377 66/8373 49/8493 33/8485 24/8604
+models_only = 12146
+name = Chest

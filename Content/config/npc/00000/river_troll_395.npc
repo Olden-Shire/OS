@@ -1,0 +1,12 @@
+// npc 395
+size = 1
+resizev = 96
+resizeh = 160
+walkanim = 283
+readyanim = 286
+op2 = Attack
+alwaysontop = true
+vislevel = 120
+recol = 61/26925
+name = River troll
+models = 3752

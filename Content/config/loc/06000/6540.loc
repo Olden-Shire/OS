@@ -1,0 +1,7 @@
+// loc 6540
+sharelight = true
+blockwalk = true
+active = 0
+contrast = 40
+recol = 10434/8526
+models_only = 6247

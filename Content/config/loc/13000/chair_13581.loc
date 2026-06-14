@@ -1,0 +1,7 @@
+// loc 13581
+op1 = Sit-on
+op5 = Remove
+forceapproach = 11
+nonblockrange = true
+models_only = 12443
+name = Chair

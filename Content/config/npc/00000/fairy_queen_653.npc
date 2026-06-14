@@ -1,0 +1,7 @@
+// npc 653
+vislevel = 0
+size = 1
+op1 = Talk-to
+name = Fairy Queen
+models = 2858
+headmodels = 12

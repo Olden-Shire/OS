@@ -1,0 +1,10 @@
+// npc 799
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 19
+recol = 8741/12 25238/12 61/12
+name = Pirate Guard
+models = 219 294 151 254 185 179 246 518
+headmodels = 57

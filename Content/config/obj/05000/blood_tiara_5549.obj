@@ -1,0 +1,14 @@
+// obj 5549
+model = obj_blood_tiara_5549
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_blood_tiara_5549_man, 0
+womanwear = obj_blood_tiara_5549_woman, 0
+manhead = 7467
+womanhead = 7467
+members = true
+cost = 100
+recol = 43096/61532
+name = Blood tiara

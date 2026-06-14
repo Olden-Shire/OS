@@ -1,0 +1,12 @@
+// loc 21009
+anim = 5744
+ambient = 25
+contrast = 25
+width = 2
+resizex = 64
+resizey = 64
+resizez = 64
+bgsound = 3360, 5
+recol = 16/41147 3350/41152 7446/41156 6550/41160 7326/41164 7585/41168
+models_only = 21816 21815
+name = Lathe

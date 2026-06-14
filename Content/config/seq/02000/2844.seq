@@ -1,0 +1,7 @@
+// seq 2844
+replaceheldright = 7234
+replaceheldleft = 0
+priority = 2
+preanim_move = 1
+postanim_move = 1
+frames = 5/28/303 5/29/303 5/30/303 5/31/303 5/32/303 20/33/303 20/33/303 5/32/303 5/31/303 5/30/303 5/29/303 5/28/303

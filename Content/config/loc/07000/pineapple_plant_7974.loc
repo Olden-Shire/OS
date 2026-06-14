@@ -1,0 +1,7 @@
+// loc 7974
+op1 = Pick-pineapple
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8099 7767 8097
+name = Pineapple plant

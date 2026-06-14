@@ -1,0 +1,10 @@
+// loc 22859
+active = 1
+ambient = 20
+blockwalk = true
+resizex = 110
+resizey = 110
+resizez = 110
+nonblockrange = true
+models_only = 23372
+name = Crates

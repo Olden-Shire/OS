@@ -1,0 +1,7 @@
+// loc 16304
+width = 3
+ambient = 20
+active = 1
+nonblockrange = true
+models_only = 16187
+name = Stretcher

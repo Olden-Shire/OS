@@ -1,0 +1,7 @@
+// loc 15748
+hillskew = true
+width = 3
+op1 = Squeeze-through
+active = 1
+models_only = 15505
+name = Tunnel

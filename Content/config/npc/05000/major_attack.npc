@@ -1,0 +1,9 @@
+// npc 5035
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+recol = 22439/947
+name = Major Attack
+models = 11740 230 252 11759 11727 11732 19250 11735 11764 19260
+headmodels = 63 19238 84

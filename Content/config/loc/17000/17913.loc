@@ -1,0 +1,8 @@
+// loc 17913
+sharelight = true
+blockwalk = true
+active = 0
+noshadow = true
+mapscene = 22
+resizey = 160
+models = 12030/0 16331/9

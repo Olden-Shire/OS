@@ -1,0 +1,13 @@
+// obj 1434
+members = true
+cost = 50000
+iop2 = Wield
+manwear = obj_dragon_mace_1434_wear, 0
+womanwear = obj_dragon_mace_1434_wear, 6
+model = obj_dragon_mace_1434
+xof2d = -13
+yof2d = 13
+zoom2d = 1440
+yan2d = 1388
+xan2d = 348
+name = Dragon mace

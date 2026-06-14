@@ -1,0 +1,10 @@
+// obj 7973
+model = obj_beam
+yof2d = -13
+zoom2d = 1440
+yan2d = 1716
+xan2d = 160
+members = true
+ambient = 15
+cost = 5
+name = Beam

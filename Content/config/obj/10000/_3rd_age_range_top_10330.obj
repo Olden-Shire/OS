@@ -1,0 +1,15 @@
+// obj 10330
+model = obj__3rd_age_range_top_10330
+manwear = obj__3rd_age_range_top_10330_man, 0
+womanwear = obj__3rd_age_range_top_10330_woman, 0
+manwear2 = 20126
+womanwear2 = 20174
+iop2 = Wear
+cost = 45000
+xof2d = -5
+yof2d = -1
+zoom2d = 1503
+xan2d = 553
+contrast = 20
+members = true
+name = 3rd age range top

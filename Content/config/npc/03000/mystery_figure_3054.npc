@@ -1,0 +1,11 @@
+// npc 3054
+vislevel = 0
+size = 2
+resizeh = 160
+resizev = 160
+ambient = 10
+walkanim = 2601
+readyanim = 2941
+name = Mystery figure
+models = 9301 10293 10296 9302 10292
+headmodels = 9251

@@ -1,0 +1,9 @@
+// loc 14433
+hillskew = true
+ambient = 35
+sharelight = true
+nonsolid = true
+forcedecor = true
+resizey = 32
+active = 0
+models_only = 13860

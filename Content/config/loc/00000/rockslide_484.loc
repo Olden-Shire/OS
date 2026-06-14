@@ -1,0 +1,9 @@
+// loc 484
+width = 2
+length = 2
+hillskew = true
+mapscene = 12
+nonblockrange = true
+recol = 6689/61
+models_only = 819
+name = Rockslide

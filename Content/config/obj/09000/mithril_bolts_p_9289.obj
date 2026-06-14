@@ -1,0 +1,17 @@
+// obj 9289
+stackable = true
+model = obj_bronze_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+count1 = 9319, 2
+count2 = 9320, 3
+count3 = 9321, 4
+count4 = 9322, 5
+members = true
+iop2 = Wield
+cost = 20
+recol = 5537/43181 5532/43177 5656/43173 5652/43297
+name = Mithril bolts (p)

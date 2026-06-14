@@ -1,0 +1,12 @@
+// npc 2159
+size = 1
+resizeh = 130
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 8485/16 7473/9529 10330/7729 8604/10417 61/9529
+name = Gulldamar
+models = 2971 7069 7061 2978 7046 2985
+headmodels = 2 6949

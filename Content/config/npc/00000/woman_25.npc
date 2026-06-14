@@ -1,0 +1,12 @@
+// npc 25
+size = 1
+op2 = Attack
+op3 = Pickpocket
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 2
+recol = 43072/4550 25238/6947
+name = Woman
+models = 378 361 462 341 353 428 483 445
+headmodels = 103

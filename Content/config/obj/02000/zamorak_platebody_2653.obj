@@ -1,0 +1,16 @@
+// obj 2653
+cost = 65000
+model = obj_zamorak_platebody_2653
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_black_platebody_t_2583_man, 0
+manwear2 = 164
+manwear3 = 3381
+womanwear = obj_black_platebody_t_2583_woman, 0
+womanwear2 = 344
+womanwear3 = 3381
+recol = 61/36133 41/37270 24/937
+name = Zamorak platebody

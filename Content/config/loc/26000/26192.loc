@@ -1,0 +1,8 @@
+// loc 26192
+active = 0
+op1 = Examine
+op2 = Warm-by
+anim = 478
+length = 3
+bgsound = 2066, 3
+models_only = 27608

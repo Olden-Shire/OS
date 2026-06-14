@@ -1,0 +1,6 @@
+// loc 5629
+anim = 1730
+ambient = 20
+nonsolid = true
+models_only = 5510
+name = Standard

@@ -1,0 +1,9 @@
+// npc 6035
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Irina
+models = 26144 26153 26137 26148 26141
+headmodels = 26273

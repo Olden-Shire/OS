@@ -1,0 +1,9 @@
+// loc 13529
+length = 2
+anim = 3105
+op5 = Remove
+contrast = 25
+ambient = 25
+bgsound = 2065, 3
+models_only = 14101 12624
+name = Firepit with hook

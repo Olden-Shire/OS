@@ -1,0 +1,15 @@
+// obj 1153
+cost = 154
+model = obj_iron_full_helm_1153
+xof2d = -1
+yof2d = 6
+zoom2d = 800
+yan2d = 152
+xan2d = 160
+iop2 = Wear
+manwear = obj_iron_full_helm_1153_man, 0
+womanwear = obj_iron_full_helm_1153_woman, 0
+manhead = 56
+womanhead = 116
+recol = 61/33 926/48030
+name = Iron full helm

@@ -1,0 +1,13 @@
+// obj 9776
+model = obj_attack_hood
+zoom2d = 720
+yan2d = 18
+xan2d = 21
+iop2 = Wear
+manwear = obj_attack_hood_man, 0
+womanwear = obj_attack_hood_woman, 0
+manhead = 18911
+womanhead = 18913
+members = true
+recol = 57280/22422 54183/22416 54503/22412 960/22422 22464/22420 43968/22416
+name = Herblore hood

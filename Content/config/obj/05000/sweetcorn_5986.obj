@@ -1,0 +1,11 @@
+// obj 5986
+model = obj_sweetcorn_5986
+xof2d = -3
+yof2d = -2
+zoom2d = 730
+yan2d = 236
+xan2d = 404
+ambient = 15
+members = true
+cost = 9
+name = Sweetcorn

@@ -1,0 +1,10 @@
+// npc 4246
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 25238/41505 54397/55 8741/16540 8078/7326
+name = Taxidermist
+models = 15125 390 467 15124 428 358 7366
+headmodels = 113 15120

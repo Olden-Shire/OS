@@ -1,0 +1,13 @@
+// obj 3485
+cost = 64000
+model = obj_black_plateskirt_t_3472
+xof2d = 5
+yof2d = 5
+zoom2d = 1100
+xan2d = 620
+iop2 = Wear
+manwear = obj_black_plateskirt_t_3472_man, 0
+womanwear = obj_black_plateskirt_t_3472_woman, 0
+members = true
+recol = 61/7114 41/7097 57/6057 25238/7097
+name = Gilded plateskirt

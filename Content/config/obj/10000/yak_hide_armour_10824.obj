@@ -1,0 +1,11 @@
+// obj 10824
+cost = 20
+model = obj_yak_hide_armour_10824
+zoom2d = 1616
+xan2d = 561
+iop2 = Wear
+manwear = obj_yak_hide_armour_10824_man, 0
+womanwear = obj_yak_hide_armour_10824_woman, 0
+members = true
+cost = 500
+name = Yak-hide armour

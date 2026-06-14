@@ -1,0 +1,6 @@
+// loc 3795
+hillskew = true
+nonsolid = true
+active = 1
+models_only = 3795
+name = Grass

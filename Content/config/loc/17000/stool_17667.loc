@@ -1,0 +1,7 @@
+// loc 17667
+blockwalk = true
+ambient = 10
+nonblockrange = true
+recol = 6707/7452 7952/8481
+models_only = 10089
+name = Stool

@@ -1,0 +1,11 @@
+// loc 19437
+active = 0
+hillskew = true
+resizex = 64
+resizez = 64
+resizey = 64
+ambient = 30
+contrast = 30
+nonblockrange = true
+recol = 6689/43131
+models_only = 819

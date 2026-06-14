@@ -1,0 +1,6 @@
+// loc 4642
+ambient = 50
+active = 1
+op1 = Read
+models = 2040/4
+name = Noticeboard

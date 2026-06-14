@@ -1,0 +1,7 @@
+// npc 5853
+alwaysontop = true
+op1 = Talk-To
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+multivar = 3527, 65535, 5834 5835

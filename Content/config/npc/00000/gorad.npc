@@ -1,0 +1,10 @@
+// npc 856
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+op2 = Attack
+vislevel = 68
+name = Gorad
+models = 20371 20386
+headmodels = 20418

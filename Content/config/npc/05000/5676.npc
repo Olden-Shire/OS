@@ -1,0 +1,7 @@
+// npc 5676
+walkanim = 5645
+readyanim = 5646
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+multivar = 3407, 65535, 5622

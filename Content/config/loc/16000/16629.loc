@@ -1,0 +1,9 @@
+// loc 16629
+active = 0
+noshadow = true
+contrast = 30
+ambient = 30
+resizex = 140
+resizey = 140
+resizez = 140
+models_only = 16744

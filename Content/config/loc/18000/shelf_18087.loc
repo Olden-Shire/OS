@@ -1,0 +1,10 @@
+// loc 18087
+op5 = Climb-down
+active = 1
+resizex = 128
+resizey = 160
+resizez = 128
+forcedecor = true
+models_only = 17685
+models_only = 17746
+name = Shelf

@@ -1,0 +1,6 @@
+// loc 15413
+active = 1
+op5 = Build
+nonsolid = true
+models = 9612/22
+name = Rug space

@@ -1,0 +1,14 @@
+// obj 9924
+model = obj_skeleton_shirt_9924
+manwear = obj_skeleton_shirt_9924_man, 0
+manwear2 = 19172
+womanwear = obj_skeleton_shirt_9924_woman, 0
+womanwear2 = 19188
+iop2 = Wear
+iop5 = Destroy
+xof2d = -1
+yof2d = 7
+zoom2d = 1178
+xan2d = 526
+cost = 1
+name = Skeleton shirt

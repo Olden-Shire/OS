@@ -1,0 +1,11 @@
+// npc 4708
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 100
+recol = 4550/94 43026/3470 12/3470 43270/8 280/8 21526/3470
+name = Old Man Ral
+models = 6364 230 4925 10378 18074 177 3711 18089 181
+headmodels = 18124 7380 6212

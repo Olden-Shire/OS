@@ -1,0 +1,17 @@
+// obj 9339
+model = obj_opal_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+stackable = true
+members = true
+count1 = 9359, 2
+count2 = 9360, 3
+count3 = 9361, 4
+count4 = 9362, 5
+cost = 125
+recol = 17971/21671 5537/21671 5532/21667 5656/21662 5652/21658 10465/931
+name = Ruby bolts

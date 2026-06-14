@@ -1,0 +1,11 @@
+// obj 10963
+model = obj_coated_frogs_legs
+zoom2d = 1232
+yan2d = 1925
+xan2d = 303
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 10
+name = Coated frogs' legs

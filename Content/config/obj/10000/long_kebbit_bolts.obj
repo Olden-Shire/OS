@@ -1,0 +1,10 @@
+// obj 10159
+model = obj_kebbit_bolts
+zoom2d = 790
+yan2d = 308
+xan2d = 1788
+stackable = true
+iop2 = Wield
+members = true
+cost = 31
+name = Long kebbit bolts

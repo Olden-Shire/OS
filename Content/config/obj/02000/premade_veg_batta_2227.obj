@@ -1,0 +1,12 @@
+// obj 2227
+model = obj_premade_wm_batta_2219
+xof2d = 1
+yof2d = 32
+zoom2d = 780
+yan2d = 136
+xan2d = 236
+iop1 = Eat
+members = true
+cost = 120
+recol = 926/947 15283/12762
+name = Premade veg batta

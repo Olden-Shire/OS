@@ -1,0 +1,5 @@
+// loc 18125
+active = 1
+resizey = 160
+blockwalk = true
+multiloc = 2594, 65535, 18040 18041

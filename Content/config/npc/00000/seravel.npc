@@ -1,0 +1,10 @@
+// npc 514
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/4785 8741/37181 906/41872 8472/41872 4626/37181
+name = Seravel
+models = 235 253 311 170 176 274 181
+headmodels = 53 85

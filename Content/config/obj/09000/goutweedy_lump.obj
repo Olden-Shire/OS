@@ -1,0 +1,11 @@
+// obj 9901
+model = obj_goutweedy_lump
+yof2d = -30
+zoom2d = 2500
+yan2d = 384
+zan2d = 1964
+xan2d = 192
+cost = 5
+members = true
+iop5 = Destroy
+name = Goutweedy lump

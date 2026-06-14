@@ -1,0 +1,8 @@
+// npc 1828
+readyanim = 1796
+walkanim = 1797
+op2 = Attack
+size = 2
+vislevel = 99
+name = Giant frog
+models = 6947

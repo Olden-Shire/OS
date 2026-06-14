@@ -1,0 +1,11 @@
+// npc 1714
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pickpocket
+recol = 8741/61347 25238/61347 7952/61347 4550/4564
+name = H.A.M. Member
+models = 163 176 247 185 265 308 5434 5430 5433 317
+headmodels = 5428 79

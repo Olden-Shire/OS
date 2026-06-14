@@ -1,0 +1,6 @@
+// npc 3074
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 1
+multivar = 1467, 65535, 3075

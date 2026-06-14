@@ -1,0 +1,8 @@
+// loc 25832
+contrast = 15
+ambient = 20
+blockwalk = true
+nonblockrange = true
+recol = 54480/1820 6563/5656 6443/5532 6451/5537
+models_only = 24917
+name = Chair

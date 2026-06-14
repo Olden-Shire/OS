@@ -1,0 +1,15 @@
+// loc 4388
+anim = 504
+ambient = 100
+contrast = 100
+resizex = 256
+resizey = 256
+resizez = 256
+length = 2
+width = 2
+op1 = Enter
+bgsound = 3139, 3
+nonblockrange = true
+recol = 11218/960
+models_only = 2318
+name = Zamorak Portal

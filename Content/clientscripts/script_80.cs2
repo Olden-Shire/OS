@@ -1,0 +1,34 @@
+[clientscript,script_80]()()
+
+if_setonkey(73, -2147483640, -2147483639, "iz", 8978433);
+if_setonchattransmit(81, "", 35913814);
+if_setonmisctransmit(82, "", 35913814);
+%varcstr1 = "";
+%varcint42 = -1;
+%varcint41 = 0;
+%varcint43 = chat_gethistorylength();
+%varcint3 = -1;
+%varcint4 = 0;
+%varcstr2 = "";
+%varcstr3 = "";
+%varcstr4 = "";
+%varcstr5 = "";
+%varcstr6 = "";
+%varcstr7 = "";
+%varcstr8 = "";
+%varcstr9 = "";
+%varcstr10 = "";
+%varcstr11 = "";
+%varcstr12 = "";
+%varcstr13 = "";
+%varcstr14 = "";
+%varcstr15 = "";
+%varcstr16 = "";
+%varcstr17 = "";
+%varcstr18 = "";
+%varcstr19 = "";
+%varcstr20 = "";
+%varcstr21 = "";
+if_settext(join(chat_playername(), ": ", "<col=0000ff>", escape(%varcstr1), "*"), 8978433);
+~script_178;
+return;

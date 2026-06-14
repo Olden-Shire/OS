@@ -1,0 +1,6 @@
+// loc 24842
+active = 1
+nonsolid = true
+op1 = Enter
+models_only = 25937
+name = Manhole

@@ -1,0 +1,6 @@
+// loc 21636
+anim = 1730
+ambient = 40
+blockwalk = true
+models_only = 22168
+name = Standard

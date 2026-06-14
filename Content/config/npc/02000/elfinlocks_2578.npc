@@ -1,0 +1,11 @@
+// npc 2578
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 87
+op3 = Walk here
+op4 = Follow
+op5 = Trade
+recol = 6798/21415 926/43693
+name = Elfinlocks
+models = 363 390 7010 3194 7005 353 5409 8754 3331

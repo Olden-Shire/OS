@@ -1,0 +1,8 @@
+// npc 2422
+readyanim = 195
+walkanim = 189
+vislevel = 0
+recol = 22422/414 37/10644 22426/4643 49/10518
+name = Gnome companion
+models = 2890 2914 2917
+headmodels = 21

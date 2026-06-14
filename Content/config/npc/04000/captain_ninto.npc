@@ -1,0 +1,10 @@
+// npc 4594
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/5409 22424/5268
+name = Captain Ninto
+models = 2908 2909 2922
+headmodels = 25874

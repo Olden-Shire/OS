@@ -1,0 +1,13 @@
+// npc 830
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Watch
+alwaysontop = true
+vislevel = 47
+recol = 49054/6932 25238/6579 10512/5555 10378/6550 4550/5685 7952/5281
+name = Mercenary Captain
+models = 6130 10561 9458 7605 179 19336 15417 7609 16473 317
+headmodels = 6128 10560

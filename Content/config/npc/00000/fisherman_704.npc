@@ -1,0 +1,10 @@
+// npc 704
+vislevel = 0
+size = 1
+walkanim = 4779
+readyanim = 4825
+op1 = Talk-to
+recol = 8741/28302 8656/28302 40237/784 23326/784 4550/8646 43072/8646
+name = Fisherman
+models = 10741 18489 248 18133 10980 177 562 176 14380 14375
+headmodels = 10739 18480 18333

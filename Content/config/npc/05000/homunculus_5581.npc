@@ -1,0 +1,11 @@
+// npc 5581
+readyanim = 5831
+walkanim = 5832
+size = 3
+ambient = 10
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+name = Homunculus
+models = 22772 17460
+headmodels = 22774

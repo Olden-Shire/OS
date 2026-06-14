@@ -1,0 +1,9 @@
+// npc 2503
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 2401
+op2 = Attack
+vislevel = 60
+recol = 4550/64 43072/64
+name = Broodoo victim
+models = 8923 181 315 173 176 8926 230

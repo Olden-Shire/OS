@@ -1,0 +1,13 @@
+// npc 4550
+vislevel = 0
+size = 1
+resizeh = 131
+resizev = 121
+walkanims = 819, 820, 821, 822
+readyanim = 1322
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/10520 43072/7463 8741/6798 4626/6808 22177/8369 1942/22026
+name = Murky Pat
+models = 217 248 292 173 10218 3876 267 181
+headmodels = 55 80

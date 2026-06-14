@@ -1,0 +1,11 @@
+// npc 3240
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 2
+recol = 8741/4502 25238/5786 4626/2952
+name = Jeff
+models = 226 246 292 163 10218 11339 181
+headmodels = 61

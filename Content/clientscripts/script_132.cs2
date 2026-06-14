@@ -1,0 +1,4 @@
+[clientscript,script_132]()()
+
+if_setonkey(73, -2147483640, -2147483639, "iz", 8978433);
+return;

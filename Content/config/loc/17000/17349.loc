@@ -1,0 +1,6 @@
+// loc 17349
+wallwidth = 8
+sharelight = true
+ambient = 20
+recol = 10365/5235 5006/6554
+models = 2212/0 2213/1 2176/2 2177/3 2178/9

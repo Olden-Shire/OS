@@ -1,0 +1,8 @@
+// loc 17068
+sharelight = true
+active = 1
+blockwalk = true
+op1 = Grapple
+nonblockrange = true
+models = 16897/22
+name = Broken Raft

@@ -1,0 +1,12 @@
+// loc 22365
+active = 1
+sharelight = true
+hillskew = true
+blockwalk = true
+ambient = 20
+contrast = 20
+op1 = Descend
+mapscene = 7
+nonblockrange = true
+models_only = 23111
+name = Stairs

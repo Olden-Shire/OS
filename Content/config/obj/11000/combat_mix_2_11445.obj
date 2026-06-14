@@ -1,0 +1,12 @@
+// obj 11445
+model = obj_fish_vial_11428
+members = true
+cost = 105
+yof2d = -1
+zoom2d = 550
+yan2d = 1812
+xan2d = 81
+iop1 = Drink
+iop4 = Empty
+recol = 6953/18882 7077/18877 7073/18873
+name = Combat mix(2)

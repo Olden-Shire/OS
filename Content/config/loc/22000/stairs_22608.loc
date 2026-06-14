@@ -1,0 +1,7 @@
+// loc 22608
+hillskew = true
+sharelight = true
+active = 1
+op1 = Climb-up
+models_only = 23531
+name = Stairs

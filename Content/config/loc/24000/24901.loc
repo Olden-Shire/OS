@@ -1,0 +1,9 @@
+// loc 24901
+resizex = 142
+resizey = 142
+resizez = 142
+ambient = 10
+active = 0
+nonblockrange = true
+recol = 5541/7442 5665/7690 5660/7566 5784/8070 5904/7690
+models_only = 8232 9531

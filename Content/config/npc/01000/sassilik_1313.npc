@@ -1,0 +1,11 @@
+// npc 1313
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pickpocket
+vislevel = 48
+recol = 25238/5012 8741/4645 7700/148 6798/6715
+name = Sassilik
+models = 382 483 456 479 348 353 421 358
+headmodels = 105

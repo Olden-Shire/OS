@@ -1,0 +1,12 @@
+// obj 667
+cost = 200
+model = obj_blurite_sword
+xof2d = 6
+yof2d = -49
+zoom2d = 1530
+yan2d = 408
+xan2d = 224
+manwear = obj_blurite_sword_wear, 0
+womanwear = obj_blurite_sword_wear, 6
+iop2 = Wield
+name = Blurite sword

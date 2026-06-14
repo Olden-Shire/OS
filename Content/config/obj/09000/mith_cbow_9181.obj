@@ -1,0 +1,13 @@
+// obj 9181
+model = obj_crossbow_837
+yof2d = 3
+zoom2d = 926
+yan2d = 258
+xan2d = 432
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+members = true
+cost = 783
+recol = 6447/6577 6443/6697 6439/6817 5656/43177 5652/43297 5904/43288
+name = Mith c'bow

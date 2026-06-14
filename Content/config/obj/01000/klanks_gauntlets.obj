@@ -1,0 +1,14 @@
+// obj 1495
+cost = 6
+model = obj_cooking_gauntlets
+xof2d = 8
+yof2d = -8
+zoom2d = 930
+yan2d = 828
+xan2d = 420
+members = true
+iop2 = Wear
+manwear = obj_cooking_gauntlets_man, 0
+womanwear = obj_cooking_gauntlets_woman, 0
+recol = 10004/30600
+name = Klank's gauntlets

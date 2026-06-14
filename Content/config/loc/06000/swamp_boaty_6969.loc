@@ -1,0 +1,7 @@
+// loc 6969
+width = 3
+length = 3
+op1 = Board
+op2 = Board ( Pay 10 )
+models_only = 4970
+name = Swamp Boaty

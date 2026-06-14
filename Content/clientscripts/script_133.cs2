@@ -1,0 +1,5 @@
+[clientscript,script_133](int $int0, int $int1)()
+
+%varcstr24 = ~script_74(%varcstr24, 2, $int0, $int1);
+if_settext(join(escape(%varcstr24), "<col=ffff00>", "|"), 36241423);
+return;

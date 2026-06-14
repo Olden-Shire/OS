@@ -1,0 +1,12 @@
+// npc 1
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+op1 = Talk-to
+vislevel = 2
+recol = 6798/4888 8741/43160 25238/6430 4626/8
+name = Man
+models = 215 246 292 326 151 177 12138 181
+headmodels = 53

@@ -1,0 +1,13 @@
+// obj 6666
+members = true
+model = obj_flippers
+xof2d = -5
+yof2d = 18
+zoom2d = 1730
+yan2d = 8
+xan2d = 312
+iop2 = Wear
+manwear = obj_flippers_man, 0
+womanwear = obj_flippers_woman, 0
+recol = 4626/2452
+name = Flippers

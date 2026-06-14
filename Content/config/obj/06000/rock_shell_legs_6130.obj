@@ -1,0 +1,11 @@
+// obj 6130
+cost = 64000
+model = obj_rock_shell_legs_6130
+iop2 = Wear
+manwear = obj_rock_shell_legs_6130_man, 0
+womanwear = obj_rock_shell_legs_6130_woman, 0
+members = true
+yof2d = 6
+zoom2d = 1720
+xan2d = 528
+name = Rock-shell legs

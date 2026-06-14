@@ -1,0 +1,11 @@
+// obj 10158
+model = obj_kebbit_bolts
+zoom2d = 790
+yan2d = 308
+xan2d = 1788
+stackable = true
+iop2 = Wield
+members = true
+cost = 18
+recol = 94/9804 111/9812 127/9445
+name = Kebbit bolts

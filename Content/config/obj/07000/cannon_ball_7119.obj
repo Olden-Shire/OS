@@ -1,0 +1,10 @@
+// obj 7119
+model = obj_cannon_ball_7119
+members = true
+manwear = obj_cannon_ball_7119_wear, 0
+womanwear = obj_cannon_ball_7119_wear, 0
+yof2d = 3
+zoom2d = 950
+yan2d = 72
+xan2d = 1425
+name = Cannon ball

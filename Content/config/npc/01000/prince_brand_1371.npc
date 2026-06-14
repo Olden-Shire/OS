@@ -1,0 +1,10 @@
+// npc 1371
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 1321
+op1 = Talk-to
+recol = 7952/920 43072/2524 25238/1686 4550/2524 6798/7613 8741/920
+name = Prince Brand
+models = 235 246 311 162 179 4226 4218 281 317 4394
+headmodels = 67

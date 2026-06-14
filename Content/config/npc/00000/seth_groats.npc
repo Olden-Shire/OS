@@ -1,0 +1,12 @@
+// npc 452
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+resizev = 130
+resizeh = 140
+recol = 25238/8499 8741/8499 43072/4550
+name = Seth Groats
+models = 159 263 299 185 230 248 176 4843 495 329
+headmodels = 63 5534 80

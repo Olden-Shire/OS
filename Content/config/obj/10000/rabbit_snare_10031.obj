@@ -1,0 +1,14 @@
+// obj 10031
+model = obj_rabbit_snare_10031
+xof2d = 6
+yof2d = -1
+zoom2d = 1622
+yan2d = 83
+zan2d = 32
+xan2d = 286
+iop1 = Lay
+op4 = Lay
+op5 = hidden
+members = true
+cost = 15
+name = Rabbit snare

@@ -1,0 +1,13 @@
+// obj 6333
+model = obj_logs_1511
+yof2d = -7
+zoom2d = 1180
+yan2d = 1852
+xan2d = 120
+ambient = 15
+members = true
+op4 = Light
+cost = 30
+op5 = hidden
+recol = 5665/6585 5784/6598 5559/5665
+name = Teak logs

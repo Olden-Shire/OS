@@ -1,0 +1,11 @@
+// loc 2978
+resizex = 64
+resizey = 64
+resizez = 64
+nonsolid = true
+hillskew = true
+op1 = Look
+raiseobject = 1
+recol = 6798/8640
+models = 1465/10 20043/22
+name = Sand

@@ -1,0 +1,11 @@
+// npc 5518
+size = 1
+vislevel = 115
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 25238/6689 7741/3226
+name = Kjedelig Uppsen
+models = 4219 4220 242 252 21883 323 156 179 21892 19335 21878 19945
+headmodels = 4210 84 75

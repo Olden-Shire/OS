@@ -1,0 +1,10 @@
+// npc 4278
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 11
+recol = 61/5652 41/7050 24/7050 37/7050 11200/4762
+name = Animated Bronze Armour
+models = 15311 15316 15301 15304 518 15314 15303

@@ -1,0 +1,11 @@
+// npc 4669
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+op2 = Attack
+vislevel = 152
+recol = 910/2954 912/1932 1938/3982 1814/1810 2588/3486 2469/3367
+name = Red dragon
+models = 17408 17425 17418 17423

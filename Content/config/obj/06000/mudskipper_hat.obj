@@ -1,0 +1,15 @@
+// obj 6665
+model = obj_mudskipper_hat
+members = true
+manwear = obj_mudskipper_hat_wear, 0
+womanwear = obj_mudskipper_hat_wear, 0
+manhead = 9801
+womanhead = 9801
+xof2d = -3
+yof2d = -95
+zoom2d = 1450
+yan2d = 48
+xan2d = 220
+iop2 = Wear
+cost = 0
+name = Mudskipper hat

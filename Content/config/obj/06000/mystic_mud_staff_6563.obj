@@ -1,0 +1,13 @@
+// obj 6563
+cost = 45000
+model = obj_mud_battlestaff_6562
+xof2d = -2
+yof2d = -3
+zoom2d = 1950
+yan2d = 560
+xan2d = 1816
+iop2 = Wield
+manwear = obj_mud_battlestaff_6562_wear, 0
+womanwear = obj_mud_battlestaff_6562_wear, 6
+members = true
+name = Mystic mud staff

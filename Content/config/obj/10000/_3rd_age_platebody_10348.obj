@@ -1,0 +1,12 @@
+// obj 10348
+model = obj__3rd_age_platebody_10348
+zoom2d = 1190
+xan2d = 476
+iop2 = Wear
+manwear = obj__3rd_age_platebody_10348_man, 0
+manwear2 = 20120
+womanwear = obj__3rd_age_platebody_10348_woman, 0
+womanwear2 = 20172
+members = true
+cost = 200000
+name = 3rd age platebody

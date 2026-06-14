@@ -1,0 +1,7 @@
+// loc 5332
+ambient = 40
+raiseobject = 0
+nonblockrange = true
+recol = 61/14742 49/14866 24/14866 41/10768 37/11144 33/11140
+models_only = 1643
+name = Plant

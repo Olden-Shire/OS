@@ -1,0 +1,10 @@
+// npc 1358
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 8741/43185 25238/41 6798/2576
+name = Rachael
+models = 390 467 348 353 419 358
+headmodels = 113

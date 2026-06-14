@@ -1,0 +1,25 @@
+// interface 105
+
+[com_0]
+fmt=v3
+type=5
+clientcode=0
+x=472
+y=296
+width=25
+height=25
+hide=0
+graphic=523
+rotate=0
+tiling=0
+trans=0
+outline=0
+shadowcolour=0x000000
+vflip=0
+hflip=0
+eventcode=0x0
+baseop=
+dragdeadzone=0
+dragdeadtime=0
+draggable=0
+targetverb=

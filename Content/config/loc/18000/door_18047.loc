@@ -1,0 +1,8 @@
+// loc 18047
+op1 = Open
+active = 1
+raiseobject = 0
+ambient = 10
+resizey = 160
+models = 17863/0
+name = Door

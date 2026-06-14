@@ -1,0 +1,12 @@
+// npc 2359
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 127
+resizev = 120
+size = 1
+op2 = Attack
+vislevel = 108
+recol = 9152/8912 6449/7646 25886/7646
+name = Elf warrior
+models = 4020 4025 4016 4033 4023
+headmodels = 4011

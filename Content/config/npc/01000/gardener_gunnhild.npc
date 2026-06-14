@@ -1,0 +1,10 @@
+// npc 1398
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 2273
+op1 = Talk-to
+recol = 4550/2524 25238/5425 43072/18836 6798/9133 7952/13072 8741/13072
+name = Gardener Gunnhild
+models = 390 478 332 356 421 358 480 7125
+headmodels = 113

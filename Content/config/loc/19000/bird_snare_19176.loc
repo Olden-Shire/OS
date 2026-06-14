@@ -1,0 +1,7 @@
+// loc 19176
+anim = 5169
+nonsolid = true
+active = 1
+ambient = 20
+models_only = 19886
+name = Bird snare

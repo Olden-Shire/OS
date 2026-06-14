@@ -1,0 +1,12 @@
+// npc 550
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/5652 5532/10508 6798/6854 8741/1950
+name = Lowe
+models = 235 236 246 293 173 177 257 181
+headmodels = 67 68

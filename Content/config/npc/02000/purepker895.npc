@@ -1,0 +1,10 @@
+// npc 2575
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 52
+op3 = Walk here
+op4 = Follow
+op5 = Trade
+recol = 10283/10266 25238/33036 43072/43150 4626/10508
+name = Purepker895
+models = 7608 249 7610 7605 4924 524 517 254 185

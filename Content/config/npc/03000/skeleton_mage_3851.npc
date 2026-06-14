@@ -1,0 +1,8 @@
+// npc 3851
+size = 1
+walkanim = 5479
+readyanim = 5483
+op2 = Attack
+vislevel = 83
+name = Skeleton Mage
+models = 21196

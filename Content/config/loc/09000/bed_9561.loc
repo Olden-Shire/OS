@@ -1,0 +1,7 @@
+// loc 9561
+width = 2
+length = 3
+nonsolid = true
+recol = 8286/6484 115/6364 4882/6674 8526/8497
+models_only = 1239
+name = Bed

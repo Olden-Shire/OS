@@ -1,0 +1,9 @@
+// loc 24263
+width = 2
+length = 2
+op1 = Read
+noshadow = true
+ambient = 15
+recol = 8732/7587 6036/7582 4882/7706 10324/7475
+models_only = 18518
+name = Signpost

@@ -1,0 +1,10 @@
+// obj 561
+stackable = true
+cost = 180
+model = obj_nature_rune
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+ambient = 30
+name = Nature rune

@@ -1,0 +1,10 @@
+// npc 5264
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 4550/6563 25238/7485 926/9015 43072/9019 61/9019
+name = Nathifa
+models = 376 10078 15010 9026 14588 353 9113 358
+headmodels = 101 10031 15001

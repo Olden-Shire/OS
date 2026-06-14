@@ -1,0 +1,14 @@
+// obj 6069
+model = obj_boots_of_lightness_88
+iop2 = Wear
+manwear = obj_boots_of_lightness_88_man, 0
+womanwear = obj_boots_of_lightness_88_woman, 0
+xof2d = 1
+yof2d = -6
+zoom2d = 770
+yan2d = 160
+xan2d = 152
+cost = 30
+members = true
+recol = 4626/8720
+name = Mourner boots

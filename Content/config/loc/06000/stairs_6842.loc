@@ -1,0 +1,9 @@
+// loc 6842
+hillskew = true
+width = 2
+length = 3
+op1 = Climb-up
+mapscene = 7
+forceapproach = 11
+models_only = 6797
+name = Stairs

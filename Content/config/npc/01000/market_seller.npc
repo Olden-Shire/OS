@@ -1,0 +1,12 @@
+// npc 1866
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 8741/10351 25238/10351 4550/5555
+name = Market seller
+models = 6086 249 292 170 254 185 176
+headmodels = 63 85 30

@@ -1,0 +1,10 @@
+// npc 269
+size = 2
+readyanim = 6580
+walkanim = 6582
+op2 = Attack
+resizeh = 87
+resizev = 87
+vislevel = 137
+name = Bouncer
+models = 26257

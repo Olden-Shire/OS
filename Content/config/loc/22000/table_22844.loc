@@ -1,0 +1,5 @@
+// loc 22844
+ambient = 20
+blockwalk = true
+models_only = 23400 23397
+name = Table

@@ -1,0 +1,13 @@
+// npc 1710
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+resizev = 134
+resizeh = 134
+vislevel = 12
+recol = 8741/61347 25238/61347 7952/61347 61/5784 4550/6730
+name = H.A.M. Guard
+models = 169 176 517 246 181 265 296 5434 5430 5433 317 5437
+headmodels = 5428

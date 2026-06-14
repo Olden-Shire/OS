@@ -1,0 +1,11 @@
+// obj 7523
+model = obj_cooked_crab_meat_7523
+members = true
+xof2d = -1
+yof2d = 4
+zoom2d = 1744
+yan2d = 1982
+xan2d = 288
+iop1 = Eat
+cost = 40
+name = Cooked crab meat

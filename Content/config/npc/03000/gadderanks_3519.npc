@@ -1,0 +1,12 @@
+// npc 3519
+vislevel = 0
+size = 2
+op1 = Talk-to
+resizeh = 144
+resizev = 144
+readyanim = 3563
+turnspeed = 0
+recol = 4550/8394 8741/10343
+name = Gadderanks
+models = 6848 170 14048 14045 14051 248 176
+headmodels = 5787 80

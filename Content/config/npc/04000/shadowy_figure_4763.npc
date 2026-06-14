@@ -1,0 +1,9 @@
+// npc 4763
+vislevel = 0
+size = 1
+readyanim = 6539
+walkanim = 6541
+recol = 10512/43026 10508/16 11140/43150
+name = Shadowy figure
+models = 26160
+headmodels = 26112

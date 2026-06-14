@@ -1,0 +1,11 @@
+// obj 8987
+model = obj_torch_8987
+manwear = obj_torch_8987_man, 0
+womanwear = obj_torch_8987_woman, 0
+xof2d = -36
+yof2d = 7
+zoom2d = 1616
+yan2d = 1189
+xan2d = 471
+members = true
+name = Torch

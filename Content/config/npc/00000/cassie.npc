@@ -1,0 +1,12 @@
+// npc 577
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/60762 6024/8 10138/8 5532/8 43072/8 6798/6852
+name = Cassie
+models = 393 469 351 356 435 414
+headmodels = 115 131

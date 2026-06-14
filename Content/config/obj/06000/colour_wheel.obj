@@ -1,0 +1,8 @@
+// obj 6638
+model = obj_colour_wheel
+members = true
+zoom2d = 380
+xan2d = 496
+contrast = 33
+ambient = 33
+name = Colour wheel

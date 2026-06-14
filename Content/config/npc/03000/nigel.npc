@@ -1,0 +1,9 @@
+// npc 3681
+size = 1
+walkanims = 3865, 3865, 3865, 3865
+readyanim = 808
+vislevel = 0
+recol = 8741/10316 6798/74 4626/10508
+name = Nigel
+models = 18086 253 24038 151 10218 13938 24036 185
+headmodels = 19101 85

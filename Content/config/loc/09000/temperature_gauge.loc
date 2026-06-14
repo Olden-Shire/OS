@@ -1,0 +1,7 @@
+// loc 9089
+sharelight = true
+op1 = Read
+forceapproach = 11
+bgsound = 3142, 3
+models_only = 9043
+name = Temperature gauge

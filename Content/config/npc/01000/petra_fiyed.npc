@@ -1,0 +1,10 @@
+// npc 1801
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 1
+recol = 25238/7469 11200/7469
+name = Petra Fiyed
+models = 332 429 475 481 390 356 358 519 4235
+headmodels = 113

@@ -1,0 +1,8 @@
+// npc 130
+size = 3
+walkanim = 293
+readyanim = 296
+op2 = Attack
+vislevel = 58
+name = Yeti
+models = 3001

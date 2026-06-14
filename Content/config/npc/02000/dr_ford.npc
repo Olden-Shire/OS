@@ -1,0 +1,10 @@
+// npc 2547
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 43072/4550 8741/7289 25238/5243 10004/5243 6798/9325 11183/10270
+name = Dr Ford
+models = 6848 238 249 302 3190 159 176 263 185
+headmodels = 5787 81 70

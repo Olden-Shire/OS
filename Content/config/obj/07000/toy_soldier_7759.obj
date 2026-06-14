@@ -1,0 +1,11 @@
+// obj 7759
+model = obj_toy_soldier_7759
+xof2d = -4
+yof2d = 13
+zoom2d = 1872
+yan2d = 1874
+xan2d = 318
+members = true
+cost = 10
+iop1 = Wind
+name = Toy soldier

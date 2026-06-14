@@ -1,0 +1,11 @@
+// loc 21155
+active = 1
+anim = 5734
+ambient = 25
+contrast = 25
+nonsolid = true
+op1 = Cross
+forcedecor = true
+hillskew = true
+models = 21590/22
+name = Ice

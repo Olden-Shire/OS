@@ -1,0 +1,10 @@
+// npc 2822
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/10351 25238/10351 4550/5555 9104/10318 8078/10318 4626/4
+name = Ali the Tailor
+models = 188 230 249 292 162 176 525 254 181 320
+headmodels = 30 63 81

@@ -1,0 +1,12 @@
+// npc 3101
+vislevel = 0
+size = 2
+resizeh = 130
+resizev = 130
+walkanim = 3035
+readyanim = 3033
+op1 = Talk-to
+recol = 43080/5161 43076/10279 43069/5157 43063/10275 43055/10396 24/935
+name = Graveyard Guardian
+models = 10633 10634 10637 10638 10629
+headmodels = 10697

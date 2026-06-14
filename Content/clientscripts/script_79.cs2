@@ -1,0 +1,50 @@
+[clientscript,script_79](int $int0)(string)
+
+if ($int0 < 10) {
+    if ($int0 < 5) {
+        if ($int0 = 0) {
+            return(%varcstr2);
+        } else if ($int0 = 1) {
+            return(%varcstr3);
+        } else if ($int0 = 2) {
+            return(%varcstr4);
+        } else if ($int0 = 3) {
+            return(%varcstr5);
+        } else if ($int0 = 4) {
+            return(%varcstr6);
+        }
+    } else if ($int0 = 5) {
+        return(%varcstr7);
+    } else if ($int0 = 6) {
+        return(%varcstr8);
+    } else if ($int0 = 7) {
+        return(%varcstr9);
+    } else if ($int0 = 8) {
+        return(%varcstr10);
+    } else if ($int0 = 9) {
+        return(%varcstr11);
+    }
+} else if ($int0 < 15) {
+    if ($int0 = 10) {
+        return(%varcstr12);
+    } else if ($int0 = 11) {
+        return(%varcstr13);
+    } else if ($int0 = 12) {
+        return(%varcstr14);
+    } else if ($int0 = 13) {
+        return(%varcstr15);
+    } else if ($int0 = 14) {
+        return(%varcstr16);
+    }
+} else if ($int0 = 15) {
+    return(%varcstr17);
+} else if ($int0 = 16) {
+    return(%varcstr18);
+} else if ($int0 = 17) {
+    return(%varcstr19);
+} else if ($int0 = 18) {
+    return(%varcstr20);
+} else if ($int0 = 19) {
+    return(%varcstr21);
+}
+return("");

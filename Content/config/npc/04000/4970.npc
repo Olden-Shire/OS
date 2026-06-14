@@ -1,0 +1,4 @@
+// npc 4970
+alwaysontop = true
+vislevel = 1
+multivar = 2796, 65535, 65535 4969

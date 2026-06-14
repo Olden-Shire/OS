@@ -1,0 +1,9 @@
+// loc 23269
+hillskew = true
+ambient = 25
+blockwalk = true
+active = 0
+resizey = 64
+nonblockrange = true
+recol = 6439/6435 6435/5537 6430/5532 6554/5656
+models_only = 24202

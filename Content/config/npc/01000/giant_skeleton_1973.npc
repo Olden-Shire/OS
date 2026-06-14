@@ -1,0 +1,10 @@
+// npc 1973
+size = 1
+resizeh = 108
+resizev = 108
+walkanim = 5497
+readyanim = 5493
+op2 = Attack
+vislevel = 80
+name = Giant skeleton
+models = 21165

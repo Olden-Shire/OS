@@ -1,0 +1,13 @@
+// obj 10029
+members = true
+cost = 1
+model = obj_teasing_stick_10029
+manwear = obj_teasing_stick_10029_wear, 0
+womanwear = obj_teasing_stick_10029_wear, 6
+xof2d = -9
+yof2d = 35
+zoom2d = 1872
+yan2d = 558
+xan2d = 312
+cost = 50
+name = Teasing stick

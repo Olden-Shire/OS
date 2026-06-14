@@ -1,0 +1,13 @@
+// obj 9731
+model = obj_elemental_shield_2890
+iop2 = Wield
+xof2d = -2
+yof2d = 22
+yan2d = 216
+xan2d = 300
+manwear = obj_elemental_shield_2890_wear, 0
+womanwear = obj_elemental_shield_2890_wear, 6
+members = true
+cost = 3000
+recol = 46554/5941 45285/5819
+name = Mind shield

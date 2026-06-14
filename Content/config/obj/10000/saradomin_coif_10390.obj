@@ -1,0 +1,20 @@
+// obj 10390
+model = obj_zamorak_coif_10374
+yof2d = -35
+zoom2d = 789
+yan2d = 1784
+zan2d = 2047
+xan2d = 194
+iop2 = Wear
+manhead = 63
+manhead2 = 23158
+womanhead = 120
+womanhead2 = 23158
+manwear = obj_zamorak_coif_10374_man, 0
+manwear2 = 230
+womanwear = obj_zamorak_coif_10374_woman, 0
+womanwear2 = 403
+members = true
+cost = 2000
+recol = 22168/43672 8070/40765 24082/41490 22156/43660 920/39748 912/37553
+name = Saradomin coif

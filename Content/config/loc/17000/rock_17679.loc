@@ -1,0 +1,13 @@
+// loc 17679
+sharelight = true
+hillskew = true
+resizex = 128
+resizey = 160
+resizez = 128
+op1 = Jump
+active = 1
+forcedecor = true
+blockwalk = true
+recol = 26780/32910
+models = 17909/10 17910/22
+name = Rock

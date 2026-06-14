@@ -1,0 +1,6 @@
+// loc 6983
+sharelight = true
+active = 0
+blockwalk = true
+nonblockrange = true
+models = 14190/0

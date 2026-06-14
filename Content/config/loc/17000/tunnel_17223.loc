@@ -1,0 +1,8 @@
+// loc 17223
+sharelight = true
+op1 = Exit
+hillskew = true
+ambient = 25
+contrast = 25
+models = 17059/0
+name = Tunnel

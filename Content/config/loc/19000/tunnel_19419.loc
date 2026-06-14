@@ -1,0 +1,10 @@
+// loc 19419
+resizey = 64
+sharelight = true
+hillskew = true
+op1 = Inspect
+ambient = 30
+contrast = 30
+recol = 6689/43131 6808/43115 7056/43098 6028/43082
+models_only = 19993
+name = Tunnel

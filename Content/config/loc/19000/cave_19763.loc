@@ -1,0 +1,8 @@
+// loc 19763
+width = 4
+length = 2
+sharelight = true
+op1 = Exit
+resizez = 171
+models_only = 10368
+name = Cave

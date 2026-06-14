@@ -1,0 +1,14 @@
+// obj 5096
+model = obj_marigold_seed
+xof2d = 3
+zoom2d = 730
+yan2d = 1996
+xan2d = 272
+members = true
+stackable = true
+count1 = 5131, 2
+count2 = 5132, 3
+count3 = 5133, 4
+count4 = 5134, 5
+cost = 2
+name = Marigold seed

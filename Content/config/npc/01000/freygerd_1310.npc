@@ -1,0 +1,12 @@
+// npc 1310
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 48
+recol = 25238/38040 8741/35 8078/43 7700/148 6798/8765
+name = Freygerd
+models = 387 343 456 421 353 479 361
+headmodels = 110

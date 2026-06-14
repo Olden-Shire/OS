@@ -1,0 +1,9 @@
+// loc 22713
+length = 2
+active = 1
+ambient = 20
+blockwalk = true
+bgsound = 2199, 3
+nonblockrange = true
+models_only = 23446 23444 23448
+name = Range

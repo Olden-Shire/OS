@@ -1,0 +1,12 @@
+// npc 1597
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 2561
+op1 = Talk-to
+op4 = Trade
+alwaysontop = true
+recol = 5442/4550 9104/41 4626/41 4684/49 11200/41 0/926
+name = Vannaka
+models = 231 252 315 165 565 268 185 546 328 290 201
+headmodels = 64 84 43

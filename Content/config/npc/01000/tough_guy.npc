@@ -1,0 +1,11 @@
+// npc 1906
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 75
+recol = 25238/9019 8741/49054 4550/5555
+name = Tough Guy
+models = 6130 249 6134 151 6133 176 6099 185
+headmodels = 6127 53 85

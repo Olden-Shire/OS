@@ -1,0 +1,12 @@
+// obj 4105
+cost = 10000
+model = obj_mystic_gloves_4095
+iop2 = Wear
+manwear = obj_mystic_gloves_4095_man, 0
+womanwear = obj_mystic_gloves_4095_woman, 0
+members = true
+yof2d = 3
+zoom2d = 830
+xan2d = 536
+recol = 39009/924 40918/0
+name = Mystic gloves

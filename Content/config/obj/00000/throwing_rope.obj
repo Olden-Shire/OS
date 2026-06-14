@@ -1,0 +1,9 @@
+// obj 945
+model = obj_throwing_rope
+manwear = obj_throwing_rope_wear, 0
+womanwear = obj_throwing_rope_wear, 6
+yof2d = 40
+zoom2d = 1810
+yan2d = 16
+xan2d = 1592
+name = Throwing rope

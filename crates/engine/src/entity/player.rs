@@ -12,6 +12,107 @@ use crate::entity::PathingEntity;
 use crate::script::file::ScriptFile;
 use crate::script::state::ScriptArg;
 
+/// Maximum count in a single stack — Engine-TS `Inventory.STACK_LIMIT`.
+pub const STACK_LIMIT: i32 = i32::MAX;
+
+/// What an interaction is aimed at (Engine-TS `target: Entity`). Loc/obj carry
+/// their tile + type so the per-tick processor can re-validate and compute
+/// operable/approach distance against the footprint.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum InteractTarget {
+    Npc(usize),
+    Player(usize),
+    Loc { x: i32, z: i32, level: i32, id: i32, shape: i32, angle: i32 },
+    Obj { x: i32, z: i32, level: i32, id: i32 },
+}
+
+/// An inventory→component transmission listener (Engine-TS
+/// `InventoryListener`): the inv shown on `com`, sourced from player `source_uid`
+/// (own uid for INV_TRANSMIT, another player's for INVOTHER_TRANSMIT).
+/// `first_seen` forces a full send on the first update after (re)registration.
+#[derive(Debug, Clone, Copy)]
+pub struct InvListener {
+    pub inv_id: i32,
+    pub com: i32,
+    pub source_uid: i32,
+    pub first_seen: bool,
+}
+
+/// A pending player→entity interaction (Engine-TS `target` + `targetOp` +
+/// `targetSubject`). `op` is the AP-trigger base (e.g. `APLOC1 + type`); the OP
+/// trigger is `op + 7`. `com` is the spell/component for the `*T` variants
+/// (-1 otherwise). `subject_type` is the target's type id captured at set time,
+/// for the changetype validation.
+#[derive(Debug, Clone, Copy)]
+pub struct Interaction {
+    pub target: InteractTarget,
+    pub op: i32,
+    pub com: i32,
+    pub subject_type: i32,
+}
+
+/// A player inventory (Engine-TS `Inventory`): a fixed-size slot array of
+/// `(obj_id, count)`. Stack behaviour is decided by the caller from
+/// `ObjType.stackable` (our 2007 InvType config carries only `size`, no
+/// `stackall`), so the config-dependent methods live on `World`; the pure
+/// slot mechanics live here.
+#[derive(Debug, Clone, Default)]
+pub struct Inventory {
+    pub items: Vec<Option<(i32, i32)>>,
+}
+
+impl Inventory {
+    pub fn new(size: i32) -> Self {
+        Self { items: vec![None; size.max(0) as usize] }
+    }
+
+    pub fn capacity(&self) -> i32 {
+        self.items.len() as i32
+    }
+
+    pub fn free_slots(&self) -> i32 {
+        self.items.iter().filter(|s| s.is_none()).count() as i32
+    }
+
+    pub fn first_free(&self) -> Option<usize> {
+        self.items.iter().position(|s| s.is_none())
+    }
+
+    pub fn index_of(&self, id: i32) -> Option<usize> {
+        self.items.iter().position(|s| matches!(s, Some((i, _)) if *i == id))
+    }
+
+    /// Total count of `id` across all slots, saturating at STACK_LIMIT.
+    pub fn total(&self, id: i32) -> i32 {
+        let sum: i64 = self
+            .items
+            .iter()
+            .filter_map(|s| s.as_ref())
+            .filter(|(i, _)| *i == id)
+            .map(|(_, c)| *c as i64)
+            .sum();
+        sum.min(STACK_LIMIT as i64) as i32
+    }
+
+    pub fn get(&self, slot: i32) -> Option<(i32, i32)> {
+        usize::try_from(slot).ok().and_then(|s| self.items.get(s).copied().flatten())
+    }
+
+    pub fn set(&mut self, slot: i32, item: Option<(i32, i32)>) {
+        if let Ok(s) = usize::try_from(slot) {
+            if s < self.items.len() {
+                self.items[s] = item;
+            }
+        }
+    }
+
+    pub fn clear(&mut self) {
+        for s in &mut self.items {
+            *s = None;
+        }
+    }
+}
+
 /// The two player timer flavours (Engine-TS `PlayerTimerType`): a NORMAL timer
 /// only fires when the player has protected access (not delayed / no modal), a
 /// SOFT timer fires regardless of what the player is doing.
@@ -259,6 +360,41 @@ pub struct Player {
     /// (Engine-TS `Player.lastAfkZone`). At 1000 `zones_afk()` is true and the
     /// AFK-event chance doubles.
     pub last_afk_zone: i32,
+    /// Whether the player may (re)design their avatar — ALLOWDESIGN (Engine-TS
+    /// `allowDesign`). Gates the character-design interface.
+    pub allow_design: bool,
+    /// Approach range for the current interaction and whether a script set it
+    /// this tick — P_APRANGE (Engine-TS `apRange` / `apRangeCalled`).
+    pub ap_range: i32,
+    pub ap_range_called: bool,
+    /// Transmogrify target npc id (-1 = none) — P_TRANSMOGRIFY (Engine-TS
+    /// `npcId`): renders the player as that npc in the appearance block.
+    pub transmog: i32,
+    /// Item-action context, set when an OPHELD*/INV_BUTTON* (and use/target)
+    /// trigger fires, read back by LAST_ITEM/LAST_SLOT/LAST_USEITEM/
+    /// LAST_USESLOT/LAST_TARGETSLOT (Engine-TS `lastItem`/`lastSlot`/…). Default
+    /// -1 until an interaction populates them.
+    pub last_item: i32,
+    pub last_slot: i32,
+    pub last_use_item: i32,
+    pub last_use_slot: i32,
+    pub last_target_slot: i32,
+    /// Previous-login IP for the welcome screen (LAST_LOGIN_INFO). 0 until the
+    /// connection layer records it at login.
+    pub last_login_ip: i32,
+    /// Player inventories keyed by InvType id (Engine-TS `Player.invs`): the
+    /// carried inventory, worn equipment, bank, shop views, … Created lazily at
+    /// the configured size on first access.
+    pub invs: HashMap<i32, Inventory>,
+    /// The pending interaction (Engine-TS `target`/`targetOp`): set by the
+    /// P_OP* ops, walked-to and fired by `World::process_player_interaction`.
+    pub interaction: Option<Interaction>,
+    /// Inventory→component transmit listeners (Engine-TS `invListeners`): set by
+    /// INV_TRANSMIT / INVOTHER_TRANSMIT, drained each tick into UPDATE_INV_FULL.
+    pub inv_listeners: Vec<InvListener>,
+    /// Inv ids mutated since the last transmit — drives whether a registered
+    /// listener resends. Cleared after each tick's inventory flush.
+    pub inv_dirty: std::collections::HashSet<i32>,
 }
 
 /// Cap on tracked PvP damage dealers (Engine-TS `HeroPoints(16)`).
@@ -339,6 +475,20 @@ impl Player {
             low_memory: false,
             afk_zones: [0, 0],
             last_afk_zone: 0,
+            allow_design: false,
+            ap_range: 10,
+            ap_range_called: false,
+            transmog: -1,
+            last_item: -1,
+            last_slot: -1,
+            last_use_item: -1,
+            last_use_slot: -1,
+            last_target_slot: -1,
+            last_login_ip: 0,
+            invs: HashMap::new(),
+            interaction: None,
+            inv_listeners: Vec::new(),
+            inv_dirty: std::collections::HashSet::new(),
             timers: HashMap::new(),
             queue: Vec::new(),
             weak_queue: Vec::new(),

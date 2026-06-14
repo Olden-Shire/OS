@@ -1,0 +1,8 @@
+// seq 2421
+replaceheldright = 6825
+replaceheldleft = 6795
+loops = 6
+priority = 6
+preanim_move = 1
+postanim_move = 1
+frames = 6/10/306 6/11/306 6/12/306 6/13/306 5/0/306 4/3/306

@@ -1,0 +1,10 @@
+// loc 17049
+active = 1
+hillskew = true
+wallwidth = 32
+ambient = 20
+contrast = 15
+occlude = true
+op1 = Grapple
+models = 16912/0
+name = Wall

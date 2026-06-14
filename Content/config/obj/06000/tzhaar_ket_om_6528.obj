@@ -1,0 +1,15 @@
+// obj 6528
+members = true
+iop2 = Wield
+model = obj_tzhaar_ket_om_6528
+xof2d = 3
+yof2d = -4
+zoom2d = 1130
+yan2d = 952
+xan2d = 396
+contrast = 35
+ambient = 15
+manwear = obj_tzhaar_ket_om_6528_wear, 0
+womanwear = obj_tzhaar_ket_om_6528_wear, 6
+cost = 50000
+name = Tzhaar-ket-om

@@ -1,0 +1,12 @@
+// obj 7473
+model = obj_cornflour_mixture
+xof2d = -1
+yof2d = 2
+zoom2d = 990
+yan2d = 8
+xan2d = 112
+members = true
+iop4 = Empty
+iop5 = Destroy
+recol = 8423/9664
+name = Brulee

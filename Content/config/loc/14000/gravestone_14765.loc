@@ -1,0 +1,5 @@
+// loc 14765
+active = 1
+nonblockrange = true
+models_only = 14665
+name = Gravestone

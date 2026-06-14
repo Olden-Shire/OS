@@ -1,0 +1,6 @@
+// loc 21658
+width = 2
+active = 0
+blockwalk = true
+ambient = 25
+models_only = 22187 22180 22181

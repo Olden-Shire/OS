@@ -1,0 +1,13 @@
+// npc 4548
+size = 1
+resizeh = 126
+resizev = 136
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 37
+recol = 25238/10520 8741/8493 6798/7081 4550/3408 4626/2576 22177/908
+name = Wilson
+models = 235 248 292 10980 8918 4045 271 181
+headmodels = 67 80

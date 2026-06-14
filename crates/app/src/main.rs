@@ -49,6 +49,28 @@ fn main() -> ExitCode {
 fn cmd_unpack(args: &[String]) -> std::io::Result<()> {
     let cache_dir = arg_path(args, "--cache").unwrap_or_else(|| PathBuf::from("cache"));
     let out_dir = arg_path(args, "--out").unwrap_or_else(|| PathBuf::from("Content"));
+
+    // We are CRC-complete against the vanilla cache and verify that on every
+    // server boot, so a re-unpack is never needed in normal operation — and it
+    // would wipe curated pack names + renamed config files (`hans.npc`, the
+    // `tutorial` varp, …) back to bare numeric stubs. Refuse to clobber a
+    // populated tree unless the caller explicitly opts in with `--force`; unpack
+    // elsewhere with `--out <dir>` for inspection. (The lib `unpack()` and tests
+    // are unaffected — they target throwaway dirs.)
+    let force = args.iter().any(|a| a == "--force");
+    if !force && out_dir.join("pack").exists() {
+        eprintln!(
+            "refusing to unpack over the existing tree at {} — it carries curated pack \
+             names / renamed config files that a re-unpack resets to numeric ids.\n  \
+             pass --force to overwrite anyway, or --out <dir> to unpack somewhere else.",
+            out_dir.display()
+        );
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::AlreadyExists,
+            "unpack target already populated (use --force or --out)",
+        ));
+    }
+
     // Optional name source: when present, hash-match group names against this `pack/` dir
     // to recover real Jagex names for songs, etc. Defaults to `Content-old/` if it exists.
     let name_source = arg_path(args, "--names").or_else(|| {
@@ -275,7 +297,7 @@ fn arg_path(args: &[String], name: &str) -> Option<PathBuf> {
 fn usage(prog: &str) {
     eprintln!(
         "usage:\n  \
-         {prog} unpack       [--cache DIR] [--out  DIR]   (defaults: cache → Content)\n  \
+         {prog} unpack       [--cache DIR] [--out  DIR] [--force]   (defaults: cache → Content; --force overwrites a populated tree)\n  \
          {prog} pack         [--in    DIR] [--out  DIR]   (defaults: Content → cache_repacked)\n  \
          {prog} import-names [--content DIR] [--from DIR]   (defaults: Content ← Content-old)\n  \
          {prog} gen-baseline [--cache DIR] [--out  FILE]  (default: cache → cache/crc_baseline.json)\n  \

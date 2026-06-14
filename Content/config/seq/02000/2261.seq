@@ -1,0 +1,7 @@
+// seq 2261
+replaceheldleft = 0
+replaceheldright = 6126
+reachforward = true
+loops = 11
+priority = 10
+frames = 5/22/234 5/25/234 6/26/234 6/27/234 6/28/234 6/29/234 6/30/234 5/31/234 5/32/234 5/23/234 5/24/234

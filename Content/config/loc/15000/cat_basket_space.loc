@@ -1,0 +1,5 @@
+// loc 15402
+op5 = Build
+nonsolid = true
+models = 12659/22
+name = Cat basket space

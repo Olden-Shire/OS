@@ -1,0 +1,7 @@
+// loc 18080
+active = 1
+width = 2
+nonsolid = true
+anim = 4745
+models_only = 17756
+name = Wall

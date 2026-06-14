@@ -1,0 +1,11 @@
+// obj 9626
+model = obj_consecration_seed_4205
+members = true
+resizex = 80
+resizey = 80
+resizez = 80
+zoom2d = 1450
+cost = 10000
+iop5 = Destroy
+recol = 43125/41
+name = Small crystal seed

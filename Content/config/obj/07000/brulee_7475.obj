@@ -1,0 +1,14 @@
+// obj 7475
+model = obj_cornflour_mixture
+manwear = obj_brulee_7475_wear, 0
+womanwear = obj_brulee_7475_wear, 6
+xof2d = -1
+yof2d = 2
+zoom2d = 990
+yan2d = 8
+xan2d = 112
+members = true
+iop4 = Empty
+iop5 = Destroy
+recol = 127/4758 8423/10702
+name = Brulee

@@ -1,0 +1,9 @@
+// npc 1245
+size = 1
+readyanim = 1290
+walkanim = 1289
+op2 = Attack
+vislevel = 80
+recol = 0/906
+name = Riyl Shadow
+models = 4143

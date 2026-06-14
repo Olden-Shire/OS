@@ -1,0 +1,10 @@
+// npc 4599
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22424/16788 22426/16788 17170/27414 10347/21704 5202/16788
+name = Sarble
+models = 17018 16993 14825
+headmodels = 16977

@@ -1,0 +1,9 @@
+// npc 3037
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9019/6596 6740/6579 8741/6596 35245/7479 49054/3486 4550/4649
+name = Zahur
+models = 9022 9025 343 353 506 10003 358 376
+headmodels = 9015 101

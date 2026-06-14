@@ -1,0 +1,10 @@
+// npc 5428
+walkanim = 5666
+readyanim = 5668
+resizeh = 75
+resizev = 75
+size = 1
+vislevel = 0
+name = Penguin
+models = 21547
+headmodels = 21525

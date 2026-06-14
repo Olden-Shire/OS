@@ -1,0 +1,13 @@
+// loc 24265
+active = 1
+blockwalk = true
+noshadow = true
+length = 2
+width = 2
+ambient = 25
+contrast = 25
+anim = 6492
+bgsound = 2151, 5
+nonblockrange = true
+models_only = 24859
+name = Fountain

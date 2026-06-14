@@ -1,0 +1,12 @@
+// npc 4692
+size = 2
+contrast = 5
+ambient = 8
+alwaysontop = true
+walkanim = 4649
+readyanim = 4650
+op2 = Attack
+vislevel = 28
+recol = 5446/5537 5318/57 5322/61
+name = Hill Giant
+models = 17464 17447 17431 17466 17460

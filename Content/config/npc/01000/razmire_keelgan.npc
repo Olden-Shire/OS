@@ -1,0 +1,13 @@
+// npc 1254
+vislevel = 0
+size = 1
+walkanim = 819
+readyanim = 808
+op1 = Talk-to
+op3 = Trade-General-Store
+op4 = Trade-Builders-Store
+alwaysontop = true
+recol = 25238/49059 8741/42289
+name = Razmire Keelgan
+models = 235 248 305 170 176 274 181
+headmodels = 67 80

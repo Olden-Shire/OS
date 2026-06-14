@@ -1,0 +1,19 @@
+// obj 10548
+model = obj_fighter_hat
+manwear = obj_fighter_hat_man, 0
+womanwear = obj_fighter_hat_woman, 0
+manhead = 19237
+womanhead = 19242
+manwear2 = 215
+womanwear2 = 391
+manhead2 = 53
+womanhead2 = 114
+iop2 = Wear
+cost = 5000
+xof2d = 1
+yof2d = -1
+zoom2d = 724
+xan2d = 69
+members = true
+iop5 = Destroy
+name = Fighter hat

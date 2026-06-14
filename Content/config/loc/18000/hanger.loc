@@ -1,0 +1,8 @@
+// loc 18317
+contrast = 10
+ambient = 10
+active = 1
+nonsolid = true
+recol = 6806/6451
+models = 16673/22
+name = Hanger

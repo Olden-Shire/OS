@@ -1,0 +1,8 @@
+// npc 2886
+vislevel = 0
+size = 2
+resizeh = 250
+resizev = 250
+turnspeed = 0
+name = Boulder
+models = 8743

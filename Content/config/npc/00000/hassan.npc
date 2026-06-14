@@ -1,0 +1,10 @@
+// npc 923
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 4550/4647 25238/127 6798/10508 8741/127 7700/926 11200/926
+name = Hassan
+models = 215 254 248 170 176 181 323 292 188 281
+headmodels = 53 80 30

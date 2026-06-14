@@ -1,0 +1,11 @@
+// npc 281
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 3
+recol = 25238/4769 8741/4769
+name = Monk
+models = 223 181 246 299 170 176 260
+headmodels = 59

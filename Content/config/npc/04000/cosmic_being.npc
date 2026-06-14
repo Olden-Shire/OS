@@ -1,0 +1,11 @@
+// npc 4419
+readyanim = 4303
+walkanim = 4304
+op1 = Talk-to
+vislevel = 0
+size = 1
+ambient = 20
+alwaysontop = true
+name = Cosmic Being
+models = 16204 16203
+headmodels = 16209

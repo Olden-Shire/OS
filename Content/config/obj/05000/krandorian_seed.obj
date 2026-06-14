@@ -1,0 +1,16 @@
+// obj 5310
+model = obj_hammerstone_seed
+xof2d = 1
+yof2d = -31
+zoom2d = 1150
+yan2d = 8
+xan2d = 220
+members = true
+stackable = true
+count1 = 5188, 2
+count2 = 5189, 3
+count3 = 5190, 4
+count4 = 5191, 5
+cost = 8
+recol = 12587/5557
+name = Krandorian seed

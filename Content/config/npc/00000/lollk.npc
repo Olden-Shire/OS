@@ -1,0 +1,12 @@
+// npc 207
+vislevel = 0
+resizev = 70
+resizeh = 70
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 803/5652
+name = Lollk
+models = 2976 2981 2979 2983 2985
+headmodels = 5

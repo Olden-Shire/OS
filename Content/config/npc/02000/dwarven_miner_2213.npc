@@ -1,0 +1,11 @@
+// npc 2213
+op1 = Talk-to
+readyanim = 101
+walkanim = 98
+vislevel = 0
+vislevel = 0
+size = 1
+recol = 2578/5404 10659/3346 61/10285
+name = Dwarven Miner
+models = 2970 7059 2979 2993 7053 2980 2985
+headmodels = 0

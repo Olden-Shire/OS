@@ -1,0 +1,8 @@
+// loc 24660
+blockwalk = true
+width = 3
+length = 4
+ambient = 20
+op1 = Study
+models_only = 25788
+name = Display case

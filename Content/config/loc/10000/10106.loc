@@ -1,0 +1,6 @@
+// loc 10106
+active = 0
+sharelight = true
+hillskew = true
+ambient = -25
+models = 9884/0 9885/2 9886/3

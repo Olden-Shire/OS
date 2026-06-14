@@ -1,0 +1,11 @@
+// npc 949
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/5173 41/25238 61/25238 11187/25238 10659/25238 25238/25238
+name = Quest Guide
+models = 230 249 313 157 267 185 176
+headmodels = 63 81

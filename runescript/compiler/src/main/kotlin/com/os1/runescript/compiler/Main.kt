@@ -36,7 +36,14 @@ fun main(args: Array<String>) {
         System.err.println("warning: no engine.rs2 found — engine commands will be untyped")
     }
 
-    val symbols = SymbolTable.load(commandPack, packDirs, constantPack, engineRs2)
+    // `.constant` files anywhere in the source tree (`^name = value`) feed the
+    // symbol table alongside the optional `--constants` pack.
+    val constantFiles = srcDir.walkTopDown()
+        .filter { it.isFile && it.extension == "constant" }
+        .sortedBy { it.path }
+        .toList()
+
+    val symbols = SymbolTable.load(commandPack, packDirs, constantPack, engineRs2, constantFiles)
     val diagnostics = Diagnostics()
 
     val ok = Compiler(symbols, diagnostics).compile(sources, outDir)

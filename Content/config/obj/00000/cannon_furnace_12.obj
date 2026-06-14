@@ -1,0 +1,10 @@
+// obj 12
+model = obj_cannon_furnace_12
+xof2d = 2
+yof2d = -19
+zoom2d = 1170
+yan2d = 1780
+xan2d = 160
+cost = 187500
+members = true
+name = Cannon furnace

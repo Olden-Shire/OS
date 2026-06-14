@@ -1,0 +1,8 @@
+// loc 16587
+active = 1
+noshadow = true
+contrast = 40
+ambient = 40
+op1 = Deposit
+models_only = 16769
+name = Log pile

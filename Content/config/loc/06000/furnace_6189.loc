@@ -1,0 +1,13 @@
+// loc 6189
+width = 2
+length = 2
+resizez = 80
+resizey = 80
+resizex = 80
+width = 2
+length = 2
+sharelight = true
+forceapproach = 13
+op2 = Smelt
+models_only = 1192
+name = Furnace

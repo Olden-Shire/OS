@@ -1,0 +1,12 @@
+// obj 1289
+cost = 20800
+model = obj_bronze_sword_1277
+yof2d = -3
+zoom2d = 1040
+yan2d = 1156
+xan2d = 352
+iop2 = Wield
+manwear = obj_bronze_sword_1277_wear, 0
+womanwear = obj_bronze_sword_1277_wear, 6
+recol = 61/36133
+name = Rune sword

@@ -1,0 +1,11 @@
+// npc 538
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 943/1944 939/1944 6798/6854 935/1944
+name = Peksa
+models = 11741 214 11746 252 11759 11727 11732 11810 11736 11764
+headmodels = 52 84 11801 11806

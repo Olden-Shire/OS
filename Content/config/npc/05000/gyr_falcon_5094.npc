@@ -1,0 +1,10 @@
+// npc 5094
+vislevel = 0
+resizeh = 76
+resizev = 76
+readyanim = 5202
+walkanim = 5284
+op1 = Retrieve
+recol = 4773/5018
+name = Gyr Falcon
+models = 19974

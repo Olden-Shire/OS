@@ -1,0 +1,10 @@
+// obj 560
+stackable = true
+cost = 180
+model = obj_death_rune_560
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+ambient = 30
+name = Death rune

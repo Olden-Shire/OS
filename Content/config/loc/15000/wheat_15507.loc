@@ -1,0 +1,8 @@
+// loc 15507
+ambient = 20
+op2 = Pick
+nonsolid = true
+mapscene = 31
+noshadow = true
+models_only = 25300
+name = Wheat

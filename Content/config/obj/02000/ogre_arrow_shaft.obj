@@ -1,0 +1,16 @@
+// obj 2864
+cost = 1
+stackable = true
+members = true
+model = obj_arrow_shaft
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+count1 = 7923, 2
+count2 = 7924, 3
+count3 = 7925, 4
+count4 = 7926, 5
+recol = 5012/7582
+name = Ogre arrow shaft

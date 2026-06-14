@@ -1,0 +1,8 @@
+// loc 12729
+blockwalk = true
+op1 = hidden
+length = 2
+hillskew = true
+forceapproach = 11
+models_only = 13376
+name = Grave

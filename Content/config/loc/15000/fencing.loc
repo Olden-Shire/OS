@@ -1,0 +1,6 @@
+// loc 15369
+active = 1
+op5 = Build
+nonsolid = true
+models = 12698/0 12699/2
+name = Fencing

@@ -1,0 +1,9 @@
+// npc 2633
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+vislevel = 0
+op1 = Talk-to
+recol = 8741/8856 25238/8856 926/8617 11200/8617
+name = Wise Old Man
+models = 7409 292 170 265 181 176 4925 323 3711
+headmodels = 7379 7380

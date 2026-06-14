@@ -1,0 +1,7 @@
+// loc 14960
+anim = 3976
+width = 2
+length = 2
+bgsound = 2066, 3
+models_only = 14903
+name = Firebox

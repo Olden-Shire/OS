@@ -1,0 +1,13 @@
+// npc 4536
+vislevel = 0
+size = 1
+resizeh = 131
+resizev = 121
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/8369 6798/9670 11200/10157 8078/10394 6587/7605
+name = Lokar Searunner
+models = 214 4221 252 292 4391 162 3660 533 4226 4218
+headmodels = 52 84

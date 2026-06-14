@@ -1,0 +1,15 @@
+// obj 805
+members = true
+cost = 440
+model = obj_bronze_thrownaxe
+manwear = obj_bronze_thrownaxe_wear, 0
+womanwear = obj_bronze_thrownaxe_wear, 6
+xof2d = 1
+yof2d = 6
+zoom2d = 750
+yan2d = 208
+xan2d = 388
+iop2 = Wield
+stackable = true
+recol = 61/36133 57/36133
+name = Rune thrownaxe

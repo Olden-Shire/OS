@@ -1,0 +1,7 @@
+// loc 7256
+blockwalk = true
+forcedecor = true
+active = 1
+op1 = Open
+models = 7567/0
+name = Doorway

@@ -1,0 +1,13 @@
+// obj 4856
+members = true
+cost = 13000
+iop2 = Wear
+manwear = obj_ham_hood_4302_man, 0
+womanwear = obj_ham_hood_4302_woman, 0
+manhead = 5428
+womanhead = 5429
+zoom2d = 730
+yan2d = 2036
+model = obj_ham_hood_4302
+recol = 8741/10512
+name = Ahrims hood 100

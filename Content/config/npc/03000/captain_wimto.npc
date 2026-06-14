@@ -1,0 +1,11 @@
+// npc 3813
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op3 = Glider
+vislevel = 0
+recol = 22426/5797 22422/5914 22040/4626 5202/5541 8747/4626
+name = Captain Wimto
+models = 2908 14824 14825
+headmodels = 25874

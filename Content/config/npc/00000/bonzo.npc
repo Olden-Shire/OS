@@ -1,0 +1,12 @@
+// npc 225
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pay
+recol = 4550/7062 23326/13974 8887/8747 7097/7587 7446/7062 5815/8986
+name = Bonzo
+models = 14339 230 246 14383 10980 177 14380 14375
+headmodels = 63 14335

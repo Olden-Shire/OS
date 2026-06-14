@@ -1,0 +1,6 @@
+// npc 4231
+vislevel = 0
+size = 1
+name = Left head
+models = 3010 3006
+headmodels = 18506 18505 18509

@@ -1,0 +1,12 @@
+// npc 3378
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 16/20 12/20 280/156
+name = Evil Dave
+models = 9981 181 253 9983 13893 9980 13896
+headmodels = 53 9976 85

@@ -1,0 +1,8 @@
+// npc 5584
+size = 3
+ambient = 10
+vislevel = 0
+turnspeed = 0
+alwaysontop = true
+name = Cage
+models = 22771

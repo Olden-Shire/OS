@@ -1,0 +1,8 @@
+// loc 22731
+active = 1
+ambient = 20
+blockwalk = true
+bgsound = 3506, 3
+nonblockrange = true
+models_only = 23570
+name = Wire

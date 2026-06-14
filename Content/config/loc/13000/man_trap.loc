@@ -1,0 +1,6 @@
+// loc 13357
+active = 1
+op5 = Remove
+nonsolid = true
+models = 12717/22
+name = Man trap

@@ -1,0 +1,10 @@
+// loc 1653
+length = 2
+nonsolid = true
+sharelight = true
+active = 0
+ambient = 25
+contrast = 25
+recol = 61/7952
+retex = 2/23
+models_only = 674

@@ -1,0 +1,11 @@
+// obj 4694
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+stackable = true
+cost = 20
+model = obj_steam_rune
+ambient = 30
+members = true
+name = Steam rune

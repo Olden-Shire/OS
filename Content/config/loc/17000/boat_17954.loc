@@ -1,0 +1,9 @@
+// loc 17954
+length = 3
+width = 2
+noshadow = true
+op1 = Search
+op2 = Push
+forceapproach = 14
+models_only = 17556
+name = Boat

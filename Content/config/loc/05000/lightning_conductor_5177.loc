@@ -1,0 +1,7 @@
+// loc 5177
+width = 2
+length = 2
+anim = 1632
+blockwalk = true
+models_only = 5172
+name = Lightning conductor

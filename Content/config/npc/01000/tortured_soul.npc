@@ -1,0 +1,13 @@
+// npc 1698
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizev = 112
+resizeh = 112
+ambient = 12
+contrast = 12
+op2 = Attack
+vislevel = 59
+recol = 17467/17583
+name = Tortured soul
+models = 5398 5219 5209 5216
+headmodels = 5203

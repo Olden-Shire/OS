@@ -1,0 +1,6 @@
+// loc 23171
+sharelight = true
+ambient = 10
+recol = 24/10396
+models_only = 24076
+name = Cave

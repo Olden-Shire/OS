@@ -1,0 +1,9 @@
+// obj 6097
+model = obj_sieve
+yof2d = -3
+zoom2d = 850
+yan2d = 68
+xan2d = 52
+members = true
+cost = 10
+name = Sieve

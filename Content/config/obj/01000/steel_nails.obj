@@ -1,0 +1,10 @@
+// obj 1539
+cost = 3
+model = obj_steel_nails
+stackable = true
+xof2d = 3
+yof2d = 4
+zoom2d = 650
+yan2d = 1984
+xan2d = 308
+name = Steel nails

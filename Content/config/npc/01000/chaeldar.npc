@@ -1,0 +1,12 @@
+// npc 1598
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+op4 = Trade
+alwaysontop = true
+recol = 37/43297 57/43282 41/43282
+name = Chaeldar
+models = 5044
+headmodels = 2925

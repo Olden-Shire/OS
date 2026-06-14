@@ -1,0 +1,11 @@
+// npc 2723
+vislevel = 0
+size = 1
+readyanim = 456
+resizeh = 32
+resizev = 32
+op1 = Use-rod
+op4 = hidden
+alwaysontop = true
+name = Fishing spot
+models = 2320

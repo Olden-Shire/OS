@@ -1,0 +1,10 @@
+// npc 2349
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op2 = Attack
+vislevel = 11
+recol = 926/43270 8741/6936 7073/6032 11200/43270 8090/6936
+name = Mourner
+models = 212 295 150 273 185 323 553
+headmodels = 51

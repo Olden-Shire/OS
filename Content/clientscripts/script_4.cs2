@@ -1,0 +1,169 @@
+[clientscript,script_4](int $int0)(int)
+
+if ($int0 < 10) {
+    if ($int0 = 0) {
+        if (%varp130 = 4) {
+            return(2);
+        } else if (%varp130 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 1) {
+        if (%varp29 = 2) {
+            return(2);
+        } else if (%varp29 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 2) {
+        if (%varbit2561 = 3) {
+            return(2);
+        } else if (%varbit2561 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 3) {
+        if (%varp31 = 100) {
+            return(2);
+        } else if (%varp31 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 4) {
+        if (%varp176 = 10) {
+            return(2);
+        } else if (%varp176 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 5) {
+        if (%varp32 = 3) {
+            return(2);
+        } else if (%varp32 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 6) {
+        if (%varbit2378 = 6) {
+            return(2);
+        } else if (%varbit2378 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 7) {
+        if (%varp160 = 2) {
+            return(2);
+        } else if (%varp160 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 8) {
+        if (%varp122 = 7) {
+            return(2);
+        } else if (%varp122 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 9) {
+        if (%varp71 = 4) {
+            return(2);
+        } else if (%varp71 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+}
+if ($int0 < 20) {
+    if ($int0 = 10) {
+        if (%varp273 = 110) {
+            return(2);
+        } else if (%varp273 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 11) {
+        if (%varp107 = 5) {
+            return(2);
+        } else if (%varp107 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 12) {
+        if (%varp144 = 100) {
+            return(2);
+        } else if (%varp144 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 13) {
+        if (%varp63 = 6) {
+            return(2);
+        } else if (%varp63 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 14) {
+        if (%varp179 = 21) {
+            return(2);
+        } else if (%varp179 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 15) {
+        if (%varp145 = 7 | %varp146 = 4) {
+            return(2);
+        } else if (%varp145 > 0 | %varp146 > 0) {
+            return(1);
+        } else {
+            return(0);
+        }
+    }
+    if ($int0 = 16) {
+        if (%varp178 = 3) {
+            return(2);
+        } else if (%varp178 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+    if ($int0 = 17) {
+        if (%varp67 = 3) {
+            return(2);
+        } else if (%varp67 = 0) {
+            return(0);
+        } else {
+            return(1);
+        }
+    }
+}
+return(0);

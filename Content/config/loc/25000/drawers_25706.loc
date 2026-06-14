@@ -1,0 +1,9 @@
+// loc 25706
+op1 = Search
+op2 = Shut
+forceapproach = 11
+contrast = 15
+ambient = 20
+recol = 6443/5532 6682/5421
+models_only = 25071
+name = Drawers

@@ -1,0 +1,9 @@
+// obj 6464
+model = obj_white_tree_sapling
+zoom2d = 2120
+yan2d = 80
+xan2d = 160
+members = true
+iop5 = Destroy
+recol = 6930/7054 21712/2167 21714/2159 21720/2157 5338/5198
+name = White tree sapling

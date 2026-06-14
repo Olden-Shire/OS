@@ -1,0 +1,9 @@
+// npc 3641
+vislevel = 0
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 6798/115 25238/5440 4626/20 8741/5541 28318/5786 7281/49218
+name = Brana
+models = 6364 230 249 7611 5668 177 3711 254 181
+headmodels = 63 81 6212

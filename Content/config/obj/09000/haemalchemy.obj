@@ -1,0 +1,12 @@
+// obj 9652
+members = true
+iop1 = Read
+iop5 = Destroy
+model = obj_haemalchemy
+xof2d = -5
+yof2d = 3
+zoom2d = 1178
+yan2d = 1867
+zan2d = 1798
+xan2d = 692
+name = Haemalchemy

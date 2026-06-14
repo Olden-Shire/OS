@@ -1,0 +1,6 @@
+// loc 22379
+ambient = 35
+sharelight = true
+mirror = true
+models_only = 22829
+name = Granary wall

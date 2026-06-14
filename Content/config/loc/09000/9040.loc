@@ -1,0 +1,6 @@
+// loc 9040
+occlude = true
+contrast = 100
+ambient = 10
+active = 0
+models = 2192/10 2202/0 2203/2 2204/3 2205/9

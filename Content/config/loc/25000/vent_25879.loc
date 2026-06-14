@@ -1,0 +1,8 @@
+// loc 25879
+active = 1
+sharelight = true
+contrast = 15
+ambient = 20
+blockwalk = true
+models = 27392/0
+name = Vent

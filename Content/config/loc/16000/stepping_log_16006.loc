@@ -1,0 +1,6 @@
+// loc 16006
+active = 1
+blockwalk = true
+nonblockrange = true
+models = 15777/22
+name = Stepping log

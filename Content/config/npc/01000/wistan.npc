@@ -1,0 +1,13 @@
+// npc 1083
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 54397/6445 25238/66 8741/0
+name = Wistan
+models = 230 249 305 151 176 254 185
+headmodels = 63 81

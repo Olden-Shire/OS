@@ -1,0 +1,10 @@
+// obj 10092
+model = obj_ferret
+members = true
+iop5 = Release
+yof2d = -3
+zoom2d = 820
+yan2d = 128
+xan2d = 128
+cost = 40
+name = Ferret

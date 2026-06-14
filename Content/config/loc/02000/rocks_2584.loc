@@ -1,0 +1,8 @@
+// loc 2584
+width = 2
+length = 2
+hillskew = true
+occlude = true
+op2 = Search
+models_only = 830
+name = Rocks

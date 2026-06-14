@@ -1,0 +1,11 @@
+// npc 1384
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 1
+recol = 25238/8472 43072/8472 8741/5425 4550/2524 6798/7731
+name = Yrsa
+models = 387 472 343 353 3332 439 358
+headmodels = 110

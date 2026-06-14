@@ -1,0 +1,15 @@
+// npc 3507
+vislevel = 0
+readyanim = 317
+walkanim = 314
+op1 = Pick-up
+op3 = Talk-to
+op4 = Interact-with
+nominimap = true
+resizeh = 70
+resizev = 70
+ambient = 40
+recol = 8/914
+name = Wily hellcat
+models = 13412 13408
+headmodels = 12745

@@ -1,0 +1,15 @@
+// obj 9380
+model = obj_bronze_bolts_unf
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+stackable = true
+members = true
+count1 = 9403, 2
+count2 = 9404, 3
+count3 = 9405, 4
+count4 = 9406, 5
+recol = 17971/21671 5537/21671 5532/21667 5656/21662 5652/21658
+name = Adamant bolts(unf)

@@ -1,0 +1,10 @@
+// npc 4872
+vislevel = 0
+size = 1
+readyanim = 4780
+op1 = Talk-to
+turnspeed = 0
+recol = 4550/4546 8860/42287 8741/42279
+name = Col. O'Niall
+models = 18190 214 11190 8780 10980 177 10218 18196
+headmodels = 18185 52 11188

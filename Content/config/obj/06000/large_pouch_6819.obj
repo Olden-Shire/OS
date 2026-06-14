@@ -1,0 +1,14 @@
+// obj 6819
+model = obj_large_pouch_5512
+yof2d = 2
+zoom2d = 760
+yan2d = 96
+xan2d = 132
+ambient = 40
+members = true
+iop1 = Fill
+iop2 = Empty
+iop3 = Check
+iop5 = Destroy
+recol = 7223/3261 7467/5553 6430/4517 6798/4882
+name = Large pouch

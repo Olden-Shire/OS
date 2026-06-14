@@ -1,0 +1,15 @@
+// obj 5324
+model = obj_cabbage_seed
+xof2d = -1
+yof2d = 157
+zoom2d = 980
+yan2d = 1864
+xan2d = 260
+members = true
+stackable = true
+count1 = 5155, 2
+count2 = 5156, 3
+count3 = 5157, 4
+count4 = 5158, 5
+cost = 3
+name = Cabbage seed

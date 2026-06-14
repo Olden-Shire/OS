@@ -1,0 +1,9 @@
+// npc 257
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 25
+recol = 61/20 25238/3974
+name = Khazard Guard
+models = 230 252 306 152 176 254 185 550
+headmodels = 63 84

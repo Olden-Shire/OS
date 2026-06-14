@@ -1,0 +1,13 @@
+// obj 1029
+cost = 32
+model = obj_cape_1007
+xof2d = 3
+yof2d = 6
+zoom2d = 2140
+yan2d = 948
+xan2d = 400
+iop2 = Wear
+manwear = obj_cape_1007_man, 0
+womanwear = obj_cape_1007_woman, 0
+recol = 11200/47655 7700/51495 926/52754
+name = Cape

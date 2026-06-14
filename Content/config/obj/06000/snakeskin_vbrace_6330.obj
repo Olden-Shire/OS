@@ -1,0 +1,12 @@
+// obj 6330
+cost = 434
+iop2 = Wear
+members = true
+model = obj_snakeskin_vbrace_6330
+manwear = obj_snakeskin_vbrace_6330_man, 0
+womanwear = obj_snakeskin_vbrace_6330_woman, 0
+yof2d = 47
+zoom2d = 600
+yan2d = 204
+xan2d = 300
+name = Snakeskin v'brace

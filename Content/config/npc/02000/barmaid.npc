@@ -1,0 +1,9 @@
+// npc 2178
+walkanim = 2156
+readyanim = 2157
+vislevel = 0
+op1 = Talk-to
+recol = 7062/7735 61/21522 10347/18712 910/16652
+name = Barmaid
+models = 7035 7064 7038 7048 7068
+headmodels = 6994

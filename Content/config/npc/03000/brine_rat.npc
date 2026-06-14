@@ -1,0 +1,8 @@
+// npc 3707
+size = 1
+walkanim = 6114
+readyanim = 6127
+op2 = Attack
+vislevel = 70
+name = Brine rat
+models = 24150

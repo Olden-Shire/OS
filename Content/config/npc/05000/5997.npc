@@ -1,0 +1,7 @@
+// npc 5997
+readyanim = 6507
+size = 3
+alwaysontop = true
+vislevel = 0
+turnspeed = 0
+multivar = 3717, 65535, 5989

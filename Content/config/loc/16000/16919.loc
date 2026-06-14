@@ -1,0 +1,6 @@
+// loc 16919
+sharelight = true
+contrast = 20
+ambient = 20
+active = 0
+models = 16544/0 16545/1 16546/9

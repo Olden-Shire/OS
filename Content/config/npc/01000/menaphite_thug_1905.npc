@@ -1,0 +1,14 @@
+// npc 1905
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+op4 = Lure
+op5 = Knock-Out
+vislevel = 55
+recol = 25238/9019 8741/49054 4550/5555
+name = Menaphite Thug
+models = 6130 249 6134 151 6133 176 6099 185
+headmodels = 6127 53 85

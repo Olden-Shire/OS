@@ -1,0 +1,8 @@
+// loc 25689
+op1 = Search
+forceapproach = 13
+contrast = 15
+ambient = 20
+recol = 6565/4517 7834/4387 7958/11024 6430/5413 5400/5532
+models_only = 7392 7393
+name = Bookcase

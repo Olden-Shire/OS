@@ -1,0 +1,11 @@
+// obj 6305
+cost = 10
+model = obj_skewer_stick
+xof2d = -3
+yof2d = 45
+zoom2d = 1710
+yan2d = 436
+xan2d = 300
+stackable = true
+members = true
+name = Skewer stick

@@ -1,0 +1,19 @@
+// obj 10452
+model = obj_saradomin_mitre_10452
+manwear = obj_saradomin_mitre_10452_man, 0
+manwear2 = 230
+womanwear = obj_saradomin_mitre_10452_woman, 0
+womanwear2 = 403
+manhead = 20109
+womanhead = 20117
+manhead2 = 63
+womanhead2 = 120
+iop2 = Wear
+xof2d = -3
+zoom2d = 659
+yan2d = 225
+xan2d = 184
+members = true
+cost = 5000
+recol = 916/43924 908/43916 307/43315
+name = Saradomin mitre

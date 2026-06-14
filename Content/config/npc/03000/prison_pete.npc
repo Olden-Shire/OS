@@ -1,0 +1,11 @@
+// npc 3118
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 926/0
+name = Prison Pete
+models = 230 246 10741 10743 10742 181
+headmodels = 63 10739 9822

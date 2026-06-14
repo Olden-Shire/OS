@@ -1,0 +1,11 @@
+// npc 4554
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/10508 8741/10508 43072/4550
+name = 'Beedy-eye' Jones
+models = 215 252 299 159 176 259 193 236 518
+headmodels = 53 84 68 36

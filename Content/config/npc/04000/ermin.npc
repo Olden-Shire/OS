@@ -1,0 +1,10 @@
+// npc 4592
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22424/10892 22426/6594 28434/1820 10347/21704 22418/1820
+name = Ermin
+models = 17008 2909 2915
+headmodels = 16967

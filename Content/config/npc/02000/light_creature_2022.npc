@@ -1,0 +1,9 @@
+// npc 2022
+readyanim = 2051
+walkanim = 2051
+size = 3
+resizeh = 220
+resizev = 220
+vislevel = 0
+name = Light creature
+models = 6541

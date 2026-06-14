@@ -1,0 +1,5 @@
+// loc 13438
+op5 = Remove
+nonsolid = true
+models_only = 13145
+name = Daffodils

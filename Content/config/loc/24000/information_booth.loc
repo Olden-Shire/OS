@@ -1,0 +1,7 @@
+// loc 24452
+active = 1
+ambient = 20
+blockwalk = true
+op1 = Look-at
+models_only = 25347
+name = Information booth

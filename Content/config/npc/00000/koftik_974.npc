@@ -1,0 +1,9 @@
+// npc 974
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+name = Koftik
+models = 163 185 176 208 249 274 292 326
+headmodels = 48 81

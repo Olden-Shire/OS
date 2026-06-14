@@ -1,0 +1,14 @@
+// npc 2623
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+walkanim = 2602
+readyanim = 2604
+contrast = 0
+ambient = 10
+resizeh = 120
+resizev = 115
+recol = 3005/960 406/933
+name = TzHaar-Mej-Roh
+models = 9311 9310 9313 9312
+headmodels = 9251

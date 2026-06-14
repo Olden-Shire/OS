@@ -1,0 +1,11 @@
+// npc 1972
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 4550/7062 25238/10266 6798/10304 8741/1317 7073/11144 4626/11144
+name = Rasolo
+models = 230 250 186 5222 162 179 267 730
+headmodels = 63 82 28

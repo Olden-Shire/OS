@@ -1,0 +1,11 @@
+// obj 7969
+model = obj_pulley_beam
+xof2d = 1
+yof2d = -13
+zoom2d = 1560
+yan2d = 1740
+xan2d = 100
+members = true
+ambient = 10
+cost = 5
+name = Pulley beam

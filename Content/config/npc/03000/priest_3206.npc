@@ -1,0 +1,9 @@
+// npc 3206
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 10171/4884 25238/4769 6798/3594 8741/4769 4886/5648
+name = Priest
+models = 230 244 246 284 292 9607 170 10218 265 8919
+headmodels = 63 77

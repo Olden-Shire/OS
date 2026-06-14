@@ -1,0 +1,4 @@
+// seq 3311
+preanim_move = 2
+postanim_move = 2
+frames = 5/58/120 20/59/120 5/60/120

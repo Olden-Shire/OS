@@ -1,0 +1,13 @@
+// obj 4675
+members = true
+model = obj_ancient_staff_4675
+xof2d = -5
+yof2d = 2
+zoom2d = 1490
+yan2d = 1400
+xan2d = 148
+iop2 = Wield
+manwear = obj_ancient_staff_4675_wear, 0
+womanwear = obj_ancient_staff_4675_wear, 6
+cost = 100000
+name = Ancient staff

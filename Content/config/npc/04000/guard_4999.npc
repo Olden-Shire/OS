@@ -1,0 +1,11 @@
+// npc 4999
+op1 = Talk-to
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 15
+vislevel = 45
+recol = 5161/8472 926/9123 4550/4645 10353/10382 5652/8472 8741/33
+name = Guard
+models = 235 248 294 151 177 566 517 6090 185
+headmodels = 67 80

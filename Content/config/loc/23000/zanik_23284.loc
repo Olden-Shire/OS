@@ -1,0 +1,9 @@
+// loc 23284
+length = 3
+contrast = 20
+ambient = 20
+op1 = Untie
+anim = 6211
+forceapproach = 13
+models_only = 24405
+name = Zanik

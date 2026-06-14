@@ -1,0 +1,13 @@
+// obj 299
+cost = 200
+model = obj_mithril_seeds
+xof2d = 7
+yof2d = 39
+zoom2d = 920
+yan2d = 676
+xan2d = 240
+members = true
+stackable = true
+iop1 = Plant
+recol = 43288/22433
+name = Mithril seeds

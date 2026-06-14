@@ -1,0 +1,7 @@
+// loc 1903
+sharelight = true
+occlude = true
+hillskew = true
+ambient = 25
+contrast = 25
+models = 626/0

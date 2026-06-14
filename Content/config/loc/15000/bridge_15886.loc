@@ -1,0 +1,6 @@
+// loc 15886
+hillskew = true
+width = 3
+blockwalk = true
+models_only = 15751
+name = Bridge

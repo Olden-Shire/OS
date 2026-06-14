@@ -1,0 +1,9 @@
+// npc 4524
+walkanim = 4374
+readyanim = 4374
+contrast = 12
+ambient = 12
+vislevel = 0
+nominimap = true
+name = Enchanted Bucket
+models = 16739

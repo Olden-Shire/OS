@@ -1,0 +1,16 @@
+// obj 6351
+cost = 300
+members = true
+iop2 = Wear
+model = obj_tribal_top_6341
+manwear = obj_tribal_top_6341_man, 0
+manwear2 = 8916
+womanwear = obj_tribal_top_6341_woman, 0
+womanwear2 = 8931
+xof2d = -1
+yof2d = 16
+zoom2d = 1130
+yan2d = 2032
+xan2d = 384
+recol = 4886/36036 5572/2157
+name = Tribal top

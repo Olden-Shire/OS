@@ -1,0 +1,15 @@
+// npc 2946
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 115
+resizev = 136
+contrast = 10
+ambient = 20
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 127/32790 4550/5435 8741/6319 25238/21658 4626/5268 43072/7461
+name = Grimesquit
+models = 10078 8849 332 353 428 358 418
+headmodels = 10034 137

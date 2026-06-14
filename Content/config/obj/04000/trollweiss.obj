@@ -1,0 +1,13 @@
+// obj 4086
+model = obj_flowers_2460
+yof2d = -2
+zoom2d = 840
+yan2d = 816
+xan2d = 612
+iop2 = Wield
+manwear = obj_flowers_2460_wear, 0
+womanwear = obj_flowers_2460_wear, 6
+members = true
+cost = 5
+recol = 17835/19648 48596/36180 53167/36172 37196/36060 10043/36069
+name = Trollweiss

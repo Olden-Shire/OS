@@ -1,0 +1,9 @@
+// loc 24799
+active = 1
+sharelight = true
+contrast = 15
+ambient = 25
+blockwalk = true
+op1 = Enter
+models_only = 26011
+name = Mouse hole

@@ -1,0 +1,7 @@
+// loc 17157
+sharelight = true
+ambient = 20
+active = 0
+nonsolid = true
+recol = 5400/7706
+models_only = 9515

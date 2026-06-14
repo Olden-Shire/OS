@@ -1,0 +1,13 @@
+// npc 5859
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+resizev = 134
+resizeh = 134
+op2 = Attack
+vislevel = 30
+recol = 8741/61347 25238/61347 7952/61347 61/5784 4550/6730
+name = H.A.M. Archer
+models = 169 176 563 246 181 265 296 5434 5430 5433 317
+headmodels = 5428

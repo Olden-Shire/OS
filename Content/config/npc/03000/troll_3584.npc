@@ -1,0 +1,7 @@
+// npc 3584
+walkanim = 283
+readyanim = 286
+op2 = Attack
+vislevel = 91
+name = Troll
+models = 3753 3756 3758 14113

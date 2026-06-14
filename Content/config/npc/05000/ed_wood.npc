@@ -1,0 +1,10 @@
+// npc 5964
+walkanim = 2064
+readyanim = 2065
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 111/24 8741/803 8860/922 25238/10409 947/803
+name = Ed Wood
+models = 15103 217 248 18546 10980 177 18541 21812 19947
+headmodels = 55 80

@@ -1,0 +1,14 @@
+// obj 8993
+model = obj_blue_navy_slacks
+iop2 = Wear
+manwear = obj_blue_navy_slacks_man, 0
+womanwear = obj_blue_navy_slacks_woman, 0
+xof2d = -5
+zoom2d = 1827
+yan2d = 816
+zan2d = 138
+xan2d = 539
+members = true
+cost = 100
+recol = 43311/414 43303/662 43422/910
+name = Red navy slacks

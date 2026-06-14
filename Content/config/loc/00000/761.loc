@@ -1,0 +1,7 @@
+// loc 761
+sharelight = true
+noshadow = true
+active = 0
+hillskew = true
+recol = 5400/16 5660/12 5921/8 6051/4
+models = 2148/22

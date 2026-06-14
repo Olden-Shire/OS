@@ -1,0 +1,8 @@
+// obj 10
+model = obj_cannon_barrels_10
+yof2d = -3
+yan2d = 1872
+xan2d = 188
+cost = 187500
+members = true
+name = Cannon barrels

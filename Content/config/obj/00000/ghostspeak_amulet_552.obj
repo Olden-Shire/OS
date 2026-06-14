@@ -1,0 +1,10 @@
+// obj 552
+cost = 35
+model = obj_ghostspeak_amulet_552
+zoom2d = 480
+yan2d = 97
+xan2d = 207
+iop2 = Wear
+manwear = obj_ghostspeak_amulet_552_man, 0
+womanwear = obj_ghostspeak_amulet_552_woman, 0
+name = Ghostspeak amulet

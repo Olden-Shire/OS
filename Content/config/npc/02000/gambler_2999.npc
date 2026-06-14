@@ -1,0 +1,9 @@
+// npc 2999
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+vislevel = 0
+op1 = Talk-to
+recol = 8741/8 25238/8 4626/8 49420/8 8078/8
+name = Gambler
+models = 230 10038 248 5221 162 176 3711 254 181
+headmodels = 63 10027 80

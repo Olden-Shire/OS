@@ -1,0 +1,7 @@
+// loc 493
+width = 5
+length = 5
+sharelight = true
+occlude = true
+active = 0
+models_only = 863

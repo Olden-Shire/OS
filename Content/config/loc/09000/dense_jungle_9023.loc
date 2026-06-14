@@ -1,0 +1,9 @@
+// loc 9023
+op3 = Hidden
+op4 = Hack
+mapscene = 5
+anim = 2380
+nonblockrange = true
+recol = 6825/7060 6585/6817 15017/16030
+models_only = 8898
+name = Dense Jungle

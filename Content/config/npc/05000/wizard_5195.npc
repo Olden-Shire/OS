@@ -1,0 +1,10 @@
+// npc 5195
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 6798/6327 123/38831
+name = Wizard
+models = 20398 214 250 20404 3189 20395 177 20402 181
+headmodels = 82 52 20392

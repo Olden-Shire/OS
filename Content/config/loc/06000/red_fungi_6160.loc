@@ -1,0 +1,8 @@
+// loc 6160
+nonsolid = true
+resizex = 100
+resizey = 100
+resizez = 100
+recol = 17294/2966 17296/2962 15252/1934 16274/2962
+models_only = 5915 5916 5917
+name = Red fungi

@@ -1,0 +1,8 @@
+// loc 17986
+op1 = Climb-up
+forceapproach = 13
+nonsolid = true
+ambient = 10
+mapscene = 7
+models_only = 17852
+name = Ladder

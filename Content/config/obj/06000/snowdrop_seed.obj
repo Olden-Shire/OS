@@ -1,0 +1,15 @@
+// obj 6460
+model = obj_orchid_seed_6458
+xof2d = -8
+yof2d = 7
+zoom2d = 1260
+yan2d = 2008
+xan2d = 280
+members = true
+iop5 = Destroy
+stackable = true
+count1 = 6508, 2
+count2 = 6509, 3
+count3 = 6510, 4
+count4 = 6511, 5
+name = Snowdrop seed

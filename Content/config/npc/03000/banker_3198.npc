@@ -1,0 +1,10 @@
+// npc 3198
+vislevel = 0
+walkanim = 808
+readyanim = 808
+op1 = Talk-to
+op3 = Bank
+recol = 25238/10295 8741/10283 9104/10270
+name = Banker
+models = 215 236 246 292 320 10301 10218 254 181
+headmodels = 53 68

@@ -1,0 +1,10 @@
+// npc 37
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 8741/7700 11187/61 11200/41 11187/41 926/43934
+name = Sigbert the Adventurer
+models = 313 208 167 268 185 179 250 323 553 3330
+headmodels = 48 82

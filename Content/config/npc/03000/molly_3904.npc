@@ -1,0 +1,9 @@
+// npc 3904
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 25238/939 8741/454 9529/454 107/218 908/218 6798/2997
+name = Molly
+models = 399 11360 332 10706 429 358
+headmodels = 118

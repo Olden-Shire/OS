@@ -1,0 +1,8 @@
+// loc 25160
+width = 2
+length = 2
+mapscene = 12
+nonblockrange = true
+recol = 16536/10258 16545/43026 18601/43034
+models_only = 8690
+name = Rock

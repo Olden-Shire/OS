@@ -1,0 +1,10 @@
+// npc 259
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/10508 8741/10345 43072/4550
+name = Khazard barman
+models = 230 247 292 151 176 254 181 326
+headmodels = 63 79

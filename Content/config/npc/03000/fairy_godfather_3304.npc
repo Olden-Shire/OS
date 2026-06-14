@@ -1,0 +1,8 @@
+// npc 3304
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 9447/7836
+name = Fairy Godfather
+models = 11880
+headmodels = 3178

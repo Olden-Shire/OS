@@ -1,0 +1,6 @@
+// npc 4228
+vislevel = 0
+size = 1
+name = Basilisk
+models = 3010 3006
+headmodels = 14429

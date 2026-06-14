@@ -1,0 +1,10 @@
+// npc 4661
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 20
+recol = 25238/10508 8741/10508 6798/10508 4550/5582
+name = Dark wizard
+models = 208 252 17528 17514 177 176 17525 181
+headmodels = 48 84

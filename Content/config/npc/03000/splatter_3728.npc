@@ -1,0 +1,9 @@
+// npc 3728
+size = 1
+op2 = Attack
+walkanim = 3887
+readyanim = 3886
+vislevel = 33
+recol = 4550/57680 4546/57676 4541/57672 4537/57540
+name = Splatter
+models = 14550

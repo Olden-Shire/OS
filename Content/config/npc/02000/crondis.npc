@@ -1,0 +1,12 @@
+// npc 2010
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 140
+resizev = 140
+op2 = Attack
+vislevel = 75
+alwaysontop = true
+recol = 4550/11687 61/9015 43072/11687 4626/11687 25238/42908 7073/9015
+name = Crondis
+models = 6465 281 315 173 176 6135 266 181

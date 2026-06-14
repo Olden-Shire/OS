@@ -1,0 +1,12 @@
+// obj 9670
+model = obj_prosyte_harness_f_9670
+xof2d = 3
+yof2d = -28
+zoom2d = 2476
+yan2d = 1798
+xan2d = 221
+members = true
+cost = 25000
+iop1 = Unpack
+recol = 9166/3022 9152/4034 7104/4032
+name = Pros'yte harness f

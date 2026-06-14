@@ -1,0 +1,15 @@
+// obj 5318
+model = obj_potato_seed_5318
+xof2d = 2
+yof2d = 4
+zoom2d = 1440
+yan2d = 144
+xan2d = 536
+members = true
+stackable = true
+count1 = 5163, 2
+count2 = 5164, 3
+count3 = 5165, 4
+count4 = 5166, 5
+cost = 2
+name = Potato seed

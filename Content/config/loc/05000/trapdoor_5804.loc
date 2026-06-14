@@ -1,0 +1,8 @@
+// loc 5804
+active = 1
+forceapproach = 7
+op1 = Open
+raiseobject = 0
+nonsolid = true
+models = 1173/22
+name = Trapdoor

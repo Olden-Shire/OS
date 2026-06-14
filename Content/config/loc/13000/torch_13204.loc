@@ -1,0 +1,7 @@
+// loc 13204
+op1 = Light
+op5 = Remove
+ambient = 20
+contrast = 20
+models_only = 11319
+name = Torch

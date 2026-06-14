@@ -1,0 +1,8 @@
+// loc 24668
+forceapproach = 13
+op1 = Open
+contrast = 15
+ambient = 25
+recol = 9104/6554 8856/6430 8765/6554 3594/6550 3346/6674 3470/6798
+models_only = 1951 5531
+name = Wardrobe

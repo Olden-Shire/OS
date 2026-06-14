@@ -1,0 +1,7 @@
+// loc 18061
+op1 = Climb-into
+active = 1
+blockwalk = true
+nonblockrange = true
+models = 17661/22
+name = Trapdoor tunnel

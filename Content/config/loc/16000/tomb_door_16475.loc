@@ -1,0 +1,9 @@
+// loc 16475
+hillskew = true
+forcedecor = true
+active = 1
+active = 1
+op1 = Pick-lock
+recol = 7481/7353 8501/7349 8497/7475 8493/7473 8617/7461
+models = 16414/0
+name = Tomb Door

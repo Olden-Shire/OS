@@ -1,0 +1,16 @@
+// obj 4881
+members = true
+cost = 103000
+iop2 = Wear
+manwear = obj_dharoks_helm_4716_man, 0
+womanwear = obj_dharoks_helm_4716_woman, 0
+manhead = 6569
+womanhead = 6574
+model = obj_dharoks_helm_4716
+xof2d = 5
+yof2d = -8
+zoom2d = 660
+yan2d = 128
+xan2d = 96
+recol = 10394/10388 10388/10508
+name = Dharoks helm 75

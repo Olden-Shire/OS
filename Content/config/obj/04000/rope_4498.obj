@@ -1,0 +1,7 @@
+// obj 4498
+model = obj_mud_4490
+members = true
+manwear = obj_rope_4498_wear, 0
+womanwear = obj_rope_4498_wear, 6
+yof2d = -1
+name = Rope

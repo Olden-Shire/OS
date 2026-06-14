@@ -1,0 +1,8 @@
+// loc 5976
+length = 3
+width = 3
+blockwalk = true
+nonblockrange = true
+recol = 43051/28
+models_only = 5851 5852
+name = Dwarf MultiCannon

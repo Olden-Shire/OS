@@ -1,0 +1,10 @@
+// npc 4416
+vislevel = 0
+size = 1
+readyanim = 808
+op1 = Talk-To
+alwaysontop = true
+recol = 8741/103 8090/103 4626/103 8078/24 16/24 10004/24
+name = Bee keeper
+models = 230 249 305 162 179 273 185 16038
+headmodels = 63 81 15966

@@ -1,0 +1,6 @@
+// loc 16004
+sharelight = true
+hillskew = true
+active = 0
+recol = 6932/5665 6684/5545 6930/5660
+models = 993/0 995/1 996/2 998/3 999/9

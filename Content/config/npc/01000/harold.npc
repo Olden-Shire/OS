@@ -1,0 +1,12 @@
+// npc 1078
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 25238/8741
+name = Harold
+models = 219 246 294 167 179 274 185
+headmodels = 57

@@ -1,0 +1,10 @@
+// obj 6129
+cost = 65000
+model = obj_rock_shell_plate_6129
+iop2 = Wear
+manwear = obj_rock_shell_plate_6129_man, 0
+womanwear = obj_rock_shell_plate_6129_woman, 0
+members = true
+zoom2d = 1190
+xan2d = 476
+name = Rock-shell plate

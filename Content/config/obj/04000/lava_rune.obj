@@ -1,0 +1,11 @@
+// obj 4699
+stackable = true
+cost = 20
+model = obj_lava_rune
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+ambient = 30
+members = true
+name = Lava rune

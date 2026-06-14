@@ -1,0 +1,10 @@
+// loc 19191
+anim = 5179
+op1 = Check
+nonsolid = true
+active = 1
+raiseobject = 0
+ambient = 25
+contrast = 25
+models_only = 19904
+name = Shaking box

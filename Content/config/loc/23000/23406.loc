@@ -1,0 +1,9 @@
+// loc 23406
+active = 0
+width = 2
+contrast = 20
+ambient = 20
+blockwalk = true
+recol = 5640/10382 5388/10258 5392/10262 5268/10266 5272/10270 5276/10275
+models_only = 24378 24377
+models_only = 24379 24377

@@ -1,0 +1,10 @@
+// npc 1608
+size = 3
+walkanim = 1510
+readyanim = 1511
+op2 = Attack
+resizeh = 185
+resizev = 185
+vislevel = 106
+name = Kurask
+models = 5082

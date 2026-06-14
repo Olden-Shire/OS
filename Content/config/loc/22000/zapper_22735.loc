@@ -1,0 +1,8 @@
+// loc 22735
+anim = 6035
+ambient = 20
+bgsound = 3513, 2
+active = 1
+op1 = hidden
+models_only = 23475
+name = Zapper

@@ -1,0 +1,9 @@
+// loc 19660
+anim = 5270
+length = 2
+nonsolid = true
+mapscene = 68
+raiseobject = 0
+recol = 6682/5388 6071/0
+models_only = 19934
+name = Net trap

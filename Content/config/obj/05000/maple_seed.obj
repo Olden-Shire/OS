@@ -1,0 +1,14 @@
+// obj 5314
+model = obj_maple_seed
+yof2d = 3
+zoom2d = 1380
+yan2d = 2036
+xan2d = 556
+members = true
+stackable = true
+count1 = 5119, 2
+count2 = 5120, 3
+count3 = 5121, 4
+count4 = 5122, 5
+cost = 48
+name = Maple seed

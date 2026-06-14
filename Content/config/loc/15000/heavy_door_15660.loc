@@ -1,0 +1,5 @@
+// loc 15660
+mirror = true
+op1 = Open
+models = 15380/10 15379/0
+name = Heavy door

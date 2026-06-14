@@ -1,0 +1,9 @@
+// loc 3376
+width = 2
+resizex = 110
+resizey = 74
+resizez = 128
+nonblockrange = true
+recol = 6036/6689
+models_only = 723
+name = Ogre bench

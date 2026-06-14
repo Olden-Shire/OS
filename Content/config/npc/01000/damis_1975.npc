@@ -1,0 +1,11 @@
+// npc 1975
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 174
+recol = 4550/4647 61/16 41/12 57/12
+name = Damis
+models = 215 254 248 173 176 181 315 546
+headmodels = 53 80

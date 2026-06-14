@@ -1,0 +1,7 @@
+// seq 2113
+replaceheldleft = 0
+replaceheldright = 0
+priority = 2
+preanim_move = 1
+postanim_move = 1
+frames = 4/262/215 3/263/215 2/264/215 2/265/215 24/266/215 2/265/215 2/264/215 3/263/215 4/262/215

@@ -1,0 +1,9 @@
+// npc 6087
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+vislevel = 83
+name = Elvarg
+models = 17404 17406 17405 17423

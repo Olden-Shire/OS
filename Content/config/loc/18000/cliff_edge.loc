@@ -1,0 +1,8 @@
+// loc 18922
+hillskew = true
+active = 1
+op1 = Climb-down
+blockwalk = true
+recol = 4892/9533 4899/9525 5921/9517
+models = 1124/22
+name = Cliff edge

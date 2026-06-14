@@ -1,0 +1,11 @@
+// loc 22253
+active = 1
+hillskew = true
+nonsolid = true
+sharelight = true
+contrast = 20
+ambient = 20
+op1 = Climb-down
+models_only = 22870
+models_only = 22892
+name = Stairs

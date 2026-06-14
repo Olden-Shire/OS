@@ -1,0 +1,10 @@
+// obj 5062
+model = obj_left_boot
+xof2d = -3
+yof2d = -5
+zoom2d = 630
+yan2d = 212
+xan2d = 100
+members = true
+iop1 = Wear
+name = Left boot

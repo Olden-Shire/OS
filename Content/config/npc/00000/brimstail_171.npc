@@ -1,0 +1,12 @@
+// npc 171
+size = 1
+walkanim = 189
+readyanim = 195
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+op3 = Teleport
+recol = 926/41624 22426/40090 4758/10378 22302/40094
+name = Brimstail
+models = 17000 16986 17014 17007
+headmodels = 18 16980

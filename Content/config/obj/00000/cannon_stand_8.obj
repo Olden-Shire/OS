@@ -1,0 +1,9 @@
+// obj 8
+model = obj_cannon_stand_8
+yof2d = 106
+zoom2d = 1750
+yan2d = 1456
+xan2d = 268
+cost = 187500
+members = true
+name = Cannon stand

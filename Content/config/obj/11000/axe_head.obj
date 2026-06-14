@@ -1,0 +1,11 @@
+// obj 11050
+model = obj_axe_head
+xof2d = 3
+yof2d = 5
+zoom2d = 1049
+yan2d = 1826
+xan2d = 470
+contrast = 15
+ambient = 15
+members = true
+name = Axe head

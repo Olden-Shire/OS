@@ -1,0 +1,6 @@
+// loc 8142
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7874 7766
+name = Herbs

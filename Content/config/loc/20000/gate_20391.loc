@@ -1,0 +1,7 @@
+// loc 20391
+hillskew = true
+ambient = 10
+active = 1
+op1 = Open
+models = 20797/0
+name = Gate

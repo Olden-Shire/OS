@@ -1,0 +1,9 @@
+// loc 11703
+active = 0
+ambient = 25
+hillskew = true
+nonsolid = true
+forcedecor = true
+ambient = 15
+recol = 10578/8406 10442/6352 10438/6348
+models = 9142/22

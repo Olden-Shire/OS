@@ -1,0 +1,5 @@
+// seq 799
+replaceheldleft = 0
+replaceheldright = 790
+reachforward = true
+frames = 4/94/245 4/95/245 6/96/245 3/97/245 18/98/245 4/99/245

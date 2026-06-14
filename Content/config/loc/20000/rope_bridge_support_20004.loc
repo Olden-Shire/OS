@@ -1,0 +1,10 @@
+// loc 20004
+active = 1
+sharelight = true
+hillskew = true
+noshadow = true
+blockwalk = true
+ambient = 10
+nonblockrange = true
+models = 20332/0
+name = Rope bridge support

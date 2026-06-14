@@ -1,0 +1,13 @@
+// obj 7332
+model = obj_black_shield_h1_7332
+manwear = obj_black_shield_h1_7332_wear, 0
+womanwear = obj_black_shield_h1_7332_wear, 6
+xof2d = -6
+yof2d = -14
+zoom2d = 1560
+yan2d = 1104
+xan2d = 344
+cost = 1632
+iop2 = Wear
+recol = 61/12 57/7054
+name = Black shield(h1)

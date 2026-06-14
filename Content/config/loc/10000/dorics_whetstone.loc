@@ -1,0 +1,9 @@
+// loc 10641
+width = 2
+ambient = 10
+anim = 2997
+forceapproach = 11
+bgsound = 3146, 3
+recol = 5545/6689 6466/6808 10287/5165
+models_only = 10388 10389
+name = Doric's Whetstone

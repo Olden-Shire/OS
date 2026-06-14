@@ -1,0 +1,11 @@
+// loc 15363
+active = 1
+op5 = Build
+nonsolid = true
+resizex = 75
+resizey = 75
+resizez = 75
+width = 2
+length = 2
+models_only = 12650
+name = Tree space

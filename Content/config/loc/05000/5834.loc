@@ -1,0 +1,7 @@
+// loc 5834
+forcedecor = true
+active = 0
+sharelight = true
+ambient = 25
+contrast = 25
+models = 5651/22

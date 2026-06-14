@@ -1,0 +1,10 @@
+// loc 13420
+width = 2
+length = 2
+mapscene = 0
+resizex = 75
+resizey = 75
+resizez = 75
+op5 = Remove
+models_only = 12930
+name = Oak Tree

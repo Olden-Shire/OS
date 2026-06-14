@@ -1,0 +1,7 @@
+// loc 24343
+width = 2
+ambient = 25
+op1 = Pray-at
+recol = 6682/7954 6443/7706 24/78 43094/9436
+models_only = 12370 12379
+name = Altar

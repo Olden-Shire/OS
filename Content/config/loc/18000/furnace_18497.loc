@@ -1,0 +1,9 @@
+// loc 18497
+width = 2
+length = 3
+ambient = 10
+op2 = Smelt
+bgsound = 2210, 3
+recol = 44994/17682 18/18712 20/21790 12/21908 28/21667 37/16677
+models_only = 11546
+name = Furnace

@@ -1,0 +1,9 @@
+// npc 5954
+readyanim = 6422
+walkanim = 6419
+size = 2
+alwaysontop = true
+vislevel = 0
+alwaysontop = true
+name = Workman
+models = 25837 25840 25838

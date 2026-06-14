@@ -1,0 +1,9 @@
+// loc 18182
+ambient = 15
+resizex = 100
+resizey = 100
+resizez = 100
+nonblockrange = true
+recol = 5409/7830 7452/7954 5404/7706 5400/7582 3346/7587 7952/7463
+models_only = 7774
+name = Barrel

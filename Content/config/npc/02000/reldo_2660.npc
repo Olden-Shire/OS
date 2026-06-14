@@ -1,0 +1,11 @@
+// npc 2660
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/3484 8741/10543 43072/4550 6038/13611 54397/8472
+name = Reldo
+models = 215 181 248 292 163 176 254 245 244 320 4591
+headmodels = 53 80 78 77

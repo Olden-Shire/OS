@@ -1,0 +1,9 @@
+// npc 1417
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/13739 22422/15799
+name = Carado
+models = 2914 4698 2919
+headmodels = 21

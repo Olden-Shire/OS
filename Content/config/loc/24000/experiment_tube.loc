@@ -1,0 +1,9 @@
+// loc 24689
+blockwalk = true
+ambient = 10
+contrast = 5
+ambient = 15
+nonblockrange = true
+recol = 7452/6554 8483/6430 8596/6674 8472/6550
+models_only = 17878
+name = Experiment tube

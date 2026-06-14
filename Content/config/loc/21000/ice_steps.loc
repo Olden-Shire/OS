@@ -1,0 +1,8 @@
+// loc 21095
+active = 1
+blockwalk = true
+ambient = 25
+contrast = 25
+op1 = Climb
+models_only = 21604
+name = Ice steps

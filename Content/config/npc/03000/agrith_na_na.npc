@@ -1,0 +1,8 @@
+// npc 3493
+size = 3
+walkanim = 3499
+readyanim = 3498
+op2 = Attack
+vislevel = 146
+name = Agrith-Na-Na
+models = 13693

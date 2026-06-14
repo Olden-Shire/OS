@@ -1,0 +1,11 @@
+// obj 677
+model = obj_panning_tray_677
+manwear = obj_panning_tray_677_wear, 0
+womanwear = obj_panning_tray_677_wear, 6
+yof2d = 17
+zoom2d = 1340
+yan2d = 1920
+xan2d = 172
+members = true
+iop4 = Search
+name = Panning tray

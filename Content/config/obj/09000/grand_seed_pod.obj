@@ -1,0 +1,13 @@
+// obj 9469
+model = obj_grand_seed_pod
+xof2d = -3
+yof2d = -4
+zoom2d = 724
+yan2d = 1770
+xan2d = 104
+members = true
+stackable = true
+cost = 250
+iop1 = Launch
+iop3 = Squash
+name = Grand seed pod

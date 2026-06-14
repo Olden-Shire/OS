@@ -1,0 +1,6 @@
+// loc 9267
+sharelight = true
+noshadow = true
+active = 0
+ambient = 25
+models = 9173/0

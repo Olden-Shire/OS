@@ -1,0 +1,12 @@
+// obj 11443
+model = obj_fish_vial_11428
+members = true
+cost = 13
+yof2d = -1
+zoom2d = 550
+yan2d = 1812
+xan2d = 81
+iop1 = Drink
+iop4 = Empty
+recol = 6953/11212 7077/11080 7073/11076
+name = Strength mix(2)

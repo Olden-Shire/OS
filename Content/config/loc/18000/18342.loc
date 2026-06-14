@@ -1,0 +1,8 @@
+// loc 18342
+sharelight = true
+ambient = 20
+contrast = 10
+mirror = true
+recol = 8076/7587 6024/7830
+retex = 45/50
+models = 15210/12 15221/13 15218/14 15219/15 25122/16 15220/17 15222/18

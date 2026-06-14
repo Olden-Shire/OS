@@ -1,0 +1,13 @@
+// npc 1073
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op2 = Attack
+vislevel = 42
+recol = 6674/8111
+name = Archer
+models = 220 246 303 167 179 277 185 563
+headmodels = 32 63 80

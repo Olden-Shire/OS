@@ -1,0 +1,12 @@
+// obj 10406
+model = obj_black_ele_legs_10402
+yof2d = -1
+zoom2d = 1827
+xan2d = 444
+iop2 = Wear
+manwear = obj_black_ele_legs_10402_man, 0
+womanwear = obj_black_ele_legs_10402_woman, 0
+members = true
+cost = 2000
+recol = 105/109 64/171 47/293 35/63905 26/64024 55172/64396
+name = Red ele' legs

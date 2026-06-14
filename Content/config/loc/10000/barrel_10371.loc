@@ -1,0 +1,5 @@
+// loc 10371
+ambient = 10
+nonblockrange = true
+models_only = 8232
+name = Barrel

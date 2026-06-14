@@ -1,0 +1,9 @@
+// loc 2118
+anim = 456
+resizex = 32
+resizey = 32
+resizez = 32
+bgsound = 2147, 5
+nonblockrange = true
+models_only = 2320
+name = Whirlpool

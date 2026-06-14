@@ -1,0 +1,10 @@
+// npc 849
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op3 = Trade
+name = Barman
+models = 2909 2900 2915
+headmodels = 23

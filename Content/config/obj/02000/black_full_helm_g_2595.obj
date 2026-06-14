@@ -1,0 +1,15 @@
+// obj 2595
+cost = 1056
+model = obj_iron_full_helm_1153
+xof2d = -1
+yof2d = 6
+zoom2d = 800
+yan2d = 152
+xan2d = 160
+iop2 = Wear
+manwear = obj_iron_full_helm_1153_man, 0
+womanwear = obj_iron_full_helm_1153_woman, 0
+manhead = 56
+womanhead = 116
+recol = 61/8 926/7114
+name = Black full helm(g)

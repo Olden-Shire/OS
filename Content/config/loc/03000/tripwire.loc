@@ -1,0 +1,6 @@
+// loc 3921
+nonsolid = true
+op1 = Step-over
+length = 2
+models_only = 3983
+name = Tripwire

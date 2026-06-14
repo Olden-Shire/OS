@@ -1,0 +1,10 @@
+// loc 20996
+length = 4
+width = 4
+active = 1
+nonsolid = true
+anim = 5742
+contrast = 25
+ambient = 35
+models_only = 21785 21787 21786
+name = Table

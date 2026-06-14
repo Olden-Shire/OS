@@ -1,0 +1,5 @@
+// loc 19993
+op1 = Climb
+forceapproach = 13
+width = 2
+multiloc = 3109, 65535, 19985 19986 19987 19988

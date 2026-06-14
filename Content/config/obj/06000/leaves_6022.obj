@@ -1,0 +1,9 @@
+// obj 6022
+model = obj_leaves_6020
+xof2d = -2
+yof2d = 10
+zoom2d = 1490
+yan2d = 100
+xan2d = 320
+members = true
+name = Leaves

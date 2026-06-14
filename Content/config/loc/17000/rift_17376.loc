@@ -1,0 +1,10 @@
+// loc 17376
+hillskew = true
+mirror = true
+ambient = 35
+sharelight = true
+forcedecor = true
+resizey = 64
+recol = 6040/5006
+models_only = 17310
+name = Rift

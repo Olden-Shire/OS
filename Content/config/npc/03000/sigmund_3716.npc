@@ -1,0 +1,9 @@
+// npc 3716
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 64
+recol = 8741/61347 25238/61347 7952/61347 61/68 8078/61347 11200/177
+name = Sigmund
+models = 5430 5215 283 296 317 24536 177 518 24537 181
+headmodels = 5428 5207

@@ -1,0 +1,6 @@
+// loc 7098
+ambient = 20
+nonsolid = true
+active = 1
+models = 7384/22
+name = Chart

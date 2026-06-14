@@ -1,0 +1,6 @@
+// loc 4305
+sharelight = true
+bgsound = 2209, 3
+active = 0
+recol = 28/5272 20/5392 61/5281
+models_only = 1281

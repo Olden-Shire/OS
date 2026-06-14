@@ -1,0 +1,14 @@
+// obj 6573
+members = true
+model = obj_diamond_1601
+xof2d = -5
+yof2d = 7
+zoom2d = 780
+yan2d = 220
+zan2d = 1860
+xan2d = 368
+manwear = obj_diamond_1601_wear, 0
+womanwear = obj_diamond_1601_wear, 6
+cost = 200000
+recol = 918/0 931/12 478/43053 127/0
+name = Onyx

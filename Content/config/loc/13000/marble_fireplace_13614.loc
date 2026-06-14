@@ -1,0 +1,8 @@
+// loc 13614
+length = 2
+anim = 477
+anim = 3105
+forceapproach = 13
+bgsound = 2065, 3
+models_only = 12613 12611
+name = Marble fireplace

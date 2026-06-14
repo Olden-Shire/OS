@@ -1,0 +1,9 @@
+// loc 18855
+width = 2
+length = 2
+ambient = 25
+op1 = Pick
+active = 1
+recol = 19992/8493 19988/8487 20364/8493
+models_only = 19141 19140
+name = Hardy goutweed

@@ -1,0 +1,10 @@
+// npc 1540
+size = 1
+readyanim = 5538
+walkanim = 5539
+op2 = Attack
+alwaysontop = true
+vislevel = 95
+name = Treus Dayth
+models = 21152
+headmodels = 21401

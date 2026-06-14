@@ -1,0 +1,10 @@
+// seq 733
+replaceheldright = 1102
+replaceheldleft = 0
+priority = 0
+loops = 9
+maxloops = 3
+postanim_move = 1
+duplicatebehaviour = 1
+frames = 8/151/207 4/157/207 4/158/207 4/159/207 4/160/207 3/161/207 3/162/207 15/163/207 10/164/207 15/163/207 10/164/207 30/152/207 4/153/207 4/154/207 30/155/207 4/156/207
+sound = 0 0 0 0 0 0 0 0 664849 0 664849

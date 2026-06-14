@@ -1,0 +1,10 @@
+// npc 5341
+size = 1
+resizeh = 108
+resizev = 108
+walkanim = 5497
+readyanim = 5495
+op2 = Attack
+vislevel = 45
+name = Skeleton
+models = 21166

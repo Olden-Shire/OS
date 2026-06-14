@@ -1,0 +1,10 @@
+// npc 15
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+op2 = Attack
+vislevel = 24
+recol = 6798/6854 4626/24
+name = Warrior woman
+models = 390 468 337 353 432 361 376 519 541

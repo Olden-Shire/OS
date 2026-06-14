@@ -1,0 +1,11 @@
+// obj 7398
+model = obj_enchanted_robe_7398
+cost = 80000
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+iop2 = Wear
+manwear = obj_enchanted_robe_7398_man, 0
+womanwear = obj_enchanted_robe_7398_woman, 0
+members = true
+name = Enchanted robe

@@ -1,0 +1,5 @@
+// loc 10392
+active = 0
+nonsolid = true
+length = 3
+models_only = 10208

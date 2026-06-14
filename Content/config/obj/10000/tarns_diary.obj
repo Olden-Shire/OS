@@ -1,0 +1,12 @@
+// obj 10587
+model = obj_tarns_diary
+xof2d = 3
+yof2d = 5
+zoom2d = 1104
+yan2d = 1859
+xan2d = 282
+iop2 = Read
+iop5 = Destroy
+members = true
+cost = 50
+name = Tarn's diary

@@ -1,0 +1,14 @@
+// obj 6319
+cost = 5
+model = obj_proboscis
+xof2d = 3
+yof2d = 4
+zoom2d = 650
+yan2d = 1984
+xan2d = 308
+members = true
+stackable = true
+count1 = 6320, 100
+count2 = 6321, 1000
+recol = 28/4205
+name = Proboscis

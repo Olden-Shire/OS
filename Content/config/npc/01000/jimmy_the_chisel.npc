@@ -1,0 +1,12 @@
+// npc 1718
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+resizev = 120
+resizeh = 120
+recol = 25238/9104 123/8741 4550/4564 4550/5563 43072/5563
+name = Jimmy the Chisel
+models = 173 176 4218 4226 297 3189 226 280
+headmodels = 61

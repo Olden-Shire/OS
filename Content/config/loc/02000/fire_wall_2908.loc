@@ -1,0 +1,10 @@
+// loc 2908
+anim = 476
+ambient = 100
+contrast = 100
+op1 = Touch
+op2 = Investigate
+mapscene = 15
+nonblockrange = true
+models = 2263/0 2264/1 2265/2
+name = Fire Wall

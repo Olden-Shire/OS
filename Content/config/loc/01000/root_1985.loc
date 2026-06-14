@@ -1,0 +1,8 @@
+// loc 1985
+width = 3
+length = 3
+op1 = Search
+active = 1
+nonblockrange = true
+models_only = 2152
+name = Root

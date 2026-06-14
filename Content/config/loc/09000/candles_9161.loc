@@ -1,0 +1,8 @@
+// loc 9161
+mirror = true
+anim = 2564
+resizex = 200
+resizey = 200
+resizez = 200
+models_only = 9229 9230
+name = Candles

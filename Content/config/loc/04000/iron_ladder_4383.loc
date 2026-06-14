@@ -1,0 +1,7 @@
+// loc 4383
+forceapproach = 14
+sharelight = true
+active = 1
+op1 = Climb
+models_only = 4569
+name = Iron ladder

@@ -1,0 +1,47 @@
+[clientscript,script_31](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6, int $int7)()
+def_int $int8;
+
+cc_create($int0, 5, 0);
+cc_setposition(0, 16);
+cc_setsize(16, calc(if_getheight($int0) - 32));
+cc_setgraphic($int2);
+cc_settiling(0);
+cc_setonclick(34, $int0, $int1, -2147483646, "IIi");
+.cc_create($int0, 5, 1);
+.cc_setposition(0, 16);
+$int8 = calc((if_getheight($int0) - 32) * if_getheight($int0) / if_getscrollheight($int1));
+if ($int8 < 10) {
+    $int8 = 10;
+}
+.cc_setsize(16, $int8);
+.cc_setgraphic($int4);
+.cc_settiling(0);
+.cc_setdraggable($int0, 0);
+.cc_setondrag(35, $int0, $int1, -2147483646, 0, "IIi1");
+.cc_setondragcomplete(35, $int0, $int1, -2147483646, 1, "IIi1");
+.cc_setdraggablebehavior(1);
+cc_create($int0, 5, 2);
+cc_setposition(0, .cc_gety());
+cc_setsize(16, 5);
+cc_setgraphic($int3);
+cc_settiling(0);
+cc_create($int0, 5, 3);
+cc_setposition(0, calc(.cc_gety() + .cc_getheight() - 5));
+cc_setsize(16, 5);
+cc_setgraphic($int5);
+cc_settiling(0);
+cc_create($int0, 5, 4);
+cc_setposition(0, 0);
+cc_setsize(16, 16);
+cc_setgraphic($int6);
+cc_settiling(0);
+cc_setonhold(32, $int0, $int1, "II");
+cc_create($int0, 5, 5);
+cc_setposition(0, calc(if_getheight($int0) - 16));
+cc_setsize(16, 16);
+cc_setgraphic($int7);
+cc_settiling(0);
+cc_setonhold(33, $int0, $int1, "II");
+if_setonscrollwheel(36, $int0, $int1, -2147483646, "IIi", $int0);
+if_setonscrollwheel(36, $int0, $int1, -2147483646, "IIi", $int1);
+return;

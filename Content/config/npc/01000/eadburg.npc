@@ -1,0 +1,13 @@
+// npc 1072
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op2 = Attack
+vislevel = 4
+recol = 10299/4550 8741/28 25238/49 4626/78
+name = Eadburg
+models = 393 374 467 332 353 428 358
+headmodels = 115 99

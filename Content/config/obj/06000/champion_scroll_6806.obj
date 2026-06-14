@@ -1,0 +1,12 @@
+// obj 6806
+iop1 = Read
+model = obj_champion_scroll_6798
+xof2d = -1
+yof2d = 11
+zoom2d = 1020
+yan2d = 656
+xan2d = 344
+members = true
+ambient = 10
+recol = 6604/99 6464/94 6587/90 6583/86 60065/6323 60184/6319
+name = Champion scroll

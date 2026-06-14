@@ -1,0 +1,9 @@
+[clientscript,script_55](int $int0)(int)
+
+if ($int0 = 0) {
+    return(16973837);
+}
+if ($int0 = 1) {
+    return(16973838);
+}
+return(-1);

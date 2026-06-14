@@ -1,0 +1,11 @@
+// obj 9699
+model = obj_fire_rune_9699
+members = true
+xof2d = -1
+yof2d = -4
+zoom2d = 919
+yan2d = 166
+zan2d = 55
+xan2d = 512
+iop5 = Destroy
+name = Fire rune

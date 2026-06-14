@@ -1,0 +1,9 @@
+// loc 3578
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Jump-on
+recol = 6573/6449
+models_only = 3634
+name = Pillar

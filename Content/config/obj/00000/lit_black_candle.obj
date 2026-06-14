@@ -1,0 +1,11 @@
+// obj 32
+members = true
+cost = 3
+model = obj_lit_black_candle
+yof2d = -2
+zoom2d = 570
+yan2d = 1864
+xan2d = 168
+iop1 = Extinguish
+recol = 127/8
+name = Lit black candle

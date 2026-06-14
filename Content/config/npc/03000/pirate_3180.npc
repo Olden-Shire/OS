@@ -1,0 +1,9 @@
+// npc 3180
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/920 39145/22158 11162/4
+name = Pirate
+models = 211 236 252 14187 151 10218 11196 259
+headmodels = 50 84 68

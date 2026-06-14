@@ -1,0 +1,13 @@
+// obj 9657
+cost = 1
+model = obj_tome_of_xp_3
+iop1 = Read
+members = true
+iop5 = Destroy
+xof2d = 1
+zoom2d = 1104
+yan2d = 1886
+xan2d = 309
+ambient = 10
+recol = 8720/43169 7700/43049 9775/5173 8633/5181 7741/43057
+name = Tome of xp (2)

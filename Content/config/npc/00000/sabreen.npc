@@ -1,0 +1,13 @@
+// npc 960
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op3 = Heal
+vislevel = 0
+recol = 8741/43228 25238/43228 6798/63397 4550/6705
+name = Sabreen
+models = 393 467 348 353 428 358 3193 3191
+headmodels = 114 3186

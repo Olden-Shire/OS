@@ -1,0 +1,9 @@
+// npc 636
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+name = Cheerleader
+models = 2913 2904 2923
+headmodels = 21

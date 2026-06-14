@@ -1,0 +1,8 @@
+// loc 24876
+active = 1
+contrast = 15
+ambient = 25
+nonsolid = true
+op1 = Take
+models_only = 26001
+name = Bones

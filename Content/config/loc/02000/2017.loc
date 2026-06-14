@@ -1,0 +1,12 @@
+// loc 2017
+width = 4
+length = 2
+resizex = 200
+resizey = 200
+resizez = 200
+ambient = 80
+contrast = 80
+noshadow = true
+anim = 522
+active = 0
+models_only = 2329

@@ -1,0 +1,9 @@
+// npc 2201
+op1 = Talk-to
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 803/7322 61/10646 53/33 4292/16 90/16 2578/10539
+name = Audmann
+models = 2972 7055 7037 2981 2985
+headmodels = 2

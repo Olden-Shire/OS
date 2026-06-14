@@ -1,0 +1,12 @@
+// obj 5331
+model = obj_watering_can_5331
+xof2d = 5
+yof2d = -9
+zoom2d = 1050
+yan2d = 1788
+xan2d = 176
+manwear = obj_watering_can_5331_wear, 0
+womanwear = obj_watering_can_5331_wear, 0
+members = true
+cost = 8
+name = Watering can

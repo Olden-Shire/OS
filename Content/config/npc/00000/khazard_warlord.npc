@@ -1,0 +1,11 @@
+// npc 477
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 112
+recol = 61/20 7700/11138 57/20
+name = Khazard warlord
+models = 225 246 306 152 176 268 185 542 523 323
+headmodels = 60

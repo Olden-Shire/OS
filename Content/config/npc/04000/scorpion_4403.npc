@@ -1,0 +1,9 @@
+// npc 4403
+size = 2
+walkanim = 6253
+readyanim = 6252
+op2 = Attack
+vislevel = 37
+recol = 3974/60044 142/61714 4884/2838 4636/2590 4645/2599 4525/2479
+name = Scorpion
+models = 24609

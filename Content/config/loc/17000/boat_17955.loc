@@ -1,0 +1,7 @@
+// loc 17955
+length = 3
+width = 3
+noshadow = true
+op1 = Board
+models_only = 17556
+name = Boat

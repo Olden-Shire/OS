@@ -1,0 +1,9 @@
+// npc 3926
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/2524 43072/2524 25238/4506 8741/54323 6798/64400
+name = Ingrid
+models = 387 470 483 348 353 431 358
+headmodels = 110

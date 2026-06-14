@@ -1,0 +1,10 @@
+// npc 218
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8090/7070 25238/7070 6798/6057 8741/7070 8090/7070
+name = Galahad
+models = 223 295 162 176 265 185 284 249
+headmodels = 59 81

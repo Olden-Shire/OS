@@ -1,0 +1,8 @@
+// npc 1154
+size = 3
+walkanim = 6220
+readyanim = 6218
+op2 = Attack
+vislevel = 85
+name = Kalphite Soldier
+models = 24595

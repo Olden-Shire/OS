@@ -1,0 +1,11 @@
+// obj 2383
+model = obj_crystal_2380
+xof2d = 1
+yof2d = -29
+zoom2d = 1320
+yan2d = 128
+xan2d = 216
+members = true
+iop5 = Destroy
+recol = 22336/127
+name = Crystal

@@ -1,0 +1,8 @@
+// loc 13864
+op4 = Continue-trek
+op5 = Escape-event
+nonsolid = true
+width = 2
+length = 3
+models_only = 14144
+name = Boat

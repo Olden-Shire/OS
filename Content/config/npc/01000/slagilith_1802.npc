@@ -1,0 +1,10 @@
+// npc 1802
+size = 2
+walkanim = 1748
+readyanim = 1749
+op2 = Attack
+resizev = 50
+resizeh = 50
+vislevel = 92
+name = Slagilith
+models = 5654

@@ -1,0 +1,7 @@
+// loc 22955
+sharelight = true
+ambient = 35
+hillskew = true
+active = 0
+recol = 5281/5268 5276/5392 5272/5388 5392/5640 5388/5640
+models_only = 23813

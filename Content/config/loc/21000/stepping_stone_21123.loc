@@ -1,0 +1,9 @@
+// loc 21123
+anim = 3743
+sharelight = true
+blockwalk = true
+active = 1
+ambient = 25
+contrast = 25
+models_only = 21534
+name = Stepping Stone

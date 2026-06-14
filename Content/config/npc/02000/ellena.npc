@@ -1,0 +1,9 @@
+// npc 2331
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 25238/6689 8741/7469 6798/7762 43072/4550 43569/5435 10262/5551
+name = Ellena
+models = 370 390 456 332 353 7368 433 7366
+headmodels = 113 95

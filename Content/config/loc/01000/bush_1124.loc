@@ -1,0 +1,8 @@
+// loc 1124
+mapscene = 9
+ambient = 25
+contrast = 25
+blockwalk = true
+nonblockrange = true
+models = 1565/10 20041/22
+name = Bush

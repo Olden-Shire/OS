@@ -1,0 +1,9 @@
+// npc 5612
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+name = Rufus
+models = 26121 26133 26118 26128 26119
+headmodels = 26268

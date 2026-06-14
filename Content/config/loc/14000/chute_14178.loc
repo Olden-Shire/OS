@@ -1,0 +1,10 @@
+// loc 14178
+active = 1
+hillskew = true
+forcedecor = true
+op1 = Climb Down
+ambient = 10
+contrast = 10
+blockwalk = true
+models = 14391/22
+name = Chute

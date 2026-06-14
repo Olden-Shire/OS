@@ -1,0 +1,8 @@
+// loc 22974
+anim = 6039
+ambient = 20
+contrast = 20
+width = 3
+bgsound = 3510, 3
+models_only = 23353 23354
+name = Frog spit

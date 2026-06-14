@@ -1,0 +1,8 @@
+// loc 25614
+width = 2
+length = 2
+ambient = 10
+nonblockrange = true
+recol = 46199/43125 4527/5309 5660/6024 926/916
+models_only = 1190
+name = Crystal ball

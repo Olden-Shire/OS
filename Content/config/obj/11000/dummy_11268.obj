@@ -1,0 +1,12 @@
+// obj 11268
+model = obj_dummy_11268
+xof2d = -7
+yof2d = 1
+zoom2d = 1440
+yan2d = 1956
+xan2d = 152
+ambient = 60
+members = true
+members = true
+cost = 1000
+name = Dummy

@@ -1,0 +1,6 @@
+// loc 15566
+ambient = 10
+contrast = 17
+op1 = Read
+models_only = 14651 14652
+name = Warning sign

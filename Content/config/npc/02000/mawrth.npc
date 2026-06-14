@@ -1,0 +1,12 @@
+// npc 2366
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 123
+resizev = 110
+op3 = Pickpocket
+op1 = Talk-to
+vislevel = 0
+recol = 14517/7595
+name = Mawrth
+models = 4030 6980 480 6978 6979
+headmodels = 4013

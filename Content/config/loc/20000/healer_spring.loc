@@ -1,0 +1,11 @@
+// loc 20150
+blockwalk = true
+active = 1
+sharelight = true
+noshadow = true
+op3 = Take-from
+op1 = Drink-from
+bgsound = 2151, 3
+nonblockrange = true
+models_only = 20647
+name = Healer spring

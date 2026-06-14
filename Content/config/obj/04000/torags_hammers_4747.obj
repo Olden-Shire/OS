@@ -1,0 +1,13 @@
+// obj 4747
+members = true
+cost = 160000
+iop2 = Wield
+manwear = obj_torags_hammers_4747_wear, 0
+womanwear = obj_torags_hammers_4747_wear, 6
+model = obj_torags_hammers_4747
+xof2d = -16
+yof2d = -9
+zoom2d = 1620
+yan2d = 1212
+xan2d = 272
+name = Torags hammers

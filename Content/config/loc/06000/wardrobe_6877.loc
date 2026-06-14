@@ -1,0 +1,7 @@
+// loc 6877
+forceapproach = 13
+op1 = Search
+ambient = 20
+recol = 24/45 7050/7954 9104/5786
+models_only = 1951
+name = Wardrobe

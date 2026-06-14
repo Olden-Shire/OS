@@ -1,0 +1,12 @@
+// loc 5512
+active = 0
+width = 2
+length = 2
+hillskew = true
+resizex = 256
+resizey = 256
+resizez = 256
+mapscene = 24
+nonblockrange = true
+recol = 5276/6930 10396/6806 5281/6682 7335/6558
+models_only = 3722

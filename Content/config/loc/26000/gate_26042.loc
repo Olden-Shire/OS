@@ -1,0 +1,10 @@
+// loc 26042
+active = 1
+sharelight = true
+contrast = 15
+ambient = 20
+blockwalk = true
+op1 = Exit
+nonblockrange = true
+models_only = 27508
+name = Gate

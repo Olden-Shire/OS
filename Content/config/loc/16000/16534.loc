@@ -1,0 +1,8 @@
+// loc 16534
+width = 2
+length = 2
+active = 1
+forceapproach = 11
+blockwalk = true
+nonblockrange = true
+multiloc = 2362, 65535, 16495 16496 16497

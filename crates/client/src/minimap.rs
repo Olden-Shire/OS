@@ -641,7 +641,7 @@ fn draw_arrow(mm: &Minimap, mapback: &Pix8, x: i32, y: i32, dx: i32, dz: i32,
 // port of Client.java:5355-5485: stamps wall lines / diagonal-loc
 // crosses / mapscene sprites for one tile into the bound 512×512
 // minimap surface.
-fn draw_detail(world: &crate::dash3d::world::World,
+pub fn draw_detail(world: &crate::dash3d::world::World,
                mapscene: Option<&[Pix8]>,
                level: i32, tx: i32, tz: i32,
                wall_rgb: i32, door_rgb: i32) {

@@ -1,0 +1,8 @@
+// loc 14691
+resizey = 75
+resizex = 75
+resizez = 75
+nonblockrange = true
+recol = 5281/5157 2452/5392 7566/5157 10382/5392 142/10258
+models_only = 14715
+name = Mushroom

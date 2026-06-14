@@ -1,0 +1,30 @@
+[clientscript,script_94](int $int0)()
+def_int $int1;
+def_int $int2;
+def_int $int3;
+def_int $int4;
+def_int $int5;
+def_int $int6;
+
+cc_deleteall($int0);
+$int1 = if_getwidth($int0);
+$int2 = if_getheight($int0);
+$int3 = calc($int1 - 9);
+$int4 = calc($int2 - 9);
+$int5 = calc($int1 - 18);
+$int6 = calc($int2 - 18);
+cc_create($int0, 3, 0);
+cc_setposition(0, 0);
+cc_setsize($int1, $int2);
+cc_setfill(1);
+cc_setcolour(3153948);
+cc_settrans(200);
+~script_98($int0, 1, 921, 0, 0, 9, 9);
+~script_98($int0, 2, 922, $int3, 0, 9, 9);
+~script_98($int0, 3, 923, 0, $int4, 9, 9);
+~script_98($int0, 4, 924, $int3, $int4, 9, 9);
+~script_98($int0, 5, 925, 0, 9, 9, $int6);
+~script_98($int0, 6, 926, 9, 0, $int5, 9);
+~script_98($int0, 7, 927, $int3, 9, 9, $int6);
+~script_98($int0, 8, 928, 9, $int4, $int5, 9);
+return;

@@ -1,0 +1,14 @@
+// obj 10939
+iop2 = Wear
+members = true
+cost = 50
+model = obj_lumberjack_top_10939
+manwear = obj_lumberjack_top_10939_man, 0
+manwear2 = 10980
+womanwear = obj_lumberjack_top_10939_woman, 0
+womanwear2 = 15123
+zoom2d = 1232
+yan2d = 1871
+xan2d = 612
+recol = 8741/803 8860/922
+name = Lumberjack top

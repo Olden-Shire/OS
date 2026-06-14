@@ -1,0 +1,13 @@
+// npc 4541
+vislevel = 0
+size = 1
+resizeh = 132
+resizev = 131
+walkanims = 819, 820, 821, 822
+readyanim = 4400
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/6932 4626/1934 933/792 54397/7386 8741/10301 43072/4550
+name = 'Beefy' Burns
+models = 12749 6848 236 253 302 3190 159 10218 12772 254 185
+headmodels = 5787 85 68 41

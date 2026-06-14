@@ -1,0 +1,9 @@
+// npc 365
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 59
+recol = 7700/823 11200/43957 926/103 6798/11187 4550/4762 7054/823
+name = Paladin
+models = 225 185 313 164 179 268 323 241 518 523 3330

@@ -1,0 +1,10 @@
+// loc 25465
+anim = 6853
+blockwalk = true
+ambient = 75
+contrast = 75
+bgsound = 2065, 3
+nonblockrange = true
+recol = 10396/5272 5276/5281 5281/5276
+models_only = 26945 26585
+name = Fire

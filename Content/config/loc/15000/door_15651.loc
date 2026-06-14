@@ -1,0 +1,7 @@
+// loc 15651
+active = 1
+ambient = 10
+op1 = Close
+raiseobject = 0
+models = 15338/0
+name = Door

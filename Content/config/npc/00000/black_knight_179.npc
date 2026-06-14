@@ -1,0 +1,9 @@
+// npc 179
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 33
+recol = 61/8 10004/8 24/8 41/0 57/8 4626/8
+name = Black Knight
+models = 218 306 164 179 268 185 518

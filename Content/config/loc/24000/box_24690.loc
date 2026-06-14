@@ -1,0 +1,8 @@
+// loc 24690
+ambient = 35
+contrast = 5
+ambient = 15
+nonblockrange = true
+recol = 5417/6435 5413/6430 5537/6554 5532/6550 5656/6674 5652/6798
+models_only = 5256
+name = Box

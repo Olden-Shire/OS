@@ -1,0 +1,5 @@
+// loc 2421
+active = 1
+op1 = Pull
+models = 2077/4
+name = Lever

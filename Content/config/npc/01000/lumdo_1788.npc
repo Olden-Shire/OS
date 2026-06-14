@@ -1,0 +1,8 @@
+// npc 1788
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 22426/16821 22422/437
+name = Lumdo
+models = 2914 14924 2919
+headmodels = 21

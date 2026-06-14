@@ -1,0 +1,6 @@
+// loc 22717
+active = 1
+ambient = 40
+nonsolid = true
+models = 23450/4
+name = Pots

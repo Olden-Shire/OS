@@ -1,0 +1,5 @@
+// loc 25200
+blockwalk = true
+nonblockrange = true
+models_only = 26516
+name = Beacon.

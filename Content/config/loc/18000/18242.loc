@@ -1,0 +1,10 @@
+// loc 18242
+active = 0
+length = 7
+ambient = 60
+contrast = 60
+nonsolid = true
+noshadow = true
+anim = 4782
+recol = 35041/127
+models_only = 18277

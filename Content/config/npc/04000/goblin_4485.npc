@@ -1,0 +1,13 @@
+// npc 4485
+readyanim = 6186
+walkanim = 6187
+op2 = Attack
+op1 = Talk-to
+resizev = 124
+resizeh = 124
+ambient = 15
+vislevel = 5
+recol = 6331/916 6323/912 12060/14771 11941/14656
+name = Goblin
+models = 24431 24444 24448 24458 24477 24483 24509
+headmodels = 24211

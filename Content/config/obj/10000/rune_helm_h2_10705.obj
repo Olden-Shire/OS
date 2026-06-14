@@ -1,0 +1,14 @@
+// obj 10705
+model = obj_rune_helm_h2_10288
+manwear = obj_rune_helm_h2_10288_man, 0
+womanwear = obj_rune_helm_h2_10288_woman, 0
+manhead = 20113
+womanhead = 20354
+xof2d = 1
+zoom2d = 768
+yan2d = 1901
+xan2d = 75
+iop2 = Wear
+cost = 35200
+recol = 61/36133 57/7054 935/55207 11187/6067
+name = Rune helm (h2)

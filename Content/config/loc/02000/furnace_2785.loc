@@ -1,0 +1,6 @@
+// loc 2785
+forceapproach = 13
+sharelight = true
+bgsound = 2209, 10
+models_only = 1281
+name = Furnace

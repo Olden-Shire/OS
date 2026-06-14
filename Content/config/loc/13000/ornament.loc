@@ -1,0 +1,7 @@
+// loc 13114
+blockwalk = true
+active = 1
+op1 = Examine
+nonblockrange = true
+models_only = 1301 17237
+name = Ornament

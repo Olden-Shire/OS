@@ -1,0 +1,10 @@
+// npc 5465
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 25238/6689 8741/7710 11200/6817 926/5010 6798/4017
+name = Fridleif Shieldson
+models = 4219 4220 242 252 293 323 21868 179 4236 19335 4226 4218
+headmodels = 4210 84 75

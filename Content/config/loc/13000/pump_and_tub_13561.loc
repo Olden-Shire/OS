@@ -1,0 +1,7 @@
+// loc 13561
+length = 2
+op5 = Remove
+forceapproach = 13
+nonblockrange = true
+models_only = 13221 13215
+name = Pump and tub

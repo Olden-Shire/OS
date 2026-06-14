@@ -1,0 +1,13 @@
+// npc 4542
+vislevel = 0
+size = 1
+resizeh = 131
+resizev = 125
+walkanims = 819, 820, 821, 822
+readyanim = 4401
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/10520 6798/7502 43072/6315 4550/4430 4626/6808 22177/6932
+name = 'Eagle-eye' Shultz
+models = 211 249 292 168 10218 254 181 16836
+headmodels = 16834 81

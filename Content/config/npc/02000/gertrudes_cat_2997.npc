@@ -1,0 +1,11 @@
+// npc 2997
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 317
+resizeh = 80
+resizev = 80
+op1 = Talk-to
+name = Gertrude's cat
+models = 3010 3006
+headmodels = 6435

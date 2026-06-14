@@ -1,0 +1,6 @@
+// loc 15280
+active = 1
+op5 = Build
+nonsolid = true
+models = 12675/0 12676/3
+name = Combat ring space

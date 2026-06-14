@@ -1,0 +1,26 @@
+// interface 545
+
+[com_0]
+fmt=v3
+type=6
+clientcode=0
+x=329
+y=146
+width=32
+height=32
+hide=0
+model=com_i26580
+modelxof=0
+modelyof=0
+xan=441
+yan=480
+zan=0
+zoom=656
+anim=6641
+orthog=0
+eventcode=0x0
+baseop=
+dragdeadzone=0
+dragdeadtime=0
+draggable=0
+targetverb=

@@ -1,0 +1,11 @@
+// npc 6170
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 127
+recol = 6798/5537
+name = Sir Lancelot
+models = 27191 27195 27203
+headmodels = 27209 27205

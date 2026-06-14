@@ -1,0 +1,6 @@
+// loc 15353
+active = 1
+op5 = Build
+nonsolid = true
+models = 12721/0
+name = Prison space

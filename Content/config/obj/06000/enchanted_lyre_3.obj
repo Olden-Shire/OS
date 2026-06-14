@@ -1,0 +1,11 @@
+// obj 6126
+model = obj_unstrung_lyre
+iop1 = Play
+xof2d = -4
+zoom2d = 1230
+yan2d = 144
+xan2d = 464
+cost = 1000
+manwear = obj_unstrung_lyre_wear, 0
+members = true
+name = Enchanted lyre(3)

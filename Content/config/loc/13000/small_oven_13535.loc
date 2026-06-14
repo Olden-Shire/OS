@@ -1,0 +1,9 @@
+// loc 13535
+length = 2
+anim = 3105
+op1 = Take-kettle
+contrast = 25
+ambient = 25
+bgsound = 2199, 3
+models_only = 14100 12620 12621
+name = Small oven

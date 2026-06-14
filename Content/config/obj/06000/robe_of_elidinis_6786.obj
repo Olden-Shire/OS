@@ -1,0 +1,13 @@
+// obj 6786
+model = obj_robe_of_elidinis_6786
+yof2d = -2
+zoom2d = 1290
+xan2d = 580
+iop2 = Wear
+manwear = obj_priest_gown_426_man, 0
+manwear2 = 10123
+womanwear = obj_priest_gown_426_woman, 0
+womanwear2 = 10126
+members = true
+recol = 8741/6740
+name = Robe of elidinis

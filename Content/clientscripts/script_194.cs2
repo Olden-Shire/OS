@@ -1,0 +1,10 @@
+[clientscript,script_194](int $int0)()
+
+if ($int0 = 1) {
+    if (clan_getchatcount() > 0) {
+        clan_leavechat();
+    } else {
+        ~script_111;
+    }
+}
+return;

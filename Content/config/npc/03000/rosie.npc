@@ -1,0 +1,11 @@
+// npc 3082
+resizeh = 145
+resizev = 145
+readyanim = 3008
+walkanim = 3012
+op1 = Talk-to
+vislevel = 0
+recol = 4550/1218 42283/54695 1573/54695 15779/45231 25238/45231
+name = Rosie
+models = 10508 10519 10511 10514 10527 10526
+headmodels = 10409 10404

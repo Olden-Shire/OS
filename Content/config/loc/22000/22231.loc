@@ -1,0 +1,9 @@
+// loc 22231
+active = 0
+sharelight = true
+hillskew = true
+contrast = 20
+ambient = 20
+mirror = true
+mapscene = 22
+models = 22900/0 22901/3

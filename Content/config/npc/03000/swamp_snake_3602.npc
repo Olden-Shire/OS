@@ -1,0 +1,13 @@
+// npc 3602
+vislevel = 0
+alwaysontop = true
+op2 = Skin
+size = 3
+resizeh = 97
+resizev = 97
+ambient = 10
+readyanim = 3535
+walkanim = 3537
+recol = 3912/14781 3776/14773 3895/14893
+name = Swamp snake
+models = 14171

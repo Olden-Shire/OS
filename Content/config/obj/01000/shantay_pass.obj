@@ -1,0 +1,13 @@
+// obj 1854
+cost = 5
+members = true
+stackable = true
+model = obj_shantay_pass
+xof2d = 8
+yof2d = 7
+zoom2d = 1049
+yan2d = 1798
+xan2d = 484
+contrast = 15
+ambient = 15
+name = Shantay pass

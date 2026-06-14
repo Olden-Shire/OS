@@ -1,0 +1,10 @@
+// obj 5328
+model = obj_spade_head
+xof2d = 17
+yof2d = 17
+zoom2d = 820
+yan2d = 32
+xan2d = 312
+members = true
+recol = 61/5181 57/5177 70/5190
+name = Spade head

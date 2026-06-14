@@ -1,0 +1,6 @@
+// loc 6341
+sharelight = true
+occlude = true
+hillskew = true
+active = 0
+models = 6169/9

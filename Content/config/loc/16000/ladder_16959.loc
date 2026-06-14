@@ -1,0 +1,13 @@
+// loc 16959
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+resizex = 128
+resizey = 160
+resizez = 128
+op1 = Climb
+forceapproach = 7
+mapscene = 7
+models_only = 16520
+name = Ladder

@@ -1,0 +1,8 @@
+// loc 25546
+active = 0
+hillskew = true
+sharelight = true
+ambient = 20
+contrast = 10
+forcedecor = true
+models = 26995/22

@@ -1,0 +1,10 @@
+// npc 1543
+size = 1
+nominimap = true
+vislevel = 0
+alwaysontop = true
+op1 = Take
+readyanim = 1450
+walkanim = 1451
+name = Innocent-looking key
+models = 4918

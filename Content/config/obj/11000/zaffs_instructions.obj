@@ -1,0 +1,10 @@
+// obj 11011
+model = obj_zaffs_instructions
+zoom2d = 1360
+yan2d = 2003
+xan2d = 390
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+name = Zaff's instructions

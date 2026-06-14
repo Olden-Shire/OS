@@ -1,0 +1,7 @@
+// loc 8057
+ambient = 25
+op1 = Chop-down
+op2 = Inspect
+op4 = Guide
+models_only = 8051 7767
+name = Orange tree

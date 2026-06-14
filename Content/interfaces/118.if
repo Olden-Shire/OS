@@ -1,0 +1,17 @@
+// interface 118
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=260
+y=140
+width=32
+height=32
+trans=0
+model=com_i10988
+activemodel=-1
+anim=3092
+zoom=85
+xan=0
+yan=0

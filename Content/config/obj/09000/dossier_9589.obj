@@ -1,0 +1,10 @@
+// obj 9589
+model = obj_dossier_9589
+xof2d = 4
+yof2d = -100
+zoom2d = 976
+yan2d = 120
+xan2d = 246
+iop1 = Read
+iop5 = Destroy
+name = Dossier

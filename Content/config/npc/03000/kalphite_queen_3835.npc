@@ -1,0 +1,9 @@
+// npc 3835
+size = 5
+walkanim = 6238
+readyanim = 6239
+op2 = Attack
+headicon = 6
+vislevel = 333
+name = Kalphite Queen
+models = 24597 24598

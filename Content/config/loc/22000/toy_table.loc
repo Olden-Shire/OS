@@ -1,0 +1,10 @@
+// loc 22783
+active = 1
+resizex = 66
+resizey = 66
+resizez = 66
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23443
+name = Toy table

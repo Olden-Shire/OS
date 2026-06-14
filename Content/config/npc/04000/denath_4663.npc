@@ -1,0 +1,11 @@
+// npc 4663
+size = 1
+resizeh = 135
+resizev = 140
+walkanim = 4626
+readyanim = 808
+vislevel = 0
+recol = 12/10508 280/10396
+name = Denath
+models = 17523 6131 17530 17513 17524 17519
+headmodels = 63 6129 9997

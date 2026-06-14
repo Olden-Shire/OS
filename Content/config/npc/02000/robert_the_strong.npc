@@ -1,0 +1,12 @@
+// npc 2639
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 132
+resizev = 138
+op1 = Talk-to
+recol = 10266/57 6674/32970 10283/57 3226/57 43067/8 43072/57
+name = Robert the Strong
+models = 8747 250 8749 4924 9431 8748 8727
+headmodels = 8745 82

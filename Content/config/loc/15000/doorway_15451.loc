@@ -1,0 +1,6 @@
+// loc 15451
+active = 1
+nonsolid = true
+op5 = Carpent
+models = 12686/0
+name = Doorway

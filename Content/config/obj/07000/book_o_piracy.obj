@@ -1,0 +1,10 @@
+// obj 7144
+model = obj_book_o_piracy
+xof2d = 2
+yof2d = 13
+zoom2d = 1030
+yan2d = 88
+xan2d = 420
+members = true
+iop1 = Read
+name = Book o' piracy

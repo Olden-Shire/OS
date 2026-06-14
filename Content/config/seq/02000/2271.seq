@@ -1,0 +1,6 @@
+// seq 2271
+replaceheldleft = 0
+replaceheldright = 1188
+reachforward = true
+loops = 5
+frames = 4/200/298 4/201/298 10/202/298 4/193/298 4/194/298

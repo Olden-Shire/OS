@@ -1,0 +1,9 @@
+// loc 22634
+active = 1
+ambient = 20
+length = 2
+sharelight = true
+hillskew = true
+recol = 5786/10266 5006/10760 5910/16
+models_only = 23552
+name = Console

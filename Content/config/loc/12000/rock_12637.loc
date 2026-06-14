@@ -1,0 +1,10 @@
+// loc 12637
+length = 3
+ambient = 50
+resizex = 118
+resizez = 120
+resizey = 128
+active = 1
+recol = 3230/5788 3226/5912 21526/6932 322/5908 10262/5910 21530/5914
+models_only = 14197 14198
+name = Rock

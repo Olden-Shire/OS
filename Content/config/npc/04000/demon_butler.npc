@@ -1,0 +1,10 @@
+// npc 4243
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/107 8860/90 38036/908 33030/532 4550/918 25238/902
+name = Demon butler
+models = 229 11811 15106 14373 180 12138 181
+headmodels = 140

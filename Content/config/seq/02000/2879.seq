@@ -1,0 +1,7 @@
+// seq 2879
+replaceheldright = 7260
+loops = 2
+preanim_move = 1
+postanim_move = 1
+priority = 0
+frames = 5/32/276 4/38/276 4/39/276 3/40/276 10/41/276 10/42/276

@@ -1,0 +1,11 @@
+// npc 6050
+size = 2
+readyanim = 6580
+walkanim = 6556
+resizeh = 116
+resizev = 116
+op2 = Attack
+vislevel = 27
+recol = 10337/8615 10328/8737 10312/7706 10304/7700 10295/6798 10287/6024
+name = Desert Wolf
+models = 26266

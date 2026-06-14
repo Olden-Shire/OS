@@ -1,0 +1,12 @@
+// npc 1848
+size = 1
+walkanim = 98
+readyanim = 101
+resizeh = 115
+resizev = 120
+vislevel = 0
+op1 = Talk-to
+recol = 61/10413 7473/10405 5784/7378 10659/10405 10659/10405
+name = Dernu
+models = 2971 2980 2979 2983 2985 6019
+headmodels = 1 6026

@@ -1,0 +1,11 @@
+// npc 3236
+vislevel = 0
+contrast = 10
+ambient = 10
+readyanim = 808
+walkanim = 819
+op1 = Talk-to
+recol = 25238/7452 54397/7376 8741/8371 933/5285
+name = Workman
+models = 6848 248 302 163 10218 491 263 185
+headmodels = 5787 80

@@ -1,0 +1,8 @@
+// loc 20270
+active = 0
+hillskew = true
+blockwalk = true
+width = 2
+length = 2
+recol = 43/7603 30/7599 39/7723 35/7719
+models_only = 11795

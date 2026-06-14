@@ -1,0 +1,6 @@
+// loc 10477
+active = 0
+hillskew = true
+sharelight = true
+nonsolid = true
+models_only = 10179

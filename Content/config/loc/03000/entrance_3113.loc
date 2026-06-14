@@ -1,0 +1,12 @@
+// loc 3113
+width = 2
+ambient = 60
+contrast = 60
+mirror = true
+op1 = Forfeit
+active = 1
+anim = 917
+nonblockrange = true
+recol = 6932/6689
+models_only = 3324
+name = Entrance

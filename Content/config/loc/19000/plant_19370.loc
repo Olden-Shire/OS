@@ -1,0 +1,10 @@
+// loc 19370
+resizex = 64
+resizey = 64
+resizez = 64
+ambient = 40
+op1 = Inspect
+nonblockrange = true
+recol = 61/16916 49/13840 41/3350 37/3346 33/3470
+models_only = 1642
+name = Plant

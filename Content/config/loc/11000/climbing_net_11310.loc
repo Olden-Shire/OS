@@ -1,0 +1,6 @@
+// loc 11310
+hillskew = true
+op1 = Climb
+forceapproach = 11
+models_only = 11154
+name = Climbing net

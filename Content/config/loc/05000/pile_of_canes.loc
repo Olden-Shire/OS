@@ -1,0 +1,6 @@
+// loc 5158
+forcedecor = true
+op1 = Take-from
+blockwalk = true
+models_only = 5153
+name = Pile of canes

@@ -1,0 +1,12 @@
+// npc 3624
+vislevel = 0
+op1 = Talk-to
+op1 = Talk-to
+size = 1
+resizeh = 110
+walkanim = 189
+readyanim = 195
+recol = 4550/10450 8741/291 22426/414 22424/4645 11162/16536 6798/4781
+name = Smiddi Ryak
+models = 2895 2909 14178 14177
+headmodels = 138

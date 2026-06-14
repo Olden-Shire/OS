@@ -1,0 +1,12 @@
+// npc 3235
+vislevel = 0
+resizev = 131
+contrast = 10
+ambient = 10
+readyanim = 808
+walkanim = 819
+op1 = Talk-to
+recol = 25238/7452 54397/7376 8741/4275 933/54313 6798/5532
+name = Apprentice workman
+models = 217 246 305 10723 151 176 271 181 491
+headmodels = 55

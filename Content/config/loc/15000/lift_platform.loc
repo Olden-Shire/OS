@@ -1,0 +1,7 @@
+// loc 15237
+forcedecor = true
+active = 1
+op1 = Use-Lift
+blockwalk = true
+models = 15081/22
+name = Lift Platform

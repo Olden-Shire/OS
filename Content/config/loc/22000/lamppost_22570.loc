@@ -1,0 +1,6 @@
+// loc 22570
+blockwalk = true
+forcedecor = true
+active = 1
+models_only = 23272
+name = Lamppost

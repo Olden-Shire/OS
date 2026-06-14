@@ -1,0 +1,14 @@
+// obj 10623
+model = obj_larupia_top_10043
+iop2 = Wear
+manwear = obj_larupia_top_10043_man, 0
+manwear2 = 19810
+womanwear = obj_larupia_top_10043_woman, 0
+womanwear2 = 19856
+yof2d = 5
+zoom2d = 1308
+yan2d = 3
+xan2d = 609
+members = true
+cost = 100
+name = Larupia top

@@ -1,0 +1,6 @@
+// loc 19981
+nonsolid = true
+anim = 5295
+recol = 127/4539 32999/5582
+models_only = 20082 20079 20081
+name = Pedestal

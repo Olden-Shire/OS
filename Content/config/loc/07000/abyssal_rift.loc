@@ -1,0 +1,13 @@
+// loc 7171
+width = 3
+length = 3
+noshadow = true
+anim = 2260
+ambient = 30
+contrast = 20
+resizex = 180
+resizey = 180
+resizez = 180
+bgsound = 3139, 5
+models_only = 7427 7428 7426
+name = Abyssal rift

@@ -1,0 +1,9 @@
+// loc 24291
+length = 2
+resizex = 128
+resizey = 135
+resizez = 128
+ambient = 25
+recol = 6466/7461 6319/16466 5545/7706 926/39095 8377/40033
+models_only = 12397
+name = Bed

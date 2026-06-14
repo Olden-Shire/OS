@@ -1,0 +1,13 @@
+// npc 3723
+vislevel = 0
+size = 1
+resizeh = 148
+resizev = 148
+readyanim = 6203
+walkanim = 6202
+resizev = 148
+resizeh = 148
+recol = 6331/916 6323/912 35133/916 35253/912
+name = General Bentnoze
+models = 24456 24484 24433 24476 24443 24450 24505 24506
+headmodels = 24208

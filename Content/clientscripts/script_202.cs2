@@ -1,0 +1,58 @@
+[clientscript,script_202](int $int0)()
+def_int $int1;
+
+cc_deleteall($int0);
+if (friend_count() = -2) {
+    cc_create($int0, 4, 0);
+    cc_settextfont(496);
+    cc_settext("Loading Friend List - please wait...");
+    cc_setposition(0, 0);
+    cc_setsize(138, 100);
+    cc_setcolour(16777060);
+    cc_settextshadow(1);
+    return;
+}
+if (friend_count() = -1) {
+    cc_create($int0, 4, 0);
+    cc_settextfont(496);
+    cc_settext("Connecting to friend server - please wait...");
+    cc_setposition(0, 0);
+    cc_setsize(138, 100);
+    cc_setcolour(16777060);
+    cc_settextshadow(1);
+    return;
+}
+$int1 = 0;
+while ($int1 < friend_count()) {
+    cc_create($int0, 4, calc($int1 + $int1));
+    cc_settextfont(496);
+    cc_settext(friend_getname($int1));
+    cc_setposition(0, calc($int1 * 15));
+    cc_setsize(138, 15);
+    cc_setcolour(16777060);
+    cc_settextshadow(1);
+    cc_create($int0, 4, calc($int1 + $int1 + 1));
+    cc_settextfont(496);
+    cc_settext(~script_203(friend_getrank($int1)));
+    cc_setposition(137, calc($int1 * 15));
+    cc_setsize(131, 15);
+    cc_setcolour(16777215);
+    cc_settextshadow(1);
+    cc_setop(1, "Not in clan");
+    cc_setop(2, "Recruit");
+    cc_setop(3, "Corporal");
+    cc_setop(4, "Sergeant");
+    cc_setop(5, "Lieutenant");
+    cc_setop(6, "Captain");
+    cc_setop(7, "General");
+    cc_setonop(204, $int1, -2147483644, "ii");
+    $int1 = calc($int1 + 1);
+}
+if (friend_count() > 0) {
+    if_setscrollsize(0, calc(15 * friend_count()), $int0);
+} else {
+    if_setscrollsize(0, 15, $int0);
+}
+cc_deleteall(38666259);
+~script_31(38666259, 38666258, 792, 789, 790, 791, 773, 788);
+return;

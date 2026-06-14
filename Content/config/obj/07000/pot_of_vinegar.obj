@@ -1,0 +1,11 @@
+// obj 7811
+model = obj_pot_of_vinegar
+xof2d = -1
+yof2d = 2
+zoom2d = 990
+yan2d = 8
+xan2d = 112
+cost = 0
+iop4 = Empty
+members = true
+name = Pot of vinegar

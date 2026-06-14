@@ -1,0 +1,11 @@
+// npc 2285
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 20
+recol = 70/99 5532/82 41/82 61/99 7700/103 24/103
+name = Sir Leye
+models = 233 246 3379 323 157 176 540 268 184
+headmodels = 66

@@ -1,0 +1,9 @@
+// loc 24802
+active = 1
+sharelight = true
+contrast = 15
+ambient = 25
+blockwalk = true
+op1 = Enter
+models_only = 26008
+name = Grate

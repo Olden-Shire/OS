@@ -1,0 +1,5 @@
+// loc 12263
+op1 = Go-down
+blockwalk = true
+models = 12605/22
+name = Trapdoor

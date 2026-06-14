@@ -1,0 +1,6 @@
+// loc 19988
+width = 2
+ambient = 20
+op1 = Climb
+models_only = 20075
+name = Tall vine

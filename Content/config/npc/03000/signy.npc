@@ -1,0 +1,11 @@
+// npc 3928
+vislevel = 0
+resizeh = 110
+resizev = 110
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/7587 25238/1317 926/25490 6798/8765
+name = Signy
+models = 391 414 456 9359 353 437 358 479
+headmodels = 114 131

@@ -1,0 +1,17 @@
+// obj 5616
+members = true
+cost = 1
+stackable = true
+model = obj_ice_arrows
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+iop2 = Wield
+count1 = 900, 2
+count2 = 899, 3
+count3 = 898, 4
+count4 = 901, 5
+recol = 61/5652 57/13221
+name = Bronze arrow(p+)

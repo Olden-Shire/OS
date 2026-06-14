@@ -1,0 +1,12 @@
+// npc 5112
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 10
+contrast = 10
+recol = 4626/4283 10004/4283
+name = Hunting expert
+models = 19820 253 19830 19809 179 19825 185
+headmodels = 19800 85

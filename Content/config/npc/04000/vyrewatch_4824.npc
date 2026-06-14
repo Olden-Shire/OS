@@ -1,0 +1,11 @@
+// npc 4824
+turnspeed = 0
+op1 = Talk-to
+op2 = Attack
+alwaysontop = true
+readyanim = 4706
+size = 3
+vislevel = 125
+name = Vyrewatch
+models = 17958 17959 17950
+headmodels = 18059

@@ -1,0 +1,13 @@
+// obj 6658
+model = obj_camo_bottoms_6655
+yof2d = 6
+zoom2d = 2060
+yan2d = 1924
+zan2d = 104
+xan2d = 596
+manwear = obj_camo_bottoms_6655_man, 0
+manwear2 = 185
+womanwear = obj_camo_bottoms_6655_woman, 0
+womanwear2 = 361
+stackable = true
+name = Camo bottoms

@@ -1,0 +1,11 @@
+// npc 4696
+size = 2
+resizeh = 86
+resizev = 86
+walkanim = 63
+readyanim = 66
+op2 = Attack
+vislevel = 82
+recol = 1690/561 1814/553 1938/801 912/920 910/916
+name = Lesser demon
+models = 17379 17395 17386 17388 17390

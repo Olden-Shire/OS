@@ -1,0 +1,8 @@
+// npc 5065
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op4 = Fly
+alwaysontop = true
+vislevel = 1
+multivar = 2871, 65535, 65535 5054

@@ -1,0 +1,8 @@
+// loc 15857
+hillskew = true
+width = 3
+anim = 4239
+blockwalk = true
+bgsound = 2066, 3
+models_only = 15803
+name = Bridge

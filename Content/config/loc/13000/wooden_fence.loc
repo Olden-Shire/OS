@@ -1,0 +1,5 @@
+// loc 13450
+op5 = Remove
+nonblockrange = true
+models = 13152/0 15139/1 13153/2 15140/9
+name = Wooden fence

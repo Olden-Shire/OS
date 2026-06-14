@@ -1,0 +1,8 @@
+// loc 624
+resizex = 40
+resizey = 100
+resizez = 100
+nonblockrange = true
+retex = 5/16 22/16
+models_only = 1213
+name = Table

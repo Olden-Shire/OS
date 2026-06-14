@@ -1,0 +1,22 @@
+// obj 11200
+model = obj_ruperts_helmet
+xof2d = 4
+yof2d = -5
+zoom2d = 659
+yan2d = 195
+xan2d = 138
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_dwarven_helmet_11200_man, 0
+manwear2 = 230
+womanwear = obj_dwarven_helmet_11200_woman, 0
+womanwear2 = 403
+manhead = 63
+manhead2 = 26083
+womanhead = 120
+womanhead2 = 26083
+cost = 60000
+iop2 = Wear
+iop5 = Drop
+name = Dwarven helmet

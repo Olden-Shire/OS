@@ -1,0 +1,9 @@
+// loc 24804
+active = 1
+hillskew = true
+contrast = 15
+ambient = 25
+blockwalk = true
+nonblockrange = true
+models_only = 26006
+name = Nails

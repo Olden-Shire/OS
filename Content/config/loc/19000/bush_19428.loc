@@ -1,0 +1,9 @@
+// loc 19428
+mapscene = 9
+op1 = Search
+op2 = Attack
+blockwalk = true
+forcedecor = true
+nonblockrange = true
+models = 1565/10 20041/22
+name = Bush

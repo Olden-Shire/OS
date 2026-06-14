@@ -1,0 +1,9 @@
+// loc 15116
+op1 = Climb-down
+mapscene = 7
+sharelight = true
+ambient = 10
+forceapproach = 13
+recol = 5673/7463 5788/8722 5912/7587 6049/10892
+models_only = 14781
+name = Ladder

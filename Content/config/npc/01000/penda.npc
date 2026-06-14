@@ -1,0 +1,11 @@
+// npc 1087
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 5
+recol = 25238/21652 8741/21669 43072/4550 6798/90
+name = Penda
+models = 214 246 292 151 176 254 181
+headmodels = 52

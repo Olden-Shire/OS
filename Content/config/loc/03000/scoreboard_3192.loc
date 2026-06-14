@@ -1,0 +1,9 @@
+// loc 3192
+width = 2
+length = 3
+ambient = 50
+contrast = 50
+op1 = View
+active = 1
+models_only = 3293
+name = Scoreboard

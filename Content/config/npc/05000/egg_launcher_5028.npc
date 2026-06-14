@@ -1,0 +1,7 @@
+// npc 5028
+readyanim = 5424
+vislevel = 0
+alwaysontop = true
+nominimap = true
+name = Egg launcher
+models = 20660

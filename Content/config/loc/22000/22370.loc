@@ -1,0 +1,7 @@
+// loc 22370
+active = 1
+length = 2
+mapscene = 7
+op2 = Climb
+op1 = hidden
+multiloc = 3385, 65535, 22368 22369

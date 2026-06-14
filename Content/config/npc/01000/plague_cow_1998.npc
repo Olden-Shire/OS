@@ -1,0 +1,9 @@
+// npc 1998
+size = 2
+walkanim = 5848
+readyanim = 5852
+vislevel = 0
+op1 = Pet
+recol = 7442/9515 7566/9511 7690/9635 8070/9630 5190/9519 5198/9523
+name = Plague cow
+models = 23889

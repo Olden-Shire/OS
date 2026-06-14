@@ -1,0 +1,11 @@
+// npc 1799
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Give-Sword
+recol = 25238/0 8741/0 9104/20 4626/0
+name = Tindel Marchant
+models = 163 254 292 320 230 247 176 181
+headmodels = 63 79

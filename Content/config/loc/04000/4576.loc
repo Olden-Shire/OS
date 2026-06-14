@@ -1,0 +1,10 @@
+// loc 4576
+sharelight = true
+occlude = true
+resizex = 128
+resizey = 256
+resizez = 128
+ambient = 20
+contrast = 0
+active = 0
+models = 4540/10 4541/0

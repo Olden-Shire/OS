@@ -1,0 +1,12 @@
+// obj 11008
+members = true
+model = obj_rats_paper
+zoom2d = 1104
+yan2d = 6
+xan2d = 363
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Rat's paper

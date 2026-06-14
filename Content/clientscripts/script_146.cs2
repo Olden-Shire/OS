@@ -1,0 +1,4 @@
+[clientscript,script_146](int $int0)()
+
+~script_147($int0, clientclock());
+return;

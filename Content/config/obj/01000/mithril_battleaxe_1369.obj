@@ -1,0 +1,13 @@
+// obj 1369
+cost = 1690
+model = obj_iron_battleaxe_1363
+xof2d = -7
+yof2d = -2
+zoom2d = 1180
+yan2d = 1128
+xan2d = 420
+iop2 = Wield
+manwear = obj_iron_battleaxe_1363_wear, 0
+womanwear = obj_iron_battleaxe_1363_wear, 6
+recol = 61/43297
+name = Mithril battleaxe

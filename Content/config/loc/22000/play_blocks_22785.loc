@@ -1,0 +1,7 @@
+// loc 22785
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23501
+name = Play blocks

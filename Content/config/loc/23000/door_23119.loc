@@ -1,0 +1,9 @@
+// loc 23119
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+blockwalk = true
+op1 = Enter
+models = 24015/0
+name = Door

@@ -1,0 +1,7 @@
+// loc 20198
+op1 = Close
+mirror = true
+raiseobject = 0
+recol = 6697/5547 6945/5543 6814/5667 6940/5662 4638/5786 4762/5910
+models = 18550/0
+name = Barbarian door

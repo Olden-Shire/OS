@@ -1,0 +1,8 @@
+// loc 19925
+width = 2
+length = 2
+offsety = 100
+ambient = 15
+op2 = Inspect
+models_only = 19997
+name = Rocky outcrop

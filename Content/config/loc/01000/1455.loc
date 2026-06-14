@@ -1,0 +1,7 @@
+// loc 1455
+contrast = 100
+ambient = 50
+mirror = true
+hillskew = true
+active = 0
+models = 2071/4

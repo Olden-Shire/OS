@@ -1,0 +1,8 @@
+// loc 13933
+sharelight = true
+hillskew = true
+length = 2
+ambient = 50
+op1 = Use
+models_only = 14237
+name = Exit

@@ -1,0 +1,12 @@
+// npc 3226
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+op1 = Talk-to
+vislevel = 2
+recol = 25238/33300 8741/231 43072/4550 6798/5045
+name = Woman
+models = 390 456 332 10706 421 358
+headmodels = 113

@@ -1,0 +1,13 @@
+// obj 9800
+model = obj_attack_hood
+zoom2d = 720
+yan2d = 18
+xan2d = 21
+iop2 = Wear
+manwear = obj_attack_hood_man, 0
+womanwear = obj_attack_hood_woman, 0
+manhead = 18911
+womanhead = 18913
+members = true
+recol = 57280/38119 54183/38486 54503/38325 960/38222 22464/38214 43968/38205
+name = Fishing hood

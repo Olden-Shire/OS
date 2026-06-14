@@ -1,0 +1,12 @@
+// obj 7564
+model = obj_balloon_toad_7564
+xof2d = -5
+yof2d = -1
+zoom2d = 3536
+yan2d = 1979
+xan2d = 207
+members = true
+iop1 = Drop
+iop4 = Release-all
+iop5 = Release
+name = Balloon toad

@@ -1,0 +1,16 @@
+// obj 9920
+model = obj_jack_lantern_mask_9920
+manwear = obj_jack_lantern_mask_9920_man, 0
+womanwear = obj_jack_lantern_mask_9920_woman, 0
+manhead = 19168
+womanhead = 19170
+iop2 = Wear
+iop5 = Destroy
+cost = 3
+xof2d = -3
+yof2d = -1
+zoom2d = 595
+yan2d = 1964
+xan2d = 2047
+cost = 1
+name = Jack lantern mask

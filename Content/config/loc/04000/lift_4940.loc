@@ -1,0 +1,10 @@
+// loc 4940
+length = 2
+sharelight = true
+op1 = Go-down
+resizey = 153
+ambient = 20
+contrast = 20
+recol = 6689/7851
+models_only = 21234
+name = Lift

@@ -1,0 +1,11 @@
+// npc 1510
+vislevel = 0
+size = 1
+op1 = Talk-to
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+recol = 8741/38814 4626/38814 25238/38814 7756/8152 7845/6965
+name = Apprentice
+models = 202 215 251 292 5592 170 4113 534 3470 265 185
+headmodels = 53 44 83

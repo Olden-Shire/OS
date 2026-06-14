@@ -1,0 +1,12 @@
+// loc 19691
+active = 1
+width = 2
+length = 2
+contrast = 20
+ambient = 30
+blockwalk = true
+op1 = Descend
+mapscene = 69
+forceapproach = 11
+models_only = 19361
+name = Steps

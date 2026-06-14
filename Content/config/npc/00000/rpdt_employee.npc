@@ -1,0 +1,10 @@
+// npc 843
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/43569 8741/36048 43072/4550 7070/43569
+name = RPDT employee
+models = 215 292 249 151 176 271 185 194 327
+headmodels = 53 81 37

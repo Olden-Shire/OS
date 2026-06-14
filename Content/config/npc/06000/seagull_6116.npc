@@ -1,0 +1,10 @@
+// npc 6116
+walkanim = 6819
+readyanim = 6815
+ambient = 20
+resizeh = 148
+resizev = 148
+op2 = Attack
+vislevel = 3
+name = Seagull
+models = 26874

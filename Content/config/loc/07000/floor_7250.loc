@@ -1,0 +1,6 @@
+// loc 7250
+active = 1
+nonsolid = true
+recol = 8617/5662 8737/5786 8856/5910 9104/6034 8076/3604 6024/4882
+models = 6268/22
+name = Floor

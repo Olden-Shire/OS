@@ -1,0 +1,11 @@
+// npc 6164
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Hidden
+op1 = Talk-to
+vislevel = 122
+recol = 5673/5648 6798/5648
+name = Sir Gawain
+models = 27125 27194 27203
+headmodels = 27209 81

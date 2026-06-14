@@ -1,0 +1,12 @@
+// npc 646
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pickpocket
+alwaysontop = true
+recol = 6798/61 8741/8 920/41246 25238/8 7446/127 4626/8
+name = Curator Haig Halen
+models = 14340 238 246 10305 163 177 254 12082 25693
+headmodels = 14337 16843

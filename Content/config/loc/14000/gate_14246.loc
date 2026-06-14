@@ -1,0 +1,9 @@
+// loc 14246
+ambient = 5
+noshadow = true
+nonsolid = true
+active = 1
+op1 = Close
+op3 = Repair
+models = 27173/22
+name = Gate

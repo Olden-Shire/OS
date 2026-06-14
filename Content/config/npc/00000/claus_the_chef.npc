@@ -1,0 +1,10 @@
+// npc 886
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 107/127 43072/4550 4550/6709 25238/6695 8741/916
+name = Claus the chef
+models = 230 246 302 159 176 263 181 199
+headmodels = 63 41

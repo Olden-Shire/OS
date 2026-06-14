@@ -1,0 +1,5 @@
+// loc 15770
+sharelight = true
+ambient = 70
+models_only = 15623
+name = Cave

@@ -1,0 +1,13 @@
+// npc 2102
+size = 1
+resizeh = 135
+resizev = 128
+walkanim = 2156
+readyanim = 2157
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 6980/7516 43055/8138 61/9802 4550/4541 910/10816 22/10816
+name = Yellow Fortune Director
+models = 7031 7070 7058 7038 7045 7068
+headmodels = 6990 6995

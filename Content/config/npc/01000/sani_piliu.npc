@@ -1,0 +1,10 @@
+// npc 1570
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/1686 43072/3534 8741/1686 4550/3534 6798/43906 4626/29574
+name = Sani Piliu
+models = 390 457 347 356 438 358 417
+headmodels = 113

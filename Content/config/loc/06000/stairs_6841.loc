@@ -1,0 +1,9 @@
+// loc 6841
+hillskew = true
+sharelight = true
+width = 2
+length = 3
+op1 = Climb-down
+forceapproach = 14
+models_only = 6798
+name = Stairs

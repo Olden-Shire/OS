@@ -1,0 +1,12 @@
+// npc 5363
+size = 4
+ambient = 15
+contrast = 15
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+op2 = Attack
+vislevel = 304
+name = Mithril dragon
+models = 24575 24584 24580 17423

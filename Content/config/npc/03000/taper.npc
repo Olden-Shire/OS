@@ -1,0 +1,8 @@
+// npc 3208
+walkanim = 3183
+readyanim = 3183
+vislevel = 0
+turnspeed = 0
+nominimap = true
+name = Taper
+models = 11313

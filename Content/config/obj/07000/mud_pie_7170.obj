@@ -1,0 +1,15 @@
+// obj 7170
+model = obj_raw_mud_pie_7168
+members = true
+yof2d = -9
+zoom2d = 950
+yan2d = 104
+xan2d = 192
+contrast = 10
+ambient = 10
+iop2 = Wield
+manwear = obj_mud_pie_7170_wear, 0
+womanwear = obj_mud_pie_7170_wear, 5
+cost = 54
+recol = 8728/8976 7721/7710 4416/6443
+name = Mud pie

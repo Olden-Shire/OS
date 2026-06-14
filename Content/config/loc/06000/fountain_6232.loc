@@ -1,0 +1,9 @@
+// loc 6232
+width = 2
+length = 2
+mapscene = 8
+bgsound = 2151, 3
+nonblockrange = true
+recol = 7331/10446 61/10330 7343/10450 7335/10450 7339/10454 7219/10334
+models_only = 1497
+name = Fountain

@@ -1,0 +1,4 @@
+[clientscript,script_186](int $int0)()
+
+if_setgraphic(1022, $int0);
+return;

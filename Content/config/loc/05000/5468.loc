@@ -1,0 +1,8 @@
+// loc 5468
+hillskew = true
+forcedecor = true
+ambient = 90
+contrast = 50
+nonsolid = true
+active = 0
+models_only = 5323

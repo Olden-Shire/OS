@@ -1,0 +1,8 @@
+// npc 3954
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+recol = 9447/8
+name = Treasure fairy
+models = 2857

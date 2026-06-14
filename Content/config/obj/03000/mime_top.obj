@@ -1,0 +1,13 @@
+// obj 3058
+model = obj_mime_top
+yof2d = 4
+zoom2d = 1160
+xan2d = 528
+iop2 = Wear
+manwear = obj_priest_gown_426_man, 0
+manwear2 = 163
+manwear3 = 3667
+womanwear2 = 348
+womanwear = obj_mime_top_woman, 0
+recol = 9104/43117 8741/8
+name = Mime top

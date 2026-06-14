@@ -1,0 +1,13 @@
+// obj 4620
+model = obj_black_mushroom
+xof2d = -6
+yof2d = -1
+zoom2d = 1370
+yan2d = 1928
+zan2d = 2028
+xan2d = 1992
+members = true
+cost = 1
+iop1 = Eat
+recol = 6261/10442 5351/10553
+name = Black mushroom

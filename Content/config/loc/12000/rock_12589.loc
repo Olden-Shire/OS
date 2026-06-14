@@ -1,0 +1,9 @@
+// loc 12589
+sharelight = true
+hillskew = true
+mirror = true
+contrast = 10
+ambient = 10
+recol = 10299/6028
+models_only = 9527
+name = Rock

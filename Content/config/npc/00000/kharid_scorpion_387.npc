@@ -1,0 +1,8 @@
+// npc 387
+vislevel = 0
+size = 1
+walkanim = 6257
+readyanim = 6258
+op1 = Pick-up
+name = Kharid Scorpion
+models = 24612

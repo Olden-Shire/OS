@@ -1,0 +1,10 @@
+// npc 895
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22424/39859 11162/5002 6550/7079 6798/7079
+name = Boy
+models = 2897 2909 2917
+headmodels = 139

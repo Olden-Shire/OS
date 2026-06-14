@@ -1,0 +1,6 @@
+// loc 15374
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 12703
+name = Big plant 2

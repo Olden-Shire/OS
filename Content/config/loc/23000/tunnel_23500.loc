@@ -1,0 +1,9 @@
+// loc 23500
+contrast = 20
+ambient = 20
+blockwalk = true
+width = 9
+length = 2
+mirror = true
+models_only = 24355
+name = Tunnel

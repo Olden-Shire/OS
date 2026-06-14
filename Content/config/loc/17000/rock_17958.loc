@@ -1,0 +1,13 @@
+// loc 17958
+sharelight = true
+hillskew = true
+resizex = 128
+resizey = 160
+resizez = 128
+mirror = true
+active = 1
+nonsolid = true
+op1 = Jump-onto
+recol = 26780/32910
+models_only = 17338
+name = Rock

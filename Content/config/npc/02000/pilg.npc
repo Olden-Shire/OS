@@ -1,0 +1,9 @@
+// npc 2040
+vislevel = 0
+size = 2
+readyanim = 2088
+op1 = Talk-to
+turnspeed = 0
+name = Pilg
+models = 6768
+headmodels = 141

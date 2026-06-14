@@ -1,0 +1,12 @@
+// obj 1430
+cost = 1440
+iop2 = Wield
+manwear = obj_iron_mace_1420_wear, 0
+womanwear = obj_iron_mace_1420_wear, 6
+model = obj_iron_mace_1420
+yof2d = -1
+zoom2d = 1030
+yan2d = 1188
+xan2d = 392
+recol = 61/21662
+name = Adamant mace

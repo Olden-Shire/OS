@@ -1,0 +1,9 @@
+// npc 3705
+size = 1
+walkanim = 6112
+readyanim = 6113
+op2 = Attack
+vislevel = 60
+recol = 45/11148 49/11148 12574/49 12694/49 10531/78 10409/78
+name = Skeleton fremennik
+models = 24181 24189 24185 24054

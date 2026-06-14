@@ -1,0 +1,9 @@
+// npc 2959
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/4647 25238/46307 6798/10508 8741/54722 10659/54722
+name = Silk merchant
+models = 215 198 254 248 170 176 181 292 181
+headmodels = 53 40 80

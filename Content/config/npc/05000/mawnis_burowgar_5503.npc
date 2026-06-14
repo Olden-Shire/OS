@@ -1,0 +1,11 @@
+// npc 5503
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 25238/10291 8741/6451 6798/123 7073/6817
+name = Mawnis Burowgar
+models = 21873 4220 22163 21885 21890 21863 176 21878 19945
+headmodels = 22153 85

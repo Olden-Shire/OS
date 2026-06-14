@@ -1,0 +1,8 @@
+// loc 10323
+active = 1
+op1 = Climb-up
+op2 = Look-up
+ambient = 5
+contrast = 5
+models = 10071/4
+name = Trellis

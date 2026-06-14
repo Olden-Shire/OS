@@ -1,0 +1,9 @@
+// loc 22943
+ambient = 35
+active = 1
+length = 2
+nonsolid = true
+anim = 6026
+models_only = 23743
+models_only = 23742
+name = Stairs

@@ -1,0 +1,14 @@
+// obj 1615
+cost = 10000
+model = obj_diamond_1601
+xof2d = -5
+yof2d = 7
+zoom2d = 780
+yan2d = 220
+zan2d = 1860
+xan2d = 368
+members = true
+manwear = obj_diamond_1601_wear, 0
+womanwear = obj_diamond_1601_wear, 6
+recol = 478/50752 931/51111 918/50074 127/50752
+name = Dragonstone

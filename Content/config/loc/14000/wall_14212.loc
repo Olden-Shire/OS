@@ -1,0 +1,8 @@
+// loc 14212
+hillskew = true
+ambient = 5
+noshadow = true
+blockwalk = true
+active = 1
+models = 14477/0
+name = Wall

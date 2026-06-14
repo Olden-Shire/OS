@@ -1,0 +1,9 @@
+// loc 10706
+resizex = 220
+resizey = 128
+resizez = 220
+width = 2
+length = 2
+recol = 43943/9878
+models_only = 10477 10456
+name = Large Box

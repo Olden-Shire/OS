@@ -1,0 +1,8 @@
+// loc 22564
+blockwalk = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Swing-across
+models_only = 23291
+name = Ladder

@@ -1,0 +1,9 @@
+// loc 17047
+sharelight = true
+wallwidth = 32
+occlude = true
+ambient = 25
+contrast = 25
+op1 = Grapple
+models = 16911/0
+name = Wall

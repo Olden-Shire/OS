@@ -1,0 +1,14 @@
+// obj 7441
+cost = 1660
+iop2 = Wield
+manwear = obj_frying_pan_7441_wear, 0
+womanwear = obj_frying_pan_7441_wear, 6
+model = obj_frying_pan_7441
+xof2d = 2
+yof2d = -16
+zoom2d = 750
+yan2d = 830
+zan2d = 913
+xan2d = 1300
+members = true
+name = Frying pan

@@ -1,0 +1,15 @@
+// obj 2647
+cost = 40
+members = true
+model = obj_red_headband_2645
+xof2d = -1
+zoom2d = 380
+yan2d = 56
+xan2d = 108
+iop2 = Wear
+manwear = obj_red_headband_2645_man, 0
+womanwear = obj_red_headband_2645_woman, 0
+manhead = 43
+womanhead = 101
+recol = 61/0 41/8
+name = Black headband

@@ -1,0 +1,11 @@
+// npc 449
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 26
+recol = 25238/5652 5532/10508 6798/6854 8741/1950
+name = Jail guard
+models = 230 246 311 151 179 257 502
+headmodels = 63

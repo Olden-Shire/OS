@@ -1,0 +1,10 @@
+// npc 1508
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 926/1701 7700/1581 11200/1701 25238/1820 7469/7446
+name = Forester
+models = 12137 246 311 323 169 10218 563 262 185
+headmodels = 14371

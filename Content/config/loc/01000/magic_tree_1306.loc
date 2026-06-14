@@ -1,0 +1,10 @@
+// loc 1306
+width = 2
+length = 2
+op1 = Chop down
+op3 = hidden
+mapscene = 0
+ambient = 25
+bgsound = 3134, 5
+models_only = 7978
+name = Magic tree

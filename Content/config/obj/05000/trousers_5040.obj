@@ -1,0 +1,12 @@
+// obj 5040
+cost = 750
+model = obj_trousers_5036
+members = true
+yof2d = 2
+zoom2d = 980
+xan2d = 500
+iop2 = Wear
+manwear = obj_trousers_5036_man, 0
+womanwear = obj_trousers_5036_woman, 0
+recol = 9529/43827
+name = Trousers

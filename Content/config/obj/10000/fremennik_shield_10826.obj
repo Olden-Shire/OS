@@ -1,0 +1,17 @@
+// obj 10826
+cost = 20
+iop2 = Wield
+model = obj_fremennik_shield_10826
+yof2d = 1
+zoom2d = 1632
+yan2d = 954
+zan2d = 28
+xan2d = 609
+contrast = 15
+ambient = 15
+members = true
+cost = 500
+manwear = obj_fremennik_shield_10826_wear, 0
+womanwear = obj_fremennik_shield_10826_wear, 6
+recol = 9525/9659 9517/9651
+name = Fremennik shield

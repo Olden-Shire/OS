@@ -1,0 +1,14 @@
+// npc 645
+size = 1
+resizeh = 130
+resizev = 124
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+alwaysontop = true
+vislevel = 2
+recol = 25238/3982 8741/10508 43072/4550 8596/39087
+name = Jonny the beard
+models = 25658 25663 299 16831 159 177 19250 25649
+headmodels = 25635 25638

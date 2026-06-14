@@ -1,0 +1,5 @@
+// seq 2394
+replaceheldright = 540
+priority = 6
+reachforward = true
+frames = 4/303/207 4/304/207 6/305/207 3/307/207 18/308/207 4/309/207

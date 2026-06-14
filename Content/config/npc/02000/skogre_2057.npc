@@ -1,0 +1,10 @@
+// npc 2057
+resizeh = 130
+resizev = 130
+walkanim = 358
+readyanim = 357
+op2 = Attack
+size = 2
+vislevel = 44
+name = Skogre
+models = 6770

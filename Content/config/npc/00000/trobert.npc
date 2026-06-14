@@ -1,0 +1,9 @@
+// npc 790
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/12 25238/127 6798/12 7700/7083 11200/111
+name = Trobert
+models = 235 246 292 254 323 179 185 151 290 518 326
+headmodels = 67

@@ -1,0 +1,10 @@
+// npc 5266
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 4550/6563 25238/7485 926/49054 43072/9019 61/9019
+name = Urbi
+models = 376 390 9026 14588 10706 9113 358
+headmodels = 101 113

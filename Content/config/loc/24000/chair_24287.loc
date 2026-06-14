@@ -1,0 +1,7 @@
+// loc 24287
+forceapproach = 11
+ambient = 25
+nonblockrange = true
+recol = 7952/922
+models_only = 12443
+name = Chair

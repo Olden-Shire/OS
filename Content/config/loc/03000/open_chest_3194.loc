@@ -1,0 +1,6 @@
+// loc 3194
+op2 = Bank
+op3 = Shut
+forceapproach = 14
+models_only = 1226
+name = Open chest

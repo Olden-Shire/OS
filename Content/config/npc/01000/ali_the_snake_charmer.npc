@@ -1,0 +1,11 @@
+// npc 1872
+size = 1
+readyanim = 1879
+op1 = Talk-to
+vislevel = 0
+turnspeed = 0
+alwaysontop = true
+recol = 25238/10351 4663/10351 4550/5555
+name = Ali the Snake Charmer
+models = 6085 315 173 264 6100 246 176
+headmodels = 6080 63

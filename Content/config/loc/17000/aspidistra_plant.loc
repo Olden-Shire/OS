@@ -1,0 +1,7 @@
+// loc 17238
+ambient = 10
+anim = 4559
+op1 = Search
+nonblockrange = true
+models_only = 17067
+name = Aspidistra plant

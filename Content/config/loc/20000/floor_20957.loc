@@ -1,0 +1,9 @@
+// loc 20957
+nonsolid = true
+resizey = 135
+active = 1
+forcedecor = true
+ambient = 25
+contrast = 25
+models = 21373/22
+name = Floor

@@ -1,0 +1,8 @@
+// loc 20524
+sharelight = true
+op1 = Crawl-through
+resizey = 153
+ambient = 20
+contrast = 20
+models_only = 21248
+name = Cart tunnel

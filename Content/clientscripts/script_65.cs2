@@ -1,0 +1,4 @@
+[clientscript,script_65](int $int0, int $int1, int $int2, int $int3)()
+
+if_setontimer(66, $int0, $int1, $int2, $int3, "iiiI", $int3);
+return;

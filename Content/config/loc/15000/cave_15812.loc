@@ -1,0 +1,5 @@
+// loc 15812
+sharelight = true
+op1 = Exit
+models_only = 15640
+name = Cave

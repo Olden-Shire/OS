@@ -1,0 +1,6 @@
+// loc 21033
+active = 1
+ambient = 25
+blockwalk = true
+models = 21641/22
+name = Music Scores

@@ -1,0 +1,19 @@
+// obj 10476
+model = obj_purple_sweets_10476
+xof2d = 7
+yof2d = 5
+zoom2d = 1460
+yan2d = 1268
+xan2d = 484
+cost = 15
+stackable = true
+members = true
+iop1 = Eat
+count1 = 10477, 2
+count2 = 10478, 3
+count3 = 10479, 4
+count4 = 10480, 5
+count5 = 10481, 10
+count6 = 10482, 25
+count7 = 10483, 100
+name = Purple sweets

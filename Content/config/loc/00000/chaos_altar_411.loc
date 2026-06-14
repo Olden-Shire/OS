@@ -1,0 +1,6 @@
+// loc 411
+width = 2
+op1 = Pray-at
+nonblockrange = true
+models_only = 1216
+name = Chaos altar

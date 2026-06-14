@@ -1,0 +1,7 @@
+// loc 22572
+width = 4
+forceapproach = 7
+noshadow = true
+op1 = Swing
+models_only = 23870
+name = Cable

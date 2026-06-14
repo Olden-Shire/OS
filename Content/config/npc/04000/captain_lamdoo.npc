@@ -1,0 +1,10 @@
+// npc 4596
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/6451 22424/14614 11162/6451
+name = Captain Lamdoo
+models = 2908 2909 2922
+headmodels = 25874

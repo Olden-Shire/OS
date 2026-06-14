@@ -1,0 +1,12 @@
+// obj 6821
+model = obj_commorb
+xof2d = 1
+yof2d = -1
+zoom2d = 740
+yan2d = 2028
+xan2d = 160
+ambient = 20
+members = true
+iop5 = Destroy
+recol = 36977/58712 37208/58568 36048/58560
+name = Orb

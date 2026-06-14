@@ -1,0 +1,16 @@
+// obj 6109
+model = obj_ghostly_hood
+manwear = obj_ghostly_hood_man, 0
+manwear2 = 8381
+womanwear = obj_ghostly_hood_woman, 0
+womanwear2 = 8387
+manhead = 8374
+womanhead = 8377
+cost = 300
+iop2 = Wear
+yof2d = -2
+zoom2d = 930
+yan2d = 52
+xan2d = 124
+members = true
+name = Ghostly hood

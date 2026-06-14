@@ -1,0 +1,11 @@
+// npc 576
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/5014 25238/6709 54397/36771 43072/4550 6798/78
+name = Harry
+models = 215 263 246 159 176 185 302
+headmodels = 53

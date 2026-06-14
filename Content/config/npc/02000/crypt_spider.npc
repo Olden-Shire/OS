@@ -1,0 +1,8 @@
+// npc 2034
+readyanim = 6247
+walkanim = 6248
+op2 = Attack
+vislevel = 56
+recol = 10398/12574 10394/12579 10518/12583 10514/12459
+name = Crypt spider
+models = 24613

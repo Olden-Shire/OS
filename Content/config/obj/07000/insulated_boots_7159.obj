@@ -1,0 +1,13 @@
+// obj 7159
+model = obj_insulated_boots_7159
+manwear = obj_insulated_boots_7159_man, 0
+womanwear = obj_insulated_boots_7159_woman, 0
+members = true
+iop2 = Wear
+xof2d = 3
+yof2d = -3
+zoom2d = 770
+yan2d = 156
+xan2d = 164
+cost = 200
+name = Insulated boots

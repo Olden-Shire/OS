@@ -1,0 +1,8 @@
+// npc 1503
+vislevel = 0
+size = 1
+turnspeed = 0
+recol = 933/43970
+name = Dummy
+models = 14035
+headmodels = 10031

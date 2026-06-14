@@ -1,0 +1,5 @@
+// loc 17634
+active = 0
+nonsolid = true
+offsety = 80
+models = 17754/22

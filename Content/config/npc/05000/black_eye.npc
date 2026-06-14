@@ -1,0 +1,15 @@
+// npc 5589
+vislevel = 0
+resizeh = 130
+resizev = 130
+walkanims = 819, 820, 821, 822
+readyanim = 5817
+ambient = 25
+contrast = 25
+op1 = Talk-to
+op3 = Pickpocket
+alwaysontop = true
+recol = 12/7331 8741/43117 40237/7331 40117/5772
+name = 'Black-eye'
+models = 230 22599 246 10705 19329 19332 14379 181
+headmodels = 63 22592 22594

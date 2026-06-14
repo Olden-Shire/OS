@@ -1,0 +1,11 @@
+// obj 4067
+model = obj_agility_arena_ticket
+cost = 1
+zoom2d = 1160
+yan2d = 1888
+zan2d = 8
+xan2d = 308
+members = true
+stackable = true
+recol = 16714/6581
+name = Castle wars ticket

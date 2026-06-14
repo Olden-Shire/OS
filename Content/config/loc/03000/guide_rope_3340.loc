@@ -1,0 +1,5 @@
+// loc 3340
+op1 = Fire-at
+active = 1
+models_only = 755
+name = Guide rope

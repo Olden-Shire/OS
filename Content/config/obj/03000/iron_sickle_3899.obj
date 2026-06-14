@@ -1,0 +1,14 @@
+// obj 3899
+cost = 15
+model = obj_silver_sickle_2961
+xof2d = -4
+yof2d = 2
+zoom2d = 980
+yan2d = 948
+xan2d = 604
+iop2 = Wield
+manwear = obj_silver_sickle_2961_wear, 0
+womanwear = obj_silver_sickle_2961_wear, 6
+members = true
+recol = 24/7073
+name = Iron sickle

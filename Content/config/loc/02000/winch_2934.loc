@@ -1,0 +1,9 @@
+// loc 2934
+width = 4
+length = 5
+resizex = 300
+resizey = 300
+resizez = 300
+op1 = Search
+models_only = 1795
+name = Winch

@@ -1,0 +1,12 @@
+// npc 1082
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 54397/6445 25238/7958 6798/0
+name = Dunstan
+models = 214 252 302 167 179 263 185 491
+headmodels = 52 84

@@ -1,0 +1,12 @@
+// obj 10657
+cost = 99000
+members = true
+model = obj_fishing_cape_9798
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_fishing_cape_9798_man, 0
+womanwear = obj_fishing_cape_9798_woman, 0
+recol = 57280/38119 54183/38486 54503/38325 960/38222 22464/38214 43968/38205
+name = Fishing cape

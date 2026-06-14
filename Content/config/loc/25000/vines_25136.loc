@@ -1,0 +1,7 @@
+// loc 25136
+hillskew = true
+ambient = 20
+blockwalk = true
+anim = 6639
+models_only = 26576
+name = Vines

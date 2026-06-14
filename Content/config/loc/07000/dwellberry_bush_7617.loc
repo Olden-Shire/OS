@@ -1,0 +1,8 @@
+// loc 7617
+ambient = 25
+op1 = Check-health
+op2 = Inspect
+op4 = Guide
+recol = 14872/22034 8722/8844 6364/41401
+models_only = 7826 7767 7815
+name = Dwellberry bush

@@ -1,0 +1,8 @@
+// npc 5218
+readyanim = 5094
+walkanim = 5095
+op2 = Attack
+vislevel = 68
+recol = 14507/14734 14511/14610 14387/14614 14391/14490 14395/14494
+name = Penance Fighter
+models = 20697 20696

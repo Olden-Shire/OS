@@ -1,0 +1,9 @@
+// npc 2324
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 25238/8604 8741/14746 6798/7762 43072/4550
+name = Dantaera
+models = 378 471 4392 348 353 7368 421 7366
+headmodels = 103

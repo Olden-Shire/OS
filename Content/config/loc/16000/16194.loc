@@ -1,0 +1,8 @@
+// loc 16194
+active = 0
+sharelight = true
+hillskew = true
+ambient = 20
+contrast = 20
+recol = 268/18 142/148 272/274
+models = 16182/0 16183/1 16184/9

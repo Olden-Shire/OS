@@ -1,0 +1,11 @@
+// npc 539
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/4647 25238/46307 6798/10508 8741/54722
+name = Silk trader
+models = 215 254 250 170 176 181 292
+headmodels = 53 82

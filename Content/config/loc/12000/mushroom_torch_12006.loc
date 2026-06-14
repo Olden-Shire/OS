@@ -1,0 +1,6 @@
+// loc 12006
+noshadow = true
+ambient = 30
+recol = 957/37817 348/227 37084/14261 227/34014 105/34917 231/34917
+models_only = 11939
+name = Mushroom torch

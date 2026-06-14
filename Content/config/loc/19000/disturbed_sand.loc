@@ -1,0 +1,13 @@
+// loc 19430
+resizex = 96
+resizey = 16
+resizez = 96
+hillskew = true
+op1 = Search
+op2 = Attack
+blockwalk = true
+forcedecor = true
+nonblockrange = true
+recol = 6798/8640
+models = 1465/10 20043/22
+name = Disturbed sand

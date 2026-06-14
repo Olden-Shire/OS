@@ -1,0 +1,10 @@
+// npc 2211
+readyanim = 2150
+walkanim = 2150
+vislevel = 0
+turnspeed = 5000
+size = 1
+recol = 2578/5404 10659/3346 61/10285
+name = Dwarven Miner
+models = 2970 7059 2979 2993 7053 2980 7066
+headmodels = 0

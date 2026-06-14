@@ -1,0 +1,10 @@
+// npc 350
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 926/43270 8741/6936 7073/6032 11200/43270
+name = Omart
+models = 207 185 252 311 163 179 274
+headmodels = 47 84

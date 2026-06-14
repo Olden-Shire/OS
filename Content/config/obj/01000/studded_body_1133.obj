@@ -1,0 +1,9 @@
+// obj 1133
+cost = 850
+model = obj_studded_body_1133
+zoom2d = 910
+xan2d = 580
+iop2 = Wear
+manwear = obj_studded_body_1133_man, 0
+womanwear = obj_studded_body_1133_woman, 0
+name = Studded body

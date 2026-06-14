@@ -1,0 +1,10 @@
+// npc 4901
+turnspeed = 0
+readyanim = 3845
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 23326/41282 8887/127 8741/127 6798/417
+name = Fishing tutor
+models = 18545 230 253 14383 163 10218 14377
+headmodels = 18544 63 85

@@ -1,0 +1,8 @@
+// loc 12400
+width = 3
+length = 3
+anim = 3405
+blockwalk = true
+bgsound = 3115, 3
+models_only = 13492 13493 13494
+name = Cauldron

@@ -1,0 +1,10 @@
+// npc 2043
+size = 2
+walkanim = 358
+readyanim = 357
+size = 2
+op1 = Talk-to
+vislevel = 76
+name = Ogre guard
+models = 2880 2876
+headmodels = 141

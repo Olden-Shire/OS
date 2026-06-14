@@ -1,0 +1,11 @@
+// npc 1477
+walkanim = 6257
+readyanim = 6252
+nominimap = true
+resizeh = 32
+resizev = 32
+op2 = Attack
+vislevel = 38
+recol = 142/268 3974/900 4525/156 4645/152 4636/148 4884/272
+name = Scorpion
+models = 24609

@@ -1,0 +1,6 @@
+// loc 4655
+blockwalk = true
+active = 0
+nonblockrange = true
+recol = 41/5660 931/2964
+models = 984/0 985/1 986/2

@@ -1,0 +1,7 @@
+// loc 24396
+active = 0
+sharelight = true
+nonsolid = true
+ambient = 25
+mirror = true
+models = 25370/0

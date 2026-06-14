@@ -1,0 +1,11 @@
+// npc 6049
+size = 2
+readyanim = 6580
+walkanim = 6556
+resizeh = 110
+resizev = 110
+op2 = Attack
+vislevel = 25
+recol = 10304/10320 10312/10324 10328/10345 10337/10349
+name = Wolf
+models = 26266

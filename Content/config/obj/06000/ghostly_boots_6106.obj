@@ -1,0 +1,12 @@
+// obj 6106
+model = obj_ghostly_boots_6106
+manwear = obj_ghostly_boots_6106_man, 0
+womanwear = obj_ghostly_boots_6106_woman, 0
+iop2 = Wear
+cost = 300
+xof2d = 3
+zoom2d = 880
+yan2d = 120
+xan2d = 96
+members = true
+name = Ghostly boots

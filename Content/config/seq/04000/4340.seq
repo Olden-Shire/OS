@@ -1,0 +1,7 @@
+// seq 4340
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 0
+preanim_move = 1
+postanim_move = 0
+frames = 5/62/1127 5/63/1127 5/64/1127 5/65/1127 5/66/1127 5/67/1127 5/68/1127 15/69/1127

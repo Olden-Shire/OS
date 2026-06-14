@@ -1,0 +1,9 @@
+// npc 3830
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 23326/17694 8887/7609 7097/7991 43422/41131 4550/4558 6976/8111
+name = Kathy Corkat
+models = 399 14868 14862 14863 14867 14864
+headmodels = 118

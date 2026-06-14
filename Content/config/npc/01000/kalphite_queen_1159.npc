@@ -1,0 +1,7 @@
+// npc 1159
+vislevel = 333
+size = 5
+walkanim = 1189
+readyanim = 1183
+name = Kalphite Queen
+models = 3850

@@ -1,0 +1,7 @@
+// loc 16778
+occlude = true
+active = 1
+op1 = Open
+ambient = 40
+models = 16625/0
+name = Door

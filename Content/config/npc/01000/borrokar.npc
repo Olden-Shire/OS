@@ -1,0 +1,12 @@
+// npc 1307
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 48
+recol = 6798/6585 25238/7465 8741/8501 8078/7485 8084/7601
+name = Borrokar
+models = 4220 252 299 162 179 4226 4218 550 4221 4219
+headmodels = 53 84 4210

@@ -1,0 +1,9 @@
+// loc 4450
+length = 3
+mapscene = 7
+sharelight = true
+mirror = true
+recol = 8076/7717
+retex = 23/35
+models_only = 4428
+name = Staircase

@@ -1,0 +1,11 @@
+// obj 10492
+model = obj_research_notes
+iop1 = Translate
+cost = 1
+members = true
+xof2d = 1
+yof2d = -1
+zoom2d = 2411
+xan2d = 429
+iop5 = Destroy
+name = Research notes

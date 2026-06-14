@@ -1,0 +1,12 @@
+// loc 6848
+width = 2
+length = 3
+hillskew = true
+op1 = Open
+op2 = Pick-lock
+op4 = hidden
+mapscene = 34
+nonblockrange = true
+recol = 6689/6930 7475/6558
+models_only = 6784
+name = Ogre Coffin

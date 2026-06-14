@@ -1,0 +1,10 @@
+// loc 17243
+active = 1
+length = 2
+ambient = 10
+blockwalk = true
+anim = 4563
+offsety = -10
+bgsound = 2326, 5
+models_only = 17082
+name = Cogs

@@ -1,0 +1,10 @@
+// npc 2961
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+recol = 8741/10351 25238/10351 4663/10351 4550/5555
+name = Ali Morrisane
+models = 6086 6087 6091 6084 6089 185 176
+headmodels = 6080 6081 63

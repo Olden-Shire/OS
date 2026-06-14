@@ -1,0 +1,10 @@
+// npc 3532
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 142
+resizev = 142
+op2 = Attack
+vislevel = 45
+recol = 25238/3226 8741/43043 4550/5462 7236/5462 4626/3350 43049/43045
+name = Vampyre Juvenile
+models = 4089 246 14047 151 10218 254 181

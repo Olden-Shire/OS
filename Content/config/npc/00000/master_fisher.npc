@@ -1,0 +1,10 @@
+// npc 308
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/9131 8078/8128 25238/8092 8090/9131
+name = Master fisher
+models = 230 244 248 295 162 176 274 185 18933
+headmodels = 63 77 80

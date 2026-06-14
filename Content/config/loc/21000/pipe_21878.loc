@@ -1,0 +1,6 @@
+// loc 21878
+ambient = 25
+contrast = 25
+nonsolid = true
+models_only = 22672
+name = Pipe

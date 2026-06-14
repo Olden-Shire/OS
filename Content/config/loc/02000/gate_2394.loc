@@ -1,0 +1,6 @@
+// loc 2394
+op1 = Open
+active = 1
+nonblockrange = true
+models = 1298/0
+name = Gate

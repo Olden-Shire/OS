@@ -1,0 +1,9 @@
+// npc 661
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/41682 25238/43162
+name = Megan
+models = 390 363 467 348 353 429 358
+headmodels = 113 87

@@ -1,0 +1,10 @@
+// obj 10280
+model = obj_willow_comp_bow_10280
+zoom2d = 2070
+yan2d = 39
+xan2d = 355
+manwear = obj_willow_comp_bow_10280_wear, 0
+womanwear = obj_willow_comp_bow_10280_wear, 6
+cost = 300
+iop2 = Wield
+name = Willow comp bow

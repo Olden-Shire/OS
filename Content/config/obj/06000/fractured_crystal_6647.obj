@@ -1,0 +1,9 @@
+// obj 6647
+model = obj_fractured_crystal_6647
+ambient = 40
+contrast = 40
+zoom2d = 340
+xan2d = 120
+members = true
+iop5 = Destroy
+name = Fractured crystal

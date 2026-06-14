@@ -1,0 +1,6 @@
+// loc 68
+active = 1
+op1 = Take-from
+bgsound = 3045, 3
+models_only = 1505
+name = Beehive

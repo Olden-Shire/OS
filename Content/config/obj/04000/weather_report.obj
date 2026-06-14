@@ -1,0 +1,12 @@
+// obj 4435
+cost = 1
+model = obj_scrawled_note
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+zoom2d = 940
+yan2d = 112
+xan2d = 248
+iop1 = Read
+members = true
+recol = 0/43691 898/8530 898/43319 898/8530 904/43319 5351/43123
+name = Weather report

@@ -1,0 +1,7 @@
+// loc 5753
+sharelight = true
+mirror = true
+ambient = 25
+contrast = 25
+retex = 2/23 6/44
+models = 595/18

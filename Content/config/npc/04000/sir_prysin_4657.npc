@@ -1,0 +1,11 @@
+// npc 4657
+vislevel = 124
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+name = Sir Prysin
+models = 17522 17529 17515 17520 17526 17517 513
+headmodels = 17532

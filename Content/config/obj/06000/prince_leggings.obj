@@ -1,0 +1,13 @@
+// obj 6185
+model = obj_prince_leggings
+manwear = obj_prince_leggings_man, 0
+womanwear = obj_prince_leggings_woman, 0
+iop2 = Wear
+xof2d = -2
+yof2d = 17
+zoom2d = 1590
+yan2d = 4
+xan2d = 360
+cost = 0
+recol = 908/64396 25238/127
+name = Prince leggings

@@ -1,0 +1,6 @@
+// loc 18876
+noshadow = true
+ambient = 20
+blockwalk = true
+models_only = 19287
+name = Sign post

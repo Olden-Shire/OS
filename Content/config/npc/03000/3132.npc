@@ -1,0 +1,6 @@
+// npc 3132
+vislevel = 0
+size = 2
+nominimap = true
+turnspeed = 0
+multivar = 1577, 65535, 3133

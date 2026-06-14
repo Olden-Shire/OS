@@ -1,0 +1,11 @@
+// npc 1198
+size = 2
+readyanim = 6580
+walkanim = 6556
+resizeh = 170
+resizev = 130
+op2 = Attack
+vislevel = 88
+recol = 82/10279 10301/10275 7219/33 262/16
+name = Dire Wolf
+models = 26264

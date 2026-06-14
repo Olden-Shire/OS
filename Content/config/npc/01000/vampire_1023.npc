@@ -1,0 +1,8 @@
+// npc 1023
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 72
+recol = 4550/5353 7236/5353 25238/6036 8741/8076 4626/5353
+name = Vampire
+models = 4089 4090 4088 275 181

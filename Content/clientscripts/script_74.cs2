@@ -1,0 +1,23 @@
+[clientscript,script_74](int $int0, int $int1, int $int2, string $string0)(string)
+def_int $int3;
+
+$int3 = string_length($string0);
+if ($int1 = 85) {
+    if ($int3 > 0) {
+        $string0 = substring($string0, 0, calc($int3 - 1));
+    }
+} else if (char_isprintable($int2) = 1) {
+    if ($int0 = 0) {
+        if ($int3 < 80) {
+            $string0 = append_char($string0, $int2);
+        }
+    } else if ($int0 = 1) {
+        if (char_isnumeric($int2) = 1 & $int3 < 10) {
+            $string0 = append_char($string0, $int2);
+        }
+    } else if ($int0 = 2 & (char_isalphanumeric($int2) = 1 | string_indexof_char(" _", $int2) ! -1) & $int3 < 12) {
+        $string0 = append_char($string0, $int2);
+    }
+}
+return($string0);
+return("");

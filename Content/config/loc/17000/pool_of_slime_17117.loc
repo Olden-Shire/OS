@@ -1,0 +1,15 @@
+// loc 17117
+anim = 493
+noshadow = true
+active = 1
+ambient = 50
+contrast = 25
+nonsolid = true
+resizex = 256
+resizey = 256
+resizez = 256
+width = 2
+length = 2
+recol = 5058/20797
+models_only = 2297
+name = Pool of Slime

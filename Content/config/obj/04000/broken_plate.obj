@@ -1,0 +1,11 @@
+// obj 4614
+cost = 0
+model = obj_broken_plate
+manwear = obj_broken_plate_wear, 3
+womanwear = obj_broken_plate_wear, 3
+yof2d = 6
+zoom2d = 1110
+yan2d = 1980
+xan2d = 404
+recol = 86/111 78/103
+name = Broken plate

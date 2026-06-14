@@ -1,0 +1,10 @@
+// loc 3770
+hillskew = true
+sharelight = true
+ambient = 25
+contrast = 25
+active = 1
+blockwalk = true
+recol = 6036/7335 5008/7219 1932/7232 904/7244 900/7384 898/7269
+models = 3808/0 3807/22
+name = Window

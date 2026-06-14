@@ -1,0 +1,10 @@
+// npc 996
+vislevel = 0
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 803/38040 4550/6709
+name = Kamen
+models = 2972 2984 2981 2979 2985 2990
+headmodels = 2

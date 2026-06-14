@@ -1,0 +1,11 @@
+// obj 11324
+model = obj_roe_11324
+xof2d = 1
+yof2d = 15
+zoom2d = 530
+yan2d = 2024
+xan2d = 318
+members = true
+iop1 = Eat
+cost = 20
+name = Roe

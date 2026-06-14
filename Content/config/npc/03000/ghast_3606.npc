@@ -1,0 +1,8 @@
+// npc 3606
+vislevel = 0
+nominimap = true
+size = 2
+walkanim = 1091
+readyanim = 1092
+name = Ghast
+models = 3559

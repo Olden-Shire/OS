@@ -1,0 +1,7 @@
+// loc 23044
+active = 1
+ambient = 20
+nonsolid = true
+recol = 33/6051 28/7079 24/5910 20/5908
+models_only = 23882
+name = Metal

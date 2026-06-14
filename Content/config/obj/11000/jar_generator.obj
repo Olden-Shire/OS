@@ -1,0 +1,15 @@
+// obj 11258
+model = obj_jar_generator
+xof2d = 1
+yof2d = 3
+zoom2d = 854
+yan2d = 1591
+zan2d = 41
+xan2d = 1757
+members = true
+iop1 = Butterfly-jar
+iop3 = Impling-jar
+iop4 = Check
+iop5 = Destroy
+cost = 600
+name = Jar generator

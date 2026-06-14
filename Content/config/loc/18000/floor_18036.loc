@@ -1,0 +1,9 @@
+// loc 18036
+active = 1
+op1 = Climb-up
+active = 1
+resizey = 160
+mapscene = 7
+blockwalk = true
+models = 17920/22
+name = Floor

@@ -1,0 +1,7 @@
+// loc 10060
+active = 0
+anim = 2768
+hillskew = true
+bgsound = 3124, 3
+recol = 43067/8078 94/10780 9164/4919 695/8865
+models_only = 9796

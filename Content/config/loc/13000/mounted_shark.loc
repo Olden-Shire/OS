@@ -1,0 +1,7 @@
+// loc 13490
+op5 = Remove
+contrast = 25
+ambient = 25
+nonsolid = true
+models_only = 12156
+name = Mounted shark

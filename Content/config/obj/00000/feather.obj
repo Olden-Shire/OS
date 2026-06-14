@@ -1,0 +1,12 @@
+// obj 314
+model = obj_magic_gold_feather
+xof2d = 4
+yof2d = 10
+zoom2d = 700
+yan2d = 692
+xan2d = 428
+stackable = true
+cost = 2
+manwear = obj_feather_wear, 0
+womanwear = obj_feather_wear, 6
+name = Feather

@@ -1,0 +1,15 @@
+// obj 3053
+cost = 17000
+model = obj_lava_battlestaff_3053
+xof2d = -5
+yof2d = 2
+zoom2d = 1490
+yan2d = 1400
+xan2d = 148
+iop2 = Wield
+manwear = obj_dramen_staff_wear, 0
+manwear2 = 3665
+womanwear = obj_dramen_staff_wear, 6
+womanwear2 = 3665
+members = true
+name = Lava battlestaff

@@ -1,0 +1,9 @@
+// npc 4355
+walkanim = 4236
+readyanim = 4231
+size = 2
+op2 = Attack
+vislevel = 80
+recol = 10277/10289 10394/10512 7952/7830
+name = Cave horror
+models = 15651 15654 15658

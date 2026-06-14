@@ -1,0 +1,8 @@
+// loc 21563
+nonsolid = true
+active = 0
+hillskew = true
+sharelight = true
+mirror = true
+recol = 7580/7331 7704/7326 7700/8472 7952/8481 8076/7326 9098/7331
+models_only = 12033

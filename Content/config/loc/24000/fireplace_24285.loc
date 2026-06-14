@@ -1,0 +1,9 @@
+// loc 24285
+length = 3
+anim = 477
+anim = 3105
+ambient = 25
+bgsound = 2065, 5
+recol = 10295/10287 10407/10275
+models_only = 12612 12611
+name = Fireplace

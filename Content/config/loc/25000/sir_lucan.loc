@@ -1,0 +1,8 @@
+// loc 25664
+anim = 6912
+nonsolid = true
+ambient = 10
+contrast = 10
+op1 = Talk-to
+models_only = 27126
+name = Sir Lucan

@@ -1,0 +1,9 @@
+// obj 5008
+model = obj_brooch
+members = true
+zoom2d = 690
+yan2d = 2024
+xan2d = 504
+cost = 1
+iop1 = Look-at
+name = Brooch

@@ -1,0 +1,10 @@
+// npc 2025
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op2 = Attack
+ambient = 50
+contrast = 50
+alwaysontop = true
+vislevel = 98
+name = Ahrim the Blighted
+models = 6668

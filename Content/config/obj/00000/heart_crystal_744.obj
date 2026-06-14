@@ -1,0 +1,8 @@
+// obj 744
+model = obj_heart_crystal_744
+members = true
+xof2d = 2
+yof2d = 1
+zoom2d = 660
+iop1 = Look-at
+name = Heart crystal

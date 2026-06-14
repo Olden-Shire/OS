@@ -1,0 +1,9 @@
+// loc 8826
+sharelight = true
+hillskew = true
+active = 0
+resizex = 128
+resizey = 256
+resizez = 128
+recol = 6689/7465
+models_only = 823

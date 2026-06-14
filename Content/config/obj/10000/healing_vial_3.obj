@@ -1,0 +1,9 @@
+// obj 10543
+model = obj_healing_vial_3
+yof2d = -4
+zoom2d = 1438
+yan2d = 221
+xan2d = 166
+iop5 = Destroy
+members = true
+name = Healing vial(3)

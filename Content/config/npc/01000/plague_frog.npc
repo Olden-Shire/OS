@@ -1,0 +1,9 @@
+// npc 1997
+size = 1
+walkanim = 1021
+readyanim = 1018
+op2 = Attack
+vislevel = 11
+recol = 15013/11707 15017/11707
+name = Plague frog
+models = 3447

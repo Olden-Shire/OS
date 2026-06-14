@@ -1,0 +1,8 @@
+// npc 5172
+vislevel = 0
+size = 1
+walkanim = 5340
+readyanim = 5339
+recol = 82/7616 78/7739 74/7622 90/7752 70/7746
+name = Golden sheep
+models = 20283 20288 20284

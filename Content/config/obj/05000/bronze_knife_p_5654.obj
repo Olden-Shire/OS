@@ -1,0 +1,16 @@
+// obj 5654
+members = true
+cost = 1
+model = obj_iron_knife
+manwear = obj_iron_knife_wear, 0
+womanwear = obj_iron_knife_wear, 6
+xof2d = -1
+yof2d = -26
+zoom2d = 1080
+yan2d = 112
+zan2d = 1860
+xan2d = 204
+iop2 = Wield
+stackable = true
+recol = 61/5652 57/13221
+name = Bronze knife(p+)

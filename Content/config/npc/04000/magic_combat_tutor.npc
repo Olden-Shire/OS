@@ -1,0 +1,11 @@
+// npc 4707
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+op3 = Claim
+vislevel = 0
+alwaysontop = true
+recol = 8741/41282 24/127 9164/127 914/41282 918/41267 929/41381
+name = Magic combat tutor
+models = 9608 390 11359 11348 10706 534 15126 358
+headmodels = 113 9601

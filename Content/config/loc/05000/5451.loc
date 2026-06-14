@@ -1,0 +1,7 @@
+// loc 5451
+active = 0
+sharelight = true
+occlude = true
+hillskew = true
+recol = 21642/14858 21646/14734 21522/14610 21526/14614 21530/14490 21534/14494
+models_only = 5364

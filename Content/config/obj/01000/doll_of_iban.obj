@@ -1,0 +1,11 @@
+// obj 1492
+cost = 2
+model = obj_doll_of_iban
+members = true
+iop1 = Search
+xof2d = 2
+yof2d = 15
+zoom2d = 1040
+yan2d = 1736
+xan2d = 364
+name = Doll of iban

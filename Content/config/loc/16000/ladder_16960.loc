@@ -1,0 +1,10 @@
+// loc 16960
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+op1 = Climb
+forceapproach = 7
+mapscene = 7
+models_only = 16520
+name = Ladder

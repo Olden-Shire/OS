@@ -1,0 +1,7 @@
+// loc 5891
+ambient = 0
+blockwalk = true
+active = 1
+op1 = Go-through
+models = 5710/0
+name = Tent door

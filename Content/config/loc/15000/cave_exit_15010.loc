@@ -1,0 +1,7 @@
+// loc 15010
+width = 3
+length = 2
+sharelight = true
+op1 = Exit
+models_only = 14971
+name = Cave Exit

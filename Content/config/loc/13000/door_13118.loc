@@ -1,0 +1,8 @@
+// loc 13118
+wallwidth = 8
+occlude = true
+active = 1
+op1 = Open
+mirror = true
+models = 13286/0
+name = Door

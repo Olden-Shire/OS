@@ -1,0 +1,13 @@
+// obj 6774
+model = obj_rat_pole_6773
+manwear = obj_rat_pole_6773_wear, 0
+manwear2 = 10081
+womanwear = obj_rat_pole_6773_wear, 6
+womanwear2 = 10081
+members = true
+zoom2d = 1990
+yan2d = 1996
+xan2d = 268
+iop1 = Remove-rat
+iop2 = Wield
+name = Rat pole

@@ -1,0 +1,9 @@
+// npc 2960
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/103 6798/6852
+name = Zenesha
+models = 393 468 352 356 432 414 361
+headmodels = 115 131

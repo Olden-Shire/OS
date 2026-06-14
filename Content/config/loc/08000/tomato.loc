@@ -1,0 +1,7 @@
+// loc 8645
+op1 = Harvest
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8221 7766
+name = Tomato

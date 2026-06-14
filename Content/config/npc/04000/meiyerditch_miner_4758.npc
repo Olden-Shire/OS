@@ -1,0 +1,10 @@
+// npc 4758
+vislevel = 0
+op1 = Talk-to
+resizeh = 100
+readyanim = 808
+walkanims = 819, 820, 821, 822
+recol = 8741/5404 8078/3226 8656/5404 4550/94 40237/3604 3604/156
+name = Meiyerditch miner
+models = 18084 230 246 18133 18070 177 18099 18088 7607
+headmodels = 18036

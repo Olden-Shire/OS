@@ -1,0 +1,8 @@
+// loc 4679
+hillskew = true
+nonsolid = true
+op1 = Weed
+op3 = hidden
+recol = 60748/60727
+models_only = 1690 4634
+name = Herbs

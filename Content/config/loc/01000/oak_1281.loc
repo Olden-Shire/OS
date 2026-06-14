@@ -1,0 +1,9 @@
+// loc 1281
+ambient = 25
+width = 3
+length = 3
+op1 = Chop down
+op3 = hidden
+mapscene = 1
+models_only = 8037 8040
+name = Oak

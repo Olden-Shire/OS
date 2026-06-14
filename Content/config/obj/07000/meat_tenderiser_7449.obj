@@ -1,0 +1,13 @@
+// obj 7449
+cost = 41500
+iop2 = Wield
+manwear = obj_meat_tenderiser_7449_wear, 0
+womanwear = obj_meat_tenderiser_7449_wear, 6
+model = obj_meat_tenderiser_7449
+xof2d = 9
+yof2d = 24
+zoom2d = 2476
+yan2d = 235
+xan2d = 387
+members = true
+name = Meat tenderiser

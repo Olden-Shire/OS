@@ -1,0 +1,9 @@
+// loc 18841
+anim = 5012
+width = 3
+length = 4
+resizex = 100
+resizey = 100
+resizez = 100
+models_only = 19127 19126
+name = Dolphin

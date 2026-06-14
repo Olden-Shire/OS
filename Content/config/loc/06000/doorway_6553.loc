@@ -1,0 +1,6 @@
+// loc 6553
+active = 1
+op1 = Open
+blockwalk = true
+models_only = 6242
+name = Doorway

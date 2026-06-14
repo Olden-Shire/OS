@@ -1,0 +1,5 @@
+// loc 21305
+ambient = 10
+op1 = Cut-wood
+models_only = 21984
+name = Woodcutting stump

@@ -1,0 +1,9 @@
+// npc 2424
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 803/12820 7473/10553 6356/12820 61/29574
+name = Gunslik
+models = 2974 2984 2978 2981 2985 2992
+headmodels = 4

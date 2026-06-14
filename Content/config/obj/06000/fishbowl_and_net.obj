@@ -1,0 +1,15 @@
+// obj 6673
+model = obj_fishbowl_and_net
+manwear = obj_fishbowl_and_net_wear, 0
+womanwear = obj_fishbowl_and_net_wear, 6
+xof2d = 1
+yof2d = 27
+zoom2d = 1200
+yan2d = 1800
+xan2d = 284
+cost = 0
+members = true
+iop2 = Untangle
+ambient = 40
+contrast = 20
+name = Fishbowl and net

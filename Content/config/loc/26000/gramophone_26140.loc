@@ -1,0 +1,8 @@
+// loc 26140
+active = 1
+blockwalk = true
+ambient = 25
+contrast = 15
+recol = 6443/5532 6682/5421 4888/5532 4764/5537
+models_only = 27533
+name = Gramophone

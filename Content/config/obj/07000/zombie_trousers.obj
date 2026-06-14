@@ -1,0 +1,9 @@
+// obj 7593
+model = obj_zombie_trousers
+yof2d = 2
+yan2d = 1997
+xan2d = 426
+iop2 = Wear
+manwear = obj_zombie_trousers_man, 0
+womanwear = obj_zombie_trousers_woman, 0
+name = Zombie trousers

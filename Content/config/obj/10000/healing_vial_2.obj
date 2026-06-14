@@ -1,0 +1,11 @@
+// obj 10544
+model = obj_healing_vial_2
+yof2d = -4
+zoom2d = 1438
+yan2d = 221
+xan2d = 166
+manwear = obj_healing_vial_2_wear, 0
+womanwear = obj_healing_vial_2_wear, 6
+iop5 = Destroy
+members = true
+name = Healing vial(2)

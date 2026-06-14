@@ -1,0 +1,8 @@
+// npc 1859
+walkanim = 1839
+readyanim = 1838
+op1 = Talk-to
+vislevel = 781
+name = Arzinian Being of Bordanzan
+models = 6011 6009
+headmodels = 5817

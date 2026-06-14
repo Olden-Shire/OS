@@ -1,0 +1,6 @@
+// loc 21028
+active = 1
+ambient = 25
+nonsolid = true
+models = 21646/22
+name = Flute

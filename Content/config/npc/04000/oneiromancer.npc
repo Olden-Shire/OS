@@ -1,0 +1,16 @@
+// npc 4511
+size = 1
+contrast = 15
+ambient = 15
+resizeh = 135
+resizev = 135
+alwaysontop = true
+walkanims = 4426, 4427, 4428, 4429
+readyanim = 4424
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8615/43107 8741/43105 8865/43102 25238/43102 15009/235 790/59511
+name = Oneiromancer
+models = 16500 12141 16506 16494 16498 10699 16503 270
+headmodels = 12135 16465

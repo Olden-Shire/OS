@@ -1,0 +1,12 @@
+// npc 1062
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 8090/0 61/0 25238/0 4626/0 7700/0 926/0
+name = Sergeant
+models = 225 295 150 254 185 323 3780
+headmodels = 60

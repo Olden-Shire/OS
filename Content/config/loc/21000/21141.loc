@@ -1,0 +1,9 @@
+// loc 21141
+length = 2
+width = 2
+active = 0
+ambient = 25
+contrast = 25
+hillskew = true
+blockwalk = true
+models_only = 21603

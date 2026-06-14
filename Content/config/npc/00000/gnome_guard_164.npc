@@ -1,0 +1,10 @@
+// npc 164
+size = 1
+walkanim = 189
+readyanim = 195
+op2 = Attack
+vislevel = 23
+recol = 22422/64427
+name = Gnome guard
+models = 2909 2892 2922
+headmodels = 21

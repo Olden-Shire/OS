@@ -1,0 +1,12 @@
+// npc 1434
+walkanim = 1380
+readyanim = 1386
+resizeh = 160
+resizev = 160
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 7469/38094 7721/7483
+name = Daga
+models = 4822 4827
+headmodels = 4659

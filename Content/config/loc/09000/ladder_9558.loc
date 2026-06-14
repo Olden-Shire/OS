@@ -1,0 +1,7 @@
+// loc 9558
+sharelight = true
+op1 = Climb-up
+forceapproach = 14
+mapscene = 7
+models_only = 5187
+name = Ladder

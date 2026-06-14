@@ -1,0 +1,9 @@
+// npc 2907
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+name = Eric
+models = 9981 181 246 9983 9979 9980 9982 9986
+headmodels = 53 9976

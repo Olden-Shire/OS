@@ -1,0 +1,9 @@
+// npc 2449
+size = 1
+resizeh = 100
+resizev = 100
+turnspeed = 0
+vislevel = 0
+nominimap = true
+name = Egg
+models = 8712

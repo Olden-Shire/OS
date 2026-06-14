@@ -1,0 +1,13 @@
+// obj 7443
+cost = 3200
+model = obj_skewer_7443
+xof2d = 1
+yof2d = -4
+zoom2d = 848
+yan2d = 192
+xan2d = 235
+iop2 = Wield
+manwear = obj_skewer_7443_wear, 0
+womanwear = obj_skewer_7443_wear, 6
+members = true
+name = Skewer

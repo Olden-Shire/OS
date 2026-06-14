@@ -1,0 +1,6 @@
+// loc 20358
+length = 2
+nonblockrange = true
+recol = 6443/6589 6563/6705 5904/6705
+models_only = 8245
+name = Sink

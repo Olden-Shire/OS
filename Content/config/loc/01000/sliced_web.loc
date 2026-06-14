@@ -1,0 +1,5 @@
+// loc 1811
+nonsolid = true
+retex = 12/26
+models_only = 800
+name = Sliced web

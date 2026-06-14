@@ -1,0 +1,9 @@
+// npc 2490
+size = 1
+walkanim = 2392
+readyanim = 277
+op2 = Attack
+turnspeed = 1024
+vislevel = 35
+name = Bush snake
+models = 3002

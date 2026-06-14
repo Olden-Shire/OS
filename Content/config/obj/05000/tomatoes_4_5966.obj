@@ -1,0 +1,10 @@
+// obj 5966
+model = obj_tomatoes_3_5964
+yof2d = -1
+zoom2d = 660
+yan2d = 1816
+xan2d = 84
+members = true
+iop1 = Fill
+iop2 = Remove-one
+name = Tomatoes(4)

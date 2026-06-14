@@ -1,0 +1,7 @@
+// loc 14
+sharelight = true
+hillskew = true
+op1 = Inspect
+nonblockrange = true
+models = 969/0 970/9
+name = Railing

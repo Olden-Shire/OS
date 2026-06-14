@@ -1,0 +1,15 @@
+// obj 3841
+model = obj_book_on_chemicals
+iop2 = Wield
+iop3 = Check
+members = true
+manwear = obj_damaged_book_3839_wear, 0
+womanwear = obj_damaged_book_3839_wear, 6
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+cost = 200
+recol = 5018/937 61/11177 10351/61
+name = Damaged book

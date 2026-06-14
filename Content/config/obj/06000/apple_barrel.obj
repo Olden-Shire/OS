@@ -1,0 +1,9 @@
+// obj 6094
+model = obj_apple_barrel
+zoom2d = 1550
+yan2d = 1964
+xan2d = 280
+members = true
+cost = 1
+recol = 17331/3742 22422/9647 17304/3742 18347/17304
+name = Apple barrel

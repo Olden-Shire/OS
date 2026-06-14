@@ -1,0 +1,10 @@
+// npc 5608
+readyanim = 5877
+walkanim = 5876
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 28744/4550 28740/4550 28727/4550
+name = Monk
+models = 21429 21468 21412 21440 21460 21448 21422
+headmodels = 22784

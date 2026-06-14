@@ -1,0 +1,5 @@
+// loc 3045
+op1 = Use
+nonblockrange = true
+models_only = 1270
+name = Bank booth

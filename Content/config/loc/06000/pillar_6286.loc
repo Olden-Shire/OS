@@ -1,0 +1,9 @@
+// loc 6286
+resizex = 80
+resizey = 80
+resizez = 80
+width = 3
+length = 3
+recol = 49/20 41/16
+models_only = 6187
+name = Pillar

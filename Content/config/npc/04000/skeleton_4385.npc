@@ -1,0 +1,8 @@
+// npc 4385
+size = 1
+walkanim = 5479
+readyanim = 5483
+op2 = Attack
+vislevel = 60
+name = Skeleton
+models = 21170 21178 21160 21158 21181 21188

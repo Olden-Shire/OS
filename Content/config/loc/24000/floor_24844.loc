@@ -1,0 +1,7 @@
+// loc 24844
+ambient = 60
+anim = 6523
+nonsolid = true
+active = 1
+models = 25997/22
+name = Floor

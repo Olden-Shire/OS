@@ -1,0 +1,10 @@
+// npc 5193
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+op2 = Attack
+vislevel = 113
+name = Ogre shaman
+models = 20368 20377 20387
+headmodels = 20411

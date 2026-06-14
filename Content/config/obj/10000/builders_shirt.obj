@@ -1,0 +1,13 @@
+// obj 10863
+model = obj_builders_shirt
+manwear = obj_builders_shirt_man, 0
+manwear2 = 22595
+womanwear = obj_builders_shirt_woman, 0
+womanwear2 = 22619
+iop2 = Wear
+iop5 = Destroy
+cost = 100
+zoom2d = 1243
+xan2d = 526
+members = true
+name = Builder's shirt

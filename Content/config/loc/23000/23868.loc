@@ -1,0 +1,6 @@
+// loc 23868
+sharelight = true
+hillskew = true
+active = 0
+nonblockrange = true
+models = 24853/0

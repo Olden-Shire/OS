@@ -1,0 +1,6 @@
+// loc 4313
+active = 1
+nonblockrange = true
+recol = 6040/5404
+models = 966/0 967/1 968/9
+name = Gate

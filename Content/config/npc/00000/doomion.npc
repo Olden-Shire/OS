@@ -1,0 +1,10 @@
+// npc 999
+size = 3
+walkanim = 63
+readyanim = 66
+op2 = Attack
+resizeh = 110
+resizev = 110
+vislevel = 91
+name = Doomion
+models = 17377 17396 17386 17400 17390

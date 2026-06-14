@@ -1,0 +1,9 @@
+// npc 4647
+size = 1
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 28434/4911 22426/4899 4539/4506 26710/4899 5223/74 4550/4387
+name = Hazelmere
+models = 17024 17002 17274
+headmodels = 16978

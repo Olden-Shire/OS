@@ -1,0 +1,10 @@
+// loc 22500
+active = 1
+op1 = Talk-to
+blockwalk = true
+anim = 5983
+width = 2
+length = 2
+nonblockrange = true
+models_only = 23197 23196
+name = Marv (sick)

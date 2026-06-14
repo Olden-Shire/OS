@@ -1,0 +1,10 @@
+// npc 2729
+vislevel = 0
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op3 = Take-boat
+recol = 25238/4769 8741/4769 43072/4550 6798/2138
+name = Monk of Entrana
+models = 208 250 292 170 176 3711 260 181
+headmodels = 48 83

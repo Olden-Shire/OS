@@ -1,0 +1,10 @@
+// npc 103
+size = 1
+readyanim = 5538
+walkanim = 5539
+ambient = 20
+contrast = 20
+op2 = Attack
+vislevel = 19
+name = Ghost
+models = 21154

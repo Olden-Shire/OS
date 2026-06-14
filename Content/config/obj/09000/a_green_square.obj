@@ -1,0 +1,11 @@
+// obj 9611
+model = obj_a_red_square
+xof2d = 1
+yof2d = 3
+zoom2d = 592
+yan2d = 72
+xan2d = 390
+members = true
+stackable = true
+recol = 668/23849 916/23969 549/23857
+name = A green square

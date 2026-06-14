@@ -1,0 +1,9 @@
+// obj 6653
+model = obj_newly_made_crystal_6652
+ambient = 40
+contrast = 40
+zoom2d = 450
+xan2d = 120
+members = true
+iop5 = Destroy
+name = Crystal trinket

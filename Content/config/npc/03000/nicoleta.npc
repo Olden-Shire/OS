@@ -1,0 +1,10 @@
+// npc 3561
+vislevel = 0
+resizeh = 125
+resizev = 120
+readyanim = 1144
+op1 = Talk-to
+recol = 25238/14494 8741/12942 43072/10450 933/10450 4550/10450
+name = Nicoleta
+models = 387 474 9359 353 427
+headmodels = 110 11429

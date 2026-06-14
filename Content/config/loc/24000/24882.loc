@@ -1,0 +1,6 @@
+// loc 24882
+anim = 6522
+blockwalk = true
+active = 1
+op1 = hidden
+multiloc = 3700, 65535, 24724 24726 24725 24727

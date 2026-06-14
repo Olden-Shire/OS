@@ -1,0 +1,8 @@
+// loc 19926
+width = 2
+length = 2
+offsety = 100
+ambient = 15
+op1 = Enter
+models_only = 19997
+name = Cave entrance

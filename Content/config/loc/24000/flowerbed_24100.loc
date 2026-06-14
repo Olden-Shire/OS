@@ -1,0 +1,6 @@
+// loc 24100
+nonsolid = true
+hillskew = true
+recol = 22420/17694 43968/39620 33728/39892
+models_only = 1569
+name = Flowerbed

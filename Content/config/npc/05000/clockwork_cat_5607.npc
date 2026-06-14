@@ -1,0 +1,13 @@
+// npc 5607
+vislevel = 0
+size = 1
+readyanim = 317
+walkanim = 314
+resizeh = 60
+resizev = 60
+ambient = 40
+nominimap = true
+vislevel = 0
+name = Clockwork cat
+models = 14104 14103
+headmodels = 22781

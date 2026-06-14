@@ -1,0 +1,11 @@
+// obj 9649
+members = true
+iop1 = Read
+iop5 = Destroy
+model = obj_message_9649
+xof2d = -4
+yof2d = 9
+zoom2d = 1110
+yan2d = 401
+xan2d = 415
+name = Message

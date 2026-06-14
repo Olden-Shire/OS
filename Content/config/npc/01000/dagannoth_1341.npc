@@ -1,0 +1,10 @@
+// npc 1341
+size = 2
+resizeh = 85
+resizev = 85
+walkanim = 1339
+readyanim = 1338
+op2 = Attack
+vislevel = 92
+name = Dagannoth
+models = 4587

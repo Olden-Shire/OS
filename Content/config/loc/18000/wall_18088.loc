@@ -1,0 +1,8 @@
+// loc 18088
+op5 = Crawl-under
+resizex = 128
+resizey = 160
+resizez = 128
+ambient = 10
+models = 17711/0
+name = Wall

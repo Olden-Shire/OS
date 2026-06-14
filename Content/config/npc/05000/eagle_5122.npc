@@ -1,0 +1,9 @@
+// npc 5122
+readyanim = 1773
+walkanim = 1773
+size = 5
+turnspeed = 1024
+vislevel = 0
+recol = 10357/9519 5543/7333 5667/8481 6697/7452 6573/8472 5551/8596
+name = Eagle
+models = 5727 5729

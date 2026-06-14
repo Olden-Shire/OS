@@ -1,0 +1,7 @@
+// loc 15891
+mirror = true
+offsetx = 64
+forceapproach = 13
+recol = 6585/6689 5673/5912
+models_only = 15746
+name = Bamboo Ladder

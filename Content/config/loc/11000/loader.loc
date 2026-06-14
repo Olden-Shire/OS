@@ -1,0 +1,6 @@
+// loc 11162
+width = 2
+forceapproach = 13
+sharelight = true
+models_only = 11023
+name = Loader

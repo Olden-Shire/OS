@@ -1,0 +1,16 @@
+// obj 4042
+model = obj_cape_1007
+xof2d = 3
+yof2d = 6
+zoom2d = 2140
+yan2d = 948
+xan2d = 400
+iop2 = Wear
+manwear = obj_hooded_cloak_4041_man, 0
+womanwear = obj_hooded_cloak_4041_woman, 0
+manhead = 48
+womanhead = 107
+members = true
+team = 2
+recol = 8741/2735 7700/2611 8076/2844 11200/2578
+name = Hooded cloak

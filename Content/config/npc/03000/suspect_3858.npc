@@ -1,0 +1,9 @@
+// npc 3858
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Grab
+recol = 25238/43433 8741/43313 8078/43067 24/43239 15242/43239 6798/7993
+name = Suspect
+models = 10078 11359 343 10706 431 358
+headmodels = 10031

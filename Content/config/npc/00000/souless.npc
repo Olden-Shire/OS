@@ -1,0 +1,8 @@
+// npc 140
+size = 1
+walkanim = 336
+readyanim = 337
+op2 = Attack
+vislevel = 18
+name = Souless
+models = 2958

@@ -1,0 +1,12 @@
+// npc 970
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 6798/3862 8741/4626 9104/7566 25238/33174 7073/4502 10004/908
+name = Diango
+models = 186 217 253 292 320 167 179 3329 730
+headmodels = 28 55 85

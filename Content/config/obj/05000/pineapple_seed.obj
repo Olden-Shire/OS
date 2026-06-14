@@ -1,0 +1,16 @@
+// obj 5287
+model = obj_pineapple_seed
+xof2d = 1
+yof2d = -5
+zoom2d = 620
+yan2d = 1992
+xan2d = 396
+members = true
+stackable = true
+count1 = 5244, 2
+count2 = 5245, 3
+count3 = 5246, 4
+count4 = 5247, 5
+cost = 74
+recol = 520/1560
+name = Pineapple seed

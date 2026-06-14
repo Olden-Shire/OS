@@ -1,0 +1,7 @@
+// loc 21070
+active = 0
+ambient = 20
+contrast = 20
+sharelight = true
+mirror = true
+models = 21783/0

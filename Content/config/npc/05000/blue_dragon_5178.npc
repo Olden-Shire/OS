@@ -1,0 +1,10 @@
+// npc 5178
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+vislevel = 27
+recol = 910/42770 912/42646 1938/42522 1814/42398 2588/42283 2469/43315
+name = Blue dragon
+models = 17408 17425 17418 17423

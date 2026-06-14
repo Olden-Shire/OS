@@ -1,0 +1,10 @@
+// npc 6141
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+alwaysontop = true
+op1 = Talk-to
+recol = 8860/12 61/16 7073/5772 8741/33 9104/16 926/12
+name = Squire (Veteran)
+models = 391 414 14442 14447 341 10706 14589 14574 358 27134
+headmodels = 131 114

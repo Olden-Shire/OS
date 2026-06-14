@@ -1,0 +1,13 @@
+// obj 10784
+model = obj_saradomin_robe_top_10458
+zoom2d = 1190
+xan2d = 476
+iop2 = Wear
+manwear = obj_saradomin_robe_top_10458_man, 0
+manwear2 = 20127
+womanwear = obj_saradomin_robe_top_10458_woman, 0
+womanwear2 = 20175
+members = true
+cost = 7000
+recol = 916/43924 908/43916 307/43315
+name = Saradomin robe top

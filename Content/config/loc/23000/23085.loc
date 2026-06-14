@@ -1,0 +1,5 @@
+// loc 23085
+blockwalk = true
+active = 0
+recol = 30/10266 35/10270 39/10275 43/10279 47/10283 51/10287
+models_only = 11798

@@ -1,0 +1,10 @@
+// npc 2572
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 54397/10524 8741/12463 25238/13716 4626/13840 6798/2731 43072/4550
+name = Olivia
+models = 393 417 467 348 353 428 7366
+headmodels = 115 136

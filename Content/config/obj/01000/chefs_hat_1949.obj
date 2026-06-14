@@ -1,0 +1,14 @@
+// obj 1949
+cost = 2
+model = obj_chefs_hat_1949
+xof2d = -4
+yof2d = 3
+zoom2d = 580
+xan2d = 668
+manwear = obj_chefs_hat_1949_man, 0
+womanwear = obj_chefs_hat_1949_woman, 0
+manhead = 41
+womanhead = 99
+iop2 = Wear
+recol = 61/127
+name = Chef's hat

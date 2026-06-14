@@ -1,0 +1,10 @@
+// npc 889
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/3990 25238/2855 8741/3990 8078/914 11183/78 37/78
+name = Henryeta Carnillean
+models = 378 361 470 343 353 421 482 447 412
+headmodels = 103 128

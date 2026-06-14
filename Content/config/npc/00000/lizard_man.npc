@@ -1,0 +1,8 @@
+// npc 69
+size = 2
+walkanim = 176
+readyanim = 179
+op2 = Attack
+vislevel = 22
+name = Lizard man
+models = 2888

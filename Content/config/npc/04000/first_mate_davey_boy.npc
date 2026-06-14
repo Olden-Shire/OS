@@ -1,0 +1,13 @@
+// npc 4543
+vislevel = 0
+size = 1
+resizeh = 134
+resizev = 123
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/10520 11162/6932 28318/43303 8741/8478 7281/5421 43072/21543
+name = First mate 'Davey-boy'
+models = 193 217 244 249 14187 163 10218 11339 185
+headmodels = 55 81 77 36

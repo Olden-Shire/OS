@@ -1,0 +1,6 @@
+// loc 53
+op1 = Open
+mirror = true
+sharelight = true
+models = 14356/0
+name = Gate

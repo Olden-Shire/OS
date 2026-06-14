@@ -1,0 +1,7 @@
+// loc 16906
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+models_only = 16583
+name = Wheel

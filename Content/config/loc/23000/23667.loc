@@ -1,0 +1,7 @@
+// loc 23667
+sharelight = true
+ambient = 25
+contrast = 25
+hillskew = true
+active = 0
+models = 24793/0

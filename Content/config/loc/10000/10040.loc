@@ -1,0 +1,6 @@
+// loc 10040
+nonsolid = true
+active = 1
+raiseobject = 0
+noshadow = true
+multiloc = 1328, 65535, 65535 10038

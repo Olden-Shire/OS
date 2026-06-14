@@ -1,0 +1,11 @@
+// npc 3553
+vislevel = 0
+resizeh = 126
+resizev = 123
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/16540 25238/24730 8741/16540 11162/10450 4550/10450 933/10450
+name = Victor
+models = 2906 2910 2915
+headmodels = 139

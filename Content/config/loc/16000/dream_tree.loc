@@ -1,0 +1,13 @@
+// loc 16604
+active = 1
+width = 2
+length = 2
+noshadow = true
+contrast = 40
+ambient = 60
+anim = 4355
+blockwalk = true
+op1 = Chop
+mapscene = 66
+models_only = 16761
+name = Dream tree

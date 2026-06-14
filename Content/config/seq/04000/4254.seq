@@ -1,0 +1,9 @@
+// seq 4254
+loops = 27
+reachforward = true
+priority = 2
+replaceheldleft = 0
+replaceheldright = 0
+preanim_move = 1
+postanim_move = 1
+frames = 4/46/1110 4/53/1110 4/54/1110 4/55/1110 8/56/1110 8/57/1110 8/58/1110 8/59/1110 8/60/1110 10/47/1110 5/48/1110 5/49/1110 5/50/1110 5/51/1110 5/52/1110

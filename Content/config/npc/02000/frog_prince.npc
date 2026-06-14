@@ -1,0 +1,8 @@
+// npc 2474
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+recol = 8741/48039 6024/8844 8078/8844 25238/127
+name = Frog prince
+models = 8774 235 7611 162 257 8233 176 246
+headmodels = 67 6951

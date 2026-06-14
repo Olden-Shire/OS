@@ -1,0 +1,9 @@
+// obj 10593
+model = obj_cowbells
+members = true
+yof2d = -9
+zoom2d = 1049
+yan2d = 1856
+xan2d = 195
+iop1 = Play
+name = Cowbells

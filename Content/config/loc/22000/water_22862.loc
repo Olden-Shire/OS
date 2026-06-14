@@ -1,0 +1,9 @@
+// loc 22862
+anim = 6024
+active = 1
+ambient = 35
+mapscene = 75
+bgsound = 2150, 5
+models = 23727/0
+models = 23725/0
+name = Water

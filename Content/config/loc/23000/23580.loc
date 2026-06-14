@@ -1,0 +1,6 @@
+// loc 23580
+active = 0
+hillskew = true
+nonblockrange = true
+recol = 43/10258 39/10262 35/10266 30/10270
+models_only = 11799

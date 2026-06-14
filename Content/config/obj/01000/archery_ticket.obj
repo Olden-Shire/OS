@@ -1,0 +1,11 @@
+// obj 1464
+model = obj_paramaya_ticket_619
+cost = 25
+xof2d = 6
+yof2d = -2
+zoom2d = 830
+yan2d = 132
+xan2d = 320
+members = true
+stackable = true
+name = Archery ticket

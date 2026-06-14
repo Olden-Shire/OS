@@ -1,0 +1,15 @@
+// obj 3387
+cost = 45000
+model = obj_splitbark_body_3387
+iop2 = Wear
+manwear = obj_splitbark_body_3387_man, 0
+manwear2 = 4112
+womanwear = obj_splitbark_body_3387_woman, 0
+womanwear2 = 4118
+members = true
+xof2d = -3
+yof2d = -3
+zoom2d = 1373
+yan2d = 2047
+xan2d = 498
+name = Splitbark body

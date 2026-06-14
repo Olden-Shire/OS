@@ -1,0 +1,13 @@
+// loc 9671
+active = 0
+noshadow = true
+blockwalk = true
+hillskew = true
+mapscene = 25
+ambient = 15
+resizex = 64
+resizey = 64
+resizez = 64
+nonblockrange = true
+recol = 6689/6040
+models_only = 820

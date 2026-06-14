@@ -1,0 +1,11 @@
+// obj 6
+model = obj_cannon_base_6
+xof2d = -2
+yof2d = -4
+zoom2d = 2590
+yan2d = 1756
+xan2d = 188
+cost = 187500
+iop1 = Set-up
+members = true
+name = Cannon base

@@ -1,0 +1,11 @@
+// loc 5847
+op1 = Climb-over
+width = 2
+length = 2
+active = 1
+hillskew = true
+mapscene = 11
+nonblockrange = true
+recol = 6689/7331
+models_only = 819
+name = Rockslide

@@ -1,0 +1,11 @@
+// obj 2574
+cost = 50
+members = true
+model = obj_sextant
+xof2d = 3
+yof2d = 10
+zoom2d = 690
+yan2d = 124
+xan2d = 488
+iop1 = Look through
+name = Sextant

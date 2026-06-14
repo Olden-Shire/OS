@@ -1,0 +1,12 @@
+// obj 11266
+model = obj_anchovy_paste
+xof2d = 3
+yof2d = 1
+zoom2d = 530
+yan2d = 664
+zan2d = 1992
+xan2d = 152
+cost = 5
+members = true
+stackable = true
+name = Anchovy paste

@@ -1,0 +1,11 @@
+// obj 6737
+cost = 10000
+model = obj_berserker_ring_6737
+iop2 = Wear
+members = true
+xof2d = 3
+yof2d = -15
+zoom2d = 600
+yan2d = 1916
+xan2d = 324
+name = Berserker ring

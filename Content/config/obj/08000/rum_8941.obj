@@ -1,0 +1,13 @@
+// obj 8941
+model = obj_khali_brew
+yof2d = -1
+zoom2d = 970
+yan2d = 1888
+xan2d = 104
+members = true
+cost = 2
+iop1 = Drink
+manwear = obj_karamjan_rum_3164_wear, 0
+womanwear = obj_karamjan_rum_3164_wear, 6
+recol = 1942/43311
+name = Rum

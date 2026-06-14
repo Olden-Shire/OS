@@ -1,0 +1,13 @@
+// loc 3882
+width = 3
+length = 3
+resizex = 128
+resizey = 170
+resizez = 128
+mapscene = 10
+op1 = Chop down
+op3 = hidden
+ambient = 25
+contrast = 25
+models_only = 3944
+name = Tree

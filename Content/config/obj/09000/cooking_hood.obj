@@ -1,0 +1,13 @@
+// obj 9803
+model = obj_attack_hood
+zoom2d = 720
+yan2d = 18
+xan2d = 21
+iop2 = Wear
+manwear = obj_attack_hood_man, 0
+womanwear = obj_attack_hood_woman, 0
+manhead = 18911
+womanhead = 18913
+members = true
+recol = 57280/51738 54183/51986 54503/51084 960/51738 22464/51862 43968/51986
+name = Cooking hood

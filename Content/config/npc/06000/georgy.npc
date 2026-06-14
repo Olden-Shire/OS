@@ -1,0 +1,9 @@
+// npc 6033
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Georgy
+models = 26120 26132 26117 26127 26119
+headmodels = 26267

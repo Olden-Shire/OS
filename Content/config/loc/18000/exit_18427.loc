@@ -1,0 +1,8 @@
+// loc 18427
+ambient = 10
+active = 1
+op1 = Climb-up
+mapscene = 7
+recol = 7508/8384 7504/8375 7500/8367 7494/8487 7490/8478 7483/8598
+models_only = 18363
+name = Exit

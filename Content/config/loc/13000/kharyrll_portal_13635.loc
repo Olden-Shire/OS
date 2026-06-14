@@ -1,0 +1,10 @@
+// loc 13635
+op5 = Remove
+width = 2
+anim = 3174
+op1 = Enter
+bgsound = 3139, 3
+ambient = 40
+recol = 50072/49 49948/53 49953/57 49829/61 49705/66
+models_only = 11231 11237
+name = Kharyrll Portal

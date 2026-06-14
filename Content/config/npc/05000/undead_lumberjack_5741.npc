@@ -1,0 +1,10 @@
+// npc 5741
+op2 = Attack
+size = 1
+contrast = 10
+ambient = 10
+readyanim = 5966
+walkanim = 5966
+vislevel = 70
+name = Undead Lumberjack
+models = 23213

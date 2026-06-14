@@ -1,0 +1,11 @@
+// obj 6110
+cost = 300
+model = obj_ghostly_gloves
+iop2 = Wear
+manwear = obj_ghostly_gloves_man, 0
+womanwear = obj_ghostly_gloves_woman, 0
+yof2d = 10
+zoom2d = 750
+xan2d = 404
+members = true
+name = Ghostly gloves

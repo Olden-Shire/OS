@@ -1,0 +1,6 @@
+// loc 16885
+active = 1
+op1 = Take-from
+recol = 6558/5404 6443/6563 6806/6930
+models_only = 7761 16514
+name = Barrel

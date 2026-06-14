@@ -1,0 +1,9 @@
+// npc 77
+size = 1
+op2 = Attack
+readyanim = 5565
+walkanims = 5566, 5790, 5788, 5789
+vislevel = 13
+recol = 13506/15405 13501/15405 13493/15397 13489/15397 13497/16425
+name = Summoned Zombie
+models = 21111 21067 21049 21098 21125 21081 21140

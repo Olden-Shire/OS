@@ -1,0 +1,9 @@
+// npc 1185
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+name = Elven city guard
+models = 4014 4018 4022 4024 4033
+headmodels = 4010

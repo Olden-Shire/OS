@@ -1,0 +1,10 @@
+// npc 4374
+vislevel = 0
+op1 = Talk-To
+resizeh = 86
+resizev = 86
+readyanim = 4259
+turnspeed = 0
+recol = 40871/677 41517/441 40728/786
+name = Parrot
+models = 15833

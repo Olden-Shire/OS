@@ -1,0 +1,9 @@
+// npc 5038
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+recol = 22439/22451
+name = Major Heal
+models = 11740 230 252 11758 11763 11728 11731 19250 11735 11762 19262
+headmodels = 63 19238 84

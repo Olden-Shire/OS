@@ -1,0 +1,11 @@
+// npc 1314
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pickpocket
+vislevel = 48
+recol = 25238/412 8741/295 8078/299 10299/4550 6798/5962 7700/148
+name = Inga
+models = 378 343 470 421 483 479 353 361
+headmodels = 103

@@ -1,0 +1,7 @@
+// loc 19943
+blockwalk = true
+forceapproach = 13
+anim = 5308
+nonblockrange = true
+models_only = 20078
+name = Bird feeder

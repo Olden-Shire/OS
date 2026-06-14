@@ -1,0 +1,12 @@
+// npc 541
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 4550/4647 11200/926 6798/10508 8741/1950 25238/926
+name = Zeke
+models = 215 265 250 170 176 181 292 191 323
+headmodels = 53 82 34

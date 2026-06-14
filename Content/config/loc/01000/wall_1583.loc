@@ -1,0 +1,6 @@
+// loc 1583
+active = 1
+op1 = Push
+raiseobject = 0
+models = 634/0 635/1 574/2 575/3 576/9
+name = Wall

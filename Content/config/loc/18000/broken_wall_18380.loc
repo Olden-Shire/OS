@@ -1,0 +1,7 @@
+// loc 18380
+sharelight = true
+hillskew = true
+ambient = 35
+occlude = true
+models_only = 18474
+name = Broken wall

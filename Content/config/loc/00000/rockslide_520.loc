@@ -1,0 +1,10 @@
+// loc 520
+width = 2
+length = 2
+noshadow = true
+blockwalk = true
+hillskew = true
+nonblockrange = true
+recol = 6689/7056
+models_only = 821
+name = Rockslide

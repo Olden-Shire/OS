@@ -1,0 +1,10 @@
+// loc 16517
+width = 2
+anim = 459
+nonsolid = true
+hillskew = true
+active = 1
+op1 = Pass
+recol = 7481/7353 8501/7349 8497/7475 8493/7473 8617/7461
+models_only = 16424
+name = Speartrap

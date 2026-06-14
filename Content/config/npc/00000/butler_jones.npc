@@ -1,0 +1,10 @@
+// npc 890
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/24 25238/24 6798/530 7070/41 43072/5347 4550/5347
+name = Butler Jones
+models = 235 247 292 167 176 267 185 327
+headmodels = 67 79

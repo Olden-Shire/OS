@@ -1,0 +1,19 @@
+// interface 336
+
+[com_0]
+fmt=v3
+type=0
+clientcode=0
+x=16
+y=8
+width=162
+height=250
+hide=0
+scrollwidth=0
+scrollheight=0
+eventcode=0x0
+baseop=
+dragdeadzone=0
+dragdeadtime=0
+draggable=0
+targetverb=

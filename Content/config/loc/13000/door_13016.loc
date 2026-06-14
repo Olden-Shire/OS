@@ -1,0 +1,8 @@
+// loc 13016
+wallwidth = 8
+occlude = true
+contrast = 30
+ambient = 30
+op1 = Open
+models = 12193/0
+name = Door

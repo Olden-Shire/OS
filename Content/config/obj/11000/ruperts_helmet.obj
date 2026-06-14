@@ -1,0 +1,12 @@
+// obj 11199
+model = obj_ruperts_helmet
+xof2d = 4
+yof2d = -5
+zoom2d = 659
+yan2d = 195
+xan2d = 138
+contrast = 15
+ambient = 15
+members = true
+iop5 = Destroy
+name = Rupert's helmet

@@ -1,0 +1,5 @@
+// loc 7301
+active = 1
+sharelight = true
+forceapproach = 11
+multiloc = 658, 65535, 7314 7305 7308 7310 7304 7305 7305 7314 7306 65535 7303 7306 7310

@@ -1,0 +1,9 @@
+// npc 336
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/6435 10353/6554 8078/6430 6798/6684 4626/6550
+name = Da Vinci
+models = 9618 217 9620 292 317 162 176 9461 6090 9617 4391
+headmodels = 55 9449 9442

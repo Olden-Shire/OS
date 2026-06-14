@@ -1,0 +1,9 @@
+// loc 12809
+width = 2
+length = 2
+ambient = 25
+anim = 3106
+op2 = Smelt
+bgsound = 2208, 3
+models_only = 10996 11000 10997 10999
+name = Furnace

@@ -1,0 +1,8 @@
+// loc 22161
+ambient = 15
+contrast = 15
+blockwalk = true
+nonblockrange = true
+recol = 7326/6817 7335/6697 7343/6573 5285/6697 5404/6817
+models_only = 17067
+name = Potted plant

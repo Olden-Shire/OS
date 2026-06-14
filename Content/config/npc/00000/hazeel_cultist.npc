@@ -1,0 +1,12 @@
+// npc 894
+size = 1
+readyanim = 813
+op1 = Talk-to
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 13
+recol = 8741/24 25238/24 4550/5347 11200/10473
+name = Hazeel Cultist
+models = 226 246 292 170 176 256 286 534
+headmodels = 61

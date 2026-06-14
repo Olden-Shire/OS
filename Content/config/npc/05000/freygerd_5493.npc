@@ -1,0 +1,12 @@
+// npc 5493
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/38040 8741/35 8078/43 7700/148 6798/8765
+name = Freygerd
+models = 387 343 456 421 353 479 361
+headmodels = 110

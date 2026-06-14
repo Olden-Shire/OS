@@ -1,0 +1,6 @@
+// loc 13146
+op1 = Walk-through
+blockwalk = true
+nonblockrange = true
+models = 13128/0
+name = Magic barrier

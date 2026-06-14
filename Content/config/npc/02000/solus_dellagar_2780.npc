@@ -1,0 +1,10 @@
+// npc 2780
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op2 = Attack
+alwaysontop = true
+recol = 8741/786 39463/786 7952/786 6798/286 8078/908 11177/786
+name = Solus Dellagar
+models = 9647 217 250 292 317 162 179 9650 556 9648 4955 9649
+headmodels = 55 9646 82

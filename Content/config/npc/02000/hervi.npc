@@ -1,0 +1,11 @@
+// npc 2157
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 61/14627 33/8119 12/13204 8604/3350 2578/6947
+name = Hervi
+models = 2974 7069 7059 2979 2980 2985
+headmodels = 4 6949

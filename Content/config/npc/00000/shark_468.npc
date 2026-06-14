@@ -1,0 +1,7 @@
+// npc 468
+size = 1
+vislevel = 0
+walkanim = 10
+readyanim = 10
+name = Shark
+models = 2848

@@ -1,0 +1,16 @@
+// obj 9046
+model = obj_pharaohs_sceptre_9044
+iop2 = Wield
+cost = 10000
+manwear = obj_pharaohs_sceptre_9044_wear, 0
+womanwear = obj_pharaohs_sceptre_9044_wear, 0
+members = true
+xof2d = -1
+yof2d = 46
+zoom2d = 1744
+yan2d = 1508
+xan2d = 285
+members = true
+iop1 = Teleport
+cost = 100
+name = Pharaoh's sceptre

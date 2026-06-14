@@ -1,0 +1,6 @@
+// loc 12202
+hillskew = true
+nonsolid = true
+active = 1
+models = 12031/22
+name = Mole hill

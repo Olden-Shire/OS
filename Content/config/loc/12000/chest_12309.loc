@@ -1,0 +1,8 @@
+// loc 12309
+op1 = Bank
+op2 = Buy-food
+op3 = Buy-items
+forceapproach = 14
+active = 1
+models_only = 13651
+name = Chest

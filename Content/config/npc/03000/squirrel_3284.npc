@@ -1,0 +1,7 @@
+// npc 3284
+vislevel = 0
+walkanim = 3210
+readyanim = 3212
+recol = 4300/5276 7240/7343 61/37 5173/5276
+name = Squirrel
+models = 11723

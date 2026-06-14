@@ -1,0 +1,10 @@
+// obj 5504
+model = obj_strawberry_5504
+zoom2d = 520
+yan2d = 76
+xan2d = 128
+ambient = 10
+members = true
+iop1 = Eat
+cost = 17
+name = Strawberry

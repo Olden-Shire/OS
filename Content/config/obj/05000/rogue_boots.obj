@@ -1,0 +1,11 @@
+// obj 5557
+model = obj_rogue_boots
+iop2 = Wear
+members = true
+manwear = obj_rogue_boots_man, 0
+womanwear = obj_rogue_boots_woman, 0
+zoom2d = 870
+yan2d = 204
+xan2d = 184
+cost = 250
+name = Rogue boots

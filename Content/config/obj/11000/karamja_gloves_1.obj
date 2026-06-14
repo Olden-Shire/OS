@@ -1,0 +1,13 @@
+// obj 11136
+model = obj_karamja_gloves_1
+manwear = obj_karamja_gloves_1_man, 0
+womanwear = obj_karamja_gloves_1_woman, 0
+yof2d = -1
+zoom2d = 917
+yan2d = 150
+xan2d = 408
+members = true
+cost = 0
+iop2 = Wear
+iop5 = Destroy
+name = Karamja gloves 1

@@ -1,0 +1,10 @@
+// loc 11158
+active = 0
+width = 4
+length = 4
+ambient = 60
+contrast = -12
+anim = 3104
+bgsound = 2209, 3
+recol = 13601/7343
+models_only = 11002

@@ -1,0 +1,7 @@
+// loc 3021
+op1 = Open
+mirror = true
+active = 1
+nonblockrange = true
+models = 1509/0 1511/9
+name = Gate

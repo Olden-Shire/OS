@@ -1,0 +1,11 @@
+// npc 1919
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+readyanim = 808
+op2 = Attack
+vislevel = 95
+recol = 4550/4762 10004/8 8741/8 25238/8 22177/8 4626/8
+name = Stranger
+models = 211 248 292 151 179 254 185 6221 539
+headmodels = 50 6374

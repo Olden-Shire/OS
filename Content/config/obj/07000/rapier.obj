@@ -1,0 +1,13 @@
+// obj 7142
+model = obj_rapier
+iop2 = Wield
+manwear = obj_rapier_wear, 0
+womanwear = obj_rapier_wear, 6
+members = true
+xof2d = 3
+yof2d = 20
+zoom2d = 1288
+yan2d = 1403
+xan2d = 263
+cost = 25600
+name = Rapier

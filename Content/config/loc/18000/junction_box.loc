@@ -1,0 +1,7 @@
+// loc 18641
+ambient = 20
+active = 1
+length = 3
+op1 = Open
+models_only = 18818 18817
+name = Junction box

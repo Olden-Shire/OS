@@ -1,0 +1,13 @@
+// obj 5345
+model = obj_gardening_boots_5345
+xof2d = 1
+yof2d = -1
+zoom2d = 700
+yan2d = 232
+xan2d = 88
+manwear = obj_gardening_boots_5345_man, 0
+womanwear = obj_gardening_boots_5345_woman, 0
+iop2 = Wear
+members = true
+cost = 25
+name = Gardening boots

@@ -1,0 +1,6 @@
+// loc 16570
+ambient = 20
+nonsolid = true
+active = 0
+recol = 7054/7700
+models_only = 5511

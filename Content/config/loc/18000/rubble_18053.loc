@@ -1,0 +1,6 @@
+// loc 18053
+active = 1
+blockwalk = true
+forcedecor = true
+models = 17940/22
+name = Rubble

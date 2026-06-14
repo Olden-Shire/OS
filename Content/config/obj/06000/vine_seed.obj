@@ -1,0 +1,15 @@
+// obj 6456
+model = obj_barley_seed
+yof2d = 6
+zoom2d = 660
+yan2d = 1996
+xan2d = 276
+members = true
+iop5 = Destroy
+stackable = true
+count1 = 6492, 2
+count2 = 6493, 3
+count3 = 6494, 4
+count4 = 6495, 5
+recol = 6480/17953 6336/14641
+name = Vine seed

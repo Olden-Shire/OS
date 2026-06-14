@@ -1,0 +1,6 @@
+// loc 17668
+blockwalk = true
+length = 2
+ambient = 10
+models_only = 17850
+name = Bunk bed

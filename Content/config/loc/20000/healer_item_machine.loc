@@ -1,0 +1,9 @@
+// loc 20243
+op1 = Stock-Up
+op2 = Take-Vial
+op3 = Take-Tofu
+op4 = Take-Worms
+op5 = Take-Meat
+ambient = 45
+models_only = 20695
+name = Healer item machine

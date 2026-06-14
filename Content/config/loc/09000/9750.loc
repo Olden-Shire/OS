@@ -1,0 +1,7 @@
+// loc 9750
+blockwalk = true
+width = 3
+length = 3
+active = 1
+nonblockrange = true
+multiloc = 1331, 65535, 9751 9752

@@ -1,0 +1,10 @@
+// loc 22698
+active = 1
+ambient = 20
+blockwalk = true
+op1 = Open
+op2 = Pick-lock
+forceapproach = 14
+nonblockrange = true
+models_only = 23367
+name = Chest

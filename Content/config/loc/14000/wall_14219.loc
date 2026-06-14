@@ -1,0 +1,11 @@
+// loc 14219
+hillskew = true
+ambient = 5
+noshadow = true
+blockwalk = true
+active = 1
+op2 = hidden
+op3 = Repair
+nonblockrange = true
+models = 14478/0 14479/1 14480/2 14481/9
+name = Wall

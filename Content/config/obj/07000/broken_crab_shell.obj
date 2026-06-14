@@ -1,0 +1,10 @@
+// obj 7541
+model = obj_broken_crab_shell
+members = true
+xof2d = -5
+yof2d = -60
+zoom2d = 1872
+yan2d = 2036
+xan2d = 228
+cost = 1
+name = Broken crab shell

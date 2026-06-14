@@ -1,0 +1,10 @@
+// obj 6121
+model = obj_scrawled_note
+xof2d = -3
+yof2d = 5
+zoom2d = 700
+yan2d = 20
+xan2d = 328
+members = true
+iop1 = Read
+name = Letter

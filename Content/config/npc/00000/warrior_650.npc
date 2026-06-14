@@ -1,0 +1,10 @@
+// npc 650
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 24/7863 7054/41 123/7863
+name = Warrior
+models = 214 250 3379 164 179 268 185 550 521 3189
+headmodels = 52 82

@@ -1,0 +1,5 @@
+// seq 2577
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 0
+frames = 40/0/262 6/1/262 7/2/262 6/3/262 5/4/262 40/5/262

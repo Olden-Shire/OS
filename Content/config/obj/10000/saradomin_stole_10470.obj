@@ -1,0 +1,14 @@
+// obj 10470
+model = obj_saradomin_stole_10470
+xof2d = 9
+yof2d = -8
+zoom2d = 1697
+yan2d = 73
+zan2d = 69
+xan2d = 373
+iop2 = Wear
+manwear = obj_saradomin_stole_10470_man, 0
+womanwear = obj_saradomin_stole_10470_woman, 0
+members = true
+cost = 2500
+name = Saradomin stole

@@ -1,0 +1,13 @@
+// obj 5044
+cost = 360
+model = obj_shorts_5042
+members = true
+xof2d = 1
+zoom2d = 730
+yan2d = 68
+xan2d = 584
+iop2 = Wear
+manwear = obj_shorts_5042_man, 0
+womanwear = obj_shorts_5042_woman, 0
+recol = 9529/7616
+name = Shorts

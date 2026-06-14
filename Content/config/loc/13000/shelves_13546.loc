@@ -1,0 +1,8 @@
+// loc 13546
+active = 1
+op1 = Search
+op5 = Remove
+contrast = 25
+ambient = 25
+models = 12538/4
+name = Shelves

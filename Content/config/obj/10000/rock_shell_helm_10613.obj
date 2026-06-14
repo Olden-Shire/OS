@@ -1,0 +1,14 @@
+// obj 10613
+cost = 35200
+model = obj_rock_shell_helm_6128
+iop2 = Wear
+manwear = obj_desert_disguise_man, 0
+manwear2 = 8747
+womanwear = obj_desert_disguise_woman, 0
+womanwear2 = 8753
+manhead = 8745
+womanhead = 8746
+members = true
+zoom2d = 620
+xan2d = 60
+name = Rock-shell helm

@@ -1,0 +1,8 @@
+// loc 22007
+active = 1
+blockwalk = true
+ambient = 30
+contrast = 30
+op1 = Open
+models = 22972/0
+name = Door

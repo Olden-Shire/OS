@@ -1,0 +1,10 @@
+// loc 20890
+active = 1
+contrast = 20
+ambient = 20
+forcedecor = true
+resizey = 135
+op5 = Jump-to
+nonsolid = true
+models = 21308/22
+name = Ledge

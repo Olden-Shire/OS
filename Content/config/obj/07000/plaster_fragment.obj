@@ -1,0 +1,12 @@
+// obj 7628
+cost = 1
+model = obj_plaster_fragment
+xof2d = 2
+yof2d = 29
+zoom2d = 1450
+yan2d = 136
+xan2d = 300
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Plaster fragment

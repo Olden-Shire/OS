@@ -1,0 +1,7 @@
+// obj 6902
+model = obj_orb_6902
+zoom2d = 1200
+yan2d = 56
+ambient = 10
+members = true
+name = Orb

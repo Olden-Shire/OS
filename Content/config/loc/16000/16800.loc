@@ -1,0 +1,6 @@
+// loc 16800
+mirror = true
+sharelight = true
+noshadow = true
+active = 0
+models = 16635/18 16634/20

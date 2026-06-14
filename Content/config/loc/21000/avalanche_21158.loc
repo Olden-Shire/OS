@@ -1,0 +1,9 @@
+// loc 21158
+sharelight = true
+ambient = 20
+contrast = 20
+active = 1
+noshadow = true
+op1 = Use
+models_only = 21654
+name = Avalanche

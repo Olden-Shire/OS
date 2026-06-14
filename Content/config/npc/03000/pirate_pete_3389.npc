@@ -1,0 +1,9 @@
+// npc 3389
+size = 1
+vislevel = 0
+walkanim = 3396
+readyanim = 3396
+recol = 39145/6938 11162/5008 28318/8 22177/12 8741/10902
+name = Pirate Pete
+models = 5430 246 310 163 179 3329 185 12799
+headmodels = 5428

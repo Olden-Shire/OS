@@ -1,0 +1,9 @@
+// loc 20832
+active = 1
+contrast = 15
+ambient = 15
+nonsolid = true
+resizey = 135
+op1 = Enter
+models_only = 21299
+name = Passageway

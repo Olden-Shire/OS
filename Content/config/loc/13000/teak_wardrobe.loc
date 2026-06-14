@@ -1,0 +1,8 @@
+// loc 13159
+op1 = Change-clothes
+op5 = Remove
+forceapproach = 11
+ambient = 25
+contrast = 25
+models_only = 11128
+name = Teak wardrobe

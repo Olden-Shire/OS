@@ -1,0 +1,13 @@
+// obj 2472
+cost = 100
+model = obj_flowers_2460
+members = true
+iop2 = Wield
+manwear = obj_flowers_2460_wear, 0
+womanwear = obj_flowers_2460_wear, 6
+yof2d = -2
+zoom2d = 840
+yan2d = 816
+xan2d = 612
+recol = 48596/947 37196/43955 53167/11200
+name = Flowers

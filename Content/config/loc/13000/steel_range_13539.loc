@@ -1,0 +1,8 @@
+// loc 13539
+length = 2
+op5 = Remove
+contrast = 25
+ambient = 25
+bgsound = 2065, 3
+models_only = 12616
+name = Steel range

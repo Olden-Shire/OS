@@ -1,0 +1,9 @@
+// npc 3471
+vislevel = 0
+size = 5
+readyanim = 3473
+walkanim = 3474
+op1 = Board
+name = Ogre boat
+models = 13730 13728 13727
+headmodels = 13884 13888

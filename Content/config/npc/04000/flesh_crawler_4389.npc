@@ -1,0 +1,8 @@
+// npc 4389
+size = 2
+walkanim = 1189
+readyanim = 1183
+op2 = Attack
+vislevel = 28
+name = Flesh Crawler
+models = 16018

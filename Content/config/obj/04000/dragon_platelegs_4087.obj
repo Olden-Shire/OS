@@ -1,0 +1,11 @@
+// obj 4087
+model = obj_dragon_platelegs_4087
+yof2d = -8
+zoom2d = 1740
+xan2d = 444
+cost = 270000
+iop2 = Wear
+manwear = obj_dragon_platelegs_4087_man, 0
+womanwear = obj_dragon_platelegs_4087_woman, 0
+members = true
+name = Dragon platelegs

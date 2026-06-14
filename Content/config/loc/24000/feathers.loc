@@ -1,0 +1,8 @@
+// loc 24841
+active = 1
+ambient = 25
+contrast = 25
+nonsolid = true
+op1 = Take
+models_only = 25936
+name = Feathers

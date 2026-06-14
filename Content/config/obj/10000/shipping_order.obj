@@ -1,0 +1,11 @@
+// obj 10897
+model = obj_shipping_order
+xof2d = 1
+yof2d = 4
+zoom2d = 465
+yan2d = 166
+xan2d = 318
+contrast = 15
+ambient = 15
+members = true
+name = Shipping order

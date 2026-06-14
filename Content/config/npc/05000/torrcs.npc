@@ -1,0 +1,10 @@
+// npc 5939
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 24/61 61/36133 41/37270 57/36133
+name = Torrcs
+models = 206 246 306 164 179 518 541 268 4954
+headmodels = 46

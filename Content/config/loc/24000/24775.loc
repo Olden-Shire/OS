@@ -1,0 +1,7 @@
+// loc 24775
+active = 0
+nonsolid = true
+width = 7
+length = 4
+resizey = 105
+multiloc = 3710, 65535, 24762 24762 24763 24763 24762

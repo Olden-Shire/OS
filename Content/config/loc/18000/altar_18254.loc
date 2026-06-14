@@ -1,0 +1,7 @@
+// loc 18254
+length = 3
+ambient = 40
+contrast = 20
+op1 = Pray
+models_only = 18203 18202
+name = Altar

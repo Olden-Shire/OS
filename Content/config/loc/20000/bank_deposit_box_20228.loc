@@ -1,0 +1,7 @@
+// loc 20228
+forceapproach = 11
+op1 = Deposit
+ambient = 20
+contrast = 20
+models_only = 20630
+name = Bank deposit box

@@ -1,0 +1,14 @@
+// obj 10147
+model = obj_orange_salamander_10146
+iop2 = Wield
+iop5 = Release
+manwear = obj_orange_salamander_10146_wear, 0
+womanwear = obj_orange_salamander_10146_wear, 6
+xof2d = 5
+yof2d = 29
+zoom2d = 1370
+xan2d = 296
+members = true
+cost = 150
+recol = 5935/2972 6059/1946 5029/920
+name = Red salamander

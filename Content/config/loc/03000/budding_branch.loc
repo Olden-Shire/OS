@@ -1,0 +1,6 @@
+// loc 3511
+op2 = Take-cutting
+nonsolid = true
+anim = 1098
+models_only = 3590
+name = Budding branch

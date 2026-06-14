@@ -1,0 +1,9 @@
+// obj 1735
+model = obj_shears_1735
+manwear = obj_shears_1735_wear, 0
+womanwear = obj_shears_1735_wear, 6
+yof2d = 15
+zoom2d = 710
+yan2d = 136
+xan2d = 300
+name = Shears

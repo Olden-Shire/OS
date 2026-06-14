@@ -1,0 +1,11 @@
+// loc 22942
+ambient = 35
+active = 1
+length = 2
+nonsolid = true
+op1 = Climb-down
+mapscene = 7
+forceapproach = 13
+models_only = 23737
+models_only = 23738
+name = Stairs

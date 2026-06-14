@@ -1,0 +1,12 @@
+// npc 1311
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 48
+recol = 25238/10644 8741/12574 8078/12583 7700/12574 6798/8642
+name = Lensa
+models = 382 470 343 353 421 358 479
+headmodels = 105

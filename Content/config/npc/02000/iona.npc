@@ -1,0 +1,11 @@
+// npc 2369
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 106
+resizev = 87
+op1 = Talk-to
+vislevel = 0
+recol = 9137/8117 8792/11592
+name = Iona
+models = 4021 6977 6975 8267
+headmodels = 8260

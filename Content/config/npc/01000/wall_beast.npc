@@ -1,0 +1,7 @@
+// npc 1827
+readyanim = 1799
+op2 = Attack
+turnspeed = 0
+vislevel = 49
+name = Wall beast
+models = 5788

@@ -1,0 +1,13 @@
+// obj 285
+members = true
+cost = 50
+model = obj_plague_trousers
+yof2d = -10
+zoom2d = 1650
+yan2d = 1912
+zan2d = 104
+xan2d = 460
+iop2 = Wear
+manwear = obj_plague_trousers_man, 0
+womanwear = obj_plague_trousers_woman, 0
+name = Plague trousers

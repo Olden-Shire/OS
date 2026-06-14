@@ -1,0 +1,14 @@
+// npc 2846
+readyanim = 5650
+walkanim = 5652
+resizeh = 116
+resizev = 116
+op1 = Talk-to
+op2 = Attack
+op3 = Intimidate
+size = 1
+vislevel = 55
+recol = 28744/16466 28740/15434 28736/16454 28731/15421 127/404
+name = Zombie swab
+models = 21434 21479 21418 21441 21462 21449 21425
+headmodels = 21400

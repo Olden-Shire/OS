@@ -1,0 +1,4 @@
+// loc 14001
+active = 1
+op1 = Read
+multiloc = 2034, 65535, 14003 14002

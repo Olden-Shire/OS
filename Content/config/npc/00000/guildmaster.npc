@@ -1,0 +1,11 @@
+// npc 198
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 4626/24 5532/41
+name = Guildmaster
+models = 12137 253 306 317 164 179 518 4047 268 185
+headmodels = 14371 85

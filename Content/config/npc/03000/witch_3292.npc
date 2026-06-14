@@ -1,0 +1,9 @@
+// npc 3292
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 25
+recol = 27548/7490 4550/7490 25238/152 8741/3350 40241/3350 40233/3346
+name = Witch
+models = 9608 405 9361 9359 353 440
+headmodels = 122 9601

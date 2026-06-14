@@ -1,0 +1,12 @@
+// obj 4097
+cost = 10000
+model = obj_mystic_boots_4097
+iop2 = Wear
+manwear = obj_mystic_boots_4097_man, 0
+womanwear = obj_mystic_boots_4097_woman, 0
+members = true
+yof2d = -4
+zoom2d = 770
+yan2d = 1988
+xan2d = 188
+name = Mystic boots

@@ -1,0 +1,10 @@
+// obj 9723
+model = obj_pipe_9723
+members = true
+xof2d = 1
+zoom2d = 2476
+yan2d = 512
+zan2d = 14
+xan2d = 526
+recol = 5429/6682 61/7566 5431/37035
+name = Pipe

@@ -1,0 +1,6 @@
+// loc 16239
+ambient = 40
+active = 1
+offsetx = -12
+models = 16102/4
+name = First aid box

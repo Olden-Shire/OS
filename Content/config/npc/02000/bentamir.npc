@@ -1,0 +1,9 @@
+// npc 2192
+op1 = Talk-to
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 10347/169 61/8613 22/8598
+name = Bentamir
+models = 2972 7063 2978 7045 2985
+headmodels = 2

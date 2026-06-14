@@ -1,0 +1,7 @@
+// loc 20307
+active = 0
+hillskew = true
+resizex = 128
+resizey = 256
+resizez = 128
+models_only = 20804

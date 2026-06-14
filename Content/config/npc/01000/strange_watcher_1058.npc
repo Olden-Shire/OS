@@ -1,0 +1,8 @@
+// npc 1058
+vislevel = 0
+size = 1
+readyanim = 1137
+nominimap = true
+recol = 4550/16280 6798/9100 43072/16280 25238/10126 4626/11142
+name = Strange watcher
+models = 206 252 315 173 176 3599

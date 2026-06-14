@@ -1,0 +1,10 @@
+// loc 25022
+ambient = 50
+contrast = 60
+nonsolid = true
+forcedecor = true
+anim = 6597
+active = 1
+recol = 12707/8745 12702/8615 12587/8623 10675/9653 10683/9661
+models = 26382/22
+name = Growing wheat

@@ -1,0 +1,13 @@
+// obj 1377
+members = true
+cost = 200000
+model = obj_dragon_battleaxe_1377
+xof2d = 1
+yof2d = -3
+zoom2d = 1360
+yan2d = 2020
+xan2d = 420
+iop2 = Wield
+manwear = obj_dragon_battleaxe_1377_wear, 0
+womanwear = obj_dragon_battleaxe_1377_wear, 6
+name = Dragon battleaxe

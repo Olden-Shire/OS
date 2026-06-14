@@ -1,0 +1,14 @@
+// npc 160
+size = 1
+resizeh = 100
+resizev = 100
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 1
+recol = 22426/32970
+name = Gnome child
+models = 2909 2899 2918
+headmodels = 16

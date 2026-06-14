@@ -1,0 +1,10 @@
+// npc 5210
+size = 1
+vislevel = 123
+walkanim = 2064
+readyanim = 2065
+alwaysontop = true
+recol = 61/36133 41/37270 57/38226 25238/37270 10004/30600
+name = Cow31337Killer
+models = 215 6651 306 323 164 4954 6702 179 266
+headmodels = 53 6569

@@ -1,0 +1,7 @@
+[clientscript,script_174](int $int0)()
+
+if (%varcint42 = $int0) {
+    %varcint42 = -1;
+    ~script_178;
+}
+return;

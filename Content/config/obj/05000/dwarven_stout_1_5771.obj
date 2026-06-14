@@ -1,0 +1,12 @@
+// obj 5771
+model = obj_calquat_keg_5769
+yof2d = 6
+zoom2d = 1190
+yan2d = 4
+xan2d = 116
+manwear = obj_dwarven_stout_1_5771_wear, 0
+womanwear = obj_dwarven_stout_1_5771_wear, 0
+ambient = 15
+members = true
+iop1 = Drink
+name = Dwarven stout(1)

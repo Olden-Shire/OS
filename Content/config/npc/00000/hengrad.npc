@@ -1,0 +1,10 @@
+// npc 263
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4626/4550 25238/8722 8741/5297
+name = Hengrad
+models = 230 246 310 151 176 275 181
+headmodels = 63

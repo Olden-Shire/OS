@@ -1,0 +1,10 @@
+// npc 1443
+walkanim = 1385
+readyanim = 1386
+resizeh = 180
+resizev = 180
+op2 = Attack
+vislevel = 149
+name = Oipuis
+models = 4821 4828 4832
+headmodels = 4660

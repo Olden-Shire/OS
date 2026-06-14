@@ -1,0 +1,10 @@
+// npc 784
+vislevel = 0
+readyanim = 6484
+op1 = Talk-to
+turnspeed = 0
+op1 = Talk-to
+recol = 22426/38065 22294/62637 6550/9152 8893/2983
+name = Kanel
+models = 14289 25846 2915 25849
+headmodels = 14287

@@ -1,0 +1,7 @@
+// seq 865
+replaceheldleft = 0
+replaceheldright = 0
+priority = 2
+preanim_move = 1
+postanim_move = 1
+frames = 4/1/215 4/2/215 4/3/215 4/4/215 10/5/215 10/6/215 10/5/215 10/6/215 10/5/215 10/6/215 10/5/215 4/4/215 4/3/215 4/2/215 4/1/215

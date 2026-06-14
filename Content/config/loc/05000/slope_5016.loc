@@ -1,0 +1,10 @@
+// loc 5016
+active = 1
+forcedecor = true
+noshadow = true
+hillskew = true
+blockwalk = true
+op1 = Slide
+nonblockrange = true
+models_only = 3951
+name = slope

@@ -1,0 +1,13 @@
+// interface 284
+
+[com_0]
+type=5
+buttontype=0
+clientcode=0
+x=480
+y=304
+width=25
+height=25
+trans=0
+graphic=219
+activegraphic=-1

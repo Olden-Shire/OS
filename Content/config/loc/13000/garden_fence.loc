@@ -1,0 +1,5 @@
+// loc 13454
+op5 = Remove
+nonblockrange = true
+models = 13161/0 13162/2
+name = Garden fence

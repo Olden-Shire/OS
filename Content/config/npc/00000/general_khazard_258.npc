@@ -1,0 +1,11 @@
+// npc 258
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 112
+recol = 61/20 57/20
+name = General Khazard
+models = 209 306 164 179 268 185 546 323
+headmodels = 149

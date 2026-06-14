@@ -1,0 +1,11 @@
+// obj 11279
+model = obj_elvargs_head
+xof2d = -3
+yof2d = 3
+zoom2d = 1697
+yan2d = 870
+xan2d = 315
+manwear = obj_elvargs_head_wear, 0
+womanwear = obj_elvargs_head_wear, 6
+iop5 = Destroy
+name = Elvarg's head

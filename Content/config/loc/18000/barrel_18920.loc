@@ -1,0 +1,6 @@
+// loc 18920
+ambient = 20
+nonblockrange = true
+recol = 5541/6430 5665/6554 5660/6550 5784/6674 5904/6798 5524/7050
+models_only = 8232
+name = Barrel

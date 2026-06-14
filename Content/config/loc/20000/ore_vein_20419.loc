@@ -1,0 +1,12 @@
+// loc 20419
+hillskew = true
+active = 1
+ambient = 20
+contrast = 20
+resizey = 153
+op1 = Mine
+op2 = Prospect
+op3 = Hidden
+recol = 53/43297 37/43288
+models = 21259/0
+name = Ore vein

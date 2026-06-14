@@ -1,0 +1,9 @@
+// loc 9300
+sharelight = true
+hillskew = true
+op1 = Jump-over
+active = 1
+nonblockrange = true
+recol = 6439/7587 6430/7582 6550/7706
+models = 25043/0
+name = Fence

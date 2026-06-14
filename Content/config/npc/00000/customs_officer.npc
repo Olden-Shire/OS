@@ -1,0 +1,11 @@
+// npc 380
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pay-Fare
+recol = 8741/43420 25238/43420 4550/5675 10004/24 9529/43420 43569/43420
+name = Customs officer
+models = 370 393 471 480 11775 356 419 361
+headmodels = 115 95

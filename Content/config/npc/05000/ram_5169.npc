@@ -1,0 +1,9 @@
+// npc 5169
+size = 1
+walkanim = 5334
+readyanim = 5335
+op2 = Attack
+vislevel = 2
+recol = 0/22 20/5272 24/5157 28/5165 33/5169 37/3127
+name = Ram
+models = 20292 20295 20294

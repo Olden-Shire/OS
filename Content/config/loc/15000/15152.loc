@@ -1,0 +1,10 @@
+// loc 15152
+active = 0
+nonsolid = true
+hillskew = true
+mapscene = 12
+resizex = 64
+resizey = 64
+resizez = 64
+recol = 6689/10398
+models_only = 821

@@ -1,0 +1,11 @@
+// npc 3385
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/60067 24/231 6798/66
+name = Gypsy
+models = 408 15010 11359 332 10706 17548
+headmodels = 125 15001

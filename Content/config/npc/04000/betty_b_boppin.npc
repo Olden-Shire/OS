@@ -1,0 +1,11 @@
+// npc 4553
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/1950 8741/5652
+name = 'Betty' B.Boppin
+models = 211 246 292 173 176 271 181 490 236
+headmodels = 50 68

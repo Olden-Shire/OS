@@ -1,0 +1,11 @@
+// npc 3696
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 54397/5427 8741/5541 25238/5541 6798/8518 4550/4558
+name = Ingrid Hradson
+models = 24193 390 467 5675 428 361
+headmodels = 113 24174

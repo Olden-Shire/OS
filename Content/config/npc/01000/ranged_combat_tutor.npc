@@ -1,0 +1,11 @@
+// npc 1861
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Claim
+vislevel = 0
+alwaysontop = true
+recol = 8741/41282 908/117 55/41282 88/42320 78/41178 6674/41282
+name = Ranged combat tutor
+models = 408 414 18547 10839 10706 512 17548
+headmodels = 125 131

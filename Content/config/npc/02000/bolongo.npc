@@ -1,0 +1,9 @@
+// npc 2343
+walkanim = 189
+readyanim = 195
+vislevel = 0
+op1 = Talk-to
+recol = 22426/7465 22424/9108 22422/9108 11162/6930 908/6930
+name = Bolongo
+models = 8238 2909 2922
+headmodels = 21

@@ -1,0 +1,10 @@
+// npc 4598
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 37/825 22426/3239 49/17566 45/825 4550/4535
+name = Wurbel
+models = 2905 16993 2924
+headmodels = 16966

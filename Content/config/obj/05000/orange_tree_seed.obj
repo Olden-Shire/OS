@@ -1,0 +1,15 @@
+// obj 5285
+model = obj_orange_tree_seed
+xof2d = 2
+yof2d = 2
+zoom2d = 650
+yan2d = 2004
+xan2d = 364
+members = true
+stackable = true
+count1 = 5236, 2
+count2 = 5237, 3
+count3 = 5238, 4
+count4 = 5239, 5
+cost = 31
+name = Orange tree seed

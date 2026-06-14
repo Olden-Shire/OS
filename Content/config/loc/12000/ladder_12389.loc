@@ -1,0 +1,7 @@
+// loc 12389
+active = 1
+op1 = Climb-Down
+forceapproach = 13
+mapscene = 7
+models_only = 13458
+name = Ladder

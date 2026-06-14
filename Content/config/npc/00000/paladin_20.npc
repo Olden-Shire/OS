@@ -1,0 +1,10 @@
+// npc 20
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+op2 = Attack
+vislevel = 62
+recol = 4626/24 6798/6854 55198/35026 43072/4550
+name = Paladin
+models = 217 248 313 156 176 268 185 518 541 3330

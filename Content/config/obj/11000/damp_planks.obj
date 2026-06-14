@@ -1,0 +1,11 @@
+// obj 11031
+model = obj_damp_planks
+xof2d = 2
+yof2d = 26
+zoom2d = 1900
+yan2d = 2044
+xan2d = 268
+members = true
+cost = 0
+iop5 = Destroy
+name = Damp planks

@@ -1,0 +1,8 @@
+// npc 138
+size = 2
+walkanim = 1007
+readyanim = 1008
+op2 = Attack
+vislevel = 28
+name = Terrorbird
+models = 26856

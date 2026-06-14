@@ -1,0 +1,4 @@
+[clientscript,script_208](string $string0)()
+
+chat_sendpublic($string0);
+return;

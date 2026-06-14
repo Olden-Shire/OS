@@ -1,0 +1,9 @@
+// loc 8985
+anim = 1732
+width = 2
+length = 2
+contrast = 25
+bgsound = 2199, 3
+recol = 5053/40654 53/43061 4533/41275
+models_only = 5504 5505
+name = Uncooking pot

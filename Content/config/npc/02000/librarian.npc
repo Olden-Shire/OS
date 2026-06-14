@@ -1,0 +1,9 @@
+// npc 2165
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 61/6356 4550/2394
+name = Librarian
+models = 7029 7071 6017 7037 7045 2985
+headmodels = 6988 6996

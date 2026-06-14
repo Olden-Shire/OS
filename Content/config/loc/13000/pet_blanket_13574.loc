@@ -1,0 +1,6 @@
+// loc 13574
+nonsolid = true
+op5 = Remove
+active = 1
+models = 12521/22
+name = Pet blanket

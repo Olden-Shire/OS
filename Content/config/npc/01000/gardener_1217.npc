@@ -1,0 +1,11 @@
+// npc 1217
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 4
+recol = 8741/6689 40237/6806 40117/6682 25238/6682 57/6806 6798/7585
+name = Gardener
+models = 6848 249 10705 170 179 495 274 185 4390
+headmodels = 5787 81

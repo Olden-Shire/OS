@@ -1,0 +1,7 @@
+// loc 5090
+active = 1
+sharelight = true
+op1 = Walk-across
+blockwalk = true
+models = 5000/22
+name = Log balance

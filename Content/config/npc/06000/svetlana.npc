@@ -1,0 +1,9 @@
+// npc 6034
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Svetlana
+models = 26143 26152 26136 26147 26141
+headmodels = 26272

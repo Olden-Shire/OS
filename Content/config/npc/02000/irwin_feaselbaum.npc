@@ -1,0 +1,11 @@
+// npc 2066
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 111
+resizev = 103
+op1 = Talk-to
+recol = 25238/1719 8741/939 38814/64295
+name = Irwin Feaselbaum
+models = 202 215 292 328 170 176 265 181 246
+headmodels = 53 44

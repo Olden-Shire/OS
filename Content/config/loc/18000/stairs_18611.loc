@@ -1,0 +1,6 @@
+// loc 18611
+forceapproach = 7
+sharelight = true
+op1 = Climb-down
+models_only = 18689
+name = Stairs

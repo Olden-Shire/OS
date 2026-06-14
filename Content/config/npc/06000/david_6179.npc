@@ -1,0 +1,11 @@
+// npc 6179
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/16553 43072/4550 25238/15779 6798/9152
+name = David
+models = 215 246 14577 170 176 267 185
+headmodels = 53

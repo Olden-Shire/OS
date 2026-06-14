@@ -1,0 +1,12 @@
+// npc 2269
+vislevel = 0
+resizeh = 133
+resizev = 133
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = hidden
+vislevel = 0
+recol = 5442/18 41/138 25238/8 37/12 4626/16652 49/1688
+name = Rogue Guard
+models = 6655 307 165 490 274 185
+headmodels = 6571

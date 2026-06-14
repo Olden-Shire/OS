@@ -1,0 +1,10 @@
+// npc 602
+readyanim = 195
+walkanim = 189
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 22426/8472 22424/10378
+name = Gulluck
+models = 2892 2909 2915
+headmodels = 21

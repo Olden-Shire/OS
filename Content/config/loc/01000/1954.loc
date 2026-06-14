@@ -1,0 +1,6 @@
+// loc 1954
+sharelight = true
+occlude = true
+ambient = 25
+contrast = 25
+models = 623/0 624/2 625/9

@@ -1,0 +1,10 @@
+// npc 3104
+vislevel = 0
+size = 1
+contrast = 10
+ambient = 10
+walkanim = 3027
+readyanim = 3026
+op1 = Talk-to
+name = Charmed Warrior
+models = 10641 10642 10643

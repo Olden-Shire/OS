@@ -1,0 +1,7 @@
+// loc 7755
+ambient = 25
+op1 = Pick-spine
+op2 = Inspect
+op4 = Guide
+models_only = 7834 7835 7767
+name = Cactus

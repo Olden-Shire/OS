@@ -1,0 +1,9 @@
+// loc 13560
+length = 2
+op5 = Remove
+anim = 3720
+forceapproach = 13
+bgsound = 2150, 3
+nonblockrange = true
+models_only = 13219 13218
+name = Pump and drain

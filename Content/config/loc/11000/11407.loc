@@ -1,0 +1,5 @@
+// loc 11407
+sharelight = true
+active = 0
+resizey = 120
+models = 11443/0 11444/1 11445/2

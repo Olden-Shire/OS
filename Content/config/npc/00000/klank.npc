@@ -1,0 +1,10 @@
+// npc 995
+vislevel = 0
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 803/9098 4550/4645 61/15248
+name = Klank
+models = 2971 2984 2981 2979 2985
+headmodels = 1

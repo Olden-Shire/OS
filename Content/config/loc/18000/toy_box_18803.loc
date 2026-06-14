@@ -1,0 +1,8 @@
+// loc 18803
+width = 2
+op1 = Search
+op2 = Close
+ambient = 20
+forceapproach = 11
+models_only = 19034
+name = Toy box

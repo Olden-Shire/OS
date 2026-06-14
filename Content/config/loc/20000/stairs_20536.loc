@@ -1,0 +1,10 @@
+// loc 20536
+active = 1
+noshadow = true
+contrast = 25
+ambient = 25
+blockwalk = true
+resizey = 135
+nonblockrange = true
+models_only = 21331
+name = Stairs

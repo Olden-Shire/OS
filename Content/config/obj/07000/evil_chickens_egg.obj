@@ -1,0 +1,10 @@
+// obj 7477
+model = obj_evil_chickens_egg
+xof2d = 1
+yof2d = -1
+zoom2d = 528
+yan2d = 414
+xan2d = 290
+members = true
+iop5 = Destroy
+name = Evil chicken's egg

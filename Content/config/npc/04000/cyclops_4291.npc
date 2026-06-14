@@ -1,0 +1,9 @@
+// npc 4291
+size = 2
+op2 = Attack
+walkanim = 4649
+readyanim = 4650
+alwaysontop = true
+vislevel = 56
+name = Cyclops
+models = 26408 26400 17434 17467 17460

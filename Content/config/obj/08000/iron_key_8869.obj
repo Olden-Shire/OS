@@ -1,0 +1,11 @@
+// obj 8869
+model = obj_steel_key
+xof2d = -1
+yof2d = 10
+zoom2d = 976
+yan2d = 33
+xan2d = 381
+members = true
+cost = 1
+recol = 5198/5157 5194/5281 5186/5272
+name = Iron key

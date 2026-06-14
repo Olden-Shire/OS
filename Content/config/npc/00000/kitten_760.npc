@@ -1,0 +1,9 @@
+// npc 760
+vislevel = 0
+size = 1
+walkanim = 2662
+readyanim = 317
+resizeh = 30
+resizev = 40
+name = Kitten
+models = 9386 9388

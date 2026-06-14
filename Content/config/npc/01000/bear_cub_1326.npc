@@ -1,0 +1,10 @@
+// npc 1326
+size = 2
+walkanim = 4924
+readyanim = 4920
+resizeh = 148
+resizev = 148
+op2 = Attack
+vislevel = 15
+name = Bear Cub
+models = 18883 18885

@@ -1,0 +1,10 @@
+// loc 10742
+mirror = true
+sharelight = true
+hillskew = true
+active = 0
+resizex = 128
+resizey = 165
+resizez = 128
+recol = 43051/43276
+models = 5962/0

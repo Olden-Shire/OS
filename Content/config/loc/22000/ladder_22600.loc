@@ -1,0 +1,9 @@
+// loc 22600
+hillskew = true
+sharelight = true
+mapscene = 7
+active = 1
+op1 = Climb-up
+recol = 21522/10258 26896/10258
+models_only = 23309
+name = Ladder

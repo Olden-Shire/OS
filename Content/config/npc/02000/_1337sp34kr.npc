@@ -1,0 +1,10 @@
+// npc 2577
+walkanims = 1146, 820, 821, 822
+readyanim = 808
+vislevel = 63
+op3 = Walk here
+op4 = Follow
+op5 = Trade
+recol = 10283/10266 25238/33036
+name = 1337sp34kr
+models = 206 250 8733 8726 5036 5112 274 7121

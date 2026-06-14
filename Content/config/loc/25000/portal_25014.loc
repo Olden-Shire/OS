@@ -1,0 +1,8 @@
+// loc 25014
+active = 1
+hillskew = true
+nonsolid = true
+op1 = Leave
+recol = 30/7050 35/8076 39/7952 43/7700
+models = 14598/22
+name = Portal

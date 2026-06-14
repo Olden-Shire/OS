@@ -1,0 +1,13 @@
+// obj 11097
+model = obj_gold_bracelet_11069
+yof2d = -7
+zoom2d = 659
+yan2d = 1909
+xan2d = 184
+iop2 = Wear
+manwear = obj_gold_bracelet_11069_man, 0
+womanwear = obj_gold_bracelet_11069_woman, 0
+cost = 4200
+members = true
+recol = 43072/127
+name = Abyssal brace(4)

@@ -1,0 +1,7 @@
+// loc 3980
+op1 = Enter
+ambient = 50
+contrast = 10
+sharelight = true
+models = 3974/0
+name = Tent flap

@@ -1,0 +1,10 @@
+// npc 2722
+readyanim = 447
+walkanim = 448
+size = 1
+nominimap = true
+op1 = Use-rod
+op4 = hidden
+vislevel = 0
+name = Fishing spot
+models = 1491

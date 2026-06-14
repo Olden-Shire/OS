@@ -1,0 +1,8 @@
+// loc 16939
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+width = 3
+models_only = 16539
+name = Cannon

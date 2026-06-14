@@ -1,0 +1,6 @@
+// loc 24884
+active = 1
+width = 3
+length = 3
+blockwalk = true
+multiloc = 3714, 65535, 24730 24731 24733 24735 24738

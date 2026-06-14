@@ -1,0 +1,10 @@
+// npc 3823
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 25238/10508 8741/10508
+name = Franklin Caranos
+models = 14854 14860 14842 14846 14857 14848 14869
+headmodels = 14833

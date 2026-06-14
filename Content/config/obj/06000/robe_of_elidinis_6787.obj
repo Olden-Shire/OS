@@ -1,0 +1,10 @@
+// obj 6787
+model = obj_robe_of_elidinis_6787
+xof2d = -3
+zoom2d = 1970
+xan2d = 436
+manwear = obj_robe_of_elidinis_6787_man, 0
+womanwear = obj_robe_of_elidinis_6787_woman, 0
+iop2 = Wear
+members = true
+name = Robe of elidinis

@@ -1,0 +1,9 @@
+// npc 5856
+readyanim = 6181
+walkanim = 6193
+turnspeed = 1024
+vislevel = 0
+recol = 6331/916 6323/912
+name = Goblin
+models = 24433 24443 24450 24464 24476 24484 24502 24506
+headmodels = 24216

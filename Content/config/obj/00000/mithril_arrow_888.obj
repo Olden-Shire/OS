@@ -1,0 +1,16 @@
+// obj 888
+cost = 32
+stackable = true
+model = obj_ice_arrows
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+iop2 = Wield
+count1 = 920, 2
+count2 = 919, 3
+count3 = 918, 4
+count4 = 921, 5
+recol = 61/43297 57/43297
+name = Mithril arrow

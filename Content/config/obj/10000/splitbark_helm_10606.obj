@@ -1,0 +1,15 @@
+// obj 10606
+cost = 10000
+model = obj_splitbark_helm_3385
+iop2 = Wear
+manwear = obj_splitbark_helm_3385_man, 0
+womanwear = obj_splitbark_helm_3385_woman, 0
+manhead = 4110
+womanhead = 4111
+members = true
+xof2d = -2
+yof2d = -59
+zoom2d = 1040
+yan2d = 200
+xan2d = 272
+name = Splitbark helm

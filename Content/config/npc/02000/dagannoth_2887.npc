@@ -1,0 +1,11 @@
+// npc 2887
+size = 1
+resizeh = 69
+resizev = 69
+walkanim = 1339
+readyanim = 1338
+op2 = Attack
+vislevel = 88
+recol = 10291/10293 10287/10289 10283/7343 10279/7339
+name = Dagannoth
+models = 4587

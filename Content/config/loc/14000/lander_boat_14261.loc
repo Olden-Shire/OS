@@ -1,0 +1,6 @@
+// loc 14261
+sharelight = true
+ambient = 20
+width = 4
+models_only = 14505
+name = Lander boat

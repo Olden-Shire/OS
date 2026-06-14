@@ -1,0 +1,12 @@
+// npc 957
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 25238/8720 7952/6554 61/6550 4550/6705
+name = Mubariz
+models = 230 252 201 303 317 169 179 254 276 185
+headmodels = 63 84 43

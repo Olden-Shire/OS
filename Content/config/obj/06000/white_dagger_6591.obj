@@ -1,0 +1,13 @@
+// obj 6591
+model = obj_iron_dagger_1203
+cost = 240
+yof2d = -4
+zoom2d = 760
+yan2d = 1276
+xan2d = 472
+iop2 = Wield
+manwear = obj_iron_dagger_1203_wear, 0
+womanwear = obj_iron_dagger_1203_wear, 6
+members = true
+recol = 11200/7110 6036/6550 37/74 74/99 103/115
+name = White dagger

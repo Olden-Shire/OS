@@ -1,0 +1,7 @@
+// loc 11327
+nonsolid = true
+raiseobject = 0
+sharelight = true
+active = 0
+recol = 6585/6689 5673/5912
+models = 2183/0

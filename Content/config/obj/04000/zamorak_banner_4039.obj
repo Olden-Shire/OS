@@ -1,0 +1,10 @@
+// obj 4039
+model = obj_zamorak_banner_4039
+yof2d = 6
+zoom2d = 2060
+xan2d = 464
+iop2 = Wield
+manwear = obj_zamorak_banner_4039_wear, 0
+womanwear = obj_zamorak_banner_4039_wear, 6
+members = true
+name = Zamorak banner

@@ -1,0 +1,13 @@
+// obj 8849
+model = obj_bronze_defender
+xof2d = 1
+yof2d = 20
+zoom2d = 490
+yan2d = 192
+xan2d = 344
+iop2 = Wield
+manwear = obj_bronze_defender_wear, 0
+womanwear = obj_bronze_defender_wear, 6
+members = true
+recol = 28/22026 74/21662
+name = Adamant defender

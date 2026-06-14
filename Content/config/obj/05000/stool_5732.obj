@@ -1,0 +1,7 @@
+// obj 5732
+cost = 1
+model = obj_stool_5732
+manwear = obj_stool_5732, 0
+womanwear = obj_stool_5732, 2
+zoom2d = 800
+name = Stool

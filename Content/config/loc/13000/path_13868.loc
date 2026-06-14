@@ -1,0 +1,9 @@
+// loc 13868
+hillskew = true
+active = 1
+nonsolid = true
+op1 = Look-at
+op2 = Return-to-Burgh
+recol = 4892/10518 4899/10518 5921/10518
+models = 1124/22
+name = Path

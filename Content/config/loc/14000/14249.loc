@@ -1,0 +1,6 @@
+// loc 14249
+sharelight = true
+ambient = 20
+mapscene = 22
+nonblockrange = true
+models = 14509/0

@@ -1,0 +1,16 @@
+// obj 5309
+model = obj_hammerstone_seed
+xof2d = 1
+yof2d = -31
+zoom2d = 1150
+yan2d = 8
+xan2d = 220
+members = true
+stackable = true
+count1 = 5184, 2
+count2 = 5185, 3
+count3 = 5186, 4
+count4 = 5187, 5
+cost = 6
+recol = 12587/10157
+name = Yanillian seed

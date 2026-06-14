@@ -1,0 +1,10 @@
+// npc 1182
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/4572 9152/3470 8119/3470
+name = Lord Iorwerth
+models = 4014 4020 4022 4024 4033 4026
+headmodels = 4011

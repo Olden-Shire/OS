@@ -1,0 +1,12 @@
+// npc 597
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/10508 8741/10508
+name = Noterazzo
+models = 207 181 247 292 170 176 254 326
+headmodels = 47 79

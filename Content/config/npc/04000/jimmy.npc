@@ -1,0 +1,13 @@
+// npc 4298
+vislevel = 0
+size = 1
+resizeh = 145
+resizev = 135
+walkanim = 2769
+readyanim = 2770
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/2334 61/933 5648/10398 6682/10514 4626/10638 5652/10762
+name = Jimmy
+models = 201 230 11746 246 11759 11728 11732 11810 11736
+headmodels = 63 43 11806

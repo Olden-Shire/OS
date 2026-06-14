@@ -1,0 +1,12 @@
+[clientscript,script_59](int $int0)()
+def_int $int1;
+
+$int1 = ~script_56($int0);
+if ($int1 = 2) {
+    if_setcolour(65280, ~script_55($int0));
+} else if ($int1 = 1) {
+    if_setcolour(16776960, ~script_55($int0));
+} else {
+    if_setcolour(16711680, ~script_55($int0));
+}
+return;

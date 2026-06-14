@@ -1,0 +1,8 @@
+// npc 6182
+vislevel = 0
+nominimap = true
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+name = Jury
+models = 27192

@@ -1,0 +1,8 @@
+// loc 21201
+sharelight = true
+ambient = 20
+contrast = 20
+active = 1
+noshadow = true
+models = 21678/0
+name = Door

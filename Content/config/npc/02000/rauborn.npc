@@ -1,0 +1,10 @@
+// npc 2991
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 61/6356
+name = Rauborn
+models = 2970 7071 6017 2978 2981 2985
+headmodels = 0 6996

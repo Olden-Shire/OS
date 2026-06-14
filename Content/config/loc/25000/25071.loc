@@ -1,0 +1,10 @@
+// loc 25071
+hillskew = true
+sharelight = true
+nonsolid = true
+forcedecor = true
+active = 0
+mirror = true
+ambient = 30
+recol = 7952/8076
+models_only = 26540

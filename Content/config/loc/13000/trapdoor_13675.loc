@@ -1,0 +1,7 @@
+// loc 13675
+op5 = Remove
+op1 = Open
+op4 = Remove-room
+blockwalk = true
+models = 12604/22
+name = Trapdoor

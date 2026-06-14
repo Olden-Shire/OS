@@ -1,0 +1,10 @@
+// npc 2024
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 1728
+op1 = Talk-to
+recol = 6798/21594 7281/10520 4550/7494 8741/12952 25238/13198 43072/7490
+name = Strange Old Man
+models = 5430 250 310 317 163 176 5442 275 185
+headmodels = 5428 82

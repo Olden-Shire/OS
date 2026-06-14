@@ -1,0 +1,10 @@
+// npc 1436
+walkanim = 1380
+readyanim = 1386
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 7469/17705 20/12
+name = Ifaba
+models = 4822 4827
+headmodels = 4659

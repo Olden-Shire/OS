@@ -1,0 +1,9 @@
+// npc 6188
+size = 1
+walkanim = 6928
+readyanim = 6927
+op2 = Hidden
+vislevel = 37
+name = Renegade knight
+models = 27129 25685
+headmodels = 27207

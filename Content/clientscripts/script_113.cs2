@@ -1,0 +1,123 @@
+[clientscript,script_113]()()
+
+if (if_hassub(35913820) = 1) {
+    if_sethide(0, 35913820);
+    if_sethide(1, 35913819);
+    if_sethide(1, 35913818);
+} else if (if_hassub(35913819) = 1) {
+    if_sethide(1, 35913820);
+    if_sethide(0, 35913819);
+    if_sethide(1, 35913818);
+} else {
+    if_sethide(1, 35913820);
+    if_sethide(1, 35913819);
+    if_sethide(0, 35913818);
+}
+if (if_hassub(35913825) = 1) {
+    if_sethide(1, 35913757);
+    if_sethide(1, 35913774);
+    if_sethide(1, 35913826);
+} else {
+    if_sethide(0, 35913757);
+    if_sethide(0, 35913774);
+    if_sethide(0, 35913826);
+}
+if (if_hassub(35913827) = 1) {
+    if_sethide(0, 35913782);
+    if_sethide(0, 35913775);
+} else {
+    if_sethide(1, 35913782);
+    if_sethide(1, 35913775);
+}
+if (if_hassub(35913828) = 1) {
+    if_sethide(0, 35913783);
+    if_sethide(0, 35913776);
+} else {
+    if_sethide(1, 35913783);
+    if_sethide(1, 35913776);
+}
+if (if_hassub(35913829) = 1) {
+    if_sethide(0, 35913784);
+    if_sethide(0, 35913777);
+} else {
+    if_sethide(1, 35913784);
+    if_sethide(1, 35913777);
+}
+if (if_hassub(35913830) = 1) {
+    if_sethide(0, 35913785);
+    if_sethide(0, 35913778);
+} else {
+    if_sethide(1, 35913785);
+    if_sethide(1, 35913778);
+}
+if (if_hassub(35913831) = 1) {
+    if_sethide(0, 35913786);
+    if_sethide(0, 35913779);
+} else {
+    if_sethide(1, 35913786);
+    if_sethide(1, 35913779);
+}
+if (if_hassub(35913832) = 1) {
+    if_sethide(0, 35913787);
+    if_sethide(0, 35913780);
+} else {
+    if_sethide(1, 35913787);
+    if_sethide(1, 35913780);
+}
+if (if_hassub(35913833) = 1) {
+    if_sethide(0, 35913788);
+    if_sethide(0, 35913781);
+} else {
+    if_sethide(1, 35913788);
+    if_sethide(1, 35913781);
+}
+if (if_hassub(35913834) = 1) {
+    if_sethide(0, 35913765);
+    if_sethide(0, 35913758);
+} else {
+    if_sethide(1, 35913765);
+    if_sethide(1, 35913758);
+}
+if (if_hassub(35913835) = 1) {
+    if_sethide(0, 35913766);
+    if_sethide(0, 35913759);
+} else {
+    if_sethide(1, 35913766);
+    if_sethide(1, 35913759);
+}
+if (if_hassub(35913836) = 1) {
+    if_sethide(0, 35913767);
+    if_sethide(0, 35913760);
+} else {
+    if_sethide(1, 35913767);
+    if_sethide(1, 35913760);
+}
+if (if_hassub(35913837) = 1) {
+    if_sethide(0, 35913768);
+    if_sethide(0, 35913761);
+} else {
+    if_sethide(1, 35913768);
+    if_sethide(1, 35913761);
+}
+if (if_hassub(35913838) = 1) {
+    if_sethide(0, 35913769);
+    if_sethide(0, 35913762);
+} else {
+    if_sethide(1, 35913769);
+    if_sethide(1, 35913762);
+}
+if (if_hassub(35913839) = 1) {
+    if_sethide(0, 35913770);
+    if_sethide(0, 35913763);
+} else {
+    if_sethide(1, 35913770);
+    if_sethide(1, 35913763);
+}
+if (if_hassub(35913840) = 1) {
+    if_sethide(0, 35913771);
+    if_sethide(0, 35913764);
+} else {
+    if_sethide(1, 35913771);
+    if_sethide(1, 35913764);
+}
+return;

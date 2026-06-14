@@ -1,0 +1,12 @@
+// obj 6408
+model = obj_oak_blackjack_o_6408
+manwear = obj_oak_blackjack_o_6408_wear, 0
+womanwear = obj_oak_blackjack_o_6408_wear, 6
+iop2 = Wield
+xof2d = 6
+zoom2d = 700
+yan2d = 468
+xan2d = 372
+members = true
+cost = 400
+name = Oak blackjack(o)

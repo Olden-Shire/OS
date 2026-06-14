@@ -1,0 +1,10 @@
+// loc 6096
+resizex = 200
+resizey = 128
+resizez = 200
+width = 2
+length = 2
+active = 1
+anim = 1869
+models_only = 5947
+name = Fireplace

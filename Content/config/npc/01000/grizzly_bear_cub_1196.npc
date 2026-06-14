@@ -1,0 +1,11 @@
+// npc 1196
+size = 2
+walkanim = 4924
+readyanim = 4920
+resizeh = 148
+resizev = 148
+op2 = Attack
+vislevel = 33
+recol = 3491/520 5157/5272
+name = Grizzly bear cub
+models = 18883 18885

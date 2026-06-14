@@ -1,0 +1,10 @@
+// npc 133
+size = 2
+readyanim = 6374
+walkanim = 6373
+resizeh = 110
+resizev = 110
+op2 = Attack
+vislevel = 27
+name = Black unicorn
+models = 25754 25756

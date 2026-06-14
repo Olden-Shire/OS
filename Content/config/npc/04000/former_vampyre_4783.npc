@@ -1,0 +1,8 @@
+// npc 4783
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/5338
+name = Former vampyre
+models = 12137 246 16346 18077 18081 18091 18079
+headmodels = 14371

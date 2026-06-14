@@ -1,0 +1,11 @@
+// npc 4294
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 8741/26822 25238/24458 6798/811 4626/796 4550/4440
+name = Lilly
+models = 399 470 15321 332 10706 433 361
+headmodels = 118

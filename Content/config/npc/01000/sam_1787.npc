@@ -1,0 +1,11 @@
+// npc 1787
+size = 2
+walkanim = 1739
+readyanim = 1740
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 43072/80
+name = Sam
+models = 232 250 5614 173 176 269 181 293
+headmodels = 65 82

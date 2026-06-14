@@ -1,0 +1,7 @@
+// npc 5248
+readyanim = 5090
+walkanim = 5089
+op2 = Attack
+vislevel = 63
+name = Queen spawn
+models = 20718

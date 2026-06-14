@@ -1,0 +1,11 @@
+// loc 13370
+resizex = 215
+resizez = 215
+anim = 145
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+recol = 8128/2964 10258/6028
+models_only = 2884 13415
+name = Huge Spider

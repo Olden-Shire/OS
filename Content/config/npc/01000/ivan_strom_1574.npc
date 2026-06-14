@@ -1,0 +1,10 @@
+// npc 1574
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 7952/43922 61/7062 25238/1686 43072/9133 11200/65480 8741/920
+name = Ivan Strom
+models = 207 246 292 151 176 275 185 287 317 521
+headmodels = 47

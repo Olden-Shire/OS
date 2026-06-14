@@ -1,0 +1,16 @@
+// obj 2633
+cost = 80
+members = true
+model = obj_blue_beret_2633
+xof2d = -1
+yof2d = -4
+zoom2d = 560
+yan2d = 1936
+xan2d = 136
+iop2 = Wear
+manwear = obj_blue_beret_2633_man, 0
+womanwear = obj_blue_beret_2633_woman, 0
+manhead = 40
+womanhead = 98
+recol = 10659/41492
+name = Blue beret

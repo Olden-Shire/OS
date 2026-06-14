@@ -1,0 +1,4 @@
+[clientscript,script_42](int $int0, int $int1, int $int2, int $int3, int $int4, string $string0)()
+
+~script_43($int0, $int1, $int2, $string0, $int3, $int4);
+return;

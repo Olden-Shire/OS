@@ -1,0 +1,9 @@
+// npc 177
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 25
+recol = 25238/10508 8741/10508 38814/10508 8741/10508
+name = Witch
+models = 405 470 348 353 428 361 377

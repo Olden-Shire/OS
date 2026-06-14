@@ -1,0 +1,8 @@
+// loc 18493
+width = 2
+length = 2
+hillskew = true
+op1 = Read
+noshadow = true
+models_only = 18518
+name = Signpost

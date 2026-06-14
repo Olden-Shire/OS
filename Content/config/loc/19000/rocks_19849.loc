@@ -1,0 +1,9 @@
+// loc 19849
+hillskew = true
+forcedecor = true
+active = 1
+op1 = Climb
+mapscene = 25
+blockwalk = true
+models = 20044/22
+name = Rocks

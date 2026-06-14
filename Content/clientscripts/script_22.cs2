@@ -1,0 +1,34 @@
+[clientscript,script_22]()()
+def_int $int0;
+
+def_type73 $array0(calc(108 + 1));
+$int0 = 0;
+while ($int0 <= 17) {
+    $array0($int0) = enum(105, 73, 208, $int0);
+    $int0 = calc($int0 + 1);
+}
+~script_62(0, 0, 17, 504);
+if_setposition(10, 10, 17956877);
+$int0 = 0;
+while ($int0 <= 17) {
+    if_setposition(10, calc(30 + $int0 * 15), $array0($int0));
+    $int0 = calc($int0 + 1);
+}
+$int0 = 0;
+while ($int0 <= 108) {
+    $array0($int0) = enum(105, 73, 209, $int0);
+    $int0 = calc($int0 + 1);
+}
+~script_62(0, 0, 108, 504);
+if_setposition(10, calc(50 + 17 * 15), 17956896);
+$int0 = 0;
+while ($int0 <= 108) {
+    if_setposition(10, calc(70 + 17 * 15 + $int0 * 15), $array0($int0));
+    $int0 = calc($int0 + 1);
+}
+if_setscrollsize(167, calc(95 + 17 * 15 + 108 * 15), 17956864);
+~script_31(17956876, 17956864, 792, 789, 790, 791, 773, 788);
+if (cc_find(17956876, 1) = 1) {
+    ~script_37(17956876, 17956864, %varcint10, 1);
+}
+return;

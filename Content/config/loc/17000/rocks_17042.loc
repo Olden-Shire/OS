@@ -1,0 +1,7 @@
+// loc 17042
+noshadow = true
+blockwalk = true
+op1 = Grapple
+nonblockrange = true
+models_only = 16893
+name = Rocks

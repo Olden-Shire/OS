@@ -1,0 +1,10 @@
+// loc 22354
+active = 1
+length = 2
+contrast = 20
+ambient = 20
+blockwalk = true
+mapscene = 7
+op1 = Climb-down
+models_only = 22923 22921
+name = Statue

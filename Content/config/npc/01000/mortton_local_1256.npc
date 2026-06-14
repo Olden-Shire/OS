@@ -1,0 +1,10 @@
+// npc 1256
+vislevel = 0
+size = 1
+walkanim = 819
+readyanim = 808
+op1 = Talk-to
+recol = 25238/7070 8741/7062 43072/4550
+name = Mort'ton Local
+models = 390 456 351 353 437 358
+headmodels = 113

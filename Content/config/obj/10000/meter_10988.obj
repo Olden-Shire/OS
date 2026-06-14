@@ -1,0 +1,10 @@
+// obj 10988
+model = obj_meter_10988
+yof2d = 1
+zoom2d = 868
+yan2d = 24
+xan2d = 633
+members = true
+cost = 0
+iop5 = Destroy
+name = Meter

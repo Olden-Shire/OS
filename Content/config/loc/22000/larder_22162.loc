@@ -1,0 +1,9 @@
+// loc 22162
+blockwalk = true
+width = 2
+length = 2
+ambient = 15
+contrast = 15
+recol = 5545/6817 6466/6573 6682/6936
+models_only = 12502
+name = Larder

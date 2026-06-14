@@ -1,0 +1,8 @@
+// loc 12763
+active = 1
+raiseobject = 0
+ambient = 30
+op1 = Climb-down
+blockwalk = true
+models = 13992/22
+name = Trapdoor

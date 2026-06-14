@@ -1,0 +1,12 @@
+// obj 5555
+model = obj_rogue_trousers
+iop2 = Wear
+members = true
+manwear = obj_rogue_trousers_man, 0
+womanwear = obj_rogue_trousers_woman, 0
+yof2d = 4
+zoom2d = 1140
+yan2d = 2036
+xan2d = 388
+cost = 500
+name = Rogue trousers

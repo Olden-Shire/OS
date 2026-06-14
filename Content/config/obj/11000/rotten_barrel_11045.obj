@@ -1,0 +1,10 @@
+// obj 11045
+model = obj_rotten_barrel_11044
+xof2d = -1
+yof2d = -4
+yan2d = 1907
+xan2d = 144
+members = true
+cost = 0
+iop5 = Destroy
+name = Rotten barrel

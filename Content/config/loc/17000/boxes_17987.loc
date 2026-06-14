@@ -1,0 +1,6 @@
+// loc 17987
+op1 = Search
+nonblockrange = true
+recol = 13596/8481 13592/7452 13716/8472 13840/8596 13964/8720 14216/8844
+models_only = 13975 17861
+name = Boxes

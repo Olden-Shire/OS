@@ -1,0 +1,11 @@
+// obj 9686
+model = obj_page_3
+members = true
+yof2d = 15
+zoom2d = 1957
+yan2d = 1923
+xan2d = 415
+iop1 = Read
+iop2 = Shape-Mind
+iop5 = Destroy
+name = Page 3

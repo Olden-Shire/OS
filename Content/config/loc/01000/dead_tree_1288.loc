@@ -1,0 +1,6 @@
+// loc 1288
+mapscene = 6
+mirror = true
+sharelight = true
+models_only = 1621
+name = Dead tree

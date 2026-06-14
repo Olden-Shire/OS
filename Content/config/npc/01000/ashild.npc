@@ -1,0 +1,10 @@
+// npc 1366
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/10279 43072/2524 8741/10279 4550/2524 6798/7731 4626/29574
+name = Ashild
+models = 391 469 347 353 429 358
+headmodels = 114

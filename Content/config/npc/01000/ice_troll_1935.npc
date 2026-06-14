@@ -1,0 +1,12 @@
+// npc 1935
+size = 1
+resizeh = 139
+resizev = 139
+walkanim = 283
+readyanim = 286
+op1 = Talk-to
+vislevel = 0
+recol = 61/43105 21570/43220
+name = Ice troll
+models = 4942 3758 3756 3762 4948
+headmodels = 3791 3789

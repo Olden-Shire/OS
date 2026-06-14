@@ -1,0 +1,14 @@
+// obj 6541
+model = obj_mouse_toy
+xof2d = -5
+yof2d = -2
+zoom2d = 790
+yan2d = 1380
+xan2d = 120
+iop2 = Wield
+manwear = obj_mouse_toy_wear, 0
+womanwear = obj_mouse_toy_wear, 6
+members = true
+cost = 1
+iop5 = Destroy
+name = Mouse toy

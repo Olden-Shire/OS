@@ -1,0 +1,7 @@
+// obj 7145
+model = obj_cannon_barrel
+yan2d = 168
+zan2d = 24
+xan2d = 220
+members = true
+name = Cannon barrel

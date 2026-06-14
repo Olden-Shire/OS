@@ -1,0 +1,11 @@
+// npc 3352
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/36742 25238/36742 7952/38788 6798/43096 4626/43906 9104/37776
+name = Mysterious Old Man
+models = 13335 13333 292 324 12758 170 176 267 185
+headmodels = 13871

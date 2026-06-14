@@ -1,0 +1,15 @@
+// npc 5484
+size = 1
+vislevel = 0
+alwaysontop = true
+resizev = 132
+resizeh = 136
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/5667 25238/4626 8078/6589 6798/4921 7952/4382 7073/3489
+name = Flosi Dalksson
+models = 217 252 292 305 162 179 12769 4226 4218
+headmodels = 55 84

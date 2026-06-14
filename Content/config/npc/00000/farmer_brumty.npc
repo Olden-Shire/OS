@@ -1,0 +1,10 @@
+// npc 291
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/3489 8741/5673 43569/3489 4550/6709
+name = Farmer Brumty
+models = 217 194 251 310 167 176 271 181
+headmodels = 55 37 83

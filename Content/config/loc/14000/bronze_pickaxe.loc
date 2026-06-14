@@ -1,0 +1,7 @@
+// loc 14910
+nonsolid = true
+active = 1
+op1 = Take
+recol = 61/5652
+models_only = 2529
+name = Bronze pickaxe

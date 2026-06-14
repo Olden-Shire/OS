@@ -1,0 +1,15 @@
+// obj 5097
+model = obj_rosemary_seed
+xof2d = 1
+yof2d = -56
+zoom2d = 1110
+yan2d = 1932
+xan2d = 232
+members = true
+stackable = true
+count1 = 5135, 2
+count2 = 5136, 3
+count3 = 5137, 4
+count4 = 5138, 5
+cost = 4
+name = Rosemary seed

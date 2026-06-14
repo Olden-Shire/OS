@@ -1,0 +1,7 @@
+// loc 22568
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+models = 23277/22
+name = Cable

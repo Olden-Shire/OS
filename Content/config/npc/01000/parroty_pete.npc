@@ -1,0 +1,10 @@
+// npc 1216
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/6488 8741/8099 43072/4550 43569/6488 6798/7613
+name = Parroty Pete
+models = 215 292 251 151 176 271 185 194 327 319
+headmodels = 53 83 37

@@ -1,0 +1,11 @@
+// npc 997
+walkanim = 5317
+readyanim = 5318
+resizeh = 108
+resizev = 108
+size = 3
+op2 = Attack
+vislevel = 89
+recol = 960/10690 33728/38156 22443/38160 11200/38408 56256/10826 50099/10954
+name = Kalrag
+models = 20314 20298

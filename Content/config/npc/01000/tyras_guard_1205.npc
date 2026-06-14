@@ -1,0 +1,11 @@
+// npc 1205
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 10004/61 4626/61 7566/61 7446/41 25238/61 8741/4550
+name = Tyras guard
+models = 159 185 176 230 246 3329 299
+headmodels = 63

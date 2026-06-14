@@ -1,0 +1,12 @@
+// obj 4823
+model = obj_steel_nails
+cost = 45
+xof2d = 3
+yof2d = 4
+zoom2d = 650
+yan2d = 1984
+xan2d = 308
+members = true
+stackable = true
+recol = 28/21662
+name = Adamantite nails

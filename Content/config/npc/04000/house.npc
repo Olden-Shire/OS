@@ -1,0 +1,14 @@
+// npc 4512
+size = 5
+contrast = 10
+ambient = 10
+walkanim = 4390
+readyanim = 4391
+resizeh = 215
+resizev = 215
+alwaysontop = true
+op1 = Go-inside
+nominimap = true
+vislevel = 0
+name = House
+models = 16736 16735 16737

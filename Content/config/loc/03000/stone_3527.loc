@@ -1,0 +1,8 @@
+// loc 3527
+forcedecor = true
+nonsolid = true
+active = 1
+op5 = Search
+recol = 53/6699
+models = 1799/22
+name = Stone

@@ -1,0 +1,11 @@
+// npc 351
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 4
+recol = 43072/5662 25238/3980 4550/5289
+name = Man
+models = 215 185 249 310 173 176 275
+headmodels = 53 81

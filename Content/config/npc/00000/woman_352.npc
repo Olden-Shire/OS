@@ -1,0 +1,11 @@
+// npc 352
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 3
+recol = 43072/5662 25238/3980 4550/5289 5297/4661
+name = Woman
+models = 408 361 474 332 353 438
+headmodels = 125 11429

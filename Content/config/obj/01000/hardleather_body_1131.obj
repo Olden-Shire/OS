@@ -1,0 +1,9 @@
+// obj 1131
+cost = 170
+model = obj_hardleather_body_1131
+zoom2d = 920
+xan2d = 628
+iop2 = Wear
+manwear = obj_hardleather_body_1131_man, 0
+womanwear = obj_hardleather_body_1131_woman, 0
+name = Hardleather body

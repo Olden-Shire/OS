@@ -1,0 +1,9 @@
+// obj 10989
+model = obj_capacitor_10989
+zoom2d = 976
+yan2d = 69
+xan2d = 297
+members = true
+cost = 0
+iop5 = Destroy
+name = Capacitor

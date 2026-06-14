@@ -1,0 +1,8 @@
+// loc 5965
+length = 7
+anim = 1846
+blockwalk = true
+nonblockrange = true
+recol = 12/8885
+models_only = 5869
+name = Gold cannonball

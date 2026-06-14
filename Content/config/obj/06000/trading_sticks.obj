@@ -1,0 +1,15 @@
+// obj 6306
+cost = 1
+model = obj_trading_sticks
+xof2d = -6
+yof2d = -27
+zoom2d = 1750
+yan2d = 152
+xan2d = 212
+members = true
+stackable = true
+count1 = 6307, 10
+count2 = 6308, 100
+count3 = 6309, 1000
+count4 = 6310, 10000
+name = Trading sticks

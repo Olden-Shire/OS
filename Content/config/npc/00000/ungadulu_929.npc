@@ -1,0 +1,11 @@
+// npc 929
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 70
+recol = 4550/7062 8741/127 25238/127 6798/86 926/7062
+name = Ungadulu
+models = 214 250 292 170 176 265 181 534
+headmodels = 52 82

@@ -1,0 +1,6 @@
+// loc 7425
+ambient = 15
+op1 = Level
+nonblockrange = true
+models_only = 7775
+name = Chef's Delight

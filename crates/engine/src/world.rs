@@ -15,6 +15,25 @@ use crate::script::runner;
 use crate::script::state::{ScriptArg, ScriptState};
 use crate::script::trigger;
 use std::sync::Arc;
+use std::time::{Duration, Instant};
+
+/// Per-cycle wall-clock breakdown of [`World::cycle`], for the control panel's
+/// time-accounting graph. `world`/`npcs`/`players`/`info` are non-overlapping
+/// and sum to (approximately) the whole cycle; `scripts` is the cross-cutting
+/// RuneScript total spent *inside* those phases (reported, not stacked).
+#[derive(Clone, Copy, Default)]
+pub struct CycleStats {
+    /// World queue, delayed objs, zone obj/loc lifecycle, AFK re-roll.
+    pub world: Duration,
+    /// NPC AI, timers, queues, movement, zone reindex.
+    pub npcs: Duration,
+    /// Player scripts, queues, timers, movement, energy/stats, logouts.
+    pub players: Duration,
+    /// Reorient + per-observer player/npc info packet building.
+    pub info: Duration,
+    /// RuneScript execution time (subset of the above phases).
+    pub scripts: Duration,
+}
 
 /// A script queued to run on the player after `delay` ticks — the engine half
 /// of Engine-TS `Player.engineQueue` (used for ADVANCESTAT, CHANGESTAT and other
@@ -105,6 +124,58 @@ pub struct World {
     /// Animation length in ticks per seq id (sum of frame delays) — feeds the
     /// SEQLENGTH op. Populated by [`World::load_configs`].
     pub seq_lengths: std::collections::HashMap<i32, i32>,
+    /// Loc/obj/npc config fields the config-query ops (LC_*/OC_*/NC_*, and the
+    /// active-entity NAME ops) read. Populated by [`World::load_configs`].
+    pub loc_info: std::collections::HashMap<i32, LocInfo>,
+    pub obj_info: std::collections::HashMap<i32, ObjInfo>,
+    pub npc_info: std::collections::HashMap<i32, NpcInfo>,
+    /// EnumType tables (config group 8) for ENUM / ENUM_GETOUTPUTCOUNT.
+    pub enums: std::collections::HashMap<i32, EnumData>,
+    /// InvType sizes (config group 5), keyed by inv id — the capacity a player
+    /// inventory is created at. Backs INV_SIZE and the INV_* slot ops.
+    pub inv_sizes: std::collections::HashMap<i32, i32>,
+    /// Ground objs queued to spawn after a delay (Engine-TS `objDelayedQueue`) —
+    /// INV_DROPITEM_DELAYED. Each entry counts `delay` down each tick, then
+    /// spawns with its `despawn` duration.
+    delayed_objs: Vec<DelayedObj>,
+    /// Pending npc spawn/despawn triggers (Engine-TS `npcEventQueue`): `(nid,
+    /// trigger)` for [ai_spawn]/[ai_despawn], run at the head of the next cycle.
+    npc_events: Vec<(usize, u16)>,
+    /// Rolling log of public chat (newest last), for observers like the control
+    /// panel. Each line keeps the raw WordPack-packed bytes so the reader can
+    /// decode them with the chat Huffman table. Capped to the last 256 lines.
+    pub chat_log: std::collections::VecDeque<ChatLine>,
+    /// Monotonic id stamped on each chat line so observers can resume without
+    /// double-reading (the deque drops its front when it overflows).
+    pub chat_seq: u64,
+    /// XTEA map keys (from `load_map`) so a region-change REBUILD_NORMAL ships
+    /// the correct per-mapsquare keys — without them the client decrypts the new
+    /// region's loc data with zero keys and crashes ("Invalid GZIP header").
+    pub map_keys: cache::maps::XteaKeys,
+}
+
+/// One public-chat line captured for observers (control panel).
+#[derive(Clone)]
+pub struct ChatLine {
+    pub seq: u64,
+    pub tick: u32,
+    pub pid: usize,
+    pub name: String,
+    /// Raw WordPack-packed message bytes (decode with the chat Huffman table).
+    pub message: Vec<u8>,
+}
+
+/// A pending delayed ground-obj spawn (Engine-TS `ObjDelayedRequest`).
+#[derive(Debug, Clone, Copy)]
+struct DelayedObj {
+    id: i32,
+    count: i32,
+    x: i32,
+    z: i32,
+    level: i32,
+    receiver: i32,
+    despawn: i32,
+    delay: i32,
 }
 
 /// The slice of a `LocType` collision needs: footprint + block flags. Mirrors
@@ -118,6 +189,51 @@ pub struct LocCollision {
     /// LocType.active — 1 when the loc is interactive; MAP_LOCADDUNSAFE only
     /// counts active locs as occupying a tile.
     pub active: i32,
+}
+
+/// Loc config fields the config-query ops read (LC_NAME / LC_WIDTH / LC_LENGTH)
+/// plus the op labels the interaction ops gate on.
+#[derive(Debug, Clone, Default)]
+pub struct LocInfo {
+    pub name: String,
+    pub width: i32,
+    pub length: i32,
+    pub op: [Option<String>; 5],
+}
+
+/// Obj config fields the config-query ops read (OC_NAME / COST / MEMBERS /
+/// STACKABLE / CERT / UNCERT).
+#[derive(Debug, Clone, Default)]
+pub struct ObjInfo {
+    pub name: String,
+    pub cost: i32,
+    pub stackable: i32,
+    pub members: bool,
+    pub certlink: i32,
+    pub certtemplate: i32,
+    pub op: [Option<String>; 5],
+    pub iop: [Option<String>; 5],
+}
+
+/// Npc config fields the config-query ops read (NC_NAME / SIZE / VISLEVEL / OP).
+#[derive(Debug, Clone, Default)]
+pub struct NpcInfo {
+    pub name: String,
+    pub size: i32,
+    pub vislevel: i32,
+    pub op: [Option<String>; 5],
+}
+
+/// EnumType key→value table for the ENUM / ENUM_GETOUTPUTCOUNT ops. `is_string`
+/// picks which value vec (and which stack) the lookup result uses.
+#[derive(Debug, Clone, Default)]
+pub struct EnumData {
+    pub keys: Vec<i32>,
+    pub int_values: Vec<i32>,
+    pub string_values: Vec<String>,
+    pub default_int: i32,
+    pub default_string: String,
+    pub is_string: bool,
 }
 
 /// How often (in ticks) the world rolls each player's AFK-event flag — Engine-TS
@@ -139,6 +255,46 @@ impl Default for World {
 /// A nonzero xorshift seed derived from wall-clock nanos (xorshift requires a
 /// nonzero state). Determinism doesn't matter here — only the AFK roll consumes
 /// it, and tests don't run the 500-tick window.
+/// Map an `NpcMode` (3..=46) to its AI trigger + whether it's an op (vs ap)
+/// trigger. None for the non-interaction modes (NONE/WANDER/PATROL/escape/face/
+/// follow). The 5-op runs are contiguous; ap/op pairs are 7 apart.
+fn npc_mode_trigger(mode: i32) -> Option<(u16, bool)> {
+    use crate::script::trigger as t;
+    let (base, ai_base, is_op) = match mode {
+        7..=11 => (7, t::AI_OPPLAYER1, true),
+        12..=16 => (12, t::AI_APPLAYER1, false),
+        17..=21 => (17, t::AI_OPLOC1, true),
+        22..=26 => (22, t::AI_APLOC1, false),
+        27..=31 => (27, t::AI_OPOBJ1, true),
+        32..=36 => (32, t::AI_APOBJ1, false),
+        37..=41 => (37, t::AI_OPNPC1, true),
+        42..=46 => (42, t::AI_APNPC1, false),
+        _ => return None,
+    };
+    Some(((ai_base as i32 + (mode - base)) as u16, is_op))
+}
+
+// Engine-TS NpcType defaults for the server-side combat/AI fields the 2007
+// client cache doesn't carry (NpcType.ts). The npc AI reads these; per-npc
+// values arrive when the server npc config is sourced (content).
+const NPC_MAXRANGE: i32 = 7;
+const NPC_WANDERRANGE: i32 = 5;
+const NPC_ATTACKRANGE: i32 = 0;
+const NPC_GIVECHASE: bool = true;
+/// Engine-TS NpcType.defaultmode — an idle npc wanders.
+const NPC_DEFAULTMODE: i32 = 1;
+
+/// Per-axis distance from coord `p` to the `[b, b+span)` span — 0 when inside.
+fn axis_dist(p: i32, b: i32, span: i32) -> i32 {
+    if p < b {
+        b - p
+    } else if p > b + span - 1 {
+        p - (b + span - 1)
+    } else {
+        0
+    }
+}
+
 fn seed_rng() -> u64 {
     let nanos = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -166,6 +322,16 @@ impl World {
             collision: crate::collision::WorldCollision::new(),
             loc_config: std::collections::HashMap::new(),
             seq_lengths: std::collections::HashMap::new(),
+            loc_info: std::collections::HashMap::new(),
+            obj_info: std::collections::HashMap::new(),
+            npc_info: std::collections::HashMap::new(),
+            enums: std::collections::HashMap::new(),
+            inv_sizes: std::collections::HashMap::new(),
+            delayed_objs: Vec::new(),
+            npc_events: Vec::new(),
+            chat_log: std::collections::VecDeque::new(),
+            chat_seq: 0,
+            map_keys: cache::maps::XteaKeys::default(),
         }
     }
 
@@ -184,6 +350,59 @@ impl World {
                         blockwalk: lt.blockwalk,
                         blockrange: lt.blockrange,
                         active: lt.active,
+                    },
+                );
+                self.loc_info.insert(
+                    id,
+                    LocInfo { name: lt.name, width: lt.width, length: lt.length, op: lt.op },
+                );
+            }
+        }
+        if let Ok(Some(files)) = cache.read_files(cache::CONFIG_ARCHIVE, 10) {
+            for (id, bytes) in files {
+                let ot = cache::config::obj::ObjType::decode(id, &bytes);
+                self.obj_info.insert(
+                    id,
+                    ObjInfo {
+                        name: ot.name,
+                        cost: ot.cost,
+                        stackable: ot.stackable,
+                        members: ot.members,
+                        certlink: ot.certlink,
+                        certtemplate: ot.certtemplate,
+                        op: ot.op,
+                        iop: ot.iop,
+                    },
+                );
+            }
+        }
+        if let Ok(Some(files)) = cache.read_files(cache::CONFIG_ARCHIVE, 9) {
+            for (id, bytes) in files {
+                let nt = cache::config::npc::NpcType::decode(id, &bytes);
+                self.npc_info.insert(
+                    id,
+                    NpcInfo { name: nt.name, size: nt.size, vislevel: nt.vislevel, op: nt.op },
+                );
+            }
+        }
+        if let Ok(Some(files)) = cache.read_files(cache::CONFIG_ARCHIVE, 5) {
+            for (id, bytes) in files {
+                let it = cache::config::inv::InvType::decode(id, &bytes);
+                self.inv_sizes.insert(id, it.size);
+            }
+        }
+        if let Ok(Some(files)) = cache.read_files(cache::CONFIG_ARCHIVE, 8) {
+            for (id, bytes) in files {
+                let et = cache::config::enum_::EnumType::decode(id, &bytes);
+                self.enums.insert(
+                    id,
+                    EnumData {
+                        is_string: !et.string_values.is_empty(),
+                        keys: et.keys,
+                        int_values: et.int_values,
+                        string_values: et.string_values,
+                        default_int: et.default_int,
+                        default_string: et.default_string,
                     },
                 );
             }
@@ -208,6 +427,8 @@ impl World {
     /// flag bit 1) clips one level down, matching the client.
     pub fn load_map(&mut self, cache: &mut cache::Cache, keys: &cache::maps::XteaKeys) {
         use cache::maps::{REGION_LEVELS, REGION_SIZE};
+        // Keep the keys so region-change rebuilds ship the right per-square keys.
+        self.map_keys = keys.clone();
         let mut regions = 0u32;
         for rx in 0..120u32 {
             for ry in 0..256u32 {
@@ -266,6 +487,917 @@ impl World {
             }
         }
         eprintln!("[engine] collision built from {regions} region(s)");
+    }
+
+    // ── Inventory (Engine-TS Player.inv* + Inventory) ─────────────────────
+    /// Whether `obj_id` stacks (ObjType.stackable). Our 2007 InvType config has
+    /// no `stackall`, so stack behaviour is purely per-obj. Unknown objs don't
+    /// stack.
+    pub fn obj_stackable(&self, obj_id: i32) -> bool {
+        self.obj_info.get(&obj_id).is_some_and(|o| o.stackable != 0)
+    }
+
+    /// Borrow (creating at the configured size if absent) player `pid`'s
+    /// inventory `inv_id`.
+    fn ensure_inv(&mut self, pid: usize, inv_id: i32) -> Option<&mut player::Inventory> {
+        let size = self.inv_sizes.get(&inv_id).copied().unwrap_or(0);
+        let p = self.players[pid].as_mut()?;
+        Some(p.invs.entry(inv_id).or_insert_with(|| player::Inventory::new(size)))
+    }
+
+    /// INV_ADD: insert up to `count` of `obj_id`; returns how many were inserted
+    /// (the caller drops the overflow). Stackable objs merge into one slot
+    /// (capped at STACK_LIMIT); others take one slot each.
+    pub fn inv_add(&mut self, pid: usize, inv_id: i32, obj_id: i32, count: i32) -> i32 {
+        if count <= 0 {
+            return 0;
+        }
+        self.mark_inv_dirty(pid, inv_id);
+        let stackable = self.obj_stackable(obj_id);
+        let Some(inv) = self.ensure_inv(pid, inv_id) else { return 0 };
+        if stackable {
+            if let Some(idx) = inv.index_of(obj_id) {
+                let (_, cur) = inv.items[idx].unwrap();
+                let new = (cur as i64 + count as i64).min(player::STACK_LIMIT as i64) as i32;
+                inv.items[idx] = Some((obj_id, new));
+                new - cur
+            } else if let Some(free) = inv.first_free() {
+                inv.items[free] = Some((obj_id, count));
+                count
+            } else {
+                0
+            }
+        } else {
+            let mut added = 0;
+            while added < count {
+                let Some(free) = inv.first_free() else { break };
+                inv.items[free] = Some((obj_id, 1));
+                added += 1;
+            }
+            added
+        }
+    }
+
+    /// INV_DEL: remove up to `count` of `obj_id`; returns how many were removed.
+    pub fn inv_del(&mut self, pid: usize, inv_id: i32, obj_id: i32, count: i32) -> i32 {
+        if count <= 0 {
+            return 0;
+        }
+        self.mark_inv_dirty(pid, inv_id);
+        let Some(inv) = self.ensure_inv(pid, inv_id) else { return 0 };
+        let mut remaining = count;
+        let mut removed = 0;
+        for slot in inv.items.iter_mut() {
+            if remaining == 0 {
+                break;
+            }
+            if let Some((id, c)) = slot {
+                if *id == obj_id {
+                    let take = (*c).min(remaining);
+                    *c -= take;
+                    removed += take;
+                    remaining -= take;
+                    if *c == 0 {
+                        *slot = None;
+                    }
+                }
+            }
+        }
+        removed
+    }
+
+    /// INV_TOTAL: total count of `obj_id` in the inventory.
+    pub fn inv_total(&self, pid: usize, inv_id: i32, obj_id: i32) -> i32 {
+        self.players[pid]
+            .as_ref()
+            .and_then(|p| p.invs.get(&inv_id))
+            .map_or(0, |inv| inv.total(obj_id))
+    }
+
+    /// INV_GETOBJ / INV_GETNUM: the `(id, count)` in a slot, if any.
+    pub fn inv_get_slot(&self, pid: usize, inv_id: i32, slot: i32) -> Option<(i32, i32)> {
+        self.players[pid]
+            .as_ref()
+            .and_then(|p| p.invs.get(&inv_id))
+            .and_then(|inv| inv.get(slot))
+    }
+
+    /// INV_FREESPACE: free slots in the inventory.
+    pub fn inv_free_space(&mut self, pid: usize, inv_id: i32) -> i32 {
+        self.ensure_inv(pid, inv_id).map_or(0, |inv| inv.free_slots())
+    }
+
+    /// INV_CLEAR: empty the inventory.
+    pub fn inv_clear(&mut self, pid: usize, inv_id: i32) {
+        self.mark_inv_dirty(pid, inv_id);
+        if let Some(inv) = self.ensure_inv(pid, inv_id) {
+            inv.clear();
+        }
+    }
+
+    /// INV_SETSLOT: write a slot directly (obj -1 / count ≤ 0 clears it).
+    pub fn inv_set(&mut self, pid: usize, inv_id: i32, obj_id: i32, count: i32, slot: i32) {
+        self.mark_inv_dirty(pid, inv_id);
+        let Some(inv) = self.ensure_inv(pid, inv_id) else { return };
+        if obj_id == -1 || count <= 0 {
+            inv.set(slot, None);
+        } else {
+            inv.set(slot, Some((obj_id, count)));
+        }
+    }
+
+    /// INV_ITEMSPACE: overflow of adding `count` of `obj_id` within the first
+    /// `size` slots — 0 means it all fits.
+    pub fn inv_item_space(&mut self, pid: usize, inv_id: i32, obj_id: i32, count: i32, size: i32) -> i32 {
+        let stackable = self.obj_stackable(obj_id);
+        let Some(inv) = self.ensure_inv(pid, inv_id) else { return count };
+        let cap = (size.max(0) as usize).min(inv.items.len());
+        let window = &inv.items[..cap];
+        if stackable {
+            let has_stack = window.iter().any(|s| matches!(s, Some((i, _)) if *i == obj_id));
+            let has_free = window.iter().any(|s| s.is_none());
+            if has_stack || has_free {
+                let cur = inv.total(obj_id) as i64;
+                (cur + count as i64 - player::STACK_LIMIT as i64).max(0) as i32
+            } else {
+                count
+            }
+        } else {
+            let free = window.iter().filter(|s| s.is_none()).count() as i32;
+            (count - free).max(0)
+        }
+    }
+
+    /// INV_MOVETOSLOT: swap the contents of `from_slot`/`to_slot` (the UI drag
+    /// move — Engine-TS `invMoveToSlot`). Works within or across the player's
+    /// own inventories.
+    pub fn inv_move_to_slot(&mut self, pid: usize, from_inv: i32, to_inv: i32, from_slot: i32, to_slot: i32) {
+        self.mark_inv_dirty(pid, from_inv);
+        self.mark_inv_dirty(pid, to_inv);
+        let from_item = self.inv_get_slot(pid, from_inv, from_slot);
+        let to_item = self.inv_get_slot(pid, to_inv, to_slot);
+        self.ensure_inv(pid, from_inv);
+        self.ensure_inv(pid, to_inv);
+        if let Some(p) = self.players[pid].as_mut() {
+            if let Some(inv) = p.invs.get_mut(&to_inv) {
+                inv.set(to_slot, from_item);
+            }
+            if let Some(inv) = p.invs.get_mut(&from_inv) {
+                inv.set(from_slot, to_item);
+            }
+        }
+    }
+
+    /// INV_MOVEFROMSLOT: move the whole stack at `from_slot` into `to_inv`,
+    /// returning `(overflow, obj_id)` (the caller drops the overflow). Engine-TS
+    /// `invMoveFromSlot`.
+    pub fn inv_move_from_slot(&mut self, pid: usize, from_inv: i32, to_inv: i32, from_slot: i32) -> (i32, i32) {
+        let Some((obj, count)) = self.inv_get_slot(pid, from_inv, from_slot) else {
+            return (0, -1);
+        };
+        self.inv_set(pid, from_inv, -1, 0, from_slot);
+        let added = self.inv_add(pid, to_inv, obj, count);
+        (count - added, obj)
+    }
+
+    /// Mark `inv_id` dirty for player `pid` so its transmit listeners resend.
+    fn mark_inv_dirty(&mut self, pid: usize, inv_id: i32) {
+        if let Some(p) = self.players[pid].as_mut() {
+            p.inv_dirty.insert(inv_id);
+        }
+    }
+
+    /// INV_TRANSMIT / INVOTHER_TRANSMIT: register `com` to show inventory
+    /// `inv_id` sourced from player `source_uid` (own uid, or another player's).
+    /// Replaces any existing listener on the same com.
+    pub fn inv_listen_on_com(&mut self, pid: usize, inv_id: i32, com: i32, source_uid: i32) {
+        if let Some(p) = self.players[pid].as_mut() {
+            p.inv_listeners.retain(|l| l.com != com);
+            p.inv_listeners.push(player::InvListener { inv_id, com, source_uid, first_seen: true });
+        }
+    }
+
+    /// INV_STOPTRANSMIT: drop the listener on `com` and tell the client to clear
+    /// that component's inventory.
+    pub fn inv_stop_listen_on_com(&mut self, pid: usize, com: i32) {
+        if let Some(p) = self.players[pid].as_mut() {
+            let had = p.inv_listeners.iter().any(|l| l.com == com);
+            p.inv_listeners.retain(|l| l.com != com);
+            if had {
+                p.write(protocol::server::update_inv_stop_transmit(com));
+            }
+        }
+    }
+
+    /// Flush this player's inventory listeners into UPDATE_INV_FULL packets:
+    /// every listener resends on its first tick, and own-inventory listeners
+    /// resend whenever that inv was mutated. Run once per player per cycle.
+    fn send_inv_updates(&mut self, pid: usize) {
+        let listeners = match self.players[pid].as_ref() {
+            Some(p) if !p.inv_listeners.is_empty() => p.inv_listeners.clone(),
+            _ => {
+                if let Some(p) = self.players[pid].as_mut() {
+                    p.inv_dirty.clear();
+                }
+                return;
+            }
+        };
+        let own_uid = self.players[pid].as_ref().map_or(0, |p| p.uid());
+        let dirty = self.players[pid].as_ref().map(|p| p.inv_dirty.clone()).unwrap_or_default();
+        for (i, l) in listeners.iter().enumerate() {
+            let own = l.source_uid == own_uid;
+            // Resend on first sight, when the (own) inv changed, or always for a
+            // foreign-sourced inv (we don't track other players' dirtiness here).
+            let resend = l.first_seen || !own || dirty.contains(&l.inv_id);
+            if !resend {
+                continue;
+            }
+            // Resolve the source inventory's slots.
+            let src_pid = if own {
+                Some(pid)
+            } else {
+                self.get_player_by_uid(l.source_uid)
+            };
+            let slots: Vec<(i32, i32)> = src_pid
+                .and_then(|sp| self.players[sp].as_ref())
+                .and_then(|p| p.invs.get(&l.inv_id))
+                .map(|inv| {
+                    inv.items.iter().map(|s| s.unwrap_or((-1, 0))).collect()
+                })
+                .unwrap_or_default();
+            if let Some(p) = self.players[pid].as_mut() {
+                p.write(protocol::server::update_inv_full(l.com, l.inv_id, &slots));
+                p.inv_listeners[i].first_seen = false;
+            }
+        }
+        if let Some(p) = self.players[pid].as_mut() {
+            p.inv_dirty.clear();
+        }
+    }
+
+    // ── Interaction (Engine-TS target / targetOp processing) ──────────────
+    /// Footprint of an interaction target: `(x, z, level, width, length,
+    /// type_id)`. `type_id` is -1 for players. None if the target no longer
+    /// exists.
+    fn interact_footprint(&self, target: player::InteractTarget) -> Option<(i32, i32, i32, i32, i32, i32)> {
+        use player::InteractTarget as T;
+        match target {
+            T::Npc(nid) => {
+                let n = self.npcs.get(nid)?.as_ref()?;
+                let size = self.npc_info.get(&n.type_id).map_or(1, |i| i.size).max(1);
+                Some((n.entity.x, n.entity.z, n.entity.level, size, size, n.type_id))
+            }
+            T::Player(p2) => {
+                let p = self.players.get(p2)?.as_ref()?;
+                Some((p.entity.x, p.entity.z, p.entity.level, 1, 1, -1))
+            }
+            T::Loc { x, z, level, id, angle, .. } => {
+                let (w, l) = self.loc_info.get(&id).map_or((1, 1), |i| (i.width.max(1), i.length.max(1)));
+                let (w, l) = if angle == 1 || angle == 3 { (l, w) } else { (w, l) };
+                Some((x, z, level, w, l, id))
+            }
+            T::Obj { x, z, level, id } => Some((x, z, level, 1, 1, id)),
+        }
+    }
+
+    /// Engine-TS inOperableDistance — orthogonally adjacent to (or standing on)
+    /// the target footprint, same level. Approximates rsmod `reached*`: it omits
+    /// the wall-side / forceapproach gating our 2007 loc config doesn't carry.
+    pub fn in_operable_distance(&self, pid: usize, target: player::InteractTarget) -> bool {
+        let Some(p) = self.players[pid].as_ref() else { return false };
+        let Some((bx, bz, blevel, bw, bl, _)) = self.interact_footprint(target) else { return false };
+        if p.entity.level != blevel {
+            return false;
+        }
+        let dx = axis_dist(p.entity.x, bx, bw);
+        let dz = axis_dist(p.entity.z, bz, bl);
+        dx + dz <= 1
+    }
+
+    /// Engine-TS inApproachDistance — within `range` (chebyshev to the footprint)
+    /// with line of sight, and not standing inside a pathing-entity target.
+    pub fn in_approach_distance(&self, pid: usize, target: player::InteractTarget, range: i32) -> bool {
+        let Some(p) = self.players[pid].as_ref() else { return false };
+        let Some((bx, bz, blevel, bw, bl, _)) = self.interact_footprint(target) else { return false };
+        if p.entity.level != blevel {
+            return false;
+        }
+        let (px, pz) = (p.entity.x, p.entity.z);
+        let dx = axis_dist(px, bx, bw);
+        let dz = axis_dist(pz, bz, bl);
+        let pathing = matches!(target, player::InteractTarget::Npc(_) | player::InteractTarget::Player(_));
+        if pathing && dx == 0 && dz == 0 {
+            return false; // can't approach from underneath a mob
+        }
+        dx.max(dz) <= range && self.collision.line_of_sight(blevel, px, pz, bx, bz)
+    }
+
+    /// Engine-TS stopAction: drop the current interaction, close any modal, and
+    /// clear the client map flag.
+    pub fn stop_action(&mut self, pid: usize) {
+        if let Some(p) = self.players[pid].as_mut() {
+            p.interaction = None;
+            p.entity.clear_interaction();
+            p.unset_map_flag();
+        }
+        self.close_modal(pid);
+    }
+
+    /// Engine-TS setInteraction: aim the player at `target` with AP-trigger base
+    /// `op` (OP trigger is `op + 7`), set facing, and reset the approach range.
+    pub fn set_interaction(&mut self, pid: usize, target: player::InteractTarget, op: i32, com: i32) {
+        let subject_type = self.interact_footprint(target).map_or(-1, |f| f.5);
+        if let Some(p) = self.players[pid].as_mut() {
+            p.interaction = Some(player::Interaction { target, op, com, subject_type });
+            match target {
+                player::InteractTarget::Npc(nid) => p.entity.set_face_entity(nid as i32),
+                player::InteractTarget::Player(p2) => p.entity.set_face_entity(p2 as i32 + 32768),
+                player::InteractTarget::Loc { x, z, .. } | player::InteractTarget::Obj { x, z, .. } => {
+                    p.entity.set_face_coord_target(x, z)
+                }
+            }
+            p.ap_range = 10;
+            p.ap_range_called = false;
+        }
+    }
+
+    /// Engine-TS validateTarget: same level, still exists, and (for npc) its
+    /// type hasn't changed since the interaction began.
+    fn interaction_valid(&self, pid: usize) -> bool {
+        let Some(p) = self.players[pid].as_ref() else { return false };
+        let Some(it) = p.interaction else { return false };
+        let Some((_, _, blevel, _, _, type_id)) = self.interact_footprint(it.target) else {
+            return false;
+        };
+        if p.entity.level != blevel {
+            return false;
+        }
+        match it.target {
+            player::InteractTarget::Npc(_) => type_id == it.subject_type,
+            _ => true,
+        }
+    }
+
+    /// The trigger type-id used for op/ap script lookup — the spell component for
+    /// `*T` interactions, else the subject's type id.
+    fn interaction_type_id(&self, it: &player::Interaction) -> i32 {
+        if it.com != -1 {
+            it.com
+        } else {
+            self.interact_footprint(it.target).map_or(-1, |f| f.5)
+        }
+    }
+
+    /// Fire an op/ap trigger, with the active player + active subject set so the
+    /// script's subject ops resolve.
+    fn run_interaction_trigger(&mut self, pid: usize, t: u16, type_id: i32, target: player::InteractTarget) {
+        use crate::script::state::Pointer;
+        let script = self.scripts.as_ref().and_then(|s| s.get_by_trigger(t, type_id, -1));
+        let Some(script) = script else { return };
+        let mut state = ScriptState::new(script, &[]);
+        state.active_player = Some(pid);
+        state.pointer_add(Pointer::ActivePlayer);
+        state.pointer_add(Pointer::ProtectedActivePlayer);
+        match target {
+            player::InteractTarget::Npc(nid) => {
+                state.active_npc = Some(nid);
+                state.pointer_add(Pointer::ActiveNpc);
+            }
+            player::InteractTarget::Player(p2) => {
+                state.active_player2 = Some(p2);
+                state.pointer_add(Pointer::ActivePlayer2);
+            }
+            player::InteractTarget::Loc { x, z, level, id, shape, angle } => {
+                state.active_loc = Some((x, z, level, id, shape, angle));
+                state.pointer_add(Pointer::ActiveLoc);
+            }
+            player::InteractTarget::Obj { x, z, level, id } => {
+                state.active_obj = Some((x, z, level, id));
+                state.pointer_add(Pointer::ActiveObj);
+            }
+        }
+        self.dispatch(state);
+    }
+
+    /// Engine-TS defaultOp: the no-handler fallback. OSRS shows a generic line.
+    fn default_op(&mut self, pid: usize) {
+        if let Some(p) = self.players[pid].as_mut() {
+            p.write(msg::message_game("Nothing interesting happens."));
+            p.interaction = None;
+            p.entity.clear_interaction();
+        }
+    }
+
+    /// Engine-TS tryInteract: fire the op trigger when in operable distance, or
+    /// the ap trigger when in approach distance, managing the
+    /// next-target / aprange-recall lifecycle. Returns whether an interaction
+    /// ran (a fired ap that only called p_aprange counts as "not interacted").
+    fn try_interact(&mut self, pid: usize, allow_op_scenery: bool) -> bool {
+        let Some(it) = self.players[pid].as_ref().and_then(|p| p.interaction) else {
+            return false;
+        };
+        let type_id = self.interaction_type_id(&it);
+        let op_t = (it.op + 7) as u16;
+        let ap_t = it.op as u16;
+        let has_op = self.scripts.as_ref().and_then(|s| s.get_by_trigger(op_t, type_id, -1)).is_some();
+        let has_ap = self.scripts.as_ref().and_then(|s| s.get_by_trigger(ap_t, type_id, -1)).is_some();
+        let pathing = matches!(it.target, player::InteractTarget::Npc(_) | player::InteractTarget::Player(_));
+        let ap_range = self.players[pid].as_ref().map_or(10, |p| p.ap_range);
+
+        // 1. Op trigger, in operable distance.
+        if has_op && (pathing || allow_op_scenery) && self.in_operable_distance(pid, it.target) {
+            if let Some(p) = self.players[pid].as_mut() {
+                p.interaction = None;
+                p.entity.waypoints.clear();
+            }
+            self.run_interaction_trigger(pid, op_t, type_id, it.target);
+            // The script may have set a new interaction (chained p_op*); else
+            // it stays cleared. Release facing when nothing replaced it.
+            if self.players[pid].as_ref().is_some_and(|p| p.interaction.is_none()) {
+                if let Some(p) = self.players[pid].as_mut() {
+                    p.entity.clear_interaction();
+                }
+            }
+            return true;
+        }
+
+        // 2. Ap trigger, in approach distance.
+        if has_ap && self.in_approach_distance(pid, it.target, ap_range) {
+            if let Some(p) = self.players[pid].as_mut() {
+                p.ap_range_called = false;
+                p.interaction = None;
+            }
+            self.run_interaction_trigger(pid, ap_t, type_id, it.target);
+            let new_int = self.players[pid].as_ref().and_then(|p| p.interaction);
+            let ap_called = self.players[pid].as_ref().is_some_and(|p| p.ap_range_called);
+            if new_int.is_some() {
+                if let Some(p) = self.players[pid].as_mut() {
+                    p.entity.waypoints.clear();
+                }
+                return true;
+            } else if ap_called {
+                // p_aprange asked to re-approach; restore the target and keep walking.
+                if let Some(p) = self.players[pid].as_mut() {
+                    p.interaction = Some(it);
+                }
+                return false;
+            }
+            if let Some(p) = self.players[pid].as_mut() {
+                p.entity.clear_interaction();
+            }
+            return true;
+        }
+
+        // 3. Default ap (in range, no ap script): stop approaching.
+        if self.in_approach_distance(pid, it.target, ap_range) {
+            if let Some(p) = self.players[pid].as_mut() {
+                p.ap_range = -1;
+            }
+            return false;
+        }
+
+        // 4. Default op (in operable distance, no op script).
+        if (pathing || allow_op_scenery) && self.in_operable_distance(pid, it.target) {
+            self.default_op(pid);
+            return true;
+        }
+        false
+    }
+
+    /// Recompute the walk path toward the interaction target. Re-paths every
+    /// tick for moving (pathing) targets; for static loc/obj targets it only
+    /// paths when the player has no waypoints. Falls back to a direct waypoint
+    /// when no collision is loaded.
+    fn path_to_target(&mut self, pid: usize) {
+        let Some(it) = self.players[pid].as_ref().and_then(|p| p.interaction) else {
+            return;
+        };
+        let Some((bx, bz, blevel, _, _, _)) = self.interact_footprint(it.target) else {
+            return;
+        };
+        let Some((px, pz, plevel, has_wp)) = self.players[pid].as_ref().map(|p| {
+            (p.entity.x, p.entity.z, p.entity.level, !p.entity.waypoints.is_empty())
+        }) else {
+            return;
+        };
+        if plevel != blevel {
+            return;
+        }
+        let pathing = matches!(it.target, player::InteractTarget::Npc(_) | player::InteractTarget::Player(_));
+        if has_wp && !pathing {
+            return; // static target: keep the existing route
+        }
+        let path = self.collision.find_path(blevel, px, pz, bx, bz, true);
+        if let Some(p) = self.players[pid].as_mut() {
+            if !path.is_empty() {
+                p.entity.queue_waypoints(&path);
+            } else if p.entity.waypoints.is_empty() && (px, pz) != (bx, bz) {
+                p.entity.queue_waypoints(&[(bx, bz)]);
+            }
+        }
+    }
+
+    /// Engine-TS processInteraction: validate, try to interact before & after
+    /// movement, walking toward the target in between. Drives `update_movement`
+    /// for interacting players (the no-interaction case is handled inline in the
+    /// cycle).
+    fn process_player_interaction(&mut self, pid: usize) {
+        if !self.interaction_valid(pid) {
+            if let Some(p) = self.players[pid].as_mut() {
+                p.interaction = None;
+                p.entity.clear_interaction();
+                p.unset_map_flag();
+                p.update_movement();
+            }
+            return;
+        }
+        let mut interacted = self.try_interact(pid, false);
+        if !interacted {
+            self.path_to_target(pid);
+        }
+        if let Some(p) = self.players[pid].as_mut() {
+            p.update_movement();
+        }
+        if !interacted && self.players[pid].as_ref().is_some_and(|p| p.interaction.is_some()) {
+            let steps0 = self.players[pid].as_ref().map_or(true, |p| p.entity.steps_taken == 0);
+            interacted = self.try_interact(pid, steps0);
+            if !interacted {
+                let stuck = self
+                    .players[pid]
+                    .as_ref()
+                    .map_or(true, |p| p.entity.waypoints.is_empty() && p.entity.steps_taken == 0);
+                if stuck {
+                    if let Some(p) = self.players[pid].as_mut() {
+                        p.write(msg::message_game("I can't reach that!"));
+                        p.interaction = None;
+                        p.entity.clear_interaction();
+                    }
+                }
+            }
+        }
+    }
+
+    /// NPC AI turn — 1:1 with Engine-TS `processNpcModes`. OWNS movement (each
+    /// mode steps `updateMovement` at the faithful point, so aiMode can interact
+    /// before AND after the step in one tick — exact tick parity). Called once
+    /// per active, non-delayed npc; the cycle does NOT step movement separately.
+    fn process_npc_ai(&mut self, nid: usize) {
+        // Fresh step count for the turn (non-moving modes report 0 steps).
+        if let Some(n) = self.npcs[nid].as_mut() {
+            n.entity.steps_taken = 0;
+        }
+        let mode = match self.npcs[nid].as_ref() {
+            Some(n) => n.mode,
+            None => return,
+        };
+        let has_target = self.npcs[nid].as_ref().is_some_and(|n| n.target.is_some());
+        if !has_target {
+            // NONE / PATROL just move; WANDER does randomWalk first.
+            if mode == 1 {
+                self.process_npc_wander(nid);
+            } else {
+                self.npc_move(nid);
+            }
+            return;
+        }
+        // Engine-TS validateTarget — invalid (gone / wrong level / out of
+        // maxrange) holds still this tick and reverts to the default mode.
+        if !self.npc_target_valid(nid) {
+            self.npc_reset_defaults(nid);
+            return;
+        }
+        match mode {
+            3 => self.npc_escape(nid),
+            4 => {
+                // PLAYERFOLLOW
+                self.npc_path_to_target(nid);
+                self.npc_move(nid);
+            }
+            5 => {} // PLAYERFACE: face only (set at NPC_SETMODE)
+            6 => {
+                // PLAYERFACECLOSE
+                if self.npc_target_dist(nid) > 1 {
+                    self.npc_reset_defaults(nid);
+                }
+            }
+            _ => self.npc_aimode(nid),
+        }
+    }
+
+    /// updateMovement for an npc; returns whether it stepped.
+    fn npc_move(&mut self, nid: usize) -> bool {
+        self.npcs[nid].as_mut().is_some_and(|n| n.update_movement())
+    }
+
+    /// Engine-TS `Npc.aiMode`: interact before moving (incl. op scenery), else
+    /// path toward the target and step; abandon if givechase=no after moving;
+    /// then interact again after moving — all this tick.
+    fn npc_aimode(&mut self, nid: usize) {
+        if let Some(n) = self.npcs[nid].as_mut() {
+            n.wander_counter = 0;
+        }
+        if self.npc_try_interact(nid, true) {
+            return;
+        }
+        self.npc_path_to_target(nid);
+        let moved = self.npc_move(nid);
+        if moved && !NPC_GIVECHASE {
+            self.npc_reset_defaults(nid);
+            return;
+        }
+        if self.npcs[nid].as_ref().is_some_and(|n| n.target.is_some()) {
+            self.npc_try_interact(nid, false);
+        }
+    }
+
+    /// Engine-TS `Npc.tryInteract`: fire the npc's [ai_op*/ai_ap*] trigger when
+    /// in range (op = operable/adjacent + scenery gate; ap = within attackrange +
+    /// LOS, not on top of the target). Returns whether the npc engaged (which
+    /// stops it moving), running the script when content defines one.
+    fn npc_try_interact(&mut self, nid: usize, allow_op_scenery: bool) -> bool {
+        let (target, mode) = match self.npcs[nid].as_ref() {
+            Some(n) => match n.target {
+                Some(t) => (t, n.mode),
+                None => return false,
+            },
+            None => return false,
+        };
+        let Some((trig, is_op)) = npc_mode_trigger(mode) else { return false };
+        let Some((tx, tz, tlevel, tw, tl, _)) = self.interact_footprint(target) else {
+            return false;
+        };
+        let Some((nx, nz, nlevel)) =
+            self.npcs[nid].as_ref().map(|n| (n.entity.x, n.entity.z, n.entity.level))
+        else {
+            return false;
+        };
+        if nlevel != tlevel {
+            return false;
+        }
+        let dx = axis_dist(nx, tx, tw);
+        let dz = axis_dist(nz, tz, tl);
+        let pathing =
+            matches!(target, player::InteractTarget::Player(_) | player::InteractTarget::Npc(_));
+        let in_range = if is_op {
+            dx + dz <= 1 && (pathing || allow_op_scenery)
+        } else {
+            dx.max(dz) <= NPC_ATTACKRANGE
+                && !(dx == 0 && dz == 0)
+                && self.collision.line_of_sight(nlevel, nx, nz, tx, tz)
+        };
+        if !in_range {
+            return false;
+        }
+        let npc_type = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
+        let has = self.scripts.as_ref().and_then(|s| s.get_by_trigger(trig, npc_type, -1)).is_some();
+        if has {
+            if let Some(n) = self.npcs[nid].as_mut() {
+                n.entity.waypoints.clear();
+            }
+            self.run_npc_trigger(nid, trig, target);
+        }
+        true
+    }
+
+    /// Queue the walk toward the npc's target (Engine-TS `pathToTarget` →
+    /// findPathToEntity, move-near): stop once orthogonally adjacent to the
+    /// target footprint rather than stepping onto it.
+    fn npc_path_to_target(&mut self, nid: usize) {
+        let Some(target) = self.npcs[nid].as_ref().and_then(|n| n.target) else { return };
+        let Some((tx, tz, tlevel, tw, tl, _)) = self.interact_footprint(target) else { return };
+        let Some((nx, nz, nlevel)) =
+            self.npcs[nid].as_ref().map(|n| (n.entity.x, n.entity.z, n.entity.level))
+        else {
+            return;
+        };
+        if nlevel != tlevel {
+            return;
+        }
+        // Already adjacent (reached) → stop.
+        if axis_dist(nx, tx, tw) + axis_dist(nz, tz, tl) <= 1 {
+            if let Some(n) = self.npcs[nid].as_mut() {
+                n.entity.waypoints.clear();
+            }
+            return;
+        }
+        let path = self.collision.find_path(tlevel, nx, nz, tx, tz, true);
+        if let Some(n) = self.npcs[nid].as_mut() {
+            if !path.is_empty() {
+                n.entity.queue_waypoints(&path);
+            } else {
+                n.entity.queue_waypoints(&[(tx, tz)]);
+            }
+        }
+    }
+
+    /// Engine-TS `Npc.playerEscapeMode`: step away from the target, then move.
+    /// (The maxrange axis-fallback + wall-flag nuance is simplified; the
+    /// one-step-per-tick cadence is faithful.)
+    fn npc_escape(&mut self, nid: usize) {
+        let Some(target) = self.npcs[nid].as_ref().and_then(|n| n.target) else { return };
+        let Some((tx, tz, _, _, _, _)) = self.interact_footprint(target) else { return };
+        let Some((nx, nz)) = self.npcs[nid].as_ref().map(|n| (n.entity.x, n.entity.z)) else { return };
+        let sx = (nx - tx).signum();
+        let sz = (nz - tz).signum();
+        let dest = (nx + if sx == 0 { 1 } else { sx }, nz + if sz == 0 { 1 } else { sz });
+        if let Some(n) = self.npcs[nid].as_mut() {
+            n.entity.queue_waypoints(&[dest]);
+        }
+        self.npc_move(nid);
+    }
+
+    /// Chebyshev distance from the npc to its target footprint (0 if no target).
+    fn npc_target_dist(&self, nid: usize) -> i32 {
+        let Some(n) = self.npcs[nid].as_ref() else { return 0 };
+        let Some(target) = n.target else { return 0 };
+        let Some((tx, tz, _, tw, tl, _)) = self.interact_footprint(target) else { return 0 };
+        axis_dist(n.entity.x, tx, tw).max(axis_dist(n.entity.z, tz, tl))
+    }
+
+    /// Engine-TS `Npc.validateTarget`: target exists, same level, within maxrange.
+    fn npc_target_valid(&self, nid: usize) -> bool {
+        let Some(n) = self.npcs[nid].as_ref() else { return false };
+        let Some(target) = n.target else { return false };
+        let Some((_, _, tlevel, _, _, _)) = self.interact_footprint(target) else { return false };
+        if n.entity.level != tlevel {
+            return false;
+        }
+        self.npc_target_within_maxrange(nid)
+    }
+
+    /// Engine-TS `Npc.resetDefaults`: clear the interaction and return to the
+    /// npc's default mode (WANDER).
+    fn npc_reset_defaults(&mut self, nid: usize) {
+        if let Some(n) = self.npcs[nid].as_mut() {
+            n.target = None;
+            n.mode = NPC_DEFAULTMODE;
+            n.entity.clear_interaction();
+            n.entity.waypoints.clear();
+        }
+    }
+
+    /// Engine-TS `Npc.wanderMode` + `randomWalk`: each tick a 1/8 chance to head
+    /// to a random tile within `wanderrange` of the spawn (`dst = start + round(
+    /// rand*2*range - range)`, queued only if it differs from the current tile);
+    /// after 500 ticks away from spawn it teleports home. Default wanderrange /
+    /// moverestrict=NORMAL (server npc config absent from our 2007 cache).
+    fn process_npc_wander(&mut self, nid: usize) {
+        let Some((sx, sz, slevel, nx, nz, nlevel)) = self.npcs[nid].as_ref().map(|n| {
+            (n.spawn_x, n.spawn_z, n.spawn_level, n.entity.x, n.entity.z, n.entity.level)
+        }) else {
+            return;
+        };
+        if self.next_rand_unit() < 0.125 {
+            let range = NPC_WANDERRANGE as f64;
+            let dx = (self.next_rand_unit() * (range * 2.0) - range).round() as i32;
+            let dz = (self.next_rand_unit() * (range * 2.0) - range).round() as i32;
+            let (rx, rz) = (sx + dx, sz + dz);
+            if (rx, rz) != (nx, nz) {
+                if let Some(n) = self.npcs[nid].as_mut() {
+                    n.entity.queue_waypoints(&[(rx, rz)]);
+                }
+            }
+        }
+        self.npc_move(nid);
+        let on_spawn = (nx, nz, nlevel) == (sx, sz, slevel);
+        if let Some(n) = self.npcs[nid].as_mut() {
+            n.wander_counter += 1;
+            if n.wander_counter >= 500 {
+                if !on_spawn {
+                    n.entity.teleport(sx, sz, slevel, true);
+                }
+                n.wander_counter = 0;
+            }
+        }
+    }
+
+    /// Engine-TS `Npc.targetWithinMaxRange` (used by NPC_INRANGE + validateTarget):
+    /// PLAYERFOLLOW is always in range; op modes allow `maxrange+1` (no corner);
+    /// ap modes `maxrange+attackrange`; other targeted modes `maxrange+1` — all
+    /// measured from the npc's spawn tile. Uses Engine-TS default maxrange/
+    /// attackrange (server npc config not in our 2007 cache).
+    pub fn npc_target_within_maxrange(&self, nid: usize) -> bool {
+        let Some(n) = self.npcs[nid].as_ref() else { return false };
+        let Some(target) = n.target else { return true };
+        if n.mode == 4 {
+            return true; // PLAYERFOLLOW
+        }
+        let Some((tx, tz, tlevel, _, _, _)) = self.interact_footprint(target) else {
+            return false;
+        };
+        if n.entity.level != tlevel {
+            return false;
+        }
+        let (ddx, ddz) = ((tx - n.spawn_x).abs(), (tz - n.spawn_z).abs());
+        match npc_mode_trigger(n.mode) {
+            Some((_, true)) => {
+                // op trigger
+                ddx.max(ddz) <= NPC_MAXRANGE + 1
+                    && !(ddx == NPC_MAXRANGE + 1 && ddz == NPC_MAXRANGE + 1)
+            }
+            Some((_, false)) => ddx.max(ddz) <= NPC_MAXRANGE + NPC_ATTACKRANGE,
+            None => ddx.max(ddz) <= NPC_MAXRANGE + 1,
+        }
+    }
+
+    /// Fire an npc AI interaction trigger ([ai_op*/ai_ap*, npctype]) with the
+    /// active npc set to `nid` and the active subject set from `target` (the
+    /// player/loc/obj/npc the npc is acting on).
+    fn run_npc_trigger(&mut self, nid: usize, t: u16, target: player::InteractTarget) {
+        use crate::script::state::Pointer;
+        let type_id = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
+        let script = self.scripts.as_ref().and_then(|s| s.get_by_trigger(t, type_id, -1));
+        let Some(script) = script else { return };
+        let mut state = ScriptState::new(script, &[]);
+        state.active_npc = Some(nid);
+        state.pointer_add(Pointer::ActiveNpc);
+        match target {
+            player::InteractTarget::Player(pid) => {
+                state.active_player = Some(pid);
+                state.pointer_add(Pointer::ActivePlayer);
+                state.pointer_add(Pointer::ProtectedActivePlayer);
+            }
+            player::InteractTarget::Npc(t2) => {
+                state.active_npc2 = Some(t2);
+                state.pointer_add(Pointer::ActiveNpc2);
+            }
+            player::InteractTarget::Loc { x, z, level, id, shape, angle } => {
+                state.active_loc = Some((x, z, level, id, shape, angle));
+                state.pointer_add(Pointer::ActiveLoc);
+            }
+            player::InteractTarget::Obj { x, z, level, id } => {
+                state.active_obj = Some((x, z, level, id));
+                state.pointer_add(Pointer::ActiveObj);
+            }
+        }
+        self.dispatch(state);
+    }
+
+    /// Load world npc spawns from a text list — one `type_id x z level` per line
+    /// (`#` comments + blank lines skipped). The 2007 cache carries no Jagex
+    /// npc-spawn file, so this is OS1's own format for placing npcs; spawned npcs
+    /// take the Engine-TS default mode (WANDER) and idle near their spawn.
+    /// Missing file is a silent no-op.
+    pub fn load_npc_spawns(&mut self, path: &std::path::Path) {
+        let Ok(text) = std::fs::read_to_string(path) else { return };
+        let mut count = 0;
+        for line in text.lines() {
+            let line = line.split('#').next().unwrap_or("").trim();
+            if line.is_empty() {
+                continue;
+            }
+            let f: Vec<&str> = line.split_whitespace().collect();
+            if f.len() < 4 {
+                continue;
+            }
+            let (Ok(id), Ok(x), Ok(z), Ok(level)) =
+                (f[0].parse(), f[1].parse(), f[2].parse(), f[3].parse())
+            else {
+                continue;
+            };
+            if let Some(nid) = self.add_npc(id, x, z, level) {
+                if let Some(n) = self.npcs[nid].as_mut() {
+                    n.mode = NPC_DEFAULTMODE;
+                }
+                count += 1;
+            }
+        }
+        eprintln!("[engine] loaded {count} npc spawn(s)");
+    }
+
+    /// Load NPC spawns from every `.jm2` map under `maps_dir` (the `==== NPC ====`
+    /// section). Spawn coords there are region-local (0..63); the region origin
+    /// comes from the `{rx}_{ry}.jm2` filename, so world = (rx*64+x, ry*64+z).
+    pub fn load_npc_spawns_from_maps(&mut self, maps_dir: &std::path::Path) {
+        let Ok(entries) = std::fs::read_dir(maps_dir) else {
+            eprintln!("[engine] no maps dir {maps_dir:?} for npc spawns");
+            return;
+        };
+        let mut count = 0;
+        let mut files: Vec<std::path::PathBuf> = entries
+            .flatten()
+            .map(|e| e.path())
+            .filter(|p| p.extension().and_then(|e| e.to_str()) == Some("jm2"))
+            .collect();
+        files.sort();
+        for path in files {
+            let stem = path.file_stem().and_then(|s| s.to_str()).unwrap_or("");
+            let mut it = stem.split('_');
+            let (Some(rx), Some(ry)) = (it.next(), it.next()) else { continue };
+            let (Ok(rx), Ok(ry)) = (rx.parse::<i32>(), ry.parse::<i32>()) else { continue };
+            let Ok(text) = std::fs::read_to_string(&path) else { continue };
+            let Ok(region) = cache::maps::text::RawRegion::from_text(&text) else { continue };
+            for n in &region.npcs {
+                let (wx, wz) = (rx * 64 + n.x as i32, ry * 64 + n.z as i32);
+                if let Some(nid) = self.add_npc(n.id, wx, wz, n.level as i32) {
+                    if let Some(npc) = self.npcs[nid].as_mut() {
+                        npc.mode = NPC_DEFAULTMODE;
+                    }
+                    count += 1;
+                }
+            }
+        }
+        eprintln!("[engine] loaded {count} npc spawn(s) from {} maps", maps_dir.display());
     }
 
     /// Next uniform `f64` in `[0, 1)` from the engine PRNG (xorshift64*), the
@@ -951,7 +2083,37 @@ impl World {
         let npc = Npc::new(nid, type_id, x, z, level);
         self.zones.enter_npc(npc.entity.zone_index, nid);
         self.npcs[nid] = Some(npc);
+        // Engine-TS addNpc queues the [ai_spawn] trigger.
+        self.queue_npc_event(nid, type_id, trigger::AI_SPAWN);
         Some(nid)
+    }
+
+    /// Queue an npc spawn/despawn trigger if content defines one (Engine-TS only
+    /// enqueues when the script exists).
+    fn queue_npc_event(&mut self, nid: usize, type_id: i32, trig: u16) {
+        if self.scripts.as_ref().and_then(|s| s.get_by_trigger(trig, type_id, -1)).is_some() {
+            self.npc_events.push((nid, trig));
+        }
+    }
+
+    /// Run the queued npc spawn/despawn triggers (Engine-TS `processNpcEventQueue`,
+    /// at the head of the cycle). Each runs with its npc active.
+    fn process_npc_events(&mut self) {
+        if self.npc_events.is_empty() {
+            return;
+        }
+        for (nid, trig) in std::mem::take(&mut self.npc_events) {
+            let type_id = match self.npcs[nid].as_ref() {
+                Some(n) => n.type_id,
+                None => continue,
+            };
+            let script = self.scripts.as_ref().and_then(|s| s.get_by_trigger(trig, type_id, -1));
+            let Some(script) = script else { continue };
+            let mut state = ScriptState::new(script, &[]);
+            state.active_npc = Some(nid);
+            state.pointer_add(crate::script::state::Pointer::ActiveNpc);
+            self.dispatch(state);
+        }
     }
 
     pub fn remove_npc(&mut self, nid: usize) {
@@ -1192,6 +2354,37 @@ impl World {
     pub fn add_ground_obj(&mut self, id: i32, count: i32, x: i32, z: i32, level: i32,
                           receiver: i32, despawn: i32) {
         self.spawn_obj(id, count, x, z, level, receiver, despawn);
+    }
+
+    /// Queue a ground obj to spawn after `delay` ticks — INV_DROPITEM_DELAYED.
+    pub fn add_ground_obj_delayed(&mut self, id: i32, count: i32, x: i32, z: i32, level: i32,
+                                  receiver: i32, despawn: i32, delay: i32) {
+        if delay <= 0 {
+            self.spawn_obj(id, count, x, z, level, receiver, despawn);
+        } else {
+            self.delayed_objs.push(DelayedObj { id, count, x, z, level, receiver, despawn, delay });
+        }
+    }
+
+    /// Tick the delayed-obj queue: count each entry's delay down and spawn the
+    /// ones that come due. Run once per cycle alongside the zone-obj tick.
+    fn process_delayed_objs(&mut self) {
+        if self.delayed_objs.is_empty() {
+            return;
+        }
+        let mut due: Vec<DelayedObj> = Vec::new();
+        self.delayed_objs.retain_mut(|d| {
+            d.delay -= 1;
+            if d.delay <= 0 {
+                due.push(*d);
+                false
+            } else {
+                true
+            }
+        });
+        for d in due {
+            self.spawn_obj(d.id, d.count, d.x, d.z, d.level, d.receiver, d.despawn);
+        }
     }
 
     fn spawn_obj(&mut self, id: i32, count: i32, x: i32, z: i32, level: i32, receiver: i32,
@@ -1543,7 +2736,7 @@ impl World {
                 // the one-per-tick latch — 1:1 with Engine-TS MessagePublicHandler.
                 // (The WordEnc profanity filter awaits the cache wordenc data; the
                 // already-packed bytes are re-broadcast verbatim.)
-                if let Some(p) = self.players[pid].as_mut() {
+                let logged = if let Some(p) = self.players[pid].as_mut() {
                     if p.social_protect
                         || !(0..=11).contains(&colour)
                         || !(0..=5).contains(&effect)
@@ -1556,9 +2749,21 @@ impl World {
                     // chatRights = min(staffModLevel, 2) — the mod/admin crown shown
                     // beside the message (1:1 with Engine-TS MessagePublicHandler).
                     p.chat_rights = p.staff_mod_level.min(2);
-                    p.chat_message = message;
+                    p.chat_message = message.clone();
                     p.entity.masks |= crate::entity::player::MASK_PUBLIC_CHAT;
                     p.social_protect = true;
+                    Some(p.username.clone())
+                } else {
+                    None
+                };
+                // Mirror the line into the observer chat log (control panel).
+                if let Some(name) = logged {
+                    let seq = self.chat_seq;
+                    self.chat_seq += 1;
+                    self.chat_log.push_back(ChatLine { seq, tick: self.tick, pid, name, message });
+                    while self.chat_log.len() > 256 {
+                        self.chat_log.pop_front();
+                    }
                 }
             }
             ClientMessage::CloseModal => {
@@ -1671,7 +2876,10 @@ impl World {
     /// One 600ms world tick. The network layer feeds decoded client
     /// messages in via [`World::handle_message`] before calling this,
     /// and drains every player's `out` queue after.
-    pub fn cycle(&mut self) {
+    pub fn cycle(&mut self) -> CycleStats {
+        crate::script::runner::SCRIPT_NS.store(0, std::sync::atomic::Ordering::Relaxed);
+        let mut stats = CycleStats::default();
+        let t_world = Instant::now();
         // Client-input head (Engine-TS processClientsIn): every AFK_EVENTRATE
         // ticks, re-roll each player's random-event flag — the odds double once
         // they've gone "afk" in one spot. Content reads the flag via AFK_EVENT.
@@ -1693,10 +2901,17 @@ impl World {
         // head of the cycle, before client input / npcs / players).
         self.process_world_queue();
 
+        // Delayed ground-obj spawns (INV_DROPITEM_DELAYED) come due first.
+        self.process_delayed_objs();
         // Zone lifecycle: ground-item reveal/despawn + timed loc reverts.
         self.process_zone_objs();
         self.process_zone_locs();
+        stats.world = t_world.elapsed();
 
+        let t_npc = Instant::now();
+        // Spawn/despawn triggers queued last tick run first (Engine-TS
+        // processNpcEventQueue, ahead of npc processing).
+        self.process_npc_events();
         // Resume any NPC_DELAY-suspended AI scripts whose lock elapsed (the head
         // of Engine-TS Npc.turn), then fire due AI timers — both before npc
         // movement so a resumed/fired script can set up the npc's actions. (The
@@ -1712,20 +2927,41 @@ impl World {
         let npc_tick = self.tick as i32;
         let mut npc_moves: Vec<(usize, i32, i32)> = Vec::new();
         for nid in 0..self.npcs.len() {
-            let Some(npc) = self.npcs[nid].as_mut() else { continue; };
-            npc.process_lifecycle();
-            npc.process_regen();
-            // Movement is gated exactly as Engine-TS `processMovementInteraction`
-            // (early-returns on `delayed || !isActive`): a NPC_DELAY-locked or
-            // inactive npc holds still even with waypoints queued. Regen/timers/
-            // queues above still run while delayed.
-            if npc.active && !npc.is_delayed(npc_tick) {
-                npc.update_movement();
-                // Stamp the arrival tick on a step (Engine-TS Npc.turn sets
-                // `lastMovement = currentTick + 1` for NPC_ARRIVEDELAY).
-                if npc.entity.steps_taken > 0 {
-                    npc.entity.last_movement = npc_tick + 1;
+            if self.npcs[nid].is_none() {
+                continue;
+            }
+            let ev = match self.npcs[nid].as_mut() {
+                Some(npc) => {
+                    let e = npc.process_lifecycle();
+                    npc.process_regen();
+                    e
                 }
+                None => continue,
+            };
+            // Queue the spawn/despawn trigger for a respawned/despawned npc.
+            match ev {
+                crate::entity::npc::LifecycleEvent::Respawned => {
+                    let t = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
+                    self.queue_npc_event(nid, t, trigger::AI_SPAWN);
+                }
+                crate::entity::npc::LifecycleEvent::Despawned => {
+                    let t = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
+                    self.queue_npc_event(nid, t, trigger::AI_DESPAWN);
+                }
+                crate::entity::npc::LifecycleEvent::None => {}
+            }
+            // AI turn (Engine-TS Npc.turn → processNpcModes) OWNS movement: a
+            // NPC_DELAY-locked or inactive npc holds still (regen/timers/queues
+            // above still run). Gated exactly like Engine-TS.
+            let do_turn = self.npcs[nid].as_ref().is_some_and(|n| n.active && !n.is_delayed(npc_tick));
+            if do_turn {
+                self.process_npc_ai(nid);
+            }
+            let Some(npc) = self.npcs[nid].as_mut() else { continue; };
+            // Stamp the arrival tick on a step (Engine-TS Npc.turn sets
+            // `lastMovement = currentTick + 1` for NPC_ARRIVEDELAY).
+            if do_turn && npc.entity.steps_taken > 0 {
+                npc.entity.last_movement = npc_tick + 1;
             }
             npc.entity.validate_distance_walked();
             let new_idx = crate::zone::zone_index(npc.entity.x, npc.entity.z, npc.entity.level);
@@ -1737,7 +2973,9 @@ impl World {
         for (nid, from, to) in npc_moves {
             self.zones.move_npc(nid, from, to);
         }
+        stats.npcs = t_npc.elapsed();
 
+        let t_player = Instant::now();
         // Resume P_DELAY-suspended scripts whose lock elapsed, then fire the
         // delayed engine-queue scripts — both before movement, matching
         // Engine-TS processPlayers.
@@ -1757,9 +2995,18 @@ impl World {
         let mut rebuilt: Vec<usize> = Vec::new();
         let tick = self.tick as i32;
         for pid in 0..MAX_PLAYERS {
+            if self.players[pid].is_none() {
+                continue;
+            }
+            // Interaction-driven players walk-to-and-fire (Engine-TS
+            // processInteraction wraps updateMovement); others just step their
+            // queued waypoints.
+            if self.players[pid].as_ref().is_some_and(|p| p.interaction.is_some()) {
+                self.process_player_interaction(pid);
+            } else if let Some(player) = self.players[pid].as_mut() {
+                player.update_movement();
+            }
             let Some(player) = self.players[pid].as_mut() else { continue; };
-            // Pick walk/run from the run + temp-run flags, then step.
-            player.update_movement();
             // Stamp the arrival tick when a step was taken (Engine-TS updateMovement
             // sets `lastMovement = currentTick + 1` for P_ARRIVEDELAY).
             if player.entity.steps_taken > 0 {
@@ -1799,8 +3046,21 @@ impl World {
                 let (ox, oz) = protocol::server::build_area_origin(x, z);
                 player.origin_x = ox;
                 player.origin_z = oz;
-                player.write(msg::rebuild_normal(x, z, |_, _| [0; 4]));
+                // Real per-mapsquare XTEA keys, so the client can decrypt the new
+                // region's loc data (zero keys here = "Invalid GZIP header" crash).
+                let keys = &self.map_keys;
+                let rebuild = msg::rebuild_normal(x, z, |mx, mz| {
+                    keys.get(mx as u32, mz as u32).copied().unwrap_or([0; 4])
+                });
+                player.write(rebuild);
                 rebuilt.push(pid);
+            }
+        }
+        // Flush inventory→component transmissions (INV_TRANSMIT listeners) for
+        // every player after movement/script effects have settled this tick.
+        for pid in 0..MAX_PLAYERS {
+            if self.players[pid].is_some() {
+                self.send_inv_updates(pid);
             }
         }
         for (pid, from, to) in player_moves {
@@ -1816,7 +3076,9 @@ impl World {
         // Grant any pending logout requests — 1:1 with Engine-TS processLogouts,
         // run after the player phase and before info is built.
         self.process_logouts();
+        stats.players = t_player.elapsed();
 
+        let t_info = Instant::now();
         // Re-face interaction targets that moved this tick — 1:1 with Engine-TS
         // `reorient` (run in processInfo, before the info packets) so a newly
         // observing client sees each entity turned toward its (moving) target.
@@ -1849,6 +3111,10 @@ impl World {
         }
 
         self.tick += 1;
+        stats.info = t_info.elapsed();
+        stats.scripts =
+            Duration::from_nanos(crate::script::runner::SCRIPT_NS.load(std::sync::atomic::Ordering::Relaxed));
+        stats
     }
 }
 
@@ -2053,6 +3319,203 @@ mod reorient_tests {
         world.cycle(); // queue pass runs the advancestat script
         assert!(world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 211),
                 "advancestat script ran after the level-up");
+    }
+
+    #[test]
+    fn opnpc_interaction_fires_adjacent_and_walks_when_far() {
+        use crate::entity::player::InteractTarget;
+        use crate::script::provider::ScriptProvider;
+        let mut world = World::new();
+        let mut provider = ScriptProvider::test_empty();
+        // [opnpc1, type 1] plays midi 77 (packet 211) — observable that it ran.
+        provider.test_insert_specific(trigger::OPNPC1, 1, midi_script(77));
+        world.scripts = Some(provider);
+
+        // Adjacent target: the op trigger fires on the next cycle and the
+        // interaction is then cleared.
+        let pid = world.add_player("a".into(), 3200, 3200, 0).unwrap();
+        let nid = world.add_npc(1, 3201, 3200, 0).unwrap();
+        world.set_interaction(pid, InteractTarget::Npc(nid), trigger::APNPC1 as i32, -1);
+        world.players[pid].as_mut().unwrap().out.clear();
+        world.cycle();
+        assert!(
+            world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 211),
+            "adjacent op trigger fires"
+        );
+        assert!(world.players[pid].as_ref().unwrap().interaction.is_none(), "interaction cleared after firing");
+
+        // Far target: the player walks toward the npc over several cycles, then
+        // fires the op trigger.
+        let p2 = world.add_player("b".into(), 3200, 3210, 0).unwrap();
+        let n2 = world.add_npc(1, 3205, 3210, 0).unwrap();
+        world.set_interaction(p2, InteractTarget::Npc(n2), trigger::APNPC1 as i32, -1);
+        let mut fired = false;
+        for _ in 0..8 {
+            world.players[p2].as_mut().unwrap().out.clear();
+            world.cycle();
+            if world.players[p2].as_ref().unwrap().out.iter().any(|m| m.opcode == 211) {
+                fired = true;
+                break;
+            }
+        }
+        assert!(fired, "player walked to the npc and fired the op trigger");
+    }
+
+    #[test]
+    fn npc_setmode_playerfollow_chases_into_range() {
+        use crate::entity::player::InteractTarget;
+        use crate::script::file::ScriptInfo;
+        use crate::script::opcode as op;
+        use crate::script::state::Execution;
+        let mut world = World::new();
+        let pid = world.add_player("p".into(), 3200, 3200, 0).unwrap();
+        let nid = world.add_npc(1, 3205, 3200, 0).unwrap();
+        // NPC_SETMODE PLAYERFOLLOW (4) targeting the active player.
+        let setmode = Arc::new(ScriptFile {
+            id: 0,
+            info: ScriptInfo {
+                script_name: "t".into(), source_file_path: "t".into(), lookup_key: -1,
+                parameter_types: vec![], pcs: vec![], lines: vec![],
+            },
+            int_local_count: 0, string_local_count: 0, int_arg_count: 0, string_arg_count: 0,
+            switch_tables: vec![],
+            opcodes: vec![op::PUSH_CONSTANT_INT, op::NPC_SETMODE, op::RETURN],
+            int_operands: vec![4, 0, 0],
+            string_operands: vec![None; 3],
+        });
+        let mut s = ScriptState::new(setmode, &[]);
+        s.active_npc = Some(nid);
+        s.active_player = Some(pid);
+        assert_eq!(crate::script::runner::execute(&mut s, &mut world), Execution::Finished);
+        assert_eq!(world.npcs[nid].as_ref().unwrap().mode, 4);
+        assert_eq!(world.npcs[nid].as_ref().unwrap().target, Some(InteractTarget::Player(pid)));
+
+        let start_x = world.npcs[nid].as_ref().unwrap().entity.x;
+        let dist_to_player = |w: &World| {
+            let n = w.npcs[nid].as_ref().unwrap();
+            (n.entity.x - 3200).abs().max((n.entity.z - 3200).abs())
+        };
+        assert!(dist_to_player(&world) > 1, "not adjacent yet");
+        for _ in 0..6 {
+            world.cycle();
+        }
+        assert!(world.npcs[nid].as_ref().unwrap().entity.x < start_x, "npc walked toward the player");
+        assert_eq!(dist_to_player(&world), 1, "npc followed to and stopped adjacent to the player");
+    }
+
+    #[test]
+    fn npc_opplayer_mode_fires_ai_trigger_in_range() {
+        use crate::entity::player::InteractTarget;
+        use crate::script::provider::ScriptProvider;
+        let mut world = World::new();
+        let mut provider = ScriptProvider::test_empty();
+        // [ai_opplayer1, npctype 1] plays midi 77 (packet 211) — observable.
+        provider.test_insert_specific(trigger::AI_OPPLAYER1, 1, midi_script(77));
+        world.scripts = Some(provider);
+        let pid = world.add_player("p".into(), 3200, 3200, 0).unwrap();
+        let nid = world.add_npc(1, 3201, 3200, 0).unwrap(); // adjacent
+        if let Some(n) = world.npcs[nid].as_mut() {
+            n.mode = 7; // OPPLAYER1
+            n.target = Some(InteractTarget::Player(pid));
+        }
+        world.players[pid].as_mut().unwrap().out.clear();
+        world.cycle();
+        assert!(
+            world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 211),
+            "adjacent OPPLAYER1 npc fired its ai_opplayer1 trigger"
+        );
+    }
+
+    #[test]
+    fn npc_aimode_fires_the_same_tick_it_reaches_melee() {
+        use crate::entity::player::InteractTarget;
+        use crate::script::provider::ScriptProvider;
+        let mut world = World::new();
+        let mut provider = ScriptProvider::test_empty();
+        provider.test_insert_specific(trigger::AI_OPPLAYER1, 1, midi_script(77));
+        world.scripts = Some(provider);
+        let pid = world.add_player("p".into(), 3200, 3200, 0).unwrap();
+        let nid = world.add_npc(1, 3202, 3200, 0).unwrap(); // 2 tiles away
+        if let Some(n) = world.npcs[nid].as_mut() {
+            n.mode = 7; // OPPLAYER1
+            n.target = Some(InteractTarget::Player(pid));
+        }
+        world.players[pid].as_mut().unwrap().out.clear();
+        // One tick: pre-move interact fails (not adjacent), npc steps to 3201,
+        // post-move interact fires the trigger — exact tick parity with Engine-TS.
+        world.cycle();
+        assert_eq!(world.npcs[nid].as_ref().unwrap().entity.x, 3201, "npc stepped to melee");
+        assert!(
+            world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 211),
+            "npc fired its attack the same tick it reached melee (post-move interact)"
+        );
+    }
+
+    #[test]
+    fn npc_spawns_load_and_wander_near_spawn() {
+        let mut world = World::new();
+        let path = std::env::temp_dir().join("os1_test_npcs.txt");
+        std::fs::write(&path, "# spawn list\n3 3210 3220 0\nbad\n").unwrap();
+        world.load_npc_spawns(&path);
+        let _ = std::fs::remove_file(&path);
+
+        let nid = world
+            .npcs
+            .iter()
+            .position(|n| n.as_ref().is_some_and(|x| x.type_id == 3))
+            .expect("npc spawned from the list");
+        {
+            let n = world.npcs[nid].as_ref().unwrap();
+            assert_eq!((n.entity.x, n.entity.z), (3210, 3220));
+            assert_eq!(n.mode, 1, "spawned npc takes the default WANDER mode");
+        }
+        // Over many ticks it idles around — moves but never leaves the wander
+        // radius (Engine-TS default wanderrange = 5).
+        let mut moved = false;
+        for _ in 0..300 {
+            world.cycle();
+            let n = world.npcs[nid].as_ref().unwrap();
+            if (n.entity.x, n.entity.z) != (3210, 3220) {
+                moved = true;
+            }
+            assert!(
+                (n.entity.x - 3210).abs() <= 5 && (n.entity.z - 3220).abs() <= 5,
+                "npc stays within its wander radius"
+            );
+        }
+        assert!(moved, "npc wandered from its spawn");
+    }
+
+    #[test]
+    fn npc_spawn_fires_ai_spawn_trigger() {
+        use crate::script::file::ScriptInfo;
+        use crate::script::opcode as op;
+        use crate::script::provider::ScriptProvider;
+        let mut world = World::new();
+        let mut provider = ScriptProvider::test_empty();
+        // [ai_spawn, type 1]: NPC_DAMAGE the active npc by 1 (HP 1 → 0, observable).
+        let script = Arc::new(ScriptFile {
+            id: 0,
+            info: ScriptInfo {
+                script_name: "t".into(), source_file_path: "t".into(), lookup_key: -1,
+                parameter_types: vec![], pcs: vec![], lines: vec![],
+            },
+            int_local_count: 0, string_local_count: 0, int_arg_count: 0, string_arg_count: 0,
+            switch_tables: vec![],
+            opcodes: vec![op::PUSH_CONSTANT_INT, op::PUSH_CONSTANT_INT, op::NPC_DAMAGE, op::RETURN],
+            int_operands: vec![0, 1, 0, 0], // dtype 0, amount 1
+            string_operands: vec![None; 4],
+        });
+        provider.test_insert_specific(trigger::AI_SPAWN, 1, script);
+        world.scripts = Some(provider);
+
+        let nid = world.add_npc(1, 3200, 3200, 0).unwrap();
+        assert_eq!(world.npcs[nid].as_ref().unwrap().levels[3], 1, "fresh npc at full HP");
+        world.cycle(); // processNpcEventQueue runs [ai_spawn]
+        assert_eq!(
+            world.npcs[nid].as_ref().unwrap().levels[3], 0,
+            "the [ai_spawn] trigger ran when the npc spawned"
+        );
     }
 
     #[test]

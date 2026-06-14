@@ -1,0 +1,8 @@
+// loc 882
+op1 = Climb-down
+op2 = Close
+blockwalk = true
+forceapproach = 7
+nonblockrange = true
+models_only = 25035
+name = Manhole

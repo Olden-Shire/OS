@@ -1,0 +1,14 @@
+// obj 10006
+model = obj_bird_snare_10006
+xof2d = 1
+yof2d = 28
+zoom2d = 1470
+yan2d = 632
+zan2d = 2008
+xan2d = 340
+iop1 = Lay
+op4 = Lay
+op5 = hidden
+members = true
+cost = 5
+name = Bird snare

@@ -1,0 +1,16 @@
+// obj 5281
+model = obj_belladonna_seed
+xof2d = -1
+yof2d = 10
+zoom2d = 680
+yan2d = 2004
+xan2d = 352
+members = true
+count1 = 5272, 2
+count2 = 5273, 3
+count3 = 5274, 4
+count4 = 5275, 5
+stackable = true
+cost = 177
+recol = 40237/52409
+name = Belladonna seed

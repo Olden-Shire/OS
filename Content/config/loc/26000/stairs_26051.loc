@@ -1,0 +1,10 @@
+// loc 26051
+contrast = 15
+ambient = 20
+blockwalk = true
+width = 2
+length = 3
+mapscene = 7
+resizey = 180
+models_only = 27514
+name = Stairs

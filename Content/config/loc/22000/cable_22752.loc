@@ -1,0 +1,6 @@
+// loc 22752
+active = 1
+ambient = 25
+nonsolid = true
+models_only = 23258
+name = Cable

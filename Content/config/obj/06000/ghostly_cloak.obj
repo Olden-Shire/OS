@@ -1,0 +1,12 @@
+// obj 6111
+cost = 250
+model = obj_ghostly_cloak
+iop2 = Wear
+manwear = obj_ghostly_cloak_man, 0
+womanwear = obj_ghostly_cloak_woman, 0
+yof2d = 8
+zoom2d = 2080
+yan2d = 540
+xan2d = 448
+members = true
+name = Ghostly cloak

@@ -1,0 +1,11 @@
+// npc 511
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pay-fare
+recol = 8741/103 25238/43478 103/103 8090/103 4550/4645
+name = Vigroy
+models = 230 247 295 150 179 274 185
+headmodels = 63 79

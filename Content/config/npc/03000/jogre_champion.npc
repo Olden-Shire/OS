@@ -1,0 +1,8 @@
+// npc 3063
+size = 2
+walkanim = 2932
+readyanim = 2931
+op2 = Attack
+vislevel = 107
+name = Jogre Champion
+models = 10280 10282 10281

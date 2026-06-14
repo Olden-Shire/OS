@@ -1,0 +1,10 @@
+// loc 13626
+op5 = Remove
+width = 2
+anim = 3174
+op1 = Enter
+bgsound = 3139, 3
+ambient = 40
+recol = 50072/935 49948/939 49953/815 49829/819 49705/695
+models_only = 11231 11235
+name = Ardougne Portal

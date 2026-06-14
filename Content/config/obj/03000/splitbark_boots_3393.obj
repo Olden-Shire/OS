@@ -1,0 +1,12 @@
+// obj 3393
+cost = 5000
+model = obj_splitbark_boots_3393
+iop2 = Wear
+manwear = obj_splitbark_boots_3393_man, 0
+womanwear = obj_splitbark_boots_3393_woman, 0
+members = true
+xof2d = 6
+zoom2d = 810
+yan2d = 192
+xan2d = 168
+name = Splitbark boots

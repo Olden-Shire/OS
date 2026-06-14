@@ -1,0 +1,12 @@
+// npc 536
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/10508 8741/39145 6798/6854 43072/4550
+name = Valaine
+models = 390 456 332 353 421 358
+headmodels = 113

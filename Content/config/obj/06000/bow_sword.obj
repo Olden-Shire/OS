@@ -1,0 +1,13 @@
+// obj 6818
+model = obj_bow_sword
+yof2d = -9
+zoom2d = 1800
+yan2d = 64
+xan2d = 236
+iop2 = Wield
+manwear = obj_bow_sword_wear, 0
+womanwear = obj_bow_sword_wear, 6
+members = true
+iop5 = Destroy
+recol = 61/43297
+name = Bow-sword

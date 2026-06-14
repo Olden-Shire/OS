@@ -1,0 +1,8 @@
+// loc 24390
+active = 1
+nonsolid = true
+ambient = 30
+op1 = Look-at
+op2 = Take
+models = 25344/4
+name = Map

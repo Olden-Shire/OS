@@ -1,0 +1,12 @@
+// npc 2127
+resizeh = 140
+resizev = 130
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 61/12 10347/82 5784/10337 4550/3418
+name = Trade Referee
+models = 2973 7071 7063 7037 7044 2985
+headmodels = 3 6996

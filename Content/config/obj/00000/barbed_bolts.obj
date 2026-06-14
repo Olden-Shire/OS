@@ -1,0 +1,17 @@
+// obj 881
+stackable = true
+cost = 200
+members = true
+model = obj_barbed_bolts
+xof2d = -1
+yof2d = -42
+zoom2d = 640
+yan2d = 4
+xan2d = 244
+iop2 = Wield
+count1 = 3823, 2
+count2 = 3824, 3
+count3 = 3825, 4
+count4 = 3826, 5
+recol = 20/5018
+name = Barbed bolts

@@ -1,0 +1,6 @@
+// loc 24144
+nonsolid = true
+ambient = 50
+active = 1
+models = 24721/4
+name = Poster

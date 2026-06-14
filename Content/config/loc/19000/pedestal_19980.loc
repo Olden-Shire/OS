@@ -1,0 +1,8 @@
+// loc 19980
+width = 3
+length = 3
+blockwalk = true
+op1 = Take-from
+recol = 127/4539 32999/5582
+models_only = 20080 20062 20081
+name = Pedestal

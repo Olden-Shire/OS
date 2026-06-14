@@ -1,0 +1,10 @@
+// obj 10486
+model = obj_empty_sack_10486
+members = true
+cost = 1
+xof2d = -26
+yof2d = -32
+zoom2d = 1178
+yan2d = 1383
+zan2d = 304
+name = Empty sack

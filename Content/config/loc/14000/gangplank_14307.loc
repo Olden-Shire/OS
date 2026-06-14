@@ -1,0 +1,10 @@
+// loc 14307
+sharelight = true
+active = 1
+op1 = Cross
+hillskew = true
+forcedecor = true
+mapscene = 46
+blockwalk = true
+models = 1882/22
+name = Gangplank

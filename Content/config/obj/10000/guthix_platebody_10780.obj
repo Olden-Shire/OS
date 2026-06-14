@@ -1,0 +1,16 @@
+// obj 10780
+cost = 65000
+model = obj_guthix_platebody_2669
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_black_platebody_t_2583_man, 0
+manwear2 = 164
+manwear3 = 3380
+womanwear = obj_black_platebody_t_2583_woman, 0
+womanwear2 = 344
+womanwear3 = 3380
+recol = 61/36133 41/37270 24/21939
+name = Guthix platebody

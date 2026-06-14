@@ -1,0 +1,9 @@
+// loc 3078
+forcedecor = true
+ambient = 30
+contrast = 30
+op5 = Lean against
+nonblockrange = true
+recol = 6932/6689
+models = 3227/0
+name = Wall

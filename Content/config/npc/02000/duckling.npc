@@ -1,0 +1,13 @@
+// npc 2694
+size = 1
+walkanim = 6817
+readyanim = 6818
+resizeh = 64
+resizev = 64
+op2 = Attack
+resizeh = 64
+resizev = 64
+nominimap = true
+vislevel = 1
+name = Duckling
+models = 26872

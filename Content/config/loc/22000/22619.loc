@@ -1,0 +1,6 @@
+// loc 22619
+active = 0
+ambient = 30
+sharelight = true
+hillskew = true
+models = 23536/0 23537/1 23538/9

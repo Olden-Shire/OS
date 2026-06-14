@@ -1,0 +1,6 @@
+// seq 2339
+replaceheldleft = 6634
+replaceheldright = 6635
+reachforward = true
+loops = 10
+frames = 26/20/261 16/22/261 21/23/261 6/24/261 26/25/261 16/26/261 31/27/261 11/28/261 31/29/261 11/21/261

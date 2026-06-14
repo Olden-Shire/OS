@@ -1,0 +1,5 @@
+// seq 1767
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 0
+frames = 5/20/268 4/21/268 4/22/268 4/23/268 9/24/268 9/25/268 9/24/268 4/23/268 4/22/268 4/21/268 5/20/268

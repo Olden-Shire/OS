@@ -1,0 +1,9 @@
+// loc 23551
+anim = 2709
+ambient = 20
+active = 1
+blockwalk = true
+forceapproach = 14
+nonblockrange = true
+models_only = 24552 9599
+name = Chest

@@ -1,0 +1,11 @@
+// npc 1403
+size = 1
+walkanim = 5385
+readyanim = 5386
+op2 = Attack
+resizeh = 100
+resizev = 100
+vislevel = 2
+recol = 6466/3996 8896/6720 935/685 929/679 6474/3879 6470/4003
+name = Rooster
+models = 23905

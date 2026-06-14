@@ -1,0 +1,9 @@
+// npc 2326
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/14746 25238/14990 43072/4550 5169/21679 5173/21555 5181/21563
+name = Lyra
+models = 385 470 483 348 353 7368 421 361 7366
+headmodels = 109

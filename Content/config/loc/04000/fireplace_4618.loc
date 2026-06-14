@@ -1,0 +1,12 @@
+// loc 4618
+anim = 475
+length = 2
+width = 2
+active = 1
+resizex = 95
+resizey = 95
+resizez = 95
+bgsound = 2065, 3
+retex = 23/2
+models_only = 4609
+name = Fireplace

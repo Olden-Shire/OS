@@ -1,0 +1,9 @@
+// npc 2219
+size = 1
+walkanim = 98
+readyanim = 2151
+vislevel = 0
+recol = 6356/51507 61/51507 74/9924 4626/41246
+name = Purple Pewter Director
+models = 7026 6020 6017 7037 7045 2985
+headmodels = 6985

@@ -1,0 +1,10 @@
+// npc 847
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/39145 8741/10258 107/127
+name = Head chef
+models = 215 199 251 305 170 176 254 181 18923
+headmodels = 53 41 83

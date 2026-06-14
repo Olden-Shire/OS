@@ -1,0 +1,7 @@
+// loc 3161
+mirror = true
+ambient = 15
+contrast = 15
+active = 0
+nonblockrange = true
+models = 3315/0

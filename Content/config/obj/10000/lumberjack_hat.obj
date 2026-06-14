@@ -1,0 +1,19 @@
+// obj 10941
+members = true
+iop2 = Wear
+cost = 50
+model = obj_lumberjack_hat
+manwear = obj_lumberjack_hat_man, 0
+womanwear = obj_lumberjack_hat_woman, 0
+manwear2 = 215
+womanwear2 = 391
+manhead = 23160
+manhead2 = 53
+womanhead = 23160
+womanhead2 = 114
+xof2d = -3
+yof2d = -7
+zoom2d = 720
+yan2d = 1886
+xan2d = 105
+name = Lumberjack hat

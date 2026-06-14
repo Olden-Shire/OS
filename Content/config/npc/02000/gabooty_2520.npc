@@ -1,0 +1,12 @@
+// npc 2520
+vislevel = 0
+size = 1
+op1 = Talk-to
+op3 = Trade-Co-op
+op4 = Trade-Drinks
+resizeh = 127
+resizev = 126
+recol = 4550/5795 25238/5572 6443/5572 43072/5795
+name = Gabooty
+models = 230 250 8845 326 173 8918 275 8919 553 8947
+headmodels = 63 82

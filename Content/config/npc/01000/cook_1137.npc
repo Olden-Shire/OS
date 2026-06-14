@@ -1,0 +1,10 @@
+// npc 1137
+readyanim = 286
+walkanim = 283
+size = 2
+resizeh = 132
+resizev = 132
+vislevel = 0
+recol = 61/8367 10355/10578 10355/7768
+name = Cook
+models = 3754 3759 3756 3772 3767

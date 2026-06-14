@@ -1,0 +1,11 @@
+// npc 5520
+size = 1
+vislevel = 115
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 7446/123 6798/5058 7741/5194
+name = Slug Hemligssen
+models = 21875 230 253 21889 21864 21898 21881 21870
+headmodels = 63 85 22155

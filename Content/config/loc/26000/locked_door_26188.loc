@@ -1,0 +1,11 @@
+// loc 26188
+active = 1
+sharelight = true
+ambient = 15
+contrast = 10
+resizey = 159
+mirror = true
+hillskew = true
+op1 = Open
+models = 27606/0
+name = Locked door

@@ -1,0 +1,6 @@
+// loc 24879
+active = 1
+nonsolid = true
+ambient = 20
+contrast = 20
+multiloc = 3722, 65535, 24878 24877

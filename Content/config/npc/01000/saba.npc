@@ -1,0 +1,12 @@
+// npc 1070
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 6798/53 4626/4550 25238/4626 43072/4550
+name = Saba
+models = 206 250 315 168 176 275 181
+headmodels = 45 82

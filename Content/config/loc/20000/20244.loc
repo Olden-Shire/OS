@@ -1,0 +1,7 @@
+// loc 20244
+active = 0
+sharelight = true
+nonsolid = true
+hillskew = true
+mapscene = 22
+models = 20635/3

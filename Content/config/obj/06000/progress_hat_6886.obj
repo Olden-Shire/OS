@@ -1,0 +1,18 @@
+// obj 6886
+model = obj_progress_hat_6885
+iop2 = Wear
+members = true
+iop1 = Talk-to
+iop5 = Destroy
+manwear = obj_progress_hat_6885_man, 0
+womanwear = obj_progress_hat_6885_woman, 0
+manhead = 10680
+womanhead = 19803
+yof2d = 2
+zoom2d = 740
+yan2d = 40
+zan2d = 1908
+xan2d = 456
+ambient = 20
+recol = 3503/5683 7469/7609 2355/6587 13743/13623
+name = Progress hat

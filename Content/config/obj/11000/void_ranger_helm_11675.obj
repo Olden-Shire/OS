@@ -1,0 +1,19 @@
+// obj 11675
+model = obj_void_ranger_helm_11664
+xof2d = 4
+yof2d = -1
+zoom2d = 540
+yan2d = 188
+xan2d = 88
+iop2 = Wear
+manwear = obj_desert_disguise_man, 0
+manwear2 = 27150
+womanwear = obj_desert_disguise_woman, 0
+womanwear2 = 27138
+manhead = 63
+manhead2 = 3624
+womanhead = 120
+womanhead2 = 3624
+members = true
+cost = 9851
+name = Void ranger helm

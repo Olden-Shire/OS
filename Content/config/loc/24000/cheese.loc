@@ -1,0 +1,8 @@
+// loc 24874
+active = 1
+contrast = 25
+ambient = 35
+nonsolid = true
+op1 = Take
+models_only = 26002
+name = Cheese

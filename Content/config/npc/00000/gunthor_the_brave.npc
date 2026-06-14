@@ -1,0 +1,10 @@
+// npc 199
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 29
+recol = 8741/10508 6798/7700 4626/24 25238/5281 54397/54298
+name = Gunthor the brave
+models = 11759 11764 11727 11732 11793 11810 11736 11743 11750
+headmodels = 11805 11808

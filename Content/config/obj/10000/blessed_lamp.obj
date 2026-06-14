@@ -1,0 +1,11 @@
+// obj 10889
+model = obj_lamp_2528
+members = true
+xof2d = 2
+yof2d = -2
+zoom2d = 840
+yan2d = 228
+xan2d = 28
+iop1 = Pray-over
+iop5 = Destroy
+name = Blessed lamp

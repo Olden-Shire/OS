@@ -1,0 +1,7 @@
+// loc 15517
+op1 = Close
+active = 1
+ambient = 25
+nonblockrange = true
+models = 25030/0
+name = Gate

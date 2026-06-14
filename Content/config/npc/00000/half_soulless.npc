@@ -1,0 +1,8 @@
+// npc 991
+size = 2
+walkanim = 800
+readyanim = 800
+vislevel = 1
+recol = 25238/8629 4626/8286 4550/8286 8741/8629 43072/8286
+name = Half-soulless
+models = 230 310 275 246 168 181 176

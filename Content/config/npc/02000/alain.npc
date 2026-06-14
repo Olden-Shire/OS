@@ -1,0 +1,9 @@
+// npc 2339
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 6798/103 8741/123 25238/123 43072/4541 908/7442 4550/4541
+name = Alain
+models = 206 250 292 170 176 496 260 7121
+headmodels = 46 82

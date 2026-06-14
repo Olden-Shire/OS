@@ -1,0 +1,11 @@
+// obj 11004
+model = obj_used_folder
+xof2d = -3
+yof2d = -5
+zoom2d = 1373
+yan2d = 156
+xan2d = 264
+contrast = 15
+ambient = 15
+members = true
+stackable = true

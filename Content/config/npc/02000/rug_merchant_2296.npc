@@ -1,0 +1,11 @@
+// npc 2296
+readyanim = 1144
+op1 = Talk-to
+op3 = Travel
+vislevel = 0
+turnspeed = 0
+alwaysontop = true
+recol = 39463/5400 25238/6470 8741/7390 4550/4544
+name = Rug Merchant
+models = 7743 215 247 292 163 176 264 326
+headmodels = 7741 53 79

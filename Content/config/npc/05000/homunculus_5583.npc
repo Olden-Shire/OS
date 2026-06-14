@@ -1,0 +1,11 @@
+// npc 5583
+readyanim = 5831
+size = 3
+ambient = 10
+vislevel = 0
+op1 = Talk-to
+turnspeed = 0
+alwaysontop = true
+name = Homunculus
+models = 22772 22773 17460
+headmodels = 22774

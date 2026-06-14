@@ -1,0 +1,12 @@
+// obj 8923
+cost = 900
+model = obj_witchwood_icon
+yof2d = 2
+zoom2d = 490
+yan2d = 1901
+xan2d = 423
+iop2 = Wear
+manwear = obj_witchwood_icon_man, 0
+womanwear = obj_witchwood_icon_woman, 0
+members = true
+name = Witchwood icon

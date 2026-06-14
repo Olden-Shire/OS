@@ -1,0 +1,8 @@
+// npc 3125
+size = 2
+vislevel = 0
+alwaysontop = true
+nominimap = true
+turnspeed = 0
+name = Pyramid block
+models = 10817

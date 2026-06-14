@@ -1,0 +1,10 @@
+// npc 500
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 43072/4785 4550/4785 4550/4785
+name = Mosol Rei
+models = 206 249 315 173 176 279 181 553
+headmodels = 46 81

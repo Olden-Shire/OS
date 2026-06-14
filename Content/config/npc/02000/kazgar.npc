@@ -1,0 +1,8 @@
+// npc 2086
+readyanim = 6006
+walkanim = 6005
+vislevel = 0
+op1 = Talk-to
+name = Kazgar
+models = 23658 23700 23634 23676
+headmodels = 23228 23246

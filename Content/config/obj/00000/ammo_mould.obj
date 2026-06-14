@@ -1,0 +1,9 @@
+// obj 4
+model = obj_ammo_mould
+xof2d = 8
+zoom2d = 2160
+yan2d = 88
+xan2d = 308
+cost = 5
+members = true
+name = Ammo mould

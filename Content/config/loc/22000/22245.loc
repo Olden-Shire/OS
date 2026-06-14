@@ -1,0 +1,8 @@
+// loc 22245
+active = 0
+sharelight = true
+hillskew = true
+blockwalk = true
+contrast = 20
+ambient = 20
+models_only = 22907

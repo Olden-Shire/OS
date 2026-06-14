@@ -1,0 +1,11 @@
+// obj 7679
+model = obj_pugel_7679
+manwear = obj_pugel_7679_wear, 0
+womanwear = obj_pugel_7679_wear, 6
+xof2d = 3
+yof2d = 8
+zoom2d = 2346
+yan2d = 8
+xan2d = 360
+members = true
+name = Pugel

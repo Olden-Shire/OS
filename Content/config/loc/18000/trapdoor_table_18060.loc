@@ -1,0 +1,7 @@
+// loc 18060
+op1 = Open
+active = 1
+blockwalk = true
+nonblockrange = true
+models = 17657/22
+name = Trapdoor table

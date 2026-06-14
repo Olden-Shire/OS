@@ -1,0 +1,9 @@
+// loc 13858
+anim = 493
+noshadow = true
+active = 0
+ambient = 40
+nonsolid = true
+bgsound = 2177, 3
+recol = 5058/27955
+models_only = 2297

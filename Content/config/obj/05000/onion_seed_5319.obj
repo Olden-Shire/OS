@@ -1,0 +1,15 @@
+// obj 5319
+model = obj_onion_seed_5319
+xof2d = 2
+yof2d = 3
+zoom2d = 1260
+yan2d = 236
+xan2d = 564
+members = true
+stackable = true
+count1 = 5159, 2
+count2 = 5160, 3
+count3 = 5161, 4
+count4 = 5162, 5
+cost = 3
+name = Onion seed

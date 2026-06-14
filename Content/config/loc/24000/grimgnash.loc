@@ -1,0 +1,10 @@
+// loc 24839
+anim = 6506
+width = 3
+length = 3
+active = 1
+ambient = 25
+contrast = 25
+op1 = Talk-to
+models_only = 26077 26076 26079
+name = Grimgnash

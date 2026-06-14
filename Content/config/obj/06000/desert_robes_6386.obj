@@ -1,0 +1,14 @@
+// obj 6386
+model = obj_priest_gown_428
+manwear = obj_priest_gown_428_man, 0
+womanwear = obj_desert_robes_6386_woman, 0
+iop2 = Wear
+xof2d = -5
+yof2d = 36
+zoom2d = 1550
+yan2d = 1828
+xan2d = 324
+members = true
+cost = 25
+recol = 25238/7390
+name = Desert robes

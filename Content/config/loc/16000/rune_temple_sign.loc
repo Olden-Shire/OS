@@ -1,0 +1,6 @@
+// loc 16307
+ambient = 0
+active = 1
+op1 = Read
+models = 16075/4
+name = Rune temple sign

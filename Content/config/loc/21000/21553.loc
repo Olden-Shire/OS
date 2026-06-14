@@ -1,0 +1,5 @@
+// loc 21553
+nonsolid = true
+active = 0
+recol = 43/7335 39/7322 35/7331 30/7326
+models_only = 11800

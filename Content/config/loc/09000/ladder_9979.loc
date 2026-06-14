@@ -1,0 +1,8 @@
+// loc 9979
+width = 2
+sharelight = true
+active = 1
+mapscene = 7
+op1 = Climb-down
+models_only = 9686
+name = Ladder

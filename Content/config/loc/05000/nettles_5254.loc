@@ -1,0 +1,5 @@
+// loc 5254
+nonsolid = true
+op1 = Pick
+models_only = 5405
+name = Nettles

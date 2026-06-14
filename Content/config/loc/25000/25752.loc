@@ -1,0 +1,7 @@
+// loc 25752
+sharelight = true
+hillskew = true
+contrast = 15
+ambient = 20
+nonblockrange = true
+models = 960/0 961/1 962/2 963/3 964/9

@@ -1,0 +1,11 @@
+// obj 1941
+cost = 30
+model = obj_swamp_paste
+xof2d = 1
+yof2d = -22
+zoom2d = 710
+yan2d = 148
+xan2d = 224
+members = true
+stackable = true
+name = Swamp paste

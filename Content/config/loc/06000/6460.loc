@@ -1,0 +1,9 @@
+// loc 6460
+hillskew = true
+sharelight = true
+forcedecor = true
+resizex = 110
+resizey = 110
+resizez = 110
+active = 0
+models_only = 6324

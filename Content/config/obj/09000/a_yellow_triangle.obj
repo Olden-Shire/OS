@@ -1,0 +1,11 @@
+// obj 9606
+model = obj_a_red_triangle
+xof2d = 3
+yof2d = 1
+zoom2d = 620
+yan2d = 114
+xan2d = 603
+members = true
+stackable = true
+recol = 668/10828 916/10692 549/9812
+name = A yellow triangle

@@ -1,0 +1,9 @@
+// loc 9025
+hillskew = true
+op1 = Repair
+op3 = Hidden
+op4 = Hidden
+active = 1
+nonblockrange = true
+models = 8884/0 8885/9
+name = Rotten village fence

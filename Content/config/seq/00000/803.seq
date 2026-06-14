@@ -1,0 +1,7 @@
+// seq 803
+preanim_move = 2
+postanim_move = 2
+replaceheldleft = 0
+replaceheldright = 0
+priority = 6
+frames = 25/180/198 2/195/198 2/196/198 2/197/198 2/198/198 2/199/198 25/200/198

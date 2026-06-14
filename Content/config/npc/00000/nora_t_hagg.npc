@@ -1,0 +1,9 @@
+// npc 896
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/10508 8741/10508 38814/10508 27548/4550 8741/10508
+name = Nora T. Hagg
+models = 405 470 348 353 428 361 377
+headmodels = 122 102

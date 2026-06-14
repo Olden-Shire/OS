@@ -1,0 +1,11 @@
+// obj 11237
+stackable = true
+members = true
+cost = 500
+model = obj_dragon_arrowtips
+xof2d = 8
+yof2d = 11
+zoom2d = 720
+yan2d = 336
+xan2d = 396
+name = Dragon arrowtips

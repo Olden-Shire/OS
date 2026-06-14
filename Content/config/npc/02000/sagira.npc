@@ -1,0 +1,10 @@
+// npc 2995
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8741/15397 10659/1331 7062/9655 22/12942 4550/4527 910/9531
+name = Sagira
+models = 7032 7060 7038 7045 7068
+headmodels = 6991

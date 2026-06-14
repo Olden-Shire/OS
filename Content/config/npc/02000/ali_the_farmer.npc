@@ -1,0 +1,10 @@
+// npc 2821
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/10473 25238/8297 4550/5555
+name = Ali the Farmer
+models = 4843 230 249 292 170 176 495 257
+headmodels = 5534 81 63

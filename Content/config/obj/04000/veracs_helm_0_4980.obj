@@ -1,0 +1,15 @@
+// obj 4980
+members = true
+cost = 103000
+manwear = obj_veracs_helm_4753_man, 0
+womanwear = obj_veracs_helm_4753_woman, 0
+manhead = 6573
+womanhead = 6573
+xof2d = 5
+yof2d = 1
+zoom2d = 810
+yan2d = 208
+xan2d = 28
+model = obj_veracs_helm_0_4980
+recol = 10411/10388 10403/10512 10394/10508 10518/10760 10514/11140 10638/11138
+name = Veracs helm 0

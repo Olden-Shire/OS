@@ -1,0 +1,15 @@
+// obj 53
+cost = 1
+stackable = true
+members = true
+model = obj_headless_arrow
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+count1 = 6444, 2
+count2 = 6445, 3
+count3 = 6446, 4
+count4 = 6447, 5
+name = Headless arrow

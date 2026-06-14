@@ -1,0 +1,14 @@
+// loc 5009
+width = 3
+length = 3
+resizex = 384
+resizey = 384
+resizez = 384
+hillskew = true
+ambient = 60
+contrast = 70
+sharelight = true
+op1 = Enter
+recol = 6036/7335 5008/7326 1932/7446 904/7566 900/8070
+models_only = 4936
+name = Tunnel

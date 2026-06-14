@@ -1,0 +1,11 @@
+// npc 4902
+walkanim = 2064
+readyanim = 2065
+op1 = Talk-to
+vislevel = 0
+resizev = 120
+alwaysontop = true
+recol = 8741/127 25238/41282 10270/40334 7446/41633 4626/40334 6036/5949
+name = Mining tutor
+models = 230 9619 11750 299 9621 167 177 509 263 185
+headmodels = 63 11808 9616

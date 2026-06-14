@@ -1,0 +1,6 @@
+// loc 6547
+mirror = true
+active = 1
+op1 = Open
+models_only = 6252
+name = Pyramid entrance

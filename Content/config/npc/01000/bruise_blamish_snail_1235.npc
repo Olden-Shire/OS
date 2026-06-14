@@ -1,0 +1,9 @@
+// npc 1235
+size = 1
+walkanim = 1274
+readyanim = 1276
+op2 = Attack
+vislevel = 20
+recol = 10545/10423 12589/13493 12713/14387 7494/45252 7605/45361
+name = Bruise Blamish Snail
+models = 4109

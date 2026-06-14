@@ -1,0 +1,10 @@
+// loc 4638
+active = 1
+op1 = Open
+raiseobject = 0
+ambient = 25
+contrast = 25
+recol = 24/4762
+retex = 2/4
+models = 634/0 635/1 574/2 575/3 576/9
+name = Door

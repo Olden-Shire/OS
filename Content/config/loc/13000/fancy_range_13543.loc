@@ -1,0 +1,8 @@
+// loc 13543
+length = 2
+op1 = Take-kettle
+contrast = 25
+ambient = 25
+bgsound = 2209, 3
+models_only = 12632 12633
+name = Fancy range

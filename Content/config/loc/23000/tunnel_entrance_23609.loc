@@ -1,0 +1,7 @@
+// loc 23609
+width = 2
+length = 2
+ambient = 10
+noshadow = true
+models_only = 24615
+name = Tunnel entrance

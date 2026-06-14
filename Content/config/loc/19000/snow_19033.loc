@@ -1,0 +1,9 @@
+// loc 19033
+op1 = Make-ball-of
+op3 = hidden
+raiseobject = 1
+ambient = 20
+mapscene = 12
+hillskew = true
+models_only = 20485
+name = Snow

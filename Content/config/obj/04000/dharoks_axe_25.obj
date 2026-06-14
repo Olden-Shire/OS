@@ -1,0 +1,12 @@
+// obj 4889
+members = true
+cost = 208000
+iop2 = Wield
+manwear = obj_dharoks_greataxe_4718_wear, 0
+womanwear = obj_dharoks_greataxe_4718_wear, 6
+model = obj_dharoks_greataxe_4718
+yof2d = 51
+zoom2d = 1710
+yan2d = 2004
+xan2d = 280
+name = Dharoks axe 25

@@ -1,0 +1,10 @@
+// npc 460
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/38814 25238/38814 6798/127
+name = Wizard Frumscone
+models = 214 181 249 292 170 176 265 202
+headmodels = 52 44 81

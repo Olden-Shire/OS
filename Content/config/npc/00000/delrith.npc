@@ -1,0 +1,11 @@
+// npc 879
+size = 2
+walkanim = 63
+readyanim = 66
+op2 = Attack
+resizeh = 86
+resizev = 86
+alwaysontop = true
+vislevel = 27
+name = Delrith
+models = 17382 17387 17392

@@ -1,0 +1,7 @@
+// loc 21748
+ambient = 30
+active = 0
+mirror = true
+length = 2
+sharelight = true
+models_only = 22249

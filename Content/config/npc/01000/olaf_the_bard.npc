@@ -1,0 +1,10 @@
+// npc 1269
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 1318
+op1 = Talk-to
+recol = 6798/4771 6587/5404 8084/10524 25238/6435 8741/8619 7952/13964
+name = Olaf the Bard
+models = 215 249 292 163 179 4226 4218 4391 4390 244 317
+headmodels = 53 81 77

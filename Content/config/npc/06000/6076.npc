@@ -1,0 +1,10 @@
+// npc 6076
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 35
+contrast = 35
+op1 = Talk-To
+vislevel = 0
+recol = 17467/18626
+multivar = 3732, 65535, 65535 1685

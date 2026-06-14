@@ -1,0 +1,14 @@
+// obj 10692
+cost = 40
+members = true
+model = obj_highwayman_mask_2631
+xof2d = 3
+zoom2d = 290
+yan2d = 224
+xan2d = 488
+iop2 = Wear
+manwear = obj_highwayman_mask_2631_man, 0
+womanwear = obj_highwayman_mask_2631_woman, 0
+manhead = 76
+womanhead = 134
+name = Highwayman mask

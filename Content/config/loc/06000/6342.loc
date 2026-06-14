@@ -1,0 +1,7 @@
+// loc 6342
+sharelight = true
+occlude = true
+hillskew = true
+active = 0
+recol = 10334/10436
+models = 893/0 894/1 876/2 877/3 878/9

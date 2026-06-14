@@ -1,0 +1,11 @@
+// npc 945
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/5173 41/931 61/931 11187/931 10659/931 25238/931
+name = RuneScape Guide
+models = 230 249 313 157 198 267 185 176 3330
+headmodels = 63 81 40

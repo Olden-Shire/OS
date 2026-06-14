@@ -1,0 +1,7 @@
+// loc 2954
+op1 = Lift
+width = 3
+length = 3
+nonsolid = true
+models_only = 1789
+name = Totem pole

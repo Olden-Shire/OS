@@ -1,0 +1,8 @@
+// npc 453
+size = 1
+walkanims = 819, 820, 821, 822
+op2 = Attack
+vislevel = 19
+recol = 6798/926 41/61 61/41 4550/0 57/41 7054/926
+name = Suit of armour
+models = 218 313 164 179 268 185 518 486 3330

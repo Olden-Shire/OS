@@ -1,0 +1,13 @@
+// obj 7796
+cost = 5000
+model = obj_firemaking_tome_7794
+xof2d = 1
+yof2d = 3
+zoom2d = 735
+yan2d = 61
+xan2d = 329
+ambient = 10
+members = true
+iop1 = Read
+recol = 8720/3864 7700/3745 9775/5557 8633/5437 7741/3625
+name = Firemaking tome

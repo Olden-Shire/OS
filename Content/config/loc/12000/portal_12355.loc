@@ -1,0 +1,12 @@
+// loc 12355
+ambient = 40
+anim = 3351
+noshadow = true
+active = 1
+nonsolid = true
+op1 = Use
+ambient = 100
+contrast = 100
+bgsound = 3139, 3
+models_only = 13691 13692
+name = Portal

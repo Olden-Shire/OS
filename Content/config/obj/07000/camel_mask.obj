@@ -1,0 +1,14 @@
+// obj 7003
+model = obj_camel_mask
+members = true
+iop2 = Wear
+manwear = obj_camel_mask_man, 0
+womanwear = obj_camel_mask_woman, 0
+manhead = 10831
+womanhead = 10977
+xof2d = -9
+yof2d = -5
+zoom2d = 1243
+yan2d = 346
+xan2d = 539
+name = Camel mask

@@ -1,0 +1,7 @@
+// loc 12581
+active = 1
+sharelight = true
+op1 = Enter
+blockwalk = true
+models = 13605/22
+name = Hole

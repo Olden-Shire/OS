@@ -1,0 +1,5 @@
+// loc 12005
+noshadow = true
+ambient = 30
+models_only = 11939
+name = Mushroom torch

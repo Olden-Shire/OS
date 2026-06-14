@@ -1,0 +1,13 @@
+// obj 6281
+model = obj_garden_cane
+xof2d = 2
+yof2d = 12
+zoom2d = 1450
+yan2d = 1988
+xan2d = 684
+manwear = obj_thatch_spar_light_6281_wear, 0
+womanwear = obj_thatch_spar_light_6281_wear, 6
+members = true
+cost = 10
+recol = 7461/6585
+name = Thatch spar light

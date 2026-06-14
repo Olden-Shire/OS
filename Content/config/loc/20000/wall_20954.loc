@@ -1,0 +1,9 @@
+// loc 20954
+width = 2
+nonsolid = true
+contrast = 10
+ambient = 10
+resizey = 135
+anim = 5631
+models_only = 21378
+name = Wall

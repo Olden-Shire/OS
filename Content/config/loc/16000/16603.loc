@@ -1,0 +1,8 @@
+// loc 16603
+active = 0
+noshadow = true
+contrast = 60
+ambient = 60
+blockwalk = true
+nonblockrange = true
+models_only = 16765

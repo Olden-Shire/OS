@@ -1,0 +1,12 @@
+// obj 1097
+cost = 750
+model = obj_studded_chaps_1097
+xof2d = 7
+yof2d = 5
+zoom2d = 1720
+zan2d = 224
+xan2d = 488
+iop2 = Wear
+manwear = obj_studded_chaps_1097_man, 0
+womanwear = obj_studded_chaps_1097_woman, 0
+name = Studded chaps

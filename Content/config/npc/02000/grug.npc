@@ -1,0 +1,9 @@
+// npc 2041
+vislevel = 0
+size = 2
+readyanim = 2089
+op1 = Talk-to
+turnspeed = 0
+name = Grug
+models = 6768
+headmodels = 141

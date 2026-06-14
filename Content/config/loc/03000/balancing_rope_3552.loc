@@ -1,0 +1,7 @@
+// loc 3552
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+models = 1878/22
+name = Balancing rope

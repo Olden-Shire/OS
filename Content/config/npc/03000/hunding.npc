@@ -1,0 +1,10 @@
+// npc 3254
+resizeh = 137
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 943/1944 939/1944 935/1944
+name = Hunding
+models = 11739 214 11746 252 11759 11764 11727 11732 11790 11810 11736
+headmodels = 52 84 11804 11806

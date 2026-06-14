@@ -1,0 +1,9 @@
+// obj 8837
+cost = 1
+model = obj_timber_beam_8837
+zoom2d = 1957
+yan2d = 1979
+xan2d = 180
+ambient = 15
+members = true
+name = Timber beam

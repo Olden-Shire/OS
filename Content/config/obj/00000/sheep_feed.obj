@@ -1,0 +1,9 @@
+// obj 279
+cost = 3
+model = obj_sheep_feed
+members = true
+yof2d = -3
+zoom2d = 930
+yan2d = 1936
+xan2d = 120
+name = Sheep feed

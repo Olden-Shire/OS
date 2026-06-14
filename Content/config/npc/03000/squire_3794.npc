@@ -1,0 +1,9 @@
+// npc 3794
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 43072/4550 61/16 7073/5772 4550/6938 8741/24 9104/16
+name = Squire
+models = 215 246 301 173 10218 14565 181
+headmodels = 53

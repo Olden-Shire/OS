@@ -1,0 +1,6 @@
+// loc 1881
+sharelight = true
+mirror = true
+ambient = 25
+contrast = 25
+models = 786/0

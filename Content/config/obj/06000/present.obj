@@ -1,0 +1,11 @@
+// obj 6542
+cost = 1
+members = true
+model = obj_research_package
+yof2d = -14
+zoom2d = 1180
+yan2d = 172
+xan2d = 160
+iop1 = Open
+iop5 = Destroy
+name = Present

@@ -1,0 +1,6 @@
+// loc 8445
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8030 7768
+name = Tree stump

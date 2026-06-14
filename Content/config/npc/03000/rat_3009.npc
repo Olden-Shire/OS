@@ -1,0 +1,12 @@
+// npc 3009
+size = 1
+nominimap = true
+vislevel = 0
+resizeh = 133
+resizev = 134
+op2 = Hidden
+readyanim = 2704
+walkanim = 2703
+recol = 8741/24
+name = Rat
+models = 9610

@@ -1,0 +1,10 @@
+// loc 19220
+mapscene = 9
+blockwalk = true
+op5 = hidden
+resizex = 76
+resizey = 76
+resizez = 76
+nonblockrange = true
+models_only = 19973
+name = Perch

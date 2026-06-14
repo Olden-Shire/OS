@@ -1,0 +1,9 @@
+// npc 1813
+size = 2
+readyanim = 1756
+walkanim = 1757
+vislevel = 70
+op2 = Attack
+name = The Kendal
+models = 18904 18905
+headmodels = 18880

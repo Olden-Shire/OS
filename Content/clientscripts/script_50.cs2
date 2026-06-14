@@ -1,0 +1,139 @@
+[clientscript,script_50](int $int0, int $int1)()
+
+if (~script_51($int0) = 0) {
+    if (map_members() = 0 & ($int0 = 17760303 | $int0 = 17760305 | $int0 = 17760307 | $int0 = 17760309 | $int0 = 17760311)) {
+        mes("You need to be on a members' server to use this Prayer.");
+        return;
+    }
+    if (stat(5) = 0) {
+        sound_synth(2673, 1, 0);
+        mes("You need to recharge your Prayer at an altar.");
+        return;
+    }
+    if ($int0 = 17760263 & stat_base(5) < 4) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760265 & stat_base(5) < 7) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760267 & stat_base(5) < 8) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760269 & stat_base(5) < 9) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760271 & stat_base(5) < 10) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760273 & stat_base(5) < 13) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760275 & stat_base(5) < 16) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760277 & stat_base(5) < 19) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760279 & stat_base(5) < 22) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760281 & stat_base(5) < 25) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760283 & stat_base(5) < 26) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760285 & stat_base(5) < 27) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760287 & stat_base(5) < 28) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760289 & stat_base(5) < 31) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760291 & stat_base(5) < 34) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760293 & stat_base(5) < 37) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760295 & stat_base(5) < 40) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760297 & stat_base(5) < 43) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760299 & stat_base(5) < 44) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760301 & stat_base(5) < 45) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760303 & stat_base(5) < 46) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760305 & stat_base(5) < 49) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760307 & stat_base(5) < 52) {
+        sound_synth(2673, 1, 0);
+        return;
+    }
+    if ($int0 = 17760309) {
+        if (stat_base(5) < 60) {
+            sound_synth(2673, 1, 0);
+            return;
+        }
+        if (stat_base(1) < 55) {
+            sound_synth(2673, 1, 0);
+            return;
+        }
+        if (%varbit3909 ! 8) {
+            sound_synth(2673, 1, 0);
+            return;
+        }
+    }
+    if ($int0 = 17760311) {
+        if (stat_base(5) < 70) {
+            sound_synth(2673, 1, 0);
+            return;
+        }
+        if (stat_base(1) < 70) {
+            sound_synth(2673, 1, 0);
+            return;
+        }
+        if (%varbit3909 ! 8) {
+            sound_synth(2673, 1, 0);
+            return;
+        }
+    }
+    if_sethide(0, $int1);
+    if_setop(1, "Deactivate", $int0);
+} else {
+    if_sethide(1, $int1);
+    if_setop(1, "Activate", $int0);
+}
+return;

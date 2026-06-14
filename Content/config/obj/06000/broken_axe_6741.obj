@@ -1,0 +1,12 @@
+// obj 6741
+model = obj_broken_axe_6741
+xof2d = -47
+yof2d = -33
+zoom2d = 1552
+yan2d = 1271
+xan2d = 235
+manwear = obj_broken_axe_6741_wear, 0
+womanwear = obj_broken_axe_6741_wear, 6
+cost = 1800
+members = true
+name = Broken axe

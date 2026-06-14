@@ -1,0 +1,7 @@
+// loc 1161
+op2 = Pick
+nonsolid = true
+mapscene = 9
+ambient = 17
+models_only = 8196
+name = Cabbage

@@ -1,0 +1,10 @@
+// loc 5003
+hillskew = true
+active = 0
+forcedecor = true
+op1 = Repair
+active = 1
+blockwalk = true
+recol = 5673/13592 6585/12583
+models = 4967/22
+name = Broken rope bridge

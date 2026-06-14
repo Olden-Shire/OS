@@ -1,0 +1,8 @@
+// npc 1463
+walkanim = 219
+readyanim = 222
+op1 = Talk-to
+vislevel = 3
+name = Monkey
+models = 3004
+headmodels = 4661

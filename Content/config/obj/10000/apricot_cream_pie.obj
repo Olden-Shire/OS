@@ -1,0 +1,9 @@
+// obj 10841
+model = obj_apricot_cream_pie
+manwear = obj_apricot_cream_pie, 0
+womanwear = obj_apricot_cream_pie, 0
+members = true
+xof2d = 30
+yof2d = 38
+zoom2d = 789
+name = Apricot cream pie

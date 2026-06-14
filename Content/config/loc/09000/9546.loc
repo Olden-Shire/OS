@@ -1,0 +1,6 @@
+// loc 9546
+sharelight = true
+active = 0
+mirror = true
+nonblockrange = true
+models = 9481/0

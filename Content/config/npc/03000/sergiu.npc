@@ -1,0 +1,13 @@
+// npc 3544
+vislevel = 0
+resizeh = 120
+resizev = 120
+resizeh = 120
+resizev = 120
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 127/528 43072/10450 25238/10388 8741/12694 4550/10450 933/43026
+name = Sergiu
+models = 214 250 310 163 176 275 9823
+headmodels = 52 82 9822

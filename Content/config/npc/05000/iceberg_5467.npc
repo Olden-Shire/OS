@@ -1,0 +1,7 @@
+// npc 5467
+walkanim = 5770
+readyanim = 5770
+vislevel = 0
+nominimap = true
+name = Iceberg
+models = 19892

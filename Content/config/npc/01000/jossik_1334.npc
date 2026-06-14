@@ -1,0 +1,10 @@
+// npc 1334
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 6798/2454 25238/5400 8741/2590 8078/2471 8084/2714 43569/2721
+name = Jossik
+models = 206 292 162 4226 253 4218 4391 176 194
+headmodels = 46 85 37

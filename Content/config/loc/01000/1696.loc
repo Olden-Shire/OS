@@ -1,0 +1,5 @@
+// loc 1696
+sharelight = true
+occlude = true
+active = 0
+models = 922/0 923/1 924/2 925/3 926/9

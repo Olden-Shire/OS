@@ -1,0 +1,9 @@
+// npc 2787
+vislevel = 0
+resizeh = 110
+resizev = 100
+readyanim = 808
+walkanims = 819, 820, 821, 822
+recol = 4626/4548 43072/4548 25238/10518
+name = Slave
+models = 215 246 315 173 176 254 181

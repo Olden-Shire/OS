@@ -1,0 +1,10 @@
+// npc 5965
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 10004/7465 8741/7465
+name = Orlando Smith
+models = 6364 217 10304 21813 151 179 21812 19947
+headmodels = 55 6212

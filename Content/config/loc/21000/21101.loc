@@ -1,0 +1,12 @@
+// loc 21101
+anim = 3743
+hillskew = true
+sharelight = true
+active = 0
+blockwalk = true
+length = 3
+width = 3
+ambient = 25
+contrast = 25
+models_only = 21537
+models_only = 21617

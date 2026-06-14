@@ -1,0 +1,15 @@
+// obj 6388
+model = obj_desert_top_6388
+manwear = obj_desert_top_6388_man, 0
+manwear2 = 170
+womanwear = obj_desert_top_6388_woman, 0
+womanwear2 = 348
+iop2 = Wear
+yof2d = 6
+zoom2d = 1640
+yan2d = 1932
+xan2d = 332
+members = true
+cost = 35
+recol = 8741/6470
+name = Desert top

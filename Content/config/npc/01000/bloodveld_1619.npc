@@ -1,0 +1,10 @@
+// npc 1619
+size = 2
+walkanim = 1549
+readyanim = 1551
+resizeh = 200
+resizev = 200
+op2 = Attack
+vislevel = 76
+name = Bloodveld
+models = 5065

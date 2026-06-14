@@ -1,0 +1,10 @@
+// npc 4903
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/41282 25238/41282 24/10363 908/10363 5018/10359 926/40231
+name = Prayer tutor
+models = 383 470 11348 10706 556 9113
+headmodels = 107

@@ -1,0 +1,11 @@
+// obj 3901
+model = obj_book_on_chemicals
+iop1 = Read
+members = true
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+recol = 5018/22428 61/11177 10351/61
+name = Ghrim's book

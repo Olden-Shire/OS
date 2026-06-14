@@ -1,0 +1,10 @@
+// npc 3562
+vislevel = 0
+resizeh = 120
+resizev = 120
+readyanim = 1144
+op1 = Talk-to
+recol = 25238/21658 8741/17682 61/10450 933/5675 43072/10450 4550/10450
+name = Simona
+models = 382 8849 347 353 427
+headmodels = 105 11429

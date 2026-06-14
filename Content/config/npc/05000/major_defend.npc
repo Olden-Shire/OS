@@ -1,0 +1,9 @@
+// npc 5037
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+recol = 22439/43955
+name = Major Defend
+models = 11740 230 251 11758 11763 11726 11731 19250 11735 19261
+headmodels = 63 19238 83

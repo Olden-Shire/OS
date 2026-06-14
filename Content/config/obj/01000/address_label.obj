@@ -1,0 +1,10 @@
+// obj 1858
+cost = 10
+model = obj_address_label
+members = true
+xof2d = -3
+yof2d = -33
+zoom2d = 760
+yan2d = 1116
+xan2d = 244
+name = Address label

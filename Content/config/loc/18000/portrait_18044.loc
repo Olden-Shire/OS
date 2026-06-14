@@ -1,0 +1,8 @@
+// loc 18044
+active = 1
+op1 = Search
+op5 = Look-at
+nonsolid = true
+ambient = 10
+models = 17656/4
+name = Portrait

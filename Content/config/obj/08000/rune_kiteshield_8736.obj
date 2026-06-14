@@ -1,0 +1,16 @@
+// obj 8736
+model = obj_rune_kiteshield_8736
+xof2d = -4
+yof2d = -9
+zoom2d = 1568
+yan2d = 152
+zan2d = 138
+xan2d = 484
+iop2 = Wear
+cost = 238
+manwear = obj_rune_kiteshield_8736_man, 4
+womanwear = obj_rune_kiteshield_8736_woman, 0
+ambient = 10
+members = true
+cost = 54400
+name = Rune kiteshield

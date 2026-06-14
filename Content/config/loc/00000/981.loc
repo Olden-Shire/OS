@@ -1,0 +1,5 @@
+// loc 981
+sharelight = true
+hillskew = true
+nonblockrange = true
+models = 960/0 961/1 962/2 963/3 964/9

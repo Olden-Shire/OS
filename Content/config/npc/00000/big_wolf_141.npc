@@ -1,0 +1,11 @@
+// npc 141
+size = 2
+readyanim = 6580
+walkanim = 6556
+resizeh = 170
+resizev = 170
+op2 = Attack
+vislevel = 73
+recol = 262/16
+name = Big Wolf
+models = 26264

@@ -1,0 +1,5 @@
+// loc 100
+op1 = Open
+nonsolid = true
+models = 1205/22
+name = Trapdoor

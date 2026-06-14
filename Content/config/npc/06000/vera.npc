@@ -1,0 +1,9 @@
+// npc 6043
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Vera
+models = 12141 26156 26140 26147 26142
+headmodels = 12134

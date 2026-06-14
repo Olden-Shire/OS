@@ -1,0 +1,13 @@
+// obj 5982
+model = obj_watermelon_5982
+manwear = obj_watermelon_5982_wear, 0
+womanwear = obj_watermelon_5982_wear, 0
+yof2d = -3
+zoom2d = 910
+yan2d = 1920
+xan2d = 100
+ambient = 15
+members = true
+iop1 = Eat
+cost = 48
+name = Watermelon

@@ -1,0 +1,8 @@
+// npc 3688
+readyanim = 1829
+walkanim = 1828
+ambient = 30
+contrast = 10
+vislevel = 1
+name = Easter Bunny
+models = 23901

@@ -1,0 +1,13 @@
+// obj 6398
+model = obj_iron_plateskirt_1081
+manwear = obj_menap_action_kilt_6398_man, 0
+womanwear = obj_iron_plateskirt_1081_woman, 0
+iop2 = Wear
+xof2d = 5
+yof2d = 5
+zoom2d = 1100
+xan2d = 620
+members = true
+cost = 20
+recol = 8741/43453 25238/8138 61/49054
+name = Menap action kilt

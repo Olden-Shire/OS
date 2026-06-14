@@ -1,0 +1,9 @@
+// npc 1875
+size = 1
+walkanim = 274
+readyanim = 277
+readyanim = 1900
+vislevel = 0
+alwaysontop = true
+name = Snake
+models = 6104

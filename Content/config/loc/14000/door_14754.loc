@@ -1,0 +1,7 @@
+// loc 14754
+op1 = Close
+mirror = true
+raiseobject = 0
+recol = 6697/7706 6945/7830 6814/7954 6940/8078 4638/6028 4762/5002
+models = 639/0
+name = Door

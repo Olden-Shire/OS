@@ -1,0 +1,6 @@
+// npc 6133
+size = 2
+vislevel = 0
+readyanim = 6859
+name = Goblin
+models = 27111

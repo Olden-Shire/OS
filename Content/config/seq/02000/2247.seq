@@ -1,0 +1,5 @@
+// seq 2247
+postanim_move = 1
+replaceheldright = 0
+replaceheldleft = 0
+frames = 4/34/205 4/35/205 4/36/205 4/37/205 4/38/205 4/39/205 4/40/205

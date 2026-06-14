@@ -1,0 +1,9 @@
+// npc 6024
+size = 1
+readyanim = 6539
+walkanim = 6541
+op2 = Attack
+vislevel = 88
+recol = 43072/931 43057/2842 43045/530 2260/931 63680/2842 62637/530
+name = Werewolf
+models = 26164 26170 26169

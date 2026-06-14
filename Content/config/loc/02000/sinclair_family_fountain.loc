@@ -1,0 +1,10 @@
+// loc 2654
+anim = 6023
+width = 2
+length = 2
+ambient = 20
+bgsound = 2151, 5
+mapscene = 8
+op2 = Investigate
+models_only = 24520 24521
+name = Sinclair family fountain

@@ -1,0 +1,10 @@
+// npc 366
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/11169 43072/4550 8078/43111
+name = Jerico
+models = 214 250 315 173 176 267 185 280
+headmodels = 52 82

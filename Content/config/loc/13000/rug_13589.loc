@@ -1,0 +1,6 @@
+// loc 13589
+active = 1
+nonsolid = true
+op5 = Remove
+models = 11820/22
+name = Rug

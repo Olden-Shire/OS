@@ -1,0 +1,12 @@
+// obj 278
+members = true
+cost = 3
+model = obj_cattleprod
+xof2d = -5
+zoom2d = 680
+yan2d = 1844
+xan2d = 264
+iop2 = Equip
+manwear = obj_cattleprod_wear, 0
+womanwear = obj_cattleprod_wear, 6
+name = Cattleprod

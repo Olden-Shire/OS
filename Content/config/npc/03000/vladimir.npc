@@ -1,0 +1,14 @@
+// npc 3558
+vislevel = 0
+size = 2
+resizeh = 117
+resizev = 122
+walkanims = 1147, 1147, 1147, 1147
+readyanim = 1147
+op1 = Talk-to
+vislevel = 0
+ambient = -25
+recol = 25238/5547 43072/8309 8741/289 908/9635 4550/8309 4626/8309
+name = Vladimir
+models = 217 253 315 173 176 4227
+headmodels = 55 85 9822

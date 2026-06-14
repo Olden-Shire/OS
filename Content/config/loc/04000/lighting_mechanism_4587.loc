@@ -1,0 +1,9 @@
+// loc 4587
+width = 4
+length = 4
+ambient = 20
+active = 1
+anim = 1347
+bgsound = 3132, 5
+models_only = 4570 4573 4572
+name = Lighting mechanism

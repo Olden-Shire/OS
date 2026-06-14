@@ -1,0 +1,6 @@
+// loc 25610
+forceapproach = 13
+ambient = 20
+recol = 8765/5409 8856/5409 9104/5400 3346/5400 3470/6024 3594/5648
+models_only = 1951 5531
+name = Wardrobe

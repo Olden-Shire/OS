@@ -1,0 +1,9 @@
+// loc 17249
+active = 1
+ambient = 10
+blockwalk = true
+anim = 4562
+op1 = Repair
+offsety = -30
+models_only = 17091
+name = Oaknock's exchanger

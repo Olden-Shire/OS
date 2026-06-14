@@ -1,0 +1,14 @@
+// obj 9474
+model = obj_reward_token_9474
+xof2d = 3
+yof2d = 1
+zoom2d = 528
+yan2d = 3
+zan2d = 69
+xan2d = 14
+members = true
+cost = 250
+iop1 = Check
+iop3 = Activate
+iop5 = Destroy
+name = Reward token

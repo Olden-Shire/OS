@@ -1,0 +1,10 @@
+// npc 5531
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/35008 8741/35008 6806/549 6558/553 4550/4533 908/35008
+name = Sorceress
+models = 22288 403 451 11359 10839 353 8784 361
+headmodels = 120 22276

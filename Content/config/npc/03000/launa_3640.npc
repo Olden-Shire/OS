@@ -1,0 +1,9 @@
+// npc 3640
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/2283 8993/2283 0/43301
+name = Launa
+models = 398 471 348 10706 13900 358
+headmodels = 106

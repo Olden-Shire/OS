@@ -1,0 +1,9 @@
+// npc 5932
+size = 1
+turnspeed = 0
+op1 = Talk-to
+vislevel = 0
+recol = 6798/5186
+name = Barnabus Hurma
+models = 25362
+headmodels = 5787

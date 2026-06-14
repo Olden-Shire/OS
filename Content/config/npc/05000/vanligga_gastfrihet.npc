@@ -1,0 +1,13 @@
+// npc 5495
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+size = 1
+vislevel = 0
+alwaysontop = true
+recol = 25238/8076 8741/7830 8078/7582 7700/7830 6798/7746
+name = Vanligga Gastfrihet
+models = 383 343 456 421 353 479 361 417
+headmodels = 107 136

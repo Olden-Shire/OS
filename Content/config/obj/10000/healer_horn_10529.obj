@@ -1,0 +1,15 @@
+// obj 10529
+model = obj_attacker_horn_10516
+ambient = 10
+xof2d = -1
+yof2d = -11
+zoom2d = 1114
+zan2d = 1148
+xan2d = 567
+iop1 = Tell-tofu
+iop2 = Tell-crackers
+iop3 = Tell-worms
+iop4 = Medic
+members = true
+recol = 935/23213
+name = Healer horn

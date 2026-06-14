@@ -1,0 +1,7 @@
+// loc 7350
+op1 = Open
+forceapproach = 14
+ambient = 10
+recol = 14499/5421 12698/6451 16536/5417 12818/6445
+models_only = 5272
+name = Closed chest

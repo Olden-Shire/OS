@@ -1,0 +1,7 @@
+// loc 17074
+width = 2
+length = 2
+ambient = 40
+op1 = Grapple
+models_only = 16896
+name = Strong Tree

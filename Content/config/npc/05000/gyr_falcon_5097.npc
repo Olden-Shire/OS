@@ -1,0 +1,10 @@
+// npc 5097
+vislevel = 0
+turnspeed = 0
+resizeh = 76
+resizev = 76
+readyanim = 5203
+walkanim = 5284
+recol = 4773/5018
+name = Gyr Falcon
+models = 19974 2498

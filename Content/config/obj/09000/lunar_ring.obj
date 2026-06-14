@@ -1,0 +1,12 @@
+// obj 9104
+cost = 100
+model = obj_lunar_ring
+iop2 = Wear
+members = true
+yof2d = -9
+zoom2d = 848
+yan2d = 213
+xan2d = 396
+iop5 = Destroy
+recol = 9152/36007
+name = Lunar ring

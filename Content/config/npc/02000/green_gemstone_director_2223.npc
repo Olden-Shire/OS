@@ -1,0 +1,11 @@
+// npc 2223
+size = 1
+resizeh = 138
+resizev = 135
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 4550/4694 2578/18074 5181/5421 61/19769 8604/18074
+name = Green Gemstone Director
+models = 7029 7069 6017 2978 7044 2985
+headmodels = 6988 6949

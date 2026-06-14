@@ -1,0 +1,9 @@
+// obj 6899
+model = obj_cube
+zoom2d = 1000
+yan2d = 1948
+xan2d = 84
+ambient = 10
+members = true
+cost = 0
+name = Cube

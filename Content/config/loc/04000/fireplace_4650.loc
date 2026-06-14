@@ -1,0 +1,8 @@
+// loc 4650
+anim = 475
+length = 3
+width = 3
+active = 1
+bgsound = 2066, 5
+models_only = 4609
+name = Fireplace

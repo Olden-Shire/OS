@@ -1,0 +1,8 @@
+[clientscript,script_52](int $int0, int $int1, int $int2, int $int3)()
+
+if (stat_base(5) < $int0) {
+    if_setgraphic($int1, $int3);
+} else {
+    if_setgraphic($int2, $int3);
+}
+return;

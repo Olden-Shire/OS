@@ -1,0 +1,8 @@
+// loc 19884
+anim = 475
+op1 = Inspect
+forcedecor = true
+active = 1
+recol = 44859/8720
+models_only = 20055
+name = Campfire

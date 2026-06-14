@@ -1,0 +1,10 @@
+// npc 5777
+walkanim = 6041
+readyanim = 6040
+vislevel = 0
+op1 = Talk-to
+op3 = Bank
+recol = 5549/417 5673/412 5793/536 8485/417 8609/412 8728/536
+name = Banker
+models = 23670 23699 23629
+headmodels = 23227 23246

@@ -1,0 +1,10 @@
+// npc 4452
+size = 1
+ambient = 35
+readyanim = 4315
+turnspeed = 0
+nominimap = true
+vislevel = 0
+op1 = Pick
+name = Starflower
+models = 16194

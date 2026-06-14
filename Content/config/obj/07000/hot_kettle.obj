@@ -1,0 +1,12 @@
+// obj 7691
+model = obj_hot_kettle
+xof2d = 10
+yof2d = 2
+zoom2d = 1178
+yan2d = 148
+xan2d = 50
+members = true
+members = true
+manwear = obj_kettle_7688_wear, 0
+womanwear = obj_kettle_7688_wear, 6
+name = Hot kettle

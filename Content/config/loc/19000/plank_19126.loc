@@ -1,0 +1,7 @@
+// loc 19126
+anim = 3743
+ambient = 10
+noshadow = true
+op1 = Use
+models_only = 19774
+name = Plank

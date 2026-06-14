@@ -1,0 +1,9 @@
+// npc 3816
+walkanim = 189
+readyanim = 195
+op2 = Attack
+vislevel = 5
+recol = 22422/6942
+name = Gnome Mage
+models = 14807 10340 14812
+headmodels = 4654

@@ -1,0 +1,8 @@
+// loc 19230
+noshadow = true
+contrast = 0
+ambient = 0
+op2 = Dismantle
+active = 1
+models_only = 10772
+name = Collapsed trap

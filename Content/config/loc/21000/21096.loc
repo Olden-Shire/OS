@@ -1,0 +1,10 @@
+// loc 21096
+sharelight = true
+active = 0
+blockwalk = true
+length = 2
+width = 2
+ambient = 25
+contrast = 25
+hillskew = true
+models_only = 21606

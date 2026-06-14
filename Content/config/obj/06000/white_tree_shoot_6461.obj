@@ -1,0 +1,11 @@
+// obj 6461
+model = obj_white_tree_shoot_6461
+xof2d = -2
+yof2d = 76
+zoom2d = 500
+yan2d = 1912
+xan2d = 244
+members = true
+iop5 = Destroy
+recol = 21712/2167 21714/2159 21720/2157 5338/5198
+name = White tree shoot

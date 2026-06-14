@@ -1,0 +1,8 @@
+// npc 4371
+walkanim = 1380
+readyanim = 1386
+vislevel = 1
+recol = 20/43311 24/43307
+name = Blue Monkey
+models = 4817 4824
+headmodels = 4656

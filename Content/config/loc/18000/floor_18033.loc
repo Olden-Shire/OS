@@ -1,0 +1,8 @@
+// loc 18033
+op1 = Search
+op5 = Kick-down
+active = 1
+active = 1
+blockwalk = true
+models = 17921/22
+name = Floor

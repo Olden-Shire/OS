@@ -1,0 +1,9 @@
+// loc 24348
+anim = 2564
+resizex = 200
+resizey = 200
+resizez = 200
+ambient = 25
+recol = 6067/8115
+models_only = 25763 25764
+name = Candles

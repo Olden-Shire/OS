@@ -1,0 +1,13 @@
+// npc 3102
+vislevel = 0
+size = 1
+resizeh = 60
+resizev = 62
+contrast = 10
+ambient = 10
+walkanim = 3034
+readyanim = 3033
+op1 = Talk-to
+name = Maze Guardian
+models = 10633 10640 10637 10638 10632
+headmodels = 10696

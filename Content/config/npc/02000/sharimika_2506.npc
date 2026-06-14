@@ -1,0 +1,8 @@
+// npc 2506
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 4550/4645 5572/62013 4886/3173
+name = Sharimika
+models = 210 8921 249 8928 8916 8918 8925 8919
+headmodels = 49 81 8909

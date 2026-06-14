@@ -1,0 +1,9 @@
+// npc 3556
+vislevel = 0
+size = 2
+op1 = Talk-to
+turnspeed = 0
+recol = 933/5675
+name = Marius
+models = 14035
+headmodels = 55 85 9822

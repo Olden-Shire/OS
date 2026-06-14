@@ -1,0 +1,6 @@
+// loc 23944
+nonsolid = true
+ambient = 30
+active = 1
+models = 25202/4
+name = Rack

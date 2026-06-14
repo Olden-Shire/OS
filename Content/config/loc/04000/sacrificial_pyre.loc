@@ -1,0 +1,9 @@
+// loc 4767
+width = 4
+length = 4
+blockwalk = true
+raiseobject = 0
+anim = 1416
+bgsound = 2064, 3
+models_only = 4768
+name = Sacrificial Pyre

@@ -1,0 +1,13 @@
+// obj 11128
+model = obj_onyx_necklace_6577
+yof2d = -16
+zoom2d = 1020
+yan2d = 2020
+xan2d = 332
+iop2 = Wear
+manwear = obj_onyx_necklace_6577_man, 0
+womanwear = obj_onyx_necklace_6577_woman, 0
+cost = 202000
+members = true
+recol = 41/43528 9152/43528
+name = Berserker necklace

@@ -699,8 +699,14 @@ pub fn draw(
     // open().
     let mut s = STATE.lock().unwrap();
     if s.flame_cycle > 0 {
-        let var28 = s.flame_cycle;
         let var29: i32 = 256;
+        // Java relies on draw() running every frame, so flameCycle never exceeds
+        // 256 (the buffer height) before being consumed. Under wasm render
+        // throttling our draw() can be entered with many ticks batched, which
+        // would drive the signed loop bounds (var29 - var28) negative and panic
+        // the `as usize` casts below. Clamp to 256 = one full buffer refresh,
+        // the identical result Java reaches when it advances a whole cycle.
+        let var28 = s.flame_cycle.min(var29);
         s.flame_cycle0 = s.flame_cycle0.wrapping_add(var28 * 128);
         let buf0_len = s.flame_buffer0.len() as i32;
         if s.flame_cycle0 > buf0_len {

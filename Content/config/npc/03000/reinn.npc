@@ -1,0 +1,11 @@
+// npc 3932
+vislevel = 0
+resizeh = 110
+resizev = 110
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43072/4550 8741/38069 25238/34985 6798/5400 11844/8386
+name = Reinn
+models = 206 246 292 317 170 176 4226 4218 322
+headmodels = 105

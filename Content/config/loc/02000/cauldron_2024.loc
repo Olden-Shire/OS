@@ -1,0 +1,6 @@
+// loc 2024
+anim = 479
+op1 = Drink From
+bgsound = 2197, 3
+models_only = 2241
+name = Cauldron

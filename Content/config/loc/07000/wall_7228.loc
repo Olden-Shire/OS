@@ -1,0 +1,10 @@
+// loc 7228
+anim = 2196
+blockwalk = true
+forcedecor = true
+active = 1
+hillskew = true
+op5 = Search
+recol = 10394/5662 10518/5786 10514/5910 10638/6034 10762/3604
+models_only = 7581
+name = Wall

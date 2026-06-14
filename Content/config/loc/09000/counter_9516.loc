@@ -1,0 +1,5 @@
+// loc 9516
+width = 2
+nonblockrange = true
+models_only = 9516
+name = Counter

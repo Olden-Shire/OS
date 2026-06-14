@@ -1,0 +1,7 @@
+// loc 3566
+nonsolid = true
+forcedecor = true
+active = 1
+op1 = Swing-on
+models_only = 2269
+name = Rope swing

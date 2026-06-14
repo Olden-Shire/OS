@@ -1,0 +1,12 @@
+// obj 10167
+stackable = true
+model = obj_eagle_feather
+xof2d = 9
+zoom2d = 1270
+yan2d = 252
+xan2d = 428
+count1 = 10168, 2
+count2 = 10169, 3
+count3 = 10170, 4
+members = true
+name = Eagle feather

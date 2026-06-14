@@ -1,0 +1,9 @@
+// npc 2325
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 43072/4550 25238/6689 9096/6808 6798/9630 908/6689
+name = Kragen
+models = 4843 235 253 315 173 176 496 274 7121
+headmodels = 67 5534 85

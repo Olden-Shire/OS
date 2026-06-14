@@ -1,0 +1,13 @@
+// loc 16284
+width = 3
+length = 3
+resizex = 140
+resizey = 140
+resizez = 140
+active = 1
+ambient = 25
+active = 1
+mapscene = 11
+recol = 6806/7054 6693/5662 6699/6693 6705/6699 6711/6705 6717/6711
+models_only = 16081 16088 16087
+name = Large rock

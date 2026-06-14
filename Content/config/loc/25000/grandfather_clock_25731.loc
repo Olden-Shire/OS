@@ -1,0 +1,8 @@
+// loc 25731
+anim = 1726
+contrast = 15
+ambient = 20
+bgsound = 3120, 3
+recol = 7471/5421 7587/5532
+models_only = 11878
+name = Grandfather clock

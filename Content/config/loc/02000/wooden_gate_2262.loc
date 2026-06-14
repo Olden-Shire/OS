@@ -1,0 +1,7 @@
+// loc 2262
+mirror = true
+active = 1
+op1 = Open
+nonblockrange = true
+models = 966/0 967/1 968/9
+name = Wooden gate

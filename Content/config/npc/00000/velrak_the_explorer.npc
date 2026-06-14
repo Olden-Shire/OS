@@ -1,0 +1,9 @@
+// npc 798
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/5347 43072/5347 4626/5347 4550/5347 6798/61 25238/41
+name = Velrak the explorer
+models = 214 250 308 275 176 181 168
+headmodels = 52 82

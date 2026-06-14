@@ -1,0 +1,6 @@
+// loc 9141
+active = 1
+op1 = Open
+raiseobject = 0
+models = 9081/0
+name = Gate

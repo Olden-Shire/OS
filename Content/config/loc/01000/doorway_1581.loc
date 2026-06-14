@@ -1,0 +1,8 @@
+// loc 1581
+mirror = true
+sharelight = true
+raiseobject = 0
+ambient = 25
+contrast = 25
+models = 653/10 644/0
+name = Doorway

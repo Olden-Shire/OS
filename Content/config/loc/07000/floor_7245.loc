@@ -1,0 +1,5 @@
+// loc 7245
+nonsolid = true
+op5 = Search
+models_only = 7576
+name = Floor

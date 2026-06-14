@@ -1,0 +1,11 @@
+// npc 5147
+vislevel = 0
+size = 1
+walkanim = 5340
+readyanim = 5339
+ambient = 20
+resizeh = 88
+resizev = 88
+recol = 115/16 5231/24 107/20 99/28 41/28
+name = Lamb
+models = 20272

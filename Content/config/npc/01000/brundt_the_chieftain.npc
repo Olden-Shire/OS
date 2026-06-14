@@ -1,0 +1,10 @@
+// npc 1294
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 5161/6856 24/6856 6798/6707 25238/7333 61/5276 41/5268
+name = Brundt the Chieftain
+models = 4220 250 3379 164 176 4226 4218 542 236 4221 4219
+headmodels = 4210 82 68 4211

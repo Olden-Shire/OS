@@ -1,0 +1,9 @@
+// obj 4810
+model = obj_ruined_backpack
+xof2d = -2
+yof2d = 31
+yan2d = 500
+xan2d = 340
+iop1 = Open
+members = true
+name = Ruined backpack

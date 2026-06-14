@@ -1,0 +1,7 @@
+// npc 2937
+readyanim = 2893
+ambient = 40
+contrast = -112
+vislevel = 0
+name = Droalak
+models = 10009

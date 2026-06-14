@@ -1,0 +1,8 @@
+// npc 5593
+readyanim = 5839
+walkanim = 5840
+size = 2
+op2 = Attack
+vislevel = 103
+name = Frogeel
+models = 22770

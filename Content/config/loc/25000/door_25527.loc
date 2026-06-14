@@ -1,0 +1,9 @@
+// loc 25527
+active = 1
+hillskew = true
+sharelight = true
+ambient = 35
+contrast = 20
+op1 = Open
+models_only = 27049
+name = Door

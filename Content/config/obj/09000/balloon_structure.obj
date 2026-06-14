@@ -1,0 +1,9 @@
+// obj 9933
+model = obj_balloon_structure
+zoom2d = 912
+yan2d = 1733
+xan2d = 1952
+contrast = 15
+ambient = 15
+members = true
+name = Balloon structure

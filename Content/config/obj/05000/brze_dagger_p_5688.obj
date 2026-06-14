@@ -1,0 +1,13 @@
+// obj 5688
+members = true
+model = obj_iron_dagger_p_1219
+cost = 10
+yof2d = -4
+zoom2d = 760
+yan2d = 1276
+xan2d = 472
+iop2 = Wield
+manwear = obj_iron_dagger_p_1219_wear, 0
+womanwear = obj_iron_dagger_p_1219_wear, 6
+recol = 61/5652 37/5002 74/5652 103/3489 22459/13221
+name = Br'ze dagger(p++)

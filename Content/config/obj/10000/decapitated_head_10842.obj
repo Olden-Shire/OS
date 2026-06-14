@@ -1,0 +1,12 @@
+// obj 10842
+members = true
+model = obj_decapitated_head_10842
+manwear = obj_decapitated_head_10842_wear, 0
+womanwear = obj_decapitated_head_10842_wear, 6
+xof2d = 5
+yof2d = -3
+zoom2d = 1178
+yan2d = 1784
+xan2d = 180
+iop5 = Destroy
+name = Decapitated head

@@ -1,0 +1,10 @@
+// npc 584
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+name = Herquin
+models = 235 11748 9620 11760 11769 11326 10218 11869 181 11770
+headmodels = 67 9449 11868

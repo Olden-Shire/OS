@@ -1,0 +1,10 @@
+// npc 5811
+resizeh = 86
+resizev = 86
+walkanim = 6042
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+name = Cave goblin child
+models = 23655 23697 23633
+headmodels = 23244

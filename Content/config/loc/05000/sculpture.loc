@@ -1,0 +1,9 @@
+// loc 5808
+hillskew = true
+active = 1
+ambient = 20
+contrast = 80
+op1 = Look
+op5 = Search
+models = 5650/4
+name = Sculpture

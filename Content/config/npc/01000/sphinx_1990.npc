@@ -1,0 +1,13 @@
+// npc 1990
+op1 = Talk-to
+resizev = 240
+resizeh = 240
+size = 2
+walkanim = 2027
+readyanim = 2028
+vislevel = 0
+alwaysontop = true
+recol = 59429/8887 90/9007 4550/11844 4546/12859 49054/8883 6798/4550
+name = Sphinx
+models = 6456 6457
+headmodels = 6128

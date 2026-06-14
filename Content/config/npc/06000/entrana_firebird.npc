@@ -1,0 +1,9 @@
+// npc 6108
+size = 2
+ambient = 40
+walkanim = 6808
+readyanim = 6809
+op2 = Attack
+vislevel = 2
+name = Entrana firebird
+models = 26853

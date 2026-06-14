@@ -1,0 +1,10 @@
+// obj 8004
+model = obj_arthur_portrait
+members = true
+cost = 1000
+xof2d = -1
+yof2d = 7
+zoom2d = 1503
+yan2d = 24
+xan2d = 399
+name = Small map

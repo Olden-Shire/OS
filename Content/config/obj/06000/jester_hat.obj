@@ -1,0 +1,14 @@
+// obj 6858
+model = obj_jester_hat
+xof2d = 1
+yof2d = 1
+zoom2d = 724
+yan2d = 2006
+xan2d = 93
+iop2 = Wear
+manwear = obj_jester_hat_man, 0
+womanwear = obj_jester_hat_woman, 0
+manhead = 10391
+womanhead = 10403
+iop5 = Destroy
+name = Jester hat

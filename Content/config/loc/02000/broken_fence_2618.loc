@@ -1,0 +1,6 @@
+// loc 2618
+op1 = Climb-over
+offsety = -15
+nonblockrange = true
+models_only = 24897
+name = Broken fence

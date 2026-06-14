@@ -1,0 +1,12 @@
+// loc 4577
+occlude = true
+blockwalk = true
+resizex = 128
+resizey = 256
+resizez = 128
+ambient = 20
+contrast = 0
+active = 1
+op1 = Walk-through
+models = 4528/0
+name = Doorway

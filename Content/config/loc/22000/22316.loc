@@ -1,0 +1,9 @@
+// loc 22316
+active = 0
+hillskew = true
+blockwalk = true
+contrast = 10
+ambient = 10
+resizey = 150
+noshadow = true
+models_only = 23072

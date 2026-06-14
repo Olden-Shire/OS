@@ -1,0 +1,6 @@
+// loc 10341
+sharelight = true
+occlude = true
+active = 0
+recol = 24/6439 10339/7500
+models = 10061/0 10062/1 10063/2 10064/3 10065/9

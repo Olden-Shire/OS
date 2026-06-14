@@ -1,0 +1,8 @@
+// npc 5080
+walkanim = 5181
+readyanim = 5182
+op2 = Attack
+vislevel = 2
+recol = 5169/3988 7343/3988 7335/3982 7339/3986 7343/5014 5165/3988
+name = Carnivorous chinchompa
+models = 19371

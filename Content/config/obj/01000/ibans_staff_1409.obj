@@ -1,0 +1,13 @@
+// obj 1409
+members = true
+model = obj_ibans_staff_1409
+yof2d = -15
+zoom2d = 1640
+yan2d = 1464
+xan2d = 196
+cost = 42500
+iop2 = Wield
+iop4 = Check
+manwear = obj_ibans_staff_1409_wear, 0
+womanwear = obj_ibans_staff_1409_wear, 6
+name = Iban's staff

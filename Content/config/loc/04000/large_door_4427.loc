@@ -1,0 +1,7 @@
+// loc 4427
+op1 = Open
+op2 = Attack
+mirror = true
+raiseobject = 0
+models = 639/0
+name = Large door

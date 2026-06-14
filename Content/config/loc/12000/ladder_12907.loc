@@ -1,0 +1,6 @@
+// loc 12907
+op1 = Climb-up
+sharelight = true
+forceapproach = 13
+models_only = 13990
+name = Ladder

@@ -1,0 +1,13 @@
+// obj 6182
+model = obj_lederhosen_hat
+iop2 = Wear
+manwear = obj_lederhosen_hat_man, 0
+womanwear = obj_lederhosen_hat_woman, 0
+manhead = 8769
+womanhead = 8771
+xof2d = 4
+yof2d = -18
+zoom2d = 920
+yan2d = 212
+xan2d = 196
+name = Lederhosen hat

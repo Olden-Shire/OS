@@ -1,0 +1,6 @@
+// loc 16251
+op1 = Search
+ambient = 15
+recol = 6443/32943 6439/32819 6563/32943 6558/33063 6682/32924 6806/32939
+models_only = 7700
+name = Crates

@@ -1,0 +1,10 @@
+// npc 670
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+name = King Narnode Shareen
+models = 2909 2891 2916
+headmodels = 20

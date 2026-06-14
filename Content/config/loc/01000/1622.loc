@@ -1,0 +1,7 @@
+// loc 1622
+sharelight = true
+active = 0
+ambient = 25
+contrast = 25
+retex = 2/23
+models = 669/0 670/1 671/2 672/3 673/9

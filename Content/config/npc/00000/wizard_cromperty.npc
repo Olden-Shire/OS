@@ -1,0 +1,11 @@
+// npc 844
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Teleport
+recol = 6798/119 123/38831
+name = Wizard Cromperty
+models = 202 215 246 20405 3189 20395 176 20403 181
+headmodels = 53 44

@@ -1,0 +1,13 @@
+// npc 1675
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 130
+resizev = 135
+alwaysontop = true
+vislevel = 0
+recol = 25238/10004 4550/6579 6040/10004 43072/6579 4626/10004 61/41
+name = Gardener Ghost
+models = 5182 5180 5181 5183 5184 5185 496
+headmodels = 5179

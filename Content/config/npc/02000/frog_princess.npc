@@ -1,0 +1,8 @@
+// npc 2475
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+recol = 8741/127 908/127 25238/32879 4626/127 6798/11216 10299/4550
+name = Frog princess
+models = 6962 390 8786 8846 8784 360 353 444
+headmodels = 113 6953

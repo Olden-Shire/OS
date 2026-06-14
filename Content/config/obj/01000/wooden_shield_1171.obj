@@ -1,0 +1,13 @@
+// obj 1171
+cost = 20
+model = obj_wooden_shield_1171
+xof2d = 3
+yof2d = 40
+zoom2d = 1390
+yan2d = 32
+xan2d = 328
+iop2 = Wield
+manwear = obj_wooden_shield_1171_wear, 0
+womanwear = obj_wooden_shield_1171_wear, 6
+recol = 61/5784
+name = Wooden shield

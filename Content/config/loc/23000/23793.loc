@@ -1,0 +1,9 @@
+// loc 23793
+ambient = 25
+contrast = 25
+hillskew = true
+sharelight = true
+active = 0
+resizey = 130
+mirror = true
+models_only = 24688

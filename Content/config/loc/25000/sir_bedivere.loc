@@ -1,0 +1,9 @@
+// loc 25667
+anim = 6915
+nonsolid = true
+ambient = 10
+contrast = 10
+op1 = Talk-to
+recol = 5673/10328
+models_only = 27191
+name = Sir Bedivere

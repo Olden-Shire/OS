@@ -1,0 +1,113 @@
+[clientscript,script_100]()()
+
+if (testbit(%varp286, 0) = 1) {
+    if_setgraphic(181, 7012428);
+} else {
+    if_setgraphic(180, 7012428);
+}
+if (testbit(%varp286, 1) = 1) {
+    if_setgraphic(181, 7012432);
+} else {
+    if_setgraphic(180, 7012432);
+}
+if (testbit(%varp286, 4) = 1) {
+    if_setgraphic(181, 7012423);
+} else {
+    if_setgraphic(180, 7012423);
+}
+if (testbit(%varp286, 5) = 1) {
+    if_setgraphic(181, 7012424);
+} else {
+    if_setgraphic(180, 7012424);
+}
+if (testbit(%varp286, 6) = 1) {
+    if_setgraphic(181, 7012425);
+} else {
+    if_setgraphic(180, 7012425);
+}
+if (testbit(%varp286, 7) = 1) {
+    if_setgraphic(181, 7012429);
+} else {
+    if_setgraphic(180, 7012429);
+}
+if (testbit(%varp286, 8) = 1) {
+    if_setgraphic(181, 7012430);
+} else {
+    if_setgraphic(180, 7012430);
+}
+if (testbit(%varp286, 9) = 1) {
+    if_setgraphic(181, 7012431);
+} else {
+    if_setgraphic(180, 7012431);
+}
+if (testbit(%varp286, 10) = 1) {
+    if_setgraphic(181, 7012433);
+} else {
+    if_setgraphic(180, 7012433);
+}
+if (testbit(%varp286, 12) = 1) {
+    if_setgraphic(181, 7012427);
+} else {
+    if_setgraphic(180, 7012427);
+}
+if (testbit(%varp286, 13) = 1) {
+    if_setgraphic(181, 7012426);
+} else {
+    if_setgraphic(180, 7012426);
+}
+if (testbit(%varp286, 14) = 1) {
+    if_setmodel(7669, 7012487);
+} else {
+    if_setmodel(-1, 7012487);
+}
+if (testbit(%varp286, 15) = 1) {
+    if_setmodel(7669, 7012488);
+} else {
+    if_setmodel(-1, 7012488);
+}
+if (testbit(%varp286, 16) = 1) {
+    if_setmodel(7669, 7012489);
+} else {
+    if_setmodel(-1, 7012489);
+}
+if (testbit(%varp286, 17) = 1) {
+    if_setmodel(7669, 7012491);
+} else {
+    if_setmodel(-1, 7012491);
+}
+if (testbit(%varp286, 18) = 1) {
+    if_setmodel(7669, 7012492);
+} else {
+    if_setmodel(-1, 7012492);
+}
+if (testbit(%varp286, 19) = 1) {
+    if_setmodel(7669, 7012493);
+} else {
+    if_setmodel(-1, 7012493);
+}
+if (testbit(%varp286, 21) = 1) {
+    if_setmodel(7669, 7012494);
+} else {
+    if_setmodel(-1, 7012494);
+}
+if (testbit(%varp286, 23) = 1) {
+    if_setmodel(7669, 7012495);
+} else {
+    if_setmodel(-1, 7012495);
+}
+if (testbit(%varp286, 24) = 1) {
+    if_setmodel(7669, 7012496);
+} else {
+    if_setmodel(-1, 7012496);
+}
+if (testbit(%varp286, 26) = 1) {
+    if_setmodel(7669, 7012497);
+} else {
+    if_setmodel(-1, 7012497);
+}
+if (testbit(%varp286, 27) = 1) {
+    if_setmodel(7669, 7012490);
+} else {
+    if_setmodel(-1, 7012490);
+}
+return;

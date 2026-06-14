@@ -1,0 +1,9 @@
+// npc 2335
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 8741/4657 25238/5652 908/6028 43072/3532 4550/3532 6798/5910
+name = Dreven
+models = 206 253 292 326 151 176 496 254 7121 276
+headmodels = 46 85

@@ -1,0 +1,10 @@
+// npc 4976
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/8741 908/8741 4550/4533 6798/8862
+name = Male slave
+models = 217 250 19182 19173 19331 509 19181 19330
+headmodels = 55 82

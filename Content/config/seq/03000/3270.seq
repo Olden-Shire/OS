@@ -1,0 +1,4 @@
+// seq 3270
+replaceheldleft = 0
+replaceheldright = 0
+frames = 4/80/199 4/81/199 4/82/199 4/83/199 4/84/199 4/85/199

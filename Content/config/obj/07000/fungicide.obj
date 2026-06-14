@@ -1,0 +1,10 @@
+// obj 7432
+model = obj_fungicide
+contrast = 15
+ambient = 15
+members = true
+zoom2d = 848
+yan2d = 1892
+xan2d = 195
+cost = 10
+name = Fungicide

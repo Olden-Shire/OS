@@ -1,0 +1,11 @@
+// npc 117
+size = 2
+contrast = 5
+ambient = 8
+alwaysontop = true
+walkanim = 4649
+readyanim = 4650
+op2 = Attack
+vislevel = 28
+name = Hill Giant
+models = 17463 17446 17430 17466 17460

@@ -1,0 +1,13 @@
+// npc 4285
+size = 1
+vislevel = 0
+op1 = Talk-to
+resizeh = 160
+resizev = 160
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 4550/4771 7054/0 6798/109 939/0 61/7054 25238/0
+name = Ghommal
+models = 230 253 15315 11764 11727 11731 266 4954
+headmodels = 63 85

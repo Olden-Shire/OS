@@ -1,0 +1,7 @@
+// loc 13407
+width = 2
+length = 2
+op5 = Remove
+nonblockrange = true
+models_only = 12918 12920
+name = Pond

@@ -1,0 +1,7 @@
+// npc 2717
+size = 1
+walkanim = 5479
+readyanim = 5483
+vislevel = 0
+name = Skeleton mage
+models = 21193

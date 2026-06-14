@@ -1,0 +1,13 @@
+// obj 7634
+cost = 1
+model = obj_battered_tome
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+members = true
+iop1 = Read
+iop5 = Destroy
+recol = 32883/6040 43239/12184 43486/10130
+name = Battered tome

@@ -1,0 +1,12 @@
+// obj 11165
+cost = 4
+model = obj_phoenix_crossbow_767
+xof2d = -22
+yof2d = -16
+zoom2d = 1114
+yan2d = 1079
+xan2d = 290
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+name = Phoenix crossbow

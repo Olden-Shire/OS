@@ -1,0 +1,6 @@
+// loc 10817
+active = 1
+op1 = Pull
+forceapproach = 11
+models_only = 2221
+name = Lever

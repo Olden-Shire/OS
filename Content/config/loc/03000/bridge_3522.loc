@@ -1,0 +1,10 @@
+// loc 3522
+sharelight = true
+forcedecor = true
+hillskew = true
+mapscene = 46
+active = 1
+nonsolid = true
+op1 = Jump
+models = 1089/22
+name = Bridge

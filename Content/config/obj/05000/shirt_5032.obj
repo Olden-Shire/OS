@@ -1,0 +1,14 @@
+// obj 5032
+model = obj_shirt_5030
+yof2d = 1
+zoom2d = 790
+xan2d = 512
+members = true
+cost = 600
+iop2 = Wear
+manwear = obj_shirt_5030_man, 0
+manwear2 = 6999
+womanwear = obj_shirt_5030_woman, 0
+womanwear2 = 7005
+recol = 9529/7616
+name = Shirt

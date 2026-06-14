@@ -1,0 +1,9 @@
+// npc 6042
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Nikita
+models = 26146 26155 26139 26151 26142
+headmodels = 26275

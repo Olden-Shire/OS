@@ -1,0 +1,8 @@
+// loc 14879
+active = 1
+op1 = Open
+raiseobject = 0
+forceapproach = 13
+blockwalk = true
+models = 14819/22
+name = Trapdoor

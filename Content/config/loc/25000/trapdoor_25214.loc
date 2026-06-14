@@ -1,0 +1,6 @@
+// loc 25214
+sharelight = true
+op1 = Open
+recol = 6930/6028 6932/7054 7958/7056 7834/6932 7836/7958
+models_only = 20791
+name = Trapdoor

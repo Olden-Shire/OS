@@ -1,0 +1,16 @@
+// interface 155
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=240
+y=152
+width=32
+height=32
+trans=0
+model=com_i6233
+activemodel=-1
+zoom=113
+xan=480
+yan=512

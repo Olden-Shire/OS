@@ -1,0 +1,14 @@
+// obj 6448
+model = obj_spadeful_of_coke
+manwear = obj_spadeful_of_coke_wear, 0
+womanwear = obj_spadeful_of_coke_wear, 0
+xof2d = -1
+yof2d = 15
+zoom2d = 1650
+yan2d = 1468
+xan2d = 304
+cost = 3
+members = true
+iop1 = Empty
+recol = 61/5181 57/5177 70/5190
+name = Spadeful of coke

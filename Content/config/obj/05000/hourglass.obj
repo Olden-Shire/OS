@@ -1,0 +1,10 @@
+// obj 5610
+model = obj_hourglass
+xof2d = 1
+yof2d = 2
+zoom2d = 690
+yan2d = 60
+xan2d = 112
+ambient = 30
+members = true
+name = Hourglass

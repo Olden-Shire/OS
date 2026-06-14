@@ -1,0 +1,12 @@
+// obj 6650
+model = obj_red_crystal
+ambient = 40
+contrast = 40
+xof2d = 1
+yof2d = 1
+zoom2d = 360
+yan2d = 1948
+xan2d = 104
+members = true
+recol = 127/24
+name = Blackened crystal

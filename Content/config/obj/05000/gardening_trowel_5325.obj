@@ -1,0 +1,11 @@
+// obj 5325
+model = obj_gardening_trowel_5325
+manwear = obj_gardening_trowel_5325_wear, 0
+womanwear = obj_gardening_trowel_5325_wear, 6
+yof2d = -2
+zoom2d = 920
+yan2d = 1740
+xan2d = 188
+members = true
+cost = 12
+name = Gardening trowel

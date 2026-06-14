@@ -1,0 +1,6 @@
+// loc 2114
+active = 1
+op1 = Remove-coal
+op2 = Investigate
+models_only = 1398
+name = Coal Truck

@@ -1,0 +1,9 @@
+// npc 390
+vislevel = 0
+size = 1
+readyanim = 4
+resizeh = 64
+resizev = 64
+alwaysontop = true
+name = Big fish
+models = 2845

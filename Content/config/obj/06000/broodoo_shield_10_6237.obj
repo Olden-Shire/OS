@@ -1,0 +1,13 @@
+// obj 6237
+cost = 3000
+iop2 = Wield
+model = obj_broodoo_shield_10_6215
+manwear = obj_broodoo_shield_10_6215_wear, 0
+womanwear = obj_broodoo_shield_10_6215_wear, 6
+xof2d = -2
+zoom2d = 1370
+yan2d = 264
+xan2d = 364
+members = true
+recol = 6585/8879 35047/4930 35047/7997 119/4930 37444/4663
+name = Broodoo shield (10)

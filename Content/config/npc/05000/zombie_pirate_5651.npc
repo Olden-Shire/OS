@@ -1,0 +1,9 @@
+// npc 5651
+readyanim = 5883
+walkanim = 5882
+op2 = Attack
+size = 1
+vislevel = 57
+recol = 906/38540 1932/38416 3982/38292 3858/38168 3734/38168
+name = Zombie pirate
+models = 21432 21478 21418 21441 21465 21449 21424

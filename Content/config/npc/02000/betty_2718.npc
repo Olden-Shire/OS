@@ -1,0 +1,11 @@
+// npc 2718
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 43072/4550 6798/0 8741/55186 25238/0 9104/127 4550/5466
+name = Betty
+models = 378 446 469 332 353 421 361
+headmodels = 103

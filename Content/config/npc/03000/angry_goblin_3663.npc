@@ -1,0 +1,12 @@
+// npc 3663
+size = 1
+contrast = 30
+ambient = 30
+readyanim = 6181
+walkanim = 6180
+op2 = Attack
+ambient = 15
+vislevel = 47
+recol = 127/10716
+name = Angry goblin
+models = 24428

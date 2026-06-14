@@ -1,0 +1,4 @@
+// loc 15934
+op1 = Take-Tool
+models_only = 15771 15770
+name = Workbench

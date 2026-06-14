@@ -1,0 +1,5 @@
+// loc 15070
+active = 1
+ambient = 25
+models_only = 8220 8222 7766
+name = Dry patch

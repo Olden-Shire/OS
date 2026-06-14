@@ -1,0 +1,13 @@
+// obj 8880
+model = obj_dorgeshuun_cbow_8880
+iop2 = Wield
+manwear = obj_dorgeshuun_cbow_8880_wear, 0
+womanwear = obj_dorgeshuun_cbow_8880_wear, 6
+xof2d = 2
+yof2d = 8
+zoom2d = 1104
+yan2d = 1658
+xan2d = 444
+cost = 2000
+members = true
+name = Dorgeshuun c'bow

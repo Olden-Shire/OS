@@ -1,0 +1,7 @@
+// loc 25442
+active = 1
+anim = 3105
+nonsolid = true
+length = 2
+op1 = Inspect
+multiloc = 3837, 65535, 25440 25441

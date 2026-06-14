@@ -1,0 +1,13 @@
+// obj 1267
+cost = 140
+model = obj_bronze_pickaxe_1265
+manwear = obj_bronze_pickaxe_1265_wear, 0
+womanwear = obj_bronze_pickaxe_1265_wear, 6
+xof2d = -2
+yof2d = -19
+zoom2d = 1070
+yan2d = 1056
+xan2d = 224
+iop2 = Wield
+recol = 61/33
+name = Iron pickaxe

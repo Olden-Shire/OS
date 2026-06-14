@@ -1,0 +1,11 @@
+// loc 5117
+anim = 1533
+width = 2
+length = 2
+mapscene = 11
+resizex = 108
+resizez = 108
+resizey = 128
+recol = 61/21522 53/21522
+models_only = 4456 4457
+name = Statue

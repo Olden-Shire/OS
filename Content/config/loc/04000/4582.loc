@@ -1,0 +1,6 @@
+// loc 4582
+sharelight = true
+active = 0
+ambient = 20
+recol = 61/43051
+models_only = 4584

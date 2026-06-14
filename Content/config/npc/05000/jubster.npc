@@ -1,0 +1,8 @@
+// npc 5596
+size = 3
+walkanim = 6804
+readyanim = 6803
+op2 = Attack
+vislevel = 87
+name = Jubster
+models = 26864

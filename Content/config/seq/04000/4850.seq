@@ -1,0 +1,5 @@
+// seq 4850
+replaceheldright = 0
+replaceheldleft = 0
+postanim_move = 1
+frames = 5/77/201 5/78/201 5/79/201 5/80/201 5/81/201 5/82/201 6/83/201 7/84/201 200/85/201

@@ -1,0 +1,9 @@
+// npc 2587
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+recol = 25238/10508 8741/6930 43072/4550 6798/4510 61/5652
+name = Bob, another guard of Falador
+models = 233 250 294 151 176 254 185 519 541
+headmodels = 66 82

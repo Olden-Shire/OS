@@ -1,0 +1,10 @@
+// npc 1283
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 6798/7380 25238/14494 8741/14494 7952/10512 7073/4510
+name = Swensen the Navigator
+models = 230 250 292 170 176 265 185 553 317 326
+headmodels = 63 82

@@ -1,0 +1,7 @@
+// loc 16244
+ambient = 20
+active = 1
+nonblockrange = true
+recol = 6451/32943 6443/32819 6439/32924 6563/32819
+models_only = 16104 9590
+name = Medical table

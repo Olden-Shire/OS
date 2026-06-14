@@ -1,0 +1,10 @@
+// npc 3559
+vislevel = 0
+resizeh = 125
+resizev = 120
+readyanim = 1144
+op1 = Talk-to
+recol = 43072/10450 25238/11148 4550/10450 6443/10398
+name = Calin
+models = 210 250 8845 168 176 264
+headmodels = 49 82 9822

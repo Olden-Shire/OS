@@ -1,0 +1,8 @@
+// npc 1522
+op2 = Attack
+size = 2
+walkanim = 5987
+readyanim = 5986
+vislevel = 98
+name = Nail beast
+models = 23212

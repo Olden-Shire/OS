@@ -1,0 +1,10 @@
+// npc 373
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/5231 8741/5231 4550/5805 43072/5805
+name = Nurse Sarah
+models = 390 456 332 353 429 358
+headmodels = 113

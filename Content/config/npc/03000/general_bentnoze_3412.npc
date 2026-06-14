@@ -1,0 +1,19 @@
+// npc 3412
+vislevel = 0
+size = 1
+resizeh = 148
+resizev = 148
+resizev = 148
+resizeh = 148
+walkanim = 3389
+readyanim = 3389
+alwaysontop = true
+turnspeed = 0
+alwaysontop = true
+op1 = Inspect
+vislevel = 0
+ambient = 15
+recol = 14238/10782 8086/8732 2974/916
+name = General Bentnoze
+models = 5535 16426 16425 5551 5547 15485
+headmodels = 15551

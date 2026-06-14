@@ -1,0 +1,11 @@
+// obj 7058
+model = obj_mushroom_potato_7058
+xof2d = 1
+yof2d = -6
+zoom2d = 860
+yan2d = 1856
+xan2d = 208
+iop1 = Eat
+members = true
+cost = 45
+name = Mushroom potato

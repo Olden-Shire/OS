@@ -1,0 +1,6 @@
+// loc 5269
+hillskew = true
+op1 = Jump-To
+nonsolid = true
+models_only = 3951
+name = Rock

@@ -1,0 +1,12 @@
+// obj 2928
+model = obj_priest_gown_428
+manwear = obj_priest_gown_428_man, 0
+womanwear = obj_priest_gown_428_woman, 0
+iop2 = Wear
+cost = 500
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+members = true
+recol = 25238/33678
+name = Robe bottoms

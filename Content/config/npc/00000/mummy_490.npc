@@ -1,0 +1,6 @@
+// npc 490
+size = 2
+vislevel = 0
+readyanim = 6856
+name = Mummy
+models = 27112

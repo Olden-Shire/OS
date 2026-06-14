@@ -1,0 +1,13 @@
+// npc 2536
+resizeh = 120
+resizev = 136
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8741/33 25238/24 4626/0 28318/4 908/4
+name = Niles
+models = 215 247 7611 163 176 254 181 8954
+headmodels = 53 79

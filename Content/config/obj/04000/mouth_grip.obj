@@ -1,0 +1,10 @@
+// obj 4181
+model = obj_mouth_grip
+manwear = obj_mouth_grip_wear, 0
+womanwear = obj_mouth_grip_wear, 0
+iop2 = Wear
+members = true
+yof2d = 113
+zoom2d = 1690
+xan2d = 72
+name = Mouth grip

@@ -1,0 +1,7 @@
+// npc 1014
+vislevel = 0
+size = 1
+readyanim = 1020
+walkanim = 1020
+name = Bloated Toad
+models = 3447

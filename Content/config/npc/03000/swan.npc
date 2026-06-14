@@ -1,0 +1,10 @@
+// npc 3296
+size = 1
+vislevel = 0
+resizeh = 57
+resizev = 57
+ambient = 20
+walkanim = 3241
+readyanim = 3242
+name = Swan
+models = 11725

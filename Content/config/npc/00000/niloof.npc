@@ -1,0 +1,10 @@
+// npc 994
+vislevel = 0
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 803/38040 4550/6709 5784/66 61/42413
+name = Niloof
+models = 2970 2984 2981 2979 2985 2990
+headmodels = 0

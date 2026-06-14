@@ -1,0 +1,14 @@
+// obj 3107
+cost = 30
+members = true
+model = obj_spiked_boots_3107
+xof2d = 1
+zoom2d = 790
+yan2d = 152
+xan2d = 60
+iop2 = Wear
+manwear = obj_spiked_boots_3107_man, 0
+womanwear = obj_spiked_boots_3107_woman, 0
+members = true
+recol = 4626/28
+name = Spiked boots

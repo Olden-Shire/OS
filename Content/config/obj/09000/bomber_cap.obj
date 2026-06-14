@@ -1,0 +1,21 @@
+// obj 9945
+model = obj_bomber_cap
+yof2d = 1
+yof2d = -1
+zoom2d = 528
+yan2d = 84
+xan2d = 165
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_bomber_cap_man, 0
+manwear2 = 230
+womanwear = obj_bomber_cap_woman, 0
+womanwear2 = 403
+manhead = 63
+manhead2 = 357
+womanhead = 120
+womanhead2 = 402
+iop2 = Wear
+iop5 = Destroy
+name = Bomber cap

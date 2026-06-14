@@ -1,0 +1,7 @@
+// loc 7724
+ambient = 25
+op1 = Pick-from
+op2 = Inspect
+op4 = Guide
+models_only = 7826 7814 7767
+name = Whiteberry bush

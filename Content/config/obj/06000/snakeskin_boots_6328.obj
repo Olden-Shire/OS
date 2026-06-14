@@ -1,0 +1,12 @@
+// obj 6328
+cost = 250
+iop2 = Wear
+members = true
+model = obj_snakeskin_boots_6328
+manwear = obj_snakeskin_boots_6328_man, 0
+womanwear = obj_snakeskin_boots_6328_woman, 0
+xof2d = 4
+zoom2d = 880
+yan2d = 212
+xan2d = 104
+name = Snakeskin boots

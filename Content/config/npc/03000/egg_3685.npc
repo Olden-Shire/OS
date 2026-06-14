@@ -1,0 +1,8 @@
+// npc 3685
+vislevel = 0
+walkanim = 3853
+ambient = 50
+contrast = 30
+turnspeed = 1024
+name = Egg
+models = 14410

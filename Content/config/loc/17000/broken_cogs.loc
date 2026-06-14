@@ -1,0 +1,9 @@
+// loc 17242
+active = 1
+length = 2
+ambient = 10
+blockwalk = true
+anim = 4563
+offsety = -10
+models_only = 17081
+name = Broken cogs

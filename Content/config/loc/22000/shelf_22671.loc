@@ -1,0 +1,6 @@
+// loc 22671
+active = 1
+ambient = 20
+blockwalk = true
+models_only = 23381 23380
+name = Shelf

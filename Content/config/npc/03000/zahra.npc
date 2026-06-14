@@ -1,0 +1,9 @@
+// npc 3036
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9019/5586 8741/5586 49054/51365 43072/3503 25238/5551 4550/3503
+name = Zahra
+models = 9022 9025 332 353 428 358
+headmodels = 9015

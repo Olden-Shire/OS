@@ -1,0 +1,6 @@
+// npc 5575
+walkanim = 841
+readyanim = 842
+alwaysontop = true
+vislevel = 0
+multivar = 393, 65535, 65535 5568

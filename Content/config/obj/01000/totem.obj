@@ -1,0 +1,10 @@
+// obj 1857
+cost = 10
+model = obj_totem
+members = true
+xof2d = 2
+yof2d = -9
+zoom2d = 1150
+yan2d = 108
+xan2d = 188
+name = Totem

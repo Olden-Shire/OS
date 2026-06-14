@@ -1,0 +1,12 @@
+// obj 5016
+model = obj_bone_spear_5016
+manwear = obj_bone_spear_5016_wear, 0
+womanwear = obj_bone_spear_5016_wear, 0
+members = true
+cost = 600
+xof2d = -1
+zoom2d = 2160
+yan2d = 512
+xan2d = 424
+iop2 = Wield
+name = Bone spear

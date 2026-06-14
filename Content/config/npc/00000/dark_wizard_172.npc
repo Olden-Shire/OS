@@ -1,0 +1,9 @@
+// npc 172
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 20
+recol = 25238/10508 8741/10508 6798/10508
+name = Dark wizard
+models = 208 181 251 292 170 176 265

@@ -1,0 +1,11 @@
+// npc 1043
+vislevel = 0
+walkanim = 1071
+readyanim = 1071
+resizeh = 142
+resizev = 142
+nominimap = true
+ambient = 70
+contrast = 70
+name = Will o' the wisp
+models = 3558

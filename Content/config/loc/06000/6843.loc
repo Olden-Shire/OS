@@ -1,0 +1,8 @@
+// loc 6843
+width = 2
+length = 3
+hillskew = true
+mapscene = 34
+active = 1
+nonblockrange = true
+multiloc = 488, 65535, 6844 6844 6844 6845 6845 6845

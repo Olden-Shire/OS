@@ -1,0 +1,6 @@
+// loc 18018
+ambient = 15
+nonblockrange = true
+recol = 6451/8472 6439/10266 6443/8472 6563/10258 6682/21526
+models_only = 17728
+name = Counter

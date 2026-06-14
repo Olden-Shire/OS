@@ -1,0 +1,10 @@
+// npc 714
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+recol = 4550/5662 25238/10913 43072/5662 8741/5592
+name = Edmond
+models = 230 185 250 299 159 176 263 276 329 495
+headmodels = 63 82

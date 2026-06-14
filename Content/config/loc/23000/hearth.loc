@@ -1,0 +1,11 @@
+// loc 23963
+anim = 4130
+ambient = 20
+contrast = 20
+width = 2
+resizey = 80
+resizex = 80
+resizez = 80
+bgsound = 2066, 5
+models_only = 24830 24829
+name = Hearth

@@ -1,0 +1,11 @@
+// obj 10859
+model = obj_tea_flask_10859
+iop1 = Drink
+iop2 = Look-in
+xof2d = 3
+yof2d = -12
+zoom2d = 720
+yan2d = 2000
+xan2d = 166
+members = true
+name = Tea flask

@@ -1,0 +1,12 @@
+// npc 2876
+vislevel = 0
+size = 1
+resizeh = 115
+resizev = 115
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 4550/2593 6798/11138 22426/46395 22424/7081 11162/15238
+name = Child
+models = 2902 2909 2918
+headmodels = 138

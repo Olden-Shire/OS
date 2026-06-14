@@ -1,0 +1,13 @@
+// obj 4866
+members = true
+cost = 85000
+manwear = obj_ahrims_staff_4710_wear, 0
+womanwear = obj_ahrims_staff_4710_wear, 6
+xof2d = -4
+yof2d = -19
+zoom2d = 1550
+yan2d = 116
+xan2d = 224
+model = obj_ahrims_staff_0_4866
+recol = 14503/10512 14499/10508 14494/10760 14490/11140
+name = Ahrims staff 0

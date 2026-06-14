@@ -1,0 +1,7 @@
+// npc 4378
+op1 = talk
+size = 1
+vislevel = 1
+name = Ricketty door
+models = 10302
+headmodels = 15911

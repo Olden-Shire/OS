@@ -1,0 +1,9 @@
+// npc 2333
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 38814/12702 8741/10520 25238/12702 43072/4550 908/8078
+name = Vasquen
+models = 4843 217 248 292 151 176 496 254 4390 185
+headmodels = 5534 55 80

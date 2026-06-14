@@ -1,0 +1,11 @@
+// obj 11035
+model = obj_windswept_logs
+xof2d = 3
+yof2d = -5
+zoom2d = 1140
+yan2d = 1748
+xan2d = 140
+members = true
+cost = 0
+iop5 = Destroy
+name = Windswept logs

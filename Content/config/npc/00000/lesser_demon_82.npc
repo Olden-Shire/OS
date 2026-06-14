@@ -1,0 +1,10 @@
+// npc 82
+size = 2
+resizeh = 86
+resizev = 86
+walkanim = 63
+readyanim = 66
+op2 = Attack
+vislevel = 82
+name = Lesser demon
+models = 17375 17391 17384 17388 17390

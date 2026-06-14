@@ -1,0 +1,17 @@
+// obj 9336
+model = obj_opal_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+stackable = true
+members = true
+count1 = 9347, 2
+count2 = 9348, 3
+count3 = 9349, 4
+count4 = 9350, 5
+cost = 22
+recol = 17971/78 5537/74 5532/70 5656/66 5652/61 10465/63411
+name = Topaz bolts

@@ -1,0 +1,11 @@
+// loc 24157
+active = 0
+hillskew = true
+mapscene = 11
+resizex = 64
+resizey = 64
+resizez = 64
+ambient = 20
+nonblockrange = true
+recol = 6689/10283
+models_only = 819

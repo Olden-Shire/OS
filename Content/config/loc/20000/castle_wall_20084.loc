@@ -1,0 +1,9 @@
+// loc 20084
+sharelight = true
+wallwidth = 32
+occlude = true
+op1 = Climb-under
+ambient = 25
+contrast = 25
+models_only = 9233
+name = Castle wall

@@ -1,0 +1,9 @@
+// npc 796
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/6620 5532/61 25238/926
+name = Achietties
+models = 393 376 468 430 356 360 339 417 541 518
+headmodels = 115 136 101

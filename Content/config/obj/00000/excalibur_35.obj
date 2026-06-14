@@ -1,0 +1,13 @@
+// obj 35
+members = true
+cost = 200
+model = obj_excalibur_35
+xof2d = 6
+yof2d = 17
+zoom2d = 1500
+yan2d = 932
+xan2d = 384
+iop2 = Wield
+manwear = obj_excalibur_35_wear, 0
+womanwear = obj_excalibur_35_wear, 6
+name = Excalibur

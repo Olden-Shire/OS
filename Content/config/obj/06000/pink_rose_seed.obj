@@ -1,0 +1,15 @@
+// obj 6455
+model = obj_white_rose_seed
+xof2d = -8
+yof2d = 7
+zoom2d = 1260
+yan2d = 2008
+xan2d = 280
+members = true
+iop5 = Destroy
+stackable = true
+count1 = 6488, 2
+count2 = 6489, 3
+count3 = 6490, 4
+count4 = 6491, 5
+name = Pink rose seed

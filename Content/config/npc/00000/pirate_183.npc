@@ -1,0 +1,11 @@
+// npc 183
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 23
+recol = 6798/10508 8741/10508 43072/4550
+name = Pirate
+models = 215 252 299 159 176 259 193 236 518
+headmodels = 53 84 68 36

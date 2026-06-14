@@ -1,0 +1,10 @@
+// npc 364
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8078/926 8741/127 25238/926 4626/127 7700/926 11200/127
+name = King Lathas
+models = 230 185 251 313 160 176 267 1808 323
+headmodels = 63 83 2938

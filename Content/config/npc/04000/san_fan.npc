@@ -1,0 +1,11 @@
+// npc 4360
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+op3 = Join-Crew
+vislevel = 0
+alwaysontop = true
+recol = 127/43683 9529/103 8741/103 8078/90 39145/8 4550/4533
+name = San Fan
+models = 11118 456 343 353 15984 422
+headmodels = 11189

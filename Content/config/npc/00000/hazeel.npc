@@ -1,0 +1,10 @@
+// npc 892
+vislevel = 296
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/4205 25238/0 926/20 43072/4205 4626/4205
+name = Hazeel
+models = 231 246 315 168 176 275 181 328 239
+headmodels = 64 71

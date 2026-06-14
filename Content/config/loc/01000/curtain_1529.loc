@@ -1,0 +1,7 @@
+// loc 1529
+active = 1
+op1 = Close
+nonsolid = true
+raiseobject = 0
+models = 879/0 880/9
+name = Curtain

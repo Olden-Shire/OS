@@ -1,0 +1,8 @@
+// loc 3738
+sharelight = true
+hillskew = true
+active = 0
+ambient = 25
+contrast = 25
+recol = 6689/7335
+models_only = 834

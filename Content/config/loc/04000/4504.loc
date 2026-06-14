@@ -1,0 +1,8 @@
+// loc 4504
+sharelight = true
+hillskew = true
+ambient = 20
+resizez = 128
+resizex = 128
+resizey = 192
+models = 4463/0 4464/1 4465/2 4466/3 4467/9

@@ -1,0 +1,8 @@
+// npc 2194
+op1 = Talk-to
+walkanim = 98
+readyanim = 101
+vislevel = 0
+name = Reinald
+models = 2972 7062 2978 7044 2985 6019
+headmodels = 2 6026

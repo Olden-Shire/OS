@@ -1,0 +1,15 @@
+// obj 1712
+cost = 17625
+model = obj_amulet_of_accuracy_1478
+xof2d = 1
+yof2d = 16
+zoom2d = 620
+yan2d = 68
+xan2d = 424
+members = true
+iop2 = Wear
+iop4 = Rub
+manwear = obj_amulet_of_accuracy_1478_man, 0
+womanwear = obj_amulet_of_accuracy_1478_woman, 0
+recol = 127/51111 5916/127 4882/127
+name = Amulet of glory(4)

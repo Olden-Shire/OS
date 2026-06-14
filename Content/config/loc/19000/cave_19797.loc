@@ -1,0 +1,8 @@
+// loc 19797
+width = 2
+hillskew = true
+sharelight = true
+ambient = 30
+recol = 61/8648 49/8388 12/8976 28/8367
+models_only = 19359
+name = Cave

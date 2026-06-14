@@ -1,0 +1,8 @@
+// loc 12802
+active = 1
+width = 2
+ambient = 15
+op1 = Search
+nonblockrange = true
+models_only = 13960
+name = Tomb

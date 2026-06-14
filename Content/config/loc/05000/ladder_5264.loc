@@ -1,0 +1,8 @@
+// loc 5264
+active = 1
+op1 = Climb-up
+mapscene = 7
+forceapproach = 11
+recol = 5788/8724 5912/8724 5673/8724
+models_only = 5187
+name = Ladder

@@ -1,0 +1,6 @@
+// loc 16243
+ambient = 25
+noshadow = true
+hillskew = true
+recol = 7580/32943 7700/32819 7952/32924 7704/32819 7585/32819
+models = 16105/0 16106/9

@@ -1,0 +1,8 @@
+// loc 3393
+sharelight = true
+active = 0
+blockwalk = true
+wallwidth = 16
+contrast = 25
+ambient = 30
+models = 27424/9

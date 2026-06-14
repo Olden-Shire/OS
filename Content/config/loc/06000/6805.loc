@@ -1,0 +1,11 @@
+// loc 6805
+active = 0
+width = 2
+length = 2
+hillskew = true
+resizex = 256
+resizey = 256
+resizez = 256
+nonblockrange = true
+recol = 10396/10514 5281/10518 7335/10394 5276/10638
+models_only = 3722

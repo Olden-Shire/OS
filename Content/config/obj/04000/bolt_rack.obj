@@ -1,0 +1,17 @@
+// obj 4740
+cost = 50
+model = obj_bolt_rack
+xof2d = 1
+yof2d = 1
+zoom2d = 870
+yan2d = 1776
+xan2d = 72
+iop2 = Wield
+stackable = true
+count1 = 4741, 2
+count2 = 4742, 3
+count3 = 4743, 4
+count4 = 4744, 5
+members = true
+recol = 10529/10388 8602/10512 10520/10508 8722/10760
+name = Bolt rack

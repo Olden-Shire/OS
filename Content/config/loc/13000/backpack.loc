@@ -1,0 +1,7 @@
+// loc 13872
+hillskew = true
+active = 1
+nonsolid = true
+op1 = Search
+models_only = 14145
+name = Backpack

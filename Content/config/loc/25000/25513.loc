@@ -1,0 +1,9 @@
+// loc 25513
+active = 0
+hillskew = true
+sharelight = true
+mirror = true
+ambient = 35
+contrast = 20
+mapscene = 22
+models = 27041/0 27017/9

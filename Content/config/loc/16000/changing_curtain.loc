@@ -1,0 +1,6 @@
+// loc 16558
+sharelight = true
+ambient = 5
+active = 1
+models = 16428/0
+name = Changing Curtain

@@ -1,0 +1,10 @@
+// npc 3560
+vislevel = 0
+resizeh = 120
+resizev = 120
+readyanim = 1144
+op1 = Talk-to
+recol = 6798/10638 43072/10450 25238/21522 8741/12950 4550/10450 933/43026
+name = Mihail
+models = 214 250 310 163 176 264
+headmodels = 52 82 9822

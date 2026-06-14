@@ -1,0 +1,7 @@
+// loc 16514
+anim = 4335
+ambient = 10
+active = 1
+op1 = Search
+models_only = 16420 16417
+name = Urn

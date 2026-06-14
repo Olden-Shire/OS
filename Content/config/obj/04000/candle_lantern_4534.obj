@@ -1,0 +1,11 @@
+// obj 4534
+model = obj_candle_lantern_4531
+iop2 = Extinguish
+yof2d = -8
+zoom2d = 1250
+yan2d = 1904
+xan2d = 140
+cost = 15
+members = true
+recol = 8417/8
+name = Candle lantern

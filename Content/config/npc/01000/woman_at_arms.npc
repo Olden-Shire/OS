@@ -1,0 +1,10 @@
+// npc 1509
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 61/43297 41/43282 57/43297 926/1701 7700/1581 11200/1701
+name = Woman-at-arms
+models = 395 468 337 10706 23178 23179 432 5031 481
+headmodels = 117

@@ -1,0 +1,9 @@
+// npc 3138
+vislevel = 0
+resizev = 140
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/920 8741/920 4550/6241 11200/906 7700/63376 926/945
+name = Enakhra
+models = 10841 10842 481 10839 10706 440 10843
+headmodels = 10832

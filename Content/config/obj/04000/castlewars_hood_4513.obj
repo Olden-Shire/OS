@@ -1,0 +1,12 @@
+// obj 4513
+model = obj_ham_hood_4302
+zoom2d = 730
+yan2d = 2036
+iop2 = Wear
+manwear = obj_castlewars_hood_4513_man, 0
+womanwear = obj_castlewars_hood_4513_woman, 0
+manhead = 48
+womanhead = 107
+members = true
+recol = 8741/41416 7700/41424 8076/38554 11200/10473
+name = Castlewars hood

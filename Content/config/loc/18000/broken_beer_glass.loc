@@ -1,0 +1,6 @@
+// loc 18865
+ambient = 10
+active = 1
+nonsolid = true
+models_only = 19119
+name = Broken beer glass

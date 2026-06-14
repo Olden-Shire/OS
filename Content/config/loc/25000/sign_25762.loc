@@ -1,0 +1,7 @@
+// loc 25762
+anim = 4128
+ambient = 30
+contrast = 25
+recol = 5784/6554 5793/6435 5667/6323 6682/6674 2225/6323
+models_only = 25207 25208
+name = Sign

@@ -1,0 +1,87 @@
+[clientscript,script_147](int $int0, int $int1)()
+
+if ($int0 = 0) {
+    %varcint12 = $int1;
+}
+if ($int0 = 1) {
+    %varcint13 = $int1;
+}
+if ($int0 = 2) {
+    %varcint14 = $int1;
+}
+if ($int0 = 3) {
+    %varcint15 = $int1;
+}
+if ($int0 = 4) {
+    %varcint16 = $int1;
+}
+if ($int0 = 5) {
+    %varcint17 = $int1;
+}
+if ($int0 = 6) {
+    %varcint18 = $int1;
+}
+if ($int0 = 7) {
+    %varcint19 = $int1;
+}
+if ($int0 = 8) {
+    %varcint20 = $int1;
+}
+if ($int0 = 9) {
+    %varcint21 = $int1;
+}
+if ($int0 = 10) {
+    %varcint22 = $int1;
+}
+if ($int0 = 11) {
+    %varcint23 = $int1;
+}
+if ($int0 = 12) {
+    %varcint24 = $int1;
+}
+if ($int0 = 13) {
+    %varcint25 = $int1;
+}
+if ($int0 = 14) {
+    %varcint26 = $int1;
+}
+if ($int0 = 15) {
+    %varcint27 = $int1;
+}
+if ($int0 = 16) {
+    %varcint28 = $int1;
+}
+if ($int0 = 17) {
+    %varcint29 = $int1;
+}
+if ($int0 = 18) {
+    %varcint30 = $int1;
+}
+if ($int0 = 19) {
+    %varcint31 = $int1;
+}
+if ($int0 = 20) {
+    %varcint32 = $int1;
+}
+if ($int0 = 21) {
+    %varcint33 = $int1;
+}
+if ($int0 = 22) {
+    %varcint34 = $int1;
+}
+if ($int0 = 23) {
+    %varcint35 = $int1;
+}
+if ($int0 = 24) {
+    %varcint36 = $int1;
+}
+if ($int0 = 25) {
+    %varcint37 = $int1;
+}
+if ($int0 = 26) {
+    %varcint38 = $int1;
+}
+if ($int0 = 27) {
+    %varcint39 = $int1;
+}
+return;

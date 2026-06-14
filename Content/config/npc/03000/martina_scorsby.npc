@@ -1,0 +1,11 @@
+// npc 3326
+vislevel = 0
+size = 1
+readyanim = 3281
+turnspeed = 0
+ambient = 10
+contrast = 5
+recol = 25238/54447 8741/10574 8615/10448
+name = Martina Scorsby
+models = 12140 391 470 12139 428 358 12144
+headmodels = 114 12133

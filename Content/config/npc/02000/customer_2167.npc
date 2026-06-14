@@ -1,0 +1,11 @@
+// npc 2167
+resizeh = 115
+resizev = 120
+walkanim = 2156
+readyanim = 2157
+vislevel = 0
+op1 = Talk-to
+recol = 61/41133 22/417 4550/4564
+name = Customer
+models = 7033 7060 7036 7045 7068
+headmodels = 6992

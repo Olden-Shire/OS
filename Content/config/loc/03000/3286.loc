@@ -1,0 +1,6 @@
+// loc 3286
+sharelight = true
+active = 0
+nonblockrange = true
+recol = 6689/7952
+models_only = 745

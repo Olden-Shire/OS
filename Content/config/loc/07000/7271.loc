@@ -1,0 +1,8 @@
+// loc 7271
+active = 0
+sharelight = true
+mirror = true
+ambient = 25
+contrast = 25
+recol = 6036/5409 4886/5409 6038/5409
+models = 7670/0

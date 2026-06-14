@@ -1,0 +1,6 @@
+// loc 25629
+sharelight = true
+active = 1
+op1 = Climb
+models_only = 14512
+name = Ladder

@@ -1,0 +1,9 @@
+// npc 3034
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9019/7630 8741/7630 49054/39091 61/39091 25238/39099 4550/3503
+name = Habibah
+models = 9022 9025 483 332 353 430 358
+headmodels = 9015

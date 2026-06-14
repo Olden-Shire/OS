@@ -1,0 +1,9 @@
+// npc 5885
+vislevel = 0
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 61/62759 2578/64935 910/5400 7062/5388
+name = Dwarf
+models = 7032 7060 7038 7048 7068
+headmodels = 6991

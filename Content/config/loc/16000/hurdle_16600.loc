@@ -1,0 +1,11 @@
+// loc 16600
+active = 1
+width = 3
+noshadow = true
+contrast = 40
+ambient = 50
+anim = 4357
+blockwalk = true
+op1 = Jump-over
+models_only = 16764
+name = Hurdle

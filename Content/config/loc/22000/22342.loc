@@ -1,0 +1,8 @@
+// loc 22342
+active = 0
+hillskew = true
+ambient = 20
+contrast = 20
+nonblockrange = true
+recol = 30/39991 35/39995 39/40000 43/40004 47/40012 51/40144
+models = 12127/22

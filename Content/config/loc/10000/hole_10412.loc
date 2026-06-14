@@ -1,0 +1,5 @@
+// loc 10412
+active = 1
+blockwalk = true
+models = 10188/22
+name = Hole

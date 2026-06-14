@@ -1,0 +1,10 @@
+// npc 5436
+readyanim = 5668
+resizeh = 75
+resizev = 75
+size = 1
+vislevel = 0
+alwaysontop = true
+name = Pong
+models = 21547 21545
+headmodels = 21525

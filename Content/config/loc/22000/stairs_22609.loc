@@ -1,0 +1,6 @@
+// loc 22609
+op1 = Climb-down
+active = 1
+blockwalk = true
+models = 15050/22
+name = Stairs

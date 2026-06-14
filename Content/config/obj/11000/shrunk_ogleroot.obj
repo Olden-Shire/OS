@@ -1,0 +1,16 @@
+// obj 11205
+cost = 2
+stackable = true
+members = true
+count1 = 11206, 2
+count2 = 11207, 3
+count3 = 11208, 4
+count4 = 11209, 5
+model = obj_shrunk_ogleroot
+xof2d = 1
+yof2d = -3
+zoom2d = 400
+yan2d = 216
+xan2d = 152
+iop4 = Eat
+name = Shrunk ogleroot

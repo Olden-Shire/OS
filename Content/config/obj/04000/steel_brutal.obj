@@ -1,0 +1,16 @@
+// obj 4783
+model = obj_bronze_brutal
+yof2d = -9
+zoom2d = 1700
+yan2d = 116
+xan2d = 324
+members = true
+stackable = true
+count1 = 4784, 2
+count2 = 4785, 3
+count3 = 4786, 4
+count4 = 4787, 5
+iop2 = Wield
+cost = 20
+recol = 4771/7582 926/127
+name = Steel brutal

@@ -1,0 +1,9 @@
+// loc 5053
+hillskew = true
+active = 1
+ambient = 25
+contrast = 25
+recol = 24/9098
+retex = 2/23
+models = 634/0 635/1 574/2 575/3 576/9
+name = Wall

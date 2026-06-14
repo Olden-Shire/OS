@@ -1,0 +1,11 @@
+// obj 9610
+model = obj_a_red_triangle
+xof2d = 3
+yof2d = 1
+zoom2d = 620
+yan2d = 114
+xan2d = 603
+members = true
+stackable = true
+recol = 668/23849 916/23969 549/23857
+name = A green triangle

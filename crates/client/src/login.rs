@@ -290,6 +290,22 @@ pub fn poll(c: &mut Client) {
     }
 }
 
+/// At least `need` bytes buffered on the game stream? A dead/errored stream
+/// (Java: readPacket throwing → lostCon) triggers `lost_con` and returns false
+/// so the read loop stops and the client drops to the reconnect/login path —
+/// instead of silently waiting out the 15s silence timeout.
+fn stream_ready(c: &mut Client, need: i32) -> bool {
+    match c.login_stream.as_mut().map(|s| s.available()) {
+        Some(Ok(n)) => n >= need,
+        Some(Err(_)) => {
+            eprintln!("[net] read err (connection dead) -> lost_con");
+            crate::client::lost_con(c);
+            false
+        }
+        None => false,
+    }
+}
+
 // @ObfuscatedName("client.tcpIn") — server packet drain. Mirrors Java's
 // tcpIn() state machine: read opcode → look up size in SERVERPROT_SIZES
 // → optionally read u8/u16 length prefix → read payload.
@@ -304,35 +320,43 @@ pub fn game_tick(c: &mut Client) {
             let _ = stream.write(&[228u8], 0, 1);
         }
     }
-    // Drain whatever is currently buffered.
+    // Drain whatever is currently buffered. A genuine connection error mid-read
+    // (vs. "no data yet") drops to lost_con so the client reconnects / returns
+    // to login, instead of freezing in-game until the silence timeout.
     loop {
         // Read header bytes — return when not enough is available.
         if c.ptype == -1 {
-            let Some(stream) = c.login_stream.as_mut() else { return };
-            if stream.available().unwrap_or(0) < 1 { return; }
-            c.ptype = match stream.read_byte() { Ok(v) => v, Err(_) => return };
+            if !stream_ready(c, 1) { return; }
+            let r = c.login_stream.as_mut().unwrap().read_byte();
+            match r {
+                Ok(v) if (0..=255).contains(&v) => c.ptype = v,
+                _ => { eprintln!("[net] EOF/read err on opcode -> lost_con"); crate::client::lost_con(c); return; }
+            }
             c.psize = SERVERPROT_SIZES[(c.ptype & 0xFF) as usize];
         }
         if c.psize == -1 {
-            let Some(stream) = c.login_stream.as_mut() else { return };
-            if stream.available().unwrap_or(0) < 1 { return; }
-            let b = match stream.read_byte() { Ok(v) => v, Err(_) => return };
-            c.psize = b & 0xFF;
+            if !stream_ready(c, 1) { return; }
+            let r = c.login_stream.as_mut().unwrap().read_byte();
+            match r {
+                Ok(v) if (0..=255).contains(&v) => c.psize = v & 0xFF,
+                _ => { crate::client::lost_con(c); return; }
+            }
         } else if c.psize == -2 {
-            let Some(stream) = c.login_stream.as_mut() else { return };
-            if stream.available().unwrap_or(0) < 2 { return; }
+            if !stream_ready(c, 2) { return; }
             let mut hdr = [0u8; 2];
-            if stream.read(&mut hdr, 0, 2).is_err() { return; }
+            if c.login_stream.as_mut().unwrap().read(&mut hdr, 0, 2).is_err() {
+                crate::client::lost_con(c);
+                return;
+            }
             c.psize = ((hdr[0] as i32) << 8) | (hdr[1] as i32);
         }
         // Payload read.
-        let buf = {
-            let Some(stream) = c.login_stream.as_mut() else { return };
-            if c.psize > 0 && stream.available().unwrap_or(0) < c.psize { return; }
-            let mut buf = vec![0u8; c.psize.max(0) as usize];
-            if c.psize > 0 && stream.read(&mut buf, 0, c.psize).is_err() { return; }
-            buf
-        };
+        if c.psize > 0 && !stream_ready(c, c.psize) { return; }
+        let mut buf = vec![0u8; c.psize.max(0) as usize];
+        if c.psize > 0 && c.login_stream.as_mut().unwrap().read(&mut buf, 0, c.psize).is_err() {
+            crate::client::lost_con(c);
+            return;
+        }
         let ptype = c.ptype;
         c.ptype = -1;
         c.psize = 0;

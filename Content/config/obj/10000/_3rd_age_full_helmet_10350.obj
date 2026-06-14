@@ -1,0 +1,15 @@
+// obj 10350
+model = obj__3rd_age_full_helmet_10350
+manwear = obj__3rd_age_full_helmet_10350_man, 0
+womanwear = obj__3rd_age_full_helmet_10350_woman, 0
+manhead = 20105
+womanhead = 20105
+manhead2 = 63
+womanhead2 = 120
+iop2 = Wear
+cost = 90000
+zoom2d = 720
+yan2d = 1892
+xan2d = 28
+members = true
+name = 3rd age full helmet

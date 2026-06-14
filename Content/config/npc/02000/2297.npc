@@ -1,0 +1,8 @@
+// npc 2297
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+op1 = Talk-to
+op3 = Travel
+vislevel = 0
+multivar = 395, 65535, 65535 2298

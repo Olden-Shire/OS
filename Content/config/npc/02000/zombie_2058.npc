@@ -1,0 +1,9 @@
+// npc 2058
+walkanim = 298
+readyanim = 301
+op1 = Talk-to
+op2 = Attack
+vislevel = 39
+recol = 34341/10444
+name = Zombie
+models = 6775

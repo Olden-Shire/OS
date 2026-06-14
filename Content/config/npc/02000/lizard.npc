@@ -1,0 +1,11 @@
+// npc 2803
+size = 3
+contrast = 30
+ambient = 30
+alwaysontop = true
+walkanim = 2775
+readyanim = 2774
+op2 = Attack
+vislevel = 42
+name = Lizard
+models = 9831

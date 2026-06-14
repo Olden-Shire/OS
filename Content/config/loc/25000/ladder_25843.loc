@@ -1,0 +1,10 @@
+// loc 25843
+active = 1
+op1 = Climb-down
+mapscene = 7
+contrast = 15
+ambient = 20
+nonblockrange = true
+recol = 5541/7706 5665/8078
+models_only = 21232
+name = Ladder

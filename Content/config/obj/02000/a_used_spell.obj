@@ -1,0 +1,10 @@
+// obj 2969
+members = true
+model = obj_scrawled_note
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+zoom2d = 940
+yan2d = 112
+xan2d = 248
+recol = 0/17344 898/17344 900/17344 902/17344 904/17344 5351/17344
+name = A used spell

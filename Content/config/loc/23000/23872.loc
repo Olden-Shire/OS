@@ -1,0 +1,7 @@
+// loc 23872
+sharelight = true
+active = 0
+hillskew = true
+nonblockrange = true
+recol = 45/7343 41/7339 37/7335 33/7331 28/7326 24/7322
+models = 25039/9

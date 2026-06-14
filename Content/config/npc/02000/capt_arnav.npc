@@ -1,0 +1,10 @@
+// npc 2308
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/542 25238/788 7281/6490 22177/2721 61/6856 6798/6453
+name = Capt' Arnav
+models = 190 214 250 5222 162 3660 3876 5218
+headmodels = 52 31 82

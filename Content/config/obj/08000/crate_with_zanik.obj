@@ -1,0 +1,12 @@
+// obj 8871
+model = obj_crate_with_zanik
+manwear = obj_crate_with_zanik_wear, 0
+womanwear = obj_crate_with_zanik_wear, 6
+xof2d = -1
+yof2d = -6
+zoom2d = 2020
+yan2d = 232
+xan2d = 112
+members = true
+iop2 = Wield
+name = Crate with zanik

@@ -1,0 +1,11 @@
+// npc 6092
+resizeh = 132
+resizev = 132
+walkanim = 5481
+readyanim = 5483
+op2 = Attack
+ambient = 5
+vislevel = 22
+recol = 10308/6362 10304/6362 10299/6362 10295/6362 10291/6362 10287/6362
+name = Skeleton
+models = 21174 21179 21161 21156 21182 21199 21186

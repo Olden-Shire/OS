@@ -1,0 +1,8 @@
+// npc 1094
+vislevel = 0
+size = 1
+walkanim = 5340
+readyanim = 5339
+recol = 8390/10322 8384/10312 8371/10304 10411/10421 5388/10275 5392/10270
+name = Mountain goat
+models = 20273 20281 20275

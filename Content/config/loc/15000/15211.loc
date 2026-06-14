@@ -1,0 +1,5 @@
+// loc 15211
+forcedecor = true
+nonsolid = true
+active = 0
+models_only = 15072

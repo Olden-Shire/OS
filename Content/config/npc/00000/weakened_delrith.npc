@@ -1,0 +1,12 @@
+// npc 880
+size = 2
+resizeh = 86
+resizev = 86
+readyanim = 4619
+walkanim = 63
+op1 = Banish
+alwaysontop = true
+vislevel = 1
+recol = 918/3486
+name = Weakened Delrith
+models = 17382 17387 17392 17389

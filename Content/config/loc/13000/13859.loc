@@ -1,0 +1,14 @@
+// loc 13859
+anim = 493
+noshadow = true
+active = 0
+ambient = 40
+nonsolid = true
+resizex = 256
+resizey = 256
+resizez = 256
+width = 2
+length = 2
+bgsound = 2175, 3
+recol = 5058/27955
+models_only = 2297

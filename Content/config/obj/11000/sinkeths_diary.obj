@@ -1,0 +1,14 @@
+// obj 11002
+cost = 10
+model = obj_sinkeths_diary
+xof2d = -1
+yof2d = 1
+zoom2d = 1488
+yan2d = 243
+xan2d = 183
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Sin'keth's diary

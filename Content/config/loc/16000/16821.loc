@@ -1,0 +1,7 @@
+// loc 16821
+active = 1
+hillskew = true
+active = 0
+nonsolid = true
+forcedecor = true
+models = 16288/22

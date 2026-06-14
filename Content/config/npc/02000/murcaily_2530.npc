@@ -1,0 +1,10 @@
+// npc 2530
+vislevel = 0
+size = 1
+op1 = Talk-to
+resizeh = 130
+resizev = 131
+recol = 4550/5532 7442/5799 4416/5572 43072/5671 6443/5572 7073/5454
+name = Murcaily
+models = 8921 230 246 8928 173 8918 534 8925 8919
+headmodels = 63 8909

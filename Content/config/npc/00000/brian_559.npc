@@ -1,0 +1,12 @@
+// npc 559
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/13601 8741/5545 43072/4550 54397/5400
+name = Brian
+models = 230 254 247 302 173 176 181
+headmodels = 63 79

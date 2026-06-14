@@ -1,0 +1,15 @@
+// obj 10378
+model = obj_guthix_dragonhide_10378
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_guthix_dragonhide_10378_man, 0
+manwear2 = 20121
+womanwear = obj_guthix_dragonhide_10378_woman, 0
+womanwear2 = 20177
+members = true
+cost = 13000
+recol = 920/27210 912/24014 8070/19788
+name = Guthix dragonhide

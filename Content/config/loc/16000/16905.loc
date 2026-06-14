@@ -1,0 +1,10 @@
+// loc 16905
+active = 0
+sharelight = true
+contrast = 20
+ambient = 20
+resizex = 128
+resizey = 160
+resizez = 128
+mirror = true
+models_only = 16586

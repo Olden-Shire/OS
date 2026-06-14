@@ -1,0 +1,6 @@
+// loc 3568
+nonsolid = true
+forcedecor = true
+active = 1
+models = 3652/22
+name = Blade

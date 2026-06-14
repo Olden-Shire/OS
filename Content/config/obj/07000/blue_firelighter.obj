@@ -1,0 +1,13 @@
+// obj 7331
+model = obj_red_firelighter
+members = true
+stackable = true
+xof2d = 3
+yof2d = -18
+zoom2d = 976
+yan2d = 470
+xan2d = 221
+members = true
+cost = 15
+recol = 2857/38193
+name = Blue firelighter

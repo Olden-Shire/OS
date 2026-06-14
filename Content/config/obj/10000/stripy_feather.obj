@@ -1,0 +1,12 @@
+// obj 10087
+model = obj_stripy_feather
+yof2d = 4
+zoom2d = 400
+yan2d = 300
+xan2d = 308
+stackable = true
+cost = 2
+members = true
+cost = 20
+ambient = 40
+name = Stripy feather

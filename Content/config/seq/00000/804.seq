@@ -1,0 +1,5 @@
+// seq 804
+replaceheldleft = 0
+replaceheldright = 0
+priority = 5
+frames = 25/200/198 2/199/198 2/198/198 2/197/198 2/196/198 2/195/198 20000/180/198

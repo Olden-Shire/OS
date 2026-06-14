@@ -1,0 +1,9 @@
+// loc 17245
+active = 1
+ambient = 10
+blockwalk = true
+anim = 4561
+op1 = Operate
+offsety = -30
+models_only = 17088
+name = Oaknock's Machine

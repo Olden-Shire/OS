@@ -1,0 +1,10 @@
+// obj 697
+model = obj_damaged_armour
+xof2d = -8
+yof2d = 11
+zoom2d = 1450
+yan2d = 128
+xan2d = 292
+members = true
+recol = 45/8472
+name = Damaged armour

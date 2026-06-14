@@ -1,0 +1,11 @@
+// obj 6772
+members = true
+model = obj_smouldering_pot
+xof2d = -1
+yof2d = 2
+zoom2d = 990
+yan2d = 8
+xan2d = 112
+manwear = obj_smouldering_pot_wear, 0
+womanwear = obj_smouldering_pot_wear, 6
+name = Smouldering pot

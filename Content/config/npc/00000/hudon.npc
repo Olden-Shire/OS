@@ -1,0 +1,10 @@
+// npc 305
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/941
+name = Hudon
+models = 2897 2910 2918
+headmodels = 139

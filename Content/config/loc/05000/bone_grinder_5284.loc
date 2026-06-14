@@ -1,0 +1,9 @@
+// loc 5284
+length = 3
+width = 2
+op1 = Wind
+op2 = Empty
+op3 = Status
+forceapproach = 13
+models_only = 5275
+name = Bone grinder

@@ -1,0 +1,12 @@
+// obj 4158
+cost = 31000
+model = obj_leaf_bladed_spear_4158
+iop2 = Wield
+manwear = obj_leaf_bladed_spear_4158_wear, 0
+womanwear = obj_leaf_bladed_spear_4158_wear, 6
+xof2d = 1
+yof2d = 6
+yan2d = 472
+xan2d = 368
+members = true
+name = Leaf-bladed spear

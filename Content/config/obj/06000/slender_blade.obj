@@ -1,0 +1,13 @@
+// obj 6817
+model = obj_slender_blade
+xof2d = -1
+yof2d = 25
+zoom2d = 1580
+yan2d = 36
+xan2d = 276
+manwear = obj_slender_blade_wear, 0
+womanwear = obj_slender_blade_wear, 6
+members = true
+iop5 = Destroy
+recol = 61/43297
+name = Slender blade

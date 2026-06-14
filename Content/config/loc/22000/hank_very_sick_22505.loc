@@ -1,0 +1,11 @@
+// loc 22505
+active = 1
+op1 = Talk-to
+blockwalk = true
+anim = 5976
+width = 2
+length = 2
+nonblockrange = true
+recol = 4550/2242 6798/6323
+models_only = 23200 23196
+name = Hank (very sick)

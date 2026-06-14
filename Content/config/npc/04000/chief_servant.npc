@@ -1,0 +1,10 @@
+// npc 4245
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 25238/920 8741/920 8078/9164 49420/0 11844/0
+name = Chief servant
+models = 15121 230 5215 12751 322 162 4924 15147 254 181
+headmodels = 63 15118 5207

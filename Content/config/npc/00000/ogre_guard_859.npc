@@ -1,0 +1,9 @@
+// npc 859
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+vislevel = 0
+name = Ogre guard
+models = 20375 14116
+headmodels = 20409

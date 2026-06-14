@@ -1,0 +1,11 @@
+// obj 11677
+cost = 6
+model = obj_nulodions_notes
+zoom2d = 840
+yan2d = 152
+xan2d = 256
+members = true
+iop1 = Read
+iop5 = Destroy
+recol = 5018/14226
+name = Explorer's notes

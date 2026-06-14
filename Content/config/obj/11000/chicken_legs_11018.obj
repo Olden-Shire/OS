@@ -1,0 +1,11 @@
+// obj 11018
+model = obj_chicken_legs_11018
+zoom2d = 1744
+yan2d = 2047
+zan2d = 28
+xan2d = 622
+contrast = 15
+ambient = 15
+manwear = obj_chicken_legs_11018_man, 0
+womanwear = obj_chicken_legs_11018_woman, 0
+name = Chicken legs

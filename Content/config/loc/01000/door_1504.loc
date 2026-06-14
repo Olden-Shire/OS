@@ -1,0 +1,6 @@
+// loc 1504
+sharelight = true
+active = 1
+raiseobject = 0
+models = 608/0
+name = Door

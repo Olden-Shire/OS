@@ -1,0 +1,12 @@
+// obj 11034
+model = obj_notes
+xof2d = 5
+yof2d = -5
+zoom2d = 1310
+yan2d = 1704
+xan2d = 136
+members = true
+iop1 = Read
+cost = 0
+iop5 = Destroy
+name = Sven's last map

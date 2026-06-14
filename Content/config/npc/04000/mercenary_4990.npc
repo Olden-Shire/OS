@@ -1,0 +1,13 @@
+// npc 4990
+op1 = Talk-to
+op2 = Attack
+resizeh = 124
+resizev = 124
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 15
+vislevel = 45
+recol = 25238/8472 926/10382 152/6806 11200/8472 8390/8472 8534/8472
+name = Mercenary
+models = 214 5104 7365 9458 323 173 176 566 19335 262 16473
+headmodels = 52 5095

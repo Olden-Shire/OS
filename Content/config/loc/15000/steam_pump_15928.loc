@@ -1,0 +1,6 @@
+// loc 15928
+op1 = Pump
+op2 = Vent
+op3 = hidden
+models_only = 15832
+name = Steam Pump

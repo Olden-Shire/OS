@@ -1,0 +1,8 @@
+// loc 20232
+blockwalk = true
+hillskew = true
+anim = 5415
+op1 = Dunk
+bgsound = 3077, 3
+models_only = 20655
+name = Lava crater

@@ -1,0 +1,7 @@
+// loc 10436
+width = 3
+length = 3
+ambient = 20
+noshadow = true
+models_only = 10163 10164
+name = Fountain

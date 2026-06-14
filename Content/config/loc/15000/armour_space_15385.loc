@@ -1,0 +1,6 @@
+// loc 15385
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 12873
+name = Armour space

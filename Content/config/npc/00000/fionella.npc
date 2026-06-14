@@ -1,0 +1,11 @@
+// npc 932
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/43181 8741/43181 15242/127 9096/127 8078/127 61/127
+name = Fionella
+models = 390 470 343 484 353 437 361 376
+headmodels = 113 101

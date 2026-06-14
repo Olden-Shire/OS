@@ -1,0 +1,10 @@
+// loc 18096
+op5 = Climb-down
+hillskew = true
+sharelight = true
+active = 1
+nonsolid = true
+forcedecor = true
+models_only = 17685
+models_only = 17746
+name = Shelf

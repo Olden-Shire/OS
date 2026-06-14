@@ -1,0 +1,12 @@
+// obj 4827
+cost = 180
+model = obj_comp_ogre_bow_4827
+zoom2d = 2070
+yan2d = 48
+xan2d = 232
+members = true
+manwear = obj_comp_ogre_bow_4827_wear, 0
+womanwear = obj_comp_ogre_bow_4827_wear, 6
+iop2 = Wield
+iop3 = Check kills
+name = Comp ogre bow

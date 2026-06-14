@@ -1,0 +1,12 @@
+// npc 1599
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op4 = Trade
+alwaysontop = true
+recol = 4550/4785 25238/6032 43072/4785 33/36133 41/36141 49/36021
+name = Duradel
+models = 231 241 246 309 173 176 254 181 3780 18949
+headmodels = 64 73

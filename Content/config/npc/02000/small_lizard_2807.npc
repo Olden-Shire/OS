@@ -1,0 +1,12 @@
+// npc 2807
+size = 1
+resizeh = 40
+resizev = 40
+contrast = 30
+ambient = 30
+walkanim = 2775
+readyanim = 2774
+op2 = Attack
+vislevel = 12
+name = Small Lizard
+models = 9831 9830

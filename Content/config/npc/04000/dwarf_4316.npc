@@ -1,0 +1,11 @@
+// npc 4316
+resizeh = 129
+resizev = 132
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 61/4884 10347/49 4550/4535 5417/5784
+name = Dwarf
+models = 2971 7072 7062 2979 7044 2985
+headmodels = 1 15568

@@ -1,0 +1,8 @@
+// loc 3182
+ambient = 15
+contrast = 15
+active = 1
+nonblockrange = true
+recol = 4886/99 5908/103
+models_only = 1170
+name = Chair

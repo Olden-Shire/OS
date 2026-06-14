@@ -1,0 +1,6 @@
+// loc 4200
+sharelight = true
+occlude = true
+active = 0
+mirror = true
+models = 4374/0

@@ -1,0 +1,9 @@
+// loc 21090
+anim = 5730
+length = 2
+width = 2
+active = 1
+ambient = 25
+contrast = 25
+blockwalk = true
+multiloc = 3297, 65535, 21093 21093

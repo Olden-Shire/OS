@@ -1,0 +1,8 @@
+// npc 4686
+size = 2
+walkanim = 4669
+readyanim = 4670
+op2 = Attack
+vislevel = 53
+name = Ice giant
+models = 17453 17443 17460

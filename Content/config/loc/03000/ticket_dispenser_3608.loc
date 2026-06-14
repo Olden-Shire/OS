@@ -1,0 +1,8 @@
+// loc 3608
+active = 1
+forcedecor = true
+op1 = Tag
+nonblockrange = true
+recol = 6573/6449
+models_only = 3642
+name = Ticket Dispenser

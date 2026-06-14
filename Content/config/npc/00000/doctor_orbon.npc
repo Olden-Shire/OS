@@ -1,0 +1,10 @@
+// npc 290
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/103 10128/103 8090/103
+name = Doctor Orbon
+models = 230 273 246 305 151 179 245 561
+headmodels = 63 78

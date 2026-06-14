@@ -1,0 +1,10 @@
+// npc 6101
+size = 2
+walkanim = 63
+readyanim = 66
+op2 = Attack
+resizeh = 86
+resizev = 86
+vislevel = 82
+name = Lesser demon
+models = 17378 26454 17386 17388

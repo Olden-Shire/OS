@@ -1,0 +1,10 @@
+// npc 1880
+size = 1
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 56
+recol = 8741/10351 4550/5555
+name = Bandit
+models = 6086 247 292 173 6090 181 176 490 523
+headmodels = 79 6080 53

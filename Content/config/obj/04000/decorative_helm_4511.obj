@@ -1,0 +1,16 @@
+// obj 4511
+cost = 1920
+model = obj_khazard_helmet
+members = true
+xof2d = 1
+yof2d = -4
+zoom2d = 640
+yan2d = 156
+xan2d = 108
+iop2 = Wear
+manwear = obj_khazard_helmet_man, 0
+womanwear = obj_khazard_helmet_woman, 0
+manhead = 57
+womanhead = 117
+recol = 926/43280 61/10929 929/43280
+name = Decorative helm

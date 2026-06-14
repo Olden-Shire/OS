@@ -1,0 +1,10 @@
+// npc 1913
+size = 1
+walkanim = 841
+readyanim = 842
+op2 = Attack
+vislevel = 154
+recol = 4550/5351 61/127 41/127 57/127
+name = Kamil
+models = 219 268 251 164 179 185 3379 518 317
+headmodels = 57 83

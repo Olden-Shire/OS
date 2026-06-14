@@ -1,0 +1,7 @@
+// loc 3309
+mapscene = 12
+hillskew = true
+op1 = Climb-over
+recol = 6689/7952
+models_only = 781
+name = Rockslide

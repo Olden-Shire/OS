@@ -1,0 +1,8 @@
+// loc 23141
+sharelight = true
+hillskew = true
+contrast = 20
+ambient = 20
+nonblockrange = true
+recol = 6036/5784
+models = 977/0 978/9

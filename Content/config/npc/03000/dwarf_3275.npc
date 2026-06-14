@@ -1,0 +1,9 @@
+// npc 3275
+walkanim = 98
+readyanim = 101
+op2 = Attack
+vislevel = 7
+recol = 8485/8604 61/6550 33/11175 49/26 2578/5772 5784/6257
+name = Dwarf
+models = 2971 7059 2978 6021 7046 2985
+headmodels = 0

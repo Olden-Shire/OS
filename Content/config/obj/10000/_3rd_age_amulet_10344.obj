@@ -1,0 +1,15 @@
+// obj 10344
+model = obj__3rd_age_amulet_10344
+manwear = obj__3rd_age_amulet_10344_man, 0
+womanwear = obj__3rd_age_amulet_10344_woman, 0
+iop2 = Wear
+cost = 20000
+xof2d = 4
+yof2d = 100
+zoom2d = 543
+yan2d = 73
+zan2d = 69
+xan2d = 282
+contrast = 20
+members = true
+name = 3rd age amulet

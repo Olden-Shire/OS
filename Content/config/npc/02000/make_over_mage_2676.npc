@@ -1,0 +1,10 @@
+// npc 2676
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/5921 8741/39215 40918/39211 119/39331 40384/39207 8078/39207
+name = Make-over mage
+models = 9608 390 9459 471 343 353 534 5034 358
+headmodels = 113 9601

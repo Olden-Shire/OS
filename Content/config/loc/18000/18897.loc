@@ -1,0 +1,5 @@
+// loc 18897
+hillskew = true
+ambient = 45
+nonblockrange = true
+models = 785/22

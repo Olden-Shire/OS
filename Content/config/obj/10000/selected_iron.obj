@@ -1,0 +1,12 @@
+// obj 10488
+model = obj_selected_iron
+cost = 10
+members = true
+yof2d = 18
+zoom2d = 1178
+yan2d = 194
+xan2d = 304
+manwear = obj_selected_iron_wear, 0
+womanwear = obj_selected_iron_wear, 6
+iop5 = Destroy
+name = Selected iron

@@ -1,0 +1,9 @@
+// loc 25880
+active = 1
+op1 = Reach
+sharelight = true
+contrast = 15
+ambient = 20
+blockwalk = true
+models = 27397/0
+name = Vent

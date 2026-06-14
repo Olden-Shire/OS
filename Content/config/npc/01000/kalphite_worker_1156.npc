@@ -1,0 +1,8 @@
+// npc 1156
+size = 2
+walkanim = 6220
+readyanim = 6218
+op2 = Attack
+vislevel = 28
+name = Kalphite Worker
+models = 24596

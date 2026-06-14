@@ -1,0 +1,10 @@
+// loc 6614
+length = 3
+width = 2
+offsety = 178
+ambient = 20
+contrast = 10
+op1 = Touch
+op3 = Open
+models_only = 14199
+name = Door

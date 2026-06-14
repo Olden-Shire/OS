@@ -1,0 +1,8 @@
+// loc 10377
+width = 2
+length = 2
+ambient = 15
+forceapproach = 7
+bgsound = 2065, 3
+models_only = 10152
+name = Clay Oven

@@ -1,0 +1,9 @@
+// npc 1759
+vislevel = 0
+size = 1
+readyanim = 1728
+walkanims = 1205, 1206, 1207, 1208
+recol = 25238/7599 8741/6930 43072/4550
+name = Farmer
+models = 217 246 292 151 176 254 185 5442 4843
+headmodels = 55

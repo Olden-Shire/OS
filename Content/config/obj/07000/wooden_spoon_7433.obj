@@ -1,0 +1,12 @@
+// obj 7433
+cost = 35
+model = obj_wooden_spoon_7433
+xof2d = -1
+zoom2d = 1232
+yan2d = 240
+xan2d = 366
+iop2 = Wield
+manwear = obj_wooden_spoon_7433_wear, 0
+womanwear = obj_wooden_spoon_7433_wear, 6
+members = true
+name = Wooden spoon

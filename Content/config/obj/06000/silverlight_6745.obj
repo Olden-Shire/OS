@@ -1,0 +1,15 @@
+// obj 6745
+members = true
+cost = 50
+model = obj_silverlight_2402
+xof2d = -2
+yof2d = -4
+zoom2d = 980
+yan2d = 864
+zan2d = 84
+xan2d = 196
+iop2 = Wield
+manwear = obj_silverlight_2402_wear, 0
+womanwear = obj_silverlight_2402_wear, 6
+recol = 47168/0 11200/33
+name = Silverlight

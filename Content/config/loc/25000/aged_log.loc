@@ -1,0 +1,8 @@
+// loc 25216
+width = 3
+anim = 3306
+nonsolid = true
+active = 1
+op1 = Ride
+models_only = 12020
+name = Aged log

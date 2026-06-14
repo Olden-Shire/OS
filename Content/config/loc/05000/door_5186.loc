@@ -1,0 +1,7 @@
+// loc 5186
+hillskew = true
+ambient = 20
+mirror = true
+op1 = Open
+models = 4474/0
+name = Door

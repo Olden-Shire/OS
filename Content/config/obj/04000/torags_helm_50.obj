@@ -1,0 +1,14 @@
+// obj 4954
+members = true
+cost = 103000
+iop2 = Wear
+manwear = obj_torags_helm_4745_man, 0
+womanwear = obj_torags_helm_4745_woman, 0
+manhead = 6572
+womanhead = 6576
+model = obj_torags_helm_4745
+xof2d = 11
+zoom2d = 660
+yan2d = 212
+recol = 10394/10388 6020/11140
+name = Torags helm 50

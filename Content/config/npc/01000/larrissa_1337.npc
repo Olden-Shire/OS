@@ -1,0 +1,9 @@
+// npc 1337
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/2842 8741/2599 8078/2603 7700/2964 6798/7748 61/6038
+name = Larrissa
+models = 390 343 470 421 483 479 353 361 417 376
+headmodels = 113 136 101

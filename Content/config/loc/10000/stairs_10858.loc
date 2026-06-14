@@ -1,0 +1,8 @@
+// loc 10858
+width = 2
+length = 2
+blockwalk = true
+forceapproach = 14
+op1 = Climb-down
+models_only = 10772
+name = Stairs

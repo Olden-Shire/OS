@@ -1,0 +1,12 @@
+// npc 2140
+size = 1
+resizeh = 65
+resizev = 65
+readyanim = 2134
+op1 = Talk-to
+turnspeed = 0
+vislevel = 0
+recol = 61/5400 16/10324 123/0 64414/478 5904/10266
+name = Dromund's cat
+models = 3010 3006 7024
+headmodels = 6436

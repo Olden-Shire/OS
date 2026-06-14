@@ -1,0 +1,12 @@
+// obj 6891
+model = obj_arena_book_6891
+xof2d = 2
+yof2d = 7
+zoom2d = 980
+yan2d = 1928
+xan2d = 300
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Arena book

@@ -1,0 +1,7 @@
+// loc 1912
+sharelight = true
+wallwidth = 32
+occlude = true
+ambient = 25
+contrast = 25
+models = 646/0 647/1 648/2 649/3 650/9

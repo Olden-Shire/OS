@@ -1,0 +1,8 @@
+// loc 15727
+anim = 4217
+nonsolid = true
+resizex = 192
+resizey = 192
+resizez = 192
+models_only = 15524
+name = Drip

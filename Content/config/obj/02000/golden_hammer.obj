@@ -1,0 +1,13 @@
+// obj 2949
+cost = 300
+model = obj_hammer_2347
+manwear = obj_hammer_2347_wear, 0
+womanwear = obj_hammer_2347_wear, 6
+members = true
+xof2d = -3
+yof2d = -1
+zoom2d = 900
+yan2d = 2012
+xan2d = 356
+recol = 25525/9141 45/9141
+name = Golden hammer

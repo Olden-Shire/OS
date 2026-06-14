@@ -1,0 +1,8 @@
+// loc 16597
+active = 0
+noshadow = true
+contrast = 40
+ambient = 40
+nonsolid = true
+forcedecor = true
+models = 16758/22

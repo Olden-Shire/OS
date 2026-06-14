@@ -1,0 +1,12 @@
+// npc 560
+vislevel = 0
+size = 1
+op1 = Talk-to
+op3 = Trade
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 4550/4645 43072/4541 25238/4541 926/121 7056/4541 4626/4645
+name = Jiminua
+models = 404 453 478 351 353 429 358
+headmodels = 121

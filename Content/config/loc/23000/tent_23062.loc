@@ -1,0 +1,11 @@
+// loc 23062
+active = 1
+width = 3
+length = 3
+contrast = 20
+ambient = 20
+blockwalk = true
+resizex = 110
+resizez = 110
+models_only = 23975
+name = Tent

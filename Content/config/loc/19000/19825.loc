@@ -1,0 +1,8 @@
+// loc 19825
+hillskew = true
+active = 0
+resizex = 128
+resizey = 270
+resizez = 128
+nonsolid = true
+models = 4743/10 4744/22

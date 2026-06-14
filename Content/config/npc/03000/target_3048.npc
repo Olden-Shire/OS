@@ -1,0 +1,6 @@
+// npc 3048
+turnspeed = 0
+nominimap = true
+vislevel = 0
+name = Target
+models = 10209

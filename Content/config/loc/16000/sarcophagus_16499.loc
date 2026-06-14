@@ -1,0 +1,9 @@
+// loc 16499
+length = 2
+width = 2
+anim = 4336
+ambient = 10
+forceapproach = 11
+recol = 7611/6563 7599/4502 7595/4626 7591/4750 7715/5002 5413/61962
+models_only = 16406 16408
+name = Sarcophagus

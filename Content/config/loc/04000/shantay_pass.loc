@@ -1,0 +1,7 @@
+// loc 4031
+width = 4
+mapscene = 14
+op1 = Go-through
+op2 = Look-at
+models_only = 4051
+name = Shantay pass

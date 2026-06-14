@@ -1,0 +1,10 @@
+// loc 25876
+active = 1
+contrast = 15
+ambient = 20
+blockwalk = true
+op1 = Open
+raiseobject = 0
+nonblockrange = true
+models = 27408/0
+name = Metal door

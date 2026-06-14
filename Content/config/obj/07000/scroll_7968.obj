@@ -1,0 +1,13 @@
+// obj 7968
+model = obj_champion_scroll_6798
+xof2d = -1
+yof2d = 11
+zoom2d = 1020
+yan2d = 656
+xan2d = 344
+members = true
+ambient = 10
+iop1 = Read
+cost = 10
+iop5 = Destroy
+name = Scroll

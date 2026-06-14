@@ -1,0 +1,17 @@
+// obj 2866
+cost = 25
+stackable = true
+members = true
+model = obj_ice_arrows
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+iop2 = Wield
+count1 = 2870, 2
+count2 = 2869, 3
+count3 = 2868, 4
+count4 = 2867, 5
+recol = 5012/7582 926/127 61/10326 57/13790 74/9329
+name = Ogre arrow

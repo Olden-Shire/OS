@@ -1,0 +1,11 @@
+// npc 1162
+resizeh = 127
+resizev = 131
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 4550/5656 39137/5572 37093/5580 38003/6490
+name = Timfraku
+models = 3615 230 246 8928 8916 8918 540 8925 8919
+headmodels = 64 3609

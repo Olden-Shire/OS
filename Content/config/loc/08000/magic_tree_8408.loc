@@ -1,0 +1,8 @@
+// loc 8408
+ambient = 25
+op1 = Check-health
+op2 = Inspect
+op4 = Guide
+bgsound = 3134, 5
+models_only = 7987 7768
+name = Magic Tree

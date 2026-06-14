@@ -1,0 +1,8 @@
+// npc 5031
+walkanim = 2064
+readyanim = 2065
+vislevel = 0
+op1 = Talk-to
+name = Private Paldo
+models = 11740 230 252 11759 11729 11732 11788 19250 11735
+headmodels = 63 19238 84

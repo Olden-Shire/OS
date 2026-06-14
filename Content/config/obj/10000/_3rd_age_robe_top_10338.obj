@@ -1,0 +1,15 @@
+// obj 10338
+model = obj__3rd_age_robe_top_10338
+manwear = obj__3rd_age_robe_top_10338_man, 0
+womanwear = obj__3rd_age_robe_top_10338_woman, 0
+manwear2 = 20124
+womanwear2 = 20173
+iop2 = Wear
+cost = 45000
+xof2d = 1
+yof2d = 1
+zoom2d = 2143
+xan2d = 553
+contrast = 20
+members = true
+name = 3rd age robe top

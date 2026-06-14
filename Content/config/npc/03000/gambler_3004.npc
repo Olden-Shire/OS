@@ -1,0 +1,9 @@
+// npc 3004
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/15397 10659/1331 9529/1331 7952/12942 4550/7834 926/9531
+name = Gambler
+models = 373 390 9361 9359 9360 7008 8934
+headmodels = 98 113

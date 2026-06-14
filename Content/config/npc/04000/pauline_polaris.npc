@@ -1,0 +1,12 @@
+// npc 4514
+size = 1
+contrast = 12
+ambient = 12
+walkanims = 4426, 4427, 4428, 4429
+readyanim = 4424
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+name = Pauline Polaris
+models = 16500 12141 16506 16493 177 12143 16496 270
+headmodels = 12134 16465

@@ -1,0 +1,12 @@
+// obj 3832
+cost = 200
+stackable = true
+members = true
+model = obj_saradomin_page_1
+xof2d = 1
+yof2d = 5
+zoom2d = 680
+yan2d = 80
+xan2d = 400
+recol = 90/220 86/344 82/212 78/208 74/204
+name = Zamorak page 2

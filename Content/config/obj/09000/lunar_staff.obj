@@ -1,0 +1,13 @@
+// obj 9084
+model = obj_lunar_staff
+iop2 = Wield
+manwear = obj_lunar_staff_wear, 0
+womanwear = obj_lunar_staff_wear, 6
+xof2d = -3
+zoom2d = 1488
+yan2d = 1425
+zan2d = 55
+xan2d = 304
+members = true
+iop5 = Destroy
+name = Lunar staff

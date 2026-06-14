@@ -1,0 +1,11 @@
+// obj 7596
+model = obj_zombie_boots
+iop2 = Wear
+manwear = obj_zombie_boots_man, 0
+womanwear = obj_zombie_boots_woman, 0
+xof2d = -4
+yof2d = -9
+zoom2d = 848
+yan2d = 1892
+xan2d = 132
+name = Zombie boots

@@ -1,0 +1,9 @@
+// loc 16245
+width = 3
+length = 3
+ambient = 20
+active = 1
+nonblockrange = true
+recol = 7580/32943 7700/32819 7952/32924 7704/32819 7585/32819
+models_only = 16109 16107
+name = Map table

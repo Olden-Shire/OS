@@ -1,0 +1,9 @@
+// loc 22534
+op1 = Search
+active = 1
+forcedecor = true
+mapscene = 46
+blockwalk = true
+recol = 6932/12698 6684/12818
+models = 23189/22
+name = Slightly broken bridge

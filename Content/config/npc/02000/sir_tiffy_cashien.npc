@@ -1,0 +1,10 @@
+// npc 2290
+vislevel = 0
+size = 1
+readyanim = 4838
+op1 = Talk-to
+turnspeed = 0
+recol = 70/99 5532/82 41/82 61/99 7700/103 6798/4213
+name = Sir Tiffy Cashien
+models = 7722 18347 7719 268 184
+headmodels = 5787 82 70

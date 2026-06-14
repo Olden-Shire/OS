@@ -1,0 +1,9 @@
+// npc 1265
+size = 1
+walkanim = 1311
+readyanim = 1310
+nominimap = true
+op2 = Attack
+vislevel = 13
+name = Rock Crab
+models = 4399 4400

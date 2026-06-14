@@ -1,0 +1,7 @@
+// loc 16966
+sharelight = true
+contrast = 20
+ambient = 20
+active = 0
+mapscene = 22
+models = 16513/0 16525/2

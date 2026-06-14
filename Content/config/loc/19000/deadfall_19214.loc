@@ -1,0 +1,8 @@
+// loc 19214
+anim = 5196
+width = 2
+mapscene = 71
+nonblockrange = true
+recol = 5008/5532
+models_only = 19910 19922 19913 19909
+name = Deadfall

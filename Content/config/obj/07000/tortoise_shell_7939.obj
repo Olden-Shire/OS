@@ -1,0 +1,11 @@
+// obj 7939
+model = obj_tortoise_shell_7939
+members = true
+cost = 1000
+yof2d = 41
+zoom2d = 1232
+yan2d = 81
+xan2d = 285
+ambient = 10
+contrast = 10
+name = Tortoise shell

@@ -1,0 +1,11 @@
+// npc 2904
+size = 1
+resizeh = 135
+resizev = 140
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+name = Denath
+models = 9999 6131 10001 9998 10000 181
+headmodels = 63 6129 9997

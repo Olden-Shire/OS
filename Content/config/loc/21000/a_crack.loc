@@ -1,0 +1,6 @@
+// loc 21157
+active = 1
+op1 = Use
+blockwalk = true
+models = 21566/22
+name = A crack

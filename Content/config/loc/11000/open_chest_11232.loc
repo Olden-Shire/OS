@@ -1,0 +1,6 @@
+// loc 11232
+op1 = Plunder
+forceapproach = 14
+recol = 6443/4510 6439/4515 6563/6930 6558/4391 6682/6930 6806/6930
+models_only = 11205
+name = Open chest

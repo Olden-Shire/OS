@@ -1,0 +1,8 @@
+// npc 1901
+size = 1
+op1 = Talk-to
+vislevel = 0
+recol = 8741/49054 4550/5555
+name = Menaphite Leader
+models = 6130 6131 6134 170 6132 176 6135
+headmodels = 6127 63 6129

@@ -1,0 +1,10 @@
+// npc 1918
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43072/5555 4550/5555 8741/7062 25238/9098 906/0 7073/9098
+name = Archaeologist
+models = 215 253 292 173 176 274 185 326 6364 6228 3707
+headmodels = 53 6212 85

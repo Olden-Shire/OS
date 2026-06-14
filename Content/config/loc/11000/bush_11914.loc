@@ -1,0 +1,8 @@
+// loc 11914
+ambient = 10
+resizex = 64
+resizey = 64
+resizez = 64
+hillskew = true
+models_only = 11551
+name = Bush

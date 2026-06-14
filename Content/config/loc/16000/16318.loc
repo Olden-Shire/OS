@@ -1,0 +1,9 @@
+// loc 16318
+sharelight = true
+hillskew = true
+ambient = 30
+contrast = 30
+noshadow = true
+mapscene = 22
+recol = 7442/54817 7446/44467 7322/39091 7326/17723 7331/10557 7335/7626
+models = 9963/0 9964/1 9965/9

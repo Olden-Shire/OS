@@ -1,0 +1,15 @@
+// loc 10774
+active = 1
+length = 3
+width = 2
+sharelight = true
+contrast = 30
+ambient = 30
+nonsolid = true
+resizex = 128
+resizey = 192
+resizez = 128
+op1 = Climb-down
+forceapproach = 11
+models_only = 10612
+name = Stairs

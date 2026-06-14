@@ -1,0 +1,5 @@
+// loc 16829
+op1 = Step-on
+blockwalk = true
+models = 16762/22
+name = Transport platform

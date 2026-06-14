@@ -1,0 +1,8 @@
+// loc 13366
+anim = 5483
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+models_only = 21197
+name = Bones

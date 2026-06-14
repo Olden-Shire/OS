@@ -1,0 +1,4 @@
+// loc 23538
+active = 1
+nonsolid = true
+multiloc = 3554, 65535, 23528 23529 23529

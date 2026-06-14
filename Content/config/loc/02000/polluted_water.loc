@@ -1,0 +1,8 @@
+// loc 2943
+width = 2
+length = 2
+op1 = Look
+bgsound = 2171, 3
+retex = 1/32
+models_only = 1435
+name = Polluted water

@@ -1,0 +1,8 @@
+// loc 18515
+width = 3
+length = 5
+bgsound = 3153, 10
+active = 1
+recol = 5429/6682 61/7566
+models_only = 3465 3466
+name = Bellows

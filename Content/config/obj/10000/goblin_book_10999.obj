@@ -1,0 +1,13 @@
+// obj 10999
+model = obj_goblin_book_10999
+xof2d = -4
+yof2d = -4
+zoom2d = 1114
+yan2d = 1936
+xan2d = 369
+contrast = 15
+ambient = 15
+members = true
+cost = 1
+iop1 = Read
+name = Goblin book

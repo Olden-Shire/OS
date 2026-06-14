@@ -1,0 +1,8 @@
+// npc 2428
+walkanim = 104
+readyanim = 2337
+vislevel = 0
+recol = 5181/4647 10347/8598 61/8390
+name = Gauss
+models = 7026 7062 2978 7045 2985 2992 8642
+headmodels = 6985

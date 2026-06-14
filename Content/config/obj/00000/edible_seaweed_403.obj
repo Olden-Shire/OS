@@ -1,0 +1,11 @@
+// obj 403
+model = obj_seaweed_401
+xof2d = 7
+yof2d = -13
+zoom2d = 1360
+yan2d = 304
+xan2d = 272
+cost = 2
+iop1 = Eat
+members = true
+name = Edible seaweed

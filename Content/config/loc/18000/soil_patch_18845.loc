@@ -1,0 +1,9 @@
+// loc 18845
+width = 2
+length = 2
+ambient = 25
+blockwalk = true
+active = 1
+nonblockrange = true
+models_only = 19141
+name = Soil patch

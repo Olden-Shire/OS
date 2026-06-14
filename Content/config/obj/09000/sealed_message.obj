@@ -1,0 +1,11 @@
+// obj 9653
+members = true
+iop1 = Read
+iop5 = Destroy
+model = obj_sealed_message
+xof2d = 1
+zoom2d = 984
+yan2d = 373
+zan2d = 55
+xan2d = 373
+name = Sealed message

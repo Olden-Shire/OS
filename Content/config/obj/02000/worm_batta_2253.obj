@@ -1,0 +1,10 @@
+// obj 2253
+model = obj_worm_batta_2253
+xof2d = 1
+yof2d = 32
+zoom2d = 780
+yan2d = 136
+xan2d = 236
+iop1 = Eat
+members = true
+name = Worm batta

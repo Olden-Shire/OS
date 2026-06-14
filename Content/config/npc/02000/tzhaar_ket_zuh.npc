@@ -1,0 +1,13 @@
+// npc 2619
+vislevel = 0
+op1 = Talk-to
+op3 = Bank
+walkanim = 2601
+readyanim = 2603
+contrast = 0
+ambient = 10
+resizeh = 140
+resizev = 140
+name = TzHaar-Ket-Zuh
+models = 9301 9300 9303 9302 9306
+headmodels = 9251

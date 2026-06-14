@@ -1,0 +1,10 @@
+// loc 3343
+mapscene = 12
+resizex = 50
+resizey = 50
+resizez = 50
+hillskew = true
+op1 = Climb-over
+recol = 6689/7952
+models_only = 819
+name = Rock pile

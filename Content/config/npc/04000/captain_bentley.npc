@@ -1,0 +1,11 @@
+// npc 4540
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 39145/11150 11162/6932 0/7442 8741/7442 28318/21543 43072/21543
+name = Captain Bentley
+models = 190 214 250 14187 26875 169 176 259
+headmodels = 52 82 31

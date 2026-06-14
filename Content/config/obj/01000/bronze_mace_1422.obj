@@ -1,0 +1,12 @@
+// obj 1422
+cost = 18
+iop2 = Wield
+manwear = obj_iron_mace_1420_wear, 0
+womanwear = obj_iron_mace_1420_wear, 6
+model = obj_iron_mace_1420
+yof2d = -1
+zoom2d = 1030
+yan2d = 1188
+xan2d = 392
+recol = 61/5652
+name = Bronze mace

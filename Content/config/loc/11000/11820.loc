@@ -1,0 +1,9 @@
+// loc 11820
+active = 0
+ambient = 20
+contrast = 15
+resizey = 132
+wallwidth = 32
+occlude = true
+recol = 5322/8406 6356/8398 6352/7378 6348/8398
+models = 11644/0 11645/1 11646/2 11647/3 11648/9

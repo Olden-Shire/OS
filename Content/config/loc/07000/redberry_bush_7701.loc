@@ -1,0 +1,10 @@
+// loc 7701
+ambient = 25
+op1 = Pick-from
+op2 = Inspect
+op4 = Guide
+width = 2
+length = 2
+recol = 14872/22166 8722/5400 6364/821
+models_only = 7826 7767 7815
+name = Redberry bush

@@ -1,0 +1,10 @@
+// loc 6916
+op1 = Search
+forceapproach = 11
+offsetx = 28
+offsety = 0
+offsetz = 0
+ambient = 25
+recol = 6707/7587 7952/7830 5002/46024
+models_only = 15207
+name = Bookcase

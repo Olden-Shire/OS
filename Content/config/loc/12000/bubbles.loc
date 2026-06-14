@@ -1,0 +1,8 @@
+// loc 12531
+anim = 3440
+ambient = 25
+noshadow = true
+bgsound = 3076, 5
+blockwalk = true
+models = 13745/10 13746/22
+name = Bubbles

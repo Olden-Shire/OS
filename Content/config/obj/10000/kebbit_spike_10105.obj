@@ -1,0 +1,14 @@
+// obj 10105
+model = obj_kebbit_spike_10105
+xof2d = -4
+yof2d = 1
+zoom2d = 360
+yan2d = 1528
+xan2d = 624
+resizex = 100
+resizey = 100
+resizez = 100
+members = true
+cost = 90
+recol = 94/9804 111/9812 127/9445
+name = Kebbit spike

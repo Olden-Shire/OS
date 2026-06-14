@@ -1,0 +1,9 @@
+// npc 2329
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 4550/6705 8741/7397 25238/7397 43072/6705 59515/7397 908/7508
+name = Iago
+models = 188 215 249 292 170 176 496 260 7121
+headmodels = 53 81 30

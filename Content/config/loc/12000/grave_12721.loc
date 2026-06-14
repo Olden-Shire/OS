@@ -1,0 +1,8 @@
+// loc 12721
+blockwalk = true
+op1 = Take-Coffin
+length = 2
+hillskew = true
+forceapproach = 11
+models_only = 13375 13372
+name = Grave

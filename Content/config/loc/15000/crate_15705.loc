@@ -1,0 +1,4 @@
+// loc 15705
+nonsolid = true
+models_only = 15510 15516
+name = Crate

@@ -1,0 +1,7 @@
+// loc 8718
+forcedecor = true
+active = 0
+mapfunction = 6
+sharelight = true
+recol = 6932/5665 6684/5545
+models = 1089/22

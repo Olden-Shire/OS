@@ -1,0 +1,10 @@
+// npc 2677
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 5
+recol = 7700/12 11200/54676 926/12 8741/8076
+name = Highwayman
+models = 215 246 292 170 176 254 185 243 4604 519
+headmodels = 48 76

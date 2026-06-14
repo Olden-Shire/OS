@@ -1,0 +1,15 @@
+// obj 1385
+cost = 1500
+model = obj_staff_of_armadyl
+xof2d = -5
+yof2d = 2
+zoom2d = 1490
+yan2d = 1400
+xan2d = 148
+iop2 = Wield
+manwear = obj_dramen_staff_wear, 0
+manwear2 = 567
+womanwear = obj_dramen_staff_wear, 6
+womanwear2 = 567
+recol = 43117/3501
+name = Staff of earth

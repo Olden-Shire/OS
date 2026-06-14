@@ -1,0 +1,11 @@
+// npc 6187
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/0 7056/20 8741/20 25238/20 4626/0
+name = Morgan Le Faye
+models = 390 27555 353 27556 14589 414
+headmodels = 113 131

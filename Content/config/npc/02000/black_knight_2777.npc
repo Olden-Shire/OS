@@ -1,0 +1,10 @@
+// npc 2777
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+op2 = Attack
+vislevel = 32
+recol = 70/24 5532/10508 41/10508 61/24 57/24
+name = Black Knight
+models = 218 306 164 179 268 185 518

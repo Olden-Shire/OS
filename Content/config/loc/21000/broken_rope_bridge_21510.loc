@@ -1,0 +1,10 @@
+// loc 21510
+hillskew = true
+active = 1
+ambient = 20
+contrast = 20
+forcedecor = true
+blockwalk = true
+nonblockrange = true
+models = 22102/0 22101/22
+name = Broken rope bridge

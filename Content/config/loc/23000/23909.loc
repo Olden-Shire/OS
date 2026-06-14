@@ -1,0 +1,7 @@
+// loc 23909
+ambient = 25
+mirror = true
+nonsolid = true
+noshadow = true
+mapscene = 22
+models = 24702/0

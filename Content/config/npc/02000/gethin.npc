@@ -1,0 +1,11 @@
+// npc 2357
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 107/7390 7595/6480 8792/6583
+name = Gethin
+models = 8357 8263 8268 6975 6976
+headmodels = 8257 41

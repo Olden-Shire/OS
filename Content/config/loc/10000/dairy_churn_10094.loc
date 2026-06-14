@@ -1,0 +1,10 @@
+// loc 10094
+blockwalk = true
+op1 = Churn
+forceapproach = 11
+active = 1
+ambient = 15
+contrast = 10
+nonblockrange = true
+models_only = 9838
+name = Dairy churn

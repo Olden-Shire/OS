@@ -1,0 +1,10 @@
+// npc 5030
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Tutorial
+alwaysontop = true
+name = Captain Cain
+models = 11740 230 252 11759 11765 11727 11732 19250 11735
+headmodels = 63 19238 84

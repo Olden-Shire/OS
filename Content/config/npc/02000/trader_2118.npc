@@ -1,0 +1,8 @@
+// npc 2118
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 61/2165
+name = Trader
+models = 2972 6020 7062 2979 7044 2985
+headmodels = 2

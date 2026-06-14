@@ -1,0 +1,7 @@
+// loc 21092
+anim = 5728
+width = 2
+length = 2
+blockwalk = true
+models_only = 21625 21623 21624 21622
+name = Crazy penguin

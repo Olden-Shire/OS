@@ -1,0 +1,11 @@
+// obj 3268
+model = obj_fake_man
+members = true
+cost = 1
+xof2d = -57
+yof2d = -24
+zoom2d = 2970
+yan2d = 56
+zan2d = 1900
+xan2d = 128
+name = Fake man

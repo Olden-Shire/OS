@@ -1,0 +1,9 @@
+// loc 23107
+active = 0
+forcedecor = true
+ambient = 25
+contrast = 25
+sharelight = true
+offsety = 52
+recol = 10312/10270
+models_only = 23993

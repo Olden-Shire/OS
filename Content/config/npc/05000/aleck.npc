@@ -1,0 +1,11 @@
+// npc 5110
+op1 = Talk-to
+op5 = Trade
+alwaysontop = true
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 6583/5289 5673/7587
+name = Aleck
+models = 19822 19832 14175 169 179 19333 19814
+headmodels = 63 19794

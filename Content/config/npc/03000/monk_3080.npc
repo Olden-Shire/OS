@@ -1,0 +1,8 @@
+// npc 3080
+vislevel = 0
+walkanim = 2994
+readyanim = 2993
+recol = 25238/4769 8741/4769 906/4888
+name = Monk
+models = 230 246 292 9607 170 10218 260 8919 326 10380
+headmodels = 63

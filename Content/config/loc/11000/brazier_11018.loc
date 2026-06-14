@@ -1,0 +1,5 @@
+// loc 11018
+op1 = Investigate
+active = 1
+models_only = 10991 10993
+name = Brazier

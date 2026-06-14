@@ -1,0 +1,10 @@
+// npc 2238
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 25238/7622 8741/6930 43072/4550
+name = Donie
+models = 390 456 332 353 419 361 534
+headmodels = 113

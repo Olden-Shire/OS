@@ -1,0 +1,9 @@
+// loc 25828
+op1 = Close
+raiseobject = 0
+contrast = 15
+ambient = 20
+mirror = true
+recol = 6697/5305 6945/5301 6814/5297 6940/5293 4638/5289 4762/5285
+models = 639/0
+name = Door

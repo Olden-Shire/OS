@@ -1,0 +1,7 @@
+// seq 856
+priority = 2
+preanim_move = 1
+postanim_move = 1
+replaceheldleft = 0
+replaceheldright = 0
+frames = 5/258/215 4/259/215 5/260/215 4/261/215 5/258/215 4/259/215 5/260/215 4/261/215 5/258/215 4/259/215 5/260/215 4/261/215

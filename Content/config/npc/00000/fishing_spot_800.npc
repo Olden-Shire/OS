@@ -1,0 +1,10 @@
+// npc 800
+vislevel = 0
+readyanim = 525
+walkanim = 525
+size = 1
+nominimap = true
+op1 = Bait
+op3 = hidden
+name = Fishing spot
+models = 2331

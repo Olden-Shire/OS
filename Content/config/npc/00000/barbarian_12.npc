@@ -1,0 +1,11 @@
+// npc 12
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 7
+recol = 25238/5652 926/61 6798/6854 8741/4769
+name = Barbarian
+models = 219 252 311 173 176 274 242 185 550
+headmodels = 57 84 75

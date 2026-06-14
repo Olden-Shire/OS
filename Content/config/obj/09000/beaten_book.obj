@@ -1,0 +1,12 @@
+// obj 9717
+model = obj_battered_book
+members = true
+xof2d = 3
+yof2d = 1
+zoom2d = 854
+yan2d = 166
+zan2d = 152
+xan2d = 360
+iop1 = Read
+recol = 9152/33676 2991/33300 5018/33672
+name = Beaten book

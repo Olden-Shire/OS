@@ -1,0 +1,6 @@
+// npc 3213
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+multivar = 1783, 65535, 714

@@ -1,0 +1,6 @@
+// loc 13898
+length = 2
+ambient = 50
+active = 1
+op1 = Enter
+multiloc = 2030, 65535, 13899 13900

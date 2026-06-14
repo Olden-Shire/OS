@@ -1,0 +1,9 @@
+// obj 5004
+model = obj_frog_spawn
+members = true
+xof2d = -3
+yan2d = 1956
+xan2d = 304
+iop1 = Eat
+cost = 5
+name = Frog spawn

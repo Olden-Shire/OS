@@ -1,0 +1,12 @@
+// npc 542
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 4550/4647 8741/10508 6798/7700 4626/24
+name = Louie Legs
+models = 207 268 249 170 176 185 292
+headmodels = 47 81

@@ -1,0 +1,10 @@
+// npc 1692
+size = 1
+resizeh = 64
+resizev = 64
+walkanim = 5385
+readyanim = 5386
+op2 = Attack
+vislevel = 1
+name = Undead chicken
+models = 20463

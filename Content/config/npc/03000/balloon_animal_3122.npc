@@ -1,0 +1,8 @@
+// npc 3122
+walkanim = 3048
+readyanim = 3049
+nominimap = true
+op1 = Pop
+vislevel = 0
+name = Balloon Animal
+models = 10737

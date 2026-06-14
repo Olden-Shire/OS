@@ -1,0 +1,5 @@
+// loc 446
+nonsolid = true
+raiseobject = 0
+models_only = 1407
+name = Stones

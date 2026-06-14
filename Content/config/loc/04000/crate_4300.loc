@@ -1,0 +1,7 @@
+// loc 4300
+op1 = Search
+ambient = 25
+contrast = 25
+nonblockrange = true
+models_only = 2143
+name = Crate

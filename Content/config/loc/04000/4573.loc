@@ -1,0 +1,10 @@
+// loc 4573
+sharelight = true
+occlude = true
+resizex = 128
+resizey = 256
+resizez = 128
+ambient = 20
+contrast = 0
+active = 0
+models = 4533/0 4534/1 4535/2 4536/3 4537/9

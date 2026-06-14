@@ -1,0 +1,12 @@
+// obj 4215
+model = obj_new_crystal_bow_4212
+members = true
+cost = 800000
+xof2d = 1
+zoom2d = 1570
+yan2d = 76
+xan2d = 192
+iop2 = Wield
+manwear = obj_new_crystal_bow_4212_wear, 0
+womanwear = obj_new_crystal_bow_4212_wear, 6
+name = Crystal bow 9/10

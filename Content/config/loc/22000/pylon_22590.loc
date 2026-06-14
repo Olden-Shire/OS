@@ -1,0 +1,7 @@
+// loc 22590
+blockwalk = true
+sharelight = true
+forcedecor = true
+active = 1
+models_only = 23270
+name = Pylon

@@ -1,0 +1,9 @@
+// npc 489
+readyanim = 6200
+walkanim = 6201
+op2 = Attack
+vislevel = 42
+recol = 43303/37790 6331/37790 7104/37786 6071/39832
+name = Goblin guard
+models = 24466 24484 24436 24472 24446 24449 24507
+headmodels = 24218

@@ -1,0 +1,9 @@
+// loc 2942
+width = 2
+length = 2
+op1 = Look
+op2 = Investigate
+mapscene = 8
+bgsound = 2171, 3
+models_only = 1435
+name = Water Pool

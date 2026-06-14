@@ -1,0 +1,8 @@
+// npc 1224
+size = 2
+readyanim = 6580
+walkanim = 6556
+vislevel = 1
+recol = 10287/9098 10295/8846 10304/8722 10312/8598 10328/8602 10337/8478
+name = Vampyric hound
+models = 26266

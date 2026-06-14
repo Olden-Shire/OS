@@ -1,0 +1,9 @@
+// npc 5794
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+recol = 43169/60711 43164/60707 43160/60702 5219/5231 5214/5227
+name = Durgok
+models = 23663 23696 23629
+headmodels = 23225 23246

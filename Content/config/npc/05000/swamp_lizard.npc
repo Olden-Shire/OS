@@ -1,0 +1,8 @@
+// npc 5117
+size = 1
+walkanim = 5262
+readyanim = 5263
+vislevel = 0
+recol = 61/22032
+name = Swamp lizard
+models = 19391

@@ -1,0 +1,10 @@
+// npc 696
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/8518 8741/8518 5400/7331 24/7331
+name = Caroline
+models = 390 11359 18120 9359 10706 440 358
+headmodels = 10031

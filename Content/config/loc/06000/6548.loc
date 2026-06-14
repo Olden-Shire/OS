@@ -1,0 +1,5 @@
+// loc 6548
+mirror = true
+blockwalk = true
+active = 0
+models_only = 6253

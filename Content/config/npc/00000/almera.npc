@@ -1,0 +1,10 @@
+// npc 304
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/42215 8741/123 4550/5805 43072/5805
+name = Almera
+models = 390 456 332 353 429 358
+headmodels = 113

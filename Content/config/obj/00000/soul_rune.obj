@@ -1,0 +1,11 @@
+// obj 566
+stackable = true
+cost = 300
+model = obj_soul_rune
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+members = true
+ambient = 30
+name = Soul rune

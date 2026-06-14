@@ -1,0 +1,6 @@
+// loc 15307
+nonsolid = true
+active = 1
+op5 = Build
+models = 12681/0
+name = Door hotspot

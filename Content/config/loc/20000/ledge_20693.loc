@@ -1,0 +1,11 @@
+// loc 20693
+active = 1
+contrast = 15
+ambient = 15
+nonsolid = true
+resizey = 135
+forcedecor = true
+op1 = Walk-across
+forceapproach = 11
+models = 21334/22
+name = Ledge

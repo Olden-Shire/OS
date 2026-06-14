@@ -1,0 +1,6 @@
+// loc 2048
+sharelight = true
+occlude = true
+op1 = Open
+models_only = 570
+name = Door

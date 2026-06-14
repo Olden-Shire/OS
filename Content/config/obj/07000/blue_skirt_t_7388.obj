@@ -1,0 +1,11 @@
+// obj 7388
+cost = 2
+model = obj_blue_skirt_g_7386
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+iop2 = Wear
+manwear = obj_blue_skirt_g_7386_man, 0
+womanwear = obj_blue_skirt_g_7386_woman, 0
+recol = 25238/38814 24/4
+name = Blue skirt (t)

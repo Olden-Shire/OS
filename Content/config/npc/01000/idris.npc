@@ -1,0 +1,9 @@
+// npc 1186
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+name = Idris
+models = 4016 4020 4023 4025 4017
+headmodels = 4011 4009

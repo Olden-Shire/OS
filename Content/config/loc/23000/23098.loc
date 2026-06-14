@@ -1,0 +1,10 @@
+// loc 23098
+active = 1
+active = 1
+anim = 504
+op1 = Use
+ambient = 100
+contrast = 100
+bgsound = 3139, 3
+nonsolid = true
+multiloc = 3529, 65535, 23094 23093

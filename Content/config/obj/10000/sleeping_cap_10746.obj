@@ -1,0 +1,17 @@
+// obj 10746
+model = obj_sleeping_cap_10398
+iop2 = Wear
+manhead = 20111
+womanhead = 20118
+manwear = obj_sleeping_cap_10398_man, 0
+manwear2 = 230
+womanwear = obj_sleeping_cap_10398_woman, 0
+womanwear2 = 403
+xof2d = 5
+yof2d = 12
+zoom2d = 659
+yan2d = 1259
+xan2d = 290
+members = true
+cost = 2000
+name = Sleeping cap

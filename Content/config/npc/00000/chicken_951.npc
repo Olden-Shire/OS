@@ -1,0 +1,10 @@
+// npc 951
+vislevel = 3
+size = 1
+resizeh = 80
+resizev = 80
+walkanim = 5385
+readyanim = 5386
+op2 = Attack
+name = Chicken
+models = 23905

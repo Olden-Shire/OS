@@ -1,0 +1,7 @@
+// loc 20016
+active = 0
+sharelight = true
+hillskew = true
+forcedecor = true
+ambient = 10
+models = 20327/22

@@ -1,0 +1,15 @@
+// obj 1716
+cost = 200
+model = obj_unblessed_symbol_1716
+xof2d = -3
+yof2d = -235
+zoom2d = 990
+yan2d = 96
+xan2d = 260
+iop2 = Wear
+manwear = obj_unblessed_symbol_1716_man, 0
+manwear2 = 284
+womanwear = obj_unblessed_symbol_1716_woman, 0
+womanwear2 = 448
+recol = 10171/94 5916/127 4882/127
+name = Unblessed symbol

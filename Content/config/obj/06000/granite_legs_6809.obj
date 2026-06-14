@@ -1,0 +1,11 @@
+// obj 6809
+cost = 66000
+model = obj_granite_legs_6809
+iop2 = Wear
+manwear = obj_granite_legs_6809_man, 0
+womanwear = obj_granite_legs_6809_woman, 0
+members = true
+zoom2d = 1620
+yan2d = 1960
+xan2d = 276
+name = Granite legs

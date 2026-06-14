@@ -1,0 +1,12 @@
+// obj 7121
+model = obj_repair_plank_7121
+members = true
+manwear = obj_repair_plank_7121_wear, 0
+womanwear = obj_repair_plank_7121_wear, 0
+xof2d = -3
+yof2d = 1
+zoom2d = 1590
+yan2d = 52
+xan2d = 376
+recol = 12574/4515 12694/4515
+name = Repair plank

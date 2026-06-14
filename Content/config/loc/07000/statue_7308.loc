@@ -1,0 +1,7 @@
+// loc 7308
+ambient = 30
+noshadow = true
+op1 = Touch
+recol = 70/4661 61/4781 49/5029 45/5022
+models_only = 7709
+name = Statue

@@ -1,0 +1,14 @@
+// loc 10773
+active = 1
+length = 3
+sharelight = true
+contrast = 30
+ambient = 30
+blockwalk = true
+forceapproach = 7
+resizex = 128
+resizey = 192
+resizez = 128
+op1 = Climb-down
+models_only = 10611
+name = Stairs

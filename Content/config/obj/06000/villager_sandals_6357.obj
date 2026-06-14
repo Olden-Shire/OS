@@ -1,0 +1,14 @@
+// obj 6357
+cost = 100
+iop2 = Wear
+members = true
+model = obj_villager_sandals_6349
+manwear = obj_villager_sandals_6349_man, 0
+womanwear = obj_villager_sandals_6349_woman, 0
+xof2d = 5
+yof2d = -93
+zoom2d = 900
+yan2d = 240
+xan2d = 244
+recol = 4886/36036 5572/2157
+name = Villager sandals

@@ -1,0 +1,13 @@
+// obj 10556
+model = obj_attacker_icon
+manwear = obj_attacker_icon_man, 0
+womanwear = obj_attacker_icon_woman, 0
+iop2 = Wear
+xof2d = 35
+yof2d = 30
+zoom2d = 919
+yan2d = 1024
+xan2d = 567
+members = true
+recol = 22439/947
+name = Attacker icon

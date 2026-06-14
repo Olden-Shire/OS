@@ -1,0 +1,18 @@
+// obj 6672
+model = obj_fishbowl_6670
+xof2d = 1
+yof2d = 27
+zoom2d = 1000
+yan2d = 1800
+xan2d = 284
+cost = 0
+members = true
+iop1 = Talk-At
+iop2 = Play-With
+iop3 = Feed
+ambient = 40
+contrast = 20
+manwear = obj_fishbowl_6670_wear, 0
+womanwear = obj_fishbowl_6670_wear, 6
+recol = 37809/8099 35394/11943 41938/42330
+name = Fishbowl

@@ -1,0 +1,9 @@
+// npc 1911
+size = 2
+ambient = 40
+walkanim = 6808
+readyanim = 6809
+op3 = Grab-feather
+vislevel = 0
+name = Desert Phoenix
+models = 26852

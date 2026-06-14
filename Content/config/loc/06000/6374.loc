@@ -1,0 +1,8 @@
+// loc 6374
+sharelight = true
+occlude = true
+ambient = 10
+contrast = 10
+active = 0
+recol = 7465/10529 7580/10524 7952/10644 6024/10892 898/11142
+models = 6206/22

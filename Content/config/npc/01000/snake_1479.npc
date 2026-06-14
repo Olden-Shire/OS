@@ -1,0 +1,8 @@
+// npc 1479
+walkanim = 274
+nominimap = true
+op2 = Attack
+vislevel = 24
+recol = 11177/12723 14228/17036
+name = Snake
+models = 3002

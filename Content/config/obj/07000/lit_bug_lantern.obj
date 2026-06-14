@@ -1,0 +1,14 @@
+// obj 7053
+model = obj_lit_bug_lantern
+zoom2d = 1000
+yan2d = 1796
+xan2d = 140
+members = true
+manwear = obj_unlit_bug_lantern_7051_wear, 0
+manwear2 = 11077
+womanwear = obj_unlit_bug_lantern_7051_wear, 6
+womanwear2 = 11077
+iop2 = Wield
+iop3 = Extinguish
+cost = 130
+name = Lit bug lantern

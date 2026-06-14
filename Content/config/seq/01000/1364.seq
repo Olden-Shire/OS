@@ -1,0 +1,9 @@
+// seq 1364
+replaceheldright = 1781
+replaceheldleft = 1781
+priority = 0
+loops = 8
+reachforward = true
+postanim_move = 1
+duplicatebehaviour = 1
+frames = 5/177/207 3/181/207 3/182/207 3/183/207 3/184/207 3/185/207 3/186/207 3/187/207 16/188/207 3/178/207 5/179/207 5/180/207

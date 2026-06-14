@@ -1,0 +1,7 @@
+// loc 22569
+forcedecor = true
+active = 1
+nonsolid = true
+op1 = Walk-across
+models = 23273/22
+name = Cable

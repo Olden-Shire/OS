@@ -1,0 +1,7 @@
+// loc 8000
+op1 = Chop-down
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7935 7767
+name = Banana tree

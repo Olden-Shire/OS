@@ -1,0 +1,6 @@
+// loc 25579
+op1 = Look-at
+ambient = 20
+contrast = 10
+models = 27030/4
+name = Star chart

@@ -1,0 +1,13 @@
+// obj 10612
+model = obj_rogue_mask_5554
+iop2 = Wear
+members = true
+manwear = obj_rogue_mask_5554_man, 0
+womanwear = obj_rogue_mask_5554_woman, 0
+manhead = 7600
+womanhead = 7602
+zoom2d = 730
+yan2d = 232
+xan2d = 348
+cost = 375
+name = Rogue mask

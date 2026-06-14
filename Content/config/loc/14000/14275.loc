@@ -1,0 +1,7 @@
+// loc 14275
+hillskew = true
+forcedecor = true
+ambient = 10
+mirror = true
+sharelight = true
+models = 14516/22

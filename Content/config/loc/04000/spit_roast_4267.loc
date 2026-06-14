@@ -1,0 +1,10 @@
+// loc 4267
+width = 2
+anim = 1334
+ambient = 50
+contrast = 50
+active = 1
+bgsound = 2220, 3
+nonblockrange = true
+models_only = 4328
+name = Spit roast

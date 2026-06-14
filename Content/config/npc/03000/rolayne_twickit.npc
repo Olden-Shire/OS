@@ -1,0 +1,10 @@
+// npc 3626
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanim = 1146
+readyanim = 808
+recol = 5572/6443 4550/10450 3123/286 25238/404 3131/299 6798/5541
+name = Rolayne Twickit
+models = 6848 250 8845 14175 8916 10218 3711 275 8919
+headmodels = 5787 82 13945

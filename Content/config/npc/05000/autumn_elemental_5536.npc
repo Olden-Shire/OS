@@ -1,0 +1,12 @@
+// npc 5536
+readyanim = 5801
+walkanim = 5802
+size = 1
+ambient = 20
+resizeh = 80
+resizev = 80
+vislevel = 0
+alwaysontop = true
+nowalksmoothing = true
+name = Autumn Elemental
+models = 22264 22265 22263

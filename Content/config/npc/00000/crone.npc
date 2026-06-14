@@ -1,0 +1,10 @@
+// npc 217
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/54472 4550/4321 8741/27584 25238/33694 5532/33694
+name = Crone
+models = 378 462 346 356 426 361
+headmodels = 103

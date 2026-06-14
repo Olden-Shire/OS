@@ -1,0 +1,7 @@
+// npc 1222
+size = 2
+walkanim = 1261
+readyanim = 1261
+vislevel = 1
+name = Mist
+models = 4086

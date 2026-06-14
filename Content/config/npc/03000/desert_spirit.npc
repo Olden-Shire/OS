@@ -1,0 +1,9 @@
+// npc 3131
+vislevel = 0
+walkanim = 2333
+readyanim = 2334
+op1 = Talk-to
+recol = 25238/8152 8741/8152 908/8152 123/8152 4550/8152 7073/8152
+name = Desert Spirit
+models = 10375 246 292 3189 10833 256
+headmodels = 10373

@@ -1,0 +1,7 @@
+// loc 20149
+length = 2
+op1 = Take-from
+nonblockrange = true
+recol = 5559/5547 5679/5543 5675/5667 5799/5662
+models_only = 4325 20650
+name = Scroll table

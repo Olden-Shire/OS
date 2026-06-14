@@ -1,0 +1,9 @@
+// loc 3238
+op1 = Cross
+forcedecor = true
+mapscene = 43
+sharelight = true
+hillskew = true
+blockwalk = true
+models = 1804/22
+name = Ledge

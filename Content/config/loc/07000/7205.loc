@@ -1,0 +1,7 @@
+// loc 7205
+hillskew = true
+nonsolid = true
+active = 0
+ambient = -40
+recol = 9556/7500
+models_only = 6801

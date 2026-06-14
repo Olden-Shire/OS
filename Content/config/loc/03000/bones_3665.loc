@@ -1,0 +1,5 @@
+// loc 3665
+nonsolid = true
+recol = 82/8400 74/8392 66/8384 57/8375 43063/8367 41/8487
+models_only = 2149
+name = Bones

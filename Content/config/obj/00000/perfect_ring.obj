@@ -1,0 +1,13 @@
+// obj 773
+cost = 2025
+model = obj_perfect_ring
+xof2d = 3
+yof2d = -35
+zoom2d = 830
+yan2d = 180
+zan2d = 2024
+xan2d = 268
+iop2 = Wear
+members = true
+recol = 127/960
+name = 'perfect' ring

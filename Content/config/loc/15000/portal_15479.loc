@@ -1,0 +1,9 @@
+// loc 15479
+width = 5
+length = 2
+anim = 3174
+op1 = Enter
+mapscene = 64
+ambient = 40
+models_only = 11233 12636
+name = Portal

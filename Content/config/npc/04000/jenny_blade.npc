@@ -1,0 +1,11 @@
+// npc 4555
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 39145/10415
+name = Jenny Blade
+models = 388 410 469 348 353 490 434 358
+headmodels = 111 136 126

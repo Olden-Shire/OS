@@ -1,0 +1,11 @@
+// npc 5198
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/10644 6798/10582
+name = Ava
+models = 20461 17288 17287 18110 421 13339
+headmodels = 20459

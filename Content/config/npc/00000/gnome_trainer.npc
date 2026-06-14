@@ -1,0 +1,10 @@
+// npc 162
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/5543
+name = Gnome trainer
+models = 2909 2890 2922
+headmodels = 21

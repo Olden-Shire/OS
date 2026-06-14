@@ -1,0 +1,11 @@
+// npc 1658
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 50467/40384
+name = Robe Store owner
+models = 215 4955 250 5028 4952 4953 4844 5027 18941
+headmodels = 53 4950 82

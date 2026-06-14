@@ -1,0 +1,10 @@
+// obj 7118
+model = obj_canister_7118
+xof2d = -1
+zoom2d = 1080
+yan2d = 280
+xan2d = 84
+members = true
+manwear = obj_canister_7118_wear, 0
+womanwear = obj_canister_7118_wear, 0
+name = Canister

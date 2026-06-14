@@ -1,0 +1,11 @@
+// obj 7580
+model = obj_raw_stuffed_snake
+members = true
+cost = 1
+xof2d = 3
+yof2d = 6
+zoom2d = 2128
+yan2d = 1985
+xan2d = 429
+recol = 3230/138 3226/138 21530/138 10262/138 322/138
+name = Snake over-cooked

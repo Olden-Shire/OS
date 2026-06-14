@@ -1,0 +1,14 @@
+// obj 5551
+model = obj_soul_tiara_5551
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_soul_tiara_5551_man, 0
+womanwear = obj_soul_tiara_5551_woman, 0
+manhead = 7477
+womanhead = 7477
+members = true
+cost = 100
+recol = 43096/54364
+name = Soul tiara

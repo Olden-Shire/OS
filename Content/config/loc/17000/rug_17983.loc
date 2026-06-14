@@ -1,0 +1,7 @@
+// loc 17983
+active = 1
+nonsolid = true
+forceapproach = 7
+forcedecor = true
+models = 17646/22
+name = Rug

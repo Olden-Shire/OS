@@ -1,0 +1,11 @@
+// obj 4698
+stackable = true
+cost = 20
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+model = obj_mud_rune
+ambient = 30
+members = true
+name = Mud rune

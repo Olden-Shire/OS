@@ -1,0 +1,6 @@
+// loc 25152
+sharelight = true
+ambient = 15
+contrast = 15
+models_only = 26526
+name = Pillar

@@ -1,0 +1,5 @@
+// loc 19922
+op1 = Take
+nonsolid = true
+models_only = 19417
+name = Giant feathers

@@ -1,0 +1,8 @@
+// loc 17097
+active = 1
+ambient = 15
+contrast = 15
+active = 1
+recol = 7700/7582 7952/7706 8076/7830
+models_only = 24895
+name = Shelf

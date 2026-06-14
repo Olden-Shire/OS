@@ -1,0 +1,10 @@
+// obj 8676
+model = obj_banner_8676
+manwear = obj_banner_8676_wear, 0
+womanwear = obj_banner_8676_wear, 6
+iop2 = Wield
+ambient = 30
+zoom2d = 2060
+xan2d = 429
+members = true
+name = Banner

@@ -1,0 +1,7 @@
+// loc 15393
+active = 1
+op5 = Build
+nonsolid = true
+ambient = 100
+models = 12713/4
+name = Landscape space

@@ -1,0 +1,7 @@
+// loc 26194
+nonsolid = true
+active = 1
+op1 = Pull
+forceapproach = 11
+models_only = 27607
+name = Lever

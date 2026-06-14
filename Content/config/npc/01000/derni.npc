@@ -1,0 +1,12 @@
+// npc 1849
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+resizeh = 110
+resizev = 105
+op1 = Talk-to
+recol = 2578/6439 61/6331 10659/7834 5784/10432
+name = Derni
+models = 2972 2980 2978 2984 2985 6019
+headmodels = 2 6026

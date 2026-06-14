@@ -1,0 +1,13 @@
+// npc 2276
+size = 1
+readyanim = 6181
+walkanim = 6180
+op2 = Attack
+resizev = 120
+resizeh = 120
+ambient = 15
+vislevel = 2
+recol = 6040/5795 6323/5010 6331/6038
+name = Goblin
+models = 24457 24482 24432 24474 24441 24448
+headmodels = 24210

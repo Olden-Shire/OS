@@ -1,0 +1,6 @@
+// loc 20364
+nonsolid = true
+ambient = 50
+recol = 5660/6705
+models = 2100/10 7745/4
+name = Clothing shelves

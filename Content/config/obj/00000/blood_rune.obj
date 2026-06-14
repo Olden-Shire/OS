@@ -1,0 +1,11 @@
+// obj 565
+stackable = true
+cost = 400
+model = obj_blood_rune
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+members = true
+ambient = 30
+name = Blood rune

@@ -1,0 +1,10 @@
+// npc 4567
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/7075 8741/39987 25238/40103 908/0 4626/6558 5652/4
+name = Examiner
+models = 399 418 8786 14588 10706 428 358
+headmodels = 118 137

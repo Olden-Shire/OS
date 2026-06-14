@@ -1,0 +1,8 @@
+// loc 19253
+anim = 5235
+width = 2
+length = 2
+active = 1
+forcedecor = true
+nonblockrange = true
+multiloc = 2958, 65535, 19227 19228 19229 19233 19236

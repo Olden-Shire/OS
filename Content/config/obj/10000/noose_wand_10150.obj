@@ -1,0 +1,14 @@
+// obj 10150
+model = obj_noose_wand_10150
+xof2d = 4
+yof2d = 37
+zoom2d = 2274
+yan2d = 567
+zan2d = 1660
+xan2d = 277
+members = true
+manwear = obj_noose_wand_10150_wear, 0
+womanwear = obj_noose_wand_10150_wear, 6
+iop2 = Wield
+cost = 4
+name = Noose wand

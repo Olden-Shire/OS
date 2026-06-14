@@ -1,0 +1,12 @@
+// obj 10573
+model = obj_amulet_of_accuracy_1478
+xof2d = 1
+yof2d = 16
+zoom2d = 620
+yan2d = 68
+xan2d = 424
+iop2 = Wear
+manwear = obj_amulet_of_accuracy_1478_man, 0
+womanwear = obj_amulet_of_accuracy_1478_woman, 0
+recol = 127/43951 5916/127 4882/127
+name = Thingy

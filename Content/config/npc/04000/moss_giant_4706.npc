@@ -1,0 +1,8 @@
+// npc 4706
+size = 2
+walkanim = 4654
+readyanim = 4656
+op2 = Attack
+vislevel = 48
+name = Moss giant
+models = 17456 17445 17460

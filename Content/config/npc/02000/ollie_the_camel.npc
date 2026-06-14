@@ -1,0 +1,12 @@
+// npc 2811
+op1 = Talk-to
+size = 2
+resizeh = 121
+resizev = 124
+walkanim = 45
+readyanim = 51
+vislevel = 0
+recol = 7475/6461
+name = Ollie the Camel
+models = 9845 9844 9847
+headmodels = 9839

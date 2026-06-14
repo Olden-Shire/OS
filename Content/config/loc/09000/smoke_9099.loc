@@ -1,0 +1,8 @@
+// loc 9099
+width = 3
+length = 2
+anim = 2439
+active = 1
+bgsound = 3128, 5
+models_only = 9056
+name = Smoke

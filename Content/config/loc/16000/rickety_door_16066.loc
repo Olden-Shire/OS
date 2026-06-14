@@ -1,0 +1,8 @@
+// loc 16066
+mirror = true
+hillskew = true
+op1 = Open
+active = 1
+anim = 4284
+models = 15609/10 15610/0
+name = Rickety door

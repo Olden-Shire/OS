@@ -1,0 +1,8 @@
+// npc 4794
+vislevel = 0
+readyanim = 4690
+walkanim = 4684
+size = 3
+name = Vanstrom Klause
+models = 18004 18003
+headmodels = 18051

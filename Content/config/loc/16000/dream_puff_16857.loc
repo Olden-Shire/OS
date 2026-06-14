@@ -1,0 +1,9 @@
+// loc 16857
+active = 1
+noshadow = true
+contrast = 40
+ambient = 50
+anim = 4364
+nonsolid = true
+models = 16789/22
+name = Dream puff

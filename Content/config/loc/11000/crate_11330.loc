@@ -1,0 +1,5 @@
+// loc 11330
+nonblockrange = true
+recol = 6443/6684 6439/6682 6563/6684 6558/6806
+models_only = 7699
+name = Crate

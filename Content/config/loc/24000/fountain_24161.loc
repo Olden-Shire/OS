@@ -1,0 +1,8 @@
+// loc 24161
+anim = 6023
+width = 2
+length = 2
+ambient = 20
+bgsound = 2151, 5
+models_only = 24520 24521
+name = Fountain

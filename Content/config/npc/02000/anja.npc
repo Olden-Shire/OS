@@ -1,0 +1,11 @@
+// npc 2684
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 2
+recol = 8741/322 25238/5532 6798/8099 43072/4550
+name = Anja
+models = 390 456 483 332 353 437 358
+headmodels = 113

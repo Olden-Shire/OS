@@ -1,0 +1,12 @@
+// loc 16322
+sharelight = true
+hillskew = true
+active = 0
+noshadow = true
+ambient = 30
+contrast = 30
+resizez = 128
+resizex = 128
+resizey = 64
+recol = 6689/7626
+models_only = 834

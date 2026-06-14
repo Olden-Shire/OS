@@ -1,0 +1,5 @@
+// loc 1615
+wallwidth = 8
+sharelight = true
+occlude = true
+models = 2181/0

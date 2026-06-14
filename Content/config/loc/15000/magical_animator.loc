@@ -1,0 +1,10 @@
+// loc 15621
+ambient = 20
+anim = 4161
+resizex = 128
+resizez = 128
+resizey = 115
+nonsolid = true
+forceapproach = 14
+models_only = 15351
+name = Magical Animator

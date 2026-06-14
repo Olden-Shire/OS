@@ -1,0 +1,8 @@
+// npc 5803
+walkanim = 6057
+readyanim = 6058
+vislevel = 0
+op1 = Talk-to
+name = Young 'un
+models = 23711
+headmodels = 23245

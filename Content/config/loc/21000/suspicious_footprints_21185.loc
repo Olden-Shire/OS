@@ -1,0 +1,8 @@
+// loc 21185
+active = 1
+mirror = true
+contrast = 25
+ambient = 25
+nonsolid = true
+models = 21575/22
+name = Suspicious footprints

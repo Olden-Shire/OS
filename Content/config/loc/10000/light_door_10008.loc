@@ -1,0 +1,6 @@
+// loc 10008
+mirror = true
+width = 2
+recol = 127/33728
+models_only = 9683
+name = Light door

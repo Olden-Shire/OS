@@ -1,0 +1,10 @@
+// npc 2713
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/24 25238/24 7700/16 926/8 11200/8
+name = Malignius Mortifer
+models = 9454 181 250 292 170 176 265 323
+headmodels = 9444 82

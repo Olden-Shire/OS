@@ -1,0 +1,5 @@
+[clientscript,script_173](int $int0)()
+
+%varcint42 = $int0;
+~script_178;
+return;

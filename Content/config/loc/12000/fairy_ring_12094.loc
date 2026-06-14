@@ -1,0 +1,7 @@
+// loc 12094
+active = 1
+ambient = 20
+op1 = Use
+blockwalk = true
+models = 11940/10 16232/22
+name = Fairy ring

@@ -1,0 +1,9 @@
+// npc 1959
+walkanim = 5552
+readyanim = 5548
+op2 = Attack
+ambient = 60
+contrast = 60
+vislevel = 98
+name = Mummy
+models = 20904 20905

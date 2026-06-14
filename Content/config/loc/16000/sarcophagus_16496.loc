@@ -1,0 +1,12 @@
+// loc 16496
+length = 2
+width = 2
+anim = 4336
+ambient = 10
+active = 1
+forceapproach = 11
+blockwalk = true
+op1 = Search
+nonblockrange = true
+models_only = 16406 16410
+name = Sarcophagus

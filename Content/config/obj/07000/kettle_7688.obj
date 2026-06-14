@@ -1,0 +1,11 @@
+// obj 7688
+model = obj_kettle_7688
+xof2d = 2
+yof2d = -1
+zoom2d = 1050
+yan2d = 148
+xan2d = 50
+members = true
+manwear = obj_kettle_7688_wear, 0
+womanwear = obj_kettle_7688_wear, 6
+name = Kettle

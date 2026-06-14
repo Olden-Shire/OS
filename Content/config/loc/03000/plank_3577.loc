@@ -1,0 +1,8 @@
+// loc 3577
+anim = 1104
+nonsolid = true
+forcedecor = true
+active = 1
+recol = 61/6449
+models_only = 3646
+name = Plank

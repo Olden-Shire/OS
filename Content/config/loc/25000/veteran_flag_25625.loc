@@ -1,0 +1,6 @@
+// loc 25625
+sharelight = true
+active = 1
+anim = 6874
+models_only = 27186 27180
+name = Veteran Flag

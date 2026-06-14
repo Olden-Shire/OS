@@ -1,0 +1,11 @@
+// npc 4718
+vislevel = 0
+op1 = Talk-to
+resizeh = 117
+resizev = 122
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/154 3604/154 21526/154 6798/99 5541/154
+name = Meiyerditch citizen
+models = 230 250 5673 18074 177 3711 18090 181
+headmodels = 63 82

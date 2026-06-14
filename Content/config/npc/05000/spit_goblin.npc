@@ -1,0 +1,10 @@
+// npc 5823
+size = 1
+walkanim = 6041
+readyanim = 6060
+turnspeed = 0
+op1 = Talk-to
+vislevel = 0
+name = Spit goblin
+models = 23651 23702 23634
+headmodels = 23223 23246

@@ -1,0 +1,8 @@
+// loc 3185
+active = 1
+ambient = 15
+contrast = 15
+active = 1
+recol = 7700/103 7952/99 8076/94
+models_only = 2135
+name = Hospital shelves

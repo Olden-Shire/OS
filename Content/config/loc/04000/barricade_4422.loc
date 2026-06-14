@@ -1,0 +1,8 @@
+// loc 4422
+anim = 475
+ambient = 40
+contrast = 40
+nonblockrange = true
+recol = 5669/4762 2396/2376
+models_only = 14205 4495
+name = Barricade

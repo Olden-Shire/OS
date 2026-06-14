@@ -1,0 +1,11 @@
+// npc 3023
+vislevel = 0
+alwaysontop = true
+walkanim = 2907
+readyanim = 2906
+op1 = Talk-to
+ambient = 20
+recol = 6701/6740
+name = Nirrie
+models = 10212
+headmodels = 10122

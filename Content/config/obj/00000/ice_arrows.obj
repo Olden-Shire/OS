@@ -1,0 +1,17 @@
+// obj 78
+members = true
+cost = 2
+stackable = true
+model = obj_ice_arrows
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+iop2 = Wield
+count1 = 81, 2
+count2 = 80, 3
+count3 = 79, 4
+count4 = 82, 5
+recol = 57/37340 61/37340 5012/37444 926/37340 5012/37340
+name = Ice arrows

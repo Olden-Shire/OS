@@ -1,0 +1,14 @@
+// obj 7594
+model = obj_zombie_mask
+xof2d = -1
+yof2d = 4
+zoom2d = 720
+yan2d = 166
+zan2d = 1826
+xan2d = 1770
+iop2 = Wear
+manwear = obj_zombie_mask_man, 0
+womanwear = obj_zombie_mask_woman, 0
+manhead = 13872
+womanhead = 13874
+name = Zombie mask

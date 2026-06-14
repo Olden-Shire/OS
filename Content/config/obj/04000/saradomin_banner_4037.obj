@@ -1,0 +1,10 @@
+// obj 4037
+model = obj_saradomin_banner_4037
+yof2d = 6
+zoom2d = 2060
+xan2d = 464
+iop2 = Wield
+manwear = obj_saradomin_banner_4037_wear, 0
+womanwear = obj_saradomin_banner_4037_wear, 6
+members = true
+name = Saradomin banner

@@ -1,0 +1,14 @@
+// npc 4288
+size = 1
+vislevel = 0
+op1 = Talk-to
+op3 = Claim-Tokens
+resizeh = 145
+resizev = 135
+walkanim = 2064
+readyanim = 2065
+alwaysontop = true
+recol = 54397/49 5532/8 41/8 61/16 57/43026 6798/88
+name = Ajjat
+models = 217 10304 3379 8233 10298 15411 15414 268 15410 15318 18919
+headmodels = 15409

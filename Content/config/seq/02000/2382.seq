@@ -1,0 +1,8 @@
+// seq 2382
+reachforward = true
+maxloops = 8
+priority = 6
+replaceheldright = 1487
+preanim_move = 1
+postanim_move = 1
+frames = 1/14/306 10/18/306 3/19/306 3/20/306 4/21/306 5/22/306 10/23/306 3/24/306 2/25/306 8/15/306 3/16/306 1/17/306

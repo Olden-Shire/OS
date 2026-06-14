@@ -1,0 +1,11 @@
+// npc 6177
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 110
+recol = 5673/10328
+name = Sir Bedivere
+models = 27191 27202
+headmodels = 53 84 43

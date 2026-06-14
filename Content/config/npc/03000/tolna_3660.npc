@@ -1,0 +1,8 @@
+// npc 3660
+size = 3
+walkanim = 3828
+readyanim = 3828
+op2 = Attack
+vislevel = 46
+name = Tolna
+models = 14284

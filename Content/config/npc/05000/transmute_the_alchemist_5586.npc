@@ -1,0 +1,12 @@
+// npc 5586
+resizeh = 130
+resizev = 130
+walkanim = 5822
+readyanim = 808
+ambient = 25
+contrast = 25
+vislevel = 0
+recol = 6798/38160 12/46994 10508/45966 10396/54808 280/54684 8741/45968
+name = 'Transmute' The Alchemist
+models = 207 248 22604 22596 177 17525 181
+headmodels = 47 80

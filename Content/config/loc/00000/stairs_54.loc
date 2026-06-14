@@ -1,0 +1,9 @@
+// loc 54
+width = 2
+length = 3
+op1 = Climb-up
+mapscene = 7
+forceapproach = 11
+recol = 41/7580 37/7704 33/7700 28/7952 24/8076 49/7461
+models_only = 14360
+name = Stairs

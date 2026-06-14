@@ -1,0 +1,10 @@
+// npc 664
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/43301 25238/43540 24/7104 4626/33030 6798/6327
+name = Dimintheis
+models = 14340 5215 25864 10313 163 10218 11339 181
+headmodels = 14337 5207

@@ -1,0 +1,14 @@
+// npc 2986
+vislevel = 0
+size = 1
+size = 1
+resizeh = 85
+resizev = 80
+readyanim = 317
+walkanim = 314
+vislevel = 0
+op2 = hidden
+alwaysontop = true
+recol = 16/61 127/68 64414/24472
+name = Captain Tom
+models = 3006 9388

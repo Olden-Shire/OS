@@ -1,0 +1,6 @@
+// npc 4232
+vislevel = 0
+size = 1
+name = Middle head
+models = 3010 3006
+headmodels = 18507 18504 18509

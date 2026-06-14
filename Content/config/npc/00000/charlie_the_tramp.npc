@@ -1,0 +1,11 @@
+// npc 641
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 10407/5301 8741/7706 7331/39 6798/803 908/5281 5289/39
+name = Charlie the Tramp
+models = 18190 203 244 10304 18135 14175 18126 10218 15005 8919
+headmodels = 45 18187 18185

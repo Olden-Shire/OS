@@ -1,0 +1,5 @@
+// loc 13830
+active = 1
+blockwalk = true
+models = 12895/0
+name = Window

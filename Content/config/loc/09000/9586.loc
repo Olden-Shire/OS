@@ -1,0 +1,6 @@
+// loc 9586
+sharelight = true
+ambient = 20
+active = 0
+nonsolid = true
+models_only = 9515

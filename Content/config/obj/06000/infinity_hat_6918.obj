@@ -1,0 +1,17 @@
+// obj 6918
+model = obj_infinity_hat_6918
+manwear = obj_infinity_hat_6918_man, 0
+manwear2 = 230
+womanwear = obj_infinity_hat_6918_woman, 0
+womanwear2 = 403
+manhead = 10679
+manhead2 = 63
+womanhead = 10679
+womanhead2 = 120
+zoom2d = 1150
+yan2d = 68
+xan2d = 112
+iop2 = Wear
+members = true
+cost = 17000
+name = Infinity hat

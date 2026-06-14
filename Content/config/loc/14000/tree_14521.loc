@@ -1,0 +1,8 @@
+// loc 14521
+width = 3
+length = 2
+mapscene = 6
+hillskew = true
+recol = 10772/7452 11148/8481 10638/8472
+models_only = 14739
+name = Tree

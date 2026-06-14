@@ -1,0 +1,15 @@
+// obj 5282
+model = obj_mushroom_spore
+xof2d = 1
+yof2d = 9
+zoom2d = 840
+yan2d = 36
+xan2d = 340
+members = true
+stackable = true
+count1 = 5260, 2
+count2 = 5261, 3
+count3 = 5262, 4
+count4 = 5263, 5
+cost = 86
+name = Mushroom spore

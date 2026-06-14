@@ -1,0 +1,8 @@
+// loc 3567
+anim = 1103
+blockwalk = true
+forcedecor = true
+length = 2
+active = 1
+models_only = 3650
+name = Blade

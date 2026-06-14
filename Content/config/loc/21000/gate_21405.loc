@@ -1,0 +1,6 @@
+// loc 21405
+op1 = Open
+raiseobject = 0
+mirror = true
+models = 22113/0
+name = Gate

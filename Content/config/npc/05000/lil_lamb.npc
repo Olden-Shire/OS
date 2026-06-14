@@ -1,0 +1,10 @@
+// npc 5146
+vislevel = 0
+size = 1
+walkanim = 5340
+readyanim = 5339
+ambient = 20
+resizeh = 88
+resizev = 88
+name = Li'l lamb
+models = 20272

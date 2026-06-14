@@ -1,0 +1,12 @@
+// obj 784
+members = true
+cost = 2
+model = obj_book_on_chemicals
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+iop1 = Read
+recol = 5018/18721 61/7952 11177/7952
+name = Translation book

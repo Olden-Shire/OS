@@ -1,0 +1,6 @@
+// npc 4631
+readyanim = 4472
+walkanim = 4473
+vislevel = 0
+name = fluffie
+models = 16956 16954

@@ -1,0 +1,8 @@
+// loc 11892
+resizex = 64
+resizey = 64
+resizez = 64
+nonblockrange = true
+recol = 9661/5272 8745/5268
+models_only = 11459
+name = Table

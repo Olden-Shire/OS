@@ -1,0 +1,11 @@
+// loc 4138
+width = 2
+resizex = 128
+resizey = 100
+resizez = 84
+offsetx = 0
+offsety = 0
+offsetz = 20
+nonblockrange = true
+models_only = 1148
+name = Counter

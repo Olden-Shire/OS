@@ -1,0 +1,7 @@
+// npc 5058
+walkanim = 5150
+readyanim = 5146
+vislevel = 0
+recol = 8741/5285 4626/5285 908/5409
+name = Bob
+models = 18086 246 310 18125 10218 495 15005 18129

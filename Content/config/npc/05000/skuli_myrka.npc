@@ -1,0 +1,13 @@
+// npc 5486
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 6798/6585 25238/7465 8741/8501 8078/7485 8084/7601
+name = Skuli Myrka
+models = 4220 252 299 162 179 4226 4218 550 4221 4219
+headmodels = 53 84 4210

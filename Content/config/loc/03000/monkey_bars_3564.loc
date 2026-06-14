@@ -1,0 +1,10 @@
+// loc 3564
+width = 3
+blockwalk = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Swing-across
+recol = 61/5309
+models_only = 1474
+name = Monkey bars

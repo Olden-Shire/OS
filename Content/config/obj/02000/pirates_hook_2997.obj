@@ -1,0 +1,12 @@
+// obj 2997
+cost = 89
+xof2d = -3
+zoom2d = 810
+yan2d = 2012
+xan2d = 680
+members = true
+model = obj_pirates_hook_2997
+manwear = obj_pirates_hook_2997_man, 0
+womanwear = obj_pirates_hook_2997_woman, 0
+iop2 = Wear
+name = Pirate's hook

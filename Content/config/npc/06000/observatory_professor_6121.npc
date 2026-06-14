@@ -1,0 +1,8 @@
+// npc 6121
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+name = Observatory professor
+models = 26890 26885 26892 26886 26889 26887
+headmodels = 26905

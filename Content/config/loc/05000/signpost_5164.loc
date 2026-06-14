@@ -1,0 +1,7 @@
+// loc 5164
+blockwalk = true
+op1 = Read
+anim = 1631
+bgsound = 2970, 3
+models_only = 5174
+name = Signpost

@@ -1,0 +1,15 @@
+// obj 2983
+model = obj_chompy_bird_hat_2978
+manwear = obj_chompy_bird_hat_2978_man, 0
+womanwear = obj_chompy_bird_hat_2978_woman, 0
+manhead = 3608
+womanhead = 3611
+iop2 = Wear
+xof2d = 5
+yof2d = -10
+zoom2d = 800
+yan2d = 156
+xan2d = 152
+members = true
+recol = 38003/11200 37093/11181 39137/11173 61/11181
+name = Chompy bird hat

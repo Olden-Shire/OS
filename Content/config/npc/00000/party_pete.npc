@@ -1,0 +1,10 @@
+// npc 659
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/42093 9104/41682 25238/43162
+name = Party Pete
+models = 230 246 244 187 167 176 297 267 181
+headmodels = 63 77 29

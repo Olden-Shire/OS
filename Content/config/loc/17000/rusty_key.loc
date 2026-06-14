@@ -1,0 +1,7 @@
+// loc 17429
+resizey = 85
+resizex = 85
+resizez = 85
+op1 = Take
+models_only = 17468 17471
+name = Rusty key

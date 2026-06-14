@@ -1,0 +1,6 @@
+// npc 4234
+vislevel = 0
+size = 1
+name = Kalphite Queen
+models = 3010 3006
+headmodels = 24572

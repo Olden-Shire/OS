@@ -1,0 +1,12 @@
+// npc 3324
+vislevel = 0
+size = 1
+resizeh = 132
+resizev = 138
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 33030/7721 38036/4292 6798/5214 8741/7721 10002/8099 4626/27528
+name = Draul Leptoc
+models = 215 238 247 11811 11769 10980 10218 11869 181
+headmodels = 53 70 79

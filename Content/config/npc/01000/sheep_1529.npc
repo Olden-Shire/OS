@@ -1,0 +1,10 @@
+// npc 1529
+size = 1
+walkanim = 5334
+readyanim = 5335
+resizeh = 108
+resizev = 108
+ambient = 20
+vislevel = 1
+name = Sheep
+models = 20290 20291

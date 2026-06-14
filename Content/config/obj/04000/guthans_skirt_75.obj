@@ -1,0 +1,12 @@
+// obj 4923
+members = true
+cost = 275000
+iop2 = Wear
+manwear = obj_guthans_chainskirt_4730_man, 0
+womanwear = obj_guthans_chainskirt_4730_woman, 0
+model = obj_guthans_chainskirt_4730
+yof2d = 1
+zoom2d = 1720
+xan2d = 468
+recol = 10407/10512 10394/10508 10388/10760
+name = Guthans skirt 75

@@ -1,0 +1,9 @@
+// loc 13533
+length = 2
+anim = 3105
+op5 = Remove
+contrast = 25
+ambient = 25
+bgsound = 2198, 3
+models_only = 14100 12620
+name = Small oven

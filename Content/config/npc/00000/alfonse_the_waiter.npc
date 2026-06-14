@@ -1,0 +1,10 @@
+// npc 793
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 54397/4550 9104/115 8741/115 25238/45908
+name = Alfonse the waiter
+models = 235 292 247 170 267 185 176 320
+headmodels = 67 79

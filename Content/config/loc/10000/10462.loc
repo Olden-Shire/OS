@@ -1,0 +1,6 @@
+// loc 10462
+sharelight = true
+active = 0
+forcedecor = true
+mapfunction = 39
+models = 10205/22

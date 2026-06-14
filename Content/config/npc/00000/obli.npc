@@ -1,0 +1,11 @@
+// npc 516
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 4550/4785 25238/8741
+name = Obli
+models = 223 247 302 170 176 274 181
+headmodels = 59 79

@@ -1,0 +1,8 @@
+// loc 21035
+sharelight = true
+ambient = 20
+contrast = 20
+noshadow = true
+op1 = Use
+models = 21754/0
+name = Chasm

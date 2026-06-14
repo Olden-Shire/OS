@@ -1,0 +1,8 @@
+// loc 3221
+mirror = true
+width = 2
+length = 2
+op1 = Open
+recol = 6689/7952
+models_only = 750
+name = Door

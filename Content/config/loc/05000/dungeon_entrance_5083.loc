@@ -1,0 +1,11 @@
+// loc 5083
+forceapproach = 11
+hillskew = true
+resizex = 95
+resizey = 110
+resizez = 95
+length = 4
+width = 4
+op1 = Enter
+models_only = 4998 4999
+name = Dungeon entrance

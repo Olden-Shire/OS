@@ -1,0 +1,8 @@
+// loc 15711
+length = 2
+ambient = 20
+op1 = Inspect
+active = 1
+nonsolid = true
+models_only = 23886
+name = Zanik

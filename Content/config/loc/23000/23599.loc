@@ -1,0 +1,7 @@
+// loc 23599
+active = 0
+hillskew = true
+ambient = 10
+nonsolid = true
+recol = 43/7473 39/7469 35/7465 30/7461
+models_only = 11799

@@ -1,0 +1,10 @@
+// loc 4266
+anim = 475
+blockwalk = true
+ambient = 75
+contrast = 75
+active = 1
+bgsound = 2065, 3
+nonblockrange = true
+models_only = 3818 3811
+name = Fire

@@ -1,0 +1,12 @@
+// npc 2641
+vislevel = 0
+size = 3
+resizeh = 150
+resizev = 150
+readyanim = 2688
+walkanim = 2689
+alwaysontop = true
+nominimap = true
+recol = 933/3734 26776/10396
+name = Dragonkin
+models = 9416

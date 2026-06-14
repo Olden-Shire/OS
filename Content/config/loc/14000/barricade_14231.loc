@@ -1,0 +1,9 @@
+// loc 14231
+hillskew = true
+ambient = 5
+noshadow = true
+nonsolid = true
+active = 1
+op3 = Repair
+models = 27169/22
+name = Barricade

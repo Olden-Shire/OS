@@ -1,0 +1,7 @@
+// loc 25427
+sharelight = true
+length = 3
+ambient = 25
+contrast = 25
+models_only = 27080
+name = Blackboard

@@ -1,0 +1,5 @@
+// loc 12717
+op1 = Read
+blockwalk = true
+models_only = 13379
+name = Gravestone

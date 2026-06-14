@@ -1,0 +1,10 @@
+// obj 10174
+model = obj_metal_feather
+xof2d = -1
+yof2d = -12
+zoom2d = 595
+yan2d = 1901
+xan2d = 192
+members = true
+iop5 = Destroy
+name = Metal feather

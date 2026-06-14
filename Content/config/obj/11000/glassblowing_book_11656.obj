@@ -1,0 +1,12 @@
+// obj 11656
+model = obj_glassblowing_book_11656
+xof2d = 2
+yof2d = 10
+zoom2d = 950
+yan2d = 1948
+xan2d = 260
+ambient = 15
+cost = 3
+iop1 = Read
+members = true
+name = Glassblowing book

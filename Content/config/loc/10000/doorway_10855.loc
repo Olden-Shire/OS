@@ -1,0 +1,6 @@
+// loc 10855
+nonsolid = true
+active = 1
+op1 = Enter
+models = 10771/4
+name = Doorway

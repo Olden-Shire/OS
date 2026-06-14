@@ -1,0 +1,9 @@
+// npc 3033
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9019/7616 8741/7616 49054/43043 25238/37929 4550/4523
+name = Garai
+models = 9016 251 9017 151 176 6133 181
+headmodels = 9013 83

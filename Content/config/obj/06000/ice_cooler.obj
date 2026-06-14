@@ -1,0 +1,14 @@
+// obj 6696
+model = obj_ice_cooler
+resizex = 128
+resizey = 128
+resizez = 128
+contrast = 30
+ambient = 30
+yof2d = -4
+zoom2d = 1650
+yan2d = 1852
+xan2d = 164
+members = true
+stackable = true
+name = Ice cooler

@@ -1,0 +1,11 @@
+// npc 1261
+size = 1
+walkanim = 1306
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 32
+recol = 25238/10415 8741/10415 4550/13640 6798/12828 43072/13640 43303/960
+name = Afflicted
+models = 230 251 310 151 176 265 181
+headmodels = 63 83

@@ -1,0 +1,9 @@
+// npc 691
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 64
+recol = 6674/9135 43072/22416
+name = Tower Archer
+models = 220 253 314 169 176 258 185 563

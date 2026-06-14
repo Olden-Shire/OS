@@ -1,0 +1,16 @@
+// interface 483
+
+[com_0]
+type=3
+buttontype=0
+clientcode=0
+x=0
+y=0
+width=550
+height=400
+trans=220
+fill=1
+colour=0xccccff
+colour2=0x000000
+colourover=0x000000
+colour2over=0x000000

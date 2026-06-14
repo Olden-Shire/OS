@@ -1,0 +1,7 @@
+// npc 987
+size = 2
+walkanim = 288
+readyanim = 291
+vislevel = 15
+name = Unicorn
+models = 2933

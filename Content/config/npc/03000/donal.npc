@@ -1,0 +1,8 @@
+// npc 3938
+vislevel = 0
+walkanim = 98
+op1 = Talk-to
+recol = 61/40008 803/662 4626/8
+name = Donal
+models = 2971 7059 2979 2992 2981 2985
+headmodels = 1

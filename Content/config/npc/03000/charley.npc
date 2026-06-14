@@ -1,0 +1,10 @@
+// npc 3161
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 6798/10508 8741/933 43072/4550 39145/38073
+name = Charley
+models = 190 215 236 250 299 159 179 11113
+headmodels = 53 82 31 68

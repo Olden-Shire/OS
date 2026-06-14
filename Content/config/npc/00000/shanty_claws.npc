@@ -1,0 +1,10 @@
+// npc 828
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+size = 1
+walkanim = 4740
+readyanim = 4738
+name = Shanty Claws
+models = 19234 19235
+headmodels = 19236

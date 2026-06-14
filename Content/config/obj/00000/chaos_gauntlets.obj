@@ -1,0 +1,14 @@
+// obj 777
+members = true
+model = obj_cooking_gauntlets
+xof2d = 8
+yof2d = -8
+zoom2d = 930
+yan2d = 828
+xan2d = 420
+iop2 = Wear
+iop5 = Destroy
+manwear = obj_cooking_gauntlets_man, 0
+womanwear = obj_cooking_gauntlets_woman, 0
+recol = 10004/1825
+name = Chaos gauntlets

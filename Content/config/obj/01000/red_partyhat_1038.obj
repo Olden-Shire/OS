@@ -1,0 +1,13 @@
+// obj 1038
+model = obj_red_partyhat_1038
+xof2d = 1
+yof2d = 1
+zoom2d = 440
+yan2d = 1852
+xan2d = 76
+iop2 = Wear
+manwear = obj_red_partyhat_1038_man, 0
+womanwear = obj_red_partyhat_1038_woman, 0
+manhead = 29
+womanhead = 87
+name = Red partyhat

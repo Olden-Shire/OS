@@ -1,0 +1,13 @@
+// obj 10559
+model = obj_attacker_icon
+manwear = obj_healer_icon_man, 0
+womanwear = obj_healer_icon_woman, 0
+iop2 = Wear
+xof2d = -32
+yof2d = -32
+zoom2d = 1049
+yan2d = 1024
+xan2d = 512
+members = true
+recol = 22439/22451
+name = Healer icon

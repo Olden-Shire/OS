@@ -1,0 +1,11 @@
+// npc 251
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 687/43299
+name = King Arthur
+models = 27193 27197 27203
+headmodels = 27208 27560 27204

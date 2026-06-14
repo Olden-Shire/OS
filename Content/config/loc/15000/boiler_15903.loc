@@ -1,0 +1,6 @@
+// loc 15903
+length = 2
+width = 2
+bgsound = 2197, 3
+models_only = 15800 15795
+name = Boiler

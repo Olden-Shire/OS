@@ -1,0 +1,10 @@
+// loc 18444
+hillskew = true
+sharelight = true
+active = 1
+op1 = Climb-through
+width = 2
+hillskew = true
+recol = 21547/6449 21543/6445 21539/6569 21534/6565 21530/6689
+models_only = 18378
+name = Shortcut

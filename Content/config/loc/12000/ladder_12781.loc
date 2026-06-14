@@ -1,0 +1,5 @@
+// loc 12781
+op1 = Climb-down
+sharelight = true
+models_only = 14004
+name = Ladder

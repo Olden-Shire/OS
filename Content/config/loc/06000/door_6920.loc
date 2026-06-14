@@ -1,0 +1,8 @@
+// loc 6920
+hillskew = true
+sharelight = true
+mirror = true
+active = 1
+op1 = Open
+models_only = 6931
+name = Door

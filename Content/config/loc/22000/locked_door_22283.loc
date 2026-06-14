@@ -1,0 +1,8 @@
+// loc 22283
+hillskew = true
+contrast = 20
+ambient = 20
+blockwalk = true
+mirror = true
+models_only = 22883
+name = Locked door

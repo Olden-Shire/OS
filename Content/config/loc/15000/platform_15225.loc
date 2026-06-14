@@ -1,0 +1,5 @@
+// loc 15225
+forcedecor = true
+op1 = Use-Lift
+models_only = 15080
+name = Platform

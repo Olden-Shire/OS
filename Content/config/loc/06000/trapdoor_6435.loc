@@ -1,0 +1,6 @@
+// loc 6435
+blockwalk = true
+op1 = Climb-down
+nonblockrange = true
+models_only = 1223
+name = Trapdoor

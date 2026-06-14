@@ -1,0 +1,10 @@
+// obj 10885
+model = obj_keg_10885
+zoom2d = 789
+yan2d = 1868
+xan2d = 222
+contrast = 15
+ambient = 15
+members = true
+op1 = Take
+name = Keg

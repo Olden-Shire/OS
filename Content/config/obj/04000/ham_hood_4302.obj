@@ -1,0 +1,13 @@
+// obj 4302
+cost = 75
+model = obj_ham_hood_4302
+zoom2d = 730
+yan2d = 2036
+iop2 = Wear
+manwear = obj_ham_hood_4302_man, 0
+womanwear = obj_ham_hood_4302_woman, 0
+manhead = 5428
+womanhead = 5429
+members = true
+recol = 43059/61347 8596/61347 8741/61347
+name = Ham hood

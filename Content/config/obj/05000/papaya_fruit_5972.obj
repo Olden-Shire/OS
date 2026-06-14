@@ -1,0 +1,11 @@
+// obj 5972
+model = obj_papaya_fruit_5972
+yof2d = -1
+zoom2d = 930
+yan2d = 36
+xan2d = 84
+iop1 = Eat
+ambient = 15
+members = true
+cost = 64
+name = Papaya fruit

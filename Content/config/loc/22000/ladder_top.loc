@@ -1,0 +1,7 @@
+// loc 22666
+active = 1
+op1 = Climb-down
+mapscene = 7
+nonsolid = true
+models = 23284/22
+name = Ladder top

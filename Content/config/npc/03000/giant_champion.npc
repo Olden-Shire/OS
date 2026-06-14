@@ -1,0 +1,8 @@
+// npc 3058
+size = 2
+readyanim = 6371
+walkanim = 6372
+op2 = Attack
+vislevel = 56
+name = Giant Champion
+models = 25624 25623 25622 17466

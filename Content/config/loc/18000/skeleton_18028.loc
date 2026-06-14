@@ -1,0 +1,5 @@
+// loc 18028
+active = 1
+blockwalk = true
+models_only = 17884 17885
+name = Skeleton

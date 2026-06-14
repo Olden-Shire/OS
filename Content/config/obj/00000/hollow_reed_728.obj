@@ -1,0 +1,12 @@
+// obj 728
+members = true
+model = obj_hollow_reed_727
+manwear = obj_hollow_reed_727_wear, 0
+womanwear = obj_hollow_reed_727_wear, 0
+xof2d = -2
+yof2d = -15
+zoom2d = 1770
+yan2d = 940
+xan2d = 212
+stackable = true
+name = Hollow reed

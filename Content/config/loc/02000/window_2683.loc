@@ -1,0 +1,6 @@
+// loc 2683
+ambient = 10
+active = 1
+op2 = Search
+models = 2045/4
+name = Window

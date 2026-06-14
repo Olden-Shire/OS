@@ -1,0 +1,12 @@
+[clientscript,script_110](string $string0)()
+
+if_sethide(0, 35913816);
+if_sethide(1, 35913817);
+if_settext($string0, 35913821);
+if_settext("*", 35913822);
+%varcint5 = 9;
+%varcstr22 = "";
+if_setonclick(-1, "", 35913816);
+if_setonkey(112, -2147483640, -2147483639, "iz", 35913822);
+if_setondialogabort(138, "", 35913822);
+return;

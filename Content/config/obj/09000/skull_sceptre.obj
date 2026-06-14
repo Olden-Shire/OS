@@ -1,0 +1,13 @@
+// obj 9013
+model = obj_skull_sceptre
+xof2d = -3
+yof2d = 77
+yan2d = 1550
+xan2d = 276
+iop2 = Wield
+iop3 = Invoke
+iop4 = Divine
+iop5 = Destroy
+manwear = obj_skull_sceptre_wear, 0
+womanwear = obj_skull_sceptre_wear, 6
+name = Skull sceptre

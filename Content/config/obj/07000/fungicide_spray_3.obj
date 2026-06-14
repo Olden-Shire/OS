@@ -1,0 +1,13 @@
+// obj 7428
+model = obj_fungicide_spray_10
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_fungicide_spray_10_wear, 0
+womanwear = obj_fungicide_spray_10_wear, 6
+xof2d = -2
+yof2d = -6
+zoom2d = 912
+yan2d = 1268
+xan2d = 303
+name = Fungicide spray 3

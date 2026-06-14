@@ -1,0 +1,9 @@
+// loc 15569
+active = 0
+ambient = 20
+contrast = 15
+wallwidth = 32
+occlude = true
+mirror = true
+recol = 5322/8406 6356/8398 6352/7378 6348/8398
+models = 15277/0

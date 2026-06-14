@@ -1,0 +1,15 @@
+// obj 11026
+model = obj_chocolate_kebbit
+xof2d = 1
+yof2d = 3
+zoom2d = 1360
+yan2d = 1760
+xan2d = 69
+contrast = 15
+ambient = 15
+iop1 = Eat
+iop5 = Drop
+ambient = 20
+contrast = 10
+stackable = true
+name = Chocolate kebbit

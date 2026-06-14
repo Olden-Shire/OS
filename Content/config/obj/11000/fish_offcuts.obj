@@ -1,0 +1,12 @@
+// obj 11334
+model = obj_fish_offcuts
+xof2d = 7
+yof2d = -16
+zoom2d = 984
+yan2d = 1770
+zan2d = 124
+xan2d = 111
+members = true
+stackable = true
+cost = 1
+name = Fish offcuts

@@ -1,0 +1,10 @@
+// npc 3777
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op3 = Toggle-warnings
+vislevel = 0
+recol = 25238/78 8741/36145 926/43276 7700/37656 11200/94 6798/6067
+name = Doomsayer
+models = 208 250 14461 323 10301 176 534 14460 8919
+headmodels = 48 82

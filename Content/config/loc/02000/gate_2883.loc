@@ -1,0 +1,6 @@
+// loc 2883
+op1 = Open
+op4 = Pay-toll(10gp)
+mirror = true
+models = 1509/0 1511/9
+name = Gate

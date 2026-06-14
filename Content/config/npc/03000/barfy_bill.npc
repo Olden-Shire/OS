@@ -1,0 +1,12 @@
+// npc 3331
+size = 1
+vislevel = 0
+resizeh = 134
+resizev = 145
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+recol = 8741/43100 11844/10760 13122/7050 25238/38197 10004/10378
+name = Barfy Bill
+models = 193 215 244 250 292 322 170 179 12087 5218
+headmodels = 53 36 82

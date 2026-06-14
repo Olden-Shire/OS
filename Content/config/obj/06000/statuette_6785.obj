@@ -1,0 +1,11 @@
+// obj 6785
+model = obj_statuette_6785
+xof2d = -7
+yof2d = 73
+zoom2d = 1610
+yan2d = 196
+xan2d = 300
+ambient = 15
+members = true
+recol = 6740/6606
+name = Statuette

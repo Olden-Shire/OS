@@ -1,0 +1,11 @@
+// obj 11337
+model = obj_mangled_bones
+members = true
+cost = 1000
+xof2d = 8
+yof2d = -1
+zoom2d = 1488
+yan2d = 651
+xan2d = 498
+iop5 = Destroy
+name = Mangled bones

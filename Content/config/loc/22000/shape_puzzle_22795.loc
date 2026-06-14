@@ -1,0 +1,9 @@
+// loc 22795
+resizex = 90
+resizey = 90
+resizez = 90
+active = 1
+ambient = 20
+nonsolid = true
+models = 23497/22
+name = Shape puzzle

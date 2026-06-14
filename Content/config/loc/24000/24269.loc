@@ -1,0 +1,9 @@
+// loc 24269
+mirror = true
+active = 0
+noshadow = true
+blockwalk = true
+ambient = 25
+contrast = 25
+noshadow = true
+models = 24860/0

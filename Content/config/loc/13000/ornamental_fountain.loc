@@ -1,0 +1,8 @@
+// loc 13480
+anim = 3647
+width = 2
+length = 2
+op5 = Remove
+bgsound = 2151, 3
+models_only = 13191
+name = Ornamental fountain

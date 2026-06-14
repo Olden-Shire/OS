@@ -1,0 +1,10 @@
+// npc 3455
+resizeh = 148
+resizev = 117
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+recol = 25238/33036 4626/8720 8741/5417 10004/522 4550/6697
+name = ? ? ? ?
+models = 5430 246 310 163 179 3329 185 12771
+headmodels = 5428

@@ -1,0 +1,6 @@
+// loc 15897
+mirror = true
+offsetx = -20
+forceapproach = 7
+models_only = 15755
+name = Copper Ladder

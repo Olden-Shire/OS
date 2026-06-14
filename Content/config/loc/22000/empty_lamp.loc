@@ -1,0 +1,11 @@
+// loc 22763
+anim = 6031
+active = 1
+forcedecor = true
+ambient = 100
+contrast = 100
+blockwalk = true
+op1 = Inspect
+nonblockrange = true
+models_only = 23459
+name = Empty lamp

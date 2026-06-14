@@ -1,0 +1,9 @@
+// loc 7022
+hillskew = true
+sharelight = true
+forcedecor = true
+active = 1
+blockwalk = true
+recol = 5016/7050 53/10262 41/10262
+models = 1394/22
+name = Track

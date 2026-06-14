@@ -1,0 +1,11 @@
+// obj 11175
+model = obj_uncleaned_find
+xof2d = -13
+yof2d = -81
+zoom2d = 1467
+yan2d = 1431
+xan2d = 218
+members = true
+iop5 = Destroy
+members = true
+name = Uncleaned find

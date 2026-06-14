@@ -1,0 +1,9 @@
+// npc 3508
+op1 = Talk-to
+walkanim = 2562
+readyanim = 2561
+vislevel = 0
+recol = 6798/3243 25238/8472 8741/6573
+name = Leo
+models = 6848 13937 11190 293 169 177 13938 275 185
+headmodels = 5787 13936 11188

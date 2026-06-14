@@ -1,0 +1,8 @@
+// loc 2231
+hillskew = true
+op1 = Climb
+ambient = 25
+contrast = 25
+blockwalk = true
+models = 1743/22
+name = Rocks

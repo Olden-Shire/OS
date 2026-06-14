@@ -1,0 +1,9 @@
+// npc 1467
+walkanim = 1382
+readyanim = 1386
+turnspeed = 10
+op2 = Attack
+vislevel = 82
+recol = 20/23849 7721/17734 0/65455
+name = Monkey Zombie
+models = 4817 4824

@@ -1,0 +1,10 @@
+// npc 4281
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 69
+recol = 61/8 41/0 24/12 37/12 11200/12
+name = Animated Black Armour
+models = 15311 15316 15301 15304 518 15314 15303

@@ -1,0 +1,10 @@
+// npc 4247
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/0 25238/0 908/39099
+name = Estate agent
+models = 13705 230 10039 11760 163 10218 8954 11339 181 18922
+headmodels = 63 13701 10030

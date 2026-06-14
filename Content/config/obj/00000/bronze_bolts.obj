@@ -1,0 +1,16 @@
+// obj 877
+stackable = true
+cost = 0
+model = obj_bronze_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+count1 = 3807, 2
+count2 = 3808, 3
+count3 = 3809, 4
+count4 = 3810, 5
+recol = 17971/5532 5537/5532 5532/5656 5656/5652 5652/5904
+name = Bronze bolts

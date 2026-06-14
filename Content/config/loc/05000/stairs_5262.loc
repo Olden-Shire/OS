@@ -1,0 +1,8 @@
+// loc 5262
+hillskew = true
+width = 3
+length = 3
+op1 = Climb-up
+recol = 8497/16904 8530/16656
+models_only = 5400
+name = Stairs

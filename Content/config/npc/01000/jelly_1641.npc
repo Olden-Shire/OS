@@ -1,0 +1,11 @@
+// npc 1641
+size = 1
+walkanim = 1584
+readyanim = 1583
+op2 = Attack
+resizeh = 102
+resizev = 102
+vislevel = 78
+recol = 21557/32813 21565/32821 21570/32825 21574/32829 21578/32834
+name = Jelly
+models = 5081

@@ -1,0 +1,7 @@
+// loc 10148
+sharelight = true
+hillskew = true
+resizey = 115
+op1 = Turn
+models_only = 9868
+name = Output Tap

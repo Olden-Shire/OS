@@ -1,0 +1,11 @@
+// npc 3557
+vislevel = 0
+resizeh = 120
+resizev = 120
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/21788 8741/14742 61/10450 933/7591 43072/10450 4550/10450
+name = Gabriela
+models = 382 8849 347 353 438 361
+headmodels = 105 11429

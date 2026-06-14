@@ -1,0 +1,10 @@
+// loc 10167
+sharelight = true
+op1 = Climb-up
+forceapproach = 14
+resizex = 128
+resizey = 151
+resizez = 128
+mapscene = 7
+models_only = 5187
+name = Ladder

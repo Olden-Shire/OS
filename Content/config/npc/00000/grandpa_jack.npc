@@ -1,0 +1,11 @@
+// npc 230
+alwaysontop = true
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 41372/60702 41798/61611 6798/82 8887/3235 8741/60702 123/61611
+name = Grandpa Jack
+models = 203 250 14384 3189 10980 177 14381 14376 194
+headmodels = 45 82 37

@@ -1,0 +1,12 @@
+// npc 2438
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+vislevel = 0
+op1 = Talk-to
+op3 = Travel
+recol = 25238/10388 8741/7461
+name = Jarvald
+models = 8747 252 292 162 176 4236 4235 4226 4218
+headmodels = 8745 84

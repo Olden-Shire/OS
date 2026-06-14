@@ -1,0 +1,8 @@
+// loc 21068
+active = 1
+ambient = 20
+contrast = 20
+width = 5
+op1 = Open
+models_only = 21782
+name = Door

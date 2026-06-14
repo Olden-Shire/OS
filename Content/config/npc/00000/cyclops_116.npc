@@ -1,0 +1,8 @@
+// npc 116
+size = 2
+walkanim = 4649
+readyanim = 4650
+op2 = Attack
+vislevel = 56
+name = Cyclops
+models = 26408 17446 17432 17466 17460

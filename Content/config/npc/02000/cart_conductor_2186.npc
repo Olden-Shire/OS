@@ -1,0 +1,9 @@
+// npc 2186
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 10659/10512 61/7704 10347/410
+name = Cart conductor
+models = 2972 6019 7063 2978 2980 7067
+headmodels = 2 6026

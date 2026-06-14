@@ -1,0 +1,9 @@
+// npc 3617
+alwaysontop = true
+op2 = Attack
+walkanim = 1281
+readyanim = 1282
+vislevel = 140
+recol = 916/127
+name = Shade
+models = 4140 14167

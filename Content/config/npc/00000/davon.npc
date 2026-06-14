@@ -1,0 +1,12 @@
+// npc 588
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/43340 25238/45976 4626/43340 908/57172
+name = Davon
+models = 299 170 245 281 290 230 246 263 176 181
+headmodels = 63 78

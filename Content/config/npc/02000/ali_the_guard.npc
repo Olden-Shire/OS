@@ -1,0 +1,12 @@
+// npc 2823
+size = 1
+resizeh = 154
+resizev = 139
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 4550/4653 8741/10347 25238/10347
+name = Ali the Guard
+models = 6085 6131 299 167 176 8973 263 185
+headmodels = 63 6129 6080

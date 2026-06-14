@@ -1,0 +1,10 @@
+// loc 19418
+blockwalk = true
+resizey = 224
+resizez = 224
+width = 3
+op1 = Inspect
+nonblockrange = true
+recol = 4531/6930 4537/127
+models_only = 1634
+name = Hollow log

@@ -1,0 +1,12 @@
+// loc 22368
+active = 1
+sharelight = true
+blockwalk = true
+ambient = 20
+contrast = 20
+op2 = Climb
+op1 = Repair
+length = 2
+mapscene = 7
+models_only = 23119
+name = Stairs

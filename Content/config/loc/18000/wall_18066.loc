@@ -1,0 +1,9 @@
+// loc 18066
+resizex = 128
+resizey = 160
+resizez = 128
+ambient = 10
+active = 1
+op1 = Search
+models = 17720/0
+name = Wall

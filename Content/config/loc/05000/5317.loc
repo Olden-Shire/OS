@@ -1,0 +1,10 @@
+// loc 5317
+sharelight = true
+active = 0
+resizez = 128
+resizex = 128
+resizey = 64
+mapscene = 22
+hillskew = true
+recol = 7335/13477 7331/13601 7326/13596 7322/13592 7446/13716 7442/13840
+models = 4460/0 4461/1 4462/9

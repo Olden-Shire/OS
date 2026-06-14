@@ -1,0 +1,10 @@
+// loc 4813
+hillskew = true
+active = 1
+resizex = 128
+resizey = 270
+resizez = 128
+forcedecor = true
+nonsolid = true
+models = 4743/10 4744/22
+name = Jungle Grass

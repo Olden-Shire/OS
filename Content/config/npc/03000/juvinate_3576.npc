@@ -1,0 +1,13 @@
+// npc 3576
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 143
+resizev = 140
+op2 = Attack
+ambient = 5
+vislevel = 59
+recol = 4550/21584 40229/24745 40237/24749 40241/24753 11138/16536 12/16536
+name = Juvinate
+models = 14042 14039 14046 14041 14044
+headmodels = 13943

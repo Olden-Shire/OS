@@ -1,0 +1,12 @@
+// obj 1057
+cost = 15
+model = obj_green_hween_mask_1053
+manwear = obj_green_hween_mask_1053_man, 0
+womanwear = obj_green_hween_mask_1053_woman, 0
+manhead = 1755
+womanhead = 3187
+yof2d = -10
+zoom2d = 730
+xan2d = 516
+iop2 = Wear
+name = Red h'ween mask

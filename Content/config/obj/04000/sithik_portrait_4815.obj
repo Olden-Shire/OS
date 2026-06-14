@@ -1,0 +1,11 @@
+// obj 4815
+model = obj_picture
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+yof2d = 4
+zoom2d = 1690
+yan2d = 88
+xan2d = 508
+members = true
+recol = 5353/33 48359/90 47331/16 47582/70 5720/82 6042/74
+name = Sithik portrait

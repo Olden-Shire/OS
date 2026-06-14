@@ -1,0 +1,7 @@
+// npc 56
+size = 1
+walkanim = 93
+readyanim = 96
+vislevel = 1
+name = Dryad
+models = 2856

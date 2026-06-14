@@ -1,0 +1,6 @@
+// npc 697
+op1 = Talk-to
+walkanim = 844
+readyanim = 808
+vislevel = 1
+multivar = 65535, 159, 4864 4864 4864 4864 4864 4864 4864 4864 4864 4864 4864

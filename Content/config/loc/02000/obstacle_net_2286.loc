@@ -1,0 +1,5 @@
+// loc 2286
+width = 2
+op1 = Climb-over
+models_only = 1439
+name = Obstacle net

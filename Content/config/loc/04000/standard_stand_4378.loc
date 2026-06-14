@@ -1,0 +1,5 @@
+// loc 4378
+op1 = Capture
+nonblockrange = true
+models_only = 4416
+name = Standard Stand

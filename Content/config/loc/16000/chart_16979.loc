@@ -1,0 +1,5 @@
+// loc 16979
+active = 1
+nonsolid = true
+models = 7383/22
+name = Chart

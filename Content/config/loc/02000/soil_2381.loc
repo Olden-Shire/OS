@@ -1,0 +1,7 @@
+// loc 2381
+hillskew = true
+active = 1
+nonsolid = true
+recol = 4899/21902 4892/21782 4899/21782 5921/21902
+models = 1124/22
+name = Soil

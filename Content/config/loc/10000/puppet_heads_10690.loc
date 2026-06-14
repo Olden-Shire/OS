@@ -1,0 +1,9 @@
+// loc 10690
+resizex = 110
+resizey = 90
+resizez = 110
+active = 1
+op1 = Add
+recol = 43943/1686 6457/553 6573/920 5543/912
+models_only = 10477 10473
+name = Puppet heads

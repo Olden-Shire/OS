@@ -1,0 +1,5 @@
+// loc 14370
+ambient = 50
+nonblockrange = true
+models_only = 7700
+name = Crates

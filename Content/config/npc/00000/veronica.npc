@@ -1,0 +1,10 @@
+// npc 285
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/35736 8741/37060 43072/4550 908/36760 929/44961 6798/7075
+name = Veronica
+models = 399 446 470 9359 353 8784 358
+headmodels = 118

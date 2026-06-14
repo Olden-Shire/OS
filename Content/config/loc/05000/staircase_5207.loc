@@ -1,0 +1,10 @@
+// loc 5207
+width = 2
+length = 2
+op1 = Climb-down
+forceapproach = 14
+sharelight = true
+mapscene = 7
+recol = 8844/21646 4882/21526 4510/21534
+models_only = 1944
+name = Staircase

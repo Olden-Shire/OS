@@ -1,0 +1,13 @@
+// obj 11037
+cost = 26000
+model = obj_brine_sabre_11037
+xof2d = -1
+yof2d = 3
+zoom2d = 1503
+yan2d = 1421
+xan2d = 489
+iop2 = Wield
+manwear = obj_brine_sabre_11037_wear, 0
+womanwear = obj_brine_sabre_11037_wear, 6
+members = true
+name = Brine sabre

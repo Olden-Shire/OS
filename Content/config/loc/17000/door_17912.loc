@@ -1,0 +1,7 @@
+// loc 17912
+mirror = true
+active = 1
+resizey = 160
+ambient = 10
+models = 6623/0
+name = Door

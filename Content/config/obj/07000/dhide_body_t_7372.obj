@@ -1,0 +1,11 @@
+// obj 7372
+cost = 7800
+model = obj_dhide_body_g_7370
+yof2d = -4
+zoom2d = 1030
+xan2d = 548
+iop2 = Wear
+manwear = obj_dhide_body_g_7370_man, 0
+womanwear = obj_dhide_body_g_7370_woman, 0
+recol = 24/21834
+name = D'hide body (t)

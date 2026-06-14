@@ -1,0 +1,13 @@
+// obj 9461
+model = obj_bronze_cbow_u_9454
+xof2d = 3
+yof2d = 5
+zoom2d = 1049
+yan2d = 243
+xan2d = 420
+members = true
+cost = 750
+manwear = obj_bronze_cbow_u_9454_wear, 0
+womanwear = obj_bronze_cbow_u_9454_wear, 6
+recol = 6447/6577 6443/6697 6439/6817 5656/43177 5652/43297 5904/43288
+name = Mithril c'bow (u)

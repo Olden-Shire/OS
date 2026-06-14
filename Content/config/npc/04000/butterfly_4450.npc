@@ -1,0 +1,8 @@
+// npc 4450
+size = 1
+walkanim = 362
+readyanim = 362
+vislevel = 0
+recol = 32889/5351 39386/5351 39892/5351
+name = Butterfly
+models = 3023

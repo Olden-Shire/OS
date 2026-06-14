@@ -1,0 +1,13 @@
+// obj 9185
+model = obj_crossbow_837
+yof2d = 3
+zoom2d = 926
+yan2d = 258
+xan2d = 432
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+members = true
+cost = 16200
+recol = 6447/6806 6443/7054 6439/5002 5656/36141 5652/36133 5904/36252
+name = Rune c'bow

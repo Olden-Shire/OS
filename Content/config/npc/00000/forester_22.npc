@@ -1,0 +1,9 @@
+// npc 22
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 15
+recol = 7700/13200 8741/11148 43072/4550 11200/10508
+name = Forester
+models = 217 247 292 151 179 274 181 196 326 323 510

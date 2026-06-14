@@ -1,0 +1,7 @@
+// loc 24208
+active = 1
+ambient = 20
+op1 = Search
+recol = 5388/790 6439/7582 6563/7706 6558/7830 6682/7954 6806/8078
+models_only = 7685 16950
+name = Crate

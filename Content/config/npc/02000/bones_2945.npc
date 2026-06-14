@@ -1,0 +1,13 @@
+// npc 2945
+size = 1
+resizeh = 37
+resizev = 37
+walkanim = 2662
+readyanim = 2664
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 127/10291 16/32821 61/32821 4818/1478 64414/31671
+name = Bones
+models = 9386 9388
+headmodels = 6438

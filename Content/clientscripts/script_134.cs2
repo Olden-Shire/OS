@@ -1,0 +1,13 @@
+[clientscript,script_134]()()
+
+if (%varcint6 = 1) {
+    %varcint6 = 0;
+} else {
+    %varcint6 = 1;
+}
+if (%varcint6 = 0) {
+    if_settext(join("Moderator option: Mute player for 48 hours: ", "<lt>", "OFF", "<gt>"), 36241424);
+} else {
+    if_settext(join("<col=ff0000>", "Moderator option: Mute player for 48 hours: ", "<lt>", "ON", "<gt>"), 36241424);
+}
+return;

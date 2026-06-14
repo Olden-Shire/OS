@@ -1,0 +1,12 @@
+// obj 1973
+iop1 = Eat
+cost = 10
+model = obj_chocolate_bar_1973
+xof2d = 1
+yof2d = 41
+zoom2d = 950
+yan2d = 208
+xan2d = 276
+manwear = obj_chocolate_bar_1973_wear, 0
+womanwear = obj_chocolate_bar_1973_wear, 6
+name = Chocolate bar

@@ -1,0 +1,9 @@
+// obj 27
+model = obj_fishing_pass
+members = true
+xof2d = -4
+yof2d = 1
+zoom2d = 1360
+yan2d = 1881
+xan2d = 498
+name = Fishing pass

@@ -1,0 +1,12 @@
+// npc 757
+size = 1
+resizev = 140
+resizev = 140
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 34
+recol = 4550/3303 8741/0 25238/0 9104/794 7952/914 8078/908
+name = Count Draynor
+models = 227 238 246 292 320 162 176 256 181 317

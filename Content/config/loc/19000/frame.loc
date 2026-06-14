@@ -1,0 +1,6 @@
+// loc 19162
+width = 2
+length = 2
+ambient = 10
+models_only = 19515 19516
+name = Frame

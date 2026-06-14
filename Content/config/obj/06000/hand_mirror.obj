@@ -1,0 +1,8 @@
+// obj 6639
+model = obj_hand_mirror
+zoom2d = 770
+yan2d = 252
+xan2d = 376
+members = true
+iop5 = Destroy
+name = Hand mirror

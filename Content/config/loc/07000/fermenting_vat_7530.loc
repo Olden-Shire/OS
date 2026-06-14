@@ -1,0 +1,8 @@
+// loc 7530
+width = 2
+length = 2
+ambient = 15
+bgsound = 3117, 3
+nonblockrange = true
+models_only = 7778 7780 7782
+name = Fermenting Vat

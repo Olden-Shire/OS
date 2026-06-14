@@ -1,0 +1,8 @@
+[clientscript,script_36](int $int0, int $int1, int $int2)()
+def_int $int3;
+
+$int3 = calc(if_getscrolly($int1) + $int2 * 45);
+if (cc_find($int0, 1) = 1) {
+    ~script_37($int0, $int1, $int3, 1);
+}
+return;

@@ -1,0 +1,13 @@
+// npc 4768
+nominimap = true
+vislevel = 0
+op1 = Talk-to
+size = 1
+readyanim = 317
+walkanim = 314
+resizeh = 70
+resizev = 70
+recol = 61/8481 16/8472 12/8720 127/8472
+name = Cat
+models = 9426 9428
+headmodels = 9424

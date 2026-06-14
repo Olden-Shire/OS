@@ -1,0 +1,7 @@
+// loc 12576
+hillskew = true
+forcedecor = true
+op1 = Climb-up
+blockwalk = true
+models = 13575/22
+name = Skull slope

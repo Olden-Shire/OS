@@ -1,0 +1,7 @@
+// npc 5259
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Bank
+vislevel = 1
+multivar = 3276, 65535, 65535 5260

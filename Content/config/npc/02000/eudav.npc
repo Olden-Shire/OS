@@ -1,0 +1,13 @@
+// npc 2352
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 127
+resizev = 120
+op1 = Talk-to
+op3 = Trade
+recol = 7595/6587 8792/7634
+name = Eudav
+models = 8264 8268 6975 8267
+headmodels = 8258

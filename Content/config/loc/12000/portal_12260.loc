@@ -1,0 +1,8 @@
+// loc 12260
+length = 2
+width = 5
+anim = 3174
+op1 = Use
+bgsound = 3139, 3
+models_only = 12635 11233
+name = Portal

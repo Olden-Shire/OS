@@ -1,0 +1,7 @@
+// loc 9079
+hillskew = true
+noshadow = true
+active = 1
+ambient = 35
+models = 8999/0
+name = Dyed fabric

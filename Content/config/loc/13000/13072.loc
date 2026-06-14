@@ -1,0 +1,5 @@
+// loc 13072
+sharelight = true
+wallwidth = 32
+active = 0
+models = 12261/0 12262/2

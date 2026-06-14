@@ -1,0 +1,7 @@
+// loc 2050
+op1 = Open
+op2 = hidden
+ambient = 25
+nonblockrange = true
+models = 25029/0
+name = Gate

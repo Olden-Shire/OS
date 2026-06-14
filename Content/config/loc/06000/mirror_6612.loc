@@ -1,0 +1,6 @@
+// loc 6612
+sharelight = true
+hillskew = true
+mirror = true
+models_only = 6416
+name = Mirror

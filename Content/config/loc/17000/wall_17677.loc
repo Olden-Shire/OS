@@ -1,0 +1,10 @@
+// loc 17677
+sharelight = true
+hillskew = true
+resizex = 128
+resizey = 160
+resizez = 128
+blockwalk = true
+recol = 26780/32910
+models = 17907/10 17908/22
+name = Wall

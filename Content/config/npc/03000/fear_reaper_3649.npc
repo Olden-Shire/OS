@@ -1,0 +1,10 @@
+// npc 3649
+size = 2
+walkanim = 3809
+readyanim = 3810
+op2 = Attack
+ambient = 60
+contrast = 60
+vislevel = 42
+name = Fear reaper
+models = 14282

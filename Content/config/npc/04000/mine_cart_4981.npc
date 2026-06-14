@@ -1,0 +1,5 @@
+// npc 4981
+vislevel = 0
+nominimap = true
+name = Mine Cart
+models = 19284

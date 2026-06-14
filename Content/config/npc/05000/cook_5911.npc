@@ -1,0 +1,10 @@
+// npc 5911
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+ambient = 20
+recol = 4550/4539 17825/58006 8860/58522 8741/58522 107/7341 90/10403
+name = Cook
+models = 230 249 14791 15106 10980 10218 25665
+headmodels = 63 81

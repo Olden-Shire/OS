@@ -1,0 +1,6 @@
+// loc 25131
+hillskew = true
+ambient = 20
+nonsolid = true
+models_only = 26571
+name = Vines

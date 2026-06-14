@@ -1,0 +1,10 @@
+// loc 19218
+anim = 5197
+width = 2
+op1 = Check
+forceapproach = 13
+mapscene = 71
+nonblockrange = true
+recol = 5008/5532
+models_only = 19910 19909
+name = Boulder

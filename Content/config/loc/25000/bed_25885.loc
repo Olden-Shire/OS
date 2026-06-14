@@ -1,0 +1,8 @@
+// loc 25885
+width = 2
+length = 2
+contrast = 15
+ambient = 20
+recol = 7952/10524 6707/8487 43074/10394 8377/10415 10425/127
+models_only = 27404
+name = Bed

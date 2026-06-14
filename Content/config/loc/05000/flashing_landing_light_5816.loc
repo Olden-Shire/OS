@@ -1,0 +1,10 @@
+// loc 5816
+anim = 1747
+resizex = 90
+resizey = 90
+resizez = 90
+ambient = 50
+contrast = 120
+op1 = Look
+models_only = 5645
+name = Flashing landing light

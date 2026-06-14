@@ -1,0 +1,11 @@
+// obj 9668
+model = obj_prosyte_harness_m_9666
+xof2d = 3
+yof2d = -28
+zoom2d = 2476
+yan2d = 1798
+xan2d = 221
+members = true
+cost = 20000
+iop1 = Unpack
+name = Initiate harness m

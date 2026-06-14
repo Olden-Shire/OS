@@ -1,0 +1,7 @@
+// loc 10145
+sharelight = true
+hillskew = true
+resizey = 115
+bgsound = 3117, 3
+models_only = 9861
+name = Brewing vat

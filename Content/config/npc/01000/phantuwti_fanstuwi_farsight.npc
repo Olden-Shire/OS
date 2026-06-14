@@ -1,0 +1,10 @@
+// npc 1798
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/82 8741/82 6798/90 7952/119 908/119
+name = Phantuwti Fanstuwi Farsight
+models = 170 256 292 317 217 249 176
+headmodels = 55 81

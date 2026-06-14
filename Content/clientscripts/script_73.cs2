@@ -1,0 +1,22 @@
+[clientscript,script_73](int $int0, int $int1)()
+
+if (staffmodlevel() > 0 & string_indexof_char("`", $int1) ! -1 & string_length(%varcstr1) = 0) {
+    return;
+}
+if ($int0 = 84 & string_length(%varcstr1) > 0) {
+    chat_sendpublic(%varcstr1);
+    ~script_77(%varcstr1);
+    %varcstr1 = "";
+} else if ($int0 = 104) {
+    if (staffmodlevel() > 0) {
+        ~script_75;
+    }
+} else if ($int0 = 105) {
+    if (staffmodlevel() > 0) {
+        ~script_76;
+    }
+} else {
+    %varcstr1 = ~script_74(%varcstr1, 0, $int0, $int1);
+}
+if_settext(join(chat_playername(), ": ", "<col=0000ff>", escape(%varcstr1), "*"), 8978433);
+return;

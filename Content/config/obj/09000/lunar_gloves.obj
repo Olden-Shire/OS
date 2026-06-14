@@ -1,0 +1,13 @@
+// obj 9099
+cost = 100
+model = obj_lunar_gloves
+iop2 = Wear
+manwear = obj_lunar_gloves_man, 0
+womanwear = obj_lunar_gloves_woman, 0
+members = true
+yof2d = 1
+zoom2d = 984
+xan2d = 484
+iop5 = Destroy
+recol = 6573/40210 36007/16652 33300/20 410/61714
+name = Lunar gloves

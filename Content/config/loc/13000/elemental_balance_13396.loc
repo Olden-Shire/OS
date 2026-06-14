@@ -1,0 +1,9 @@
+// loc 13396
+op1 = Activate
+op5 = Remove
+anim = 3582
+resizex = 100
+resizey = 100
+resizez = 100
+models_only = 12960
+name = Elemental balance

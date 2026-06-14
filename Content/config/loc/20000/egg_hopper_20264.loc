@@ -1,0 +1,7 @@
+// loc 20264
+anim = 5432
+active = 1
+op1 = Load
+op2 = Look-in
+models_only = 20657
+name = Egg hopper

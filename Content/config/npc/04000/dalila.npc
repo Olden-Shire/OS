@@ -1,0 +1,9 @@
+// npc 4588
+readyanim = 4537
+op1 = Talk-to
+vislevel = 0
+turnspeed = 0
+recol = 937/63917 22426/63917
+name = Dalila
+models = 2904 16995 2917 16992
+headmodels = 16965

@@ -1,0 +1,7 @@
+// loc 18522
+active = 1
+ambient = 40
+forceapproach = 7
+blockwalk = true
+models = 18591/22
+name = Lava trough

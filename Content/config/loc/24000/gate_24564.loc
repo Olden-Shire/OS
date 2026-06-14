@@ -1,0 +1,8 @@
+// loc 24564
+noshadow = true
+mapscene = 22
+active = 1
+blockwalk = true
+op1 = Open
+models = 18595/0
+name = Gate

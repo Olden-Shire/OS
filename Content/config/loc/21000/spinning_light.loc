@@ -1,0 +1,8 @@
+// loc 21085
+anim = 5738
+ambient = 80
+contrast = 25
+active = 1
+bgsound = 3368, 5
+models = 21784/4
+name = Spinning light

@@ -1,0 +1,11 @@
+// npc 1411
+walkanim = 189
+readyanim = 195
+resizeh = 150
+resizev = 150
+op1 = Talk-to
+vislevel = 0
+recol = 41/933
+name = Garkor
+models = 2909 4702 2919
+headmodels = 22

@@ -1,0 +1,14 @@
+// obj 10608
+cost = 1000
+model = obj_moonclan_hat_9069
+iop2 = Wear
+manwear = obj_moonclan_hat_9069_man, 0
+womanwear = obj_moonclan_hat_9069_woman, 0
+manhead = 16466
+womanhead = 16466
+members = true
+yof2d = -5
+zoom2d = 854
+yan2d = 126
+xan2d = 101
+name = Moonclan hat

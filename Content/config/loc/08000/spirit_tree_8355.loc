@@ -1,0 +1,7 @@
+// loc 8355
+ambient = 25
+op1 = Talk-to
+op2 = Inspect
+op4 = Guide
+models_only = 8110 7768
+name = Spirit Tree

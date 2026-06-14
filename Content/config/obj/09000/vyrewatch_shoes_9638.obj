@@ -1,0 +1,15 @@
+// obj 9638
+cost = 500
+members = true
+iop2 = Wear
+model = obj_vyrewatch_shoes_9638
+xof2d = -1
+yof2d = 48
+zoom2d = 848
+yan2d = 1863
+zan2d = 373
+xan2d = 290
+womanwear = obj_vyrewatch_shoes_9638_woman, 0
+manwear = obj_vyrewatch_shoes_9638_man, 0
+recol = 4626/0
+name = Vyrewatch shoes

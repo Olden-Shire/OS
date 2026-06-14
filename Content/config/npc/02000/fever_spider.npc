@@ -1,0 +1,11 @@
+// npc 2850
+size = 2
+resizeh = 78
+resizev = 78
+walkanim = 5317
+readyanim = 5318
+op2 = Attack
+vislevel = 49
+recol = 56256/6953 960/4894 33728/20 22443/6930 50099/5029 11200/5388
+name = Fever spider
+models = 20302 20301

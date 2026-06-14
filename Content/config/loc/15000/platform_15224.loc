@@ -1,0 +1,4 @@
+// loc 15224
+forcedecor = true
+models_only = 15080
+name = Platform

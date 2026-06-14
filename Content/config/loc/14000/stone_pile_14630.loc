@@ -1,0 +1,8 @@
+// loc 14630
+sharelight = true
+hillskew = true
+active = 1
+nonblockrange = true
+recol = 21534/28 21530/24 21526/20 21522/16 21646/16 21642/12
+models_only = 4476
+name = Stone Pile

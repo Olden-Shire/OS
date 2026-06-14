@@ -1,0 +1,7 @@
+// loc 15040
+width = 2
+ambient = 15
+nonblockrange = true
+recol = 6451/5673 6443/6585 6439/6585 6563/5673 6558/5673 6682/5673
+models_only = 7906
+name = Counter

@@ -1,0 +1,9 @@
+// loc 9310
+sharelight = true
+wallwidth = 32
+occlude = true
+op1 = Climb-into
+active = 1
+ambient = 20
+models_only = 11692
+name = Underwall tunnel

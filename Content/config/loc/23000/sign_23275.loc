@@ -1,0 +1,7 @@
+// loc 23275
+op1 = Read
+nonsolid = true
+active = 1
+recol = 7715/13200 6808/12952 7952/14098
+models_only = 1402
+name = Sign

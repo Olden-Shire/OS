@@ -1,0 +1,17 @@
+// npc 4513
+size = 1
+resizeh = 110
+resizev = 110
+contrast = 12
+ambient = 12
+alwaysontop = true
+walkanims = 4426, 4427, 4428, 4429
+readyanim = 4424
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/8615 6798/94 7073/3239 4550/4562
+name = Baba Yaga
+models = 12140 10078 16506 16494 353 534 16503 270
+headmodels = 9358 16466

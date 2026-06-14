@@ -1,0 +1,12 @@
+// obj 10171
+model = obj_eagle_cape
+xof2d = 2
+yof2d = 76
+zoom2d = 1530
+yan2d = 1948
+xan2d = 264
+iop2 = Wear
+manwear = obj_eagle_cape_man, 0
+womanwear = obj_eagle_cape_woman, 0
+members = true
+name = Eagle cape

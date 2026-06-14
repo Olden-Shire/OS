@@ -1,0 +1,7 @@
+// loc 22625
+ambient = 20
+length = 2
+sharelight = true
+hillskew = true
+models_only = 23520
+name = Levers

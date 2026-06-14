@@ -1,0 +1,13 @@
+// obj 10687
+cost = 15
+model = obj_wizard_robe_g_7390
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+iop2 = Wear
+manwear = obj_wizard_robe_g_7390_man, 0
+womanwear = obj_wizard_robe_g_7390_woman, 0
+manwear2 = 10984
+womanwear2 = 11359
+recol = 8741/38814 24/4
+name = Wizard robe (t)

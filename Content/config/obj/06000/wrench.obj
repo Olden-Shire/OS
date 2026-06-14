@@ -1,0 +1,12 @@
+// obj 6713
+cost = 5
+model = obj_wrench
+members = true
+manwear = obj_wrench_wear, 0
+womanwear = obj_wrench_wear, 6
+xof2d = 9
+yof2d = 2
+zoom2d = 1210
+yan2d = 2032
+xan2d = 588
+name = Wrench

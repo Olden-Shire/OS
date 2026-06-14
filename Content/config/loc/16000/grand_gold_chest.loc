@@ -1,0 +1,9 @@
+// loc 16473
+width = 3
+ambient = 10
+contrast = 10
+offsety = -40
+op1 = Search
+offsety = 12
+models_only = 16387
+name = Grand Gold Chest

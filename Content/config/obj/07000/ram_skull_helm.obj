@@ -1,0 +1,13 @@
+// obj 7917
+cost = 1
+model = obj_ram_skull_helm
+zoom2d = 848
+yan2d = 228
+xan2d = 1982
+iop2 = Wear
+members = true
+manwear = obj_ram_skull_helm_man, 0
+womanwear = obj_ram_skull_helm_woman, 0
+manhead = 2853
+womanhead = 2854
+name = Ram skull helm

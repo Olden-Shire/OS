@@ -1,0 +1,10 @@
+// npc 2869
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Scare
+op1 = Talk-To
+vislevel = 0
+recol = 4550/7355 8741/8472 25238/32794 4626/7355 43072/7355
+name = Zombie
+models = 230 246 310 151 176 254 181
+headmodels = 63

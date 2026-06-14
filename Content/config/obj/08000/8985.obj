@@ -1,0 +1,9 @@
+// obj 8985
+model = obj_pieces_of_eight
+stackable = true
+xof2d = 1
+yof2d = -1
+zoom2d = 595
+yan2d = 166
+xan2d = 622
+members = true

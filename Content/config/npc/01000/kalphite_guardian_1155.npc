@@ -1,0 +1,8 @@
+// npc 1155
+size = 4
+walkanim = 6222
+readyanim = 6219
+op2 = Attack
+vislevel = 141
+name = Kalphite Guardian
+models = 24594

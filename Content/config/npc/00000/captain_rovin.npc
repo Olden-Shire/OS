@@ -1,0 +1,11 @@
+// npc 884
+vislevel = 52
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+name = Captain Rovin
+models = 230 17531 317 17516 17521 518 17527 17518 247
+headmodels = 63 79

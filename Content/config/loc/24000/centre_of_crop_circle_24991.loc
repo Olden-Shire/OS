@@ -1,0 +1,8 @@
+// loc 24991
+anim = 6627
+active = 1
+op1 = Enter
+bgsound_random = 200, 200, 20, 3721
+nonsolid = true
+models_only = 26336
+name = Centre of crop circle

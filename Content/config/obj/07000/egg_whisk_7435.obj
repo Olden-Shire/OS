@@ -1,0 +1,12 @@
+// obj 7435
+model = obj_egg_whisk_7435
+cost = 50
+yof2d = -5
+zoom2d = 848
+yan2d = 1895
+xan2d = 144
+iop2 = Wield
+manwear = obj_egg_whisk_7435_wear, 0
+womanwear = obj_egg_whisk_7435_wear, 6
+members = true
+name = Egg whisk

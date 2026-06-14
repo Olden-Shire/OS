@@ -1,0 +1,10 @@
+// obj 10973
+model = obj_light_orb_10973
+zoom2d = 740
+yan2d = 254
+xan2d = 45
+contrast = 15
+ambient = 15
+members = true
+cost = 350
+name = Light orb

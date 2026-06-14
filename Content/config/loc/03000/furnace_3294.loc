@@ -1,0 +1,7 @@
+// loc 3294
+width = 2
+length = 3
+ambient = 10
+bgsound = 2210, 3
+models_only = 21511
+name = Furnace

@@ -1,0 +1,7 @@
+// npc 1544
+nominimap = true
+vislevel = 0
+alwaysontop = true
+turnspeed = 1024
+name = Mine cart
+models = 4894

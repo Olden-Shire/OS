@@ -1,0 +1,7 @@
+// npc 1214
+size = 1
+vislevel = 0
+nominimap = true
+op1 = Pick
+name = Thistle
+models = 4067

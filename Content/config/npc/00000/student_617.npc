@@ -1,0 +1,11 @@
+// npc 617
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Pickpocket
+recol = 6798/7626 8741/57884 25238/59022 908/58774 10004/6806 22449/103
+name = Student
+models = 399 447 456 332 356 429 361
+headmodels = 118

@@ -1,0 +1,11 @@
+// loc 2217
+width = 3
+length = 3
+resizex = 256
+resizez = 256
+mapscene = 11
+op1 = Look-at
+op2 = Search
+blockwalk = true
+models = 1465/10 20043/22
+name = Mound of earth

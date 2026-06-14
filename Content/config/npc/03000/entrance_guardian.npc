@@ -1,0 +1,14 @@
+// npc 3097
+size = 1
+resizeh = 60
+resizev = 60
+contrast = 10
+ambient = 10
+walkanim = 3034
+readyanim = 3033
+op1 = Talk-to
+vislevel = 0
+recol = 43080/10314 43076/10314 43069/10310 43063/10312 43055/14395 24/10270
+name = Entrance Guardian
+models = 10633 10635 10637 10638 10630
+headmodels = 10695

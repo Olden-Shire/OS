@@ -1,0 +1,12 @@
+// npc 548
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8741/9529 6798/7620 10138/38852 43072/4550 25238/16683
+name = Thessalia
+models = 390 11359 11775 353 435
+headmodels = 113

@@ -1,0 +1,11 @@
+// npc 3234
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 3
+recol = 8741/16026 25238/37394 123/5572
+name = Gardener
+models = 230 251 292 4391 170 179 254 183 495 4843 11812
+headmodels = 63 5534 83

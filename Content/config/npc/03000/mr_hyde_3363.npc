@@ -1,0 +1,8 @@
+// npc 3363
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 79
+recol = 8741/8485 4626/0 25238/12 6798/10308 7236/4550
+name = Mr Hyde
+models = 13335 13333 8952 263 181 4088 12758

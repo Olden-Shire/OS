@@ -1,0 +1,8 @@
+// loc 13682
+op5 = Remove
+width = 2
+length = 2
+anim = 3615
+nonsolid = true
+models_only = 13126
+name = Magic circle

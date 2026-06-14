@@ -1,0 +1,7 @@
+// loc 19651
+op1 = Dismantle
+op2 = Investigate
+nonsolid = true
+raiseobject = 0
+models_only = 19932
+name = Net trap

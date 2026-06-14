@@ -1,0 +1,16 @@
+// obj 7534
+model = obj_fishbowl_helmet
+iop2 = Wear
+manwear = obj_fishbowl_helmet_man, 0
+womanwear = obj_fishbowl_helmet_woman, 0
+manwear2 = 13335
+womanwear2 = 13344
+manhead = 13871
+womanhead = 13873
+xof2d = 2
+zoom2d = 848
+yan2d = 1679
+xan2d = 27
+members = true
+cost = 1
+name = Fishbowl helmet

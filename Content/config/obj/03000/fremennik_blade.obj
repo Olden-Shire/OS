@@ -1,0 +1,13 @@
+// obj 3757
+model = obj_fremennik_blade
+xof2d = 1
+yof2d = 23
+zoom2d = 1710
+yan2d = 1940
+xan2d = 332
+iop2 = Wield
+manwear = obj_fremennik_blade_wear, 0
+womanwear = obj_fremennik_blade_wear, 6
+members = true
+cost = 5000
+name = Fremennik blade

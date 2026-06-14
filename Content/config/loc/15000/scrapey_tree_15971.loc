@@ -1,0 +1,7 @@
+// loc 15971
+mapscene = 5
+length = 2
+width = 2
+ambient = 30
+models_only = 15775
+name = Scrapey Tree

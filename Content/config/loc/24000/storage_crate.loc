@@ -1,0 +1,7 @@
+// loc 24534
+active = 1
+sharelight = true
+ambient = 25
+recol = 13596/6439 13592/6435 13716/6430 13840/6554 13964/6550 14216/6674
+models_only = 13975
+name = Storage crate

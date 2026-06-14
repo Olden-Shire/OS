@@ -1,0 +1,5 @@
+// loc 23214
+active = 1
+nonsolid = true
+models_only = 24169
+name = Walkway

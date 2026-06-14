@@ -1,0 +1,10 @@
+// npc 1001
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/687 8741/687 6798/127
+name = Dark mage
+models = 235 181 249 292 170 176 260
+headmodels = 67 81

@@ -1,0 +1,12 @@
+// npc 2915
+size = 1
+resizeh = 138
+resizev = 119
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 6740/12 6604/12 35245/280 6596/12 8741/12 43072/280
+name = Tanya
+models = 9984 390 9985 9359 353 10003 358
+headmodels = 113 9976

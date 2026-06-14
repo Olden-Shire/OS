@@ -1,0 +1,7 @@
+// npc 5944
+walkanim = 6410
+readyanim = 6411
+vislevel = 0
+op1 = Talk-to
+name = Teacher and pupil
+models = 25798 25799 25800

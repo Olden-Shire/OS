@@ -1,0 +1,9 @@
+// loc 20102
+active = 0
+sharelight = true
+hillskew = true
+blockwalk = true
+ambient = 20
+contrast = 20
+recol = 7442/7333 7446/8481 7322/7452 7326/8472 7331/8596 7335/8720
+models = 20488/0 20489/1 20490/9

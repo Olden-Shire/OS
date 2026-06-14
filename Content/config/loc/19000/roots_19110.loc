@@ -1,0 +1,6 @@
+// loc 19110
+op1 = Climb
+ambient = 15
+sharelight = true
+models_only = 19216
+name = Roots

@@ -1,0 +1,7 @@
+// loc 25680
+active = 0
+nonsolid = true
+contrast = 15
+ambient = 20
+recol = 926/6825 0/7068 9666/7068
+models = 12528/22

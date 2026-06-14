@@ -1,0 +1,8 @@
+// loc 3563
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+recol = 61/5309
+models_only = 1522
+name = Monkey bars

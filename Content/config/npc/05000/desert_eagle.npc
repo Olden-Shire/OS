@@ -1,0 +1,9 @@
+// npc 5130
+walkanim = 5279
+readyanim = 5280
+size = 3
+alwaysontop = true
+vislevel = 0
+recol = 10357/6364 5543/6455 5667/6447 6697/6439 6573/6558 5551/6806
+name = Desert eagle
+models = 19380

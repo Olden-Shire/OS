@@ -1,0 +1,10 @@
+// loc 20533
+active = 1
+noshadow = true
+contrast = 25
+ambient = 25
+blockwalk = true
+resizey = 135
+anim = 5600
+models_only = 21364
+name = Bars

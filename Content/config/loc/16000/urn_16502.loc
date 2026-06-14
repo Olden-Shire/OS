@@ -1,0 +1,8 @@
+// loc 16502
+anim = 4335
+ambient = 10
+active = 1
+op1 = Search
+op2 = Check for Snakes
+models_only = 16420 16416
+name = Urn

@@ -1,0 +1,9 @@
+// loc 1936
+active = 0
+sharelight = true
+occlude = true
+mapscene = 21
+ambient = 25
+contrast = 25
+retex = 2/23
+models_only = 573

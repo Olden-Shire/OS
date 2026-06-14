@@ -1,0 +1,8 @@
+// loc 3620
+sharelight = true
+occlude = true
+ambient = 100
+active = 0
+recol = 10339/8373 6930/7566
+retex = 2/23 16/5
+models = 3669/0 3670/1 3671/2 3672/3 3673/9

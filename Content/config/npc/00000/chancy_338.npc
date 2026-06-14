@@ -1,0 +1,9 @@
+// npc 338
+vislevel = 0
+readyanim = 2713
+op1 = Talk-to
+turnspeed = 0
+recol = 8741/16796 25238/10638 6798/5665 7719/16916 8084/1575 43072/4548
+name = Chancy
+models = 217 246 292 5432 170 176 9623 264 4391
+headmodels = 55

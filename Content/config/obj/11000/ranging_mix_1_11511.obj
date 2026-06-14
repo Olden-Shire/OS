@@ -1,0 +1,12 @@
+// obj 11511
+model = obj_fish_vial_11427
+members = true
+cost = 144
+yof2d = -1
+zoom2d = 550
+yan2d = 1812
+xan2d = 81
+iop1 = Drink
+iop4 = Empty
+recol = 6953/36812 7077/36680 7073/36676
+name = Ranging mix(1)

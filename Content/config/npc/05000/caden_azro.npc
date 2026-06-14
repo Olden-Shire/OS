@@ -1,0 +1,9 @@
+// npc 5934
+size = 1
+turnspeed = 0
+op1 = Talk-to
+vislevel = 0
+recol = 6798/9897
+name = Caden Azro
+models = 25362
+headmodels = 14337 83

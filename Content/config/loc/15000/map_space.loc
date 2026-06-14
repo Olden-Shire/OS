@@ -1,0 +1,7 @@
+// loc 15396
+active = 1
+op5 = Build
+nonsolid = true
+ambient = 100
+models = 12891/4
+name = Map space

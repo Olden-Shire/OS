@@ -1,0 +1,6 @@
+// loc 23173
+anim = 4218
+nonsolid = true
+bgsound = 3081, 3
+models_only = 15524
+name = Drips

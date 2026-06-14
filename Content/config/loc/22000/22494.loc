@@ -1,0 +1,8 @@
+// loc 22494
+sharelight = true
+active = 0
+mapscene = 9
+ambient = 30
+nonblockrange = true
+recol = 7504/6602 7496/6594 6457/6705 14224/6697 15244/6945
+models_only = 23156

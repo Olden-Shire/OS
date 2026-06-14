@@ -1,0 +1,7 @@
+// npc 1831
+walkanim = 1788
+readyanim = 1790
+op2 = Attack
+vislevel = 23
+name = Cave slime
+models = 5786

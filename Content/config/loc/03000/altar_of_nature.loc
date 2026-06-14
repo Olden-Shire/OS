@@ -1,0 +1,8 @@
+// loc 3521
+width = 2
+length = 3
+op1 = Look
+mapscene = 8
+op1 = Pray-at
+models_only = 3571
+name = Altar of nature

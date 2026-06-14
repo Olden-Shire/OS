@@ -1,0 +1,10 @@
+// obj 9590
+model = obj_dossier_9589
+xof2d = 4
+yof2d = -100
+zoom2d = 976
+yan2d = 120
+xan2d = 246
+manwear = obj_dossier_9590_wear, 0
+womanwear = obj_dossier_9590_wear, 0
+name = Dossier

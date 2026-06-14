@@ -1,0 +1,5 @@
+// loc 15328
+op5 = Build
+nonsolid = true
+models = 12644/0
+name = Door space

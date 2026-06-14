@@ -1,0 +1,9 @@
+// loc 9017
+op3 = Hidden
+op4 = Hack
+mapscene = 5
+anim = 2380
+nonblockrange = true
+recol = 6825/7841 6585/7851 15017/16037
+models_only = 8897
+name = Medium Jungle

@@ -1,0 +1,9 @@
+// loc 16270
+resizex = 64
+resizey = 64
+resizez = 64
+ambient = 35
+nonblockrange = true
+recol = 61/18192 49/19220 41/10126
+models_only = 1645
+name = Plant

@@ -1,0 +1,9 @@
+// loc 18443
+nonsolid = true
+breakroutefinding = true
+hillskew = true
+active = 1
+ambient = 30
+op1 = Open
+models_only = 18382
+name = Imposing Doors

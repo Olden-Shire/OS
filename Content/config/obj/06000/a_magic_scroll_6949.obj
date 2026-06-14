@@ -1,0 +1,9 @@
+// obj 6949
+model = obj_a_magic_scroll_6949
+yof2d = 12
+zoom2d = 980
+yan2d = 168
+xan2d = 300
+members = true
+iop5 = Destroy
+name = A magic scroll

@@ -1,0 +1,16 @@
+// obj 2641
+cost = 200
+members = true
+model = obj_tan_cavalier_2639
+xof2d = -1
+yof2d = -8
+zoom2d = 690
+yan2d = 1856
+xan2d = 160
+iop2 = Wear
+manwear = obj_tan_cavalier_2639_man, 0
+womanwear = obj_tan_cavalier_2639_woman, 0
+manhead = 28
+womanhead = 86
+recol = 7073/5008
+name = Dark cavalier

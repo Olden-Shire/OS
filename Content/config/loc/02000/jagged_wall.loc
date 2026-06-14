@@ -1,0 +1,7 @@
+// loc 2926
+sharelight = true
+op1 = Look
+op2 = Jump-over
+retex = 23/11
+models = 849/0 850/1 851/2 852/3 853/9
+name = Jagged wall

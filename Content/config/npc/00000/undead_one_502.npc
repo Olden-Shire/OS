@@ -1,0 +1,9 @@
+// npc 502
+size = 1
+walkanim = 5479
+readyanim = 5483
+op2 = Attack
+vislevel = 68
+recol = 10308/11726 10304/11722 10299/11718 10295/11726 10291/11726 10287/10685
+name = Undead one
+models = 21170 21178 21160 21158 21181 21188

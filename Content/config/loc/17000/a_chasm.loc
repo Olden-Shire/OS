@@ -1,0 +1,7 @@
+// loc 17268
+active = 1
+hillskew = true
+nonsolid = true
+forcedecor = true
+models = 17051/22
+name = A chasm

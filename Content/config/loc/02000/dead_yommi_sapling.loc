@@ -1,0 +1,10 @@
+// loc 2947
+resizex = 32
+resizey = 32
+resizez = 32
+width = 3
+length = 3
+nonsolid = true
+recol = 6315/11045 8497/11045
+models_only = 1818
+name = Dead Yommi sapling

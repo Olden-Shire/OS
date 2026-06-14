@@ -1,0 +1,8 @@
+// loc 17516
+active = 0
+sharelight = true
+hillskew = true
+resizex = 128
+resizey = 80
+resizez = 128
+models = 17766/0 17767/1 17768/9

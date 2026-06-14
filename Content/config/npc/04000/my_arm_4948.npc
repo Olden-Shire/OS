@@ -1,0 +1,11 @@
+// npc 4948
+vislevel = 0
+readyanim = 4986
+walkanim = 283
+size = 1
+resizeh = 100
+resizev = 100
+recol = 61/10421
+name = My Arm
+models = 19109
+headmodels = 3790 19105

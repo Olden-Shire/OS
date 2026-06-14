@@ -1,0 +1,6 @@
+// loc 2798
+op1 = Search
+mapscene = 9
+blockwalk = true
+models = 1565/10 20041/22
+name = Bush

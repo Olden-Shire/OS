@@ -1,0 +1,8 @@
+// loc 19174
+anim = 5170
+op1 = Dismantle
+nonsolid = true
+active = 1
+ambient = 20
+models_only = 19886
+name = Bird snare

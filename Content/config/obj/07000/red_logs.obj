@@ -1,0 +1,15 @@
+// obj 7404
+cost = 4
+model = obj_logs_1511
+yof2d = -7
+zoom2d = 1180
+yan2d = 1852
+xan2d = 120
+ambient = 15
+op4 = Light
+op5 = hidden
+manwear = obj_logs_1511_wear, 0
+womanwear = obj_logs_1511_wear, 0
+members = true
+recol = 5559/2487 5665/3875 5784/3994
+name = Red logs

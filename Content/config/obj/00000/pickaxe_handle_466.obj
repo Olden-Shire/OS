@@ -1,0 +1,12 @@
+// obj 466
+iop2 = Wield
+model = obj_pickaxe_handle_466
+xof2d = -2
+yof2d = -19
+zoom2d = 1070
+yan2d = 1056
+xan2d = 224
+manwear = obj_pickaxe_handle_466_wear, 0
+womanwear = obj_pickaxe_handle_466_wear, 6
+cost = 1
+name = Pickaxe handle

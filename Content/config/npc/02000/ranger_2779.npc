@@ -1,0 +1,9 @@
+// npc 2779
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 2728
+op2 = Attack
+recol = 22424/99 22416/82 23442/82 8741/82 6674/99 4626/74
+name = Ranger
+models = 221 253 314 170 179 563 258 185 9651
+headmodels = 58 85

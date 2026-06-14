@@ -1,0 +1,10 @@
+// npc 904
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 6798/6046 8741/7062 25238/7062 7952/6028
+name = Chamber guardian
+models = 214 250 303 170 176 265 185 317
+headmodels = 52 82

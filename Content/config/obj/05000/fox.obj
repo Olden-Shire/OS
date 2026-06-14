@@ -1,0 +1,13 @@
+// obj 5608
+model = obj_fox
+manwear = obj_fox_wear, 0
+womanwear = obj_fox_wear, 6
+xof2d = -9
+yof2d = -8
+zoom2d = 2080
+yan2d = 252
+xan2d = 56
+iop2 = Wear
+members = true
+ambient = 60
+name = Fox

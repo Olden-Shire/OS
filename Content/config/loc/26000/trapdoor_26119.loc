@@ -1,0 +1,9 @@
+// loc 26119
+active = 1
+forcedecor = true
+op1 = Climb-down
+ambient = 25
+contrast = 25
+blockwalk = true
+models = 27322/22
+name = Trapdoor

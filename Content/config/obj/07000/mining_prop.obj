@@ -1,0 +1,11 @@
+// obj 7958
+members = true
+model = obj_mining_prop
+xof2d = -46
+yof2d = -7
+zoom2d = 2250
+yan2d = 140
+zan2d = 1816
+cost = 10
+iop5 = Destroy
+name = Mining prop

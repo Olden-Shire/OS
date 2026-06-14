@@ -1,0 +1,9 @@
+// loc 11318
+anim = 464
+active = 1
+width = 2
+op1 = Waterproof
+bgsound = 3082, 3
+recol = 12579/4510 12574/4515 12698/6930 12694/4391 12818/6930
+models_only = 11185
+name = Ship hull

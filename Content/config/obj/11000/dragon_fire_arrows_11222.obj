@@ -1,0 +1,15 @@
+// obj 11222
+members = true
+cost = 10
+stackable = true
+model = obj_dragon_fire_arrows_11222
+yof2d = 12
+zoom2d = 2220
+yan2d = 180
+xan2d = 405
+iop2 = Wield
+count1 = 11223, 2
+count2 = 11224, 3
+count3 = 11225, 4
+count4 = 11226, 5
+name = Dragon fire arrows

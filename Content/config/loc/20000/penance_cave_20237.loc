@@ -1,0 +1,12 @@
+// loc 20237
+active = 1
+hillskew = true
+blockwalk = true
+width = 3
+length = 2
+ambient = 20
+op1 = Block
+raiseobject = 0
+recol = 6697/5652 6701/5656 6705/5532 6581/5537 6589/5413
+models_only = 20639
+name = Penance cave

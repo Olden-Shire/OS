@@ -1,0 +1,8 @@
+// loc 17961
+active = 1
+forcedecor = true
+hillskew = true
+nonsolid = true
+op1 = Jump-onto
+models_only = 17338
+name = Boat

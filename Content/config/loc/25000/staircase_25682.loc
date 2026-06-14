@@ -1,0 +1,11 @@
+// loc 25682
+width = 2
+length = 2
+op1 = Climb-up
+mapscene = 7
+ambient = 20
+contrast = 15
+blockwalk = true
+recol = 5400/5652
+models_only = 11567
+name = Staircase

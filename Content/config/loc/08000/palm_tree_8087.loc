@@ -1,0 +1,8 @@
+// loc 8087
+op1 = Pick-coconut
+ambient = 25
+op2 = Inspect
+op4 = Guide
+recol = 21696/18859 21815/19222
+models_only = 8069 7767 8072
+name = Palm tree

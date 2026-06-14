@@ -1,0 +1,6 @@
+// loc 22602
+active = 1
+op1 = Climb-down
+blockwalk = true
+models = 15050/22
+name = Ladder

@@ -1,0 +1,9 @@
+// npc 1810
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+name = Jokul
+models = 203 250 5673 5672 5667 5725 553
+headmodels = 45 82

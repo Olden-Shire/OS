@@ -1,0 +1,7 @@
+// loc 17897
+blockwalk = true
+ambient = 10
+width = 3
+nonblockrange = true
+models_only = 17877
+name = Lab tube

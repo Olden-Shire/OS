@@ -1,0 +1,12 @@
+// npc 3613
+op2 = Attack
+size = 3
+resizeh = 170
+resizev = 170
+walkanim = 3721
+readyanim = 3722
+ambient = 15
+vislevel = 109
+recol = 13477/12702 13601/12826 13596/12950 13592/13074 13716/13198 13840/13196
+name = Giant snail
+models = 14161

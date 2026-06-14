@@ -1,0 +1,14 @@
+// obj 11242
+model = obj_baby_impling_jar_11238
+xof2d = 20
+yof2d = -12
+zoom2d = 789
+yan2d = 97
+zan2d = 180
+xan2d = 2047
+iop3 = Loot
+iop5 = Destroy
+members = true
+cost = 50
+recol = 43030/4444 43034/4329 43038/55622 43043/4329 555/4329
+name = Gourm' impling jar

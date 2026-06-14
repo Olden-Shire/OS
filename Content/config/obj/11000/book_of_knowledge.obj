@@ -1,0 +1,11 @@
+// obj 11640
+cost = 1
+model = obj_book_of_knowledge
+iop1 = Read
+iop5 = Destroy
+yof2d = 26
+zoom2d = 750
+yan2d = 124
+xan2d = 276
+ambient = 15
+name = Book of knowledge

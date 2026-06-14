@@ -1,0 +1,12 @@
+// obj 9919
+model = obj_evil_root
+cost = 3
+xof2d = 1
+yof2d = -1
+zoom2d = 1488
+yan2d = 1328
+zan2d = 1826
+xan2d = 664
+cost = 1
+iop5 = Destroy
+name = Evil root

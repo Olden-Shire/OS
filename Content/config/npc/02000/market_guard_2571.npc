@@ -1,0 +1,8 @@
+// npc 2571
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 20
+recol = 25238/12698 43072/3660 61/2229 11200/2349
+name = Market Guard
+models = 232 251 293 317 169 176 518 523 274 185

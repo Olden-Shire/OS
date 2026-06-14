@@ -1,0 +1,15 @@
+// obj 4371
+cost = 50
+team = 29
+iop2 = Wear
+members = true
+model = obj_team_9_cape_4331
+manwear = obj_team_9_cape_4331_man, 0
+womanwear = obj_team_9_cape_4331_woman, 0
+xof2d = -5
+yof2d = 4
+zoom2d = 1770
+yan2d = 996
+xan2d = 304
+recol = 7756/40167 7845/40499
+name = Team-29 cape

@@ -1,0 +1,15 @@
+// obj 10551
+model = obj_fighter_torso
+manwear = obj_fighter_torso_man, 0
+manwear2 = 156
+womanwear = obj_fighter_torso_woman, 0
+womanwear2 = 337
+iop2 = Wear
+cost = 20000
+yof2d = 7
+zoom2d = 1178
+yan2d = 1840
+xan2d = 498
+members = true
+iop5 = Destroy
+name = Fighter torso

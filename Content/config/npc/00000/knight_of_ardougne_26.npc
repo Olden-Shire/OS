@@ -1,0 +1,9 @@
+// npc 26
+size = 1
+walkanims = 819, 820, 821, 822
+op2 = Attack
+op3 = Pickpocket
+vislevel = 46
+recol = 11187/54185 5532/82 54397/48064 6798/48064
+name = Knight of Ardougne
+models = 232 313 164 179 268 185 518 3330

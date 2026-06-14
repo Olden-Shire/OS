@@ -1,0 +1,7 @@
+// loc 20134
+blockwalk = true
+ambient = 10
+width = 2
+op1 = Read
+models_only = 20638
+name = Blackboard

@@ -1,0 +1,10 @@
+// npc 4477
+vislevel = 0
+walkanim = 5557
+readyanim = 5558
+resizeh = 140
+resizev = 138
+alwaysontop = true
+name = Annoyed guardian mummy
+models = 20906
+headmodels = 21386

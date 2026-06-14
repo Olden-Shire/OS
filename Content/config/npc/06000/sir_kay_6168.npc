@@ -1,0 +1,10 @@
+// npc 6168
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+name = Sir Kay
+models = 27130
+headmodels = 27211 27561

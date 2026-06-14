@@ -1,0 +1,8 @@
+// loc 10448
+active = 0
+ambient = 15
+hillskew = true
+resizex = 128
+resizey = 256
+resizez = 128
+models_only = 10169

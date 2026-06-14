@@ -1,0 +1,9 @@
+// loc 18777
+width = 2
+length = 2
+op1 = Search
+op2 = Close
+ambient = 20
+forceapproach = 11
+models_only = 19010
+name = Fancy dress box

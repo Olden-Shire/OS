@@ -1,0 +1,10 @@
+// loc 13634
+op5 = Remove
+width = 2
+anim = 3174
+op1 = Enter
+bgsound = 3139, 3
+ambient = 40
+recol = 50072/18343 49948/18347 49953/18223 49829/18227 49705/18103
+models_only = 11231 11237
+name = Yanille Portal

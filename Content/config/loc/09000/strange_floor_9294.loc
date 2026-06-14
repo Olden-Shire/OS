@@ -1,0 +1,9 @@
+// loc 9294
+anim = 1112
+blockwalk = true
+forcedecor = true
+active = 1
+op1 = Jump-over
+nonblockrange = true
+models_only = 7603
+name = Strange floor

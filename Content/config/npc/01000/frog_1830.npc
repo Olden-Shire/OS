@@ -1,0 +1,8 @@
+// npc 1830
+resizeh = 32
+resizev = 32
+walkanim = 1797
+readyanim = 1796
+vislevel = 0
+name = Frog
+models = 6947

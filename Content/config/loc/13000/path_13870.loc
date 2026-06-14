@@ -1,0 +1,10 @@
+// loc 13870
+hillskew = true
+active = 1
+nonsolid = true
+op1 = Look-at
+op2 = Continue-trek
+ambient = 7
+recol = 4892/6697 5921/6573 4899/6573
+models = 1124/22
+name = Path

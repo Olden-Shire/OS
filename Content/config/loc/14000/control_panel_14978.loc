@@ -1,0 +1,7 @@
+// loc 14978
+ambient = 20
+contrast = 20
+op1 = Use
+forceapproach = 14
+models_only = 14946
+name = Control panel

@@ -1,0 +1,10 @@
+// npc 1000
+size = 3
+walkanim = 63
+readyanim = 66
+op2 = Attack
+resizeh = 110
+resizev = 110
+vislevel = 91
+name = Holthion
+models = 17375 17393 17385 17399 17390

@@ -1,0 +1,12 @@
+// npc 1912
+size = 1
+resizeh = 115
+resizev = 115
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/9664 25238/8604 4550/4539 6024/9664
+name = Elissa
+models = 378 418 446 471 348 354 440
+headmodels = 103 137

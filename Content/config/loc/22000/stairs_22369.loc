@@ -1,0 +1,12 @@
+// loc 22369
+active = 1
+sharelight = true
+blockwalk = true
+ambient = 20
+contrast = 20
+op2 = Climb
+op1 = Hidden
+length = 2
+mapscene = 7
+models_only = 23120
+name = Stairs

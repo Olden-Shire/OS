@@ -1,0 +1,6 @@
+// loc 25137
+hillskew = true
+ambient = 20
+blockwalk = true
+models_only = 26560
+name = Plant

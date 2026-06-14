@@ -1,0 +1,5 @@
+// loc 2038
+op1 = Hit
+forceapproach = 11
+models_only = 1286
+name = Dummy

@@ -1,0 +1,6 @@
+// loc 17351
+ambient = 10
+blockwalk = true
+nonblockrange = true
+models_only = 17320
+name = Rock

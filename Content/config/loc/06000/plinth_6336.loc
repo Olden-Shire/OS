@@ -1,0 +1,6 @@
+// loc 6336
+mirror = true
+width = 2
+length = 2
+models_only = 6175 6177
+name = Plinth

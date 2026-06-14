@@ -1,0 +1,9 @@
+// npc 1231
+size = 1
+walkanim = 1274
+readyanim = 1276
+op2 = Attack
+vislevel = 15
+recol = 10545/7983 12589/6955 12713/7077 6466/5945 6577/6061 6697/5033
+name = Bark Blamish Snail
+models = 4108

@@ -1,0 +1,18 @@
+// obj 10547
+model = obj_healer_hat
+manwear = obj_healer_hat_man, 0
+womanwear = obj_healer_hat_woman, 0
+manwear2 = 215
+womanwear2 = 391
+manhead = 19239
+manhead2 = 53
+womanhead = 114
+womanhead2 = 19243
+iop2 = Wear
+cost = 5000
+xof2d = 7
+zoom2d = 1114
+yan2d = 194
+members = true
+iop5 = Destroy
+name = Healer hat

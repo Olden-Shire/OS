@@ -1,0 +1,8 @@
+// loc 21054
+sharelight = true
+ambient = 20
+contrast = 20
+noshadow = true
+mapscene = 22
+active = 0
+models_only = 21752

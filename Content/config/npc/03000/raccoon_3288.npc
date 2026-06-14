@@ -1,0 +1,7 @@
+// npc 3288
+vislevel = 0
+walkanim = 3214
+readyanim = 3215
+recol = 5161/3243 5165/3247 7240/2235
+name = Raccoon
+models = 11724

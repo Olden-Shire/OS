@@ -1,0 +1,8 @@
+// npc 1837
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 2578/6455 66/34099 8728/6806 5784/7277 61/6554
+name = Dondakan the Dwarf
+models = 2970 2980 2978 2984 6018 2990
+headmodels = 0

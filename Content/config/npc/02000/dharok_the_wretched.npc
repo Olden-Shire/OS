@@ -1,0 +1,10 @@
+// npc 2026
+walkanim = 2064
+readyanim = 2065
+op2 = Attack
+ambient = 50
+contrast = 50
+alwaysontop = true
+vislevel = 115
+name = Dharok the Wretched
+models = 6652 6671 6640 6661 6703 6679

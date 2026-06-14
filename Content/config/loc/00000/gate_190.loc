@@ -1,0 +1,8 @@
+// loc 190
+width = 5
+length = 2
+active = 1
+blockwalk = true
+op1 = Open
+models_only = 1321
+name = Gate

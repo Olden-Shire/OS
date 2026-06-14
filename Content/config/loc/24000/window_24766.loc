@@ -1,0 +1,7 @@
+// loc 24766
+active = 1
+contrast = 10
+ambient = 20
+blockwalk = true
+models_only = 26059
+name = Window

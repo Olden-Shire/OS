@@ -1,0 +1,11 @@
+// npc 1921
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/4769 8741/38439 43072/4550
+name = Bartender
+models = 235 248 302 159 176 254 181
+headmodels = 67 80

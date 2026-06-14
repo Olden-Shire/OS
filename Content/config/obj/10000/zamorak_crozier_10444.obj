@@ -1,0 +1,12 @@
+// obj 10444
+model = obj_zamorak_crozier_10444
+xof2d = -5
+yof2d = -1
+zoom2d = 2086
+xan2d = 567
+iop2 = Wield
+manwear = obj_zamorak_crozier_10444_wear, 0
+womanwear = obj_zamorak_crozier_10444_wear, 6
+members = true
+cost = 5000
+name = Zamorak crozier

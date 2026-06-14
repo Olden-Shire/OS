@@ -1,0 +1,8 @@
+// loc 24733
+length = 3
+width = 3
+blockwalk = true
+op1 = Climb
+op3 = Chop
+models_only = 25957
+name = Beanstalk

@@ -1,0 +1,8 @@
+// npc 4762
+vislevel = 0
+size = 1
+readyanim = 6539
+walkanim = 6541
+name = Shadowy figure
+models = 26160
+headmodels = 26112

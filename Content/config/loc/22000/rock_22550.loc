@@ -1,0 +1,6 @@
+// loc 22550
+mapscene = 11
+nonblockrange = true
+recol = 16536/10258 16545/17566 18601/17575
+models_only = 8689
+name = Rock

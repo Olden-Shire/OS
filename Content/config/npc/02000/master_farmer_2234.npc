@@ -1,0 +1,9 @@
+// npc 2234
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+vislevel = 0
+recol = 8741/12583 25238/5400 6798/7465 9096/5400 54397/8497
+name = Master Farmer
+models = 6364 217 249 292 4391 170 176 7367 274 7121
+headmodels = 55 81 6212

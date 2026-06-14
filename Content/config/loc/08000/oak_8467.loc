@@ -1,0 +1,9 @@
+// loc 8467
+op1 = Chop down
+op3 = hidden
+ambient = 25
+mapscene = 0
+op2 = Inspect
+op4 = Guide
+models_only = 8041 7768
+name = Oak

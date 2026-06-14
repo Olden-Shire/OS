@@ -1,0 +1,9 @@
+// npc 1165
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 6798/9118 43072/4645 5572/58797 4886/68 4550/6806 61/58797
+name = Tinsay
+models = 206 250 8928 8916 176 8925 8919 553 201
+headmodels = 46 82 43

@@ -1,0 +1,7 @@
+// npc 3204
+vislevel = 0
+readyanim = 3168
+walkanim = 3167
+nominimap = true
+name = Storm Cloud
+models = 11266

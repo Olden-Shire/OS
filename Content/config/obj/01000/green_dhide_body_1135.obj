@@ -1,0 +1,10 @@
+// obj 1135
+cost = 7800
+model = obj_green_dhide_body_1135
+yof2d = -4
+zoom2d = 1030
+xan2d = 548
+iop2 = Wear
+manwear = obj_green_dhide_body_1135_man, 0
+womanwear = obj_green_dhide_body_1135_woman, 0
+name = Green d'hide body

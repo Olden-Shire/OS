@@ -1,0 +1,6 @@
+// loc 24124
+width = 3
+sharelight = true
+nonblockrange = true
+models_only = 24883 24882
+name = Shop counter

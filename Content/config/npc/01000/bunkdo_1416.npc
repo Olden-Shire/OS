@@ -1,0 +1,8 @@
+// npc 1416
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 22426/13745 22422/8741
+name = Bunkdo
+models = 2914 4699 2919
+headmodels = 21

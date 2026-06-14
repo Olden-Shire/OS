@@ -1,0 +1,11 @@
+// npc 3085
+resizeh = 150
+resizev = 150
+readyanim = 3008
+walkanim = 3012
+vislevel = 0
+op1 = Talk-to
+recol = 42283/4550 1573/4550 4550/5444
+name = Cormac
+models = 10506 10517 10509 10512 10527 10525
+headmodels = 10398 10392

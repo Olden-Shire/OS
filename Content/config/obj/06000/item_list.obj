@@ -1,0 +1,10 @@
+// obj 6648
+iop1 = Read
+iop5 = Destroy
+model = obj_notes
+yof2d = 49
+zoom2d = 750
+yan2d = 1380
+xan2d = 304
+members = true
+name = Item list

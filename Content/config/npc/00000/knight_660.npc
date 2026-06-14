@@ -1,0 +1,9 @@
+// npc 660
+walkanims = 819, 820, 821, 822
+readyanim = 784
+op1 = Talk-to
+vislevel = 0
+recol = 5400/5214 5648/5206 41/5206 61/5223 57/7269 43311/926
+name = Knight
+models = 11744 306 164 13318 268 4954
+headmodels = 56

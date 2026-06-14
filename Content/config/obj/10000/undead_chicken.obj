@@ -1,0 +1,15 @@
+// obj 10487
+model = obj_undead_chicken
+members = true
+cost = 100
+xof2d = -9
+yof2d = 24
+zoom2d = 1308
+yan2d = 1853
+zan2d = 1895
+xan2d = 2047
+iop5 = Destroy
+iop2 = Wield
+manwear = obj_undead_chicken, 0
+womanwear = obj_undead_chicken, 0
+name = Undead chicken

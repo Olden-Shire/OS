@@ -1,0 +1,15 @@
+// obj 9636
+cost = 500
+members = true
+iop2 = Wear
+model = obj_vyrewatch_legs_9636
+xof2d = -2
+yof2d = 3
+zoom2d = 1488
+yan2d = 30
+zan2d = 1881
+xan2d = 357
+manwear = obj_vyrewatch_legs_9636_man, 0
+womanwear = obj_vyrewatch_legs_9636_woman, 0
+recol = 4626/0 25238/0
+name = Vyrewatch legs

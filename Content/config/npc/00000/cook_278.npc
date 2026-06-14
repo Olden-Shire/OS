@@ -1,0 +1,11 @@
+// npc 278
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 37/47225 57/43292 43928/43292 8860/43292 8741/43177 4626/43280
+name = Cook
+models = 199 215 247 13897 10980 10218 12750 181
+headmodels = 53 41 79

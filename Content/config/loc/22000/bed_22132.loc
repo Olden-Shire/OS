@@ -1,0 +1,9 @@
+// loc 22132
+blockwalk = true
+ambient = 15
+contrast = 15
+length = 2
+nonblockrange = true
+recol = 6466/6573 5545/6817 926/8369
+models_only = 12397
+name = Bed

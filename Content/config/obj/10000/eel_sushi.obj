@@ -1,0 +1,11 @@
+// obj 10971
+model = obj_eel_sushi
+zoom2d = 405
+yan2d = 1618
+xan2d = 332
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 50
+name = Eel sushi

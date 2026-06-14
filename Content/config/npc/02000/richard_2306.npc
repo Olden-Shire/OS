@@ -1,0 +1,11 @@
+// npc 2306
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 8741/12583 25238/5400 6798/6589 9096/5400 54397/8497
+name = Richard
+models = 217 305 170 176 274 7121 246
+headmodels = 55

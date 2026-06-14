@@ -1,0 +1,7 @@
+// loc 14790
+active = 0
+width = 3
+length = 4
+sharelight = true
+mirror = true
+models_only = 14723 14724

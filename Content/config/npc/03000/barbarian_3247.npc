@@ -1,0 +1,11 @@
+// npc 3247
+resizeh = 137
+walkanims = 2562, 2562, 2562, 2562
+readyanim = 2561
+op2 = Attack
+op1 = Talk-to
+vislevel = 10
+recol = 943/1944 939/1944 935/1944
+name = Barbarian
+models = 11738 214 11747 251 11758 11728 11731 11754 11733 11763 11793
+headmodels = 52 83 11803 11807

@@ -1,0 +1,9 @@
+// loc 22154
+ambient = 15
+contrast = 15
+width = 2
+forceapproach = 13
+bgsound = 2200, 5
+recol = 12698/5541 12818/5660
+models_only = 22943
+name = Cooking range

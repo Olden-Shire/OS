@@ -1,0 +1,10 @@
+// loc 13171
+anim = 3511
+active = 1
+op1 = Read
+op5 = Remove
+ambient = 25
+contrast = 25
+bgsound = 3120, 3
+models_only = 12972
+name = Clock

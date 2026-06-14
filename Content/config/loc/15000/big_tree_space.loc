@@ -1,0 +1,11 @@
+// loc 15362
+active = 1
+op5 = Build
+nonsolid = true
+width = 2
+length = 2
+resizex = 85
+resizey = 85
+resizez = 85
+models_only = 12650
+name = Big Tree space

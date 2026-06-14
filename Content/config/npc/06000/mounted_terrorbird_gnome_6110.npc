@@ -1,0 +1,9 @@
+// npc 6110
+size = 2
+walkanim = 6796
+readyanim = 6793
+op2 = Attack
+vislevel = 49
+recol = 14753/14868 12579/12694
+name = Mounted terrorbird gnome
+models = 26855

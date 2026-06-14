@@ -1,0 +1,6 @@
+// npc 5040
+readyanim = 5094
+walkanim = 5095
+vislevel = 0
+name = Penance Fighter
+models = 20697 20696

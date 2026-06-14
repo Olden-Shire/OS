@@ -1,0 +1,13 @@
+// loc 5286
+resizez = 128
+resizex = 128
+resizey = 88
+active = 1
+forcedecor = true
+hillskew = true
+sharelight = true
+op1 = Cross
+blockwalk = true
+recol = 5673/12818 5559/12698
+models = 1882/22
+name = Gangplank

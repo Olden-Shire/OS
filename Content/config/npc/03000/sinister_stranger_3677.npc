@@ -1,0 +1,11 @@
+// npc 3677
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/7273 7700/0 11200/0 6032/926
+name = Sinister Stranger
+models = 227 246 14382 14372 14379 14374 562 323 14341
+headmodels = 62 14338

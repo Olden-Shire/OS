@@ -1,0 +1,13 @@
+// obj 7809
+members = true
+cost = 26
+model = obj_anger_spear
+iop2 = Wield
+manwear = obj_anger_spear_wear, 0
+womanwear = obj_anger_spear_wear, 6
+xof2d = 1
+yof2d = 1
+yan2d = 2042
+xan2d = 504
+members = true
+name = Anger spear

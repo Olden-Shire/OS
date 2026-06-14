@@ -1,0 +1,16 @@
+[clientscript,script_183](int $int0, int $int1)()
+
+if ($int0 = 1) {
+    %varcint44 = $int1;
+} else if ($int0 = 2) {
+    %varcint45 = $int1;
+} else if ($int0 = 3) {
+    %varcint46 = $int1;
+} else if ($int0 = 4) {
+    %varcint47 = $int1;
+} else if ($int0 = 5) {
+    %varcint48 = $int1;
+} else if ($int0 = 6) {
+    %varcint49 = $int1;
+}
+return;

@@ -1,0 +1,8 @@
+// npc 4771
+vislevel = 0
+size = 3
+turnspeed = 0
+walkanim = 4756
+readyanim = 4756
+name = Boat
+models = 17556 17555

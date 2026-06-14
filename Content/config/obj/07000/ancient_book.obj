@@ -1,0 +1,12 @@
+// obj 7633
+cost = 1
+model = obj_ancient_book
+members = true
+yof2d = 26
+zoom2d = 750
+yan2d = 124
+xan2d = 276
+iop1 = Read
+iop5 = Destroy
+recol = 32883/5022 43239/9118 43486/15244
+name = Ancient book

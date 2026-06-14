@@ -1,0 +1,12 @@
+// obj 6373
+cost = 250
+members = true
+iop2 = Wear
+model = obj_villager_robe_6343
+manwear = obj_villager_robe_6343_man, 0
+womanwear = obj_villager_robe_6343_woman, 0
+zoom2d = 1560
+yan2d = 2028
+xan2d = 272
+recol = 5572/62013 4886/3173
+name = Villager robe

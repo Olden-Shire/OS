@@ -1,0 +1,9 @@
+// loc 17978
+resizex = 128
+resizey = 160
+resizez = 128
+length = 2
+op1 = Climb-down
+forceapproach = 14
+models_only = 17687
+name = Stairs down

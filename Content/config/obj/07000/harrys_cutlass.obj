@@ -1,0 +1,12 @@
+// obj 7141
+model = obj_harrys_cutlass
+iop2 = Wield
+manwear = obj_harrys_cutlass_wear, 0
+womanwear = obj_harrys_cutlass_wear, 6
+members = true
+yof2d = -4
+zoom2d = 990
+yan2d = 1369
+xan2d = 553
+cost = 1040
+name = Harry's cutlass

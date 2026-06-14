@@ -1,0 +1,6 @@
+// loc 14007
+anim = 3105
+op1 = Remove-Pot
+active = 1
+models_only = 14095 14097 14099
+name = Pot-boiler

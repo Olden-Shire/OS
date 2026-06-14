@@ -1,0 +1,11 @@
+// npc 4607
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 317
+resizeh = 60
+resizev = 60
+recol = 61/12 16/12 127/33
+name = Black Cat
+models = 3010 3006
+headmodels = 6435

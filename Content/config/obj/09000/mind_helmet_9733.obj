@@ -1,0 +1,16 @@
+// obj 9733
+model = obj_elemental_helmet_9729
+xof2d = 1
+yof2d = -45
+zoom2d = 659
+yan2d = 221
+xan2d = 235
+members = true
+manwear = obj_elemental_helmet_9729_man, 0
+womanwear = obj_elemental_helmet_9729_woman, 0
+manhead = 18909
+womanhead = 18910
+cost = 3000
+iop2 = Equip
+recol = 33715/5941 36775/5828
+name = Mind helmet

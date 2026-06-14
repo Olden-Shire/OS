@@ -1,0 +1,9 @@
+// npc 6041
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Yadviga
+models = 26145 26154 26138 26150 26142
+headmodels = 26274

@@ -1,0 +1,10 @@
+// npc 1429
+walkanim = 1380
+readyanim = 1386
+resizeh = 130
+resizev = 180
+op1 = Talk-to
+vislevel = 0
+name = Dugopul
+models = 4820 4827 4834
+headmodels = 4659

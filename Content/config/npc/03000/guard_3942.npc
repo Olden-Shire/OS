@@ -1,0 +1,11 @@
+// npc 3942
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+vislevel = 0
+op1 = Talk-to
+recol = 8741/6554 25238/7566 8078/7609
+name = Guard
+models = 4220 252 292 162 179 4226 4218 326 4221 4219
+headmodels = 4210 84 4211

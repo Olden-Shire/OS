@@ -1,0 +1,12 @@
+// npc 2064
+vislevel = 0
+size = 2
+resizeh = 125
+resizev = 123
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+recol = 8722/5673
+name = Scarg
+models = 3442 2878
+headmodels = 141

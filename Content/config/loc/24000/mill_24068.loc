@@ -1,0 +1,9 @@
+// loc 24068
+width = 2
+length = 2
+anim = 6494
+ambient = 20
+contrast = 10
+bgsound = 2226, 5
+models_only = 25335
+name = Mill

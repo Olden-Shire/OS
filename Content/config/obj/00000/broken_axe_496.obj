@@ -1,0 +1,11 @@
+// obj 496
+model = obj_broken_axe_494
+xof2d = -15
+zoom2d = 1060
+yan2d = 1196
+xan2d = 520
+manwear = obj_broken_axe_494_wear, 0
+womanwear = obj_broken_axe_494_wear, 6
+cost = 0
+recol = 61/33
+name = Broken axe

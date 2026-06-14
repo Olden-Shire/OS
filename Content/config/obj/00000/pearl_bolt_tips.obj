@@ -1,0 +1,14 @@
+// obj 46
+model = obj_opal_bolt_tips
+xof2d = 1
+zoom2d = 300
+yan2d = 66
+xan2d = 453
+stackable = true
+members = true
+cost = 12
+count1 = 9199, 2
+count2 = 9200, 3
+count3 = 9201, 4
+count4 = 9202, 5
+name = Pearl bolt tips

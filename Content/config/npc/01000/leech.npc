@@ -1,0 +1,9 @@
+// npc 1219
+size = 1
+walkanim = 1269
+readyanim = 1270
+op2 = Attack
+nominimap = true
+vislevel = 52
+name = Leech
+models = 4083

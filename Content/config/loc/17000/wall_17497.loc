@@ -1,0 +1,8 @@
+// loc 17497
+sharelight = true
+hillskew = true
+resizex = 128
+resizey = 160
+resizez = 128
+models_only = 17778
+name = Wall

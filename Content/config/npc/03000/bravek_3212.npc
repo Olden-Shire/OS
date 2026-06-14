@@ -1,0 +1,10 @@
+// npc 3212
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 3186
+op1 = Talk-to
+recol = 25238/5580 8741/6742 43072/4550
+name = Bravek
+models = 206 299 159 274 185 323 252 176 11432
+headmodels = 46 84

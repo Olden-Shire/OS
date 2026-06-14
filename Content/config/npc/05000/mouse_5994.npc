@@ -1,0 +1,9 @@
+// npc 5994
+size = 4
+walkanim = 6517
+readyanim = 6518
+op2 = Attack
+alwaysontop = true
+vislevel = 95
+name = Mouse
+models = 26075

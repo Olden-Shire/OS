@@ -1,0 +1,9 @@
+[clientscript,script_81]()()
+
+if (if_hassub(35913819) = 1 & chat_gethistory_byuid(0) = 0) {
+    ~script_102(chat_gethistory_bytypeandline(0));
+}
+~script_84;
+~script_89;
+~script_192;
+return;

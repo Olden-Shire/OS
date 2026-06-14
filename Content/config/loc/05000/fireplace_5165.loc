@@ -1,0 +1,6 @@
+// loc 5165
+blockwalk = true
+anim = 1629
+bgsound = 2066, 3
+models_only = 5170
+name = Fireplace

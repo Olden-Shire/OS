@@ -1,0 +1,9 @@
+// loc 1507
+active = 1
+op1 = Close
+mirror = true
+raiseobject = 0
+ambient = 25
+contrast = 25
+models = 594/0
+name = Large door

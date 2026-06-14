@@ -1,0 +1,10 @@
+// npc 5464
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+alwaysontop = true
+recol = 8741/6554 25238/7566 8078/7609 6798/6713 7952/13072 7073/5404
+name = Honour guard
+models = 4220 252 292 162 179 4226 4218 540 326 4235 317 4219
+headmodels = 4210 84

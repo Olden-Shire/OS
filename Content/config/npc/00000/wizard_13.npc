@@ -1,0 +1,10 @@
+// npc 13
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 9
+recol = 8741/38817 25238/39834 6798/127 123/39607 127/123 43117/16
+name = Wizard
+models = 215 181 246 292 170 176 265 202 3189 326
+headmodels = 53 44

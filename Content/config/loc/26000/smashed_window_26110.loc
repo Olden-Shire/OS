@@ -1,0 +1,12 @@
+// loc 26110
+active = 1
+op2 = Investigate
+op3 = Break
+contrast = 15
+ambient = 20
+sharelight = true
+blockwalk = true
+resizey = 105
+recol = 38119/7378 41067/5421
+models = 27297/0
+name = Smashed window

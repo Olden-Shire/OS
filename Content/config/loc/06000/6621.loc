@@ -1,0 +1,6 @@
+// loc 6621
+sharelight = true
+active = 1
+length = 3
+width = 3
+multiloc = 395, 65535, 6622 6623

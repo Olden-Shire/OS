@@ -1,0 +1,9 @@
+// loc 12353
+op1 = Pass-through
+ambient = 40
+anim = 3349
+resizey = 300
+noshadow = true
+bgsound = 3139, 3
+models_only = 13669
+name = Barrier

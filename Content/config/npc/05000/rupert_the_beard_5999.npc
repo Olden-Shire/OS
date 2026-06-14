@@ -1,0 +1,7 @@
+// npc 5999
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+name = Rupert the Beard
+models = 26105 26107 26103 26106 26104 26109
+headmodels = 26082 26081

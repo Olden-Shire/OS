@@ -1,0 +1,10 @@
+// npc 834
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/127 25238/127 4626/127 908/127 43072/127 4550/4645
+name = Bedabin Nomad Guard
+models = 230 248 188 292 170 176 265 185 490
+headmodels = 63 30 80

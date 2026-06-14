@@ -1,0 +1,10 @@
+// loc 5953
+width = 2
+length = 2
+active = 0
+noshadow = true
+hillskew = true
+mapscene = 12
+nonblockrange = true
+recol = 6689/10266
+models_only = 821

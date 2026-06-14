@@ -1,0 +1,9 @@
+// loc 1578
+length = 2
+nonsolid = true
+sharelight = true
+raiseobject = 0
+ambient = 25
+contrast = 25
+models_only = 674
+name = Doorway

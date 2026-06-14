@@ -1,0 +1,13 @@
+// obj 5024
+model = obj_woven_top_5024
+zoom2d = 810
+xan2d = 444
+members = true
+cost = 500
+iop2 = Wear
+manwear = obj_woven_top_5024_man, 0
+manwear2 = 6999
+womanwear = obj_woven_top_5024_woman, 0
+womanwear2 = 7005
+recol = 9529/10130
+name = Woven top

@@ -1,0 +1,12 @@
+// npc 5099
+size = 1
+walkanim = 5272
+readyanim = 5273
+resizeh = 96
+resizev = 96
+op1 = Catch
+turnspeed = 64
+vislevel = 0
+recol = 5008/0 5532/8 5537/43026 5413/24 5417/33 5656/43026
+name = Dark kebbit
+models = 19381 19389 19384

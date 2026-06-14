@@ -1,0 +1,11 @@
+// seq 873
+replaceheldleft = 1873
+replaceheldright = 0
+priority = 0
+loops = 6
+maxloops = 4
+preanim_move = 1
+postanim_move = 1
+duplicatebehaviour = 1
+frames = 4/384/207 4/385/207 10/386/207 12/387/207 6/388/207 4/389/207
+sound = 0 0 0 700177

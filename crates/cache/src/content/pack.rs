@@ -35,6 +35,16 @@ pub struct PackStats {
 /// Pack the directory at `src` into a cache at `dest`. `dest` is created if missing;
 /// existing `main_file_cache.*` files in it are overwritten.
 pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
+    pack_with_progress(src, dest, &mut |_, _| {})
+}
+
+/// Like [`pack`], but reports `(groups_done, groups_total)` as it writes — used
+/// by the control-panel splash for a packing progress bar.
+pub fn pack_with_progress(
+    src: &Path,
+    dest: &Path,
+    progress: &mut dyn FnMut(usize, usize),
+) -> std::io::Result<PackStats> {
     fs::create_dir_all(dest)?;
     let dat_path = dest.join("main_file_cache.dat2");
     let mut writer = DatWriter::new(File::create(&dat_path)?);
@@ -62,6 +72,15 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
     // scanned before any body compiles, so gosub callees resolve regardless of order.
     let cs2_sigs = scan_cs2_signatures(src, &names)?;
 
+    // Pre-count groups across all archives so the progress callback has a total.
+    let mut total_groups = 0usize;
+    for archive in 0..ARCHIVE_COUNT {
+        let m: ArchiveManifest =
+            read_manifest(&src.join(ARCHIVE_NAMES[archive as usize]).join("_meta.json"))?;
+        total_groups += m.groups.len();
+    }
+    let mut done = 0usize;
+
     for archive in 0..ARCHIVE_COUNT {
         let archive_dir = src.join(ARCHIVE_NAMES[archive as usize]);
         let manifest: ArchiveManifest = read_manifest(&archive_dir.join("_meta.json"))?;
@@ -80,6 +99,10 @@ pub fn pack(src: &Path, dest: &Path) -> std::io::Result<PackStats> {
             idx.insert(group.id, (group_bytes.len() as u32, first_sector));
             stats.total_groups += 1;
             stats.total_bytes += group_bytes.len() as u64;
+            done += 1;
+            if done % 256 == 0 || done == total_groups {
+                progress(done, total_groups);
+            }
         }
         write_idx(&dest.join(format!("main_file_cache.idx{archive}")), &idx)?;
     }
@@ -231,6 +254,16 @@ fn read_group_payload(
         } else {
             None
         };
+        // Model-typed operands (obj model/manwear/womanwear) may reference models
+        // by their `model.pack` name — resolve those back to ids on encode.
+        let model_refs = if config_codec.is_some() {
+            packs
+                .get("model")
+                .map(crate::content::config_text::ModelRefs::from_pack)
+                .unwrap_or_default()
+        } else {
+            crate::content::config_text::ModelRefs::default()
+        };
         let nfiles = file_ids.len();
         let mut files: Vec<Vec<u8>> = Vec::with_capacity(nfiles);
         for &fid in file_ids {
@@ -248,7 +281,7 @@ fn read_group_payload(
                     let text = fs::read_to_string(&text_path).map_err(|e| {
                         std::io::Error::new(e.kind(), format!("read {text_path:?}: {e}"))
                     })?;
-                    let bytes = crate::content::config_text::encode(schema, &text).ok_or_else(|| {
+                    let bytes = crate::content::config_text::encode(schema, &text, &model_refs).ok_or_else(|| {
                         std::io::Error::new(
                             std::io::ErrorKind::InvalidData,
                             format!("{text_path:?}: config text re-encode failed"),

@@ -1,0 +1,11 @@
+// npc 556
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 43072/4550 8741/53159 25238/46364 10659/46364 9104/54587 5652/55178
+name = Grum
+models = 198 215 245 247 292 327 151 176 257
+headmodels = 53 79 40 78

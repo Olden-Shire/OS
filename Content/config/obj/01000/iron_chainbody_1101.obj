@@ -1,0 +1,10 @@
+// obj 1101
+cost = 210
+model = obj_iron_chainbody_1101
+yof2d = 2
+zoom2d = 1100
+xan2d = 568
+iop2 = Wear
+manwear = obj_iron_chainbody_1101_man, 0
+womanwear = obj_iron_chainbody_1101_woman, 0
+name = Iron chainbody

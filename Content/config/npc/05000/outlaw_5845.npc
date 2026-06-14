@@ -1,0 +1,9 @@
+// npc 5845
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 32
+recol = 3235/20
+name = Outlaw
+models = 23922 228 11190 23941 23945 23919 23948 23937

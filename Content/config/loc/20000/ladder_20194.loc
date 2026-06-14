@@ -1,0 +1,10 @@
+// loc 20194
+active = 1
+sharelight = true
+blockwalk = true
+op1 = Climb-up
+forceapproach = 14
+mapscene = 7
+nonblockrange = true
+models_only = 20645
+name = Ladder

@@ -1,0 +1,10 @@
+// npc 3922
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8741/5537 4550/2524 43072/2524 25238/43160 6587/10906 123/5214
+name = Finn
+models = 6848 252 292 159 176 4226 4218 15106
+headmodels = 5787 84

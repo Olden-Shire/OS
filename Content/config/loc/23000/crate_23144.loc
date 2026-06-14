@@ -1,0 +1,8 @@
+// loc 23144
+hillskew = true
+contrast = 20
+ambient = 20
+nonblockrange = true
+recol = 13596/21543 13592/21539 13716/21534 13840/21526 13964/21522 14216/21646
+models_only = 13975
+name = Crate

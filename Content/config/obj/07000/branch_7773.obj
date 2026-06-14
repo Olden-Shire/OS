@@ -1,0 +1,13 @@
+// obj 7773
+model = obj_branch_7773
+manwear = obj_branch_7773_wear, 0
+womanwear = obj_branch_7773_wear, 6
+xof2d = 46
+yof2d = 26
+zoom2d = 1632
+yan2d = 263
+zan2d = 111
+xan2d = 664
+members = true
+recol = 5772/14742
+name = Branch

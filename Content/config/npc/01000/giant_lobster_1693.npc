@@ -1,0 +1,8 @@
+// npc 1693
+size = 2
+walkanim = 6264
+readyanim = 6263
+op2 = Attack
+vislevel = 32
+name = Giant lobster
+models = 24608

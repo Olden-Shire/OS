@@ -1,0 +1,9 @@
+// loc 17048
+sharelight = true
+wallwidth = 32
+occlude = true
+ambient = 25
+contrast = 25
+op1 = Jump
+models = 16884/0
+name = Wall

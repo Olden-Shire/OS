@@ -1,0 +1,13 @@
+// npc 4526
+size = 1
+vislevel = 0
+contrast = 12
+ambient = 12
+walkanims = 4426, 4427, 4428, 4429
+readyanim = 4424
+op1 = Talk-to
+alwaysontop = true
+recol = 15009/41678 8621/8910 8615/32813 8865/33057
+name = Bouquet Mac Hyacinth
+models = 10078 16506 16493 16498 12143 16496 12140 16491 270
+headmodels = 10031 16466

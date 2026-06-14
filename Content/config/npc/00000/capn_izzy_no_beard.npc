@@ -1,0 +1,10 @@
+// npc 437
+readyanim = 808
+walkanims = 819, 820, 821, 822
+op1 = Talk-to
+op3 = Pay
+vislevel = 0
+recol = 6798/0 7050/43544 25238/10557 4626/0 10004/0
+name = Cap'n Izzy No-Beard
+models = 210 246 193 292 26875 167 179 271 185 18917
+headmodels = 49 36

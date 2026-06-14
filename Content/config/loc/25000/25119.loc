@@ -1,0 +1,7 @@
+// loc 25119
+hillskew = true
+sharelight = true
+active = 0
+ambient = 30
+recol = 21534/28 21530/24 21526/20 21522/16 21646/16 21642/12
+models = 26466/0 26467/9

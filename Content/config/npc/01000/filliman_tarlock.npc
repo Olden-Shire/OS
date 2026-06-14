@@ -1,0 +1,11 @@
+// npc 1050
+vislevel = 0
+size = 1
+walkanim = 841
+readyanim = 842
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/39388 8741/7062 25238/7062 6798/41191 1944/43968
+name = Filliman Tarlock
+models = 210 292 256 170 250 176 280
+headmodels = 49 82

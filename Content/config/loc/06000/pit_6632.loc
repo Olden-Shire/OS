@@ -1,0 +1,10 @@
+// loc 6632
+active = 1
+forcedecor = true
+noshadow = true
+hillskew = true
+nonsolid = true
+sharelight = true
+op2 = Jump-Across
+models_only = 3951
+name = Pit

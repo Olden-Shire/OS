@@ -1,0 +1,10 @@
+// obj 6012
+model = obj_nasturtiums_6012
+yof2d = 21
+zoom2d = 1190
+yan2d = 1960
+xan2d = 204
+members = true
+ambient = 15
+cost = 4
+name = Nasturtiums

@@ -1,0 +1,7 @@
+// npc 3674
+size = 1
+readyanim = 3840
+vislevel = 0
+name = Bones
+models = 13700
+headmodels = 13700

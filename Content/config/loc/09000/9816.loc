@@ -1,0 +1,9 @@
+// loc 9816
+active = 0
+nonsolid = true
+ambient = 100
+contrast = 100
+anim = 2742
+noshadow = true
+recol = 127/22464
+models_only = 9736

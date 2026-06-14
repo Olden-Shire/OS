@@ -1,0 +1,8 @@
+// loc 13211
+op5 = Remove
+anim = 3573
+ambient = 20
+contrast = 20
+bgsound = 2065, 3
+models_only = 13115 13114
+name = Incense burner

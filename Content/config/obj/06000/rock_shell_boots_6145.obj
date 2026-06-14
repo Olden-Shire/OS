@@ -1,0 +1,14 @@
+// obj 6145
+cost = 650
+model = obj_spined_boots_6143
+xof2d = 2
+yof2d = -2
+zoom2d = 660
+yan2d = 104
+xan2d = 96
+members = true
+iop2 = Wear
+manwear = obj_spined_boots_6143_man, 0
+womanwear = obj_spined_boots_6143_woman, 0
+recol = 10283/10266 10270/10262 3226/10262
+name = Rock-shell boots

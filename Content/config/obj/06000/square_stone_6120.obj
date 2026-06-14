@@ -1,0 +1,9 @@
+// obj 6120
+model = obj_square_stone_6120
+yof2d = 3
+zoom2d = 500
+yan2d = 1768
+xan2d = 348
+stackable = true
+members = true
+name = Square stone

@@ -1,0 +1,13 @@
+// obj 11007
+cost = 10
+model = obj_full_folder
+yof2d = 16
+zoom2d = 976
+yan2d = 222
+xan2d = 216
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Full folder

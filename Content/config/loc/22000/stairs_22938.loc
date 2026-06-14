@@ -1,0 +1,10 @@
+// loc 22938
+active = 1
+op1 = Climb-down
+width = 2
+length = 2
+mapscene = 7
+forceapproach = 13
+models_only = 23732
+models_only = 23730
+name = Stairs

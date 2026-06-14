@@ -1,0 +1,14 @@
+[clientscript,script_105]()()
+
+if (%varcint11 = 1) {
+    if_close();
+}
+if_sethide(0, 35913816);
+if_sethide(1, 35913817);
+if_settext("Enter name of player to add to list", 35913821);
+if_settext("*", 35913822);
+%varcint5 = 4;
+%varcstr22 = "";
+if_setonclick(-1, "", 35913816);
+if_setonkey(112, -2147483640, -2147483639, "iz", 35913822);
+return;

@@ -1,0 +1,10 @@
+// npc 707
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/20 38814/0 90/794 6798/5400 6709/794 6949/916
+name = Wizard Grayzag
+models = 202 214 250 10985 14562 177 14565 181
+headmodels = 52 44 82

@@ -1,0 +1,10 @@
+// loc 23611
+width = 2
+length = 2
+blockwalk = true
+ambient = 10
+anim = 6274
+op1 = hidden
+nonblockrange = true
+models_only = 24623 24622 24621
+name = Cocoon

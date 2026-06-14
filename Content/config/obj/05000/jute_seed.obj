@@ -1,0 +1,14 @@
+// obj 5306
+model = obj_jute_seed
+xof2d = 1
+zoom2d = 660
+yan2d = 1964
+xan2d = 264
+members = true
+stackable = true
+count1 = 5172, 2
+count2 = 5173, 3
+count3 = 5174, 4
+count4 = 5175, 5
+cost = 5
+name = Jute seed

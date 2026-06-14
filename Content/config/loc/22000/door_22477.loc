@@ -1,0 +1,7 @@
+// loc 22477
+sharelight = true
+blockwalk = true
+ambient = 30
+contrast = 30
+models_only = 23059
+name = Door

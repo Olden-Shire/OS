@@ -1,0 +1,11 @@
+// npc 543
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/5652 8741/52636 6798/10508 43072/4647 4550/4647 54397/4769
+name = Karim
+models = 235 254 249 305 151 176 181
+headmodels = 67 81

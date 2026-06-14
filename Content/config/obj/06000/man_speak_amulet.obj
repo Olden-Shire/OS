@@ -1,0 +1,11 @@
+// obj 6208
+model = obj_man_speak_amulet
+manwear = obj_man_speak_amulet_man, 0
+womanwear = obj_man_speak_amulet_woman, 6
+iop2 = Wear
+xof2d = 4
+yof2d = 42
+zoom2d = 530
+yan2d = 140
+xan2d = 308
+name = Man speak amulet

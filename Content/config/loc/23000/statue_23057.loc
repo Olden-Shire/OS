@@ -1,0 +1,10 @@
+// loc 23057
+active = 1
+width = 2
+length = 2
+contrast = 20
+ambient = 20
+blockwalk = true
+op1 = Excavate
+models_only = 23982 23980
+name = Statue

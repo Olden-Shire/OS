@@ -1,0 +1,7 @@
+// npc 1319
+size = 1
+readyanim = 6561
+walkanim = 6560
+vislevel = 0
+name = Fox
+models = 26254

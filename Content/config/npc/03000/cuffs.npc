@@ -1,0 +1,11 @@
+// npc 3237
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 3
+recol = 25238/33166 8741/6550 6798/10673
+name = Cuffs
+models = 217 246 11760 162 10218 274 181
+headmodels = 55

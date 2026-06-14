@@ -1,0 +1,9 @@
+// obj 6970
+model = obj_pyramid_top
+members = true
+xof2d = -1
+yof2d = -100
+zoom2d = 2384
+yan2d = 207
+xan2d = 237
+name = Pyramid top

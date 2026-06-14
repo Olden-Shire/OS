@@ -1,0 +1,5 @@
+// loc 9522
+ambient = 25
+nonblockrange = true
+models_only = 9529
+name = Anchor

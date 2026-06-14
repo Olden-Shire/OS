@@ -1,0 +1,6 @@
+// loc 3922
+width = 3
+nonsolid = true
+op1 = Pass
+models_only = 3984
+name = Sticks

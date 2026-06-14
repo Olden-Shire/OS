@@ -1,0 +1,7 @@
+// npc 6102
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 132
+name = Lost barbarian
+models = 26625 214 252 26638 26646 26620 26613 26622

@@ -1,0 +1,10 @@
+// npc 102
+size = 1
+readyanim = 6181
+walkanim = 6180
+op2 = Attack
+ambient = 15
+vislevel = 13
+name = Goblin
+models = 24465 24483 24432 24475 24441 24449
+headmodels = 24217

@@ -1,0 +1,9 @@
+// loc 22097
+active = 1
+sharelight = true
+blockwalk = true
+ambient = 30
+contrast = 30
+op1 = Peer-through
+models_only = 23069
+name = Peephole

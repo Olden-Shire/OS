@@ -1,0 +1,7 @@
+// loc 19821
+sharelight = true
+hillskew = true
+mirror = true
+mapscene = 20
+active = 0
+models_only = 19353

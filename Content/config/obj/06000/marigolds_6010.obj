@@ -1,0 +1,11 @@
+// obj 6010
+model = obj_marigolds_6010
+xof2d = -4
+yof2d = 14
+zoom2d = 1460
+yan2d = 2024
+xan2d = 364
+members = true
+ambient = 15
+cost = 1
+name = Marigolds

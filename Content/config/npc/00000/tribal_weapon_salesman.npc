@@ -1,0 +1,11 @@
+// npc 692
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 4550/6806 43072/6806
+name = Tribal Weapon Salesman
+models = 231 181 246 315 173 176 279 323 201
+headmodels = 64 43

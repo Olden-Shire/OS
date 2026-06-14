@@ -1,0 +1,7 @@
+// loc 23945
+active = 0
+ambient = 25
+resizey = 152
+nonblockrange = true
+recol = 5388/790 5541/7587 5665/7582 5660/7706 5784/7830 5904/7954
+models_only = 8232 24821

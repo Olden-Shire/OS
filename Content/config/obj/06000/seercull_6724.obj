@@ -1,0 +1,14 @@
+// obj 6724
+members = true
+cost = 8000
+model = obj_seercull_6724
+xof2d = -5
+yof2d = 5
+zoom2d = 1650
+yan2d = 20
+xan2d = 384
+iop2 = Wield
+manwear = obj_seercull_6724_wear, 0
+womanwear = obj_seercull_6724_wear, 6
+recol = 6674/6049
+name = Seercull

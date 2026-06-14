@@ -1,0 +1,10 @@
+// npc 885
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/94 43072/4550 8741/1843 7700/1843
+name = Ceril Carnillean
+models = 217 246 299 159 176 274 185 323 281 201
+headmodels = 55 43

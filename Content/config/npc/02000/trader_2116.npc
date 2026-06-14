@@ -1,0 +1,10 @@
+// npc 2116
+resizeh = 130
+resizev = 115
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 61/19769 90/15153 4550/6715 10347/13646
+name = Trader
+models = 2973 7072 7062 7037 7044 2985
+headmodels = 3 6997

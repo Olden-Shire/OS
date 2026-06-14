@@ -1,0 +1,12 @@
+// npc 5446
+walkanim = 5666
+readyanim = 5668
+resizeh = 75
+resizev = 75
+size = 1
+vislevel = 0
+nominimap = true
+op1 = Pick-up
+name = Penguin suit
+models = 21544
+headmodels = 21523

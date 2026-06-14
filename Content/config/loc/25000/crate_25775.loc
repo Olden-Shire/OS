@@ -1,0 +1,9 @@
+// loc 25775
+active = 1
+ambient = 15
+contrast = 15
+op1 = Search
+nonblockrange = true
+recol = 5417/6430 5532/6315 5656/6435 5652/6554 5413/6430 5537/6550
+models_only = 3815
+name = Crate

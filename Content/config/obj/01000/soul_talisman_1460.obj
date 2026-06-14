@@ -1,0 +1,11 @@
+// obj 1460
+cost = 4
+model = obj_soul_talisman_1460
+members = true
+xof2d = 2
+yof2d = 20
+zoom2d = 1160
+yan2d = 160
+xan2d = 352
+iop4 = Locate
+name = Soul talisman

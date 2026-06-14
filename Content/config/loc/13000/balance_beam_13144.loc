@@ -1,0 +1,10 @@
+// loc 13144
+op1 = Stand-on
+op2 = hidden
+op4 = Get-down
+op5 = Remove
+blockwalk = true
+forceapproach = 7
+nonblockrange = true
+models = 12900/22
+name = Balance beam

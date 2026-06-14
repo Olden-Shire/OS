@@ -1,0 +1,9 @@
+// npc 5863
+size = 1
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 61/24 4626/8 74/8722
+name = Ambassador Alvijar
+models = 7029 6020 23876 7037 7045 2985
+headmodels = 6988 15405

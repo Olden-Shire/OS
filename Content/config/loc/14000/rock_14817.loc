@@ -1,0 +1,9 @@
+// loc 14817
+anim = 3943
+length = 2
+width = 2
+noshadow = true
+ambient = 35
+contrast = 15
+models_only = 14670
+name = Rock

@@ -1,0 +1,5 @@
+// loc 20267
+active = 1
+op1 = Load
+op2 = Look-in
+multiloc = 3268, 65535, 20264 20265 20266

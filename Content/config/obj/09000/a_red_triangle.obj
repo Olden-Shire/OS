@@ -1,0 +1,10 @@
+// obj 9598
+model = obj_a_red_triangle
+xof2d = 3
+yof2d = 1
+zoom2d = 620
+yan2d = 114
+xan2d = 603
+members = true
+stackable = true
+name = A red triangle

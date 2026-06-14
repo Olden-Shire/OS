@@ -1,0 +1,10 @@
+// npc 1680
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 16701/16945 9152/111
+name = Islwyn
+models = 4015 4020 4023 4025
+headmodels = 4011

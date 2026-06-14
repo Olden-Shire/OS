@@ -1,0 +1,8 @@
+// loc 6949
+active = 0
+anim = 2131
+nonsolid = true
+hillskew = true
+forcedecor = true
+sharelight = true
+models = 6878/22

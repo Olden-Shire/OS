@@ -1,0 +1,9 @@
+// npc 3480
+walkanim = 1380
+readyanim = 1386
+vislevel = 0
+op1 = Inspect
+vislevel = 0
+name = King Awowogei
+models = 4816 4823
+headmodels = 4655

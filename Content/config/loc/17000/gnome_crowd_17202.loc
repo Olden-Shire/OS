@@ -1,0 +1,6 @@
+// loc 17202
+width = 3
+anim = 4567
+noshadow = true
+models_only = 17042 17044 17040 17041
+name = Gnome crowd

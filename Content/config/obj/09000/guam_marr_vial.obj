@@ -1,0 +1,12 @@
+// obj 9090
+model = obj_waking_sleep_vial
+members = true
+xof2d = -2
+yof2d = -2
+zoom2d = 1232
+yan2d = 174
+xan2d = 129
+manwear = obj_empty_vial_wear, 0
+womanwear = obj_empty_vial_wear, 6
+iop5 = Destroy
+name = Guam-marr vial

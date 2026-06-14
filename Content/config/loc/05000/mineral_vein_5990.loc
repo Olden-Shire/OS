@@ -1,0 +1,8 @@
+// loc 5990
+hillskew = true
+active = 1
+op1 = Mine
+op2 = Prospect
+op3 = Hidden
+models = 5860/0
+name = Mineral vein

@@ -1,0 +1,12 @@
+// npc 551
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/5652 8741/1686 6798/6854 54397/5551 43072/4550 78/8877
+name = Shop keeper
+models = 5736 248 305 25856 25853 15929 12138 181
+headmodels = 48 80

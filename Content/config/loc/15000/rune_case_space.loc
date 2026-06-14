@@ -1,0 +1,6 @@
+// loc 15386
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 12863
+name = Rune case space

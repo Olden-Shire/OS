@@ -1,0 +1,7 @@
+// loc 24034
+ambient = 10
+contrast = 10
+active = 1
+nonsolid = true
+models = 24801/22
+name = Fabric

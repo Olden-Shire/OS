@@ -1,0 +1,14 @@
+// obj 9472
+model = obj_gnome_goggles_9472
+iop2 = Wear
+yof2d = -3
+zoom2d = 400
+yan2d = 166
+xan2d = 346
+manwear = obj_gnome_goggles_9472_man, 0
+womanwear = obj_gnome_goggles_9472_woman, 0
+manhead = 25878
+womanhead = 25879
+cost = 1000
+members = true
+name = Gnome goggles

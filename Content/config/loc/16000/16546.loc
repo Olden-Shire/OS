@@ -1,0 +1,9 @@
+// loc 16546
+anim = 4338
+hillskew = true
+sharelight = true
+forcedecor = true
+active = 1
+width = 2
+length = 2
+multiloc = 2374, 65535, 16493 16492 16494

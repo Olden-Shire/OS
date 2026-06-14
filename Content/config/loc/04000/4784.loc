@@ -1,0 +1,6 @@
+// loc 4784
+hillskew = true
+blockwalk = true
+sharelight = true
+nonblockrange = true
+models = 4754/0 4755/1 4756/2 4757/9

@@ -1,0 +1,10 @@
+// npc 4590
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22424/10644 22426/8598 17170/18721 10347/8394 5202/16788
+name = Mimm
+models = 17018 2911 14825
+headmodels = 16977

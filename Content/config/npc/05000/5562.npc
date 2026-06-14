@@ -1,0 +1,9 @@
+// npc 5562
+vislevel = 0
+size = 1
+walkanim = 4754
+readyanim = 4753
+inactive = true
+turnspeed = 15
+recol = 18745/6594 18737/6585 18857/6705 18977/6945
+models = 18009

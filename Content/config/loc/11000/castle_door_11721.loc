@@ -1,0 +1,9 @@
+// loc 11721
+op1 = Open
+mirror = true
+raiseobject = 0
+resizey = 152
+ambient = 20
+recol = 6697/6453 6945/6449 6814/6445 6940/6569 4638/6565 4762/6689
+models = 639/0
+name = Castle door

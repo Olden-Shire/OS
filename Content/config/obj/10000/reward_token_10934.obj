@@ -1,0 +1,12 @@
+// obj 10934
+model = obj_reward_token_7774
+xof2d = 5
+yof2d = -3
+zoom2d = 789
+yan2d = 111
+zan2d = 28
+xan2d = 304
+iop1 = Look-at
+iop5 = Destroy
+members = true
+name = Reward token

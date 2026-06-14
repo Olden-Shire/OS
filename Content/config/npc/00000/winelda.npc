@@ -1,0 +1,10 @@
+// npc 276
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+vislevel = 0
+op1 = Talk-to
+recol = 8741/926 25238/52112 38814/16 8082/43920 11200/56995 4550/84
+name = Winelda
+models = 393 377 462 348 353 481 440 454 534
+headmodels = 115 102

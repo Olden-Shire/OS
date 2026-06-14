@@ -1,0 +1,13 @@
+// obj 4600
+model = obj_oak_blackjack
+iop2 = Wield
+xof2d = 6
+zoom2d = 700
+yan2d = 468
+xan2d = 372
+members = true
+manwear = obj_oak_blackjack_wear, 0
+womanwear = obj_oak_blackjack_wear, 6
+cost = 600
+recol = 5640/9903
+name = Willow-blackjack

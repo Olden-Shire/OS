@@ -1,0 +1,8 @@
+// loc 5890
+ambient = 0
+mirror = true
+nonsolid = true
+active = 1
+op1 = Close
+models = 5711/0
+name = Tent door

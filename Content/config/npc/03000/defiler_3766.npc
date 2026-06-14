@@ -1,0 +1,9 @@
+// npc 3766
+size = 1
+op2 = Attack
+walkanim = 3919
+readyanim = 3918
+vislevel = 66
+recol = 49189/2479 47275/1820 117/10584
+name = Defiler
+models = 14546

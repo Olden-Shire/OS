@@ -1,0 +1,12 @@
+// obj 4174
+xof2d = 6
+yof2d = 30
+zoom2d = 1330
+yan2d = 128
+xan2d = 300
+stackable = true
+members = true
+model = obj_broad_arrows_4174
+iop2 = Wield
+recol = 5012/5404
+name = Broad arrows

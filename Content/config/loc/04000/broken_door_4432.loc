@@ -1,0 +1,8 @@
+// loc 4432
+blockwalk = true
+mirror = true
+active = 1
+op1 = Repair
+nonblockrange = true
+models = 4427/0 4426/22
+name = Broken door

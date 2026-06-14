@@ -1,0 +1,9 @@
+// loc 10018
+length = 3
+op1 = Climb-down
+forceapproach = 14
+ambient = 20
+contrast = 20
+mapscene = 7
+models_only = 9711
+name = Staircase

@@ -1,0 +1,14 @@
+// obj 1511
+cost = 4
+model = obj_logs_1511
+yof2d = -7
+zoom2d = 1180
+yan2d = 1852
+xan2d = 120
+ambient = 15
+op4 = Light
+op5 = hidden
+manwear = obj_logs_1511_wear, 0
+womanwear = obj_logs_1511_wear, 0
+recol = 5559/6697 5665/5660 5784/5908
+name = Logs

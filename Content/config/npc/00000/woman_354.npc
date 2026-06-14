@@ -1,0 +1,11 @@
+// npc 354
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 3
+recol = 43072/5662 25238/3980 4550/5289
+name = Woman
+models = 378 474 351 353 438 358
+headmodels = 103 11429

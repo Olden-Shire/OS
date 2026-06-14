@@ -1,0 +1,10 @@
+// npc 630
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Tackle
+recol = 37/10165
+name = Gnome baller
+models = 2914 2905 2921
+headmodels = 21

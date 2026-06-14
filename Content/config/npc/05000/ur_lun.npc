@@ -1,0 +1,9 @@
+// npc 5774
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+recol = 6024/8293 900/8412 6051/536 5916/532
+name = Ur-lun
+models = 23642 23692 23625
+headmodels = 23240

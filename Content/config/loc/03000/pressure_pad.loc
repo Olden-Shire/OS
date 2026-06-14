@@ -1,0 +1,6 @@
+// loc 3585
+nonsolid = true
+forcedecor = true
+active = 1
+models = 3639/22
+name = Pressure pad

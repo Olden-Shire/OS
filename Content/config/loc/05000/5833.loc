@@ -1,0 +1,9 @@
+// loc 5833
+mirror = true
+nonsolid = true
+active = 0
+offsetx = -48
+offsety = -10
+offsetz = 0
+recol = 6808/5904 6689/5656
+models_only = 3308

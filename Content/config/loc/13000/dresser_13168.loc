@@ -1,0 +1,10 @@
+// loc 13168
+width = 2
+active = 1
+op1 = Preen
+op5 = Remove
+forceapproach = 11
+ambient = 25
+contrast = 25
+models_only = 12466
+name = Dresser

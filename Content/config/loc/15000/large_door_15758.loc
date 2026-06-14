@@ -1,0 +1,6 @@
+// loc 15758
+op1 = Listen-at
+mirror = true
+raiseobject = 0
+models = 12367/0
+name = Large door

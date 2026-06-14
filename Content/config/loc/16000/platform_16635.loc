@@ -1,0 +1,8 @@
+// loc 16635
+anim = 4358
+op1 = Step-on
+active = 1
+nonsolid = true
+recol = 54501/41438 50654/51030
+models = 16763/22
+name = Platform

@@ -1,0 +1,10 @@
+// npc 5929
+resizeh = 130
+resizev = 130
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 16
+recol = 6798/7634
+name = Thief
+models = 390 25715 25700 25704 25711 25702

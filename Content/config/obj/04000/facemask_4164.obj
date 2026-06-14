@@ -1,0 +1,16 @@
+// obj 4164
+cost = 200
+model = obj_facemask_4164
+xof2d = 3
+yof2d = -15
+zoom2d = 480
+yan2d = 156
+xan2d = 208
+iop2 = Wear
+manwear = obj_facemask_4164_man, 0
+womanwear = obj_facemask_4164_woman, 0
+manhead = 5095
+womanhead = 5098
+members = true
+recol = 8534/8485 8390/8373
+name = Facemask

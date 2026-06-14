@@ -1,0 +1,7 @@
+// loc 17034
+hillskew = true
+ambient = 40
+nonsolid = true
+active = 0
+forcedecor = true
+models = 16905/22

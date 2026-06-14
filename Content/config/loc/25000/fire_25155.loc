@@ -1,0 +1,10 @@
+// loc 25155
+anim = 6645
+ambient = 60
+contrast = 60
+width = 2
+length = 2
+noshadow = true
+nonsolid = true
+models_only = 26582
+name = Fire

@@ -1,0 +1,9 @@
+// npc 3336
+size = 1
+contrast = 10
+ambient = 10
+turnspeed = 0
+nominimap = true
+vislevel = 0
+name = Bullrush
+models = 1674

@@ -1,0 +1,8 @@
+// loc 5981
+active = 1
+forcedecor = true
+blockwalk = true
+anim = 1847
+bgsound = 2065, 3
+models_only = 5870
+name = Fire

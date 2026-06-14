@@ -1,0 +1,5 @@
+// loc 9204
+ambient = 25
+op2 = Inspect
+models_only = 9159 9160
+name = Plantpot

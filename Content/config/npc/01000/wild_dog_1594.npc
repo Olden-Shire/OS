@@ -1,0 +1,11 @@
+// npc 1594
+size = 1
+readyanim = 6561
+walkanim = 6560
+resizeh = 116
+resizev = 116
+op2 = Attack
+vislevel = 63
+recol = 5281/5285 5276/5409 5272/5404 5268/5400
+name = Wild dog
+models = 26263

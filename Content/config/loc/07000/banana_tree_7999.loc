@@ -1,0 +1,7 @@
+// loc 7999
+op1 = Check-health
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7941 7767 7935
+name = Banana tree

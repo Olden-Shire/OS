@@ -1,0 +1,6 @@
+// loc 5415
+sharelight = true
+op1 = Climb-up
+forceapproach = 11
+models_only = 14188
+name = Ship's ladder

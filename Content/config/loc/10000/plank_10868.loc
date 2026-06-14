@@ -1,0 +1,6 @@
+// loc 10868
+op1 = Cross
+sharelight = true
+nonsolid = true
+models = 10779/22
+name = Plank

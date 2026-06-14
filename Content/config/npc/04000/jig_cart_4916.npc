@@ -1,0 +1,8 @@
+// npc 4916
+vislevel = 0
+nominimap = true
+op1 = Take-from
+vislevel = 0
+recol = 7062/6077
+name = Jig cart
+models = 18664 18666

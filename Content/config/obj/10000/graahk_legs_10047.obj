@@ -1,0 +1,11 @@
+// obj 10047
+model = obj_graahk_legs_10047
+iop2 = Wear
+manwear = obj_graahk_legs_10047_man, 0
+womanwear = obj_graahk_legs_10047_woman, 0
+yof2d = 3
+zoom2d = 1762
+xan2d = 567
+members = true
+cost = 150
+name = Graahk legs

@@ -1,0 +1,8 @@
+// loc 23553
+anim = 464
+active = 0
+width = 2
+op1 = Fill
+bgsound = 2169, 3
+recol = 12579/4510 12574/4515 12698/6930 12694/4391 12818/6930
+models_only = 2216

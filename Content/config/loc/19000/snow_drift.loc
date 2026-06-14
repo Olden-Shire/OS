@@ -1,0 +1,15 @@
+// loc 19435
+resizex = 76
+resizey = 48
+resizez = 76
+hillskew = true
+op1 = Search
+op2 = Attack
+blockwalk = true
+forcedecor = true
+ambient = 30
+contrast = 30
+nonblockrange = true
+recol = 6798/43131
+models = 1465/10 20043/22
+name = Snow drift

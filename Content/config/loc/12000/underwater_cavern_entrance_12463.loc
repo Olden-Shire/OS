@@ -1,0 +1,9 @@
+// loc 12463
+sharelight = true
+hillskew = true
+mirror = true
+op1 = Exit
+active = 1
+recol = 7442/9521 7446/9525 7322/9529 7326/9533 7331/9538 7335/9542
+models = 13744/0
+name = Underwater Cavern Entrance

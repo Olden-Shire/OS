@@ -1,0 +1,9 @@
+// npc 3160
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/542 25238/788 7281/6490 22177/2721 61/6856 6798/6453
+name = Bill Teach
+models = 190 215 246 14187 162 10218 5218
+headmodels = 53 31

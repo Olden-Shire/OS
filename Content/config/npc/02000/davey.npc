@@ -1,0 +1,10 @@
+// npc 2829
+resizev = 124
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/8289 7281/8289 10004/16 25238/6439 28318/8289 22177/20
+name = Davey
+models = 211 249 7611 170 179 5218
+headmodels = 50 81

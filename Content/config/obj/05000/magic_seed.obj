@@ -1,0 +1,16 @@
+// obj 5316
+model = obj_magic_seed
+xof2d = -6
+yof2d = -3
+zoom2d = 1040
+yan2d = 68
+xan2d = 236
+members = true
+stackable = true
+count1 = 5123, 2
+count2 = 5124, 3
+count3 = 5125, 4
+count4 = 5126, 5
+cost = 422
+recol = 6930/8722 6682/8602 6563/8483
+name = Magic seed

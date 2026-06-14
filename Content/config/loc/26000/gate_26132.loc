@@ -1,0 +1,9 @@
+// loc 26132
+op1 = Close
+active = 1
+raiseobject = 0
+active = 1
+contrast = 15
+ambient = 20
+models = 27540/0
+name = Gate

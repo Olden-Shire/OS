@@ -1,0 +1,9 @@
+// npc 3395
+vislevel = 0
+size = 1
+walkanim = 3396
+readyanim = 3396
+recol = 70/99 5532/82 41/82 61/99 7700/103 57/99
+name = Sir Amik Varze
+models = 215 306 164 179 268 184 201 249 12799
+headmodels = 53 81 43

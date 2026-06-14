@@ -1,0 +1,9 @@
+// npc 6047
+size = 2
+ambient = 20
+readyanim = 6580
+walkanim = 6556
+op2 = Attack
+vislevel = 25
+name = Wolf
+models = 26266

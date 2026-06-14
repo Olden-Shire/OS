@@ -1,0 +1,8 @@
+// npc 4803
+vislevel = 0
+readyanim = 4690
+walkanim = 4684
+size = 3
+name = Ranis Drakan
+models = 18005 18002
+headmodels = 18047

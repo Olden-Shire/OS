@@ -1,0 +1,9 @@
+// loc 4624
+width = 2
+length = 3
+op1 = Climb-down
+sharelight = true
+mapscene = 7
+recol = 61/43053
+models_only = 4595
+name = Stairs

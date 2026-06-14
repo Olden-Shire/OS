@@ -1,0 +1,14 @@
+// npc 3099
+vislevel = 0
+size = 1
+resizeh = 60
+resizev = 60
+contrast = 10
+ambient = 10
+walkanim = 3035
+readyanim = 3033
+op1 = Talk-to
+recol = 43080/7591 43076/7715 43069/7715 43063/7841 43055/7834 24/8076
+name = Alchemy Guardian
+models = 10633 10635 10637 10638 10627
+headmodels = 10695

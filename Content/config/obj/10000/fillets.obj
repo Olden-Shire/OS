@@ -1,0 +1,13 @@
+// obj 10969
+model = obj_fillets
+xof2d = -4
+yof2d = -100
+zoom2d = 2346
+yan2d = 1770
+xan2d = 221
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 50
+name = Fillets

@@ -1,0 +1,9 @@
+// npc 4312
+readyanim = 4210
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+name = Nardok
+models = 23851
+headmodels = 23247

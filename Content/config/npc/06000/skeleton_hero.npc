@@ -1,0 +1,7 @@
+// npc 6103
+walkanim = 2064
+readyanim = 2065
+op2 = Attack
+vislevel = 149
+name = Skeleton hero
+models = 26629 26635 26641 26614 26624 11788

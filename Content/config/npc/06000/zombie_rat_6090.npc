@@ -1,0 +1,12 @@
+// npc 6090
+size = 1
+walkanim = 4931
+readyanim = 4932
+op2 = Attack
+resizeh = 64
+resizev = 64
+ambient = 15
+vislevel = 3
+recol = 10295/5297 10291/5301 10287/5293 10283/5297 10279/5293 10275/5289
+name = Zombie rat
+models = 18893 18889 18896 18888

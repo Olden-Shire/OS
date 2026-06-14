@@ -1,0 +1,10 @@
+// npc 2872
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22424/9121 22426/36758 11162/11138 4550/5673 6550/0 6798/0
+name = Child
+models = 2897 2909 2918
+headmodels = 139

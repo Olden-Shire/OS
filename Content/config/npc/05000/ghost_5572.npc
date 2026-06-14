@@ -1,0 +1,12 @@
+// npc 5572
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 35
+contrast = 35
+op1 = Talk-To
+vislevel = 0
+alwaysontop = true
+recol = 18626/10304
+name = Ghost
+models = 22280 22283 22278 22282 22279 22284
+headmodels = 22328

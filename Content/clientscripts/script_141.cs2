@@ -1,0 +1,9 @@
+[clientscript,script_141]()()
+
+if (%varp1042 = 1) {
+    if_sethide(0, 21954618);
+}
+if (%varp1043 = 1) {
+    if_sethide(0, 21954619);
+}
+return;

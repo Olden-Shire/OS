@@ -1,0 +1,9 @@
+// loc 24840
+anim = 6506
+active = 1
+blockwalk = true
+width = 3
+length = 3
+op1 = Talk-to
+nonblockrange = true
+multiloc = 3717, 65535, 65535 24839

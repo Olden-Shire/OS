@@ -1,0 +1,16 @@
+// obj 7150
+model = obj_tacks
+stackable = true
+count1 = 7151, 2
+count2 = 7152, 3
+count3 = 7153, 4
+count4 = 7154, 5
+stackable = true
+xof2d = -9
+yof2d = 5
+zoom2d = 1030
+yan2d = 52
+xan2d = 660
+members = true
+recol = 28/7952
+name = Tacks

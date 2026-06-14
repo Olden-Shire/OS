@@ -1,0 +1,7 @@
+// loc 10385
+ambient = 10
+op2 = Search
+op3 = Shut
+forceapproach = 11
+models_only = 10159 10162 10161
+name = Cupboard

@@ -1,0 +1,11 @@
+// obj 10494
+model = obj_a_pattern
+cost = 10
+members = true
+xof2d = 1
+yof2d = 4
+zoom2d = 1124
+yan2d = 2024
+xan2d = 462
+iop5 = Destroy
+name = A pattern

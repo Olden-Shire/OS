@@ -1,0 +1,8 @@
+// npc 1833
+size = 1
+walkanim = 1781
+readyanim = 1782
+nominimap = true
+vislevel = 0
+name = Cave bug larva
+models = 5785

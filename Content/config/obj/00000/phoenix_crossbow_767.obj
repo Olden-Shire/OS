@@ -1,0 +1,13 @@
+// obj 767
+cost = 4
+model = obj_phoenix_crossbow_767
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+xof2d = 15
+yof2d = 12
+zoom2d = 1112
+yan2d = 1815
+xan2d = 483
+recol = 6447/6439 6443/6563 6439/6558 5656/5904 5652/6028 5904/5002
+name = Phoenix crossbow

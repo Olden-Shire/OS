@@ -1,0 +1,6 @@
+// loc 2944
+nonsolid = true
+op1 = Look
+op2 = Search
+models_only = 1674
+name = Tall Reeds

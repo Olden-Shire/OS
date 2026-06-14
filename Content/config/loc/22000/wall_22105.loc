@@ -1,0 +1,9 @@
+// loc 22105
+active = 1
+sharelight = true
+blockwalk = true
+ambient = 30
+contrast = 30
+anim = 5900
+models_only = 23054
+name = Wall

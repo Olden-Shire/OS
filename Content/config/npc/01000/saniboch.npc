@@ -1,0 +1,13 @@
+// npc 1595
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 135
+resizev = 128
+vislevel = 0
+op1 = Talk-to
+op3 = Pay
+recol = 4550/6806 43072/6806
+name = Saniboch
+models = 231 246 315 173 176 279 181 281
+headmodels = 64

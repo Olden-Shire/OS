@@ -1,0 +1,9 @@
+// loc 22723
+active = 1
+ambient = 20
+blockwalk = true
+sharelight = true
+ambient = 35
+nonblockrange = true
+models_only = 23439
+name = Chimney

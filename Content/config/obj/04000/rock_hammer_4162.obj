@@ -1,0 +1,12 @@
+// obj 4162
+cost = 500
+model = obj_rock_hammer_4162
+manwear = obj_rock_hammer_4162_wear, 0
+womanwear = obj_rock_hammer_4162_wear, 6
+xof2d = 3
+yof2d = -49
+zoom2d = 1460
+yan2d = 88
+xan2d = 248
+members = true
+name = Rock hammer

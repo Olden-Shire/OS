@@ -1,0 +1,8 @@
+// loc 2433
+active = 1
+op1 = Open
+mirror = true
+recol = 24/4762
+retex = 2/45
+models = 1509/0 1511/9
+name = Gate

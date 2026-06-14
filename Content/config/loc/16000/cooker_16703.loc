@@ -1,0 +1,4 @@
+// loc 16703
+bgsound = 2200, 3
+models_only = 16675 16679
+name = Cooker

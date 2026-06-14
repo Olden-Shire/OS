@@ -1,0 +1,8 @@
+// npc 1691
+size = 2
+walkanim = 5848
+readyanim = 5852
+op2 = Attack
+vislevel = 2
+name = Undead cow
+models = 23894

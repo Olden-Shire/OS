@@ -1,0 +1,9 @@
+// loc 21007
+active = 0
+sharelight = true
+contrast = 25
+ambient = 25
+blockwalk = true
+bgsound = 3142, 5
+recol = 5186/41147 5190/41152 5194/41156 5198/41160 5202/41164 5206/41168
+models_only = 21794

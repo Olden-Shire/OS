@@ -1,0 +1,12 @@
+// obj 9790
+cost = 99000
+members = true
+model = obj_construct_cape_9789
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_construct_cape_9789_man, 0
+womanwear = obj_construct_cape_9789_woman, 0
+recol = 57280/6061 54183/5945 54503/6061 960/6344 22464/6336 43968/6327
+name = Construct. cape(t)

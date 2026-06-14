@@ -1,0 +1,12 @@
+// npc 4359
+resizeh = 130
+resizev = 130
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Sew
+vislevel = 0
+alwaysontop = true
+name = Patchy
+models = 15931 15934 15936 15939 15925 15927 15937 15926 15930
+headmodels = 15919

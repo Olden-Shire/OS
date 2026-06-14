@@ -1,0 +1,8 @@
+// loc 6282
+width = 3
+anim = 1908
+op1 = Enter
+bgsound = 3139, 3
+recol = 49/20 41/16
+models_only = 6194 6195
+name = Portal

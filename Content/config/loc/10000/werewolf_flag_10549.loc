@@ -1,0 +1,9 @@
+// loc 10549
+width = 2
+ambient = 25
+active = 1
+anim = 917
+nonsolid = true
+recol = 6932/6689 8662/10287 7626/10266
+models_only = 10348
+name = Werewolf Flag

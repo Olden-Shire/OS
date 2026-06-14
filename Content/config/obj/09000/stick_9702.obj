@@ -1,0 +1,13 @@
+// obj 9702
+model = obj_stick_9702
+iop2 = Wield
+iop5 = Destroy
+manwear = obj_stick_9702_wear, 0
+womanwear = obj_stick_9702_wear, 6
+xof2d = -1
+yof2d = -31
+zoom2d = 595
+yan2d = 166
+zan2d = 1328
+xan2d = 152
+name = Stick

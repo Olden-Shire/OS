@@ -1,0 +1,8 @@
+// loc 15537
+active = 1
+ambient = 20
+contrast = 15
+blockwalk = true
+recol = 82/17694 61/17694 41/17694
+models = 15256/22
+name = Drain

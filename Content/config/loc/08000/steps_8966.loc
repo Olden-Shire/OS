@@ -1,0 +1,8 @@
+// loc 8966
+length = 2
+width = 2
+op1 = Climb
+mapscene = 7
+recol = 7326/27144 7331/26892 7335/26896 7339/10266
+models_only = 8687
+name = Steps

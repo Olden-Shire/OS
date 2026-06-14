@@ -1,0 +1,12 @@
+// npc 544
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 4550/4647 8741/1950 6798/10508 7056/1950 25238/33 43072/4647
+name = Ranael
+models = 390 478 332 353 428 361 376
+headmodels = 113 43

@@ -1,0 +1,9 @@
+// npc 3514
+vislevel = 0
+op1 = Talk-to
+resizeh = 143
+resizev = 140
+recol = 4550/54352
+name = Vampyre Juvinate
+models = 14042 14039 14046 14041 14044
+headmodels = 13943

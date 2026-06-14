@@ -1,0 +1,11 @@
+// npc 4564
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Steal-from
+recol = 25238/40237 54397/9106 8741/99 40237/39452 40117/39333 10004/7054
+name = Digsite workman
+models = 235 246 305 151 179 5218
+headmodels = 67

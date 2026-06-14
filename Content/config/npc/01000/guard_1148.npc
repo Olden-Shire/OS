@@ -1,0 +1,10 @@
+// npc 1148
+walkanim = 283
+readyanim = 286
+size = 1
+resizeh = 134
+resizev = 134
+vislevel = 0
+recol = 61/7465 21570/6439 10355/7626
+name = Guard
+models = 3753 3758 3756 3763

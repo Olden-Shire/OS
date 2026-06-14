@@ -1,0 +1,8 @@
+// npc 3057
+size = 1
+readyanim = 2945
+walkanims = 2947, 2948, 2949, 2950
+op2 = Attack
+vislevel = 102
+name = Earth Warrior Champion
+models = 10274 10278 10276 10277 10275

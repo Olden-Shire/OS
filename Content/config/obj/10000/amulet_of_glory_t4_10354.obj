@@ -1,0 +1,16 @@
+// obj 10354
+cost = 17625
+model = obj_amulet_of_glory_t4_10354
+xof2d = 4
+yof2d = 100
+zoom2d = 415
+yan2d = 73
+zan2d = 69
+xan2d = 282
+members = true
+iop2 = Wear
+iop4 = Rub
+manwear = obj_amulet_of_glory_t4_10354_man, 0
+womanwear = obj_amulet_of_glory_t4_10354_woman, 0
+recol = 5916/127 4882/127
+name = Amulet of glory(t4)

@@ -1,0 +1,9 @@
+// obj 748
+model = obj_holy_force
+members = true
+yof2d = 17
+zoom2d = 1460
+yan2d = 112
+xan2d = 272
+iop1 = Cast Spell
+name = Holy force

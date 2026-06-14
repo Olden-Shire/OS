@@ -1,0 +1,9 @@
+// loc 24726
+anim = 6522
+bgsound = 3715, 5
+blockwalk = true
+active = 1
+op1 = Kick
+ambient = 30
+models_only = 25987 25982
+name = Gramophone

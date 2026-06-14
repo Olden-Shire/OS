@@ -1,0 +1,7 @@
+// loc 2686
+mirror = true
+active = 1
+op1 = Open
+op2 = Search
+models = 19288/0
+name = Gate

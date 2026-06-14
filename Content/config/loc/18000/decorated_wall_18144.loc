@@ -1,0 +1,11 @@
+// loc 18144
+op2 = Search
+op5 = Press
+forceapproach = 13
+nonsolid = true
+resizex = 128
+resizey = 160
+resizez = 128
+ambient = 10
+models = 17758/0
+name = Decorated wall

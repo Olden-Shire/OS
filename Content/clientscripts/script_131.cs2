@@ -1,0 +1,4 @@
+[clientscript,script_131](string $string0)()
+
+%varcstr24 = $string0;
+return;

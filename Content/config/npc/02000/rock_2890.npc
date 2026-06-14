@@ -1,0 +1,11 @@
+// npc 2890
+vislevel = 0
+size = 2
+resizeh = 85
+resizev = 85
+contrast = 15
+ambient = 15
+turnspeed = 0
+nominimap = true
+name = Rock
+models = 14183

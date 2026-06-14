@@ -1,0 +1,7 @@
+// npc 1482
+walkanim = 1399
+readyanim = 1401
+vislevel = 1
+name = Gorilla
+models = 4810 4812
+headmodels = 4662

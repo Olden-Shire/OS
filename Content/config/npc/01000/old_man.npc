@@ -1,0 +1,11 @@
+// npc 1696
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+resizev = 106
+resizeh = 114
+vislevel = 0
+recol = 6798/74 4550/6474 25238/10638 54397/7240 43072/6474
+name = Old man
+models = 214 315 173 176 275 250 181
+headmodels = 52 82

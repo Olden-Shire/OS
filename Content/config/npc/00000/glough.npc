@@ -1,0 +1,10 @@
+// npc 671
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 7322/14610 6439/14499
+name = Glough
+models = 17025 14809 16988
+headmodels = 22

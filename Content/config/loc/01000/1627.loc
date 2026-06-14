@@ -1,0 +1,7 @@
+// loc 1627
+sharelight = true
+hillskew = true
+active = 0
+ambient = 25
+contrast = 25
+models = 849/0 850/1 851/2 852/3 853/9

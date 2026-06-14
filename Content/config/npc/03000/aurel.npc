@@ -1,0 +1,12 @@
+// npc 3541
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+resizeh = 117
+resizev = 122
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 43072/4323 25238/10388 8741/8724 4550/10450 933/16656
+name = Aurel
+models = 206 250 310 326 163 176 275 181
+headmodels = 46 82

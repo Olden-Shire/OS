@@ -1,0 +1,8 @@
+// loc 12089
+length = 2
+width = 2
+active = 1
+ambient = 40
+bgsound = 2150, 3
+models_only = 11934
+name = Fairy fountain

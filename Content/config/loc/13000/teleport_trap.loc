@@ -1,0 +1,6 @@
+// loc 13360
+active = 1
+op5 = Remove
+nonsolid = true
+models = 12877/22
+name = Teleport trap

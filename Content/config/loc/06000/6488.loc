@@ -1,0 +1,9 @@
+// loc 6488
+active = 1
+length = 2
+width = 2
+resizex = 256
+resizey = 256
+resizez = 256
+anim = 1943
+multiloc = 389, 65535, 6489 6490

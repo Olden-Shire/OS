@@ -1,0 +1,10 @@
+// npc 5529
+size = 2
+op2 = Attack
+walkanim = 5781
+readyanim = 5785
+alwaysontop = true
+vislevel = 22
+recol = 26/10365 10363/5784 30/10365
+name = Yak
+models = 22165

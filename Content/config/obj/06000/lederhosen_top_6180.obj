@@ -1,0 +1,14 @@
+// obj 6180
+model = obj_lederhosen_top_6180
+iop2 = Wear
+manwear = obj_lederhosen_top_6180_man, 0
+manwear2 = 170
+womanwear = obj_lederhosen_top_6180_woman, 0
+womanwear2 = 348
+xof2d = 7
+yof2d = 21
+zoom2d = 1420
+yan2d = 132
+xan2d = 348
+recol = 8741/10471
+name = Lederhosen top

@@ -33,11 +33,12 @@ fn renaming_via_pack_file_preserves_crc() {
     let keys = XteaKeys::load(&original_dir.join("keys.json")).expect("load keys");
     unpack(&mut original, &keys, &content_dir).expect("unpack");
 
-    // 2. Rename two files across different namespaces:
-    //    - models/model_995.ob2 → models/coins.ob2 (single-file archive, typed ext)
-    //    - config/npc/0.dat     → config/npc/hans.dat (config-type, default ext)
-    rename_via_pack(&content_dir, "models", "model.pack", 995, "model_995", "coins", "ob2");
-    rename_via_pack(&content_dir, "config/npc", "npc.pack", 0, "0", "hans", "dat");
+    // 2. Rename two files across different namespaces (both sharded into
+    //    1000-id subdirs by the current unpack, with typed extensions):
+    //    - models/00000/995.ob2     → models/00000/coins.ob2 (typed-ext archive)
+    //    - config/npc/00000/0.npc   → config/npc/00000/hans.npc (config-type)
+    rename_via_pack(&content_dir, "models/00000", "model.pack", 995, "995", "coins", "ob2");
+    rename_via_pack(&content_dir, "config/npc/00000", "npc.pack", 0, "0", "hans", "npc");
 
     // 3. Pack and verify byte-identity per group.
     pack(&content_dir, &repacked_dir).expect("pack");

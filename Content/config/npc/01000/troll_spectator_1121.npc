@@ -1,0 +1,11 @@
+// npc 1121
+walkanim = 283
+readyanim = 286
+size = 1
+resizeh = 134
+resizev = 134
+op2 = Attack
+vislevel = 71
+recol = 61/6435 21570/4510 6430/5404
+name = Troll spectator
+models = 3753 3758 3755 3763

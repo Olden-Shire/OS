@@ -1,0 +1,9 @@
+// loc 5490
+active = 1
+op1 = Open
+op4 = hidden
+op5 = Pick-Lock
+raiseobject = 0
+blockwalk = true
+models = 5420/22
+name = Trapdoor

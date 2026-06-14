@@ -1,0 +1,11 @@
+// npc 3796
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+op1 = Talk-to
+op3 = Trade
+recol = 43072/4550 6798/57
+name = Squire
+models = 6848 246 301 173 10218 14565 181
+headmodels = 5787

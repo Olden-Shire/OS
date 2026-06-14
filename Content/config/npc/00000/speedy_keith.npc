@@ -1,0 +1,10 @@
+// npc 204
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 34
+recol = 25238/10508 8741/10508 7700/1950 11200/2749
+name = Speedy Keith
+models = 206 249 292 151 176 254 185 243 323 490

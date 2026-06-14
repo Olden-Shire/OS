@@ -1,0 +1,10 @@
+// npc 920
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/4913 8741/55194 4550/4657 6798/10508
+name = Prince Ali
+models = 215 323 246 292 151 176 254 181 201
+headmodels = 53 43

@@ -1,0 +1,15 @@
+// obj 10386
+model = obj_saradomin_dhide_10386
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_saradomin_dhide_10386_man, 0
+manwear2 = 20121
+womanwear = obj_saradomin_dhide_10386_woman, 0
+womanwear2 = 20177
+members = true
+cost = 13000
+recol = 22168/43672 8070/40765 24082/41490 22156/43660 920/39748 912/37553
+name = Saradomin d'hide

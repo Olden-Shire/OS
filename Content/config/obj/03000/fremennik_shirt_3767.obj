@@ -1,0 +1,16 @@
+// obj 3767
+cost = 250
+model = obj_fremennik_shirt_3767
+manwear = obj_fremennik_shirt_3767_man, 0
+manwear2 = 292
+manwear3 = 4391
+womanwear = obj_druids_robe_540_woman, 0
+womanwear2 = 470
+womanwear3 = 4392
+iop2 = Wear
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+members = true
+recol = 8741/5537 8084/5904 8078/5656
+name = Fremennik shirt

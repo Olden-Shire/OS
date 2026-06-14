@@ -1,0 +1,7 @@
+// loc 13559
+length = 2
+op5 = Remove
+forceapproach = 13
+nonblockrange = true
+models_only = 13219 13216
+name = Pump and drain

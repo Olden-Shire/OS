@@ -1,0 +1,5 @@
+// loc 8706
+sharelight = true
+active = 0
+recol = 7580/6443 2952/6563 5413/6443 5559/7597
+models = 4345/12 4346/13

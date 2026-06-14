@@ -1,0 +1,7 @@
+// loc 7253
+anim = 2212
+blockwalk = true
+forcedecor = true
+active = 1
+models_only = 7575
+name = Spin Blades

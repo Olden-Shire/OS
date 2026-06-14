@@ -1,0 +1,7 @@
+// loc 24255
+ambient = 10
+contrast = 10
+active = 1
+nonsolid = true
+models = 25182/22
+name = Rat

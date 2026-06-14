@@ -1,0 +1,9 @@
+// npc 2169
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 7863/43055 7880/43055 61/40099 53/10270 4292/16536 90/16536
+name = Dromund
+models = 7027 7055 7037 7045 2985
+headmodels = 6986

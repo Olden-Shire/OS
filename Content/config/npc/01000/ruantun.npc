@@ -1,0 +1,10 @@
+// npc 1916
+size = 1
+op1 = Talk-to
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/7401 25238/8741 4626/7401 123/8745 7236/7401
+name = Ruantun
+models = 6224 6220 4090 275 181 3189
+headmodels = 6217

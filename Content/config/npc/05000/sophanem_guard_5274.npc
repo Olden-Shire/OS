@@ -1,0 +1,10 @@
+// npc 5274
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 4550/6558 10353/39822 4626/9019 939/39822 943/39822 926/39822
+name = Sophanem guard
+models = 20750 251 11758 11762 14587 10218 20756 6090 181
+headmodels = 20743 83

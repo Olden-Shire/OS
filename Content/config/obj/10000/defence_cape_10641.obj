@@ -1,0 +1,12 @@
+// obj 10641
+cost = 99000
+members = true
+model = obj_defence_cape_9753
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_defence_cape_9753_man, 0
+womanwear = obj_defence_cape_9753_woman, 0
+recol = 57280/41426 54183/41408 54503/41527 960/41426 22464/41416 43968/41408
+name = Defence cape

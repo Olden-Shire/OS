@@ -1,0 +1,8 @@
+// npc 3073
+walkanim = 841
+readyanim = 842
+op2 = Attack
+vislevel = 57
+recol = 61/35792 41/35792 4550/35792 57/35792 12/35792 24/35792
+name = Ice warrior
+models = 213 306 164 176 268 184 511

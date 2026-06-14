@@ -1,0 +1,9 @@
+// loc 16949
+active = 0
+sharelight = true
+contrast = 15
+ambient = 15
+width = 3
+length = 3
+nonblockrange = true
+models_only = 16543

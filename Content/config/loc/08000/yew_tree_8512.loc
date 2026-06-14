@@ -1,0 +1,8 @@
+// loc 8512
+mapscene = 0
+ambient = 25
+op1 = Check-health
+op2 = Inspect
+op4 = Guide
+models_only = 8143 7768
+name = Yew tree

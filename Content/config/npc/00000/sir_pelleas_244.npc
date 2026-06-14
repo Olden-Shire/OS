@@ -1,0 +1,10 @@
+// npc 244
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 5673/7729 6798/7729
+name = Sir Pelleas
+models = 27125 27196 27203
+headmodels = 27209 81

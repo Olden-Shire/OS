@@ -1,0 +1,14 @@
+// obj 9070
+cost = 1000
+model = obj_moonclan_armour
+iop2 = Wear
+manwear = obj_moonclan_armour_man, 0
+manwear2 = 16472
+womanwear = obj_moonclan_armour_woman, 0
+womanwear2 = 16493
+members = true
+yof2d = -1
+zoom2d = 668
+yan2d = 2033
+xan2d = 525
+name = Moonclan armour

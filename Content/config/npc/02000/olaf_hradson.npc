@@ -1,0 +1,12 @@
+// npc 2621
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6466/4304 5541/3373 5665/4387 5660/4382 8844/4387 6798/5334
+name = Olaf Hradson
+models = 214 250 5674 24191 5668 18131 18128
+headmodels = 52 82

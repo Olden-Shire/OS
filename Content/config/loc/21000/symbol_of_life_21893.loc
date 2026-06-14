@@ -1,0 +1,11 @@
+// loc 21893
+ambient = 55
+nonsolid = true
+forcedecor = true
+op1 = Inspect
+op2 = Activate
+active = 1
+anim = 5844
+width = 3
+models_only = 22686
+name = Symbol of life

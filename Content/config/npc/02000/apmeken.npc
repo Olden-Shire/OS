@@ -1,0 +1,12 @@
+// npc 2008
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 140
+resizev = 140
+op2 = Attack
+vislevel = 75
+alwaysontop = true
+recol = 4550/7587 61/9015 43072/7587 4626/7587 25238/42908
+name = Apmeken
+models = 6464 281 315 173 176 6135 266 181

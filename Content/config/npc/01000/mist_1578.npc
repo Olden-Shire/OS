@@ -1,0 +1,8 @@
+// npc 1578
+vislevel = 0
+size = 3
+walkanim = 1261
+readyanim = 1261
+alwaysontop = true
+name = Mist
+models = 4086

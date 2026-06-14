@@ -1,0 +1,7 @@
+// loc 22443
+hillskew = true
+ambient = 35
+sharelight = true
+recol = 30/10378 39/10258
+models_only = 23107
+name = Rock wall

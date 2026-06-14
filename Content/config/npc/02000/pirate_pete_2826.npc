@@ -1,0 +1,11 @@
+// npc 2826
+resizeh = 148
+resizev = 117
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/33036 4626/8720 8741/5417 10004/522 4550/6697
+name = Pirate Pete
+models = 5430 246 310 163 179 3329 185
+headmodels = 5428

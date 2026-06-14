@@ -1,0 +1,10 @@
+// npc 2205
+readyanim = 101
+walkanim = 98
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 4550/4552 7473/35998 22/32794 4626/4382 7062/10512
+name = Dwarven Boatman
+models = 2970 2980 2979 2983 2985
+headmodels = 0

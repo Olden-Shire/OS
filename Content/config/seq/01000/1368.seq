@@ -1,0 +1,9 @@
+// seq 1368
+replaceheldleft = 0
+replaceheldright = 0
+priority = 6
+loops = 13
+maxloops = 4
+postanim_move = 1
+duplicatebehaviour = 1
+frames = 8/1/269 6/2/269 8/3/269 12/4/269 8/5/269 8/6/269 10/7/269 8/8/269 4/9/269

@@ -1,0 +1,7 @@
+// loc 21175
+width = 6
+length = 3
+noshadow = true
+op1 = Travel
+models_only = 21563
+name = Boat

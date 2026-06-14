@@ -1,0 +1,9 @@
+// loc 4293
+width = 3
+length = 2
+hillskew = true
+sharelight = true
+mirror = true
+active = 0
+mapscene = 51
+models_only = 4295

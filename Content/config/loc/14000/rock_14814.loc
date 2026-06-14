@@ -1,0 +1,10 @@
+// loc 14814
+anim = 3943
+length = 4
+width = 4
+noshadow = true
+ambient = 35
+contrast = 15
+bgsound = 2178, 5
+models_only = 14672
+name = Rock

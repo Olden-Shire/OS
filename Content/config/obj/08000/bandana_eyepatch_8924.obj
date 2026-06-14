@@ -1,0 +1,15 @@
+// obj 8924
+model = obj_bandana_eyepatch_8924
+members = true
+manwear = obj_bandana_eyepatch_8924_man, 0
+womanwear = obj_bandana_eyepatch_8924_woman, 0
+iop2 = Wear
+manhead = 15918
+womanhead = 15922
+xof2d = -4
+yof2d = 14
+zoom2d = 720
+yan2d = 225
+xan2d = 444
+cost = 100
+name = Bandana eyepatch

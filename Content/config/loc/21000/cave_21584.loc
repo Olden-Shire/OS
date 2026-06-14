@@ -1,0 +1,8 @@
+// loc 21584
+forcedecor = true
+sharelight = true
+width = 2
+length = 2
+op1 = Open
+models_only = 21982
+name = Cave

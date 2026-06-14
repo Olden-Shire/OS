@@ -1,0 +1,13 @@
+// obj 837
+cost = 70
+model = obj_crossbow_837
+xof2d = 2
+yof2d = 1
+zoom2d = 984
+yan2d = 150
+xan2d = 577
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+recol = 6447/6439 6443/6563 6439/6558 5656/5904 5652/6028 5904/5002
+name = Crossbow

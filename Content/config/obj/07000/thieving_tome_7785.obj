@@ -1,0 +1,13 @@
+// obj 7785
+cost = 5000
+model = obj_thieving_tome_7785
+xof2d = 1
+yof2d = 15
+zoom2d = 724
+yan2d = 82
+xan2d = 290
+ambient = 10
+members = true
+iop1 = Read
+recol = 8720/43169 7700/43049 9775/5173 8633/5181 7741/43057
+name = Thieving tome

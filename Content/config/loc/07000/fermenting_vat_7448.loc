@@ -1,0 +1,7 @@
+// loc 7448
+ambient = 15
+bgsound = 3117, 5
+nonblockrange = true
+recol = 12500/33 12492/20 12484/8
+models_only = 7778 7780 7782
+name = Fermenting Vat

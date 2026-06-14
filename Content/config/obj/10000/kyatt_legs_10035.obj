@@ -1,0 +1,13 @@
+// obj 10035
+model = obj_kyatt_legs_10035
+iop2 = Wear
+manwear = obj_kyatt_legs_10035_man, 0
+womanwear = obj_kyatt_legs_10035_woman, 0
+xof2d = 1
+yof2d = 4
+zoom2d = 1762
+yan2d = 2033
+xan2d = 627
+members = true
+cost = 200
+name = Kyatt legs

@@ -1,0 +1,6 @@
+// loc 4484
+active = 1
+ambient = 50
+op1 = View
+models = 4439/4
+name = Scoreboard

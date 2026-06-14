@@ -1,0 +1,11 @@
+// loc 25026
+ambient = 50
+contrast = 60
+hillskew = true
+mapscene = 31
+blockwalk = true
+active = 1
+nonblockrange = true
+recol = 12707/8745 12702/8615 12587/8623 10675/9653 10683/9661
+models_only = 26349
+name = Magical wheat

@@ -1,0 +1,11 @@
+// npc 1381
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 1
+recol = 25238/8472 43072/8472 8741/4288 4550/2524 6798/9133 61/7710
+name = Alrik
+models = 215 252 311 169 176 4226 4218 3706
+headmodels = 53 84 3713

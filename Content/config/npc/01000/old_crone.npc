@@ -1,0 +1,12 @@
+// npc 1695
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizev = 106
+resizeh = 114
+op1 = Talk-To
+vislevel = 0
+alwaysontop = true
+recol = 6798/74 4550/6474 25238/10638 54397/7240
+name = Old crone
+models = 393 417 465 332 353 440
+headmodels = 115

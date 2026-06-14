@@ -1,0 +1,10 @@
+// loc 12615
+active = 1
+blockwalk = true
+width = 2
+length = 2
+op1 = Pick
+nonblockrange = true
+recol = 6364/4550
+models_only = 7826 7815 13581
+name = Bush

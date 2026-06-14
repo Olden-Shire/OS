@@ -1,0 +1,9 @@
+// loc 12742
+length = 2
+width = 2
+resizex = 100
+resizey = 100
+resizez = 100
+nonsolid = true
+models_only = 868
+name = Rubble

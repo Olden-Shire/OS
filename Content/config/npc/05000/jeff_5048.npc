@@ -1,0 +1,10 @@
+// npc 5048
+vislevel = 0
+op1 = Talk-to
+ambient = 20
+walkanim = 189
+readyanim = 195
+recol = 8741/8493 11162/8720 22426/8493 22424/14746 4550/4645
+name = Jeff
+models = 2906 2909 2918
+headmodels = 139

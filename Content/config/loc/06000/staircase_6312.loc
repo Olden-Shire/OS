@@ -1,0 +1,10 @@
+// loc 6312
+active = 1
+op1 = Climb-up
+mapscene = 7
+length = 2
+width = 2
+mapscene = 7
+recol = 10334/10436
+models_only = 6070
+name = Staircase

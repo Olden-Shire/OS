@@ -1,0 +1,13 @@
+// loc 3191
+op2 = Search
+op3 = Shut
+forceapproach = 13
+ambient = 15
+contrast = 15
+resizex = 100
+resizey = 100
+resizez = 100
+active = 1
+recol = 5786/99 7954/86 2452/70
+models_only = 1236
+name = Drawers

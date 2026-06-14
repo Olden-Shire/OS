@@ -1,0 +1,5 @@
+// seq 2570
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 5841
+frames = 10/127/298 10/138/298 10/140/298 10/141/298 10/142/298 10/143/298

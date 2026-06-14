@@ -1,0 +1,10 @@
+// loc 25698
+mirror = true
+op1 = Search
+forceapproach = 13
+contrast = 15
+ambient = 20
+offsetx = 16
+recol = 6565/54307 7834/6684 7958/7952 6430/5413 5400/5532
+models_only = 7392 7393
+name = Bookcase

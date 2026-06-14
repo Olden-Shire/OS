@@ -1,0 +1,9 @@
+// npc 4747
+vislevel = 0
+op1 = Talk-to
+walkanim = 189
+readyanim = 195
+recol = 22426/7609 25238/33052 11162/16 24/10398 786/10398
+name = A Meiyerditch child
+models = 14289 2910 14178 17028
+headmodels = 14287 18123

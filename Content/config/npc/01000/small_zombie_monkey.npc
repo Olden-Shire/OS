@@ -1,0 +1,8 @@
+// npc 1485
+walkanim = 1382
+readyanim = 1386
+vislevel = 1
+recol = 20/23849 7721/17734 0/65455
+name = Small zombie monkey
+models = 4817 4824
+headmodels = 4656

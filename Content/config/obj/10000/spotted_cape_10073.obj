@@ -1,0 +1,14 @@
+// obj 10073
+cost = 32
+model = obj_spotted_cape_10069
+xof2d = 3
+yof2d = 6
+zoom2d = 2140
+yan2d = 948
+xan2d = 400
+iop2 = Wear
+manwear = obj_spotted_cape_10069_man, 0
+womanwear = obj_spotted_cape_10069_woman, 0
+members = true
+cost = 400
+name = Spotted cape

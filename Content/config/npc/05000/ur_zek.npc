@@ -1,0 +1,8 @@
+// npc 5770
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+name = Ur-zek
+models = 23657 23705 23629
+headmodels = 23249

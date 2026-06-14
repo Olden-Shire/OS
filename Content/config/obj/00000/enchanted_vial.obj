@@ -1,0 +1,10 @@
+// obj 731
+model = obj_enchanted_vial
+members = true
+yof2d = -2
+zoom2d = 710
+yan2d = 1516
+xan2d = 80
+manwear = obj_vial_229_wear, 0
+womanwear = obj_vial_229_wear, 6
+name = Enchanted vial

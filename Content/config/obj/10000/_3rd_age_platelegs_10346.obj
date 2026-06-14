@@ -1,0 +1,11 @@
+// obj 10346
+model = obj__3rd_age_platelegs_10346
+yof2d = 11
+zoom2d = 1740
+xan2d = 444
+iop2 = Wear
+manwear = obj__3rd_age_platelegs_10346_man, 0
+womanwear = obj__3rd_age_platelegs_10346_woman, 0
+members = true
+cost = 200000
+name = 3rd age platelegs

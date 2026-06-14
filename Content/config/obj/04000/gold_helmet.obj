@@ -1,0 +1,16 @@
+// obj 4567
+model = obj_gold_helmet
+xof2d = 1
+yof2d = -4
+zoom2d = 590
+yan2d = 104
+xan2d = 80
+iop2 = Wear
+manwear = obj_gold_helmet_man, 0
+womanwear = obj_gold_helmet_woman, 0
+manhead = 63
+manhead2 = 5813
+womanhead = 120
+womanhead2 = 5813
+members = true
+name = Gold helmet

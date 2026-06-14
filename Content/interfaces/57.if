@@ -1,0 +1,24 @@
+// interface 57
+
+[com_0]
+type=4
+buttontype=0
+clientcode=0
+x=17
+y=51
+width=480
+height=14
+trans=0
+scriptcmp=3/0
+scripts=5/380/0
+halign=1
+valign=0
+lineheight=0
+font=496
+shadowed=0
+text=Waiting for players to join the other team.
+activetext=Time until next game starts: %1
+colour=0xffffff
+colour2=0xffffff
+colourover=0x000000
+colour2over=0x000000

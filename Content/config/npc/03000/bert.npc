@@ -1,0 +1,10 @@
+// npc 3108
+walkanims = 819, 820, 821, 822
+readyanim = 808
+size = 1
+vislevel = 0
+op1 = Talk-to
+recol = 25238/40237 8741/7366 933/8891 6798/3226 9096/40117 908/40237
+name = Bert
+models = 217 246 10705 10723 163 10218 274 185
+headmodels = 55

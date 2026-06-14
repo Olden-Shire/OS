@@ -1,0 +1,7 @@
+// npc 2795
+walkanim = 2769
+readyanim = 2770
+op1 = Talk-To
+op3 = Sober-Up
+vislevel = 48
+multivar = 1344, 65535, 2796 2797 2798 2799

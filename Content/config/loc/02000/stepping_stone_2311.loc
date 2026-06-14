@@ -1,0 +1,11 @@
+// loc 2311
+hillskew = true
+ambient = 35
+sharelight = true
+nonsolid = true
+forcedecor = true
+resizey = 32
+active = 1
+op1 = Cross
+models = 14718/22
+name = Stepping stone

@@ -1,0 +1,11 @@
+// loc 19040
+active = 1
+op1 = Climb-up
+forceapproach = 14
+blockwalk = true
+ambient = 30
+contrast = 30
+mapscene = 7
+nonblockrange = true
+models_only = 20482
+name = Ladder

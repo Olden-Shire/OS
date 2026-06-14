@@ -1,0 +1,6 @@
+// loc 25621
+sharelight = true
+active = 1
+anim = 6873
+models_only = 27187 27184
+name = Intermediate Flag

@@ -1,0 +1,7 @@
+// loc 13345
+op1 = Open
+op2 = Pick-lock
+op3 = Force
+op5 = Remove
+models = 12209/0
+name = Door

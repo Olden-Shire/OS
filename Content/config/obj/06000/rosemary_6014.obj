@@ -1,0 +1,11 @@
+// obj 6014
+model = obj_rosemary_6014
+xof2d = -3
+zoom2d = 900
+yan2d = 100
+zan2d = 1948
+xan2d = 136
+members = true
+ambient = 15
+cost = 2
+name = Rosemary

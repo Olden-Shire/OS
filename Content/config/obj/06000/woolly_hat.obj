@@ -1,0 +1,14 @@
+// obj 6862
+model = obj_woolly_hat
+xof2d = -1
+yof2d = -1
+zoom2d = 659
+yan2d = 1425
+xan2d = 124
+iop2 = Wear
+manwear = obj_woolly_hat_man, 0
+womanwear = obj_woolly_hat_woman, 0
+manhead = 10396
+womanhead = 10407
+iop5 = Destroy
+name = Woolly hat

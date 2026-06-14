@@ -1,0 +1,6 @@
+// loc 24048
+ambient = 20
+active = 1
+nonsolid = true
+models = 24800/22
+name = Clothes

@@ -1,0 +1,10 @@
+// npc 36
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/36015
+name = Wyson the gardener
+models = 230 253 11761 10301 179 11757 185 4843 496
+headmodels = 63 5534 85

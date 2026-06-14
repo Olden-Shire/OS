@@ -1,0 +1,9 @@
+// loc 8070
+ambient = 25
+op1 = Chop-down
+op2 = Inspect
+op4 = Guide
+recol = 8602/12820
+retex = 8/65535 41/65535
+models_only = 8051 7767
+name = Diseased orange tree

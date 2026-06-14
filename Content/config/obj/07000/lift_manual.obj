@@ -1,0 +1,12 @@
+// obj 7972
+model = obj_book_on_chemicals
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+members = true
+iop1 = Read
+cost = 5
+recol = 5018/4634 11177/4882 61/4882 10351/10429
+name = Lift manual

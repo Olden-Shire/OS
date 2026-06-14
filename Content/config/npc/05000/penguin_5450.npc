@@ -1,0 +1,8 @@
+// npc 5450
+readyanim = 5682
+resizeh = 75
+resizev = 75
+size = 1
+vislevel = 0
+name = Penguin
+models = 21547

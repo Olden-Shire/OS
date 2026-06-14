@@ -1,0 +1,9 @@
+// loc 1922
+sharelight = true
+occlude = true
+length = 2
+width = 2
+active = 0
+ambient = 25
+contrast = 25
+models_only = 668

@@ -1,0 +1,5 @@
+// loc 1168
+nonblockrange = true
+recol = 2857/2332 7283/8381 1742/4515 6371/9641 2619/4510 2739/3484
+models_only = 1722
+name = Mushrooms

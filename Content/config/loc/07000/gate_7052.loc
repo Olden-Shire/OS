@@ -1,0 +1,6 @@
+// loc 7052
+mirror = true
+op1 = Close
+nonblockrange = true
+models = 7371/0
+name = Gate

@@ -1,0 +1,12 @@
+// npc 1270
+vislevel = 0
+size = 1
+walkanim = 283
+readyanim = 286
+resizeh = 160
+resizev = 160
+op1 = Talk-to
+recol = 61/5431 21570/4531 10355/7626
+name = Lalli
+models = 3753 3759 3755
+headmodels = 3791

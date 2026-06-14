@@ -1,0 +1,7 @@
+// npc 2303
+walkanim = 219
+readyanim = 222
+alwaysontop = true
+vislevel = 0
+op1 = Talk-to
+multivar = 346, 65535, 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 2301

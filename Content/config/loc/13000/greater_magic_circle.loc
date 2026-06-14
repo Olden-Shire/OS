@@ -1,0 +1,8 @@
+// loc 13683
+op5 = Remove
+width = 2
+length = 2
+anim = 3616
+nonsolid = true
+models_only = 13125
+name = Greater magic circle

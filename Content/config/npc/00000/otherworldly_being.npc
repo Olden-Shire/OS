@@ -1,0 +1,9 @@
+// npc 126
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 64
+recol = 25238/10508 38814/10508 8741/10508 4550/10508
+name = Otherworldly being
+models = 202 292 170 260

@@ -1,0 +1,10 @@
+// loc 13726
+active = 1
+width = 2
+length = 2
+contrast = 20
+ambient = 20
+anim = 3587
+blockwalk = true
+models_only = 13120 13119
+name = Jacky Jester

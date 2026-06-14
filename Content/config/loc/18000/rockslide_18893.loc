@@ -1,0 +1,8 @@
+// loc 18893
+width = 2
+length = 2
+mapscene = 24
+ambient = 45
+nonblockrange = true
+models_only = 819
+name = Rockslide

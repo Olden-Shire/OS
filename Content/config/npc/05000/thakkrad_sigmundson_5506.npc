@@ -1,0 +1,11 @@
+// npc 5506
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Craft-goods
+recol = 17825/5404 12698/5400 18716/5404 19986/5404 7741/5400 6798/9143
+name = Thakkrad Sigmundson
+models = 4219 4220 4221 253 21886 167 177 491 14857 19945
+headmodels = 4210 4211 85

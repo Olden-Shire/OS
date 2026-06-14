@@ -1,0 +1,10 @@
+// npc 5281
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/4657 25238/10351 8741/10334
+name = Maisa
+models = 364 391 20830 470 332 10706 20829 419 358
+headmodels = 114 20828 88

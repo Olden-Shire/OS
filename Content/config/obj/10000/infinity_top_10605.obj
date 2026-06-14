@@ -1,0 +1,14 @@
+// obj 10605
+model = obj_infinity_top_6916
+manwear = obj_infinity_top_6916_man, 0
+manwear2 = 10681
+womanwear = obj_infinity_top_6916_woman, 0
+womanwear2 = 10688
+iop2 = Wear
+xof2d = -1
+zoom2d = 1380
+yan2d = 2044
+xan2d = 468
+members = true
+cost = 140000
+name = Infinity top

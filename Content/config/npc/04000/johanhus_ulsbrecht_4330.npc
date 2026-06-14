@@ -1,0 +1,11 @@
+// npc 4330
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 4208
+resizev = 130
+resizeh = 130
+recol = 8741/902 25238/902 7952/902 6798/0 43072/4550
+name = Johanhus Ulsbrecht
+models = 167 176 215 249 181 265 292 5434 5433 317 15476
+headmodels = 53 81

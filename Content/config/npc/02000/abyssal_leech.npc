@@ -1,0 +1,8 @@
+// npc 2263
+size = 1
+walkanim = 2179
+readyanim = 2180
+op2 = Attack
+vislevel = 41
+name = Abyssal leech
+models = 7461

@@ -1,0 +1,14 @@
+// obj 10045
+model = obj_larupia_hat_10045
+iop2 = Wear
+manwear = obj_larupia_hat_10045_man, 0
+womanwear = obj_larupia_hat_10045_woman, 0
+manhead = 19801
+womanhead = 19805
+yof2d = -16
+zoom2d = 854
+yan2d = 2030
+xan2d = 180
+members = true
+cost = 500
+name = Larupia hat

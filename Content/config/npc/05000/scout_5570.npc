@@ -1,0 +1,13 @@
+// npc 5570
+resizeh = 129
+resizev = 129
+walkanim = 841
+readyanim = 842
+op1 = Talk-to
+nominimap = true
+alwaysontop = true
+vislevel = 0
+recol = 61/33 8741/49 36007/28 33300/33 10768/28 10644/41
+name = Scout
+models = 16480 22314 152 179 6664 4954 3707
+headmodels = 22332

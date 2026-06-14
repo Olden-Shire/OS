@@ -1,0 +1,10 @@
+// npc 1920
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 123/8 10004/55178 8741/55178 25238/55178 22177/55178 4550/7401
+name = Malak
+models = 227 292 170 179 267 185 3189
+headmodels = 62

@@ -1,0 +1,10 @@
+// npc 518
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/4785 25238/43420 8741/40485 43072/4550 6798/10508
+name = Captain Shanks
+models = 214 249 292 151 176 254 181 194
+headmodels = 52 81 37

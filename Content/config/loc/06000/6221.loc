@@ -1,0 +1,8 @@
+// loc 6221
+mirror = true
+sharelight = true
+active = 0
+ambient = 20
+contrast = 25
+nonblockrange = true
+models = 6105/0

@@ -1,0 +1,9 @@
+[clientscript,script_117]()()
+
+if (%varbit3756 < 1 | %varbit3756 > 14) {
+    if_setontimer(-1, "", 35913774);
+    ~script_113;
+    return;
+}
+if_setontimer(120, "", 35913774);
+return;

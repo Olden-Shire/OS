@@ -1,0 +1,9 @@
+// loc 21572
+anim = 1727
+resizex = 70
+resizey = 70
+resizez = 70
+bgsound = 3087, 3
+recol = 61/10266
+models = 5514/10 5515/1
+name = Small rock

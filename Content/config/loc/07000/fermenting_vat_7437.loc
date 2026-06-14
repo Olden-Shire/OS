@@ -1,0 +1,5 @@
+// loc 7437
+ambient = 15
+nonblockrange = true
+models_only = 7778 7782
+name = Fermenting Vat

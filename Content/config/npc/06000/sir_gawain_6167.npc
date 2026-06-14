@@ -1,0 +1,11 @@
+// npc 6167
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 5673/5648
+name = Sir Gawain
+models = 27125
+headmodels = 27209 81

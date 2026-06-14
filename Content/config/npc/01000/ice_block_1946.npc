@@ -1,0 +1,8 @@
+// npc 1946
+vislevel = 0
+size = 2
+op1 = Talk-to
+op2 = Smash-ice
+turnspeed = 0
+name = Ice block
+models = 6323

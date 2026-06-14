@@ -1,0 +1,9 @@
+// npc 4924
+size = 2
+walkanim = 4931
+readyanim = 4932
+op2 = Attack
+vislevel = 3
+recol = 10295/32836 10291/32844 10287/32836 10283/32840 10279/32832 10275/32827
+name = Giant rat
+models = 18892 18890 18895 18888

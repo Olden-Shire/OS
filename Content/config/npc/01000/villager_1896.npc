@@ -1,0 +1,9 @@
+// npc 1896
+size = 1
+op1 = Talk-to
+op3 = Pickpocket
+vislevel = 3
+recol = 8741/10351 25238/10351 4550/5555
+name = Villager
+models = 390 364 456 348 429 358 353
+headmodels = 113 88

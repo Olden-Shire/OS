@@ -1,0 +1,11 @@
+// obj 4026
+members = true
+cost = 1000
+model = obj_monkey_talisman
+yof2d = 13
+zoom2d = 750
+yan2d = 4
+xan2d = 456
+iop2 = Hold
+recol = 70/24 127/37 0/960
+name = Monkey greegree

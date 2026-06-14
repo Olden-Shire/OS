@@ -1,0 +1,5 @@
+// seq 2450
+replaceheldleft = 0
+replaceheldright = 2437
+reachforward = true
+frames = 4/32/220 3/35/220 3/36/220 6/37/220 12/38/220 2/39/220 12/40/220 4/41/220 3/42/220 2/33/220 4/34/220

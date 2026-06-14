@@ -1,0 +1,7 @@
+// loc 10780
+anim = 3030
+active = 1
+op1 = Enter
+raiseobject = 0
+models_only = 10619 10618
+name = Alchemists Teleport

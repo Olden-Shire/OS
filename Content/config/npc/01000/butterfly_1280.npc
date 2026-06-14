@@ -1,0 +1,9 @@
+// npc 1280
+size = 1
+walkanim = 362
+readyanim = 362
+nominimap = true
+vislevel = 0
+recol = 39029/8501 4506/28839
+name = Butterfly
+models = 3022

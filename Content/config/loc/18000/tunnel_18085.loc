@@ -1,0 +1,8 @@
+// loc 18085
+op5 = Climb-into
+active = 1
+wallwidth = 32
+occlude = true
+blockwalk = true
+models = 17663/22
+name = Tunnel

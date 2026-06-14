@@ -1,0 +1,7 @@
+// loc 8501
+mapscene = 3
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8138 7768
+name = Dead Willow

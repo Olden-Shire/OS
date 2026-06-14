@@ -1,0 +1,5 @@
+// loc 4728
+active = 1
+op1 = Climb
+models_only = 3640
+name = Climbing rope

@@ -1,0 +1,9 @@
+// npc 3338
+size = 3
+contrast = 10
+ambient = 5
+turnspeed = 0
+nominimap = true
+vislevel = 0
+name = Cave Scenery
+models = 12016

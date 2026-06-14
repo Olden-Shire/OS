@@ -1,0 +1,10 @@
+// loc 20826
+active = 1
+noshadow = true
+contrast = 20
+ambient = 20
+nonsolid = true
+resizey = 135
+op1 = Enter
+models_only = 21323
+name = Stairs

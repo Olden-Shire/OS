@@ -1,0 +1,14 @@
+// obj 9704
+model = obj_training_shield
+xof2d = -6
+yof2d = -14
+zoom2d = 1560
+yan2d = 1104
+xan2d = 344
+iop2 = Wear
+iop5 = Destroy
+cost = 1
+manwear = obj_training_shield_wear, 0
+womanwear = obj_training_shield_wear, 6
+recol = 61/127 57/41310 7054/41282
+name = Training shield

@@ -1,0 +1,8 @@
+// loc 24808
+active = 1
+sharelight = true
+contrast = 5
+ambient = 15
+recol = 4750/4626
+models_only = 25950
+name = Drain

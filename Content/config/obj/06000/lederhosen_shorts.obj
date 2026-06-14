@@ -1,0 +1,11 @@
+// obj 6181
+model = obj_lederhosen_shorts
+iop2 = Wear
+manwear = obj_lederhosen_shorts_man, 0
+womanwear = obj_lederhosen_shorts_woman, 0
+xof2d = 11
+yof2d = 2
+zoom2d = 1760
+yan2d = 44
+xan2d = 364
+name = Lederhosen shorts

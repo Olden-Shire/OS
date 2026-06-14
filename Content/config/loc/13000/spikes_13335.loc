@@ -1,0 +1,5 @@
+// loc 13335
+nonsolid = true
+op5 = Remove
+models = 12519/22
+name = Spikes

@@ -1,0 +1,13 @@
+// npc 3103
+vislevel = 0
+size = 2
+resizeh = 126
+resizev = 126
+walkanim = 3035
+readyanim = 3033
+op1 = Talk-to
+op4 = Trade-with
+recol = 43080/9657 43076/8757 43069/9657 43063/7735 43055/48439
+name = Rewards Guardian
+models = 10633 10635 10637 10638 10631
+headmodels = 10695

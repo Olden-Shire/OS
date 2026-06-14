@@ -1,0 +1,12 @@
+// obj 7410
+model = obj_queens_secateurs_7410
+manwear = obj_queens_secateurs_7410_wear, 0
+womanwear = obj_queens_secateurs_7410_wear, 6
+iop5 = Destroy
+xof2d = 22
+yof2d = -4
+zoom2d = 912
+yan2d = 764
+xan2d = 489
+members = true
+name = Queen's secateurs

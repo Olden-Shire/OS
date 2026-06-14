@@ -1,0 +1,10 @@
+// npc 3421
+size = 2
+walkanim = 3426
+readyanim = 3424
+resizeh = 256
+resizev = 256
+op2 = Attack
+vislevel = 23
+name = Crab
+models = 13799

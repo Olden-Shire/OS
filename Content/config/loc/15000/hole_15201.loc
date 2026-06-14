@@ -1,0 +1,4 @@
+// loc 15201
+nonblockrange = true
+models_only = 15049
+name = Hole

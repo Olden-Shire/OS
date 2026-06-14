@@ -1,0 +1,12 @@
+// obj 5984
+model = obj_watermelon_slice_5984
+xof2d = 2
+yof2d = 8
+zoom2d = 750
+yan2d = 148
+xan2d = 192
+ambient = 15
+members = true
+iop1 = Eat
+cost = 16
+name = Watermelon slice

@@ -1,0 +1,10 @@
+// npc 4907
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Bank
+vislevel = 0
+recol = 8741/127 25238/127 902/41282 6024/43299 8078/41282 908/41261
+name = Banker tutor
+models = 408 418 15320 343 10706 435
+headmodels = 125 137 136

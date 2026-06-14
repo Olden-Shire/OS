@@ -1,0 +1,15 @@
+// npc 770
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 317
+op1 = Pick-up
+op3 = Talk-to
+op4 = Interact-with
+nominimap = true
+resizeh = 60
+resizev = 60
+recol = 61/8105 16/5916 127/5673
+name = Cat
+models = 3010 3006
+headmodels = 6435

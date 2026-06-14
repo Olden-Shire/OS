@@ -1,0 +1,14 @@
+// loc 10739
+active = 1
+length = 3
+width = 3
+contrast = 15
+ambient = 15
+blockwalk = true
+anim = 3029
+resizex = 128
+resizey = 128
+resizez = 128
+bgsound = 3144, 3
+models_only = 10622 10620
+name = Statue

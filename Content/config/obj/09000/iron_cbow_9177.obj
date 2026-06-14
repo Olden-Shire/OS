@@ -1,0 +1,13 @@
+// obj 9177
+model = obj_crossbow_837
+yof2d = 3
+zoom2d = 926
+yan2d = 258
+xan2d = 432
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+members = true
+cost = 157
+recol = 6447/8478 6443/8598 6439/8846 5656/41 5652/33 5904/24
+name = Iron c'bow

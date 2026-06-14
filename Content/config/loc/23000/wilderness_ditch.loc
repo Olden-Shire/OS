@@ -1,0 +1,8 @@
+// loc 23271
+blockwalk = true
+active = 1
+length = 2
+op1 = Cross
+nonblockrange = true
+models_only = 24201
+name = Wilderness Ditch

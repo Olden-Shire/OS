@@ -1,0 +1,13 @@
+// obj 1215
+members = true
+model = obj_dragon_dagger_1215
+cost = 30000
+yof2d = -4
+zoom2d = 760
+yan2d = 1276
+xan2d = 472
+iop2 = Wield
+manwear = obj_dragon_dagger_1215_wear, 0
+womanwear = obj_dragon_dagger_1215_wear, 6
+recol = 22459/924
+name = Dragon dagger

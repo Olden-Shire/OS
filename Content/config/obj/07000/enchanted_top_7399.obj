@@ -1,0 +1,13 @@
+// obj 7399
+model = obj_enchanted_top_7399
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+iop2 = Wear
+manwear = obj_enchanted_top_7399_man, 0
+womanwear = obj_enchanted_top_7399_woman, 0
+manwear2 = 11414
+womanwear2 = 11418
+cost = 120000
+members = true
+name = Enchanted top

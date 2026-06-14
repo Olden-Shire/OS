@@ -1,0 +1,10 @@
+// npc 261
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4626/4558 25238/8722 6798/4886 8741/4523 4550/4558
+name = Joe
+models = 206 246 310 151 176 275 181 326
+headmodels = 46

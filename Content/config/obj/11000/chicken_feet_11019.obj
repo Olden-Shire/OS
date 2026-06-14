@@ -1,0 +1,14 @@
+// obj 11019
+model = obj_chicken_feet_11016
+xof2d = -4
+yof2d = -5
+zoom2d = 848
+yan2d = 1931
+xan2d = 127
+contrast = 15
+ambient = 15
+manwear = obj_chicken_feet_11016_man, 0
+womanwear = obj_chicken_feet_11016_woman, 0
+iop2 = Wear
+iop5 = Destroy
+name = Chicken feet

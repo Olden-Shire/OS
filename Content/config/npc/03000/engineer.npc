@@ -1,0 +1,7 @@
+// npc 3282
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 61/66 803/6040 2578/4750 33/11175 49/169
+name = Engineer
+models = 2970 7059 2978 2993 2981 2985

@@ -1,0 +1,14 @@
+// obj 10336
+model = obj__3rd_age_vambraces_10336
+manwear = obj__3rd_age_vambraces_10336_man, 0
+womanwear = obj__3rd_age_vambraces_10336_woman, 0
+iop2 = Wear
+cost = 15000
+xof2d = 7
+yof2d = -33
+zoom2d = 740
+yan2d = 1784
+xan2d = 196
+contrast = 20
+members = true
+name = 3rd age vambraces

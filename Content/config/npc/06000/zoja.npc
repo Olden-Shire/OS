@@ -1,0 +1,9 @@
+// npc 6044
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Zoja
+models = 26143 26156 26137 26149 26141
+headmodels = 26272

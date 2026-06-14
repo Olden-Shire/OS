@@ -1,0 +1,10 @@
+// npc 2287
+vislevel = 0
+size = 1
+readyanim = 1321
+op1 = Talk-to
+turnspeed = 0
+recol = 70/99 5532/82 41/82 61/99 7700/103 4550/4535
+name = Sir Ren Itchood
+models = 201 230 249 306 323 164 179 4394 268 184
+headmodels = 63 81 43

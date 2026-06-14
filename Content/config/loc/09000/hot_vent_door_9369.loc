@@ -1,0 +1,10 @@
+// loc 9369
+hillskew = true
+anim = 2598
+blockwalk = true
+op1 = Pass
+noshadow = true
+bgsound = 2066, 3
+recol = 33676/0
+models_only = 9290
+name = Hot vent door

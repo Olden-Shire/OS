@@ -1,0 +1,12 @@
+// obj 10388
+model = obj_zamorak_chaps_10372
+yof2d = -1
+zoom2d = 1827
+xan2d = 444
+iop2 = Wear
+manwear = obj_zamorak_chaps_10372_man, 0
+womanwear = obj_zamorak_chaps_10372_woman, 0
+members = true
+cost = 6000
+recol = 22168/43672 8070/40765 24082/41490 22156/43660 920/39748 912/37553
+name = Saradomin chaps

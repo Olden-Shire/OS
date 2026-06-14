@@ -1,0 +1,9 @@
+// npc 2643
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 0
+recol = 22416/4 22424/16 8472/4 8720/16 6674/31516
+name = R4ng3rNo0b889
+models = 512 314 258 178 4929 3378 251 151 217

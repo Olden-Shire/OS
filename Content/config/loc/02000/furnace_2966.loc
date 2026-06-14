@@ -1,0 +1,10 @@
+// loc 2966
+width = 3
+length = 3
+forceapproach = 13
+op1 = Look
+op2 = Search
+bgsound = 2209, 3
+recol = 7952/3980
+models_only = 748
+name = Furnace

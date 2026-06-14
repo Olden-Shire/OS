@@ -1,0 +1,11 @@
+// npc 3930
+vislevel = 0
+resizeh = 110
+resizev = 110
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/5648 43072/4550 25238/10529 6798/43906
+name = Armod
+models = 10981 246 292 9607 170 176 4226 4218 4391
+headmodels = 10976

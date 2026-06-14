@@ -1,0 +1,15 @@
+// obj 8928
+model = obj_hat_eyepatch_8928
+members = true
+manwear = obj_hat_eyepatch_8928_man, 0
+womanwear = obj_hat_eyepatch_8928_woman, 0
+iop2 = Wear
+manhead = 15920
+womanhead = 15923
+xof2d = -3
+yof2d = -32
+zoom2d = 784
+yan2d = 84
+xan2d = 216
+cost = 100
+name = Hat eyepatch

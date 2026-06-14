@@ -1,0 +1,15 @@
+// obj 10828
+model = obj_helm_of_neitiznot_10828
+xof2d = -1
+yof2d = 1
+zoom2d = 984
+yan2d = 129
+xan2d = 126
+iop2 = Wear
+manwear = obj_helm_of_neitiznot_10828_man, 0
+manhead = 22153
+womanwear = obj_helm_of_neitiznot_10828_woman, 0
+womanhead = 22777
+members = true
+cost = 50000
+name = Helm of neitiznot

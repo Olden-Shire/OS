@@ -1,0 +1,10 @@
+// npc 268
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/912 25238/33
+name = Local
+models = 230 249 236 299 167 179 275 185
+headmodels = 63 81 68

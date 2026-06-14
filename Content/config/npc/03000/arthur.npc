@@ -1,0 +1,11 @@
+// npc 3779
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 57/5652 61/5652 25238/12 8741/12 7952/0
+name = Arthur
+models = 14575 294 317 151 177 254 185
+headmodels = 7667 27208 27204

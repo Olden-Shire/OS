@@ -1,0 +1,9 @@
+// loc 15898
+mirror = true
+blockwalk = true
+forceapproach = 7
+op1 = Climb-down
+mapscene = 7
+offsetx = -20
+models_only = 15756
+name = Copper Ladder

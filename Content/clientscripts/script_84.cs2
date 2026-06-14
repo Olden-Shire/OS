@@ -1,0 +1,100 @@
+[clientscript,script_84]()()
+def_int $int0;
+def_int $int1;
+def_int $int2;
+def_int $int3;
+def_int $int4;
+
+$int0 = 0;
+$int1 = 0;
+$int2 = 0;
+$int3 = -1;
+$int4 = 0;
+if (%varcint41 = 3) {
+    $int4 = 1;
+}
+while ($int1 < 100) {
+    if (~script_193($int1) = 1 & ~script_90($int1, $int4) = 1) {
+        $int0 = calc($int0 + 1);
+    }
+    $int1 = calc($int1 + 1);
+}
+if ($int0 < 8) {
+    $int0 = 8;
+    ~script_85(8978436);
+    ~script_85(8978437);
+    ~script_85(8978438);
+    ~script_85(8978439);
+    ~script_85(8978440);
+    ~script_85(8978441);
+    ~script_85(8978442);
+    ~script_85(8978443);
+}
+if_setscrollsize(463, calc($int0 * 14 + 2), 8978434);
+~script_72(8978435, 8978434, calc(%varcint7 + (if_getscrollheight(8978434) - %varcint8)));
+%varcint7 = if_getscrolly(8978434);
+%varcint8 = if_getscrollheight(8978434);
+if ($int0 < 100) {
+    ~script_85(enum(105, 73, 579, $int0));
+}
+$int1 = 0;
+while ($int1 < 100) {
+    if (~script_193($int1) = 1 & ~script_90($int1, $int4) = 1) {
+        $int0 = calc($int0 - 1);
+        $int3 = enum(105, 73, 579, $int0);
+        $int2 = chat_gethistory_byuid($int1);
+        if ($int2 = 0 | $int2 = 11 | $int2 = 12 | $int2 = 13) {
+            if_settext(chat_gethistory_bytypeandline($int1), $int3);
+        }
+        if ($int2 = 1) {
+            if_settext(join(chat_sendclan($int1), ": ", "<col=0000ff>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 2) {
+            if_settext(join(chat_sendclan($int1), ": ", "<col=0000ff>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 3) {
+            if_settext(join("From ", chat_sendclan($int1), ": ", "<col=800000>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 4) {
+            if_settext(join("<col=800080>", chat_sendclan($int1), " ", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 5) {
+            if_settext(join("<col=800000>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 6) {
+            if_settext(join("To ", chat_sendclan($int1), ": ", "<col=800000>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 7) {
+            if_settext(join("From ", chat_sendclan($int1), ": ", "<col=800000>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 8) {
+            if_settext(join("<col=7e3200>", chat_sendclan($int1), " ", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 9) {
+            if_settext(join("[", "<col=0000ff>", chat_getscreenname($int1), "<col=000000>", "] ", chat_sendclan($int1), ": ", "<col=800000>", chat_gethistory_bytypeandline($int1)), $int3);
+        }
+        if ($int2 = 10) {
+            if_settext(join("<col=800080>", chat_sendclan($int1), " is asking for assistance."), $int3);
+        }
+        if_clearops($int3);
+        if ($int2 = 1 | $int2 = 2 | $int2 = 3 | $int2 = 7 | $int2 = 9) {
+            if_setopbase(join("<col=ffffff>", chat_sendclan($int1)), $int3);
+            if_setop(6, "Add friend", $int3);
+            if_setop(7, "Add ignore", $int3);
+            if (staffmodlevel() > 0 | playermod() > 0) {
+                if_setop(8, "Report abuse", $int3);
+            }
+        } else if ($int2 = 4) {
+            if_setopbase(join("<col=ffffff>", chat_sendclan($int1)), $int3);
+            if_setop(1, "Accept trade", $int3);
+        } else if ($int2 = 8) {
+            if_setopbase(join("<col=ffffff>", chat_sendclan($int1)), $int3);
+            if_setop(2, "Accept challenge", $int3);
+        } else if ($int2 = 10) {
+            if_setopbase(join("<col=ffffff>", chat_sendclan($int1)), $int3);
+            if_setop(3, "Give assistance", $int3);
+        }
+    }
+    $int1 = calc($int1 + 1);
+}
+return;

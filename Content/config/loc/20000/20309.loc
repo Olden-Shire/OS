@@ -1,0 +1,11 @@
+// loc 20309
+active = 0
+resizex = 128
+resizey = 256
+resizez = 128
+resizex = 256
+resizey = 256
+resizez = 256
+width = 2
+length = 2
+models_only = 20803

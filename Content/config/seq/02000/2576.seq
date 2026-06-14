@@ -1,0 +1,8 @@
+// seq 2576
+replaceheldright = 819
+replaceheldleft = 819
+loops = 2
+maxloops = 8
+preanim_move = 1
+postanim_move = 1
+frames = 15/7/294 15/8/294

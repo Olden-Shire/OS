@@ -1,0 +1,9 @@
+// loc 9027
+op1 = Repair
+op3 = Hidden
+op4 = Hidden
+active = 1
+hillskew = true
+nonblockrange = true
+models = 8888/0 8889/9
+name = Short fence

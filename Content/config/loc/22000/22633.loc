@@ -1,0 +1,9 @@
+// loc 22633
+active = 0
+width = 2
+length = 2
+ambient = 20
+sharelight = true
+hillskew = true
+recol = 5786/10266 5910/16 5916/24
+models = 23523/10 23524/1

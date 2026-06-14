@@ -1,0 +1,10 @@
+// npc 2029
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+ambient = 50
+contrast = 50
+alwaysontop = true
+vislevel = 115
+name = Torag the Corrupted
+models = 6657 6677 6645 6663 6708 6679

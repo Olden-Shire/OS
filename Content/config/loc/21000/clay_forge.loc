@@ -1,0 +1,9 @@
+// loc 21303
+sharelight = true
+hillskew = true
+ambient = 20
+contrast = 20
+op2 = Smelt-ore
+bgsound = 2209, 5
+models_only = 21970
+name = Clay forge

@@ -1,0 +1,10 @@
+// obj 7649
+cost = 100
+model = obj_rod_clay_mould
+yof2d = 3
+zoom2d = 2180
+yan2d = 1036
+xan2d = 520
+members = true
+iop5 = Destroy
+name = Rod clay mould

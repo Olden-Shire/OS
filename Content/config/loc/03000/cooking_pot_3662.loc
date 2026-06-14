@@ -1,0 +1,12 @@
+// loc 3662
+anim = 479
+width = 2
+length = 2
+resizex = 192
+resizey = 192
+resizez = 192
+op1 = Search
+bgsound = 2197, 3
+recol = 22435/8520 22420/6695
+models_only = 19167
+name = Cooking pot

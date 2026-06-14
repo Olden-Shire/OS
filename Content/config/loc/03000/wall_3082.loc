@@ -1,0 +1,10 @@
+// loc 3082
+forcedecor = true
+ambient = 30
+contrast = 30
+sharelight = true
+op5 = Lean against
+mapscene = 22
+nonblockrange = true
+models = 3257/0
+name = Wall

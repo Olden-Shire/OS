@@ -1,0 +1,8 @@
+// npc 5972
+readyanim = 6433
+vislevel = 0
+turnspeed = 0
+nominimap = true
+size = 3
+name = Sea slugs display
+models = 25739 25740 25741 25742 25743 25744

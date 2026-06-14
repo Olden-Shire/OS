@@ -1,0 +1,12 @@
+// npc 533
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/5652 8741/4769 6798/10508 43072/4645 4550/4645 54397/4391
+name = Shop assistant
+models = 217 254 246 305 151 176 181
+headmodels = 55

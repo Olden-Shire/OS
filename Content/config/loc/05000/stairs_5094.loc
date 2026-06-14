@@ -1,0 +1,7 @@
+// loc 5094
+sharelight = true
+width = 4
+length = 3
+op1 = Walk-up
+models_only = 4995
+name = Stairs

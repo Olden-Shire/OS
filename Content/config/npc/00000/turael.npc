@@ -1,0 +1,12 @@
+// npc 70
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+op4 = Trade
+alwaysontop = true
+recol = 8741/43053 25238/40090 7952/21526 61/37954 41/37933 24/38044
+name = Turael
+models = 208 251 3379 317 174 179 274 185 555
+headmodels = 48 83

@@ -1,0 +1,11 @@
+// npc 744
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/43569 8741/127 43072/4550
+name = Klarense
+models = 194 215 253 26420 151 177 176 254 181
+headmodels = 53 85 37

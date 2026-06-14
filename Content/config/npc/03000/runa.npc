@@ -1,0 +1,10 @@
+// npc 3920
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/22412 43072/2524 8741/12399 4550/2524 908/22024 6798/6618
+name = Runa
+models = 399 456 483 332 353 429 358
+headmodels = 118

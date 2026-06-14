@@ -1,0 +1,11 @@
+// obj 7951
+model = obj_shamans_tome
+xof2d = 1
+yof2d = 22
+zoom2d = 860
+yan2d = 120
+xan2d = 276
+members = true
+iop1 = Read
+recol = 5018/7710
+name = Herman's book

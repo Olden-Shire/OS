@@ -1,0 +1,8 @@
+// loc 18069
+op1 = Climb-down
+active = 1
+resizex = 128
+resizey = 160
+resizez = 128
+models_only = 17635
+name = Ladder

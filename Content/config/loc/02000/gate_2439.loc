@@ -1,0 +1,6 @@
+// loc 2439
+mirror = true
+op1 = Open
+active = 1
+models = 966/0 967/1 968/9
+name = Gate

@@ -1,0 +1,6 @@
+[clientscript,script_101]()()
+
+if_sethide(1, 35913816);
+if_sethide(0, 35913817);
+%varcint5 = 0;
+return;

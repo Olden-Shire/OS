@@ -1,0 +1,12 @@
+// npc 5203
+walkanim = 5372
+readyanim = 5370
+ambient = 40
+contrast = 40
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 17467/18626
+name = Alice's husband
+models = 5212 20460 5219 20421 5209 5231 5216
+headmodels = 5203

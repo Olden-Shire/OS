@@ -1,0 +1,5 @@
+// loc 13838
+op1 = Stand-on
+blockwalk = true
+models = 14143/22
+name = Bog

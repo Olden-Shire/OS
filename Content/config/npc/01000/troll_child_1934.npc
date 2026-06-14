@@ -1,0 +1,13 @@
+// npc 1934
+size = 1
+alwaysontop = true
+walkanim = 283
+readyanim = 1476
+op1 = Talk-to
+vislevel = 0
+resizeh = 72
+resizev = 72
+recol = 61/43105 21570/43220
+name = Troll child
+models = 4942 6239 3756 4945
+headmodels = 3791 3789

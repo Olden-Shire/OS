@@ -1,0 +1,7 @@
+// loc 11164
+width = 2
+op1 = Empty
+forceapproach = 13
+sharelight = true
+models_only = 11021
+name = Bin

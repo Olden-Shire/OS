@@ -1,0 +1,12 @@
+// obj 4837
+model = obj_binding_book
+manwear = obj_damaged_book_3839_wear, 0
+womanwear = obj_damaged_book_3839_wear, 6
+yof2d = 13
+zoom2d = 1220
+yan2d = 112
+xan2d = 292
+iop1 = Read
+members = true
+recol = 5018/24627 11177/7566 61/7566
+name = Necromancy book

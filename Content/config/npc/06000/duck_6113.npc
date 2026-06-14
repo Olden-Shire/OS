@@ -1,0 +1,8 @@
+// npc 6113
+size = 1
+walkanim = 6819
+readyanim = 6813
+vislevel = 0
+nominimap = true
+name = Duck
+models = 26870

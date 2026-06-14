@@ -1,0 +1,5 @@
+// npc 1215
+size = 1
+vislevel = 0
+name = Parrots
+models = 26868

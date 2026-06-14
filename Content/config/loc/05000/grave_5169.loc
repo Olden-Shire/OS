@@ -1,0 +1,8 @@
+// loc 5169
+blockwalk = true
+op1 = Read
+op2 = Dig
+forceapproach = 11
+mapscene = 34
+models_only = 1366
+name = Grave

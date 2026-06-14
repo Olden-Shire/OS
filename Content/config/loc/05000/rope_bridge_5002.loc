@@ -1,0 +1,11 @@
+// loc 5002
+hillskew = true
+active = 0
+forcedecor = true
+op1 = Walk-here
+op5 = Repair
+active = 1
+blockwalk = true
+recol = 5673/13592 6585/12583
+models = 2188/22
+name = Rope bridge

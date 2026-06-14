@@ -1,0 +1,7 @@
+// loc 10860
+width = 2
+length = 2
+nonsolid = true
+op1 = Cross
+models_only = 10772
+name = Ledge

@@ -1,0 +1,9 @@
+// loc 6836
+sharelight = true
+hillskew = true
+op1 = Unlock
+noshadow = true
+ambient = 25
+nonblockrange = true
+models = 6756/0
+name = Cage

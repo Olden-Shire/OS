@@ -1,0 +1,11 @@
+// obj 783
+members = true
+cost = 2
+model = obj_bark_sample
+xof2d = 2
+yof2d = 64
+zoom2d = 900
+yan2d = 76
+xan2d = 264
+recol = 6024/6028
+name = Bark sample

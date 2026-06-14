@@ -1,0 +1,10 @@
+// loc 17248
+active = 1
+ambient = 10
+blockwalk = true
+anim = 4562
+op1 = Use
+offsety = -30
+bgsound = 2325, 5
+models_only = 17090
+name = Oaknock's exchanger

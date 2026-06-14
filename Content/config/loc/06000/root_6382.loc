@@ -1,0 +1,6 @@
+// loc 6382
+sharelight = true
+width = 3
+hillskew = true
+models_only = 6210
+name = Root

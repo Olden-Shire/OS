@@ -1,0 +1,11 @@
+// obj 603
+model = obj_observatory_lens
+cost = 3
+xof2d = 1
+yof2d = 15
+zoom2d = 1178
+yan2d = 423
+xan2d = 336
+members = true
+iop5 = Destroy
+name = Observatory lens

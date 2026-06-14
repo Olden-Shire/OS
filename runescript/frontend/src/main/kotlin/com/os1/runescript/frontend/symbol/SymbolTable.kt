@@ -61,6 +61,7 @@ class SymbolTable {
             packDirs: List<File>,
             constantPack: File? = null,
             engineRs2: File? = null,
+            constantFiles: List<File> = emptyList(),
         ): SymbolTable {
             val table = SymbolTable()
 
@@ -107,20 +108,25 @@ class SymbolTable {
                 }
             }
 
-            constantPack?.let { cp ->
-                if (cp.exists()) {
-                    cp.forEachLine { raw ->
-                        val line = raw.substringBefore("//").trim()
-                        if (line.isEmpty()) return@forEachLine
-                        val eq = line.indexOf('=')
-                        if (eq <= 0) return@forEachLine
-                        val name = line.substring(0, eq).trim()
-                        val value = line.substring(eq + 1).trim()
-                        val intVal = value.toIntOrNull()
-                        table.constants[name] = ConstantSymbol(name, intVal, if (intVal == null) value else null)
-                    }
+            // Constants come from an optional `constant.pack` and any `.constant`
+            // files scanned from the source tree. Both use `name = value` lines;
+            // a leading `^` on the name (RuneScript `.constant` style) is stripped
+            // so it matches the `^name` reference form used in scripts.
+            fun loadConstants(f: File) {
+                if (!f.exists()) return
+                f.forEachLine { raw ->
+                    val line = raw.substringBefore("//").trim()
+                    if (line.isEmpty()) return@forEachLine
+                    val eq = line.indexOf('=')
+                    if (eq <= 0) return@forEachLine
+                    val name = line.substring(0, eq).trim().removePrefix("^")
+                    val value = line.substring(eq + 1).trim()
+                    val intVal = value.toIntOrNull()
+                    table.constants[name] = ConstantSymbol(name, intVal, if (intVal == null) value else null)
                 }
             }
+            constantPack?.let { loadConstants(it) }
+            constantFiles.forEach { loadConstants(it) }
 
             return table
         }

@@ -1,0 +1,9 @@
+// npc 2337
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 6798/6701 8741/6558 25238/13840 908/5648
+name = Rhazien
+models = 214 4219 252 292 326 162 176 496 254 7121
+headmodels = 52 84 4210

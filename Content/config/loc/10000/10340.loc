@@ -1,0 +1,6 @@
+// loc 10340
+sharelight = true
+occlude = true
+active = 0
+recol = 24/6439 10339/7500
+models = 586/0 587/1 588/2 589/3 591/9

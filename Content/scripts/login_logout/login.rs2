@@ -1,0 +1,106 @@
+[login,_]
+~welcome_screen;
+
+[proc,welcome_screen]
+if_opentop(welcome);
+if_opensub(welcome:welcome_main_layer, welcome_main, 1);
+if_opensub(welcome:welcome_message_of_the_week_layer, welcome_message_of_the_week_christmas, 1);
+
+[if_button,welcome_main:play_runescape]
+~login;
+
+[proc,login]
+if_opentop(if_548); //inauthentic
+
+mes("Welcome to RuneScape.");
+//cam_reset;
+
+%musicplay = 1; // set to auto on login
+if (%option_brightness = 0) {
+    // sane defaults for game controls
+    %option_brightness = 2;
+    %option_music = 2;
+    %option_sounds = 2;
+}
+
+/*
+if(~wilderness_level(coord) > 0) {
+    set_player_op("Attack", 2, ^false);
+
+    if(coordz(coord) >= ^wilderness_starting_underground_z) {
+        if_openoverlay(wilderness_underground_overlay);
+    } else {
+        if_openoverlay(wilderness_overlay);
+    }
+
+} else {
+    set_player_op(null, 2, ^false);
+}
+
+set_player_op(null, 2, ^false);
+set_player_op("Follow", 3, ^false);
+set_player_op("Trade with", 4, ^false);
+set_player_op(null, 5, ^false);
+
+minimap_toggle(0); //reset minimap state on login
+
+// register the soft timer that handles replenishing stats
+settimer(stat_regen, 100);
+settimer(stat_boost_restore, 100);
+// same for health
+settimer(health_regen, 100);
+// random event timer
+settimer(general_macro_events, 500);
+// chest macro gas
+~check_chest_macro_gas;
+
+// for logout out during a general macro event, they respawn when you log back in
+// queue:
+// - https://youtu.be/T0ulsgorBkY?list=PLn23LiLYLb1Y3P9S9qZbijcJihiD416jT
+// - https://youtu.be/HwGAzcmvF9k?list=PLn23LiLYLb1Y3P9S9qZbijcJihiD416jT
+// npc spawns only after interface is closed
+queue(macro_event_login, 0, 0);
+// TODO: Find out if these run on login?
+~macro_cube_login;
+// so pk skulls persist after logging back in
+~set_pk_skull_login;
+// so antifire persists after logging back in
+~set_antifire_login;
+// if player is in a duel, they are removed from the duel
+~duel_arena_login;
+// if player is in a gnomeball game, they login outside of the arena
+~gnomeball_login;
+// if player is on a trawler ship, they login at port sarim
+~trawler_login;
+// logging out when posioned would continue to poison you after logging back in in 2006
+// https://forum.tip.it/topic/76167-poison-effect-on-f2p/
+~set_poison_login;
+// update weight-reduction equipment (in the case where you switch from f2p <-> p2p)
+~update_weight_equipment;
+~ferment_wines_login;
+~thieving_stall_timers_login;
+~stat_boost_login; // f2p boost reset
+~sa_login; // start timer if low sa energy
+
+if(inzone(movecoord(^grandtree_jail_coord, 0, 0, -2), movecoord(^grandtree_jail_coord, 3, 0, 2), coord) = true) {
+    ~grandtree_spawn_charlie;
+}
+
+if (%tutorial < ^tutorial_complete & ~in_tutorial_island(coord) = true) {
+    ~update_bas;
+    @start_tutorial;
+}
+
+[proc,in_tutorial_island](coord $coord)(boolean)
+if (inzone(0_47_47_45_48, 3_49_49_20_0, $coord) = true) {
+    // taken from client code: x >= 3053 && x <= 3156 && z >= 3056 && z <= 3136
+    return (true);
+}
+
+if (inzone(0_48_148_0_20, 3_48_148_46_63, $coord) = true) {
+    // taken from client code: x >= 3072 && x <= 3118 && z >= 9492 && z <= 9535
+    return (true);
+}
+
+return (false);
+*/

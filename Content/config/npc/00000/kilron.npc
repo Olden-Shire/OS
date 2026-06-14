@@ -1,0 +1,10 @@
+// npc 349
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/3980 8472/3980
+name = Kilron
+models = 208 185 250 311 162 179 274
+headmodels = 48 82

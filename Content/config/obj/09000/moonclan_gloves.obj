@@ -1,0 +1,12 @@
+// obj 9072
+cost = 900
+model = obj_moonclan_gloves
+iop2 = Wear
+manwear = obj_moonclan_gloves_man, 0
+womanwear = obj_moonclan_gloves_woman, 0
+members = true
+yof2d = 1
+zoom2d = 856
+yan2d = 9
+xan2d = 535
+name = Moonclan gloves

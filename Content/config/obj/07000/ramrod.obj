@@ -1,0 +1,9 @@
+// obj 7120
+model = obj_ramrod
+members = true
+manwear = obj_ramrod_wear, 0
+womanwear = obj_ramrod_wear, 0
+zoom2d = 950
+yan2d = 72
+xan2d = 1776
+name = Ramrod

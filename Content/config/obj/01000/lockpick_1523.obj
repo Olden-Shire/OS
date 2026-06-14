@@ -1,0 +1,10 @@
+// obj 1523
+model = obj_lockpick_1523
+xof2d = -9
+yof2d = 4
+zoom2d = 760
+yan2d = 192
+xan2d = 512
+members = true
+cost = 20
+name = Lockpick

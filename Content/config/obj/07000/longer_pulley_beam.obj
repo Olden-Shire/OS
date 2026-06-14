@@ -1,0 +1,12 @@
+// obj 7971
+model = obj_longer_pulley_beam
+xof2d = -29
+yof2d = -2
+zoom2d = 2320
+yan2d = 2032
+zan2d = 1992
+xan2d = 408
+members = true
+ambient = 10
+cost = 5
+name = Longer pulley beam

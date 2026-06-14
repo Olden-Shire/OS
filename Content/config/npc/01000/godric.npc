@@ -1,0 +1,12 @@
+// npc 1114
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+resizeh = 118
+resizev = 118
+recol = 8090/0 61/0 25238/0 4626/0 7700/0 6798/262
+name = Godric
+models = 215 295 150 254 185 246
+headmodels = 67

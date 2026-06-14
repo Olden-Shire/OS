@@ -1,0 +1,6 @@
+// loc 10416
+active = 1
+op1 = Climb-down
+blockwalk = true
+models = 10155/22
+name = Crevice

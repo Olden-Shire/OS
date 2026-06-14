@@ -1,0 +1,11 @@
+// npc 4905
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+resizev = 120
+alwaysontop = true
+recol = 8741/41282 24/41633 6430/99 6439/127 25238/41633 4626/38156
+name = Master smithing tutor
+models = 230 4925 10984 15412 167 179 491 274 185
+headmodels = 63 7380

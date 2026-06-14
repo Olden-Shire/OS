@@ -1,0 +1,6 @@
+// npc 3473
+vislevel = 0
+readyanim = 3469
+walkanim = 3469
+name = Balloon Toad
+models = 13723

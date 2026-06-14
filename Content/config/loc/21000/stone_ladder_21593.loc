@@ -1,0 +1,7 @@
+// loc 21593
+hillskew = true
+op1 = Climb-down
+forcedecor = true
+blockwalk = true
+models = 10155/22
+name = Stone ladder

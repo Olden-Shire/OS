@@ -1,0 +1,6 @@
+// loc 17069
+sharelight = true
+active = 1
+nonsolid = true
+models = 16902/22
+name = Broken Raft

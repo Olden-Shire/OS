@@ -1,0 +1,8 @@
+// loc 6092
+active = 1
+blockwalk = true
+forceapproach = 11
+op1 = Climb
+recol = 11148/5404 11026/5404 10894/5404
+models_only = 7107 14193
+name = Bookcase

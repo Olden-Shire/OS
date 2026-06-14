@@ -1,0 +1,10 @@
+// npc 1674
+size = 1
+resizeh = 93
+resizev = 71
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+name = Lord Rologarth
+models = 5175
+headmodels = 5119

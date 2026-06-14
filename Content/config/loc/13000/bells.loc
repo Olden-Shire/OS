@@ -1,0 +1,8 @@
+// loc 13215
+op5 = Remove
+anim = 3577
+width = 2
+op1 = Play
+forceapproach = 11
+models_only = 13132
+name = Bells

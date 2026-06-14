@@ -1,0 +1,13 @@
+// npc 2108
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 2159
+op1 = Talk-to
+resizeh = 70
+resizev = 70
+turnspeed = 0
+recol = 127/16 16/61 61/127
+name = Red Axe Cat
+models = 3010 3006
+headmodels = 6436

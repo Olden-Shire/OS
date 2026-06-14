@@ -1,0 +1,8 @@
+// loc 5044
+mirror = true
+length = 3
+sharelight = true
+active = 1
+op1 = Go-through
+models_only = 4960
+name = Ice gate

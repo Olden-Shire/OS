@@ -1,0 +1,10 @@
+// obj 3164
+cost = 30
+model = obj_khali_brew
+yof2d = -1
+zoom2d = 970
+yan2d = 1888
+xan2d = 104
+manwear = obj_karamjan_rum_3164_wear, 0
+womanwear = obj_karamjan_rum_3164_wear, 6
+name = Karamjan rum

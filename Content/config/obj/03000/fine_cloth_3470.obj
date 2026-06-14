@@ -1,0 +1,8 @@
+// obj 3470
+model = obj_fine_cloth_3470
+yan2d = 360
+zan2d = 168
+xan2d = 580
+cost = 500
+members = true
+name = Fine cloth

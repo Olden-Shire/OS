@@ -1,0 +1,11 @@
+// npc 3329
+size = 1
+vislevel = 0
+resizev = 133
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+recol = 943/1944 939/1944 935/1944 5161/7054 4550/4539
+name = Sigurd
+models = 11739 214 11746 252 11759 11764 11727 11732 12087 11810 11736
+headmodels = 52 84 11804 11806

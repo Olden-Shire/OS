@@ -1,0 +1,7 @@
+// loc 6307
+op1 = Turn
+active = 1
+ambient = 30
+contrast = 30
+models = 6158/4
+name = Statuette in alcove

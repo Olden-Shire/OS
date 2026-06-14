@@ -1,0 +1,9 @@
+// loc 19228
+noshadow = true
+contrast = 0
+ambient = 0
+op1 = Jump
+op2 = Dismantle
+active = 1
+models_only = 10772
+name = Spiked pit

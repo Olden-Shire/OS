@@ -1,0 +1,7 @@
+// loc 20357
+sharelight = true
+op1 = Climb-down
+forceapproach = 11
+recol = 7836/6589 7834/6585 7958/6581 6932/6577 6930/6573
+models_only = 11539
+name = Ladder

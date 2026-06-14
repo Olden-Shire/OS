@@ -1,0 +1,14 @@
+// obj 5288
+model = obj_papaya_tree_seed
+xof2d = 2
+zoom2d = 930
+yan2d = 1932
+xan2d = 320
+members = true
+stackable = true
+count1 = 5248, 2
+count2 = 5249, 3
+count3 = 5250, 4
+count4 = 5251, 5
+cost = 115
+name = Papaya tree seed

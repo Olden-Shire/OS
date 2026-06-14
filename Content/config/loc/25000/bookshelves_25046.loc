@@ -1,0 +1,7 @@
+// loc 25046
+length = 2
+forceapproach = 13
+ambient = 25
+op1 = Search
+models_only = 26460 26458
+name = Bookshelves

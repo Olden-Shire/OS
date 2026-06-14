@@ -1,0 +1,11 @@
+// npc 208
+vislevel = 0
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+alwaysontop = true
+recol = 61/520 7054/90 908/26 906/7888
+name = Captain Lawgof
+models = 7029 6020 7050 7039 2991 7042
+headmodels = 6988 15405

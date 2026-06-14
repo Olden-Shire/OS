@@ -1,0 +1,6 @@
+// loc 24097
+active = 1
+ambient = 20
+nonsolid = true
+models = 24738/22
+name = Toy weapons

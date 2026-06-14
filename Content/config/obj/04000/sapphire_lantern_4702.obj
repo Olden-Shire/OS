@@ -1,0 +1,10 @@
+// obj 4702
+model = obj_bullseye_lantern_4550
+zoom2d = 1190
+yan2d = 120
+xan2d = 28
+cost = 600
+members = true
+iop1 = Extinguish
+recol = 8146/41938 8419/41938
+name = Sapphire lantern

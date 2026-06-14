@@ -1,0 +1,10 @@
+// npc 680
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/8111 8741/5033 25238/43183 6798/41 43072/7446
+name = Leatherworker
+models = 396 360 293 332 353 436 479 444
+headmodels = 120 90

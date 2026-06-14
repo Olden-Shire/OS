@@ -1,0 +1,10 @@
+// npc 5138
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/7595 25238/7595 4626/7446 0/8844
+name = Charlie
+models = 20096 230 11190 292 20098 20095 15411 495 271 185
+headmodels = 63 11188 20094

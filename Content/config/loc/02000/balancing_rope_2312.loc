@@ -1,0 +1,8 @@
+// loc 2312
+hillskew = true
+sharelight = true
+active = 1
+op1 = Walk-on
+blockwalk = true
+models = 1878/22
+name = Balancing rope

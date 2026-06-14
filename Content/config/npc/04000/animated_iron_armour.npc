@@ -1,0 +1,10 @@
+// npc 4279
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 23
+recol = 61/33 41/20 24/142 37/20 11200/49
+name = Animated Iron Armour
+models = 15311 15316 15301 15304 518 15314 15303

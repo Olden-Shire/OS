@@ -1,0 +1,10 @@
+// obj 7984
+model = obj_basilisk_head_7984
+members = true
+xof2d = 8
+yof2d = -1
+zoom2d = 1360
+yan2d = 1850
+xan2d = 90
+cost = 4000
+name = Basilisk head

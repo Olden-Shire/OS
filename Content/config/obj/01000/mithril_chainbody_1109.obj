@@ -1,0 +1,11 @@
+// obj 1109
+cost = 1950
+model = obj_bronze_chainbody_1103
+yof2d = 2
+zoom2d = 1100
+xan2d = 568
+iop2 = Wear
+manwear = obj_bronze_chainbody_1103_man, 0
+womanwear = obj_bronze_chainbody_1103_woman, 0
+recol = 33/43297 41/43177 49/43185
+name = Mithril chainbody

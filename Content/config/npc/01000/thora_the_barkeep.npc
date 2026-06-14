@@ -1,0 +1,11 @@
+// npc 1300
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk to
+op3 = Trade
+recol = 6798/6730 8741/5547 10299/4550 25238/2475
+name = Thora the Barkeep
+models = 390 456 332 353 428 361 417
+headmodels = 113 136

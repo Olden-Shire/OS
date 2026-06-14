@@ -1,0 +1,9 @@
+// loc 19107
+resizex = 110
+resizey = 90
+resizez = 110
+width = 2
+active = 1
+recol = 43943/19992 6457/22305 6573/22424 5543/22416
+models_only = 10480 10482
+name = Puppet torsos

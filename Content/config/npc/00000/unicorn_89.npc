@@ -1,0 +1,11 @@
+// npc 89
+size = 2
+readyanim = 6374
+walkanim = 6373
+resizeh = 110
+resizev = 110
+ambient = 25
+op2 = Attack
+vislevel = 15
+name = Unicorn
+models = 25755 25756

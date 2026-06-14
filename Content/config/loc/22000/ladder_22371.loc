@@ -1,0 +1,11 @@
+// loc 22371
+active = 1
+sharelight = true
+hillskew = true
+contrast = 20
+ambient = 20
+blockwalk = true
+mapscene = 7
+op1 = Climb
+models_only = 23117
+name = Ladder

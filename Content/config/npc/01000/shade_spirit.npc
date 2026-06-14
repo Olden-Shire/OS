@@ -1,0 +1,8 @@
+// npc 1242
+vislevel = 0
+size = 1
+walkanim = 1308
+readyanim = 1308
+recol = 916/22464 0/127 24/127
+name = Shade Spirit
+models = 4140

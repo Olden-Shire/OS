@@ -1,0 +1,10 @@
+// loc 18960
+anim = 5044
+width = 4
+length = 2
+resizey = 228
+resizex = 228
+resizez = 228
+op1 = Talk-to
+models_only = 19325 19326 19324
+name = Cart Camel

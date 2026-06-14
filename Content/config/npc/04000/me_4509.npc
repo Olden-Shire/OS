@@ -1,0 +1,11 @@
+// npc 4509
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op2 = Attack
+ambient = 40
+contrast = 40
+op2 = Attack
+vislevel = 79
+name = Me
+models = 16480 16484 16482 16475 16474 16487 16483 16489 16471
+headmodels = 16468

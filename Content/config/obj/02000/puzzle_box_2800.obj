@@ -1,0 +1,10 @@
+// obj 2800
+cost = 100
+members = true
+model = obj_puzzle_box_2795
+yof2d = 4
+zoom2d = 900
+yan2d = 80
+xan2d = 420
+iop1 = Open
+name = Puzzle box

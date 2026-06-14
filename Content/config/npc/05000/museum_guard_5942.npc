@@ -1,0 +1,10 @@
+// npc 5942
+readyanim = 6464
+walkanims = 819, 820, 821, 822
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 4626/0
+name = Museum guard
+models = 25655 6848 246 25679 25647 177 25667 181
+headmodels = 25629 5787

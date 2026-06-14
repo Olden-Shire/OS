@@ -1,0 +1,14 @@
+// loc 3769
+width = 2
+length = 2
+resizex = 256
+resizey = 256
+resizez = 256
+anim = 475
+blockwalk = true
+ambient = 75
+contrast = 75
+bgsound = 2065, 3
+nonblockrange = true
+models_only = 3818 3811
+name = Fire

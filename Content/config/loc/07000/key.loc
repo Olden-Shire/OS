@@ -1,0 +1,6 @@
+// loc 7346
+ambient = 30
+active = 1
+nonsolid = true
+models_only = 7698
+name = Key

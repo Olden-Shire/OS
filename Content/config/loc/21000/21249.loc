@@ -1,0 +1,5 @@
+// loc 21249
+active = 1
+mirror = true
+nonsolid = true
+multiloc = 3294, 65535, 65535 65535 65535 21184

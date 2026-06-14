@@ -1,0 +1,8 @@
+// npc 5906
+size = 1
+readyanim = 6311
+walkanim = 6312
+op2 = Attack
+vislevel = 78
+name = A Doubt
+models = 25007

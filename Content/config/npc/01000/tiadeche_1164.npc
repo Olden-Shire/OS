@@ -1,0 +1,10 @@
+// npc 1164
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 4550/6806 43072/6806 4886/36036 5572/2157 61/926
+name = Tiadeche
+models = 231 8919 246 8928 8916 176 8925 201 289
+headmodels = 64 43

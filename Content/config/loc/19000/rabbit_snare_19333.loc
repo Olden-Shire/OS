@@ -1,0 +1,6 @@
+// loc 19333
+nonsolid = true
+op1 = Dismantle
+op2 = Investigate
+models_only = 23903
+name = Rabbit snare

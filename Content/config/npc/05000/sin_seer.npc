@@ -1,0 +1,10 @@
+// npc 5571
+vislevel = 0
+walkanim = 5809
+readyanim = 5810
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+name = Sin Seer
+models = 22319 22320
+headmodels = 22277

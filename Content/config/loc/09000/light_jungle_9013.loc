@@ -1,0 +1,8 @@
+// loc 9013
+op3 = Hidden
+op4 = Hack
+mapscene = 5
+anim = 2380
+nonblockrange = true
+models_only = 8898
+name = Light Jungle

@@ -1,0 +1,8 @@
+// npc 2494
+size = 1
+walkanim = 2396
+readyanim = 2395
+op2 = Attack
+vislevel = 17
+name = Mosquito swarm
+models = 8905

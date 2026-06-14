@@ -1,0 +1,5 @@
+// loc 9544
+sharelight = true
+active = 0
+nonblockrange = true
+models = 9478/0 25872/1 9479/3 25873/9

@@ -1,0 +1,8 @@
+// loc 4437
+length = 2
+width = 2
+op1 = Mine
+op3 = hidden
+nonblockrange = true
+models_only = 4418
+name = Rocks

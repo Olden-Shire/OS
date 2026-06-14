@@ -1,0 +1,12 @@
+// obj 10440
+model = obj_saradomin_crozier_10440
+xof2d = 3
+yof2d = 4
+zoom2d = 2151
+xan2d = 567
+iop2 = Wield
+manwear = obj_saradomin_crozier_10440_wear, 0
+womanwear = obj_saradomin_crozier_10440_wear, 6
+members = true
+cost = 5000
+name = Saradomin crozier

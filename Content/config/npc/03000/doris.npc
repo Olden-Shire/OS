@@ -1,0 +1,11 @@
+// npc 3381
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/40247 43072/4550
+name = Doris
+models = 408 13345 465 8846 353 13346 13339
+headmodels = 12741 13306

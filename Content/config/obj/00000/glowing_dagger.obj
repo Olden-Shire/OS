@@ -1,0 +1,11 @@
+// obj 747
+model = obj_glowing_dagger
+xof2d = 1
+zoom2d = 1000
+yan2d = 248
+xan2d = 412
+members = true
+iop2 = Wield
+manwear = obj_glowing_dagger_wear, 0
+womanwear = obj_glowing_dagger_wear, 6
+name = Glowing dagger

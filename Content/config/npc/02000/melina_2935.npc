@@ -1,0 +1,11 @@
+// npc 2935
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 50
+contrast = 50
+op1 = Talk-To
+recol = 17467/18626
+name = Melina
+models = 5226 5228 5225 5227
+headmodels = 5208

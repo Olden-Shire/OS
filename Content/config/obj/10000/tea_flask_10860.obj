@@ -1,0 +1,7 @@
+// obj 10860
+model = obj_tea_flask_10859
+womanwear = obj_tea_flask_10860_wear, 0
+manwear = obj_tea_flask_10860_wear, 0
+iop2 = Use
+members = true
+name = Tea flask

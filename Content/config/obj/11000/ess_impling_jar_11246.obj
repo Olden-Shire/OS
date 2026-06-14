@@ -1,0 +1,14 @@
+// obj 11246
+model = obj_baby_impling_jar_11238
+xof2d = 20
+yof2d = -12
+zoom2d = 789
+yan2d = 97
+zan2d = 180
+xan2d = 2047
+iop3 = Loot
+iop5 = Destroy
+members = true
+cost = 50
+recol = 43030/28723 43034/33678 43038/33321 43043/33678 555/33678
+name = Ess' impling jar

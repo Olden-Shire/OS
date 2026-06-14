@@ -1,0 +1,11 @@
+// obj 7420
+model = obj_mutated_zygomite
+contrast = 20
+ambient = 20
+xof2d = -3
+yof2d = 2
+zoom2d = 1872
+yan2d = 6
+xan2d = 468
+members = true
+name = Mutated zygomite

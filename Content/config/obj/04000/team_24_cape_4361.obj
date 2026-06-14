@@ -1,0 +1,15 @@
+// obj 4361
+cost = 50
+team = 24
+iop2 = Wear
+members = true
+model = obj_team_4_cape_4321
+manwear = obj_team_4_cape_4321_man, 0
+womanwear = obj_team_4_cape_4321_woman, 0
+xof2d = 3
+yof2d = 12
+zoom2d = 2130
+yan2d = 992
+xan2d = 364
+recol = 7756/40167 7845/40499
+name = Team-24 cape

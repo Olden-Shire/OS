@@ -1,0 +1,7 @@
+// loc 3800
+width = 2
+hillskew = true
+nonblockrange = true
+recol = 6036/7335
+models_only = 723
+name = Counter

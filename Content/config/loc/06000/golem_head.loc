@@ -1,0 +1,4 @@
+// loc 6326
+nonsolid = true
+models_only = 6163
+name = Golem head

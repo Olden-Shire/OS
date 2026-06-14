@@ -1,0 +1,9 @@
+// loc 11005
+ambient = 60
+contrast = 60
+anim = 3095
+active = 1
+op1 = Pass-through
+bgsound = 3131, 3
+models_only = 10936
+name = Magic barrier

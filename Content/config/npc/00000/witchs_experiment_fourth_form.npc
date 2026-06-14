@@ -1,0 +1,11 @@
+// npc 900
+size = 2
+readyanim = 6580
+walkanim = 6556
+resizeh = 110
+resizev = 110
+op2 = Attack
+vislevel = 53
+recol = 7219/54550 10270/21691 10262/54546 10258/54794 82/21691 10301/54550
+name = Witch's experiment (fourth form)
+models = 26264

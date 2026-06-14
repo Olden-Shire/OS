@@ -1,0 +1,7 @@
+// loc 13479
+width = 2
+length = 2
+op5 = Remove
+bgsound = 2150, 3
+models_only = 13149
+name = Large fountain

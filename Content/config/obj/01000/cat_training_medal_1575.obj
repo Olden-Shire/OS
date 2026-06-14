@@ -1,0 +1,12 @@
+// obj 1575
+cost = 350
+model = obj_cat_training_medal_1575
+members = true
+yof2d = 9
+zoom2d = 500
+yan2d = 120
+xan2d = 296
+iop2 = Wear
+manwear = obj_cat_training_medal_1575_man, 0
+womanwear = obj_cat_training_medal_1575_woman, 0
+name = Cat training medal

@@ -1,0 +1,6 @@
+// loc 11885
+sharelight = true
+active = 0
+ambient = 10
+recol = 8406/7335 6356/7331 6352/7326 8398/7326 6348/7331 5322/7335
+models = 11641/0

@@ -1,0 +1,13 @@
+// obj 9176
+model = obj_crossbow_837
+yof2d = 3
+zoom2d = 926
+yan2d = 258
+xan2d = 432
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+members = true
+cost = 93
+recol = 6447/5425 6443/5545 6439/5665 5656/43472 5652/43464 5904/43328
+name = Blurite c'bow

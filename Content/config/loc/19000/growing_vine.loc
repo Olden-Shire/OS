@@ -1,0 +1,6 @@
+// loc 19987
+width = 2
+ambient = 20
+op1 = Climb
+models_only = 20073
+name = Growing vine

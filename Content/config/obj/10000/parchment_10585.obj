@@ -1,0 +1,11 @@
+// obj 10585
+model = obj_parchment_10585
+xof2d = 1
+yof2d = 7
+zoom2d = 1040
+yan2d = 120
+xan2d = 380
+iop1 = Read
+iop5 = Destroy
+members = true
+name = Parchment

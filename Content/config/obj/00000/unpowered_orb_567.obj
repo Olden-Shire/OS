@@ -1,0 +1,12 @@
+// obj 567
+model = obj_unpowered_orb_567
+xof2d = 3
+yof2d = 3
+zoom2d = 790
+yan2d = 96
+xan2d = 316
+cost = 100
+members = true
+cost = 100
+recol = 43117/127
+name = Unpowered orb

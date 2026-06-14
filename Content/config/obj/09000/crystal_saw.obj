@@ -1,0 +1,13 @@
+// obj 9625
+members = true
+model = obj_crystal_saw
+ambient = 25
+cost = 10
+xof2d = 12
+yof2d = -14
+zoom2d = 1114
+yan2d = 277
+zan2d = 28
+xan2d = 650
+iop5 = Destroy
+name = Crystal saw

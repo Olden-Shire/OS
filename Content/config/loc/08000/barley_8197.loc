@@ -1,0 +1,6 @@
+// loc 8197
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8186 8222 7766
+name = Barley

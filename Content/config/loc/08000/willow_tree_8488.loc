@@ -1,0 +1,9 @@
+// loc 8488
+mapscene = 3
+ambient = 25
+op1 = Chop down
+op3 = hidden
+op2 = Inspect
+op4 = Guide
+models_only = 8137 7768
+name = Willow Tree

@@ -1,0 +1,9 @@
+// obj 2370
+model = obj_steel_studs_2370
+yof2d = 15
+zoom2d = 430
+yan2d = 24
+xan2d = 288
+cost = 150
+members = true
+name = Steel studs

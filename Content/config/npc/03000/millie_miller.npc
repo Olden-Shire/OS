@@ -1,0 +1,9 @@
+// npc 3806
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/293
+name = Millie Miller
+models = 399 467 8846 10706 11119 358
+headmodels = 118

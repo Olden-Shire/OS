@@ -1,0 +1,12 @@
+// obj 10637
+members = true
+iop2 = Wear
+cost = 60000
+model = obj_fire_cape_6570
+xof2d = -4
+zoom2d = 2086
+yan2d = 2031
+xan2d = 567
+manwear = obj_fire_cape_6570_man, 0
+womanwear = obj_fire_cape_6570_woman, 0
+name = Fire cape

@@ -1,0 +1,12 @@
+// npc 573
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/6057
+name = Fur trader
+models = 230 299 250 159 176 254 185
+headmodels = 63 82

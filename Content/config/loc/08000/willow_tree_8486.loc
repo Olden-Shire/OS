@@ -1,0 +1,6 @@
+// loc 8486
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8135 7768
+name = Willow Tree

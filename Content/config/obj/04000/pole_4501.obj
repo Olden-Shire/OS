@@ -1,0 +1,8 @@
+// obj 4501
+model = obj_mud_4490
+members = true
+manwear = obj_pole_4500_wear, 0
+womanwear = obj_pole_4500_wear, 6
+yof2d = -1
+stackable = true
+name = Pole

@@ -1,0 +1,8 @@
+// npc 1538
+size = 1
+readyanim = 1442
+walkanim = 5479
+vislevel = 0
+nominimap = true
+name = Corpse
+models = 21171 21177 21162 21157 21183 21203 21188

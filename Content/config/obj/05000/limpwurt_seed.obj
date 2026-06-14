@@ -1,0 +1,14 @@
+// obj 5100
+model = obj_limpwurt_seed
+yof2d = 28
+zoom2d = 680
+yan2d = 144
+xan2d = 256
+members = true
+count1 = 5268, 2
+count2 = 5269, 3
+count3 = 5270, 4
+count4 = 5271, 5
+stackable = true
+cost = 12
+name = Limpwurt seed

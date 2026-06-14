@@ -1,0 +1,11 @@
+// npc 4937
+size = 1
+resizeh = 64
+resizev = 64
+walkanim = 4931
+readyanim = 4932
+op2 = Attack
+vislevel = 12
+recol = 10295/21568 10291/21576 10287/21568 10283/21572 10279/21563 10275/21559
+name = Dungeon rat
+models = 18893 18889 18896 18888

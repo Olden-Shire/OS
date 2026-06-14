@@ -1,0 +1,12 @@
+// obj 3389
+cost = 40000
+model = obj_splitbark_legs_3389
+iop2 = Wear
+manwear = obj_splitbark_legs_3389_man, 0
+womanwear = obj_splitbark_legs_3389_woman, 0
+members = true
+xof2d = 4
+yof2d = -1
+zoom2d = 1320
+xan2d = 252
+name = Splitbark legs

@@ -1,0 +1,8 @@
+// loc 18082
+blockwalk = true
+active = 1
+op1 = Walk-across
+forcedecor = true
+offsety = -40
+models = 17757/22
+name = Floor

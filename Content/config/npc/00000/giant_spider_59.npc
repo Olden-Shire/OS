@@ -1,0 +1,9 @@
+// npc 59
+size = 1
+walkanim = 5325
+readyanim = 5326
+op2 = Attack
+vislevel = 2
+recol = 960/8088 33728/9098 22443/8076 11200/10159 56256/7700 50099/7106
+name = Giant spider
+models = 20309 20311

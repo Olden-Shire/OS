@@ -1,0 +1,9 @@
+// npc 5212
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+recol = 54397/13489 8741/13601 25238/13716 6798/8640
+name = Alice
+models = 393 414 467 348 353 421 7366
+headmodels = 115 131

@@ -1,0 +1,9 @@
+// loc 21766
+width = 2
+length = 2
+active = 1
+ambient = 30
+op1 = Pick-Fruit
+recol = 14224/18737 15244/18857 7504/5444 7496/5435 6457/5427
+models_only = 22206 22201 22203 22205
+name = Sq'irk tree

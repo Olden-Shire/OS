@@ -1,0 +1,9 @@
+// npc 4433
+vislevel = 0
+size = 1
+op1 = Talk-to
+op3 = Pick-pocket
+recol = 9447/7836
+name = Fairy Godfather
+models = 11880
+headmodels = 3178

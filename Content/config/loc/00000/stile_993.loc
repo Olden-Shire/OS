@@ -1,0 +1,9 @@
+// loc 993
+length = 2
+hillskew = true
+op1 = Climb-over
+mapscene = 70
+raiseobject = 0
+nonblockrange = true
+models_only = 982
+name = Stile

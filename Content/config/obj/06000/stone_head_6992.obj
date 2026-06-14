@@ -1,0 +1,10 @@
+// obj 6992
+model = obj_stone_head_6992
+members = true
+xof2d = 9
+yof2d = -4
+zoom2d = 1232
+yan2d = 1505
+xan2d = 453
+iop5 = Destroy
+name = Stone head

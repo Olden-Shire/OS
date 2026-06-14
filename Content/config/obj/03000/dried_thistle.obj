@@ -1,0 +1,13 @@
+// obj 3263
+model = obj_troll_thistle
+members = true
+cost = 1
+xof2d = 5
+yof2d = 20
+zoom2d = 700
+yan2d = 1004
+xan2d = 128
+ambient = 30
+contrast = 30
+recol = 14224/7461 13852/7461 17292/7461
+name = Dried thistle

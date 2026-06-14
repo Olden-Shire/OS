@@ -1,0 +1,10 @@
+// npc 605
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 70/99 5532/82 41/82 61/99 7700/103 57/99
+name = Sir Vyvin
+models = 206 306 164 179 268 185 247 236
+headmodels = 46 79 68

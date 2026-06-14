@@ -1,0 +1,6 @@
+// loc 2175
+op1 = Climb-down
+sharelight = true
+recol = 12579/5665 12574/5660 12698/5784 12694/5784
+models_only = 5294
+name = Ship's ladder

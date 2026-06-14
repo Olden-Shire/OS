@@ -1,0 +1,9 @@
+// loc 7252
+anim = 2210
+nonsolid = true
+forcedecor = true
+length = 2
+active = 1
+recol = 41/61
+models_only = 7666
+name = Blade

@@ -1,0 +1,6 @@
+// loc 22800
+active = 1
+ambient = 20
+nonsolid = true
+models = 23486/22
+name = Mushrooms

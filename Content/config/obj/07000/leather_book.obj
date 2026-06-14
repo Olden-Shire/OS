@@ -1,0 +1,13 @@
+// obj 7635
+cost = 1
+model = obj_battered_book
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+members = true
+iop1 = Read
+iop5 = Destroy
+recol = 2991/11148 9152/11160 5018/15244
+name = Leather book

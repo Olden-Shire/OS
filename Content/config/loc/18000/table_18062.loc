@@ -1,0 +1,7 @@
+// loc 18062
+op1 = Search
+active = 1
+blockwalk = true
+nonblockrange = true
+models_only = 17658
+name = Table

@@ -1,0 +1,8 @@
+// loc 17666
+blockwalk = true
+width = 2
+ambient = 10
+nonblockrange = true
+recol = 6443/8481 6439/7452 6563/8472 6558/8596 6682/8720 6806/8844
+models_only = 17856
+name = Table

@@ -1,0 +1,10 @@
+// loc 9152
+sharelight = true
+occlude = true
+active = 1
+ambient = 25
+contrast = 25
+recol = 24/9098
+retex = 2/23
+models_only = 9106
+name = Patched Wall

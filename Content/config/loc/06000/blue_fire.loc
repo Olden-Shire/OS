@@ -1,0 +1,14 @@
+// loc 6009
+anim = 476
+ambient = 100
+contrast = 100
+resizey = 85
+resizex = 56
+resizez = 56
+active = 1
+blockwalk = true
+bgsound = 2065, 3
+nonblockrange = true
+recol = 7104/42964 8128/43980 5056/44973 4019/43965 2987/43934
+models_only = 6022
+name = Blue Fire

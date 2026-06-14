@@ -1,0 +1,10 @@
+// npc 398
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+recol = 7952/127 61/43218 41/43181 926/127 57/43218 10004/127
+name = Legends guard
+models = 219 253 306 164 179 268 184 540 317
+headmodels = 57 85

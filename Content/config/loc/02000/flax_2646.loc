@@ -1,0 +1,6 @@
+// loc 2646
+op2 = Pick
+mapscene = 32
+nonsolid = true
+models_only = 1668
+name = Flax

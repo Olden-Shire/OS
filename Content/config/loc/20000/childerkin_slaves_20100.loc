@@ -1,0 +1,9 @@
+// loc 20100
+active = 1
+nonsolid = true
+width = 7
+ambient = 30
+contrast = 30
+anim = 5068
+models_only = 20478 20477 20479 20480
+name = Childerkin slaves

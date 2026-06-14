@@ -1,0 +1,9 @@
+// loc 13841
+width = 2
+length = 3
+anim = 3742
+ambient = 10
+noshadow = true
+recol = 5545/10533 5541/10657 5665/10652 5660/10776 5784/10772 5904/11024
+models_only = 14159 14160
+name = Row boat

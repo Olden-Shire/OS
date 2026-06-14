@@ -1,0 +1,7 @@
+// loc 20159
+active = 0
+hillskew = true
+sharelight = true
+ambient = 20
+recol = 7335/7603 7331/7599 7326/7723 7322/7719 7446/7843 7442/7838
+models_only = 20652

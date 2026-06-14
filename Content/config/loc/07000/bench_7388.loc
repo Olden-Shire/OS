@@ -1,0 +1,6 @@
+// loc 7388
+mirror = true
+ambient = 25
+nonblockrange = true
+models_only = 7719
+name = Bench

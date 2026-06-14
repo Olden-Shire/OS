@@ -1,0 +1,9 @@
+// loc 7248
+anim = 2209
+width = 2
+length = 2
+nonsolid = true
+hillskew = true
+recol = 10394/5662 10518/5786 10514/5910 10638/6034 10762/3604
+models_only = 7578
+name = Wall

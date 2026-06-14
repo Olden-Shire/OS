@@ -1,0 +1,10 @@
+// npc 2809
+op1 = Talk-to
+size = 2
+resizev = 126
+walkanim = 45
+readyanim = 51
+vislevel = 0
+name = Al the Camel
+models = 9846 9844 9849
+headmodels = 9840

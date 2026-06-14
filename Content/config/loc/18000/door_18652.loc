@@ -1,0 +1,8 @@
+// loc 18652
+width = 3
+length = 2
+nonsolid = true
+anim = 4879
+ambient = 35
+models_only = 18836
+name = Door

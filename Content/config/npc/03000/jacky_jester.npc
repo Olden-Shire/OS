@@ -1,0 +1,14 @@
+// npc 3955
+size = 1
+resizeh = 95
+resizev = 90
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Banish
+alwaysontop = true
+recol = 50467/805 25238/21027 4626/805 4550/9313 6798/9313
+name = Jacky Jester
+models = 15144 228 10075 246 15146 10073 10074 10076 15143
+headmodels = 53 76 12739

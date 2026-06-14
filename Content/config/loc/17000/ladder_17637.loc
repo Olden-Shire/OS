@@ -1,0 +1,5 @@
+// loc 17637
+blockwalk = true
+nonblockrange = true
+models_only = 17644
+name = Ladder

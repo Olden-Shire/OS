@@ -1,0 +1,10 @@
+// loc 7161
+active = 1
+ambient = 15
+width = 3
+length = 2
+blockwalk = true
+op1 = Chop
+forceapproach = 11
+models_only = 7442 7441
+name = Tendrils

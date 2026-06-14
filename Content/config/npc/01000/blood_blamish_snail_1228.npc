@@ -1,0 +1,9 @@
+// npc 1228
+size = 1
+walkanim = 1274
+readyanim = 1276
+op2 = Attack
+vislevel = 20
+recol = 10545/10285 12589/10281 12713/5157 6466/20 6577/295 6697/20
+name = Blood Blamish Snail
+models = 4108

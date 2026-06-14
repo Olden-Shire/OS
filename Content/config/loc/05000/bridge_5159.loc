@@ -1,0 +1,11 @@
+// loc 5159
+op1 = Cross
+sharelight = true
+forcedecor = true
+hillskew = true
+mapscene = 46
+nonsolid = true
+active = 1
+recol = 6932/12698 6684/12818
+models = 1089/22
+name = Bridge

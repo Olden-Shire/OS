@@ -1,0 +1,11 @@
+// npc 1871
+size = 1
+walkanim = 1146
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/0 25238/0 4550/5555
+name = Ali the Hag
+models = 6095 6097 6092 428 6093 181 6102
+headmodels = 6083

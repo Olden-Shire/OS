@@ -1,0 +1,6 @@
+// loc 20375
+forceapproach = 13
+ambient = 20
+recol = 5784/6701 5660/6589 5541/6598
+models_only = 1179
+name = Potter's wheel

@@ -1,0 +1,9 @@
+// loc 21344
+sharelight = true
+ambient = 20
+contrast = 20
+hillskew = true
+active = 0
+offsety = -40
+recol = 5413/6817 7580/6705
+models = 4342/12 4343/13 4344/18

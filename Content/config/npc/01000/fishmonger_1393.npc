@@ -1,0 +1,12 @@
+// npc 1393
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 8741/41137 25238/32798 8078/32819 6798/6713 7952/13072 7073/5404
+name = Fishmonger
+models = 230 252 292 162 179 4226 4218 326 317
+headmodels = 63 84

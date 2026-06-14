@@ -1,0 +1,11 @@
+// obj 730
+model = obj_binding_book
+yof2d = 5
+zoom2d = 1340
+yan2d = 1940
+xan2d = 412
+members = true
+iop1 = Read
+iop2 = Enchant-Vials
+recol = 5018/43544 41/41191 61/41191 11177/41191 10351/33744
+name = Binding book

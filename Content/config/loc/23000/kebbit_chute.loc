@@ -1,0 +1,9 @@
+// loc 23123
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+blockwalk = true
+op1 = Insert-kebbit
+models_only = 24020
+name = Kebbit chute

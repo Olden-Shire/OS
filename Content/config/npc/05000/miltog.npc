@@ -1,0 +1,10 @@
+// npc 5781
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+op3 = Trade
+recol = 5532/10644 5656/10768 5652/10892 20/10768 24/10644 11175/10892
+name = Miltog
+models = 23643 23690 23625
+headmodels = 23236

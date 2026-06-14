@@ -1,0 +1,7 @@
+// loc 3945
+width = 2
+mirror = true
+op1 = Enter
+ambient = 25
+models_only = 3996
+name = Huge Gate

@@ -1,0 +1,9 @@
+// loc 4765
+anim = 476
+ambient = 100
+contrast = 100
+resizey = 512
+mapscene = 22
+active = 1
+models = 4794/0 4795/1 4796/2
+name = Wall of flame

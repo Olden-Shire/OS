@@ -1,0 +1,12 @@
+// npc 1435
+walkanim = 1380
+readyanim = 1386
+resizeh = 130
+resizev = 160
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 20/45 7721/6461
+name = Tutab
+models = 4817 4827
+headmodels = 4659

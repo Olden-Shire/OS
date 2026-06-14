@@ -1,0 +1,6 @@
+// loc 2051
+ambient = 25
+op1 = Open
+nonblockrange = true
+models = 25030/0
+name = Gate

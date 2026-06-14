@@ -1,0 +1,8 @@
+// npc 85
+size = 2
+walkanim = 152
+readyanim = 155
+op2 = Attack
+vislevel = 55
+name = Golem
+models = 2969

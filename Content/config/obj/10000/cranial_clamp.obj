@@ -1,0 +1,11 @@
+// obj 10893
+model = obj_cranial_clamp
+xof2d = 1
+yof2d = 11
+zoom2d = 1438
+yan2d = 41
+xan2d = 456
+contrast = 15
+ambient = 15
+members = true
+name = Cranial clamp

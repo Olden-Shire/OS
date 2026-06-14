@@ -1,0 +1,11 @@
+// obj 4251
+iop1 = Empty
+members = true
+model = obj_ectophial_4251
+manwear = obj_ectophial_4251_wear, 0
+womanwear = obj_ectophial_4251_wear, 0
+yof2d = -5
+zoom2d = 890
+yan2d = 24
+xan2d = 156
+name = Ectophial

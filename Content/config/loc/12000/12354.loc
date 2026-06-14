@@ -1,0 +1,5 @@
+// loc 12354
+active = 1
+nonsolid = true
+anim = 3351
+multiloc = 1850, 65535, 65535 65535 65535 65535 12355

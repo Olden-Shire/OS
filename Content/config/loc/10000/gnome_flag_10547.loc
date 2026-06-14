@@ -1,0 +1,9 @@
+// loc 10547
+width = 2
+ambient = 25
+active = 1
+anim = 917
+nonsolid = true
+recol = 6932/6689 8662/21784 7626/25104
+models_only = 10348
+name = Gnome Flag

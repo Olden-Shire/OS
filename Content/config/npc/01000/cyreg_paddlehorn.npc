@@ -1,0 +1,9 @@
+// npc 1567
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+op1 = Talk-to
+recol = 7952/19873 4626/29574 8741/19873 4550/2524 6798/7613 25238/19873
+name = Cyreg Paddlehorn
+models = 208 250 292 163 179 265 185 317 534
+headmodels = 48 82

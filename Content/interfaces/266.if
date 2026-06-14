@@ -1,0 +1,21 @@
+// interface 266
+
+[com_0]
+type=2
+buttontype=0
+clientcode=0
+x=16
+y=8
+width=4
+height=7
+trans=0
+eventcode=0x1f800000
+marginx=10
+marginy=4
+iop1=Deposit 1
+iop2=Deposit 5
+iop3=Deposit 10
+iop4=Deposit All
+iop5=Deposit X
+targetverb=
+targetbase=

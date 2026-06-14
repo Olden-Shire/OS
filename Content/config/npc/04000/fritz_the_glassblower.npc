@@ -1,0 +1,10 @@
+// npc 4909
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 4859
+op1 = Talk-to
+recol = 8887/8478 8741/8478 23326/4007 10004/6430
+name = Fritz the Glassblower
+models = 14174 6848 247 14383 15412 151 179 14857 14848 515 9619
+headmodels = 5787 14173 79 9616

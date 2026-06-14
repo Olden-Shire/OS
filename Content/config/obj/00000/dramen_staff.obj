@@ -1,0 +1,12 @@
+// obj 772
+cost = 15
+members = true
+model = obj_dramen_staff
+yof2d = -23
+zoom2d = 1460
+yan2d = 1416
+xan2d = 196
+iop2 = Wield
+manwear = obj_dramen_staff_wear, 0
+womanwear = obj_dramen_staff_wear, 6
+name = Dramen staff

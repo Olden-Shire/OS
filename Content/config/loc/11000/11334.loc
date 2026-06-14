@@ -1,0 +1,7 @@
+// loc 11334
+sharelight = true
+ambient = 10
+active = 0
+nonblockrange = true
+recol = 6585/6689 5673/5912
+models_only = 11156

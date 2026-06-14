@@ -1,0 +1,8 @@
+// loc 10143
+hillskew = true
+length = 2
+width = 2
+anim = 2807
+bgsound = 3119, 5
+models_only = 14317
+name = Brewing control

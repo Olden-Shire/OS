@@ -1,0 +1,14 @@
+// obj 4916
+members = true
+cost = 280000
+iop2 = Wear
+manwear = obj_guthans_platebody_4728_man, 0
+manwear2 = 6641
+womanwear = obj_guthans_platebody_4728_woman, 0
+womanwear2 = 6682
+model = obj_guthans_platebody_4728
+yof2d = 8
+zoom2d = 960
+xan2d = 412
+recol = 10394/10388 10291/10508
+name = Guthans body 100

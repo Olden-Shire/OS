@@ -1,0 +1,6 @@
+// loc 24583
+length = 3
+blockwalk = true
+ambient = 35
+models_only = 25463 25464
+name = Machine

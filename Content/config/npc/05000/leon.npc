@@ -1,0 +1,11 @@
+// npc 5111
+op1 = Talk-to
+op5 = Trade
+alwaysontop = true
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/924 25238/912 4626/7355 6798/2593
+name = Leon
+models = 9452 245 9620 10984 6036 151 179 19839 11339 181
+headmodels = 9448 9449 78

@@ -1,0 +1,7 @@
+// loc 7758
+ambient = 25
+op1 = Check-health
+op2 = Inspect
+op4 = Guide
+models_only = 7834 7837 7767
+name = Cactus

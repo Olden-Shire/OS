@@ -1,0 +1,7 @@
+// loc 10859
+width = 2
+length = 2
+nonsolid = true
+op1 = Jump
+models_only = 10772
+name = Gap

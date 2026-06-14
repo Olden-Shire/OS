@@ -1,0 +1,8 @@
+// loc 6629
+hillskew = true
+anim = 1944
+nonsolid = true
+active = 1
+bgsound = 3123, 5
+models_only = 6275
+name = Wall Crusher

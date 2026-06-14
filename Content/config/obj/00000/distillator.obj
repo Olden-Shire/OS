@@ -1,0 +1,10 @@
+// obj 420
+members = true
+cost = 1
+model = obj_distillator
+xof2d = 3
+yof2d = 3
+zoom2d = 720
+yan2d = 684
+xan2d = 304
+name = Distillator

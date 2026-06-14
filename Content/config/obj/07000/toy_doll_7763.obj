@@ -1,0 +1,11 @@
+// obj 7763
+model = obj_toy_doll_7763
+xof2d = -5
+yof2d = 16
+zoom2d = 1616
+yan2d = 1889
+xan2d = 354
+members = true
+cost = 10
+iop1 = Wind
+name = Toy doll

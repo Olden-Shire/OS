@@ -1,0 +1,9 @@
+// npc 2781
+size = 1
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 22422/64427
+name = Gnome guard
+models = 2909 2893 2915
+headmodels = 21

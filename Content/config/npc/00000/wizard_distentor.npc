@@ -1,0 +1,11 @@
+// npc 462
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op3 = Teleport
+recol = 25238/38852 8741/38852 6798/5921 38814/38852
+name = Wizard Distentor
+models = 214 181 250 292 170 176 265 202 534 290
+headmodels = 52 44 82

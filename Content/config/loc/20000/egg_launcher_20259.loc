@@ -1,0 +1,6 @@
+// loc 20259
+active = 1
+anim = 5429
+blockwalk = true
+models = 20656/22
+name = Egg launcher

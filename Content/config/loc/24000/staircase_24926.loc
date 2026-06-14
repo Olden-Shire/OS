@@ -1,0 +1,10 @@
+// loc 24926
+op1 = Climb-down
+blockwalk = true
+forceapproach = 13
+mapscene = 7
+ambient = 20
+sharelight = true
+recol = 5400/7566
+models_only = 9519
+name = Staircase

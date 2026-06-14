@@ -1,0 +1,16 @@
+// obj 430
+cost = 40
+model = obj_doctors_gown
+iop2 = Wear
+xof2d = -2
+yof2d = 11
+zoom2d = 1040
+yan2d = 168
+xan2d = 304
+manwear = obj_priest_gown_426_man, 0
+manwear2 = 151
+womanwear = obj_priest_gown_426_woman, 0
+womanwear2 = 332
+members = true
+recol = 8741/127
+name = Doctors' gown

@@ -1,0 +1,8 @@
+// loc 17296
+ambient = 20
+op1 = Open
+op2 = Search
+nonblockrange = true
+recol = 5541/6430 5665/6554 5660/6550 5784/6674 5904/6798 5524/7050
+models_only = 17299
+name = Barrel

@@ -1,0 +1,8 @@
+// npc 123
+size = 1
+walkanim = 162
+readyanim = 166
+op2 = Attack
+vislevel = 42
+name = Hobgoblin
+models = 2994 2995

@@ -1,0 +1,10 @@
+// loc 21355
+active = 1
+ambient = 30
+contrast = 30
+width = 2
+length = 2
+anim = 5771
+bgsound = 3087, 5
+models_only = 22049
+name = Large Geyser

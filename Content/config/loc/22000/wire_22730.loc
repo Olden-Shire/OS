@@ -1,0 +1,10 @@
+// loc 22730
+active = 1
+ambient = 20
+blockwalk = true
+anim = 6038
+bgsound = 3506, 3
+op1 = Grab
+nonblockrange = true
+models_only = 23572 23576 23577 23578
+name = Wire

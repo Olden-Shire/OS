@@ -1,0 +1,9 @@
+// npc 3113
+walkanims = 819, 820, 821, 822
+readyanim = 3036
+size = 1
+vislevel = 0
+recol = 43569/5285 8084/99 8741/41253 25238/6439 908/6682
+name = Sandy
+models = 194 215 247 5221 4391 163 10218 274 185
+headmodels = 53 37 79

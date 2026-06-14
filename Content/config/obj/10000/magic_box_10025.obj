@@ -1,0 +1,18 @@
+// obj 10025
+model = obj_magic_box_10025
+resizex = 128
+resizey = 128
+resizez = 128
+contrast = 30
+ambient = 30
+yof2d = -4
+zoom2d = 1070
+yan2d = 1852
+xan2d = 164
+members = true
+iop1 = Activate
+op4 = Activate
+op5 = hidden
+cost = 600
+recol = 18343/66 52017/66 11187/127 40871/0 685/0
+name = Magic box

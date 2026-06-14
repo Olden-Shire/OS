@@ -1,0 +1,6 @@
+// npc 4643
+size = 3
+readyanim = 3952
+vislevel = 0
+name = Healthorg and tortoise
+models = 14803 14801 14799 17273

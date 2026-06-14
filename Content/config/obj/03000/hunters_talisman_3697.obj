@@ -1,0 +1,11 @@
+// obj 3697
+model = obj_hunters_talisman_3696
+xof2d = 4
+yof2d = 4
+zoom2d = 1170
+yan2d = 1264
+xan2d = 576
+cost = 4
+iop1 = Locate
+members = true
+name = Hunters' talisman

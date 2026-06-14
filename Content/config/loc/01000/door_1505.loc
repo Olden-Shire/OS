@@ -1,0 +1,7 @@
+// loc 1505
+sharelight = true
+occlude = true
+active = 1
+raiseobject = 0
+models = 605/0
+name = Door

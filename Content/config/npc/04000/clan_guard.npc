@@ -1,0 +1,13 @@
+// npc 4520
+vislevel = 1
+vislevel = 0
+walkanims = 4426, 4427, 4428, 4429
+readyanim = 4424
+resizeh = 120
+resizev = 120
+contrast = 12
+ambient = 12
+alwaysontop = true
+name = Clan Guard
+models = 16480 16484 16487 16471 16475 16482 16474 270
+headmodels = 16468

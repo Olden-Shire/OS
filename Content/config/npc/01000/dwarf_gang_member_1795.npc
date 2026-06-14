@@ -1,0 +1,13 @@
+// npc 1795
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+op2 = Attack
+resizev = 129
+resizeh = 142
+vislevel = 44
+recol = 7473/0 803/0
+name = Dwarf gang member
+models = 5621 2979 2985 2981 2983 2993
+headmodels = 5618

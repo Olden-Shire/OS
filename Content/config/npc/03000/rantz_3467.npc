@@ -1,0 +1,10 @@
+// npc 3467
+size = 2
+walkanim = 3460
+readyanim = 3460
+op1 = Talk-to
+alwaysontop = true
+vislevel = 1
+name = Rantz
+models = 2878 3442
+headmodels = 141

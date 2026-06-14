@@ -1,0 +1,10 @@
+// npc 2725
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8596/5388
+name = Otto Godblessed
+models = 18192 11747 22163 280 11759 11764 11727 11731 19250 11733
+headmodels = 26661 11807 26830

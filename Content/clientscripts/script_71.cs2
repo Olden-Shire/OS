@@ -1,0 +1,87 @@
+[clientscript,script_71](int $int0)()
+
+if_setgraphic(-1, 35913775);
+if_setgraphic(-1, 35913776);
+if_setgraphic(-1, 35913777);
+if_setgraphic(-1, 35913778);
+if_setgraphic(-1, 35913779);
+if_setgraphic(-1, 35913780);
+if_setgraphic(-1, 35913781);
+if_setgraphic(-1, 35913758);
+if_setgraphic(-1, 35913759);
+if_setgraphic(-1, 35913760);
+if_setgraphic(-1, 35913761);
+if_setgraphic(-1, 35913762);
+if_setgraphic(-1, 35913763);
+if_setgraphic(-1, 35913764);
+if_sethide(1, 35913827);
+if_sethide(1, 35913828);
+if_sethide(1, 35913829);
+if_sethide(1, 35913830);
+if_sethide(1, 35913831);
+if_sethide(1, 35913832);
+if_sethide(1, 35913833);
+if_sethide(1, 35913834);
+if_sethide(1, 35913835);
+if_sethide(1, 35913836);
+if_sethide(1, 35913837);
+if_sethide(1, 35913838);
+if_sethide(1, 35913839);
+if_sethide(1, 35913840);
+if ($int0 = 0) {
+    if_setgraphic(1026, 35913775);
+    if_sethide(0, 35913827);
+}
+if ($int0 = 1) {
+    if_setgraphic(1030, 35913776);
+    if_sethide(0, 35913828);
+}
+if ($int0 = 2) {
+    if_setgraphic(1030, 35913777);
+    if_sethide(0, 35913829);
+}
+if ($int0 = 3) {
+    if_setgraphic(1030, 35913778);
+    if_sethide(0, 35913830);
+}
+if ($int0 = 4) {
+    if_setgraphic(1030, 35913779);
+    if_sethide(0, 35913831);
+}
+if ($int0 = 5) {
+    if_setgraphic(1030, 35913780);
+    if_sethide(0, 35913832);
+}
+if ($int0 = 6) {
+    if_setgraphic(1027, 35913781);
+    if_sethide(0, 35913833);
+}
+if ($int0 = 7) {
+    if_setgraphic(1028, 35913758);
+    if_sethide(0, 35913834);
+}
+if ($int0 = 8) {
+    if_setgraphic(1030, 35913759);
+    if_sethide(0, 35913835);
+}
+if ($int0 = 9) {
+    if_setgraphic(1030, 35913760);
+    if_sethide(0, 35913836);
+}
+if ($int0 = 10) {
+    if_setgraphic(1030, 35913761);
+    if_sethide(0, 35913837);
+}
+if ($int0 = 11) {
+    if_setgraphic(1030, 35913762);
+    if_sethide(0, 35913838);
+}
+if ($int0 = 12) {
+    if_setgraphic(1030, 35913763);
+    if_sethide(0, 35913839);
+}
+if ($int0 = 13) {
+    if_setgraphic(1029, 35913764);
+    if_sethide(0, 35913840);
+}
+return;

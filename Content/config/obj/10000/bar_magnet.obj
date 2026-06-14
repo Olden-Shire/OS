@@ -1,0 +1,10 @@
+// obj 10489
+model = obj_bar_magnet
+cost = 15
+members = true
+yof2d = 18
+zoom2d = 1178
+yan2d = 224
+xan2d = 286
+iop5 = Destroy
+name = Bar magnet

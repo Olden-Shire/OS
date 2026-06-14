@@ -1,0 +1,13 @@
+// npc 3346
+size = 1
+walkanim = 3323
+readyanim = 3324
+turnspeed = 900
+op2 = Attack
+op3 = Hidden
+ambient = 10
+contrast = 10
+vislevel = 74
+recol = 6371/10448 7386/15434 7376/21563 10301/24751 3491/1843
+name = Zygomite
+models = 12641

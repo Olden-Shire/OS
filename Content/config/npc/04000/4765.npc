@@ -1,0 +1,10 @@
+// npc 4765
+vislevel = 0
+inactive = true
+turnspeed = 15
+size = 1
+ambient = 10
+nominimap = true
+walkanim = 4754
+readyanim = 4753
+models = 18009

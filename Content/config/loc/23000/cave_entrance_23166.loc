@@ -1,0 +1,6 @@
+// loc 23166
+sharelight = true
+ambient = 10
+recol = 24/10396 20/10392 16/10512 12/10378
+models_only = 24061
+name = Cave entrance

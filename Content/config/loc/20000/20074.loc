@@ -1,0 +1,9 @@
+// loc 20074
+active = 0
+blockwalk = true
+length = 2
+width = 2
+noshadow = true
+anim = 5360
+nonblockrange = true
+multiloc = 2547, 65535, 20072 20073

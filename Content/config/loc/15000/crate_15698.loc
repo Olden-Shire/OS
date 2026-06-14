@@ -1,0 +1,5 @@
+// loc 15698
+width = 2
+nonblockrange = true
+models_only = 15519
+name = Crate

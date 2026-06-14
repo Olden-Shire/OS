@@ -1,0 +1,10 @@
+// npc 2753
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+size = 1
+alwaysontop = true
+recol = 8741/25238 25238/926 6798/78 82/406 12221/0
+name = Mage of Zamorak
+models = 5430 251 286 292 170 176 544 556 256
+headmodels = 5428 83

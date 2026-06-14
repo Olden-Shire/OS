@@ -1,0 +1,7 @@
+// loc 18610
+forceapproach = 13
+op1 = Climb-up
+sharelight = true
+mapscene = 7
+models_only = 18688
+name = Stairs

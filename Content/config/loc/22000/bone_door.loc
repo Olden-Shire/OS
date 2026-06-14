@@ -1,0 +1,7 @@
+// loc 22945
+ambient = 15
+active = 1
+width = 2
+op1 = Open
+models_only = 23740 23741
+name = Bone door

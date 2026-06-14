@@ -1,0 +1,5 @@
+// loc 6965
+sharelight = true
+ambient = 20
+contrast = 50
+models = 634/0 635/1 574/2 575/3 576/9

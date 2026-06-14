@@ -1,0 +1,5 @@
+// loc 1630
+nonsolid = true
+ambient = 25
+contrast = 25
+models = 857/22

@@ -1,0 +1,7 @@
+// loc 16268
+ambient = 35
+ambient = 40
+nonblockrange = true
+recol = 61/18192 49/19220 41/10126 37/9100 33/9100 24/18314
+models_only = 1643
+name = Plant

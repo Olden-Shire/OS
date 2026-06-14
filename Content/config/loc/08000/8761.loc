@@ -1,0 +1,5 @@
+// loc 8761
+mirror = true
+ambient = 25
+contrast = 40
+models = 8318/4

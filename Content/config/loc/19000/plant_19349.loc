@@ -1,0 +1,7 @@
+// loc 19349
+ambient = 40
+op1 = Inspect
+nonblockrange = true
+recol = 61/16916 49/13840 24/14216 41/3350 37/3346 33/3470
+models_only = 1643
+name = Plant

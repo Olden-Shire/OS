@@ -1,0 +1,6 @@
+// loc 13337
+nonsolid = true
+op5 = Remove
+anim = 3105
+models_only = 12615
+name = Fire

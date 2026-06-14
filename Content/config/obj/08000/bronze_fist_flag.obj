@@ -1,0 +1,11 @@
+// obj 8968
+model = obj_bronze_fist_flag
+yof2d = 6
+zoom2d = 2060
+xan2d = 464
+iop2 = Wield
+manwear = obj_bronze_fist_flag_wear, 0
+womanwear = obj_bronze_fist_flag_wear, 6
+members = true
+cost = 300
+name = Bronze fist flag

@@ -1,0 +1,7 @@
+// npc 5211
+size = 2
+walkanim = 5848
+readyanim = 5852
+vislevel = 2
+name = Undead cow
+models = 23894

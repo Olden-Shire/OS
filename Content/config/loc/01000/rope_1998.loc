@@ -1,0 +1,5 @@
+// loc 1998
+noshadow = true
+nonsolid = true
+models_only = 1588
+name = Rope

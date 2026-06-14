@@ -1,0 +1,6 @@
+// loc 19032
+ambient = 15
+op1 = Pull Up
+bgsound = 3232, 5
+models_only = 19232
+name = Large root

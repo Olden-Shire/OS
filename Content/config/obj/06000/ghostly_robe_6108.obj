@@ -1,0 +1,10 @@
+// obj 6108
+model = obj_ghostly_robe_6108
+iop2 = Wear
+cost = 300
+manwear = obj_ghostly_robe_6108_man, 0
+womanwear = obj_ghostly_robe_6108_woman, 0
+zoom2d = 1980
+xan2d = 460
+members = true
+name = Ghostly robe

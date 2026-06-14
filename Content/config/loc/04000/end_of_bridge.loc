@@ -1,0 +1,6 @@
+// loc 4745
+active = 1
+nonsolid = true
+op1 = Jump off
+models_only = 4730
+name = End of bridge

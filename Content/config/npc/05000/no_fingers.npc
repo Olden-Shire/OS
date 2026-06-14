@@ -1,0 +1,16 @@
+// npc 5590
+resizeh = 120
+resizev = 120
+walkanims = 819, 820, 821, 822
+readyanim = 5815
+ambient = 25
+contrast = 25
+vislevel = 0
+op1 = Talk-to
+op3 = Pickpocket
+turnspeed = 0
+alwaysontop = true
+recol = 40233/5772 8656/809 8741/809 5541/2576 41372/7331 40237/7331
+name = 'No fingers'
+models = 230 22599 10561 18498 19329 19332 14381 18128 22609
+headmodels = 63 22592 10560

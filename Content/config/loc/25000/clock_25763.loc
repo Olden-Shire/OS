@@ -1,0 +1,9 @@
+// loc 25763
+anim = 3511
+active = 1
+ambient = 30
+contrast = 25
+bgsound = 3120, 5
+recol = 4510/6315 4502/6554
+models_only = 12973
+name = Clock

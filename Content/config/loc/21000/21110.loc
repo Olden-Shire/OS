@@ -1,0 +1,10 @@
+// loc 21110
+anim = 3743
+length = 2
+width = 2
+active = 0
+nonsolid = true
+ambient = 25
+contrast = 25
+models_only = 21538
+models_only = 21617

@@ -1,0 +1,6 @@
+// npc 2142
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+multivar = 576, 65535, 2143 2144 2145 2147 2146 2148 2149 2150

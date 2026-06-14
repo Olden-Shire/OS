@@ -1,0 +1,10 @@
+// loc 20155
+active = 0
+hillskew = true
+sharelight = true
+resizez = 128
+resizex = 128
+resizey = 64
+ambient = 20
+recol = 7335/7488 7331/7611 7326/7607 7322/7603 7446/7599 7442/7723
+models = 4460/0 4461/1 4462/9

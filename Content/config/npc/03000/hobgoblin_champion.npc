@@ -1,0 +1,10 @@
+// npc 3061
+size = 1
+resizeh = 160
+resizev = 160
+walkanim = 162
+readyanim = 2958
+op2 = Attack
+vislevel = 56
+name = Hobgoblin Champion
+models = 10334 10335

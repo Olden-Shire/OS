@@ -1,0 +1,12 @@
+// npc 5384
+size = 1
+resizeh = 108
+resizev = 108
+size = 2
+walkanim = 5497
+readyanim = 5493
+op2 = Attack
+vislevel = 100
+recol = 2576/5392 2700/5640
+name = Giant skeleton
+models = 21166

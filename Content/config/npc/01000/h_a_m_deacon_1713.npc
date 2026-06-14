@@ -1,0 +1,9 @@
+// npc 1713
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/60300 25238/60300 7952/60300
+name = H.A.M. Deacon
+models = 151 176 248 181 265 292 5434 5430 5433 317
+headmodels = 5428 80

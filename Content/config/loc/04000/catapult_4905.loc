@@ -1,0 +1,12 @@
+// loc 4905
+anim = 1431
+width = 3
+length = 3
+active = 1
+ambient = 40
+contrast = 40
+mapscene = 30
+nonblockrange = true
+recol = 37/24 7700/3346 8076/3346 53/3239
+models_only = 4448 4449
+name = Catapult

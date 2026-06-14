@@ -1,0 +1,6 @@
+// loc 3692
+nonsolid = true
+ambient = 30
+contrast = 30
+models_only = 1842
+name = Climbing Rope

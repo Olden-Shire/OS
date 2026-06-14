@@ -1,0 +1,10 @@
+// npc 6073
+walkanim = 6614
+readyanim = 6613
+vislevel = 1
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+name = Wandering impling
+models = 26374
+headmodels = 26278

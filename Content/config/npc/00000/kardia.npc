@@ -1,0 +1,9 @@
+// npc 992
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 43072/10419 4550/10419 27548/10419 38814/59274 25238/59274
+name = Kardia
+models = 405 474 347 421 353 361 479 447 534 377

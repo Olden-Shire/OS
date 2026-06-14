@@ -1,0 +1,9 @@
+// npc 1279
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+ambient = 80
+vislevel = 69
+recol = 6253/6488
+name = The Draugen
+models = 6141

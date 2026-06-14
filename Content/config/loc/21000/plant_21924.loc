@@ -1,0 +1,10 @@
+// loc 21924
+width = 2
+length = 2
+ambient = 40
+mapscene = 5
+op1 = Search
+nonblockrange = true
+recol = 61/16916 49/13840 41/3346
+models_only = 1669
+name = Plant

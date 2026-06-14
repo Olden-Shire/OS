@@ -1,0 +1,13 @@
+// obj 3803
+iop1 = Drink
+model = obj_beer_3803
+manwear = obj_beer_3803_wear, 0
+womanwear = obj_beer_3803_wear, 0
+xof2d = -4
+yof2d = 1
+zoom2d = 670
+yan2d = 76
+xan2d = 132
+cost = 20
+members = true
+name = Beer

@@ -1,0 +1,12 @@
+// npc 3578
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 145
+resizev = 147
+op2 = Attack
+ambient = 5
+vislevel = 119
+recol = 4550/21580 40229/17571 40237/17566 40241/17562 11138/16536 12/16536
+name = Juvinate
+models = 14042 14039 14046 14041 14044
+headmodels = 13943

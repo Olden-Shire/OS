@@ -1,0 +1,11 @@
+// npc 1380
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 1
+recol = 25238/8472 43072/8472 8741/5421 4550/2524 6798/7731
+name = Einar
+models = 4220 4219 292 162 179 4226 4218 250 3707
+headmodels = 4210 82

@@ -1,0 +1,12 @@
+// npc 4289
+size = 1
+vislevel = 0
+op1 = Talk-to
+op3 = Claim-Tokens
+walkanim = 2064
+readyanim = 2065
+alwaysontop = true
+recol = 40384/926 40918/5819 61/185 41/80 6798/0 119/926
+name = Kamfreena
+models = 391 414 468 481 344 353 546 15413 5034 3331
+headmodels = 114 131

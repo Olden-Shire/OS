@@ -1,0 +1,10 @@
+// loc 21560
+op1 = Exit-cave
+forcedecor = true
+nonsolid = true
+active = 1
+hillskew = true
+sharelight = true
+recol = 7580/7331 7704/7326 7700/8472 7952/8481 8076/7326 9098/7331
+models_only = 12037
+name = Exit cavern

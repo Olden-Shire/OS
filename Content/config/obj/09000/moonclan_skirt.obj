@@ -1,0 +1,12 @@
+// obj 9071
+cost = 1000
+model = obj_moonclan_skirt
+iop2 = Wear
+manwear = obj_moonclan_skirt_man, 0
+womanwear = obj_moonclan_skirt_woman, 0
+members = true
+yof2d = -27
+zoom2d = 1192
+yan2d = 3
+xan2d = 387
+name = Moonclan skirt

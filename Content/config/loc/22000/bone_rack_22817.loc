@@ -1,0 +1,6 @@
+// loc 22817
+active = 1
+ambient = 20
+blockwalk = true
+models_only = 23330 23323
+name = Bone rack

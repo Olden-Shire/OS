@@ -1,0 +1,10 @@
+// npc 2074
+readyanim = 6006
+walkanim = 6005
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+recol = 32798/32811
+name = Cave goblin guard
+models = 23658 23700 23634 23676
+headmodels = 23228 23246

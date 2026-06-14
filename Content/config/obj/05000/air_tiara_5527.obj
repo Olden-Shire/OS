@@ -1,0 +1,13 @@
+// obj 5527
+model = obj_air_tiara_5527
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_air_tiara_5527_man, 0
+womanwear = obj_air_tiara_5527_woman, 0
+manhead = 7466
+womanhead = 7466
+cost = 100
+recol = 43096/99
+name = Air tiara

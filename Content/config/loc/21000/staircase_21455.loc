@@ -1,0 +1,7 @@
+// loc 21455
+blockwalk = true
+length = 2
+width = 2
+op1 = Climb-Down
+models_only = 21999
+name = Staircase

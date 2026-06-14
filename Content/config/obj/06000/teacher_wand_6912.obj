@@ -1,0 +1,13 @@
+// obj 6912
+model = obj_teacher_wand_6912
+manwear = obj_teacher_wand_6912_wear, 0
+womanwear = obj_teacher_wand_6912_wear, 0
+iop2 = Wield
+xof2d = 2
+yof2d = 2
+zoom2d = 560
+yan2d = 1968
+xan2d = 1108
+cost = 2000
+members = true
+name = Teacher wand

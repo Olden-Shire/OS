@@ -1,0 +1,13 @@
+// loc 521
+width = 2
+length = 2
+active = 0
+hillskew = true
+noshadow = true
+ambient = 25
+contrast = 25
+anim = 524
+mapscene = 65
+bgsound = 2066, 10
+nonblockrange = true
+models_only = 2330

@@ -1,0 +1,12 @@
+// npc 5835
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+op1 = Talk-To
+alwaysontop = true
+recol = 6798/6327
+name = Surok Magis
+models = 23926 214 250 23944 23916 177 23934
+headmodels = 82 52 23911

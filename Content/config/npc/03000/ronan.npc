@@ -1,0 +1,11 @@
+// npc 3088
+resizeh = 150
+resizev = 140
+readyanim = 3008
+walkanim = 3012
+vislevel = 0
+op1 = Talk-to
+recol = 15779/41133 1573/8282 42283/41145 4550/1220
+name = Ronan
+models = 10507 10520 10510 10513 10527 10522
+headmodels = 10401 10395

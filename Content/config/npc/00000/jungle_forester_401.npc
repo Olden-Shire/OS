@@ -1,0 +1,10 @@
+// npc 401
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/8741 11200/8741 926/7952 9104/7952
+name = Jungle forester
+models = 207 250 292 167 179 254 185 323 324 566
+headmodels = 47 82

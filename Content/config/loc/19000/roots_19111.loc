@@ -1,0 +1,5 @@
+// loc 19111
+ambient = 15
+sharelight = true
+models_only = 19210
+name = Roots

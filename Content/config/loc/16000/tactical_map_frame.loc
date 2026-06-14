@@ -1,0 +1,7 @@
+// loc 16254
+width = 2
+ambient = 40
+active = 1
+recol = 7585/32943 7952/32819 8076/32924 7704/33063
+models_only = 16111
+name = Tactical map frame

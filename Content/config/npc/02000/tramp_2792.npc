@@ -1,0 +1,9 @@
+// npc 2792
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/5652 8741/4502 43072/4550
+name = Tramp
+models = 214 246 310 151 176 275 181
+headmodels = 52

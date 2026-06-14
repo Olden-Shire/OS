@@ -1,0 +1,10 @@
+// npc 637
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/64737 8741/64737 926/20911 10440/10330 908/557
+name = Juliet
+models = 12142 9361 9359 9360 9113
+headmodels = 12135

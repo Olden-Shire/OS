@@ -1,0 +1,9 @@
+// npc 898
+size = 1
+walkanim = 5325
+readyanim = 5326
+op2 = Attack
+vislevel = 30
+recol = 960/54550 56256/21691 33728/54670 50099/21679 22443/54794 11200/21673
+name = Witch's experiment (second form)
+models = 20309 20312

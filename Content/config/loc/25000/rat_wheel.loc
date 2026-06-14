@@ -1,0 +1,10 @@
+// loc 25590
+ambient = 20
+contrast = 20
+length = 2
+anim = 3230
+bgsound = 3121, 10
+nonblockrange = true
+recol = 6443/5417 6439/5413 6563/5537 6451/5421
+models_only = 7712 27116
+name = Rat wheel

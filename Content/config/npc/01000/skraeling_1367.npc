@@ -1,0 +1,11 @@
+// npc 1367
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 2
+recol = 6798/6722 25238/5272 8741/5537 8078/5417 7952/10644 4550/2524
+name = Skraeling
+models = 4220 250 292 162 176 317 4219 4226 4218 4236 4235 4391
+headmodels = 53 82 4210

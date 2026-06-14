@@ -1,0 +1,15 @@
+// npc 778
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 317
+op1 = Pick-up
+op3 = Talk-to
+op4 = Interact-with
+nominimap = true
+resizeh = 80
+resizev = 65
+recol = 61/7060 16/61
+name = Overgrown cat
+models = 3010 3006
+headmodels = 6436

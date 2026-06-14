@@ -1,0 +1,13 @@
+// obj 11277
+model = obj_cavalier_mask_11277
+members = true
+manwear = obj_cavalier_mask_11277_man, 0
+womanwear = obj_cavalier_mask_11277_woman, 0
+iop2 = Wear
+manhead = 25053
+womanhead = 26412
+yof2d = -9
+zoom2d = 724
+xan2d = 111
+cost = 200
+name = Cavalier mask

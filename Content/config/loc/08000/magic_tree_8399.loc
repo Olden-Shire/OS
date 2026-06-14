@@ -1,0 +1,6 @@
+// loc 8399
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7995 7768
+name = Magic Tree

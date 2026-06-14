@@ -1,0 +1,14 @@
+// npc 3026
+resizeh = 150
+resizev = 150
+resizeh = 150
+resizev = 150
+readyanim = 1913
+walkanim = 1912
+op2 = Attack
+alwaysontop = true
+alwaysontop = true
+vislevel = 75
+recol = 4521/5652 4391/5532 5413/5532 6435/5656 8481/5652 61/8481
+name = Black golem
+models = 6146 6148 6150

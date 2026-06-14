@@ -1,0 +1,9 @@
+// loc 3580
+blockwalk = true
+length = 3
+forcedecor = true
+active = 1
+nonblockrange = true
+recol = 6573/6449
+models_only = 3648
+name = Spinning blades

@@ -1,0 +1,15 @@
+// npc 4287
+op1 = Talk-to
+op3 = Claim-Tokens
+op4 = Claim-Shield
+size = 1
+vislevel = 0
+walkanim = 98
+readyanim = 101
+resizeh = 150
+resizev = 120
+alwaysontop = true
+recol = 4550/4539 5784/5035 664/7704 61/6705 49/22 803/3608
+name = Gamfred
+models = 10321 10325 2977 6021 2982 7067
+headmodels = 10235

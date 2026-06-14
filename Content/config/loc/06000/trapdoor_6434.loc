@@ -1,0 +1,6 @@
+// loc 6434
+blockwalk = true
+op1 = Open
+nonblockrange = true
+models_only = 1244
+name = Trapdoor

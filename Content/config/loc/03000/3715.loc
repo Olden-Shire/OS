@@ -1,0 +1,11 @@
+// loc 3715
+active = 0
+width = 2
+length = 2
+hillskew = true
+resizex = 256
+resizey = 256
+resizez = 256
+mapscene = 12
+nonblockrange = true
+models_only = 3722

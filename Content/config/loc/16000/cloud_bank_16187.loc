@@ -1,0 +1,8 @@
+// loc 16187
+active = 1
+sharelight = true
+hillskew = true
+blockwalk = true
+op1 = Enter-cloud
+models = 16163/0 16164/1 16165/9
+name = Cloud bank

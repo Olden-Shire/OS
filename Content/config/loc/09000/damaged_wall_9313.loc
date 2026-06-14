@@ -1,0 +1,8 @@
+// loc 9313
+width = 2
+hillskew = true
+blockwalk = true
+nonblockrange = true
+recol = 7952/6689
+models_only = 2323
+name = Damaged wall

@@ -1,0 +1,7 @@
+// loc 8005
+op1 = Pick-banana
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7940 7767 7935
+name = Banana tree

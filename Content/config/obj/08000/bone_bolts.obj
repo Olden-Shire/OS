@@ -1,0 +1,16 @@
+// obj 8882
+stackable = true
+cost = 3
+model = obj_bone_bolts
+iop2 = Wield
+xof2d = 18
+yof2d = 9
+zoom2d = 1215
+yan2d = 1943
+xan2d = 444
+count1 = 8883, 2
+count2 = 8884, 3
+count3 = 8885, 4
+count4 = 8886, 5
+members = true
+name = Bone bolts

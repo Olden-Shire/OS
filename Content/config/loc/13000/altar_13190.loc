@@ -1,0 +1,7 @@
+// loc 13190
+width = 2
+op1 = Pray
+forceapproach = 11
+op5 = Remove
+models_only = 12372 12378
+name = Altar

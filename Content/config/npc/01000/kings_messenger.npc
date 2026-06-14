@@ -1,0 +1,9 @@
+// npc 1210
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+name = Kings messenger
+models = 151 176 235 253 273 292 317
+headmodels = 67 85

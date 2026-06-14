@@ -1,0 +1,9 @@
+// npc 478
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 48
+recol = 61/20 57/20
+name = Khazard commander
+models = 206 252 306 152 176 268 185 540 323

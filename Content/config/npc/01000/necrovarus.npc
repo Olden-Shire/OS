@@ -1,0 +1,12 @@
+// npc 1684
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+ambient = 50
+contrast = 50
+vislevel = 0
+op1 = Talk-To
+size = 1
+recol = 17467/18626
+name = Necrovarus
+models = 5213 5219 5209 5216 5223 5232
+headmodels = 5205

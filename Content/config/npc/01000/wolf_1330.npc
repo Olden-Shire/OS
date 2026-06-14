@@ -1,0 +1,9 @@
+// npc 1330
+size = 2
+size = 2
+readyanim = 6580
+walkanim = 6556
+op2 = Attack
+vislevel = 64
+name = Wolf
+models = 26265

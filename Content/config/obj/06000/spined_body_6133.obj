@@ -1,0 +1,12 @@
+// obj 6133
+cost = 7800
+model = obj_spined_body_6133
+xof2d = -1
+yof2d = 4
+zoom2d = 1140
+xan2d = 460
+iop2 = Wear
+manwear = obj_spined_body_6133_man, 0
+womanwear = obj_spined_body_6133_woman, 0
+members = true
+name = Spined body

@@ -1,0 +1,10 @@
+// obj 11012
+model = obj_wand
+zoom2d = 848
+yan2d = 1028
+xan2d = 417
+manwear = obj_wand_man, 0
+womanwear = obj_wand_woman, 0
+members = true
+iop5 = Destroy
+name = Wand

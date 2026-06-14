@@ -1,0 +1,6 @@
+// loc 13328
+op5 = Remove
+op1 = Climb
+op4 = Remove-room
+models_only = 12495
+name = Ladder

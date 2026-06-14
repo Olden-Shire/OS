@@ -1,0 +1,16 @@
+// obj 8962
+model = obj_blue_tricorn_hat
+manwear = obj_blue_tricorn_hat_man, 0
+womanwear = obj_blue_tricorn_hat_woman, 0
+manhead = 15967
+womanhead = 15972
+xof2d = 5
+yof2d = -15
+zoom2d = 592
+yan2d = 258
+xan2d = 221
+iop2 = Wear
+members = true
+cost = 50
+recol = 43311/5400 43303/5648
+name = Brown tricorn hat

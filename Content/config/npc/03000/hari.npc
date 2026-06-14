@@ -1,0 +1,12 @@
+// npc 3330
+size = 1
+vislevel = 0
+resizeh = 134
+resizev = 145
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+recol = 4550/4535 43072/4535 25238/38061 13122/5157
+name = Hari
+models = 12083 244 12085 173 177 12087 5218
+headmodels = 12025 77 12026

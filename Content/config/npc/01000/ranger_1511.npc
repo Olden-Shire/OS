@@ -1,0 +1,9 @@
+// npc 1511
+vislevel = 0
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 43072/4550 7591/8753 7845/8879 7756/9174 6798/9015 6674/9135
+name = Ranger
+models = 390 477 5602 351 10706 23177 423 361
+headmodels = 113

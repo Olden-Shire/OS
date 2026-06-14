@@ -1,0 +1,14 @@
+// loc 12741
+active = 1
+hillskew = true
+forcedecor = true
+length = 2
+width = 2
+resizex = 200
+resizey = 200
+resizez = 200
+op1 = Search
+nonsolid = true
+recol = 8617/16904 7481/16536 8501/16532 8497/16656 8493/16652
+models_only = 14063
+name = Fallen Wall

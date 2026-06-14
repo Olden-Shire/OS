@@ -1,0 +1,7 @@
+// loc 8
+length = 3
+width = 3
+op1 = Pick-up
+nonsolid = true
+models_only = 1801
+name = Cannon stand

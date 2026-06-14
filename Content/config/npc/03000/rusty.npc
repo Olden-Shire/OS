@@ -1,0 +1,11 @@
+// npc 3239
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 2
+recol = 8741/22412 25238/9096 7952/4391 6798/0
+name = Rusty
+models = 217 249 292 317 170 10218 254 185
+headmodels = 55 81

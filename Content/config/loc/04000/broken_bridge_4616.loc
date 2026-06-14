@@ -1,0 +1,7 @@
+// loc 4616
+active = 1
+mapscene = 21
+nonsolid = true
+op1 = Cross
+models_only = 4556
+name = Broken bridge

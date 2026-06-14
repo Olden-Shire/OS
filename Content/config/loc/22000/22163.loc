@@ -1,0 +1,8 @@
+// loc 22163
+active = 0
+blockwalk = true
+ambient = 15
+contrast = 15
+nonblockrange = true
+recol = 6466/6573 5545/6817
+models_only = 12544

@@ -1,0 +1,7 @@
+// npc 3846
+readyanim = 3978
+walkanim = 3977
+vislevel = 0
+size = 3
+name = Sea Troll General
+models = 14918 14916 14915 14919

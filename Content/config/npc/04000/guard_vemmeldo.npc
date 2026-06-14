@@ -1,0 +1,10 @@
+// npc 4600
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/32842 22424/33670 11162/898
+name = Guard Vemmeldo
+models = 17017 2909 2915
+headmodels = 16976

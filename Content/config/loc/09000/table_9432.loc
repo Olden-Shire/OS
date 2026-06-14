@@ -1,0 +1,8 @@
+// loc 9432
+width = 2
+ambient = 25
+contrast = 20
+op1 = Inspect
+nonblockrange = true
+models_only = 1213 9412 9410
+name = Table

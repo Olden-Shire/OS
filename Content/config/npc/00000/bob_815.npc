@@ -1,0 +1,11 @@
+// npc 815
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/1575 43072/4550 25238/1566 6798/5056
+name = Bob
+models = 215 248 14577 170 176 267 185
+headmodels = 53 80

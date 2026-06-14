@@ -1,0 +1,12 @@
+// npc 2065
+vislevel = 0
+size = 2
+resizeh = 129
+resizev = 133
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+recol = 8722/8609
+name = Gruh
+models = 3442 2878
+headmodels = 141

@@ -1,0 +1,6 @@
+// loc 15145
+nonsolid = true
+ambient = 25
+recol = 25913/2343 5809/54362 45227/5027 1827/8765 3501/32819 5660/7582
+models = 2100/10 7745/4
+name = Clothing shelves

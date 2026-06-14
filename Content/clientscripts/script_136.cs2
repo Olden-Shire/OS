@@ -1,0 +1,15 @@
+[clientscript,script_136]()()
+
+if_setonkey(133, -2147483640, -2147483639, "iz", 36241423);
+if_setonkey(-1, "", 8978433);
+if_settext(join(escape(%varcstr24), "<col=ffff00>", "|"), 36241423);
+%varcint6 = 0;
+if_settext(join("Moderator option: Mute player for 48 hours: ", "<lt>", "OFF", "<gt>"), 36241424);
+%varcint11 = 1;
+if (if_gethide(35913816) = 0) {
+    if_sethide(1, 35913816);
+    if_sethide(0, 35913817);
+    %varcint5 = 0;
+    %varcstr22 = "";
+}
+return;

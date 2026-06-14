@@ -1,0 +1,11 @@
+// npc 2720
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+op3 = Trade
+recol = 25238/14490 8741/7475 6798/10508 933/2374 43072/4548 7073/7483
+name = Gerrant
+models = 186 217 302 3190 151 176 562 254 185 246
+headmodels = 55 28

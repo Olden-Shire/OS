@@ -1,0 +1,8 @@
+// npc 1789
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 22424/6563 22426/14878
+name = Bunkwicket
+models = 2909 2915 4701
+headmodels = 21

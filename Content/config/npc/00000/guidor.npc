@@ -1,0 +1,10 @@
+// npc 343
+vislevel = 0
+size = 1
+readyanim = 4780
+op1 = Talk-to
+turnspeed = 0
+recol = 4550/3404
+name = Guidor
+models = 230 253 25673 25664
+headmodels = 63 85

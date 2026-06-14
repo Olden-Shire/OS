@@ -1,0 +1,14 @@
+// npc 3100
+vislevel = 0
+size = 2
+resizeh = 120
+resizev = 125
+contrast = 10
+ambient = 10
+walkanim = 3034
+readyanim = 3033
+op1 = Talk-to
+recol = 43080/18721 43076/17699 43069/17694 43063/17818 43055/17818 24/15816
+name = Enchantment Guardian
+models = 10633 10640 10637 10638 10628
+headmodels = 10696

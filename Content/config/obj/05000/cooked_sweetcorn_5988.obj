@@ -1,0 +1,12 @@
+// obj 5988
+model = obj_cooked_sweetcorn_5988
+xof2d = -3
+yof2d = -3
+zoom2d = 710
+yan2d = 228
+xan2d = 432
+ambient = 15
+members = true
+iop1 = Eat
+cost = 9
+name = Cooked sweetcorn

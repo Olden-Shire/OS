@@ -1,0 +1,17 @@
+// obj 9300
+stackable = true
+model = obj_bronze_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+count1 = 9307, 2
+count2 = 9308, 3
+count3 = 9309, 4
+count4 = 9310, 5
+members = true
+iop2 = Wield
+cost = 2
+recol = 5537/43233 5532/43486 5656/43482 5652/43862
+name = Blurite bolts(p++)

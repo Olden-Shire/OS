@@ -1,0 +1,11 @@
+// loc 19225
+resizex = 128
+resizey = 128
+resizez = 128
+contrast = 30
+ambient = 30
+nonsolid = true
+active = 1
+anim = 5222
+models_only = 19891
+name = Magic box

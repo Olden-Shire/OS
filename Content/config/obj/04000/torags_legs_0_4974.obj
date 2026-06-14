@@ -1,0 +1,11 @@
+// obj 4974
+members = true
+cost = 275000
+manwear = obj_torags_platelegs_4751_man, 0
+womanwear = obj_torags_platelegs_4751_woman, 0
+model = obj_torags_legs_0_4974
+yof2d = 1
+zoom2d = 1720
+xan2d = 468
+recol = 10394/10388
+name = Torags legs 0

@@ -1,0 +1,8 @@
+// loc 4283
+active = 1
+resizex = 108
+resizey = 108
+resizez = 108
+blockwalk = true
+models = 4306/22
+name = Drain

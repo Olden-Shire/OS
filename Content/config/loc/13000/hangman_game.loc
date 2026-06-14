@@ -1,0 +1,7 @@
+// loc 13404
+width = 2
+length = 2
+op1 = Activate
+op5 = Remove
+models_only = 12975
+name = Hangman game

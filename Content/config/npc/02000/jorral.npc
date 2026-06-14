@@ -1,0 +1,10 @@
+// npc 2932
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/5409 25238/2328 9096/5289 43072/4560 6798/5910 4550/4560
+name = Jorral
+models = 215 244 248 292 4391 163 176 274 181 9607 245
+headmodels = 53 77 80 78

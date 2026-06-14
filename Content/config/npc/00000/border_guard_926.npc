@@ -1,0 +1,10 @@
+// npc 926
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 25238/55194 8741/2754 4550/4657 6798/10508
+name = Border Guard
+models = 215 555 249 292 151 176 254 181 191
+headmodels = 53 81 34

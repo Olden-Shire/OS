@@ -1,0 +1,13 @@
+[clientscript,script_47](int $int0)(string)
+
+if ($int0 > 99) {
+    return(tostring($int0));
+}
+if ($int0 > 9) {
+    return(join("0", tostring($int0)));
+}
+if ($int0 >= 0) {
+    return(join("00", tostring($int0)));
+}
+return(tostring($int0));
+return("");

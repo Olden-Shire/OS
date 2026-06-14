@@ -1,0 +1,9 @@
+// loc 4886
+anim = 1112
+nonsolid = true
+forcedecor = true
+active = 1
+noshadow = true
+hillskew = true
+models_only = 4799
+name = Floor spikes

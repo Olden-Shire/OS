@@ -1,0 +1,11 @@
+// obj 5769
+model = obj_calquat_keg_5769
+manwear = obj_calquat_keg_5769_wear, 0
+womanwear = obj_calquat_keg_5769_wear, 0
+yof2d = 6
+zoom2d = 1190
+yan2d = 4
+xan2d = 116
+ambient = 15
+members = true
+name = Calquat keg

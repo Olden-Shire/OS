@@ -1,0 +1,5 @@
+// npc 5440
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+multivar = 3299, 65535, 5441 5441

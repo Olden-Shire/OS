@@ -1,0 +1,11 @@
+// obj 7778
+model = obj_short_vine
+manwear = obj_short_vine_wear, 0
+womanwear = obj_short_vine_wear, 0
+xof2d = -5
+yof2d = -30
+zoom2d = 1249
+yan2d = 1976
+xan2d = 188
+members = true
+name = Short vine

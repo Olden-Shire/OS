@@ -1,0 +1,8 @@
+// loc 19401
+width = 2
+length = 2
+mapscene = 4
+op1 = Inspect
+nonblockrange = true
+models_only = 1599
+name = Cactus

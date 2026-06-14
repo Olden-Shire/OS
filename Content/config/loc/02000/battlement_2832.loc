@@ -1,0 +1,6 @@
+// loc 2832
+active = 1
+op1 = Climb-over
+nonblockrange = true
+models_only = 3345
+name = Battlement

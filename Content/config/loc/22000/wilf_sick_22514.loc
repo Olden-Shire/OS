@@ -1,0 +1,10 @@
+// loc 22514
+active = 1
+op1 = Talk-to
+blockwalk = true
+anim = 5983
+width = 2
+length = 2
+nonblockrange = true
+models_only = 23202 23196
+name = Wilf (sick)

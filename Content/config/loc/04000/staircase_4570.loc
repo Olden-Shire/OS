@@ -1,0 +1,9 @@
+// loc 4570
+sharelight = true
+occlude = true
+op1 = Climb-down
+blockwalk = true
+forceapproach = 13
+mapscene = 7
+models_only = 4547
+name = Staircase

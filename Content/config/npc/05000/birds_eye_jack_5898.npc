@@ -1,0 +1,11 @@
+// npc 5898
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Bank
+alwaysontop = true
+vislevel = 0
+recol = 6798/10301
+name = 'Bird's-Eye' Jack
+models = 193 6848 251 16485 12086 16472 16476 16481 16473 270
+headmodels = 5787 83 36

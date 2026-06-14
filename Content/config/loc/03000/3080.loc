@@ -1,0 +1,8 @@
+// loc 3080
+forcedecor = true
+ambient = 30
+contrast = 30
+sharelight = true
+active = 0
+mapscene = 22
+models = 3236/0

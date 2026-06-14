@@ -1,0 +1,8 @@
+// loc 5138
+op1 = Jump-to
+active = 1
+blockwalk = true
+nonblockrange = true
+recol = 61/5421
+models = 4443/22
+name = Stepping stone

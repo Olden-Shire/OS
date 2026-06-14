@@ -1,0 +1,11 @@
+// npc 819
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/43325 43072/4550 25238/43309 6798/918
+name = Frank
+models = 215 251 14577 170 176 267 185
+headmodels = 53 83

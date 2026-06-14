@@ -1,0 +1,13 @@
+// obj 2522
+cost = 100
+model = obj_toy_horsey_2520
+manwear = obj_toy_horsey_2520_wear, 0
+womanwear = obj_toy_horsey_2520_wear, 6
+xof2d = 1
+yof2d = -2
+zoom2d = 920
+yan2d = 1732
+xan2d = 40
+iop1 = Play-with
+recol = 5662/43100 7954/43084
+name = Toy horsey

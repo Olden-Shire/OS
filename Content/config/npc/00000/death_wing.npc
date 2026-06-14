@@ -1,0 +1,8 @@
+// npc 79
+size = 2
+walkanim = 4913
+readyanim = 4914
+op2 = Attack
+vislevel = 83
+name = Death wing
+models = 18897

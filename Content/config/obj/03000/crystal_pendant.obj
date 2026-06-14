@@ -1,0 +1,13 @@
+// obj 3208
+model = obj_glarials_amulet
+xof2d = 1
+yof2d = 16
+zoom2d = 620
+yan2d = 68
+xan2d = 424
+members = true
+cost = 10
+iop2 = Wear
+manwear = obj_glarials_amulet_man, 0
+womanwear = obj_glarials_amulet_woman, 0
+name = Crystal pendant

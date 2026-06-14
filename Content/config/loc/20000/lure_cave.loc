@@ -1,0 +1,13 @@
+// loc 20151
+active = 1
+hillskew = true
+blockwalk = true
+sharelight = true
+width = 4
+length = 2
+resizex = 171
+ambient = 20
+op1 = Enter
+raiseobject = 0
+models_only = 20639
+name = Lure cave

@@ -1,0 +1,12 @@
+// obj 9774
+cost = 99000
+members = true
+model = obj_herblore_cape_9774
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_herblore_cape_9774_man, 0
+womanwear = obj_herblore_cape_9774_woman, 0
+recol = 57280/22422 54183/22416 54503/22412 960/22422 22464/22420 43968/22416
+name = Herblore cape

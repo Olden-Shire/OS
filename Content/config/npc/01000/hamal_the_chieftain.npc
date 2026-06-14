@@ -1,0 +1,11 @@
+// npc 1807
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/7376
+name = Hamal the Chieftain
+models = 214 250 5674 5672 5668 5725 5726 5670
+headmodels = 52 82 5664

@@ -1,0 +1,11 @@
+// npc 1784
+size = 2
+walkanim = 1739
+readyanim = 1740
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 43072/80 4550/5557
+name = Neil
+models = 230 250 5614 173 176 269 181 293
+headmodels = 63 82

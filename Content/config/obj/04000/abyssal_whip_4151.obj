@@ -1,0 +1,12 @@
+// obj 4151
+model = obj_abyssal_whip_4151
+xof2d = -2
+yof2d = 56
+zoom2d = 840
+xan2d = 280
+iop2 = Wield
+manwear = obj_abyssal_whip_4151_wear, 0
+womanwear = obj_abyssal_whip_4151_wear, 6
+members = true
+cost = 120001
+name = Abyssal whip

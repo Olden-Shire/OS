@@ -1,0 +1,7 @@
+// loc 12616
+ambient = 50
+length = 3
+op1 = Climb-up
+recol = 8078/7585 8082/7585
+models_only = 1487 13908 13909
+name = Exit

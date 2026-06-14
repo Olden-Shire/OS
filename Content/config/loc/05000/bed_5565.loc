@@ -1,0 +1,12 @@
+// loc 5565
+width = 2
+length = 2
+resizex = 90
+resizey = 90
+resizez = 90
+offsetx = 5
+offsety = 0
+offsetz = 0
+recol = 924/38189 8770/43088 9133/6682 6032/6682
+models_only = 1288
+name = Bed

@@ -1,0 +1,10 @@
+// loc 11079
+width = 2
+length = 2
+anim = 3101
+ambient = 60
+contrast = 60
+nonsolid = true
+noshadow = true
+models_only = 10941
+name = Light

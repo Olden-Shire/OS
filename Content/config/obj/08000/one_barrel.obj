@@ -1,0 +1,11 @@
+// obj 8860
+model = obj_one_barrel
+xof2d = 7
+yof2d = 100
+zoom2d = 1360
+yan2d = 170
+xan2d = 18
+manwear = obj_one_barrel, 0
+womanwear = obj_one_barrel, 6
+members = true
+name = One barrel

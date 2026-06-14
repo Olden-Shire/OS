@@ -1,0 +1,9 @@
+// npc 795
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 111
+recol = 41/43484 61/39386 4550/41193 12224/43484 25238/43484 6798/42209
+name = Ice Queen
+models = 379 368 468 440 353 339
+headmodels = 104 93

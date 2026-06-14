@@ -1,0 +1,8 @@
+// loc 19881
+anim = 475
+bgsound = 2199, 3
+forcedecor = true
+active = 1
+recol = 44859/8720
+models_only = 20040
+name = Campfire

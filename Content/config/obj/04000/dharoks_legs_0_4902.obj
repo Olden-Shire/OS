@@ -1,0 +1,12 @@
+// obj 4902
+members = true
+cost = 275000
+manwear = obj_dharoks_platelegs_4722_man, 0
+womanwear = obj_dharoks_platelegs_4722_woman, 0
+model = obj_dharoks_legs_0_4902
+xof2d = 1
+yof2d = 1
+zoom2d = 1660
+xan2d = 456
+recol = 10394/10512 10388/10760
+name = Dharoks legs 0

@@ -1,0 +1,13 @@
+// loc 16945
+active = 1
+sharelight = true
+contrast = 20
+ambient = 20
+op1 = Climb
+resizex = 128
+resizey = 160
+resizez = 128
+forceapproach = 7
+mapscene = 7
+models_only = 16576
+name = Stairs

@@ -1,0 +1,13 @@
+// obj 6866
+model = obj_blue_marionette_6865
+xof2d = 1
+yof2d = 8
+zoom2d = 1368
+xan2d = 512
+iop1 = Jump
+iop2 = Walk
+iop3 = Bow
+iop4 = Dance
+iop5 = Destroy
+recol = 6457/22305 6573/22424 5543/22416
+name = Green marionette

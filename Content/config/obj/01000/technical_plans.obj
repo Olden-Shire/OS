@@ -1,0 +1,13 @@
+// obj 1850
+cost = 1
+members = true
+iop1 = Read
+model = obj_technical_plans
+xof2d = -2
+yof2d = 7
+zoom2d = 2256
+yan2d = 1985
+xan2d = 498
+contrast = 15
+ambient = 15
+name = Technical plans

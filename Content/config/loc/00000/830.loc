@@ -1,0 +1,7 @@
+// loc 830
+wallwidth = 32
+sharelight = true
+hillskew = true
+blockwalk = true
+nonblockrange = true
+models = 1419/0

@@ -1,0 +1,13 @@
+// obj 6739
+model = obj_dragon_axe_6739
+manwear = obj_dragon_axe_6739_wear, 0
+womanwear = obj_dragon_axe_6739_wear, 6
+iop2 = Wield
+cost = 55000
+xof2d = -6
+yof2d = 6
+zoom2d = 1450
+yan2d = 1288
+xan2d = 520
+members = true
+name = Dragon axe

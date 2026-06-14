@@ -1,0 +1,24 @@
+{
+  "archive_id": 10,
+  "archive_name": "binary",
+  "groups": [
+    {
+      "id": 0,
+      "ctype": 2,
+      "version": [
+        0,
+        5
+      ],
+      "path": "0.jpg"
+    },
+    {
+      "id": 1,
+      "ctype": 2,
+      "version": [
+        0,
+        1
+      ],
+      "path": "1.dat"
+    }
+  ]
+}

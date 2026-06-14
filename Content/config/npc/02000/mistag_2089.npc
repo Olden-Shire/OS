@@ -1,0 +1,7 @@
+// npc 2089
+readyanim = 6040
+walkanim = 6041
+vislevel = 0
+name = Mistag
+models = 23668 23704
+headmodels = 23246 23232 23230

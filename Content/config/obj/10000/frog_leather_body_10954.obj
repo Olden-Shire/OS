@@ -1,0 +1,17 @@
+// obj 10954
+model = obj_frog_leather_body_10954
+contrast = 15
+ambient = 15
+xof2d = 5
+yof2d = 3
+zoom2d = 1117
+yan2d = 2040
+xan2d = 609
+members = true
+manwear = obj_frog_leather_body_10954_man, 0
+womanwear = obj_frog_leather_body_10954_woman, 0
+manwear2 = 23861
+womanwear2 = 23865
+iop2 = Wear
+cost = 1000
+name = Frog-leather body

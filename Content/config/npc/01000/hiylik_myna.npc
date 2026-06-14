@@ -1,0 +1,11 @@
+// npc 1514
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+size = 1
+recol = 8741/6558 24/6682 20/6806 16/6930 12/7054 90/2952
+name = Hiylik Myna
+models = 230 250 292 14562 176 14566 181
+headmodels = 63 82

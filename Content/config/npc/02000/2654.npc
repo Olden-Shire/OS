@@ -1,0 +1,6 @@
+// npc 2654
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 1
+multivar = 1032, 65535, 2655 2656 2657 2658 2659 2658 2657 2656 2655

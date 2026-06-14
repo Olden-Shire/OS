@@ -1,0 +1,6 @@
+// loc 22718
+active = 1
+ambient = 40
+nonsolid = true
+models = 23449/4
+name = Shelves

@@ -1,0 +1,9 @@
+// loc 25161
+blockwalk = true
+ambient = 20
+hillskew = true
+active = 1
+op1 = Climb-over
+recol = 9098/7054 8846/6930 8722/6806 8598/6682 8602/6558 8478/6563
+models_only = 26498
+name = Wall

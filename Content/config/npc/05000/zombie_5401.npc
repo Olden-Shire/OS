@@ -1,0 +1,9 @@
+// npc 5401
+size = 1
+readyanim = 5572
+walkanim = 5570
+op2 = Attack
+vislevel = 72
+recol = 2339/10279 2334/10275 2458/10270 2578/10266 2578/10262
+name = Zombie
+models = 21104 21139 21057 21037 21113 21073 21086

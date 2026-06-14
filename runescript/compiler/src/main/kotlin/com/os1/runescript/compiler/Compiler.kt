@@ -99,10 +99,9 @@ class Compiler(
         // id); the child is the numeric component index within it.
         if (trigger.subjectType == "component") {
             val parts = subject.split(':')
-            val child = if (parts.size == 2) parts[1].toIntOrNull() else null
-            if (parts.size != 2 || child == null) {
+            if (parts.size != 2) {
                 diagnostics.error(sourceName, node.subjectSpan,
-                    "component subject must be 'interface:child' (e.g. if_378:6), got '$subject'")
+                    "component subject must be 'interface:child' (e.g. if_378:6 or welcome:com_6), got '$subject'")
                 return 0
             }
             val ifaceId = parts[0].toIntOrNull() ?: symbols.config("interface", parts[0])?.id
@@ -110,7 +109,20 @@ class Compiler(
                 diagnostics.error(sourceName, node.subjectSpan, "unknown interface '${parts[0]}'")
                 return 0
             }
-            return (ifaceId shl 16) or child
+            // Child may be a numeric index (welcome:6) or a named component
+            // (welcome:com_6). Named components resolve through interface.pack as
+            // the full `interface:child` key, which already encodes (iface<<16)|child.
+            val child = parts[1].toIntOrNull()
+            if (child != null) {
+                return (ifaceId shl 16) or child
+            }
+            val named = symbols.config("interface", subject)?.id
+            if (named != null) {
+                return named
+            }
+            diagnostics.error(sourceName, node.subjectSpan,
+                "unknown component '$subject' (no '${parts[1]}' in interface '${parts[0]}')")
+            return 0
         }
         // coord / mapzone subjects are literal ids.
         if (subject.contains('_') && subject.all { it.isDigit() || it == '_' }) {

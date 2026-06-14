@@ -1,0 +1,9 @@
+// loc 19433
+resizey = 64
+sharelight = true
+hillskew = true
+active = 0
+ambient = 30
+contrast = 30
+recol = 6689/43131
+models_only = 812

@@ -1,0 +1,6 @@
+// loc 25973
+contrast = 15
+ambient = 20
+blockwalk = true
+mirror = true
+models = 27245/0

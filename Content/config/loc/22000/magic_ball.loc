@@ -1,0 +1,8 @@
+// loc 22826
+active = 1
+ambient = 40
+blockwalk = true
+anim = 6028
+nonblockrange = true
+models_only = 23513
+name = Magic ball

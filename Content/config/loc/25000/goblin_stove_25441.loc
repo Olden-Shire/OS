@@ -1,0 +1,10 @@
+// loc 25441
+ambient = 5
+contrast = 5
+length = 2
+anim = 3105
+op1 = Inspect
+bgsound = 2199, 5
+recol = 6592/3230 6583/3226 6707/3350 7843/3346 7838/3470 7962/520
+models_only = 26908 26903
+name = Goblin stove

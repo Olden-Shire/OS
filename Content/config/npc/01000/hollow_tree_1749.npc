@@ -1,0 +1,11 @@
+// npc 1749
+size = 1
+walkanim = 5751
+readyanim = 5751
+vislevel = 0
+op1 = Chop down
+op3 = hidden
+turnspeed = 0
+recol = 7056/13592 6674/10512
+name = Hollow tree
+models = 21834

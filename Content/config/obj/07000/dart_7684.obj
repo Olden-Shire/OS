@@ -1,0 +1,10 @@
+// obj 7684
+model = obj_dart_7684
+manwear = obj_dart_7684_wear, 0
+womanwear = obj_dart_7684_wear, 6
+xof2d = -1
+yof2d = 1
+zoom2d = 976
+yan2d = 267
+xan2d = 418
+name = Dart

@@ -1,0 +1,13 @@
+// obj 6186
+model = obj_princess_blouse_6186
+womanwear = obj_prince_tunic_woman, 0
+womanwear2 = 8846
+manwear = obj_prince_tunic_man, 0
+manwear2 = 162
+iop2 = Wear
+yof2d = 9
+zoom2d = 1140
+xan2d = 400
+cost = 0
+recol = 8741/127
+name = Princess blouse

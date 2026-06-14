@@ -1,0 +1,11 @@
+// loc 25429
+length = 3
+ambient = 40
+contrast = 40
+sharelight = true
+active = 1
+op1 = Climb up
+forceapproach = 11
+recol = 6461/5268 6457/5392 6449/5388 6445/5640
+models_only = 26909
+name = Stairs

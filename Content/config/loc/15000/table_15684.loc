@@ -1,0 +1,7 @@
+// loc 15684
+ambient = 20
+length = 2
+nonblockrange = true
+recol = 6443/5660 6439/6451 6451/6563
+models_only = 7712
+name = Table

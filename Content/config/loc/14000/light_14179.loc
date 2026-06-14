@@ -1,0 +1,14 @@
+// loc 14179
+width = 2
+length = 2
+anim = 3101
+ambient = 60
+contrast = 60
+nonsolid = true
+noshadow = true
+resizex = 128
+resizey = 50
+resizez = 128
+op1 = Jump-out
+models_only = 10941
+name = Light

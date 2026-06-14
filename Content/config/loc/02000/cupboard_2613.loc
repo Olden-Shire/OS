@@ -1,0 +1,9 @@
+// loc 2613
+length = 2
+op1 = Search
+op2 = Close
+forceapproach = 13
+blockwalk = true
+raiseobject = 0
+models_only = 2243
+name = Cupboard

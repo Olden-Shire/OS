@@ -1,0 +1,12 @@
+// obj 1917
+cost = 2
+iop1 = Drink
+model = obj_asgarnian_ale_1905
+xof2d = -3
+yof2d = 2
+zoom2d = 660
+yan2d = 1904
+xan2d = 140
+manwear = obj_beer_1917_wear, 0
+womanwear = obj_beer_1917_wear, 6
+name = Beer

@@ -1,0 +1,10 @@
+// npc 1571
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/37526 43072/8472 8741/1686 4550/6695 10004/61 4626/33680
+name = Harold Evans
+models = 230 244 280 312 152 179 263 181 246
+headmodels = 63 77

@@ -1,0 +1,6 @@
+// loc 9105
+active = 1
+op1 = Repair
+anim = 2451
+models_only = 9069
+name = Cogs

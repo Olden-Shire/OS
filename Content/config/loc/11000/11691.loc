@@ -1,0 +1,9 @@
+// loc 11691
+active = 0
+hillskew = true
+wallwidth = 32
+ambient = 20
+contrast = 15
+mirror = true
+occlude = true
+models = 11654/0

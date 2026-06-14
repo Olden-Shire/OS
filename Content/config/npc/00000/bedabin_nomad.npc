@@ -1,0 +1,12 @@
+// npc 833
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 8741/127 25238/127 4626/127 908/127 43072/127 4550/4645
+name = Bedabin Nomad
+models = 217 246 188 292 170 176 265 185
+headmodels = 55 30

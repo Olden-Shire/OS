@@ -1,0 +1,7 @@
+// loc 20457
+active = 1
+noshadow = true
+nonsolid = true
+anim = 5603
+models_only = 21267
+name = Skeleton

@@ -1,0 +1,15 @@
+// obj 1253
+members = true
+cost = 91
+model = obj_bronze_spear_1237
+iop2 = Wield
+manwear = obj_bronze_spear_1237_wear, 0
+womanwear = obj_bronze_spear_1237_wear, 6
+xof2d = 7
+yof2d = -4
+zoom2d = 1490
+yan2d = 112
+zan2d = 144
+xan2d = 1960
+recol = 33/13221 28/13221
+name = Iron spear(p)

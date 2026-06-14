@@ -1,0 +1,10 @@
+// loc 13372
+resizex = 110
+resizey = 110
+resizez = 110
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+models_only = 17411 17427 17421 17417
+name = Baby red dragon

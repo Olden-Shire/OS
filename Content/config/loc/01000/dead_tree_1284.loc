@@ -1,0 +1,11 @@
+// loc 1284
+width = 2
+length = 2
+mapscene = 6
+resizex = 100
+resizey = 100
+resizez = 100
+op1 = Chop down
+op3 = hidden
+models_only = 1715
+name = Dead tree

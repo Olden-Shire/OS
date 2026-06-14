@@ -1,0 +1,12 @@
+// npc 1814
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 120
+resizev = 120
+op1 = Talk-to
+op2 = Attack
+vislevel = 31
+name = Camp dweller
+models = 214 250 5673 5671 5667 5725
+headmodels = 52 82

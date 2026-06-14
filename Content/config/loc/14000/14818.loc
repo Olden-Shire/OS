@@ -1,0 +1,7 @@
+// loc 14818
+active = 0
+ambient = 40
+contrast = 15
+sharelight = true
+hillskew = true
+models = 14673/10 14674/0 14675/1 14676/9

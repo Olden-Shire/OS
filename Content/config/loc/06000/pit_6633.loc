@@ -1,0 +1,9 @@
+// loc 6633
+active = 1
+forcedecor = true
+noshadow = true
+hillskew = true
+nonsolid = true
+sharelight = true
+models_only = 3951
+name = Pit

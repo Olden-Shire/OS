@@ -1,0 +1,9 @@
+// npc 4442
+vislevel = 0
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+recol = 6798/5206
+name = Fairy Very Wise
+models = 16218
+headmodels = 16233 16234

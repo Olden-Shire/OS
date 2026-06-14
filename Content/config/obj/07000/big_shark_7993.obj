@@ -1,0 +1,11 @@
+// obj 7993
+model = obj_big_shark_7993
+xof2d = 5
+yof2d = 20
+zoom2d = 1860
+yan2d = 12
+xan2d = 344
+cost = 300
+members = true
+cost = 5000
+name = Big shark

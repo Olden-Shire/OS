@@ -1,0 +1,15 @@
+// obj 5280
+model = obj_cactus_seed
+xof2d = -2
+yof2d = 1
+zoom2d = 810
+yan2d = 88
+xan2d = 380
+members = true
+stackable = true
+count1 = 5264, 2
+count2 = 5265, 3
+count3 = 5266, 4
+count4 = 5267, 5
+cost = 99
+name = Cactus seed

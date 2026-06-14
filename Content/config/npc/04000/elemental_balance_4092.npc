@@ -1,0 +1,9 @@
+// npc 4092
+readyanim = 3584
+vislevel = 0
+size = 1
+op2 = Banish
+turnspeed = 0
+recol = 127/33246
+name = Elemental balance
+models = 12960

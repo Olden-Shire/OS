@@ -1,0 +1,14 @@
+// obj 6668
+model = obj_fishbowl_6668
+xof2d = 1
+yof2d = 27
+zoom2d = 1000
+yan2d = 1800
+xan2d = 284
+cost = 0
+members = true
+iop3 = Empty
+ambient = 40
+contrast = 20
+recol = 41938/42330
+name = Fishbowl

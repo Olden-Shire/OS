@@ -1,0 +1,17 @@
+// interface 117
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=123
+y=119
+width=32
+height=32
+trans=0
+model=com_i10846
+activemodel=-1
+anim=3093
+zoom=185
+xan=0
+yan=0

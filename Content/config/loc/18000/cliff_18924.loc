@@ -1,0 +1,7 @@
+// loc 18924
+hillskew = true
+op1 = Climb-down
+active = 1
+nonsolid = true
+models = 19307/22
+name = Cliff

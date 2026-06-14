@@ -1,0 +1,9 @@
+// loc 20527
+ambient = 25
+contrast = 25
+op1 = Enter
+resizey = 135
+ambient = 20
+contrast = 20
+models_only = 21298
+name = Entrance

@@ -1,0 +1,11 @@
+// npc 3671
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 25238/904 8741/904 5910/107 54397/94 6439/12 6038/2454
+name = Fortunato
+models = 13705 14107 245 299 330 10301 263 10124 3707
+headmodels = 13703 14325 78 13701

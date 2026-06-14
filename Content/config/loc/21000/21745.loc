@@ -1,0 +1,5 @@
+// loc 21745
+sharelight = true
+ambient = 30
+mirror = true
+models = 22239/0 22240/1 22241/9

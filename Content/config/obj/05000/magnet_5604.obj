@@ -1,0 +1,9 @@
+// obj 5604
+cost = 3
+model = obj_magnet_5604
+yof2d = 6
+zoom2d = 950
+yan2d = 160
+xan2d = 308
+members = true
+name = Magnet

@@ -1,0 +1,7 @@
+// loc 14973
+width = 2
+length = 2
+hillskew = true
+op1 = Take-from
+models_only = 14898 14899
+name = Net

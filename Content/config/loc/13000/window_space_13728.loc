@@ -1,0 +1,6 @@
+// loc 13728
+op5 = Build
+active = 1
+blockwalk = true
+models = 12665/0
+name = Window space

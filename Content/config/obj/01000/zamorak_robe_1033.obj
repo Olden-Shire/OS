@@ -1,0 +1,12 @@
+// obj 1033
+cost = 30
+model = obj_priest_gown_428
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+iop2 = Wear
+manwear = obj_priest_gown_428_man, 0
+womanwear = obj_priest_gown_428_woman, 0
+members = true
+recol = 25238/937
+name = Zamorak robe

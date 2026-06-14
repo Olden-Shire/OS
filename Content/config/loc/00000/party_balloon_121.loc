@@ -1,0 +1,7 @@
+// loc 121
+anim = 498
+nonsolid = true
+ambient = 60
+op1 = Burst
+models_only = 2226
+name = Party Balloon

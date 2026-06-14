@@ -1,0 +1,10 @@
+// seq 622
+replaceheldright = 819
+replaceheldleft = 819
+loops = 2
+maxloops = 8
+preanim_move = 1
+postanim_move = 1
+reachforward = true
+frames = 15/1/294 4/2/294 4/3/294 4/4/294 12/5/294 4/6/294 15/7/294 15/8/294 15/7/294 15/8/294 15/7/294 15/8/294 15/7/294 15/8/294 15/7/294 15/7/294 15/8/294 15/7/294 15/8/294
+sound = 0 0 0 0 0 665617

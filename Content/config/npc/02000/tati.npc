@@ -1,0 +1,12 @@
+// npc 2160
+size = 1
+resizeh = 130
+vislevel = 0
+walkanim = 2154
+readyanim = 2155
+op1 = Talk-to
+op3 = Trade
+recol = 7473/5669 2578/57 8604/3350
+name = Tati
+models = 7029 7071 2983 2979 7075 2980 2985
+headmodels = 6988 6996

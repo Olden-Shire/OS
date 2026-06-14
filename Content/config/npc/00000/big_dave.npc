@@ -1,0 +1,13 @@
+// npc 228
+alwaysontop = true
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizev = 135
+resizeh = 135
+op1 = Talk-to
+recol = 8741/6581 41372/5409 8887/5425 8747/7587 123/8530
+name = Big Dave
+models = 14339 203 252 299 321 167 179 562 14381 14376
+headmodels = 45 84 14335

@@ -1,0 +1,9 @@
+// loc 16987
+active = 0
+sharelight = true
+contrast = 20
+ambient = 20
+resizex = 128
+resizey = 160
+resizez = 128
+models_only = 16584

@@ -1,0 +1,8 @@
+// loc 2478
+width = 3
+length = 3
+op1 = Craft-rune
+anim = 503
+bgsound = 3140, 5
+models_only = 2304
+name = Altar

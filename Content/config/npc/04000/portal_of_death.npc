@@ -1,0 +1,7 @@
+// npc 4380
+op1 = talk
+size = 1
+vislevel = 1
+name = Portal of Death
+models = 10302
+headmodels = 15910

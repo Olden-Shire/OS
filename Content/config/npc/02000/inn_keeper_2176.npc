@@ -1,0 +1,11 @@
+// npc 2176
+resizeh = 128
+resizev = 138
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 10330/10434
+name = Inn Keeper
+models = 2970 7061 2979 7046 2985
+headmodels = 0

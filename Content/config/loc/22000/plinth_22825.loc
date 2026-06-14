@@ -1,0 +1,6 @@
+// loc 22825
+active = 1
+ambient = 20
+nonsolid = true
+models = 23507/22
+name = Plinth

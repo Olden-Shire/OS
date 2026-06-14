@@ -1,0 +1,11 @@
+// npc 1251
+vislevel = 0
+size = 1
+walkanim = 1306
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/4523 8741/4523 4550/13640 6798/12828 43072/13640 43303/960
+name = Afflicted(Ulsquire)
+models = 223 247 299 163 176 265 181
+headmodels = 59 79

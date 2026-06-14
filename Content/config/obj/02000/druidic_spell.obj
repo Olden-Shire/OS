@@ -1,0 +1,11 @@
+// obj 2968
+members = true
+model = obj_scrawled_note
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+zoom2d = 940
+yan2d = 112
+xan2d = 248
+iop1 = Cast
+recol = 0/22410 898/22410 900/17344 902/22410 904/17344 5351/17344
+name = Druidic spell

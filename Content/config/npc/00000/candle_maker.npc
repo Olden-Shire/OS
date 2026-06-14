@@ -1,0 +1,12 @@
+// npc 562
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 6798/7070 43072/4550 8741/32852 25238/8 4626/8 54397/4391
+name = Candle maker
+models = 217 302 167 176 274 185 249
+headmodels = 55 81

@@ -1,0 +1,10 @@
+// loc 24889
+active = 1
+resizex = 120
+resizey = 135
+resizez = 120
+ambient = 15
+nonblockrange = true
+recol = 933/666 8128/547 3986/7690
+models_only = 1161
+name = Barstool

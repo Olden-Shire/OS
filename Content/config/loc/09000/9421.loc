@@ -1,0 +1,7 @@
+// loc 9421
+active = 0
+sharelight = true
+resizex = 128
+resizey = 256
+resizez = 128
+models = 9402/0 9403/1 9404/9

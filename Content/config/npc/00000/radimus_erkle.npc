@@ -1,0 +1,10 @@
+// npc 400
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 7952/127 61/36133 41/37270 6798/111 4626/43181 57/36133
+name = Radimus Erkle
+models = 215 250 306 164 179 268 185 317
+headmodels = 53 82

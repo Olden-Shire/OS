@@ -1,0 +1,6 @@
+// loc 11215
+length = 2
+op1 = Repair
+blockwalk = true
+models_only = 11152
+name = Broken Cannon

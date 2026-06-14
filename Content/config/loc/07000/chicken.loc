@@ -1,0 +1,8 @@
+// loc 7281
+resizex = 25
+resizey = 25
+resizez = 25
+ambient = 20
+op1 = Pick-up
+models_only = 7728
+name = Chicken

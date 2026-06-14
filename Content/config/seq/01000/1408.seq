@@ -1,0 +1,5 @@
+// seq 1408
+reachforward = true
+priority = 9
+loops = 1
+frames = 50/79/217

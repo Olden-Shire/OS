@@ -1,0 +1,19 @@
+// obj 10008
+iop1 = Lay
+op4 = Lay
+op5 = hidden
+model = obj_box_trap_10008
+resizex = 128
+resizey = 128
+resizez = 128
+contrast = 30
+ambient = 30
+xof2d = 15
+yof2d = -100
+zoom2d = 2345
+yan2d = 747
+zan2d = 1535
+xan2d = 180
+members = true
+cost = 32
+name = Box trap

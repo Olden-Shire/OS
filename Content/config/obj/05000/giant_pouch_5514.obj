@@ -1,0 +1,10 @@
+// obj 5514
+cost = 1200
+members = true
+model = obj_giant_pouch_5514
+zoom2d = 760
+xan2d = 128
+iop1 = Fill
+iop2 = Empty
+iop3 = Check
+name = Giant pouch

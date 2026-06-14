@@ -1,0 +1,8 @@
+[clientscript,script_135](int $int0)()
+
+if (string_length(%varcstr24) > 0) {
+    chat_sendabusereport(%varcstr24, $int0, %varcint6);
+}
+if_close();
+%varcint11 = 0;
+return;

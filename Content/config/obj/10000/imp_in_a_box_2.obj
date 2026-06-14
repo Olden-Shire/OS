@@ -1,0 +1,16 @@
+// obj 10027
+model = obj_imp_in_a_box_2
+resizex = 128
+resizey = 128
+resizez = 128
+contrast = 30
+ambient = 30
+yof2d = -4
+zoom2d = 1070
+yan2d = 1852
+xan2d = 164
+members = true
+iop1 = Talk-to
+iop2 = Bank
+cost = 600
+name = Imp-in-a-box(2)

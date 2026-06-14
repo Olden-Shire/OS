@@ -1,0 +1,11 @@
+// npc 2240
+vislevel = 0
+size = 2
+walkanim = 2165
+readyanim = 2166
+ambient = 15
+resizeh = 200
+resizev = 200
+recol = 2380/2376 2372/2368
+name = Pig
+models = 7363

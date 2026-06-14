@@ -1,0 +1,9 @@
+// loc 9028
+op1 = Repair
+op3 = Hidden
+op4 = Hidden
+active = 1
+hillskew = true
+nonblockrange = true
+models = 8890/0 8891/9
+name = Medium fence

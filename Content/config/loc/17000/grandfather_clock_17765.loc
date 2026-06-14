@@ -1,0 +1,5 @@
+// loc 17765
+bgsound = 3120, 3
+recol = 4502/10392 4510/5281 6854/6558 127/103
+models_only = 12973
+name = Grandfather clock

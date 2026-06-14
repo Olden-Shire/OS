@@ -1,0 +1,10 @@
+// npc 916
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 2452/24 5532/41 6798/10508
+name = Joe
+models = 217 246 294 173 179 268 185 502
+headmodels = 55

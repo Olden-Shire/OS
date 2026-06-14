@@ -1,0 +1,11 @@
+// obj 10851
+model = obj_spring_sqirkjuice
+xof2d = -3
+yof2d = 2
+zoom2d = 660
+yan2d = 1904
+xan2d = 140
+members = true
+iop1 = Drink
+recol = 832/43206
+name = Winter sq'irkjuice

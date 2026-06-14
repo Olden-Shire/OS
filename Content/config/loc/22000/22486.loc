@@ -1,0 +1,8 @@
+// loc 22486
+hillskew = true
+noshadow = true
+contrast = 20
+ambient = 20
+nonsolid = true
+forcedecor = true
+models = 22795/22

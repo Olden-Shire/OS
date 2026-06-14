@@ -1,0 +1,11 @@
+// npc 3416
+size = 1
+vislevel = 0
+walkanim = 3396
+readyanim = 3396
+op1 = Talk-to
+turnspeed = 0
+alwaysontop = true
+recol = 39145/6938 11162/5008 28318/8 22177/12 8741/10902
+name = Pirate Pete
+models = 190 211 236 11190 5222 162 177 259 12760

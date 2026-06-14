@@ -1,0 +1,10 @@
+// npc 1886
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 56
+recol = 8741/10351 4550/5555
+name = Cowardly Bandit
+models = 6086 247 292 173 6090 181 176 490 523
+headmodels = 79 6080 53

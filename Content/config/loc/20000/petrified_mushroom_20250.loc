@@ -1,0 +1,5 @@
+// loc 20250
+hillskew = true
+op1 = Get-Spikes
+models_only = 20632
+name = Petrified mushroom

@@ -1,0 +1,8 @@
+// loc 9324
+active = 1
+blockwalk = true
+sharelight = true
+forcedecor = true
+op1 = Walk-across
+models = 1024/22
+name = Log balance

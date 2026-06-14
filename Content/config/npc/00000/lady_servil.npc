@@ -1,0 +1,10 @@
+// npc 264
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/38699 8741/38464 8741/39029
+name = Lady Servil
+models = 378 456 348 353 428 358
+headmodels = 103

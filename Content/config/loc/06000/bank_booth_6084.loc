@@ -1,0 +1,10 @@
+// loc 6084
+op1 = Use
+op2 = Use-quickly
+resizex = 128
+resizey = 100
+resizez = 128
+nonblockrange = true
+recol = 7056/5404 6814/6697 20/43051
+models_only = 1270
+name = Bank booth

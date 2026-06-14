@@ -1,0 +1,5 @@
+// loc 16981
+active = 1
+nonsolid = true
+models = 7385/22
+name = Scrolls

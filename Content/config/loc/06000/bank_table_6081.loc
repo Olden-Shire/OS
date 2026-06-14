@@ -1,0 +1,9 @@
+// loc 6081
+width = 2
+resizex = 128
+resizey = 100
+resizez = 128
+nonblockrange = true
+recol = 7056/5404 57/8119 43722/8125
+models_only = 1262
+name = Bank table

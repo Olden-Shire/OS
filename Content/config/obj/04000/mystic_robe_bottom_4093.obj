@@ -1,0 +1,15 @@
+// obj 4093
+cost = 80000
+model = obj_mystic_robe_bottom_4093
+iop2 = Wear
+manwear = obj_mystic_robe_bottom_4093_man, 0
+womanwear = obj_mystic_robe_bottom_4093_woman, 0
+members = true
+xof2d = 5
+yof2d = 7
+zoom2d = 1690
+yan2d = 2024
+xan2d = 408
+ambient = 30
+contrast = 20
+name = Mystic robe bottom

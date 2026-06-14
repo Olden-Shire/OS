@@ -1,0 +1,12 @@
+// loc 6493
+length = 2
+width = 2
+length = 2
+width = 2
+resizex = 256
+resizey = 256
+resizez = 256
+anim = 1943
+recol = 61/10262 7485/10277
+models_only = 6267
+name = Obelisk

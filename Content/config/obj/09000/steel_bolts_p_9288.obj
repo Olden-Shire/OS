@@ -1,0 +1,17 @@
+// obj 9288
+stackable = true
+model = obj_bronze_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+count1 = 9315, 2
+count2 = 9316, 3
+count3 = 9317, 4
+count4 = 9318, 5
+members = true
+iop2 = Wield
+cost = 8
+recol = 5537/74 5532/70 5656/66 5652/61
+name = Steel bolts (p)

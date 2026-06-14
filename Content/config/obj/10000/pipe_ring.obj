@@ -1,0 +1,9 @@
+// obj 10872
+model = obj_pipe_ring
+members = true
+xof2d = -1
+yof2d = 8
+zoom2d = 659
+yan2d = 2047
+xan2d = 290
+name = Pipe ring

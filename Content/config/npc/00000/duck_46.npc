@@ -1,0 +1,9 @@
+// npc 46
+size = 1
+walkanim = 6817
+readyanim = 6818
+op2 = Attack
+nominimap = true
+vislevel = 1
+name = Duck
+models = 26873

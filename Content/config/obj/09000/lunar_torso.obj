@@ -1,0 +1,15 @@
+// obj 9097
+cost = 100
+model = obj_lunar_torso
+iop2 = Wear
+manwear = obj_lunar_torso_man, 0
+manwear2 = 16471
+womanwear = obj_lunar_torso_woman, 0
+womanwear2 = 16492
+members = true
+yof2d = -1
+zoom2d = 1308
+xan2d = 498
+iop5 = Destroy
+recol = 6573/40210 36007/16652 33300/20 410/61714
+name = Lunar torso

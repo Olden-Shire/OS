@@ -1,0 +1,12 @@
+// obj 10968
+model = obj_mushrooms
+yof2d = 6
+zoom2d = 848
+yan2d = 1631
+xan2d = 393
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 50
+name = Mushrooms

@@ -1,0 +1,9 @@
+// npc 2224
+size = 1
+walkanim = 98
+readyanim = 2152
+vislevel = 0
+recol = 2578/2165 7062/107 61/7475 12/7475
+name = White Chisel Director
+models = 7028 7059 2979 2980 2985
+headmodels = 6987

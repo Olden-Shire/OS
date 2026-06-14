@@ -43,10 +43,13 @@ pub fn draw(ui: &mut egui::Ui, sys: &mut ClientSystems, group_id: u32, sel: &mut
         return;
     }
 
-    let by_sub_id: HashMap<i32, &IfType> = components.iter().map(|c| (c.sub_id, c)).collect();
+    // Decoded components carry sub_id == -1 (only cc_create assigns it); their
+    // real identity is `parent_id = (group << 16) | file_id`, so the low 16 bits
+    // are the file id the browser selects on. Key + match everything on that.
+    let by_child: HashMap<i32, &IfType> = components.iter().map(|c| (child_id(c), c)).collect();
     let offsets: HashMap<i32, (i32, i32)> = components
         .iter()
-        .map(|c| (c.sub_id, parent_offset(c, &by_sub_id)))
+        .map(|c| (child_id(c), parent_offset(c, &by_child)))
         .collect();
 
     section(ui, "interface", |ui| {
@@ -79,7 +82,7 @@ pub fn draw(ui: &mut egui::Ui, sys: &mut ClientSystems, group_id: u32, sel: &mut
             if comp.hide || comp.type_ == 0 {
                 continue;
             }
-            let (ox, oy) = offsets.get(&comp.sub_id).copied().unwrap_or((0, 0));
+            let (ox, oy) = offsets.get(&child_id(comp)).copied().unwrap_or((0, 0));
             let c_rect = egui::Rect::from_min_size(
                 egui::pos2(rect.min.x + (comp.x + ox) as f32, rect.min.y + (comp.y + oy) as f32),
                 egui::vec2(comp.width.max(1) as f32, comp.height.max(1) as f32),
@@ -91,13 +94,13 @@ pub fn draw(ui: &mut egui::Ui, sys: &mut ClientSystems, group_id: u32, sel: &mut
                 hovered = Some(comp);
             }
             if click_pos.is_some_and(|p| c_rect.contains(p)) {
-                newly_selected = Some(comp.sub_id);
+                newly_selected = Some(child_id(comp));
             }
         }
 
         if let Some(fid) = sel.file_id {
-            if let Some(comp) = components.iter().find(|c| c.sub_id == fid) {
-                let (ox, oy) = offsets.get(&comp.sub_id).copied().unwrap_or((0, 0));
+            if let Some(comp) = components.iter().find(|c| child_id(c) == fid) {
+                let (ox, oy) = offsets.get(&child_id(comp)).copied().unwrap_or((0, 0));
                 painter.rect_stroke(
                     egui::Rect::from_min_size(
                         egui::pos2(
@@ -123,6 +126,7 @@ pub fn draw(ui: &mut egui::Ui, sys: &mut ClientSystems, group_id: u32, sel: &mut
     section(ui, "components", |ui| {
         egui::ScrollArea::vertical().max_height(200.0).id_salt("if_comp_list").show(ui, |ui| {
             for comp in &components {
+                let cid = child_id(comp);
                 let extra = match comp.type_ {
                     5 if comp.graphic >= 0 => format!("  spr#{}", comp.graphic),
                     6 if comp.model1_id >= 0 => {
@@ -132,20 +136,34 @@ pub fn draw(ui: &mut egui::Ui, sys: &mut ClientSystems, group_id: u32, sel: &mut
                 };
                 let label = format!(
                     "#{:>3}  {:<8} {:>4},{:<4}  {:>4}×{:<4}  layer={:<4}{}{}",
-                    comp.sub_id,
+                    cid,
                     component_type_label(comp.type_),
                     comp.x,
                     comp.y,
                     comp.width,
                     comp.height,
-                    comp.layer_id,
+                    comp.layer_id & 0xFFFF,
                     if comp.hide { "  hide" } else { "" },
                     extra,
                 );
-                ui.label(egui::RichText::new(label).monospace().small());
+                // Clicking a row selects the component (and draws its box above).
+                let selected = sel.file_id == Some(cid);
+                if ui
+                    .add(egui::SelectableLabel::new(selected, egui::RichText::new(label).monospace().small()))
+                    .clicked()
+                {
+                    sel.file_id = Some(cid);
+                }
             }
         });
     });
+}
+
+/// A component's file id — the low 16 bits of its packed `parent_id`
+/// (`(group << 16) | file_id`). This is what the browser selects on; the
+/// `sub_id` field stays -1 for decoded (non-cc_create) components.
+fn child_id(c: &IfType) -> i32 {
+    c.parent_id & 0xFFFF
 }
 
 /// Walk the `layer_id` parent chain summing each parent's (x - scrollPosX,
@@ -171,7 +189,7 @@ fn parent_offset(c: &IfType, by_sub_id: &HashMap<i32, &IfType>) -> (i32, i32) {
 
 fn draw_hover_tooltip(ui: &mut egui::Ui, c: &IfType) {
     ui.label(
-        egui::RichText::new(format!("#{}  {}", c.sub_id, component_type_label(c.type_))).strong(),
+        egui::RichText::new(format!("#{}  {}", child_id(c), component_type_label(c.type_))).strong(),
     );
     ui.label(
         egui::RichText::new(format!("pos {},{}  size {}×{}", c.x, c.y, c.width, c.height))

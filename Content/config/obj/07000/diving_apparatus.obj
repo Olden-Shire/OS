@@ -1,0 +1,13 @@
+// obj 7535
+iop2 = Wear
+model = obj_diving_apparatus
+manwear = obj_diving_apparatus_man, 0
+womanwear = obj_diving_apparatus_woman, 0
+xof2d = 4
+yof2d = -7
+zoom2d = 1358
+yan2d = 1400
+xan2d = 435
+members = true
+cost = 1
+name = Diving apparatus

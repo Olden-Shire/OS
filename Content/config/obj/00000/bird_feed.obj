@@ -1,0 +1,10 @@
+// obj 422
+cost = 1
+model = obj_bird_feed
+xof2d = -2
+yof2d = -4
+zoom2d = 550
+yan2d = 1844
+xan2d = 116
+members = true
+name = Bird feed

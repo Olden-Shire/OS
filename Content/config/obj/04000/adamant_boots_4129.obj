@@ -1,0 +1,14 @@
+// obj 4129
+cost = 1920
+model = obj_bronze_boots_4119
+iop2 = Wear
+manwear = obj_bronze_boots_4119_man, 0
+womanwear = obj_bronze_boots_4119_woman, 0
+members = true
+xof2d = 3
+yof2d = -3
+zoom2d = 770
+yan2d = 156
+xan2d = 164
+recol = 61/21662
+name = Adamant boots

@@ -1,0 +1,15 @@
+// obj 10424
+model = obj_white_ele_blouse_10420
+xof2d = -1
+yof2d = 5
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_white_ele_blouse_10420_man, 0
+manwear2 = 20123
+womanwear = obj_white_ele_blouse_10420_woman, 0
+womanwear2 = 20179
+members = true
+cost = 2000
+recol = 105/171 64/293 47/64396 26/63905 55172/64396
+name = Red ele' blouse

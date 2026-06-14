@@ -1,0 +1,11 @@
+// obj 4809
+model = obj_scrawled_note
+members = true
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+zoom2d = 940
+yan2d = 112
+xan2d = 248
+iop1 = Read
+recol = 0/37805 898/18652 900/123 902/902 904/904 5351/123
+name = Torn page

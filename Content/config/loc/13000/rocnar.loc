@@ -1,0 +1,8 @@
+// loc 13373
+anim = 3707
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+models_only = 13224
+name = Rocnar

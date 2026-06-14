@@ -1,0 +1,8 @@
+// npc 337
+vislevel = 0
+walkanims = 1323, 1324, 1325, 1326
+readyanim = 1322
+op1 = Talk-to
+name = Da Vinci
+models = 25362
+headmodels = 55 9449 9442

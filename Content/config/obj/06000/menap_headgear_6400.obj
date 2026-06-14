@@ -1,0 +1,14 @@
+// obj 6400
+model = obj_menap_headgear_6392
+manwear = obj_menap_headgear_6392_man, 0
+womanwear = obj_menap_headgear_6392_woman, 0
+manhead = 6128
+womanhead = 9014
+iop2 = Wear
+yof2d = 6
+zoom2d = 930
+xan2d = 588
+members = true
+cost = 35
+recol = 49054/64431
+name = Menap headgear

@@ -1,0 +1,14 @@
+// obj 6317
+cost = 2000
+model = obj_machete_975
+xof2d = -2
+yof2d = -12
+zoom2d = 770
+yan2d = 88
+xan2d = 200
+iop2 = Wield
+manwear = obj_machete_975_wear, 0
+womanwear = obj_machete_975_wear, 6
+members = true
+recol = 90/61376 70/49
+name = Red topaz machete

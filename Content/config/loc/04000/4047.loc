@@ -1,0 +1,9 @@
+// loc 4047
+length = 2
+width = 2
+anim = 1261
+contrast = 30
+ambient = 30
+active = 0
+bgsound = 2184, 3
+models_only = 4086

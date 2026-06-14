@@ -1,0 +1,13 @@
+// npc 4494
+vislevel = 0
+size = 1
+readyanim = 6203
+walkanim = 6202
+op1 = Talk-to
+resizev = 148
+resizeh = 148
+ambient = 15
+recol = 6331/22414 6323/22410 35133/22414 35253/22410
+name = General Wartface
+models = 24462 24484 24433 24477 24444 24450 24502 24506
+headmodels = 24214

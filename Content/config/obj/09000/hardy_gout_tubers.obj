@@ -1,0 +1,12 @@
+// obj 9902
+model = obj_hardy_gout_tubers
+xof2d = -1
+yof2d = 3
+zoom2d = 1503
+yan2d = 1826
+zan2d = 1964
+xan2d = 401
+cost = 5
+members = true
+iop5 = Destroy
+name = Hardy gout tubers

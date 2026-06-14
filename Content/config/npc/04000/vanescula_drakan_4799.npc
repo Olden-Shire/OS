@@ -1,0 +1,8 @@
+// npc 4799
+vislevel = 0
+size = 3
+readyanim = 4690
+walkanim = 4684
+name = Vanescula Drakan
+models = 18006 18001
+headmodels = 18049

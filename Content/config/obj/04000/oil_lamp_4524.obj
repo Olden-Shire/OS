@@ -1,0 +1,10 @@
+// obj 4524
+model = obj_oil_lamp_4524
+iop2 = Extinguish
+yof2d = -1
+zoom2d = 1070
+yan2d = 1900
+xan2d = 176
+cost = 28
+members = true
+name = Oil lamp

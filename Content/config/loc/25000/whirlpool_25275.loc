@@ -1,0 +1,12 @@
+// loc 25275
+noshadow = true
+width = 5
+length = 5
+op1 = Dive in
+active = 1
+ambient = 30
+contrast = 30
+anim = 6737
+nonblockrange = true
+models_only = 26699
+name = Whirlpool

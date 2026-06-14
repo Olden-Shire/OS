@@ -1,0 +1,9 @@
+// loc 15605
+active = 1
+ambient = 10
+contrast = 5
+mirror = true
+op1 = Open
+nonblockrange = true
+models = 15401/0
+name = Gate

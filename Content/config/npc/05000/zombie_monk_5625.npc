@@ -1,0 +1,10 @@
+// npc 5625
+readyanim = 5877
+walkanim = 5876
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 9779/50454
+name = Zombie monk
+models = 21431 21469 21412 21440 21460 21448 21422
+headmodels = 21393

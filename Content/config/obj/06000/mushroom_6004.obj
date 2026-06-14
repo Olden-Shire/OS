@@ -1,0 +1,10 @@
+// obj 6004
+model = obj_mushroom_6004
+yof2d = -5
+zoom2d = 1370
+yan2d = 160
+xan2d = 84
+members = true
+ambient = 15
+cost = 38
+name = Mushroom

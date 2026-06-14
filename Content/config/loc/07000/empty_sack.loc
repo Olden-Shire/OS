@@ -1,0 +1,8 @@
+// loc 7285
+resizex = 99
+resizey = 99
+resizez = 99
+ambient = 20
+op1 = Pick-up
+models_only = 7701
+name = Empty Sack

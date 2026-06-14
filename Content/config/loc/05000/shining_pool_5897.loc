@@ -1,0 +1,10 @@
+// loc 5897
+width = 2
+length = 2
+anim = 523
+active = 1
+noshadow = true
+ambient = 40
+op1 = Listen-to
+models_only = 5724
+name = Shining pool

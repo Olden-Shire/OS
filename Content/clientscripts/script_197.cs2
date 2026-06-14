@@ -1,0 +1,114 @@
+[clientscript,script_197](int $int0)()
+def_int $int1;
+def_int $int2;
+def_int $int3;
+def_int $int4;
+def_int $int5;
+def_int $int6;
+def_int $int7;
+def_int $int8;
+def_int $int9;
+
+cc_deleteall($int0);
+$int1 = clan_getchatcount();
+$int2 = 0;
+$int3 = clan_getchatminkick();
+$int4 = clan_getchatrank();
+$int5 = 0;
+while ($int2 < $int1) {
+    $int5 = calc($int2 + $int2 + $int2);
+    cc_create($int0, 4, $int5);
+    cc_settextfont(494);
+    cc_settextalign(0, 1, 0);
+    cc_settext(clan_getchatusername($int2));
+    cc_setposition(15, calc($int2 * 15));
+    cc_setsize(85, 15);
+    cc_setcolour(16777215);
+    cc_settextshadow(0);
+    cc_setonop(199, clan_getchatusername($int2), -2147483644, "si");
+    if (clan_isself($int2) = 0) {
+        if (friend_test(clan_getchatusername($int2)) = 1) {
+            cc_setop(9, join("Remove friend ", clan_getchatusername($int2)));
+        } else if (ignore_test(clan_getchatusername($int2)) = 1) {
+            cc_setop(10, join("Remove ignore ", clan_getchatusername($int2)));
+        } else {
+            cc_setop(7, join("Add friend ", clan_getchatusername($int2)));
+            cc_setop(8, join("Add ignore ", clan_getchatusername($int2)));
+        }
+    }
+    if ($int4 >= $int3 & $int4 > clan_getchatuserrank($int2)) {
+        cc_setop(6, join("Kick user ", clan_getchatusername($int2)));
+    }
+    cc_create($int0, 4, calc($int5 + 1));
+    cc_settextfont(494);
+    cc_settextalign(2, 1, 0);
+    cc_settext(join("World ", tostring(clan_getchatuserworld($int2))));
+    cc_setposition(98, calc($int2 * 15));
+    cc_setsize(50, 15);
+    cc_setcolour(16777060);
+    cc_settextshadow(0);
+    cc_setonop(199, clan_getchatusername($int2), -2147483644, "si");
+    if (clan_isself($int2) = 0) {
+        if (friend_test(clan_getchatusername($int2)) = 1) {
+            cc_setop(9, join("Remove friend ", clan_getchatusername($int2)));
+        } else if (ignore_test(clan_getchatusername($int2)) = 1) {
+            cc_setop(10, join("Remove ignore ", clan_getchatusername($int2)));
+        } else {
+            cc_setop(7, join("Add friend ", clan_getchatusername($int2)));
+            cc_setop(8, join("Add ignore ", clan_getchatusername($int2)));
+        }
+    }
+    if ($int4 >= $int3 & $int4 > clan_getchatuserrank($int2)) {
+        cc_setop(6, join("Kick user ", clan_getchatusername($int2)));
+    }
+    cc_create($int0, 5, calc($int5 + 2));
+    cc_setposition(3, calc($int2 * 15 + 2));
+    cc_setsize(9, 9);
+    cc_setgraphic(~script_198(clan_getchatuserrank($int2)));
+    cc_setonop(199, clan_getchatusername($int2), -2147483644, "si");
+    if (clan_isself($int2) = 0) {
+        if (friend_test(clan_getchatusername($int2)) = 1) {
+            cc_setop(9, join("Remove friend ", clan_getchatusername($int2)));
+        } else if (ignore_test(clan_getchatusername($int2)) = 1) {
+            cc_setop(10, join("Remove ignore ", clan_getchatusername($int2)));
+        } else {
+            cc_setop(7, join("Add friend ", clan_getchatusername($int2)));
+            cc_setop(8, join("Add ignore ", clan_getchatusername($int2)));
+        }
+    }
+    if ($int4 >= $int3 & $int4 > clan_getchatuserrank($int2)) {
+        cc_setop(6, join("Kick user ", clan_getchatusername($int2)));
+    }
+    $int2 = calc($int2 + 1);
+}
+if ($int1 > 0) {
+    if_settext(join("<col=ff9b00>", "Talking in: ", "<col=ffff64>", clan_getchatdisplayname()), 38600704);
+    if_settext(join("<col=ff9b00>", "Owner: ", "<col=ffffff>", clan_getchatownername()), 38600705);
+    if_settext("Leave Chat", 38600712);
+    if_setop(1, "Leave Chat", 38600712);
+} else {
+    if_settext(join("<col=ff9b00>", "Talking in: Not in chat"), 38600704);
+    if_settext(join("<col=ff9b00>", "Owner: None"), 38600705);
+    if_settext("Join Chat", 38600712);
+    if_setop(1, "Join Chat", 38600712);
+}
+$int6 = calc(15 * $int1);
+$int7 = if_getheight(38600709);
+if ($int6 < 15) {
+    $int6 = 15;
+}
+$int8 = calc($int6 - $int7);
+if ($int8 < 0) {
+    $int8 = 0;
+}
+$int9 = if_getscrolly(38600709);
+if ($int9 > $int8) {
+    $int9 = $int8;
+}
+if ($int1 > 0) {
+    if_setscrollsize(0, $int6, 38600709);
+} else {
+    if_setscrollsize(0, 15, 38600709);
+}
+~script_72(38600710, 38600709, $int9);
+return;

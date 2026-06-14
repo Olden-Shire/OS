@@ -1,0 +1,7 @@
+// obj 4574
+model = obj_book_page_1
+zoom2d = 790
+xan2d = 384
+members = true
+iop1 = Assemble
+name = Base schematics

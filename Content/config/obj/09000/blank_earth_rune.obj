@@ -1,0 +1,9 @@
+// obj 9694
+model = obj_blank_earth_rune
+members = true
+xof2d = 4
+yof2d = -1
+zoom2d = 900
+xan2d = 498
+iop5 = Destroy
+name = Blank earth rune

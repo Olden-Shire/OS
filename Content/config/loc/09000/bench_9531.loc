@@ -1,0 +1,6 @@
+// loc 9531
+width = 2
+ambient = 35
+nonblockrange = true
+models_only = 5492
+name = Bench

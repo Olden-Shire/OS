@@ -1,0 +1,6 @@
+// loc 21302
+ambient = 10
+forcedecor = true
+bgsound = 2065, 3
+models_only = 21971
+name = Clay oven

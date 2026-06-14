@@ -1,0 +1,9 @@
+// loc 11785
+width = 2
+length = 2
+hillskew = true
+ambient = 15
+mapscene = 11
+models_only = 11707 11709 11708
+models_only = 11707 7767 7767
+name = Standing stone

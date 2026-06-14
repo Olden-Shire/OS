@@ -1,0 +1,11 @@
+// npc 4502
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+ambient = 40
+contrast = 40
+recol = 33676/49346 410/29902 33300/50244 36007/231 6573/54371 33036/35404
+name = Ethereal Lady
+models = 16455 16504 16505 16507 16492 16497 16489 16502 16495
+headmodels = 16468

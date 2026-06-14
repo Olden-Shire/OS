@@ -1,0 +1,13 @@
+// obj 9806
+model = obj_attack_hood
+zoom2d = 720
+yan2d = 18
+xan2d = 21
+iop2 = Wear
+manwear = obj_attack_hood_man, 0
+womanwear = obj_attack_hood_woman, 0
+manhead = 18911
+womanhead = 18913
+members = true
+recol = 57280/5056 54183/4027 54503/4023 960/5056 22464/4027 43968/4023
+name = Firemaking hood

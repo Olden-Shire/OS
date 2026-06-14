@@ -1,0 +1,10 @@
+// obj 4083
+model = obj_sled_4083
+zoom2d = 1960
+yan2d = 160
+xan2d = 136
+manwear = obj_sled_4083_wear, 0
+womanwear = obj_sled_4083_wear, 0
+members = true
+cost = 150
+name = Sled

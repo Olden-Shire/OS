@@ -1,0 +1,6 @@
+// loc 21032
+active = 1
+ambient = 25
+nonsolid = true
+models = 21643/22
+name = Clarinet

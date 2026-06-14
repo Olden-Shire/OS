@@ -1,0 +1,8 @@
+// npc 10
+walkanim = 6471
+readyanim = 6472
+vislevel = 0
+op1 = Talk-to
+name = Schoolgirl
+models = 25847 25845 25844
+headmodels = 138

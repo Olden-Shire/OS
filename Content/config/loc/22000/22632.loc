@@ -1,0 +1,9 @@
+// loc 22632
+active = 0
+width = 4
+length = 4
+ambient = 20
+sharelight = true
+hillskew = true
+recol = 5786/10266 6034/10258 5910/16 5916/24 5667/24 5006/10760
+models_only = 23527 23554 23551 23529

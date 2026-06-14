@@ -1,0 +1,9 @@
+// npc 4584
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 937/580 908/9152 4550/4546
+name = Damwin
+models = 2904 2913 2923
+headmodels = 16965

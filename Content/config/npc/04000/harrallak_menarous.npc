@@ -1,0 +1,11 @@
+// npc 4286
+size = 1
+vislevel = 0
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 8741/2729 25238/29456 43059/2729 8078/10332 10004/10378
+name = Harrallak Menarous
+models = 220 9620 15305 14187 162 179 5218 15415
+headmodels = 15407 9449 15406

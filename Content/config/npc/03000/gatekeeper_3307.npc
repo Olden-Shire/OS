@@ -1,0 +1,11 @@
+// npc 3307
+vislevel = 0
+resizeh = 110
+resizev = 140
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/3346
+name = Gatekeeper
+models = 6453 6472 170 6310 6471
+headmodels = 11986

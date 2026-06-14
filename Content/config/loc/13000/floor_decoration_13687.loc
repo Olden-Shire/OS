@@ -1,0 +1,5 @@
+// loc 13687
+op5 = Remove
+nonsolid = true
+models = 12478/22
+name = Floor decoration

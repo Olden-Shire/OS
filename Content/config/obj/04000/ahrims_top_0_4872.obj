@@ -1,0 +1,13 @@
+// obj 4872
+members = true
+cost = 50000
+manwear = obj_ahrims_robetop_4712_man, 0
+manwear2 = 170
+womanwear = obj_ahrims_robetop_4712_woman, 0
+womanwear2 = 348
+yof2d = 3
+zoom2d = 1250
+xan2d = 468
+model = obj_ahrims_top_0_4872
+recol = 8741/10512 14490/10512
+name = Ahrims top 0

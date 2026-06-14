@@ -1,0 +1,8 @@
+// loc 21107
+active = 1
+blockwalk = true
+hillskew = true
+ambient = 25
+contrast = 25
+models_only = 21614
+name = Sign

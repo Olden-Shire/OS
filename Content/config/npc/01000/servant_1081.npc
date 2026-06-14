@@ -1,0 +1,13 @@
+// npc 1081
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op2 = Attack
+vislevel = 5
+recol = 43072/4550 8741/49 25238/49 6798/6569
+name = Servant
+models = 215 246 292 170 176 267 181
+headmodels = 53

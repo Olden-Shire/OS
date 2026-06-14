@@ -1,0 +1,6 @@
+// loc 15855
+hillskew = true
+nonsolid = true
+width = 3
+models_only = 15752
+name = Bridge

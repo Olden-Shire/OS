@@ -1,0 +1,7 @@
+// loc 15323
+op5 = Build
+width = 2
+length = 2
+nonsolid = true
+models_only = 21520
+name = Guard space

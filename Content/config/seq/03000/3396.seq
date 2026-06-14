@@ -1,0 +1,5 @@
+// seq 3396
+loops = 9
+replaceheldleft = 0
+replaceheldright = 0
+frames = 6/72/240 6/73/240 5/74/240 5/75/240 5/76/240 5/77/240 7/78/240 9/79/240 9/80/240

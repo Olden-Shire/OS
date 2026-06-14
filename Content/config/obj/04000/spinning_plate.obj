@@ -1,0 +1,13 @@
+// obj 4613
+cost = 50
+iop1 = Spin
+model = obj_spinning_plate
+manwear = obj_spinning_plate_wear, 3
+womanwear = obj_spinning_plate_wear, 3
+xof2d = -1
+yof2d = 6
+zoom2d = 1040
+yan2d = 80
+xan2d = 444
+recol = 86/111 78/103
+name = Spinning plate

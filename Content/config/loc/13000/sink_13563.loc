@@ -1,0 +1,7 @@
+// loc 13563
+length = 2
+op5 = Remove
+forceapproach = 13
+nonblockrange = true
+models_only = 13220 13215
+name = Sink

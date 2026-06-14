@@ -1,0 +1,6 @@
+// npc 1943
+turnspeed = 0
+size = 2
+turnspeed = 0
+vislevel = 34
+multivar = 380, 65535, 1944 1948

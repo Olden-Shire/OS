@@ -1,0 +1,11 @@
+// obj 2609
+cost = 6400
+model = obj_iron_platelegs_1067
+yof2d = -8
+zoom2d = 1740
+xan2d = 444
+iop2 = Wear
+manwear = obj_iron_platelegs_1067_man, 0
+womanwear = obj_iron_platelegs_1067_woman, 0
+recol = 61/21662 41/21776 57/7114
+name = Adam platelegs (g)

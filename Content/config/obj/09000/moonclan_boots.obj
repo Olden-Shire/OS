@@ -1,0 +1,12 @@
+// obj 9073
+cost = 900
+model = obj_moonclan_boots
+iop2 = Wear
+manwear = obj_moonclan_boots_man, 0
+womanwear = obj_moonclan_boots_woman, 0
+members = true
+yof2d = -19
+zoom2d = 682
+yan2d = 63
+xan2d = 195
+name = Moonclan boots

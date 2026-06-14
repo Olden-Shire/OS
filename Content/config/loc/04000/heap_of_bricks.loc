@@ -1,0 +1,10 @@
+// loc 4513
+sharelight = true
+hillskew = true
+ambient = 20
+resizez = 125
+resizex = 120
+resizey = 130
+nonsolid = true
+models_only = 4476
+name = Heap of bricks

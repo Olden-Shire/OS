@@ -1,0 +1,7 @@
+// npc 4973
+vislevel = 0
+size = 4
+resizeh = 106
+resizev = 106
+name = Shadow
+models = 19137

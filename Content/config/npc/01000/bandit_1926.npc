@@ -1,0 +1,12 @@
+// npc 1926
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+op2 = Attack
+op1 = Talk-to
+vislevel = 74
+recol = 4550/4647 25238/127 6798/10508 8741/127 7700/926 11200/926
+name = Bandit
+models = 215 254 248 170 176 181 323 292 188 533
+headmodels = 53 80 30

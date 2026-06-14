@@ -1,0 +1,7 @@
+// npc 1226
+vislevel = 0
+size = 1
+nominimap = true
+recol = 7054/13592 6028/13592
+name = Tree
+models = 3014

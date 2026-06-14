@@ -1,0 +1,13 @@
+// obj 10352
+model = obj__3rd_age_kiteshield_10352
+manwear = obj__3rd_age_kiteshield_10352_wear, 0
+womanwear = obj__3rd_age_kiteshield_10352_wear, 6
+iop2 = Wield
+cost = 180000
+xof2d = 3
+yof2d = 27
+zoom2d = 2030
+yan2d = 56
+xan2d = 364
+members = true
+name = 3rd age kiteshield

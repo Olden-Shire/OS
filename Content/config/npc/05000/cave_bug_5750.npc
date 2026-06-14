@@ -1,0 +1,8 @@
+// npc 5750
+size = 2
+walkanim = 6077
+readyanim = 6078
+op2 = Attack
+vislevel = 96
+name = Cave bug
+models = 23853

@@ -1,0 +1,11 @@
+// obj 9718
+model = obj_crane_schematic
+members = true
+xof2d = 3
+yof2d = 1
+zoom2d = 854
+yan2d = 166
+zan2d = 152
+xan2d = 360
+iop1 = Read
+name = Crane schematic

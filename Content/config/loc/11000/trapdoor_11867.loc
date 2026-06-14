@@ -1,0 +1,7 @@
+// loc 11867
+active = 1
+op1 = Climb-down
+raiseobject = 0
+blockwalk = true
+models = 11537/22
+name = Trapdoor

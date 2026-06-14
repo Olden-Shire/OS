@@ -1,0 +1,8 @@
+// npc 5975
+readyanim = 6437
+vislevel = 0
+turnspeed = 0
+nominimap = true
+size = 4
+name = Lizard display
+models = 25765 25767 25768 25766

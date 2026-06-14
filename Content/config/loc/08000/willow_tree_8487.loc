@@ -1,0 +1,8 @@
+// loc 8487
+mapscene = 3
+ambient = 25
+op1 = Check-health
+op2 = Inspect
+op4 = Guide
+models_only = 8137 7768
+name = Willow Tree

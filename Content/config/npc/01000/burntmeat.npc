@@ -1,0 +1,13 @@
+// npc 1151
+readyanim = 286
+walkanim = 283
+alwaysontop = true
+size = 2
+resizeh = 156
+resizev = 156
+vislevel = 0
+op1 = Talk-to
+recol = 61/8367 10355/10578 21570/7469
+name = Burntmeat
+models = 3754 3758 3756 3772 3764
+headmodels = 3791 2930

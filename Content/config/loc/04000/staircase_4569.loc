@@ -1,0 +1,11 @@
+// loc 4569
+sharelight = true
+occlude = true
+width = 2
+length = 2
+op1 = Climb
+op2 = Climb-up
+op3 = Climb-down
+mapscene = 7
+models_only = 4546
+name = Staircase

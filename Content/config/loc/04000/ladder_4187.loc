@@ -1,0 +1,6 @@
+// loc 4187
+op2 = Climb-down
+op3 = Climb-up
+forceapproach = 11
+models_only = 4312
+name = Ladder

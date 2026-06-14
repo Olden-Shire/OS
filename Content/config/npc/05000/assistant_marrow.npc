@@ -1,0 +1,11 @@
+// npc 5055
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op4 = Fly
+alwaysontop = true
+recol = 25238/32922 99/2593 9104/1829 13122/2452 6798/6445 10378/3346
+name = Assistant Marrow
+models = 206 252 19474 19465 10218 5218
+headmodels = 46 84

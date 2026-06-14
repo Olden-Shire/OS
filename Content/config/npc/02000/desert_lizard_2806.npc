@@ -1,0 +1,13 @@
+// npc 2806
+size = 2
+resizeh = 80
+resizev = 76
+contrast = 30
+ambient = 30
+walkanim = 2775
+readyanim = 2774
+op2 = Attack
+vislevel = 24
+recol = 10644/6558 10529/5671 10407/5549 10526/7461 10650/6435 64943/44343
+name = Desert Lizard
+models = 9831

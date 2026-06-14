@@ -1,0 +1,14 @@
+// obj 8957
+model = obj_blue_naval_shirt
+iop2 = Wear
+manwear = obj_blue_naval_shirt_man, 0
+manwear2 = 15973
+womanwear = obj_blue_naval_shirt_woman, 0
+womanwear2 = 15986
+zoom2d = 1488
+yan2d = 48
+xan2d = 483
+members = true
+cost = 100
+recol = 43311/56858 43303/57106 43422/57228
+name = Purple naval shirt

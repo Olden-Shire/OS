@@ -1,0 +1,5 @@
+// loc 14223
+hillskew = true
+ambient = 5
+noshadow = true
+models = 27170/22

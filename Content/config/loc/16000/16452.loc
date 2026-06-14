@@ -1,0 +1,4 @@
+// loc 16452
+active = 0
+bgsound_random = 250, 500, 20, 3097 3098 3099 3100
+models = 1105/22

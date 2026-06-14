@@ -1,0 +1,10 @@
+// loc 16246
+ambient = 20
+active = 1
+resizex = 98
+resizey = 98
+resizez = 98
+nonblockrange = true
+recol = 6466/32943 5545/32819
+models_only = 12577
+name = Stool

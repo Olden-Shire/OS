@@ -1,0 +1,16 @@
+// npc 5580
+size = 2
+op1 = Talk-to
+resizeh = 140
+resizev = 140
+walkanims = 819, 820, 821, 822
+readyanim = 5814
+turnspeed = 0
+ambient = 25
+contrast = 25
+vislevel = 0
+alwaysontop = true
+recol = 43105/4550
+name = Bonafido
+models = 22600 22599 22603 22595 22598 22601 19947 22606
+headmodels = 22593

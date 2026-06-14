@@ -1,0 +1,9 @@
+// loc 10542
+width = 2
+ambient = 25
+mirror = true
+anim = 917
+nonsolid = true
+recol = 6932/6689 8662/44948 7626/43916
+models_only = 10348
+name = Human Flag

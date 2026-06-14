@@ -1,0 +1,7 @@
+// loc 8950
+width = 2
+length = 2
+mapscene = 11
+nonblockrange = true
+models_only = 8691
+name = Rock

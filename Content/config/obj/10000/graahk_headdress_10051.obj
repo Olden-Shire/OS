@@ -1,0 +1,13 @@
+// obj 10051
+model = obj_graahk_headdress_10051
+iop2 = Wear
+zoom2d = 1232
+yan2d = 2045
+xan2d = 24
+manwear = obj_graahk_headdress_10051_man, 0
+womanwear = obj_graahk_headdress_10051_woman, 0
+manhead = 20047
+womanhead = 20048
+members = true
+cost = 750
+name = Graahk headdress

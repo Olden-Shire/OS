@@ -1,0 +1,18 @@
+// obj 10589
+model = obj_granite_helm_10589
+iop2 = Wear
+manwear = obj_granite_helm_10589_man, 0
+manwear2 = 215
+womanwear = obj_granite_helm_10589_woman, 0
+womanwear2 = 391
+manhead = 21503
+manhead2 = 53
+womanhead = 21504
+womanhead2 = 114
+members = true
+yof2d = 4
+zoom2d = 480
+yan2d = 1944
+xan2d = 120
+cost = 46000
+name = Granite helm

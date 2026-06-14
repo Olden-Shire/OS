@@ -1,0 +1,7 @@
+// npc 4611
+walkanim = 189
+readyanim = 1412
+vislevel = 0
+name = Saboteur
+models = 4703 4704 4697
+headmodels = 4653

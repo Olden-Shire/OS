@@ -1,0 +1,7 @@
+// loc 18074
+op5 = Push
+active = 1
+nonsolid = true
+width = 2
+models_only = 17751
+name = Wall

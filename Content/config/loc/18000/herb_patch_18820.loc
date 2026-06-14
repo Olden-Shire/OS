@@ -1,0 +1,9 @@
+// loc 18820
+ambient = 25
+active = 1
+op2 = Inspect
+width = 2
+length = 2
+recol = 13982/14866 14230/14990
+models_only = 19148 19152 19146
+name = Herb patch

@@ -1,0 +1,14 @@
+// obj 10039
+model = obj_kyatt_hat_10039
+iop2 = Wear
+manwear = obj_kyatt_hat_10039_man, 0
+womanwear = obj_kyatt_hat_10039_woman, 0
+manhead = 19800
+womanhead = 19804
+yof2d = -38
+zoom2d = 919
+yan2d = 9
+xan2d = 189
+members = true
+cost = 1000
+name = Kyatt hat

@@ -1,0 +1,12 @@
+// npc 2271
+vislevel = 0
+resizeh = 130
+resizev = 135
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Bank
+recol = 43072/8720 8741/8720 7281/8485 8090/5772 16/7452
+name = Emerald Benedict
+models = 230 238 5221 173 176 273 246
+headmodels = 63 70

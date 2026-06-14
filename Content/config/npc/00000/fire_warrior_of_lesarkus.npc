@@ -1,0 +1,11 @@
+// npc 277
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 84
+recol = 4550/689 8741/2989 61/5652 41/5652 57/5652 11200/2989
+name = Fire Warrior of Lesarkus
+models = 230 14441 268 163 176 328 323 246 184
+headmodels = 63

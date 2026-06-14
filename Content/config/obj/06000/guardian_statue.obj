@@ -1,0 +1,10 @@
+// obj 6888
+model = obj_guardian_statue
+members = true
+op3 = Observe
+op4 = Reset
+yof2d = -6
+zoom2d = 1560
+yan2d = 1876
+xan2d = 140
+name = Guardian statue

@@ -1,0 +1,9 @@
+// loc 10453
+active = 0
+ambient = 15
+resizex = 256
+resizey = 256
+resizez = 256
+width = 2
+length = 2
+models_only = 10168

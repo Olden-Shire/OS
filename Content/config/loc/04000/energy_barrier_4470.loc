@@ -1,0 +1,10 @@
+// loc 4470
+active = 1
+op1 = Pass
+raiseobject = 0
+anim = 1433
+ambient = 100
+contrast = 100
+recol = 61/960
+models = 4874/0
+name = Energy Barrier

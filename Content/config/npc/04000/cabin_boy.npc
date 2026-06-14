@@ -1,0 +1,12 @@
+// npc 4539
+vislevel = 0
+size = 1
+resizev = 125
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+alwaysontop = true
+recol = 11162/4550 25238/6932 22426/34981 6550/8772 8741/34981
+name = Cabin boy
+models = 2906 2910 14178 14386
+headmodels = 139

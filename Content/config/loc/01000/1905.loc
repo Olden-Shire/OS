@@ -1,0 +1,7 @@
+// loc 1905
+sharelight = true
+occlude = true
+ambient = 20
+contrast = 20
+recol = 10339/5210
+models = 586/0 587/1 588/2 589/3 591/9

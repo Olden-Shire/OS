@@ -1,0 +1,10 @@
+// loc 13499
+width = 2
+length = 2
+op1 = Climb-up
+forceapproach = 11
+mapscene = 7
+op5 = Remove
+op4 = Remove-room
+models_only = 12553
+name = Staircase

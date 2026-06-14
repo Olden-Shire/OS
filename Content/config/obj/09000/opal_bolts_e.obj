@@ -1,0 +1,18 @@
+// obj 9236
+stackable = true
+members = true
+model = obj_opal_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+count1 = 9246, 2
+count2 = 9247, 3
+count3 = 9248, 4
+count4 = 9249, 5
+members = true
+cost = 7
+recol = 17971/5421 5537/5421 5532/5417 5656/5413 5652/5537 10465/10351
+name = Opal bolts (e)

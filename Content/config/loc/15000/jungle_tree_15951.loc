@@ -1,0 +1,9 @@
+// loc 15951
+length = 2
+width = 2
+mapscene = 5
+ambient = 30
+op1 = Cut-Down
+op3 = hidden
+models_only = 15810
+name = Jungle Tree

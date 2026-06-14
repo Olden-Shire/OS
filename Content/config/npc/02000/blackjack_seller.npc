@@ -1,0 +1,12 @@
+// npc 2548
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 8741/7632 25238/10460 10353/54360
+name = Blackjack seller
+models = 6085 249 5221 170 254 185 176 6099
+headmodels = 6080 63 81

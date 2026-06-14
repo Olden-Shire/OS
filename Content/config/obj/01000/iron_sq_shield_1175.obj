@@ -1,0 +1,13 @@
+// obj 1175
+cost = 168
+model = obj_bronze_sq_shield_1173
+xof2d = 2
+yof2d = 174
+zoom2d = 1410
+yan2d = 60
+xan2d = 268
+iop2 = Wield
+manwear = obj_bronze_sq_shield_1173_wear, 0
+womanwear = obj_bronze_sq_shield_1173_wear, 6
+recol = 57/33
+name = Iron sq shield

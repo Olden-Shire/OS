@@ -1,0 +1,5 @@
+// loc 25375
+active = 0
+blockwalk = true
+noshadow = true
+models_only = 26876

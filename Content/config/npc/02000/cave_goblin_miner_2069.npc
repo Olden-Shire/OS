@@ -1,0 +1,9 @@
+// npc 2069
+walkanim = 6005
+readyanim = 6006
+op1 = Talk-to
+op2 = Attack
+vislevel = 11
+name = Cave goblin miner
+models = 23665 23703 23632 23681
+headmodels = 23246 23231

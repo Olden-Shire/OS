@@ -1,0 +1,11 @@
+// obj 6187
+model = obj_princess_skirt
+womanwear = obj_prince_leggings_woman, 0
+manwear = obj_prince_leggings_man, 0
+iop2 = Wear
+yof2d = -4
+zoom2d = 1730
+xan2d = 492
+cost = 0
+recol = 25238/32879 908/127
+name = Princess skirt

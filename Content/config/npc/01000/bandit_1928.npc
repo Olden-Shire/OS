@@ -1,0 +1,10 @@
+// npc 1928
+vislevel = 0
+turnspeed = 0
+size = 1
+readyanim = 1953
+op1 = Talk-to
+recol = 4550/4647 25238/127 6798/10508 8741/127 7700/926 11200/926
+name = Bandit
+models = 215 3599 248 170 176 292 188 6230
+headmodels = 53 80 30

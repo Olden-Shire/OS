@@ -1,0 +1,11 @@
+// npc 3376
+size = 2
+resizeh = 110
+resizev = 110
+walkanim = 21
+readyanim = 27
+op2 = Attack
+vislevel = 83
+recol = 910/28 912/33 1938/37 1814/41 2588/4267 2469/4275
+name = Baby black dragon
+models = 17411 17427 17421 17424

@@ -1,0 +1,11 @@
+// loc 25337
+hillskew = true
+sharelight = true
+active = 1
+width = 2
+length = 2
+ambient = 30
+op1 = Climb-up
+mapscene = 7
+models_only = 26729
+name = Stairs

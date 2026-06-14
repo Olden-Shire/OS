@@ -1,0 +1,9 @@
+// npc 5613
+walkanim = 5858
+readyanim = 5859
+op1 = Confront
+vislevel = 0
+alwaysontop = true
+name = Mi-Gor
+models = 22791
+headmodels = 22782

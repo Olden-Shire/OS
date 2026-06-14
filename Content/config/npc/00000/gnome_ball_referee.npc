@@ -1,0 +1,10 @@
+// npc 635
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/8 4550/5916 4541/5916 4537/5916
+name = Gnome ball referee
+models = 2909 2900 2915
+headmodels = 23

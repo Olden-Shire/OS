@@ -1,0 +1,11 @@
+// obj 6794
+model = obj_choc_ice_6794
+xof2d = 1
+yof2d = -4
+zoom2d = 560
+yan2d = 1812
+xan2d = 152
+members = true
+cost = 30
+iop1 = Eat
+name = Choc-ice

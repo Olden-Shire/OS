@@ -1,0 +1,10 @@
+// npc 616
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/5541 25238/10650 8741/3996 8860/1944 10004/8720 4626/8844
+name = Student
+models = 235 249 299 10980 179 254 185
+headmodels = 67 81

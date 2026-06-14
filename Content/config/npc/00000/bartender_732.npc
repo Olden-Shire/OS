@@ -1,0 +1,10 @@
+// npc 732
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/5921 8741/5652 43072/4550
+name = Bartender
+models = 235 245 247 299 159 176 25863 181 25869
+headmodels = 67 79

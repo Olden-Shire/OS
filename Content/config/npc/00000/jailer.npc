@@ -1,0 +1,10 @@
+// npc 201
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 47
+recol = 61/20 41/12 926/20 57/20
+name = Jailer
+models = 230 306 268 253 185 156 179

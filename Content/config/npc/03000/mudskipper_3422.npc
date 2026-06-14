@@ -1,0 +1,8 @@
+// npc 3422
+size = 1
+walkanim = 3432
+readyanim = 3431
+op2 = Attack
+vislevel = 30
+name = Mudskipper
+models = 13832 13833

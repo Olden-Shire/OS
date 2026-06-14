@@ -1,0 +1,9 @@
+// npc 4343
+size = 1
+walkanim = 274
+readyanim = 277
+op2 = Attack
+vislevel = 35
+recol = 10413/7083 10644/7083 10512/24 10646/0
+name = Snake
+models = 3002

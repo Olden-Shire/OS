@@ -1,0 +1,11 @@
+// loc 25720
+blockwalk = true
+op1 = Churn
+forceapproach = 11
+active = 1
+contrast = 15
+ambient = 20
+nonblockrange = true
+recol = 5541/5421 5665/5413 5660/5421 5784/5532 5904/5413
+models_only = 9837
+name = Dairy churn

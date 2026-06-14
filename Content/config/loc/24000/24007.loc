@@ -1,0 +1,8 @@
+// loc 24007
+active = 0
+sharelight = true
+ambient = 20
+contrast = 10
+nonblockrange = true
+recol = 5532/7587 5656/7706 5652/7830 6674/7954
+models_only = 25131 25152 25148 22175

@@ -1,0 +1,8 @@
+// loc 23055
+width = 2
+length = 3
+contrast = 10
+ambient = 10
+op1 = Search
+models_only = 23976 23974
+name = Broken cart

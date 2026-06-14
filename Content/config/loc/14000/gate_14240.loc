@@ -1,0 +1,11 @@
+// loc 14240
+ambient = 5
+mirror = true
+noshadow = true
+blockwalk = true
+active = 1
+op1 = Close
+op2 = hidden
+op3 = Repair
+models = 14465/0
+name = Gate

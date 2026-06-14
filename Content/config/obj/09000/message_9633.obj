@@ -1,0 +1,12 @@
+// obj 9633
+model = obj_ballad
+members = true
+iop1 = Read
+iop5 = Destroy
+xof2d = -1
+yof2d = 11
+zoom2d = 1020
+yan2d = 656
+xan2d = 344
+recol = 6608/10549 6604/10545 6464/10545 6587/10541 6583/10661
+name = Message

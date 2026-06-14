@@ -1,0 +1,8 @@
+// loc 22120
+blockwalk = true
+ambient = 15
+contrast = 15
+width = 2
+nonblockrange = true
+models_only = 22932
+name = Bench

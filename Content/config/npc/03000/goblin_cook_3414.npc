@@ -1,0 +1,9 @@
+// npc 3414
+size = 1
+readyanim = 6181
+walkanim = 6180
+op1 = Talk-to
+vislevel = 0
+name = Goblin Cook
+models = 24459 24481 24430 24479 24445 24453 24504
+headmodels = 24212

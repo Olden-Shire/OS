@@ -1,0 +1,11 @@
+// npc 274
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 45
+recol = 57/36133 41/37270 61/36133 8741/127 8078/103 926/35051
+name = Guardian of Armadyl
+models = 214 313 268 162 176 323 185 250 518 523 3330
+headmodels = 52 82

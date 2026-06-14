@@ -1,0 +1,8 @@
+// loc 7521
+active = 0
+ambient = 25
+hillskew = true
+nonsolid = true
+forcedecor = true
+recol = 82/14746 61/14742 41/14866 7465/12942 7585/13194
+models = 7769/22

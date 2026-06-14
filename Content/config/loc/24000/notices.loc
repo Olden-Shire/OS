@@ -1,0 +1,6 @@
+// loc 24127
+ambient = 40
+active = 1
+nonblockrange = true
+models = 24884/4
+name = Notices

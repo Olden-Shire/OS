@@ -1,0 +1,8 @@
+// loc 7351
+op1 = Search
+op2 = Close
+forceapproach = 14
+ambient = 10
+recol = 14499/6569 12698/6445 16536/5417 12818/5413 13194/5404
+models_only = 5273
+name = Open chest

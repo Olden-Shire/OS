@@ -1,0 +1,9 @@
+// npc 863
+vislevel = 0
+size = 2
+walkanim = 254
+readyanim = 257
+op1 = Talk-to
+name = Scared skavid
+models = 20388
+headmodels = 20394

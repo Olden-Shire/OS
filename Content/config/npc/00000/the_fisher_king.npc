@@ -1,0 +1,10 @@
+// npc 220
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 4626/107 61/107 41/82 4550/5442 9104/107 57/107
+name = The Fisher King
+models = 215 14440 165 179 268 185 534 252 192 323
+headmodels = 53 35 84

@@ -1,0 +1,8 @@
+// loc 21502
+ambient = 20
+contrast = 20
+active = 0
+hillskew = true
+blockwalk = true
+op2 = hidden
+models = 22085/0 22086/1 22087/9

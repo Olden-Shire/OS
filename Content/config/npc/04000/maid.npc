@@ -1,0 +1,10 @@
+// npc 4237
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 9529/11140 926/11140 6798/4762
+name = Maid
+models = 391 417 11360 11775 10706 15154 358
+headmodels = 114 136

@@ -1,0 +1,10 @@
+// npc 1633
+size = 1
+walkanim = 1579
+readyanim = 1578
+op2 = Attack
+ambient = 60
+contrast = 60
+vislevel = 43
+name = Pyrefiend
+models = 5083

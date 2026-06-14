@@ -1,0 +1,8 @@
+// loc 26074
+width = 5
+length = 5
+blockwalk = true
+ambient = 25
+contrast = 15
+models_only = 27458
+name = Table

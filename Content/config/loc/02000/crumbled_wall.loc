@@ -1,0 +1,8 @@
+// loc 2185
+op1 = Climb-over
+active = 1
+blockwalk = true
+recol = 24/9098
+retex = 2/23
+models_only = 843
+name = Crumbled wall

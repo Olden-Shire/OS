@@ -1,0 +1,16 @@
+[clientscript,script_107](string $string0)()
+
+if (%varcint11 = 1) {
+    mes("You can't do that while you're reporting abuse.");
+    return;
+}
+%varcstr23 = $string0;
+if_sethide(0, 35913816);
+if_sethide(1, 35913817);
+if_settext(join("Enter message to send to ", %varcstr23), 35913821);
+if_settext("*", 35913822);
+%varcint5 = 6;
+%varcstr22 = "";
+if_setonclick(-1, "", 35913816);
+if_setonkey(112, -2147483640, -2147483639, "iz", 35913822);
+return;

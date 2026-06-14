@@ -1,0 +1,6 @@
+// npc 1519
+walkanims = 2562, 2562, 2562, 2562
+readyanim = 2561
+alwaysontop = true
+vislevel = 1
+multivar = 3412, 65535, 65535 1512

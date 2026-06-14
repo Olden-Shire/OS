@@ -1,0 +1,8 @@
+// loc 3774
+hillskew = true
+sharelight = true
+ambient = 25
+contrast = 25
+op1 = Leave
+models = 3800/0
+name = Exit

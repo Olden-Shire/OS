@@ -1,0 +1,9 @@
+// npc 1015
+size = 1
+walkanim = 6765
+readyanim = 6764
+op5 = Attack
+alwaysontop = true
+vislevel = 6
+name = Chompy bird
+models = 26861

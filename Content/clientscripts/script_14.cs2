@@ -1,0 +1,3749 @@
+[clientscript,script_14](int $int0, int $int1, int $int2)(int, int, string)
+
+if ($int0 = 0) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 1205, "Bronze");
+        }
+        if ($int2 = 1) {
+            return(1, 1203, "Iron");
+        }
+        if ($int2 = 2) {
+            return(5, 1207, "Steel");
+        }
+        if ($int2 = 3) {
+            return(10, 1217, "Black");
+        }
+        if ($int2 = 4) {
+            return(20, 1209, "Mithril");
+        }
+        if ($int2 = 5) {
+            return(30, 1211, "Adamant");
+        }
+        if ($int2 = 6) {
+            return(40, 1213, "Rune");
+        }
+        if ($int2 = 7) {
+            return(60, 1215, "Members: Dragon");
+        }
+    }
+    if ($int1 = 1) {
+        return(~script_15($int2));
+    }
+}
+if ($int0 = 1) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(5, 3196, join("Black halberd", "<br>", " (with 10 Attack)"));
+        }
+        if ($int2 = 1) {
+            return(10, 3198, join("Mithril halberd", "<br>", " (with 20 Attack)"));
+        }
+        if ($int2 = 2) {
+            return(15, 3200, join("Adamant halberd", "<br>", " (with 30 Attack)"));
+        }
+        if ($int2 = 3) {
+            return(20, 3202, join("Rune halberd", "<br>", " (with 40 Attack)"));
+        }
+        if ($int2 = 4) {
+            return(50, 10589, join("Granite armour", "<br>", " (with 50 Defence)"));
+        }
+        if ($int2 = 5) {
+            return(50, 4153, join("Granite maul", "<br>", " (with 50 Attack)"));
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(19, 6515, join("Cross the River Lum to Al Kharid", "<br>", " (with 8 Agility and 37 Ranged)"));
+        }
+        if ($int2 = 1) {
+            return(21, 6515, join("Karamja", "<br>", " (with 53 Agility and 42 Ranged)"));
+        }
+        if ($int2 = 2) {
+            return(22, 6515, join("Escape from the water obelisk island", "<br>", " (with 36 Agility and 39 Ranged)"));
+        }
+        if ($int2 = 3) {
+            return(35, 6517, join("Scale the Catherby cliff", "<br>", " (with 32 Agility, 35 Ranged and Fishing Contest)"));
+        }
+        if ($int2 = 4) {
+            return(37, 6517, join("Scale Falador wall", "<br>", " (with 11 Agility and 19 Ranged)"));
+        }
+        if ($int2 = 5) {
+            return(38, 6517, join("Scale Yanille wall", "<br>", " (with 39 Agility and 21 Ranged)"));
+        }
+    }
+}
+if ($int0 = 2 & $int1 = 0) {
+    if ($int2 = 0) {
+        return(1, 1139, "Bronze");
+    }
+    if ($int2 = 1) {
+        return(1, 1137, "Iron");
+    }
+    if ($int2 = 2) {
+        return(5, 1141, "Steel");
+    }
+    if ($int2 = 3) {
+        return(10, 1151, "Black");
+    }
+    if ($int2 = 4) {
+        return(20, 1143, "Mithril");
+    }
+    if ($int2 = 5) {
+        return(20, 10822, "Members: Yak-hide");
+    }
+    if ($int2 = 6) {
+        return(30, 1145, "Adamantite");
+    }
+    if ($int2 = 7) {
+        return(40, 1147, "Rune");
+    }
+    if ($int2 = 8) {
+        return(50, 3122, "Members: Granite");
+    }
+    if ($int2 = 9) {
+        return(60, 1149, "Members: Dragon");
+    }
+    if ($int2 = 10) {
+        return(70, 4211, "Members: Elf crystal (with 50 Agility)");
+    }
+    if ($int2 = 11) {
+        return(75, 11283, "Members: Dragonfire shield");
+    }
+}
+if ($int0 = 3) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 841, join("Standard bows", "<br>", " Ammo: Arrows up to iron"));
+        }
+        if ($int2 = 1) {
+            return(5, 843, join("Oak bows", "<br>", " Ammo: Arrows up to steel"));
+        }
+        if ($int2 = 2) {
+            return(20, 849, join("Willow bows", "<br>", " Ammo: Arrows up to mithril"));
+        }
+        if ($int2 = 3) {
+            return(30, 853, join("Maple bows", "<br>", " Ammo: Arrows up to adamant"));
+        }
+        if ($int2 = 4) {
+            return(30, 4827, join("Members: Ogre composite bows", "<br>", " Ammo: 'Brutal' arrows up to rune"));
+        }
+        if ($int2 = 5) {
+            return(40, 857, join("Members: Yew bows", "<br>", " Ammo: Arrows up to rune"));
+        }
+        if ($int2 = 6) {
+            return(50, 861, join("Members: Magic bows", "<br>", " Ammo: Arrows up to rune"));
+        }
+        if ($int2 = 7) {
+            return(60, 11235, join("Members: Dark bows", "<br>", " Ammo: Arrows up to dragon"));
+        }
+        if ($int2 = 8) {
+            return(70, 4212, join("Members: Crystal bows (with 50 Agility)", "<br>", " Ammo: None"));
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 864, "Bronze items");
+        }
+        if ($int2 = 1) {
+            return(1, 863, "Iron items");
+        }
+        if ($int2 = 2) {
+            return(5, 865, "Steel items");
+        }
+        if ($int2 = 3) {
+            return(10, 869, "Black items");
+        }
+        if ($int2 = 4) {
+            return(20, 866, "Mithril items");
+        }
+        if ($int2 = 5) {
+            return(30, 867, "Adamantite items");
+        }
+        if ($int2 = 6) {
+            return(40, 868, "Rune items");
+        }
+        if ($int2 = 7) {
+            return(45, 10033, "Chinchompas");
+        }
+        if ($int2 = 8) {
+            return(55, 10034, "Carnivorous chinchompas");
+        }
+        if ($int2 = 9) {
+            return(60, 11230, "Dragon items");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(1, 1129, "Plain leather items");
+        }
+        if ($int2 = 1) {
+            return(1, 1131, join("Hard leather body", "<br>", " (with 10 Defence)"));
+        }
+        if ($int2 = 2) {
+            return(20, 1133, join("Studded leather body", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 3) {
+            return(20, 1097, "Studded leather chaps");
+        }
+        if ($int2 = 4) {
+            return(20, 1169, "Coif");
+        }
+        if ($int2 = 5) {
+            return(25, 10954, join("Members: Frog-leather body", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 6) {
+            return(25, 10956, join("Members: Frog-leather chaps", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 7) {
+            return(25, 10958, join("Members: Frog-leather boots", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 8) {
+            return(30, 6322, join("Members: Snakeskin body", "<br>", " (with 30 Defence)"));
+        }
+        if ($int2 = 9) {
+            return(30, 6324, join("Members: Snakeskin chaps", "<br>", " (with 30 Defence)"));
+        }
+        if ($int2 = 10) {
+            return(30, 6330, join("Members: Snakeskin vambraces", "<br>", " (with 30 Defence)"));
+        }
+        if ($int2 = 11) {
+            return(30, 6326, join("Members: Snakeskin bandana", "<br>", " (with 30 Defence)"));
+        }
+        if ($int2 = 12) {
+            return(30, 6328, join("Members: Snakeskin boots", "<br>", " (with 30 Defence)"));
+        }
+        if ($int2 = 13) {
+            return(40, 2577, "Members: Ranger boots");
+        }
+        if ($int2 = 14) {
+            return(40, 2581, "Members: Robin Hood hat");
+        }
+        if ($int2 = 15) {
+            return(40, 1065, "Green dragonhide vambraces");
+        }
+        if ($int2 = 16) {
+            return(40, 1099, "Green dragonhide chaps");
+        }
+        if ($int2 = 17) {
+            return(40, 1135, join("Green dragonhide body", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 18) {
+            return(50, 2487, "Members: Blue dragonhide vambraces");
+        }
+        if ($int2 = 19) {
+            return(50, 2493, "Members: Blue dragonhide chaps");
+        }
+        if ($int2 = 20) {
+            return(50, 2499, join("Members: Blue dragonhide body", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 21) {
+            return(60, 2489, "Members: Red dragonhide vambraces");
+        }
+        if ($int2 = 22) {
+            return(60, 2495, "Members: Red dragonhide chaps");
+        }
+        if ($int2 = 23) {
+            return(60, 2501, join("Members: Red dragonhide body", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 24) {
+            return(70, 2491, "Members: Black dragonhide vambraces");
+        }
+        if ($int2 = 25) {
+            return(70, 2497, "Members: Black dragonhide chaps");
+        }
+        if ($int2 = 26) {
+            return(70, 2503, join("Members: Black dragonhide body", "<br>", " (with 40 Defence)"));
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(1, 837, join("Crossbow", "<br>", "  Ammo: Bronze crossbow bolts"));
+        }
+        if ($int2 = 1) {
+            return(1, 767, join("Phoenix crossbow", "<br>", "  Ammo: Bronze crossbow bolts"));
+        }
+        if ($int2 = 2) {
+            return(1, 9174, join("Members: Bronze crossbow", "<br>", "  Ammo: Bronze crossbow bolts"));
+        }
+        if ($int2 = 3) {
+            return(16, 9176, join("Members: Blurite crossbow", "<br>", "  Ammo: Bolts up to blurite"));
+        }
+        if ($int2 = 4) {
+            return(26, 9177, join("Members: Iron crossbow", "<br>", "  Ammo: Bolts up to iron"));
+        }
+        if ($int2 = 5) {
+            return(28, 8880, join("Members: Dorgeshuun crossbow", "<br>", "  Ammo: Bolts up to iron"));
+        }
+        if ($int2 = 6) {
+            return(31, 9179, join("Members: Steel crossbow", "<br>", "  Ammo: Bolts up to steel"));
+        }
+        if ($int2 = 7) {
+            return(36, 9181, join("Members: Mithril crossbow", "<br>", "  Ammo: Bolts up to mithril"));
+        }
+        if ($int2 = 8) {
+            return(46, 9183, join("Members: Adamantite crossbow", "<br>", "  Ammo: Bolts up to adamantite"));
+        }
+        if ($int2 = 9) {
+            return(50, 10156, join("Members: Hunters' crossbow", "<br>", "  Ammo: Kebbit bolts"));
+        }
+        if ($int2 = 10) {
+            return(61, 9185, join("Members: Runite crossbow", "<br>", "  Ammo: Bolts up to runite"));
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(19, 6517, join("Scale Falador wall ", "<br>", " (with 11 Agility and 37 Strength)"));
+        }
+        if ($int2 = 1) {
+            return(21, 6517, join("Scale Yanille wall ", "<br>", " (with 39 Agility and 38 Strength)"));
+        }
+        if ($int2 = 2) {
+            return(35, 6517, join("Scale the Catherby cliff ", "<br>", " (with 32 Agility, 35 Strength and Fishing Contest quest)"));
+        }
+        if ($int2 = 3) {
+            return(37, 6515, join("Cross the River Lum to Al Kharid ", "<br>", " (with 8 Agility and 19 Strength)"));
+        }
+        if ($int2 = 4) {
+            return(39, 6515, join("Escape from the water obelisk island ", "<br>", " (with 36 Agility and 22 Strength)"));
+        }
+        if ($int2 = 5) {
+            return(42, 6515, join("Karamja, south of the volcano ", "<br>", " (with 53 Agility and 21 Strength)"));
+        }
+        if ($int2 = 6) {
+            return(70, 6515, join("Cross cave south of Dorgesh-Kaan ", "<br>", " (with 70 Agility and 70 Strength)"));
+        }
+    }
+    if ($int1 = 5) {
+        return(~script_15($int2));
+    }
+}
+if ($int0 = 4 & $int1 = 0) {
+    if ($int2 = 0) {
+        return(-1, 7620, join("To view the available prayers, select", "<br>", "the Prayer icon on the side interface.", "<br>", "You can see what each Prayer does by", "<br>", "moving your mouse over its icon."));
+    }
+    if ($int2 = 1) {
+        return(50, 1716, join("Members: Use completed prayer books", "<br>", "to bless holy and unholy symbols."));
+    }
+}
+if ($int0 = 5) {
+    if ($int1 = 0 & $int2 = 0) {
+        return(-1, 7620, join("To view the available spells, select the", "<br>", "spellbook icon on the side interface.", "<br>", "You can see what each spell does by", "<br>", "moving your mouse over its icon."));
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(20, 2579, "Wizard boots");
+        }
+        if ($int2 = 1) {
+            return(40, 4089, join("Mystic hat", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 2) {
+            return(40, 4091, join("Mystic robe top", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 3) {
+            return(40, 4093, join("Mystic robe bottom", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 4) {
+            return(40, 4095, join("Mystic gloves", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 5) {
+            return(40, 4097, join("Mystic boots", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 6) {
+            return(40, 3385, join("Splitbark helm", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 7) {
+            return(40, 3387, join("Splitbark body", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 8) {
+            return(40, 3389, join("Splitbark legs", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 9) {
+            return(40, 3391, join("Splitbark gauntlets", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 10) {
+            return(40, 3393, join("Splitbark boots", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 11) {
+            return(50, 6918, join("Infinity hat", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 12) {
+            return(50, 6916, join("Infinity robe top", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 13) {
+            return(50, 6924, join("Infinity robe bottom", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 14) {
+            return(50, 6922, join("Infinity gloves", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 15) {
+            return(50, 6920, join("Infinity boots", "<br>", " (with 25 Defence)"));
+        }
+        if ($int2 = 16) {
+            return(65, 9096, join("Lunar helm", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 17) {
+            return(65, 9097, join("Lunar torso", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 18) {
+            return(65, 9099, join("Lunar gloves", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 19) {
+            return(65, 9098, join("Lunar legs", "<br>", " (with 40 Defence)"));
+        }
+        if ($int2 = 20) {
+            return(65, 9100, join("Lunar boots", "<br>", " (with 40 Defence)"));
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(4, 9236, "Opal-tipped bronze crossbow bolt");
+        }
+        if ($int2 = 1) {
+            return(7, 9240, "Sapphire-tipped mithril crossbow bolt");
+        }
+        if ($int2 = 2) {
+            return(14, 9237, "Jade-tipped blurite crossbow bolt");
+        }
+        if ($int2 = 3) {
+            return(24, 9238, "Pearl-tipped iron crossbow bolt");
+        }
+        if ($int2 = 4) {
+            return(27, 9241, "Emerald-tipped mithril crossbow bolt");
+        }
+        if ($int2 = 5) {
+            return(29, 9239, "Red topaz-tipped steel crossbow bolt");
+        }
+        if ($int2 = 6) {
+            return(49, 9242, "Ruby-tipped adamant crossbow bolt");
+        }
+        if ($int2 = 7) {
+            return(57, 9243, "Diamond-tipped adamant crossbow bolt");
+        }
+        if ($int2 = 8) {
+            return(68, 9244, "Dragonstone-tipped rune crossbow bolt");
+        }
+        if ($int2 = 9) {
+            return(87, 9245, "Onyx-tipped rune crossbow bolt");
+        }
+    }
+    if ($int1 = 3) {
+        return(~script_15($int2));
+    }
+}
+if ($int0 = 6 & $int1 = 0) {
+    if ($int2 = 0) {
+        return(-1, 7620, "Hitpoints are used to tell you how healthy your character is. A character who reaches 0 Hitpoints has died, but will reappear in their chosen respawn location (normally Lumbridge).");
+    }
+    if ($int2 = 1) {
+        return(-1, 7620, "If you see any red 'hit splats' during combat, the number shown corresponds to the number of Hitpoints lost as a result of that strike.");
+    }
+    if ($int2 = 2) {
+        return(-1, 7620, "Blue hit splats mean no damage has been dealt.");
+    }
+    if ($int2 = 3) {
+        return(-1, 7620, "Green hit splats are poison damage. (Members)");
+    }
+    if ($int2 = 4) {
+        return(-1, 7620, "Orange hit splats are disease damage. (Members)");
+    }
+}
+if ($int0 = 7) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 2150, "Gnome Stronghold Agility Course");
+        }
+        if ($int2 = 1) {
+            return(1, 751, "Gnomeball game");
+        }
+        if ($int2 = 2) {
+            return(1, 2996, "Low-level Agility Arena obstacles");
+        }
+        if ($int2 = 3) {
+            return(20, 2996, "Medium-level Agility Arena obstacles");
+        }
+        if ($int2 = 4) {
+            return(25, 1061, "Werewolf Skullball game");
+        }
+        if ($int2 = 5) {
+            return(30, 6970, "Agility Pyramid");
+        }
+        if ($int2 = 6) {
+            return(30, 10595, "Penguin Agility Course");
+        }
+        if ($int2 = 7) {
+            return(35, 1365, "Barbarian Outpost Agility Course");
+        }
+        if ($int2 = 8) {
+            return(40, 2996, "High-level Agility Arena obstacles");
+        }
+        if ($int2 = 9) {
+            return(48, 4024, "Ape Atoll Agility Course");
+        }
+        if ($int2 = 10) {
+            return(50, 4211, "Use crystal equipment");
+        }
+        if ($int2 = 11) {
+            return(52, 964, "Wilderness Course");
+        }
+        if ($int2 = 12) {
+            return(60, 4179, "Werewolf Agility Course");
+        }
+        if ($int2 = 13) {
+            return(70, 4550, "Caves south of Dorgesh-Kaan");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(10, 6518, "Rope-swing to Moss Giant Island");
+        }
+        if ($int2 = 1) {
+            return(12, 6518, "Stepping stones in Karamja Dungeon");
+        }
+        if ($int2 = 2) {
+            return(15, 6518, "Monkey bars under Edgeville");
+        }
+        if ($int2 = 3) {
+            return(22, 6520, "Pipe contortion in Karamja Dungeon");
+        }
+        if ($int2 = 4) {
+            return(30, 6518, "Stepping stones in south-eastern Karamja");
+        }
+        if ($int2 = 5) {
+            return(34, 6520, "Pipe contortion in Karamja Dungeon");
+        }
+        if ($int2 = 6) {
+            return(45, 6519, "Elf area log balance");
+        }
+        if ($int2 = 7) {
+            return(49, 6520, "Contortion in Yanille Dungeon small room");
+        }
+        if ($int2 = 8) {
+            return(67, 6521, "Yanille Dungeon's rubble climb");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(5, 6517, "Falador Agility shortcut");
+        }
+        if ($int2 = 1) {
+            return(8, 6515, join("Cross the River Lum to Al Kharid", "<br>", " (with 19 Strength and 37 Ranged)"));
+        }
+        if ($int2 = 2) {
+            return(11, 6517, join("Scale Falador wall", "<br>", " (with 37 Strength and 19 Ranged)"));
+        }
+        if ($int2 = 3) {
+            return(16, 6516, "Yanille Agility shortcut");
+        }
+        if ($int2 = 4) {
+            return(20, 6515, "Coal Truck log balance");
+        }
+        if ($int2 = 5) {
+            return(21, 6516, "Varrock Agility shortcut");
+        }
+        if ($int2 = 6) {
+            return(25, 6517, "Eagles' Peak Agility shortcut");
+        }
+        if ($int2 = 7) {
+            return(26, 6516, "Falador Agility shortcut");
+        }
+        if ($int2 = 8) {
+            return(31, 6515, "Draynor Manor stones to Champions' Guild");
+        }
+        if ($int2 = 9) {
+            return(32, 6517, join("Scale the Catherby cliff", "<br>", " (with 35 Strength, 35 Ranged and Fishing Contest quest)"));
+        }
+        if ($int2 = 10) {
+            return(33, 6515, "Ardougne log balance shortcut");
+        }
+        if ($int2 = 11) {
+            return(36, 6517, join("Escape from the water obelisk island", "<br>", " (with 22 Strength and 39 Ranged)"));
+        }
+        if ($int2 = 12) {
+            return(37, 6517, "Gnome Stronghold shortcut");
+        }
+        if ($int2 = 13) {
+            return(38, 6517, "Al Kharid Mining pit cliffside scramble");
+        }
+        if ($int2 = 14) {
+            return(39, 6517, join("Scale Yanille wall", "<br>", " (with 38 Strength and 21 Ranged)"));
+        }
+        if ($int2 = 15) {
+            return(41, 6517, "Trollheim easy cliffside scramble");
+        }
+        if ($int2 = 16) {
+            return(42, 6516, "Dwarven Mine narrow crevice");
+        }
+        if ($int2 = 17) {
+            return(43, 6517, "Trollheim medium cliffside scramble");
+        }
+        if ($int2 = 18) {
+            return(44, 6517, "Trollheim advanced cliffside scramble");
+        }
+        if ($int2 = 19) {
+            return(46, 6516, "Cosmic Temple - medium narrow walkway");
+        }
+        if ($int2 = 20) {
+            return(47, 6517, "Trollheim hard cliffside scramble");
+        }
+        if ($int2 = 21) {
+            return(48, 6515, "Log balance to Fremennik Province");
+        }
+        if ($int2 = 22) {
+            return(51, 6516, "Pipe from Edgeville dungeon to Varrock Sewers");
+        }
+        if ($int2 = 23) {
+            return(53, 6517, join("Karamja crossing, south of volcano", "<br>", " (with 21 Strength and 42 Ranged)"));
+        }
+        if ($int2 = 24) {
+            return(58, 6517, "Port Phasmatys ectopool shortcut");
+        }
+        if ($int2 = 25) {
+            return(59, 6517, "Elven overpass easy cliffside scramble");
+        }
+        if ($int2 = 26) {
+            return(61, 6517, "Slayer Tower medium spiked chain climb");
+        }
+        if ($int2 = 27) {
+            return(62, 6516, "Slayer Dungeon narrow crevice");
+        }
+        if ($int2 = 28) {
+            return(64, 6517, "Trollheim Wilderness route");
+        }
+        if ($int2 = 29) {
+            return(65, 6517, "Temple on the Salve to Morytania shortcut");
+        }
+        if ($int2 = 30) {
+            return(66, 6516, "Cosmic Temple advanced narrow walkway");
+        }
+        if ($int2 = 31) {
+            return(68, 6517, "Elven overpass medium cliffside scramble");
+        }
+        if ($int2 = 32) {
+            return(70, 6516, "Taverley Dungeon pipe squeeze to blue dragons");
+        }
+        if ($int2 = 33) {
+            return(71, 6517, "Slayer Tower advanced spiked chain climb");
+        }
+        if ($int2 = 34) {
+            return(80, 6514, "Taverley Dungeon spiked blades jump");
+        }
+        if ($int2 = 35) {
+            return(81, 6514, "Slayer Dungeon spiked blades jump");
+        }
+        if ($int2 = 36) {
+            return(85, 6517, "Elven overpass advanced cliffside scramble");
+        }
+    }
+}
+if ($int0 = 8) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(-1, 7620, "You must complete the Druidic Ritual quest before you can use Herblore.");
+        }
+        if ($int2 = 1) {
+            return(3, 221, join("Attack potion", "<br>", "Guam leaf & eye of newt"));
+        }
+        if ($int2 = 2) {
+            return(5, 235, join("Anti-poison potion", "<br>", "Marrentill & ground unicorn horn"));
+        }
+        if ($int2 = 3) {
+            return(8, 1534, "Relicym's balm");
+        }
+        if ($int2 = 4) {
+            return(12, 225, join("Strength potion", "<br>", "Tarromin & limpwurt root"));
+        }
+        if ($int2 = 5) {
+            return(19, 10142, join("Guam tar", "<br>", "Guam leaf & swamp tar"));
+        }
+        if ($int2 = 6) {
+            return(22, 223, join("Stat restore potion", "<br>", "Harralander & red spiders' eggs"));
+        }
+        if ($int2 = 7) {
+            return(22, 1550, "Guthix balance potion");
+        }
+        if ($int2 = 8) {
+            return(26, 1975, join("Energy potion", "<br>", "Harralander & chocolate dust"));
+        }
+        if ($int2 = 9) {
+            return(30, 239, join("Defence potion", "<br>", "Ranarr weed & white berries"));
+        }
+        if ($int2 = 10) {
+            return(31, 10143, join("Marrentill tar", "<br>", "Marrentill & swamp tar"));
+        }
+        if ($int2 = 11) {
+            return(34, 2152, join("Agility potion", "<br>", "Toadflax & toad legs"));
+        }
+        if ($int2 = 12) {
+            return(36, 9736, join("Combat potion", "<br>", "Harralander & ground desert goat horn"));
+        }
+        if ($int2 = 13) {
+            return(38, 231, join("Prayer restore potion", "<br>", "Ranarr weed & snape grass"));
+        }
+        if ($int2 = 14) {
+            return(39, 10144, join("Tarromin tar", "<br>", "Tarromin & swamp tar"));
+        }
+        if ($int2 = 15) {
+            return(44, 10145, join("Harralander tar", "<br>", "Harralander & swamp tar"));
+        }
+        if ($int2 = 16) {
+            return(45, 221, join("Super Attack potion", "<br>", "Irit leaf & eye of newt"));
+        }
+        if ($int2 = 17) {
+            return(48, 235, join("Super anti-poison potion", "<br>", "Irit leaf & ground unicorn horn"));
+        }
+        if ($int2 = 18) {
+            return(50, 231, join("Fishing potion", "<br>", "Avantoe & snape grass"));
+        }
+        if ($int2 = 19) {
+            return(52, 2970, join("Super energy potion", "<br>", "Avantoe & Mort Myre fungi"));
+        }
+        if ($int2 = 20) {
+            return(53, 10109, "Hunting potion - Avantoe & ground sabre-toothed kebbit teeth");
+        }
+        if ($int2 = 21) {
+            return(55, 225, join("Super Strength potion", "<br>", "Kwuarm & limpwurt root"));
+        }
+        if ($int2 = 22) {
+            return(57, 9016, join("Magic essence potion", "<br>", "Star flower & ground gorak's claw"));
+        }
+        if ($int2 = 23) {
+            return(60, 241, join("Weapon poison", "<br>", "Kwuarm & ground blue dragon scale"));
+        }
+        if ($int2 = 24) {
+            return(63, 223, join("Super restore potion", "<br>", "Snapdragon & red spiders' eggs"));
+        }
+        if ($int2 = 25) {
+            return(65, 10937, join("Sanfew serum cure all", "<br>", "Super restore potion, snake weed, ground unicorn horn and nail beast nails."));
+        }
+        if ($int2 = 26) {
+            return(66, 239, join("Super Defence potion", "<br>", "Cadantine & white berries"));
+        }
+        if ($int2 = 27) {
+            return(68, 6049, join("Extra strong anti-poison potion", "<br>", "Coconut milk, toadflax & yew roots"));
+        }
+        if ($int2 = 28) {
+            return(69, 241, join("Anti-firebreath potion", "<br>", "Lantadyme & ground blue dragon scale"));
+        }
+        if ($int2 = 29) {
+            return(72, 245, join("Ranging potion", "<br>", "Dwarf weed & wine of Zamorak"));
+        }
+        if ($int2 = 30) {
+            return(73, 6016, "Extra strong weapon poison potion - Coconut milk, cactus spine & red spiders' eggs");
+        }
+        if ($int2 = 31) {
+            return(76, 3138, join("Magic potion", "<br>", "Lantadyme & potato cactus"));
+        }
+        if ($int2 = 32) {
+            return(78, 247, join("Zamorak brew", "<br>", "Torstol & jangerberries"));
+        }
+        if ($int2 = 33) {
+            return(79, 6051, join("Super strong anti-poison potion", "<br>", "Coconut milk, irit leaf & magic tree roots"));
+        }
+        if ($int2 = 34) {
+            return(81, 6693, join("Saradomin brew", "<br>", "Toadflax & crushed birdnest"));
+        }
+        if ($int2 = 35) {
+            return(82, 6018, join("Super strong weapon poison potion", "<br>", "Coconut milk, nightshade & poison ivy berries"));
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(-1, 7620, "You must complete the Druidic Ritual quest before you can use Herblore");
+        }
+        if ($int2 = 1) {
+            return(3, 249, "Guam leaf");
+        }
+        if ($int2 = 2) {
+            return(3, 1534, "Rogue's purse");
+        }
+        if ($int2 = 3) {
+            return(3, 1526, "Snake weed");
+        }
+        if ($int2 = 4) {
+            return(5, 251, "Marrentill");
+        }
+        if ($int2 = 5) {
+            return(11, 253, "Tarromin");
+        }
+        if ($int2 = 6) {
+            return(20, 255, "Harralander");
+        }
+        if ($int2 = 7) {
+            return(25, 257, "Ranarr weed");
+        }
+        if ($int2 = 8) {
+            return(30, 2998, "Toadflax");
+        }
+        if ($int2 = 9) {
+            return(40, 259, "Irit leaf");
+        }
+        if ($int2 = 10) {
+            return(48, 261, "Avantoe");
+        }
+        if ($int2 = 11) {
+            return(54, 263, "Kwuarm");
+        }
+        if ($int2 = 12) {
+            return(59, 3000, "Snapdragon");
+        }
+        if ($int2 = 13) {
+            return(65, 265, "Cadantine");
+        }
+        if ($int2 = 14) {
+            return(67, 2481, "Lantadyme");
+        }
+        if ($int2 = 15) {
+            return(70, 267, "Dwarf weed");
+        }
+        if ($int2 = 16) {
+            return(75, 269, "Torstol");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(-1, 7620, "You must complete barbarian herblore training before you can make these potions.");
+        }
+        if ($int2 = 1) {
+            return(4, 11429, "Attack mix");
+        }
+        if ($int2 = 2) {
+            return(6, 11433, "Antipoison mix");
+        }
+        if ($int2 = 3) {
+            return(9, 11437, "Relicym's mix");
+        }
+        if ($int2 = 4) {
+            return(14, 11443, "Strength mix");
+        }
+        if ($int2 = 5) {
+            return(24, 11449, "Restore mix");
+        }
+        if ($int2 = 6) {
+            return(29, 11453, "Energy mix");
+        }
+        if ($int2 = 7) {
+            return(33, 11457, "Defence mix");
+        }
+        if ($int2 = 8) {
+            return(37, 11461, "Agility mix");
+        }
+        if ($int2 = 9) {
+            return(40, 11445, "Combat mix");
+        }
+        if ($int2 = 10) {
+            return(42, 11465, "Prayer mix");
+        }
+        if ($int2 = 11) {
+            return(47, 11469, "Super Attack mix");
+        }
+        if ($int2 = 12) {
+            return(51, 11473, "Anti-poison supermix");
+        }
+        if ($int2 = 13) {
+            return(53, 11477, "Fishing mix");
+        }
+        if ($int2 = 14) {
+            return(56, 11481, "Super energy mix");
+        }
+        if ($int2 = 15) {
+            return(58, 11517, "Hunting mix");
+        }
+        if ($int2 = 16) {
+            return(59, 11485, "Super Strength mix");
+        }
+        if ($int2 = 17) {
+            return(61, 11489, "Magic essence mix");
+        }
+        if ($int2 = 18) {
+            return(67, 11493, "Super restore mix");
+        }
+        if ($int2 = 19) {
+            return(71, 11497, "Super Defence mix");
+        }
+        if ($int2 = 20) {
+            return(74, 11501, "Antidote+ mix");
+        }
+        if ($int2 = 21) {
+            return(75, 11505, "Antifire mix");
+        }
+        if ($int2 = 22) {
+            return(80, 11509, "Ranging mix");
+        }
+        if ($int2 = 23) {
+            return(83, 11513, "Magic mix");
+        }
+        if ($int2 = 24) {
+            return(85, 11521, "Zamorak mix");
+        }
+    }
+}
+if ($int0 = 9) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 3241, "Man");
+        }
+        if ($int2 = 1) {
+            return(10, 3243, "Farmer");
+        }
+        if ($int2 = 2) {
+            return(15, 4295, "Female H.A.M. follower");
+        }
+        if ($int2 = 3) {
+            return(20, 4297, "Male H.A.M. follower");
+        }
+        if ($int2 = 4) {
+            return(25, 3245, "Warrior");
+        }
+        if ($int2 = 5) {
+            return(32, 3247, "Rogue");
+        }
+        if ($int2 = 6) {
+            return(36, 10998, "Cave goblin");
+        }
+        if ($int2 = 7) {
+            return(38, 5068, "Master farmer");
+        }
+        if ($int2 = 8) {
+            return(40, 3249, "Guard");
+        }
+        if ($int2 = 9) {
+            return(45, 3686, "Fremennik");
+        }
+        if ($int2 = 10) {
+            return(45, 6782, "Bearded Pollnivnian bandit");
+        }
+        if ($int2 = 11) {
+            return(53, 4625, "Desert bandit");
+        }
+        if ($int2 = 12) {
+            return(55, 3251, "Knight");
+        }
+        if ($int2 = 13) {
+            return(55, 6781, "Pollnivnian bandit");
+        }
+        if ($int2 = 14) {
+            return(65, 3253, "Watchman");
+        }
+        if ($int2 = 15) {
+            return(65, 6780, "Menaphite thug");
+        }
+        if ($int2 = 16) {
+            return(70, 3255, "Paladin");
+        }
+        if ($int2 = 17) {
+            return(75, 3257, "Gnome");
+        }
+        if ($int2 = 18) {
+            return(80, 3259, "Hero");
+        }
+        if ($int2 = 19) {
+            return(85, 6105, "Elf");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(2, 1965, "Vegetable stall");
+        }
+        if ($int2 = 1) {
+            return(5, 1891, "Cake stall");
+        }
+        if ($int2 = 2) {
+            return(5, 1978, "Tea stall");
+        }
+        if ($int2 = 3) {
+            return(5, 1755, "Crafting stall");
+        }
+        if ($int2 = 4) {
+            return(5, 1963, "Monkey food stall");
+        }
+        if ($int2 = 5) {
+            return(20, 950, "Silk stall");
+        }
+        if ($int2 = 6) {
+            return(22, 7919, "Wine stall");
+        }
+        if ($int2 = 7) {
+            return(27, 5171, "Seed stall");
+        }
+        if ($int2 = 8) {
+            return(35, 948, "Fur stall");
+        }
+        if ($int2 = 9) {
+            return(42, 331, "Fish stall");
+        }
+        if ($int2 = 10) {
+            return(49, 9174, "Crossbow stall");
+        }
+        if ($int2 = 11) {
+            return(50, 442, "Silver stall");
+        }
+        if ($int2 = 12) {
+            return(65, 556, "Magic stall");
+        }
+        if ($int2 = 13) {
+            return(65, 1323, "Scimitar stall");
+        }
+        if ($int2 = 14) {
+            return(65, 2007, "Spices stall");
+        }
+        if ($int2 = 15) {
+            return(75, 1607, "Gems stall");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(13, 995, "Ardougne, Rellekka and the Wilderness");
+        }
+        if ($int2 = 1) {
+            return(28, 561, "Upstairs in Ardougne and Rellekka");
+        }
+        if ($int2 = 2) {
+            return(43, 995, "Upstairs in Ardougne");
+        }
+        if ($int2 = 3) {
+            return(47, 41, "Hemenster and Rellekka");
+        }
+        if ($int2 = 4) {
+            return(52, 4522, "Dorgesh-Kaan (average chests)");
+        }
+        if ($int2 = 5) {
+            return(59, 565, "Chaos druid tower north of Ardougne");
+        }
+        if ($int2 = 6) {
+            return(72, 383, "King Lathas's castle in Ardougne");
+        }
+        if ($int2 = 7) {
+            return(78, 1623, "Dorgesh-Kaan (rich chests)");
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(1, 10855, join("Sorceress's Garden minigame - Winter", "<br>", "Al Kharid region"));
+        }
+        if ($int2 = 1) {
+            return(15, 10593, "Can steal cowbells from dairy cows");
+        }
+        if ($int2 = 2) {
+            return(21, 9026, join("Pyramid Plunder minigame - Room 1", "<br>", "In the Jalsavrah Pyramid in Sophanem"));
+        }
+        if ($int2 = 3) {
+            return(25, 10853, join("Sorceress's Garden minigame - Spring", "<br>", "Al Kharid region"));
+        }
+        if ($int2 = 4) {
+            return(31, 9032, "Pyramid Plunder - Room 2");
+        }
+        if ($int2 = 5) {
+            return(41, 9036, "Pyramid Plunder - Room 3");
+        }
+        if ($int2 = 6) {
+            return(44, 10981, "Can steal wire from the Dorgeshuun wire machine.");
+        }
+        if ($int2 = 7) {
+            return(45, 10854, join("Sorceress's Garden minigame - Autumn", "<br>", "Al Kharid region"));
+        }
+        if ($int2 = 8) {
+            return(51, 9042, "Pyramid Plunder - Room 4");
+        }
+        if ($int2 = 9) {
+            return(61, 9038, "Pyramid Plunder - Room 5");
+        }
+        if ($int2 = 10) {
+            return(65, 10852, join("Sorceress's Garden minigame - Summer", "<br>", "Al Kharid region"));
+        }
+        if ($int2 = 11) {
+            return(71, 9040, "Pyramid Plunder - Room 6");
+        }
+        if ($int2 = 12) {
+            return(81, 9028, "Pyramid Plunder - Room 7");
+        }
+        if ($int2 = 13) {
+            return(91, 9034, "Pyramid Plunder - Room 8");
+        }
+    }
+}
+if ($int0 = 10) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(21, 5418, "Vegetable sack");
+        }
+        if ($int2 = 1) {
+            return(36, 5376, "Fruit basket");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 1059, "Leather gloves");
+        }
+        if ($int2 = 1) {
+            return(7, 1061, "Leather boots");
+        }
+        if ($int2 = 2) {
+            return(9, 1167, "Leather cowl");
+        }
+        if ($int2 = 3) {
+            return(11, 1063, "Leather vambraces");
+        }
+        if ($int2 = 4) {
+            return(14, 1129, "Leather body");
+        }
+        if ($int2 = 5) {
+            return(15, 3327, "Members: Snail helmet");
+        }
+        if ($int2 = 6) {
+            return(15, 7539, "Members: Crab shell armour");
+        }
+        if ($int2 = 7) {
+            return(18, 1095, "Leather chaps");
+        }
+        if ($int2 = 8) {
+            return(28, 1131, "Hard leather body");
+        }
+        if ($int2 = 9) {
+            return(32, 10077, "Members: Spiked vambraces");
+        }
+        if ($int2 = 10) {
+            return(35, 6259, "Members: Broodoo shield");
+        }
+        if ($int2 = 11) {
+            return(38, 1169, "Members: Coif");
+        }
+        if ($int2 = 12) {
+            return(41, 1133, "Members: Studded body");
+        }
+        if ($int2 = 13) {
+            return(43, 10824, "Members: Yak-hide leg armour");
+        }
+        if ($int2 = 14) {
+            return(44, 1097, "Members: Studded chaps");
+        }
+        if ($int2 = 15) {
+            return(45, 6328, "Members: Snakeskin boots");
+        }
+        if ($int2 = 16) {
+            return(46, 10822, "Members: Yak-hide body armour");
+        }
+        if ($int2 = 17) {
+            return(47, 6330, "Members: Snakeskin vambraces");
+        }
+        if ($int2 = 18) {
+            return(48, 6326, "Members: Snakeskin bandana");
+        }
+        if ($int2 = 19) {
+            return(51, 6324, "Members: Snakeskin chaps");
+        }
+        if ($int2 = 20) {
+            return(53, 6322, "Members: Snakeskin body");
+        }
+        if ($int2 = 21) {
+            return(57, 1065, "Members: Green dragonhide vambraces");
+        }
+        if ($int2 = 22) {
+            return(60, 1099, "Members: Green dragonhide chaps");
+        }
+        if ($int2 = 23) {
+            return(63, 1135, "Members: Green dragonhide body");
+        }
+        if ($int2 = 24) {
+            return(66, 2487, "Members: Blue dragonhide vambraces");
+        }
+        if ($int2 = 25) {
+            return(68, 2493, "Members: Blue dragonhide chaps");
+        }
+        if ($int2 = 26) {
+            return(71, 2499, "Members: Blue dragonhide body");
+        }
+        if ($int2 = 27) {
+            return(73, 2489, "Members: Red dragonhide vambraces");
+        }
+        if ($int2 = 28) {
+            return(75, 2495, "Members: Red dragonhide chaps");
+        }
+        if ($int2 = 29) {
+            return(77, 2501, "Members: Red dragonhide body");
+        }
+        if ($int2 = 30) {
+            return(79, 2491, "Members: Black dragonhide vambraces");
+        }
+        if ($int2 = 31) {
+            return(82, 2497, "Members: Black dragonhide chaps");
+        }
+        if ($int2 = 32) {
+            return(84, 2503, "Members: Black dragonhide body");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(1, 1759, "Wool");
+        }
+        if ($int2 = 1) {
+            return(10, 1777, "Members: Flax into bow strings");
+        }
+        if ($int2 = 2) {
+            return(10, 9438, "Members: Sinew into crossbow strings");
+        }
+        if ($int2 = 3) {
+            return(19, 6038, "Members: Magic tree roots into magic strings");
+        }
+        if ($int2 = 4) {
+            return(30, 954, "Members: Yak hair into rope");
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(1, 1931, "Pot");
+        }
+        if ($int2 = 1) {
+            return(7, 2313, "Pie dish");
+        }
+        if ($int2 = 2) {
+            return(8, 1923, "Bowl");
+        }
+        if ($int2 = 3) {
+            return(19, 5350, "Members: Plant pot");
+        }
+        if ($int2 = 4) {
+            return(25, 4440, "Members: Pot lid");
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(1, 1919, "Beer glass");
+        }
+        if ($int2 = 1) {
+            return(4, 4527, "Candle lantern");
+        }
+        if ($int2 = 2) {
+            return(12, 4525, "Oil lamp");
+        }
+        if ($int2 = 3) {
+            return(26, 4535, "Oil lantern");
+        }
+        if ($int2 = 4) {
+            return(33, 229, "Vial");
+        }
+        if ($int2 = 5) {
+            return(42, 6667, "Fishbowl");
+        }
+        if ($int2 = 6) {
+            return(46, 567, "Glass orb");
+        }
+        if ($int2 = 7) {
+            return(49, 4542, "Bullseye lantern lens");
+        }
+        if ($int2 = 8) {
+            return(87, 10973, "Dorgeshuun light orb");
+        }
+    }
+    if ($int1 = 5) {
+        if ($int2 = 0) {
+            return(1, 1609, "Members: Cut opal");
+        }
+        if ($int2 = 1) {
+            return(3, 10496, "Polished buttons");
+        }
+        if ($int2 = 2) {
+            return(5, 1635, "Gold ring");
+        }
+        if ($int2 = 3) {
+            return(6, 1654, "Gold necklace");
+        }
+        if ($int2 = 4) {
+            return(7, 11069, "Members: Gold bracelet");
+        }
+        if ($int2 = 5) {
+            return(8, 1692, "Gold amulet");
+        }
+        if ($int2 = 6) {
+            return(13, 1611, "Members: Cut jade");
+        }
+        if ($int2 = 7) {
+            return(16, 1716, "Holy symbol");
+        }
+        if ($int2 = 8) {
+            return(16, 1613, "Members: Cut red topaz");
+        }
+        if ($int2 = 9) {
+            return(17, 1722, "Members: Unholy symbol");
+        }
+        if ($int2 = 10) {
+            return(20, 1607, "Cut sapphire");
+        }
+        if ($int2 = 11) {
+            return(20, 1637, "Sapphire ring");
+        }
+        if ($int2 = 12) {
+            return(22, 1656, "Sapphire necklace");
+        }
+        if ($int2 = 13) {
+            return(23, 5525, "Tiara");
+        }
+        if ($int2 = 14) {
+            return(23, 11072, "Members: Sapphire bracelet");
+        }
+        if ($int2 = 15) {
+            return(24, 1694, "Sapphire amulet");
+        }
+        if ($int2 = 16) {
+            return(27, 1605, "Cut emerald");
+        }
+        if ($int2 = 17) {
+            return(27, 1639, "Emerald ring");
+        }
+        if ($int2 = 18) {
+            return(29, 1658, "Emerald necklace");
+        }
+        if ($int2 = 19) {
+            return(30, 11076, "Members: Emerald bracelet");
+        }
+        if ($int2 = 20) {
+            return(31, 1696, "Emerald amulet");
+        }
+        if ($int2 = 21) {
+            return(34, 1603, "Cut ruby");
+        }
+        if ($int2 = 22) {
+            return(34, 1641, "Ruby ring");
+        }
+        if ($int2 = 23) {
+            return(37, 10132, "Members: Rabbit-foot necklaces");
+        }
+        if ($int2 = 24) {
+            return(40, 1660, "Ruby necklace");
+        }
+        if ($int2 = 25) {
+            return(42, 11085, "Members: Ruby bracelet");
+        }
+        if ($int2 = 26) {
+            return(43, 1601, "Cut diamond");
+        }
+        if ($int2 = 27) {
+            return(43, 1643, "Diamond ring");
+        }
+        if ($int2 = 28) {
+            return(50, 1698, "Ruby amulet");
+        }
+        if ($int2 = 29) {
+            return(55, 1615, "Members: Cut dragonstone");
+        }
+        if ($int2 = 30) {
+            return(55, 1645, "Members: Dragonstone ring");
+        }
+        if ($int2 = 31) {
+            return(56, 1662, "Diamond necklace");
+        }
+        if ($int2 = 32) {
+            return(58, 11092, "Members: Diamond bracelet");
+        }
+        if ($int2 = 33) {
+            return(67, 6573, "Members: Cut onyx");
+        }
+        if ($int2 = 34) {
+            return(67, 6575, "Members: Onyx ring");
+        }
+        if ($int2 = 35) {
+            return(70, 1700, "Diamond amulet");
+        }
+        if ($int2 = 36) {
+            return(72, 1664, "Members: Dragonstone necklace");
+        }
+        if ($int2 = 37) {
+            return(74, 11115, "Members: Dragonstone bracelet");
+        }
+        if ($int2 = 38) {
+            return(80, 1702, "Members: Dragonstone amulet");
+        }
+        if ($int2 = 39) {
+            return(82, 6577, "Members: Onyx necklace");
+        }
+        if ($int2 = 40) {
+            return(84, 11130, "Members: Onyx bracelet");
+        }
+        if ($int2 = 41) {
+            return(90, 6581, "Members: Onyx amulet");
+        }
+    }
+    if ($int1 = 6) {
+        if ($int2 = 0) {
+            return(21, 9145, "Silver crossbow bolt");
+        }
+        if ($int2 = 1) {
+            return(54, 1395, "Water battlestaff");
+        }
+        if ($int2 = 2) {
+            return(58, 1399, "Earth battlestaff");
+        }
+        if ($int2 = 3) {
+            return(62, 1393, "Fire battlestaff");
+        }
+        if ($int2 = 4) {
+            return(66, 1397, "Air battlestaff");
+        }
+    }
+}
+if ($int0 = 11) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 882, "Bronze arrows");
+        }
+        if ($int2 = 1) {
+            return(7, 4773, "Bronze 'brutal' arrows");
+        }
+        if ($int2 = 2) {
+            return(15, 884, "Iron arrows");
+        }
+        if ($int2 = 3) {
+            return(18, 4778, "Iron 'brutal' arrows");
+        }
+        if ($int2 = 4) {
+            return(30, 886, "Steel arrows");
+        }
+        if ($int2 = 5) {
+            return(33, 4783, "Steel 'brutal' arrows");
+        }
+        if ($int2 = 6) {
+            return(38, 4788, "Black 'brutal' arrows");
+        }
+        if ($int2 = 7) {
+            return(45, 888, "Mithril arrows");
+        }
+        if ($int2 = 8) {
+            return(49, 4793, "Mithril 'brutal' arrows");
+        }
+        if ($int2 = 9) {
+            return(60, 890, "Adamant arrows");
+        }
+        if ($int2 = 10) {
+            return(62, 4798, "Adamant 'brutal' arrows");
+        }
+        if ($int2 = 11) {
+            return(75, 892, "Rune arrows");
+        }
+        if ($int2 = 12) {
+            return(77, 4803, "Rune 'brutal' arrows");
+        }
+        if ($int2 = 13) {
+            return(90, 11212, "Dragon arrows");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(5, 841, "Shortbows");
+        }
+        if ($int2 = 1) {
+            return(10, 839, "Longbows");
+        }
+        if ($int2 = 2) {
+            return(20, 843, "Oak shortbows");
+        }
+        if ($int2 = 3) {
+            return(25, 845, "Oak longbows");
+        }
+        if ($int2 = 4) {
+            return(30, 4827, "Ogre composite bows");
+        }
+        if ($int2 = 5) {
+            return(35, 849, "Willow shortbows");
+        }
+        if ($int2 = 6) {
+            return(40, 847, "Willow longbows");
+        }
+        if ($int2 = 7) {
+            return(50, 853, "Maple shortbows");
+        }
+        if ($int2 = 8) {
+            return(55, 851, "Maple longbows");
+        }
+        if ($int2 = 9) {
+            return(65, 857, "Yew shortbows");
+        }
+        if ($int2 = 10) {
+            return(70, 855, "Yew longbows");
+        }
+        if ($int2 = 11) {
+            return(80, 861, "Magic shortbows");
+        }
+        if ($int2 = 12) {
+            return(85, 859, "Magic longbows");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(9, 877, "Bronze bolts");
+        }
+        if ($int2 = 1) {
+            return(11, 879, "Opal-tipped bronze bolts");
+        }
+        if ($int2 = 2) {
+            return(24, 9139, join("Blurite bolts", "<br>", "(after Knight's Sword quest)"));
+        }
+        if ($int2 = 3) {
+            return(26, 9335, "Jade-tipped blurite bolts");
+        }
+        if ($int2 = 4) {
+            return(32, 10158, "Kebbit-tipped hunting bolts");
+        }
+        if ($int2 = 5) {
+            return(39, 9140, "Iron bolts");
+        }
+        if ($int2 = 6) {
+            return(41, 880, "Pearl-tipped iron bolts");
+        }
+        if ($int2 = 7) {
+            return(42, 10159, "Long kebbit-tipped hunting bolts");
+        }
+        if ($int2 = 8) {
+            return(43, 9145, "Silver bolts");
+        }
+        if ($int2 = 9) {
+            return(46, 9141, "Steel bolts");
+        }
+        if ($int2 = 10) {
+            return(48, 9336, "Red topaz-tipped steel bolts");
+        }
+        if ($int2 = 11) {
+            return(51, 881, "Barbed-tipped bolts");
+        }
+        if ($int2 = 12) {
+            return(54, 9142, "Mithril bolts");
+        }
+        if ($int2 = 13) {
+            return(56, 9337, "Sapphire-tipped mithril bolts");
+        }
+        if ($int2 = 14) {
+            return(58, 9338, "Emerald-tipped mithril bolts");
+        }
+        if ($int2 = 15) {
+            return(59, 9418, "Mithril grapple-tipped bolts");
+        }
+        if ($int2 = 16) {
+            return(61, 9143, "Adamantite bolts");
+        }
+        if ($int2 = 17) {
+            return(63, 9339, "Ruby-tipped adamantite bolts");
+        }
+        if ($int2 = 18) {
+            return(65, 9340, "Diamond-tipped adamantite bolts");
+        }
+        if ($int2 = 19) {
+            return(69, 9144, "Runite bolts");
+        }
+        if ($int2 = 20) {
+            return(71, 9341, "Dragonstone-tipped runite bolts");
+        }
+        if ($int2 = 21) {
+            return(73, 9342, "Onyx-tipped runite bolts");
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(1, 806, "Bronze darts");
+        }
+        if ($int2 = 1) {
+            return(22, 807, "Iron darts");
+        }
+        if ($int2 = 2) {
+            return(37, 808, "Steel darts");
+        }
+        if ($int2 = 3) {
+            return(52, 809, "Mithril darts");
+        }
+        if ($int2 = 4) {
+            return(67, 810, "Adamant darts");
+        }
+        if ($int2 = 5) {
+            return(81, 811, "Rune darts");
+        }
+        if ($int2 = 6) {
+            return(95, 11230, "Dragon darts");
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(9, 9440, "Bronze/wooden crossbows");
+        }
+        if ($int2 = 1) {
+            return(24, 9442, join("Blurite/oak crossbows", "<br>", "(after Knight's Sword quest)"));
+        }
+        if ($int2 = 2) {
+            return(39, 9444, "Iron/willow crossbows");
+        }
+        if ($int2 = 3) {
+            return(46, 9446, "Steel/teak crossbows");
+        }
+        if ($int2 = 4) {
+            return(54, 9448, "Mithril/maple crossbows");
+        }
+        if ($int2 = 5) {
+            return(61, 9450, "Adamantite/mahogany crossbows");
+        }
+        if ($int2 = 6) {
+            return(69, 9452, "Runite/yew crossbows");
+        }
+    }
+}
+if ($int0 = 12) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 1436, join("Rune essence", "<br>", "(after Rune Mysteries quest)"));
+        }
+        if ($int2 = 1) {
+            return(1, 434, "Clay");
+        }
+        if ($int2 = 2) {
+            return(1, 436, "Copper ore");
+        }
+        if ($int2 = 3) {
+            return(1, 438, "Tin ore");
+        }
+        if ($int2 = 4) {
+            return(10, 668, "Blurite ore");
+        }
+        if ($int2 = 5) {
+            return(15, 440, "Iron ore");
+        }
+        if ($int2 = 6) {
+            return(20, 442, "Silver ore");
+        }
+        if ($int2 = 7) {
+            return(30, 453, "Coal");
+        }
+        if ($int2 = 8) {
+            return(30, 7936, join("Members: Pure essence", "<br>", "(after Rune Mysteries quest)"));
+        }
+        if ($int2 = 9) {
+            return(35, 6977, "Members: Sandstone");
+        }
+        if ($int2 = 10) {
+            return(40, 444, "Gold");
+        }
+        if ($int2 = 11) {
+            return(45, 6983, "Members: Granite");
+        }
+        if ($int2 = 12) {
+            return(55, 447, "Mithril ore");
+        }
+        if ($int2 = 13) {
+            return(70, 449, "Adamantite ore");
+        }
+        if ($int2 = 14) {
+            return(85, 451, "Runite ore");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 1265, "Bronze pickaxe");
+        }
+        if ($int2 = 1) {
+            return(1, 1267, "Iron pickaxe");
+        }
+        if ($int2 = 2) {
+            return(6, 1269, "Steel pickaxe");
+        }
+        if ($int2 = 3) {
+            return(21, 1273, "Mithril pickaxe");
+        }
+        if ($int2 = 4) {
+            return(31, 1271, "Adamant pickaxe");
+        }
+        if ($int2 = 5) {
+            return(41, 1275, "Rune pickaxe");
+        }
+    }
+}
+if ($int0 = 13) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 2349, join("Bronze", "<br>", "1 tin ore & 1 copper ore"));
+        }
+        if ($int2 = 1) {
+            return(8, 9467, join("Members: Blurite", "<br>", "(after Knight's Sword quest)"));
+        }
+        if ($int2 = 2) {
+            return(15, 2351, join("Iron", "<br>", "50% chance of success"));
+        }
+        if ($int2 = 3) {
+            return(20, 2355, "Silver");
+        }
+        if ($int2 = 4) {
+            return(30, 2353, join("Steel", "<br>", "2 coal & 1 iron ore"));
+        }
+        if ($int2 = 5) {
+            return(40, 2357, "Gold");
+        }
+        if ($int2 = 6) {
+            return(50, 2359, join("Mithril", "<br>", "4 coal & 1 mithril ore"));
+        }
+        if ($int2 = 7) {
+            return(70, 2361, join("Adamant", "<br>", "6 coal & 1 adamantite ore"));
+        }
+        if ($int2 = 8) {
+            return(85, 2363, join("Runite", "<br>", "8 coal & 1 runite ore"));
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 1205, join("Bronze daggers", "<br>", "1 bar"));
+        }
+        if ($int2 = 1) {
+            return(1, 1351, join("Bronze axes", "<br>", "1 bar"));
+        }
+        if ($int2 = 2) {
+            return(2, 1422, join("Bronze maces", "<br>", "1 bar"));
+        }
+        if ($int2 = 3) {
+            return(3, 1139, join("Bronze medium helms", "<br>", "1 bar"));
+        }
+        if ($int2 = 4) {
+            return(3, 9375, join("Members: Bronze crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 5) {
+            return(4, 1277, join("Bronze swords", "<br>", "1 bar"));
+        }
+        if ($int2 = 6) {
+            return(4, 819, join("Members: Bronze dart tips", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 7) {
+            return(4, 1794, join("Members: Bronze wire", "<br>", "1 bar"));
+        }
+        if ($int2 = 8) {
+            return(4, 4819, join("Members: Bronze nails", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 9) {
+            return(5, 1321, join("Bronze scimitars", "<br>", "2 bars"));
+        }
+        if ($int2 = 10) {
+            return(5, 1237, join("Members: Bronze spears", "<br>", "1 bar, 1 log"));
+        }
+        if ($int2 = 11) {
+            return(5, 11367, join("Members: Bronze hastae", "<br>", "1 bar, 1 log"));
+        }
+        if ($int2 = 12) {
+            return(5, 39, join("Members: Bronze arrowheads", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 13) {
+            return(6, 9420, join("Members: Bronze crossbow limbs", "<br>", "1 bar"));
+        }
+        if ($int2 = 14) {
+            return(6, 1291, join("Bronze longswords", "<br>", "2 bars"));
+        }
+        if ($int2 = 15) {
+            return(7, 1155, join("Bronze full helms", "<br>", "2 bars"));
+        }
+        if ($int2 = 16) {
+            return(7, 864, join("Members: Bronze throwing knives", "<br>", "1 bar makes 5"));
+        }
+        if ($int2 = 17) {
+            return(8, 1173, join("Bronze square shields", "<br>", "2 bars"));
+        }
+        if ($int2 = 18) {
+            return(9, 1337, join("Bronze warhammers", "<br>", "3 bars"));
+        }
+        if ($int2 = 19) {
+            return(10, 1375, join("Bronze battleaxes", "<br>", "3 bars"));
+        }
+        if ($int2 = 20) {
+            return(11, 1103, join("Bronze chainbodies", "<br>", "3 bars"));
+        }
+        if ($int2 = 21) {
+            return(12, 1189, join("Bronze kiteshields", "<br>", "3 bars"));
+        }
+        if ($int2 = 22) {
+            return(13, 3095, join("Members: Bronze claws", "<br>", "2 bars"));
+        }
+        if ($int2 = 23) {
+            return(14, 1307, join("Bronze two-handed swords", "<br>", "3 bars"));
+        }
+        if ($int2 = 24) {
+            return(16, 1075, join("Bronze platelegs", "<br>", "3 bars"));
+        }
+        if ($int2 = 25) {
+            return(16, 1087, join("Bronze plateskirts", "<br>", "3 bars"));
+        }
+        if ($int2 = 26) {
+            return(18, 1117, join("Bronze platebodies", "<br>", "5 bars"));
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(-1, 7620, "After completing Knight's Sword, able to make:");
+        }
+        if ($int2 = 1) {
+            return(8, 9376, join("Blurite crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 2) {
+            return(13, 9422, join("Blurite crossbow limbs", "<br>", "1 bar"));
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(15, 1203, join("Iron daggers", "<br>", "1 bar"));
+        }
+        if ($int2 = 1) {
+            return(16, 1349, join("Iron axes", "<br>", "1 bar"));
+        }
+        if ($int2 = 2) {
+            return(17, 1420, join("Iron maces", "<br>", "1 bar"));
+        }
+        if ($int2 = 3) {
+            return(17, 7225, join("Members: Iron spits", "<br>", "1 bar"));
+        }
+        if ($int2 = 4) {
+            return(18, 1137, join("Iron medium helms", "<br>", "1 bar"));
+        }
+        if ($int2 = 5) {
+            return(18, 9377, join("Members: Iron crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 6) {
+            return(19, 1279, join("Iron swords", "<br>", "1 bar"));
+        }
+        if ($int2 = 7) {
+            return(19, 820, join("Members: Iron dart tips", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 8) {
+            return(19, 4820, join("Members: Iron nails", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 9) {
+            return(20, 1323, join("Iron scimitars", "<br>", "2 bars"));
+        }
+        if ($int2 = 10) {
+            return(20, 1239, join("Members: Iron spears", "<br>", "1 bar, 1 oak log"));
+        }
+        if ($int2 = 11) {
+            return(20, 11369, join("Members: Iron hastae", "<br>", "1 bar, 1 oak log"));
+        }
+        if ($int2 = 12) {
+            return(20, 40, join("Members: Iron arrowheads", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 13) {
+            return(21, 1293, join("Iron longswords", "<br>", "2 bars"));
+        }
+        if ($int2 = 14) {
+            return(22, 1153, join("Iron full helms", "<br>", "2 bars"));
+        }
+        if ($int2 = 15) {
+            return(22, 863, join("Members: Iron throwing knives", "<br>", "1 bar makes 5"));
+        }
+        if ($int2 = 16) {
+            return(23, 1175, join("Iron square shields", "<br>", "2 bars"));
+        }
+        if ($int2 = 17) {
+            return(23, 9423, join("Members: Iron crossbow limbs", "<br>", "1 bar"));
+        }
+        if ($int2 = 18) {
+            return(24, 1335, join("Iron warhammers", "<br>", "3 bars"));
+        }
+        if ($int2 = 19) {
+            return(25, 1363, join("Iron battleaxes", "<br>", "3 bars"));
+        }
+        if ($int2 = 20) {
+            return(26, 1101, join("Iron chainbodies", "<br>", "3 bars"));
+        }
+        if ($int2 = 21) {
+            return(26, 4540, join("Members: Oil lantern frames", "<br>", "1 bar"));
+        }
+        if ($int2 = 22) {
+            return(27, 1191, join("Iron kiteshields", "<br>", "3 bars"));
+        }
+        if ($int2 = 23) {
+            return(28, 3096, join("Members: Iron claws", "<br>", "2 bars"));
+        }
+        if ($int2 = 24) {
+            return(29, 1309, join("Iron two-handed swords", "<br>", "3 bars"));
+        }
+        if ($int2 = 25) {
+            return(31, 1067, join("Iron platelegs", "<br>", "3 bars"));
+        }
+        if ($int2 = 26) {
+            return(31, 1081, join("Iron plateskirts", "<br>", "3 bars"));
+        }
+        if ($int2 = 27) {
+            return(33, 1115, join("Iron platebodies", "<br>", "5 bars"));
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(30, 1207, join("Steel daggers", "<br>", "1 bar"));
+        }
+        if ($int2 = 1) {
+            return(31, 1353, join("Steel axes", "<br>", "1 bar"));
+        }
+        if ($int2 = 2) {
+            return(32, 1424, join("Steel maces", "<br>", "1 bar"));
+        }
+        if ($int2 = 3) {
+            return(33, 1141, join("Steel medium helms", "<br>", "1 bar"));
+        }
+        if ($int2 = 4) {
+            return(33, 9378, join("Members: Steel crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 5) {
+            return(34, 1281, join("Steel swords", "<br>", "1 bar"));
+        }
+        if ($int2 = 6) {
+            return(34, 1539, join("Steel nails", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 7) {
+            return(34, 821, join("Members: Steel dart tips", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 8) {
+            return(35, 1325, join("Steel scimitars", "<br>", "2 bars"));
+        }
+        if ($int2 = 9) {
+            return(35, 1241, join("Members: Steel spears", "<br>", "1 bar, 1 willow log"));
+        }
+        if ($int2 = 10) {
+            return(35, 11371, join("Members: Steel hastae", "<br>", "1 bar, 1 willow log"));
+        }
+        if ($int2 = 11) {
+            return(35, 41, join("Members: Steel arrowheads", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 12) {
+            return(35, 2, join("Members: Cannonballs", "<br>", "1 bar makes 4"));
+        }
+        if ($int2 = 13) {
+            return(36, 9425, join("Members: Steel crossbow limbs", "<br>", "1 bar"));
+        }
+        if ($int2 = 14) {
+            return(36, 1295, join("Steel longswords", "<br>", "2 bars"));
+        }
+        if ($int2 = 15) {
+            return(36, 2370, join("Members: Steel studs", "<br>", "1 bar"));
+        }
+        if ($int2 = 16) {
+            return(37, 1157, join("Steel full helms", "<br>", "2 bars"));
+        }
+        if ($int2 = 17) {
+            return(37, 865, join("Members: Steel throwing knives", "<br>", "1 bar makes 5"));
+        }
+        if ($int2 = 18) {
+            return(38, 1177, join("Steel square shields", "<br>", "2 bars"));
+        }
+        if ($int2 = 19) {
+            return(39, 1339, join("Steel warhammers", "<br>", "3 bars"));
+        }
+        if ($int2 = 20) {
+            return(40, 1365, join("Steel battleaxes", "<br>", "3 bars"));
+        }
+        if ($int2 = 21) {
+            return(41, 1105, join("Steel chainbodies", "<br>", "3 bars"));
+        }
+        if ($int2 = 22) {
+            return(42, 1193, join("Steel kiteshields", "<br>", "3 bars"));
+        }
+        if ($int2 = 23) {
+            return(43, 3097, join("Members: Steel claws", "<br>", "2 bars"));
+        }
+        if ($int2 = 24) {
+            return(44, 1311, join("Steel two-handed swords", "<br>", "3 bars"));
+        }
+        if ($int2 = 25) {
+            return(46, 1069, join("Steel platelegs", "<br>", "3 bars"));
+        }
+        if ($int2 = 26) {
+            return(46, 1083, join("Steel plateskirts", "<br>", "3 bars"));
+        }
+        if ($int2 = 27) {
+            return(48, 1119, join("Steel platebodies", "<br>", "5 bars"));
+        }
+        if ($int2 = 28) {
+            return(49, 4544, join("Members: Bullseye lantern frames", "<br>", "1 bar"));
+        }
+    }
+    if ($int1 = 5) {
+        if ($int2 = 0) {
+            return(50, 1209, join("Mithril daggers", "<br>", "1 bar"));
+        }
+        if ($int2 = 1) {
+            return(51, 1355, join("Mithril axes", "<br>", "1 bar"));
+        }
+        if ($int2 = 2) {
+            return(52, 1428, join("Mithril maces", "<br>", "1 bar"));
+        }
+        if ($int2 = 3) {
+            return(53, 1143, join("Mithril medium helms", "<br>", "1 bar"));
+        }
+        if ($int2 = 4) {
+            return(53, 9379, join("Members: Mithril crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 5) {
+            return(54, 1285, join("Mithril swords", "<br>", "1 bar"));
+        }
+        if ($int2 = 6) {
+            return(54, 822, join("Members: Mithril dart tips", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 7) {
+            return(54, 4822, join("Members: Mithril nails", "<br>", "1 bar Makes 15"));
+        }
+        if ($int2 = 8) {
+            return(55, 1329, join("Mithril scimitars", "<br>", "2 bars"));
+        }
+        if ($int2 = 9) {
+            return(55, 1243, join("Members: Mithril spears", "<br>", "1 bar, 1 maple log"));
+        }
+        if ($int2 = 10) {
+            return(55, 11373, join("Members: Mithril hastae", "<br>", "1 bar, 1 maple log"));
+        }
+        if ($int2 = 11) {
+            return(55, 42, join("Members: Mithril arrowheads", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 12) {
+            return(56, 9427, join("Members: Mithril crossbow limbs", "<br>", "1 bar"));
+        }
+        if ($int2 = 13) {
+            return(56, 1299, join("Mithril longswords", "<br>", "2 bars"));
+        }
+        if ($int2 = 14) {
+            return(57, 1159, join("Mithril full helms", "<br>", "2 bars"));
+        }
+        if ($int2 = 15) {
+            return(57, 866, join("Members: Mithril throwing knives", "<br>", "1 bar makes 5"));
+        }
+        if ($int2 = 16) {
+            return(58, 1181, join("Mithril square shields", "<br>", "2 bars"));
+        }
+        if ($int2 = 17) {
+            return(59, 1343, join("Mithril warhammers", "<br>", "3 bars"));
+        }
+        if ($int2 = 18) {
+            return(59, 9416, join("Members: Mithril crossbow grapple tips", "<br>", "1 bar"));
+        }
+        if ($int2 = 19) {
+            return(60, 1369, join("Mithril battleaxes", "<br>", "3 bars"));
+        }
+        if ($int2 = 20) {
+            return(61, 1109, join("Mithril chainbodies", "<br>", "3 bars"));
+        }
+        if ($int2 = 21) {
+            return(62, 1197, join("Mithril kiteshields", "<br>", "3 bars"));
+        }
+        if ($int2 = 22) {
+            return(63, 3099, join("Members: Mithril claws", "<br>", "2 bars"));
+        }
+        if ($int2 = 23) {
+            return(64, 1315, join("Mithril two-handed swords", "<br>", "3 bars"));
+        }
+        if ($int2 = 24) {
+            return(66, 1071, join("Mithril platelegs", "<br>", "3 bars"));
+        }
+        if ($int2 = 25) {
+            return(66, 1085, join("Mithril plateskirts", "<br>", "3 bars"));
+        }
+        if ($int2 = 26) {
+            return(68, 1121, join("Mithril platebodies", "<br>", "5 bars"));
+        }
+    }
+    if ($int1 = 6) {
+        if ($int2 = 0) {
+            return(70, 1211, join("Adamant daggers", "<br>", "1 bar"));
+        }
+        if ($int2 = 1) {
+            return(71, 1357, join("Adamant axes", "<br>", "1 bar"));
+        }
+        if ($int2 = 2) {
+            return(72, 1430, join("Adamant maces", "<br>", "1 bar"));
+        }
+        if ($int2 = 3) {
+            return(73, 1145, join("Adamant medium helms", "<br>", "1 bar"));
+        }
+        if ($int2 = 4) {
+            return(73, 9380, join("Members: Adamant crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 5) {
+            return(74, 1287, join("Adamant swords", "<br>", "1 bar"));
+        }
+        if ($int2 = 6) {
+            return(74, 823, join("Members: Adamant dart tips", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 7) {
+            return(74, 4823, join("Members: Adamant nails", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 8) {
+            return(75, 1331, join("Adamant scimitars", "<br>", "2 bars"));
+        }
+        if ($int2 = 9) {
+            return(75, 1245, join("Members: Adamant spears", "<br>", "1 bar, 1 yew log"));
+        }
+        if ($int2 = 10) {
+            return(75, 11375, join("Members: Adamant hastae", "<br>", "1 bar, 1 yew log"));
+        }
+        if ($int2 = 11) {
+            return(75, 43, join("Members: Adamant arrowheads", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 12) {
+            return(76, 9429, join("Members: Adamant crossbow limbs", "<br>", "1 bar"));
+        }
+        if ($int2 = 13) {
+            return(76, 1301, join("Adamant longswords", "<br>", "2 bars"));
+        }
+        if ($int2 = 14) {
+            return(77, 1161, join("Adamant full helms", "<br>", "2 bars"));
+        }
+        if ($int2 = 15) {
+            return(77, 867, join("Members: Adamant throwing knives", "<br>", "1 bar makes 5"));
+        }
+        if ($int2 = 16) {
+            return(78, 1183, join("Adamant square shields", "<br>", "2 bars"));
+        }
+        if ($int2 = 17) {
+            return(79, 1345, join("Adamant warhammers", "<br>", "3 bars"));
+        }
+        if ($int2 = 18) {
+            return(80, 1371, join("Adamant battleaxes", "<br>", "3 bars"));
+        }
+        if ($int2 = 19) {
+            return(81, 1111, join("Adamant chainbodies", "<br>", "3 bars"));
+        }
+        if ($int2 = 20) {
+            return(82, 1199, join("Adamant kiteshields", "<br>", "3 bars"));
+        }
+        if ($int2 = 21) {
+            return(83, 3100, join("Members: Adamant claws", "<br>", "2 bars"));
+        }
+        if ($int2 = 22) {
+            return(84, 1317, join("Adamant two-handed swords", "<br>", "3 bars"));
+        }
+        if ($int2 = 23) {
+            return(86, 1073, join("Adamant platelegs", "<br>", "3 bars"));
+        }
+        if ($int2 = 24) {
+            return(86, 1091, join("Adamant plateskirts", "<br>", "3 bars"));
+        }
+        if ($int2 = 25) {
+            return(88, 1123, join("Adamant platebodies", "<br>", "5 bars"));
+        }
+    }
+    if ($int1 = 7) {
+        if ($int2 = 0) {
+            return(85, 1213, join("Rune daggers", "<br>", "1 bar"));
+        }
+        if ($int2 = 1) {
+            return(86, 1359, join("Rune axes", "<br>", "1 bar"));
+        }
+        if ($int2 = 2) {
+            return(87, 1432, join("Rune maces", "<br>", "1 bar"));
+        }
+        if ($int2 = 3) {
+            return(88, 1147, join("Rune medium helms", "<br>", "1 bar"));
+        }
+        if ($int2 = 4) {
+            return(88, 9381, join("Members: Rune crossbow bolts", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 5) {
+            return(89, 1289, join("Rune swords", "<br>", "1 bar"));
+        }
+        if ($int2 = 6) {
+            return(89, 824, join("Members: Rune dart tips", "<br>", "1 bar makes 10"));
+        }
+        if ($int2 = 7) {
+            return(89, 4824, join("Members: Rune nails", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 8) {
+            return(90, 1333, join("Rune scimitars", "<br>", "2 bars"));
+        }
+        if ($int2 = 9) {
+            return(90, 1247, join("Members: Rune spears", "<br>", "1 bar, 1 magic log"));
+        }
+        if ($int2 = 10) {
+            return(90, 11377, join("Members: Rune hastae", "<br>", "1 bar, 1 magic log"));
+        }
+        if ($int2 = 11) {
+            return(90, 44, join("Members: Rune arrowheads", "<br>", "1 bar makes 15"));
+        }
+        if ($int2 = 12) {
+            return(91, 9431, join("Members: Rune crossbow limbs", "<br>", "1 bar"));
+        }
+        if ($int2 = 13) {
+            return(91, 1303, join("Rune longswords", "<br>", "2 bars"));
+        }
+        if ($int2 = 14) {
+            return(92, 1163, join("Rune full helms", "<br>", "2 bars"));
+        }
+        if ($int2 = 15) {
+            return(92, 868, join("Members: Rune throwing knives", "<br>", "1 bar makes 5"));
+        }
+        if ($int2 = 16) {
+            return(93, 1185, join("Rune square shields", "<br>", "2 bars"));
+        }
+        if ($int2 = 17) {
+            return(94, 1347, join("Rune warhammers", "<br>", "3 bars"));
+        }
+        if ($int2 = 18) {
+            return(95, 1373, join("Rune battleaxes", "<br>", "3 bars"));
+        }
+        if ($int2 = 19) {
+            return(96, 1113, join("Rune chainbodies", "<br>", "3 bars"));
+        }
+        if ($int2 = 20) {
+            return(97, 1201, join("Rune kiteshields", "<br>", "3 bars"));
+        }
+        if ($int2 = 21) {
+            return(98, 3101, join("Members: Rune claws", "<br>", "2 bars"));
+        }
+        if ($int2 = 22) {
+            return(99, 1319, join("Rune two-handed swords", "<br>", "3 bars"));
+        }
+        if ($int2 = 23) {
+            return(99, 1079, join("Rune platelegs", "<br>", "3 bars"));
+        }
+        if ($int2 = 24) {
+            return(99, 1093, join("Rune plateskirts", "<br>", "3 bars"));
+        }
+        if ($int2 = 25) {
+            return(99, 1127, join("Rune platebodies", "<br>", "5 bars"));
+        }
+    }
+}
+if ($int0 = 14 & $int1 = 0) {
+    if ($int2 = 0) {
+        return(1, 317, "Shrimp - Net fishing");
+    }
+    if ($int2 = 1) {
+        return(5, 327, "Sardine - Sea bait fishing");
+    }
+    if ($int2 = 2) {
+        return(5, 3150, "Members: Karambwanji - Net fishing");
+    }
+    if ($int2 = 3) {
+        return(10, 345, "Herring - Sea bait fishing");
+    }
+    if ($int2 = 4) {
+        return(15, 321, "Anchovies - Net fishing");
+    }
+    if ($int2 = 5) {
+        return(16, 353, "Members: Mackerel - Big net fishing");
+    }
+    if ($int2 = 6) {
+        return(16, 407, "Members: Oyster - Big net fishing");
+    }
+    if ($int2 = 7) {
+        return(16, 405, "Members: Caskets - Big net fishing");
+    }
+    if ($int2 = 8) {
+        return(20, 335, "Trout - Fly-fishing");
+    }
+    if ($int2 = 9) {
+        return(23, 341, "Members: Cod - Big net fishing");
+    }
+    if ($int2 = 10) {
+        return(25, 349, "Pike - River bait fishing");
+    }
+    if ($int2 = 11) {
+        return(28, 3379, "Members: Slimy eel - River bait fishing");
+    }
+    if ($int2 = 12) {
+        return(30, 331, "Salmon - Fly-fishing");
+    }
+    if ($int2 = 13) {
+        return(33, 5004, "Members: Giant frogspawn - Net fishing");
+    }
+    if ($int2 = 14) {
+        return(35, 359, "Tuna - Harpoon fishing");
+    }
+    if ($int2 = 15) {
+        return(38, 10138, "Members: Rainbow fish - Stripy fly-fishing");
+    }
+    if ($int2 = 16) {
+        return(38, 5001, "Members: Cave eel - River bait fishing");
+    }
+    if ($int2 = 17) {
+        return(40, 377, "Lobster - Lobster pot fishing");
+    }
+    if ($int2 = 18) {
+        return(46, 363, "Members: Bass - Big net fishing");
+    }
+    if ($int2 = 19) {
+        return(50, 371, "Swordfish - Harpoon fishing");
+    }
+    if ($int2 = 20) {
+        return(53, 2148, "Members: Lava eel - Bait fishing");
+    }
+    if ($int2 = 21) {
+        return(62, 7944, "Members: Monkfish - Net fishing");
+    }
+    if ($int2 = 22) {
+        return(65, 3142, "Members: Karambwan - Vessel fishing");
+    }
+    if ($int2 = 23) {
+        return(76, 383, "Members: Shark - Harpoon fishing");
+    }
+    if ($int2 = 24) {
+        return(79, 395, "Members: Sea turtle - Trawler minigame");
+    }
+    if ($int2 = 25) {
+        return(81, 389, "Members: Manta ray - Trawler minigame");
+    }
+}
+if ($int0 = 15) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 2142, "Meat");
+        }
+        if ($int2 = 1) {
+            return(1, 9436, join("Members: Sinew", "<br>", "(made by drying beef or bear meat on a range)"));
+        }
+        if ($int2 = 2) {
+            return(1, 315, "Shrimp");
+        }
+        if ($int2 = 3) {
+            return(1, 2140, "Chicken");
+        }
+        if ($int2 = 4) {
+            return(1, 3228, "Members: Rabbit");
+        }
+        if ($int2 = 5) {
+            return(1, 319, "Anchovies");
+        }
+        if ($int2 = 6) {
+            return(1, 325, "Sardine");
+        }
+        if ($int2 = 7) {
+            return(1, 3151, "Members: Karambwanji");
+        }
+        if ($int2 = 8) {
+            return(1, 3146, "Members: Karambwan");
+        }
+        if ($int2 = 9) {
+            return(1, 1885, "Members: Ugthanki kebab");
+        }
+        if ($int2 = 10) {
+            return(5, 347, "Herring");
+        }
+        if ($int2 = 11) {
+            return(10, 355, "Members: Mackerel");
+        }
+        if ($int2 = 12) {
+            return(11, 9980, "Members: Roasted bird meat");
+        }
+        if ($int2 = 13) {
+            return(12, 3369, "Members: Thin snail");
+        }
+        if ($int2 = 14) {
+            return(15, 333, "Trout");
+        }
+        if ($int2 = 15) {
+            return(16, 6297, "Members: Spider");
+        }
+        if ($int2 = 16) {
+            return(16, 7223, "Members: Roasted rabbit");
+        }
+        if ($int2 = 17) {
+            return(17, 3371, "Members: Lean snail");
+        }
+        if ($int2 = 18) {
+            return(18, 339, "Members: Cod");
+        }
+        if ($int2 = 19) {
+            return(20, 351, "Pike");
+        }
+        if ($int2 = 20) {
+            return(21, 9988, "Members: Roasted beast meat");
+        }
+        if ($int2 = 21) {
+            return(21, 7521, "Members: Giant crab meat");
+        }
+        if ($int2 = 22) {
+            return(22, 3373, "Members: Fat snail");
+        }
+        if ($int2 = 23) {
+            return(25, 329, "Salmon");
+        }
+        if ($int2 = 24) {
+            return(28, 3381, "Members: Slimy eel");
+        }
+        if ($int2 = 25) {
+            return(30, 361, "Tuna");
+        }
+        if ($int2 = 26) {
+            return(30, 2878, "Members: Roasted chompy");
+        }
+        if ($int2 = 27) {
+            return(31, 7530, "Members: Fishcakes");
+        }
+        if ($int2 = 28) {
+            return(35, 10136, "Members: Rainbow fish");
+        }
+        if ($int2 = 29) {
+            return(38, 5003, "Members: Cave eel");
+        }
+        if ($int2 = 30) {
+            return(40, 379, "Lobster");
+        }
+        if ($int2 = 31) {
+            return(41, 7568, "Members: Jubbly");
+        }
+        if ($int2 = 32) {
+            return(43, 365, "Members: Bass");
+        }
+        if ($int2 = 33) {
+            return(45, 373, "Swordfish");
+        }
+        if ($int2 = 34) {
+            return(53, 2149, "Members: Lava eel");
+        }
+        if ($int2 = 35) {
+            return(62, 7946, "Members: Monkfish");
+        }
+        if ($int2 = 36) {
+            return(80, 385, "Members: Shark");
+        }
+        if ($int2 = 37) {
+            return(82, 397, "Members: Sea turtle");
+        }
+        if ($int2 = 38) {
+            return(91, 391, "Members: Manta ray");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 2309, "Bread");
+        }
+        if ($int2 = 1) {
+            return(58, 1865, "Members: Pitta bread");
+        }
+        if ($int2 = 2) {
+            return(-1, 7620, "1. Pick some grain and take it to a windmill to make flour.");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "2. Use a pot to collect the flour you have made.");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "3. Fill a bucket or jug with water from a sink or fountain.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "4. Mix the flour and water to make some bread dough.");
+        }
+        if ($int2 = 6) {
+            return(-1, 7620, "5. Cook the dough by using it with a stove.");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(10, 2325, "Redberry pie");
+        }
+        if ($int2 = 1) {
+            return(20, 2327, "Meat pie");
+        }
+        if ($int2 = 2) {
+            return(29, 7170, "Members: Mud pie");
+        }
+        if ($int2 = 3) {
+            return(30, 2323, "Apple pie");
+        }
+        if ($int2 = 4) {
+            return(34, 7178, "Members: Garden pie");
+        }
+        if ($int2 = 5) {
+            return(47, 7188, "Members: Fish pie");
+        }
+        if ($int2 = 6) {
+            return(70, 7198, "Members: Admiral pie");
+        }
+        if ($int2 = 7) {
+            return(85, 7208, "Members: Wild pie");
+        }
+        if ($int2 = 8) {
+            return(95, 7218, "Members: Summer pie");
+        }
+        if ($int2 = 9) {
+            return(-1, 7620, "To make a pie:");
+        }
+        if ($int2 = 10) {
+            return(-1, 7620, "1. Mix flour and water to make pastry dough.");
+        }
+        if ($int2 = 11) {
+            return(-1, 7620, "2. Place the dough in an empty pie dish.");
+        }
+        if ($int2 = 12) {
+            return(-1, 7620, "3. Use your choice of filling with the empty pie (refer to pie recipe book).");
+        }
+        if ($int2 = 13) {
+            return(-1, 7620, "4. Cook the pie by using it with a stove.");
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(25, 2003, "Stew");
+        }
+        if ($int2 = 1) {
+            return(60, 2011, "Members: Curry");
+        }
+        if ($int2 = 2) {
+            return(-1, 7620, "To make stew:");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "1. Obtain a bowl and fill it with water from a sink or fountain.");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "2. Pick a potato and place it in the bowl.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "3. Cook some meat and place it in the bowl.");
+        }
+        if ($int2 = 6) {
+            return(-1, 7620, "4. Cook the stew by using it with a stove or fire.");
+        }
+        if ($int2 = 7) {
+            return(-1, 7620, join("After completing Evil Dave's miniquest", "<br>", "from Recipe for Disaster, I can add", "<br>", "spices to cooked stew."));
+        }
+        if ($int2 = 8) {
+            return(-1, 7620, "To make curry: make uncooked stew as above. Before cooking, add some spices or 3 curry leaves.");
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(35, 2289, "Plain pizza");
+        }
+        if ($int2 = 1) {
+            return(45, 2293, "Meat pizza");
+        }
+        if ($int2 = 2) {
+            return(55, 2297, "Anchovy pizza");
+        }
+        if ($int2 = 3) {
+            return(65, 2301, "Members: Pineapple pizza");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "To make a pizza:");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "1. Mix flour and water to make a pizza base.");
+        }
+        if ($int2 = 6) {
+            return(-1, 7620, "2. Add a tomato to the pizza.");
+        }
+        if ($int2 = 7) {
+            return(-1, 7620, "3. Add some cheese to the pizza.");
+        }
+        if ($int2 = 8) {
+            return(-1, 7620, "4. Cook the pizza by using it with a stove.");
+        }
+        if ($int2 = 9) {
+            return(-1, 7620, "5. Add your choice of topping to the pizza.");
+        }
+    }
+    if ($int1 = 5) {
+        if ($int2 = 0) {
+            return(40, 1891, "Cake");
+        }
+        if ($int2 = 1) {
+            return(50, 1897, "Chocolate cake");
+        }
+        if ($int2 = 2) {
+            return(-1, 7620, "To make a cake:");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "1. Mix flour, eggs and milk together in a cake tin.");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "2. Cook the cake by using it with a stove.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "3. Optional: Buy some chocolate and add it to the cake to make a chocolate cake.");
+        }
+    }
+    if ($int1 = 6) {
+        if ($int2 = 0) {
+            return(35, 1993, "Wine");
+        }
+        if ($int2 = 1) {
+            return(-1, 7620, "To make wine:");
+        }
+        if ($int2 = 2) {
+            return(-1, 7620, "1. Fill a jug with water.");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "2. Use grapes with the jug of water.");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "3. Wait until the wine ferments.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, join("Wine will ferment when left in", "<br>", "your inventory or the bank."));
+        }
+    }
+    if ($int1 = 7) {
+        if ($int2 = 0) {
+            return(20, 4242, "Nettle tea");
+        }
+        if ($int2 = 1) {
+            return(-1, 7620, "To make nettle tea:");
+        }
+        if ($int2 = 2) {
+            return(-1, 7620, "1. Fill a bowl with water.");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "2. Put some picked nettles into the bowl of water.");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "3. Boil the nettle-water by using it with a range or a fire.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "4. Use the bowl of nettle tea with a cup.");
+        }
+        if ($int2 = 6) {
+            return(-1, 7620, "5. If you take milk, use a bucket of milk on the nettle tea.");
+        }
+    }
+    if ($int1 = 8) {
+        if ($int2 = 0) {
+            return(14, 5763, join("Cider", "<br>", "4 Apple mush"));
+        }
+        if ($int2 = 1) {
+            return(19, 1913, join("Dwarven Stout", "<br>", "4 Hammerstone hops"));
+        }
+        if ($int2 = 2) {
+            return(24, 1905, join("Asgarnian Ale", "<br>", "4 Asgarnian hops"));
+        }
+        if ($int2 = 3) {
+            return(29, 1909, join("Greenman's Ale", "<br>", "4 Harralander leaves"));
+        }
+        if ($int2 = 4) {
+            return(34, 1907, join("Wizard's Mind Bomb", "<br>", "4 Yanillian hops"));
+        }
+        if ($int2 = 5) {
+            return(39, 1911, join("Dragon Bitter", "<br>", "4 Krandorian hops"));
+        }
+        if ($int2 = 6) {
+            return(44, 2955, join("Moonlight Mead", "<br>", "4 Bittercap mushrooms"));
+        }
+        if ($int2 = 7) {
+            return(49, 5751, join("Axeman's Folly", "<br>", "1 Oak root"));
+        }
+        if ($int2 = 8) {
+            return(54, 5755, join("Chef's Delight", "<br>", "4 Portions of chocolate dust"));
+        }
+        if ($int2 = 9) {
+            return(59, 5759, join("Slayer's Respite", "<br>", "4 Wildblood hops"));
+        }
+    }
+    if ($int1 = 9) {
+        if ($int2 = 0) {
+            return(7, 6701, "Baked potato");
+        }
+        if ($int2 = 1) {
+            return(9, 7072, "Spicy sauce (topping ingredient)");
+        }
+        if ($int2 = 2) {
+            return(11, 7062, "Chilli con carne (topping)");
+        }
+        if ($int2 = 3) {
+            return(13, 7078, "Scrambled egg (topping ingredient)");
+        }
+        if ($int2 = 4) {
+            return(23, 7064, "Scrambled egg and tomato (topping)");
+        }
+        if ($int2 = 5) {
+            return(28, 5988, "Sweetcorn");
+        }
+        if ($int2 = 6) {
+            return(39, 6703, "Baked potato with butter");
+        }
+        if ($int2 = 7) {
+            return(41, 7054, "Baked potato with chilli con carne");
+        }
+        if ($int2 = 8) {
+            return(42, 7084, "Fried onion (topping ingredient)");
+        }
+        if ($int2 = 9) {
+            return(46, 7082, "Fried mushroom (topping ingredient)");
+        }
+        if ($int2 = 10) {
+            return(47, 6705, "Baked potato with butter and cheese");
+        }
+        if ($int2 = 11) {
+            return(51, 7056, "Baked potato with egg and tomato");
+        }
+        if ($int2 = 12) {
+            return(57, 7066, "Fried mushroom and onion (topping)");
+        }
+        if ($int2 = 13) {
+            return(64, 7058, "Baked potato with mushroom and onion");
+        }
+        if ($int2 = 14) {
+            return(67, 7068, "Tuna and sweetcorn (topping)");
+        }
+        if ($int2 = 15) {
+            return(68, 7060, "Baked potato with tuna and sweetcorn");
+        }
+        if ($int2 = 16) {
+            return(-1, 7620, "To make baked potatoes with toppings:");
+        }
+        if ($int2 = 17) {
+            return(-1, 7620, "1. Bake the potato on a range.");
+        }
+        if ($int2 = 18) {
+            return(-1, 7620, "2. Add some butter.");
+        }
+        if ($int2 = 19) {
+            return(-1, 7620, "3. If needed, combine topping ingredients by chopping them into a bowl.");
+        }
+        if ($int2 = 20) {
+            return(-1, 7620, "Ingredients for toppings:");
+        }
+        if ($int2 = 21) {
+            return(-1, 7620, "1. Chilli con carne: meat & spicy sauce (made from garlic and gnome spice)");
+        }
+        if ($int2 = 22) {
+            return(-1, 7620, "2. Egg and tomato: scrambled egg & tomato");
+        }
+        if ($int2 = 23) {
+            return(-1, 7620, "3. Mushroom and onion: fried bittercap mushroom & fried onion");
+        }
+        if ($int2 = 24) {
+            return(-1, 7620, "4. Tuna and sweetcorn: tuna & cooked sweetcorn");
+        }
+    }
+    if ($int1 = 10) {
+        if ($int2 = 0) {
+            return(21, 2130, "Cream");
+        }
+        if ($int2 = 1) {
+            return(38, 6697, "Butter");
+        }
+        if ($int2 = 2) {
+            return(48, 1985, "Cheese");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "To make dairy products:");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "1. Get a bucket of milk, a pot of cream or a pot of butter.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "2. Use the milk, cream or butter in a churn.");
+        }
+        if ($int2 = 6) {
+            return(-1, 7620, "3. Milk can be churned into cream, then into butter, then into cheese.");
+        }
+    }
+    if ($int1 = 11) {
+        if ($int2 = 0) {
+            return(6, 2084, "Fruit Blast");
+        }
+        if ($int2 = 1) {
+            return(8, 2048, "Pineapple Punch");
+        }
+        if ($int2 = 2) {
+            return(10, 2217, "Toad crunchies");
+        }
+        if ($int2 = 3) {
+            return(12, 2213, "Spicy crunchies");
+        }
+        if ($int2 = 4) {
+            return(14, 2205, "Worm crunchies");
+        }
+        if ($int2 = 5) {
+            return(16, 2209, "Chocolate chip crunchies");
+        }
+        if ($int2 = 6) {
+            return(18, 2054, "Wizard Blizzard");
+        }
+        if ($int2 = 7) {
+            return(20, 2080, "Short Green Guy (SGG)");
+        }
+        if ($int2 = 8) {
+            return(25, 2277, "Fruit batta");
+        }
+        if ($int2 = 9) {
+            return(26, 2255, "Toad batta");
+        }
+        if ($int2 = 10) {
+            return(27, 2253, "Worm batta");
+        }
+        if ($int2 = 11) {
+            return(28, 2281, "Vegetable batta");
+        }
+        if ($int2 = 12) {
+            return(29, 2259, "Cheese and tomato batta");
+        }
+        if ($int2 = 13) {
+            return(30, 2191, "Worm hole");
+        }
+        if ($int2 = 14) {
+            return(32, 2092, "Drunk Dragon");
+        }
+        if ($int2 = 15) {
+            return(33, 2074, "Chocolate Saturday");
+        }
+        if ($int2 = 16) {
+            return(35, 2195, "Vegetable ball");
+        }
+        if ($int2 = 17) {
+            return(37, 2064, "Blurberry Special");
+        }
+        if ($int2 = 18) {
+            return(40, 2187, "Tangled toads' legs");
+        }
+        if ($int2 = 19) {
+            return(42, 2185, "Chocolate bomb");
+        }
+    }
+}
+if ($int0 = 16 & $int1 = 0) {
+    if ($int2 = 0) {
+        return(1, 1511, "Normal logs");
+    }
+    if ($int2 = 1) {
+        return(1, 596, "Members: Torches");
+    }
+    if ($int2 = 2) {
+        return(1, 36, "Members: Candles");
+    }
+    if ($int2 = 3) {
+        return(1, 2862, "Members: Achey logs");
+    }
+    if ($int2 = 4) {
+        return(4, 4531, "Members: Candle lanterns");
+    }
+    if ($int2 = 5) {
+        return(5, 3438, "Members: Pyre logs");
+    }
+    if ($int2 = 6) {
+        return(12, 4524, "Members: Oil lamps");
+    }
+    if ($int2 = 7) {
+        return(15, 1521, "Oak logs");
+    }
+    if ($int2 = 8) {
+        return(20, 7225, "Members: Iron spits");
+    }
+    if ($int2 = 9) {
+        return(20, 3440, "Members: Oak pyre logs");
+    }
+    if ($int2 = 10) {
+        return(26, 4539, "Members: Oil lanterns");
+    }
+    if ($int2 = 11) {
+        return(30, 1519, "Willow logs");
+    }
+    if ($int2 = 12) {
+        return(33, 7053, "Members: Harpie bug lanterns (not a light source)");
+    }
+    if ($int2 = 13) {
+        return(35, 6333, "Members: Teak logs");
+    }
+    if ($int2 = 14) {
+        return(35, 3442, "Members: Willow pyre logs");
+    }
+    if ($int2 = 15) {
+        return(40, 6211, "Members: Teak pyre logs");
+    }
+    if ($int2 = 16) {
+        return(42, 10810, "Members: Arctic pine logs");
+    }
+    if ($int2 = 17) {
+        return(45, 1517, "Maple logs");
+    }
+    if ($int2 = 18) {
+        return(47, 10808, "Members: Arctic pine pyre logs");
+    }
+    if ($int2 = 19) {
+        return(49, 4550, "Members: Bullseye lanterns");
+    }
+    if ($int2 = 20) {
+        return(49, 4702, "Members: Sapphire lanterns");
+    }
+    if ($int2 = 21) {
+        return(49, 9065, "Members: Emerald lanterns");
+    }
+    if ($int2 = 22) {
+        return(50, 6332, "Members: Mahogany logs");
+    }
+    if ($int2 = 23) {
+        return(50, 3444, "Members: Maple pyre logs");
+    }
+    if ($int2 = 24) {
+        return(52, 10973, "Members: Replace Dorgeshuun light orbs");
+    }
+    if ($int2 = 25) {
+        return(55, 6213, "Members: Mahogany pyre logs");
+    }
+    if ($int2 = 26) {
+        return(60, 1515, "Yew logs");
+    }
+    if ($int2 = 27) {
+        return(65, 5013, "Members: Cave goblin mining helmets");
+    }
+    if ($int2 = 28) {
+        return(65, 3446, "Members: Yew pyre logs");
+    }
+    if ($int2 = 29) {
+        return(75, 1513, "Members: Magic logs");
+    }
+    if ($int2 = 30) {
+        return(80, 3448, "Members: Magic pyre logs");
+    }
+}
+if ($int0 = 17) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 1511, "Normal trees");
+        }
+        if ($int2 = 1) {
+            return(1, 2862, "Members: Achey trees");
+        }
+        if ($int2 = 2) {
+            return(10, 6281, "Members: Light jungle");
+        }
+        if ($int2 = 3) {
+            return(15, 1521, "Oak trees");
+        }
+        if ($int2 = 4) {
+            return(20, 6283, "Members: Medium jungle");
+        }
+        if ($int2 = 5) {
+            return(30, 1519, "Willow trees");
+        }
+        if ($int2 = 6) {
+            return(35, 6285, "Members: Dense jungle");
+        }
+        if ($int2 = 7) {
+            return(35, 6333, "Members: Teak trees");
+        }
+        if ($int2 = 8) {
+            return(45, 1517, "Members: Maple trees");
+        }
+        if ($int2 = 9) {
+            return(45, 3239, "Members: Hollow trees");
+        }
+        if ($int2 = 10) {
+            return(50, 6332, "Members: Mahogany trees");
+        }
+        if ($int2 = 11) {
+            return(54, 10810, "Members: Arctic pine trees");
+        }
+        if ($int2 = 12) {
+            return(60, 1515, "Yew trees");
+        }
+        if ($int2 = 13) {
+            return(75, 1513, "Members: Magic trees");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 1351, "Bronze axe");
+        }
+        if ($int2 = 1) {
+            return(1, 1349, "Iron axe");
+        }
+        if ($int2 = 2) {
+            return(6, 1353, "Steel axe");
+        }
+        if ($int2 = 3) {
+            return(6, 1361, "Black axe");
+        }
+        if ($int2 = 4) {
+            return(21, 1355, "Mithril axe");
+        }
+        if ($int2 = 5) {
+            return(31, 1357, "Adamant axe");
+        }
+        if ($int2 = 6) {
+            return(41, 1359, "Rune axe");
+        }
+        if ($int2 = 7) {
+            return(61, 6739, "Members: Dragon axe");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(12, 7414, "Log canoe");
+        }
+        if ($int2 = 1) {
+            return(27, 7414, "Dugout canoe");
+        }
+        if ($int2 = 2) {
+            return(42, 7414, "Stable dugout canoe");
+        }
+        if ($int2 = 3) {
+            return(56, 10826, "Fremennik round shield");
+        }
+        if ($int2 = 4) {
+            return(56, 10812, "Split arctic pine logs");
+        }
+        if ($int2 = 5) {
+            return(57, 7414, "Waka canoe");
+        }
+    }
+}
+if ($int0 = 18) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 556, "Air runes");
+        }
+        if ($int2 = 1) {
+            return(2, 558, "Mind runes");
+        }
+        if ($int2 = 2) {
+            return(5, 555, "Water runes");
+        }
+        if ($int2 = 3) {
+            return(6, 4695, "Members: Mist runes");
+        }
+        if ($int2 = 4) {
+            return(9, 557, "Earth runes");
+        }
+        if ($int2 = 5) {
+            return(10, 4696, "Members: Dust runes");
+        }
+        if ($int2 = 6) {
+            return(13, 4698, "Members: Mud runes");
+        }
+        if ($int2 = 7) {
+            return(14, 554, "Fire runes");
+        }
+        if ($int2 = 8) {
+            return(15, 4697, "Members: Smoke runes");
+        }
+        if ($int2 = 9) {
+            return(19, 4694, "Members: Steam runes");
+        }
+        if ($int2 = 10) {
+            return(20, 559, "Body runes");
+        }
+        if ($int2 = 11) {
+            return(23, 4699, "Members: Lava runes");
+        }
+        if ($int2 = 12) {
+            return(27, 564, "Members: Cosmic runes");
+        }
+        if ($int2 = 13) {
+            return(35, 562, "Members: Chaos runes");
+        }
+        if ($int2 = 14) {
+            return(40, 9075, "Members: Astral runes");
+        }
+        if ($int2 = 15) {
+            return(44, 561, "Members: Nature runes");
+        }
+        if ($int2 = 16) {
+            return(54, 563, "Members: Law runes");
+        }
+        if ($int2 = 17) {
+            return(65, 560, "Members: Death runes");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(-1, 7620, "As your Runecrafting skill develops, you will be able to craft multiple runes from one piece of essence. You only receive experience for each piece of essence crafted, not each rune crafted.");
+        }
+        if ($int2 = 1) {
+            return(11, 556, "2 Air runes per essence");
+        }
+        if ($int2 = 2) {
+            return(14, 558, "2 Mind runes per essence");
+        }
+        if ($int2 = 3) {
+            return(19, 555, "2 Water runes per essence");
+        }
+        if ($int2 = 4) {
+            return(22, 556, "3 Air runes per essence");
+        }
+        if ($int2 = 5) {
+            return(26, 557, "2 Earth runes per essence");
+        }
+        if ($int2 = 6) {
+            return(28, 558, "3 Mind runes per essence");
+        }
+        if ($int2 = 7) {
+            return(33, 556, "4 Air runes per essence");
+        }
+        if ($int2 = 8) {
+            return(35, 554, "2 Fire runes per essence");
+        }
+        if ($int2 = 9) {
+            return(38, 555, "3 Water runes per essence");
+        }
+        if ($int2 = 10) {
+            return(42, 558, "4 Mind runes per essence");
+        }
+        if ($int2 = 11) {
+            return(44, 556, "5 Air runes per essence");
+        }
+        if ($int2 = 12) {
+            return(46, 559, "2 Body runes per essence");
+        }
+        if ($int2 = 13) {
+            return(52, 557, "3 Earth runes per essence");
+        }
+        if ($int2 = 14) {
+            return(55, 556, "6 Air runes per essence");
+        }
+        if ($int2 = 15) {
+            return(56, 558, "5 Mind runes per essence");
+        }
+        if ($int2 = 16) {
+            return(57, 555, "4 Water runes per essence");
+        }
+        if ($int2 = 17) {
+            return(59, 564, "Members: 2 Cosmic runes per essence");
+        }
+        if ($int2 = 18) {
+            return(66, 556, "7 Air runes per essence");
+        }
+        if ($int2 = 19) {
+            return(70, 558, "6 Mind runes per essence");
+        }
+        if ($int2 = 20) {
+            return(70, 554, "3 Fire runes per essence");
+        }
+        if ($int2 = 21) {
+            return(74, 562, "Members: 2 Chaos runes per essence");
+        }
+        if ($int2 = 22) {
+            return(76, 555, "5 Water runes per essence");
+        }
+        if ($int2 = 23) {
+            return(77, 556, "8 Air runes per essence");
+        }
+        if ($int2 = 24) {
+            return(78, 557, "4 Earth runes per essence");
+        }
+        if ($int2 = 25) {
+            return(82, 9075, "Members: 2 Astral runes per essence");
+        }
+        if ($int2 = 26) {
+            return(84, 558, "7 Mind runes per essence");
+        }
+        if ($int2 = 27) {
+            return(88, 556, "9 Air runes per essence");
+        }
+        if ($int2 = 28) {
+            return(91, 561, "Members: 2 Nature runes per essence");
+        }
+        if ($int2 = 29) {
+            return(92, 559, "3 Body runes per essence");
+        }
+        if ($int2 = 30) {
+            return(95, 555, "6 Water runes per essence");
+        }
+        if ($int2 = 31) {
+            return(98, 558, "8 Mind runes per essence");
+        }
+        if ($int2 = 32) {
+            return(99, 556, "10 Air runes per essence");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(-1, 7620, "Pouches come in various sizes which allow you to carry extra essence in them. As you use the pouches they degrade and store less essence, just speak to the Dark Mage at the centre of the Abyss to restore them.");
+        }
+        if ($int2 = 1) {
+            return(1, 5509, "Small pouch: Holds 3 extra essence");
+        }
+        if ($int2 = 2) {
+            return(25, 5510, "Medium pouch: Holds 6 extra essence");
+        }
+        if ($int2 = 3) {
+            return(50, 5512, "Large pouch: Holds 9 extra essence");
+        }
+        if ($int2 = 4) {
+            return(75, 5514, "Giant pouch: Holds 12 extra essence");
+        }
+    }
+}
+if ($int0 = 19) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(5, 4133, "Crawling hands");
+        }
+        if ($int2 = 1) {
+            return(7, 4521, "Cave bugs");
+        }
+        if ($int2 = 2) {
+            return(10, 4134, "Cave crawlers");
+        }
+        if ($int2 = 3) {
+            return(15, 4135, "Banshees");
+        }
+        if ($int2 = 4) {
+            return(17, 4520, "Cave slime");
+        }
+        if ($int2 = 5) {
+            return(20, 4136, "Rockslugs");
+        }
+        if ($int2 = 6) {
+            return(22, 6695, "Desert lizards");
+        }
+        if ($int2 = 7) {
+            return(25, 4137, "Cockatrice");
+        }
+        if ($int2 = 8) {
+            return(30, 4138, "Pyrefiends");
+        }
+        if ($int2 = 9) {
+            return(32, 6661, "Mogres");
+        }
+        if ($int2 = 10) {
+            return(33, 7050, "Harpie bug swarms");
+        }
+        if ($int2 = 11) {
+            return(35, 4519, "Wall beasts");
+        }
+        if ($int2 = 12) {
+            return(37, 7160, "Killerwatts");
+        }
+        if ($int2 = 13) {
+            return(39, 10997, "Molanisks");
+        }
+        if ($int2 = 14) {
+            return(40, 4139, "Basilisks");
+        }
+        if ($int2 = 15) {
+            return(40, 10591, "Terror dogs");
+        }
+        if ($int2 = 16) {
+            return(42, 6709, "Fever spiders");
+        }
+        if ($int2 = 17) {
+            return(45, 4140, "Infernal mages");
+        }
+        if ($int2 = 18) {
+            return(47, 11047, "Brine rats");
+        }
+        if ($int2 = 19) {
+            return(50, 4141, "Bloodvelds");
+        }
+        if ($int2 = 20) {
+            return(52, 4142, "Jellies");
+        }
+        if ($int2 = 21) {
+            return(55, 4143, "Turoth");
+        }
+        if ($int2 = 22) {
+            return(57, 7420, "Mutated zygomites");
+        }
+        if ($int2 = 23) {
+            return(58, 8900, "Cave horrors");
+        }
+        if ($int2 = 24) {
+            return(60, 4144, "Aberrant spectres");
+        }
+        if ($int2 = 25) {
+            return(65, 4145, "Dust devils");
+        }
+        if ($int2 = 26) {
+            return(70, 4146, "Kurask");
+        }
+        if ($int2 = 27) {
+            return(72, 6811, "Skeletal wyverns");
+        }
+        if ($int2 = 28) {
+            return(75, 4147, "Gargoyles");
+        }
+        if ($int2 = 29) {
+            return(80, 4148, "Nechryael");
+        }
+        if ($int2 = 30) {
+            return(85, 4149, "Abyssal demons");
+        }
+        if ($int2 = 31) {
+            return(90, 6637, "Dark beasts");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 4551, join("Spiny helmet", "<br>", " (with 5 Defence)"));
+        }
+        if ($int2 = 1) {
+            return(1, 4162, "Rock hammer");
+        }
+        if ($int2 = 2) {
+            return(10, 4164, "Facemask");
+        }
+        if ($int2 = 3) {
+            return(15, 4166, "Earmuffs");
+        }
+        if ($int2 = 4) {
+            return(25, 4156, join("Mirror shield", "<br>", " (with 20 Defence)"));
+        }
+        if ($int2 = 5) {
+            return(32, 6660, "Fishing explosive");
+        }
+        if ($int2 = 6) {
+            return(33, 7053, join("Harpie bug lantern", "<br>", " (not a light source)"));
+        }
+        if ($int2 = 7) {
+            return(35, 8923, "Witchwood icon");
+        }
+        if ($int2 = 8) {
+            return(37, 7159, "Insulated boots");
+        }
+        if ($int2 = 9) {
+            return(39, 10952, "Slayer bell");
+        }
+        if ($int2 = 10) {
+            return(42, 6720, "Slayer gloves");
+        }
+        if ($int2 = 11) {
+            return(55, 4158, join("Leaf-bladed spear", "<br>", " (with 50 Attack)"));
+        }
+        if ($int2 = 12) {
+            return(55, 4150, join("Broad arrows", "<br>", " (with 50 Ranged)"));
+        }
+        if ($int2 = 13) {
+            return(55, 4170, join("Slayer's staff", "<br>", " (with 50 Magic)"));
+        }
+        if ($int2 = 14) {
+            return(57, 7421, "Fungicide spray");
+        }
+        if ($int2 = 15) {
+            return(60, 4168, "Nose peg");
+        }
+    }
+}
+if ($int0 = 20) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 1942, "Potatoes");
+        }
+        if ($int2 = 1) {
+            return(5, 1957, "Onions");
+        }
+        if ($int2 = 2) {
+            return(7, 1965, "Cabbages");
+        }
+        if ($int2 = 3) {
+            return(12, 1982, "Tomatoes");
+        }
+        if ($int2 = 4) {
+            return(20, 5986, "Sweetcorn");
+        }
+        if ($int2 = 5) {
+            return(31, 5504, "Strawberries");
+        }
+        if ($int2 = 6) {
+            return(47, 5982, "Watermelons");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(3, 6006, "Barley");
+        }
+        if ($int2 = 1) {
+            return(4, 5994, "Hammerstone hops");
+        }
+        if ($int2 = 2) {
+            return(8, 5996, "Asgarnian hops");
+        }
+        if ($int2 = 3) {
+            return(13, 5931, "Jute plants");
+        }
+        if ($int2 = 4) {
+            return(16, 5998, "Yanillian hops");
+        }
+        if ($int2 = 5) {
+            return(21, 6000, "Krandorian hops");
+        }
+        if ($int2 = 6) {
+            return(28, 6002, "Wildblood hops");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(15, 1521, "Oak trees");
+        }
+        if ($int2 = 1) {
+            return(30, 1519, "Willow trees");
+        }
+        if ($int2 = 2) {
+            return(45, 1517, "Maple trees");
+        }
+        if ($int2 = 3) {
+            return(60, 1515, "Yew trees");
+        }
+        if ($int2 = 4) {
+            return(75, 1513, "Magic trees");
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(27, 1955, "Apple trees");
+        }
+        if ($int2 = 1) {
+            return(33, 1963, "Banana trees");
+        }
+        if ($int2 = 2) {
+            return(39, 2108, "Orange trees");
+        }
+        if ($int2 = 3) {
+            return(42, 5970, "Curry trees");
+        }
+        if ($int2 = 4) {
+            return(51, 2114, "Pineapple plants");
+        }
+        if ($int2 = 5) {
+            return(57, 5972, "Papaya trees");
+        }
+        if ($int2 = 6) {
+            return(68, 5974, "Palm trees");
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(10, 1951, "Redberry bushes");
+        }
+        if ($int2 = 1) {
+            return(22, 753, "Cadavaberry bushes");
+        }
+        if ($int2 = 2) {
+            return(36, 2126, "Dwellberry bushes");
+        }
+        if ($int2 = 3) {
+            return(48, 247, "Jangerberry bushes");
+        }
+        if ($int2 = 4) {
+            return(59, 239, "White berry bushes");
+        }
+        if ($int2 = 5) {
+            return(70, 6018, "Poison ivy bushes");
+        }
+    }
+    if ($int1 = 5) {
+        if ($int2 = 0) {
+            return(2, 6010, join("Marigolds", "<br>", "Protects onions, tomatoes and potatoes"));
+        }
+        if ($int2 = 1) {
+            return(11, 6014, join("Rosemary", "<br>", "Protects cabbages from disease"));
+        }
+        if ($int2 = 2) {
+            return(23, 6059, join("Make and place a scarecrow ", "<br>", "Protects sweetcorn from birds"));
+        }
+        if ($int2 = 3) {
+            return(24, 6012, join("Nasturtiums", "<br>", "Protects watermelons from disease"));
+        }
+        if ($int2 = 4) {
+            return(25, 5738, "Woad");
+        }
+        if ($int2 = 5) {
+            return(26, 225, "Limpwurt plants");
+        }
+    }
+    if ($int1 = 6) {
+        if ($int2 = 0) {
+            return(9, 249, "Guam leaf");
+        }
+        if ($int2 = 1) {
+            return(14, 251, "Marrentill");
+        }
+        if ($int2 = 2) {
+            return(19, 253, "Tarromin");
+        }
+        if ($int2 = 3) {
+            return(26, 255, "Harralander");
+        }
+        if ($int2 = 4) {
+            return(29, 3261, join("Goutweed", "<br>", "Must have completed Eadgar's Ruse"));
+        }
+        if ($int2 = 5) {
+            return(32, 257, "Ranarr weed");
+        }
+        if ($int2 = 6) {
+            return(38, 2998, "Toadflax");
+        }
+        if ($int2 = 7) {
+            return(44, 259, "Irit leaf");
+        }
+        if ($int2 = 8) {
+            return(50, 261, "Avantoe");
+        }
+        if ($int2 = 9) {
+            return(56, 263, "Kwuarm");
+        }
+        if ($int2 = 10) {
+            return(62, 3000, "Snapdragon");
+        }
+        if ($int2 = 11) {
+            return(67, 265, "Cadantine");
+        }
+        if ($int2 = 12) {
+            return(73, 2481, "Lantadyme");
+        }
+        if ($int2 = 13) {
+            return(79, 267, "Dwarf weed");
+        }
+        if ($int2 = 14) {
+            return(85, 269, "Torstol");
+        }
+    }
+    if ($int1 = 7) {
+        if ($int2 = 0) {
+            return(53, 6004, "Bittercap mushrooms");
+        }
+        if ($int2 = 1) {
+            return(55, 6016, "Cacti");
+        }
+        if ($int2 = 2) {
+            return(63, 2398, "Belladonna");
+        }
+        if ($int2 = 3) {
+            return(72, 5980, "Calquat trees");
+        }
+        if ($int2 = 4) {
+            return(83, 6063, join("Spirit trees", "<br>", "(only 1 planted at a time)"));
+        }
+    }
+    if ($int1 = 8) {
+        if ($int2 = 0) {
+            return(23, 6059, "Able to make and place a scarecrow");
+        }
+        if ($int2 = 1) {
+            return(-1, 7620, "Scarecrows ward sweetcorn from being attacked by birds, which helps to prevent disease.");
+        }
+        if ($int2 = 2) {
+            return(-1, 7620, "How to make a scarecrow:");
+        }
+        if ($int2 = 3) {
+            return(-1, 7620, "1. Fill an empty sack with straw from a bale.");
+        }
+        if ($int2 = 4) {
+            return(-1, 7620, "2. Drive the hay sack onto a bronze spear.");
+        }
+        if ($int2 = 5) {
+            return(-1, 7620, "3. Place a watermelon on top as a head.");
+        }
+        if ($int2 = 6) {
+            return(-1, 7620, "4. Stand the scarecrow in an empty flower patch.");
+        }
+    }
+}
+if ($int0 = 21) {
+    return(~script_3($int1, $int2));
+}
+if ($int0 = 22) {
+    if ($int1 = 0) {
+        if ($int2 = 0) {
+            return(1, 9953, "Polar kebbits (snow)");
+        }
+        if ($int2 = 1) {
+            return(3, 9954, "Common kebbits (woodland)");
+        }
+        if ($int2 = 2) {
+            return(7, 9955, "Feldip weasels (jungle)");
+        }
+        if ($int2 = 3) {
+            return(13, 9956, "Desert devils (desert)");
+        }
+        if ($int2 = 4) {
+            return(49, 9961, "Razor-backed kebbits (woodland)");
+        }
+    }
+    if ($int1 = 1) {
+        if ($int2 = 0) {
+            return(1, 9965, "Crimson swifts (jungle)");
+        }
+        if ($int2 = 1) {
+            return(5, 9968, "Golden warblers (desert)");
+        }
+        if ($int2 = 2) {
+            return(9, 9966, "Copper longtails (woodland)");
+        }
+        if ($int2 = 3) {
+            return(11, 9967, "Cerulean twitches (snow)");
+        }
+        if ($int2 = 4) {
+            return(19, 9969, "Tropical wagtails (jungle)");
+        }
+    }
+    if ($int1 = 2) {
+        if ($int2 = 0) {
+            return(15, 9970, "Ruby harvest butterflies (woodland)");
+        }
+        if ($int2 = 1) {
+            return(17, 11238, "Baby implings");
+        }
+        if ($int2 = 2) {
+            return(22, 11240, "Young implings");
+        }
+        if ($int2 = 3) {
+            return(25, 9971, "Sapphire glacialis butterflies (snow)");
+        }
+        if ($int2 = 4) {
+            return(28, 11242, "Gourmet implings");
+        }
+        if ($int2 = 5) {
+            return(35, 9972, "Snowy knight butterflies (snow)");
+        }
+        if ($int2 = 6) {
+            return(36, 11244, "Earth implings");
+        }
+        if ($int2 = 7) {
+            return(42, 11246, "Essence implings");
+        }
+        if ($int2 = 8) {
+            return(45, 9973, "Black warlock butterflies (jungle)");
+        }
+        if ($int2 = 9) {
+            return(50, 11248, "Eclectic implings");
+        }
+        if ($int2 = 10) {
+            return(58, 11250, "Nature implings");
+        }
+        if ($int2 = 11) {
+            return(65, 11252, "Magpie implings");
+        }
+        if ($int2 = 12) {
+            return(74, 11254, "Ninja implings");
+        }
+        if ($int2 = 13) {
+            return(83, 11256, "Dragon implings");
+        }
+    }
+    if ($int1 = 3) {
+        if ($int2 = 0) {
+            return(23, 9962, join("Wild kebbits (woodland)", "<br>", "Preferred bait: Raw meat"));
+        }
+        if ($int2 = 1) {
+            return(33, 9958, join("Barb-tailed kebbits (jungle)", "<br>", "Preferred bait: Raw rainbow fish "));
+        }
+        if ($int2 = 2) {
+            return(37, 9957, join("Prickly kebbits (northern woodland)", "<br>", "Preferred bait: Barley"));
+        }
+        if ($int2 = 3) {
+            return(51, 9959, join("Sabre-toothed kebbits (snow)", "<br>", "Preferred bait: Raw meat"));
+        }
+    }
+    if ($int1 = 4) {
+        if ($int2 = 0) {
+            return(27, 10092, join("Ferrets (woodland)", "<br>", "(After Eagles' Peak quest)"));
+        }
+        if ($int2 = 1) {
+            return(53, 9976, join("Chinchompas (woodland)", "<br>", "Preferred bait: Spicy chopped tomatoes"));
+        }
+        if ($int2 = 2) {
+            return(63, 9977, join("Red chinchompas (jungle)", "<br>", "Preferred bait: Spicy minced meat"));
+        }
+    }
+    if ($int1 = 5) {
+        if ($int2 = 0) {
+            return(29, 10149, join("Swamp lizards (swamp)", "<br>", "Preferred bait: Guam tar"));
+        }
+        if ($int2 = 1) {
+            return(47, 10146, join("Orange salamanders (desert)", "<br>", "Preferred bait: Marrentill tar"));
+        }
+        if ($int2 = 2) {
+            return(59, 10147, join("Red salamanders (lava)", "<br>", "Preferred bait: Tarromin tar"));
+        }
+        if ($int2 = 3) {
+            return(67, 10148, join("Black salamanders (lava)", "<br>", "Preferred bait: Harralander tar"));
+        }
+    }
+    if ($int1 = 6) {
+        if ($int2 = 0) {
+            return(31, 10045, "Spined larupias (jungle)");
+        }
+        if ($int2 = 1) {
+            return(41, 10051, "Horned graahks (Karamja)");
+        }
+        if ($int2 = 2) {
+            return(55, 10039, "Sabre-toothed kyatts (snow)");
+        }
+    }
+    if ($int1 = 7) {
+        if ($int2 = 0) {
+            return(43, 9960, "Spotted kebbits (woodland)");
+        }
+        if ($int2 = 1) {
+            return(57, 9963, "Dark kebbits (woodland)");
+        }
+        if ($int2 = 2) {
+            return(69, 9964, "Dashing kebbits (woodland)");
+        }
+    }
+    if ($int1 = 8 & $int2 = 0) {
+        return(71, 9952, join("Imps (worldwide)", "<br>", "Preferred bait: Magical beads"));
+    }
+    if ($int1 = 9 & $int2 = 0) {
+        return(27, 9975, join("White rabbits (woodland)", "<br>", "Use a ferret to flush the rabbit out of its hole"));
+    }
+    if ($int1 = 10 & $int2 = 0) {
+        return(27, 9974, "Giant eagles(various)");
+    }
+    if ($int1 = 11) {
+        if ($int2 = 0) {
+            return(1, 9951, "Lay 1 trap at a time");
+        }
+        if ($int2 = 1) {
+            return(1, 10006, "Set a bird trap");
+        }
+        if ($int2 = 2) {
+            return(1, 10150, "Use a noose wand in tracking");
+        }
+        if ($int2 = 3) {
+            return(15, 10010, "Net butterflies");
+        }
+        if ($int2 = 4) {
+            return(20, 9951, "Lay up to 2 traps at a time");
+        }
+        if ($int2 = 5) {
+            return(23, 1511, "Set a deadfall trap (limit of 1)");
+        }
+        if ($int2 = 6) {
+            return(27, 10008, "Set a box trap");
+        }
+        if ($int2 = 7) {
+            return(27, 10031, "Set a rabbit snare");
+        }
+        if ($int2 = 8) {
+            return(29, 303, "Set a net trap");
+        }
+        if ($int2 = 9) {
+            return(31, 10029, "Set a pitfall trap");
+        }
+        if ($int2 = 10) {
+            return(39, 594, "Use smoke to mask the scent on a trap");
+        }
+        if ($int2 = 11) {
+            return(40, 9951, "Lay up to 3 traps at a time");
+        }
+        if ($int2 = 12) {
+            return(43, 10023, "Hunt with a falcon");
+        }
+        if ($int2 = 13) {
+            return(60, 9951, "Lay up to 4 traps at a time");
+        }
+        if ($int2 = 14) {
+            return(71, 10025, "Set an imp trap");
+        }
+        if ($int2 = 15) {
+            return(80, 9951, "Lay up to 5 traps at a time");
+        }
+    }
+    if ($int1 = 12) {
+        if ($int2 = 0) {
+            return(1, 10065, "Polar kebbit fur clothing (snow)");
+        }
+        if ($int2 = 1) {
+            return(1, 10053, "Common kebbit fur clothing (woodland)");
+        }
+        if ($int2 = 2) {
+            return(4, 10057, "Feldip weasel fur clothing (jungle)");
+        }
+        if ($int2 = 3) {
+            return(10, 10061, "Desert devil fur clothing (desert)");
+        }
+        if ($int2 = 4) {
+            return(24, 10132, "Lucky rabbit's foot");
+        }
+        if ($int2 = 5) {
+            return(28, 10045, "Larupia fur clothing");
+        }
+        if ($int2 = 6) {
+            return(38, 10051, "Graahk hide clothing");
+        }
+        if ($int2 = 7) {
+            return(40, 10069, "Spotted capes");
+        }
+        if ($int2 = 8) {
+            return(52, 10039, "Kyatt fur clothing");
+        }
+        if ($int2 = 9) {
+            return(54, 10075, "Gloves of silence");
+        }
+        if ($int2 = 10) {
+            return(66, 10071, "Spottier capes");
+        }
+    }
+}
+return(0, -1, "");

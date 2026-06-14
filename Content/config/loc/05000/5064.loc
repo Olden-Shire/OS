@@ -1,0 +1,6 @@
+// loc 5064
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 0
+models_only = 5018

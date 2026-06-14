@@ -1,0 +1,10 @@
+// loc 11932
+op1 = Mine
+op2 = Prospect
+op3 = hidden
+mapscene = 25
+ambient = 10
+nonblockrange = true
+recol = 37/7580 24/10508
+models_only = 3195
+name = Rocks

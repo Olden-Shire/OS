@@ -1,0 +1,12 @@
+// obj 11495
+model = obj_fish_vial_11427
+members = true
+cost = 120
+yof2d = -1
+zoom2d = 550
+yan2d = 1812
+xan2d = 81
+iop1 = Drink
+iop4 = Empty
+recol = 6953/62131 7077/62127 7073/62251
+name = Sup. restore mix(1)

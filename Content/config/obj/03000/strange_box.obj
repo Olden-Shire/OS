@@ -1,0 +1,10 @@
+// obj 3062
+model = obj_strange_box
+xof2d = 15
+yof2d = -126
+zoom2d = 3840
+yan2d = 1684
+xan2d = 108
+iop1 = Open
+stackable = true
+name = Strange box

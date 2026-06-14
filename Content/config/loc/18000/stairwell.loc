@@ -1,0 +1,8 @@
+// loc 18597
+active = 1
+width = 2
+length = 2
+op1 = Climb-down
+mapscene = 7
+models_only = 18710 18709
+name = Stairwell

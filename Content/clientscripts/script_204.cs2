@@ -1,0 +1,9 @@
+[clientscript,script_204](int $int0, int $int1)()
+def_int $int2;
+
+$int2 = calc($int1 - 1);
+friend_setrank(friend_getname($int0), $int2);
+if (cc_find(38666258, calc($int0 + $int0 + 1)) = 1) {
+    cc_settext(~script_203($int2));
+}
+return;

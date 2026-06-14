@@ -1,0 +1,9 @@
+// loc 24762
+active = 0
+contrast = 10
+ambient = 20
+blockwalk = true
+width = 7
+length = 4
+resizey = 105
+models_only = 26051 26052 26054

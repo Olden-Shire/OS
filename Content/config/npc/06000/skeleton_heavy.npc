@@ -1,0 +1,7 @@
+// npc 6106
+walkanims = 2562, 2562, 2562, 2562
+readyanim = 2561
+op2 = Attack
+vislevel = 132
+name = Skeleton heavy
+models = 26628 26637 26641 23932 26623 11793

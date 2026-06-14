@@ -1,0 +1,15 @@
+// obj 11377
+members = true
+cost = 20800
+model = obj_bronze_hasta_11367
+iop2 = Wield
+manwear = obj_bronze_hasta_11367_wear, 0
+womanwear = obj_bronze_hasta_11367_wear, 6
+xof2d = 5
+yof2d = -4
+zoom2d = 1762
+yan2d = 1923
+zan2d = 318
+xan2d = 2047
+recol = 72/36021 59/36137 33/36252 5652/2576
+name = Rune hasta

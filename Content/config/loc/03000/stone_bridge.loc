@@ -1,0 +1,10 @@
+// loc 3276
+sharelight = true
+active = 1
+op1 = Cross
+mapscene = 43
+blockwalk = true
+nonblockrange = true
+recol = 6689/7952
+models = 3156/22
+name = Stone bridge

@@ -1,0 +1,11 @@
+// loc 25669
+sharelight = true
+hillskew = true
+mapscene = 9
+ambient = 15
+resizey = 196
+contrast = 15
+ambient = 20
+recol = 7442/6550
+models_only = 13167
+name = Hedge

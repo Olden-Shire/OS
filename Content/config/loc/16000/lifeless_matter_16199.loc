@@ -1,0 +1,7 @@
+// loc 16199
+resizex = 64
+resizey = 64
+resizez = 64
+hillskew = true
+models_only = 16161
+name = Lifeless Matter

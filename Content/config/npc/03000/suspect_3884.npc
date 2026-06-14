@@ -1,0 +1,8 @@
+// npc 3884
+size = 1
+readyanim = 3999
+vislevel = 0
+walkanim = 3999
+recol = 25238/939 8741/454 9529/454 107/218 908/218 6798/2997
+name = Suspect
+models = 399 11360 332 10706 429 358 15009 14945

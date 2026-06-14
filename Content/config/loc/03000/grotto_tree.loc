@@ -1,0 +1,8 @@
+// loc 3517
+length = 3
+width = 3
+sharelight = true
+op1 = Look-at
+op2 = Search
+models_only = 3570
+name = Grotto tree

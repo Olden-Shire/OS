@@ -1,0 +1,9 @@
+// loc 12640
+hillskew = true
+mirror = true
+ambient = 35
+sharelight = true
+active = 0
+resizey = 32
+recol = 0/6798
+models_only = 13863

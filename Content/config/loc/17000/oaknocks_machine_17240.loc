@@ -1,0 +1,10 @@
+// loc 17240
+active = 1
+length = 2
+ambient = 10
+blockwalk = true
+anim = 4560
+op1 = Repair
+offsety = -30
+models_only = 17083 17085
+name = Oaknock's machine

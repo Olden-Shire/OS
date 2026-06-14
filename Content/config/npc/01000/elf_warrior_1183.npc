@@ -1,0 +1,8 @@
+// npc 1183
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op2 = Attack
+vislevel = 90
+name = Elf warrior
+models = 4014 4018 4022 4024 4044

@@ -1,0 +1,8 @@
+// npc 1173
+size = 3
+walkanim = 1197
+readyanim = 1198
+nominimap = true
+vislevel = 83
+name = The Shaikahan
+models = 3879

@@ -1,0 +1,9 @@
+// npc 3393
+alwaysontop = true
+vislevel = 0
+walkanim = 3396
+readyanim = 3396
+recol = 6466/127 5541/41282 6457/127 8844/6478 6798/54397
+name = Lumbridge Guide
+models = 214 250 5674 5668 5672 7123 12799
+headmodels = 52 82

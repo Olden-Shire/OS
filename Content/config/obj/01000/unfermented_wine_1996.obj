@@ -1,0 +1,11 @@
+// obj 1996
+cost = 10
+model = obj_wine_of_zamorak_245
+xof2d = 1
+yof2d = 100
+zoom2d = 600
+yan2d = 84
+xan2d = 260
+stackable = true
+recol = 127/701
+name = Unfermented wine

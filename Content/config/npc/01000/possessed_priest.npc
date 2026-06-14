@@ -1,0 +1,11 @@
+// npc 1991
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 91
+recol = 41/5442 49054/926 7700/926 25238/9019 4550/6558 5442/6558
+name = Possessed Priest
+models = 6130 248 6134 165 6135 6133 185
+headmodels = 6461 80 6128 6462

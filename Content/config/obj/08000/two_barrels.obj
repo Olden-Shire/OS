@@ -1,0 +1,11 @@
+// obj 8861
+model = obj_two_barrels
+xof2d = 2
+yof2d = 99
+zoom2d = 1488
+yan2d = 2045
+xan2d = 12
+members = true
+manwear = obj_two_barrels, 0
+womanwear = obj_two_barrels, 6
+name = Two barrels

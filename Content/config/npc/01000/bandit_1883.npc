@@ -1,0 +1,12 @@
+// npc 1883
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 41
+recol = 8741/10351 5555/127
+name = Bandit
+models = 6086 6087 292 173 6090 181 176 6099 523
+headmodels = 6081 6080 53

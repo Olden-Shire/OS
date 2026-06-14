@@ -1,0 +1,10 @@
+// obj 5899
+model = obj_calquat_keg_5769
+yof2d = 6
+zoom2d = 1190
+yan2d = 4
+xan2d = 116
+ambient = 15
+members = true
+iop1 = Drink
+name = Axeman's folly(m1)

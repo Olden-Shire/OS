@@ -1,0 +1,11 @@
+// npc 813
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 43072/4550 8741/8 25238/7070
+name = Gossip
+models = 217 249 292 151 176 254 181
+headmodels = 55 81

@@ -1,0 +1,6 @@
+// loc 23529
+hillskew = true
+active = 1
+nonsolid = true
+models = 12129/22
+name = Hole

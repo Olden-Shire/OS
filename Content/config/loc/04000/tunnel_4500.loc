@@ -1,0 +1,9 @@
+// loc 4500
+width = 3
+length = 2
+ambient = 60
+contrast = 60
+sharelight = true
+op1 = Enter
+models_only = 4459
+name = Tunnel

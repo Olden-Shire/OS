@@ -1,0 +1,6 @@
+// loc 9103
+active = 1
+op1 = Repair
+anim = 2451
+models_only = 9070
+name = Drive belt

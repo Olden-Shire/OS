@@ -1,0 +1,8 @@
+// loc 21800
+hillskew = true
+sharelight = true
+active = 1
+ambient = 10
+op1 = Enter
+models = 22326/0
+name = Crack

@@ -1,0 +1,10 @@
+// obj 769
+model = obj_certificate_769
+xof2d = -3
+yof2d = -10
+zoom2d = 2020
+yan2d = 198
+xan2d = 279
+iop1 = Read
+iop5 = Destroy
+name = Certificate

@@ -1,0 +1,12 @@
+// obj 11015
+model = obj_chicken_head_11015
+yof2d = -3
+zoom2d = 1049
+yan2d = 2047
+zan2d = 1950
+xan2d = 609
+contrast = 15
+ambient = 15
+manwear = obj_chicken_head_11015_man, 0
+womanwear = obj_chicken_head_11015_woman, 0
+name = Chicken head

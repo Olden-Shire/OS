@@ -1,0 +1,12 @@
+// npc 2156
+resizeh = 130
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 61/90 8485/8631 5784/9001 4550/3534
+name = Randivor
+models = 2973 7072 7061 2978 7046 2985
+headmodels = 3 6997

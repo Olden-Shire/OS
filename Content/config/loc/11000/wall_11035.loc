@@ -1,0 +1,7 @@
+// loc 11035
+width = 5
+active = 1
+mirror = true
+resizey = 256
+models_only = 10909
+name = Wall

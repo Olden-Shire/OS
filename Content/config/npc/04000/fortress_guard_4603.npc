@@ -1,0 +1,11 @@
+// npc 4603
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 20
+recol = 57/5652 61/5652 25238/12 8741/12 7952/0
+name = Fortress Guard
+models = 7668 253 294 317 151 177 518 541 254 185
+headmodels = 7667 85

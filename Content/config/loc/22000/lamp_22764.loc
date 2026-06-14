@@ -1,0 +1,10 @@
+// loc 22764
+anim = 6032
+active = 1
+forcedecor = true
+ambient = 100
+contrast = 100
+blockwalk = true
+nonblockrange = true
+models_only = 23459
+name = Lamp

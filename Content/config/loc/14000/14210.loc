@@ -1,0 +1,7 @@
+// loc 14210
+hillskew = true
+ambient = 5
+noshadow = true
+blockwalk = true
+nonblockrange = true
+models = 14484/0 14485/9

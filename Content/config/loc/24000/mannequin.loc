@@ -1,0 +1,5 @@
+// loc 24147
+ambient = 30
+blockwalk = true
+models_only = 24718
+name = Mannequin

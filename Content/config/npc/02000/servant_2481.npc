@@ -1,0 +1,10 @@
+// npc 2481
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43072/4550 926/6443 4626/4550 6798/8094
+name = Servant
+models = 390 8849 351 353 443 358
+headmodels = 113

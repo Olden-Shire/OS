@@ -1,0 +1,9 @@
+// npc 2431
+op1 = Talk-to
+walkanim = 98
+readyanim = 2337
+vislevel = 0
+recol = 10347/10409 61/24854 12/8598 2578/8598
+name = Ulifed
+models = 2973 7062 2978 2980 2985 2992 8642
+headmodels = 3

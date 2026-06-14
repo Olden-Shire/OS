@@ -1,0 +1,7 @@
+// loc 22124
+blockwalk = true
+ambient = 25
+contrast = 25
+anim = 5906
+models_only = 22935
+name = Stand

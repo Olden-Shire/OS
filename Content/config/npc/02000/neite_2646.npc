@@ -1,0 +1,11 @@
+// npc 2646
+vislevel = 0
+walkanim = 2694
+readyanim = 2694
+op1 = Talk-to
+resizeh = 60
+resizev = 60
+alwaysontop = true
+name = Neite
+models = 6439 9389
+headmodels = 6437 9423

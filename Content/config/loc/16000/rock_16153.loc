@@ -1,0 +1,8 @@
+// loc 16153
+hillskew = true
+mapscene = 24
+ambient = 10
+nonblockrange = true
+recol = 10299/7580
+models_only = 15588
+name = Rock

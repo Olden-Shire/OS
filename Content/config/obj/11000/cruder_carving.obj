@@ -1,0 +1,11 @@
+// obj 11033
+model = obj_cruder_carving
+xof2d = 2
+yof2d = 6
+zoom2d = 1100
+yan2d = 40
+xan2d = 324
+members = true
+cost = 0
+iop5 = Destroy
+name = Cruder carving

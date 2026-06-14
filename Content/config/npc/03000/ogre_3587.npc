@@ -1,0 +1,9 @@
+// npc 3587
+size = 2
+walkanim = 358
+readyanim = 357
+op2 = Attack
+vislevel = 53
+recol = 10318/11714
+name = Ogre
+models = 13425 14111 14116

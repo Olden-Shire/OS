@@ -1,0 +1,13 @@
+// npc 5472
+op2 = Attack
+walkanim = 283
+readyanim = 286
+resizeh = 160
+resizev = 160
+size = 2
+alwaysontop = true
+vislevel = 122
+recol = 10279/916 10283/786 61/43117 53/43113 66/43119 14404/43109
+name = Ice Troll King
+models = 21920 21917 21923 4949
+headmodels = 21862

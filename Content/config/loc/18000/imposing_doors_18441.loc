@@ -1,0 +1,9 @@
+// loc 18441
+hillskew = true
+occlude = true
+active = 1
+width = 6
+ambient = 30
+op1 = Open
+models_only = 18381
+name = Imposing Doors

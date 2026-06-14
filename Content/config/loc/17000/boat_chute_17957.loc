@@ -1,0 +1,8 @@
+// loc 17957
+active = 1
+forcedecor = true
+hillskew = true
+op1 = Look-at
+blockwalk = true
+models = 17551/22
+name = Boat Chute

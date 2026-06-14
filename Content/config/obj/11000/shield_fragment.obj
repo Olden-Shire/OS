@@ -1,0 +1,11 @@
+// obj 11054
+model = obj_shield_fragment
+xof2d = 7
+yof2d = 9
+zoom2d = 976
+yan2d = 1715
+xan2d = 408
+contrast = 15
+ambient = 15
+members = true
+name = Shield fragment

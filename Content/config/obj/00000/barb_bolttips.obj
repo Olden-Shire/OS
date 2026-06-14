@@ -1,0 +1,11 @@
+// obj 47
+model = obj_barb_bolttips
+members = true
+stackable = true
+cost = 95
+xof2d = 1
+yof2d = 1
+zoom2d = 724
+yan2d = 332
+xan2d = 492
+name = Barb bolttips

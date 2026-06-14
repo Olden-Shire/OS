@@ -1,0 +1,12 @@
+// obj 7134
+model = obj_stripy_pirate_shirt_7110
+members = true
+manwear = obj_stripy_pirate_shirt_7110_man, 0
+womanwear = obj_stripy_pirate_shirt_7110_woman, 0
+iop2 = Wear
+yof2d = 2
+zoom2d = 1178
+xan2d = 568
+cost = 300
+recol = 127/8070 7719/5679
+name = Stripy pirate shirt

@@ -1,0 +1,11 @@
+// npc 2740
+size = 3
+op2 = Attack
+walkanim = 2632
+readyanim = 2631
+ambient = 60
+contrast = 60
+vislevel = 90
+recol = 43150/142 43146/138 43528/520
+name = Tok-Xil
+models = 9332 9330 9329 9331

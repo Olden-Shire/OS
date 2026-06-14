@@ -1,0 +1,10 @@
+// npc 32
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 20
+recol = 25238/811 8741/43939
+name = Guard
+models = 225 301 162 179 274 185 502

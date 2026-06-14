@@ -1,0 +1,13 @@
+// npc 4545
+vislevel = 0
+size = 1
+resizeh = 136
+resizev = 129
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/10520 8741/8369 6798/10301 4550/4430 4626/5165 22177/908
+name = 'Picarron' Pete
+models = 211 251 292 10980 179 271 181
+headmodels = 50 83

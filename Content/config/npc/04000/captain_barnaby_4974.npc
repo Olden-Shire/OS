@@ -1,0 +1,9 @@
+// npc 4974
+vislevel = 0
+size = 1
+op1 = Talk-to
+op3 = Pay-fare
+recol = 6798/115 8741/38821 25238/38821 43072/6709 4550/6709 906/7104
+name = Captain Barnaby
+models = 214 250 299 159 263 176 185 326
+headmodels = 52 82

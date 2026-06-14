@@ -1,0 +1,10 @@
+// obj 5560
+model = obj_stethoscope
+manwear = obj_stethoscope_wear, 0
+womanwear = obj_stethoscope_wear, 6
+members = true
+zoom2d = 690
+yan2d = 1760
+xan2d = 244
+cost = 10
+name = Stethoscope

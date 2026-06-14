@@ -1,0 +1,10 @@
+// npc 2980
+size = 1
+nominimap = true
+vislevel = 0
+op2 = Hidden
+resizeh = 133
+resizev = 134
+recol = 8741/24
+name = Rat
+models = 9610

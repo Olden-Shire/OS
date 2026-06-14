@@ -1,0 +1,11 @@
+// loc 22781
+active = 1
+resizex = 66
+resizey = 66
+resizez = 66
+ambient = 20
+blockwalk = true
+bgsound = 2199, 3
+nonblockrange = true
+models_only = 23446
+name = Toy range

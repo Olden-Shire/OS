@@ -1,0 +1,10 @@
+// npc 3067
+size = 1
+readyanim = 2561
+walkanims = 2562, 2562, 2562, 2562
+op2 = Attack
+vislevel = 141
+recol = 61/43286 57/9152 41/40334 10004/40334 4626/40334 6798/9562
+name = Leon d'Cour
+models = 9452 250 306 10298 179 268 185 10314 10318 10313
+headmodels = 9448 82

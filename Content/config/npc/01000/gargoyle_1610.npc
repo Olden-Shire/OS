@@ -1,0 +1,8 @@
+// npc 1610
+size = 3
+walkanim = 1515
+readyanim = 1516
+op2 = Attack
+vislevel = 111
+name = Gargoyle
+models = 5078 5079

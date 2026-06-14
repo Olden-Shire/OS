@@ -1,0 +1,8 @@
+// npc 1612
+size = 2
+walkanim = 1521
+readyanim = 1522
+op2 = Attack
+vislevel = 23
+name = Banshee
+models = 5063 5079

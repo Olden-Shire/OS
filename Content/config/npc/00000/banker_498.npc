@@ -1,0 +1,10 @@
+// npc 498
+vislevel = 0
+size = 1
+walkanim = 112
+readyanim = 112
+op1 = Talk-to
+op3 = Bank
+name = Banker
+models = 2860
+headmodels = 14

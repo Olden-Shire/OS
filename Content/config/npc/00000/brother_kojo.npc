@@ -1,0 +1,10 @@
+// npc 223
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9108/4769 8741/4769
+name = Brother Kojo
+models = 223 181 246 292 170 176 260
+headmodels = 59

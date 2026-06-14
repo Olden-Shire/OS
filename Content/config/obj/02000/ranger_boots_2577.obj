@@ -1,0 +1,13 @@
+// obj 2577
+cost = 200
+members = true
+model = obj_ranger_boots_2577
+manwear = obj_ranger_boots_2577_man, 0
+womanwear = obj_ranger_boots_2577_woman, 0
+iop2 = Wear
+xof2d = 1
+yof2d = -6
+zoom2d = 770
+yan2d = 160
+xan2d = 152
+name = Ranger boots

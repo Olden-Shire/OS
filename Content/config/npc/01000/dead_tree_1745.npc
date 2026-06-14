@@ -1,0 +1,10 @@
+// npc 1745
+size = 1
+walkanim = 5751
+readyanim = 5751
+vislevel = 0
+op1 = Chop down
+op3 = hidden
+turnspeed = 0
+name = Dead tree
+models = 21826

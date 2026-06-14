@@ -1,0 +1,8 @@
+// loc 25681
+length = 2
+contrast = 15
+ambient = 20
+nonblockrange = true
+recol = 33/6705 8770/7068
+models_only = 1256
+name = Bed

@@ -1,0 +1,14 @@
+// obj 7439
+cost = 1920
+model = obj_spatula_7439
+xof2d = 5
+yof2d = -28
+zoom2d = 1488
+yan2d = 1706
+xan2d = 222
+iop2 = Wield
+manwear = obj_spatula_7439_wear, 0
+womanwear = obj_spatula_7439_wear, 6
+members = true
+recol = 61/0
+name = Spatula

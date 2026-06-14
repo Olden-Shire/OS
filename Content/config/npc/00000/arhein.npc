@@ -1,0 +1,12 @@
+// npc 563
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 6798/8 43072/4550 8741/7070 25238/8 4626/8 54397/4391
+name = Arhein
+models = 215 305 167 176 254 185 246
+headmodels = 53

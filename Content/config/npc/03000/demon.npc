@@ -1,0 +1,10 @@
+// npc 3593
+size = 2
+walkanim = 63
+readyanim = 66
+op2 = Attack
+resizeh = 65
+resizev = 65
+vislevel = 82
+name = Demon
+models = 17375 17393 17384 17399 17390 17376

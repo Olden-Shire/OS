@@ -1,0 +1,9 @@
+// obj 11159
+model = obj_hunter_kit
+zoom2d = 1232
+yan2d = 210
+xan2d = 126
+iop1 = Open
+iop5 = Destroy
+members = true
+name = Hunter kit

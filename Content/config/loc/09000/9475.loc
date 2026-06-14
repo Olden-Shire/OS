@@ -1,0 +1,6 @@
+// loc 9475
+sharelight = true
+ambient = 25
+contrast = 25
+retex = 6/16
+models = 629/12 631/13

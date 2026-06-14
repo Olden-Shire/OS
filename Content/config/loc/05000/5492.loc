@@ -1,0 +1,5 @@
+// loc 5492
+active = 1
+blockwalk = true
+nonblockrange = true
+multiloc = 235, 65535, 5490 5491 5490 5490

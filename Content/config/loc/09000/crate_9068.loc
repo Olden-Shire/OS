@@ -1,0 +1,5 @@
+// loc 9068
+ambient = 35
+nonblockrange = true
+models_only = 9008 9009
+name = Crate

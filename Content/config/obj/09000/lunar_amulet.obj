@@ -1,0 +1,15 @@
+// obj 9102
+cost = 30
+model = obj_lunar_amulet
+xof2d = 7
+yof2d = -79
+zoom2d = 784
+yan2d = 147
+xan2d = 231
+manwear = obj_lunar_amulet_man, 0
+womanwear = obj_lunar_amulet_woman, 0
+iop2 = Wear
+members = true
+iop5 = Destroy
+recol = 9152/36007 9152/36007 41/6573
+name = Lunar amulet

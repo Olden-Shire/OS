@@ -1,0 +1,7 @@
+// loc 16805
+sharelight = true
+noshadow = true
+active = 0
+mirror = true
+resizey = 90
+models = 16619/0

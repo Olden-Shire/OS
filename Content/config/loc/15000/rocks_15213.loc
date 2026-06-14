@@ -1,0 +1,6 @@
+// loc 15213
+nonsolid = true
+active = 1
+op1 = Look-at
+models_only = 7766
+name = Rocks

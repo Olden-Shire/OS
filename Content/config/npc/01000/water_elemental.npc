@@ -1,0 +1,7 @@
+// npc 1022
+readyanim = 1045
+walkanim = 1047
+op2 = Attack
+vislevel = 34
+name = Water elemental
+models = 334

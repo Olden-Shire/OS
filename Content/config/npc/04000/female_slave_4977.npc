@@ -1,0 +1,10 @@
+// npc 4977
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/8741 908/8741 6798/59664
+name = Female slave
+models = 393 19198 19189 19338 509 19197 19337
+headmodels = 115

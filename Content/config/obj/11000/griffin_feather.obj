@@ -1,0 +1,13 @@
+// obj 11196
+model = obj_eagle_feather
+xof2d = -7
+yof2d = -1
+zoom2d = 1503
+yan2d = 761
+xan2d = 373
+contrast = 15
+ambient = 15
+members = true
+iop5 = Destroy
+recol = 5555/43045 5563/43049 5572/43053 5580/43057 12523/43065
+name = Griffin feather

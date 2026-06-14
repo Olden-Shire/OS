@@ -1,0 +1,7 @@
+// loc 26121
+op2 = Investigate
+bgsound = 3045, 3
+ambient = 20
+contrast = 15
+models_only = 27529
+name = Sinclair family beehive

@@ -1,0 +1,7 @@
+// loc 11772
+sharelight = true
+active = 0
+resizey = 159
+ambient = 20
+contrast = 15
+models = 11663/0 11664/1 11665/2 14615/3 11666/9

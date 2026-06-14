@@ -1,0 +1,10 @@
+// obj 6961
+model = obj_baguette
+xof2d = -4
+yof2d = -20
+zoom2d = 960
+yan2d = 1348
+xan2d = 200
+iop1 = Eat
+cost = 25
+name = Baguette

@@ -1,0 +1,9 @@
+// npc 1240
+size = 1
+readyanim = 1290
+walkanim = 1289
+op2 = Attack
+vislevel = 40
+recol = 0/22410
+name = Loar Shadow
+models = 4143

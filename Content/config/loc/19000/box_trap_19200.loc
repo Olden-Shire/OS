@@ -1,0 +1,8 @@
+// loc 19200
+anim = 5178
+nonsolid = true
+active = 1
+raiseobject = 0
+recol = 5169/3988 7343/3988 7335/3982 7339/3986 7343/5014 5165/3988
+models_only = 19904 19906
+name = Box trap

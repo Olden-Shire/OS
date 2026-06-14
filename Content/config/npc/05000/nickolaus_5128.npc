@@ -1,0 +1,8 @@
+// npc 5128
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+recol = 7700/7766 8741/7766 25238/6589 9104/6589 43072/4550 28/9112
+name = Nickolaus
+models = 251 230 292 327 3707 151 179 566 3704 275 6364 245
+headmodels = 63 83 78 6212

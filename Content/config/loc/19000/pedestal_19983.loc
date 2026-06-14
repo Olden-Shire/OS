@@ -1,0 +1,8 @@
+// loc 19983
+width = 3
+length = 3
+blockwalk = true
+anim = 5297
+recol = 127/4539 32999/5582
+models_only = 20082 20079
+name = Pedestal

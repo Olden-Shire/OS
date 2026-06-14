@@ -1,0 +1,5 @@
+[clientscript,script_85](int $int0)()
+
+if_settext("", $int0);
+if_clearops($int0);
+return;

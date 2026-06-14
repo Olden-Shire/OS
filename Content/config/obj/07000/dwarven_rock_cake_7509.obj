@@ -1,0 +1,13 @@
+// obj 7509
+cost = 1
+model = obj_dwarven_rock_cake_7509
+xof2d = -1
+yof2d = 12
+zoom2d = 400
+yan2d = 1412
+xan2d = 273
+manwear = obj_dwarven_rock_cake_7509_wear, 0
+womanwear = obj_dwarven_rock_cake_7509_wear, 6
+iop1 = Eat
+members = true
+name = Dwarven rock cake

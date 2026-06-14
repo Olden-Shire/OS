@@ -1,0 +1,15 @@
+// npc 1702
+walkanim = 808
+readyanim = 808
+resizev = 112
+resizeh = 112
+ambient = 40
+contrast = 40
+vislevel = 0
+size = 1
+op1 = Talk-to
+op3 = Bank
+recol = 17467/18626
+name = Ghost banker
+models = 5212 5220 5209 5216
+headmodels = 5203

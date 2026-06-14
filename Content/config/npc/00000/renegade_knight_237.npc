@@ -1,0 +1,9 @@
+// npc 237
+size = 1
+walkanim = 6928
+readyanim = 6927
+op2 = Attack
+vislevel = 37
+name = Renegade Knight
+models = 27129 25685
+headmodels = 27207

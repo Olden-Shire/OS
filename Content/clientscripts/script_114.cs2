@@ -1,0 +1,5 @@
+[clientscript,script_114]()()
+
+if_setonkey(116, -2147483640, "i", 35913774);
+if_setonvartransmit(117, 1021, 1, "Y", 35913774);
+return;

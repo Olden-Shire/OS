@@ -1,0 +1,9 @@
+// npc 1873
+op3 = Pet
+size = 2
+walkanim = 45
+readyanim = 51
+vislevel = 0
+name = Ali the Camel
+models = 2939
+headmodels = 9841

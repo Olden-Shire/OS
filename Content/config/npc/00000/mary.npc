@@ -1,0 +1,11 @@
+// npc 810
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/8 8472/127 25238/8 43072/4550
+name = Mary
+models = 391 475 351 353 429 358 483 414
+headmodels = 114 131

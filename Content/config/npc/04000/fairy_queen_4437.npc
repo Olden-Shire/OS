@@ -1,0 +1,9 @@
+// npc 4437
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+name = Fairy Queen
+models = 2858
+headmodels = 12

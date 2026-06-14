@@ -1,0 +1,14 @@
+// obj 6587
+cost = 360
+model = obj_bronze_claws_3095
+xof2d = -7
+yof2d = -13
+zoom2d = 630
+yan2d = 1340
+xan2d = 268
+iop2 = Wear
+manwear = obj_bronze_claws_3095_wear, 0
+womanwear = obj_bronze_claws_3095_wear, 6
+members = true
+recol = 49/99 41/90 33/82 24/74
+name = White claws

@@ -1,0 +1,7 @@
+// loc 10558
+active = 1
+op1 = Open
+blockwalk = true
+recol = 6049/7463 5660/7587 6032/8722
+models = 1205/22
+name = Trapdoor

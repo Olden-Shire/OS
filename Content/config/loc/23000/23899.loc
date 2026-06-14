@@ -1,0 +1,6 @@
+// loc 23899
+sharelight = true
+ambient = 10
+nonblockrange = true
+recol = 7465/7706 7461/7582 7585/7830 7580/7706 7704/7954
+models = 24899/0

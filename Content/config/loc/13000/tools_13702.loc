@@ -1,0 +1,8 @@
+// loc 13702
+op1 = Search
+op4 = Upgrade
+op5 = Remove
+ambient = 25
+contrast = 25
+models = 12600/4
+name = Tools

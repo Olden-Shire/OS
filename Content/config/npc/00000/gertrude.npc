@@ -1,0 +1,10 @@
+// npc 780
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/7339 9529/200 24/94 43090/8381 43078/10442 6798/3893
+name = Gertrude
+models = 25705 391 417 11360 11775 10706 11357 358
+headmodels = 114 15255 136

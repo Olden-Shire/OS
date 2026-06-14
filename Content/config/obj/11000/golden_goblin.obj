@@ -1,0 +1,12 @@
+// obj 11210
+model = obj_golden_goblin
+xof2d = 2
+yof2d = 5
+zoom2d = 3387
+yan2d = 1973
+xan2d = 255
+contrast = 15
+ambient = 15
+members = true
+iop5 = Destroy
+name = Golden goblin

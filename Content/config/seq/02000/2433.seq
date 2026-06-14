@@ -1,0 +1,7 @@
+// seq 2433
+loops = 8
+replaceheldleft = 0
+replaceheldright = 6963
+postanim_move = 1
+priority = 10
+frames = 4/0/220 4/6/220 4/7/220 4/8/220 4/9/220 4/10/220 4/11/220 4/12/220

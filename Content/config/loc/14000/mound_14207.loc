@@ -1,0 +1,5 @@
+// loc 14207
+active = 1
+nonsolid = true
+models_only = 14408
+name = Mound

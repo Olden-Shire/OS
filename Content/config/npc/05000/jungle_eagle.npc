@@ -1,0 +1,9 @@
+// npc 5131
+walkanim = 5279
+readyanim = 5280
+size = 3
+alwaysontop = true
+vislevel = 0
+recol = 10357/9519 5543/7333 5667/8481 6697/7452 6573/8472 5551/8596
+name = Jungle eagle
+models = 19380

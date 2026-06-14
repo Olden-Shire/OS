@@ -1,0 +1,5 @@
+// loc 11807
+mirror = true
+ambient = 50
+active = 0
+models = 11577/4

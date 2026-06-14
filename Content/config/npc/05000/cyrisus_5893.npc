@@ -1,0 +1,12 @@
+// npc 5893
+walkanim = 6284
+readyanim = 6284
+vislevel = 0
+turnspeed = 0
+op1 = Talk-to
+op3 = Inspect
+alwaysontop = true
+recol = 14228/4550 10512/21526 43072/4550 4626/22 4550/5568
+name = Cyrisus
+models = 18086 244 248 15007 8915 176 13925 18129
+headmodels = 508 77

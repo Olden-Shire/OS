@@ -1,0 +1,12 @@
+// obj 10557
+model = obj_attacker_icon
+manwear = obj_collector_icon_man, 0
+womanwear = obj_collector_icon_woman, 0
+iop2 = Wear
+xof2d = 34
+yof2d = -28
+zoom2d = 1114
+xan2d = 553
+members = true
+recol = 22439/11200
+name = Collector icon

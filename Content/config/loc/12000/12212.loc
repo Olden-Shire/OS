@@ -1,0 +1,7 @@
+// loc 12212
+ambient = 20
+nonsolid = true
+active = 0
+sharelight = true
+mirror = true
+models_only = 12036

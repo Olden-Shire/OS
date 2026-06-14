@@ -1,0 +1,11 @@
+// npc 1857
+walkanim = 1839
+readyanim = 1838
+vislevel = 125
+resizeh = 115
+resizev = 115
+op2 = Attack
+recol = 39388/18619
+name = Arzinian Avatar of Magic
+models = 6011 6009
+headmodels = 5817

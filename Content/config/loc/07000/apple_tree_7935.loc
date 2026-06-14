@@ -1,0 +1,6 @@
+// loc 7935
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7915 7767
+name = Apple tree

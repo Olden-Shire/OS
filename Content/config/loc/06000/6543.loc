@@ -1,0 +1,6 @@
+// loc 6543
+sharelight = true
+nonsolid = true
+active = 0
+forcedecor = true
+models = 6250/10 6251/22

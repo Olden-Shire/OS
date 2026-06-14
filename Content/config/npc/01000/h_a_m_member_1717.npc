@@ -1,0 +1,9 @@
+// npc 1717
+vislevel = 0
+size = 1
+readyanim = 1673
+op1 = Talk-to
+recol = 8741/61347 25238/61347 7952/61347 4886/5656
+name = H.A.M. Member
+models = 151 176 248 5436 5431 292 5434 5430 5433 5432
+headmodels = 5428 80

@@ -1,0 +1,9 @@
+// npc 97
+size = 2
+ambient = 50
+readyanim = 6580
+walkanim = 6556
+op2 = Attack
+vislevel = 38
+name = White wolf
+models = 26266

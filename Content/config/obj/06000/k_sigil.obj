@@ -1,0 +1,10 @@
+// obj 6996
+model = obj_k_sigil
+members = true
+xof2d = 1
+yof2d = 3
+zoom2d = 1744
+yan2d = 192
+xan2d = 354
+iop5 = Destroy
+name = K sigil

@@ -1,0 +1,9 @@
+// loc 13831
+hillskew = true
+active = 1
+nonsolid = true
+op2 = Evade-event
+ambient = 7
+recol = 4899/28310 5921/28310 4892/28310
+models = 1124/22
+name = Path

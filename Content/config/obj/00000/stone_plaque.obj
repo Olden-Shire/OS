@@ -1,0 +1,10 @@
+// obj 606
+model = obj_stone_plaque
+xof2d = 8
+yof2d = 19
+zoom2d = 1580
+yan2d = 136
+xan2d = 200
+iop1 = Read
+members = true
+name = Stone-plaque

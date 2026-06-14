@@ -1,0 +1,18 @@
+// obj 10550
+model = obj_ranger_hat
+manwear = obj_ranger_hat_man, 0
+womanwear = obj_ranger_hat_woman, 0
+manhead = 19240
+womanhead = 19244
+manwear2 = 215
+womanwear2 = 391
+manhead2 = 53
+womanhead2 = 114
+iop2 = Wear
+cost = 5000
+xof2d = 7
+zoom2d = 1114
+xan2d = 14
+members = true
+iop5 = Destroy
+name = Ranger hat

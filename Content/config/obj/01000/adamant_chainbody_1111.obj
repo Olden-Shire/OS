@@ -1,0 +1,11 @@
+// obj 1111
+cost = 4800
+model = obj_bronze_chainbody_1103
+yof2d = 2
+zoom2d = 1100
+xan2d = 568
+iop2 = Wear
+manwear = obj_bronze_chainbody_1103_man, 0
+womanwear = obj_bronze_chainbody_1103_woman, 0
+recol = 33/21662 41/21675 49/21795
+name = Adamant chainbody

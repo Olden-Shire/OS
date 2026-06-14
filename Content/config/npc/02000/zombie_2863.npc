@@ -1,0 +1,12 @@
+// npc 2863
+resizeh = 122
+resizev = 123
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Call-Over
+op1 = Talk-To
+vislevel = 0
+recol = 8741/29991 4626/27144 7281/10398 4550/12473 25238/35908 6798/18314
+name = Zombie
+models = 310 230 246 168 176 275 181
+headmodels = 63

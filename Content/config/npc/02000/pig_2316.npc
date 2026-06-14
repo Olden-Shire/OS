@@ -1,0 +1,7 @@
+// npc 2316
+vislevel = 0
+walkanim = 2165
+readyanim = 2166
+ambient = 15
+name = Pig
+models = 8227

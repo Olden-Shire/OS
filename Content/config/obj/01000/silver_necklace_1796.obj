@@ -1,0 +1,13 @@
+// obj 1796
+members = true
+model = obj_perfect_necklace
+xof2d = 7
+yof2d = 66
+zoom2d = 465
+yan2d = 166
+xan2d = 290
+iop2 = Wear
+manwear = obj_perfect_necklace_man, 0
+womanwear = obj_perfect_necklace_woman, 0
+recol = 9152/82
+name = Silver necklace

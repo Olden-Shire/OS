@@ -1,0 +1,6 @@
+// loc 9209
+width = 3
+length = 3
+blockwalk = true
+active = 1
+multiloc = 985, 65535, 9213 9212 9211 9210 9214 9215 9216 9217 9218 9219 9220 9221 9222

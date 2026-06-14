@@ -1,0 +1,7 @@
+// loc 21134
+noshadow = true
+nonsolid = true
+op1 = Tread-softly
+forcedecor = true
+models = 21605/22
+name = Icicles

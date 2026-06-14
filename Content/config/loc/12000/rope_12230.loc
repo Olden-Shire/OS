@@ -1,0 +1,7 @@
+// loc 12230
+sharelight = true
+nonsolid = true
+active = 1
+op1 = Climb
+models_only = 12039
+name = Rope

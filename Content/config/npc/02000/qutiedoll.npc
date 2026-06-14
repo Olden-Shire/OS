@@ -1,0 +1,11 @@
+// npc 2576
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 16
+op3 = Walk here
+op4 = Follow
+op5 = Trade
+recol = 25238/10508 8741/10508
+name = Qutiedoll
+models = 3352 230 247 281 303 169 176 3780 258 185

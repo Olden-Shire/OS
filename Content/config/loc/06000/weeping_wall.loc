@@ -1,0 +1,8 @@
+// loc 6660
+active = 1
+op1 = Collect-from
+forceapproach = 7
+blockwalk = true
+mapscene = 51
+models = 6510/0
+name = Weeping wall

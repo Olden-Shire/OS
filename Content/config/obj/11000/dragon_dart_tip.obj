@@ -1,0 +1,11 @@
+// obj 11232
+cost = 250
+model = obj_dragon_dart_tip
+members = true
+stackable = true
+xof2d = 8
+yof2d = 11
+zoom2d = 720
+yan2d = 336
+xan2d = 396
+name = Dragon dart tip

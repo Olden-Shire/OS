@@ -1,0 +1,12 @@
+// obj 1835
+cost = 40
+members = true
+iop2 = Wear
+model = obj_priest_gown_428
+yof2d = 1
+zoom2d = 1940
+xan2d = 572
+manwear = obj_priest_gown_428_man, 0
+womanwear = obj_priest_gown_428_woman, 0
+recol = 25238/127
+name = Desert robe

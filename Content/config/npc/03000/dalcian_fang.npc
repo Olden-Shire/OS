@@ -1,0 +1,10 @@
+// npc 3632
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+recol = 4550/10450 8741/40004 49054/43026 9019/43072 6798/10297 8078/43156
+name = Dalcian Fang
+models = 6848 253 310 10980 10218 6132 185 553 14175
+headmodels = 5787 85 13945

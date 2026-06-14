@@ -1,0 +1,10 @@
+// npc 4900
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/41282 6430/41273 36015/41282 25238/99 6439/41282 6674/41393
+name = Crafting tutor
+models = 217 10304 11761 15412 167 177 10218 267 181
+headmodels = 55

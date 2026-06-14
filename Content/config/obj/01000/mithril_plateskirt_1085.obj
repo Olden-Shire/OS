@@ -1,0 +1,12 @@
+// obj 1085
+cost = 2600
+model = obj_iron_plateskirt_1081
+xof2d = 5
+yof2d = 5
+zoom2d = 1100
+xan2d = 620
+iop2 = Wear
+manwear = obj_iron_plateskirt_1081_man, 0
+womanwear = obj_iron_plateskirt_1081_woman, 0
+recol = 61/43297 25238/43282
+name = Mithril plateskirt

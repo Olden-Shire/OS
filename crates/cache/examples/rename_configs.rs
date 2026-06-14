@@ -12,6 +12,7 @@
 
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
+use std::fs;
 
 use cache::configs::Configs;
 use cache::content::pack_file;
@@ -39,8 +40,11 @@ fn main() {
 
 /// A display name → `lower_case_abc123` identifier. Apostrophes are
 /// dropped (so "Nulodion's notes" → "nulodions_notes"); every other run
-/// of non-alphanumerics becomes a single `_`. Returns None for blank /
-/// "null" names or ones that would start with a digit (not a valid id).
+/// of non-alphanumerics becomes a single `_`. A name that would start with
+/// a digit (e.g. "1/2 plain pizza") is prefixed with `_` so it stays a
+/// valid identifier (`_1_2_plain_pizza`) — we rename ALL named configs, not
+/// just letter-leading ones. Returns None only for genuinely nameless
+/// entries (blank / "null"), which keep their numeric stem.
 fn to_ident(name: &str) -> Option<String> {
     if name.is_empty() || name.eq_ignore_ascii_case("null") {
         return None;
@@ -61,10 +65,36 @@ fn to_ident(name: &str) -> Option<String> {
             pending_sep = true;
         }
     }
-    if out.is_empty() || out.starts_with(|c: char| c.is_ascii_digit()) {
+    if out.is_empty() {
         return None;
     }
+    if out.starts_with(|c: char| c.is_ascii_digit()) {
+        out.insert(0, '_');
+    }
     Some(out)
+}
+
+/// Index every `*.{ext}` file under `dir` (recursing through the 1000-id shard
+/// subdirs) by its current stem. The config tree is sharded
+/// (`config/npc/00000/0.npc`), so a flat `dir.join("{id}.{ext}")` would miss
+/// every file — we rename each file IN PLACE inside its shard dir.
+fn index_files(dir: &Path, ext: &str) -> HashMap<String, PathBuf> {
+    let mut out = HashMap::new();
+    let mut stack = vec![dir.to_path_buf()];
+    while let Some(d) = stack.pop() {
+        let Ok(rd) = fs::read_dir(&d) else { continue };
+        for entry in rd.flatten() {
+            let p = entry.path();
+            if p.is_dir() {
+                stack.push(p);
+            } else if p.extension().and_then(|s| s.to_str()) == Some(ext)
+                && let Some(stem) = p.file_stem().and_then(|s| s.to_str())
+            {
+                out.insert(stem.to_string(), p.clone());
+            }
+        }
+    }
+    out
 }
 
 fn rename(
@@ -114,16 +144,14 @@ fn rename(
     }
 
     let null_or_blank = names.values().filter(|n| n.is_empty() || n.eq_ignore_ascii_case("null")).count();
-    let digit_skipped = names.len() - base.len() - null_or_blank;
     let dupe_suffixed = assigned.iter().filter(|(_, n)| !base.values().any(|b| b == n)).count();
     println!(
-        "{label}: {} entries → {} named ({} unique, {} dupe-suffixed); {} null/blank, {} digit-leading kept numeric",
+        "{label}: {} entries → {} named ({} unique, {} dupe-suffixed); {} null/blank kept numeric",
         names.len(),
         assigned.len(),
         assigned.len() - dupe_suffixed,
         dupe_suffixed,
         null_or_blank,
-        digit_skipped,
     );
     for (id, ident) in assigned.iter().take(6) {
         println!("    {id:>6}  {ident}   ({:?})", names[id]);
@@ -133,22 +161,28 @@ fn rename(
         return;
     }
 
-    // Apply: rename on-disk files first (fail loudly before touching the
-    // pack if a source is missing), then write the pack.
+    // Apply: rename on-disk files first (fail loudly before touching the pack
+    // if a source is missing), then write the pack. Files are sharded into
+    // 1000-id subdirs, so locate each by index and rename IN PLACE inside its
+    // shard dir — the pack stem must match the on-disk stem for `pack` to find
+    // it, but the shard dir is unchanged so the repack stays CRC-identical.
     let ext = label; // obj/loc/npc dir == ext
+    let files = index_files(cfg_dir, ext);
+    let mut renamed = 0usize;
     for (id, ident) in &assigned {
-        let src = cfg_dir.join(format!("{id}.{ext}"));
-        let dst = cfg_dir.join(format!("{ident}.{ext}"));
-        if src == dst {
+        let cur = id.to_string();
+        if *ident == cur {
             continue;
         }
-        if !src.exists() {
-            // Already renamed (non-pristine re-run) — skip.
+        let Some(src) = files.get(&cur) else {
+            // Not found by numeric stem — already renamed on a prior run.
             continue;
-        }
-        std::fs::rename(&src, &dst).unwrap_or_else(|e| panic!("rename {src:?} -> {dst:?}: {e}"));
+        };
+        let dst = src.with_file_name(format!("{ident}.{ext}"));
+        fs::rename(src, &dst).unwrap_or_else(|e| panic!("rename {src:?} -> {dst:?}: {e}"));
         pack.insert(*id as u32, ident.clone());
+        renamed += 1;
     }
     pack_file::write(pack_path, &pack).expect("write pack");
-    println!("  wrote {pack_path:?} + renamed {} files in {cfg_dir:?}", assigned.len());
+    println!("  wrote {pack_path:?} + renamed {renamed} files in {cfg_dir:?}");
 }

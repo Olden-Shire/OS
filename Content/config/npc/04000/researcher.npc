@@ -1,0 +1,10 @@
+// npc 4568
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/43183 25238/43297 926/6798 11146/43156
+name = Researcher
+models = 16456 417 470 332 10706 419 358
+headmodels = 16443 136

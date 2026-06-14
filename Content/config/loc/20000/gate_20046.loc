@@ -1,0 +1,8 @@
+// loc 20046
+op1 = Open
+raiseobject = 0
+mirror = true
+resizey = 160
+recol = 46381/7446 5400/7442 3346/7566
+models = 20319/0
+name = Gate

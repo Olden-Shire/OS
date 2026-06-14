@@ -1,0 +1,15 @@
+// obj 6322
+cost = 1250
+iop2 = Wear
+members = true
+model = obj_snakeskin_body_6322
+manwear = obj_snakeskin_body_6322_man, 0
+manwear2 = 8915
+womanwear = obj_snakeskin_body_6322_woman, 0
+womanwear2 = 8930
+xof2d = 2
+yof2d = 10
+zoom2d = 1370
+yan2d = 128
+xan2d = 312
+name = Snakeskin body

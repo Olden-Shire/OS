@@ -1,0 +1,8 @@
+// npc 135
+size = 3
+walkanim = 303
+readyanim = 306
+op2 = Attack
+vislevel = 41
+name = Mammoth
+models = 3005

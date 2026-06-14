@@ -1,0 +1,8 @@
+// npc 4782
+vislevel = 0
+readyanim = 4711
+walkanim = 4699
+ambient = -25
+name = Vampyre juvinate
+models = 17968 17999 17986
+headmodels = 18046

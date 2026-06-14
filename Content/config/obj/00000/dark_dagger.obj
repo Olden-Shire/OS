@@ -1,0 +1,11 @@
+// obj 746
+model = obj_dark_dagger
+members = true
+xof2d = 1
+zoom2d = 1000
+yan2d = 248
+xan2d = 412
+iop2 = Wield
+manwear = obj_dark_dagger_wear, 0
+womanwear = obj_dark_dagger_wear, 6
+name = Dark dagger

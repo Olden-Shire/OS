@@ -1,0 +1,9 @@
+// npc 205
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 70
+recol = 25238/687 8741/687 6798/4913
+name = Salarin the twisted
+models = 203 181 250 292 170 176 260

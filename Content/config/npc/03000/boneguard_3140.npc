@@ -1,0 +1,10 @@
+// npc 3140
+vislevel = 0
+size = 3
+op1 = Talk-to
+walkanim = 3078
+readyanim = 3073
+resizev = 100
+name = Boneguard
+models = 10971
+headmodels = 11015

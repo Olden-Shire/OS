@@ -1,0 +1,7 @@
+// loc 9325
+sharelight = true
+hillskew = true
+active = 1
+op1 = Squeeze-through
+models = 789/0 790/9
+name = Crevice

@@ -1,0 +1,7 @@
+// loc 21880
+width = 2
+ambient = 10
+contrast = 10
+op1 = Fix
+models_only = 22667 22668
+name = Pipe machine

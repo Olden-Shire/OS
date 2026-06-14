@@ -1,0 +1,5 @@
+// loc 13455
+op5 = Remove
+nonblockrange = true
+models = 13163/0 13164/2
+name = Marble wall

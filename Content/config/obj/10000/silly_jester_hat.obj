@@ -1,0 +1,19 @@
+// obj 10836
+members = true
+cost = 100
+model = obj_silly_jester_hat
+xof2d = 11
+yof2d = -3
+zoom2d = 919
+yan2d = 166
+zan2d = 235
+xan2d = 539
+contrast = 15
+ambient = 15
+iop2 = Wear
+manwear = obj_silly_jester_hat_man, 0
+womanwear = obj_silly_jester_hat_woman, 0
+manhead = 22155
+womanhead = 22157
+iop5 = Destroy
+name = Silly jester hat

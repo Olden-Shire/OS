@@ -1,0 +1,12 @@
+// obj 6863
+model = obj_woolly_scarf
+xof2d = 1
+yof2d = -1
+zoom2d = 659
+yan2d = 207
+xan2d = 511
+iop2 = Wear
+manwear = obj_woolly_scarf_man, 0
+womanwear = obj_woolly_scarf_woman, 0
+iop5 = Destroy
+name = Woolly scarf

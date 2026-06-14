@@ -1,0 +1,10 @@
+// obj 557
+stackable = true
+cost = 4
+model = obj_earth_rune_557
+yof2d = 1
+zoom2d = 740
+yan2d = 1012
+xan2d = 528
+ambient = 30
+name = Earth rune

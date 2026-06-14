@@ -1,0 +1,9 @@
+// npc 3031
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 9019/7616 8741/7616 49054/40107 25238/6565 4550/4523
+name = Usi
+models = 9016 248 9017 151 176 265 181
+headmodels = 9013 80

@@ -1,0 +1,9 @@
+// loc 3559
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Walk-across
+recol = 6573/6449
+models = 3631/22
+name = Balancing ledge

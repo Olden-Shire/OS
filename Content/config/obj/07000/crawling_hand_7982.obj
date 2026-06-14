@@ -1,0 +1,10 @@
+// obj 7982
+model = obj_crawling_hand_7982
+members = true
+xof2d = -1
+yof2d = 13
+zoom2d = 2128
+yan2d = 246
+xan2d = 339
+cost = 1000
+name = Crawling hand

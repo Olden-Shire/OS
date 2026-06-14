@@ -1,0 +1,11 @@
+// npc 3787
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+alwaysontop = true
+op1 = Talk-to
+op3 = Exchange
+recol = 7073/8724 43072/127 4550/5673
+name = Void Knight
+models = 230 252 14568 173 10218 14566 181 14580
+headmodels = 63 14584 84

@@ -1,0 +1,12 @@
+// loc 20878
+active = 1
+noshadow = true
+contrast = 25
+ambient = 25
+resizey = 135
+forcedecor = true
+op5 = Jump-to
+nonsolid = true
+models = 21329/22
+models = 21330/22
+name = Pillar

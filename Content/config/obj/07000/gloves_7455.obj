@@ -1,0 +1,13 @@
+// obj 7455
+model = obj_gloves_7453
+yof2d = -1
+zoom2d = 789
+yan2d = 111
+xan2d = 609
+cost = 250
+members = true
+iop2 = Wear
+manwear = obj_gloves_7453_man, 0
+womanwear = obj_gloves_7453_woman, 0
+recol = 10394/33 8656/24
+name = Gloves

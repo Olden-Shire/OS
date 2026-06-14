@@ -1,0 +1,13 @@
+// obj 9444
+model = obj_wooden_stock_9440
+xof2d = -3
+yof2d = -1
+zoom2d = 976
+yan2d = 243
+xan2d = 420
+manwear = obj_wooden_stock_9440_wear, 0
+womanwear = obj_wooden_stock_9440_wear, 6
+members = true
+cost = 53
+recol = 6447/8478 6443/8598 6439/8846
+name = Willow stock

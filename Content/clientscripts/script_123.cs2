@@ -1,0 +1,5 @@
+[clientscript,script_123]()()
+
+if_setonfriendtransmit(124, "", 36044801);
+~script_125;
+return;

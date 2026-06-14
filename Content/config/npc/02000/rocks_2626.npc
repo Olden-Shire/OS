@@ -1,0 +1,6 @@
+// npc 2626
+size = 1
+nominimap = true
+vislevel = 1
+name = Rocks
+models = 1390

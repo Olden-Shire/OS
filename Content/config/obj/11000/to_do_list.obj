@@ -1,0 +1,12 @@
+// obj 11203
+model = obj_shrinking_recipe
+xof2d = -1
+zoom2d = 720
+yan2d = 9
+xan2d = 282
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = To-do list

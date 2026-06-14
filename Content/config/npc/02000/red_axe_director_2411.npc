@@ -1,0 +1,9 @@
+// npc 2411
+vislevel = 0
+walkanim = 2154
+readyanim = 2155
+op1 = Listen-to
+recol = 4550/4428 5665/4323 5784/4446 61/1701 90/538 53/545
+name = Red Axe Director
+models = 7030 7055 7037 7075 2980 2985
+headmodels = 6989

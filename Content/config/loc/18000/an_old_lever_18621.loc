@@ -1,0 +1,6 @@
+// loc 18621
+forceapproach = 14
+op1 = Pull
+nonblockrange = true
+models_only = 18783
+name = An old lever

@@ -1,0 +1,8 @@
+// npc 986
+size = 2
+walkanim = 6
+op1 = Push
+vislevel = 0
+nominimap = true
+name = Boulder
+models = 2846

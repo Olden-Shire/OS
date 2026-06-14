@@ -1,0 +1,10 @@
+// npc 640
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/10508 8741/10508
+name = Father Lawrence
+models = 223 325 246 292 170 176 260 181
+headmodels = 59

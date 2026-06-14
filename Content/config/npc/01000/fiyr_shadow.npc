@@ -1,0 +1,8 @@
+// npc 1249
+size = 1
+readyanim = 1290
+walkanim = 1289
+op2 = Attack
+vislevel = 120
+name = Fiyr Shadow
+models = 4143

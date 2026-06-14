@@ -1,0 +1,12 @@
+// npc 5492
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 115
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+recol = 8741/59437 25238/156 8078/59445 6798/6713 7952/13072 7073/5404
+name = Guard
+models = 4219 230 11750 292 317 162 179 4236 517 4226 4218
+headmodels = 4210 11808

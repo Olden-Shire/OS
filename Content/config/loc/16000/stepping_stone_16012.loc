@@ -1,0 +1,7 @@
+// loc 16012
+active = 1
+forcedecor = true
+blockwalk = true
+nonblockrange = true
+models = 15768/22
+name = Stepping Stone

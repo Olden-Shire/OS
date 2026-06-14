@@ -1,0 +1,8 @@
+// npc 3489
+walkanims = 819, 820, 821, 822
+readyanim = 3846
+vislevel = 0
+recol = 4550/101 43928/43171 4626/20 123/37 6798/123 107/45
+name = Culinaromancer
+models = 12749 215 244 6131 13897 13330 12750 181 12753
+headmodels = 41 53 77 6129

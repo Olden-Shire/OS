@@ -1,0 +1,5 @@
+// npc 4985
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+multivar = 2803, 65535, 825 826

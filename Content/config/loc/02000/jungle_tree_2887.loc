@@ -1,0 +1,14 @@
+// loc 2887
+ambient = 40
+resizex = 164
+resizey = 164
+resizez = 164
+width = 2
+length = 2
+op1 = Chop-down
+op3 = hidden
+mapscene = 5
+nonsolid = true
+recol = 61/16916 49/13840 41/4626
+models_only = 1701
+name = Jungle Tree

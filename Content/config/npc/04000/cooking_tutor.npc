@@ -1,0 +1,10 @@
+// npc 4899
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 935/41282 924/41271 43928/41282 8741/127 24/41282 4550/4665
+name = Cooking tutor
+models = 12749 6848 5215 14791 10979 10218 12750 181
+headmodels = 5207 5787 41

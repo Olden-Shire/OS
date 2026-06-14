@@ -1,0 +1,13 @@
+// obj 4079
+cost = 10
+model = obj_yo_yo_4079
+iop1 = Play
+iop2 = Loop
+iop3 = Walk
+iop4 = Crazy
+xof2d = 7
+yof2d = 5
+zoom2d = 560
+yan2d = 2036
+xan2d = 196
+name = Yo-yo

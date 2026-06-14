@@ -1,0 +1,13 @@
+// obj 10742
+model = obj_flared_trousers_10394
+iop2 = Wear
+manwear = obj_flared_trousers_10394_man, 0
+womanwear = obj_flared_trousers_10394_woman, 0
+xof2d = 7
+yof2d = 5
+zoom2d = 2151
+zan2d = 2047
+xan2d = 429
+members = true
+cost = 2000
+name = Flared trousers

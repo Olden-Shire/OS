@@ -1,0 +1,9 @@
+// seq 623
+replaceheldright = 819
+replaceheldleft = 819
+loops = 2
+maxloops = 8
+preanim_move = 1
+postanim_move = 1
+reachforward = true
+frames = 16/7/294 16/8/294

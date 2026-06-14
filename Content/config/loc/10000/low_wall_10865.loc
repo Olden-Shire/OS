@@ -1,0 +1,6 @@
+// loc 10865
+length = 2
+op1 = Climb-over
+nonblockrange = true
+models_only = 10776
+name = Low wall

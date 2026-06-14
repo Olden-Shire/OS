@@ -1,0 +1,6 @@
+// loc 10090
+op1 = Read
+resizey = 90
+recol = 7952/7467 7715/7475
+models_only = 1402
+name = Signpost

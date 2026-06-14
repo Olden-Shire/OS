@@ -1,0 +1,15 @@
+// obj 5099
+model = obj_woad_seed
+xof2d = -5
+yof2d = 6
+zoom2d = 1030
+yan2d = 136
+xan2d = 324
+members = true
+stackable = true
+count1 = 5200, 2
+count2 = 5201, 3
+count3 = 5202, 4
+count4 = 5203, 5
+cost = 11
+name = Woad seed

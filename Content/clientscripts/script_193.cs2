@@ -1,0 +1,30 @@
+[clientscript,script_193](int $int0)(int)
+def_int $int1;
+
+if (%varcint41 = 0) {
+    return(1);
+}
+$int1 = chat_gethistory_byuid($int0);
+if ($int1 = -1) {
+    return(0);
+}
+if (%varcint41 = 1 & $int1 = 0) {
+    return(1);
+}
+if (%varcint41 = 2 & ($int1 = 1 | $int1 = 2)) {
+    return(1);
+}
+if (%varcint41 = 3 & ($int1 = 3 | $int1 = 5 | $int1 = 6 | $int1 = 7)) {
+    return(1);
+}
+if (%varcint41 = 4 & ($int1 = 9 | $int1 = 11)) {
+    return(1);
+}
+if (%varcint41 = 5 & ($int1 = 4 | $int1 = 8 | $int1 = 12)) {
+    return(1);
+}
+if (%varcint41 = 6 & ($int1 = 10 | $int1 = 13)) {
+    return(1);
+}
+return(0);
+return(-1);

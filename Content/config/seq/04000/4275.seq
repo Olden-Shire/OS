@@ -1,0 +1,6 @@
+// seq 4275
+replaceheldright = 0
+replaceheldleft = 0
+preanim_move = 1
+postanim_move = 1
+frames = 3/345/215 3/347/215 2/348/215 1/349/215 3/350/215 15/351/215 4/352/215 4/353/215 4/354/215 4/346/215

@@ -1,0 +1,5 @@
+// loc 6897
+op1 = Search
+nonblockrange = true
+models_only = 6799
+name = Stand

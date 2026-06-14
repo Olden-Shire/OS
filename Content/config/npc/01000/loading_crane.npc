@@ -1,0 +1,7 @@
+// npc 1542
+size = 3
+vislevel = 0
+nominimap = true
+recol = 6032/7050 7068/6674 5673/6554
+name = Loading crane
+models = 4909

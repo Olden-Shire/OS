@@ -1,0 +1,7 @@
+// loc 6588
+hillskew = true
+op1 = Open
+nonsolid = true
+active = 0
+recol = 21534/7481 21530/8501 21526/8497 21522/8493 21646/8493 21642/8617
+models = 4475/10 5061/22

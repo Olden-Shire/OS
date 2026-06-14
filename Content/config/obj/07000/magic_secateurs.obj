@@ -1,0 +1,14 @@
+// obj 7409
+model = obj_secateurs_5329
+manwear = obj_secateurs_5329_wear, 0
+womanwear = obj_secateurs_5329_wear, 6
+xof2d = -1
+yof2d = 11
+zoom2d = 710
+yan2d = 320
+xan2d = 312
+members = true
+iop2 = Wield
+iop5 = Destroy
+recol = 61/22445 41/22422 5772/22439
+name = Magic secateurs

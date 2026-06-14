@@ -1,0 +1,9 @@
+// loc 25525
+active = 0
+hillskew = true
+sharelight = true
+ambient = 35
+contrast = 20
+mirror = true
+forcedecor = true
+models_only = 27016

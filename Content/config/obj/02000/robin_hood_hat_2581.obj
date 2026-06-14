@@ -1,0 +1,15 @@
+// obj 2581
+cost = 450
+members = true
+model = obj_robin_hood_hat_2581
+xof2d = -3
+yof2d = -2
+zoom2d = 650
+yan2d = 256
+xan2d = 2044
+iop2 = Wear
+manwear = obj_robin_hood_hat_2581_man, 0
+womanwear = obj_robin_hood_hat_2581_woman, 0
+manhead = 3384
+womanhead = 3385
+name = Robin hood hat

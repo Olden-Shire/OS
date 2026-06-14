@@ -1,0 +1,13 @@
+// npc 3647
+size = 2
+vislevel = 45
+walkanim = 4931
+readyanim = 4932
+resizeh = 64
+resizev = 64
+op2 = Attack
+contrast = 30
+ambient = 30
+recol = 10295/4539 10291/4539 10287/4535 10283/4539 10279/4535 10275/4531
+name = Angry giant rat
+models = 18891 18889 18894 18887

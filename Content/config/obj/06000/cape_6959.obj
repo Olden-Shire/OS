@@ -1,0 +1,13 @@
+// obj 6959
+model = obj_cape_1007
+xof2d = 3
+yof2d = 6
+zoom2d = 2140
+yan2d = 948
+xan2d = 400
+iop2 = Wear
+manwear = obj_cape_1007_man, 0
+womanwear = obj_cape_1007_man, 0
+members = true
+recol = 7700/1356 11200/478 6032/1356 926/1325
+name = Cape

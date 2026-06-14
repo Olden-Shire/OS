@@ -1,0 +1,7 @@
+// loc 25415
+ambient = 10
+hillskew = true
+active = 1
+recol = 9098/262 8846/5388 8722/5392 8598/5268 8602/5272 8478/5276
+models_only = 12041
+name = Stalagmites

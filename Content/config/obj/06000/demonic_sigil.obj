@@ -1,0 +1,11 @@
+// obj 6748
+cost = 0
+model = obj_demonic_sigil
+manwear = obj_demonic_sigil_wear, 0
+womanwear = obj_demonic_sigil_wear, 6
+zoom2d = 1340
+yan2d = 684
+xan2d = 344
+members = true
+iop1 = Chant
+name = Demonic sigil

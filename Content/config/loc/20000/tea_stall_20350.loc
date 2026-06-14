@@ -1,0 +1,8 @@
+// loc 20350
+width = 2
+length = 2
+op2 = Steal-from
+ambient = 15
+recol = 6371/8514 6684/6589 6932/6705
+models_only = 1421 1417
+name = Tea stall

@@ -1,0 +1,11 @@
+// npc 1098
+walkanim = 1139
+readyanim = 926
+size = 2
+resizeh = 178
+resizev = 162
+op2 = Attack
+vislevel = 91
+recol = 61/6435 21570/4510
+name = Kraka
+models = 3753 3759 3756 3773 3766 3763

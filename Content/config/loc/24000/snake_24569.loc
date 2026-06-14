@@ -1,0 +1,8 @@
+// loc 24569
+active = 1
+width = 3
+length = 3
+ambient = 20
+anim = 6453
+models_only = 25490 25489 25491 25492
+name = Snake

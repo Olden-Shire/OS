@@ -1,0 +1,10 @@
+// npc 721
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43072/4550 25238/3980
+name = Ted Rehnison
+models = 230 185 250 310 151 176 275
+headmodels = 63 82

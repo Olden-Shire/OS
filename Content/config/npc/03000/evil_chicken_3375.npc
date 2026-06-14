@@ -1,0 +1,11 @@
+// npc 3375
+size = 1
+resizeh = 50
+resizev = 50
+walkanim = 2297
+readyanim = 2298
+op2 = Attack
+alwaysontop = true
+vislevel = 159
+name = Evil Chicken
+models = 7728

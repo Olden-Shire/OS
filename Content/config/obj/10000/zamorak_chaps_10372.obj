@@ -1,0 +1,12 @@
+// obj 10372
+model = obj_zamorak_chaps_10372
+yof2d = -1
+zoom2d = 1827
+xan2d = 444
+iop2 = Wear
+manwear = obj_zamorak_chaps_10372_man, 0
+womanwear = obj_zamorak_chaps_10372_woman, 0
+members = true
+cost = 6000
+recol = 22168/664 8070/962 24082/910 22156/652 920/962 912/1967
+name = Zamorak chaps

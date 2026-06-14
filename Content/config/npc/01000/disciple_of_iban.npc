@@ -1,0 +1,11 @@
+// npc 1002
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 13
+recol = 25238/687 8741/687 6798/127 4550/5347
+name = Disciple of Iban
+models = 235 181 249 292 170 176 260
+headmodels = 67

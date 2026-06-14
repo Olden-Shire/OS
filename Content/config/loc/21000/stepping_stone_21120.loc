@@ -1,0 +1,11 @@
+// loc 21120
+anim = 3743
+sharelight = true
+blockwalk = true
+active = 1
+ambient = 25
+forceapproach = 7
+contrast = 25
+op1 = Climb
+models_only = 21531
+name = Stepping Stone

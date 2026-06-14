@@ -1,0 +1,6 @@
+// npc 5042
+readyanim = 5099
+walkanim = 5100
+vislevel = 0
+name = Penance Runner
+models = 20721

@@ -1,0 +1,12 @@
+// npc 2363
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 127
+resizev = 113
+op3 = Pickpocket
+op1 = Talk-to
+vislevel = 0
+recol = 16701/7613 9137/5429 25886/7646
+name = Goreu
+models = 8266 6977 6975 4023
+headmodels = 8261

@@ -1,0 +1,10 @@
+// npc 184
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 26
+recol = 6798/10508 8741/937 43072/4550
+name = Pirate
+models = 215 250 299 159 179 259 190 236 518
+headmodels = 53 82 68 31

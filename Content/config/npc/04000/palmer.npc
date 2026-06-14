@@ -1,0 +1,13 @@
+// npc 4552
+size = 1
+resizeh = 131
+resizev = 121
+walkanims = 819, 820, 821, 822
+readyanim = 4402
+op2 = Attack
+alwaysontop = true
+vislevel = 37
+recol = 25238/10398 8741/6808 127/6798 8111/7954
+name = Palmer
+models = 6848 236 4925 292 173 176 6099 271 185
+headmodels = 5787 7380 68

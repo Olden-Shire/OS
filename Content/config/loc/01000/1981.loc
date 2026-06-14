@@ -1,0 +1,7 @@
+// loc 1981
+sharelight = true
+length = 2
+op1 = Open
+nonsolid = true
+active = 0
+models_only = 1354

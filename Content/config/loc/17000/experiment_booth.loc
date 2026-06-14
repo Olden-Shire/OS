@@ -1,0 +1,5 @@
+// loc 17899
+blockwalk = true
+ambient = 10
+models_only = 17876
+name = Experiment booth

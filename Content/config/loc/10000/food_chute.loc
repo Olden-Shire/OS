@@ -1,0 +1,12 @@
+// loc 10735
+contrast = 30
+ambient = 30
+sharelight = true
+width = 2
+resizex = 128
+resizey = 192
+resizez = 128
+op1 = Deposit
+recol = 10287/10382 10295/10262 10308/10270 14412/10283
+models_only = 10646
+name = Food chute

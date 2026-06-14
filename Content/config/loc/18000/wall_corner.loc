@@ -1,0 +1,8 @@
+// loc 18418
+sharelight = true
+hillskew = true
+length = 2
+width = 2
+ambient = 10
+models_only = 18364
+name = Wall corner

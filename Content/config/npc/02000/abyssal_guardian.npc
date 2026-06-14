@@ -1,0 +1,8 @@
+// npc 2264
+size = 1
+walkanim = 2184
+readyanim = 2185
+op2 = Attack
+vislevel = 59
+name = Abyssal guardian
+models = 7462

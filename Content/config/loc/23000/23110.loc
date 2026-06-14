@@ -1,0 +1,8 @@
+// loc 23110
+sharelight = true
+occlude = true
+active = 0
+offsety = -32
+recol = 10339/8373 6930/7566
+retex = 2/23 16/5
+models = 3526/0 3527/1 3528/2 3529/3 3530/9

@@ -1,0 +1,12 @@
+// obj 7728
+cost = 2
+model = obj_empty_cup_7728
+xof2d = -1
+yof2d = -2
+zoom2d = 528
+yan2d = 1980
+xan2d = 156
+members = true
+manwear = obj_empty_cup_7728_wear, 0
+womanwear = obj_empty_cup_7728_wear, 6
+name = Empty cup

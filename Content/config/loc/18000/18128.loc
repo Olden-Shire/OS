@@ -1,0 +1,6 @@
+// loc 18128
+active = 1
+nonsolid = true
+width = 2
+anim = 4744
+multiloc = 2599, 65535, 18074 18075

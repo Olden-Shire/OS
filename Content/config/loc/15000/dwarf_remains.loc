@@ -1,0 +1,5 @@
+// loc 15596
+nonsolid = true
+op1 = Take
+models_only = 2595
+name = Dwarf remains

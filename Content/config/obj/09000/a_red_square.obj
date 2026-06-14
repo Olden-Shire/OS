@@ -1,0 +1,10 @@
+// obj 9599
+model = obj_a_red_square
+xof2d = 1
+yof2d = 3
+zoom2d = 592
+yan2d = 72
+xan2d = 390
+members = true
+stackable = true
+name = A red square

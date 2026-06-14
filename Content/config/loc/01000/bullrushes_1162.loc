@@ -1,0 +1,7 @@
+// loc 1162
+resizex = 100
+resizey = 110
+resizez = 100
+nonsolid = true
+models_only = 5564
+name = Bullrushes

@@ -1,0 +1,7 @@
+// loc 21476
+hillskew = true
+sharelight = true
+active = 0
+ambient = 10
+bgsound = 2141, 3
+models = 22060/0

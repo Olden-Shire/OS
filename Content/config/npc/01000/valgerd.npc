@@ -1,0 +1,11 @@
+// npc 1388
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 2
+recol = 25238/8076 8741/7830 8078/7582 7700/7830 6798/7746 4550/2524
+name = Valgerd
+models = 390 343 456 421 353 479 361 417
+headmodels = 113 136

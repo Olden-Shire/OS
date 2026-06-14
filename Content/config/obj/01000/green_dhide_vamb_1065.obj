@@ -1,0 +1,13 @@
+// obj 1065
+cost = 2500
+model = obj_leather_vambraces_1063
+xof2d = 7
+yof2d = -33
+zoom2d = 740
+yan2d = 1784
+xan2d = 196
+iop2 = Wear
+manwear = obj_green_dhide_vamb_1065_man, 0
+womanwear = obj_green_dhide_vamb_1065_woman, 0
+recol = 8472/22416 7446/22408
+name = Green d'hide vamb

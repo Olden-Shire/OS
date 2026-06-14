@@ -1,0 +1,6 @@
+// loc 1913
+sharelight = true
+ambient = 25
+contrast = 25
+nonblockrange = true
+models = 669/0 670/1 671/2 672/3 673/9

@@ -1,0 +1,6 @@
+// loc 10803
+sharelight = true
+noshadow = true
+op1 = Deposit
+models_only = 10601
+name = Hole

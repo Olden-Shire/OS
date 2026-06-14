@@ -1,0 +1,10 @@
+// npc 3298
+vislevel = 0
+size = 1
+contrast = 10
+ambient = 10
+walkanim = 3245
+readyanim = 3244
+recol = 37167/5404 9672/10283 9668/10279
+name = Sweeper
+models = 10641 1760

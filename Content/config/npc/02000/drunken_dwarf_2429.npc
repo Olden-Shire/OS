@@ -1,0 +1,9 @@
+// npc 2429
+vislevel = 0
+size = 1
+readyanim = 900
+walkanim = 104
+vislevel = 0
+name = Drunken Dwarf
+models = 2974 2986 2983 2979 2981 2985 2992
+headmodels = 4 6

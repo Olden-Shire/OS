@@ -1,0 +1,11 @@
+// loc 24795
+active = 1
+sharelight = true
+hillskew = true
+contrast = 15
+ambient = 25
+blockwalk = true
+op1 = Climb-up
+mapscene = 7
+models_only = 26020
+name = Nails

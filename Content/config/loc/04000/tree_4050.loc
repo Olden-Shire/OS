@@ -1,0 +1,7 @@
+// loc 4050
+length = 3
+width = 3
+forcedecor = true
+sharelight = true
+models_only = 4082
+name = Tree

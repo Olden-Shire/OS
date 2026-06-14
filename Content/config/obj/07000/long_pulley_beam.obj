@@ -1,0 +1,10 @@
+// obj 7970
+model = obj_long_pulley_beam
+xof2d = -7
+yof2d = 10
+zoom2d = 2790
+xan2d = 292
+members = true
+ambient = 10
+cost = 5
+name = Long pulley beam

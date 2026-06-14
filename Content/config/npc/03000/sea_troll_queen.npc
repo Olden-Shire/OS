@@ -1,0 +1,7 @@
+// npc 3847
+size = 5
+vislevel = 170
+readyanim = 3989
+op2 = Attack
+name = Sea Troll Queen
+models = 14920

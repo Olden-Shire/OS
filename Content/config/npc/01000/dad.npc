@@ -1,0 +1,13 @@
+// npc 1125
+walkanim = 1140
+readyanim = 925
+size = 3
+resizeh = 224
+resizev = 224
+op1 = Talk-to
+op2 = Attack
+vislevel = 101
+recol = 61/7343 21570/5293
+name = Dad
+models = 3753 3759 3756 3773 3761
+headmodels = 3791 3789

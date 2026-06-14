@@ -1,0 +1,7 @@
+// loc 20331
+width = 2
+length = 2
+ambient = 15
+recol = 6371/8514 6684/6589 6932/6705
+models_only = 1421 20787
+name = Dagger stall

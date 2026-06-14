@@ -1,0 +1,11 @@
+// npc 2476
+walkanims = 4226, 4227, 821, 822
+readyanim = 4591
+op1 = Talk-To
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 8741/22 25238/18 10004/0 15252/0 28318/50469 7952/56869
+name = Rick Turpentine
+models = 228 244 246 7611 163 179 267 4929 317 16846
+headmodels = 53 76 77

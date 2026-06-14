@@ -1,0 +1,12 @@
+// obj 10660
+cost = 99000
+members = true
+model = obj_woodcutting_cape_9807
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_woodcutting_cape_9807_man, 0
+womanwear = obj_woodcutting_cape_9807_woman, 0
+recol = 57280/6579 54183/6819 54503/6938 960/6579 22464/6699 43968/6819
+name = Woodcutting cape

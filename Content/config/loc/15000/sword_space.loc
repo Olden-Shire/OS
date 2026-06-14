@@ -1,0 +1,7 @@
+// loc 15395
+active = 1
+op5 = Build
+nonsolid = true
+ambient = 100
+models = 12890/4
+name = Sword space

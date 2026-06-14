@@ -1,0 +1,10 @@
+// npc 2237
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 25238/7622 8741/6930 43072/4550
+name = Gee
+models = 215 250 292 151 176 254 185 534 7365
+headmodels = 53 82

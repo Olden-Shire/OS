@@ -1,0 +1,10 @@
+// loc 21237
+active = 0
+hillskew = true
+ambient = 25
+contrast = 25
+width = 2
+length = 4
+resizex = 110
+resizey = 110
+models_only = 21712

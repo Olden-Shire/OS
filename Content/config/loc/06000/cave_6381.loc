@@ -1,0 +1,6 @@
+// loc 6381
+length = 2
+width = 4
+sharelight = true
+models_only = 6208 6209
+name = Cave

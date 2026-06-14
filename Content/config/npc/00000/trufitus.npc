@@ -1,0 +1,12 @@
+// npc 740
+vislevel = 0
+size = 1
+op1 = Talk-to
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 127
+resizev = 131
+recol = 6798/5214 43072/4645 6443/5555 5572/5555 4550/4645
+name = Trufitus
+models = 210 250 285 8845 173 176 553 8925 8919
+headmodels = 49 82

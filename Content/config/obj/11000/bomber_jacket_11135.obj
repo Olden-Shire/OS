@@ -1,0 +1,15 @@
+// obj 11135
+model = obj_bomber_jacket_9944
+xof2d = 1
+yof2d = -3
+zoom2d = 1243
+zan2d = 69
+xan2d = 526
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_bomber_jacket_9944_man, 0
+manwear2 = 19466
+womanwear = obj_bomber_jacket_9944_woman, 0
+womanwear2 = 19478
+name = Bomber jacket

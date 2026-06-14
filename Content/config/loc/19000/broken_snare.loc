@@ -1,0 +1,6 @@
+// loc 19334
+nonsolid = true
+anim = 5237
+op1 = Dismantle
+models_only = 23903
+name = Broken snare

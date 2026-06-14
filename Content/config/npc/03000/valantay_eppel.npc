@@ -1,0 +1,10 @@
+// npc 3630
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/10450 8741/8512 25238/8741 6439/8741 4626/4645
+name = Valantay Eppel
+models = 14174 215 9620 292 326 10301 275 8919 14175
+headmodels = 53 9449 14173 13945

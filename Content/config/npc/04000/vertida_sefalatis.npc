@@ -1,0 +1,10 @@
+// npc 4709
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/94 6798/78
+name = Vertida Sefalatis
+models = 18086 246 18095 18075 18082 18092 181
+headmodels = 18041

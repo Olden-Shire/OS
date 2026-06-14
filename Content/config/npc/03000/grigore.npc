@@ -1,0 +1,11 @@
+// npc 3546
+vislevel = 0
+resizeh = 117
+resizev = 113
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/19986 4626/10450 43072/10450 6798/15397 4550/10450 6443/12818
+name = Grigore
+models = 6848 253 8845 168 176 254 181
+headmodels = 5787 85 9822

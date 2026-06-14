@@ -1,0 +1,12 @@
+// npc 5505
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+resizeh = 140
+resizev = 140
+recol = 25238/6689 6798/4017 7741/5194
+name = Fridleif Shieldson
+models = 4219 4220 242 250 21882 21863 179 21892 19335 21878 19945
+headmodels = 4210 82 75

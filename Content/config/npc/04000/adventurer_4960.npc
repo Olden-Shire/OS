@@ -1,0 +1,10 @@
+// npc 4960
+vislevel = 0
+readyanim = 479
+size = 2
+resizeh = 192
+resizev = 192
+recol = 22435/8520 22420/6695 4550/4533
+name = Adventurer
+models = 19166
+headmodels = 55 19104

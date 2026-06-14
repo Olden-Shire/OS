@@ -1,0 +1,11 @@
+// npc 4820
+op1 = Talk-to
+op2 = Attack
+alwaysontop = true
+readyanim = 4702
+walkanim = 4699
+ambient = -25
+vislevel = 125
+name = Vyrewatch
+models = 17972 18000 17990
+headmodels = 18059

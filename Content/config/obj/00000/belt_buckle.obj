@@ -1,0 +1,10 @@
+// obj 684
+model = obj_belt_buckle
+xof2d = 10
+yof2d = 14
+zoom2d = 460
+yan2d = 1852
+zan2d = 56
+xan2d = 524
+members = true
+name = Belt buckle

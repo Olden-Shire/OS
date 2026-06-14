@@ -1,0 +1,7 @@
+// loc 8111
+op1 = Chop-down
+ambient = 30
+op2 = Inspect
+op4 = Guide
+models_only = 8083 7767
+name = Papaya tree

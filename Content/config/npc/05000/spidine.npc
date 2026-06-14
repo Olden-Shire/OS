@@ -1,0 +1,8 @@
+// npc 5594
+size = 1
+walkanim = 142
+readyanim = 145
+op2 = Attack
+vislevel = 42
+name = Spidine
+models = 22630

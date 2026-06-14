@@ -1,0 +1,10 @@
+// npc 755
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/8388 8741/6356 4550/3550 7952/43456 9104/6331
+name = Morgan
+models = 215 246 292 151 176 254 181 317
+headmodels = 53

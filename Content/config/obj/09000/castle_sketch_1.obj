@@ -1,0 +1,11 @@
+// obj 9646
+members = true
+iop2 = Look-at
+iop5 = Destroy
+model = obj_castle_sketch_1
+zoom2d = 1503
+yan2d = 152
+xan2d = 650
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+name = Castle sketch 1

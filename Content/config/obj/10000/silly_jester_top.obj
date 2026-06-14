@@ -1,0 +1,19 @@
+// obj 10837
+members = true
+cost = 100
+model = obj_silly_jester_top
+xof2d = 3
+yof2d = -7
+zoom2d = 1243
+yan2d = 1867
+zan2d = 2047
+xan2d = 567
+contrast = 15
+ambient = 15
+iop2 = Wear
+womanwear = obj_silly_jester_top_woman, 0
+manwear = obj_silly_jester_top_man, 0
+womanwear2 = 21901
+manwear2 = 21867
+iop5 = Destroy
+name = Silly jester top

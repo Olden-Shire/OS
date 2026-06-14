@@ -1,0 +1,20 @@
+// obj 3749
+cost = 60000
+model = obj_archer_helm_3749
+xof2d = -2
+yof2d = -4
+zoom2d = 1010
+xan2d = 16
+iop2 = Wear
+manwear = obj_fremennik_helm_man, 0
+manwear2 = 4224
+manwear3 = 4219
+womanwear = obj_fremennik_helm_woman, 0
+womanwear2 = 4232
+womanwear3 = 4228
+manhead = 4210
+manhead2 = 4214
+womanhead = 4216
+womanhead2 = 4214
+members = true
+name = Archer helm

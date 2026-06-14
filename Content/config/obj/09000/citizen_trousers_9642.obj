@@ -1,0 +1,14 @@
+// obj 9642
+cost = 5
+model = obj_citizen_trousers_9642
+members = true
+iop2 = Wear
+xof2d = -7
+yof2d = -24
+zoom2d = 1508
+yan2d = 207
+xan2d = 332
+womanwear = obj_citizen_trousers_9642_woman, 0
+manwear = obj_citizen_trousers_9642_man, 0
+recol = 25238/5409 25238/5409
+name = Citizen trousers

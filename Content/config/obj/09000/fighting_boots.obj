@@ -1,0 +1,11 @@
+// obj 9006
+model = obj_fighting_boots
+manwear = obj_fighting_boots_man, 0
+womanwear = obj_fighting_boots_woman, 0
+iop2 = Wear
+yof2d = -4
+zoom2d = 784
+yan2d = 1841
+xan2d = 147
+iop5 = Destroy
+name = Fighting boots

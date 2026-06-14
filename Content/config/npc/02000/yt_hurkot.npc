@@ -1,0 +1,13 @@
+// npc 2746
+size = 1
+op2 = Attack
+walkanim = 2634
+readyanim = 2636
+ambient = 30
+contrast = 30
+resizeh = 35
+resizev = 35
+vislevel = 108
+recol = 908/148
+name = Yt-HurKot
+models = 9326 9328 9327

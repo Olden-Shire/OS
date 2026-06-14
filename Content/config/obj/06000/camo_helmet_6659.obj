@@ -1,0 +1,10 @@
+// obj 6659
+model = obj_camo_helmet_6656
+zoom2d = 660
+xan2d = 168
+manwear = obj_camo_helmet_6656_wear, 0
+womanwear = obj_camo_helmet_6656_wear, 6
+manhead = 9759
+womanhead = 9759
+stackable = true
+name = Camo helmet

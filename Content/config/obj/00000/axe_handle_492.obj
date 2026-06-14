@@ -1,0 +1,13 @@
+// obj 492
+iop2 = Wield
+model = obj_pickaxe_handle_466
+xof2d = -19
+yof2d = -6
+zoom2d = 1220
+yan2d = 84
+xan2d = 440
+manwear = obj_axe_handle_492_wear, 0
+womanwear = obj_axe_handle_492_wear, 6
+cost = 1
+recol = 6024/7073
+name = Axe handle

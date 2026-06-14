@@ -1,0 +1,6 @@
+// loc 5861
+active = 1
+blockwalk = true
+length = 2
+hillskew = true
+multiloc = 273, 65535, 65535 5862 5863

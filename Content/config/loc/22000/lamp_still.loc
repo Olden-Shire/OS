@@ -1,0 +1,7 @@
+// loc 22773
+active = 1
+ambient = 15
+blockwalk = true
+nonblockrange = true
+models_only = 23473
+name = Lamp still

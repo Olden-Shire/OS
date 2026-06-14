@@ -1,0 +1,4 @@
+[clientscript,script_87](int $int0)()
+
+if_settext(join("Score: ", tostring(%varbit2121)), $int0);
+return;

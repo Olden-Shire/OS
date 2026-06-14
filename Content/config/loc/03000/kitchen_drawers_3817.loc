@@ -1,0 +1,10 @@
+// loc 3817
+width = 2
+length = 2
+ambient = 10
+contrast = 10
+op1 = Close
+op2 = Search
+nonblockrange = true
+models_only = 3813
+name = Kitchen Drawers

@@ -1,0 +1,9 @@
+// obj 671
+model = obj_animal_skull
+xof2d = 9
+zoom2d = 1232
+yan2d = 1798
+xan2d = 194
+members = true
+iop5 = Destroy
+name = Animal skull

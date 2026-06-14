@@ -1,0 +1,9 @@
+// npc 5469
+size = 2
+walkanim = 5773
+readyanim = 5773
+vislevel = 0
+op1 = Chop down
+op3 = hidden
+name = Arctic Pine
+models = 16293 27610

@@ -1,0 +1,8 @@
+// loc 23400
+active = 0
+hillskew = true
+contrast = 20
+ambient = 20
+nonsolid = true
+recol = 5388/10258 5392/10262 5272/10270 5281/10275
+models = 24359/22

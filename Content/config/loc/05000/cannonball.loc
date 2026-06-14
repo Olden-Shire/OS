@@ -1,0 +1,8 @@
+// loc 5964
+anim = 1845
+length = 7
+active = 1
+blockwalk = true
+nonblockrange = true
+models_only = 5869
+name = Cannonball

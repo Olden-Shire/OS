@@ -1,0 +1,9 @@
+// npc 4920
+size = 2
+walkanim = 4931
+readyanim = 4932
+op2 = Attack
+vislevel = 76
+recol = 10295/28723 10291/26673 10287/21553 10283/15405 10279/15405 10275/7335
+name = Giant crypt rat
+models = 18892 18890 18895 18888

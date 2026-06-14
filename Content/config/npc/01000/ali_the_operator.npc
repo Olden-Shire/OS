@@ -1,0 +1,11 @@
+// npc 1902
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 25238/9019 8741/49054 4550/5555
+name = Ali the Operator
+models = 6130 246 6134 151 6133 176 490 185
+headmodels = 6127 53

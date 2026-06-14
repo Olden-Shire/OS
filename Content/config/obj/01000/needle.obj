@@ -1,0 +1,11 @@
+// obj 1733
+stackable = true
+model = obj_needle
+xof2d = 2
+yof2d = 4
+zoom2d = 850
+yan2d = 868
+xan2d = 368
+manwear = obj_needle_wear, 0
+womanwear = obj_needle_wear, 0
+name = Needle

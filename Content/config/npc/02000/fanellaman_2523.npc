@@ -1,0 +1,10 @@
+// npc 2523
+vislevel = 0
+size = 1
+op1 = Talk-to
+resizeh = 130
+resizev = 130
+recol = 4550/5795 5916/5458 5219/123 43072/5795 25238/5458 6798/5819
+name = Fanellaman
+models = 210 252 8928 173 8918 566 275 8919 8947
+headmodels = 49 84

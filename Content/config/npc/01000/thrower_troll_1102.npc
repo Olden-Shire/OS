@@ -1,0 +1,11 @@
+// npc 1102
+size = 1
+readyanim = 286
+walkanim = 283
+resizeh = 128
+resizev = 128
+op2 = Attack
+vislevel = 67
+recol = 61/7465 21570/6439
+name = Thrower Troll
+models = 3753 3759 3755 3765

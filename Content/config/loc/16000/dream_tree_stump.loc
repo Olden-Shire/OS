@@ -1,0 +1,10 @@
+// loc 16605
+active = 1
+width = 2
+length = 2
+noshadow = true
+contrast = 40
+ambient = 60
+blockwalk = true
+models_only = 16760
+name = Dream Tree stump

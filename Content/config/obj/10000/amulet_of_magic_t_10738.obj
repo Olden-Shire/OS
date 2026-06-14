@@ -1,0 +1,14 @@
+// obj 10738
+cost = 900
+model = obj_amulet_of_magic_t_10366
+xof2d = 4
+yof2d = 100
+zoom2d = 400
+yan2d = 73
+zan2d = 69
+xan2d = 282
+iop2 = Wear
+manwear = obj_amulet_of_magic_t_10366_man, 0
+womanwear = obj_amulet_of_magic_t_10366_woman, 0
+recol = 5916/127 4882/127
+name = Amulet of magic(t)

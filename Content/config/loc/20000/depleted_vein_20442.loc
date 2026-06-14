@@ -1,0 +1,12 @@
+// loc 20442
+hillskew = true
+active = 1
+ambient = 20
+contrast = 20
+resizey = 153
+op1 = Mine
+op2 = Prospect
+op3 = Hidden
+recol = 53/21547 37/21543 49/21547 45/21543
+models = 21249/0
+name = Depleted vein

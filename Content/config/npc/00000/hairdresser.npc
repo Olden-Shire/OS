@@ -1,0 +1,11 @@
+// npc 598
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8090/8741 8741/54503 25238/906
+name = Hairdresser
+models = 235 181 246 295 162 176 274 244
+headmodels = 67

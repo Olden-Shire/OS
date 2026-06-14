@@ -1,0 +1,5 @@
+[clientscript,script_200](int $int0)()
+
+if_setonfriendtransmit(201, -2147483645, "I", 38666258);
+~script_202($int0);
+return;

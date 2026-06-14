@@ -1,0 +1,10 @@
+// npc 3303
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+recol = 9447/5235 5524/43239
+name = Fairy Nuff
+models = 11883
+headmodels = 14

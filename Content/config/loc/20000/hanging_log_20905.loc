@@ -1,0 +1,9 @@
+// loc 20905
+width = 3
+length = 7
+nonsolid = true
+contrast = 15
+ambient = 15
+resizey = 135
+models_only = 21374
+name = Hanging log

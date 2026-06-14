@@ -1,0 +1,8 @@
+// loc 25672
+hillskew = true
+active = 0
+sharelight = true
+contrast = 15
+ambient = 20
+recol = 5537/5656 5532/5652 5417/5537
+models = 14350/3

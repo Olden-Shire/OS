@@ -1,0 +1,8 @@
+// npc 6128
+size = 1
+readyanim = 6829
+vislevel = 0
+op1 = Talk-to
+name = Smellytoes
+models = 24457 24488 24437 24477 24444 24448 26899 24499
+headmodels = 24210

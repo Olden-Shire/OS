@@ -1,0 +1,9 @@
+// loc 17093
+op1 = Open
+mirror = true
+raiseobject = 0
+ambient = 25
+contrast = 25
+resizey = 152
+models = 639/0
+name = Large door

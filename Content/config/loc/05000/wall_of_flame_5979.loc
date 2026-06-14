@@ -1,0 +1,13 @@
+// loc 5979
+anim = 476
+ambient = 100
+contrast = 100
+resizey = 512
+mapscene = 22
+active = 1
+op1 = Jump-through
+op2 = Talk-to
+recol = 7104/42964 8128/43980 5056/44973 4019/43965 2987/43934
+models = 4794/0 4795/1 4796/2
+models = 6014/0 6015/1 6016/2
+name = Wall of flame

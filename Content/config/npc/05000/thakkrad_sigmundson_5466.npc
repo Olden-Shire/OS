@@ -1,0 +1,10 @@
+// npc 5466
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 25238/5400 8741/7710 6798/6075 6032/6817
+name = Thakkrad Sigmundson
+models = 4219 4220 4221 253 292 4391 170 177 491 4226 4218
+headmodels = 4210 4211 85

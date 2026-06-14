@@ -1,0 +1,11 @@
+// obj 7595
+model = obj_zombie_gloves
+xof2d = -1
+yof2d = -9
+zoom2d = 848
+yan2d = 105
+xan2d = 522
+iop2 = Wear
+manwear = obj_zombie_gloves_man, 0
+womanwear = obj_zombie_gloves_woman, 0
+name = Zombie gloves

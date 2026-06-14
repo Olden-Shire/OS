@@ -1,0 +1,10 @@
+// loc 11702
+sharelight = true
+active = 0
+wallwidth = 32
+resizex = 128
+resizey = 42
+resizez = 128
+ambient = 20
+contrast = 15
+models = 11644/0 11645/1 11646/2 11647/3 11648/9

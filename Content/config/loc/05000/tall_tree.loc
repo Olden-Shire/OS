@@ -1,0 +1,6 @@
+// loc 5848
+width = 4
+blockwalk = true
+op3 = Climb
+models_only = 5695
+name = Tall tree

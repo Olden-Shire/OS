@@ -1,0 +1,13 @@
+// obj 5341
+cost = 10
+model = obj_rake_5341
+manwear = obj_rake_5341_wear, 0
+womanwear = obj_rake_5341_wear, 0
+xof2d = 8
+yof2d = -3
+zoom2d = 1490
+yan2d = 1920
+xan2d = 164
+members = true
+cost = 6
+name = Rake

@@ -1,0 +1,9 @@
+// loc 18367
+anim = 3743
+noshadow = true
+ambient = 20
+contrast = 10
+width = 2
+length = 2
+models_only = 18299 18328
+name = Crate

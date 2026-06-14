@@ -1,0 +1,4 @@
+[clientscript,script_53](int $int0)()
+
+if_settext(join(tostring(stat(5)), " / ", tostring(stat_base(5))), $int0);
+return;

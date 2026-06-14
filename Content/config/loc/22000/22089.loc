@@ -1,0 +1,7 @@
+// loc 22089
+active = 0
+sharelight = true
+nonsolid = true
+ambient = 30
+contrast = 30
+models = 22968/22

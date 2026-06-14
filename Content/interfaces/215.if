@@ -1,0 +1,22 @@
+// interface 215
+
+[com_0]
+type=4
+buttontype=0
+clientcode=0
+x=21
+y=29
+width=441
+height=17
+trans=0
+halign=1
+valign=0
+lineheight=0
+font=497
+shadowed=0
+text=Line1
+activetext=
+colour=0x000000
+colour2=0x000000
+colourover=0x000000
+colour2over=0x000000

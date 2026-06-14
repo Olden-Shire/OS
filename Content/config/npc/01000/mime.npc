@@ -1,0 +1,8 @@
+// npc 1056
+vislevel = 0
+size = 1
+readyanim = 808
+alwaysontop = true
+recol = 9104/43117 25238/8 4626/8 10004/43117 8741/8 10659/8
+name = Mime
+models = 3598 3667 292 163 179 254 185 198 230

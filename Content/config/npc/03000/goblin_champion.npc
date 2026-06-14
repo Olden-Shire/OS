@@ -1,0 +1,9 @@
+// npc 3060
+size = 1
+readyanim = 6139
+walkanim = 6138
+op2 = Attack
+ambient = 15
+vislevel = 24
+name = Goblin Champion
+models = 24460 24489 24438 24473 24440 24453 24510

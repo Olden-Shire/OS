@@ -1,0 +1,10 @@
+// npc 3163
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8741/687 8078/65335 8741/64049 25238/8396 5231/7496 9104/920
+name = Joe
+models = 214 251 11114 3667 167 11109 5218
+headmodels = 52 83

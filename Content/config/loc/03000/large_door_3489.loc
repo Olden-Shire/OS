@@ -1,0 +1,8 @@
+// loc 3489
+op1 = Open
+op2 = Knock-at
+ambient = 30
+recol = 6930/7566
+retex = 16/5
+models = 3544/0
+name = Large door

@@ -1,0 +1,8 @@
+// npc 2509
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 9152/4886 41/5572 4886/5914 61/5572 4550/5532 6798/10328
+name = Mamma Bufetta
+models = 387 445 8943 341 8933 8940 8934
+headmodels = 110

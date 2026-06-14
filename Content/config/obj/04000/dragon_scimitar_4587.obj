@@ -1,0 +1,12 @@
+// obj 4587
+members = true
+model = obj_dragon_scimitar_4587
+yof2d = 6
+zoom2d = 1640
+yan2d = 12
+xan2d = 456
+iop2 = Wield
+manwear = obj_dragon_scimitar_4587_wear, 0
+womanwear = obj_dragon_scimitar_4587_wear, 6
+cost = 100000
+name = Dragon scimitar

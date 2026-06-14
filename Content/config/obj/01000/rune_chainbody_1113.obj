@@ -1,0 +1,11 @@
+// obj 1113
+cost = 50000
+model = obj_bronze_chainbody_1103
+yof2d = 2
+zoom2d = 1100
+xan2d = 568
+manwear = obj_bronze_chainbody_1103_man, 0
+womanwear = obj_bronze_chainbody_1103_woman, 0
+iop2 = Wear
+recol = 33/36133 41/36141 49/35111
+name = Rune chainbody

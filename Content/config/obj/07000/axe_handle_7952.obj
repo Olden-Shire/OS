@@ -1,0 +1,13 @@
+// obj 7952
+iop2 = Wield
+model = obj_axe_handle_7952
+xof2d = 1
+yof2d = 24
+zoom2d = 1114
+yan2d = 1162
+xan2d = 387
+manwear = obj_axe_handle_7952_wear, 0
+womanwear = obj_axe_handle_7952_wear, 6
+cost = 1
+members = true
+name = Axe handle

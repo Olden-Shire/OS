@@ -1,0 +1,10 @@
+// loc 11699
+anim = 471
+width = 2
+length = 2
+offsetx = 12
+offsety = 0
+offsetz = 0
+bgsound = 3124, 3
+models_only = 2281
+name = Flagpole

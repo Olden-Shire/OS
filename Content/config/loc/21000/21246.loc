@@ -1,0 +1,7 @@
+// loc 21246
+active = 1
+length = 4
+width = 3
+forceapproach = 7
+op1 = Use
+multiloc = 3294, 65535, 21179 21180 21181 21182

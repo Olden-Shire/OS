@@ -1,0 +1,10 @@
+// npc 5029
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Get-rewards
+alwaysontop = true
+name = Commander Connad
+models = 20096 230 251 11758 11765 11727 11732 19251 11735 11763 11762
+headmodels = 63 20094 83

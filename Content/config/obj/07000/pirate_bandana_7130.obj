@@ -1,0 +1,15 @@
+// obj 7130
+model = obj_pirate_bandana_7112
+members = true
+manwear = obj_pirate_bandana_7112_man, 0
+womanwear = obj_pirate_bandana_7112_woman, 0
+iop2 = Wear
+manhead = 11186
+womanhead = 11189
+yof2d = 8
+zoom2d = 720
+yan2d = 417
+xan2d = 609
+cost = 100
+recol = 127/40390
+name = Pirate bandana

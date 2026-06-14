@@ -1,0 +1,12 @@
+// obj 4153
+model = obj_granite_maul_4153
+xof2d = -1
+yof2d = 17
+yan2d = 36
+xan2d = 308
+iop2 = Wield
+manwear = obj_granite_maul_4153_wear, 0
+womanwear = obj_granite_maul_4153_wear, 6
+members = true
+cost = 50000
+name = Granite maul

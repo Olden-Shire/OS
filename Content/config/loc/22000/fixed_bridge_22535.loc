@@ -1,0 +1,11 @@
+// loc 22535
+active = 1
+op1 = Search
+op2 = Walk-across
+forcedecor = true
+hillskew = true
+mapscene = 46
+blockwalk = true
+recol = 6932/12698 6684/12818
+models = 23190/22
+name = Fixed bridge

@@ -1,0 +1,6 @@
+// loc 15350
+active = 1
+op5 = Build
+nonsolid = true
+models_only = 4730
+name = Floor space

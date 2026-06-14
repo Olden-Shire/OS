@@ -1,0 +1,9 @@
+// loc 5263
+hillskew = true
+sharelight = true
+width = 3
+length = 3
+op1 = Climb-down
+recol = 8497/16904 8530/16656
+models_only = 5401
+name = Stairs

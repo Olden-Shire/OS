@@ -1,0 +1,8 @@
+// loc 19413
+blockwalk = true
+width = 2
+op1 = Inspect
+nonblockrange = true
+recol = 17304/16293
+models_only = 1613
+name = Jungle plant

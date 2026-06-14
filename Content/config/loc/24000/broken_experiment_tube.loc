@@ -1,0 +1,9 @@
+// loc 24688
+blockwalk = true
+contrast = 5
+ambient = 15
+width = 3
+nonblockrange = true
+recol = 7452/6554 8483/6430 8596/6674 8472/6550
+models_only = 17877
+name = Broken experiment tube

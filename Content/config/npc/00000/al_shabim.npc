@@ -1,0 +1,11 @@
+// npc 832
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+vislevel = 0
+recol = 8741/127 25238/127 4626/127 908/127 43072/127 4550/4645
+name = Al Shabim
+models = 215 253 188 292 170 176 265 185 534 323
+headmodels = 53 30 85

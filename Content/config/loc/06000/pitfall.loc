@@ -1,0 +1,6 @@
+// loc 6521
+active = 1
+anim = 1939
+blockwalk = true
+models = 6268/22
+name = Pitfall

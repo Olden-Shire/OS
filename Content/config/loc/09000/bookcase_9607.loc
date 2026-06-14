@@ -1,0 +1,8 @@
+// loc 9607
+op1 = Search
+forceapproach = 13
+offsetx = 0
+offsety = 0
+offsetz = -16
+models_only = 9500
+name = Bookcase

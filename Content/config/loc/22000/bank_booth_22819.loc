@@ -1,0 +1,9 @@
+// loc 22819
+active = 1
+ambient = 25
+blockwalk = true
+op1 = Use
+op2 = Use-quickly
+nonblockrange = true
+models_only = 23319
+name = Bank booth

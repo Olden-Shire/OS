@@ -1,0 +1,10 @@
+// npc 4282
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 92
+recol = 61/43297 41/43282 24/43276 37/43282 11200/43276
+name = Animated Mithril Armour
+models = 15311 15316 15301 15304 518 15314 15303

@@ -1,0 +1,8 @@
+// npc 1484
+walkanim = 1399
+readyanim = 1401
+vislevel = 1
+recol = 37/43968 45/37
+name = Ancient monkey
+models = 4809 4813
+headmodels = 4663

@@ -1,0 +1,12 @@
+// obj 2875
+members = true
+model = obj_bloated_toad
+xof2d = -2
+yof2d = -34
+zoom2d = 1430
+yan2d = 204
+xan2d = 212
+iop1 = Drop
+iop4 = Release All
+iop5 = Release
+name = Bloated toad

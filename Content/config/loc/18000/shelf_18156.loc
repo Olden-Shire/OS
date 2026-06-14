@@ -1,0 +1,6 @@
+// loc 18156
+nonsolid = true
+ambient = 10
+op1 = Search
+models = 18308/4
+name = Shelf

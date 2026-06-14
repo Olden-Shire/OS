@@ -1,0 +1,7 @@
+// loc 444
+width = 2
+length = 2
+mapscene = 11
+nonblockrange = true
+models_only = 1405
+name = Boulder

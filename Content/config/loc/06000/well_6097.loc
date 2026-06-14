@@ -1,0 +1,11 @@
+// loc 6097
+resizex = 128
+resizey = 100
+resizez = 128
+width = 2
+length = 2
+hillskew = true
+active = 1
+recol = 7062/5404 7056/5524 44874/10258 10279/10266 10275/10262 10270/10258
+models_only = 1410
+name = Well

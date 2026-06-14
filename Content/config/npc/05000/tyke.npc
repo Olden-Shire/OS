@@ -1,0 +1,10 @@
+// npc 5804
+readyanim = 6059
+walkanim = 6057
+vislevel = 0
+turnspeed = 0
+op1 = Talk-to
+recol = 7265/8286 7260/8282 12500/12496 12496/12492
+name = Tyke
+models = 23711
+headmodels = 23245

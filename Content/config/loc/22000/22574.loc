@@ -1,0 +1,7 @@
+// loc 22574
+blockwalk = true
+ambient = 20
+hillskew = true
+active = 0
+recol = 9098/10258 8846/10262 8722/10266 8598/10270 8602/10275 8478/10279
+models_only = 12041

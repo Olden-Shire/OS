@@ -1,0 +1,11 @@
+// obj 11024
+model = obj_rabbit_mould
+yof2d = -5
+zoom2d = 848
+yan2d = 1874
+xan2d = 192
+contrast = 15
+ambient = 15
+op3 = Take
+iop5 = Destroy
+name = Rabbit mould

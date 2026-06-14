@@ -1,0 +1,10 @@
+// npc 952
+vislevel = 0
+size = 1
+op1 = Net
+op3 = hidden
+nominimap = true
+readyanim = 447
+walkanim = 448
+name = Fishing spot
+models = 1491

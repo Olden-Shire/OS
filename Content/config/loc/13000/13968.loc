@@ -1,0 +1,7 @@
+// loc 13968
+hillskew = true
+nonsolid = true
+ambient = 25
+op1 = Enter
+active = 1
+multiloc = 2032, 65535, 13969 13970

@@ -1,0 +1,9 @@
+// loc 11272
+active = 0
+sharelight = true
+hillskew = true
+mirror = true
+nonsolid = true
+forcedecor = true
+recol = 12579/4510 12574/4515 12698/6930 12694/4391
+models = 9439/22

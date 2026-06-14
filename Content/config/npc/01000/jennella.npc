@@ -1,0 +1,12 @@
+// npc 1312
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 48
+recol = 25238/8076 8741/7830 8078/7582 7700/7830 6798/7746
+name = Jennella
+models = 390 343 456 421 353 479 361 417
+headmodels = 113 136

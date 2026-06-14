@@ -1,0 +1,12 @@
+// npc 149
+size = 2
+walkanim = 6773
+readyanim = 6771
+ambient = 20
+resizeh = 138
+resizev = 138
+vislevel = 0
+nominimap = true
+recol = 7070/82 11200/35361
+name = Gull
+models = 26841 26844

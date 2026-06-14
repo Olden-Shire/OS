@@ -1,0 +1,9 @@
+// npc 1513
+vislevel = 0
+op1 = Talk-to
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+recol = 4626/127 7756/40167 7845/40499 7591/40499
+name = Mage
+models = 5033 393 5035 5603 5029 5030 14589 5034 358 567
+headmodels = 4951 115

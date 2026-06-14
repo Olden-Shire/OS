@@ -1,0 +1,8 @@
+// npc 1539
+size = 1
+walkanim = 5479
+readyanim = 5483
+op2 = Attack
+vislevel = 42
+name = Skeletal miner
+models = 21171 21177 21162 21157 21183 21203 21188

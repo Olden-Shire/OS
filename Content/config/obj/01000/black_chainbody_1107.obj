@@ -1,0 +1,10 @@
+// obj 1107
+cost = 1440
+model = obj_bronze_chainbody_1103
+zoom2d = 1100
+xan2d = 576
+iop2 = Wear
+manwear = obj_bronze_chainbody_1103_man, 0
+womanwear = obj_bronze_chainbody_1103_woman, 0
+recol = 33/0 41/16 49/24
+name = Black chainbody

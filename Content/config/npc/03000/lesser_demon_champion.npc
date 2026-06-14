@@ -1,0 +1,10 @@
+// npc 3064
+size = 2
+walkanim = 4674
+readyanim = 4675
+resizeh = 86
+resizev = 86
+op2 = Attack
+vislevel = 162
+name = Lesser Demon Champion
+models = 17381 17398 17384 17390

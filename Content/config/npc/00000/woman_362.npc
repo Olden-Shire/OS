@@ -1,0 +1,11 @@
+// npc 362
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 3
+recol = 43072/4550 25238/6439 4550/7384
+name = Woman
+models = 404 11360 351 353 437 358
+headmodels = 121 11429

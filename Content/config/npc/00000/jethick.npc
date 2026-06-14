@@ -1,0 +1,10 @@
+// npc 725
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/6449 25238/10913 6798/10299 43072/4550
+name = Jethick
+models = 235 252 299 173 176 263 185
+headmodels = 67 84

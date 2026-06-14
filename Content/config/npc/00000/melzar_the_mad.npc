@@ -1,0 +1,11 @@
+// npc 753
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 43
+recol = 25238/10508 8741/10508 6798/10508
+name = Melzar the Mad
+models = 208 181 251 292 170 176 265
+headmodels = 48 83

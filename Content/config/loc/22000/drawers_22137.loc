@@ -1,0 +1,9 @@
+// loc 22137
+blockwalk = true
+ambient = 15
+contrast = 15
+offsetz = 16
+nonblockrange = true
+recol = 6466/6573 5545/6817
+models_only = 22938
+name = Drawers

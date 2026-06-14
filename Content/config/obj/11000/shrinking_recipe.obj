@@ -1,0 +1,11 @@
+// obj 11202
+model = obj_shrinking_recipe
+zoom2d = 976
+yan2d = 2012
+xan2d = 405
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Shrinking recipe

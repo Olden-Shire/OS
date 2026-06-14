@@ -1,0 +1,6 @@
+// loc 2333
+op1 = Cross
+active = 1
+blockwalk = true
+models = 1046/22
+name = Stepping stones

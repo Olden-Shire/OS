@@ -1,0 +1,14 @@
+// obj 10055
+model = obj_wood_camo_legs_10055
+iop2 = Wear
+manwear = obj_wood_camo_legs_10055_man, 0
+womanwear = obj_wood_camo_legs_10055_woman, 0
+xof2d = 10
+yof2d = 7
+zoom2d = 2030
+yan2d = 1896
+zan2d = 60
+xan2d = 452
+members = true
+cost = 20
+name = Wood camo legs

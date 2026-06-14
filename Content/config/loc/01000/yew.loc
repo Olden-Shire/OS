@@ -1,0 +1,9 @@
+// loc 1309
+width = 3
+length = 3
+op1 = Chop down
+op3 = hidden
+mapscene = 3
+ambient = 25
+models_only = 8157
+name = Yew

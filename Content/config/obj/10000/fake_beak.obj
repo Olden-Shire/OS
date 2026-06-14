@@ -1,0 +1,13 @@
+// obj 10172
+model = obj_fake_beak
+xof2d = 3
+zoom2d = 330
+yan2d = 1192
+xan2d = 372
+iop2 = Wear
+manwear = obj_fake_beak_man, 0
+womanwear = obj_fake_beak_woman, 0
+manhead = 19802
+womanhead = 19806
+members = true
+name = Fake beak

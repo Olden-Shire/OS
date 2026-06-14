@@ -1,0 +1,6 @@
+// loc 9101
+anim = 2437
+active = 1
+blockwalk = true
+models_only = 9063
+name = Conveyor belt

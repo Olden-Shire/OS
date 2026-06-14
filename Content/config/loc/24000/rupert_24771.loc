@@ -1,0 +1,10 @@
+// loc 24771
+active = 1
+contrast = 10
+ambient = 20
+nonsolid = true
+anim = 6509
+op1 = Talk-to
+op3 = Climb-down
+models_only = 26062
+name = Rupert

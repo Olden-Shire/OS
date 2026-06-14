@@ -1,0 +1,8 @@
+// loc 13710
+width = 2
+op1 = Craft
+op5 = Remove
+op4 = Upgrade
+forceapproach = 11
+models_only = 12184 12182
+name = Clockmaker's bench

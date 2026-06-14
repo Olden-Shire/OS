@@ -1,0 +1,8 @@
+// npc 3814
+walkanim = 189
+readyanim = 195
+op2 = Attack
+vislevel = 5
+name = Gnome Archer
+models = 2890 2909 2915
+headmodels = 21

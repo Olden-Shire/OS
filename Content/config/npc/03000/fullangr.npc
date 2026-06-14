@@ -1,0 +1,9 @@
+// npc 3934
+vislevel = 0
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 7473/21568 5417/5551 33/51 4626/54414 61/5667 5784/3875
+name = Fullangr
+models = 2972 2983 2979 7044 2985
+headmodels = 2

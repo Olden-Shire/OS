@@ -1,0 +1,12 @@
+[clientscript,script_102](string $string0)()
+
+if (%varcint5 < 2) {
+    if_sethide(0, 35913816);
+    if_sethide(1, 35913817);
+    if_settext($string0, 35913821);
+    if_settext("Click to continue", 35913822);
+    %varcint5 = 1;
+    if_setonclick(101, "", 35913816);
+    if_setonkey(-1, "", 35913822);
+}
+return;

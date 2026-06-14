@@ -1,0 +1,13 @@
+// obj 9446
+model = obj_wooden_stock_9440
+xof2d = -3
+yof2d = -1
+zoom2d = 976
+yan2d = 243
+xan2d = 420
+manwear = obj_wooden_stock_9440_wear, 0
+womanwear = obj_wooden_stock_9440_wear, 6
+members = true
+cost = 77
+recol = 6447/6602 6443/6594 6439/6585
+name = Teak stock

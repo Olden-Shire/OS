@@ -232,6 +232,14 @@ impl ClientStream {
         self.read_stream.set_nonblocking(true)?;
         let mut probe = [0u8; 8192];
         let n = match self.read_stream.peek(&mut probe) {
+            // peek == 0 on a non-blocking socket means the peer closed (orderly
+            // shutdown / EOF) — distinct from WouldBlock ("no data yet"). Surface
+            // it as an error so the read loop drops to lost_con instead of
+            // treating a dead connection as merely idle.
+            Ok(0) => {
+                let _ = self.read_stream.set_nonblocking(false);
+                return Err(IoError);
+            }
             Ok(n) => n as i32,
             Err(e) if e.kind() == std::io::ErrorKind::WouldBlock => 0,
             Err(e) => {

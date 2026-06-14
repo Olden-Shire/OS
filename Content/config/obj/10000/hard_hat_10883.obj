@@ -1,0 +1,16 @@
+// obj 10883
+model = obj_hard_hat_10862
+manwear = obj_hard_hat_10862_man, 0
+womanwear = obj_hard_hat_10862_woman, 0
+manhead = 22592
+womanhead = 22592
+iop2 = Wear
+iop5 = Destroy
+cost = 100
+xof2d = 3
+yof2d = -16
+zoom2d = 787
+yan2d = 1851
+xan2d = 176
+members = true
+name = Hard hat

@@ -1,0 +1,11 @@
+// npc 229
+alwaysontop = true
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/9804 8741/40377 43072/4550 10378/6585 10004/41389
+name = Joshua
+models = 12137 246 9606 10984 173 179 562 14378 7607
+headmodels = 14371

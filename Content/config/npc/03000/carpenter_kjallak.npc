@@ -1,0 +1,11 @@
+// npc 3916
+op1 = Talk-to
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 1365
+recol = 8741/8656 40237/3604 40233/3604
+name = Carpenter Kjallak
+models = 15103 215 11190 15105 167 179 510 15104 4218
+headmodels = 53 15102 11188

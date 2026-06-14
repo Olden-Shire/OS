@@ -1,0 +1,13 @@
+// obj 10041
+model = obj_larupia_legs_10041
+iop2 = Wear
+manwear = obj_larupia_legs_10041_man, 0
+womanwear = obj_larupia_legs_10041_woman, 0
+xof2d = 4
+yof2d = -5
+zoom2d = 1697
+yan2d = 12
+xan2d = 470
+members = true
+cost = 100
+name = Larupia legs

@@ -1,0 +1,10 @@
+// npc 2744
+size = 5
+op2 = Attack
+walkanim = 2643
+readyanim = 2642
+ambient = 40
+vislevel = 360
+recol = 64400/6055 64398/5027 64396/4003 906/3998 904/3996 65441/5933
+name = Ket-Zek
+models = 9324 9323 9322 9321

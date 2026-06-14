@@ -1,0 +1,11 @@
+// obj 5400
+model = obj_apples_2_5380
+yof2d = -1
+zoom2d = 660
+yan2d = 1816
+xan2d = 84
+members = true
+iop1 = Fill
+iop2 = Remove-one
+recol = 17325/815
+name = Strawberries(2)

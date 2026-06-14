@@ -1,0 +1,6 @@
+// loc 18374
+sharelight = true
+hillskew = true
+ambient = 35
+occlude = true
+models = 18469/0 18470/1 18471/9

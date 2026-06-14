@@ -1,0 +1,8 @@
+// loc 13487
+op5 = Remove
+contrast = 25
+ambient = 25
+op1 = Talk-to
+forceapproach = 11
+models_only = 24627
+name = KQ head

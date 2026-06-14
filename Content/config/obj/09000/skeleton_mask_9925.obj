@@ -1,0 +1,15 @@
+// obj 9925
+model = obj_skeleton_mask_9925
+iop2 = Wear
+iop5 = Destroy
+manwear = obj_skeleton_mask_9925_man, 0
+womanwear = obj_skeleton_mask_9925_woman, 0
+manhead = 19169
+womanhead = 19171
+xof2d = 1
+yof2d = -1
+zoom2d = 465
+yan2d = 111
+zan2d = 2047
+cost = 1
+name = Skeleton mask

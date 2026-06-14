@@ -1,0 +1,6 @@
+// npc 1527
+size = 1
+turnspeed = 1024
+vislevel = 0
+name = Mine cart
+models = 4894

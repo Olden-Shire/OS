@@ -1,0 +1,8 @@
+// loc 18615
+op1 = Search
+resizex = 250
+resizez = 250
+resizey = 250
+recol = 6443/6563 6439/6558 6563/6682 6558/6806 6682/6930 6806/7054
+models_only = 7704
+name = Crates

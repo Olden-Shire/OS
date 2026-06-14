@@ -1,0 +1,11 @@
+// obj 11198
+model = obj_music_sheet
+zoom2d = 1104
+yan2d = 1988
+xan2d = 447
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Music sheet

@@ -1,0 +1,8 @@
+// loc 13540
+length = 2
+op1 = Take-kettle
+contrast = 25
+ambient = 25
+bgsound = 2199, 3
+models_only = 12616 12617
+name = Steel range

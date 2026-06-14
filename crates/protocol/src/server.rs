@@ -124,6 +124,44 @@ pub fn if_setmodel(component: i32, model: i32) -> ServerPacket {
     finish(251, SizeKind::Fixed(6), p)
 }
 
+/// UPDATE_INV_FULL (29) — set a component's whole inventory. Client reads
+/// g4(component), g2(inv), g2(count), then per slot g1_alt3(qty) [g4_alt1 when
+/// 255] and g2_alt1(obj+1) (0 = empty). Mirrors crates/client login.rs:941.
+pub fn update_inv_full(component: i32, inv_id: i32, slots: &[(i32, i32)]) -> ServerPacket {
+    let mut p = body(8 + slots.len() * 7);
+    p.p4(component);
+    p.p2(inv_id);
+    p.p2(slots.len() as i32);
+    for &(obj, count) in slots {
+        let wire_id = if obj >= 0 { obj + 1 } else { 0 };
+        if count >= 255 {
+            p.p1_alt3(255);
+            p.p4_alt1(count);
+        } else {
+            p.p1_alt3(count);
+        }
+        p.p2_alt1(wire_id);
+    }
+    finish(29, SizeKind::Var2, p)
+}
+
+/// LAST_LOGIN_INFO (241) — the previous-login IP shown on the welcome screen.
+/// Client reads g4_alt1(ip) (login.rs:1189). (The rev1 packet is just the IP,
+/// not the 377 multi-field block.)
+pub fn last_login_info(ip: i32) -> ServerPacket {
+    let mut p = body(4);
+    p.p4_alt1(ip);
+    finish(241, SizeKind::Fixed(4), p)
+}
+
+/// UPDATE_INV_STOPTRANSMIT (117) — clear a component's inventory display.
+/// Client reads g4_alt1(component) (login.rs:1010).
+pub fn update_inv_stop_transmit(component: i32) -> ServerPacket {
+    let mut p = body(4);
+    p.p4_alt1(component);
+    finish(117, SizeKind::Fixed(4), p)
+}
+
 /// IF_SETOBJECT (102) — show item `obj` at `scale` on a component. Client reads
 /// g4(component), g2_alt2(obj), g4_alt1(scale) (Client.java:6633).
 pub fn if_setobject(component: i32, obj: i32, scale: i32) -> ServerPacket {

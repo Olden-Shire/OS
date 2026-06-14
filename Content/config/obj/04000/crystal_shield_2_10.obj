@@ -1,0 +1,13 @@
+// obj 4233
+iop2 = Wield
+model = obj_new_crystal_shield_4224
+manwear = obj_new_crystal_shield_4224_wear, 0
+womanwear = obj_new_crystal_shield_4224_wear, 6
+xof2d = -1
+yof2d = 33
+zoom2d = 1720
+yan2d = 928
+xan2d = 232
+members = true
+cost = 100000
+name = Crystal shield 2/10

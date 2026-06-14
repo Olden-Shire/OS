@@ -1,0 +1,11 @@
+// obj 4446
+model = obj_steel_key_ring
+xof2d = 2
+yof2d = -30
+zoom2d = 820
+yan2d = 92
+zan2d = 108
+xan2d = 236
+iop1 = Check-keys
+members = true
+name = Steel key ring

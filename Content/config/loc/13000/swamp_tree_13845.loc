@@ -1,0 +1,7 @@
+// loc 13845
+ambient = 10
+noshadow = true
+length = 2
+active = 1
+models_only = 14148
+name = Swamp tree

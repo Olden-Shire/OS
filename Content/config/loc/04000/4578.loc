@@ -1,0 +1,9 @@
+// loc 4578
+occlude = true
+blockwalk = true
+resizex = 128
+resizey = 256
+resizez = 128
+ambient = 20
+contrast = 0
+models = 4529/0

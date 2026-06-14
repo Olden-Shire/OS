@@ -1,0 +1,10 @@
+// npc 1950
+size = 1
+walkanim = 283
+readyanim = 286
+op1 = Talk-to
+vislevel = 0
+recol = 61/43105 21570/43220 6092/10312 1990/61879
+name = Troll mother
+models = 4941 4944 3756
+headmodels = 3791 3789

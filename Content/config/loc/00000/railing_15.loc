@@ -1,0 +1,9 @@
+// loc 15
+active = 1
+hillskew = true
+ambient = 10
+contrast = 5
+op1 = Inspect
+nonblockrange = true
+models = 15396/0
+name = Railing

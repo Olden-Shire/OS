@@ -1,0 +1,11 @@
+// obj 8872
+members = true
+model = obj_bone_dagger_8872
+zoom2d = 976
+yan2d = 30
+xan2d = 576
+iop2 = Wield
+manwear = obj_bone_dagger_8872_wear, 0
+womanwear = obj_bone_dagger_8872_wear, 6
+cost = 2000
+name = Bone dagger

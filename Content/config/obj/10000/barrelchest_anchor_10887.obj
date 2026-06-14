@@ -1,0 +1,14 @@
+// obj 10887
+model = obj_barrelchest_anchor_10887
+members = true
+cost = 230000
+iop2 = Wield
+iop5 = Destroy
+xof2d = -5
+yof2d = 2
+zoom2d = 1104
+yan2d = 24
+xan2d = 321
+manwear = obj_barrelchest_anchor_10887_wear, 0
+womanwear = obj_barrelchest_anchor_10887_wear, 6
+name = Barrelchest anchor

@@ -1,0 +1,8 @@
+// loc 8325
+ambient = 25
+op1 = Pick
+op2 = Inspect
+op4 = Guide
+nonblockrange = true
+models_only = 7900 7767
+name = Bittercap Mushrooms

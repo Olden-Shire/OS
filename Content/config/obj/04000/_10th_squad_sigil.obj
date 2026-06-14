@@ -1,0 +1,12 @@
+// obj 4035
+members = true
+model = obj__10th_squad_sigil
+xof2d = 1
+yof2d = 7
+zoom2d = 1040
+yan2d = 120
+xan2d = 380
+manwear = obj__10th_squad_sigil_man, 0
+womanwear = obj__10th_squad_sigil_woman, 0
+iop2 = Wear
+name = 10th squad sigil

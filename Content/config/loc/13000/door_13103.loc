@@ -1,0 +1,7 @@
+// loc 13103
+active = 1
+op1 = Close
+blockwalk = true
+mirror = true
+models = 13261/0
+name = Door

@@ -1,0 +1,12 @@
+[clientscript,script_72](int $int0, int $int1, int $int2)()
+def_int $int3;
+
+$int3 = calc((if_getheight($int0) - 32) * if_getheight($int0) / if_getscrollheight($int1));
+if ($int3 < 10) {
+    $int3 = 10;
+}
+if (cc_find($int0, 1) = 1) {
+    cc_setsize(16, $int3);
+    ~script_37($int0, $int1, $int2, 1);
+}
+return;

@@ -1,0 +1,11 @@
+// npc 1095
+walkanim = 1141
+readyanim = 927
+size = 2
+resizeh = 180
+resizev = 180
+op2 = Attack
+vislevel = 111
+recol = 61/8367 10355/10578 21570/7469
+name = Rock
+models = 3753 3759 3756 3768 3770 3760 3773

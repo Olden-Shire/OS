@@ -1,0 +1,10 @@
+// npc 1329
+size = 2
+readyanim = 6374
+walkanim = 6373
+resizeh = 86
+resizev = 86
+op2 = Attack
+vislevel = 22
+name = Black unicorn Foal
+models = 25754 25756

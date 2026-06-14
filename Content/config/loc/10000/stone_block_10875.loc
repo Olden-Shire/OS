@@ -1,0 +1,7 @@
+// loc 10875
+width = 2
+length = 2
+nonsolid = true
+anim = 3070
+models_only = 10815
+name = Stone block

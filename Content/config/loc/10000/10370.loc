@@ -1,0 +1,6 @@
+// loc 10370
+sharelight = true
+active = 0
+mirror = true
+recol = 5559/6563 5413/6558 7580/6682 5404/6563 5524/6682 2952/7054
+models = 5393/18

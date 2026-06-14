@@ -1,0 +1,9 @@
+// loc 24722
+active = 1
+ambient = 25
+contrast = 25
+width = 2
+op1 = Play
+op3 = Search
+models_only = 25943
+name = Piano

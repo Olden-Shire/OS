@@ -1,0 +1,9 @@
+// obj 3159
+cost = 40
+members = true
+model = obj_karambwan_vessel_3159
+zoom2d = 940
+xan2d = 72
+manwear = obj_karambwan_vessel_3157_wear, 0
+womanwear = obj_karambwan_vessel_3157_wear, 6
+name = Karambwan vessel

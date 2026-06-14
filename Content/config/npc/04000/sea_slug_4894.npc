@@ -1,0 +1,6 @@
+// npc 4894
+vislevel = 0
+walkanim = 933
+readyanim = 932
+name = Sea slug
+models = 560

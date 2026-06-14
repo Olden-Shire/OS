@@ -1,0 +1,11 @@
+// obj 10442
+model = obj_guthix_crozier_10442
+yof2d = 1
+zoom2d = 2216
+xan2d = 650
+iop2 = Wield
+manwear = obj_guthix_crozier_10442_wear, 0
+womanwear = obj_guthix_crozier_10442_wear, 6
+members = true
+cost = 5000
+name = Guthix crozier

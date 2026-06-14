@@ -1,0 +1,9 @@
+// npc 340
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 2712
+op1 = Talk-to
+recol = 6798/7353 8741/5409 25238/7442 43072/4550 1942/4764 906/5400
+name = Hops
+models = 6848 250 299 9621 170 176 3876 274 181 9607
+headmodels = 5787 82

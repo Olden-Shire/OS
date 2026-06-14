@@ -1,0 +1,7 @@
+// loc 2834
+op1 = Climb-over
+active = 1
+ambient = 10
+blockwalk = true
+models = 20329/22
+name = Battlement

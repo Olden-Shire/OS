@@ -1,0 +1,10 @@
+// loc 11745
+ambient = 10
+offsetx = -30
+offsety = 0
+offsetz = 0
+op1 = Search
+nonblockrange = true
+recol = 6443/6453 6439/6449 6563/6445 6558/6569 6682/6565 6806/6689
+models_only = 7704
+name = Crates

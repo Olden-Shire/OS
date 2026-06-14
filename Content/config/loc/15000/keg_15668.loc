@@ -1,0 +1,4 @@
+// loc 15668
+op1 = Pick-up
+models_only = 15385
+name = Keg

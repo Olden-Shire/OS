@@ -1,0 +1,7 @@
+// loc 8159
+ambient = 25
+op1 = Harvest
+op2 = Inspect
+op4 = Guide
+models_only = 8205 7766
+name = Asgarnian Hops

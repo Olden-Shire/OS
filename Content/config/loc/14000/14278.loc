@@ -1,0 +1,6 @@
+// loc 14278
+ambient = 10
+forcedecor = true
+hillskew = true
+sharelight = true
+models = 14515/22

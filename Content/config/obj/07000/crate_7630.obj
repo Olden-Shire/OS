@@ -1,0 +1,13 @@
+// obj 7630
+cost = 1
+model = obj_crate_7630
+xof2d = -1
+yof2d = -6
+zoom2d = 2020
+yan2d = 232
+xan2d = 112
+iop1 = Search
+iop5 = Destroy
+members = true
+recol = 6443/13596 6439/13592 6563/13716 6558/13840 6682/13964 6806/14216
+name = Crate

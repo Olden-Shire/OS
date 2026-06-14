@@ -1,0 +1,12 @@
+// obj 6041
+model = obj_amulet_of_nature
+yof2d = 3
+zoom2d = 630
+yan2d = 116
+xan2d = 380
+iop2 = Wear
+manwear = obj_amulet_of_accuracy_1478_man, 0
+womanwear = obj_amulet_of_accuracy_1478_woman, 0
+members = true
+recol = 127/22443 5916/10520 4882/10520
+name = Pre-nature amulet

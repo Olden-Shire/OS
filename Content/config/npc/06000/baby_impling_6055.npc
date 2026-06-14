@@ -1,0 +1,9 @@
+// npc 6055
+walkanim = 6614
+readyanim = 6613
+vislevel = 0
+op1 = Catch
+nowalksmoothing = true
+alwaysontop = true
+name = Baby impling
+models = 26366 26367

@@ -1,0 +1,6 @@
+// loc 11841
+mirror = true
+ambient = 20
+contrast = 15
+models_only = 11676
+name = Bricks

@@ -1,0 +1,10 @@
+// npc 4710
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/24 924/115 922/107 920/99 6798/94
+name = Aeonisig Raispher
+models = 217 14564 11190 284 292 14563 10218 14565 181
+headmodels = 55 11188 14583

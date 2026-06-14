@@ -1,0 +1,8 @@
+// loc 21171
+active = 1
+ambient = 20
+contrast = 20
+mirror = true
+op1 = Open
+models = 21765/0
+name = Door

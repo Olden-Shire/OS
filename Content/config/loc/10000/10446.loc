@@ -1,0 +1,6 @@
+// loc 10446
+active = 0
+ambient = 15
+hillskew = true
+nonsolid = true
+models_only = 10167

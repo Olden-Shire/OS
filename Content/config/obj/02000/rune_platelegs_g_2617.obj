@@ -1,0 +1,11 @@
+// obj 2617
+cost = 64000
+model = obj_iron_platelegs_1067
+yof2d = -8
+zoom2d = 1740
+xan2d = 444
+iop2 = Wear
+manwear = obj_iron_platelegs_1067_man, 0
+womanwear = obj_iron_platelegs_1067_woman, 0
+recol = 61/36133 41/37270 57/7114
+name = Rune platelegs (g)

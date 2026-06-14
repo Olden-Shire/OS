@@ -1,0 +1,10 @@
+// npc 472
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 11162/38715 22422/38715
+name = Remsai
+models = 2909 2890 2917
+headmodels = 21

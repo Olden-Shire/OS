@@ -1,0 +1,10 @@
+// loc 19403
+blockwalk = true
+resizex = 100
+resizey = 100
+resizez = 100
+op1 = Inspect
+nonblockrange = true
+recol = 17304/16291
+models_only = 1618
+name = Jungle plant

@@ -1,0 +1,10 @@
+// npc 855
+vislevel = 0
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+vislevel = 0
+name = Toban
+models = 20374 20385
+headmodels = 20417

@@ -1,0 +1,10 @@
+// npc 1365
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/22408 43072/8472 8741/2343 4550/2524 6798/7613 4626/29574
+name = Matilda
+models = 390 474 347 353 421 358 447
+headmodels = 113

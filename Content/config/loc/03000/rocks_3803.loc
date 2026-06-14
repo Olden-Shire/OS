@@ -1,0 +1,9 @@
+// loc 3803
+hillskew = true
+op1 = Climb
+ambient = 20
+blockwalk = true
+nonblockrange = true
+recol = 6689/10396
+models = 1743/22
+name = Rocks

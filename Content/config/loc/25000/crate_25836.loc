@@ -1,0 +1,6 @@
+// loc 25836
+contrast = 15
+ambient = 20
+recol = 6443/7587 6439/7582 6563/7706 6558/7830 6682/7954 6806/8078
+models_only = 7685
+name = Crate

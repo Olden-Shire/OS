@@ -1,0 +1,10 @@
+// npc 2439
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 6550/8768 22424/3365 8741/4391 22426/4391 6044/2328
+name = Askeladden
+models = 2906 4245 2922 4244 4398
+headmodels = 139 4217

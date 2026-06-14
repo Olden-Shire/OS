@@ -1,0 +1,13 @@
+// npc 2593
+op2 = Attack
+walkanim = 2602
+readyanim = 2604
+contrast = 0
+ambient = 10
+resizeh = 120
+resizev = 128
+vislevel = 103
+recol = 3005/955 406/924
+name = TzHaar-Mej
+models = 9311 9310 9313 9312 9316
+headmodels = 9251

@@ -1,0 +1,7 @@
+// loc 5643
+active = 0
+width = 2
+sharelight = true
+ambient = 25
+contrast = 25
+models_only = 5468

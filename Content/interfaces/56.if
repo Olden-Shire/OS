@@ -1,0 +1,18 @@
+// interface 56
+
+[com_0]
+type=2
+buttontype=0
+clientcode=0
+x=16
+y=8
+width=4
+height=7
+trans=0
+eventcode=0x1800000
+marginx=10
+marginy=4
+iop1=Value
+iop2=Sell
+targetverb=
+targetbase=

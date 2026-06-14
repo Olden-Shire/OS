@@ -1,0 +1,7 @@
+// loc 11844
+op1 = Climb-over
+blockwalk = true
+ambient = 20
+contrast = 15
+models_only = 11643
+name = Crumbling wall

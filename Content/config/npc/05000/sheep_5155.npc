@@ -1,0 +1,8 @@
+// npc 5155
+vislevel = 0
+size = 1
+walkanim = 5340
+readyanim = 5339
+recol = 90/6356 82/8394 78/8386 74/7353 70/7331
+name = Sheep
+models = 20283 20289 20285

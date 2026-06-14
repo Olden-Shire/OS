@@ -1,0 +1,8 @@
+// npc 127
+size = 1
+walkanim = 181
+readyanim = 187
+op2 = Attack
+vislevel = 42
+name = Magic axe
+models = 3000

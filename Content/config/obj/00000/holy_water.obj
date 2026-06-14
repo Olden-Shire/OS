@@ -1,0 +1,13 @@
+// obj 732
+model = obj_enchanted_vial
+members = true
+stackable = true
+yof2d = -2
+zoom2d = 710
+yan2d = 1516
+xan2d = 80
+manwear = obj_holy_water_wear, 0
+womanwear = obj_holy_water_wear, 6
+iop2 = Wield
+recol = 61/43959
+name = Holy water

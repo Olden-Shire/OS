@@ -1,0 +1,7 @@
+// loc 12475
+sharelight = true
+mirror = true
+op1 = Climb
+mapscene = 41
+models_only = 13733
+name = Anchor

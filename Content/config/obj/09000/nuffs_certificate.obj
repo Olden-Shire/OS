@@ -1,0 +1,11 @@
+// obj 9025
+members = true
+model = obj_nuffs_certificate
+yof2d = 4
+zoom2d = 1232
+yan2d = 938
+xan2d = 546
+iop1 = Read
+iop2 = Study
+iop5 = Destroy
+name = Nuff's certificate

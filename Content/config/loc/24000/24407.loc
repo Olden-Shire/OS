@@ -1,0 +1,8 @@
+// loc 24407
+active = 0
+sharelight = true
+blockwalk = true
+ambient = 35
+noshadow = true
+recol = 37945/10287 37941/10283 37937/10279 37933/10275 37929/10270 37925/10266
+models = 25400/0

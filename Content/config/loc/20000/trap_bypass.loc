@@ -1,0 +1,9 @@
+// loc 20902
+active = 1
+noshadow = true
+contrast = 25
+ambient = 25
+resizey = 135
+nonsolid = true
+models_only = 21368
+name = Trap bypass

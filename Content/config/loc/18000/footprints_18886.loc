@@ -1,0 +1,11 @@
+// loc 18886
+active = 1
+op1 = Look at
+op2 = Search
+nonsolid = true
+ambient = 20
+hillskew = true
+forcedecor = true
+recol = 8786/8615
+models = 19279/22
+name = Footprints

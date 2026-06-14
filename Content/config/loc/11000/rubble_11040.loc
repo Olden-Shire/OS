@@ -1,0 +1,6 @@
+// loc 11040
+op1 = Take-rock
+active = 1
+recol = 7481/7618 8501/7609 8497/6707 8493/6703 8617/7595
+models_only = 5370
+name = Rubble

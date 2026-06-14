@@ -1,0 +1,8 @@
+// loc 18959
+forceapproach = 14
+width = 2
+length = 3
+op1 = Look at
+op2 = Search
+models_only = 19275 19274 19277 19278
+name = Wooden cart

@@ -1,0 +1,7 @@
+// loc 24769
+active = 1
+contrast = 10
+ambient = 20
+nonsolid = true
+models_only = 26059 26060
+name = Rupert

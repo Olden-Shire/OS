@@ -1,0 +1,13 @@
+// obj 9921
+model = obj_skeleton_boots_9921
+manwear = obj_skeleton_boots_9921_man, 0
+womanwear = obj_skeleton_boots_9921_woman, 0
+iop2 = Wear
+iop5 = Destroy
+xof2d = 3
+yof2d = -4
+zoom2d = 724
+yan2d = 138
+xan2d = 138
+cost = 1
+name = Skeleton boots

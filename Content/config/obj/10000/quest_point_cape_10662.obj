@@ -1,0 +1,12 @@
+// obj 10662
+cost = 99000
+members = true
+model = obj_quest_point_cape_9813
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_quest_point_cape_9813_man, 0
+womanwear = obj_quest_point_cape_9813_woman, 0
+recol = 57280/43096 54183/43113 54503/43109 960/43113 22464/43096 43968/43096
+name = Quest point cape

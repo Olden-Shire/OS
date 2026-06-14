@@ -1,0 +1,9 @@
+// loc 7158
+ambient = 15
+width = 3
+length = 2
+blockwalk = true
+op1 = Mine
+forceapproach = 11
+models_only = 7438
+name = Rock

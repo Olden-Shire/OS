@@ -1,0 +1,7 @@
+// loc 5111
+op1 = Jump-from
+active = 1
+forcedecor = true
+blockwalk = true
+models = 1046/22
+name = Stepping stone

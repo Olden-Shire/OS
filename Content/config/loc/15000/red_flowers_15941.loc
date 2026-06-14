@@ -1,0 +1,6 @@
+// loc 15941
+anim = 4239
+bgsound = 2065, 3
+recol = 0/960
+models_only = 15806 15805
+name = Red Flowers

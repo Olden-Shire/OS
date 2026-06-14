@@ -1,0 +1,6 @@
+// loc 13402
+op1 = Shoot-at
+op5 = Remove
+ambient = 30
+models_only = 12896
+name = Archery target

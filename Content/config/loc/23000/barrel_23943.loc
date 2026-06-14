@@ -1,0 +1,7 @@
+// loc 23943
+blockwalk = true
+ambient = 10
+active = 1
+nonblockrange = true
+models_only = 25198
+name = Barrel

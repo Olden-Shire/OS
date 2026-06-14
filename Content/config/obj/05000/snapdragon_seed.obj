@@ -1,0 +1,15 @@
+// obj 5300
+model = obj_guam_seed
+xof2d = 1
+yof2d = -1
+zoom2d = 1010
+yan2d = 1952
+xan2d = 376
+members = true
+count1 = 5224, 2
+count2 = 5225, 3
+count3 = 5226, 4
+count4 = 5227, 5
+stackable = true
+cost = 64
+name = Snapdragon seed

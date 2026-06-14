@@ -1,0 +1,13 @@
+// obj 1329
+cost = 1040
+model = obj_bronze_scimitar_1321
+xof2d = -6
+yof2d = 4
+zoom2d = 1180
+yan2d = 1120
+xan2d = 300
+iop2 = Wield
+manwear = obj_bronze_scimitar_1321_wear, 0
+womanwear = obj_bronze_scimitar_1321_wear, 6
+recol = 61/43297
+name = Mithril scimitar

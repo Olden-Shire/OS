@@ -1,0 +1,6 @@
+// loc 16846
+contrast = 30
+ambient = 30
+op1 = Roll
+models_only = 16794
+name = Dice

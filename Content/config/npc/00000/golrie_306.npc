@@ -1,0 +1,9 @@
+// npc 306
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+name = Golrie
+models = 2900 2914 2915
+headmodels = 23

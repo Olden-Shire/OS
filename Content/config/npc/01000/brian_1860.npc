@@ -1,0 +1,11 @@
+// npc 1860
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/12698 25238/12942 43072/4550 6798/5537 17294/6806 15252/8088
+name = Brian
+models = 206 252 292 326 163 176 254 4929 9607
+headmodels = 46 84

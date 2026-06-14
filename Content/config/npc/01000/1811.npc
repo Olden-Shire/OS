@@ -1,0 +1,8 @@
+// npc 1811
+readyanim = 1756
+walkanim = 1757
+size = 2
+op1 = Talk-to
+op2 = Attack
+vislevel = 1
+multivar = 269, 65535, 1812

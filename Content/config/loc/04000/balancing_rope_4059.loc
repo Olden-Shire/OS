@@ -1,0 +1,8 @@
+// loc 4059
+hillskew = true
+sharelight = true
+active = 1
+nonsolid = true
+op1 = Walk-on
+models = 1878/22
+name = Balancing rope

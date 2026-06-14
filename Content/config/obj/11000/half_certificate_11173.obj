@@ -1,0 +1,11 @@
+// obj 11173
+model = obj_half_certificate_11173
+xof2d = -8
+yof2d = -5
+zoom2d = 2128
+yan2d = 192
+xan2d = 309
+stackable = true
+iop1 = Read
+iop5 = Destroy
+name = Half certificate

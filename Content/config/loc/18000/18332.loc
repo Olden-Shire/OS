@@ -1,0 +1,7 @@
+// loc 18332
+sharelight = true
+hillskew = true
+ambient = 35
+nonblockrange = true
+recol = 6579/6819 6699/6938
+models = 18438/0 18444/1 18445/9

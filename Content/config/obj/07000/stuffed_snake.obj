@@ -1,0 +1,12 @@
+// obj 7579
+members = true
+cost = 1
+model = obj_raw_stuffed_snake
+xof2d = 3
+yof2d = 6
+zoom2d = 2128
+yan2d = 1985
+xan2d = 429
+iop1 = Eat
+recol = 3230/5652 3226/5904 21526/8844 322/5772 10262/6798 21530/6930
+name = Stuffed snake

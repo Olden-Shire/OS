@@ -1,0 +1,7 @@
+// loc 9014
+op3 = Hidden
+mapscene = 5
+anim = 2380
+nonblockrange = true
+models_only = 8899
+name = Light Jungle

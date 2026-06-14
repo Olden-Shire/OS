@@ -1,0 +1,10 @@
+// npc 1359
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 25238/1686 43072/5214 7056/1686 6798/7452 7700/5214 10004/5214
+name = Queen Sigrid
+models = 393 478 351 356 440 446 3675 481
+headmodels = 115

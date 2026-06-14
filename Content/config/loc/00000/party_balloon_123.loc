@@ -1,0 +1,6 @@
+// loc 123
+anim = 499
+nonsolid = true
+ambient = 60
+models_only = 2229
+name = Party Balloon

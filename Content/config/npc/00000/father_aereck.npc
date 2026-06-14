@@ -1,0 +1,11 @@
+// npc 456
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/10508 8741/10508 11187/43309 280/43418 6798/5330 24/42531
+name = Father Aereck
+models = 6848 246 10984 3330 170 10218 10000 181
+headmodels = 5787

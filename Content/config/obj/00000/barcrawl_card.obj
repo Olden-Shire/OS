@@ -1,0 +1,11 @@
+// obj 455
+members = true
+cost = 10
+model = obj_barcrawl_card
+xof2d = 5
+yof2d = 8
+zoom2d = 830
+yan2d = 1644
+xan2d = 404
+iop1 = Read
+name = Barcrawl card

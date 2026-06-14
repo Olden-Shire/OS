@@ -1,0 +1,8 @@
+// loc 5612
+sharelight = true
+hillskew = true
+resizex = 142
+resizey = 340
+resizez = 142
+nonblockrange = true
+models = 993/0 995/1 996/2 998/3 999/9

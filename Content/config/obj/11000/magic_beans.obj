@@ -1,0 +1,12 @@
+// obj 11211
+model = obj_magic_beans
+xof2d = -1
+yof2d = -8
+zoom2d = 848
+yan2d = 1772
+xan2d = 183
+contrast = 15
+ambient = 15
+members = true
+iop5 = Destroy
+name = Magic beans

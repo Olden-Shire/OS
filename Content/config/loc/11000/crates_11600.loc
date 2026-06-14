@@ -1,0 +1,9 @@
+// loc 11600
+offsetx = -30
+offsety = 0
+offsetz = 0
+op1 = Search
+nonblockrange = true
+recol = 6443/5413 6439/5537 6563/5532 6558/5656 6682/5652 6806/5904
+models_only = 7704
+name = Crates

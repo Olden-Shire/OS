@@ -1,0 +1,12 @@
+// obj 4565
+model = obj_basket_of_eggs
+iop2 = Wield
+manwear = obj_basket_of_eggs_wear, 0
+womanwear = obj_basket_of_eggs_wear, 6
+cost = 0
+xof2d = 2
+yof2d = -4
+zoom2d = 960
+yan2d = 184
+xan2d = 136
+name = Basket of eggs

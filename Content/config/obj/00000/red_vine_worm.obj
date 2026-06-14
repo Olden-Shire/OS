@@ -1,0 +1,11 @@
+// obj 25
+model = obj_red_vine_worm
+members = true
+stackable = true
+xof2d = 9
+yof2d = 9
+zoom2d = 990
+yan2d = 188
+xan2d = 340
+recol = 5698/960
+name = Red vine worm

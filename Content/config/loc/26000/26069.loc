@@ -1,0 +1,10 @@
+// loc 26069
+active = 0
+sharelight = true
+contrast = 15
+ambient = 20
+blockwalk = true
+resizey = 105
+wallwidth = 16
+recol = 38119/7378 41067/5421
+models = 27301/9

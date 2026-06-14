@@ -1,0 +1,9 @@
+// npc 3708
+size = 2
+walkanim = 6120
+vislevel = 0
+nominimap = true
+op1 = Roll
+turnspeed = 0
+name = Boulder
+models = 24149

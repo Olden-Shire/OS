@@ -1,0 +1,8 @@
+// npc 3742
+size = 1
+op2 = Attack
+walkanim = 3914
+readyanim = 3913
+vislevel = 36
+name = Ravager
+models = 14547

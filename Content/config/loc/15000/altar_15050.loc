@@ -1,0 +1,6 @@
+// loc 15050
+width = 2
+op1 = Search
+ambient = 15
+models_only = 14994 14993
+name = Altar

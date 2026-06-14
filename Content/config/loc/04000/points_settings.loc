@@ -1,0 +1,10 @@
+// loc 4949
+sharelight = true
+length = 2
+op1 = Check
+resizey = 153
+ambient = 20
+contrast = 20
+recol = 6689/7851
+models_only = 21246
+name = Points settings

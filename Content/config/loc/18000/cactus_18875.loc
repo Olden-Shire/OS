@@ -1,0 +1,10 @@
+// loc 18875
+width = 2
+length = 2
+mapscene = 4
+op1 = Inspect
+anim = 5055
+ambient = 30
+nonblockrange = true
+models_only = 19308
+name = Cactus

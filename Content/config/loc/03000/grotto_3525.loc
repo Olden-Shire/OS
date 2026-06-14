@@ -1,0 +1,7 @@
+// loc 3525
+sharelight = true
+active = 1
+hillskew = true
+op1 = Exit
+models_only = 3578
+name = Grotto

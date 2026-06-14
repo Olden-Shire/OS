@@ -1,0 +1,11 @@
+// npc 2458
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/119
+name = Freaky Forester
+models = 215 249 299 170 176 8777 185 8781 8775
+headmodels = 53 81 8769

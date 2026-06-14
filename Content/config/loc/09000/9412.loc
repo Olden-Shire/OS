@@ -1,0 +1,9 @@
+// loc 9412
+sharelight = true
+resizex = 128
+resizey = 186
+resizez = 128
+active = 0
+sharelight = true
+nonsolid = true
+models_only = 9408

@@ -1,0 +1,8 @@
+// npc 913
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 54
+recol = 8741/127 25238/127 4626/10473 926/127 7700/43943 4550/4645
+name = Battle mage
+models = 217 250 292 170 176 265 323 185 554

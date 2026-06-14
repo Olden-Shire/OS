@@ -1,0 +1,6 @@
+// loc 7051
+op1 = Close
+active = 1
+nonblockrange = true
+models = 7371/0
+name = Gate

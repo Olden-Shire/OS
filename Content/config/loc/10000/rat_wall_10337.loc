@@ -1,0 +1,9 @@
+// loc 10337
+active = 1
+sharelight = true
+hillskew = true
+ambient = 7
+contrast = 7
+op1 = Spectate
+models = 10067/0 10068/1 10069/9
+name = Rat wall

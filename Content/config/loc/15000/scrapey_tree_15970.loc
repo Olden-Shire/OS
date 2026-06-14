@@ -1,0 +1,9 @@
+// loc 15970
+mapscene = 5
+length = 2
+width = 2
+ambient = 30
+op1 = Cut-Down
+op3 = hidden
+models_only = 15774
+name = Scrapey Tree

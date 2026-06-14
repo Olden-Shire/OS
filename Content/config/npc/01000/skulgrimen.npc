@@ -1,0 +1,11 @@
+// npc 1303
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 6798/6945 25238/4506 8741/10518 8078/10514 8084/7601
+name = Skulgrimen
+models = 206 252 299 162 176 4226 4218
+headmodels = 46 84

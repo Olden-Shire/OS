@@ -1,0 +1,15 @@
+// obj 8851
+model = obj_warrior_guild_token
+stackable = true
+xof2d = 9
+yof2d = -100
+zoom2d = 724
+yan2d = 180
+xan2d = 238
+count1 = 8852, 2
+count2 = 8853, 3
+count3 = 8854, 4
+count4 = 8855, 5
+members = true
+stackable = true
+name = Warrior guild token

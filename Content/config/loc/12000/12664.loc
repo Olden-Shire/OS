@@ -1,0 +1,8 @@
+// loc 12664
+sharelight = true
+active = 0
+wallwidth = 32
+ambient = 40
+contrast = 30
+mirror = true
+models = 13526/0

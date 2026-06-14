@@ -1,0 +1,11 @@
+// npc 1557
+walkanim = 283
+readyanim = 1480
+op1 = Talk-to
+resizeh = 124
+resizev = 124
+vislevel = 1
+recol = 61/8367
+name = Ug
+models = 3753 3758 3755 3773 4947
+headmodels = 3790 3789

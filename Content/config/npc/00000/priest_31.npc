@@ -1,0 +1,8 @@
+// npc 31
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 25238/43414 8741/43660 8078/43111
+name = Priest
+models = 223 249 292 162 176 265 185 325

@@ -1,0 +1,6 @@
+// npc 2561
+vislevel = 0
+size = 3
+recol = 7062/8128 45/8128
+name = Gold ore
+models = 9071

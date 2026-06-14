@@ -1,0 +1,7 @@
+// loc 25362
+active = 1
+op1 = Rummage
+length = 2
+nonsolid = true
+models_only = 26710
+name = Skeleton

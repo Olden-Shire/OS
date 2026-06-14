@@ -1,0 +1,9 @@
+// loc 24013
+active = 1
+width = 2
+length = 2
+ambient = 15
+length = 2
+recol = 5421/7587 5532/7582 5537/7587 5532/7582 5656/7706 5652/7830
+models_only = 25146 25147
+name = Table

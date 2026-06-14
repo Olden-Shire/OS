@@ -1,0 +1,6 @@
+[clientscript,script_82]()()
+
+if (reboottimer() > 0) {
+    ~script_89;
+}
+return;

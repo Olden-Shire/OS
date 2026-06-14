@@ -1,0 +1,9 @@
+// loc 20000
+anim = 475
+nonsolid = true
+ambient = 75
+contrast = 75
+bgsound = 2066, 5
+recol = 8128/86 7104/74 5056/49 4019/33 2987/20
+models_only = 2260
+name = Fire

@@ -1,0 +1,13 @@
+// obj 11212
+members = true
+cost = 800
+stackable = true
+model = obj_dragon_arrow
+yan2d = 180
+xan2d = 432
+iop2 = Wield
+count1 = 11213, 2
+count2 = 11214, 3
+count3 = 11215, 4
+count4 = 11216, 5
+name = Dragon arrow

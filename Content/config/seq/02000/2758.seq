@@ -1,0 +1,5 @@
+// seq 2758
+replaceheldleft = 0
+replaceheldright = 0
+reachforward = true
+frames = 5/44/213 5/45/213 5/46/213 5/47/213 6/48/213

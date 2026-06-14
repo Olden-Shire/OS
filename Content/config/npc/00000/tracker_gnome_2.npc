@@ -1,0 +1,10 @@
+// npc 482
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22422/6942 22426/6945
+name = Tracker gnome 2
+models = 2909 2890 2915
+headmodels = 21

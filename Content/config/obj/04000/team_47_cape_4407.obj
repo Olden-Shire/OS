@@ -1,0 +1,15 @@
+// obj 4407
+cost = 50
+team = 47
+iop2 = Wear
+members = true
+model = obj_team_7_cape_4327
+manwear = obj_team_7_cape_4327_man, 0
+womanwear = obj_team_7_cape_4327_woman, 0
+xof2d = -5
+yof2d = 4
+zoom2d = 1770
+yan2d = 996
+xan2d = 304
+recol = 7756/274 7845/1831
+name = Team-47 cape

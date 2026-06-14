@@ -1,0 +1,11 @@
+// obj 8864
+model = obj_five_barrels
+xof2d = 1
+yof2d = 91
+zoom2d = 2256
+yan2d = 9
+xan2d = 2030
+members = true
+manwear = obj_five_barrels, 0
+womanwear = obj_five_barrels, 6
+name = Five barrels

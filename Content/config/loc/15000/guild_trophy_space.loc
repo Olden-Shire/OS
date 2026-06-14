@@ -1,0 +1,7 @@
+// loc 15394
+active = 1
+op5 = Build
+nonsolid = true
+ambient = 100
+models = 12892/4
+name = Guild trophy space

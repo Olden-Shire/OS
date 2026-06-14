@@ -1,0 +1,7 @@
+// loc 15902
+hillskew = true
+blockwalk = true
+sharelight = true
+nonblockrange = true
+models_only = 4754
+name = Posts

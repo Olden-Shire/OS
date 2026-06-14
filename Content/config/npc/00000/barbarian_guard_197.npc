@@ -1,0 +1,9 @@
+// npc 197
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 8
+recol = 25238/5652 926/61 6798/6854 8741/4769 43072/33 4550/6709
+name = Barbarian guard
+models = 219 252 301 159 176 274 242 185 550

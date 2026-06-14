@@ -1,0 +1,14 @@
+// obj 10472
+model = obj_guthix_stole_10472
+xof2d = 9
+yof2d = -8
+zoom2d = 1697
+yan2d = 73
+zan2d = 69
+xan2d = 373
+iop2 = Wear
+manwear = obj_guthix_stole_10472_man, 0
+womanwear = obj_guthix_stole_10472_woman, 0
+members = true
+cost = 2500
+name = Guthix stole

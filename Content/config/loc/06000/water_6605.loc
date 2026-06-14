@@ -1,0 +1,6 @@
+// loc 6605
+sharelight = true
+active = 1
+noshadow = true
+models_only = 3951
+name = Water

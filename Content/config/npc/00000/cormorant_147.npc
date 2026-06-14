@@ -1,0 +1,9 @@
+// npc 147
+size = 2
+walkanim = 6774
+readyanim = 6772
+ambient = 20
+nominimap = true
+vislevel = 0
+name = Cormorant
+models = 26840 26838

@@ -1,0 +1,8 @@
+// npc 4890
+walkanim = 4821
+readyanim = 4828
+size = 2
+op2 = Attack
+vislevel = 62
+name = Slug Prince
+models = 18420

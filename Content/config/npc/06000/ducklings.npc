@@ -1,0 +1,9 @@
+// npc 6112
+walkanim = 6822
+readyanim = 6821
+resizeh = 64
+resizev = 64
+vislevel = 0
+nominimap = true
+name = Ducklings
+models = 26871

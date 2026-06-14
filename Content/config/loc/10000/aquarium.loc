@@ -1,0 +1,6 @@
+// loc 10091
+anim = 447
+op1 = Fish-In
+bgsound = 3074, 3
+models_only = 1491
+name = Aquarium

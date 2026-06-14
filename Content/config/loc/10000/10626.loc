@@ -1,0 +1,5 @@
+// loc 10626
+nonsolid = true
+active = 0
+recol = 61/5181 57/5177 70/5190
+models_only = 10371

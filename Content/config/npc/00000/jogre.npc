@@ -1,0 +1,9 @@
+// npc 113
+size = 2
+walkanim = 127
+readyanim = 130
+op2 = Attack
+vislevel = 53
+recol = 4550/14236 39145/16916 9649/14236
+name = Jogre
+models = 2870 2866

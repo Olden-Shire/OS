@@ -1,0 +1,9 @@
+// loc 22732
+length = 2
+active = 1
+ambient = 20
+blockwalk = true
+anim = 6038
+nonblockrange = true
+models_only = 23571
+name = Cogs

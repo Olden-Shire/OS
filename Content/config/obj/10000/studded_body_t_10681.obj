@@ -1,0 +1,10 @@
+// obj 10681
+cost = 850
+model = obj_studded_body_g_7362
+zoom2d = 910
+xan2d = 580
+iop2 = Wear
+manwear = obj_studded_body_g_7362_man, 0
+womanwear = obj_studded_body_g_7362_woman, 0
+recol = 24/6020
+name = Studded body (t)

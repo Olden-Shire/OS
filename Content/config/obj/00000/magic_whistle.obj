@@ -1,0 +1,10 @@
+// obj 16
+cost = 10
+members = true
+model = obj_magic_whistle
+yof2d = -2
+zoom2d = 490
+yan2d = 1208
+xan2d = 152
+iop1 = Blow
+name = Magic whistle

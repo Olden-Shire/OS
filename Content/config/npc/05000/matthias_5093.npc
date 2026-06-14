@@ -1,0 +1,13 @@
+// npc 5093
+vislevel = 0
+size = 1
+resizeh = 132
+resizev = 135
+readyanim = 5160
+walkanim = 5164
+op1 = Talk-to
+alwaysontop = true
+recol = 11200/17713 926/158 25238/8478 4550/4416 6798/10035 4626/8602
+name = Matthias
+models = 10981 251 293 323 169 19955 274 185
+headmodels = 10976 83

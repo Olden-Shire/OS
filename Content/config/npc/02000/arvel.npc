@@ -1,0 +1,10 @@
+// npc 2365
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+op1 = Talk-to
+vislevel = 0
+recol = 16701/7613 9137/8109 25886/7646 8792/13762 8652/7595 14517/7595
+name = Arvel
+models = 4030 6981 480 6978 6979
+headmodels = 4013

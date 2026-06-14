@@ -1,0 +1,10 @@
+// loc 2018
+resizex = 64
+resizey = 64
+resizez = 64
+ambient = 80
+contrast = 80
+noshadow = true
+anim = 522
+active = 0
+models_only = 2329

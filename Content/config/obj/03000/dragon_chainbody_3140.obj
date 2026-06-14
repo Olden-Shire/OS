@@ -1,0 +1,14 @@
+// obj 3140
+cost = 250000
+model = obj_dragon_chainbody_2513
+yof2d = 2
+zoom2d = 1100
+xan2d = 568
+iop2 = Wear
+manwear = obj_dragon_chainbody_3140_man, 0
+manwear2 = 156
+womanwear = obj_dragon_chainbody_3140_woman, 0
+womanwear2 = 337
+members = true
+recol = 61/926
+name = Dragon chainbody

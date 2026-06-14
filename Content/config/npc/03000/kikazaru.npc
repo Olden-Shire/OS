@@ -1,0 +1,8 @@
+// npc 3482
+readyanim = 3523
+op1 = Talk-to
+vislevel = 0
+turnspeed = 0
+name = Kikazaru
+models = 13878 13879 13880
+headmodels = 13891 13889

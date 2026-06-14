@@ -1,0 +1,9 @@
+// loc 10697
+resizex = 110
+resizey = 90
+resizez = 110
+active = 1
+op1 = Add
+recol = 43943/19992 6457/22305 6573/22424 5543/22416
+models_only = 10477 10475
+name = Puppet legs

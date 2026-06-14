@@ -1,0 +1,9 @@
+// loc 8956
+sharelight = true
+active = 1
+op1 = Climb
+op2 = Climb-up
+op3 = Climb-down
+mapscene = 7
+models_only = 4566
+name = Iron ladder

@@ -1,0 +1,11 @@
+// npc 1204
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+op2 = Attack
+vislevel = 110
+recol = 10004/61 4626/61 7566/61 7446/41 25238/61 54397/41410
+name = Tyras guard
+models = 164 185 179 4019 3329 313 555
+headmodels = 17348

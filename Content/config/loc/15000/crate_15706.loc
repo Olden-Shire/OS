@@ -1,0 +1,4 @@
+// loc 15706
+blockwalk = true
+models_only = 15510
+name = Crate

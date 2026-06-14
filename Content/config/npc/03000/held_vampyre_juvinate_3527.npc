@@ -1,0 +1,12 @@
+// npc 3527
+readyanim = 3551
+resizeh = 143
+resizev = 140
+op2 = Attack
+ambient = -25
+turnspeed = 0
+vislevel = 54
+recol = 4550/54352
+name = Held Vampyre Juvinate
+models = 14042 14039 14046 14041 14044
+headmodels = 13943

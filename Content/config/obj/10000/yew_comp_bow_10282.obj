@@ -1,0 +1,12 @@
+// obj 10282
+model = obj_willow_comp_bow_10280
+zoom2d = 2070
+yan2d = 39
+xan2d = 355
+manwear = obj_willow_comp_bow_10280_wear, 0
+womanwear = obj_willow_comp_bow_10280_wear, 6
+cost = 1800
+iop2 = Wield
+members = true
+recol = 6674/6457 5648/6577 7050/6697 6550/6461 6554/6470
+name = Yew comp bow

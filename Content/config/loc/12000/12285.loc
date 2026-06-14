@@ -1,0 +1,6 @@
+// loc 12285
+sharelight = true
+active = 0
+mirror = true
+recol = 5413/7580 7580/7465 2952/7690 6812/7465
+models = 9570/12 9571/18

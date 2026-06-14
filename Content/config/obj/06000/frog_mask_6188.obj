@@ -1,0 +1,12 @@
+// obj 6188
+model = obj_frog_mask_6188
+manwear = obj_frog_mask_6188_man, 0
+womanwear = obj_frog_mask_6188_woman, 0
+manhead = 8770
+womanhead = 8772
+yof2d = 5
+zoom2d = 900
+xan2d = 288
+iop2 = Wear
+cost = 0
+name = Frog mask

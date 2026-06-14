@@ -1,0 +1,17 @@
+// obj 10614
+cost = 60000
+model = obj_spined_helm_6131
+xof2d = 3
+yof2d = -4
+zoom2d = 810
+yan2d = 156
+xan2d = 44
+iop2 = Wear
+manwear = obj_fremennik_helm_man, 0
+manwear2 = 8728
+womanwear = obj_fremennik_helm_woman, 0
+womanwear2 = 8752
+manhead = 8721
+womanhead = 8723
+members = true
+name = Spined helm

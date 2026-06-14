@@ -1,0 +1,11 @@
+// npc 4636
+size = 1
+walkanim = 6141
+readyanim = 6140
+resizev = 120
+resizeh = 120
+vislevel = 0
+ambient = 15
+recol = 11941/10136 6331/916 6348/922 6356/693 12060/10132
+name = Goblin
+models = 24455 24482 24433 24477 24444 24448 24497 24507

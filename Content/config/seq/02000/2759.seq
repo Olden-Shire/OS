@@ -1,0 +1,6 @@
+// seq 2759
+replaceheldleft = 0
+replaceheldright = 0
+loops = 5
+reachforward = true
+frames = 6/48/213 6/49/213 6/50/213 6/49/213 6/48/213

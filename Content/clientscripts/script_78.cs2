@@ -1,0 +1,50 @@
+[clientscript,script_78](int $int0, string $string0)()
+
+if ($int0 < 10) {
+    if ($int0 < 5) {
+        if ($int0 = 0) {
+            %varcstr2 = $string0;
+        } else if ($int0 = 1) {
+            %varcstr3 = $string0;
+        } else if ($int0 = 2) {
+            %varcstr4 = $string0;
+        } else if ($int0 = 3) {
+            %varcstr5 = $string0;
+        } else if ($int0 = 4) {
+            %varcstr6 = $string0;
+        }
+    } else if ($int0 = 5) {
+        %varcstr7 = $string0;
+    } else if ($int0 = 6) {
+        %varcstr8 = $string0;
+    } else if ($int0 = 7) {
+        %varcstr9 = $string0;
+    } else if ($int0 = 8) {
+        %varcstr10 = $string0;
+    } else if ($int0 = 9) {
+        %varcstr11 = $string0;
+    }
+} else if ($int0 < 15) {
+    if ($int0 = 10) {
+        %varcstr12 = $string0;
+    } else if ($int0 = 11) {
+        %varcstr13 = $string0;
+    } else if ($int0 = 12) {
+        %varcstr14 = $string0;
+    } else if ($int0 = 13) {
+        %varcstr15 = $string0;
+    } else if ($int0 = 14) {
+        %varcstr16 = $string0;
+    }
+} else if ($int0 = 15) {
+    %varcstr17 = $string0;
+} else if ($int0 = 16) {
+    %varcstr18 = $string0;
+} else if ($int0 = 17) {
+    %varcstr19 = $string0;
+} else if ($int0 = 18) {
+    %varcstr20 = $string0;
+} else if ($int0 = 19) {
+    %varcstr21 = $string0;
+}
+return;

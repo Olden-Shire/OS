@@ -1,0 +1,13 @@
+// obj 9103
+cost = 30
+model = obj_a_special_tiara
+manwear = obj_a_special_tiara_man, 0
+womanwear = obj_a_special_tiara_woman, 0
+manhead = 16467
+womanhead = 16467
+zoom2d = 528
+yan2d = 132
+xan2d = 177
+members = true
+iop5 = Destroy
+name = A special tiara

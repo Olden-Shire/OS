@@ -1,0 +1,6 @@
+// loc 25620
+sharelight = true
+active = 1
+anim = 6873
+models_only = 27182 27184
+name = Novice Flag

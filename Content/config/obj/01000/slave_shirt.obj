@@ -1,0 +1,13 @@
+// obj 1844
+cost = 40
+iop2 = Wear
+members = true
+model = obj_slave_shirt
+zoom2d = 1360
+yan2d = 2045
+xan2d = 510
+manwear = obj_slave_shirt_man, 0
+manwear2 = 19173
+womanwear = obj_slave_shirt_woman, 0
+womanwear2 = 19189
+name = Slave shirt

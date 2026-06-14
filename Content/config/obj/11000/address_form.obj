@@ -1,0 +1,14 @@
+// obj 11680
+model = obj_address_form
+xof2d = 1
+zoom2d = 720
+yan2d = 2009
+xan2d = 366
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+op3 = Take
+cost = 1
+name = Address form

@@ -1,0 +1,5 @@
+// loc 15848
+anim = 4239
+bgsound = 2065, 3
+models_only = 15821 15807
+name = Hopper

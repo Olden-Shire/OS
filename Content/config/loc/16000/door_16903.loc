@@ -1,0 +1,10 @@
+// loc 16903
+active = 1
+contrast = 20
+ambient = 20
+op1 = Close
+resizex = 128
+resizey = 160
+resizez = 128
+models = 16564/0
+name = Door

@@ -1,0 +1,12 @@
+// npc 596
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/10508 8741/1950 107/127 4550/3550
+name = Fat Tony
+models = 230 247 302 159 176 254 199 181
+headmodels = 63 79 41

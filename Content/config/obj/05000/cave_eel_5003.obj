@@ -1,0 +1,12 @@
+// obj 5003
+model = obj_raw_cave_eel_5001
+members = true
+xof2d = -11
+yof2d = 42
+zoom2d = 1440
+yan2d = 352
+xan2d = 296
+iop1 = Eat
+cost = 15
+recol = 8485/8088 14622/6032 8386/57 12589/2960
+name = Cave eel

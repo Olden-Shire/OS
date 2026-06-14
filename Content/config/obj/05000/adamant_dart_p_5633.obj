@@ -1,0 +1,15 @@
+// obj 5633
+stackable = true
+members = true
+cost = 65
+model = obj_bronze_dart_p_812
+xof2d = 8
+yof2d = 11
+zoom2d = 720
+yan2d = 336
+xan2d = 396
+manwear = obj_bronze_dart_p_812_wear, 0
+womanwear = obj_bronze_dart_p_812_wear, 6
+iop2 = Wield
+recol = 82/21662 22459/13221
+name = Adamant dart(p+)

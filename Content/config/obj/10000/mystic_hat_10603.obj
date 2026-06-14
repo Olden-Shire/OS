@@ -1,0 +1,15 @@
+// obj 10603
+cost = 15000
+model = obj_mystic_hat_4089
+iop2 = Wear
+manwear = obj_mystic_hat_4089_man, 0
+womanwear = obj_mystic_hat_4089_woman, 0
+manhead = 4950
+womanhead = 4951
+members = true
+yof2d = -18
+zoom2d = 980
+yan2d = 220
+xan2d = 208
+recol = 39009/8138 40918/103 40384/127 40045/8138 119/8138
+name = Mystic hat

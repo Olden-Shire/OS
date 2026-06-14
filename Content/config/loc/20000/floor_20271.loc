@@ -1,0 +1,9 @@
+// loc 20271
+anim = 1112
+nonsolid = true
+forcedecor = true
+active = 1
+op1 = Search
+forceapproach = 14
+models_only = 7603
+name = Floor

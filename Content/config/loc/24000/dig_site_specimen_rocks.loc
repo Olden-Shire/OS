@@ -1,0 +1,6 @@
+// loc 24559
+ambient = 20
+sharelight = true
+op1 = Take
+models_only = 25340
+name = Dig Site specimen rocks

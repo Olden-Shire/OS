@@ -1,0 +1,5 @@
+// loc 6635
+op1 = Take
+nonsolid = true
+models_only = 6445
+name = Canopic Jar

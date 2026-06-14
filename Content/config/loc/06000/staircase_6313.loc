@@ -1,0 +1,12 @@
+// loc 6313
+active = 1
+op1 = Climb-down
+mapscene = 7
+length = 2
+offsetx = 0
+offsety = 55
+offsetz = 0
+mapscene = 7
+recol = 10334/10436
+models_only = 6071
+name = Staircase

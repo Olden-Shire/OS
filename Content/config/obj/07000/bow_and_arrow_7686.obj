@@ -1,0 +1,9 @@
+// obj 7686
+model = obj_bow_and_arrow_7686
+manwear = obj_bow_and_arrow_7686_wear, 0
+womanwear = obj_bow_and_arrow_7686_wear, 6
+xof2d = -2
+zoom2d = 976
+yan2d = 210
+xan2d = 237
+name = Bow and arrow

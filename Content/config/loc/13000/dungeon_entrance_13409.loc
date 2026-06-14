@@ -1,0 +1,9 @@
+// loc 13409
+width = 2
+length = 2
+op5 = Remove
+op1 = Enter
+op4 = Remove-room
+nonblockrange = true
+models_only = 12923
+name = Dungeon entrance

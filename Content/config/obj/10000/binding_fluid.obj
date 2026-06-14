@@ -1,0 +1,9 @@
+// obj 10870
+model = obj_binding_fluid
+members = true
+xof2d = 1
+yof2d = -4
+zoom2d = 854
+yan2d = 1660
+xan2d = 166
+name = Binding fluid

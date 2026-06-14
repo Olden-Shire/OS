@@ -1,0 +1,6 @@
+// loc 11401
+nonsolid = true
+sharelight = true
+raiseobject = 0
+models = 2112/10 25626/0
+name = Slashed web

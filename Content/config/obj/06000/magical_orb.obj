@@ -1,0 +1,9 @@
+// obj 6950
+yof2d = -1
+zoom2d = 540
+model = obj_scrying_orb_5519
+members = true
+iop1 = Activate
+iop5 = Destroy
+recol = 21584/127
+name = Magical orb

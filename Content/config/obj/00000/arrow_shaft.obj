@@ -1,0 +1,15 @@
+// obj 52
+cost = 1
+stackable = true
+members = true
+model = obj_arrow_shaft
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+count1 = 6440, 2
+count2 = 6441, 3
+count3 = 6442, 4
+count4 = 6443, 5
+name = Arrow shaft

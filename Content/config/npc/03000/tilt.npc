@@ -1,0 +1,12 @@
+// npc 3913
+walkanim = 1139
+readyanim = 4009
+size = 2
+resizeh = 178
+resizev = 162
+vislevel = 0
+op1 = Talk-To
+recol = 61/6435 21570/4510
+name = Tilt
+models = 3753 3759 3756 15013
+headmodels = 3790

@@ -1,0 +1,9 @@
+// loc 25600
+resizex = 100
+resizez = 100
+forceapproach = 11
+ambient = 25
+contrast = 25
+recol = 7952/5400 21788/5648 16549/5648 8128/5648 6707/5409 37/5648
+models_only = 12388
+name = Barrel

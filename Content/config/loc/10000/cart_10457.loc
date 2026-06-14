@@ -1,0 +1,6 @@
+// loc 10457
+width = 2
+length = 3
+ambient = 30
+models_only = 10146 10147 10148
+name = Cart

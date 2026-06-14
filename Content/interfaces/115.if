@@ -1,0 +1,17 @@
+// interface 115
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=242
+y=152
+width=32
+height=32
+trans=0
+model=com_i4055
+activemodel=-1
+anim=1255
+zoom=130
+xan=512
+yan=0

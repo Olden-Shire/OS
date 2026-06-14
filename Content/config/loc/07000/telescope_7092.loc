@@ -1,0 +1,5 @@
+// loc 7092
+active = 1
+op1 = Observe
+models_only = 7401
+name = Telescope

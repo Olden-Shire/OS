@@ -1,0 +1,8 @@
+// loc 23859
+active = 0
+sharelight = true
+blockwalk = true
+ambient = 25
+contrast = 10
+recol = 32815/10287 32811/10283 32807/10279 32803/10275 32798/10270 32794/10266
+models_only = 25297

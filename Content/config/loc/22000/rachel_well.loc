@@ -1,0 +1,11 @@
+// loc 22531
+active = 1
+op1 = Talk-to
+op3 = hidden
+blockwalk = true
+anim = 5974
+width = 2
+length = 2
+nonblockrange = true
+models_only = 23194 23196
+name = Rachel (Well)

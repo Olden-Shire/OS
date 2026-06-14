@@ -1,0 +1,10 @@
+// loc 17080
+width = 3
+length = 3
+resizex = 128
+resizey = 150
+resizez = 128
+mapscene = 10
+op1 = Grapple
+models_only = 16910
+name = Strong Tree

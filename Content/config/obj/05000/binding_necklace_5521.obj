@@ -1,0 +1,12 @@
+// obj 5521
+cost = 1425
+model = obj_binding_necklace_5521
+members = true
+yof2d = 60
+zoom2d = 510
+yan2d = 48
+xan2d = 292
+iop2 = Wear
+manwear = obj_binding_necklace_5521_man, 0
+womanwear = obj_binding_necklace_5521_woman, 0
+name = Binding necklace

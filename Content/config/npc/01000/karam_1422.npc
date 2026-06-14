@@ -1,0 +1,8 @@
+// npc 1422
+walkanim = 189
+readyanim = 1412
+op1 = Talk-to
+vislevel = 0
+name = Karam
+models = 4703 4704 4697
+headmodels = 4653

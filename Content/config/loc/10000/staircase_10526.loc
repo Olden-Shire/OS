@@ -1,0 +1,10 @@
+// loc 10526
+width = 2
+length = 2
+op1 = Climb-down
+forceapproach = 14
+mapscene = 7
+ambient = 60
+recol = 6945/5541 6940/5665 7064/5660 5912/5784 6036/5908
+models_only = 9507
+name = Staircase

@@ -1,0 +1,9 @@
+// npc 2188
+walkanim = 2154
+readyanim = 2155
+op1 = Talk-to
+vislevel = 0
+recol = 61/8377
+name = Hegir
+models = 7026 7071 7059 7036 7075 7045 2985
+headmodels = 6985 6996

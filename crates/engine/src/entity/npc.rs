@@ -36,6 +36,15 @@ const LIFECYCLE_IDLE: i32 = -1;
 /// Max distinct damage-dealers tracked for kill/loot ownership.
 const MAX_HEROES: usize = 16;
 
+/// What `Npc::process_lifecycle` did this tick, so the world can fire the
+/// matching [ai_spawn] / [ai_despawn] trigger (Engine-TS npcEventQueue).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum LifecycleEvent {
+    None,
+    Respawned,
+    Despawned,
+}
+
 pub struct Npc {
     pub nid: usize,
     pub type_id: i32,
@@ -84,6 +93,19 @@ pub struct Npc {
     /// by NPC_WALKTRIGGER. -1 = none.
     pub walk_trigger: i32,
     pub walktrigger_arg: i32,
+    /// Current AI mode (Engine-TS `targetOp` / NpcMode) — read by NPC_GETMODE,
+    /// 0 = NONE, set by NPC_SETMODE. Drives the npc AI turn (chase/face/escape).
+    pub mode: i32,
+    /// The npc's current AI target (Engine-TS `target`), set by NPC_SETMODE.
+    /// Reuses the player interaction target enum.
+    pub target: Option<crate::entity::player::InteractTarget>,
+    /// Hunt search radius (Engine-TS `huntrange`) — set by NPC_SETHUNT.
+    pub hunt_range: i32,
+    /// Hunt type id (Engine-TS `huntMode`, -1 = none) — set by NPC_SETHUNTMODE.
+    pub hunt_mode: i32,
+    /// Ticks since the wandering npc was last at its spawn (Engine-TS
+    /// `wanderCounter`): at 500 it teleports home. Reset by combat (aiMode).
+    pub wander_counter: i32,
 }
 
 impl Npc {
@@ -113,6 +135,11 @@ impl Npc {
             queue: Vec::new(),
             walk_trigger: -1,
             walktrigger_arg: 0,
+            mode: 0,
+            target: None,
+            hunt_range: -1,
+            hunt_mode: -1,
+            wander_counter: 0,
         }
     }
 
@@ -190,27 +217,36 @@ impl Npc {
     /// Per-tick lifecycle countdown — 1:1 with Engine-TS `Npc` respawn/despawn
     /// handling. When the countdown elapses: a dead RESPAWN npc respawns (an
     /// active one reverts a pending changetype); a DESPAWN npc deactivates.
-    pub fn process_lifecycle(&mut self) {
+    pub fn process_lifecycle(&mut self) -> LifecycleEvent {
         if self.lifecycle_tick <= 0 {
-            return; // idle / not counting
+            return LifecycleEvent::None; // idle / not counting
         }
         self.lifecycle_tick -= 1;
         if self.lifecycle_tick != 0 {
-            return;
+            return LifecycleEvent::None;
         }
         match self.lifecycle {
             EntityLifeCycle::Respawn => {
                 if !self.active {
                     self.respawn();
+                    LifecycleEvent::Respawned
                 } else if self.new_type != -1 {
                     self.entity.masks |= MASK_CHANGE_TYPE; // revert queued
                     self.lifecycle_tick = LIFECYCLE_IDLE;
+                    LifecycleEvent::None
                 } else {
                     self.lifecycle_tick = LIFECYCLE_IDLE;
+                    LifecycleEvent::None
                 }
             }
-            EntityLifeCycle::Despawn => self.active = false,
-            EntityLifeCycle::Forever => self.lifecycle_tick = LIFECYCLE_IDLE,
+            EntityLifeCycle::Despawn => {
+                self.active = false;
+                LifecycleEvent::Despawned
+            }
+            EntityLifeCycle::Forever => {
+                self.lifecycle_tick = LIFECYCLE_IDLE;
+                LifecycleEvent::None
+            }
         }
     }
 

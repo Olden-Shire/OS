@@ -1,0 +1,11 @@
+// obj 6311
+cost = 200
+model = obj_hardy_gout_tuber
+yof2d = -30
+zoom2d = 1840
+yan2d = 384
+zan2d = 1964
+xan2d = 192
+iop1 = Eat
+members = true
+name = Gout tuber

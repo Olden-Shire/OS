@@ -1,0 +1,8 @@
+// npc 3390
+size = 1
+walkanim = 3379
+readyanim = 3379
+vislevel = 0
+name = Mountain Dwarf
+models = 2970 2980 2978 2984 2985 13414 2992
+headmodels = 0

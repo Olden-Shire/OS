@@ -1,0 +1,6 @@
+// loc 18874
+noshadow = true
+ambient = 20
+blockwalk = true
+models_only = 19289
+name = Danger sign

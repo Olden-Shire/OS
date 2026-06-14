@@ -1,0 +1,8 @@
+// npc 1576
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 8741/9106 25238/9106 4550/4822
+name = Stranger
+models = 208 250 292 170 176 3599 26135
+headmodels = 48 82 3483

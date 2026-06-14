@@ -1,0 +1,11 @@
+// npc 1670
+resizeh = 140
+resizev = 148
+vislevel = 0
+op1 = Talk-to
+op3 = Pickpocket
+size = 1
+recol = 10004/10456 54397/10456 25238/10448 6798/10295 8741/38160
+name = Dr Fenkenstrain
+models = 185 163 179 230 238 247 265 305
+headmodels = 63 79 70

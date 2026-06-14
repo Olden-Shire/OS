@@ -1,0 +1,7 @@
+// loc 19335
+op1 = Check
+nonsolid = true
+active = 1
+anim = 5239
+models_only = 23902 23903
+name = Rabbit snare

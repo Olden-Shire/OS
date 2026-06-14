@@ -1,0 +1,10 @@
+// npc 4774
+op1 = Talk-to
+op2 = Attack
+readyanim = 4702
+walkanim = 4699
+ambient = -25
+vislevel = 45
+name = Vampyre juvenile
+models = 17967 17985
+headmodels = 18044

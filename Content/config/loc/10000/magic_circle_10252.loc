@@ -1,0 +1,8 @@
+// loc 10252
+anim = 2883
+length = 3
+width = 3
+nonsolid = true
+bgsound = 3139, 3
+models_only = 9996
+name = Magic circle

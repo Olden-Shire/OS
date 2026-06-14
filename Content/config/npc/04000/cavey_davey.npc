@@ -1,0 +1,10 @@
+// npc 4358
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/920 39145/22158 11162/4
+name = Cavey Davey
+models = 211 252 14187 151 10218 259
+headmodels = 50 84

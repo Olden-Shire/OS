@@ -1,0 +1,10 @@
+// obj 6986
+model = obj_sandstone_32kg
+xof2d = 1
+yof2d = -34
+zoom2d = 3792
+yan2d = 84
+xan2d = 132
+members = true
+iop5 = Destroy
+name = Sandstone (32kg)

@@ -1,0 +1,12 @@
+// loc 24074
+width = 2
+length = 2
+op1 = Climb
+op2 = Climb-up
+op3 = Climb-down
+mapscene = 7
+ambient = 25
+contrast = 25
+forceapproach = 7
+models_only = 25321 25310
+name = Staircase

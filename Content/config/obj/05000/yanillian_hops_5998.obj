@@ -1,0 +1,12 @@
+// obj 5998
+model = obj_hammerstone_hops_5994
+xof2d = 1
+yof2d = 10
+zoom2d = 750
+yan2d = 120
+xan2d = 404
+ambient = 20
+members = true
+cost = 7
+recol = 13095/10157 13214/10153 13210/9127
+name = Yanillian hops

@@ -1,0 +1,6 @@
+// loc 24536
+active = 1
+ambient = 25
+op1 = Open
+models = 25369/0
+name = Gate

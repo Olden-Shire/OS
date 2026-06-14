@@ -1,0 +1,8 @@
+// npc 3154
+vislevel = 34
+size = 2
+resizev = 140
+resizev = 140
+recol = 4550/3303 8741/0 25238/0 9104/794 7952/914 8078/908
+name = Count Draynor
+models = 227 238 246 292 320 11107 256 181 317 11122

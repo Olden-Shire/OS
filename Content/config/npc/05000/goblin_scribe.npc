@@ -1,0 +1,10 @@
+// npc 5786
+walkanim = 6046
+readyanim = 6045
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 5549/78 5673/74 5793/70 8485/7326 8609/7322
+name = Goblin scribe
+models = 23672 23699 23629 23682
+headmodels = 23227 23246

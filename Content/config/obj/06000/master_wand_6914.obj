@@ -1,0 +1,13 @@
+// obj 6914
+model = obj_master_wand_6914
+manwear = obj_master_wand_6914_wear, 0
+womanwear = obj_master_wand_6914_wear, 0
+iop2 = Wield
+xof2d = 6
+yof2d = -7
+zoom2d = 540
+yan2d = 1092
+xan2d = 68
+cost = 2500
+members = true
+name = Master wand

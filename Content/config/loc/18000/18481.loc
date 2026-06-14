@@ -1,0 +1,8 @@
+// loc 18481
+blockwalk = true
+ambient = 20
+hillskew = true
+active = 0
+forcedecor = true
+recol = 9098/7054 8846/6930 8722/6806 8598/6682 8602/6558 8478/6563
+models = 12042/22

@@ -1,0 +1,10 @@
+// npc 3653
+size = 2
+resizev = 60
+resizeh = 60
+walkanim = 3819
+readyanim = 3815
+op2 = Attack
+vislevel = 43
+name = Confusion beast
+models = 14278

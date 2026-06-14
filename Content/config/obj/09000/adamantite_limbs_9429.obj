@@ -1,0 +1,12 @@
+// obj 9429
+model = obj_bronze_limbs_9420
+xof2d = -1
+zoom2d = 663
+yan2d = 243
+xan2d = 420
+manwear = obj_bronze_limbs_9420_wear, 0
+womanwear = obj_bronze_limbs_9420_wear, 6
+members = true
+cost = 1600
+recol = 5656/21671 5652/21662 5904/21782
+name = Adamantite limbs

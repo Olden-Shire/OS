@@ -1,0 +1,8 @@
+// npc 3839
+readyanim = 3970
+vislevel = 0
+turnspeed = 0
+recol = 8741/8856 7700/42787 926/43963 11200/8617 25238/8856
+name = Wise Old Man
+models = 187 9103 4925 292 323 170 176 554 260 181
+headmodels = 9102 7380

@@ -1,0 +1,9 @@
+// npc 6117
+size = 5
+vislevel = 0
+op1 = Talk-to
+readyanim = 6825
+ambient = 20
+name = Mr. Mordaut
+models = 26896 26898 26895 26897 26894
+headmodels = 26906

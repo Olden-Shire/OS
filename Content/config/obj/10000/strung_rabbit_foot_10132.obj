@@ -1,0 +1,13 @@
+// obj 10132
+model = obj_strung_rabbit_foot_10132
+xof2d = -6
+yof2d = 5
+zoom2d = 1114
+yan2d = 69
+xan2d = 443
+iop2 = Wear
+manwear = obj_strung_rabbit_foot_10132_man, 0
+womanwear = obj_strung_rabbit_foot_10132_woman, 0
+members = true
+cost = 30
+name = Strung rabbit foot

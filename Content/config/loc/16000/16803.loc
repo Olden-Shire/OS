@@ -1,0 +1,5 @@
+// loc 16803
+sharelight = true
+noshadow = true
+active = 0
+models = 16637/12 16638/18

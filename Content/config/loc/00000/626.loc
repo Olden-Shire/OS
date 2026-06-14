@@ -1,0 +1,5 @@
+// loc 626
+sharelight = true
+active = 0
+nonblockrange = true
+models_only = 1230

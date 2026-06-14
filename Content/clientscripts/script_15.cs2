@@ -1,0 +1,15 @@
+[clientscript,script_15](int $int0)(int, int, string)
+
+if ($int0 = 0) {
+    return(30, 10149, join("Swamp lizard", "<br>", " (with 30 Attack, 30 Ranged & 30 Magic)"));
+}
+if ($int0 = 1) {
+    return(50, 10146, join("Orange salamander", "<br>", " (with 50 Attack, 50 Ranged & 50 Magic)"));
+}
+if ($int0 = 2) {
+    return(60, 10147, join("Red salamander", "<br>", " (with 60 Attack, 60 Ranged & 60 Magic)"));
+}
+if ($int0 = 3) {
+    return(70, 10148, join("Black salamander", "<br>", " (with 70 Attack, 70 Ranged & 70 Magic)"));
+}
+return(0, -1, "");

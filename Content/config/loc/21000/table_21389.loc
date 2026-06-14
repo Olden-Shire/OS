@@ -1,0 +1,7 @@
+// loc 21389
+width = 2
+ambient = 10
+blockwalk = true
+nonblockrange = true
+models_only = 21981 21967
+name = Table

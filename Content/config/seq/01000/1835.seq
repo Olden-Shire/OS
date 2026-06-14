@@ -1,0 +1,7 @@
+// seq 1835
+loops = 14
+maxloops = 2
+replaceheldleft = 0
+replaceheldright = 0
+postanim_move = 1
+frames = 10/1/228 8/2/228 10/1/228 8/2/228 10/1/228 8/2/228 10/1/228 10/1/228 10/3/228 2/4/228 3/5/228 1/6/228 7/7/228 2/8/228

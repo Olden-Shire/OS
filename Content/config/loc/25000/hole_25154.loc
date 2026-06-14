@@ -1,0 +1,10 @@
+// loc 25154
+sharelight = true
+width = 3
+length = 3
+ambient = 15
+contrast = 15
+active = 1
+op1 = Enter
+models_only = 26519
+name = Hole

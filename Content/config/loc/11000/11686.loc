@@ -1,0 +1,8 @@
+// loc 11686
+active = 0
+hillskew = true
+wallwidth = 32
+ambient = 20
+contrast = 15
+occlude = true
+models = 11644/0 11645/1 11646/2 11647/3 11648/9

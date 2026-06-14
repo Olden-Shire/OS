@@ -1,0 +1,11 @@
+// npc 1592
+size = 4
+walkanim = 79
+readyanim = 90
+ambient = 15
+contrast = 15
+op2 = Attack
+vislevel = 246
+recol = 43280/5161 38172/3123 38177/3131 38057/3140 38065/3148 38090/5202
+name = Steel dragon
+models = 24578 24587 24583 17423

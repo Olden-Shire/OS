@@ -1,0 +1,6 @@
+// loc 18650
+active = 1
+bgsound = 3073, 5
+recol = 5429/6682 61/7566 5431/37035
+models_only = 18675
+name = Piping

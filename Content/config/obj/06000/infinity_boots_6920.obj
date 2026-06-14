@@ -1,0 +1,13 @@
+// obj 6920
+model = obj_infinity_boots_6920
+manwear = obj_infinity_boots_6920_man, 0
+womanwear = obj_infinity_boots_6920_woman, 0
+xof2d = 2
+yof2d = -5
+zoom2d = 750
+yan2d = 248
+xan2d = 164
+iop2 = Wear
+members = true
+cost = 12000
+name = Infinity boots

@@ -1,0 +1,14 @@
+// obj 10083
+cost = 3600
+model = obj_spiky_vambraces_10077
+xof2d = 7
+yof2d = -33
+zoom2d = 740
+yan2d = 1784
+xan2d = 196
+iop2 = Wear
+manwear = obj_spiky_vambraces_10077_man, 0
+womanwear = obj_spiky_vambraces_10077_woman, 0
+members = true
+recol = 8472/912 8720/540 7446/912
+name = Red spiky vambs

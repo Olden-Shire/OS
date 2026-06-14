@@ -1,0 +1,7 @@
+// loc 2446
+active = 1
+op1 = Open
+mapscene = 43
+blockwalk = true
+models = 1175/22
+name = Trap door

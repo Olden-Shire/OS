@@ -1,0 +1,10 @@
+// npc 1199
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 16701/25886 7595/6689 9152/12 8119/12
+name = Elf Tracker
+models = 4014 4020 4022 4025
+headmodels = 4011

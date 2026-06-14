@@ -1,0 +1,10 @@
+// npc 3571
+vislevel = 0
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = -25
+recol = 4550/54352
+name = Liam
+models = 210 250 16342 16341 177 176 14044
+headmodels = 49 82 9822

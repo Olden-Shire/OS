@@ -1,0 +1,10 @@
+// npc 2155
+size = 1
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 10659/66 7473/61 6356/12820
+name = Wemund
+models = 2973 6019 2983 2978 6021 7045 2985
+headmodels = 3 6026

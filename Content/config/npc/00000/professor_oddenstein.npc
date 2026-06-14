@@ -1,0 +1,10 @@
+// npc 286
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/7281 25238/21555 43072/4550 6798/16454
+name = Professor Oddenstein
+models = 10981 247 9622 170 176 274 185
+headmodels = 10976 79

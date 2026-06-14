@@ -1,0 +1,8 @@
+// loc 1946
+sharelight = true
+mirror = true
+active = 0
+ambient = 25
+contrast = 25
+retex = 2/23
+models = 666/0

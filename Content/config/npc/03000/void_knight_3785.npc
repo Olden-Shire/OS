@@ -1,0 +1,9 @@
+// npc 3785
+vislevel = 0
+readyanim = 3926
+turnspeed = 0
+op2 = hidden
+recol = 7073/8724 4626/43528
+name = Void Knight
+models = 378 14578 14570 14572 14576 358 14579
+headmodels = 103 14586

@@ -1,0 +1,15 @@
+// obj 11283
+cost = 2000000
+model = obj_dragonfire_shield_11283
+zoom2d = 2022
+yan2d = 123
+xan2d = 540
+contrast = 15
+ambient = 15
+manwear = obj_dragonfire_shield_11283_wear, 0
+womanwear = obj_dragonfire_shield_11283_wear, 6
+iop2 = Wield
+iop3 = Inspect
+iop4 = Empty
+members = true
+name = Dragonfire shield

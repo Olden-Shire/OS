@@ -1,0 +1,14 @@
+// obj 9943
+model = obj_sandbag
+xof2d = -1
+yof2d = 3
+zoom2d = 1438
+yan2d = 1923
+xan2d = 249
+contrast = 15
+ambient = 15
+members = true
+manwear = obj_sandbag_wear, 0
+womanwear = obj_sandbag_wear, 0
+iop4 = Empty
+name = Sandbag

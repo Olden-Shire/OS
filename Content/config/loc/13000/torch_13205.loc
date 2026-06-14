@@ -1,0 +1,8 @@
+// loc 13205
+op5 = Remove
+anim = 3107
+ambient = 20
+contrast = 20
+bgsound = 2065, 3
+models_only = 11319 11020
+name = Torch

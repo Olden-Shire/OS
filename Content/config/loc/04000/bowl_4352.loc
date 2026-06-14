@@ -1,0 +1,7 @@
+// loc 4352
+active = 1
+hillskew = true
+blockwalk = true
+recol = 70/8481 41/8481 7081/5788 7075/4382
+models = 1055/22
+name = Bowl

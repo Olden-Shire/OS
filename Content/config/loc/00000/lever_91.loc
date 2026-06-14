@@ -1,0 +1,6 @@
+// loc 91
+active = 1
+op1 = Pull
+op2 = Search for traps
+models = 2108/4
+name = Lever

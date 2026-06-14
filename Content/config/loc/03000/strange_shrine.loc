@@ -1,0 +1,8 @@
+// loc 3634
+anim = 1127
+length = 3
+width = 3
+op1 = Touch
+bgsound = 3144, 10
+models_only = 3690
+name = Strange shrine

@@ -1,0 +1,12 @@
+// obj 9903
+model = obj_farming_manual
+xof2d = 2
+yof2d = 13
+zoom2d = 1178
+yan2d = 1950
+xan2d = 429
+cost = 20
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Farming manual

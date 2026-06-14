@@ -1,0 +1,10 @@
+// loc 24723
+active = 1
+sharelight = true
+contrast = 10
+ambient = 20
+blockwalk = true
+op1 = Talk-into
+op3 = Climb
+models_only = 26034 26053 26049
+name = Drain Pipe

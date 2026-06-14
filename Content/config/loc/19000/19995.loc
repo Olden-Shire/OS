@@ -1,0 +1,7 @@
+// loc 19995
+ambient = 10
+hillskew = true
+sharelight = true
+active = 0
+ambient = 10
+models = 20101/0 20102/3

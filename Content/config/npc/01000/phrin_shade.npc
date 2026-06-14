@@ -1,0 +1,10 @@
+// npc 1244
+size = 1
+walkanim = 1281
+readyanim = 1282
+op2 = Attack
+alwaysontop = true
+vislevel = 60
+recol = 0/5640 916/127
+name = Phrin Shade
+models = 4140

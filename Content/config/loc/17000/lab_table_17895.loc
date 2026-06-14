@@ -1,0 +1,7 @@
+// loc 17895
+blockwalk = true
+ambient = 10
+width = 2
+nonblockrange = true
+models_only = 17875 17879 17880
+name = Lab table

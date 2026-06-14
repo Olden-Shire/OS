@@ -1,0 +1,12 @@
+// obj 3262
+model = obj_troll_thistle
+members = true
+cost = 1
+xof2d = 5
+yof2d = 20
+zoom2d = 700
+yan2d = 1004
+xan2d = 128
+ambient = 30
+contrast = 30
+name = Troll thistle

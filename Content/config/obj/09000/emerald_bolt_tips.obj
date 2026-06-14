@@ -1,0 +1,15 @@
+// obj 9190
+model = obj_opal_bolt_tips
+xof2d = 1
+zoom2d = 300
+yan2d = 66
+xan2d = 453
+stackable = true
+members = true
+cost = 33
+count1 = 9215, 2
+count2 = 9216, 3
+count3 = 9217, 4
+count4 = 9218, 5
+recol = 10465/20956
+name = Emerald bolt tips

@@ -1,0 +1,11 @@
+// npc 878
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 38
+recol = 6798/7073 10128/41 2452/61
+name = Colonel Radick
+models = 214 244 250 313 164 179 268 185 323 550 3330
+headmodels = 52 77 82

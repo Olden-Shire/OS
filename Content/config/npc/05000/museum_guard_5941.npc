@@ -1,0 +1,9 @@
+// npc 5941
+turnspeed = 0
+readyanim = 6390
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+name = Museum guard
+models = 25655 6848 246 25679 25647 177 25667 181
+headmodels = 25629 5787

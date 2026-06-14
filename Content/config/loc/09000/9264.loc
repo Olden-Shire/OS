@@ -1,0 +1,5 @@
+// loc 9264
+sharelight = true
+active = 0
+ambient = 25
+models = 9180/0 9181/4 25758/9

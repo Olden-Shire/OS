@@ -1,0 +1,12 @@
+// loc 2219
+hillskew = true
+width = 3
+length = 3
+resizex = 192
+resizez = 192
+occlude = true
+op1 = Look-at
+op2 = Search
+recol = 5425/6798 61/5908 45/5772 57/8086 28/5388 16156/6798
+models_only = 831
+name = Fissure

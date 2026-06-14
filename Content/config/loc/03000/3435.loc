@@ -1,0 +1,8 @@
+// loc 3435
+sharelight = true
+occlude = true
+ambient = 40
+active = 0
+recol = 6930/7566
+retex = 16/5
+models = 3526/0 3527/1 3528/2 3529/3 3530/9

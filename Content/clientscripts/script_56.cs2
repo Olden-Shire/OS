@@ -1,0 +1,13 @@
+[clientscript,script_56](int $int0)(int)
+
+if ($int0 = 0) {
+    if (calc(%varbit3578 + %varbit3599 + %varbit3611) = 6) {
+        return(2);
+    } else if (calc(%varbit3578 + %varbit3599 + %varbit3611) = 0) {
+        return(0);
+    } else {
+        return(1);
+    }
+}
+return(-1);
+return(0);

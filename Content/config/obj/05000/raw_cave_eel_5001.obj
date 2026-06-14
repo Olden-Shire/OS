@@ -1,0 +1,10 @@
+// obj 5001
+model = obj_raw_cave_eel_5001
+members = true
+xof2d = -11
+yof2d = 42
+zoom2d = 1440
+yan2d = 352
+xan2d = 296
+cost = 15
+name = Raw cave eel

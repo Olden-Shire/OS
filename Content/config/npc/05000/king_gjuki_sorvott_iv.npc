@@ -1,0 +1,11 @@
+// npc 5478
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 19018/16912 25238/8 908/12224 24/94 6587/94 6798/94
+name = King Gjuki Sorvott IV
+models = 192 206 252 10984 323 10301 177 4226 4218
+headmodels = 46 77 2938 84

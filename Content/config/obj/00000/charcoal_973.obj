@@ -1,0 +1,10 @@
+// obj 973
+cost = 45
+model = obj_charcoal_973
+manwear = obj_charcoal_973_wear, 0
+womanwear = obj_charcoal_973_wear, 6
+yof2d = 26
+zoom2d = 650
+yan2d = 220
+xan2d = 288
+name = Charcoal

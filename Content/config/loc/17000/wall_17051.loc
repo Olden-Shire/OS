@@ -1,0 +1,11 @@
+// loc 17051
+active = 1
+hillskew = true
+wallwidth = 32
+ambient = 20
+contrast = 15
+occlude = true
+op1 = Jump
+recol = 5322/8406 6356/8398 6352/7378 6348/8398
+models = 16887/0
+name = Wall

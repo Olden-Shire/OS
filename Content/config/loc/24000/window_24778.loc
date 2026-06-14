@@ -1,0 +1,8 @@
+// loc 24778
+active = 1
+contrast = 10
+ambient = 20
+nonsolid = true
+length = 3
+models_only = 26055
+name = Window

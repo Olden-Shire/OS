@@ -1,0 +1,8 @@
+// loc 15644
+active = 1
+ambient = 10
+op1 = Open
+raiseobject = 0
+mirror = true
+models = 15338/0
+name = Door

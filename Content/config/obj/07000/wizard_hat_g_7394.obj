@@ -1,0 +1,15 @@
+// obj 7394
+cost = 2
+model = obj_wizard_hat_g_7394
+xof2d = 5
+yof2d = -10
+zoom2d = 800
+yan2d = 156
+xan2d = 152
+iop2 = Wear
+manwear = obj_wizard_hat_g_7394_man, 0
+womanwear = obj_wizard_hat_g_7394_woman, 0
+manhead = 11403
+womanhead = 11407
+recol = 24/7114
+name = Wizard hat (g)

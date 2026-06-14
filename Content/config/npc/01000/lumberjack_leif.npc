@@ -1,0 +1,11 @@
+// npc 1395
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 1365
+op1 = Talk-to
+recol = 25238/2343 43072/18836 8741/18836 4550/2524 6798/7731 6587/18836
+name = Lumberjack Leif
+models = 215 252 299 167 179 4226 4218 510
+headmodels = 53 84

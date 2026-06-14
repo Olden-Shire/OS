@@ -1,0 +1,8 @@
+// loc 13408
+width = 2
+length = 2
+op5 = Remove
+anim = 3647
+nonblockrange = true
+models_only = 20420 13188 13189
+name = Statue

@@ -1,0 +1,11 @@
+// obj 407
+model = obj_oyster_407
+xof2d = -1
+yof2d = 6
+zoom2d = 700
+yan2d = 1840
+xan2d = 360
+cost = 200
+iop1 = Open
+members = true
+name = Oyster

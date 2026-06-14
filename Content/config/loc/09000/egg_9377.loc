@@ -1,0 +1,7 @@
+// loc 9377
+anim = 2600
+ambient = 35
+contrast = 15
+noshadow = true
+models_only = 9296
+name = Egg

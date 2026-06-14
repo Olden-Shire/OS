@@ -1,0 +1,9 @@
+// npc 2301
+walkanim = 219
+readyanim = 222
+op1 = Talk-to
+vislevel = 0
+recol = 7721/7605 6932/6689
+name = Monkey
+models = 7744
+headmodels = 7742

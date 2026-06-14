@@ -1,0 +1,12 @@
+// npc 2810
+op1 = Talk-to
+size = 2
+resizeh = 116
+resizev = 115
+walkanim = 45
+readyanim = 51
+vislevel = 0
+recol = 7475/7613
+name = Elly the Camel
+models = 9845 9843 9850
+headmodels = 9839 9842

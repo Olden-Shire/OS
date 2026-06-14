@@ -1,0 +1,9 @@
+// npc 905
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 53947/43968 11200/43934 8741/43920 25238/43920 8078/43926 908/43968
+name = Kolodion
+models = 162 185 176 208 250 265 292 236 290
+headmodels = 48 82 68

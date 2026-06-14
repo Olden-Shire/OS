@@ -1,0 +1,12 @@
+// npc 4498
+resizeh = 108
+resizev = 108
+op1 = Talk-to
+vislevel = 0
+readyanim = 6181
+walkanim = 6180
+ambient = 15
+recol = 6331/43932 6323/43928 6348/43937
+name = Grubfoot
+models = 24435 24442 24452 24455 24472 24487
+headmodels = 24209

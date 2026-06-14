@@ -1,0 +1,10 @@
+// npc 342
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/10508 8741/5652 43072/10508 6798/45
+name = Guidor's wife
+models = 378 25713 25697 353 421 358
+headmodels = 103

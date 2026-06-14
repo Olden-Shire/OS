@@ -1,0 +1,9 @@
+// npc 3059
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 1275
+op2 = Attack
+vislevel = 85
+recol = 4626/10460 4550/10460 25238/10401 908/5272 933/10446
+name = Ghoul Champion
+models = 10303 10306 10299 275 181 10315

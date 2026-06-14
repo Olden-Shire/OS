@@ -1,0 +1,9 @@
+// loc 10546
+width = 2
+ambient = 25
+mirror = true
+anim = 917
+nonsolid = true
+recol = 6932/6689 8662/16701 7626/16701
+models_only = 10348
+name = Elf Flag

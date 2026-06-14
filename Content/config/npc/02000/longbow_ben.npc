@@ -1,0 +1,9 @@
+// npc 2691
+vislevel = 0
+walkanims = 1323, 1324, 1325, 1326
+readyanim = 1322
+op1 = Talk-to
+recol = 25238/6430 8741/45243 9104/49362 43072/4550 22177/555 7952/3377
+name = Longbow Ben
+models = 211 246 292 3667 170 176 6098 5218 317
+headmodels = 50

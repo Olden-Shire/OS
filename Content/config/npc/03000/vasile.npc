@@ -1,0 +1,11 @@
+// npc 3563
+vislevel = 0
+resizeh = 125
+resizev = 120
+walkanims = 819, 820, 821, 822
+readyanim = 3557
+op1 = Talk-to
+recol = 43072/10450 25238/14990 4550/10450 6443/21656
+name = Vasile
+models = 210 250 8845 168 176 275 8919 10087
+headmodels = 49 82 9822

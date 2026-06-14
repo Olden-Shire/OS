@@ -1,0 +1,11 @@
+// obj 952
+cost = 3
+model = obj_spade_952
+manwear = obj_spade_952_wear, 0
+womanwear = obj_spade_952_wear, 0
+zoom2d = 1860
+yan2d = 1532
+xan2d = 396
+iop1 = Dig
+recol = 61/5181 57/5177 70/5190
+name = Spade

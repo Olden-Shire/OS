@@ -1,0 +1,10 @@
+// loc 10721
+ambient = 15
+contrast = 15
+active = 1
+op1 = Enter
+resizex = 128
+resizey = 192
+resizez = 128
+models_only = 10678
+name = Doorway

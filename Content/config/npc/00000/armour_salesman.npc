@@ -1,0 +1,11 @@
+// npc 682
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 6674/8111 23442/4003 6798/7073 25238/3998 8741/3998
+name = Armour salesman
+models = 246 303 18930 167 179 563 486 262 185
+headmodels = 18912

@@ -1,0 +1,7 @@
+// loc 17966
+ambient = 10
+blockwalk = true
+active = 1
+op1 = Search
+models_only = 17558 17577 17557
+name = Mine cart

@@ -1,0 +1,6 @@
+// loc 18502
+op1 = Search
+nonblockrange = true
+recol = 6806/7830 6682/7954 6558/7706 6563/7582 6439/7587 6443/7463
+models_only = 7685
+name = Crate

@@ -1,0 +1,12 @@
+// npc 1011
+vislevel = 0
+size = 1
+walkanim = 358
+readyanim = 357
+op1 = Talk
+resizeh = 128
+resizev = 90
+recol = 8722/5547 5223/11171
+name = Fycie
+models = 2878 3441
+headmodels = 3444

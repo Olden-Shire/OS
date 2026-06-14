@@ -1,0 +1,5 @@
+// seq 4758
+replaceheldright = 0
+replaceheldleft = 0
+reachforward = true
+frames = 16/419/1234 12/420/1234 12/421/1234 17/422/1234 12/421/1234 12/420/1234

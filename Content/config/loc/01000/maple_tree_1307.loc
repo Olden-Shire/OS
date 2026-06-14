@@ -1,0 +1,9 @@
+// loc 1307
+width = 2
+mapscene = 2
+length = 2
+op1 = Chop down
+op3 = hidden
+ambient = 25
+models_only = 8023
+name = Maple tree

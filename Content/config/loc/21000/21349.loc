@@ -1,0 +1,8 @@
+// loc 21349
+sharelight = true
+active = 0
+ambient = 20
+contrast = 20
+offsety = -40
+recol = 5413/6817 5532/6705 5524/6585 5404/6695
+models = 4363/18

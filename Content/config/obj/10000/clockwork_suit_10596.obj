@@ -1,0 +1,11 @@
+// obj 10596
+model = obj_clockwork_suit_10595
+members = true
+xof2d = 4
+yof2d = 3
+zoom2d = 1632
+yan2d = 126
+xan2d = 516
+iop4 = Release
+iop5 = Destroy
+name = Clockwork suit

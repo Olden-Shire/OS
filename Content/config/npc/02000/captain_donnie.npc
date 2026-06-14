@@ -1,0 +1,10 @@
+// npc 2830
+readyanim = 5656
+walkanim = 5655
+vislevel = 0
+op1 = Talk-to
+size = 1
+recol = 28744/28866 28740/28861 28736/28857 28731/28853 127/404
+name = Captain Donnie
+models = 21427 21467 21413 21441 21459 21447 21421
+headmodels = 21397

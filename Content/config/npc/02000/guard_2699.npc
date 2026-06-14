@@ -1,0 +1,9 @@
+// npc 2699
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 21
+recol = 25238/5413 8741/5421 906/5652 61/2225 926/2225
+name = Guard
+models = 9451 253 9458 9450 176 5437 274 185

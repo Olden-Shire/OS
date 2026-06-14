@@ -1,0 +1,10 @@
+// npc 512
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/4785 8741/4785 43072/4785 25238/7070
+name = Kaleb Paramaya
+models = 217 252 305 173 176 254 181
+headmodels = 55 84

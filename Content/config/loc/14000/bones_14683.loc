@@ -1,0 +1,8 @@
+// loc 14683
+width = 2
+length = 2
+hillskew = true
+nonblockrange = true
+recol = 6241/20
+models_only = 14332
+name = Bones

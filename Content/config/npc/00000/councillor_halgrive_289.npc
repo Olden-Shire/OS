@@ -1,0 +1,10 @@
+// npc 289
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 11183/37 8741/43674 25238/43662 9104/43662 54397/584 4626/0
+name = Councillor Halgrive
+models = 215 238 247 292 170 176 254 181 320
+headmodels = 53 70 79

@@ -1,0 +1,7 @@
+// seq 2909
+loops = 8
+maxloops = 5
+reachforward = true
+replaceheldright = 0
+replaceheldleft = 0
+frames = 5/9/255 5/29/255 5/30/255 5/31/255 5/32/255 5/33/255 5/34/255 5/35/255

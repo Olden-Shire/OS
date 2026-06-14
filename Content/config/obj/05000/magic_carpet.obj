@@ -1,0 +1,8 @@
+// obj 5614
+model = obj_knife_946
+manwear = obj_magic_carpet_wear, 0
+womanwear = obj_magic_carpet_wear, 6
+ambient = -50
+contrast = -50
+members = true
+name = Magic carpet

@@ -1,0 +1,11 @@
+// obj 3194
+members = true
+cost = 1000
+model = obj_halberd_1413
+iop2 = Wield
+manwear = obj_bronze_halberd_3190_wear, 0
+womanwear = obj_bronze_halberd_3190_wear, 6
+zoom2d = 2130
+yan2d = 48
+xan2d = 604
+name = Steel halberd

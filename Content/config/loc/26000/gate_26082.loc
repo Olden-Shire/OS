@@ -1,0 +1,8 @@
+// loc 26082
+op1 = Open
+mirror = true
+active = 1
+raiseobject = 0
+nonblockrange = true
+models = 27467/0
+name = Gate

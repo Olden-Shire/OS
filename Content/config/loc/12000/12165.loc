@@ -1,0 +1,7 @@
+// loc 12165
+blockwalk = true
+length = 2
+width = 5
+op1 = Make-Canoe
+forceapproach = 11
+multiloc = 1841, 65535, 12144 12147 12148 12149 12150 12151 12152 12153 12154 12145 12146 12155 12156 12157 12158

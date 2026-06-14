@@ -1,0 +1,10 @@
+// loc 16598
+active = 1
+noshadow = true
+contrast = 40
+ambient = 50
+nonsolid = true
+forcedecor = true
+mapscene = 66
+models = 16789/22
+name = Dream puff

@@ -1,0 +1,8 @@
+// obj 743
+model = obj_lump_of_crystal
+members = true
+xof2d = 6
+yof2d = 6
+zoom2d = 510
+yan2d = 60
+name = Lump of crystal

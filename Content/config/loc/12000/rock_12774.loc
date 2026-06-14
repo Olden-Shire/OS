@@ -1,0 +1,6 @@
+// loc 12774
+nonsolid = true
+active = 1
+noshadow = true
+models_only = 3951
+name = Rock

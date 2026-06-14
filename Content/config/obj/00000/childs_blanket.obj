@@ -1,0 +1,8 @@
+// obj 90
+model = obj_childs_blanket
+yof2d = -15
+zoom2d = 1360
+xan2d = 368
+members = true
+cost = 5
+name = Child's blanket

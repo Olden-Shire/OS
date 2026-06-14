@@ -1,0 +1,8 @@
+// loc 11793
+width = 2
+length = 2
+ambient = 20
+nonblockrange = true
+recol = 10279/8406 37/8400 10275/8396 10270/8392 28/8388 7056/7580
+models_only = 1410
+name = Well

@@ -1,0 +1,9 @@
+// loc 22648
+active = 0
+ambient = 20
+sharelight = true
+hillskew = true
+nonsolid = true
+forcedecor = true
+recol = 5786/10266
+models = 23526/22

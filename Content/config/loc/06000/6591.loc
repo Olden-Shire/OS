@@ -1,0 +1,7 @@
+// loc 6591
+wallwidth = 32
+sharelight = true
+occlude = true
+active = 0
+recol = 21534/7481 21530/8501 21526/8497 21522/8493 21646/8493 21642/8617
+models = 4480/0 4481/1 4482/2 4483/3 4484/9

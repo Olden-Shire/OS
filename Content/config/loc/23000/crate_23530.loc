@@ -1,0 +1,8 @@
+// loc 23530
+ambient = 20
+blockwalk = true
+op1 = Hide-behind
+nonblockrange = true
+recol = 6443/7700 6439/7700 6563/8976 6558/8846 6682/8846 6806/8846
+models_only = 7700
+name = Crate

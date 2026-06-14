@@ -1,0 +1,11 @@
+// npc 842
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 43
+recol = 25238/11187 8741/11187 4550/4645
+name = Rowdy Guard
+models = 219 246 294 167 179 254 185 490 517
+headmodels = 57

@@ -1,0 +1,10 @@
+// loc 22823
+length = 2
+active = 1
+ambient = 20
+blockwalk = true
+anim = 6027
+bgsound = 3502, 5
+nonblockrange = true
+models_only = 23512 23511
+name = Thingymajig

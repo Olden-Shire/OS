@@ -1,0 +1,15 @@
+// obj 5312
+model = obj_acorn
+xof2d = -8
+yof2d = 7
+zoom2d = 1260
+yan2d = 2008
+xan2d = 280
+members = true
+stackable = true
+count1 = 5111, 2
+count2 = 5112, 3
+count3 = 5113, 4
+count4 = 5114, 5
+cost = 6
+name = Acorn

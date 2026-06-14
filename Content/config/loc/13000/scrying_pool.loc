@@ -1,0 +1,11 @@
+// loc 13639
+op5 = Remove
+length = 2
+width = 2
+anim = 3644
+op1 = Direct-portal
+op2 = Scry
+bgsound = 2149, 3
+ambient = 40
+models_only = 13192
+name = Scrying pool

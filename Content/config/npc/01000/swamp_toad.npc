@@ -1,0 +1,7 @@
+// npc 1013
+vislevel = 0
+size = 1
+readyanim = 1018
+walkanim = 1021
+name = Swamp toad
+models = 3447

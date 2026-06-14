@@ -1,0 +1,9 @@
+// loc 4448
+sharelight = true
+occlude = true
+hillskew = true
+active = 1
+op1 = Collapse
+op3 = hidden
+models = 782/0 783/1 784/9
+name = Cave wall

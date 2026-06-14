@@ -1,0 +1,8 @@
+// npc 1458
+walkanim = 1380
+readyanim = 1386
+op2 = Attack
+vislevel = 86
+name = Monkey Archer
+models = 4821 4828 4831
+headmodels = 4660

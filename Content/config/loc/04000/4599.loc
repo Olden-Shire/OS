@@ -1,0 +1,11 @@
+// loc 4599
+width = 10
+length = 10
+occlude = true
+resizex = 128
+resizey = 128
+resizez = 128
+ambient = 20
+blockwalk = true
+active = 0
+models_only = 4525

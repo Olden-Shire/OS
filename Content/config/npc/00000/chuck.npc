@@ -1,0 +1,8 @@
+// npc 29
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 1
+recol = 25238/10128
+name = Chuck
+models = 210 250 315 173 179 271 185 196 510 280

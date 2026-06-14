@@ -1,0 +1,5 @@
+// loc 21304
+ambient = 10
+op1 = Spin
+models_only = 21980
+name = Spinning wheel

@@ -1,0 +1,12 @@
+// obj 6067
+members = true
+cost = 100
+yof2d = -10
+zoom2d = 1650
+yan2d = 1912
+xan2d = 460
+model = obj_plague_trousers
+iop2 = Wear
+manwear = obj_plague_trousers_man, 0
+womanwear = obj_plague_trousers_woman, 0
+name = Mourner trousers

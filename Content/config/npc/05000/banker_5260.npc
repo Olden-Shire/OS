@@ -1,0 +1,10 @@
+// npc 5260
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Bank
+recol = 25238/10295 8741/10283 24/10270 61/10283 9104/10270 4550/5673
+name = Banker
+models = 378 470 484 11348 10706 430 358
+headmodels = 103

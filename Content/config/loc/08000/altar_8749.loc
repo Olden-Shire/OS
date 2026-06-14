@@ -1,0 +1,6 @@
+// loc 8749
+width = 2
+op1 = Pray-at
+nonblockrange = true
+models_only = 14201
+name = Altar

@@ -1,0 +1,13 @@
+// obj 5556
+model = obj_rogue_gloves
+iop2 = Wear
+members = true
+manwear = obj_rogue_gloves_man, 0
+womanwear = obj_rogue_gloves_woman, 0
+xof2d = 3
+yof2d = 7
+zoom2d = 740
+yan2d = 60
+xan2d = 376
+cost = 250
+name = Rogue gloves

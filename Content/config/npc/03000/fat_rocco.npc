@@ -1,0 +1,8 @@
+// npc 3306
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 9447/7836
+name = Fat Rocco
+models = 11882
+headmodels = 4382

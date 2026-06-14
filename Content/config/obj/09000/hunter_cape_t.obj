@@ -1,0 +1,12 @@
+// obj 9949
+cost = 99000
+members = true
+model = obj_hunter_cape_9948
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_hunter_cape_9948_man, 0
+womanwear = obj_hunter_cape_9948_woman, 0
+recol = 57280/5268 54183/6020 54503/6020 960/8487 22464/8478 43968/8598
+name = Hunter cape(t)

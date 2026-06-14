@@ -1,0 +1,14 @@
+// obj 5553
+model = obj_rogue_top
+iop2 = Wear
+members = true
+manwear = obj_rogue_top_man, 0
+manwear2 = 7605
+womanwear = obj_rogue_top_woman, 0
+womanwear2 = 7612
+yof2d = 16
+zoom2d = 1300
+yan2d = 212
+xan2d = 364
+cost = 625
+name = Rogue top

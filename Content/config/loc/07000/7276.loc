@@ -1,0 +1,6 @@
+// loc 7276
+active = 1
+sharelight = true
+forceapproach = 11
+op1 = Pick-up
+multiloc = 681, 65535, 65535 7277 65535 7278

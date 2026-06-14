@@ -1,0 +1,8 @@
+// loc 13967
+hillskew = true
+sharelight = true
+nonsolid = true
+ambient = 25
+op1 = Enter
+models_only = 8692
+name = Rift

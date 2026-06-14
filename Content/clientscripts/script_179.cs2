@@ -1,0 +1,22 @@
+[clientscript,script_179](int $int0)(int)
+
+if ($int0 = 1) {
+    return(%varcint44);
+}
+if ($int0 = 2) {
+    return(%varcint45);
+}
+if ($int0 = 3) {
+    return(%varcint46);
+}
+if ($int0 = 4) {
+    return(%varcint47);
+}
+if ($int0 = 5) {
+    return(%varcint48);
+}
+if ($int0 = 6) {
+    return(%varcint49);
+}
+return(0);
+return(0);

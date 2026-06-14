@@ -1,0 +1,11 @@
+// npc 2651
+vislevel = 0
+size = 2
+walkanim = 2666
+readyanim = 2666
+turnspeed = 0
+op1 = Talk-to
+recol = 61/12 16/12 127/33
+name = Odysseus
+models = 9390
+headmodels = 6435

@@ -1,0 +1,15 @@
+// npc 2951
+size = 1
+resizeh = 130
+resizev = 132
+contrast = 10
+ambient = 20
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 9096/8394 25238/7582 8741/39083 4886/7704
+name = Felkrash
+models = 10078 9361 9359 9360 437 8934
+headmodels = 10033

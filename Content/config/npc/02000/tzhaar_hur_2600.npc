@@ -1,0 +1,15 @@
+// npc 2600
+op2 = Attack
+walkanim = 2601
+readyanim = 2603
+contrast = 0
+ambient = 10
+resizeh = 110
+resizev = 110
+resizeh = 128
+resizev = 135
+vislevel = 74
+recol = 3005/1950 406/10299
+name = TzHaar-Hur
+models = 9311 9310 9313 9312
+headmodels = 9251

@@ -1,0 +1,7 @@
+// loc 10728
+active = 1
+op1 = Grab
+ambient = 15
+contrast = 15
+models_only = 10595
+name = Bones

@@ -1,0 +1,5 @@
+// npc 5949
+vislevel = 1
+name = Schoolboy
+models = 2214
+headmodels = 14287 18123

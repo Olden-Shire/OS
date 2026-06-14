@@ -1,0 +1,10 @@
+// npc 1870
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/10351 25238/10351 6798/127 4550/5555
+name = Ali the Mayor
+models = 215 6087 292 151 254 181 176
+headmodels = 53 6081

@@ -1,0 +1,6 @@
+// loc 16188
+active = 0
+sharelight = true
+hillskew = true
+nonsolid = true
+models = 16179/0 16180/1 16181/9

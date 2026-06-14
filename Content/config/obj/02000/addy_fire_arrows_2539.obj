@@ -1,0 +1,16 @@
+// obj 2539
+members = true
+cost = 10
+stackable = true
+model = obj_bronze_fire_arrows_942
+xof2d = 1
+yof2d = 1
+zoom2d = 1750
+yan2d = 120
+xan2d = 332
+iop2 = Wield
+count1 = 2546, 2
+count2 = 2547, 3
+count3 = 2548, 4
+count4 = 2549, 5
+name = Addy fire arrows

@@ -1,0 +1,8 @@
+// loc 12114
+anim = 6094
+width = 2
+length = 6
+active = 1
+bgsound = 3114, 5
+models_only = 23899 23898 23900 23897
+name = Cow wheel

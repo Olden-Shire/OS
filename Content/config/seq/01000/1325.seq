@@ -1,0 +1,5 @@
+// seq 1325
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 4315
+frames = 6/0/286 6/57/286 6/58/286 6/59/286

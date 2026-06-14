@@ -1,0 +1,15 @@
+// obj 11061
+iop2 = Wield
+model = obj_mace
+xof2d = -1
+yof2d = 4
+zoom2d = 1632
+yan2d = 83
+xan2d = 1618
+contrast = 15
+ambient = 15
+manwear = obj_ancient_mace_11061_wear, 0
+womanwear = obj_ancient_mace_11061_wear, 6
+members = true
+cost = 1000
+name = Ancient mace

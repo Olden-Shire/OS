@@ -1,0 +1,10 @@
+// npc 5825
+walkanim = 6076
+readyanim = 6075
+op1 = Talk-to
+op3 = Pickpocket
+vislevel = 0
+recol = 25238/262 8741/262 6798/103 926/22193
+name = Movario
+models = 208 11190 282 292 11767 11809 177 23251 256 181
+headmodels = 48 11188

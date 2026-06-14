@@ -1,0 +1,14 @@
+// obj 75
+members = true
+cost = 12
+model = obj_khazard_armour
+xof2d = -1
+zoom2d = 1250
+xan2d = 488
+iop2 = Wear
+manwear = obj_khazard_armour_man, 0
+manwear2 = 157
+womanwear = obj_khazard_armour_woman, 0
+womanwear2 = 339
+recol = 61/20 25238/3974
+name = Khazard armour

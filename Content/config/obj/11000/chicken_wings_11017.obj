@@ -1,0 +1,14 @@
+// obj 11017
+model = obj_chicken_wings_11017
+xof2d = -8
+yof2d = -12
+zoom2d = 1488
+yan2d = 2047
+xan2d = 595
+contrast = 15
+ambient = 15
+manwear = obj_chicken_wings_11017_man, 0
+manwear2 = 24032
+womanwear = obj_chicken_wings_11017_woman, 0
+womanwear2 = 24044
+name = Chicken wings

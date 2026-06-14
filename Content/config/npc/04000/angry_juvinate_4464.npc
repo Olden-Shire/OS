@@ -1,0 +1,12 @@
+// npc 4464
+op2 = Attack
+size = 1
+resizeh = 190
+resizev = 158
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 100
+recol = 4550/21580 7236/21580 25238/24745 8741/24745 4626/21580
+name = Angry juvinate
+models = 4089 310 167 176 275 181
+headmodels = 6216

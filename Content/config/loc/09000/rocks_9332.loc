@@ -1,0 +1,8 @@
+// loc 9332
+hillskew = true
+forcedecor = true
+active = 1
+op1 = Climb
+blockwalk = true
+models = 9236/22
+name = Rocks

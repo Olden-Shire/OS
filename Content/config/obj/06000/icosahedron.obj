@@ -1,0 +1,8 @@
+// obj 6900
+model = obj_icosahedron
+zoom2d = 1320
+xan2d = 1620
+ambient = 10
+members = true
+cost = 0
+name = Icosahedron

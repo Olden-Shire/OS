@@ -1,0 +1,15 @@
+// loc 14428
+anim = 525
+ambient = 100
+contrast = 100
+noshadow = true
+op1 = Bait
+op3 = hidden
+ambient = 35
+forcedecor = true
+resizey = 32
+hillskew = true
+offsety = 100
+nonblockrange = true
+models_only = 2331
+name = Fishing spot

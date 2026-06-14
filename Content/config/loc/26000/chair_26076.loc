@@ -1,0 +1,7 @@
+// loc 26076
+blockwalk = true
+ambient = 25
+contrast = 15
+mirror = true
+models_only = 27461
+name = Chair

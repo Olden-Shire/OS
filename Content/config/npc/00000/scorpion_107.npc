@@ -1,0 +1,8 @@
+// npc 107
+size = 2
+walkanim = 6253
+readyanim = 6252
+op2 = Attack
+vislevel = 14
+name = Scorpion
+models = 24609

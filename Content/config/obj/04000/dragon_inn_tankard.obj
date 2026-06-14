@@ -1,0 +1,10 @@
+// obj 4811
+model = obj_dragon_inn_tankard
+xof2d = -9
+yof2d = 2
+zoom2d = 940
+yan2d = 2036
+xan2d = 128
+members = true
+iop1 = Look-at
+name = Dragon inn tankard

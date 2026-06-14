@@ -1,0 +1,7 @@
+// loc 12402
+width = 3
+length = 3
+blockwalk = true
+anim = 3407
+models_only = 13492 13493 13494
+name = Explosion

@@ -1,0 +1,7 @@
+// loc 24890
+active = 1
+ambient = 15
+nonblockrange = true
+recol = 39469/666 34999/547 5652/7690 5656/7442 5532/7566
+models_only = 25132
+name = Barstool

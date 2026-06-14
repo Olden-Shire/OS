@@ -1,0 +1,9 @@
+// loc 19971
+resizex = 64
+resizey = 64
+resizez = 64
+op1 = Inspect
+nonblockrange = true
+recol = 6689/5157
+models_only = 818
+name = Rocks

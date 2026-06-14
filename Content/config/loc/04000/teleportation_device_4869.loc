@@ -1,0 +1,7 @@
+// loc 4869
+active = 1
+op1 = Operate
+nonsolid = true
+recol = 61/7566
+models = 4735/22
+name = Teleportation Device

@@ -1,0 +1,6 @@
+// npc 4105
+op1 = Hit
+vislevel = 0
+recol = 10295/6707 10304/6699
+name = Combat stone
+models = 13203 13213 13212 13207 13208 13209

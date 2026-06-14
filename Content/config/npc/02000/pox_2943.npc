@@ -1,0 +1,13 @@
+// npc 2943
+size = 1
+resizeh = 55
+resizev = 55
+readyanim = 317
+walkanim = 314
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 127/6587 16/10316 61/10316 4818/1478 64414/42927
+name = Pox
+models = 3006 3010
+headmodels = 6435

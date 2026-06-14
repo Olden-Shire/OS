@@ -1,0 +1,13 @@
+// loc 19690
+active = 1
+width = 2
+length = 2
+contrast = 20
+ambient = 30
+blockwalk = true
+op1 = Ascend
+mapscene = 69
+forceapproach = 14
+recol = 7322/34130 7326/34014 7331/37999 7335/43129 7339/43131
+models_only = 8687
+name = Steps

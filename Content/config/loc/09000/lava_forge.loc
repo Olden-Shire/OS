@@ -1,0 +1,13 @@
+// loc 9390
+anim = 2641
+ambient = 35
+contrast = 15
+hillskew = true
+length = 3
+width = 3
+forceapproach = 7
+op2 = Smelt
+noshadow = true
+bgsound = 2208, 5
+models_only = 9293
+name = Lava forge

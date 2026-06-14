@@ -1,0 +1,7 @@
+// loc 23348
+sharelight = true
+hillskew = true
+ambient = 15
+contrast = 15
+models_only = 24275
+name = Wall

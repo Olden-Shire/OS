@@ -1,0 +1,12 @@
+// obj 2889
+model = obj_odd_gnomebowl_2173
+xof2d = 1
+zoom2d = 850
+yan2d = 1888
+xan2d = 192
+members = true
+cost = 1
+manwear = obj_a_stone_bowl_2888_wear, 0
+womanwear = obj_a_stone_bowl_2888_wear, 0
+recol = 7081/37 7075/2749
+name = A stone bowl

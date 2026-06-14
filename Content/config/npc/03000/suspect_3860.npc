@@ -1,0 +1,9 @@
+// npc 3860
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Grab
+recol = 25238/939 8741/578 24/664 9529/578 15242/8406 6798/9026
+name = Suspect
+models = 393 11360 348 10706 11357 358
+headmodels = 115

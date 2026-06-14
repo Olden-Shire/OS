@@ -1,0 +1,13 @@
+// obj 6472
+model = obj_unfinished_potion_91
+yof2d = -1
+zoom2d = 550
+yan2d = 1996
+xan2d = 84
+manwear = obj_holy_water_wear, 0
+womanwear = obj_holy_water_wear, 0
+members = true
+cost = 90
+iop4 = Empty
+recol = 61/1325
+name = Compost potion(3)

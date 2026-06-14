@@ -1,0 +1,12 @@
+// npc 546
+vislevel = 0
+size = 1
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op3 = Trade
+recol = 4550/6806 0/10508 40918/8613 40384/7838 119/7341 39009/8617
+name = Zaff
+models = 215 251 299 4952 4953 553 11338 181
+headmodels = 53 83

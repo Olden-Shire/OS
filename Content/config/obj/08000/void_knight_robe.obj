@@ -1,0 +1,10 @@
+// obj 8840
+model = obj_void_knight_robe
+cost = 45000
+zoom2d = 2022
+xan2d = 408
+iop2 = Wear
+manwear = obj_void_knight_robe_man, 0
+womanwear = obj_void_knight_robe_woman, 0
+members = true
+name = Void knight robe

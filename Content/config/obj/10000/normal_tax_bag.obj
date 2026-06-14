@@ -1,0 +1,12 @@
+// obj 10833
+model = obj_normal_tax_bag
+xof2d = 4
+yof2d = -20
+zoom2d = 1488
+yan2d = 273
+xan2d = 180
+cost = 1
+members = true
+iop1 = Check tax
+iop5 = Destroy
+name = Normal tax bag

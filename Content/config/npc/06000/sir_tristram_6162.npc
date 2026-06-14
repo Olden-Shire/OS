@@ -1,0 +1,10 @@
+// npc 6162
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Hidden
+op1 = Talk-to
+vislevel = 115
+name = Sir Tristram
+models = 27127 27195 27203
+headmodels = 27212

@@ -1,0 +1,7 @@
+// loc 16378
+active = 1
+hillskew = true
+ambient = 20
+op1 = Examine
+models_only = 16121
+name = Healing certificate

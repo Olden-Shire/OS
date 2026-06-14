@@ -1,0 +1,9 @@
+// npc 3925
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/2524 8741/10529 25238/10644 6798/7845
+name = Tjorvi
+models = 10981 252 292 326 170 176 3711 4226 4218
+headmodels = 10976 84

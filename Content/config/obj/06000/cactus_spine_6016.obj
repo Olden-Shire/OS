@@ -1,0 +1,10 @@
+// obj 6016
+model = obj_cactus_spine_6016
+xof2d = 1
+yof2d = -1
+zoom2d = 480
+yan2d = 1844
+xan2d = 324
+ambient = 15
+members = true
+name = Cactus spine

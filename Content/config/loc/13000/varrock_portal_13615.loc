@@ -1,0 +1,10 @@
+// loc 13615
+op5 = Remove
+width = 2
+anim = 3174
+op1 = Enter
+bgsound = 3139, 3
+ambient = 40
+recol = 50072/6067 49948/5943 49953/5819 49829/5696 49705/5700
+models_only = 11231 11240
+name = Varrock Portal

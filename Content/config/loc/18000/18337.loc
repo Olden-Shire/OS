@@ -1,0 +1,6 @@
+// loc 18337
+sharelight = true
+forcedecor = true
+ambient = 10
+recol = 7341/5173 7463/7465 7582/7587
+models = 18442/22

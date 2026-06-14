@@ -1,0 +1,8 @@
+// loc 9560
+active = 1
+op1 = Climb-down
+mapscene = 7
+sharelight = true
+forceapproach = 11
+models_only = 9482
+name = Trapdoor

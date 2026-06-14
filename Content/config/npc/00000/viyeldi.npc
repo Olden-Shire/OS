@@ -1,0 +1,10 @@
+// npc 935
+size = 1
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 79
+recol = 8741/38814 8078/38814 25238/38814
+name = Viyeldi
+models = 202 292 170 256 534 209
+headmodels = 54 44

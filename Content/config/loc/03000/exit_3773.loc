@@ -1,0 +1,9 @@
+// loc 3773
+mirror = true
+hillskew = true
+sharelight = true
+ambient = 25
+contrast = 25
+op1 = Leave
+models = 3799/0
+name = Exit

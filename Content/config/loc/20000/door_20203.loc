@@ -1,0 +1,10 @@
+// loc 20203
+op1 = Pass
+anim = 1433
+raiseobject = 0
+ambient = 100
+contrast = 100
+active = 1
+recol = 61/935
+models = 4874/0
+name = Door

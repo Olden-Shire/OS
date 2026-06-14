@@ -1,0 +1,12 @@
+// npc 3939
+size = 2
+resizeh = 65
+resizev = 65
+ambient = 10
+alwaysontop = true
+readyanim = 3535
+walkanim = 3537
+op2 = Attack
+vislevel = 90
+name = Sea Snake Young
+models = 13911

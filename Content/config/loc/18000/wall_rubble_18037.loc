@@ -1,0 +1,9 @@
+// loc 18037
+op1 = Climb-over
+resizex = 128
+resizey = 160
+resizez = 128
+hillskew = true
+recol = 26780/32910
+models_only = 17911
+name = Wall rubble

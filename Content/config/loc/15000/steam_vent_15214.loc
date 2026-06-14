@@ -1,0 +1,6 @@
+// loc 15214
+anim = 523
+bgsound = 3142, 3
+nonblockrange = true
+models_only = 15101
+name = Steam Vent

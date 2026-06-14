@@ -1,0 +1,7 @@
+// loc 24620
+blockwalk = true
+width = 3
+ambient = 20
+op1 = Study
+models_only = 25349
+name = Painting

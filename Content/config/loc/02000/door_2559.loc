@@ -1,0 +1,6 @@
+// loc 2559
+active = 1
+op1 = Open
+op2 = Pick-lock
+models = 9476/0 9477/9
+name = Door

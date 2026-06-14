@@ -1,0 +1,14 @@
+// obj 4298
+cost = 75
+model = obj_priest_gown_426
+members = true
+yof2d = 7
+zoom2d = 1370
+xan2d = 536
+manwear = obj_priest_gown_426_man, 0
+manwear2 = 170
+womanwear = obj_ham_shirt_4298_woman, 0
+womanwear2 = 348
+iop2 = Wear
+recol = 8741/61347
+name = Ham shirt

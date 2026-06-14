@@ -1,0 +1,9 @@
+// npc 2254
+readyanim = 2170
+nominimap = true
+vislevel = 0
+turnspeed = 0
+size = 2
+op1 = Kick
+name = Bed
+models = 7381

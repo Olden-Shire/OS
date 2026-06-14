@@ -1,0 +1,10 @@
+// npc 80
+vislevel = 0
+size = 2
+walkanim = 45
+readyanim = 51
+op1 = Talk-to
+recol = 63287/94 63283/0
+name = Camel
+models = 2939
+headmodels = 9841

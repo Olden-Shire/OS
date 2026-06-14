@@ -1,0 +1,6 @@
+// loc 24022
+sharelight = true
+ambient = 25
+ambient = 35
+active = 0
+models = 24633/12 24634/16

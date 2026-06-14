@@ -1,0 +1,8 @@
+// loc 4800
+contrast = 20
+ambient = 10
+op1 = Pick-lock
+nonblockrange = true
+recol = 6585/6703 5673/5673
+models = 4723/0
+name = Jail Door

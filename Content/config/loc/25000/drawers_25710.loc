@@ -1,0 +1,10 @@
+// loc 25710
+contrast = 15
+ambient = 20
+op1 = Open
+forceapproach = 11
+offsetx = 15
+offsetz = 5
+recol = 6443/5532 6682/5421
+models_only = 12959
+name = Drawers

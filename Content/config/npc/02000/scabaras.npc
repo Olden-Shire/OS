@@ -1,0 +1,11 @@
+// npc 2009
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 140
+resizev = 140
+op2 = Attack
+vislevel = 75
+alwaysontop = true
+recol = 4550/43026 43072/43026 4626/43026 61/7863 7073/7863 25238/42789
+name = Scabaras
+models = 6470 167 176 6135 266 181

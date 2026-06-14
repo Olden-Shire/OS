@@ -1,0 +1,11 @@
+// loc 18100
+op5 = Walk-across
+hillskew = true
+sharelight = true
+active = 1
+nonsolid = true
+forcedecor = true
+mirror = true
+recol = 6439/10382 6451/10382 7490/13194 37995/29084 37982/29084 6443/10382
+models_only = 17749
+name = Washing line

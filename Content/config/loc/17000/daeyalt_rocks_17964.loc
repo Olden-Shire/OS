@@ -1,0 +1,8 @@
+// loc 17964
+hillskew = true
+ambient = 20
+op1 = Mine
+op2 = Prospect
+op3 = Hidden
+models = 17581/4
+name = Daeyalt rocks

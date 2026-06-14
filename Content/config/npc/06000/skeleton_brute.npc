@@ -1,0 +1,7 @@
+// npc 6104
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 132
+name = Skeleton brute
+models = 26628 26637 26642 23932 26623

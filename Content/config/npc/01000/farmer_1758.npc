@@ -1,0 +1,11 @@
+// npc 1758
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Pickpocket
+op2 = Attack
+vislevel = 7
+recol = 25238/7843 906/6930
+name = Farmer
+models = 215 250 292 151 176 274 185 495
+headmodels = 53

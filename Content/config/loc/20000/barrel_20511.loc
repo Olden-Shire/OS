@@ -1,0 +1,10 @@
+// loc 20511
+anim = 3743
+noshadow = true
+ambient = 20
+contrast = 20
+width = 2
+length = 2
+recol = 5665/7322 5541/7331 5660/7442 5784/7690 5904/6020
+models_only = 21487 18328
+name = Barrel

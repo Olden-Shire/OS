@@ -1,0 +1,7 @@
+// loc 2295
+op1 = Walk-across
+active = 1
+sharelight = true
+blockwalk = true
+models = 1115/22
+name = Log balance

@@ -1,0 +1,17 @@
+// interface 146
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=245
+y=152
+width=32
+height=32
+trans=0
+model=com_i1739
+activemodel=-1
+anim=2008
+zoom=232
+xan=512
+yan=36

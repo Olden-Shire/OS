@@ -1,0 +1,9 @@
+// loc 23596
+active = 1
+hillskew = true
+sharelight = true
+width = 2
+ambient = 10
+op1 = Enter
+models_only = 24616
+name = Tunnel

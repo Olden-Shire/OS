@@ -1,0 +1,12 @@
+// npc 2353
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizev = 129
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+size = 1
+recol = 7595/6587 8792/16706
+name = Oronwen
+models = 4030 6981 480 6978 8270
+headmodels = 4013

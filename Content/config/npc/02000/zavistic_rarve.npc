@@ -1,0 +1,9 @@
+// npc 2059
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 8741/40408 8078/54397 25238/21629 38814/40408 7700/127 926/32856
+name = Zavistic Rarve
+models = 202 214 251 290 292 323 162 176 534 256
+headmodels = 52 83 44

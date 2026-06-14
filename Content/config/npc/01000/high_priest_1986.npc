@@ -1,0 +1,11 @@
+// npc 1986
+size = 1
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+readyanim = 808
+walkanims = 819, 820, 821, 822
+recol = 41/5442 49054/926 7700/926 4550/6558 5442/6558
+name = High Priest
+models = 6466 250 6134 323 165 6135 6132 185
+headmodels = 82 6459 6462

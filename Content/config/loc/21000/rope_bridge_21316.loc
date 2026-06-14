@@ -1,0 +1,13 @@
+// loc 21316
+blockwalk = true
+hillskew = true
+ambient = 20
+contrast = 20
+forcedecor = true
+breakroutefinding = true
+active = 1
+mapscene = 22
+op1 = Walk-across
+nonblockrange = true
+models = 22104/0 22105/3 22103/22
+name = Rope bridge

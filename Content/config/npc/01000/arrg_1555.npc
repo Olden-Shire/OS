@@ -1,0 +1,12 @@
+// npc 1555
+walkanim = 283
+readyanim = 286
+op1 = Talk-to
+size = 2
+resizeh = 150
+resizev = 150
+vislevel = 113
+recol = 61/6435 21570/4510
+name = Arrg
+models = 3754 3759 3756 3757 3770 3769
+headmodels = 3791

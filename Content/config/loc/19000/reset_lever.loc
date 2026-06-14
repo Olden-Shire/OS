@@ -1,0 +1,6 @@
+// loc 19945
+active = 1
+op1 = Pull
+forceapproach = 11
+models_only = 20038 20036
+name = Reset Lever

@@ -1,0 +1,13 @@
+// npc 48
+size = 1
+walkanim = 5385
+readyanim = 5386
+op2 = Attack
+resizeh = 85
+resizev = 85
+resizeh = 180
+resizev = 180
+vislevel = 46
+recol = 6466/2332 6474/920 6470/2452
+name = Oomlie bird
+models = 23905

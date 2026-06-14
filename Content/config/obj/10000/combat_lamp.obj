@@ -1,0 +1,11 @@
+// obj 10586
+model = obj_combat_lamp
+xof2d = 5
+yof2d = -2
+zoom2d = 712
+yan2d = 1841
+xan2d = 70
+iop1 = Rub
+iop5 = Destroy
+members = true
+name = Combat lamp

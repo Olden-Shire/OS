@@ -1,0 +1,7 @@
+// npc 3151
+size = 1
+walkanim = 259
+readyanim = 262
+vislevel = 1
+name = Skeleton
+models = 2944

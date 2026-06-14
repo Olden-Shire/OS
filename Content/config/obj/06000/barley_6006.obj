@@ -1,0 +1,11 @@
+// obj 6006
+model = obj_barley_6006
+xof2d = -3
+yof2d = 4
+zoom2d = 1520
+yan2d = 156
+xan2d = 408
+ambient = 15
+members = true
+cost = 4
+name = Barley

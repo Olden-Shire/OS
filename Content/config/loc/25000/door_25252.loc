@@ -1,0 +1,9 @@
+// loc 25252
+nonsolid = true
+active = 1
+resizez = 128
+resizex = 128
+resizey = 117
+recol = 6594/7331 6550/7442
+models = 4338/0
+name = Door

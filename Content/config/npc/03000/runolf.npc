@@ -1,0 +1,9 @@
+// npc 3924
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/7473 8741/7473 4550/2524 6798/7362
+name = Runolf
+models = 208 252 292 4391 170 176 3711 265 185
+headmodels = 48 84

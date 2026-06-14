@@ -1,0 +1,5 @@
+// loc 22867
+sharelight = true
+ambient = 35
+active = 0
+models = 23793/10 23799/0 23800/9

@@ -1,0 +1,52 @@
+[clientscript,script_112](int $int0, int $int1)()
+
+if ($int0 = 84) {
+    if (string_length(%varcstr22) > 0) {
+        if (%varcint5 = 4 | %varcint5 = 5) {
+            if (ignore_count() < 0) {
+                mes("Unable to update ignore list - system busy");
+            } else if (%varcint5 = 4) {
+                ignore_add(%varcstr22);
+            } else if (%varcint5 = 5) {
+                ignore_del(%varcstr22);
+            }
+        } else if (%varcint5 < 7) {
+            if (friend_count() < 0) {
+                mes("Unable to complete action - system busy");
+            } else if (%varcint5 = 2) {
+                friend_add(%varcstr22);
+            } else if (%varcint5 = 3) {
+                friend_del(%varcstr22);
+            } else if (%varcint5 = 6) {
+                if (chat_getfilter_private() = 2) {
+                    chat_setfilter(chat_getfilter_public(), 1, chat_getfilter_trade());
+                    ~script_178;
+                    ~script_84;
+                    ~script_89;
+                }
+                chat_sendprivate(%varcstr23, %varcstr22);
+            }
+        } else if (%varcint5 = 7) {
+            resume_countdialog(%varcstr22);
+        } else if (%varcint5 = 8) {
+            resume_namedialog(%varcstr22);
+        } else if (%varcint5 = 9) {
+            resume_stringdialog(%varcstr22);
+        } else if (%varcint5 = 10) {
+            clan_joinchat(%varcstr22);
+        }
+    }
+    if_sethide(1, 35913816);
+    if_sethide(0, 35913817);
+    %varcint5 = 0;
+    return;
+}
+if (%varcint5 = 6 | %varcint5 = 9) {
+    %varcstr22 = ~script_74(%varcstr22, 0, $int0, $int1);
+} else if (%varcint5 = 7) {
+    %varcstr22 = ~script_74(%varcstr22, 1, $int0, $int1);
+} else {
+    %varcstr22 = ~script_74(%varcstr22, 2, $int0, $int1);
+}
+if_settext(join(escape(%varcstr22), "*"), 35913822);
+return;

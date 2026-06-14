@@ -1,0 +1,12 @@
+// npc 416
+size = 1
+readyanim = 155
+walkanim = 152
+op2 = Attack
+alwaysontop = true
+resizev = 112
+resizeh = 112
+vislevel = 79
+recol = 3280/7841 5169/6812 0/920
+name = Rock Golem
+models = 2969

@@ -1,0 +1,9 @@
+// npc 1232
+size = 1
+walkanim = 1274
+readyanim = 1276
+op2 = Attack
+vislevel = 10
+recol = 10545/10545 12589/12589 12713/12713 7605/7605 7494/7494
+name = Myre Blamish Snail
+models = 4109

@@ -1,0 +1,13 @@
+// obj 6754
+model = obj_enchanted_key
+xof2d = -3
+yof2d = 19
+zoom2d = 800
+yan2d = 64
+xan2d = 276
+ambient = 20
+members = true
+iop1 = Feel
+iop5 = Destroy
+recol = 8128/5553
+name = Enchanted key

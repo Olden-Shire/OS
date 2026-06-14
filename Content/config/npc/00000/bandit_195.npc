@@ -1,0 +1,9 @@
+// npc 195
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 22
+recol = 25238/10508 8741/43420 7700/10508 11200/10508
+name = Bandit
+models = 215 248 292 151 176 254 185 243 323 518

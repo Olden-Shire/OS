@@ -1,0 +1,9 @@
+// npc 2644
+vislevel = 0
+size = 2
+walkanim = 2672
+readyanim = 2673
+alwaysontop = true
+recol = 16/12 127/33 64414/86
+name = Love Cats
+models = 9414 9413 9415

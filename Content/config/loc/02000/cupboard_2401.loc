@@ -1,0 +1,10 @@
+// loc 2401
+length = 2
+offsetx = -20
+offsetz = 50
+active = 1
+op1 = Shut
+op2 = Search
+forceapproach = 13
+models_only = 25048
+name = Cupboard

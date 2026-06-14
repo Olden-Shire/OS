@@ -1,0 +1,10 @@
+// loc 13640
+op5 = Remove
+length = 2
+width = 2
+anim = 3646
+op1 = Direct-portal
+bgsound = 3139, 3
+ambient = 40
+models_only = 13199
+name = Teleportation focus

@@ -1,0 +1,5 @@
+// npc 4161
+vislevel = 0
+recol = 10295/10349 10304/10469
+name = Combat stone
+models = 13203 13214

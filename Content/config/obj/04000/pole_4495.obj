@@ -1,0 +1,7 @@
+// obj 4495
+model = obj_pole_4494
+members = true
+stackable = true
+yan2d = 12
+xan2d = 244
+name = Pole

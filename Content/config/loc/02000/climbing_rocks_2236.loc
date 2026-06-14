@@ -1,0 +1,8 @@
+// loc 2236
+forcedecor = true
+active = 1
+hillskew = true
+op1 = Climb
+blockwalk = true
+models = 1494/22
+name = Climbing rocks

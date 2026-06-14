@@ -1,0 +1,8 @@
+// loc 20372
+width = 2
+ambient = 15
+mapscene = 6
+nonblockrange = true
+recol = 4537/6589 4531/6705
+models_only = 1594
+name = Hollow log

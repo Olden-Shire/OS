@@ -1,0 +1,9 @@
+// npc 3595
+size = 1
+walkanim = 3713
+readyanim = 3712
+op1 = Pick-up
+vislevel = 0
+nominimap = true
+name = Toy Soldier
+models = 13227

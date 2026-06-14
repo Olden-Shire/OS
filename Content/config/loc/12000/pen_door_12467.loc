@@ -1,0 +1,7 @@
+// loc 12467
+hillskew = true
+active = 1
+op1 = Open
+nonblockrange = true
+models = 13739/0
+name = Pen Door

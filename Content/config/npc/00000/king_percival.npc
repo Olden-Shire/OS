@@ -1,0 +1,10 @@
+// npc 212
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 10128/70 6798/8 61/107 22430/960 4626/70 57/107
+name = King Percival
+models = 232 306 164 179 268 185 246 318 192 323
+headmodels = 65 35

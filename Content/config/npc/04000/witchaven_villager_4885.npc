@@ -1,0 +1,10 @@
+// npc 4885
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 12/5532 14228/7475 4886/7475 7331/5285 8621/6435
+name = Witchaven villager
+models = 12140 390 11360 11775 10706 13347 8934
+headmodels = 12133 113

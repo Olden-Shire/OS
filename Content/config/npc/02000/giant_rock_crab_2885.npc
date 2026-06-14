@@ -1,0 +1,10 @@
+// npc 2885
+size = 2
+resizeh = 250
+resizev = 250
+walkanim = 1311
+readyanim = 1310
+op2 = Attack
+vislevel = 137
+name = Giant Rock Crab
+models = 8741 8742

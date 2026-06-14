@@ -1,0 +1,6 @@
+// loc 18856
+active = 1
+ambient = 10
+blockwalk = true
+models_only = 19124
+name = Parasol

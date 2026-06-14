@@ -1,0 +1,10 @@
+// npc 2328
+walkanim = 189
+readyanim = 195
+vislevel = 0
+vislevel = 0
+op1 = Talk-to
+recol = 22426/9889 22424/10134 22422/10132 11162/5648
+name = Gardener
+models = 8238 2909 2922
+headmodels = 21

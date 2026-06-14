@@ -1,0 +1,10 @@
+// npc 3310
+vislevel = 0
+size = 1
+ambient = 20
+walkanim = 5334
+readyanim = 5335
+op1 = Talk-to
+name = Sheep
+models = 20290 20291
+headmodels = 20271

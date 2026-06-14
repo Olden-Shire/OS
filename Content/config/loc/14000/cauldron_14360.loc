@@ -1,0 +1,7 @@
+// loc 14360
+anim = 3939
+bgsound = 3115, 3
+nonblockrange = true
+recol = 49/5454 45/5446 41/5442 33/5437 22435/58279
+models_only = 14490 14491
+name = Cauldron

@@ -1,0 +1,10 @@
+// obj 4193
+members = true
+model = obj_extended_brush_4191
+yof2d = -2
+zoom2d = 2010
+yan2d = 36
+xan2d = 300
+manwear = obj_extended_brush_4193_wear, 0
+womanwear = obj_extended_brush_4193_wear, 0
+name = Extended brush

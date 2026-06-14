@@ -1,0 +1,6 @@
+// loc 26086
+active = 0
+nonsolid = true
+contrast = 25
+ambient = 30
+models = 27447/18

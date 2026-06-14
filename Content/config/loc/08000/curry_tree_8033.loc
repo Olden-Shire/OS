@@ -1,0 +1,8 @@
+// loc 8033
+op1 = Check-health
+ambient = 25
+op2 = Inspect
+op4 = Guide
+recol = 10023/7975
+models_only = 7975 7767 7969
+name = Curry tree

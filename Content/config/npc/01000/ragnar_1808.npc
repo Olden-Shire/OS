@@ -1,0 +1,10 @@
+// npc 1808
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 5161/6856 24/6856 6798/6707 25238/7333 61/5276 41/5268
+name = Ragnar
+models = 206 250 5673 5671 5667 5725
+headmodels = 46 82

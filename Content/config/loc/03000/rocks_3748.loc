@@ -1,0 +1,10 @@
+// loc 3748
+hillskew = true
+op1 = Climb
+resizex = 64
+resizey = 64
+resizez = 64
+nonblockrange = true
+recol = 6689/10396
+models_only = 818
+name = Rocks

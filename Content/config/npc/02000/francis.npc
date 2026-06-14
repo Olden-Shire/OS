@@ -1,0 +1,9 @@
+// npc 2327
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/5665 25238/5665 6798/8379 43072/4550
+name = Francis
+models = 6848 250 292 170 176 7368 265 7121
+headmodels = 5787 82

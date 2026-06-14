@@ -1,0 +1,6 @@
+// loc 5886
+mapscene = 6
+op1 = Dig-below
+nonblockrange = true
+models_only = 2173
+name = Roots

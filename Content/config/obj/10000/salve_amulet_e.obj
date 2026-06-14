@@ -1,0 +1,14 @@
+// obj 10588
+model = obj_salve_amulet
+xof2d = 2
+yof2d = -18
+zoom2d = 440
+yan2d = 72
+xan2d = 172
+iop2 = Wear
+manwear = obj_salve_amulet_e_man, 0
+womanwear = obj_salve_amulet_e_woman, 0
+members = true
+cost = 300
+recol = 5916/127 54177/62032
+name = Salve amulet(e)

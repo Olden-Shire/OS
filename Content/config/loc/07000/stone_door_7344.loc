@@ -1,0 +1,7 @@
+// loc 7344
+length = 2
+blockwalk = true
+active = 1
+op1 = Pull-spade
+models_only = 7707
+name = Stone Door

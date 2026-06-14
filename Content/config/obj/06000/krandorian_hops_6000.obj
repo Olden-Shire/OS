@@ -1,0 +1,12 @@
+// obj 6000
+model = obj_hammerstone_hops_5994
+xof2d = 1
+yof2d = 10
+zoom2d = 750
+yan2d = 120
+xan2d = 404
+ambient = 20
+members = true
+cost = 10
+recol = 13210/5797 13214/5677 13095/5557
+name = Krandorian hops

@@ -1,0 +1,7 @@
+// loc 16640
+op1 = Climb-up
+sharelight = true
+mapscene = 7
+recol = 13592/7580 13601/6439
+models_only = 10558
+name = Ladder

@@ -1,0 +1,13 @@
+// obj 6404
+model = obj_menaphite_robe_6396
+manwear = obj_menaphite_robe_6396_man, 0
+womanwear = obj_menaphite_robe_6396_woman, 0
+iop2 = Wear
+xof2d = 4
+yof2d = -23
+zoom2d = 1360
+xan2d = 240
+members = true
+cost = 40
+recol = 61/64431 8741/127 25238/8138 49054/64431 8741/64431
+name = Menaphite robe

@@ -1,0 +1,7 @@
+// loc 20288
+length = 2
+ambient = 10
+op1 = Search
+nonsolid = true
+models_only = 20788
+name = Kaleef's body

@@ -1,0 +1,12 @@
+// npc 1582
+size = 2
+contrast = 25
+ambient = 50
+walkanim = 4660
+readyanim = 4662
+resizeh = 150
+resizev = 150
+op2 = Attack
+vislevel = 86
+name = Fire giant
+models = 17452 17437

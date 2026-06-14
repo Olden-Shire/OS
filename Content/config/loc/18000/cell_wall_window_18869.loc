@@ -1,0 +1,9 @@
+// loc 18869
+active = 1
+ambient = 20
+contrast = 25
+op1 = Bend
+nonblockrange = true
+recol = 10334/8390 10326/8381 10318/7349
+models = 19296/0
+name = Cell wall window

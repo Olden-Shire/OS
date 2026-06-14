@@ -1,0 +1,10 @@
+// npc 4889
+walkanim = 4820
+readyanim = 4819
+size = 4
+resizeh = 120
+resizev = 120
+vislevel = 0
+name = Mother Mallum
+models = 18421 18423 18422 18424
+headmodels = 18344

@@ -1,0 +1,7 @@
+// loc 15423
+active = 1
+op5 = Build
+nonsolid = true
+ambient = 100
+models = 12888/4
+name = Wall chart space

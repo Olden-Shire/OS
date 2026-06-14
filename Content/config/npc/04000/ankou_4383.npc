@@ -1,0 +1,9 @@
+// npc 4383
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+size = 1
+vislevel = 86
+recol = 27955/61099 29113/819 20715/8394 22488/960
+name = Ankou
+models = 16016 16017

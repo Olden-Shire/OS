@@ -1,0 +1,8 @@
+// npc 4609
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+inactive = true
+models = 17026 17003 16990
+headmodels = 22

@@ -1,0 +1,6 @@
+// loc 7842
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7800 7766
+name = Flower Patch

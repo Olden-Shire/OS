@@ -1,0 +1,12 @@
+// npc 1681
+size = 2
+resizeh = 132
+resizev = 132
+walkanim = 4654
+readyanim = 4656
+op2 = Attack
+resizeh = 160
+resizev = 160
+vislevel = 84
+name = Moss giant
+models = 17458 17439 17460

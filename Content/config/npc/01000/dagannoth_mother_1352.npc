@@ -1,0 +1,11 @@
+// npc 1352
+size = 3
+walkanim = 1339
+readyanim = 1338
+op2 = Attack
+resizeh = 155
+resizev = 155
+vislevel = 100
+recol = 10291/43074 10287/43069 10283/43065 10279/43061
+name = Dagannoth mother
+models = 4587

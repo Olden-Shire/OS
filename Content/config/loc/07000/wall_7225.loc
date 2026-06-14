@@ -1,0 +1,9 @@
+// loc 7225
+nonsolid = true
+anim = 2198
+width = 2
+length = 3
+forcedecor = true
+recol = 10394/5662 10518/5786 10514/5910 10638/6034 10762/3604
+models = 7579/10 7580/22
+name = Wall

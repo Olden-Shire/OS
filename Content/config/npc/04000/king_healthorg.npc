@@ -1,0 +1,8 @@
+// npc 4646
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 926/37 43941/910 22426/0
+name = King Healthorg
+models = 17020 14805 16985 17033
+headmodels = 16982

@@ -1,0 +1,6 @@
+// seq 2442
+replaceheldleft = 0
+replaceheldright = 6960
+loops = 1
+postanim_move = 0
+frames = 4/31/220 4/15/220 16/16/220 4/17/220 3/18/220 16/19/220

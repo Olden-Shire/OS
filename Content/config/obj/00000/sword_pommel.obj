@@ -1,0 +1,10 @@
+// obj 623
+model = obj_sword_pommel
+cost = 1
+xof2d = -2
+yof2d = -2
+zoom2d = 1040
+yan2d = 144
+xan2d = 604
+members = true
+name = Sword pommel

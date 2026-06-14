@@ -1,0 +1,11 @@
+// npc 5680
+op2 = Attack
+size = 1
+contrast = 10
+ambient = 10
+readyanim = 5965
+walkanim = 5965
+vislevel = 30
+recol = 5276/10266 5281/10270 43034/47 43043/51 43047/55 43051/59
+name = Undead Lumberjack
+models = 23214

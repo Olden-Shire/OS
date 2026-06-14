@@ -1,0 +1,5 @@
+// loc 21607
+ambient = 10
+nonblockrange = true
+models_only = 21992
+name = Chair

@@ -1,0 +1,7 @@
+// loc 11400
+op1 = Slash
+blockwalk = true
+sharelight = true
+raiseobject = 0
+models = 2131/10 25625/0
+name = Web

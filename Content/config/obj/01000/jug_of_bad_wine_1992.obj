@@ -1,0 +1,12 @@
+// obj 1992
+iop1 = Drink
+model = obj_wine_of_zamorak_245
+xof2d = 1
+yof2d = 100
+zoom2d = 600
+yan2d = 84
+xan2d = 260
+cost = 1
+stackable = true
+recol = 127/701
+name = Jug of bad wine

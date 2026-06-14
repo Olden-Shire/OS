@@ -1,0 +1,6 @@
+// npc 4495
+walkanim = 6180
+readyanim = 6181
+ambient = 15
+vislevel = 1
+multivar = 2378, 65535, 4496 4496 4496 4496 4497 4498 4496

@@ -1,0 +1,11 @@
+// npc 1917
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 8741/127 25238/127 4626/127 4663/127 43072/127 4550/4645
+name = Bandit shopkeeper
+models = 217 246 188 6091 3707 170 176 6089 185
+headmodels = 55 30

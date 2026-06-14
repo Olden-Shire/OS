@@ -1,0 +1,12 @@
+// obj 9431
+model = obj_bronze_limbs_9420
+xof2d = -1
+zoom2d = 663
+yan2d = 243
+xan2d = 420
+manwear = obj_bronze_limbs_9420_wear, 0
+womanwear = obj_bronze_limbs_9420_wear, 6
+members = true
+cost = 16000
+recol = 5656/36141 5652/36133 5904/36252
+name = Runite limbs

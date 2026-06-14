@@ -1,0 +1,10 @@
+// npc 3725
+resizeh = 108
+resizev = 108
+vislevel = 0
+readyanim = 6181
+walkanim = 6180
+recol = 916/6798
+name = Grubfoot
+models = 24435 24442 24452 24455 24472 24487
+headmodels = 24209

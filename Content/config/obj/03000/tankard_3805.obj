@@ -1,0 +1,10 @@
+// obj 3805
+model = obj_tankard_3805
+xof2d = -4
+yof2d = 1
+zoom2d = 670
+yan2d = 76
+xan2d = 132
+cost = 5
+members = true
+name = Tankard

@@ -1,0 +1,7 @@
+// loc 23042
+ambient = 40
+active = 1
+op1 = Take
+recol = 7582/7079 7706/6051 7830/5916 7954/5908
+models = 23883/4
+name = Tools

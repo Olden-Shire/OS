@@ -1,0 +1,17 @@
+// obj 9915
+model = obj_white_destabiliser
+manwear = obj_white_destabiliser_wear, 0
+womanwear = obj_white_destabiliser_wear, 6
+cost = 3
+xof2d = -8
+yof2d = 5
+zoom2d = 465
+yan2d = 1508
+zan2d = 1577
+xan2d = 332
+iop4 = Load
+iop5 = Destroy
+stackable = true
+cost = 1
+recol = 66/41265 57/41385
+name = Blue destabiliser

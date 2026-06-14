@@ -1,0 +1,9 @@
+// loc 4919
+sharelight = true
+width = 3
+length = 4
+op1 = Walk-down
+forceapproach = 14
+recol = 6689/21526 6682/21522 6932/21646 6930/21642 6028/21766 2952/22402
+models_only = 4879
+name = Stairs

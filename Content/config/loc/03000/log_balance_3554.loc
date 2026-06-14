@@ -1,0 +1,8 @@
+// loc 3554
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+recol = 5014/6449
+models = 1115/22
+name = Log balance

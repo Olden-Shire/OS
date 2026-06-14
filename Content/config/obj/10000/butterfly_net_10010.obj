@@ -1,0 +1,14 @@
+// obj 10010
+model = obj_butterfly_net_10010
+xof2d = -7
+yof2d = 1
+zoom2d = 1440
+yan2d = 1956
+xan2d = 152
+iop2 = Wield
+manwear = obj_butterfly_net_10010_wear, 0
+womanwear = obj_butterfly_net_10010_wear, 6
+ambient = 60
+members = true
+cost = 20
+name = Butterfly net

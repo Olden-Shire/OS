@@ -1,0 +1,4 @@
+// loc 24038
+nonsolid = true
+ambient = 30
+models = 24811/4

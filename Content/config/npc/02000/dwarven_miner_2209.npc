@@ -1,0 +1,10 @@
+// npc 2209
+readyanim = 101
+walkanim = 98
+vislevel = 0
+vislevel = 0
+size = 1
+recol = 2578/5404 10659/3346 61/3350 33/9920
+name = Dwarven Miner
+models = 2971 6019 7059 2979 2990 2980 2985 7053
+headmodels = 1

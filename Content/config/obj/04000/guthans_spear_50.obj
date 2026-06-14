@@ -1,0 +1,14 @@
+// obj 4912
+members = true
+cost = 100000
+iop2 = Wield
+manwear = obj_guthans_warspear_4726_wear, 0
+womanwear = obj_guthans_warspear_4726_wear, 6
+xof2d = -2
+yof2d = -16
+zoom2d = 1470
+yan2d = 116
+xan2d = 176
+model = obj_guthans_warspear_4726
+recol = 14511/10512 14503/10508 14494/10760 21555/21543 21563/21551
+name = Guthans spear 50

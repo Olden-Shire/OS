@@ -1,0 +1,11 @@
+// npc 850
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+alwaysontop = true
+op1 = Talk-to
+recol = 22426/84 22424/41246 11162/6034
+name = Aluft Gianne snr.
+models = 17010 2909 2917
+headmodels = 16968

@@ -1,0 +1,14 @@
+// obj 11001
+cost = 10
+model = obj_dagonhai_history
+xof2d = -5
+yof2d = 16
+zoom2d = 1360
+yan2d = 180
+xan2d = 240
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Dagon'hai history

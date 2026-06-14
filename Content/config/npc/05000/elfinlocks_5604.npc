@@ -1,0 +1,9 @@
+// npc 5604
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 93
+alwaysontop = true
+recol = 6798/21415 926/43693
+name = Elfinlocks
+models = 363 390 7010 3194 7005 353 5409 8754 3331

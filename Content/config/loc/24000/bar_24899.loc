@@ -1,0 +1,9 @@
+// loc 24899
+active = 1
+sharelight = true
+mirror = true
+ambient = 20
+nonblockrange = true
+recol = 5532/7442 5656/7566 5652/7690 6674/7690
+models_only = 25130 25154 25148
+name = Bar

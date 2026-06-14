@@ -1,0 +1,7 @@
+// loc 21601
+active = 1
+op1 = Close
+raiseobject = 0
+nonblockrange = true
+models = 21993/0
+name = Gate

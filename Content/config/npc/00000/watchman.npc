@@ -1,0 +1,10 @@
+// npc 34
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 33
+recol = 25238/811 8741/43939
+name = Watchman
+models = 219 301 167 179 274 185 249

@@ -1,0 +1,8 @@
+// npc 5177
+size = 2
+walkanim = 358
+readyanim = 357
+vislevel = 1
+name = Ogre shaman
+models = 20369 20381 20387
+headmodels = 20413

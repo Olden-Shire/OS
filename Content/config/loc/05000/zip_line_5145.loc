@@ -1,0 +1,6 @@
+// loc 5145
+hillskew = true
+forcedecor = true
+blockwalk = true
+models = 5135/10 5136/22
+name = Zip line

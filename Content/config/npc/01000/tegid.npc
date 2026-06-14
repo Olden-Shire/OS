@@ -1,0 +1,10 @@
+// npc 1213
+size = 2
+walkanims = 819, 820, 821, 822
+readyanim = 619
+op1 = Talk-to
+vislevel = 0
+recol = 25238/127 8741/127 6798/127
+name = Tegid
+models = 217 181 250 292 170 176 260 4054
+headmodels = 55 82

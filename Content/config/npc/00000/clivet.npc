@@ -1,0 +1,12 @@
+// npc 893
+size = 1
+readyanim = 813
+op1 = Talk-to
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 13
+recol = 8741/24 25238/24 4550/5347 43117/55198 7073/41 11200/10473
+name = Clivet
+models = 226 246 299 162 176 256 286 534 567
+headmodels = 61

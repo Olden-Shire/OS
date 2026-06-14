@@ -1,0 +1,15 @@
+// obj 10033
+model = obj_chinchompa_9976
+iop2 = Wield
+iop5 = Release
+manwear = obj_chinchompa_10033_wear, 0
+womanwear = obj_chinchompa_10033_wear, 6
+xof2d = 1
+yof2d = 27
+zoom2d = 1000
+yan2d = 1800
+xan2d = 284
+members = true
+stackable = true
+cost = 140
+name = Chinchompa

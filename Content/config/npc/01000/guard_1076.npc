@@ -1,0 +1,13 @@
+// npc 1076
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+op2 = Attack
+vislevel = 37
+recol = 25238/8741 6798/0 57/61
+name = Guard
+models = 219 248 294 167 179 274 185 542 541
+headmodels = 57 80

@@ -1,0 +1,12 @@
+// npc 5509
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 25238/7353 8741/5421 6798/11187 6032/6817 5276/10308 5400/10279
+name = Jofridr Mordstatter
+models = 378 471 479 348 10706 11357 19950
+headmodels = 103

@@ -1,0 +1,5 @@
+// loc 13451
+op5 = Remove
+nonblockrange = true
+models = 13156/0 13157/2
+name = Stone wall

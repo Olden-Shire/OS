@@ -1,0 +1,14 @@
+// obj 10512
+members = true
+model = obj_notes
+xof2d = 1
+yof2d = 7
+zoom2d = 1040
+yan2d = 120
+xan2d = 380
+iop1 = Read
+iop3 = Write-Role
+iop4 = Clear
+iop5 = Destroy
+recol = 10351/6356
+name = Scroll

@@ -1,0 +1,9 @@
+// npc 1460
+size = 2
+walkanim = 1399
+readyanim = 1401
+op2 = Attack
+vislevel = 167
+name = Monkey Guard
+models = 4810 4813
+headmodels = 4663

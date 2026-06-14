@@ -1,0 +1,9 @@
+// npc 3141
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8860/5039 8741/6067 25238/6067 24/262 6709/22 6949/262
+name = Akthanakos
+models = 10834 10985 10979 10218 10982 8919
+headmodels = 11017

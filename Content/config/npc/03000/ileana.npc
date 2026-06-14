@@ -1,0 +1,11 @@
+// npc 3547
+vislevel = 0
+resizeh = 125
+resizev = 120
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/17566 8741/12942 43072/10450 933/10450 4550/10450
+name = Ileana
+models = 387 474 9359 353 438 358
+headmodels = 110 11429

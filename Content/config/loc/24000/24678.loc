@@ -1,0 +1,7 @@
+// loc 24678
+sharelight = true
+nonsolid = true
+contrast = 15
+ambient = 25
+recol = 5532/6430 4506/6554 4750/6550
+models = 972/0 973/1 974/2 975/3 976/9

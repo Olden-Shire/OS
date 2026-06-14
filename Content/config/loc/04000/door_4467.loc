@@ -1,0 +1,6 @@
+// loc 4467
+active = 1
+op1 = Unlock
+raiseobject = 0
+models = 9476/0 9477/9
+name = Door

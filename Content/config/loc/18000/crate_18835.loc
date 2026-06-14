@@ -1,0 +1,7 @@
+// loc 18835
+width = 2
+length = 2
+blockwalk = true
+nonblockrange = true
+models_only = 19129 19130
+name = Crate

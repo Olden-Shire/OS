@@ -1,0 +1,8 @@
+// npc 3200
+size = 3
+walkanim = 3145
+readyanim = 3144
+op2 = Attack
+vislevel = 305
+name = Chaos Elemental
+models = 11216 11217

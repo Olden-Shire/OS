@@ -1,0 +1,10 @@
+// npc 463
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 43569/8741 8741/39461 25238/272 10262/41 6798/74 4550/6709
+name = Murphy
+models = 217 310 267 170 176 185 194 244 322 249
+headmodels = 55 81 37

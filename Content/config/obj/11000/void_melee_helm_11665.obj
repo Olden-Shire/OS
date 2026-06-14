@@ -1,0 +1,19 @@
+// obj 11665
+model = obj_void_melee_helm_11665
+xof2d = 3
+yof2d = -1
+zoom2d = 620
+yan2d = 188
+xan2d = 88
+iop2 = Wear
+manwear = obj_desert_disguise_man, 0
+manwear2 = 27154
+womanwear = obj_desert_disguise_woman, 0
+womanwear2 = 27139
+manhead = 63
+manhead2 = 14444
+womanhead = 120
+womanhead2 = 14444
+members = true
+cost = 9851
+name = Void melee helm

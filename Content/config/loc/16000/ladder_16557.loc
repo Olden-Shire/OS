@@ -1,0 +1,5 @@
+// loc 16557
+mapscene = 7
+offsety = -20
+models_only = 16432
+name = Ladder

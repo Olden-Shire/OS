@@ -1,0 +1,11 @@
+// npc 1526
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op4 = Trade-with
+recol = 6798/61 4550/4574 8741/1604 906/0 25238/0
+name = Lanthus
+models = 235 250 292 162 176 274 185 326 3189 238
+headmodels = 67 70 82

@@ -1,0 +1,10 @@
+// npc 273
+size = 1
+walkanim = 6468
+readyanim = 6469
+vislevel = 0
+op1 = Talk-to
+recol = 8741/5272 43026/5272 16/5272 12/5272 43270/5268 280/10258
+name = Lucien
+models = 10375 246 9983 10374 11732 25683 10000 181
+headmodels = 25632

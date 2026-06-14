@@ -49,9 +49,10 @@ fn all_config_text_roundtrips_byte_exact() {
         let (schema, kind) = config_text::schema_for_group(gid).expect("schema");
         let mut converted = 0usize;
         let mut sample = Vec::new();
+        let refs = config_text::ModelRefs::default();
         for (fid, bytes) in &files {
-            if let Some(text) = config_text::decode(schema, kind, *fid as u32, bytes) {
-                let re = config_text::encode(schema, &text).expect("re-encode");
+            if let Some(text) = config_text::decode(schema, kind, *fid as u32, bytes, &refs) {
+                let re = config_text::encode(schema, &text, &refs).expect("re-encode");
                 assert_eq!(&re, bytes, "{kind} {fid} re-encode mismatch");
                 converted += 1;
             } else if sample.len() < 8 {

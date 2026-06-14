@@ -1,0 +1,7 @@
+// loc 14774
+op1 = Search
+op2 = Close
+forceapproach = 14
+recol = 14499/7830 12698/7954 16536/8078 12818/7830 13194/8078
+models_only = 5273
+name = Chest

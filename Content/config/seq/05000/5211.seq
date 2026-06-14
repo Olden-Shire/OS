@@ -1,0 +1,8 @@
+// seq 5211
+reachforward = true
+replaceheldleft = 0
+replaceheldright = 0
+loops = 7
+postanim_move = 2
+preanim_move = 2
+frames = 5/92/295 5/93/295 5/94/295 5/95/295 5/94/295 5/93/295 5/92/295

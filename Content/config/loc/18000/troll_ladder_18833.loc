@@ -1,0 +1,8 @@
+// loc 18833
+active = 1
+op1 = Climb-down
+mapscene = 7
+blockwalk = true
+nonblockrange = true
+models_only = 19125
+name = Troll ladder

@@ -1,0 +1,6 @@
+// loc 8108
+ambient = 30
+op2 = Inspect
+op4 = Guide
+models_only = 8080 7767
+name = Papaya tree

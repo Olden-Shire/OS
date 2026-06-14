@@ -1,0 +1,11 @@
+// npc 3679
+alwaysontop = true
+vislevel = 0
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+recol = 5784/5927 61/55 45/10279 4515/62633
+name = Vestri
+models = 2970 2984 2978 2990 2980 2985
+headmodels = 0

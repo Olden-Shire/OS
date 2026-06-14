@@ -1,0 +1,8 @@
+// loc 20978
+active = 1
+contrast = 20
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 21210
+name = Gnome skeleton

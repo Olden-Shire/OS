@@ -1,0 +1,12 @@
+// obj 1005
+cost = 2
+model = obj_white_apron_1005
+xof2d = -4
+yof2d = -4
+zoom2d = 1580
+yan2d = 172
+xan2d = 544
+iop2 = Wear
+manwear = obj_white_apron_1005_man, 0
+womanwear = obj_white_apron_1005_woman, 0
+name = White apron

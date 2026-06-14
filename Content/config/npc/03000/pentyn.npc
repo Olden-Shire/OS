@@ -1,0 +1,9 @@
+// npc 3126
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 61/5421 57/5413 7952/5413 41/3608 4550/5347 6798/7281
+name = Pentyn
+models = 10981 250 3379 10838 157 10218 268 185 317
+headmodels = 10976 82

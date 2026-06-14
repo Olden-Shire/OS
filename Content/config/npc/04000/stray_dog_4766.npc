@@ -1,0 +1,9 @@
+// npc 4766
+vislevel = 0
+nominimap = true
+size = 1
+walkanim = 4773
+readyanim = 4777
+nominimap = true
+name = Stray dog
+models = 18168 18169 18167

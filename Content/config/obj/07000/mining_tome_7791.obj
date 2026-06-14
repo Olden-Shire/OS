@@ -1,0 +1,12 @@
+// obj 7791
+cost = 5000
+model = obj_mining_tome_7791
+yof2d = 1
+zoom2d = 724
+yan2d = 88
+xan2d = 299
+ambient = 10
+members = true
+iop1 = Read
+recol = 8720/43169 7700/43049 9775/5173 8633/5181 7741/43057
+name = Mining tome

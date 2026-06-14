@@ -1,0 +1,13 @@
+// obj 7804
+members = true
+model = obj_zaros_mjolnir_7804
+iop2 = Wield
+manwear = obj_zaros_mjolnir_7804_wear, 0
+womanwear = obj_zaros_mjolnir_7804_wear, 6
+xof2d = 4
+yof2d = 7
+zoom2d = 2128
+yan2d = 2045
+xan2d = 405
+cost = 625
+name = Zaros mjolnir

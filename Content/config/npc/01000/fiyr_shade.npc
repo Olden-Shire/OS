@@ -1,0 +1,10 @@
+// npc 1250
+size = 1
+walkanim = 1281
+readyanim = 1282
+op2 = Attack
+alwaysontop = true
+vislevel = 120
+recol = 916/127
+name = Fiyr Shade
+models = 4140

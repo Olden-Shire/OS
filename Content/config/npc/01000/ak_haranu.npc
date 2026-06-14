@@ -1,0 +1,10 @@
+// npc 1688
+size = 1
+vislevel = 0
+op1 = Talk-To
+op3 = Trade
+alwaysontop = true
+recol = 8741/65075 7281/65313 4550/5565 6798/43030 25238/65313
+name = Ak-Haranu
+models = 217 5215 5221 170 176 5217 181 241 5233
+headmodels = 55 73 5207

@@ -1,0 +1,7 @@
+// loc 1286
+mapscene = 27
+op1 = Chop down
+op3 = hidden
+recol = 6028/3470 7054/3470
+models_only = 1716
+name = Dead tree

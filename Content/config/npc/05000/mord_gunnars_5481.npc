@@ -1,0 +1,13 @@
+// npc 5481
+size = 1
+vislevel = 0
+alwaysontop = true
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Ferry-Jatizso
+alwaysontop = true
+recol = 8741/40094 25238/32910 8078/40103 6798/6713 7952/40210
+name = Mord Gunnars
+models = 208 252 299 162 179 4226 4218 3877 317
+headmodels = 48 84

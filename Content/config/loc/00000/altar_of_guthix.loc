@@ -1,0 +1,7 @@
+// loc 410
+width = 2
+length = 2
+op1 = Pray-at
+nonblockrange = true
+models_only = 1470
+name = Altar of Guthix

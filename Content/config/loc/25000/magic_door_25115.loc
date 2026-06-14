@@ -1,0 +1,8 @@
+// loc 25115
+width = 3
+ambient = 10
+anim = 6635
+op1 = Open
+bgsound = 3739, 3
+models_only = 26553 26554 26556 26557
+name = Magic door

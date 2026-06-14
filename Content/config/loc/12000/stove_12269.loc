@@ -1,0 +1,6 @@
+// loc 12269
+length = 2
+forceapproach = 13
+bgsound = 2199, 3
+models_only = 12616 12617
+name = Stove

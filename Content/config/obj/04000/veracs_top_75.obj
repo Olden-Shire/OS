@@ -1,0 +1,16 @@
+// obj 4989
+members = true
+cost = 280000
+iop2 = Wear
+manwear = obj_veracs_brassard_4757_man, 0
+manwear2 = 6646
+womanwear = obj_veracs_brassard_4757_woman, 0
+womanwear2 = 6685
+xof2d = 3
+yof2d = 1
+zoom2d = 1210
+yan2d = 36
+xan2d = 464
+model = obj_veracs_brassard_4757
+recol = 10394/10388 10518/10512 10388/10508 10514/10760 10508/11140
+name = Veracs top 75

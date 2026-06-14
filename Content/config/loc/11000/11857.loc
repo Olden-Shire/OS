@@ -1,0 +1,8 @@
+// loc 11857
+active = 0
+ambient = 10
+mirror = true
+noshadow = true
+mapscene = 22
+nonblockrange = true
+models = 11613/0 11614/9

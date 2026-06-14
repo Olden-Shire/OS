@@ -1,0 +1,9 @@
+// npc 2088
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 926/43916 6323/54670 6435/54414 6674/55172 7700/43914 11200/43934
+name = Duke Horacio
+models = 235 251 281 26605 323 26603 176 26604 23921
+headmodels = 67 83

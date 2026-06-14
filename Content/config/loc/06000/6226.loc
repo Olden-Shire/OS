@@ -1,0 +1,7 @@
+// loc 6226
+sharelight = true
+active = 0
+ambient = 20
+contrast = 25
+nonblockrange = true
+models = 6110/0 6111/1 6112/2 6113/3 6114/9

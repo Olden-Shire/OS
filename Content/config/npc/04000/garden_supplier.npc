@@ -1,0 +1,11 @@
+// npc 4251
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 25238/21652 54397/33674 8741/16540 8078/7326
+name = Garden supplier
+models = 11353 390 467 332 353 428 358 7366
+headmodels = 113 11406

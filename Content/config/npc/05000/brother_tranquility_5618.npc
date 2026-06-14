@@ -1,0 +1,10 @@
+// npc 5618
+walkanim = 5645
+readyanim = 5646
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 28744/4550 28740/4550 28727/4550 9779/2838
+name = Brother Tranquility
+models = 21429 21468 21412 21440 21460 21448 21422
+headmodels = 22784

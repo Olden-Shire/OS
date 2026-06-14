@@ -1,0 +1,10 @@
+// npc 11
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/6558 25238/41129 4550/4418 6798/26 4626/21642 7331/10401
+name = Tramp
+models = 18190 203 11190 310 18126 10218 15005 18127
+headmodels = 45 11188 18185

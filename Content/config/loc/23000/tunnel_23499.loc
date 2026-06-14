@@ -1,0 +1,9 @@
+// loc 23499
+contrast = 20
+ambient = 20
+blockwalk = true
+width = 9
+length = 2
+op1 = Walk-along
+models_only = 24355
+name = Tunnel

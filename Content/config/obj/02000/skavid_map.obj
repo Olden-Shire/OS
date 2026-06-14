@@ -1,0 +1,11 @@
+// obj 2376
+model = obj_skavid_map
+xof2d = 2
+yof2d = 14
+zoom2d = 2120
+yan2d = 92
+xan2d = 312
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Skavid map

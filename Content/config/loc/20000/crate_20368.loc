@@ -1,0 +1,6 @@
+// loc 20368
+ambient = 35
+nonblockrange = true
+recol = 5417/6589 5413/6585 5537/6581 5532/6705 5656/6701 5652/6697
+models_only = 5257
+name = Crate

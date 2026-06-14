@@ -1,0 +1,15 @@
+// obj 10615
+cost = 500
+model = obj_tribal_mask_6335
+iop2 = Wear
+manwear = obj_tribal_mask_6335_man, 0
+womanwear = obj_tribal_mask_6335_woman, 0
+manhead = 8911
+womanhead = 8914
+xof2d = -2
+zoom2d = 1370
+yan2d = 264
+xan2d = 364
+members = true
+recol = 6585/13980 35047/15165 35047/17193 119/119 37394/10902
+name = Tribal mask

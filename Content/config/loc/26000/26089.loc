@@ -1,0 +1,7 @@
+// loc 26089
+active = 0
+blockwalk = true
+wallwidth = 16
+contrast = 25
+ambient = 30
+models = 27459/0 27471/1 27441/2 27446/3 27454/9

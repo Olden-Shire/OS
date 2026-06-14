@@ -1,0 +1,8 @@
+// loc 8894
+hillskew = true
+forcedecor = true
+active = 1
+blockwalk = true
+recol = 3868/7050 5016/7050 5018/7050 53/10262 41/10262
+models = 8669/22
+name = Track

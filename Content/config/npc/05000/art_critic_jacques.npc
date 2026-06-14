@@ -1,0 +1,10 @@
+// npc 5930
+walkanim = 6388
+readyanim = 6389
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 5239/21551 16/10452 10659/16 7446/21551 6798/8
+name = Art Critic Jacques
+models = 198 14340 249 25678 25646 177 25667 181 25695
+headmodels = 40 14337 81

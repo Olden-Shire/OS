@@ -1,0 +1,14 @@
+// obj 9922
+model = obj_skeleton_gloves_9922
+manwear = obj_skeleton_gloves_9922_man, 0
+womanwear = obj_skeleton_gloves_9922_woman, 0
+iop2 = Wear
+iop5 = Destroy
+xof2d = -1
+yof2d = 7
+zoom2d = 595
+yan2d = 1978
+zan2d = 2047
+xan2d = 553
+cost = 1
+name = Skeleton gloves

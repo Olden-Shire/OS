@@ -1,0 +1,10 @@
+// npc 1040
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+name = Fidelio
+models = 26121 26130 26114 26125 26119
+headmodels = 26268

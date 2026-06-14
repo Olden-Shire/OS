@@ -1,0 +1,8 @@
+// loc 22279
+contrast = 20
+ambient = 20
+hillskew = true
+nonblockrange = true
+recol = 5665/10396 5541/10401 5660/10392 5784/10388 5904/10508
+models_only = 9531 8232
+name = Barrel

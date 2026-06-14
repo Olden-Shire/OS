@@ -1,0 +1,8 @@
+// loc 24749
+sharelight = true
+contrast = 10
+ambient = 20
+blockwalk = true
+op1 = Climb-over
+models_only = 26046
+name = Crumbling wall

@@ -1,0 +1,9 @@
+// obj 9477
+model = obj_aluft_aloft_box
+yof2d = -3
+zoom2d = 530
+yan2d = 1826
+xan2d = 111
+members = true
+iop1 = Check
+name = Aluft aloft box

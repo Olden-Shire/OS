@@ -1,0 +1,10 @@
+// obj 10592
+model = obj_penguin_bongos
+members = true
+xof2d = -7
+yof2d = -8
+zoom2d = 1178
+yan2d = 1862
+xan2d = 165
+iop1 = Play
+name = Penguin bongos

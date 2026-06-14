@@ -1,0 +1,11 @@
+// seq 6704
+loops = 10
+replaceheldright = 0
+replaceheldleft = 0
+reachforward = true
+maxloops = 10
+preanim_move = 1
+postanim_move = 1
+priority = 4
+frames = 3/382/1697 3/60/1697 3/465/1697 3/186/1697 3/111/1697 3/523/1697 3/20/1697 3/111/1697 3/186/1697 3/465/1697
+sound = 969745

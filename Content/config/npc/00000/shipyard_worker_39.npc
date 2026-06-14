@@ -1,0 +1,10 @@
+// npc 39
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 11
+recol = 25238/8472 8741/61
+name = Shipyard worker
+models = 230 246 305 173 179 271 185 491
+headmodels = 63

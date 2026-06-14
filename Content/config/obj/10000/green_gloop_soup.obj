@@ -1,0 +1,12 @@
+// obj 10960
+model = obj_green_gloop_soup
+yof2d = 13
+zoom2d = 848
+yan2d = 1937
+xan2d = 234
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 10
+name = Green gloop soup

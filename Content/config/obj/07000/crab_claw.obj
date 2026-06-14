@@ -1,0 +1,11 @@
+// obj 7537
+model = obj_crab_claw
+members = true
+iop2 = Wear
+manwear = obj_crab_claw_man, 0
+womanwear = obj_crab_claw_woman, 0
+zoom2d = 848
+yan2d = 1895
+xan2d = 597
+cost = 1
+name = Crab claw

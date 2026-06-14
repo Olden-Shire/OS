@@ -1,0 +1,14 @@
+// obj 4942
+members = true
+cost = 50000
+iop2 = Wear
+manwear = obj_karils_leathertop_4736_man, 0
+manwear2 = 6643
+womanwear = obj_karils_leathertop_4736_woman, 0
+womanwear2 = 6683
+xof2d = 3
+zoom2d = 1380
+xan2d = 556
+model = obj_karils_leathertop_4736
+recol = 10413/7510 10520/10388 10644/10512 10768/10508 908/10760
+name = Karils top 50

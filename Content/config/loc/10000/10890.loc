@@ -1,0 +1,8 @@
+// loc 10890
+width = 2
+contrast = 100
+ambient = 50
+hillskew = true
+active = 0
+offsety = -512
+models = 10765/4

@@ -1,0 +1,6 @@
+// loc 16200
+hillskew = true
+forcedecor = true
+ambient = 10
+recol = 10394/18 10518/272 10514/142 10638/148 10762/268
+models = 6610/22

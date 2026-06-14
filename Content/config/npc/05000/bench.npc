@@ -1,0 +1,7 @@
+// npc 5854
+vislevel = 0
+nominimap = true
+turnspeed = 0
+readyanim = 6106
+name = Bench
+models = 23946

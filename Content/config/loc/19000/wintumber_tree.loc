@@ -1,0 +1,9 @@
+// loc 19038
+op1 = Dig-up
+op2 = hidden
+nonsolid = true
+ambient = 30
+contrast = 30
+anim = 5058
+models_only = 20491 20492 20493 20494
+name = Wintumber tree

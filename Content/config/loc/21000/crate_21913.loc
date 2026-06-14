@@ -1,0 +1,6 @@
+// loc 21913
+ambient = 10
+active = 1
+op1 = Search
+models_only = 22641
+name = Crate

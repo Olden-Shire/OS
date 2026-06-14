@@ -1,0 +1,16 @@
+// obj 6621
+members = true
+cost = 576
+model = obj_khazard_helmet
+xof2d = 1
+yof2d = -4
+zoom2d = 640
+yan2d = 156
+xan2d = 108
+iop2 = Wear
+manwear = obj_khazard_helmet_man, 0
+womanwear = obj_khazard_helmet_woman, 0
+manhead = 57
+womanhead = 117
+recol = 61/99 926/8125
+name = White med helm

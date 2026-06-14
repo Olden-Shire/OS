@@ -1,0 +1,12 @@
+// obj 11158
+model = obj_cyrisuss_chest
+xof2d = -1
+yof2d = 1
+zoom2d = 1632
+yan2d = 1674
+zan2d = 2006
+xan2d = 194
+members = true
+iop1 = Look-in
+iop5 = Destroy
+name = Cyrisus's chest

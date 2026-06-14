@@ -1,0 +1,11 @@
+// obj 8863
+model = obj_four_barrels
+xof2d = 1
+yof2d = 91
+zoom2d = 2256
+yan2d = 9
+xan2d = 2030
+members = true
+manwear = obj_four_barrels, 0
+womanwear = obj_four_barrels, 6
+name = Four barrels

@@ -1,0 +1,11 @@
+// obj 1633
+model = obj_crushed_gem_1633
+members = true
+cost = 1
+ambient = 25
+xof2d = 1
+zoom2d = 528
+yan2d = 57
+xan2d = 90
+recol = 5334/127 2613/119 5421/111 12459/103 1455/94 2733/86
+name = Crushed gem

@@ -1,0 +1,19 @@
+[clientscript,script_185](int $int0)(int)
+
+if ($int0 = 2) {
+    return(chat_getfilter_public());
+}
+if ($int0 = 3) {
+    return(chat_getfilter_private());
+}
+if ($int0 = 4) {
+    return(%varp1054);
+}
+if ($int0 = 5) {
+    return(chat_getfilter_trade());
+}
+if ($int0 = 6) {
+    return(%varp1055);
+}
+return(0);
+return(0);

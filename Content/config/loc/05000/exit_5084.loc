@@ -1,0 +1,6 @@
+// loc 5084
+sharelight = true
+hillskew = true
+op1 = Leave
+models = 5004/0
+name = Exit

@@ -1,0 +1,7 @@
+// loc 22822
+active = 1
+ambient = 25
+blockwalk = true
+nonblockrange = true
+models_only = 23322
+name = Bank safe

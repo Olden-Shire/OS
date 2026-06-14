@@ -1,0 +1,20 @@
+// obj 3751
+cost = 60000
+model = obj_berserker_helm_3751
+xof2d = 2
+zoom2d = 890
+yan2d = 120
+xan2d = 24
+iop2 = Wear
+manwear = obj_fremennik_helm_man, 0
+manwear2 = 4222
+manwear3 = 4219
+womanwear = obj_fremennik_helm_woman, 0
+womanwear2 = 4230
+womanwear3 = 4228
+manhead = 4210
+manhead2 = 4212
+womanhead = 4216
+womanhead2 = 4212
+members = true
+name = Berserker helm

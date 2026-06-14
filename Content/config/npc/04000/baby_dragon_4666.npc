@@ -1,0 +1,11 @@
+// npc 4666
+size = 2
+resizeh = 105
+resizev = 105
+walkanim = 21
+readyanim = 27
+op2 = Attack
+vislevel = 48
+recol = 910/43294 912/43299 1938/43303 1814/41257 2588/38077 2469/38086
+name = Baby dragon
+models = 17413 17427 17421 17424

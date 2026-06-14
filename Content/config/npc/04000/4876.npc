@@ -1,0 +1,12 @@
+// npc 4876
+inactive = true
+vislevel = 0
+size = 1
+readyanim = 808
+walkanims = 819, 820, 821, 822
+resizeh = 140
+resizev = 124
+turnspeed = 32
+recol = 10828/49575 10692/51509 25238/62748 6038/46393 8741/49616 4550/8646
+models = 11330 18192 18193 18197 15008 330 10301 10218 263 14374
+headmodels = 11402 18186 80

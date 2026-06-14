@@ -1,0 +1,10 @@
+// npc 3628
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 4550/10450 926/7333 8741/8631 4626/5541 5572/8741 11200/8741
+name = Jayene Kliyn
+models = 10078 8849 14176 8931 10706 7007 358
+headmodels = 10031 11429

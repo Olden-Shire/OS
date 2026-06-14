@@ -1,0 +1,9 @@
+// npc 1793
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/43038 8741/2714 6798/2974 4626/5012 54397/7335 43072/4550
+name = Tassie Slipcast
+models = 391 417 467 348 353 437 358
+headmodels = 114 136

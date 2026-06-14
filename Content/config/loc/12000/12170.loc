@@ -1,0 +1,6 @@
+// loc 12170
+active = 0
+width = 3
+anim = 3306
+nonsolid = true
+models_only = 12020

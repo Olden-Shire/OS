@@ -1,0 +1,12 @@
+// obj 5558
+model = obj_rogue_kit
+xof2d = 2
+yof2d = 15
+zoom2d = 690
+yan2d = 328
+xan2d = 304
+members = true
+stackable = true
+iop1 = Build
+cost = 50
+name = Rogue kit

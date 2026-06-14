@@ -1,0 +1,10 @@
+// loc 5463
+anim = 1643
+hillskew = true
+ambient = 90
+contrast = 50
+nonsolid = true
+length = 2
+width = 2
+active = 0
+models_only = 5333

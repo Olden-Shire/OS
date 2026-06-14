@@ -1,0 +1,14 @@
+// loc 11398
+active = 1
+width = 2
+length = 2
+noshadow = true
+contrast = 40
+ambient = 50
+anim = 4354
+blockwalk = true
+mapscene = 66
+op1 = Read
+op2 = Leave
+models_only = 16788
+name = Our lives

@@ -1,0 +1,11 @@
+// loc 9030
+hillskew = true
+blockwalk = true
+op1 = Mine
+op2 = Prospect
+op3 = hidden
+mapscene = 12
+nonblockrange = true
+recol = 5289/10908 813/10465 10297/17633 35489/61376
+models_only = 8882
+name = Gem Rock

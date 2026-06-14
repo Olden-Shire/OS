@@ -1,0 +1,10 @@
+// npc 3495
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+ambient = 50
+contrast = 50
+alwaysontop = true
+vislevel = 136
+name = Karamel
+models = 13337

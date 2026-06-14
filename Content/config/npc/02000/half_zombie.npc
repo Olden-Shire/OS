@@ -1,0 +1,8 @@
+// npc 2870
+walkanim = 2823
+readyanim = 2825
+op1 = Talk-To
+vislevel = 0
+name = Half-Zombie
+models = 9913
+headmodels = 9919

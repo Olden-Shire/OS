@@ -1,0 +1,13 @@
+// obj 10364
+cost = 2025
+model = obj_strength_amulet_t_10364
+xof2d = 5
+yof2d = 100
+zoom2d = 465
+yan2d = 74
+xan2d = 292
+iop2 = Wear
+manwear = obj_strength_amulet_t_10364_man, 0
+womanwear = obj_strength_amulet_t_10364_woman, 0
+recol = 5916/127 4882/127
+name = Strength amulet(t)

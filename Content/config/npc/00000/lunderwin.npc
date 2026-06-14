@@ -1,0 +1,11 @@
+// npc 565
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/6057 9447/528 22753/4023 908/11191
+name = Lunderwin
+models = 2857
+headmodels = 14

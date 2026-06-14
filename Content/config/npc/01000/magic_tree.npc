@@ -1,0 +1,11 @@
+// npc 1734
+size = 2
+walkanim = 5750
+readyanim = 5750
+vislevel = 0
+op1 = Chop down
+op3 = hidden
+ambient = 25
+turnspeed = 0
+name = Magic tree
+models = 21838

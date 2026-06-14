@@ -1,0 +1,10 @@
+// npc 1372
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/22408 8472/22408 8741/4205 4550/2524 6798/7613
+name = Princess Astrid
+models = 378 466 347 354 429 3708 446
+headmodels = 103

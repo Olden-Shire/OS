@@ -1,0 +1,5 @@
+// loc 10461
+sharelight = true
+active = 0
+forcedecor = true
+models = 10207/22

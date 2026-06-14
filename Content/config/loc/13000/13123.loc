@@ -1,0 +1,8 @@
+// loc 13123
+width = 4
+length = 4
+mirror = true
+ambient = 10
+contrast = 20
+active = 0
+models_only = 13287

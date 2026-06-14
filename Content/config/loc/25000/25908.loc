@@ -1,0 +1,8 @@
+// loc 25908
+active = 0
+blockwalk = true
+wallwidth = 16
+contrast = 25
+ambient = 30
+mirror = true
+models = 27321/0 27326/3

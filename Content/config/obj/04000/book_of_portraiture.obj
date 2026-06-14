@@ -1,0 +1,13 @@
+// obj 4817
+model = obj_book_on_chemicals
+manwear = obj_damaged_book_3839_wear, 0
+womanwear = obj_damaged_book_3839_wear, 6
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+iop1 = Read
+members = true
+recol = 11177/11187 5018/7077 61/24109
+name = Book of portraiture

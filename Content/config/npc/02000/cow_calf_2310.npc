@@ -1,0 +1,9 @@
+// npc 2310
+resizeh = 68
+resizev = 68
+walkanim = 5856
+readyanim = 5852
+op2 = Attack
+vislevel = 2
+name = Cow calf
+models = 23890

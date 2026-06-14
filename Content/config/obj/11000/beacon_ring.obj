@@ -1,0 +1,13 @@
+// obj 11014
+cost = 0
+iop2 = Wear
+iop3 = Operate
+iop5 = Destroy
+members = true
+model = obj_beacon_ring
+xof2d = 7
+zoom2d = 10000
+yan2d = 3
+xan2d = 258
+iop2 = Wear
+name = Beacon ring

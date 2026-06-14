@@ -1,0 +1,9 @@
+// loc 14234
+ambient = 5
+noshadow = true
+blockwalk = true
+active = 1
+op1 = Close
+op2 = hidden
+models = 14467/0
+name = Gate

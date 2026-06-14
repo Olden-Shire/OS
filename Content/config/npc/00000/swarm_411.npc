@@ -1,0 +1,10 @@
+// npc 411
+vislevel = 0
+size = 1
+readyanim = 0
+walkanim = 0
+nominimap = true
+alwaysontop = true
+recol = 12/3988
+name = Swarm
+models = 2950

@@ -1,0 +1,10 @@
+// npc 1908
+size = 1
+readyanim = 1913
+walkanim = 1912
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+name = Broken clay golem
+models = 6146 6147 6149
+headmodels = 6145

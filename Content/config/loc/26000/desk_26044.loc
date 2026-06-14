@@ -1,0 +1,7 @@
+// loc 26044
+width = 2
+contrast = 15
+ambient = 20
+nonblockrange = true
+models_only = 27500 27506
+name = Desk

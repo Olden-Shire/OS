@@ -1,0 +1,12 @@
+// npc 534
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 22753/54453 9447/5045
+name = Fairy shop keeper
+models = 2857
+headmodels = 13

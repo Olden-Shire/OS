@@ -1,0 +1,10 @@
+// loc 5787
+active = 0
+sharelight = true
+mirror = true
+offsetx = 0
+offsety = -96
+offsetz = 0
+ambient = 25
+contrast = 25
+models = 5578/0

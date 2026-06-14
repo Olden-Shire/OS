@@ -1,0 +1,8 @@
+// npc 1850
+walkanim = 1839
+readyanim = 1838
+vislevel = 0
+op2 = Attack
+name = Arzinian Avatar of Strength
+models = 6011 6010
+headmodels = 5817

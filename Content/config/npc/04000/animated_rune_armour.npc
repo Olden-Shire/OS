@@ -1,0 +1,10 @@
+// npc 4284
+size = 1
+op2 = Attack
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 138
+recol = 61/36133 41/37270 24/36238 37/37270 11200/36238
+name = Animated Rune Armour
+models = 15311 15316 15301 15304 518 15314 15303

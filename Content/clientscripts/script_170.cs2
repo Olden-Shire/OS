@@ -1,0 +1,12 @@
+[clientscript,script_170]()()
+
+if (%varbit3905 = 1) {
+    if_settext(join(tostring(%varbit3901), "/5"), 38535175);
+} else if (%varbit3905 = 2) {
+    if_settext(join(tostring(%varbit3902), "/5"), 38535175);
+} else if (%varbit3905 = 3) {
+    if_settext(join(tostring(%varbit3903), "/5"), 38535175);
+} else if (%varbit3905 = 4) {
+    if_settext(join(tostring(%varbit3904), "/5"), 38535175);
+}
+return;

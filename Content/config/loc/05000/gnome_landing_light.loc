@@ -1,0 +1,12 @@
+// loc 5815
+anim = 1747
+resizex = 90
+resizey = 90
+resizez = 90
+forcedecor = true
+active = 1
+blockwalk = true
+op1 = Look
+op5 = Search
+models_only = 5647
+name = Gnome landing light

@@ -1,0 +1,10 @@
+// npc 1363
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/22408 54397/5425 8741/8088 4550/2524 6798/7613
+name = Moldof
+models = 210 250 305 168 176 4226 4218
+headmodels = 49 82

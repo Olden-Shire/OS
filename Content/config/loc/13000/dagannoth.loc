@@ -1,0 +1,9 @@
+// loc 13376
+anim = 1338
+op5 = Remove
+nonsolid = true
+width = 3
+length = 3
+recol = 10291/5165 10287/5161 10283/5157 10279/5281
+models_only = 4587 14117
+name = Dagannoth

@@ -1,0 +1,10 @@
+// npc 2734
+size = 1
+op2 = Attack
+walkanim = 2619
+readyanim = 2618
+ambient = 60
+contrast = 60
+vislevel = 22
+name = Tz-Kih
+models = 9320

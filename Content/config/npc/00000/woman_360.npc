@@ -1,0 +1,11 @@
+// npc 360
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 4
+recol = 43072/5662 25238/3980 4550/5289 4550/5289
+name = Woman
+models = 399 474 351 353 437 358
+headmodels = 118 11428

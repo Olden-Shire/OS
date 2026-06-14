@@ -1,0 +1,13 @@
+// obj 10037
+model = obj_kyatt_top_10037
+iop2 = Wear
+manwear = obj_kyatt_top_10037_man, 0
+manwear2 = 19809
+womanwear = obj_kyatt_top_10037_woman, 0
+womanwear2 = 19855
+zoom2d = 1232
+yan2d = 2039
+xan2d = 639
+members = true
+cost = 200
+name = Kyatt top

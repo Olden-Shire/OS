@@ -1,0 +1,12 @@
+// loc 12111
+anim = 5855
+length = 2
+forceapproach = 13
+op2 = Milk
+op1 = Talk-to
+op4 = Steal-cowbell
+ambient = 20
+contrast = 20
+recol = 7442/18 7566/142 7690/138 8070/262
+models_only = 23891
+name = Dairy Cow

@@ -1,0 +1,13 @@
+// obj 9629
+model = obj_tyras_helm_9629
+zoom2d = 815
+yan2d = 1823
+xan2d = 2042
+manwear = obj_tyras_helm_9629_man, 0
+womanwear = obj_tyras_helm_9629_woman, 0
+manhead = 17348
+womanhead = 17350
+iop2 = Wear
+members = true
+cost = 550
+name = Tyras helm

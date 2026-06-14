@@ -1,0 +1,11 @@
+// npc 6072
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+name = Fairy Aeryka
+models = 2857
+headmodels = 11

@@ -1,0 +1,13 @@
+// obj 6714
+cost = 5
+model = obj_holy_wrench
+members = true
+manwear = obj_wrench_wear, 0
+womanwear = obj_wrench_wear, 6
+manwear2 = 9900
+womanwear2 = 9900
+xof2d = 6
+yof2d = 7
+zoom2d = 1210
+xan2d = 328
+name = Holy wrench

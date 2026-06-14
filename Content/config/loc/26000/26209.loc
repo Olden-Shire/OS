@@ -1,0 +1,7 @@
+// loc 26209
+resizex = 1
+resizez = 1
+active = 0
+blockwalk = true
+nonblockrange = true
+models_only = 596

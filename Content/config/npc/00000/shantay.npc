@@ -1,0 +1,12 @@
+// npc 836
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+op4 = Buy-pass
+recol = 8741/9104 61/4550 25238/6583
+name = Shantay
+models = 217 247 292 320 170 176 254 185
+headmodels = 55 79

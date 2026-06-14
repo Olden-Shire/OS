@@ -1,0 +1,10 @@
+// loc 10950
+active = 1
+width = 2
+length = 2
+hillskew = true
+ambient = 15
+op1 = Climb
+recol = 8629/8656 8625/8652 8621/8648 8745/8644
+models_only = 10953
+name = Sand pile

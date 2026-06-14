@@ -1,0 +1,9 @@
+// npc 408
+size = 1
+vislevel = 0
+readyanim = 352
+walkanim = 356
+op2 = Attack
+alwaysontop = true
+name = Strange plant
+models = 3371

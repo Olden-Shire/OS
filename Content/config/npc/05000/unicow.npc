@@ -1,0 +1,8 @@
+// npc 5603
+size = 2
+walkanim = 5848
+readyanim = 5852
+op2 = Attack
+vislevel = 25
+name = Unicow
+models = 22775

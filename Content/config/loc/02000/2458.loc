@@ -1,0 +1,7 @@
+// loc 2458
+active = 1
+width = 3
+length = 3
+anim = 2714
+bgsound = 3141, 5
+multiloc = 613, 65535, 7115 7116

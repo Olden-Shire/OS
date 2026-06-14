@@ -1,0 +1,11 @@
+// npc 3539
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/5908 54397/26929 4626/41 4550/6695 6798/0 11200/8846
+name = Veliaf Hurtz
+models = 210 247 313 167 179 268 181 284 244 3604
+headmodels = 49 79

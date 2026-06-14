@@ -1,0 +1,9 @@
+// loc 23063
+width = 2
+length = 2
+anim = 475
+blockwalk = true
+contrast = 20
+ambient = 20
+models_only = 23960
+name = Camp fire

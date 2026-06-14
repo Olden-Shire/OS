@@ -1,0 +1,13 @@
+// obj 6326
+cost = 300
+iop2 = Wear
+members = true
+model = obj_snakeskin_bandana_6326
+manwear = obj_snakeskin_bandana_6326_man, 0
+womanwear = obj_snakeskin_bandana_6326_woman, 0
+manhead = 8910
+womanhead = 8910
+zoom2d = 860
+yan2d = 160
+xan2d = 208
+name = Snakeskin bandana

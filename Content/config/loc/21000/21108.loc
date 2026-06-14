@@ -1,0 +1,6 @@
+// loc 21108
+anim = 5739
+active = 0
+nonsolid = true
+bgsound = 3124, 5
+models_only = 21589

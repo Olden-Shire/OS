@@ -1,0 +1,9 @@
+// loc 19753
+hillskew = true
+sharelight = true
+active = 1
+op1 = Enter
+blockwalk = true
+recol = 61/22408 41/22406 20/22404
+models = 19357/22
+name = Cave

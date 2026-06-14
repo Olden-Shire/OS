@@ -1,0 +1,5 @@
+// loc 17563
+active = 1
+nonsolid = true
+models = 17617/22
+name = Floor below

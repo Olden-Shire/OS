@@ -1,0 +1,11 @@
+// npc 2368
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 100
+resizev = 79
+op1 = Talk-to
+vislevel = 0
+recol = 9137/8117 8792/11592
+name = Eoin
+models = 8264 8269 6975 6976
+headmodels = 8259

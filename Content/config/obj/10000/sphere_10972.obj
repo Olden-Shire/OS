@@ -1,0 +1,13 @@
+// obj 10972
+model = obj_sphere_10972
+xof2d = 1
+zoom2d = 848
+yan2d = 1688
+xan2d = 138
+contrast = 15
+ambient = 15
+members = true
+iop1 = Break
+cost = 20
+stackable = true
+name = Sphere

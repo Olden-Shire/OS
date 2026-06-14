@@ -1,0 +1,11 @@
+// obj 3395
+model = obj_book_on_chemicals
+iop1 = Read
+xof2d = 1
+yof2d = -21
+zoom2d = 830
+yan2d = 116
+xan2d = 244
+members = true
+recol = 5018/8076 10351/7838 11177/8076 61/8076
+name = Diary

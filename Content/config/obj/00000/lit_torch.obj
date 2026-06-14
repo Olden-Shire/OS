@@ -1,0 +1,10 @@
+// obj 594
+cost = 4
+model = obj_lit_torch
+yof2d = -6
+zoom2d = 1310
+yan2d = 1660
+xan2d = 124
+members = true
+iop1 = Extinguish
+name = Lit torch

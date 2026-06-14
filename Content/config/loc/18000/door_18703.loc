@@ -1,0 +1,6 @@
+// loc 18703
+ambient = 30
+mirror = true
+op1 = Open
+models = 18668/0
+name = Door

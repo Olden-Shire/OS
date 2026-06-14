@@ -1,0 +1,9 @@
+// loc 16537
+width = 3
+ambient = 10
+contrast = 10
+offsety = -40
+active = 1
+blockwalk = true
+nonblockrange = true
+multiloc = 2363, 65535, 16473 16474

@@ -1,0 +1,6 @@
+// loc 8565
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8214 8222 7766
+name = Potato plant

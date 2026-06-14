@@ -1,0 +1,6 @@
+// npc 4325
+walkanim = 2051
+readyanim = 2051
+vislevel = 0
+name = Light creature
+models = 6541

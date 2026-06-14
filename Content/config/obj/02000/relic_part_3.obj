@@ -1,0 +1,7 @@
+// obj 2375
+model = obj_relic_part_3
+members = true
+zoom2d = 560
+yan2d = 108
+iop5 = Destroy
+name = Relic part 3

@@ -1,0 +1,9 @@
+// loc 6844
+width = 2
+length = 3
+mapscene = 34
+op1 = Search
+nonblockrange = true
+recol = 6689/6930 7475/6558
+models_only = 6786
+name = Ogre Coffin

@@ -1,0 +1,17 @@
+// obj 3331
+cost = 300
+members = true
+model = obj_myre_snelm_3327
+xof2d = 3
+yof2d = 11
+zoom2d = 730
+yan2d = 1976
+xan2d = 312
+members = true
+iop2 = Wear
+manwear = obj_myre_snelm_3327_man, 0
+womanwear = obj_myre_snelm_3327_woman, 0
+manhead = 4095
+womanhead = 4097
+recol = 6466/8772 6457/8759 6577/8759 6697/8772
+name = Ochre snelm

@@ -1,0 +1,13 @@
+// npc 447
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+resizev = 120
+resizeh = 120
+vislevel = 26
+recol = 25238/5652 5532/10508 6798/5671 8741/1950
+name = Jail guard
+models = 215 246 311 151 179 257 502
+headmodels = 53

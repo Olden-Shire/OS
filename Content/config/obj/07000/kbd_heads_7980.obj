@@ -1,0 +1,11 @@
+// obj 7980
+model = obj_kbd_heads_7980
+members = true
+cost = 50000
+xof2d = 1
+yof2d = 1
+zoom2d = 2256
+yan2d = 45
+xan2d = 444
+recol = 61/8
+name = Kbd heads

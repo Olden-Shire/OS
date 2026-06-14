@@ -1,0 +1,6 @@
+// loc 20378
+width = 2
+ambient = 15
+op1 = Pray-at
+models_only = 20794
+name = Altar

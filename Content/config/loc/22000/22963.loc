@@ -1,0 +1,6 @@
+// loc 22963
+hillskew = true
+nonsolid = true
+active = 0
+recol = 10275/5281 10270/5276 10266/5272
+models = 18242/22

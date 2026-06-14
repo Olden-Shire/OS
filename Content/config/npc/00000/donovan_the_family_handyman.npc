@@ -1,0 +1,11 @@
+// npc 806
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/8 10128/8 25238/8 6038/41 54397/0
+name = Donovan the Family Handyman
+models = 214 252 299 151 179 267 185 491 320
+headmodels = 52 84

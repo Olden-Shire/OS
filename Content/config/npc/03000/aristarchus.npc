@@ -1,0 +1,9 @@
+// npc 3127
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 4550/4645 6798/48247 24/9019 25238/49054 8741/49054 4886/22024
+name = Aristarchus
+models = 230 253 10984 9607 10979 10218 10982 8919
+headmodels = 63 85

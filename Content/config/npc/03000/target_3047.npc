@@ -1,0 +1,7 @@
+// npc 3047
+turnspeed = 0
+op2 = Shoot
+nominimap = true
+vislevel = 0
+name = Target
+models = 10210

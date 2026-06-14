@@ -1,0 +1,9 @@
+// loc 14922
+sharelight = true
+wallwidth = 32
+occlude = true
+op1 = Enter
+active = 1
+forceapproach = 7
+models_only = 14888
+name = Hole

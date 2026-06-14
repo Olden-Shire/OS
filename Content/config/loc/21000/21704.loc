@@ -1,0 +1,8 @@
+// loc 21704
+ambient = 30
+active = 0
+mirror = true
+length = 2
+sharelight = true
+recol = 7512/37974 7504/37966 7496/37958 6466/37949 6457/37941 6449/41137
+models_only = 22249

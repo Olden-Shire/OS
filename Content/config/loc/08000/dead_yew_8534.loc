@@ -1,0 +1,7 @@
+// loc 8534
+mapscene = 0
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8144 7768
+name = Dead Yew

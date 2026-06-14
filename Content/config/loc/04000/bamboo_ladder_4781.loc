@@ -1,0 +1,8 @@
+// loc 4781
+blockwalk = true
+raiseobject = 0
+forceapproach = 13
+op1 = Climb-up
+recol = 6585/6703 5673/5673
+models_only = 4726
+name = Bamboo Ladder

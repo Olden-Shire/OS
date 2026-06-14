@@ -1,0 +1,9 @@
+// npc 2634
+readyanim = 1673
+vislevel = 0
+turnspeed = 0
+op1 = Talk-to
+recol = 25238/37532 8741/37409 4550/5442
+name = Miss Schism
+models = 390 9361 9359 9360 5431 9363
+headmodels = 9358

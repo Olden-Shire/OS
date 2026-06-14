@@ -1,0 +1,8 @@
+// loc 25686
+op1 = Search
+op2 = Close
+ambient = 25
+contrast = 15
+recol = 4510/5413 4502/5532 8130/41 7095/33
+models_only = 11205
+name = Chest

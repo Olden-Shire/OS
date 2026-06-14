@@ -1,0 +1,11 @@
+// npc 6137
+size = 1
+op1 = Talk-to
+walkanim = 6867
+readyanim = 6864
+vislevel = 0
+alwaysontop = true
+recol = 39083/49 39207/45 39322/37 39442/24 39203/41
+name = Town crier
+models = 27149 27153 27140 27141 27144 2847 27155 27152
+headmodels = 27190 27188 27189

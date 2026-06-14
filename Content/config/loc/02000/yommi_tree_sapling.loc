@@ -1,0 +1,9 @@
+// loc 2946
+resizex = 64
+resizey = 64
+resizez = 64
+width = 3
+length = 3
+nonsolid = true
+models_only = 1818
+name = Yommi tree sapling

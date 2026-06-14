@@ -1,0 +1,15 @@
+// obj 6382
+model = obj_fez_6382
+manwear = obj_fez_6382_man, 0
+womanwear = obj_fez_6382_woman, 0
+manhead = 7741
+womanhead = 7741
+xof2d = 1
+yof2d = -58
+zoom2d = 550
+yan2d = 568
+xan2d = 248
+iop2 = Wear
+members = true
+cost = 20
+name = Fez

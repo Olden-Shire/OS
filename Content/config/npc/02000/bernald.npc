@@ -1,0 +1,12 @@
+// npc 2580
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 50
+contrast = 50
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 43072/4550 54397/6344 8741/2473 25238/4506 6798/6439 933/6336
+name = Bernald
+models = 6848 250 302 159 176 263 7121
+headmodels = 5787 82

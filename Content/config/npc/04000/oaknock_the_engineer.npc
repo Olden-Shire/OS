@@ -1,0 +1,8 @@
+// npc 4644
+walkanim = 189
+readyanim = 195
+vislevel = 0
+recol = 22426/39442 278/39442
+name = Oaknock the Engineer
+models = 17021 16999 16987
+headmodels = 16979

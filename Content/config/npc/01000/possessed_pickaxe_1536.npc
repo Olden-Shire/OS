@@ -1,0 +1,8 @@
+// npc 1536
+size = 1
+walkanim = 181
+readyanim = 187
+op2 = Attack
+vislevel = 50
+name = Possessed pickaxe
+models = 4922

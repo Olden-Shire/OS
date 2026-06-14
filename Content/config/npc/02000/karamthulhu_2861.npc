@@ -1,0 +1,13 @@
+// npc 2861
+vislevel = 0
+op1 = Take
+op4 = Talk-To
+op3 = Dismiss
+walkanim = 2798
+readyanim = 2799
+walkanim = 2798
+readyanim = 2799
+resizeh = 110
+resizev = 110
+name = Karamthulhu
+models = 9893

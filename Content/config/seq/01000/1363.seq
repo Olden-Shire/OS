@@ -1,0 +1,8 @@
+// seq 1363
+replaceheldright = 819
+replaceheldleft = 819
+reachforward = true
+loops = 2
+preanim_move = 1
+postanim_move = 1
+frames = 16/7/294 16/8/294

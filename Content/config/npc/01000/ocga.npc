@@ -1,0 +1,11 @@
+// npc 1085
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 5
+recol = 25238/10508 8741/43297
+name = Ocga
+models = 208 249 292 163 179 254 185
+headmodels = 48 81

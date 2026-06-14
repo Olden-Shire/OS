@@ -1,0 +1,8 @@
+// loc 18168
+active = 1
+ambient = 25
+op1 = Open
+raiseobject = 0
+recol = 6550/6563 5559/6563 5675/6563
+models = 5189/0
+name = Door

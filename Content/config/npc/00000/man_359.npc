@@ -1,0 +1,9 @@
+// npc 359
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 43072/5662 25238/3980 8741/6449 4550/5662
+name = Man
+models = 230 185 250 299 159 179 275
+headmodels = 63 82

@@ -1,0 +1,10 @@
+// obj 3735
+model = obj_vase_3734
+xof2d = -2
+yof2d = -13
+zoom2d = 1660
+yan2d = 44
+xan2d = 160
+members = true
+iop1 = Shake
+name = Vase of water

@@ -1,0 +1,15 @@
+// obj 5642
+cost = 4
+iop2 = Wield
+manwear = obj_bronze_javelin_wear, 0
+womanwear = obj_bronze_javelin_wear, 6
+model = obj_bronze_javelin
+xof2d = -2
+yof2d = 63
+zoom2d = 1470
+yan2d = 1964
+xan2d = 268
+stackable = true
+members = true
+recol = 61/5652
+name = Bronze javelin(p+)

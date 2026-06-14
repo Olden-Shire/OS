@@ -1,0 +1,6 @@
+// loc 11236
+op1 = Count-Plunder
+op2 = Store-Plunder
+forceapproach = 11
+models_only = 11205
+name = Plunder Storage

@@ -1,0 +1,12 @@
+// npc 1981
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 4550/6558 61/9015 4626/40334 54397/6435 25238/42908 8741/9015
+name = Carpenter
+models = 230 250 305 151 176 491 266 185
+headmodels = 82 63 6462

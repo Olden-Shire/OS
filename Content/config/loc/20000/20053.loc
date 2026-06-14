@@ -1,0 +1,7 @@
+// loc 20053
+sharelight = true
+hillskew = true
+ambient = 15
+mirror = true
+recol = 21526/8478 21522/8602 21646/8598 21642/8846
+models = 14787/0

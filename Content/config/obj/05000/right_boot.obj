@@ -1,0 +1,10 @@
+// obj 5063
+model = obj_right_boot
+xof2d = 7
+yof2d = -5
+zoom2d = 640
+yan2d = 1904
+xan2d = 108
+members = true
+iop1 = Wear
+name = Right boot

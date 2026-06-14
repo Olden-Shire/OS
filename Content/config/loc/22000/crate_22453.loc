@@ -1,0 +1,5 @@
+// loc 22453
+ambient = 30
+op1 = Add-bottom
+models_only = 22925
+name = Crate

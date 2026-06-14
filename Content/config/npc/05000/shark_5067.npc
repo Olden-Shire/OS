@@ -1,0 +1,6 @@
+// npc 5067
+vislevel = 0
+walkanim = 10
+readyanim = 10
+name = Shark
+models = 19778

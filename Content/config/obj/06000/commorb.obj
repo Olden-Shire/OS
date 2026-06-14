@@ -1,0 +1,16 @@
+// obj 6635
+model = obj_commorb
+manwear = obj_commorb_wear, 0
+womanwear = obj_commorb_wear, 0
+xof2d = 1
+yof2d = -1
+zoom2d = 740
+yan2d = 2028
+xan2d = 160
+ambient = 20
+members = true
+iop1 = Scan
+iop2 = Contact
+iop4 = Playback
+iop5 = Destroy
+name = Commorb

@@ -1,0 +1,8 @@
+// loc 26161
+active = 0
+sharelight = true
+ambient = 20
+contrast = 15
+mirror = true
+resizey = 159
+models_only = 27577

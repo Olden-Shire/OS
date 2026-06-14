@@ -1,0 +1,11 @@
+// npc 3931
+vislevel = 0
+resizeh = 110
+resizev = 110
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/412 43072/4550 25238/148 6798/5962 8084/37999 7719/412
+name = Beigarth
+models = 203 246 292 9607 163 176 4226 4218 4391
+headmodels = 104

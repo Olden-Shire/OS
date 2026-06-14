@@ -1,0 +1,9 @@
+// loc 16210
+sharelight = true
+hillskew = true
+active = 0
+active = 0
+noshadow = true
+offsety = 80
+recol = 6689/0
+models_only = 834

@@ -1,0 +1,7 @@
+// npc 3096
+size = 1
+op1 = Talk-to
+vislevel = 1
+name = Pizzaz Hat
+models = 10633
+headmodels = 10626

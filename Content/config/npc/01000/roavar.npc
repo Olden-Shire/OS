@@ -1,0 +1,10 @@
+// npc 1042
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+name = Roavar
+models = 26123 26132 26116 26127 26119
+headmodels = 26270

@@ -1,0 +1,10 @@
+// npc 672
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22422/63009
+name = Anita
+models = 2911 2907 2917
+headmodels = 21

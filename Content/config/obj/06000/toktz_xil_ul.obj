@@ -1,0 +1,16 @@
+// obj 6522
+members = true
+stackable = true
+iop2 = Wield
+model = obj_toktz_xil_ul
+xof2d = 3
+yof2d = -4
+zoom2d = 890
+yan2d = 28
+xan2d = 408
+contrast = 35
+ambient = 15
+manwear = obj_toktz_xil_ul_wear, 0
+womanwear = obj_toktz_xil_ul_wear, 6
+cost = 250
+name = Toktz-xil-ul

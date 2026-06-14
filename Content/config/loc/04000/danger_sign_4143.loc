@@ -1,0 +1,6 @@
+// loc 4143
+op1 = Read
+ambient = 10
+nonblockrange = true
+models_only = 3720
+name = Danger sign

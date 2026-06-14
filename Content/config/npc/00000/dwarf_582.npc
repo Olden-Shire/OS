@@ -1,0 +1,12 @@
+// npc 582
+vislevel = 0
+size = 1
+walkanim = 98
+readyanim = 101
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 43072/4550 7473/803 61/36133
+name = Dwarf
+models = 2971 2981 2979 2983 2985 2990
+headmodels = 1

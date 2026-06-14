@@ -1,0 +1,10 @@
+// loc 24365
+ambient = 25
+width = 2
+length = 3
+mapscene = 7
+sharelight = true
+forceapproach = 11
+op1 = Climb-up
+models_only = 25072
+name = Staircase

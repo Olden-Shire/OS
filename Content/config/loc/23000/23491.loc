@@ -1,0 +1,9 @@
+// loc 23491
+active = 0
+sharelight = true
+contrast = 20
+ambient = 20
+width = 3
+length = 8
+models_only = 24346 24348 24350
+models_only = 24345 24347 24349

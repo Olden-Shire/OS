@@ -1,0 +1,9 @@
+// loc 23286
+active = 1
+contrast = 20
+ambient = 20
+blockwalk = true
+op1 = Enter
+models_only = 24386
+models_only = 24385
+name = Doorway

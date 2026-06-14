@@ -1,0 +1,11 @@
+// obj 2150
+iop1 = Remove-legs
+members = true
+cost = 2
+model = obj_swamp_toad_2150
+xof2d = -1
+yof2d = 3
+zoom2d = 470
+yan2d = 128
+xan2d = 352
+name = Swamp toad

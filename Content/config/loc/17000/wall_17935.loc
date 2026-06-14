@@ -1,0 +1,6 @@
+// loc 17935
+sharelight = true
+hillskew = true
+mirror = true
+models_only = 17913
+name = Wall

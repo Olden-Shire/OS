@@ -1,0 +1,6 @@
+// npc 4233
+vislevel = 0
+size = 1
+name = Right head
+models = 3010 3006
+headmodels = 18507 18505 18508

@@ -1,0 +1,12 @@
+// npc 2141
+size = 1
+resizeh = 140
+resizev = 135
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 61/4548 5181/6373 8604/8485 4626/8410
+name = Blasidar the sculptor
+models = 7029 7069 7061 2979 7046 2985 7074
+headmodels = 6988 6949

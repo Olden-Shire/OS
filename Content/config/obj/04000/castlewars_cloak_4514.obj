@@ -1,0 +1,14 @@
+// obj 4514
+cost = 100
+model = obj_cape_1007
+xof2d = 3
+yof2d = 6
+zoom2d = 2140
+yan2d = 948
+xan2d = 400
+iop2 = Wear
+manwear = obj_castlewars_cloak_4514_wear, 0
+womanwear = obj_castlewars_cloak_4514_wear, 6
+members = true
+recol = 8741/41416 7700/41424 926/38554 8076/37801 11200/10473
+name = Castlewars cloak

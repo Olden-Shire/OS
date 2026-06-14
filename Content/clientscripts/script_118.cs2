@@ -1,0 +1,338 @@
+[clientscript,script_118](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, int $int6)()
+def_int $int7;
+def_int $int8;
+def_int $int9;
+def_int $int10;
+def_int $int11;
+def_int $int12;
+def_int $int13;
+def_int $int14;
+def_int $int15;
+def_string $string0;
+
+$int7 = 0;
+$int8 = 0;
+$int9 = 5;
+$int10 = 25;
+$int11 = -1;
+$string0 = "";
+$int12 = 0;
+$int13 = 0;
+$int14 = 0;
+$int15 = 0;
+if ($int0 = 0) {
+    while ($int7 < $int1) {
+        cc_create(6684690, 5, $int8);
+        cc_setsize(36, 32);
+        cc_setposition($int9, 25);
+        if ($int7 = 0) {
+            cc_setobject($int2, 1);
+            if ($int2 ! -1) {
+                cc_setopbase(join("<col=ff981f>", oc_name($int2)));
+                cc_setop(1, "Item : ");
+            }
+        } else if ($int7 = 1) {
+            cc_setobject($int3, 1);
+            if ($int3 ! -1) {
+                cc_setopbase(join("<col=ff981f>", oc_name($int3)));
+                cc_setop(1, "Item : ");
+            }
+        } else if ($int7 = 2) {
+            cc_setobject($int4, 1);
+            if ($int4 ! -1) {
+                cc_setopbase(join("<col=ff981f>", oc_name($int4)));
+                cc_setop(1, "Item : ");
+            }
+        } else if ($int7 = 3) {
+            cc_setobject($int5, 1);
+            if ($int5 ! -1) {
+                cc_setopbase(join("<col=ff981f>", oc_name($int5)));
+                cc_setop(1, "Item : ");
+            }
+        }
+        cc_setgraphicshadow(1118481);
+        cc_setoutline(1);
+        $int8 = calc($int8 + 1);
+        $int7 = calc($int7 + 1);
+        $int9 = calc($int9 + 40);
+    }
+    $int8 = 0;
+    $int9 = 5;
+    $int7 = 0;
+    if (oc_stackable($int2) = 0) {
+        $int14 = calc(inv_total(93, $int2) + inv_total(94, $int2));
+        $int15 = 1;
+        if ($int3 = $int2) {
+            $int15 = calc($int15 + 1);
+        }
+        if ($int4 = $int2) {
+            $int15 = calc($int15 + 1);
+        }
+        if ($int5 = $int2) {
+            $int15 = calc($int15 + 1);
+        }
+        while (calc($int14 - $int15) > 0) {
+            cc_create(6684693, 5, $int8);
+            cc_setsize(36, 32);
+            cc_setposition($int9, $int10);
+            cc_setobject($int2, 1);
+            cc_setopbase(join("<col=ff981f>", oc_name($int2)));
+            cc_setop(1, "Item : ");
+            cc_setgraphicshadow(1118481);
+            cc_setoutline(1);
+            $int9 = calc($int9 + 38);
+            if ($int9 > 300) {
+                $int10 = calc($int10 + 38);
+                $int9 = 5;
+            }
+            $int8 = calc($int8 + 1);
+            $int14 = calc($int14 - 1);
+        }
+    }
+    if ($int3 ! $int2 & oc_stackable($int3) = 0) {
+        $int14 = calc(inv_total(93, $int3) + inv_total(94, $int3));
+        $int15 = 1;
+        if ($int4 = $int3) {
+            $int15 = calc($int15 + 1);
+        }
+        if ($int5 = $int3) {
+            $int15 = calc($int15 + 1);
+        }
+        while (calc($int14 - $int15) > 0) {
+            cc_create(6684693, 5, $int8);
+            cc_setsize(36, 32);
+            cc_setposition($int9, $int10);
+            cc_setobject($int3, 1);
+            cc_setopbase(join("<col=ff981f>", oc_name($int3)));
+            cc_setop(1, "Item : ");
+            cc_setgraphicshadow(1118481);
+            cc_setoutline(1);
+            $int9 = calc($int9 + 38);
+            if ($int9 > 300) {
+                $int10 = calc($int10 + 38);
+                $int9 = 5;
+            }
+            $int8 = calc($int8 + 1);
+            $int14 = calc($int14 - 1);
+        }
+    }
+    if ($int4 ! $int2 & $int4 ! $int3 & oc_stackable($int4) = 0) {
+        $int14 = calc(inv_total(93, $int4) + inv_total(94, $int4));
+        $int15 = 1;
+        if ($int5 = $int4) {
+            $int15 = calc($int15 + 1);
+        }
+        while (calc($int14 - $int15) > 0) {
+            cc_create(6684693, 5, $int8);
+            cc_setsize(36, 32);
+            cc_setposition($int9, $int10);
+            cc_setobject($int4, 1);
+            cc_setopbase(join("<col=ff981f>", oc_name($int4)));
+            cc_setop(1, "Item : ");
+            cc_setgraphicshadow(1118481);
+            cc_setoutline(1);
+            $int9 = calc($int9 + 38);
+            if ($int9 > 300) {
+                $int10 = calc($int10 + 38);
+                $int9 = 5;
+            }
+            $int8 = calc($int8 + 1);
+            $int14 = calc($int14 - 1);
+        }
+    }
+    if ($int5 ! $int2 & $int5 ! $int3 & $int5 ! $int4 & oc_stackable($int5) = 0) {
+        $int14 = calc(inv_total(93, $int5) + inv_total(94, $int5));
+        $int15 = 1;
+        while (calc($int14 - $int15) > 0) {
+            cc_create(6684693, 5, $int8);
+            cc_setsize(36, 32);
+            cc_setposition($int9, $int10);
+            cc_setobject($int5, 1);
+            cc_setopbase(join("<col=ff981f>", oc_name($int5)));
+            cc_setop(1, "Item : ");
+            cc_setgraphicshadow(1118481);
+            cc_setoutline(1);
+            $int9 = calc($int9 + 38);
+            if ($int9 > 300) {
+                $int10 = calc($int10 + 38);
+                $int9 = 5;
+            }
+            $int8 = calc($int8 + 1);
+            $int14 = calc($int14 - 1);
+        }
+    }
+    while ($int7 < 28) {
+        $int11 = inv_getobj(93, $int7);
+        if ($int11 ! -1) {
+            if ($int11 = $int2 | $int11 = $int3 | $int11 = $int4 | $int11 = $int5) {
+                if (oc_stackable($int11) = 1) {
+                    $int12 = 0;
+                    if ($int11 = $int2) {
+                        $int12 = 1;
+                    }
+                    if ($int11 = $int3) {
+                        $int12 = calc($int12 + 1);
+                    }
+                    if ($int11 = $int4) {
+                        $int12 = calc($int12 + 1);
+                    }
+                    if ($int11 = $int5) {
+                        $int12 = calc($int12 + 1);
+                    }
+                    if (calc(inv_getnum(93, $int7) - $int12) > 0) {
+                        cc_create(6684693, 5, $int8);
+                        cc_setsize(36, 32);
+                        cc_setposition($int9, $int10);
+                        cc_setobject(inv_getobj(93, $int7), calc(inv_getnum(93, $int7) - $int12));
+                        cc_setopbase(join("<col=ff981f>", oc_name(inv_getobj(93, $int7))));
+                        cc_setop(1, "Item : ");
+                        cc_setgraphicshadow(1118481);
+                        if (enum(111, 105, 616, inv_getobj(93, $int7)) = 1) {
+                            cc_setoutline(2);
+                            $int13 = 1;
+                        } else {
+                            cc_setoutline(1);
+                        }
+                        $int9 = calc($int9 + 38);
+                        if ($int9 > 300) {
+                            $int10 = calc($int10 + 38);
+                            $int9 = 5;
+                        }
+                        $int8 = calc($int8 + 1);
+                    }
+                }
+            } else {
+                cc_create(6684693, 5, $int8);
+                cc_setsize(36, 32);
+                cc_setposition($int9, $int10);
+                cc_setobject(inv_getobj(93, $int7), inv_getnum(93, $int7));
+                cc_setopbase(join("<col=ff981f>", oc_name(inv_getobj(93, $int7))));
+                cc_setop(1, "Item : ");
+                cc_setgraphicshadow(1118481);
+                if (enum(111, 105, 616, inv_getobj(93, $int7)) = 1) {
+                    cc_setoutline(2);
+                    $int13 = 1;
+                } else {
+                    cc_setoutline(1);
+                }
+                $int9 = calc($int9 + 38);
+                if ($int9 > 300) {
+                    $int10 = calc($int10 + 38);
+                    $int9 = 5;
+                }
+                $int8 = calc($int8 + 1);
+            }
+        }
+        $int7 = calc($int7 + 1);
+    }
+    $int7 = 0;
+    while ($int7 < 14) {
+        if ($int7 ! 6 & $int7 ! 8 & $int7 ! 11) {
+            $int11 = inv_getobj(94, $int7);
+            if ($int11 ! -1) {
+                if ($int11 = $int2 | $int11 = $int3 | $int11 = $int4 | $int11 = $int5) {
+                    if (oc_stackable($int11) = 1) {
+                        $int12 = 0;
+                        if ($int11 = $int2) {
+                            $int12 = 1;
+                        }
+                        if ($int11 = $int3) {
+                            $int12 = calc($int12 + 1);
+                        }
+                        if ($int11 = $int4) {
+                            $int12 = calc($int12 + 1);
+                        }
+                        if ($int11 = $int5) {
+                            $int12 = calc($int12 + 1);
+                        }
+                        if (calc(inv_getnum(94, $int7) - $int12) > 0) {
+                            cc_create(6684693, 5, $int8);
+                            cc_setsize(36, 32);
+                            cc_setposition($int9, $int10);
+                            cc_setobject(inv_getobj(94, $int7), calc(inv_getnum(94, $int7) - $int12));
+                            cc_setopbase(join("<col=ff981f>", oc_name(inv_getobj(94, $int7))));
+                            cc_setop(1, "Item : ");
+                            cc_setgraphicshadow(1118481);
+                            if (enum(111, 105, 616, inv_getobj(94, $int7)) = 1) {
+                                cc_setoutline(2);
+                                $int13 = 1;
+                            } else {
+                                cc_setoutline(1);
+                            }
+                            $int9 = calc($int9 + 38);
+                            if ($int9 > 300) {
+                                $int10 = calc($int10 + 38);
+                                $int9 = 5;
+                            }
+                            $int8 = calc($int8 + 1);
+                        }
+                    }
+                } else {
+                    cc_create(6684693, 5, $int8);
+                    cc_setsize(36, 32);
+                    cc_setposition($int9, $int10);
+                    cc_setobject(inv_getobj(94, $int7), inv_getnum(94, $int7));
+                    cc_setopbase(join("<col=ff981f>", oc_name(inv_getobj(94, $int7))));
+                    cc_setop(1, "Item : ");
+                    cc_setgraphicshadow(1118481);
+                    if (enum(111, 105, 616, inv_getobj(94, $int7)) = 1) {
+                        cc_setoutline(2);
+                        $int13 = 1;
+                    } else {
+                        cc_setoutline(1);
+                    }
+                    $int9 = calc($int9 + 38);
+                    if ($int9 > 300) {
+                        $int10 = calc($int10 + 38);
+                        $int9 = 5;
+                    }
+                    $int8 = calc($int8 + 1);
+                }
+            }
+        }
+        $int7 = calc($int7 + 1);
+    }
+    $string0 = join("The normal amount of items kept is three.", "<br>", "<br>");
+    if ($int1 = 0) {
+        $string0 = append($string0, join("You're marked with a ", "<col=ff3333>", "PK skull", "<col=ff981f>", ". This reduces the items you keep from three to zero!"));
+    } else if ($int1 = 1) {
+        $string0 = append($string0, join("You're marked with a ", "<col=ff3333>", "PK skull", "<col=ff981f>", ". This reduces the items you keep from three to zero!", "<br>", "<br>", "However, you also have the ", "<col=ff3333>", "Protect Items", "<col=ff981f>", " prayer active, which saves you one extra item!"));
+    } else if ($int1 = 3) {
+        $string0 = append($string0, "You have no factors affecting the items you keep.");
+    } else if ($int1 = 4) {
+        $string0 = append($string0, join("You have the ", "<col=ff3333>", "Protect Items", "<col=ff981f>", " prayer active, which saves you one extra item!"));
+    }
+    if ($int13 = 1) {
+        $string0 = append($string0, join("<br>", "<br>", "Items with a ", "<col=ffffff>", "white outline", "<col=ff981f>", " are ones you will always lose."));
+    }
+    if_settext($string0, 6684699);
+    if_settext(join("<col=ffcc33>", "Max items kept on death :", "<br>", "<br>", "<col=ffcc33>", "~ ", tostring($int1), " ~"), 6684700);
+    if ($int6 > 0) {
+        if_settext("Items you will keep on death:", 6684689);
+        if_settext("Items you will lose on death:", 6684692);
+    } else {
+        if_settext("Items you will keep on death if not skulled:", 6684689);
+        if_settext("Items you will lose on death if not skulled:", 6684692);
+    }
+} else {
+    if_sethide(1, 6684693);
+    if_sethide(1, 6684690);
+    if_sethide(0, 6684701);
+    if ($int0 = 2) {
+        $string0 = join("You're in a ", "<col=ff3333>", "player-owned house", "<col=ff981f>", ",", "<br>", "which is a ", "<col=ff3333>", "safe area", "<col=ff981f>", ".", "<br>", "<br>", " If you die you will keep all your items except the items you would lose on leaving the house via the portal.");
+    } else if ($int0 = 3) {
+        $string0 = join("You're in a game of ", "<col=ff3333>", "Castle Wars", "<col=ff981f>", ",", "<br>", "which is a ", "<col=ff3333>", "safe area", "<col=ff981f>", ".", "<br>", "<br>", " If you die you will keep all your items, except the team banner should you be carrying it.");
+    } else if ($int0 = 4) {
+        $string0 = join("You're in a game of ", "<col=ff3333>", "Trouble Brewing", "<col=ff981f>", ",", "<br>", "which is a ", "<col=ff3333>", "safe area", "<col=ff981f>", ".", "<br>", "<br>", " If you die you will keep all your items brought with you, including the Trouble Brewing manual, but will lose everything else.");
+    } else if ($int0 = 5) {
+        $string0 = join("You're in a game of ", "<col=ff3333>", "Barbarian Assault", "<col=ff981f>", ",", "<br>", "which is a ", "<col=ff3333>", "safe area", "<col=ff981f>", ".", "<br>", "<br>", " If you die you will keep all your items, except items from the dispensors, logs, hammers and Penance eggs.");
+    } else {
+        $string0 = join("You're in a ", "<col=ff3333>", "safe area", "<col=ff981f>", ".", "<br>", "<br>", " If you die you will keep all the items you brought with you.");
+    }
+    if_settext($string0, 6684702);
+    $string0 = join("The normal amount of items kept is three.", "<br>", "<br>");
+    $string0 = append($string0, join("You're in a ", "<col=ff3333>", "safe area", "<col=ff981f>", ". See information to the left for a more detailed description."));
+    if_settext($string0, 6684699);
+    if_settext(join("<col=ffcc33>", "Max items kept on death :", "<br>", "<br>", "<col=ffcc33>", "All items !"), 6684700);
+}
+return;

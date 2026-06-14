@@ -1,0 +1,9 @@
+// npc 921
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+recol = 25238/62699 8741/55194 6798/6854
+name = Prince Ali
+models = 214 181 246 292 151 176 265
+headmodels = 52

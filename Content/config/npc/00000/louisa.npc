@@ -1,0 +1,11 @@
+// npc 809
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/46278 8741/8 25238/8 43072/4550
+name = Louisa
+models = 378 465 332 353 419 358 483
+headmodels = 103

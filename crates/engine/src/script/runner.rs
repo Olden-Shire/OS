@@ -14,10 +14,21 @@ use protocol::server as msg;
 /// Run `state` until it finishes, suspends, or errors. Errors print a
 /// stack backtrace (script name + line numbers) like the reference
 /// and report to the player when one is attached.
+/// Cross-cutting accumulator (nanoseconds) of time spent executing RuneScript
+/// this cycle. Reset at the head of [`World::cycle`] and read at the tail, so
+/// the control panel can show RuneScript as its own slice even though scripts
+/// run interleaved inside the world/npc/player phases.
+pub static SCRIPT_NS: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+
 pub fn execute(state: &mut ScriptState, world: &mut World) -> Execution {
     state.execution = Execution::Running;
 
+    let t0 = std::time::Instant::now();
     let result = run(state, world);
+    SCRIPT_NS.fetch_add(
+        t0.elapsed().as_nanos() as u64,
+        std::sync::atomic::Ordering::Relaxed,
+    );
     if let Err(err) = result {
         let line = state.script.line_number(state.pc);
         eprintln!("script error: {err}");
@@ -711,6 +722,456 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             state.push_int(i32::from(occupied));
         }
 
+        // ── Config-query ops (LC_* / OC_* / NC_*) ─────────────────
+        // Pure readers over the loc/obj/npc config loaded into World. Fields not
+        // present in our 2007 config decode (param / category / desc / weight /
+        // wearpos / tradeable) stay unimplemented — there's no data to source.
+        op::LC_NAME => {
+            let id = state.pop_int();
+            let n = config_name(world.loc_info.get(&id).map(|i| &i.name));
+            state.push_string(n);
+        }
+        op::LC_WIDTH => {
+            let id = state.pop_int();
+            state.push_int(world.loc_info.get(&id).map_or(1, |i| i.width));
+        }
+        op::LC_LENGTH => {
+            let id = state.pop_int();
+            state.push_int(world.loc_info.get(&id).map_or(1, |i| i.length));
+        }
+        op::OC_NAME => {
+            let id = state.pop_int();
+            let n = config_name(world.obj_info.get(&id).map(|i| &i.name));
+            state.push_string(n);
+        }
+        op::OC_COST => {
+            let id = state.pop_int();
+            state.push_int(world.obj_info.get(&id).map_or(0, |i| i.cost));
+        }
+        op::OC_MEMBERS => {
+            let id = state.pop_int();
+            state.push_int(i32::from(world.obj_info.get(&id).is_some_and(|i| i.members)));
+        }
+        op::OC_STACKABLE => {
+            let id = state.pop_int();
+            state.push_int(i32::from(world.obj_info.get(&id).is_some_and(|i| i.stackable != 0)));
+        }
+        op::OC_CERT => {
+            // Engine-TS OC_CERT: the noted form's id (certlink) when this is an
+            // un-noted item with a note link, else the id itself.
+            let id = state.pop_int();
+            let r = match world.obj_info.get(&id) {
+                Some(o) if o.certtemplate == -1 && o.certlink >= 0 => o.certlink,
+                _ => id,
+            };
+            state.push_int(r);
+        }
+        op::OC_UNCERT => {
+            // Engine-TS OC_UNCERT: the un-noted form's id when this is a note.
+            let id = state.pop_int();
+            let r = match world.obj_info.get(&id) {
+                Some(o) if o.certtemplate >= 0 && o.certlink >= 0 => o.certlink,
+                _ => id,
+            };
+            state.push_int(r);
+        }
+        op::NC_NAME => {
+            let id = state.pop_int();
+            let n = config_name(world.npc_info.get(&id).map(|i| &i.name));
+            state.push_string(n);
+        }
+        op::NC_SIZE => {
+            let id = state.pop_int();
+            state.push_int(world.npc_info.get(&id).map_or(1, |i| i.size));
+        }
+        op::NC_VISLEVEL => {
+            let id = state.pop_int();
+            state.push_int(world.npc_info.get(&id).map_or(-1, |i| i.vislevel));
+        }
+        op::NC_OP => {
+            // Engine-TS NC_OP: the 1-based op label, or "" when absent.
+            let [id, idx] = state.pop_ints::<2>();
+            let s = world
+                .npc_info
+                .get(&id)
+                .and_then(|i| usize::try_from(idx - 1).ok().and_then(|k| i.op.get(k)))
+                .and_then(|o| o.clone())
+                .unwrap_or_default();
+            state.push_string(s);
+        }
+        op::LC_OP => {
+            // The loc's 1-based op label (analogous to NC_OP). "" when absent.
+            let [id, idx] = state.pop_ints::<2>();
+            let s = world
+                .loc_info
+                .get(&id)
+                .and_then(|i| usize::try_from(idx - 1).ok().and_then(|k| i.op.get(k)))
+                .and_then(|o| o.clone())
+                .unwrap_or_default();
+            state.push_string(s);
+        }
+        op::OC_OP => {
+            let [id, idx] = state.pop_ints::<2>();
+            let s = world
+                .obj_info
+                .get(&id)
+                .and_then(|i| usize::try_from(idx - 1).ok().and_then(|k| i.op.get(k)))
+                .and_then(|o| o.clone())
+                .unwrap_or_default();
+            state.push_string(s);
+        }
+        op::OC_IOP => {
+            // Obj inventory-op label.
+            let [id, idx] = state.pop_ints::<2>();
+            let s = world
+                .obj_info
+                .get(&id)
+                .and_then(|i| usize::try_from(idx - 1).ok().and_then(|k| i.iop.get(k)))
+                .and_then(|o| o.clone())
+                .unwrap_or_default();
+            state.push_string(s);
+        }
+        op::NPC_NAME => {
+            // Engine-TS NPC_NAME: the active npc's type name.
+            let type_id = active_npc(state, world)?.type_id;
+            let n = config_name(world.npc_info.get(&type_id).map(|i| &i.name));
+            state.push_string(n);
+        }
+        op::LOC_NAME => {
+            // Engine-TS LOC_NAME: the active loc's type name.
+            let (.., id, _, _) = state.active_loc.ok_or("no active_loc")?;
+            let n = config_name(world.loc_info.get(&id).map(|i| &i.name));
+            state.push_string(n);
+        }
+        op::OBJ_NAME => {
+            // Engine-TS OBJ_NAME: the active obj's type name.
+            let (.., id) = state.active_obj.ok_or("no active_obj")?;
+            let n = config_name(world.obj_info.get(&id).map(|i| &i.name));
+            state.push_string(n);
+        }
+        op::ENUM => {
+            // Engine-TS ENUM: look up `key` in enum `enum_id`, pushing the
+            // matching value or the enum default. The popped input/output type
+            // args drive Engine-TS's type validation; OS1 instead decides
+            // int-vs-string from the enum's stored data (the two agree for any
+            // well-formed enum) so a type-arg convention mismatch can't abort a
+            // script.
+            let [_input_type, _output_type, enum_id, key] = state.pop_ints::<4>();
+            let e = world.enums.get(&enum_id).ok_or_else(|| format!("enum {enum_id} not found"))?;
+            let idx = e.keys.iter().position(|&k| k == key);
+            if e.is_string {
+                let v = idx
+                    .and_then(|i| e.string_values.get(i))
+                    .cloned()
+                    .unwrap_or_else(|| e.default_string.clone());
+                state.push_string(v);
+            } else {
+                let v = idx.and_then(|i| e.int_values.get(i)).copied().unwrap_or(e.default_int);
+                state.push_int(v);
+            }
+        }
+        op::ENUM_GETOUTPUTCOUNT => {
+            // Engine-TS ENUM_GETOUTPUTCOUNT: the number of key→value entries.
+            let id = state.pop_int();
+            state.push_int(world.enums.get(&id).map_or(0, |e| e.keys.len() as i32));
+        }
+
+        // ── Inventory ops (INV_*) ─────────────────────────────────
+        // Stack behaviour from ObjType.stackable; the protected-access / dummyitem
+        // / scope checks Engine-TS does need InvType fields our 2007 config lacks,
+        // so they're omitted. Stock / category / param / transmit ops are
+        // data- or protocol-blocked and stay unimplemented.
+        op::INV_ADD => {
+            // Engine-TS INV_ADD: insert what fits; drop the overflow at the
+            // player's feet (one obj each for non-stackables / a 1-overflow,
+            // else a single stack), owned by the player for 200 ticks.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, obj_id, count] = state.pop_ints::<3>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let added = world.inv_add(pid, inv, obj_id, count);
+            let overflow = count - added;
+            if overflow > 0 {
+                drop_overflow(world, pid, obj_id, overflow);
+            }
+        }
+        op::INV_DEL => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, obj_id, count] = state.pop_ints::<3>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_del(pid, inv, obj_id, count);
+        }
+        op::INV_TOTAL => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, obj_id] = state.pop_ints::<2>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            // Engine-TS treats obj -1 as a count of 0 rather than erroring.
+            let total = if obj_id == -1 { 0 } else { world.inv_total(pid, inv, obj_id) };
+            state.push_int(total);
+        }
+        op::INV_GETOBJ => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, slot] = state.pop_ints::<2>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            state.push_int(world.inv_get_slot(pid, inv, slot).map_or(-1, |(id, _)| id));
+        }
+        op::INV_GETNUM => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, slot] = state.pop_ints::<2>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            state.push_int(world.inv_get_slot(pid, inv, slot).map_or(0, |(_, c)| c));
+        }
+        op::INV_FREESPACE => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let inv = state.pop_int();
+            let pid = state.active_player.ok_or("no active_player")?;
+            state.push_int(world.inv_free_space(pid, inv));
+        }
+        op::INV_SIZE => {
+            // Engine-TS INV_SIZE: the InvType's configured size (no player).
+            let inv = state.pop_int();
+            state.push_int(world.inv_sizes.get(&inv).copied().unwrap_or(0));
+        }
+        op::INV_CLEAR => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let inv = state.pop_int();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_clear(pid, inv);
+        }
+        op::INV_SETSLOT => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, slot, obj_id, count] = state.pop_ints::<4>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_set(pid, inv, obj_id, count, slot);
+        }
+        op::INV_DELSLOT => {
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, slot] = state.pop_ints::<2>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_set(pid, inv, -1, 0, slot);
+        }
+        op::INV_ITEMSPACE => {
+            // Engine-TS INV_ITEMSPACE: 1 if `count` of `obj` fits within the
+            // first `size` slots, else 0.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, obj_id, count, size] = state.pop_ints::<4>();
+            if count == 0 {
+                state.push_int(0);
+            } else {
+                let inv_size = world.inv_sizes.get(&inv).copied().unwrap_or(0);
+                if size < 0 || size > inv_size {
+                    return Err(format!("inv_itemspace size out of range: {size}"));
+                }
+                let pid = state.active_player.ok_or("no active_player")?;
+                let overflow = world.inv_item_space(pid, inv, obj_id, count, size);
+                state.push_int(i32::from(overflow == 0));
+            }
+        }
+        op::INV_MOVETOSLOT => {
+            // Engine-TS INV_MOVETOSLOT: swap two slots (UI drag).
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [from_inv, to_inv, from_slot, to_slot] = state.pop_ints::<4>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_move_to_slot(pid, from_inv, to_inv, from_slot, to_slot);
+        }
+        op::INV_MOVEFROMSLOT => {
+            // Engine-TS INV_MOVEFROMSLOT: move a whole slot into another inv,
+            // dropping any overflow at the player's feet.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [from_inv, to_inv, from_slot] = state.pop_ints::<3>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let (overflow, obj) = world.inv_move_from_slot(pid, from_inv, to_inv, from_slot);
+            if overflow > 0 {
+                drop_overflow(world, pid, obj, overflow);
+            }
+        }
+        op::INV_CHANGESLOT => {
+            // Engine-TS INV_CHANGESLOT: replace the first slot holding `find`
+            // with `replace` × `replace_count`.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, find, replace, replace_count] = state.pop_ints::<4>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let _ = world.inv_free_space(pid, inv); // ensure the inv exists
+            let cap = world.inv_sizes.get(&inv).copied().unwrap_or(0);
+            let mut target = None;
+            for s in 0..cap {
+                if let Some((id, _)) = world.inv_get_slot(pid, inv, s) {
+                    if id == find {
+                        target = Some(s);
+                        break;
+                    }
+                }
+            }
+            if let Some(slot) = target {
+                world.inv_set(pid, inv, replace, replace_count, slot);
+            }
+        }
+        op::INV_MOVEITEM | op::INV_MOVEITEM_CERT | op::INV_MOVEITEM_UNCERT => {
+            // Engine-TS INV_MOVEITEM(_CERT/_UNCERT): delete `count` of `obj` from
+            // one inv and add it to another (overflow drops). The CERT/UNCERT
+            // variants re-map the obj to its noted / un-noted form before adding.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [from_inv, to_inv, obj, count] = state.pop_ints::<4>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let completed = world.inv_del(pid, from_inv, obj, count);
+            if completed > 0 {
+                let final_obj = match opcode {
+                    op::INV_MOVEITEM_CERT => match world.obj_info.get(&obj) {
+                        Some(o) if o.certtemplate == -1 && o.certlink >= 0 => o.certlink,
+                        _ => obj,
+                    },
+                    op::INV_MOVEITEM_UNCERT => match world.obj_info.get(&obj) {
+                        Some(o) if o.certtemplate >= 0 && o.certlink >= 0 => o.certlink,
+                        _ => obj,
+                    },
+                    _ => obj,
+                };
+                let added = world.inv_add(pid, to_inv, final_obj, completed);
+                let overflow = completed - added;
+                if overflow > 0 {
+                    drop_overflow(world, pid, final_obj, overflow);
+                }
+            }
+        }
+        op::INV_DROPSLOT => {
+            // Engine-TS INV_DROPSLOT: drop the slot's contents at `coord`.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, coord, slot, duration] = state.pop_ints::<4>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            if let Some((id, count)) = world.inv_get_slot(pid, inv, slot) {
+                world.inv_set(pid, inv, -1, 0, slot);
+                let (x, z, level) = unpack_coord(coord);
+                world.add_ground_obj(id, count, x, z, level, pid as i32, duration);
+            } else {
+                return Err("inv_dropslot: slot is empty".to_string());
+            }
+        }
+        op::INV_DROPITEM => {
+            // Engine-TS INV_DROPITEM: delete `count` of `obj` and drop what was
+            // removed at `coord`, making it the active obj.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, coord, obj, count, duration] = state.pop_ints::<5>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let completed = world.inv_del(pid, inv, obj, count);
+            if completed > 0 {
+                let (x, z, level) = unpack_coord(coord);
+                world.add_ground_obj(obj, completed, x, z, level, pid as i32, duration);
+                state.active_obj = Some((x, z, level, obj));
+                state.pointer_add(Pointer::ActiveObj);
+            }
+        }
+        op::INV_DROPITEM_DELAYED => {
+            // Engine-TS INV_DROPITEM_DELAYED: like INV_DROPITEM but the ground
+            // obj spawns after `delay` ticks (then despawns after `duration`).
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, coord, obj, count, duration, delay] = state.pop_ints::<6>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let completed = world.inv_del(pid, inv, obj, count);
+            if completed > 0 {
+                let (x, z, level) = unpack_coord(coord);
+                world.add_ground_obj_delayed(obj, completed, x, z, level, pid as i32, duration, delay);
+            }
+        }
+        op::INV_DROPALL => {
+            // Engine-TS INV_DROPALL: drop every slot's contents at `coord` and
+            // empty the inventory.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, coord, duration] = state.pop_ints::<3>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let (x, z, level) = unpack_coord(coord);
+            let _ = world.inv_free_space(pid, inv); // ensure the inv exists
+            let cap = world.inv_sizes.get(&inv).copied().unwrap_or(0);
+            let items: Vec<(i32, i32)> =
+                (0..cap).filter_map(|s| world.inv_get_slot(pid, inv, s)).collect();
+            world.inv_clear(pid, inv);
+            for (id, count) in items {
+                world.add_ground_obj(id, count, x, z, level, pid as i32, duration);
+            }
+        }
+        op::INV_TRANSMIT => {
+            // Engine-TS INV_TRANSMIT: show this player's inv `inv` on component
+            // `com` (UPDATE_INV_FULL is sent in the player flush each tick).
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, com] = state.pop_ints::<2>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            let uid = world.players[pid].as_ref().map_or(0, |p| p.uid());
+            world.inv_listen_on_com(pid, inv, com, uid);
+        }
+        op::INVOTHER_TRANSMIT => {
+            // Engine-TS INVOTHER_TRANSMIT: show another player's (`uid`) inv on
+            // this player's component `com`.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [uid, inv, com] = state.pop_ints::<3>();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_listen_on_com(pid, inv, com, uid);
+        }
+        op::INV_STOPTRANSMIT => {
+            // Engine-TS INV_STOPTRANSMIT: stop showing an inv on component `com`.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let com = state.pop_int();
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.inv_stop_listen_on_com(pid, com);
+        }
+        op::OBJ_TAKEITEM => {
+            // Engine-TS OBJ_TAKEITEM: pick up the active ground obj into `inv`.
+            let inv = state.pop_int();
+            let (x, z, level, id) = state.active_obj.ok_or("no active_obj")?;
+            let pid = state.active_player.ok_or("no active_player")?;
+            if let Some(count) = world.find_obj(x, z, level, id, pid) {
+                world.inv_add(pid, inv, id, count);
+                world.remove_obj_broadcast(x, z, level, id);
+            }
+        }
+        op::BOTH_MOVEINV => {
+            // Engine-TS BOTH_MOVEINV: move every item from one player's `from`
+            // inv into another player's `to` inv (overflow drops at the receiver's
+            // feet). `.both_moveinv` (secondary) swaps which player is from/to:
+            // normal → primary→secondary, secondary → secondary→primary.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [from, to] = state.pop_ints::<2>();
+            let secondary = state.secondary();
+            let (from_pid, to_pid) = if secondary {
+                (state.active_player2, state.active_player)
+            } else {
+                (state.active_player, state.active_player2)
+            };
+            let from_pid = from_pid.ok_or("BOTH_MOVEINV: missing from player")?;
+            let to_pid = to_pid.ok_or("BOTH_MOVEINV: missing to player")?;
+            let _ = world.inv_free_space(from_pid, from); // ensure it exists
+            let cap = world.inv_sizes.get(&from).copied().unwrap_or(0);
+            let items: Vec<(i32, i32)> =
+                (0..cap).filter_map(|s| world.inv_get_slot(from_pid, from, s)).collect();
+            world.inv_clear(from_pid, from);
+            for (id, count) in items {
+                let added = world.inv_add(to_pid, to, id, count);
+                let overflow = count - added;
+                if overflow > 0 {
+                    drop_overflow(world, to_pid, id, overflow);
+                }
+            }
+        }
+        op::BOTH_DROPSLOT => {
+            // Engine-TS BOTH_DROPSLOT: drop one player's slot at `coord`, owned
+            // by the *other* player (the PvP-drop recipient). Secondary swaps
+            // from/to like BOTH_MOVEINV.
+            state.pointer_check(Pointer::ActivePlayer)?;
+            let [inv, coord, slot, duration] = state.pop_ints::<4>();
+            let secondary = state.secondary();
+            let (from_pid, to_pid) = if secondary {
+                (state.active_player2, state.active_player)
+            } else {
+                (state.active_player, state.active_player2)
+            };
+            let from_pid = from_pid.ok_or("BOTH_DROPSLOT: missing from player")?;
+            let to_pid = to_pid.ok_or("BOTH_DROPSLOT: missing to player")?;
+            if let Some((id, count)) = world.inv_get_slot(from_pid, inv, slot) {
+                world.inv_set(from_pid, inv, -1, 0, slot);
+                let (x, z, level) = unpack_coord(coord);
+                world.add_ground_obj(id, count, x, z, level, to_pid as i32, duration);
+            } else {
+                return Err("both_dropslot: slot is empty".to_string());
+            }
+        }
+
         // ── Player ops ────────────────────────────────────────────
         op::MES => {
             state.pointer_check(Pointer::ActivePlayer)?;
@@ -1229,6 +1690,130 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             // pause-button / count-dialog resume value).
             state.push_int(state.last_int);
         }
+        op::LAST_ITEM => {
+            // Engine-TS LAST_ITEM: the item last acted on. Only valid in the
+            // held/inv-button triggers.
+            require_trigger(state, &OPHELD_OR_INVBUTTON, "last_item")?;
+            state.push_int(active_player(state, world)?.last_item);
+        }
+        op::LAST_SLOT => {
+            require_trigger(state, &OPHELD_OR_INVBUTTON_D, "last_slot")?;
+            state.push_int(active_player(state, world)?.last_slot);
+        }
+        op::LAST_USEITEM => {
+            require_trigger(state, &USE_TRIGGERS, "last_useitem")?;
+            state.push_int(active_player(state, world)?.last_use_item);
+        }
+        op::LAST_USESLOT => {
+            require_trigger(state, &USE_TRIGGERS, "last_useslot")?;
+            state.push_int(active_player(state, world)?.last_use_slot);
+        }
+        op::LAST_TARGETSLOT => {
+            require_trigger(state, &[trigger::INV_BUTTOND], "last_targetslot")?;
+            state.push_int(active_player(state, world)?.last_target_slot);
+        }
+        op::ALLOWDESIGN => {
+            // Engine-TS ALLOWDESIGN: gate the character-design interface.
+            let v = state.pop_int();
+            active_player(state, world)?.allow_design = v == 1;
+        }
+        op::P_APRANGE => {
+            // Engine-TS P_APRANGE: set the interaction approach range and mark
+            // it script-set this tick. Requires protected access.
+            state.pointer_check(Pointer::ProtectedActivePlayer)?;
+            let range = state.pop_int();
+            let p = active_player(state, world)?;
+            p.ap_range = range;
+            p.ap_range_called = true;
+        }
+        op::P_TRANSMOGRIFY => {
+            // Engine-TS P_TRANSMOGRIFY: render the player as npc `id` (-1 = off).
+            // Engine-TS bounds-checks against NpcType.count; we accept -1 plus
+            // any id with loaded npc config.
+            let id = state.pop_int();
+            if id < -1 {
+                return Err(format!("P_TRANSMOGRIFY invalid npc: {id}"));
+            }
+            let p = active_player(state, world)?;
+            p.transmog = id;
+            p.appearance_seq = p.appearance_seq.wrapping_add(1);
+        }
+        op::SESSION_LOG => {
+            // Engine-TS SESSION_LOG: record a session event. OS1 has no session
+            // DB, so log it (eventType is offset by +2 like the reference).
+            let event = state.pop_string();
+            let event_type = state.pop_int() + 2;
+            let p = active_player(state, world)?;
+            eprintln!("[session] {} type={event_type}: {event}", p.username);
+        }
+        op::WEALTH_EVENT => {
+            // Engine-TS WEALTH_EVENT: record a wealth-transfer event. No wealth
+            // DB in OS1 → log it.
+            let name = state.pop_string();
+            let [event_type, count, value] = state.pop_ints::<3>();
+            let p = active_player(state, world)?;
+            eprintln!(
+                "[wealth] {} type={event_type} {count}x{name} value={value}",
+                p.username
+            );
+        }
+        op::LAST_LOGIN_INFO => {
+            // Engine-TS LAST_LOGIN_INFO: send the welcome-screen last-login info.
+            // The rev1 packet is just the previous-login IP (0 until the conn
+            // layer records it).
+            let p = active_player(state, world)?;
+            let ip = p.last_login_ip;
+            p.write(msg::last_login_info(ip));
+        }
+        op::HUNTALL => {
+            // Engine-TS HUNTALL: gather every player within `distance` (chebyshev)
+            // of the coord on its level, optionally filtered by line-of-sight
+            // (checkVis 1) or line-of-walk (2). Stored nearest-last so HUNTNEXT's
+            // pop() yields nearest first.
+            let [coord, distance, check_vis] = state.pop_ints::<3>();
+            let (cx, cz, clevel) = unpack_coord(coord);
+            let mut found: Vec<(usize, i32)> = world
+                .players
+                .iter()
+                .enumerate()
+                .filter_map(|(pid, slot)| {
+                    let p = slot.as_ref()?;
+                    let e = &p.entity;
+                    if e.level != clevel {
+                        return None;
+                    }
+                    let d = (e.x - cx).abs().max((e.z - cz).abs());
+                    if d > distance {
+                        return None;
+                    }
+                    let vis_ok = match check_vis {
+                        1 => world.collision.line_of_sight(clevel, e.x, e.z, cx, cz),
+                        2 => world.collision.line_of_walk(clevel, e.x, e.z, cx, cz),
+                        _ => true,
+                    };
+                    vis_ok.then_some((pid, d))
+                })
+                .collect();
+            found.sort_by_key(|&(_, d)| d);
+            state.player_iterator = found.into_iter().rev().map(|(pid, _)| pid).collect();
+        }
+        op::HUNTNEXT => {
+            // Engine-TS HUNTNEXT: advance the player iterator, setting the next
+            // player active (push 1), or push 0 when exhausted.
+            match state.player_iterator.pop() {
+                Some(pid) => {
+                    let secondary = state.secondary();
+                    if secondary {
+                        state.active_player2 = Some(pid);
+                    } else {
+                        state.active_player = Some(pid);
+                    }
+                    state.pointer_add(crate::script::state::ACTIVE_PLAYER[secondary as usize]);
+                    state.push_int(1);
+                }
+                None => state.push_int(0),
+            }
+        }
         op::STAT => {
             let stat = state.pop_int() as usize;
             let p = active_player(state, world)?;
@@ -1496,6 +2081,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             state.pointer_check(Pointer::ProtectedActivePlayer)?;
             let pid = state.active_player.ok_or("no active_player")?;
             if let Some(p) = world.players.get_mut(pid).and_then(|o| o.as_mut()) {
+                p.interaction = None;
                 p.entity.clear_interaction();
                 p.unset_map_flag();
             }
@@ -1508,9 +2094,88 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             state.pointer_check(Pointer::ProtectedActivePlayer)?;
             let pid = state.active_player.ok_or("no active_player")?;
             if let Some(p) = world.players.get_mut(pid).and_then(|o| o.as_mut()) {
+                p.interaction = None;
                 p.entity.clear_interaction();
             }
             world.close_modal(pid);
+        }
+        op::P_OPLOC | op::P_OPNPC | op::P_OPOBJ | op::P_OPPLAYER => {
+            // Engine-TS P_OPLOC/OPNPC/OPOBJ/OPPLAYER: begin an op-N interaction
+            // with the active loc/npc/obj/secondary-player. `type` is 1-based
+            // (1..5). Locs/objs/npcs only interact if the type has that op slot.
+            // Locs and objs queue an initial waypoint toward the target.
+            state.pointer_check(Pointer::ProtectedActivePlayer)?;
+            let ty = state.pop_int() - 1;
+            if !(0..5).contains(&ty) {
+                return Err(format!("invalid op index: {}", ty + 1));
+            }
+            let pid = state.active_player.ok_or("no active_player")?;
+            match opcode {
+                op::P_OPLOC => {
+                    let (x, z, level, id, shape, angle) = state.active_loc.ok_or("no active_loc")?;
+                    let has = world.loc_info.get(&id).and_then(|i| i.op.get(ty as usize)).is_some_and(|o| o.is_some());
+                    if has {
+                        world.stop_action(pid);
+                        let target = player::InteractTarget::Loc { x, z, level, id, shape, angle };
+                        if !world.in_operable_distance(pid, target) {
+                            if let Some(p) = world.players[pid].as_mut() {
+                                p.entity.queue_waypoints(&[(x, z)]);
+                            }
+                        }
+                        world.set_interaction(pid, target, trigger::APLOC1 as i32 + ty, -1);
+                    }
+                }
+                op::P_OPOBJ => {
+                    let (x, z, level, id) = state.active_obj.ok_or("no active_obj")?;
+                    let has = world.obj_info.get(&id).and_then(|i| i.op.get(ty as usize)).is_some_and(|o| o.is_some());
+                    if has {
+                        world.stop_action(pid);
+                        let target = player::InteractTarget::Obj { x, z, level, id };
+                        if !world.in_operable_distance(pid, target) {
+                            if let Some(p) = world.players[pid].as_mut() {
+                                p.entity.queue_waypoints(&[(x, z)]);
+                            }
+                        }
+                        world.set_interaction(pid, target, trigger::APOBJ1 as i32 + ty, -1);
+                    }
+                }
+                op::P_OPNPC => {
+                    let nid = state.active_npc.ok_or("no active_npc")?;
+                    let type_id = world.npcs.get(nid).and_then(|o| o.as_ref()).map(|n| n.type_id);
+                    let has = type_id
+                        .and_then(|t| world.npc_info.get(&t))
+                        .and_then(|i| i.op.get(ty as usize))
+                        .is_some_and(|o| o.is_some());
+                    if has {
+                        world.stop_action(pid);
+                        world.set_interaction(pid, player::InteractTarget::Npc(nid), trigger::APNPC1 as i32 + ty, -1);
+                    }
+                }
+                _ => {
+                    // P_OPPLAYER
+                    let p2 = state.active_player2.ok_or("no active_player2")?;
+                    world.stop_action(pid);
+                    world.set_interaction(pid, player::InteractTarget::Player(p2), trigger::APPLAYER1 as i32 + ty, -1);
+                }
+            }
+        }
+        op::P_OPNPCT => {
+            // Engine-TS P_OPNPCT: cast spell `com` on the active npc.
+            state.pointer_check(Pointer::ProtectedActivePlayer)?;
+            let com = state.pop_int();
+            let nid = state.active_npc.ok_or("no active_npc")?;
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.stop_action(pid);
+            world.set_interaction(pid, player::InteractTarget::Npc(nid), trigger::APNPCT as i32, com);
+        }
+        op::P_OPPLAYERT => {
+            // Engine-TS P_OPPLAYERT: cast spell `com` on the secondary player.
+            state.pointer_check(Pointer::ProtectedActivePlayer)?;
+            let com = state.pop_int();
+            let p2 = state.active_player2.ok_or("no active_player2")?;
+            let pid = state.active_player.ok_or("no active_player")?;
+            world.stop_action(pid);
+            world.set_interaction(pid, player::InteractTarget::Player(p2), trigger::APPLAYERT as i32, com);
         }
         op::WEIGHT => {
             // Engine-TS WEIGHT: push the player's run weight (grams).
@@ -2147,6 +2812,150 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             let n = active_npc(state, world)?;
             state.push_int(n.nid as i32);
         }
+        op::NPC_GETMODE => {
+            // Engine-TS NPC_GETMODE: the active npc's current AI mode.
+            state.push_int(active_npc(state, world)?.mode);
+        }
+        op::NPC_SETHUNT => {
+            // Engine-TS NPC_SETHUNT: set the active npc's hunt search radius.
+            let range = state.pop_int();
+            active_npc(state, world)?.hunt_range = range;
+        }
+        op::NPC_SETHUNTMODE => {
+            // Engine-TS NPC_SETHUNTMODE: set the hunt type id (-1 clears).
+            // Engine-TS validates against HuntType config; OS1 has no HuntType
+            // decode, so the id is stored unvalidated (the hunt system that
+            // consumes it lands later).
+            let hunt = state.pop_int();
+            active_npc(state, world)?.hunt_mode = hunt;
+        }
+        op::NPC_HASOP => {
+            // Engine-TS NPC_HASOP: 1 if the active npc's type has op slot `op`
+            // (1-based), else 0.
+            let op_idx = state.pop_int();
+            let type_id = active_npc(state, world)?.type_id;
+            let has = world
+                .npc_info
+                .get(&type_id)
+                .and_then(|i| usize::try_from(op_idx - 1).ok().and_then(|k| i.op.get(k)))
+                .is_some_and(|o| o.is_some());
+            state.push_int(i32::from(has));
+        }
+        op::NPC_SETMODE => {
+            // Engine-TS NPC_SETMODE: set the npc's AI mode. NONE/WANDER/PATROL
+            // (0/1/2) and NULL (-1) just clear the target; the higher modes aim
+            // it at the active player (3..=16), loc (17..=26), obj (27..=36), or
+            // secondary npc (37+). An absent target resets to NONE.
+            let mode = state.pop_int();
+            let nid = state.active_npc.ok_or("no active_npc")?;
+            if mode == -1 || mode <= 2 {
+                if let Some(n) = world.npcs[nid].as_mut() {
+                    n.mode = mode.max(0);
+                    n.target = None;
+                    n.entity.clear_interaction();
+                    n.entity.waypoints.clear();
+                }
+            } else {
+                let target = if mode >= 37 {
+                    state.active_npc2.map(player::InteractTarget::Npc)
+                } else if mode >= 27 {
+                    state.active_obj.map(|(x, z, level, id)| player::InteractTarget::Obj { x, z, level, id })
+                } else if mode >= 17 {
+                    state
+                        .active_loc
+                        .map(|(x, z, level, id, shape, angle)| player::InteractTarget::Loc { x, z, level, id, shape, angle })
+                } else {
+                    state.active_player.map(player::InteractTarget::Player)
+                };
+                if let Some(n) = world.npcs[nid].as_mut() {
+                    match target {
+                        Some(t) => {
+                            n.mode = mode;
+                            n.target = Some(t);
+                            // Engine-TS setInteraction sets the face once; the
+                            // client then tracks the entity/coord.
+                            match t {
+                                player::InteractTarget::Player(p2) => n.entity.set_face_entity(p2 as i32 + 32768),
+                                player::InteractTarget::Npc(t2) => n.entity.set_face_entity(t2 as i32),
+                                player::InteractTarget::Loc { x, z, .. }
+                                | player::InteractTarget::Obj { x, z, .. } => n.entity.set_face_coord_target(x, z),
+                            }
+                        }
+                        None => {
+                            n.mode = 0;
+                            n.target = None;
+                            n.entity.clear_interaction();
+                        }
+                    }
+                }
+            }
+        }
+        op::NPC_INRANGE => {
+            // Engine-TS NPC_INRANGE: targetWithinMaxRange for the active npc.
+            let nid = state.active_npc.ok_or("no active_npc")?;
+            state.push_int(i32::from(world.npc_target_within_maxrange(nid)));
+        }
+        op::NPC_HUNTALL => {
+            // Engine-TS NPC_HUNTALL: gather npcs within `distance` (chebyshev) of
+            // the coord on its level, optionally line-of-sight/walk filtered, into
+            // the npc iterator (nearest-last, so NPC_FINDNEXT pops nearest first).
+            let [coord, distance, check_vis] = state.pop_ints::<3>();
+            let (cx, cz, clevel) = unpack_coord(coord);
+            let mut found: Vec<(usize, i32)> = world
+                .npcs_within(cx, cz, clevel, distance)
+                .into_iter()
+                .filter_map(|nid| {
+                    let n = world.npcs[nid].as_ref()?;
+                    if !n.active || n.entity.level != clevel {
+                        return None;
+                    }
+                    let d = (n.entity.x - cx).abs().max((n.entity.z - cz).abs());
+                    if d > distance {
+                        return None;
+                    }
+                    hunt_visible(world, clevel, n.entity.x, n.entity.z, cx, cz, check_vis)
+                        .then_some((nid, d))
+                })
+                .collect();
+            found.sort_by_key(|&(_, d)| d);
+            state.npc_iterator = found.into_iter().rev().map(|(nid, _)| nid).collect();
+        }
+        op::NPC_HUNT => {
+            // Engine-TS NPC_HUNT: set the closest (by euclidean distance) npc in
+            // range active, push 1; else push 0.
+            let [coord, distance, check_vis] = state.pop_ints::<3>();
+            let (cx, cz, clevel) = unpack_coord(coord);
+            let closest = world
+                .npcs_within(cx, cz, clevel, distance)
+                .into_iter()
+                .filter_map(|nid| {
+                    let n = world.npcs[nid].as_ref()?;
+                    if !n.active || n.entity.level != clevel {
+                        return None;
+                    }
+                    let (dx, dz) = (n.entity.x - cx, n.entity.z - cz);
+                    if dx.abs().max(dz.abs()) > distance {
+                        return None;
+                    }
+                    hunt_visible(world, clevel, n.entity.x, n.entity.z, cx, cz, check_vis)
+                        .then_some((nid, (dx * dx + dz * dz) as i64))
+                })
+                .min_by_key(|&(_, e)| e)
+                .map(|(nid, _)| nid);
+            match closest {
+                Some(nid) => {
+                    let secondary = state.secondary();
+                    if secondary {
+                        state.active_npc2 = Some(nid);
+                    } else {
+                        state.active_npc = Some(nid);
+                    }
+                    state.pointer_add(crate::script::state::ACTIVE_NPC[secondary as usize]);
+                    state.push_int(1);
+                }
+                None => state.push_int(0),
+            }
+        }
 
         _ => {
             return Err("unhandled command".to_string());
@@ -2168,6 +2977,75 @@ fn stat_random_value(level: i32, low: i32, high: i32) -> i32 {
     // level (> 99) makes `99 - level` negative, a level drained to 0 makes
     // `level - 1` negative. `div_euclid` floors for the positive divisor 98.
     (low * (99 - level)).div_euclid(98) + (high * (level - 1)).div_euclid(98) + 1
+}
+
+use crate::script::trigger;
+
+/// Triggers in which LAST_ITEM is valid (Engine-TS allowedTriggers).
+const OPHELD_OR_INVBUTTON: [u16; 12] = [
+    trigger::OPHELD1, trigger::OPHELD2, trigger::OPHELD3, trigger::OPHELD4, trigger::OPHELD5,
+    trigger::OPHELDU, trigger::OPHELDT,
+    trigger::INV_BUTTON1, trigger::INV_BUTTON2, trigger::INV_BUTTON3, trigger::INV_BUTTON4,
+    trigger::INV_BUTTON5,
+];
+/// LAST_SLOT additionally allows INV_BUTTOND.
+const OPHELD_OR_INVBUTTON_D: [u16; 13] = [
+    trigger::OPHELD1, trigger::OPHELD2, trigger::OPHELD3, trigger::OPHELD4, trigger::OPHELD5,
+    trigger::OPHELDU, trigger::OPHELDT,
+    trigger::INV_BUTTON1, trigger::INV_BUTTON2, trigger::INV_BUTTON3, trigger::INV_BUTTON4,
+    trigger::INV_BUTTON5, trigger::INV_BUTTOND,
+];
+/// LAST_USEITEM / LAST_USESLOT triggers (the "use X on Y" approach/op set).
+const USE_TRIGGERS: [u16; 9] = [
+    trigger::OPHELDU, trigger::APOBJU, trigger::APLOCU, trigger::APNPCU, trigger::APPLAYERU,
+    trigger::OPOBJU, trigger::OPLOCU, trigger::OPNPCU, trigger::OPPLAYERU,
+];
+
+/// Engine-TS allowedTriggers guard: error when an op is used outside the
+/// triggers where its context value is meaningful.
+fn require_trigger(state: &ScriptState, allowed: &[u16], op: &str) -> Result<(), String> {
+    if allowed.contains(&state.trigger) {
+        Ok(())
+    } else {
+        Err(format!("{op} is not safe to use in this trigger"))
+    }
+}
+
+/// HuntVis filter — 0 = off, 1 = line-of-sight, 2 = line-of-walk — between two
+/// tiles on `level`. Used by the hunt ops.
+fn hunt_visible(world: &World, level: i32, fx: i32, fz: i32, tx: i32, tz: i32, check_vis: i32) -> bool {
+    match check_vis {
+        1 => world.collision.line_of_sight(level, fx, fz, tx, tz),
+        2 => world.collision.line_of_walk(level, fx, fz, tx, tz),
+        _ => true,
+    }
+}
+
+/// Drop `count` of `obj` at player `pid`'s tile, owned by them for 200 ticks —
+/// the Engine-TS inventory-overflow behaviour (singles for a non-stackable obj
+/// or a 1-overflow, else one stack).
+fn drop_overflow(world: &mut World, pid: usize, obj: i32, count: i32) {
+    let Some((x, z, level)) = world.players[pid].as_ref().map(|p| (p.entity.x, p.entity.z, p.entity.level))
+    else {
+        return;
+    };
+    if !world.obj_stackable(obj) || count == 1 {
+        for _ in 0..count {
+            world.add_ground_obj(obj, 1, x, z, level, pid as i32, 200);
+        }
+    } else {
+        world.add_ground_obj(obj, count, x, z, level, pid as i32, 200);
+    }
+}
+
+/// Engine-TS config-name fallback: the type's `name` if set, else `"null"`.
+/// (Engine-TS chains `name ?? debugname ?? 'null'`; OS1 configs don't decode a
+/// debugname, so an empty name falls straight through to `"null"`.)
+fn config_name(name: Option<&String>) -> String {
+    match name {
+        Some(n) if !n.is_empty() => n.clone(),
+        _ => "null".to_string(),
+    }
 }
 
 /// Unpack a RuneScript coord int into `(x, z, level)` — the layout used by
@@ -2653,6 +3531,514 @@ mod tests {
         // …and unblocks it when removed.
         w.del_loc(3220, 3220, 0, 10);
         assert!(!w.collision.is_blocked(3220, 3220, 0));
+    }
+
+    #[test]
+    fn config_query_ops_read_loaded_config() {
+        use crate::world::{LocInfo, NpcInfo, ObjInfo};
+        let mut w = World::new();
+        w.loc_info.insert(1530, LocInfo { name: "Door".into(), width: 1, length: 2, ..Default::default() });
+        w.obj_info.insert(
+            995,
+            ObjInfo { name: "Coins".into(), cost: 1, stackable: 1, members: false, certlink: -1, certtemplate: -1, ..Default::default() },
+        );
+        // Shark (385) is the un-noted item; its note (386) has certtemplate>=0.
+        w.obj_info.insert(
+            385,
+            ObjInfo { name: "Shark".into(), cost: 100, stackable: 0, members: true, certlink: 386, certtemplate: -1, ..Default::default() },
+        );
+        w.obj_info.insert(
+            386,
+            ObjInfo { name: "Shark".into(), cost: 100, stackable: 0, members: true, certlink: 385, certtemplate: 799, ..Default::default() },
+        );
+        w.npc_info.insert(
+            1,
+            NpcInfo { name: "Hans".into(), size: 1, vislevel: -1, op: [Some("Talk-to".into()), None, None, None, None] },
+        );
+
+        // Integer readers.
+        assert_eq!(pushed(&mut w, &[1530], op::LC_WIDTH), 1);
+        assert_eq!(pushed(&mut w, &[1530], op::LC_LENGTH), 2);
+        assert_eq!(pushed(&mut w, &[995], op::OC_COST), 1);
+        assert_eq!(pushed(&mut w, &[385], op::OC_MEMBERS), 1);
+        assert_eq!(pushed(&mut w, &[995], op::OC_STACKABLE), 1);
+        assert_eq!(pushed(&mut w, &[385], op::OC_STACKABLE), 0);
+        assert_eq!(pushed(&mut w, &[1], op::NC_SIZE), 1);
+        assert_eq!(pushed(&mut w, &[1], op::NC_VISLEVEL), -1);
+        // OC_CERT on the un-noted item → its note id; OC_UNCERT on the note → base.
+        assert_eq!(pushed(&mut w, &[385], op::OC_CERT), 386);
+        assert_eq!(pushed(&mut w, &[386], op::OC_UNCERT), 385);
+        // Unknown id falls back to the id itself.
+        assert_eq!(pushed(&mut w, &[999], op::OC_CERT), 999);
+
+        // String readers (read the string stack the op pushed).
+        let st = run_op(&mut w, None, &[1530], op::LC_NAME);
+        assert_eq!(st.string_stack.last().unwrap(), "Door");
+        let st = run_op(&mut w, None, &[995], op::OC_NAME);
+        assert_eq!(st.string_stack.last().unwrap(), "Coins");
+        let st = run_op(&mut w, None, &[1], op::NC_NAME);
+        assert_eq!(st.string_stack.last().unwrap(), "Hans");
+        let st = run_op(&mut w, None, &[1, 1], op::NC_OP);
+        assert_eq!(st.string_stack.last().unwrap(), "Talk-to");
+        let st = run_op(&mut w, None, &[1, 2], op::NC_OP);
+        assert_eq!(st.string_stack.last().unwrap(), "");
+        // Unknown config → "null".
+        let st = run_op(&mut w, None, &[42], op::OC_NAME);
+        assert_eq!(st.string_stack.last().unwrap(), "null");
+    }
+
+    #[test]
+    fn entity_name_ops_read_active_type() {
+        use crate::world::{LocInfo, NpcInfo, ObjInfo};
+        let mut w = World::new();
+        w.loc_info.insert(1530, LocInfo { name: "Door".into(), width: 1, length: 1, ..Default::default() });
+        w.obj_info.insert(995, ObjInfo { name: "Coins".into(), ..Default::default() });
+        w.npc_info.insert(1, NpcInfo { name: "Hans".into(), size: 1, vislevel: -1, op: Default::default() });
+
+        // NPC_NAME reads the active npc's type.
+        let nid = w.add_npc(1, 3200, 3200, 0).unwrap();
+        let st = run_op_npc(&mut w, nid, &[], op::NPC_NAME);
+        assert_eq!(st.string_stack.last().unwrap(), "Hans");
+
+        // LOC_NAME / OBJ_NAME read the active loc/obj — set them directly.
+        let mut s = ScriptState::new(Arc::new(op_script(&[], op::LOC_NAME)), &[]);
+        s.active_loc = Some((3200, 3200, 0, 1530, 0, 0));
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert_eq!(s.string_stack.last().unwrap(), "Door");
+
+        let mut s = ScriptState::new(Arc::new(op_script(&[], op::OBJ_NAME)), &[]);
+        s.active_obj = Some((3200, 3200, 0, 995));
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert_eq!(s.string_stack.last().unwrap(), "Coins");
+    }
+
+    #[test]
+    fn last_item_ops_honour_the_trigger_guard() {
+        let mut w = World::new();
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        {
+            let p = w.players[pid].as_mut().unwrap();
+            p.last_item = 995;
+            p.last_slot = 3;
+            p.last_use_item = 386;
+            p.last_use_slot = 7;
+            p.last_target_slot = 9;
+        }
+        let run_t = |w: &mut World, op_code: u16, trig: u16| {
+            let mut s = ScriptState::new(Arc::new(op_script(&[], op_code)), &[]);
+            s.active_player = Some(pid);
+            s.trigger = trig;
+            let exec = execute(&mut s, w);
+            (exec, s.int_stack.last().copied())
+        };
+        assert_eq!(run_t(&mut w, op::LAST_ITEM, trigger::OPHELD1), (Execution::Finished, Some(995)));
+        assert_eq!(run_t(&mut w, op::LAST_SLOT, trigger::INV_BUTTOND), (Execution::Finished, Some(3)));
+        assert_eq!(run_t(&mut w, op::LAST_USEITEM, trigger::APNPCU), (Execution::Finished, Some(386)));
+        assert_eq!(run_t(&mut w, op::LAST_USESLOT, trigger::OPHELDU), (Execution::Finished, Some(7)));
+        assert_eq!(run_t(&mut w, op::LAST_TARGETSLOT, trigger::INV_BUTTOND), (Execution::Finished, Some(9)));
+        // Used outside an allowed trigger → the script aborts.
+        assert_eq!(run_t(&mut w, op::LAST_ITEM, trigger::PROC).0, Execution::Aborted);
+    }
+
+    #[test]
+    fn player_flag_ops_set_fields() {
+        let mut w = World::new();
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        run_op(&mut w, Some(pid), &[1], op::ALLOWDESIGN);
+        assert!(w.players[pid].as_ref().unwrap().allow_design);
+        run_op(&mut w, Some(pid), &[0], op::ALLOWDESIGN);
+        assert!(!w.players[pid].as_ref().unwrap().allow_design);
+
+        run_op(&mut w, Some(pid), &[42], op::P_TRANSMOGRIFY);
+        assert_eq!(w.players[pid].as_ref().unwrap().transmog, 42);
+
+        // P_APRANGE requires protected access.
+        let mut s = ScriptState::new(Arc::new(op_script(&[5], op::P_APRANGE)), &[]);
+        s.active_player = Some(pid);
+        s.pointer_add(Pointer::ProtectedActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        let p = w.players[pid].as_ref().unwrap();
+        assert_eq!(p.ap_range, 5);
+        assert!(p.ap_range_called);
+
+        // SESSION_LOG / WEALTH_EVENT just log and finish.
+        let mut s = ScriptState::new(Arc::new(op_script(&[1], op::SESSION_LOG)), &[]);
+        s.active_player = Some(pid);
+        s.string_stack.push("login".into());
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        let mut s = ScriptState::new(Arc::new(op_script(&[2, 5, 100], op::WEALTH_EVENT)), &[]);
+        s.active_player = Some(pid);
+        s.string_stack.push("coins".into());
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+    }
+
+    #[test]
+    fn huntall_gathers_players_and_huntnext_iterates() {
+        let mut w = World::new();
+        let near = w.add_player("near".into(), 3201, 3200, 0).unwrap();
+        let _far = w.add_player("far".into(), 3204, 3200, 0).unwrap();
+        let _upstairs = w.add_player("up".into(), 3201, 3200, 1).unwrap();
+        // HUNTALL from (3200,3200,0), distance 5, no vis check.
+        let mut s = ScriptState::new(
+            Arc::new(op_script(&[coord(0, 3200, 3200), 5, 0], op::HUNTALL)),
+            &[],
+        );
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        // Level-1 player excluded; nearest is on top of the pop stack.
+        assert_eq!(s.player_iterator.len(), 2);
+        assert_eq!(s.player_iterator.last().copied(), Some(near));
+
+        // HUNTNEXT pops nearest first and sets the active player.
+        let mut s2 = ScriptState::new(Arc::new(op_script(&[], op::HUNTNEXT)), &[]);
+        s2.player_iterator = s.player_iterator.clone();
+        assert_eq!(execute(&mut s2, &mut w), Execution::Finished);
+        assert_eq!(s2.int_stack.last().copied(), Some(1));
+        assert_eq!(s2.active_player, Some(near));
+
+        // Exhausted iterator → 0.
+        let mut s3 = ScriptState::new(Arc::new(op_script(&[], op::HUNTNEXT)), &[]);
+        assert_eq!(execute(&mut s3, &mut w), Execution::Finished);
+        assert_eq!(s3.int_stack.last().copied(), Some(0));
+    }
+
+    #[test]
+    fn inventory_ops_add_remove_and_query() {
+        use crate::world::ObjInfo;
+        let mut w = World::new();
+        w.inv_sizes.insert(93, 28);
+        w.inv_sizes.insert(94, 1);
+        w.obj_info.insert(995, ObjInfo { name: "Coins".into(), stackable: 1, ..Default::default() });
+        w.obj_info.insert(1277, ObjInfo { name: "Sword".into(), stackable: 0, ..Default::default() });
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        let run_inv = |w: &mut World, ints: &[i32], op_code: u16| -> ScriptState {
+            let mut s = ScriptState::new(Arc::new(op_script(ints, op_code)), &[]);
+            s.active_player = Some(pid);
+            s.pointer_add(Pointer::ActivePlayer);
+            assert_eq!(execute(&mut s, w), Execution::Finished, "inv op finished");
+            s
+        };
+        let last = |s: ScriptState| s.int_stack.last().copied();
+
+        assert_eq!(last(run_inv(&mut w, &[93], op::INV_SIZE)), Some(28));
+        // Stackable coins merge into one slot.
+        run_inv(&mut w, &[93, 995, 100], op::INV_ADD);
+        run_inv(&mut w, &[93, 995, 50], op::INV_ADD);
+        assert_eq!(last(run_inv(&mut w, &[93, 995], op::INV_TOTAL)), Some(150));
+        assert_eq!(last(run_inv(&mut w, &[93], op::INV_FREESPACE)), Some(27));
+        assert_eq!(last(run_inv(&mut w, &[93, 0], op::INV_GETOBJ)), Some(995));
+        assert_eq!(last(run_inv(&mut w, &[93, 0], op::INV_GETNUM)), Some(150));
+        // Non-stackable swords take a slot each.
+        run_inv(&mut w, &[93, 1277, 3], op::INV_ADD);
+        assert_eq!(last(run_inv(&mut w, &[93, 1277], op::INV_TOTAL)), Some(3));
+        assert_eq!(last(run_inv(&mut w, &[93], op::INV_FREESPACE)), Some(24));
+        run_inv(&mut w, &[93, 1277, 2], op::INV_DEL);
+        assert_eq!(last(run_inv(&mut w, &[93, 1277], op::INV_TOTAL)), Some(1));
+        // Direct slot writes.
+        run_inv(&mut w, &[93, 5, 995, 99], op::INV_SETSLOT);
+        assert_eq!(last(run_inv(&mut w, &[93, 5], op::INV_GETNUM)), Some(99));
+        run_inv(&mut w, &[93, 5], op::INV_DELSLOT);
+        assert_eq!(last(run_inv(&mut w, &[93, 5], op::INV_GETOBJ)), Some(-1));
+        // Item-space: an existing coin stack accepts more.
+        assert_eq!(last(run_inv(&mut w, &[93, 995, 100, 28], op::INV_ITEMSPACE)), Some(1));
+        run_inv(&mut w, &[93], op::INV_CLEAR);
+        assert_eq!(last(run_inv(&mut w, &[93, 995], op::INV_TOTAL)), Some(0));
+
+        // Overflow drops to the ground: a size-1 inv, add 2 → 1 in, 1 dropped.
+        run_inv(&mut w, &[94, 1277, 2], op::INV_ADD);
+        assert_eq!(last(run_inv(&mut w, &[94], op::INV_FREESPACE)), Some(0));
+        assert!(w.find_obj(3200, 3200, 0, 1277, pid).is_some(), "overflow dropped to ground");
+    }
+
+    #[test]
+    fn inventory_move_drop_and_take() {
+        use crate::world::ObjInfo;
+        let mut w = World::new();
+        w.inv_sizes.insert(93, 28);
+        w.inv_sizes.insert(95, 10);
+        w.obj_info.insert(995, ObjInfo { name: "Coins".into(), stackable: 1, ..Default::default() });
+        w.obj_info.insert(1277, ObjInfo { name: "Sword".into(), stackable: 0, ..Default::default() });
+        w.obj_info.insert(385, ObjInfo { name: "Shark".into(), stackable: 0, certlink: 386, certtemplate: -1, ..Default::default() });
+        w.obj_info.insert(386, ObjInfo { name: "Shark".into(), stackable: 1, certlink: 385, certtemplate: 799, ..Default::default() });
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        let run_inv = |w: &mut World, ints: &[i32], op_code: u16| -> ScriptState {
+            let mut s = ScriptState::new(Arc::new(op_script(ints, op_code)), &[]);
+            s.active_player = Some(pid);
+            s.pointer_add(Pointer::ActivePlayer);
+            assert_eq!(execute(&mut s, w), Execution::Finished, "inv op finished");
+            s
+        };
+        let last = |s: ScriptState| s.int_stack.last().copied();
+
+        // MOVETOSLOT swaps slots.
+        run_inv(&mut w, &[93, 1277, 1], op::INV_ADD);
+        run_inv(&mut w, &[93, 93, 0, 3], op::INV_MOVETOSLOT);
+        assert_eq!(last(run_inv(&mut w, &[93, 0], op::INV_GETOBJ)), Some(-1));
+        assert_eq!(last(run_inv(&mut w, &[93, 3], op::INV_GETOBJ)), Some(1277));
+
+        // MOVEFROMSLOT moves a whole slot to another inv.
+        run_inv(&mut w, &[93, 95, 3], op::INV_MOVEFROMSLOT);
+        assert_eq!(last(run_inv(&mut w, &[93, 1277], op::INV_TOTAL)), Some(0));
+        assert_eq!(last(run_inv(&mut w, &[95, 1277], op::INV_TOTAL)), Some(1));
+
+        // MOVEITEM moves stackables.
+        run_inv(&mut w, &[93, 995, 200], op::INV_ADD);
+        run_inv(&mut w, &[93, 95, 995, 200], op::INV_MOVEITEM);
+        assert_eq!(last(run_inv(&mut w, &[95, 995], op::INV_TOTAL)), Some(200));
+
+        // CERT / UNCERT remap on move.
+        run_inv(&mut w, &[93, 385, 1], op::INV_ADD);
+        run_inv(&mut w, &[93, 95, 385, 1], op::INV_MOVEITEM_CERT);
+        assert_eq!(last(run_inv(&mut w, &[95, 386], op::INV_TOTAL)), Some(1));
+        run_inv(&mut w, &[95, 93, 386, 1], op::INV_MOVEITEM_UNCERT);
+        assert_eq!(last(run_inv(&mut w, &[93, 385], op::INV_TOTAL)), Some(1));
+
+        // CHANGESLOT replaces the first matching slot.
+        run_inv(&mut w, &[93, 385, 995, 5], op::INV_CHANGESLOT);
+        assert_eq!(last(run_inv(&mut w, &[93, 385], op::INV_TOTAL)), Some(0));
+        assert_eq!(w.inv_total(pid, 93, 995), 5);
+
+        // DROPITEM puts it on the ground; OBJ_TAKEITEM picks it back up.
+        run_inv(&mut w, &[93, coord(0, 3200, 3200), 995, 5, 100], op::INV_DROPITEM);
+        assert!(w.find_obj(3200, 3200, 0, 995, pid).is_some());
+        let before = w.inv_total(pid, 93, 995);
+        let mut s = ScriptState::new(Arc::new(op_script(&[93], op::OBJ_TAKEITEM)), &[]);
+        s.active_player = Some(pid);
+        s.active_obj = Some((3200, 3200, 0, 995));
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert!(w.inv_total(pid, 93, 995) > before);
+        assert!(w.find_obj(3200, 3200, 0, 995, pid).is_none());
+
+        // DROPALL empties the inv onto the ground.
+        run_inv(&mut w, &[93, 1277, 2], op::INV_ADD);
+        run_inv(&mut w, &[93, coord(0, 3200, 3200), 100], op::INV_DROPALL);
+        assert_eq!(last(run_inv(&mut w, &[93], op::INV_FREESPACE)), Some(28));
+    }
+
+    #[test]
+    fn both_moveinv_and_dropslot_between_players() {
+        use crate::world::ObjInfo;
+        let mut w = World::new();
+        w.inv_sizes.insert(93, 28);
+        w.obj_info.insert(995, ObjInfo { name: "Coins".into(), stackable: 1, ..Default::default() });
+        let p1 = w.add_player("a".into(), 3200, 3200, 0).unwrap();
+        let p2 = w.add_player("b".into(), 3205, 3200, 0).unwrap();
+        w.inv_add(p1, 93, 995, 500);
+
+        // BOTH_MOVEINV (operand 0 → primary p1 → secondary p2).
+        let mut s = ScriptState::new(Arc::new(op_script(&[93, 93], op::BOTH_MOVEINV)), &[]);
+        s.active_player = Some(p1);
+        s.active_player2 = Some(p2);
+        s.pointer_add(Pointer::ActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert_eq!(w.inv_total(p1, 93, 995), 0);
+        assert_eq!(w.inv_total(p2, 93, 995), 500);
+
+        // BOTH_DROPSLOT drops p1's slot 0, owned by p2.
+        w.inv_add(p1, 93, 995, 10);
+        let mut s = ScriptState::new(
+            Arc::new(op_script(&[93, coord(0, 3200, 3200), 0, 100], op::BOTH_DROPSLOT)),
+            &[],
+        );
+        s.active_player = Some(p1);
+        s.active_player2 = Some(p2);
+        s.pointer_add(Pointer::ActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert_eq!(w.inv_total(p1, 93, 995), 0);
+        assert!(w.find_obj(3200, 3200, 0, 995, p2).is_some());
+    }
+
+    #[test]
+    fn inv_dropitem_delayed_spawns_after_delay() {
+        use crate::world::ObjInfo;
+        let mut w = World::new();
+        w.inv_sizes.insert(93, 28);
+        w.obj_info.insert(995, ObjInfo { name: "Coins".into(), stackable: 1, ..Default::default() });
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        w.inv_add(pid, 93, 995, 50);
+        let mut s = ScriptState::new(
+            Arc::new(op_script(&[93, coord(0, 3200, 3200), 995, 50, 100, 2], op::INV_DROPITEM_DELAYED)),
+            &[],
+        );
+        s.active_player = Some(pid);
+        s.pointer_add(Pointer::ActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        // Removed from the inv immediately, but not on the ground yet.
+        assert_eq!(w.inv_total(pid, 93, 995), 0);
+        assert!(w.find_obj(3200, 3200, 0, 995, pid).is_none(), "not spawned yet");
+        w.cycle(); // delay 2 → 1
+        assert!(w.find_obj(3200, 3200, 0, 995, pid).is_none(), "still delayed");
+        w.cycle(); // delay 1 → 0 → spawns
+        assert!(w.find_obj(3200, 3200, 0, 995, pid).is_some(), "spawned after the delay");
+    }
+
+    #[test]
+    fn inv_transmit_sends_and_stops_update_inv() {
+        use crate::world::ObjInfo;
+        let mut w = World::new();
+        w.inv_sizes.insert(93, 28);
+        w.obj_info.insert(995, ObjInfo { name: "Coins".into(), stackable: 1, ..Default::default() });
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        w.inv_add(pid, 93, 995, 100);
+        let transmit = |w: &mut World| {
+            let mut s = ScriptState::new(Arc::new(op_script(&[93, 12345], op::INV_TRANSMIT)), &[]);
+            s.active_player = Some(pid);
+            s.pointer_add(Pointer::ActivePlayer);
+            assert_eq!(execute(&mut s, w), Execution::Finished);
+        };
+        transmit(&mut w);
+        let sent29 = |w: &World| w.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 29);
+        // First flush sends UPDATE_INV_FULL.
+        w.players[pid].as_mut().unwrap().out.clear();
+        w.cycle();
+        assert!(sent29(&w), "UPDATE_INV_FULL sent on first transmit");
+        // Unchanged next tick → not resent.
+        w.players[pid].as_mut().unwrap().out.clear();
+        w.cycle();
+        assert!(!sent29(&w), "not resent when the inv is unchanged");
+        // A mutation re-sends.
+        w.inv_add(pid, 93, 995, 5);
+        w.players[pid].as_mut().unwrap().out.clear();
+        w.cycle();
+        assert!(sent29(&w), "resent after the inv changed");
+        // STOPTRANSMIT clears the component and stops further sends.
+        let mut s = ScriptState::new(Arc::new(op_script(&[12345], op::INV_STOPTRANSMIT)), &[]);
+        s.active_player = Some(pid);
+        s.pointer_add(Pointer::ActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert!(
+            w.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 117),
+            "STOPTRANSMIT (117) sent"
+        );
+        w.inv_add(pid, 93, 995, 5);
+        w.players[pid].as_mut().unwrap().out.clear();
+        w.cycle();
+        assert!(!sent29(&w), "no more sends after stoptransmit");
+    }
+
+    #[test]
+    fn last_login_info_sends_packet() {
+        let mut w = World::new();
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        w.players[pid].as_mut().unwrap().out.clear();
+        run_op(&mut w, Some(pid), &[], op::LAST_LOGIN_INFO);
+        assert!(
+            w.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 241),
+            "LAST_LOGIN_INFO (241) sent"
+        );
+    }
+
+    #[test]
+    fn npc_hunt_finds_closest_and_huntall_iterates() {
+        let mut w = World::new();
+        let near = w.add_npc(1, 3201, 3200, 0).unwrap();
+        let _far = w.add_npc(1, 3204, 3200, 0).unwrap();
+        let _upstairs = w.add_npc(1, 3201, 3200, 1).unwrap();
+        // NPC_HUNT picks the closest npc in range and sets it active.
+        let mut s = ScriptState::new(
+            Arc::new(op_script(&[coord(0, 3200, 3200), 5, 0], op::NPC_HUNT)),
+            &[],
+        );
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert_eq!(s.int_stack.last().copied(), Some(1));
+        assert_eq!(s.active_npc, Some(near));
+        // NPC_HUNTALL fills the npc iterator (level-0 only, nearest on top).
+        let mut s = ScriptState::new(
+            Arc::new(op_script(&[coord(0, 3200, 3200), 5, 0], op::NPC_HUNTALL)),
+            &[],
+        );
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert_eq!(s.npc_iterator.len(), 2);
+        assert_eq!(s.npc_iterator.last().copied(), Some(near));
+    }
+
+    #[test]
+    fn p_opnpc_sets_interaction_only_when_op_present() {
+        use crate::entity::player::InteractTarget;
+        use crate::world::NpcInfo;
+        let mut w = World::new();
+        w.npc_info.insert(
+            1,
+            NpcInfo { name: "x".into(), size: 1, vislevel: -1, op: [Some("Talk-to".into()), None, None, None, None] },
+        );
+        let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
+        let nid = w.add_npc(1, 3205, 3200, 0).unwrap();
+        // P_OPNPC op 1 (present) → interaction set with the AP-trigger base.
+        let mut s = ScriptState::new(Arc::new(op_script(&[1], op::P_OPNPC)), &[]);
+        s.active_player = Some(pid);
+        s.active_npc = Some(nid);
+        s.pointer_add(Pointer::ProtectedActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        let it = w.players[pid].as_ref().unwrap().interaction.expect("interaction set");
+        assert_eq!(it.target, InteractTarget::Npc(nid));
+        assert_eq!(it.op, trigger::APNPC1 as i32);
+        // P_OPNPC op 2 (absent on this npc) → no interaction.
+        w.players[pid].as_mut().unwrap().interaction = None;
+        let mut s = ScriptState::new(Arc::new(op_script(&[2], op::P_OPNPC)), &[]);
+        s.active_player = Some(pid);
+        s.active_npc = Some(nid);
+        s.pointer_add(Pointer::ProtectedActivePlayer);
+        assert_eq!(execute(&mut s, &mut w), Execution::Finished);
+        assert!(w.players[pid].as_ref().unwrap().interaction.is_none(), "no interaction when the op is absent");
+    }
+
+    #[test]
+    fn enum_ops_look_up_values() {
+        use crate::world::EnumData;
+        let mut w = World::new();
+        w.enums.insert(
+            7,
+            EnumData {
+                keys: vec![1, 2],
+                int_values: vec![100, 200],
+                string_values: vec![],
+                default_int: -1,
+                default_string: "null".into(),
+                is_string: false,
+            },
+        );
+        w.enums.insert(
+            8,
+            EnumData {
+                keys: vec![1],
+                int_values: vec![],
+                string_values: vec!["hi".into()],
+                default_int: 0,
+                default_string: "none".into(),
+                is_string: true,
+            },
+        );
+        // ENUM pops [inputType, outputType, enumId, key].
+        assert_eq!(pushed(&mut w, &[0, 0, 7, 2], op::ENUM), 200);
+        assert_eq!(pushed(&mut w, &[0, 0, 7, 9], op::ENUM), -1); // missing key → default
+        assert_eq!(pushed(&mut w, &[7], op::ENUM_GETOUTPUTCOUNT), 2);
+        let st = run_op(&mut w, None, &[0, 0, 8, 1], op::ENUM);
+        assert_eq!(st.string_stack.last().unwrap(), "hi");
+        let st = run_op(&mut w, None, &[0, 0, 8, 5], op::ENUM);
+        assert_eq!(st.string_stack.last().unwrap(), "none");
+    }
+
+    #[test]
+    fn npc_mode_hunt_ops() {
+        use crate::world::NpcInfo;
+        let mut w = World::new();
+        w.npc_info.insert(
+            1,
+            NpcInfo {
+                name: "Hans".into(),
+                size: 1,
+                vislevel: -1,
+                op: [Some("Talk-to".into()), None, Some("Trade".into()), None, None],
+            },
+        );
+        let nid = w.add_npc(1, 3200, 3200, 0).unwrap();
+        assert_eq!(run_op_npc(&mut w, nid, &[], op::NPC_GETMODE).int_stack.last().copied(), Some(0));
+        run_op_npc(&mut w, nid, &[5], op::NPC_SETHUNT);
+        assert_eq!(w.npcs[nid].as_ref().unwrap().hunt_range, 5);
+        run_op_npc(&mut w, nid, &[3], op::NPC_SETHUNTMODE);
+        assert_eq!(w.npcs[nid].as_ref().unwrap().hunt_mode, 3);
+        assert_eq!(run_op_npc(&mut w, nid, &[1], op::NPC_HASOP).int_stack.last().copied(), Some(1));
+        assert_eq!(run_op_npc(&mut w, nid, &[2], op::NPC_HASOP).int_stack.last().copied(), Some(0));
+        assert_eq!(run_op_npc(&mut w, nid, &[3], op::NPC_HASOP).int_stack.last().copied(), Some(1));
     }
 
     #[test]

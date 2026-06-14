@@ -1,0 +1,8 @@
+// loc 17300
+length = 2
+op1 = Open
+forceapproach = 13
+ambient = 20
+recol = 5002/6674 6046/6554 7104/6430
+models_only = 2247
+name = Cupboard

@@ -1,0 +1,9 @@
+// obj 4577
+model = obj_schematic_4575
+xof2d = -9
+yof2d = -2
+zoom2d = 1460
+xan2d = 552
+members = true
+iop1 = Assemble
+name = Schematics

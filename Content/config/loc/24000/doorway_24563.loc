@@ -1,0 +1,8 @@
+// loc 24563
+noshadow = true
+mapscene = 22
+active = 1
+blockwalk = true
+op1 = Walk-through
+models = 18595/0
+name = Doorway

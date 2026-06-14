@@ -1,0 +1,6 @@
+// loc 25083
+hillskew = true
+nonsolid = true
+recol = 21534/6806 21539/6682 21543/6558
+models_only = 26508
+name = Stalagmite

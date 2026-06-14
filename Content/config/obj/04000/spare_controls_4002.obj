@@ -1,0 +1,10 @@
+// obj 4002
+members = true
+model = obj_spare_controls_4002
+xof2d = 3
+yof2d = 8
+zoom2d = 1820
+xan2d = 388
+iop1 = View
+recol = 61/7566
+name = Spare controls

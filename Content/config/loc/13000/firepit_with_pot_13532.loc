@@ -1,0 +1,9 @@
+// loc 13532
+length = 2
+anim = 3105
+op1 = Take-kettle
+contrast = 25
+ambient = 25
+bgsound = 2199, 3
+models_only = 14101 12624 12626
+name = Firepit with pot

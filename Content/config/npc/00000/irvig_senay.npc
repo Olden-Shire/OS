@@ -1,0 +1,10 @@
+// npc 937
+size = 1
+walkanim = 5481
+readyanim = 5483
+op1 = Talk-to
+op2 = Attack
+vislevel = 100
+name = Irvig Senay
+models = 21192
+headmodels = 21404 21407

@@ -1,0 +1,6 @@
+// loc 21200
+sharelight = true
+ambient = 20
+contrast = 20
+models_only = 21657
+name = Snow

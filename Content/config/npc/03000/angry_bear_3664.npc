@@ -1,0 +1,11 @@
+// npc 3664
+size = 2
+resizeh = 108
+resizev = 108
+walkanim = 4923
+readyanim = 4919
+op2 = Attack
+vislevel = 47
+recol = 0/654 10262/4785 10266/5027 10258/3870 49/4672 41/4808
+name = Angry bear
+models = 18882 14288

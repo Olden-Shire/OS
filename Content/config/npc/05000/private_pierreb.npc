@@ -1,0 +1,8 @@
+// npc 5033
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+name = Private Pierreb
+models = 11740 230 250 11759 11726 11732 11790 19250 11735
+headmodels = 63 19238 82

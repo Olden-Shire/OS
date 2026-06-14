@@ -1,0 +1,11 @@
+// obj 5607
+model = obj_grain_5607
+manwear = obj_grain_5607_wear, 0
+womanwear = obj_grain_5607_wear, 0
+zoom2d = 2280
+yan2d = 112
+xan2d = 64
+iop2 = Wear
+members = true
+ambient = 20
+name = Grain

@@ -1,0 +1,10 @@
+// npc 210
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/49 11200/54389 25238/33 4626/0 8078/20
+name = Grail Maiden
+models = 384 456 343 353 421 358 446
+headmodels = 108

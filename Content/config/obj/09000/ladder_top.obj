@@ -1,0 +1,9 @@
+// obj 9655
+model = obj_ladder_top
+members = true
+iop5 = Destroy
+xof2d = -36
+yof2d = 32
+yan2d = 290
+xan2d = 180
+name = Ladder top

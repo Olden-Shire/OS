@@ -1,0 +1,9 @@
+// npc 3616
+op2 = Attack
+alwaysontop = true
+walkanim = 1281
+readyanim = 1282
+vislevel = 110
+recol = 0/43914 916/43968
+name = Asyn shadow
+models = 4140 14167

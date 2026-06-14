@@ -1,0 +1,8 @@
+// loc 18842
+anim = 5012
+length = 2
+resizex = 50
+resizey = 50
+resizez = 50
+models_only = 19128 19126
+name = Fish

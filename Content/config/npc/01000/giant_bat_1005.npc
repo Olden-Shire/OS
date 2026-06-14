@@ -1,0 +1,8 @@
+// npc 1005
+size = 2
+walkanim = 4913
+readyanim = 4914
+vislevel = 0
+nominimap = true
+name = Giant bat
+models = 18898

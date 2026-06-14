@@ -1,0 +1,8 @@
+// npc 5105
+walkanim = 5226
+readyanim = 5225
+size = 2
+op1 = Tease
+vislevel = 50
+name = Horned graahk
+models = 19374

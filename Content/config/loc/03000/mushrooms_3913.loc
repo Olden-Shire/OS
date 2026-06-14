@@ -1,0 +1,5 @@
+// loc 3913
+nonblockrange = true
+recol = 2857/33213 10378/43131 1742/33213 6371/33213 2619/33213 2739/33213
+models_only = 1722
+name = Mushrooms

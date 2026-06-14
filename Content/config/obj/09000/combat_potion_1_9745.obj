@@ -1,0 +1,14 @@
+// obj 9745
+iop1 = Drink
+cost = 52
+model = obj_strength_potion_1_119
+yof2d = -1
+zoom2d = 550
+yan2d = 1996
+xan2d = 84
+iop4 = Empty
+ambient = 15
+contrast = 15
+members = true
+recol = 61/18882
+name = Combat potion(1)

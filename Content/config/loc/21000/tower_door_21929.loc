@@ -1,0 +1,8 @@
+// loc 21929
+noshadow = true
+mapscene = 22
+active = 1
+op1 = Enter
+blockwalk = true
+models = 18595/0
+name = Tower door

@@ -1,0 +1,10 @@
+// obj 6662
+model = obj_broken_fishing_rod
+cost = 0
+members = true
+xof2d = -9
+yof2d = 18
+zoom2d = 1640
+yan2d = 2008
+xan2d = 344
+name = Broken fishing rod

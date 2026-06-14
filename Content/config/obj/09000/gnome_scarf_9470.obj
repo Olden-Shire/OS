@@ -1,0 +1,12 @@
+// obj 9470
+model = obj_gnome_scarf_9470
+xof2d = -7
+yof2d = 8
+zoom2d = 919
+xan2d = 595
+iop2 = Wear
+manwear = obj_gnome_scarf_9470_man, 0
+womanwear = obj_gnome_scarf_9470_woman, 0
+cost = 1000
+members = true
+name = Gnome scarf

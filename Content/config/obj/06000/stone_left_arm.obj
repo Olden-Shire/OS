@@ -1,0 +1,10 @@
+// obj 6997
+model = obj_stone_left_arm
+members = true
+xof2d = -4
+yof2d = 1
+zoom2d = 2256
+yan2d = 1991
+xan2d = 336
+iop5 = Destroy
+name = Stone left arm

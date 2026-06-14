@@ -1,0 +1,15 @@
+// obj 9068
+cost = 1000
+model = obj_moonclan_helm
+iop2 = Wear
+manwear = obj_moonclan_helm_man, 0
+womanwear = obj_moonclan_helm_woman, 0
+manhead = 16465
+womanhead = 16465
+members = true
+xof2d = 2
+yof2d = -39
+zoom2d = 465
+yan2d = 104
+xan2d = 226
+name = Moonclan helm

@@ -1,0 +1,7 @@
+// loc 153
+width = 2
+length = 2
+op1 = Search
+bgsound = 2151, 3
+models_only = 10754
+name = Fountain

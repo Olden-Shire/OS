@@ -1,0 +1,8 @@
+// loc 15195
+sharelight = true
+hillskew = true
+active = 1
+op1 = Squeeze-through
+recol = 7335/10398 7331/10394 7326/10518 7322/10514 7446/10638 7442/10762
+models = 9247/0
+name = Crevice

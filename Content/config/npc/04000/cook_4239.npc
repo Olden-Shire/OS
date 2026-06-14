@@ -1,0 +1,10 @@
+// npc 4239
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/107 8860/90 6798/9152 926/43928 4626/17284
+name = Cook
+models = 391 414 14793 15155 15123 10706 14792 358
+headmodels = 114 131

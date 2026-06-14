@@ -1,0 +1,11 @@
+// loc 16536
+hillskew = true
+op1 = Climb
+ambient = 25
+contrast = 25
+mapscene = 25
+forcedecor = true
+blockwalk = true
+recol = 6689/7481
+models = 1743/22
+name = Climbing rocks

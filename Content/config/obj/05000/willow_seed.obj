@@ -1,0 +1,15 @@
+// obj 5313
+model = obj_willow_seed
+xof2d = 1
+yof2d = 37
+zoom2d = 1000
+yan2d = 20
+xan2d = 284
+members = true
+stackable = true
+count1 = 5115, 2
+count2 = 5116, 3
+count3 = 5117, 4
+count4 = 5118, 5
+cost = 16
+name = Willow seed

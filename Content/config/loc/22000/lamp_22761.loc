@@ -1,0 +1,12 @@
+// loc 22761
+width = 2
+length = 2
+active = 1
+ambient = 100
+contrast = 100
+anim = 6029
+blockwalk = true
+nonblockrange = true
+models_only = 23457
+models_only = 23456
+name = Lamp

@@ -1,0 +1,11 @@
+// obj 4878
+members = true
+cost = 47000
+manwear = obj_ahrims_robeskirt_4714_man, 0
+womanwear = obj_ahrims_robeskirt_4714_woman, 0
+yof2d = -4
+zoom2d = 1730
+xan2d = 504
+model = obj_ahrims_skirt_0_4878
+recol = 14490/10512 45468/43840
+name = Ahrims skirt 0

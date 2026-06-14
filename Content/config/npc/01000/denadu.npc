@@ -1,0 +1,10 @@
+// npc 1439
+walkanim = 1380
+readyanim = 1387
+resizeh = 180
+resizev = 180
+op1 = Talk-to
+vislevel = 0
+name = Denadu
+models = 4815 4824 4829
+headmodels = 4656

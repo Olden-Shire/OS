@@ -1,0 +1,7 @@
+// loc 11028
+width = 5
+length = 3
+active = 1
+resizey = 256
+models_only = 10911 10912
+name = Wall

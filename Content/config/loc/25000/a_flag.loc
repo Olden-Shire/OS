@@ -1,0 +1,8 @@
+// loc 25205
+anim = 6656
+width = 2
+blockwalk = true
+ambient = 20
+nonblockrange = true
+models_only = 26483
+name = A flag

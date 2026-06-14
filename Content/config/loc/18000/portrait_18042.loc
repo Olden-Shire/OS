@@ -1,0 +1,7 @@
+// loc 18042
+active = 1
+op5 = Look-at
+nonsolid = true
+ambient = 10
+models = 17654/4
+name = Portrait

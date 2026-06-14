@@ -1,0 +1,6 @@
+// loc 5883
+anim = 480
+op1 = Dig-up
+recol = 27028/5524
+models_only = 2259
+name = Mud

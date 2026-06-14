@@ -1,0 +1,6 @@
+// loc 17162
+anim = 3939
+nonblockrange = true
+recol = 41/24 33/16 45/28 49/33
+models_only = 17163 14491
+name = Cauldron

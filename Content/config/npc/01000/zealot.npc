@@ -1,0 +1,11 @@
+// npc 1528
+op1 = Talk-to
+op3 = Pickpocket
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+vislevel = 0
+recol = 11200/127 926/127 25238/7700 8741/7700 11187/9116 908/127
+name = Zealot
+models = 248 230 292 3330 323 170 176 533 185 265
+headmodels = 63 80

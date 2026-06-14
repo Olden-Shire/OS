@@ -1,0 +1,10 @@
+// npc 1915
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 139
+recol = 4550/7401 25238/7446 4626/7401 9327/8745 7236/7401 7265/6455
+name = Dessous
+models = 6225 4088 6227 275 181
+headmodels = 6218

@@ -1,0 +1,9 @@
+// loc 23855
+sharelight = true
+ambient = 25
+mirror = true
+active = 0
+mapscene = 73
+nonblockrange = true
+recol = 5532/7587 4506/7582 4750/7830
+models_only = 25120

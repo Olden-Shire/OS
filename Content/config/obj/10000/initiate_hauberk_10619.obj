@@ -1,0 +1,14 @@
+// obj 10619
+cost = 10000
+model = obj_black_platebody_t_2583
+xof2d = -1
+zoom2d = 1250
+xan2d = 488
+iop2 = Wear
+manwear = obj_black_platebody_t_2583_man, 0
+manwear2 = 164
+womanwear = obj_black_platebody_t_2583_woman, 0
+womanwear2 = 344
+members = true
+recol = 24/7114 61/99 41/82
+name = Initiate hauberk

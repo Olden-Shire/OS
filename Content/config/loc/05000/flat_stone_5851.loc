@@ -1,0 +1,6 @@
+// loc 5851
+active = 1
+blockwalk = true
+op1 = Jump-across
+models = 5686/22
+name = Flat stone

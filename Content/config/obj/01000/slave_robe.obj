@@ -1,0 +1,10 @@
+// obj 1845
+cost = 40
+model = obj_slave_robe
+zoom2d = 1488
+xan2d = 276
+iop2 = Wear
+members = true
+manwear = obj_slave_robe_man, 0
+womanwear = obj_slave_robe_woman, 0
+name = Slave robe

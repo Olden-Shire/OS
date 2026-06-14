@@ -1,0 +1,5 @@
+// loc 6713
+mirror = true
+active = 1
+models = 6623/0
+name = Door

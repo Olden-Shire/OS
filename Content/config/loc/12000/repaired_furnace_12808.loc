@@ -1,0 +1,7 @@
+// loc 12808
+width = 2
+length = 2
+ambient = 25
+op1 = Search
+models_only = 10996 11001 10997
+name = Repaired furnace

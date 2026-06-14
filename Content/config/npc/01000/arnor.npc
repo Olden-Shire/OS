@@ -1,0 +1,10 @@
+// npc 1361
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 25238/2343 43072/2524 8741/7710 4550/2524 6798/7613
+name = Arnor
+models = 4220 251 292 163 176 4226 4218 4219
+headmodels = 4210 83

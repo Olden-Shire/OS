@@ -1,0 +1,8 @@
+// loc 20247
+length = 2
+anim = 5423
+forceapproach = 14
+op1 = Call
+bgsound = 3124, 10
+models_only = 20661
+name = Horn of glory

@@ -1,0 +1,7 @@
+// loc 26005
+active = 0
+contrast = 15
+ambient = 20
+blockwalk = true
+recol = 5025/10283 3994/10266
+models_only = 27266

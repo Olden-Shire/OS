@@ -1,0 +1,9 @@
+// npc 5627
+readyanim = 5641
+walkanim = 5642
+op2 = Attack
+size = 1
+vislevel = 57
+name = Sorebones
+models = 21430 21481 21420 21445 21461 21457 21421
+headmodels = 22785

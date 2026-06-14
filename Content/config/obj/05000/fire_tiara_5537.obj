@@ -1,0 +1,13 @@
+// obj 5537
+model = obj_fire_tiara_5537
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_fire_tiara_5537_man, 0
+womanwear = obj_fire_tiara_5537_woman, 0
+manhead = 7473
+womanhead = 7473
+cost = 100
+recol = 43096/214
+name = Fire tiara

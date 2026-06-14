@@ -1,0 +1,9 @@
+// loc 16625
+noshadow = true
+contrast = 30
+ambient = 30
+anim = 4356
+active = 1
+op1 = Press
+models_only = 16784
+name = Six

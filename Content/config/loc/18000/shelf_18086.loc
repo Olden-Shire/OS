@@ -1,0 +1,8 @@
+// loc 18086
+op5 = Climb-up
+active = 1
+resizex = 128
+resizey = 160
+resizez = 128
+models = 17686/4
+name = Shelf

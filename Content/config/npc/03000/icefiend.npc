@@ -1,0 +1,10 @@
+// npc 3406
+size = 1
+walkanim = 1579
+readyanim = 1578
+op2 = Attack
+ambient = 60
+contrast = 60
+vislevel = 13
+name = Icefiend
+models = 13915

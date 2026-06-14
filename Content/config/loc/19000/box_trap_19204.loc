@@ -1,0 +1,9 @@
+// loc 19204
+anim = 5178
+nonsolid = true
+active = 1
+raiseobject = 0
+ambient = 25
+contrast = 25
+models_only = 19904 19907
+name = Box trap

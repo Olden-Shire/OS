@@ -1,0 +1,6 @@
+// loc 9096
+width = 2
+active = 1
+op1 = Take
+models_only = 9072
+name = Bar dispenser

@@ -1,0 +1,11 @@
+// npc 6070
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 5788/37394 21793/37274 21784/37518 22032/37518 7362/37770 22422/37518
+name = Elnock Inquisitor
+models = 19773 10340 25205
+headmodels = 21

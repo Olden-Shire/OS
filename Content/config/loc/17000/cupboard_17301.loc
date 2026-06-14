@@ -1,0 +1,9 @@
+// loc 17301
+length = 2
+op1 = Close
+op2 = Search
+forceapproach = 13
+ambient = 20
+recol = 5002/6674 6046/6554 7104/6430
+models_only = 2244
+name = Cupboard

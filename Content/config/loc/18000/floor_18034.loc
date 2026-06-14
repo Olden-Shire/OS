@@ -1,0 +1,7 @@
+// loc 18034
+op5 = Climb-down
+active = 1
+resizey = 160
+blockwalk = true
+models = 17891/22
+name = Floor

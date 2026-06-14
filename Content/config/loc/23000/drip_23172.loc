@@ -1,0 +1,9 @@
+// loc 23172
+anim = 4217
+nonsolid = true
+resizex = 192
+resizey = 192
+resizez = 192
+bgsound = 3080, 3
+models_only = 15524
+name = Drip

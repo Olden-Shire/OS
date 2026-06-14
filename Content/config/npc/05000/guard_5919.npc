@@ -1,0 +1,11 @@
+// npc 5919
+walkanim = 6486
+readyanim = 6487
+op2 = Attack
+op3 = Pickpocket
+ambient = 20
+contrast = 15
+vislevel = 21
+name = Guard
+models = 25671 25685 25684
+headmodels = 25634

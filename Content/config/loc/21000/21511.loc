@@ -1,0 +1,7 @@
+// loc 21511
+sharelight = true
+op1 = Climb-up
+forceapproach = 11
+active = 0
+recol = 7836/6705 7834/6699 7958/6695 6932/6819 6930/6817
+models_only = 11538

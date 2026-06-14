@@ -1,0 +1,4 @@
+[clientscript,script_18](int $int0)()
+
+if_setoutline(0, $int0);
+return;

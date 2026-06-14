@@ -1,0 +1,9 @@
+// npc 2323
+walkanim = 2164
+readyanim = 2163
+vislevel = 0
+op1 = Talk-to
+recol = 8741/40107 25238/8604 4550/3422 6798/6065
+name = Elstan
+models = 210 252 292 326 170 176 496 274 7121
+headmodels = 49 84

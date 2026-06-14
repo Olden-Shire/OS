@@ -1,0 +1,8 @@
+// npc 3733
+size = 1
+op2 = Attack
+walkanim = 3898
+readyanim = 3899
+vislevel = 38
+name = Shifter
+models = 14548

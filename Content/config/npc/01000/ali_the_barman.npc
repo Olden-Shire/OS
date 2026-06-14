@@ -1,0 +1,11 @@
+// npc 1864
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 8741/10351 25238/10351 4550/5555
+name = Ali The barman
+models = 6086 249 292 170 254 185 176
+headmodels = 6080 85 55

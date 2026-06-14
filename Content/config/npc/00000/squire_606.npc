@@ -1,0 +1,10 @@
+// npc 606
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+recol = 8741/5210 25238/7333 7073/7467 10297/5206 9104/7452 906/8596
+name = Squire
+models = 191 217 253 297 163 179 553 254 9617 4390 3707
+headmodels = 55 85 34

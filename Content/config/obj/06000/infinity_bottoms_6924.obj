@@ -1,0 +1,11 @@
+// obj 6924
+model = obj_infinity_bottoms_6924
+manwear = obj_infinity_bottoms_6924_man, 0
+womanwear = obj_infinity_bottoms_6924_woman, 0
+yof2d = 30
+zoom2d = 1760
+xan2d = 304
+iop2 = Wear
+members = true
+cost = 90000
+name = Infinity bottoms

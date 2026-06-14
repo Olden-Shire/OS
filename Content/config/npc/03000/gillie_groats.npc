@@ -1,0 +1,9 @@
+// npc 3807
+vislevel = 0
+walkanim = 3997
+readyanim = 3950
+op1 = Talk-to
+recol = 908/33672 532/33676 536/33552 412/33300 417/33304 8741/33180
+name = Gillie Groats
+models = 391 417 467 14588 10706 11119 358 14794
+headmodels = 114 136

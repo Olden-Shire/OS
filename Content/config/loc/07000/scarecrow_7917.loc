@@ -1,0 +1,6 @@
+// loc 7917
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 7800 7812 7767
+name = Scarecrow

@@ -1,0 +1,10 @@
+// npc 3233
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 22
+recol = 25238/10508 8741/6930 61/5652
+name = Guard
+models = 233 253 9458 9450 176 254 185 563

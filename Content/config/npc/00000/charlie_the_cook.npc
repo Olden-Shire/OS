@@ -1,0 +1,9 @@
+// npc 794
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 107/123 8741/66 25238/9147
+name = Charlie the cook
+models = 235 199 302 263 176 185 151 249
+headmodels = 67 81 41

@@ -1,0 +1,9 @@
+// loc 5814
+resizex = 90
+resizey = 90
+resizez = 90
+forcedecor = true
+active = 1
+blockwalk = true
+models = 5646/22
+name = Landing light

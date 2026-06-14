@@ -1,0 +1,6 @@
+// loc 11380
+op1 = Close
+raiseobject = 0
+blockwalk = true
+models = 639/0
+name = Large door

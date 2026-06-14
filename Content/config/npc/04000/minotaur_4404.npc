@@ -1,0 +1,9 @@
+// npc 4404
+size = 1
+walkanim = 4263
+readyanim = 4264
+op2 = Attack
+vislevel = 12
+recol = 6798/8 6554/16 6430/20 6435/24 6439/28 922/939
+name = Minotaur
+models = 15915

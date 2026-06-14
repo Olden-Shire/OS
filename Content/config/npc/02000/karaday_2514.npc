@@ -1,0 +1,8 @@
+// npc 2514
+vislevel = 0
+size = 1
+op1 = Talk-to
+recol = 4550/5795 5916/5458 5219/123 43072/5795
+name = Karaday
+models = 230 246 285 315 173 8918 8925 8919 8947
+headmodels = 63

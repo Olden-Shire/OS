@@ -1,0 +1,12 @@
+// obj 9793
+cost = 99000
+members = true
+model = obj_mining_cape_9792
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_mining_cape_9792_man, 0
+womanwear = obj_mining_cape_9792_woman, 0
+recol = 57280/36296 54183/36279 54503/36399 960/10401 22464/10392 43968/10512
+name = Mining cape(t)

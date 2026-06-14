@@ -1,0 +1,14 @@
+// npc 1194
+size = 1
+walkanim = 6088
+readyanim = 6089
+resizeh = 120
+resizev = 110
+resizeh = 110
+resizev = 120
+ambient = 30
+op2 = Attack
+vislevel = 2
+recol = 5413/6474 5417/6470 5421/6466
+name = Rabbit
+models = 23901

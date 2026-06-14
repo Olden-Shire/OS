@@ -1,0 +1,6 @@
+// npc 4853
+readyanim = 4780
+turnspeed = 0
+op1 = Talk-to
+vislevel = 1
+multivar = 2610, 65535, 4872 4872 4872 4872 4872 4872 4872 4872 4872 4873 4873 4873 4873

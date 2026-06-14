@@ -1,0 +1,13 @@
+// obj 2886
+model = obj_battered_book
+cost = 10
+members = true
+iop1 = Read
+xof2d = -4
+yof2d = 3
+zoom2d = 854
+yan2d = 1895
+zan2d = 1784
+xan2d = 346
+recol = 5018/60702 2991/59544 8101/4649 9152/4657 8107/4424
+name = Battered book

@@ -1,0 +1,10 @@
+// loc 17985
+active = 1
+op1 = Climb-down
+op2 = Close
+raiseobject = 0
+nonsolid = true
+forceapproach = 7
+forcedecor = true
+models = 17647/22
+name = Trapdoor

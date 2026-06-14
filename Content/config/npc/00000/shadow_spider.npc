@@ -1,0 +1,10 @@
+// npc 58
+size = 1
+walkanim = 5325
+readyanim = 5326
+nominimap = true
+op2 = Attack
+vislevel = 52
+recol = 960/16 33728/12 22443/8 11200/4 56256/10128 50099/8130
+name = Shadow spider
+models = 20309 20312

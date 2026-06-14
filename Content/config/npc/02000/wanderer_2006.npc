@@ -1,0 +1,11 @@
+// npc 2006
+size = 1
+walkanim = 1146
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 4550/6558 61/9015 4626/6558 6798/5025 25238/6558
+name = Wanderer
+models = 390 449 471 479 348 353 3711 428 361
+headmodels = 113 6461

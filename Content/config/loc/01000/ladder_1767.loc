@@ -1,0 +1,6 @@
+// loc 1767
+active = 1
+op1 = Climb-down
+forceapproach = 13
+models_only = 14781
+name = Ladder

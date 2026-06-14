@@ -1,0 +1,11 @@
+// npc 946
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+alwaysontop = true
+recol = 8090/38814 8741/38814 8078/43937 25238/38814 8596/5173 6798/5173
+name = Magic Instructor
+models = 214 250 295 162 567 265 185 534 202 176
+headmodels = 52 82 44

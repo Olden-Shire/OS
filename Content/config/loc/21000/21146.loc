@@ -1,0 +1,9 @@
+// loc 21146
+anim = 5741
+sharelight = true
+width = 4
+active = 0
+ambient = 25
+contrast = 25
+blockwalk = true
+models_only = 21585

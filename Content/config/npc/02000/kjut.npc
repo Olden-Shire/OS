@@ -1,0 +1,9 @@
+// npc 2198
+op1 = Talk-to
+walkanim = 98
+readyanim = 101
+vislevel = 0
+recol = 10330/8396 7473/63659 8485/40094 4550/4558
+name = Kjut
+models = 2971 7061 2979 7046 2985
+headmodels = 1

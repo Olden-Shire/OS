@@ -1,0 +1,6 @@
+// loc 8967
+active = 1
+blockwalk = true
+nonblockrange = true
+models_only = 6318
+name = Door

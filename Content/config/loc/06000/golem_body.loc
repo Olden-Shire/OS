@@ -1,0 +1,4 @@
+// loc 6325
+nonsolid = true
+models_only = 6162
+name = Golem body

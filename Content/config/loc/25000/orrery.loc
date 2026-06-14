@@ -1,0 +1,9 @@
+// loc 25401
+width = 3
+length = 3
+anim = 3579
+op1 = View
+bgsound = 3804, 5
+recol = 8128/12463 6443/7322 6798/7690 6682/7442 107/26735 70/26698
+models_only = 12970
+name = Orrery

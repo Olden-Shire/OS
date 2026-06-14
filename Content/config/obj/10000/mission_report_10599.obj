@@ -1,0 +1,9 @@
+// obj 10599
+model = obj_mission_report_10597
+members = true
+zoom2d = 720
+yan2d = 2018
+xan2d = 315
+iop1 = Read
+recol = 6451/9554 6443/9546 6439/10411
+name = Mission report

@@ -1,0 +1,10 @@
+// npc 915
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 8741/7056 25238/4769 6798/10508 4550/4657
+name = Leela
+models = 393 456 332 353 419 358 376
+headmodels = 115 101

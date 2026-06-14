@@ -1,0 +1,12 @@
+// obj 10967
+model = obj_roast_frog
+yof2d = -18
+zoom2d = 1360
+yan2d = 1604
+xan2d = 221
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 50
+name = Roast frog

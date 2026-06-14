@@ -1,0 +1,13 @@
+// obj 5535
+model = obj_earth_tiara_5535
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_earth_tiara_5535_man, 0
+womanwear = obj_earth_tiara_5535_woman, 0
+manhead = 7472
+womanhead = 7472
+cost = 100
+recol = 43096/3280
+name = Earth tiara

@@ -1,0 +1,6 @@
+// loc 11875
+anim = 3237
+bgsound = 1984, 5
+recol = 6451/7587 6443/6682 6439/7700 6563/6674
+models_only = 11602 11603
+name = Canary

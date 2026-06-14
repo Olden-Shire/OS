@@ -1,0 +1,9 @@
+// loc 18381
+forceapproach = 13
+op1 = Kick
+sharelight = true
+hillskew = true
+ambient = 35
+occlude = true
+models_only = 18473
+name = Badly repaired wall

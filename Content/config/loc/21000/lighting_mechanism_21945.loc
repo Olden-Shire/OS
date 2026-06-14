@@ -1,0 +1,9 @@
+// loc 21945
+width = 4
+length = 3
+blockwalk = true
+mirror = true
+anim = 1348
+bgsound = 3145, 5
+models_only = 4575
+name = Lighting mechanism

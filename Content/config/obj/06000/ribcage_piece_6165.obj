@@ -1,0 +1,10 @@
+// obj 6165
+cost = 60
+model = obj_ribcage_piece_6165
+members = true
+xof2d = 4
+yof2d = -7
+zoom2d = 950
+yan2d = 272
+xan2d = 184
+name = Ribcage piece

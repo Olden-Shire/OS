@@ -1,0 +1,13 @@
+// obj 6544
+model = obj_catspeak_amulet
+yof2d = -10
+zoom2d = 400
+xan2d = 220
+manwear = obj_catspeak_amulet_wear, 0
+womanwear = obj_catspeak_amulet_wear, 6
+iop2 = Wear
+iop3 = Open
+iop5 = Destroy
+members = true
+cost = 1
+name = Catspeak amulet(e)

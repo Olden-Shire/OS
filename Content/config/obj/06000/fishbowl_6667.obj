@@ -1,0 +1,11 @@
+// obj 6667
+model = obj_fishbowl_6667
+xof2d = 1
+yof2d = 27
+zoom2d = 1000
+yan2d = 1800
+xan2d = 284
+members = true
+ambient = 40
+contrast = 20
+name = Fishbowl

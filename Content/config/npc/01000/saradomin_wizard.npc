@@ -1,0 +1,9 @@
+// npc 1264
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 108
+recol = 926/12221 7700/12221 11200/99 25238/99 8741/99
+name = Saradomin wizard
+models = 230 181 249 292 323 170 176 265 539

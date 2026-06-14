@@ -1,0 +1,9 @@
+// npc 4946
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 61/3635 57/3759 49/3755 41/3879 10004/3998 6798/5214
+name = Ignatius Vulcan
+models = 18086 246 3379 18931 164 179 268 181
+headmodels = 19101

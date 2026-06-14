@@ -1,0 +1,9 @@
+// loc 25665
+anim = 6913
+nonsolid = true
+ambient = 10
+contrast = 10
+op1 = Talk-to
+recol = 7888/127 5537/5652
+models_only = 27126
+name = Sir Palomedes

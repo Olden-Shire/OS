@@ -1,0 +1,11 @@
+// obj 7636
+cost = 1
+model = obj_rod_dust
+xof2d = -11
+yof2d = 14
+zoom2d = 620
+yan2d = 184
+zan2d = 2012
+xan2d = 344
+members = true
+name = Rod dust

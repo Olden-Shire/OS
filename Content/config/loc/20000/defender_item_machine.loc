@@ -1,0 +1,8 @@
+// loc 20242
+op1 = Stock-Up
+op2 = Take-Crackers
+op3 = Take-Tofu
+op4 = Take-Worms
+ambient = 45
+models_only = 20694
+name = Defender item machine

@@ -1,0 +1,8 @@
+// loc 8466
+op1 = Check-health
+ambient = 25
+mapscene = 0
+op2 = Inspect
+op4 = Guide
+models_only = 8041 7768
+name = Oak

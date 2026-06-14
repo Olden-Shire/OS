@@ -1,0 +1,11 @@
+// npc 807
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/8 25238/8 908/8 8090/8
+name = Pierre
+models = 230 246 295 150 179 275 185 236 322
+headmodels = 63 68

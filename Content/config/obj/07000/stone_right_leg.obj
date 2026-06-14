@@ -1,0 +1,8 @@
+// obj 7000
+model = obj_stone_right_leg
+members = true
+zoom2d = 1308
+yan2d = 468
+xan2d = 162
+iop5 = Destroy
+name = Stone right leg

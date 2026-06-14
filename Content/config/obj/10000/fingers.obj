@@ -1,0 +1,12 @@
+// obj 10965
+model = obj_fingers
+yof2d = -28
+zoom2d = 1243
+yan2d = 1895
+xan2d = 304
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 10
+name = Fingers

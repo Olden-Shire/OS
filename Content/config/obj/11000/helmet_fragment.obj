@@ -1,0 +1,11 @@
+// obj 11052
+model = obj_helmet_fragment
+xof2d = -3
+yof2d = -16
+zoom2d = 592
+yan2d = 1946
+xan2d = 174
+contrast = 15
+ambient = 15
+members = true
+name = Helmet fragment

@@ -1,0 +1,12 @@
+// npc 5445
+walkanim = 5666
+readyanim = 5668
+resizeh = 75
+resizev = 75
+size = 1
+alwaysontop = true
+vislevel = 0
+op1 = Talk-to
+name = Penguin
+models = 21547
+headmodels = 21525

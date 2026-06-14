@@ -1,0 +1,12 @@
+// loc 9314
+blockwalk = true
+sharelight = true
+forcedecor = true
+width = 2
+offsetx = 64
+offsety = 0
+offsety = 0
+op1 = Squeeze-past
+nonblockrange = true
+models_only = 9234
+name = Jutting wall

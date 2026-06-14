@@ -1,0 +1,10 @@
+// npc 3921
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+recol = 4550/2524 8741/2343 25238/904 43072/2524 11200/9152 6798/5656
+name = Halla
+models = 390 470 9359 353 8784 358
+headmodels = 113

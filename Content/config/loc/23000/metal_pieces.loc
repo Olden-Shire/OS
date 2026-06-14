@@ -1,0 +1,6 @@
+// loc 23951
+nonsolid = true
+ambient = 10
+active = 1
+models = 24824/4
+name = Metal pieces

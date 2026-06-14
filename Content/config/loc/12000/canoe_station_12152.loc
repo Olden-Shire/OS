@@ -1,0 +1,7 @@
+// loc 12152
+anim = 3304
+length = 2
+width = 5
+op1 = Paddle Canoe
+models_only = 12001 12005
+name = Canoe Station

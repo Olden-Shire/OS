@@ -1,0 +1,11 @@
+// npc 3555
+vislevel = 0
+resizeh = 125
+resizev = 120
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/16540 8741/13964 43072/10450 4550/10450 908/10450 7700/14490
+name = Teodor
+models = 6364 217 246 310 151 176 495 275 9823
+headmodels = 55 9822 6212

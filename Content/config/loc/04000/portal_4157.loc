@@ -1,0 +1,8 @@
+// loc 4157
+anim = 504
+op1 = Use
+ambient = 100
+contrast = 100
+bgsound = 3139, 3
+models_only = 2318
+name = Portal

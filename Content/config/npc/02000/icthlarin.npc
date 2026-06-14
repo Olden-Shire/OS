@@ -1,0 +1,12 @@
+// npc 2012
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 140
+resizev = 140
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 4550/43026 61/9015 43072/43026 4626/43026 25238/42908 7073/9015
+name = Icthlarin
+models = 6467 281 315 173 176 6135 266 181
+headmodels = 6463

@@ -1,0 +1,8 @@
+// loc 1553
+mirror = true
+op1 = Open
+active = 1
+raiseobject = 0
+nonblockrange = true
+models = 966/0 967/1 968/9
+name = Gate

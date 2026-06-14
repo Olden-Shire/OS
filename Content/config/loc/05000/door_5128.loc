@@ -1,0 +1,9 @@
+// loc 5128
+hillskew = true
+ambient = 20
+resizez = 128
+resizex = 128
+resizey = 192
+op1 = Close
+models = 5117/0
+name = Door

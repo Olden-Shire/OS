@@ -1,0 +1,5 @@
+// loc 4461
+width = 2
+op1 = Take-from
+models_only = 1213 4417
+name = Table

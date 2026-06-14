@@ -1,0 +1,11 @@
+// obj 309
+model = obj_fly_fishing_rod_309
+xof2d = -5
+yof2d = 7
+zoom2d = 1030
+yan2d = 160
+xan2d = 320
+cost = 5
+manwear = obj_fishing_rod_307_wear, 0
+womanwear = obj_fishing_rod_307_wear, 6
+name = Fly fishing rod

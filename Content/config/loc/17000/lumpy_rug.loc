@@ -1,0 +1,9 @@
+// loc 17984
+active = 1
+op1 = Open
+nonsolid = true
+forceapproach = 7
+forcedecor = true
+raiseobject = 0
+models = 17648/22
+name = Lumpy rug

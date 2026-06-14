@@ -1,0 +1,10 @@
+// npc 4415
+size = 1
+readyanim = 2704
+walkanim = 2703
+op2 = Attack
+nominimap = true
+vislevel = 1
+recol = 8741/10417
+name = Rat
+models = 9610

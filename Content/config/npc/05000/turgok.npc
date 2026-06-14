@@ -1,0 +1,8 @@
+// npc 5792
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+vislevel = 0
+name = Turgok
+models = 23662 23695 23629
+headmodels = 23224 23246

@@ -1,0 +1,9 @@
+// loc 7139
+width = 2
+ambient = 50
+contrast = 50
+anim = 2178
+active = 1
+op1 = Exit-through
+models = 7446/4
+name = Air rift

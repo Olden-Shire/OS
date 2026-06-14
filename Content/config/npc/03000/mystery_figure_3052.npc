@@ -1,0 +1,7 @@
+// npc 3052
+vislevel = 0
+size = 2
+readyanim = 2942
+name = Mystery figure
+models = 10321 10327 10325 10322 10324 10328
+headmodels = 10236 10237

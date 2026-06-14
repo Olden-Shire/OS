@@ -1,0 +1,14 @@
+// loc 16265
+active = 1
+ambient = 25
+contrast = 10
+resizex = 170
+resizey = 170
+resizez = 170
+width = 3
+length = 3
+op1 = Chop-down
+mapscene = 1
+recol = 6819/6554
+models_only = 16293 16294
+name = Tree

@@ -1,0 +1,9 @@
+// npc 5421
+walkanim = 5615
+readyanim = 5616
+size = 3
+op2 = Attack
+alwaysontop = true
+vislevel = 69
+name = Mutant tarn
+models = 21379

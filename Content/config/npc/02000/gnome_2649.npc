@@ -1,0 +1,10 @@
+// npc 2649
+size = 1
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22422/25116 22426/19875 22424/16673 4550/3633
+name = Gnome
+models = 9433 2909 2915
+headmodels = 21

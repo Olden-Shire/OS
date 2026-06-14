@@ -1,0 +1,7 @@
+// loc 22824
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23508
+name = Oojimaflip

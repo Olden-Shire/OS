@@ -1,0 +1,6 @@
+// loc 10096
+blockwalk = true
+width = 2
+length = 2
+active = 1
+multiloc = 1366, 65535, 10097 10098 10099 10100 10101 10102

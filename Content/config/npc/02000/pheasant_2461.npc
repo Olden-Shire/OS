@@ -1,0 +1,11 @@
+// npc 2461
+size = 1
+walkanim = 2369
+readyanim = 2370
+op2 = Attack
+alwaysontop = true
+resizeh = 30
+resizev = 30
+vislevel = 3
+name = Pheasant
+models = 8839 8842

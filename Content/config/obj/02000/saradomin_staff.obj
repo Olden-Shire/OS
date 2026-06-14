@@ -1,0 +1,12 @@
+// obj 2415
+cost = 80000
+members = true
+model = obj_saradomin_staff
+yof2d = -18
+zoom2d = 1710
+yan2d = 892
+xan2d = 200
+manwear = obj_saradomin_staff_wear, 0
+womanwear = obj_saradomin_staff_wear, 6
+iop2 = Wield
+name = Saradomin staff

@@ -1,0 +1,9 @@
+// loc 10078
+sharelight = true
+forcedecor = true
+hillskew = true
+nonsolid = true
+op1 = Use
+recol = 61/13200
+models = 9788/22
+name = Exercise mat

@@ -1,0 +1,7 @@
+// loc 1890
+sharelight = true
+mirror = true
+hillskew = true
+nonsolid = true
+forcedecor = true
+models = 2194/22

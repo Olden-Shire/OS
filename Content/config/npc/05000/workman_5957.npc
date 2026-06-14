@@ -1,0 +1,10 @@
+// npc 5957
+readyanim = 6423
+walkanim = 6420
+size = 2
+alwaysontop = true
+vislevel = 0
+alwaysontop = true
+recol = 8367/127
+name = Workman
+models = 25839 25840 25838

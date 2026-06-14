@@ -1,0 +1,8 @@
+// loc 25414
+sharelight = true
+hillskew = true
+active = 0
+ambient = 20
+wallwidth = 16
+recol = 6689/0
+models_only = 834

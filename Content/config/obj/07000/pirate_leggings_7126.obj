@@ -1,0 +1,12 @@
+// obj 7126
+model = obj_pirate_leggings_7116
+members = true
+manwear = obj_pirate_leggings_7116_man, 0
+womanwear = obj_pirate_leggings_7116_woman, 0
+iop2 = Wear
+yof2d = -2
+zoom2d = 1740
+xan2d = 444
+cost = 350
+recol = 9763/819
+name = Pirate leggings

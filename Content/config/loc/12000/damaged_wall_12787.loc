@@ -1,0 +1,6 @@
+// loc 12787
+active = 1
+ambient = 20
+op1 = Search
+models = 10818/4
+name = Damaged wall

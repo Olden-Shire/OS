@@ -1,0 +1,9 @@
+// loc 8513
+mapscene = 0
+ambient = 25
+op1 = Chop down
+op3 = hidden
+op2 = Inspect
+op4 = Guide
+models_only = 8143 7768
+name = Yew tree

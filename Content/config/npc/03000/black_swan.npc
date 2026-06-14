@@ -1,0 +1,11 @@
+// npc 3297
+size = 1
+vislevel = 0
+resizeh = 57
+resizev = 57
+ambient = 20
+walkanim = 3241
+readyanim = 3242
+recol = 103/16 94/12
+name = Black swan
+models = 11725

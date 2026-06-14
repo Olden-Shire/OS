@@ -1,0 +1,5 @@
+// npc 3803
+inactive = true
+nominimap = true
+vislevel = 1
+models = 8236

@@ -1,0 +1,6 @@
+// loc 3508
+nonsolid = true
+hillskew = true
+recol = 5667/17938 5786/17036
+models_only = 3595
+name = Rotting log

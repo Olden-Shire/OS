@@ -1,0 +1,8 @@
+// loc 16664
+sharelight = true
+hillskew = true
+ambient = 20
+contrast = 40
+active = 0
+recol = 7442/8 7446/16 7322/20 7326/33 7331/41 7335/61
+models = 4460/0 4461/1 4462/9

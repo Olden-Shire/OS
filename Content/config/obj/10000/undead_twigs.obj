@@ -1,0 +1,12 @@
+// obj 10490
+model = obj_undead_twigs
+cost = 1
+members = true
+xof2d = 3
+yof2d = -30
+zoom2d = 2151
+yan2d = 146
+zan2d = 97
+xan2d = 567
+iop5 = Destroy
+name = Undead twigs

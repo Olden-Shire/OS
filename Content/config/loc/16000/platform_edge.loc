@@ -1,0 +1,7 @@
+// loc 16858
+noshadow = true
+nonsolid = true
+op1 = Jump-to
+active = 1
+models_only = 7766
+name = Platform edge

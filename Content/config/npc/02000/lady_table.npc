@@ -1,0 +1,9 @@
+// npc 2283
+vislevel = 0
+size = 1
+readyanim = 2256
+op1 = Talk-to
+recol = 70/99 4626/99 41/82 61/99 7700/103 4550/4546
+name = Lady Table
+models = 390 468 481 344 356 432 361
+headmodels = 113

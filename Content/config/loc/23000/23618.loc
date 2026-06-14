@@ -1,0 +1,8 @@
+// loc 23618
+nonsolid = true
+ambient = 25
+active = 0
+noshadow = true
+mapscene = 22
+recol = 2729/691
+models = 24916/0

@@ -1,0 +1,9 @@
+// obj 10514
+model = obj_tofu
+zoom2d = 1438
+yan2d = 221
+xan2d = 235
+members = true
+iop1 = Drop
+iop5 = Destroy
+name = Tofu

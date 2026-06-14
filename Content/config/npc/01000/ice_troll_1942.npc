@@ -1,0 +1,11 @@
+// npc 1942
+walkanim = 283
+readyanim = 286
+size = 1
+resizeh = 134
+resizev = 134
+op2 = Attack
+vislevel = 121
+recol = 61/23661 21570/23781
+name = Ice troll
+models = 4942 4943 3755 3762

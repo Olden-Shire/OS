@@ -1,0 +1,7 @@
+// loc 19036
+active = 1
+forceapproach = 11
+ambient = 20
+nonblockrange = true
+models_only = 20497
+name = Cage

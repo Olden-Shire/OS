@@ -1,0 +1,10 @@
+// loc 1658
+sharelight = true
+occlude = true
+hillskew = true
+active = 0
+ambient = 25
+contrast = 25
+recol = 24/9098
+retex = 2/23
+models = 16340/10 612/0 613/1 614/2 615/9

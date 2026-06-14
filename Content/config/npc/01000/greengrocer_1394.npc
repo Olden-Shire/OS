@@ -1,0 +1,12 @@
+// npc 1394
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+recol = 8741/21665 25238/21656 8078/21545 6798/6713 7952/3608
+name = Greengrocer
+models = 206 252 292 162 179 4226 4218 4391 317
+headmodels = 46 84

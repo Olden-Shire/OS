@@ -1,0 +1,11 @@
+// npc 5499
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 43072/5662 25238/3980 4550/5289
+name = Eric
+models = 215 185 249 310 173 176 275
+headmodels = 53 81

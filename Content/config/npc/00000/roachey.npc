@@ -1,0 +1,12 @@
+// npc 592
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 8741/4626 25238/8472 43569/4626 6798/103 4550/6709 54397/33694
+name = Roachey
+models = 230 299 151 179 267 185 194 251 562 236 320
+headmodels = 63 37 68 83

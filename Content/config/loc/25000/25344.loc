@@ -1,0 +1,11 @@
+// loc 25344
+active = 0
+width = 2
+length = 2
+hillskew = true
+hillskew = true
+sharelight = true
+ambient = 30
+nonblockrange = true
+recol = 51/32929 39/32924 35/32920 30/32916
+models_only = 14594

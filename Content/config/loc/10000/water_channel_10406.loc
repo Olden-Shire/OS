@@ -1,0 +1,5 @@
+// loc 10406
+hillskew = true
+ambient = 20
+models_only = 10194 10203 10198
+name = Water Channel

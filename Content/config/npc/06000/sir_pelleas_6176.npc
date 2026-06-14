@@ -1,0 +1,11 @@
+// npc 6176
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 112
+recol = 5673/7729 6798/7729
+name = Sir Pelleas
+models = 27125 27196 27203
+headmodels = 27209 81

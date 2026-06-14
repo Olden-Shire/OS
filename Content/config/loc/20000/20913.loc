@@ -1,0 +1,8 @@
+// loc 20913
+active = 0
+nonsolid = true
+contrast = 10
+ambient = 10
+forcedecor = true
+resizey = 135
+models = 21371/22

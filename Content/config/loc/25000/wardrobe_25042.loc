@@ -1,0 +1,7 @@
+// loc 25042
+op2 = Search
+op3 = Close
+forceapproach = 13
+ambient = 20
+models_only = 26512 5531
+name = Wardrobe

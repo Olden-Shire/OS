@@ -1,0 +1,11 @@
+// npc 1051
+vislevel = 0
+size = 1
+walkanim = 841
+readyanim = 842
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/22441 25238/22441 6798/22441 4550/22464 33/127 1944/22420
+name = Nature Spirit
+models = 210 292 256 170 250 176 280 3604
+headmodels = 49 82

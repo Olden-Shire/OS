@@ -1,0 +1,7 @@
+// loc 11221
+op1 = Repair
+forceapproach = 11
+nonsolid = true
+anim = 464
+width = 2
+multiloc = 1751, 65535, 11317 11318 11319

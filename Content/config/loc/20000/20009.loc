@@ -1,0 +1,10 @@
+// loc 20009
+active = 0
+sharelight = true
+hillskew = true
+noshadow = true
+blockwalk = true
+mirror = true
+ambient = 10
+nonblockrange = true
+models = 20331/0

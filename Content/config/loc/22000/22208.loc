@@ -1,0 +1,8 @@
+// loc 22208
+active = 0
+sharelight = true
+hillskew = true
+contrast = 20
+ambient = 20
+mirror = true
+models_only = 22846

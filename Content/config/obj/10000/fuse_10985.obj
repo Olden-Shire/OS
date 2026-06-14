@@ -1,0 +1,9 @@
+// obj 10985
+model = obj_fuse_10985
+zoom2d = 1104
+yan2d = 1823
+xan2d = 486
+members = true
+cost = 0
+iop5 = Destroy
+name = Fuse

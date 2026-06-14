@@ -1,0 +1,8 @@
+// loc 25955
+active = 1
+contrast = 10
+ambient = 10
+anim = 6917
+bgsound = 3820, 5
+models_only = 27525
+name = Alan

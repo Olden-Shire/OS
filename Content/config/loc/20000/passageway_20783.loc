@@ -1,0 +1,9 @@
+// loc 20783
+active = 1
+contrast = 10
+ambient = 10
+blockwalk = true
+op1 = Enter
+resizey = 135
+models_only = 21298
+name = Passageway

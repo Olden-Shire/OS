@@ -1,0 +1,7 @@
+// loc 11825
+active = 0
+ambient = 20
+contrast = 15
+wallwidth = 32
+occlude = true
+models = 11652/0 11653/9

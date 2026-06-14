@@ -1,0 +1,8 @@
+// loc 1744
+op1 = Climb-down
+blockwalk = true
+forceapproach = 13
+mapscene = 7
+retex = 11/16
+models_only = 1287
+name = Staircase

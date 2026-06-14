@@ -1,0 +1,9 @@
+// npc 4456
+size = 1
+walkanim = 4319
+readyanim = 4318
+op1 = Talk-to
+vislevel = 0
+name = Ork
+models = 16299 16303 16307 16321 16326 16317 16315 16316
+headmodels = 16214

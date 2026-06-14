@@ -1,0 +1,16 @@
+// obj 6707
+model = obj_camulet
+ambient = 15
+xof2d = -9
+xof2d = -8
+yof2d = 25
+zoom2d = 630
+yan2d = 32
+xan2d = 384
+iop2 = Wear
+iop3 = Check-charge
+iop4 = Rub
+manwear = obj_camulet_man, 0
+womanwear = obj_camulet_woman, 0
+members = true
+name = Camulet

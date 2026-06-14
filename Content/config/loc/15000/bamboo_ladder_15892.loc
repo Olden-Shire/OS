@@ -1,0 +1,10 @@
+// loc 15892
+mirror = true
+blockwalk = true
+forceapproach = 13
+op1 = Climb-down
+mapscene = 7
+offsetx = 64
+recol = 6585/6689 5673/5912
+models_only = 4727
+name = Bamboo Ladder

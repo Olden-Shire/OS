@@ -1,0 +1,9 @@
+// loc 13368
+anim = 166
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+recol = 28/5392 6554/3619 6808/4510 8078/4510 5309/5392
+models_only = 14109
+name = Hobgoblin

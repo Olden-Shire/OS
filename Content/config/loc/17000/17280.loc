@@ -1,0 +1,9 @@
+// loc 17280
+active = 1
+blockwalk = true
+ambient = 10
+length = 2
+anim = 4560
+forceapproach = 13
+offsety = -30
+multiloc = 2502, 65535, 17241 17240 17241

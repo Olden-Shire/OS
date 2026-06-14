@@ -1,0 +1,12 @@
+// obj 5511
+cost = 300
+members = true
+model = obj_medium_pouch_5510
+zoom2d = 650
+yan2d = 64
+xan2d = 188
+iop1 = Fill
+iop2 = Empty
+iop3 = Check
+recol = 6430/5268 7467/6558 7223/10407 6798/11144
+name = Medium pouch

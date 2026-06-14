@@ -1,0 +1,11 @@
+// obj 1052
+cost = 450
+members = true
+model = obj_cape_of_legends_1052
+zoom2d = 1370
+yan2d = 804
+xan2d = 204
+iop2 = Wear
+manwear = obj_cape_of_legends_1052_man, 0
+womanwear = obj_cape_of_legends_1052_woman, 0
+name = Cape of legends

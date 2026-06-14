@@ -1,0 +1,11 @@
+// npc 2683
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+op3 = Pickpocket
+vislevel = 2
+recol = 8741/5305 25238/40094 6798/5027 8078/40099 43072/4550
+name = Hengel
+models = 235 247 292 327 163 176 254 185 276
+headmodels = 67 79

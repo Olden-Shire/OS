@@ -1,0 +1,16 @@
+// obj 5323
+model = obj_pineapple_seed
+xof2d = 1
+yof2d = -5
+zoom2d = 620
+yan2d = 1992
+xan2d = 396
+members = true
+stackable = true
+count1 = 5147, 2
+count2 = 5148, 3
+count3 = 5149, 4
+count4 = 5150, 5
+cost = 18
+recol = 520/7616
+name = Strawberry seed

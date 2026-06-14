@@ -1,0 +1,17 @@
+// interface 180
+
+[com_0]
+type=6
+buttontype=0
+clientcode=0
+x=241
+y=167
+width=32
+height=32
+trans=0
+model=com_i11229
+activemodel=-1
+anim=3166
+zoom=16
+xan=512
+yan=0

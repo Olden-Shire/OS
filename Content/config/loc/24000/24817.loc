@@ -1,0 +1,9 @@
+// loc 24817
+active = 0
+width = 5
+length = 2
+noshadow = true
+contrast = 20
+ambient = 30
+blockwalk = true
+models_only = 25958

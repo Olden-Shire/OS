@@ -1,0 +1,8 @@
+// loc 15490
+active = 1
+anim = 6477
+width = 5
+length = 5
+ambient = 20
+models_only = 25850 25851 25859 25870
+name = Kalphite Queen

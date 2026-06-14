@@ -1,0 +1,11 @@
+// npc 6173
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+alwaysontop = true
+vislevel = 120
+recol = 6798/5537
+name = Sir Lucan
+models = 27126 27195 27203
+headmodels = 27208 27562 27204

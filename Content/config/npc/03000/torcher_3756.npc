@@ -1,0 +1,9 @@
+// npc 3756
+size = 1
+op2 = Attack
+walkanim = 3879
+readyanim = 3878
+vislevel = 66
+recol = 43072/4001 43059/5016
+name = Torcher
+models = 14552

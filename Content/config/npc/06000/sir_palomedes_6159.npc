@@ -1,0 +1,11 @@
+// npc 6159
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Hidden
+op1 = Talk-to
+vislevel = 118
+recol = 7888/127 5537/5652 6798/5652
+name = Sir Palomedes
+models = 27126 27195 27203
+headmodels = 27208 27562 27204

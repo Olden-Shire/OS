@@ -1,0 +1,10 @@
+// obj 3688
+model = obj_unstrung_lyre
+manwear = obj_unstrung_lyre_wear, 0
+womanwear = obj_unstrung_lyre_wear, 0
+xof2d = -4
+zoom2d = 1230
+yan2d = 144
+xan2d = 464
+members = true
+name = Unstrung lyre

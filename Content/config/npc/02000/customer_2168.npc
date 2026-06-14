@@ -1,0 +1,9 @@
+// npc 2168
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 8741/12973 25238/7582
+name = Customer
+models = 378 456 480 348 353 419 358
+headmodels = 103

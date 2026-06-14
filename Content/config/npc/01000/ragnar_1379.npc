@@ -1,0 +1,11 @@
+// npc 1379
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 1
+recol = 25238/10279 43072/2524 8741/8088 4550/2524 6798/7731 6587/22408
+name = Ragnar
+models = 4220 250 292 151 176 4226 4218 4219
+headmodels = 4210 82

@@ -1,0 +1,11 @@
+// npc 2305
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 6798/2737 54397/8394 25238/7582 8741/9761 43072/4550
+name = Vanessa
+models = 387 467 348 353 421 7366
+headmodels = 110

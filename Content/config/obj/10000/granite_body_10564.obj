@@ -1,0 +1,13 @@
+// obj 10564
+model = obj_granite_body_10564
+iop2 = Wear
+manwear = obj_granite_body_10564_man, 0
+manwear2 = 20735
+womanwear = obj_granite_body_10564_woman, 0
+womanwear2 = 20737
+members = true
+zoom2d = 1280
+yan2d = 2016
+xan2d = 336
+cost = 80000
+name = Granite body

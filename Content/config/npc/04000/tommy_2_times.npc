@@ -1,0 +1,13 @@
+// npc 4549
+vislevel = 0
+size = 1
+resizeh = 126
+resizev = 117
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 25238/10520 8741/7054 6798/7081 4550/3408 4626/3408 22177/908
+name = Tommy 2-times
+models = 211 236 248 292 14373 8918 11201 11112 181
+headmodels = 50 80 68

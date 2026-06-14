@@ -1,0 +1,12 @@
+// npc 2983
+vislevel = 0
+size = 1
+readyanim = 317
+walkanim = 314
+resizeh = 70
+resizev = 70
+alwaysontop = true
+op2 = hidden
+recol = 61/8105 16/5916 127/5673
+name = Turbogroomer
+models = 9428 9426

@@ -1,0 +1,7 @@
+// loc 4463
+width = 2
+op1 = Take-from
+nonblockrange = true
+recol = 61/7099
+models_only = 1213 4434
+name = Table

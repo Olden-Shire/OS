@@ -1,0 +1,9 @@
+// loc 13363
+active = 1
+op5 = Remove
+nonsolid = true
+resizex = 64
+resizey = 64
+resizez = 64
+models = 596/22
+name = Tangle hidden

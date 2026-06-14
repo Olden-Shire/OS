@@ -1,0 +1,4 @@
+// loc 1000
+blockwalk = true
+nonblockrange = true
+models = 984/0 985/1 986/2

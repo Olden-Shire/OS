@@ -1,0 +1,10 @@
+// npc 703
+vislevel = 0
+size = 1
+walkanim = 4779
+readyanim = 4825
+op1 = Talk-to
+recol = 4550/8646 8741/8497 5281/532 25238/7700 8887/21526 36015/8497
+name = Fisherman
+models = 10741 215 10304 11761 162 177 562 176 4226 14376
+headmodels = 18334 18341 10739

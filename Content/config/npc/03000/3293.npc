@@ -1,0 +1,6 @@
+// npc 3293
+vislevel = 0
+walkanim = 3220
+inactive = true
+recol = 4886/8070 5908/8844
+models = 11470

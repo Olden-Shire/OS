@@ -1,0 +1,11 @@
+// npc 2812
+op1 = Talk-to
+size = 2
+resizev = 129
+walkanim = 45
+readyanim = 51
+vislevel = 0
+recol = 7475/7620 7364/7620 7355/7620 7479/7620 7360/7620
+name = Cam the Camel
+models = 9846 9844 9848
+headmodels = 9840

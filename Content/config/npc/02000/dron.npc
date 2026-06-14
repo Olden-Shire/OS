@@ -1,0 +1,12 @@
+// npc 2939
+vislevel = 0
+size = 1
+resizev = 132
+resizeh = 136
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 6798/4921 25238/3608 8741/5545 8078/5442 906/4525 61/41
+name = Dron
+models = 4219 4220 242 252 292 4391 162 176 502 4235 4226 4218
+headmodels = 84 4210 75

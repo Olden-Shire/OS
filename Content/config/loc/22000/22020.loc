@@ -1,0 +1,8 @@
+// loc 22020
+active = 0
+sharelight = true
+blockwalk = true
+ambient = 30
+contrast = 30
+mirror = true
+models = 23042/0

@@ -1,0 +1,10 @@
+// loc 4973
+sharelight = true
+width = 4
+length = 3
+op1 = Walk-up
+resizey = 153
+ambient = 20
+contrast = 20
+models_only = 21230
+name = Stairs

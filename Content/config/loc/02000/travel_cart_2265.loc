@@ -1,0 +1,8 @@
+// loc 2265
+width = 2
+length = 3
+op2 = Board
+op3 = Pay-fare
+nonblockrange = true
+models_only = 1480
+name = Travel cart

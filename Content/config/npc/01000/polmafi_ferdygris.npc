@@ -1,0 +1,10 @@
+// npc 1573
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/27528 43072/8472 8741/22408 4550/2524 10004/61 4626/29574
+name = Polmafi Ferdygris
+models = 215 245 292 170 176 275 181 324 249
+headmodels = 53 78 81

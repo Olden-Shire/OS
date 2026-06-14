@@ -1,0 +1,11 @@
+// npc 547
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/5784 8741/5921 25238/6457 43072/4550
+name = Baraek
+models = 230 244 248 299 25866 25680 177 254 19947
+headmodels = 63 77 80

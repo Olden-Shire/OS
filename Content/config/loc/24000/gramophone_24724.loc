@@ -1,0 +1,8 @@
+// loc 24724
+anim = 6522
+active = 1
+blockwalk = true
+op1 = Wind-up
+ambient = 30
+models_only = 25986 25982
+name = Gramophone

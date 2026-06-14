@@ -1,0 +1,10 @@
+// npc 840
+size = 2
+walkanim = 45
+readyanim = 51
+op1 = Talk-to
+op2 = Attack
+vislevel = 42
+name = Ugthanki
+models = 2939
+headmodels = 9841

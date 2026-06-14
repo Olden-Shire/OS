@@ -1,0 +1,12 @@
+// npc 747
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 61/35241 41/36133 6798/7054 25238/58522
+name = Oziach
+models = 235 247 312 26422 164 177 176 254 181
+headmodels = 67 79

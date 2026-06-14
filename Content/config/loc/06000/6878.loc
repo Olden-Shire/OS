@@ -1,0 +1,4 @@
+// loc 6878
+active = 1
+nonblockrange = true
+multiloc = 496, 65535, 6880 6882

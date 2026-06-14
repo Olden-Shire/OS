@@ -1,0 +1,6 @@
+// loc 23756
+sharelight = true
+ambient = 25
+contrast = 25
+nonblockrange = true
+models = 25112/0

@@ -1,0 +1,9 @@
+// loc 17885
+hillskew = true
+mirror = true
+sharelight = true
+forcedecor = true
+offsety = 240
+recol = 24/32786 20/32910 16/32906 12/33030 8/33666 4/0
+models_only = 13258
+name = Rift

@@ -1,0 +1,15 @@
+// obj 11681
+model = obj_scrap_paper
+xof2d = -1
+yof2d = 10
+zoom2d = 1872
+yan2d = 1967
+xan2d = 552
+contrast = 15
+ambient = 15
+members = true
+iop1 = Read
+iop5 = Destroy
+op3 = Take
+cost = 1
+name = Scrap paper

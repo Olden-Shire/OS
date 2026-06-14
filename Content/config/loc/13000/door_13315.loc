@@ -1,0 +1,5 @@
+// loc 13315
+op1 = Close
+nonblockrange = true
+models = 12430/0
+name = Door

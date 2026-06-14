@@ -11,4 +11,4 @@ pub mod skills;
 pub mod world;
 pub mod zone;
 
-pub use world::World;
+pub use world::{ChatLine, CycleStats, World};

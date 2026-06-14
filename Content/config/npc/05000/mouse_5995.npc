@@ -1,0 +1,10 @@
+// npc 5995
+walkanim = 6517
+readyanim = 6518
+op2 = Attack
+size = 4
+alwaysontop = true
+vislevel = 95
+recol = 5543/5656 5431/5532 8530/5293
+name = Mouse
+models = 26075

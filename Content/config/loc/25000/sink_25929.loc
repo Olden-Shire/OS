@@ -1,0 +1,7 @@
+// loc 25929
+length = 2
+ambient = 10
+contrast = 10
+nonblockrange = true
+models_only = 27376
+name = Sink

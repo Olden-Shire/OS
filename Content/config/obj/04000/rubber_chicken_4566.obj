@@ -1,0 +1,14 @@
+// obj 4566
+cost = 0
+iop2 = Wield
+model = obj_rubber_chicken_4566
+iop2 = Wield
+iop3 = Dance
+manwear = obj_rubber_chicken_4566_wear, 0
+womanwear = obj_rubber_chicken_4566_wear, 6
+xof2d = -3
+yof2d = 13
+zoom2d = 1510
+yan2d = 92
+xan2d = 332
+name = Rubber chicken

@@ -1,0 +1,14 @@
+// obj 10778
+cost = 65000
+model = obj_saradomin_plate_2661
+xof2d = -1
+yof2d = -1
+zoom2d = 1180
+xan2d = 452
+iop2 = Wear
+manwear = obj_saradomin_plate_2661_man, 0
+manwear2 = 164
+womanwear = obj_saradomin_plate_2661_woman, 0
+womanwear2 = 344
+recol = 61/36133 41/37270 24/10467 11187/10467
+name = Saradomin plate

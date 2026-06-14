@@ -1,0 +1,11 @@
+// obj 6059
+model = obj_scarecrow
+xof2d = -44
+yof2d = -236
+zoom2d = 2500
+yan2d = 260
+zan2d = 1892
+xan2d = 220
+members = true
+ambient = 15
+name = Scarecrow

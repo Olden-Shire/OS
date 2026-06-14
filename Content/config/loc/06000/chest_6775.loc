@@ -1,0 +1,10 @@
+// loc 6775
+active = 1
+op1 = Search
+op2 = Close
+forceapproach = 11
+width = 2
+length = 2
+recol = 41/11173
+models_only = 6616
+name = Chest

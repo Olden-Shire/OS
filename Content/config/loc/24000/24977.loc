@@ -1,0 +1,11 @@
+// loc 24977
+active = 0
+sharelight = true
+hillskew = true
+blockwalk = true
+resizex = 128
+resizey = 256
+resizez = 128
+ambient = 30
+recol = 7442/7700 7446/7704 7322/7580 7326/7585 7331/7461 7335/7465
+models_only = 26388

@@ -1,0 +1,9 @@
+// npc 2801
+size = 2
+walkanim = 358
+readyanim = 357
+op2 = Attack
+vislevel = 60
+recol = 8722/10526 6482/5190 7073/8596 61/41
+name = Mogre
+models = 2876 9809 9808

@@ -1,0 +1,11 @@
+// npc 831
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 1953
+turnspeed = 0
+op1 = Talk-to
+recol = 8741/35107 9104/34991 8078/34991 54397/6494 4550/4645 25238/5400
+name = Captain Siad
+models = 6848 253 292 320 162 10218 4234 176 3599
+headmodels = 5787 85

@@ -1,0 +1,6 @@
+// loc 18176
+width = 2
+nonblockrange = true
+recol = 6443/7461 6451/7585 6439/7954 6563/7830
+models_only = 9547 18258
+name = Large table

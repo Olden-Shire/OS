@@ -1,0 +1,11 @@
+// npc 227
+alwaysontop = true
+vislevel = 0
+size = 1
+readyanim = 3845
+op1 = Talk-to
+turnspeed = 0
+recol = 41282/4288 8741/5400 43288/3608 40117/5541 40237/3350 41251/169
+name = Morris
+models = 14340 247 10705 14373 177 14377
+headmodels = 14337 79

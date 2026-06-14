@@ -1,0 +1,10 @@
+// loc 8689
+anim = 5855
+length = 2
+forceapproach = 13
+op1 = Milk
+op2 = Steal-cowbell
+ambient = 20
+contrast = 20
+models_only = 23891
+name = Dairy cow

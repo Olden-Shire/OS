@@ -1,0 +1,7 @@
+// loc 25286
+active = 1
+op1 = Construct
+blockwalk = true
+forceapproach = 14
+models = 26732/22
+name = Pyre site

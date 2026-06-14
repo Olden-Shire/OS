@@ -1,0 +1,8 @@
+// loc 24560
+ambient = 25
+active = 1
+raiseobject = 0
+op1 = Open
+nonblockrange = true
+models = 25029/0
+name = Gate

@@ -1,0 +1,11 @@
+// npc 4812
+turnspeed = 0
+op1 = Talk-to
+op2 = Attack
+alwaysontop = true
+readyanim = 4706
+size = 3
+vislevel = 125
+name = Flying female vampire
+models = 17954 17959 17950
+headmodels = 18055

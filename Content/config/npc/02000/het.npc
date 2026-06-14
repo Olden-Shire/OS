@@ -1,0 +1,12 @@
+// npc 2007
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizeh = 140
+resizev = 140
+op2 = Attack
+alwaysontop = true
+vislevel = 81
+recol = 61/9015 43072/9015 4626/4550 25238/42908 7073/9015 4550/6558
+name = Het
+models = 6130 249 281 315 173 176 6135 266 181

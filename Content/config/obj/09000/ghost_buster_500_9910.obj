@@ -1,0 +1,15 @@
+// obj 9910
+model = obj_ghost_buster_500_9906
+manwear = obj_ghost_buster_500_9906_wear, 0
+womanwear = obj_ghost_buster_500_9906_wear, 6
+iop2 = Wield
+iop3 = Empty
+iop5 = Destroy
+cost = 3
+xof2d = -1
+zoom2d = 912
+yan2d = 1787
+xan2d = 567
+cost = 1
+recol = 66/8512 57/8631
+name = Ghost buster 500

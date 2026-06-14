@@ -1,0 +1,7 @@
+// loc 7150
+active = 1
+sharelight = true
+width = 3
+length = 2
+forceapproach = 11
+multiloc = 625, 65535, 7168 7164 7154 7164 7168 7165 7168 7164 7156 7164 7168 7165 7159 7160 7162 7163 7166 7167 7169 7170

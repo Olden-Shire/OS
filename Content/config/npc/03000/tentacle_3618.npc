@@ -1,0 +1,9 @@
+// npc 3618
+op2 = Attack
+walkanim = 3617
+readyanim = 3617
+ambient = 15
+vislevel = 99
+recol = 8753/12475 8745/12475 8993/12475 10355/12616
+name = Tentacle
+models = 13202

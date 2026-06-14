@@ -1,0 +1,9 @@
+// npc 903
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+name = Lundail
+models = 230 252 303 173 176 274 185
+headmodels = 63 84

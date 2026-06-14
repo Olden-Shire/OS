@@ -1,0 +1,9 @@
+// loc 17239
+active = 1
+ambient = 10
+blockwalk = true
+op3 = Sing-glass
+op1 = Inspect
+nonblockrange = true
+models_only = 17058
+name = Singing bowl

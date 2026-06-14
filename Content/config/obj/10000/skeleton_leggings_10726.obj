@@ -1,0 +1,14 @@
+// obj 10726
+members = true
+model = obj_skeleton_leggings_9923
+manwear = obj_skeleton_leggings_9923_man, 0
+womanwear = obj_skeleton_leggings_9923_woman, 0
+iop2 = Wear
+iop5 = Destroy
+xof2d = 3
+yof2d = 3
+zoom2d = 1632
+zan2d = 152
+xan2d = 567
+cost = 1
+name = Skeleton leggings

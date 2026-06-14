@@ -1,0 +1,7 @@
+// loc 15219
+sharelight = true
+width = 2
+length = 2
+recol = 7335/10398 7331/10398 7326/10398 7322/10398 7446/10398 7442/10398
+models_only = 15092
+name = Rock

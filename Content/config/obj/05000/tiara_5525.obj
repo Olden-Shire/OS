@@ -1,0 +1,12 @@
+// obj 5525
+model = obj_tiara_5525
+iop2 = Wear
+yof2d = -25
+zoom2d = 480
+xan2d = 232
+manwear = obj_tiara_5525_man, 0
+womanwear = obj_tiara_5525_woman, 0
+manhead = 7465
+womanhead = 7465
+cost = 100
+name = Tiara

@@ -1,0 +1,16 @@
+// interface 179
+
+[com_0]
+type=3
+buttontype=0
+clientcode=0
+x=0
+y=0
+width=512
+height=400
+trans=140
+fill=1
+colour=0x5a7b86
+colour2=0x000000
+colourover=0x000000
+colour2over=0x000000

@@ -1,0 +1,6 @@
+// loc 15215
+active = 1
+nonsolid = true
+bgsound = 3142, 3
+models = 15070/22
+name = Steam Vent

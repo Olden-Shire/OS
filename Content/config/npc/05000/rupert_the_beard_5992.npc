@@ -1,0 +1,6 @@
+// npc 5992
+nominimap = true
+vislevel = 1
+name = Rupert the Beard
+models = 26050
+headmodels = 26082 26081

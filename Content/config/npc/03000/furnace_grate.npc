@@ -1,0 +1,9 @@
+// npc 3135
+vislevel = 0
+size = 2
+turnspeed = 0
+op2 = Clear
+nominimap = true
+recol = 13716/7618 13840/7609 13964/6707 14216/6703 15238/7595 0/7715
+name = Furnace grate
+models = 10996

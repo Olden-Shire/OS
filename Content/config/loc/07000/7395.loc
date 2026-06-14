@@ -1,0 +1,6 @@
+// loc 7395
+sharelight = true
+active = 1
+length = 2
+blockwalk = true
+multiloc = 65535, 499, 7394

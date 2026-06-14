@@ -1,0 +1,9 @@
+// npc 781
+vislevel = 0
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/32819 25238/37394 11162/16 38119/786
+name = Shilop
+models = 14289 17006 2918
+headmodels = 14287

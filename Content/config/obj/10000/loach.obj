@@ -1,0 +1,13 @@
+// obj 10970
+model = obj_loach
+xof2d = -3
+yof2d = 8
+zoom2d = 720
+yan2d = 1868
+xan2d = 484
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 50
+name = Loach

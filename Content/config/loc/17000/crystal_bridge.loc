@@ -1,0 +1,8 @@
+// loc 17267
+active = 1
+hillskew = true
+nonsolid = true
+forcedecor = true
+op1 = Walk-across
+models = 17052/22
+name = Crystal bridge

@@ -1,0 +1,10 @@
+// npc 695
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 5338/4550 43072/4550 33/6336 8741/6336 54397/43082 6439/5532
+name = Bailey
+models = 11111 247 302 18077 176 15104 10124
+headmodels = 11186 79

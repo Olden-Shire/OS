@@ -1,0 +1,6 @@
+// loc 18210
+sharelight = true
+hillskew = true
+ambient = 55
+contrast = 20
+models = 18275/0 18276/9

@@ -1,0 +1,10 @@
+// loc 21622
+forceapproach = 11
+op1 = Decapitate
+blockwalk = true
+width = 2
+length = 2
+ambient = 20
+contrast = 20
+models_only = 22146 22147
+name = Ice Troll King

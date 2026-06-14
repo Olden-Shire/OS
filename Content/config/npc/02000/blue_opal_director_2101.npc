@@ -1,0 +1,13 @@
+// npc 2101
+size = 1
+resizeh = 130
+resizev = 115
+walkanim = 98
+readyanim = 101
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 43059/39234 61/42176 5417/43051 5181/35895 4626/39818 2578/35994
+name = Blue Opal Director
+models = 7027 7055 7037 7044 2985
+headmodels = 6986

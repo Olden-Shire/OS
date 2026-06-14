@@ -1,0 +1,13 @@
+// obj 9183
+model = obj_crossbow_837
+yof2d = 3
+zoom2d = 926
+yan2d = 258
+xan2d = 432
+iop2 = Wield
+manwear = obj_phoenix_crossbow_767_wear, 0
+womanwear = obj_phoenix_crossbow_767_wear, 6
+members = true
+cost = 1767
+recol = 6447/6585 6443/6705 6439/6697 5656/21671 5652/21662 5904/21782
+name = Adamant c'bow

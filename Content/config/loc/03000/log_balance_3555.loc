@@ -1,0 +1,9 @@
+// loc 3555
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Walk-on
+recol = 5014/6449
+models = 1128/22
+name = Log balance

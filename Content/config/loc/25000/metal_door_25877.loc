@@ -1,0 +1,9 @@
+// loc 25877
+active = 1
+contrast = 15
+ambient = 20
+blockwalk = true
+op1 = Close
+raiseobject = 0
+models = 27408/0
+name = Metal door

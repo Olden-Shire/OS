@@ -1,0 +1,7 @@
+// loc 6912
+width = 3
+sharelight = true
+op1 = Squeeze-through
+active = 1
+models_only = 6894
+name = Hole

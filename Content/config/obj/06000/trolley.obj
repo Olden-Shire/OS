@@ -1,0 +1,10 @@
+// obj 6478
+model = obj_trolley
+yof2d = -2
+zoom2d = 1890
+yan2d = 1596
+xan2d = 224
+members = true
+iop5 = Destroy
+recol = 8602/8722 8478/8598 8487/8478 8363/8483
+name = Trolley

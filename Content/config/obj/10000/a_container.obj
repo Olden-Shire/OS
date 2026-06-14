@@ -1,0 +1,12 @@
+// obj 10495
+model = obj_a_container
+cost = 10
+members = true
+xof2d = -4
+yof2d = 8
+zoom2d = 919
+yan2d = 1231
+zan2d = 1923
+xan2d = 360
+iop5 = Destroy
+name = A container

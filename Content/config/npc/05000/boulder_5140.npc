@@ -1,0 +1,11 @@
+// npc 5140
+vislevel = 0
+size = 2
+readyanim = 5310
+walkanim = 5309
+ambient = 15
+op1 = Push
+turnspeed = 0
+nominimap = true
+name = Boulder
+models = 20088

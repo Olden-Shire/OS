@@ -1,0 +1,13 @@
+// loc 19224
+resizex = 128
+resizey = 128
+resizez = 128
+contrast = 30
+ambient = 30
+op1 = Deactivate
+nonsolid = true
+active = 1
+anim = 5219
+recol = 18343/66 52017/66 11187/127 40871/0 685/0
+models_only = 19891
+name = Magic box failed

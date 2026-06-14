@@ -1,0 +1,12 @@
+// npc 4965
+size = 1
+vislevel = 0
+readyanim = 5002
+op1 = Talk-to
+op3 = Exchange
+op4 = Trade
+turnspeed = 0
+recol = 11162/4550
+name = Tool Leprechaun
+models = 17004 19107 19106 19108
+headmodels = 24 19164

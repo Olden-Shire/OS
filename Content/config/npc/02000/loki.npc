@@ -1,0 +1,12 @@
+// npc 2985
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 317
+resizeh = 80
+resizev = 65
+alwaysontop = true
+op2 = Hidden
+recol = 61/8105 16/5916 127/5673
+name = Loki
+models = 3010 3006

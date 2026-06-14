@@ -1,0 +1,8 @@
+// loc 3813
+active = 1
+mapscene = 42
+ambient = 15
+contrast = 15
+nonblockrange = true
+models_only = 3815
+name = Crate

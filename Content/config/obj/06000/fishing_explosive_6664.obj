@@ -1,0 +1,12 @@
+// obj 6664
+manwear = obj_holy_water_wear, 0
+womanwear = obj_holy_water_wear, 6
+model = obj_strength_potion_4_113
+cost = 60
+yof2d = -1
+zoom2d = 550
+yan2d = 1996
+xan2d = 84
+stackable = true
+members = true
+name = Fishing explosive

@@ -1,0 +1,8 @@
+// loc 10104
+active = 1
+hillskew = true
+length = 2
+width = 2
+anim = 2807
+forceapproach = 11
+multiloc = 1355, 65535, 10142 10143 10144

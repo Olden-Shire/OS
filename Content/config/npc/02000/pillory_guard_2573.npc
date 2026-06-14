@@ -1,0 +1,11 @@
+// npc 2573
+vislevel = 0
+size = 1
+resizeh = 138
+resizev = 131
+walkanims = 819, 820, 821, 822
+readyanim = 808
+alwaysontop = true
+recol = 8472/5177 9100/5177 5442/8596 11200/8596
+name = Pillory Guard
+models = 225 301 169 179 519 269 185

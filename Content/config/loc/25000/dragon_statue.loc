@@ -1,0 +1,7 @@
+// loc 25194
+ambient = 40
+blockwalk = true
+nonblockrange = true
+recol = 10388/33 10512/24 10392/20 10396/41
+models_only = 26477
+name = Dragon statue

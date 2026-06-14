@@ -1,0 +1,11 @@
+// npc 808
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/127 8741/8 7070/11200 10667/127 25238/8 43072/8
+name = Hobbes
+models = 215 247 292 163 176 267 185 327
+headmodels = 53 79

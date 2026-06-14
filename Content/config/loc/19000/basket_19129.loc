@@ -1,0 +1,9 @@
+// loc 19129
+anim = 5141
+width = 2
+length = 2
+ambient = 25
+active = 1
+op1 = Use
+models_only = 19505 19508 19509
+name = Basket

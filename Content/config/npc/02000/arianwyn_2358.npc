@@ -1,0 +1,9 @@
+// npc 2358
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+name = Arianwyn
+models = 4015 4021 4023 4025 4027
+headmodels = 4012

@@ -1,0 +1,7 @@
+// loc 9978
+sharelight = true
+active = 1
+mapscene = 7
+op1 = Climb-up
+models = 9685/0
+name = Ladder

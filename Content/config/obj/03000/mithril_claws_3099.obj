@@ -1,0 +1,14 @@
+// obj 3099
+cost = 475
+model = obj_bronze_claws_3095
+xof2d = -7
+yof2d = -13
+zoom2d = 630
+yan2d = 1340
+xan2d = 268
+iop2 = Wear
+manwear = obj_bronze_claws_3095_wear, 0
+womanwear = obj_bronze_claws_3095_wear, 6
+members = true
+recol = 24/43288 33/43297 41/43177 49/43185
+name = Mithril claws

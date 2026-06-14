@@ -1,0 +1,7 @@
+// loc 10403
+anim = 2905
+active = 0
+ambient = 20
+bgsound = 2170, 3
+recol = 49300/31058
+models_only = 10132

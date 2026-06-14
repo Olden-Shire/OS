@@ -1,0 +1,11 @@
+// npc 4713
+vislevel = 0
+op1 = Talk-to
+resizev = 150
+resizeh = 150
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 0/41680 8741/55174 25238/55174 4626/0 24/53142 4550/4558
+name = Safalaan
+models = 18087 246 18134 10979 177 12138 181
+headmodels = 18040

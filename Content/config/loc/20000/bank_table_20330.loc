@@ -1,0 +1,7 @@
+// loc 20330
+width = 2
+ambient = 10
+nonblockrange = true
+recol = 6451/6589 6443/6594 6439/6705 6563/6701
+models_only = 14827 20776
+name = Bank table

@@ -1,0 +1,6 @@
+// loc 3366
+op2 = Pick
+nonsolid = true
+mapscene = 33
+models_only = 8206
+name = Onion

@@ -1,0 +1,10 @@
+// obj 611
+model = obj_locating_crystal_611
+xof2d = 1
+yof2d = -8
+zoom2d = 1270
+yan2d = 4
+xan2d = 120
+members = true
+iop1 = Activate
+name = Locating crystal

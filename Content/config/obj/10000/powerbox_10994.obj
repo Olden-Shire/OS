@@ -1,0 +1,9 @@
+// obj 10994
+model = obj_powerbox_10994
+zoom2d = 659
+yan2d = 105
+xan2d = 156
+members = true
+cost = 0
+iop5 = Destroy
+name = Powerbox

@@ -1,0 +1,10 @@
+// npc 5865
+size = 1
+walkanim = 98
+readyanim = 6206
+op1 = Talk-to
+vislevel = 0
+recol = 61/119
+name = Builder
+models = 2974 23874 23878 2978 2990 23875 2985
+headmodels = 4 24533

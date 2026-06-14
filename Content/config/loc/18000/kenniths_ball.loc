@@ -1,0 +1,10 @@
+// loc 18403
+anim = 3743
+resizex = 100
+resizey = 100
+resizez = 100
+noshadow = true
+ambient = 20
+contrast = 10
+models_only = 18482 18481
+name = Kennith's ball

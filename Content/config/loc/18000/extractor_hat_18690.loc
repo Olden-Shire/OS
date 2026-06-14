@@ -1,0 +1,6 @@
+// loc 18690
+anim = 4883
+bgsound = 3166, 3
+op1 = Operate
+models_only = 18777
+name = Extractor hat

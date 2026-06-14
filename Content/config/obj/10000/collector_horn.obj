@@ -1,0 +1,16 @@
+// obj 10560
+model = obj_attacker_horn_10516
+ambient = 10
+xof2d = -1
+yof2d = -11
+zoom2d = 1114
+zan2d = 1148
+xan2d = 567
+iop1 = Tell-style1
+iop2 = Tell-style2
+iop3 = Tell-style3
+iop4 = Tell-style4
+iop5 = Medic
+members = true
+recol = 935/11200
+name = Collector horn

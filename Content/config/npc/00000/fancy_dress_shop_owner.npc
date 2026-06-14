@@ -1,0 +1,14 @@
+// npc 554
+vislevel = 0
+size = 1
+resizeh = 134
+resizev = 111
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/10760 8741/123 38036/54817 33030/54693 937/54817 4550/5338
+name = Fancy dress shop owner
+models = 7743 230 245 247 11811 10301 10218 12138 181
+headmodels = 63 79 78 7741

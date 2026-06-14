@@ -1,0 +1,8 @@
+// npc 78
+size = 2
+walkanim = 4913
+readyanim = 4914
+op2 = Attack
+vislevel = 27
+name = Giant bat
+models = 18898

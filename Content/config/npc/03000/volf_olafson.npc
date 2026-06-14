@@ -1,0 +1,13 @@
+// npc 3695
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 120
+resizev = 120
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 6798/5547 25238/6798 5541/5786 6466/6457 4550/5584
+name = Volf Olafson
+models = 214 252 5673 5667 4226 18128 5725
+headmodels = 52 84

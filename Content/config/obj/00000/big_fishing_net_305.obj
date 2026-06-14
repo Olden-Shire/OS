@@ -1,0 +1,12 @@
+// obj 305
+model = obj_big_fishing_net_305
+xof2d = 6
+yof2d = 19
+zoom2d = 1700
+yan2d = 140
+xan2d = 340
+cost = 20
+members = true
+manwear = obj_big_fishing_net_305_wear, 0
+womanwear = obj_big_fishing_net_305_wear, 6
+name = Big fishing net

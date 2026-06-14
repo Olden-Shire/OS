@@ -1,0 +1,6 @@
+// loc 1564
+sharelight = true
+occlude = true
+raiseobject = 0
+nonblockrange = true
+models = 945/0

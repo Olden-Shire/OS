@@ -1,0 +1,16 @@
+// obj 10609
+cost = 100
+model = obj_lunar_helm_9096
+iop2 = Wear
+manwear = obj_lunar_helm_9096_man, 0
+womanwear = obj_lunar_helm_9096_woman, 0
+manhead = 16468
+womanhead = 16468
+members = true
+yof2d = -5
+zoom2d = 854
+yan2d = 126
+xan2d = 101
+iop5 = Destroy
+recol = 6573/40210 36007/16652 33300/20 410/61714
+name = Lunar helm

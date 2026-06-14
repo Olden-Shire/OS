@@ -1,0 +1,13 @@
+// obj 11273
+model = obj_newcomer_map_550
+cost = 3
+members = true
+xof2d = -1
+yof2d = 56
+zoom2d = 990
+yan2d = 1716
+xan2d = 264
+iop1 = Toggle-view
+iop5 = Destroy
+recol = 5452/8373 5440/8493 5427/8485 1938/41612
+name = Impling scroll

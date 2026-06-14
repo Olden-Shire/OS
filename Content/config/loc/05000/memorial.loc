@@ -1,0 +1,9 @@
+// loc 5167
+width = 2
+blockwalk = true
+op1 = Push
+op2 = Search
+forceapproach = 7
+mapscene = 34
+models_only = 5169
+name = Memorial

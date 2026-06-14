@@ -1,0 +1,17 @@
+// npc 2982
+size = 1
+readyanim = 2704
+walkanim = 2703
+alwaysontop = true
+resizeh = 180
+resizev = 175
+vislevel = 0
+op2 = Hidden
+readyanim = 2704
+walkanim = 2703
+resizeh = 140
+resizev = 140
+recol = 8741/268 10535/10502 4405/4397
+name = King rat
+models = 9610
+headmodels = 10035

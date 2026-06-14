@@ -1,0 +1,9 @@
+// loc 14517
+resizex = 64
+resizez = 64
+resizey = 64
+hillskew = true
+nonblockrange = true
+recol = 8478/7452 8602/8481 8598/8472
+models_only = 8012
+name = Tree Stump

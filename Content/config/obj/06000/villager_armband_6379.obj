@@ -1,0 +1,14 @@
+// obj 6379
+cost = 150
+members = true
+iop2 = Wear
+model = obj_villager_armband_6347
+iop2 = Wear
+manwear = obj_villager_armband_6347_man, 0
+womanwear = obj_villager_armband_6347_woman, 0
+yof2d = -19
+zoom2d = 570
+yan2d = 48
+xan2d = 320
+recol = 5572/62013 4886/3173
+name = Villager armband

@@ -1,0 +1,10 @@
+// loc 1620
+wallwidth = 32
+sharelight = true
+occlude = true
+active = 0
+ambient = 25
+contrast = 25
+recol = 24/9098
+retex = 2/23
+models = 678/0 679/1 636/2 637/3 638/9

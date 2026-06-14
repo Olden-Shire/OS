@@ -1,0 +1,6 @@
+// loc 21130
+noshadow = true
+nonsolid = true
+op1 = Jump
+models = 21617/22
+name = Stepping Stone

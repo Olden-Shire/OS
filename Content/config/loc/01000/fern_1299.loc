@@ -1,0 +1,6 @@
+// loc 1299
+nonsolid = true
+mapscene = 9
+ambient = 40
+models_only = 1653
+name = Fern

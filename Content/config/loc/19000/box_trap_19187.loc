@@ -1,0 +1,10 @@
+// loc 19187
+op1 = Dismantle
+op2 = Investigate
+nonsolid = true
+active = 1
+raiseobject = 0
+ambient = 25
+contrast = 25
+models_only = 19904
+name = Box trap

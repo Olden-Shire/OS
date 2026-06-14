@@ -1,0 +1,8 @@
+// loc 22538
+active = 1
+hillskew = true
+sharelight = true
+op1 = Enter
+blockwalk = true
+models_only = 23252
+name = Tunnel

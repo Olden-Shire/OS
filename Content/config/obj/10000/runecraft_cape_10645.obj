@@ -1,0 +1,12 @@
+// obj 10645
+cost = 99000
+members = true
+model = obj_runecraft_cape_9765
+yof2d = 1
+zoom2d = 2128
+xan2d = 504
+iop2 = Wear
+manwear = obj_runecraft_cape_9765_man, 0
+womanwear = obj_runecraft_cape_9765_woman, 0
+recol = 57280/10332 54183/10316 54503/10308 960/10332 22464/10324 43968/10316
+name = Runecraft cape

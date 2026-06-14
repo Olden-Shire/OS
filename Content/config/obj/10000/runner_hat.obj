@@ -1,0 +1,19 @@
+// obj 10549
+model = obj_runner_hat
+manwear = obj_runner_hat_man, 0
+womanwear = obj_runner_hat_woman, 0
+manhead = 19241
+womanhead = 19245
+manwear2 = 215
+womanwear2 = 391
+manhead2 = 53
+womanhead2 = 114
+iop2 = Wear
+cost = 5000
+xof2d = -3
+zoom2d = 1438
+yan2d = 2047
+xan2d = 83
+members = true
+iop5 = Destroy
+name = Runner hat

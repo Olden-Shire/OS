@@ -1,0 +1,8 @@
+// loc 15489
+width = 3
+length = 3
+hillskew = true
+ambient = 25
+recol = 920/15787 918/15783 916/15907 6938/7830 7062/7954 922/15787
+models_only = 25861
+name = Tree

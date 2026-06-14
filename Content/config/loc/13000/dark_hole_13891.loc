@@ -1,0 +1,8 @@
+// loc 13891
+sharelight = true
+hillskew = true
+length = 2
+ambient = 20
+op1 = Look-inside
+models_only = 14236
+name = Dark hole

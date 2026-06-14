@@ -1,0 +1,11 @@
+// npc 2659
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 25238/0 8741/54561 43072/4550
+name = Unferth
+models = 214 250 292 167 176 254 185
+headmodels = 52 82

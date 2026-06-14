@@ -1,0 +1,9 @@
+// npc 1035
+walkanim = 6614
+readyanim = 6613
+vislevel = 0
+op1 = Catch
+nowalksmoothing = true
+alwaysontop = true
+name = Magpie impling
+models = 26373 26367

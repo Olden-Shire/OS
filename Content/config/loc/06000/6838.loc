@@ -1,0 +1,9 @@
+// loc 6838
+sharelight = true
+hillskew = true
+blockwalk = true
+active = 0
+noshadow = true
+ambient = 25
+nonblockrange = true
+models_only = 6758 15273

@@ -1,0 +1,7 @@
+// loc 21926
+ambient = 25
+contrast = 25
+nonsolid = true
+mirror = true
+models_only = 22666
+name = Pipe

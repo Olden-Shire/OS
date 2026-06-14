@@ -1,0 +1,8 @@
+// loc 24871
+active = 0
+hillskew = true
+ambient = 40
+contrast = 40
+offsety = -480
+noshadow = true
+models_only = 25971

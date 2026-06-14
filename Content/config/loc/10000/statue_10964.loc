@@ -1,0 +1,10 @@
+// loc 10964
+width = 2
+length = 2
+anim = 3099
+noshadow = true
+hillskew = true
+ambient = 25
+recol = 5590/8656
+models_only = 10933 10931 10929
+name = Statue

@@ -1,0 +1,8 @@
+// loc 16234
+width = 2
+ambient = 20
+active = 1
+nonblockrange = true
+recol = 7580/32943 7700/32819 7952/32924 8076/32920
+models_only = 16110 16099
+name = Hurt fairy

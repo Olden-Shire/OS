@@ -1,0 +1,11 @@
+// npc 1558
+size = 2
+readyanim = 6580
+walkanim = 6556
+ambient = 70
+op2 = Attack
+resizev = 110
+resizeh = 110
+vislevel = 96
+name = Ice wolf
+models = 26266

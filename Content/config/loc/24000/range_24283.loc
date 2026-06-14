@@ -1,0 +1,8 @@
+// loc 24283
+length = 2
+forceapproach = 13
+ambient = 25
+bgsound = 2199, 5
+recol = 45/10287 37/10279 28/10270
+models_only = 12616
+name = Range

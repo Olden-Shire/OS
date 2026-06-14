@@ -1,0 +1,7 @@
+// loc 1542
+op1 = Open
+active = 1
+raiseobject = 0
+nonblockrange = true
+models = 609/0
+name = Door

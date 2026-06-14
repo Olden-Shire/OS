@@ -1,0 +1,7 @@
+// npc 3081
+vislevel = 0
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+recol = 10004/43270 61/43297 43026/43150
+name = Assassin
+models = 10374 10376 10378 10377 10379 179

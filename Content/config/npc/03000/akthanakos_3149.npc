@@ -1,0 +1,8 @@
+// npc 3149
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+recol = 8741/5157 25238/5157 4550/5202 908/5157 4886/5161
+name = Akthanakos
+models = 10835 292 170 10218 265 8919
+headmodels = 11018

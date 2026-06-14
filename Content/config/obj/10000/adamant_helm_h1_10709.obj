@@ -1,0 +1,14 @@
+// obj 10709
+model = obj_rune_helm_h1_10286
+manwear = obj_rune_helm_h1_10286_man, 0
+womanwear = obj_rune_helm_h1_10286_woman, 0
+manhead = 20112
+womanhead = 20353
+xof2d = 1
+zoom2d = 768
+yan2d = 1901
+xan2d = 75
+iop2 = Wear
+cost = 3520
+recol = 61/21662 57/7054 935/43955 11187/18343
+name = Adamant helm (h1)

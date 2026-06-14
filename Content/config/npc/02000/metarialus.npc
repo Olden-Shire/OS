@@ -1,0 +1,11 @@
+// npc 2322
+walkanims = 819, 820, 821, 822
+readyanim = 808
+ambient = 50
+contrast = 50
+op1 = Talk-to
+vislevel = 0
+recol = 17467/18626
+name = Metarialus
+models = 5212 5219 5209 5216
+headmodels = 5203

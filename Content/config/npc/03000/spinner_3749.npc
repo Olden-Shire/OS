@@ -1,0 +1,9 @@
+// npc 3749
+size = 1
+op2 = Attack
+walkanim = 3907
+readyanim = 3906
+vislevel = 74
+recol = 960/43239 63836/11200 63597/52787 43239/21568 43119/15467 62693/21960
+name = Spinner
+models = 14549

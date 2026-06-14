@@ -1,0 +1,9 @@
+// npc 2338
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/4641 25238/4641 908/4641 43072/4550
+name = Torrell
+models = 223 248 299 163 176 7368 260 7121
+headmodels = 59 80

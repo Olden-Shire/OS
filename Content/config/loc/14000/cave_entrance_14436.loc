@@ -1,0 +1,12 @@
+// loc 14436
+width = 3
+length = 2
+hillskew = true
+ambient = 35
+sharelight = true
+nonsolid = true
+forcedecor = true
+resizey = 32
+hillskew = true
+models_only = 14717
+name = Cave entrance

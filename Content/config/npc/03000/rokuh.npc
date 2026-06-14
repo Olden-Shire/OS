@@ -1,0 +1,10 @@
+// npc 3045
+vislevel = 0
+walkanim = 2912
+readyanim = 2911
+op1 = Talk-to
+op3 = Trade
+recol = 8741/5700 49054/4403 25238/6689 61/5404 4550/4773 54397/4316
+name = Rokuh
+models = 201 9016 248 10219 151 10218 6133 185 10128
+headmodels = 9013 80

@@ -1,0 +1,11 @@
+// obj 6948
+model = obj_sandys_rota
+xof2d = 2
+yof2d = 10
+zoom2d = 1030
+yan2d = 116
+xan2d = 304
+members = true
+iop1 = Read
+iop5 = Destroy
+name = Sandy's rota

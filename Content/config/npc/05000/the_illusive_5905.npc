@@ -1,0 +1,8 @@
+// npc 5905
+size = 1
+walkanim = 6339
+readyanim = 6338
+op2 = Attack
+vislevel = 108
+name = The Illusive
+models = 24999

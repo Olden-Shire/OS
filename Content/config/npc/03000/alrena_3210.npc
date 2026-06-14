@@ -1,0 +1,10 @@
+// npc 3210
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 3185
+op1 = Talk-to
+recol = 8741/18646 25238/24914 8078/17523 926/16499 8082/21809 11200/19084
+name = Alrena
+models = 390 361 469 348 353 421 481 447 11433
+headmodels = 113

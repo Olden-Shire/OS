@@ -1,0 +1,8 @@
+// loc 21640
+active = 0
+hillskew = true
+width = 2
+length = 2
+nonblockrange = true
+recol = 30/66 35/70 39/74 43/78 47/82 51/86
+models_only = 11796

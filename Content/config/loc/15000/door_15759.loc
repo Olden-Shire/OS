@@ -1,0 +1,7 @@
+// loc 15759
+active = 1
+op1 = Open
+op4 = Pick-lock
+raiseobject = 0
+models = 9476/0 9477/9
+name = Door

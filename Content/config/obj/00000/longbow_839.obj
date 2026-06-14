@@ -1,0 +1,13 @@
+// obj 839
+cost = 80
+model = obj_longbow_839
+xof2d = 2
+yof2d = 15
+zoom2d = 1820
+yan2d = 1004
+xan2d = 460
+iop2 = Wield
+manwear = obj_longbow_839_wear, 0
+womanwear = obj_longbow_839_wear, 6
+recol = 6674/6049
+name = Longbow

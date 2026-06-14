@@ -1,0 +1,12 @@
+// npc 6153
+vislevel = 0
+size = 3
+op1 = hidden
+op2 = Attack
+turnspeed = 0
+walkanim = 3928
+readyanim = 3928
+ambient = 40
+recol = 54387/63411 54503/63287 54744/63163 55219/63046 55203/63046
+name = Portal
+models = 14533 14523 14524 14525

@@ -1,0 +1,14 @@
+// npc 2622
+vislevel = 0
+op1 = Talk-to
+op3 = Trade
+walkanim = 2601
+readyanim = 2603
+contrast = 0
+ambient = 10
+resizeh = 110
+resizev = 110
+recol = 3005/926 406/2229
+name = TzHaar-Hur-Lek
+models = 9311 9310 9313 9312
+headmodels = 9251

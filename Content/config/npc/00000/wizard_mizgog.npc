@@ -1,0 +1,10 @@
+// npc 706
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 8741/24 6798/49 920/40233 922/40237 924/40241 90/40233
+name = Wizard Mizgog
+models = 217 14564 251 292 14562 177 14565 181
+headmodels = 55 83 14583

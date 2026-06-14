@@ -1,0 +1,5 @@
+// seq 2592
+loops = 4
+replaceheldleft = 0
+replaceheldright = 0
+frames = 4/64/199 4/64/199 4/65/199 4/65/199

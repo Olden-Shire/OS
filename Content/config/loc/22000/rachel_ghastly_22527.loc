@@ -1,0 +1,10 @@
+// loc 22527
+active = 1
+op1 = Talk-to
+blockwalk = true
+anim = 5977
+width = 2
+length = 2
+nonblockrange = true
+models_only = 23211 23196
+name = Rachel (ghastly!)

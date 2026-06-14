@@ -1,0 +1,9 @@
+// npc 4585
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+recol = 22426/30001 22294/39198 22414/36378 21784/16 6430/36238 8598/36238
+name = Professor Onglewip
+models = 17016 10340 16983
+headmodels = 16975

@@ -1,0 +1,9 @@
+// loc 25760
+active = 0
+sharelight = true
+hillskew = true
+contrast = 25
+ambient = 30
+nonblockrange = true
+recol = 6430/6323 6550/6315 6439/6331
+models = 7373/0 7374/1 7375/2 7376/3 7377/9

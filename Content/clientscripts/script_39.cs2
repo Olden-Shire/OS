@@ -1,0 +1,50 @@
+[clientscript,script_39](int $int0, int $int1, int $int2, int $int3, string $string0)()
+def_int $int4;
+def_int $int5;
+
+$int4 = 0;
+$int5 = 0;
+if (%varcint1 < calc(clientclock() + $int2)) {
+    if (%varcint1 < clientclock()) {
+        %varcint1 = clientclock();
+    }
+    %varcint1 = calc(%varcint1 + 2);
+    return;
+}
+%varcint1 = calc(clientclock() + $int2 + 10);
+if (%varcint2 = 0) {
+    if ($int3 > if_getwidth(if_getlayer($int1))) {
+        $int3 = if_getwidth(if_getlayer($int1));
+    }
+    $int3 = calc($int3 - 4);
+    if_setsize(calc(4 + parawidth($string0, $int3, 495)), calc(4 + 13 * paraheight($string0, $int3, 495)), $int1);
+    $int4 = calc(if_getx($int0) + 5);
+    $int5 = calc(if_gety($int0) + if_getheight($int0) + 5);
+    if (if_getlayer($int1) ! -1) {
+        if ($int4 > calc(if_getwidth(if_getlayer($int1)) - if_getwidth($int1))) {
+            $int4 = calc(if_getwidth(if_getlayer($int1)) - if_getwidth($int1));
+        }
+        if ($int5 > calc(if_getheight(if_getlayer($int1)) - if_getheight($int1))) {
+            $int5 = calc(if_gety($int0) - if_getheight($int1) - 5);
+        }
+    }
+    if_setposition($int4, $int5, $int1);
+    cc_deleteall($int1);
+    cc_create($int1, 3, 0);
+    cc_setsize(if_getwidth($int1), if_getheight($int1));
+    cc_setfill(1);
+    cc_setcolour(16777120);
+    cc_create($int1, 3, 1);
+    cc_setsize(if_getwidth($int1), if_getheight($int1));
+    cc_setfill(0);
+    cc_setcolour(0);
+    cc_create($int1, 4, 2);
+    cc_setsize($int3, if_getheight($int1));
+    cc_setposition(2, 0);
+    cc_settext($string0);
+    cc_settextalign(0, 1, 0);
+    cc_settextfont(495);
+    cc_setcolour(0);
+    %varcint2 = 1;
+}
+return;

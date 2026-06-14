@@ -1,0 +1,8 @@
+// npc 1977
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 167
+name = Fareed
+models = 6223 6226 6219 6365 6366

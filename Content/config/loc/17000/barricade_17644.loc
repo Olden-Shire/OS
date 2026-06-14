@@ -1,0 +1,7 @@
+// loc 17644
+hillskew = true
+blockwalk = true
+ambient = 15
+resizey = 160
+models_only = 17637
+name = Barricade

@@ -1,0 +1,9 @@
+// loc 19205
+anim = 5197
+width = 2
+op1 = Set-trap
+forceapproach = 13
+mapscene = 71
+nonblockrange = true
+models_only = 19910
+name = Boulder

@@ -1,0 +1,7 @@
+// loc 22709
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23345 23346
+name = Statue

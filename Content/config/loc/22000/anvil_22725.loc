@@ -1,0 +1,7 @@
+// loc 22725
+active = 1
+ambient = 20
+blockwalk = true
+nonblockrange = true
+models_only = 23436
+name = Anvil

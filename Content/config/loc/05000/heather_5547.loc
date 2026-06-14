@@ -1,0 +1,4 @@
+// loc 5547
+nonsolid = true
+models_only = 5525 5527
+name = Heather

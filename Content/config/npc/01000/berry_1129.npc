@@ -1,0 +1,12 @@
+// npc 1129
+walkanim = 283
+readyanim = 1159
+size = 2
+resizeh = 148
+resizev = 148
+op2 = Attack
+op3 = Pickpocket
+vislevel = 71
+recol = 61/8363 21570/7465 6430/5409 57/14400 49/14507
+name = Berry
+models = 3754 3758 3756 3763 3771

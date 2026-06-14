@@ -1,0 +1,13 @@
+// loc 5538
+op2 = Pick
+resizex = 120
+resizey = 120
+resizez = 120
+offsetx = 30
+offsety = 0
+offsetz = 20
+nonsolid = true
+mapscene = 9
+recol = 7283/4552
+models_only = 2750
+name = Onion

@@ -1,0 +1,10 @@
+// npc 5765
+vislevel = 0
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+op3 = Pickpocket
+recol = 6461/8375 6457/8371 6453/8367 5549/26694 5673/26690 5793/26685
+name = Cave goblin
+models = 23637 23692 23628
+headmodels = 23240

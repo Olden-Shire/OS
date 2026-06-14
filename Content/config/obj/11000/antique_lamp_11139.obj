@@ -1,0 +1,12 @@
+// obj 11139
+model = obj_lamp_2528
+xof2d = 2
+yof2d = -2
+zoom2d = 840
+yan2d = 228
+xan2d = 28
+iop1 = Rub
+iop5 = Destroy
+members = true
+recol = 11191/840 11183/563
+name = Antique lamp

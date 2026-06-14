@@ -1,0 +1,14 @@
+// obj 8839
+model = obj_void_knight_top_8839
+cost = 48000
+yof2d = 3
+zoom2d = 919
+xan2d = 459
+iop2 = Wear
+manwear = obj_void_knight_top_8839_man, 0
+manwear2 = 14562
+womanwear = obj_void_knight_top_8839_woman, 0
+womanwear2 = 14570
+members = true
+recol = 43072/4550
+name = Void knight top

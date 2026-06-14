@@ -1,0 +1,14 @@
+// npc 5912
+vislevel = 0
+size = 1
+resizeh = 130
+resizev = 124
+readyanim = 808
+walkanim = 808
+op1 = Talk-to
+op3 = Bank
+ambient = 20
+recol = 8741/47382 25238/47382 8078/47382 0/47502 33030/47382 4626/4
+name = Banker
+models = 215 246 17365 163 10218 12138 181
+headmodels = 53

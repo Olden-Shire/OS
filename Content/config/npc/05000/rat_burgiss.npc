@@ -1,0 +1,11 @@
+// npc 5833
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 6798/9893
+name = Rat Burgiss
+models = 23924 230 253 23942 23920 23938 23921
+headmodels = 63 85 23913

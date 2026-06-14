@@ -1,0 +1,9 @@
+// npc 191
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op2 = Attack
+vislevel = 32
+recol = 4550/6806 43072/6806
+name = Tribesman
+models = 231 181 246 315 173 176 279 540 201

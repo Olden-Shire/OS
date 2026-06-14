@@ -1,0 +1,11 @@
+// npc 5362
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+op2 = Attack
+vislevel = 227
+recol = 2469/16695 912/16801 1938/16677 1814/16681 2588/17713 910/16796
+name = Brutal green dragon
+models = 17407 17426 17418 17423

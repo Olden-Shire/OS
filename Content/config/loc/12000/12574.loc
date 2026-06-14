@@ -1,0 +1,5 @@
+// loc 12574
+nonsolid = true
+active = 0
+hillskew = true
+models_only = 13582

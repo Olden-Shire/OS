@@ -1,0 +1,15 @@
+// obj 10392
+model = obj_a_powdered_wig_10392
+iop2 = Wear
+manhead = 20110
+womanhead = 20119
+manwear = obj_a_powdered_wig_10392_man, 0
+womanwear = obj_a_powdered_wig_10392_woman, 0
+xof2d = -1
+yof2d = 12
+zoom2d = 848
+yan2d = 1189
+xan2d = 387
+members = true
+cost = 2000
+name = A powdered wig

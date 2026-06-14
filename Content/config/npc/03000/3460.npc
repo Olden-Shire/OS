@@ -1,0 +1,12 @@
+// npc 3460
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizev = 120
+resizeh = 120
+ambient = 50
+contrast = 50
+vislevel = 0
+recol = 17467/18626
+name = ? ? ? ?
+models = 5226 5228 5225 5227 12771
+headmodels = 5208

@@ -1,0 +1,7 @@
+// loc 16089
+hillskew = true
+op1 = Open
+active = 1
+anim = 4284
+models = 15611/10 15612/0
+name = Oozing barrier

@@ -1,0 +1,10 @@
+// loc 22715
+anim = 6037
+length = 2
+active = 1
+ambient = 20
+blockwalk = true
+bgsound = 2151, 3
+nonblockrange = true
+models_only = 23454 23453
+name = Sink

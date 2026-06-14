@@ -1,0 +1,9 @@
+// obj 10513
+model = obj_crackers
+xof2d = 14
+yan2d = 235
+xan2d = 470
+members = true
+iop1 = Drop
+iop5 = Destroy
+name = Crackers

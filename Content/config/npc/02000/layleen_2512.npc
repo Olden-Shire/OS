@@ -1,0 +1,10 @@
+// npc 2512
+vislevel = 0
+size = 1
+op1 = Talk-to
+resizeh = 116
+resizev = 114
+recol = 8741/5572 4550/5553 61/16937
+name = Layleen
+models = 390 444 8849 8931 8933 8940 8934
+headmodels = 113

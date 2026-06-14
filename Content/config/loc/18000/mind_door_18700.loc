@@ -1,0 +1,7 @@
+// loc 18700
+ambient = 30
+op1 = Open
+active = 1
+mirror = true
+models = 18672/0
+name = Mind Door

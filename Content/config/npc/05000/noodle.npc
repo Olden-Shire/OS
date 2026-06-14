@@ -1,0 +1,12 @@
+// npc 5444
+walkanim = 5666
+readyanim = 5668
+resizeh = 75
+resizev = 75
+size = 1
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+name = Noodle
+models = 21550
+headmodels = 21526

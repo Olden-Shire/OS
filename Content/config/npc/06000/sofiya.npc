@@ -1,0 +1,9 @@
+// npc 6039
+walkanims = 6531, 6532, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 24
+name = Sofiya
+models = 26143 26152 26136 26148 26141
+headmodels = 26272

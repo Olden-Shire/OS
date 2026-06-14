@@ -1,0 +1,14 @@
+// obj 10718
+model = obj_bob_shirt_10316
+manwear = obj_bob_shirt_10316_man, 0
+womanwear = obj_bob_shirt_10316_woman, 0
+manwear2 = 20125
+womanwear2 = 20176
+iop2 = Wear
+cost = 3
+yof2d = 7
+zoom2d = 1296
+xan2d = 553
+members = true
+recol = 3546/56753 66/56778 115/54375 278/56988
+name = Bob shirt

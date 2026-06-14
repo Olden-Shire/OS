@@ -1,0 +1,7 @@
+// loc 22738
+active = 1
+ambient = 25
+blockwalk = true
+nonblockrange = true
+models_only = 23255
+name = Lamppost

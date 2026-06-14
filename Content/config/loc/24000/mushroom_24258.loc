@@ -1,0 +1,7 @@
+// loc 24258
+ambient = 25
+hillskew = true
+nonblockrange = true
+recol = 7283/7636 10378/7283 1742/7390
+models_only = 3918
+name = Mushroom

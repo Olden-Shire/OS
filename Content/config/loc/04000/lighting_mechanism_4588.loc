@@ -1,0 +1,7 @@
+// loc 4588
+active = 1
+width = 4
+length = 4
+ambient = 20
+models_only = 4570 4574
+name = Lighting mechanism

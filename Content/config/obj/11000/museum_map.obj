@@ -1,0 +1,9 @@
+// obj 11184
+model = obj_museum_map
+yof2d = -3
+zoom2d = 1360
+yan2d = 300
+xan2d = 318
+iop1 = Look-at
+cost = 0
+name = Museum map

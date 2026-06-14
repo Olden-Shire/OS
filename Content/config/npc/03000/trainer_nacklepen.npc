@@ -1,0 +1,8 @@
+// npc 3818
+walkanim = 3963
+readyanim = 3965
+op1 = Talk-to
+vislevel = 0
+name = Trainer Nacklepen
+models = 14808 14809 14813
+headmodels = 14822

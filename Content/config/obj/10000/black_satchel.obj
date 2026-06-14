@@ -1,0 +1,16 @@
+// obj 10880
+model = obj_plain_satchel
+manwear = obj_plain_satchel_wear, 0
+womanwear = obj_plain_satchel_wear, 6
+iop2 = Wear
+cost = 100
+xof2d = 3
+yof2d = -32
+zoom2d = 854
+yan2d = 249
+xan2d = 235
+members = true
+iop1 = Inspect
+iop4 = Empty
+recol = 40161/138 39137/18 37093/26 38003/30
+name = Black satchel

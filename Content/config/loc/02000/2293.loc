@@ -1,0 +1,6 @@
+// loc 2293
+active = 0
+nonsolid = true
+sharelight = true
+forcedecor = true
+models = 1024/22

@@ -1,0 +1,10 @@
+// npc 469
+vislevel = 0
+size = 1
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+recol = 22426/6845
+name = King Bolren
+models = 2909 2891 2916
+headmodels = 20

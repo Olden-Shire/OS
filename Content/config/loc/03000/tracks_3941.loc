@@ -1,0 +1,7 @@
+// loc 3941
+hillskew = true
+noshadow = true
+op1 = Follow
+nonsolid = true
+models = 3910/22
+name = Tracks

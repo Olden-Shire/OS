@@ -1,0 +1,15 @@
+// obj 10156
+model = obj_hunters_crossbow_10156
+xof2d = -6
+yof2d = -36
+zoom2d = 1330
+yan2d = 128
+xan2d = 236
+contrast = 15
+ambient = 15
+members = true
+iop2 = Wield
+manwear = obj_hunters_crossbow_10156_wear, 0
+womanwear = obj_hunters_crossbow_10156_wear, 6
+cost = 1300
+name = Hunters' crossbow

@@ -1,0 +1,12 @@
+// npc 4375
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+size = 1
+op1 = Talk-to
+op2 = Attack
+alwaysontop = true
+recol = 25238/8 61/8 5772/8 8720/8 10004/8 908/8
+name = Security Guard
+models = 11737 10302 10304 296 169 179 3329 4954
+headmodels = 10239 11802

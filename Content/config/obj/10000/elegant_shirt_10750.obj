@@ -1,0 +1,15 @@
+// obj 10750
+model = obj_black_ele_shirt_10400
+xof2d = -1
+yof2d = 7
+zoom2d = 1373
+xan2d = 452
+iop2 = Wear
+manwear = obj_black_ele_shirt_10400_man, 0
+manwear2 = 20122
+womanwear = obj_black_ele_shirt_10400_woman, 0
+womanwear2 = 20178
+members = true
+cost = 2000
+recol = 105/109 64/171 47/293 35/63905 26/64024 55172/64396
+name = Elegant shirt

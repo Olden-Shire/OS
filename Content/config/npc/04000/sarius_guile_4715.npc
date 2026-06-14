@@ -1,0 +1,9 @@
+// npc 4715
+vislevel = 0
+op1 = Talk-to
+walkanims = 819, 820, 821, 822
+resizeh = 100
+readyanim = 808
+name = Sarius Guile
+models = 18111 18118 18120 18105 18110 18114 18106
+headmodels = 18069

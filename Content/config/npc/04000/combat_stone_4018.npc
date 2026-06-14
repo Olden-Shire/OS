@@ -1,0 +1,5 @@
+// npc 4018
+op1 = Hit
+vislevel = 0
+name = Combat stone
+models = 13203 13213 13204 13205 13206 13208 13209

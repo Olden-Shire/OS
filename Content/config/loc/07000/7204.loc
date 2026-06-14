@@ -1,0 +1,8 @@
+// loc 7204
+hillskew = true
+mirror = true
+nonsolid = true
+active = 0
+ambient = -40
+recol = 9556/7500
+models_only = 6802

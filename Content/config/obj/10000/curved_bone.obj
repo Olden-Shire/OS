@@ -1,0 +1,9 @@
+// obj 10977
+model = obj_curved_bone
+xof2d = 3
+yan2d = 12
+xan2d = 552
+members = true
+cost = 7
+iop1 = Bury
+name = Curved bone

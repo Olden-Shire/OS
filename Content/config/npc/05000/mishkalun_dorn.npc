@@ -1,0 +1,10 @@
+// npc 5839
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-To
+vislevel = 0
+alwaysontop = true
+name = Mishkal'un Dorn
+models = 23928 23917 23934
+headmodels = 63 23912

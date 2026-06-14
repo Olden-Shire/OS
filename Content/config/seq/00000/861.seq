@@ -1,0 +1,7 @@
+// seq 861
+replaceheldleft = 0
+replaceheldright = 0
+priority = 2
+preanim_move = 1
+postanim_move = 1
+frames = 4/179/215 4/180/215 8/181/215 8/182/215 8/181/215 8/182/215 8/181/215 8/182/215 8/181/215 8/182/215 8/181/215 4/180/215 4/179/215

@@ -1,0 +1,10 @@
+// npc 3216
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 926/43270 8741/6936 61/43270 11200/43270 8090/8
+name = Mourner
+models = 212 295 150 273 323 499
+headmodels = 51

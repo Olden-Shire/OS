@@ -1,0 +1,7 @@
+// npc 5827
+walkanim = 6036
+readyanim = 6036
+vislevel = 0
+nominimap = true
+name = Moths
+models = 23474

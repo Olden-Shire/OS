@@ -1,0 +1,6 @@
+// loc 3513
+op2 = Pick
+nonsolid = true
+anim = 1097
+models_only = 3603
+name = A golden pear bush

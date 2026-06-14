@@ -1,0 +1,11 @@
+// obj 6720
+cost = 200
+model = obj_slayer_gloves_6708
+iop2 = Wear
+manwear = obj_cooking_gauntlets_man, 0
+womanwear = obj_cooking_gauntlets_woman, 0
+zoom2d = 730
+yan2d = 4
+xan2d = 328
+members = true
+name = Slayer gloves

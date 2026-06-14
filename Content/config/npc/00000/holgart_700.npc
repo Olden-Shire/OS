@@ -1,0 +1,10 @@
+// npc 700
+vislevel = 0
+size = 1
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+op1 = Talk-to
+recol = 8741/26130 41372/8082 8887/24 43072/4550 8860/26518
+name = Holgart
+models = 18487 215 18490 250 299 10980 177 18493 176 14381 14376
+headmodels = 18497 63 82 18340

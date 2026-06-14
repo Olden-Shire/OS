@@ -1,0 +1,8 @@
+// loc 22667
+active = 1
+mapscene = 7
+op1 = Climb-down
+blockwalk = true
+recol = 30/10258 35/10262 39/10266 43/10270 47/10275 51/10279
+models = 23295/22
+name = Rocks

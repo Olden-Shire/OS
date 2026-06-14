@@ -1,0 +1,15 @@
+// npc 4519
+size = 1
+vislevel = 0
+walkanim = 4424
+readyanim = 4424
+resizeh = 120
+resizev = 120
+contrast = 12
+ambient = 12
+op1 = Talk-to
+op3 = Bank
+recol = 6798/8914
+name = Sirsal Banker
+models = 220 253 16485 16472 16476 16481 16473 12086 270
+headmodels = 15407 85

@@ -1,0 +1,12 @@
+// obj 10430
+model = obj_white_ele_skirt_10422
+yof2d = -1
+zoom2d = 1187
+xan2d = 444
+iop2 = Wear
+manwear = obj_white_ele_skirt_10422_man, 0
+womanwear = obj_white_ele_skirt_10422_woman, 0
+members = true
+cost = 2000
+recol = 105/43115 64/43179 47/43301 26/45592 55172/45964
+name = Blue ele' skirt

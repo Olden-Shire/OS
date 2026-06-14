@@ -1,0 +1,6 @@
+// loc 1812
+sharelight = true
+anim = 491
+bgsound = 3139, 5
+models_only = 2253
+name = Portal

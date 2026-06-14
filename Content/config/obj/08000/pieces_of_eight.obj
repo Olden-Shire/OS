@@ -1,0 +1,12 @@
+// obj 8951
+model = obj_pieces_of_eight
+stackable = true
+count1 = 8984, 2
+count2 = 8985, 3
+xof2d = -4
+yof2d = 3
+zoom2d = 592
+yan2d = 699
+xan2d = 360
+members = true
+name = Pieces of eight

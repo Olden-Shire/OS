@@ -1,0 +1,10 @@
+// npc 2527
+vislevel = 0
+size = 1
+op1 = Talk-to
+resizeh = 130
+resizev = 131
+recol = 4550/5671 6798/4783 4416/5572 43072/5572 6443/5572
+name = Jagbakoba
+models = 206 252 8845 173 176 566 8925 8919
+headmodels = 46 84

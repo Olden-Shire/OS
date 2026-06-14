@@ -1,0 +1,10 @@
+// loc 4503
+wallwidth = 32
+sharelight = true
+occlude = true
+resizez = 128
+resizex = 128
+resizey = 192
+recol = 24/9098
+retex = 2/23
+models = 4480/0 4481/1 4482/2 4483/3 4484/9

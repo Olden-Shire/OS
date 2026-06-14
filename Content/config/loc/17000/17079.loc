@@ -1,0 +1,7 @@
+// loc 17079
+active = 0
+hillskew = true
+noshadow = true
+blockwalk = true
+nonblockrange = true
+models_only = 16895

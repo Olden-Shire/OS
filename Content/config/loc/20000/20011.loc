@@ -1,0 +1,8 @@
+// loc 20011
+active = 0
+sharelight = true
+hillskew = true
+forcedecor = true
+mirror = true
+ambient = 10
+models = 20317/22

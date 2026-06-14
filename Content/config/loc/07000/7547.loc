@@ -1,0 +1,6 @@
+// loc 7547
+ambient = 25
+hillskew = true
+forcedecor = true
+recol = 7465/7461 7585/7580 8724/6930
+models = 7791/22

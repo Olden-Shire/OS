@@ -1,0 +1,9 @@
+// loc 25889
+anim = 6925
+width = 8
+nonsolid = true
+ambient = 10
+contrast = 10
+op1 = Talk-to
+models_only = 27479
+name = Sir Tristram

@@ -1,0 +1,8 @@
+// npc 4441
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+name = Wood Dryad
+models = 16296 16295 16298 16297
+headmodels = 16210

@@ -1,0 +1,10 @@
+// npc 2692
+vislevel = 0
+walkanims = 1323, 1324, 1325, 1326
+readyanim = 1137
+turnspeed = 0
+op1 = Talk-to
+recol = 8741/6340 25238/7704 6798/6740 43072/4550
+name = Ahab
+models = 235 246 292 8233 170 176 3599 4391 9627
+headmodels = 67

@@ -1,0 +1,14 @@
+// npc 2402
+walkanim = 2333
+readyanim = 2334
+resizev = 112
+resizeh = 112
+ambient = 35
+contrast = 35
+op1 = Talk-To
+vislevel = 0
+nominimap = true
+recol = 4550/4537 8741/7700 61/5648 25238/27152 11200/11169 57/10270
+name = Mysterious ghost
+models = 230 252 3379 317 164 178 519 268 181
+headmodels = 8373 8376

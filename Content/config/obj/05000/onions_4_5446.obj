@@ -1,0 +1,11 @@
+// obj 5446
+model = obj_empty_sack_5418
+yof2d = -4
+zoom2d = 1220
+yan2d = 1920
+xan2d = 164
+members = true
+iop1 = Fill
+iop2 = Remove-one
+ambient = 15
+name = Onions(4)

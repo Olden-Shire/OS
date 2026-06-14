@@ -1,0 +1,8 @@
+// loc 13369
+anim = 286
+op5 = Remove
+nonsolid = true
+width = 2
+length = 2
+models_only = 3753 3756 3758 14113
+name = Troll

@@ -1,0 +1,8 @@
+// loc 13481
+op5 = Remove
+contrast = 25
+ambient = 25
+op1 = Talk-to
+forceapproach = 11
+models_only = 12162
+name = Crawling hand

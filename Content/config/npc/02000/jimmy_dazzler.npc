@@ -1,0 +1,13 @@
+// npc 2949
+size = 1
+contrast = 10
+ambient = 20
+walkanims = 1146, 820, 821, 822
+readyanim = 813
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+recol = 25238/45342 5532/43276
+name = Jimmy Dazzler
+models = 9618 6848 10075 10039 10077 10073 10074 3711 10076 185
+headmodels = 10028 10030 9442

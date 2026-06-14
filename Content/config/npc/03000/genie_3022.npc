@@ -1,0 +1,9 @@
+// npc 3022
+vislevel = 0
+alwaysontop = true
+readyanim = 792
+op1 = Talk-to
+recol = 4550/37322 6798/40627 926/43924 43072/37322 0/957 25238/58919
+name = Genie
+models = 231 241 252 315 173 176 264 270
+headmodels = 64 73 84

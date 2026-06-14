@@ -1,0 +1,13 @@
+// obj 7437
+cost = 325
+model = obj_spork_7437
+xof2d = -1
+yof2d = 3
+zoom2d = 1114
+yan2d = 249
+xan2d = 526
+iop2 = Wield
+manwear = obj_spork_7437_wear, 0
+womanwear = obj_spork_7437_wear, 6
+members = true
+name = Spork

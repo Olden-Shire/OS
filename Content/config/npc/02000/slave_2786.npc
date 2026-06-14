@@ -1,0 +1,7 @@
+// npc 2786
+vislevel = 0
+readyanim = 830
+walkanims = 819, 820, 821, 822
+recol = 4626/4548 43072/4548 25238/10518
+name = Slave
+models = 214 251 315 173 176 496 254 181

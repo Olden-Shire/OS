@@ -1,0 +1,11 @@
+// npc 3050
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+resizeh = 145
+resizev = 122
+recol = 8741/33030 25238/32910 4626/33030
+name = Larxus
+models = 10038 10302 10304 10305 10301 254 185
+headmodels = 10239 10027

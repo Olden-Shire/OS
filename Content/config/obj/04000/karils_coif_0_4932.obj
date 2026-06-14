@@ -1,0 +1,16 @@
+// obj 4932
+members = true
+cost = 13000
+manwear = obj_karils_coif_4732_man, 0
+womanwear = obj_karils_coif_4732_woman, 0
+manhead = 6571
+womanhead = 6571
+manhead2 = 63
+womanhead2 = 120
+xof2d = -1
+yof2d = -3
+zoom2d = 690
+xan2d = 144
+model = obj_karils_coif_0_4932
+recol = 10394/10388 10388/10512 10514/10508 10638/10760 10762/11140
+name = Karils coif 0

@@ -1,0 +1,7 @@
+// npc 2584
+ambient = 10
+alwaysontop = true
+vislevel = 0
+recol = 8602/8722 8478/8598 8487/8478 8363/8483
+name = Trolley
+models = 9225

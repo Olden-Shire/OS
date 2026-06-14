@@ -1,0 +1,10 @@
+// npc 5857
+size = 1
+readyanim = 6040
+walkanim = 6215
+vislevel = 0
+alwaysontop = true
+turnspeed = 1024
+name = Zanik
+models = 23638 23693
+headmodels = 23243 15561

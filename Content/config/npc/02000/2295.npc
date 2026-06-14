@@ -1,0 +1,8 @@
+// npc 2295
+readyanim = 1144
+alwaysontop = true
+turnspeed = 0
+op1 = Talk-to
+op3 = Travel
+vislevel = 1
+multivar = 346, 65535, 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 2296

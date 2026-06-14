@@ -1,0 +1,12 @@
+// npc 1709
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+resizev = 130
+resizeh = 130
+recol = 8741/902 25238/902 7952/902 6798/0 43072/4550
+name = Johanhus Ulsbrecht
+models = 167 176 215 249 181 265 292 5434 5433 317
+headmodels = 53 81

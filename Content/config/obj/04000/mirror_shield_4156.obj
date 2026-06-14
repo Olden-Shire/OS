@@ -1,0 +1,13 @@
+// obj 4156
+cost = 1000
+model = obj_mirror_shield_4156
+xof2d = 1
+zoom2d = 1910
+yan2d = 400
+xan2d = 480
+iop2 = Wield
+manwear = obj_mirror_shield_4156_wear, 0
+womanwear = obj_mirror_shield_4156_wear, 6
+members = true
+cost = 5000
+name = Mirror shield

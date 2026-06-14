@@ -1,0 +1,6 @@
+// loc 17844
+active = 0
+hillskew = true
+sharelight = true
+blockwalk = true
+models_only = 17576

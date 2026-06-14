@@ -1,0 +1,6 @@
+// loc 15325
+active = 1
+op5 = Build
+nonsolid = true
+models = 12882/22
+name = Trap space

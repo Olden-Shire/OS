@@ -1,0 +1,8 @@
+// loc 13846
+ambient = 10
+noshadow = true
+op1 = Look-at
+op2 = Swing-on
+length = 2
+models_only = 14148 14172
+name = Vine hanging from branch

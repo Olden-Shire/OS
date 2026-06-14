@@ -1,0 +1,7 @@
+// loc 21067
+active = 1
+ambient = 20
+contrast = 20
+mirror = true
+models = 21763/0
+name = Door

@@ -1,0 +1,9 @@
+// obj 796
+model = obj_holy_water_wear
+manwear = obj_exploding_vial_wear, 0
+womanwear = obj_exploding_vial_wear, 6
+xof2d = 29
+yof2d = 32
+zoom2d = 510
+xan2d = 1956
+name = Exploding vial

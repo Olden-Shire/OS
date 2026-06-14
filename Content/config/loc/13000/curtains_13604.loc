@@ -1,0 +1,7 @@
+// loc 13604
+active = 1
+nonsolid = true
+raiseobject = 0
+op5 = Remove
+models = 12451/4
+name = Curtains

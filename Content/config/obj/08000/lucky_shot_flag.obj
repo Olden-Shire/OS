@@ -1,0 +1,11 @@
+// obj 8969
+model = obj_lucky_shot_flag
+yof2d = 6
+zoom2d = 2060
+xan2d = 464
+iop2 = Wield
+manwear = obj_lucky_shot_flag_wear, 0
+womanwear = obj_lucky_shot_flag_wear, 6
+members = true
+cost = 400
+name = Lucky shot flag

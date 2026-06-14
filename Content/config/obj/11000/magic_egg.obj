@@ -1,0 +1,8 @@
+// obj 11023
+model = obj_magic_egg
+yof2d = -1
+zoom2d = 789
+yan2d = 166
+iop1 = Eat
+iop5 = Destroy
+name = Magic egg

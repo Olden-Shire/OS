@@ -1,0 +1,10 @@
+// loc 10552
+width = 2
+ambient = 25
+mirror = true
+active = 1
+anim = 917
+nonsolid = true
+recol = 6932/6689 8662/3005 7626/1971
+models_only = 10348
+name = TzHaar Flag

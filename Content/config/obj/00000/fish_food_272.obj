@@ -1,0 +1,11 @@
+// obj 272
+model = obj_fish_food_272
+xof2d = -1
+yof2d = -24
+zoom2d = 920
+yan2d = 1904
+xan2d = 194
+manwear = obj_fish_food_272_wear, 0
+womanwear = obj_fish_food_272_wear, 6
+ambient = 15
+name = Fish food

@@ -1,0 +1,8 @@
+// obj 10875
+model = obj_valve_wheel
+members = true
+xof2d = -1
+yof2d = 3
+zoom2d = 919
+xan2d = 484
+name = Valve wheel

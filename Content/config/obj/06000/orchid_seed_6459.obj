@@ -1,0 +1,16 @@
+// obj 6459
+model = obj_orchid_seed_6458
+xof2d = -8
+yof2d = 7
+zoom2d = 1260
+yan2d = 2008
+xan2d = 280
+members = true
+iop5 = Destroy
+stackable = true
+count1 = 6504, 2
+count2 = 6505, 3
+count3 = 6506, 4
+count4 = 6507, 5
+recol = 37991/10176 37974/9149 15547/15659
+name = Orchid seed

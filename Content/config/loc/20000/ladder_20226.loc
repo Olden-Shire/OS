@@ -1,0 +1,8 @@
+// loc 20226
+active = 1
+sharelight = true
+blockwalk = true
+op1 = Climb-down
+nonblockrange = true
+models_only = 20644
+name = Ladder

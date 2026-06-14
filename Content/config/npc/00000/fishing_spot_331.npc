@@ -1,0 +1,12 @@
+// npc 331
+vislevel = 0
+readyanim = 447
+walkanim = 448
+size = 1
+nominimap = true
+op1 = Lure
+op3 = Bait
+op4 = hidden
+op5 = hidden
+name = Fishing spot
+models = 1491

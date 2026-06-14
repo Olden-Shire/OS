@@ -1,0 +1,8 @@
+// obj 6988
+model = obj_sandstone_base
+zoom2d = 4048
+yan2d = 3
+xan2d = 36
+members = true
+iop5 = Destroy
+name = Sandstone base

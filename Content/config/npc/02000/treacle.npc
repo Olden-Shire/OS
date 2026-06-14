@@ -1,0 +1,12 @@
+// npc 2987
+vislevel = 0
+size = 1
+walkanim = 314
+readyanim = 317
+op2 = hidden
+resizeh = 60
+resizev = 60
+alwaysontop = true
+recol = 61/43175 16/10304
+name = Treacle
+models = 3010 3006

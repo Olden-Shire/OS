@@ -1,0 +1,11 @@
+// npc 2304
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 54397/3268 25238/4387 8741/2355 43072/4550 6798/6817
+name = Sarah
+models = 378 467 348 353 421 7366
+headmodels = 103

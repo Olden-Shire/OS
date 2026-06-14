@@ -1,0 +1,6 @@
+// loc 21242
+sharelight = true
+ambient = 25
+hillskew = true
+nonblockrange = true
+models = 21640/0

@@ -1,0 +1,11 @@
+// obj 9685
+model = obj_page_2
+members = true
+zoom2d = 1872
+yan2d = 1127
+xan2d = 387
+iop1 = Read
+iop2 = Shape-Fire
+iop3 = Shape-Water
+iop5 = Destroy
+name = Page 2

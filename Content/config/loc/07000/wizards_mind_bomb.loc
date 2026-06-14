@@ -1,0 +1,6 @@
+// loc 7417
+ambient = 15
+op1 = Level
+nonblockrange = true
+models_only = 7775
+name = Wizards Mind Bomb

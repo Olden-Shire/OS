@@ -1,0 +1,12 @@
+// npc 1113
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizeh = 128
+resizev = 128
+op1 = Talk-to
+vislevel = 0
+recol = 43072/4550 6798/5161 25238/7446 8741/5400 906/5547
+name = Eadgar
+models = 230 250 310 168 176 275 181 326
+headmodels = 63 82

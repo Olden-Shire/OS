@@ -1,0 +1,10 @@
+// npc 1168
+walkanims = 819, 820, 821, 822
+readyanim = 813
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 4550/6806 43072/6806 61/926
+name = Tamayu
+models = 231 8919 246 315 173 176 8925 540 201
+headmodels = 64 43

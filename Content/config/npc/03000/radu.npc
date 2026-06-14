@@ -1,0 +1,11 @@
+// npc 3545
+vislevel = 0
+resizeh = 117
+resizev = 122
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/16912 43072/10450 8741/14734 908/9635 4550/10450 4626/10450
+name = Radu
+models = 217 253 310 173 176 271 181
+headmodels = 55 85 9822

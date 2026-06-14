@@ -1,0 +1,6 @@
+// seq 843
+reachforward = true
+priority = 10
+replaceheldright = 0
+replaceheldleft = 0
+frames = 8/31/302 4/32/302 4/33/302 3/34/302 3/35/302 3/36/302 20000/37/302

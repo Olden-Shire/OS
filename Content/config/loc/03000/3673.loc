@@ -1,0 +1,5 @@
+// loc 3673
+sharelight = true
+nonsolid = true
+recol = 103/12
+models = 1996/0 1997/9

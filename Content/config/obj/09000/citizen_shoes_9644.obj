@@ -1,0 +1,14 @@
+// obj 9644
+cost = 5
+members = true
+iop2 = Wear
+model = obj_citizen_shoes_9644
+xof2d = -4
+yof2d = 29
+zoom2d = 825
+yan2d = 24
+xan2d = 342
+womanwear = obj_boots_of_lightness_88_woman, 0
+manwear = obj_boots_of_lightness_88_man, 0
+recol = 4626/6674
+name = Citizen shoes

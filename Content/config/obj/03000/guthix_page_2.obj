@@ -1,0 +1,12 @@
+// obj 3836
+cost = 200
+stackable = true
+members = true
+model = obj_saradomin_page_1
+xof2d = 1
+yof2d = 5
+zoom2d = 680
+yan2d = 80
+xan2d = 400
+recol = 90/21716 86/21712 82/21580 78/21576 74/21572
+name = Guthix page 2

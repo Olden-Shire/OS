@@ -1,0 +1,11 @@
+// obj 7051
+model = obj_unlit_bug_lantern_7051
+zoom2d = 1000
+yan2d = 1796
+xan2d = 140
+members = true
+manwear = obj_unlit_bug_lantern_7051_wear, 0
+womanwear = obj_unlit_bug_lantern_7051_wear, 6
+iop2 = Wield
+cost = 130
+name = Unlit bug lantern

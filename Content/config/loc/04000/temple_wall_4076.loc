@@ -1,0 +1,6 @@
+// loc 4076
+anim = 1300
+op1 = Repair
+op3 = hidden
+models_only = 4134
+name = Temple wall

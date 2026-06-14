@@ -1,0 +1,7 @@
+// loc 1920
+sharelight = true
+wallwidth = 32
+active = 0
+ambient = 25
+contrast = 25
+models = 651/0 652/1

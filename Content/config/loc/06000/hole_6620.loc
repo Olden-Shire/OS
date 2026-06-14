@@ -1,0 +1,6 @@
+// loc 6620
+hillskew = true
+active = 1
+op1 = Climb-through
+models = 6430/0
+name = Hole

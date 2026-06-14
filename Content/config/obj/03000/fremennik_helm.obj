@@ -1,0 +1,21 @@
+// obj 3748
+model = obj_fremennik_helm
+xof2d = 4
+yof2d = -1
+zoom2d = 540
+yan2d = 188
+xan2d = 88
+iop2 = Wear
+manwear = obj_fremennik_helm_man, 0
+manwear2 = 4221
+manwear3 = 4219
+womanwear = obj_fremennik_helm_woman, 0
+womanwear3 = 4221
+womanwear2 = 4228
+manhead = 4210
+manhead2 = 4211
+womanhead = 4216
+womanhead2 = 4211
+members = true
+cost = 5000
+name = Fremennik helm

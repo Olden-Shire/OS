@@ -1,0 +1,7 @@
+// loc 10405
+hillskew = true
+ambient = 20
+op1 = Clear
+op3 = hidden
+models_only = 10194 10204 10197
+name = Water Channel

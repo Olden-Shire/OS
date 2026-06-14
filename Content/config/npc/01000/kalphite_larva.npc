@@ -1,0 +1,7 @@
+// npc 1161
+vislevel = 0
+size = 1
+walkanim = 6221
+readyanim = 6218
+name = Kalphite Larva
+models = 24591

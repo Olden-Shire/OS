@@ -1,0 +1,8 @@
+// npc 2255
+readyanim = 2170
+vislevel = 0
+turnspeed = 0
+size = 2
+op2 = Attack
+name = Thing under the bed
+models = 7381

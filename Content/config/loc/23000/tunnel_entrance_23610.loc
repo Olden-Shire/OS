@@ -1,0 +1,8 @@
+// loc 23610
+width = 2
+length = 2
+op1 = Climb-down
+ambient = 10
+noshadow = true
+models_only = 24614
+name = Tunnel entrance

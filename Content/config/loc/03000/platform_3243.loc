@@ -1,0 +1,6 @@
+// loc 3243
+width = 4
+length = 4
+sharelight = true
+models_only = 715
+name = Platform

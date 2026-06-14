@@ -1,0 +1,4 @@
+// loc 17368
+nonsolid = true
+models_only = 17338
+name = Floor

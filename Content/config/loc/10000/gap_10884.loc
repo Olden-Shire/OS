@@ -1,0 +1,8 @@
+// loc 10884
+width = 2
+length = 2
+op1 = Cross
+nonsolid = true
+offsety = -64
+models_only = 10772
+name = Gap

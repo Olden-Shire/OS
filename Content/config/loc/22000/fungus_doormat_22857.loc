@@ -1,0 +1,6 @@
+// loc 22857
+active = 1
+ambient = 20
+nonsolid = true
+models = 23374/22
+name = Fungus doormat

@@ -1,0 +1,10 @@
+// npc 3046
+walkanim = 808
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+op3 = Bank
+recol = 49054/7469 9019/8512 25238/8512 8741/8512 61/5318 4550/4649
+name = Nardah Banker
+models = 201 9016 5215 6134 151 176 6133 185
+headmodels = 43 9013 5207

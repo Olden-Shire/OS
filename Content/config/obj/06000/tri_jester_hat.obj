@@ -1,0 +1,14 @@
+// obj 6860
+model = obj_tri_jester_hat
+xof2d = 1
+yof2d = -7
+zoom2d = 592
+yan2d = 267
+xan2d = 171
+iop2 = Wear
+manwear = obj_tri_jester_hat_man, 0
+womanwear = obj_tri_jester_hat_woman, 0
+manhead = 10397
+womanhead = 10408
+iop5 = Destroy
+name = Tri-jester hat

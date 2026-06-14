@@ -1,0 +1,10 @@
+// npc 5798
+walkanim = 6041
+readyanim = 6040
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+alwaysontop = true
+name = Lurgon
+models = 23664 23709 23629
+headmodels = 23234 23246

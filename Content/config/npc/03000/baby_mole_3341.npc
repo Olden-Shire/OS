@@ -1,0 +1,9 @@
+// npc 3341
+vislevel = 0
+size = 1
+readyanim = 3309
+walkanim = 3313
+nominimap = true
+recol = 5388/317 5392/322 5268/326 5272/328 5276/332 4558/63706
+name = Baby Mole
+models = 12073

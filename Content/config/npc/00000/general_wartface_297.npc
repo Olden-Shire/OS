@@ -1,0 +1,11 @@
+// npc 297
+vislevel = 0
+size = 1
+walkanim = 308
+readyanim = 311
+op1 = Talk-to
+alwaysontop = true
+recol = 916/22443 61/22443
+name = General Wartface
+models = 2951 2953 2955 2956
+headmodels = 144

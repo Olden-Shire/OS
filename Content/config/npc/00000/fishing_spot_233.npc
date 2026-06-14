@@ -1,0 +1,9 @@
+// npc 233
+vislevel = 0
+readyanim = 447
+walkanim = 448
+size = 1
+nominimap = true
+op1 = Bait
+name = Fishing spot
+models = 1491

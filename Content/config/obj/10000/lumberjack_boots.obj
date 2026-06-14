@@ -1,0 +1,14 @@
+// obj 10933
+members = true
+iop2 = Wear
+cost = 50
+model = obj_builders_boots
+manwear = obj_lumberjack_boots_man, 0
+womanwear = obj_lumberjack_boots_woman, 0
+xof2d = 3
+yof2d = -32
+zoom2d = 854
+yan2d = 249
+xan2d = 235
+recol = 4626/5272 8101/5157
+name = Lumberjack boots

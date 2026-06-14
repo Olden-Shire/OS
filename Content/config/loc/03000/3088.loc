@@ -1,0 +1,7 @@
+// loc 3088
+forcedecor = true
+ambient = 30
+contrast = 30
+mapscene = 22
+nonblockrange = true
+models = 3318/2 3218/3

@@ -1,0 +1,10 @@
+// loc 19846
+hillskew = true
+op1 = Climb
+ambient = 30
+contrast = 30
+forcedecor = true
+blockwalk = true
+recol = 6689/43131
+models = 1743/22
+name = Rocky handholds

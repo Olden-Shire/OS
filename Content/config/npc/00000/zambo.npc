@@ -1,0 +1,12 @@
+// npc 568
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 57651/49738 45231/47547
+name = Zambo
+models = 235 249 14933 14934 14932 10218 14378 185
+headmodels = 53 81

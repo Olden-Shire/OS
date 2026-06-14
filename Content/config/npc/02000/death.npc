@@ -1,0 +1,10 @@
+// npc 2862
+size = 1
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 847
+nominimap = true
+alwaysontop = true
+recol = 10004/5231 25238/0 8741/0 4550/5353 908/0 7073/8084
+name = Death
+models = 5100 292 170 179 256 507

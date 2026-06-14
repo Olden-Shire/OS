@@ -1,0 +1,13 @@
+// npc 4515
+size = 1
+vislevel = 0
+contrast = 12
+ambient = 12
+walkanims = 4426, 4427, 4428, 4429
+readyanim = 4424
+op1 = Talk-to
+alwaysontop = true
+recol = 15009/8772 8621/41178 8615/45231 8865/45351
+name = Meteora
+models = 390 16506 16493 16498 12143 16496 16499 16508 270
+headmodels = 16450 16469

@@ -1,0 +1,13 @@
+// npc 5477
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+alwaysontop = true
+op1 = Talk-to
+op3 = Request-supplies
+recol = 25238/6319 8741/7349 6798/4017 6032/6817 5276/10308 5400/10279
+name = Bork Sigmundson
+models = 230 11190 299 22164 170 10218 4046 4226 4218
+headmodels = 63 11188

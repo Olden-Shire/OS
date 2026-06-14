@@ -1,0 +1,7 @@
+// loc 1122
+width = 2
+length = 2
+mapscene = 6
+nonblockrange = true
+models_only = 1640
+name = Bush

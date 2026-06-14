@@ -1,0 +1,8 @@
+// loc 25434
+ambient = 50
+contrast = 50
+sharelight = true
+op1 = Climb-down
+mapscene = 7
+models_only = 26910
+name = Stairs

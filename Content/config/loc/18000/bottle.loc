@@ -1,0 +1,7 @@
+// loc 18404
+anim = 3743
+noshadow = true
+ambient = 20
+contrast = 10
+models_only = 18484 18483
+name = Bottle

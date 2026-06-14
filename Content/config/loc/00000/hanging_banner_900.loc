@@ -1,0 +1,8 @@
+// loc 900
+ambient = 50
+sharelight = true
+active = 1
+recol = 10176/43105 43930/40483 127/70 9145/43105
+retex = 16/19
+models = 2065/4
+name = Hanging banner

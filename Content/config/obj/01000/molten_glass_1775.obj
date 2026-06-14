@@ -1,0 +1,10 @@
+// obj 1775
+cost = 2
+model = obj_molten_glass_1775
+ambient = 50
+cost = 3
+zoom2d = 976
+yan2d = 18
+xan2d = 216
+members = true
+name = Molten glass

@@ -1,0 +1,13 @@
+// npc 1701
+walkanims = 819, 820, 821, 822
+readyanim = 808
+resizev = 110
+resizeh = 110
+ambient = 40
+contrast = 40
+op1 = Talk-To
+vislevel = 0
+recol = 17467/18626
+name = Ghost farmer
+models = 5212 5219 5209 5216 5211 5231
+headmodels = 5203 5202

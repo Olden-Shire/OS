@@ -1,0 +1,10 @@
+// npc 5268
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 4550/6563 9019/50078 926/49054 43072/9019 49054/7485 61/9019
+name = Jamila
+models = 376 390 9026 14588 10706 9024 358
+headmodels = 101 113

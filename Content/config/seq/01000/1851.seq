@@ -1,0 +1,6 @@
+// seq 1851
+replaceheldleft = 0
+replaceheldright = 0
+reachforward = true
+loops = 4
+frames = 3/14/254 3/15/254 3/16/254 3/17/254

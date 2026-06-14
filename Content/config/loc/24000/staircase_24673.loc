@@ -1,0 +1,11 @@
+// loc 24673
+width = 2
+length = 2
+op1 = Walk-down
+forceapproach = 14
+mapscene = 7
+contrast = 15
+ambient = 25
+recol = 8844/6554 4510/6674 4882/6550
+models_only = 1944
+name = Staircase

@@ -1,0 +1,9 @@
+// npc 181
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+vislevel = 13
+recol = 25238/687 8741/687 6798/127
+name = Chaos druid
+models = 235 181 249 292 170 176 260

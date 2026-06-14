@@ -1,0 +1,9 @@
+// npc 3936
+vislevel = 0
+walkanim = 98
+readyanim = 4021
+op1 = Talk-to
+recol = 8485/5388 7473/5392 10330/7232 61/4550 910/904 5784/16652
+name = Thorodin
+models = 2970 7061 2978 2990 7046 2985
+headmodels = 0

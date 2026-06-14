@@ -1,0 +1,12 @@
+// npc 5527
+walkanim = 283
+readyanim = 286
+resizeh = 134
+resizev = 134
+op2 = Attack
+op2 = Attack
+alwaysontop = true
+vislevel = 82
+recol = 61/43131 21570/43121
+name = Ice troll female
+models = 4941 4944 3755 3765

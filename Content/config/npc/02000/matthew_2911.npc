@@ -1,0 +1,12 @@
+// npc 2911
+size = 1
+resizeh = 134
+resizev = 125
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+recol = 4550/4517
+name = Matthew
+models = 9981 246 9983 9979 9980 9982 181
+headmodels = 53 9976

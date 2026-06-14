@@ -1,0 +1,7 @@
+// loc 18016
+width = 2
+ambient = 15
+nonblockrange = true
+recol = 6439/10266 6451/21526 6682/10258 6563/20 6558/24 6443/8472
+models_only = 17660
+name = Broken counter

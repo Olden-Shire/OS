@@ -1,0 +1,10 @@
+// npc 21
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 69
+recol = 70/36133 5532/39234 41/39234 61/36133 57/36133 4550/4657
+name = Hero
+models = 217 306 164 179 268 185 518 246 541

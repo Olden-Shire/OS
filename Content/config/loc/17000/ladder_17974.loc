@@ -1,0 +1,9 @@
+// loc 17974
+resizex = 128
+resizey = 160
+resizez = 128
+op1 = Climb-up
+forceapproach = 11
+mapscene = 7
+models_only = 17636
+name = Ladder

@@ -1,0 +1,10 @@
+// npc 3656
+size = 2
+resizev = 106
+resizeh = 106
+walkanim = 3825
+readyanim = 3822
+op2 = Attack
+vislevel = 40
+name = Hopeless creature
+models = 14283

@@ -1,0 +1,9 @@
+// npc 1243
+size = 1
+readyanim = 1290
+walkanim = 1289
+op2 = Attack
+vislevel = 60
+recol = 0/5640
+name = Phrin Shadow
+models = 4143

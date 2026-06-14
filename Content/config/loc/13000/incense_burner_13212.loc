@@ -1,0 +1,7 @@
+// loc 13212
+op1 = Light
+op5 = Remove
+ambient = 20
+contrast = 20
+models_only = 13116
+name = Incense burner

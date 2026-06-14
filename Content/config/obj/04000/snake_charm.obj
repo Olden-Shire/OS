@@ -1,0 +1,11 @@
+// obj 4605
+model = obj_snake_charm
+xof2d = -3
+zoom2d = 1170
+yan2d = 56
+xan2d = 304
+iop1 = Play
+manwear = obj_snake_charm_man, 0
+womanwear = obj_snake_charm_woman, 0
+members = true
+name = Snake charm

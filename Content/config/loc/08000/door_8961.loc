@@ -1,0 +1,7 @@
+// loc 8961
+anim = 2350
+width = 3
+blockwalk = true
+recol = 32798/21522 32803/32790 32807/32794 32811/32798 32815/32803
+models_only = 11871
+name = Door

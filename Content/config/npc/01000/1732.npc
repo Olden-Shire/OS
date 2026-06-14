@@ -1,0 +1,6 @@
+// npc 1732
+walkanims = 819, 820, 821, 822
+readyanim = 808
+vislevel = 0
+op1 = Talk-to
+multivar = 2025, 65535, 65535 5462

@@ -1,0 +1,10 @@
+// loc 22766
+width = 2
+length = 2
+active = 1
+ambient = 15
+blockwalk = true
+nonblockrange = true
+recol = 10394/404 10392/528 10388/398 10514/268 10638/32906
+models_only = 23463 23471
+name = Market stall

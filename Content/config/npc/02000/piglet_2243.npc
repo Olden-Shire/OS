@@ -1,0 +1,9 @@
+// npc 2243
+vislevel = 0
+walkanim = 2165
+readyanim = 2166
+resizeh = 64
+resizev = 64
+ambient = 15
+name = Piglet
+models = 7364

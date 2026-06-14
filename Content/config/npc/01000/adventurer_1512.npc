@@ -1,0 +1,10 @@
+// npc 1512
+vislevel = 0
+op1 = Talk-to
+size = 1
+walkanims = 2562, 2562, 2562, 2562
+readyanim = 2561
+recol = 123/38825 24/36133 61/36133 41/37270 57/36133 926/48030
+name = Adventurer
+models = 218 306 3189 164 10218 546 268 4954
+headmodels = 56

@@ -1,0 +1,12 @@
+// obj 4983
+members = true
+cost = 160000
+iop2 = Wield
+manwear = obj_veracs_flail_4755_wear, 0
+womanwear = obj_veracs_flail_4755_wear, 6
+model = obj_veracs_flail_4755
+yof2d = 32
+zoom2d = 1440
+yan2d = 352
+xan2d = 272
+name = Veracs flail 75

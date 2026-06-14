@@ -1,0 +1,6 @@
+// loc 26134
+hillskew = true
+contrast = 15
+ambient = 20
+blockwalk = true
+models = 27544/0 27541/1 27542/2 27543/3 27546/9

@@ -1,0 +1,11 @@
+// npc 812
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+alwaysontop = true
+recol = 8741/43072 926/43968 25238/43072
+name = Guard
+models = 219 248 301 163 176 274 185 519 517 323
+headmodels = 57 80

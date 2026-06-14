@@ -1,0 +1,13 @@
+// npc 1686
+walkanims = 1205, 1206, 1207, 1208
+readyanim = 813
+resizev = 114
+resizeh = 114
+ambient = 40
+contrast = 40
+op1 = Talk-To
+vislevel = 0
+recol = 17467/18626
+name = Ghost disciple
+models = 5212 5219 5209 5216 5223 5230
+headmodels = 5203

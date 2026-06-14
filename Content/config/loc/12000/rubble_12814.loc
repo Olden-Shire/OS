@@ -1,0 +1,8 @@
+// loc 12814
+mapscene = 12
+op1 = Mine
+op2 = Prospect
+op3 = hidden
+nonblockrange = true
+models_only = 14033
+name = Rubble

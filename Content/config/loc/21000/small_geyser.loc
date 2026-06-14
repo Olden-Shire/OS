@@ -1,0 +1,11 @@
+// loc 21356
+active = 1
+ambient = 30
+contrast = 30
+resizex = 64
+resizey = 64
+resizez = 64
+anim = 5772
+bgsound = 2150, 3
+models_only = 22049
+name = Small Geyser

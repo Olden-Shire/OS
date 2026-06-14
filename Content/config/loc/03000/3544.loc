@@ -1,0 +1,6 @@
+// loc 3544
+sharelight = true
+active = 0
+hillskew = true
+recol = 7580/12837 7471/15023
+models_only = 3577

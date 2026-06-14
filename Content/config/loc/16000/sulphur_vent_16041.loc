@@ -1,0 +1,11 @@
+// loc 16041
+ambient = 30
+contrast = 15
+forcedecor = true
+noshadow = true
+active = 1
+blockwalk = true
+bgsound = 2066, 3
+recol = 33676/0
+models = 9294/10 9295/22
+name = Sulphur vent

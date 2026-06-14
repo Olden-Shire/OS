@@ -1,0 +1,10 @@
+// npc 1673
+size = 1
+resizeh = 93
+resizev = 71
+op1 = Talk-to
+alwaysontop = true
+vislevel = 0
+name = Fenkenstrain's Monster
+models = 5175
+headmodels = 5119

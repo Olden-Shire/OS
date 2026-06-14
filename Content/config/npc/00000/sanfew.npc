@@ -1,0 +1,10 @@
+// npc 454
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 25238/127 8741/127 6798/127
+name = Sanfew
+models = 217 181 250 292 170 176 260
+headmodels = 55 82

@@ -1,0 +1,27 @@
+[clientscript,script_152](int $int0, int $int1, int $int2, int $int3, int $int4, int $int5, string $string0, string $string1, string $string2, string $string3, string $string4)()
+def_int $int6;
+def_int $int7;
+def_int $int8;
+
+cc_deleteall($int0);
+$int6 = 0;
+$int7 = 0;
+if (if_getscrollwidth($int0) > 0) {
+    $int6 = calc((if_getscrollwidth($int0) - 36 * $int2) / ($int2 - 1));
+} else {
+    $int6 = calc((if_getwidth($int0) - 36 * $int2) / ($int2 - 1));
+}
+if (if_getscrollheight($int0) > 0) {
+    $int7 = calc((if_getscrollheight($int0) - 32 * $int3) / ($int3 - 1));
+} else {
+    $int7 = calc((if_getheight($int0) - 32 * $int3) / ($int3 - 1));
+}
+$int8 = 0;
+while ($int8 <= calc($int2 * $int3)) {
+    cc_create($int0, 5, $int8);
+    cc_setsize(36, 32);
+    cc_setposition(calc((36 + $int6) * ($int8 % $int2)), calc($int8 / $int2 * (32 + $int7)));
+    ~script_154($int1, $int8, $int0, $int8, $int4, $int5, $string0, $string1, $string2, $string3, $string4, "null", "null", "null", "null");
+    $int8 = calc($int8 + 1);
+}
+return;

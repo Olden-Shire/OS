@@ -1,0 +1,9 @@
+// obj 9665
+model = obj_torch_9665
+zoom2d = 1660
+yan2d = 312
+xan2d = 1632
+manwear = obj_torch_9665, 0
+womanwear = obj_torch_9665, 6
+iop2 = Wield
+name = Torch

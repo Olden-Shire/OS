@@ -1,0 +1,10 @@
+// obj 604
+model = obj_bone_shard
+xof2d = 6
+yof2d = -1
+zoom2d = 580
+yan2d = 60
+xan2d = 152
+members = true
+iop1 = Inspect
+name = Bone shard

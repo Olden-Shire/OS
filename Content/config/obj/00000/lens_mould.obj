@@ -1,0 +1,9 @@
+// obj 602
+model = obj_lens_mould
+yof2d = -17
+zoom2d = 2610
+yan2d = 1912
+xan2d = 196
+members = true
+iop5 = Destroy
+name = Lens mould

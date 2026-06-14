@@ -1,0 +1,19 @@
+[clientscript,script_26](int $int0, int $int1, int $int2)()
+
+cc_create($int0, 5, 0);
+cc_setposition(0, 0);
+cc_setsize(24, 24);
+cc_setgraphic($int2);
+cc_settiling(0);
+cc_setonclick(29, "");
+cc_setonmouseover(27, $int0, "I");
+cc_setonmouseleave(28, $int0, "I");
+cc_create($int0, 5, 1);
+cc_setposition(0, 0);
+cc_setsize(24, 24);
+cc_setgraphic($int1);
+cc_settiling(0);
+cc_setonclick(29, "");
+cc_setonmouseover(27, $int0, "I");
+cc_setonmouseleave(28, $int0, "I");
+return;

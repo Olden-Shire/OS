@@ -1,0 +1,10 @@
+// loc 7435
+active = 1
+op1 = Climb-down
+op2 = Close
+raiseobject = 0
+forceapproach = 13
+blockwalk = true
+recol = 6049/8724 6032/10508 5660/9100 33/10394
+models = 1173/22
+name = Trapdoor

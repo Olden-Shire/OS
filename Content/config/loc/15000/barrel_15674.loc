@@ -1,0 +1,8 @@
+// loc 15674
+ambient = 15
+resizex = 100
+resizey = 100
+resizez = 100
+nonblockrange = true
+models_only = 7774
+name = Barrel

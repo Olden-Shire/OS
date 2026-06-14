@@ -1,0 +1,10 @@
+// obj 970
+cost = 10
+model = obj_papyrus_970
+manwear = obj_scrawled_note_wear, 0
+womanwear = obj_scrawled_note_wear, 6
+zoom2d = 940
+yan2d = 112
+xan2d = 248
+members = true
+name = Papyrus

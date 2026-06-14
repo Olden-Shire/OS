@@ -1,0 +1,6 @@
+// loc 6557
+sharelight = true
+hillskew = true
+active = 0
+nonblockrange = true
+models = 3531/0 3532/2 3533/3 3534/9

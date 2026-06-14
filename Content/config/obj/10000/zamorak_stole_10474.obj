@@ -1,0 +1,14 @@
+// obj 10474
+model = obj_zamorak_stole_10474
+xof2d = 9
+yof2d = -8
+zoom2d = 1697
+yan2d = 73
+zan2d = 69
+xan2d = 373
+iop2 = Wear
+manwear = obj_zamorak_stole_10474_man, 0
+womanwear = obj_zamorak_stole_10474_woman, 0
+members = true
+cost = 2500
+name = Zamorak stole

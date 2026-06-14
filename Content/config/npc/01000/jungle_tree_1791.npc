@@ -1,0 +1,11 @@
+// npc 1791
+size = 1
+walkanim = 5751
+readyanim = 5751
+vislevel = 0
+op1 = Chop down
+op3 = hidden
+turnspeed = 0
+recol = 61/16916 49/13840 41/4626
+name = Jungle Tree
+models = 21835

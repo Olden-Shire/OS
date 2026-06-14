@@ -1,0 +1,5 @@
+// loc 18135
+active = 1
+blockwalk = true
+forcedecor = true
+multiloc = 2601, 65535, 65535 65535 18103

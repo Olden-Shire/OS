@@ -1,0 +1,14 @@
+// obj 3488
+model = obj_bronze_kiteshield_1189
+xof2d = -6
+yof2d = -14
+zoom2d = 1560
+yan2d = 1104
+xan2d = 344
+iop2 = Wear
+cost = 54400
+manwear = obj_bronze_kiteshield_1189_wear, 4
+womanwear = obj_bronze_kiteshield_1189_wear, 6
+members = true
+recol = 61/7114 7054/7097 57/6057
+name = Gilded kiteshield

@@ -1,0 +1,13 @@
+// obj 7639
+cost = 1000
+model = obj_silvthrill_rod_7637
+zoom2d = 1838
+yan2d = 88
+zan2d = 300
+xan2d = 480
+members = true
+manwear = obj_silvthrill_rod_7637_wear, 0
+womanwear = obj_silvthrill_rod_7637_wear, 0
+iop2 = Wield
+recol = 37970/26706 37958/24648 37949/24640
+name = Rod of ivandis(10)

@@ -1,0 +1,8 @@
+// loc 3562
+nonsolid = true
+sharelight = true
+forcedecor = true
+active = 1
+recol = 6573/6449
+models = 3631/22
+name = Balancing ledge

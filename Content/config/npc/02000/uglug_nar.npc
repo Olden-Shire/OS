@@ -1,0 +1,10 @@
+// npc 2039
+vislevel = 0
+size = 2
+walkanim = 358
+readyanim = 357
+op1 = Talk-to
+op3 = Trade
+name = Uglug Nar
+models = 6760 6769
+headmodels = 141

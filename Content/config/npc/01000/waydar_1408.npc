@@ -1,0 +1,8 @@
+// npc 1408
+walkanim = 189
+readyanim = 195
+op1 = Talk-to
+vislevel = 0
+name = Waydar
+models = 2909 2908 2922
+headmodels = 19

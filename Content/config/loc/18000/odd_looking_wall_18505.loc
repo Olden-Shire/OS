@@ -1,0 +1,8 @@
+// loc 18505
+noshadow = true
+mapscene = 22
+active = 1
+op1 = Pass
+blockwalk = true
+models = 18595/0
+name = Odd looking wall

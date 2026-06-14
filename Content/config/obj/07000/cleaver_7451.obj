@@ -1,0 +1,13 @@
+// obj 7451
+cost = 25600
+model = obj_cleaver_7451
+xof2d = -7
+yof2d = -3
+zoom2d = 854
+yan2d = 1328
+xan2d = 429
+iop2 = Wield
+manwear = obj_cleaver_7451_wear, 0
+womanwear = obj_cleaver_7451_wear, 6
+members = true
+name = Cleaver

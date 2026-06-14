@@ -1,0 +1,10 @@
+// npc 9
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = Attack
+op3 = Pickpocket
+vislevel = 21
+recol = 25238/10508 8741/6930 61/5652
+name = Guard
+models = 233 246 294 151 176 254 185 519 541

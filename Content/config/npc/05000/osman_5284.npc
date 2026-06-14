@@ -1,0 +1,11 @@
+// npc 5284
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+alwaysontop = true
+recol = 4550/4647 25238/10508 6798/7700 8741/10508 8860/10512
+name = Osman
+models = 208 249 310 10980 176 275 181
+headmodels = 48 81

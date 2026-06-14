@@ -1,0 +1,6 @@
+// loc 15695
+op1 = Search
+active = 1
+nonblockrange = true
+models_only = 15518
+name = Crate

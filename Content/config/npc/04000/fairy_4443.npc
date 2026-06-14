@@ -1,0 +1,10 @@
+// npc 4443
+vislevel = 0
+size = 1
+walkanim = 106
+readyanim = 112
+op1 = Talk-to
+recol = 22753/17738 4550/4556
+name = Fairy
+models = 16219
+headmodels = 16206

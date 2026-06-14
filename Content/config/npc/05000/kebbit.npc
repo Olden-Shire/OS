@@ -1,0 +1,9 @@
+// npc 5137
+size = 1
+op2 = Attack
+readyanim = 5302
+walkanim = 5301
+alwaysontop = true
+vislevel = 13
+name = Kebbit
+models = 20090 20091 20093

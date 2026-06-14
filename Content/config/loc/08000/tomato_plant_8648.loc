@@ -1,0 +1,6 @@
+// loc 8648
+ambient = 25
+op2 = Inspect
+op4 = Guide
+models_only = 8219 8222 7766
+name = Tomato plant

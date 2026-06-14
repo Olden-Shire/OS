@@ -1,0 +1,15 @@
+// obj 3175
+cost = 20800
+members = true
+model = obj_bronze_spear_1237
+xof2d = 7
+yof2d = -4
+zoom2d = 1490
+yan2d = 112
+zan2d = 144
+xan2d = 1960
+manwear = obj_bronze_spear_1237_wear, 0
+womanwear = obj_bronze_spear_1237_wear, 6
+iop2 = Wield
+recol = 33/25048 28/25048
+name = Rune spear(kp)

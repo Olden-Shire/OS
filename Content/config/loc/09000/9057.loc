@@ -1,0 +1,6 @@
+// loc 9057
+sharelight = true
+active = 1
+length = 2
+width = 2
+multiloc = 922, 65535, 9058 9059 9060 9061 9062 9063

@@ -1,0 +1,5 @@
+// seq 1440
+replaceheldleft = 0
+replaceheldright = 0
+loops = 8
+frames = 4/9/295 4/10/295 4/11/295 4/12/295 4/13/295 4/14/295 4/15/295 4/16/295

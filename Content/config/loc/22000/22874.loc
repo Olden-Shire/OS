@@ -1,0 +1,6 @@
+// loc 22874
+ambient = 35
+active = 0
+mirror = true
+nonsolid = true
+models_only = 23809

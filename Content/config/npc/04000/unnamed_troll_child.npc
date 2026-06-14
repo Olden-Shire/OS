@@ -1,0 +1,12 @@
+// npc 4968
+size = 1
+alwaysontop = true
+walkanim = 283
+readyanim = 286
+vislevel = 0
+resizeh = 66
+resizev = 66
+recol = 61/8478 21570/7580 10355/7768
+name = Unnamed troll child
+models = 4942 6239 3756
+headmodels = 3791 3789

@@ -1,0 +1,11 @@
+// npc 1386
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op2 = Attack
+vislevel = 2
+recol = 25238/38040 8741/35 8078/43 7700/148 6798/8765 4550/2524
+name = Rannveig
+models = 387 343 456 421 353 479 361
+headmodels = 110

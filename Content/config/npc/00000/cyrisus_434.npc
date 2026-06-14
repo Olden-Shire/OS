@@ -1,0 +1,10 @@
+// npc 434
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op2 = hidden
+alwaysontop = true
+vislevel = 126
+recol = 4550/5568 8741/10512 14490/10512
+name = Cyrisus
+models = 3378 215 244 248 3820 156 10218 6232 24985 10683
+headmodels = 24977 77

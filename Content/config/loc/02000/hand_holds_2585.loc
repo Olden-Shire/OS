@@ -1,0 +1,7 @@
+// loc 2585
+contrast = 100
+ambient = 50
+active = 1
+op1 = Climb
+models = 2078/4
+name = Hand holds

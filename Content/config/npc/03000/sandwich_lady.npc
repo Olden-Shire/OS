@@ -1,0 +1,11 @@
+// npc 3117
+op1 = Talk-to
+alwaysontop = true
+size = 1
+vislevel = 0
+walkanim = 3042
+readyanim = 3043
+recol = 8741/1372 25238/1372 4626/10762
+name = Sandwich lady
+models = 391 10744 332 353 428 358 10745 417
+headmodels = 114 10740 136

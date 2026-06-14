@@ -1,0 +1,11 @@
+// npc 580
+vislevel = 0
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 4550/4647 8741/10508 6798/7700 4626/24 25238/5281 54397/54298
+name = Flynn
+models = 215 254 249 170 176 185 305 10741
+headmodels = 53 81 10739

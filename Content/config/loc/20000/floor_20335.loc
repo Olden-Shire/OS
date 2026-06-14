@@ -1,0 +1,8 @@
+// loc 20335
+nonsolid = true
+forcedecor = true
+active = 1
+hillskew = true
+noshadow = true
+models_only = 20810
+name = Floor

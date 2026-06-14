@@ -1,0 +1,16 @@
+// obj 3337
+cost = 300
+members = true
+model = obj_myre_snelm_3337
+xof2d = 7
+yof2d = -2
+zoom2d = 1190
+yan2d = 188
+xan2d = 185
+members = true
+iop2 = Wear
+manwear = obj_myre_snelm_3337_man, 0
+womanwear = obj_myre_snelm_3337_woman, 0
+manhead = 4096
+womanhead = 4098
+name = Myre snelm

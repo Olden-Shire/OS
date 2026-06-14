@@ -1,0 +1,8 @@
+// loc 25748
+op1 = Open
+raiseobject = 0
+contrast = 15
+ambient = 20
+recol = 6945/5421 6940/5417 6697/5425 4762/5532 4638/5537 6814/5413
+models = 639/0
+name = Large door

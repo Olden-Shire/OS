@@ -1,0 +1,12 @@
+// npc 4250
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Buy-plank
+op4 = Trade
+vislevel = 0
+alwaysontop = true
+recol = 8741/5276 10004/5276 25238/10518 54397/5165
+name = Sawmill operator
+models = 230 9619 249 305 10980 179 274 181
+headmodels = 9616 63 81

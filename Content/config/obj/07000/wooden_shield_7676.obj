@@ -1,0 +1,13 @@
+// obj 7676
+model = obj_bronze_kiteshield_1189
+xof2d = -8
+yof2d = -7
+zoom2d = 1892
+yan2d = 1156
+xan2d = 352
+iop2 = Wield
+manwear = obj_bronze_kiteshield_1189_wear, 0
+womanwear = obj_bronze_kiteshield_1189_wear, 6
+members = true
+recol = 7054/7952 61/6707
+name = Wooden shield

@@ -1,0 +1,6 @@
+// loc 22788
+active = 1
+ambient = 20
+nonsolid = true
+models = 23491/22
+name = Chalk patterns

@@ -1,0 +1,17 @@
+// obj 5617
+members = true
+cost = 3
+stackable = true
+model = obj_ice_arrows
+xof2d = 6
+yof2d = -29
+zoom2d = 1220
+yan2d = 100
+xan2d = 216
+iop2 = Wield
+count1 = 908, 2
+count2 = 907, 3
+count3 = 906, 4
+count4 = 909, 5
+recol = 61/33 57/13221
+name = Iron arrow(p+)

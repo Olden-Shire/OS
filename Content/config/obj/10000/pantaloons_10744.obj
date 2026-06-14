@@ -1,0 +1,13 @@
+// obj 10744
+model = obj_pantaloons_10396
+iop2 = Wear
+manwear = obj_pantaloons_10396_man, 0
+womanwear = obj_pantaloons_10396_woman, 0
+xof2d = 3
+yof2d = 1
+zoom2d = 1892
+zan2d = 2047
+xan2d = 498
+members = true
+cost = 2000
+name = Pantaloons

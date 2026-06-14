@@ -1,0 +1,9 @@
+// npc 3937
+vislevel = 0
+walkanim = 98
+readyanim = 4021
+op1 = Talk-to
+recol = 61/4550 803/43164 910/54290 5784/152
+name = Ferd
+models = 2973 2986 7061 2978 2990 2981 2985
+headmodels = 3 6

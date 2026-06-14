@@ -1,0 +1,17 @@
+// obj 9237
+model = obj_opal_bolts
+xof2d = 3
+yof2d = 5
+zoom2d = 720
+yan2d = 117
+xan2d = 477
+iop2 = Wield
+stackable = true
+members = true
+count1 = 9254, 2
+count2 = 9255, 3
+count3 = 9256, 4
+count4 = 9257, 5
+cost = 13
+recol = 17971/43241 5537/43241 5532/43239 5656/43237 5652/43235 10465/18132
+name = Jade bolts (e)

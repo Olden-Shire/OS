@@ -1,0 +1,11 @@
+// npc 4674
+size = 4
+resizeh = 110
+resizev = 110
+walkanim = 79
+readyanim = 90
+op2 = Attack
+vislevel = 227
+recol = 2469/24 912/55170 1938/4 1814/43270 2588/16 910/43906
+name = Black dragon
+models = 17409 17425 17419 17423

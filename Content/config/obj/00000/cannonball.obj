@@ -1,0 +1,10 @@
+// obj 2
+model = obj_cannonball
+xof2d = 1
+zoom2d = 1400
+yan2d = 1852
+xan2d = 156
+stackable = true
+members = true
+cost = 5
+name = Cannonball

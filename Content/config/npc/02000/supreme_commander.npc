@@ -1,0 +1,11 @@
+// npc 2128
+resizeh = 135
+resizev = 135
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+recol = 28/8 61/59664 906/9021 908/8 5181/6565
+name = Supreme Commander
+models = 7029 7050 7039 7042
+headmodels = 6988

@@ -1,0 +1,12 @@
+// npc 519
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+alwaysontop = true
+recol = 25238/1934 8741/794 4550/6806 6798/10508 43072/6806
+name = Bob
+models = 235 254 246 292 151 176 276 185 326
+headmodels = 67

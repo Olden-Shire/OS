@@ -1,0 +1,9 @@
+// npc 1171
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+vislevel = 0
+recol = 6798/32865
+name = Lubufu
+models = 185 246 3873 173 176 254
+headmodels = 63 81

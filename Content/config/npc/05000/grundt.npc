@@ -1,0 +1,12 @@
+// npc 5502
+resizeh = 110
+resizev = 115
+walkanim = 98
+readyanim = 101
+vislevel = 0
+op1 = Talk-to
+alwaysontop = true
+recol = 61/1701 10347/819 4550/4560
+name = Grundt
+models = 2974 7072 7063 2978 7044 2985
+headmodels = 4 6997

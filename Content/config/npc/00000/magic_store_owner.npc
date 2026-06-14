@@ -1,0 +1,11 @@
+// npc 461
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op3 = Trade
+vislevel = 0
+recol = 8741/38814 25238/38814 6798/127
+name = Magic Store owner
+models = 215 181 246 292 170 176 265 202
+headmodels = 53 44

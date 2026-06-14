@@ -1,0 +1,11 @@
+// obj 6790
+model = obj_shoes
+yof2d = -2
+zoom2d = 720
+yan2d = 1812
+xan2d = 136
+members = true
+iop2 = Wear
+manwear = obj_shoes_man, 0
+womanwear = obj_shoes_woman, 0
+name = Shoes

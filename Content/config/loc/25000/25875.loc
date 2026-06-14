@@ -1,0 +1,9 @@
+// loc 25875
+active = 0
+sharelight = true
+contrast = 15
+ambient = 20
+blockwalk = true
+mirror = true
+nonblockrange = true
+models = 27406/0

@@ -1,0 +1,11 @@
+// obj 4704
+model = obj_stone_bowl
+manwear = obj_stone_bowl_wear, 3
+womanwear = obj_stone_bowl_wear, 3
+members = true
+xof2d = 1
+zoom2d = 660
+yan2d = 68
+xan2d = 184
+cost = 1
+name = Stone bowl

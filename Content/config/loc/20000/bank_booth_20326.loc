@@ -1,0 +1,6 @@
+// loc 20326
+ambient = 15
+nonblockrange = true
+recol = 5549/6589 5547/6594 5545/6594 5665/6705 6684/6589
+models_only = 20769
+name = Bank booth

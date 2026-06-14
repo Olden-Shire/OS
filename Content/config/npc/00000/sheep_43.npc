@@ -1,0 +1,8 @@
+// npc 43
+vislevel = 0
+size = 1
+walkanim = 5334
+readyanim = 5335
+op1 = Shear
+name = Sheep
+models = 20290 20291

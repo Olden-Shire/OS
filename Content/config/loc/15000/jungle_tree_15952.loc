@@ -1,0 +1,9 @@
+// loc 15952
+length = 2
+width = 2
+mapscene = 5
+ambient = 30
+anim = 4239
+bgsound = 2065, 3
+models_only = 15810 15827
+name = Jungle Tree

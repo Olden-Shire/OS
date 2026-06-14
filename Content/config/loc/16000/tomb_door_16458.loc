@@ -1,0 +1,9 @@
+// loc 16458
+hillskew = true
+sharelight = true
+forcedecor = true
+active = 1
+op1 = Leave Tomb
+recol = 7481/7353 8501/7349 8497/7475 8493/7473 8617/7461
+models = 16412/0
+name = Tomb Door

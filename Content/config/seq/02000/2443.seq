@@ -1,0 +1,7 @@
+// seq 2443
+replaceheldleft = 0
+replaceheldright = 1464
+loops = 1
+preanim_move = 1
+postanim_move = 1
+frames = 4/20/220 4/21/220 4/22/220 4/23/220

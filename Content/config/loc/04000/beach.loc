@@ -1,0 +1,7 @@
+// loc 4550
+active = 1
+mapscene = 21
+nonsolid = true
+op1 = Jump-to
+models_only = 4556
+name = Beach

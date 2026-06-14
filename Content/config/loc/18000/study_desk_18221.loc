@@ -1,0 +1,6 @@
+// loc 18221
+width = 2
+op1 = Search
+nonblockrange = true
+models_only = 18238 18239
+name = Study desk

@@ -1,0 +1,8 @@
+// loc 20144
+nonsolid = true
+ambient = 15
+active = 1
+mirror = true
+recol = 7706/5537 7830/5532 7954/5656 8076/5652 7050/5904
+models = 20685/22
+name = Trapdoor

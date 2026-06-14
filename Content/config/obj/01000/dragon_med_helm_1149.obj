@@ -1,0 +1,20 @@
+// obj 1149
+cost = 100000
+manwear = obj_khazard_helmet_man, 0
+manwear2 = 239
+womanwear = obj_khazard_helmet_woman, 0
+womanwear2 = 413
+manhead = 57
+manhead2 = 71
+womanhead = 117
+womanhead2 = 129
+model = obj_dragon_med_helm_1149
+xof2d = 3
+yof2d = -5
+zoom2d = 670
+yan2d = 136
+xan2d = 92
+iop2 = Wear
+members = true
+recol = 61/924
+name = Dragon med helm

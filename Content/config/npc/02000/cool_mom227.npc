@@ -1,0 +1,11 @@
+// npc 2579
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op3 = Walk here
+op4 = Follow
+op5 = Trade
+vislevel = 27
+recol = 8741/127
+name = Cool Mom227
+models = 374 399 456 3194 332 353 533 7007 7614

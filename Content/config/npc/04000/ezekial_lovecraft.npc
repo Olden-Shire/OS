@@ -1,0 +1,11 @@
+// npc 4856
+vislevel = 0
+size = 1
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+op4 = Shop
+recol = 3604/43053 8887/7322 8741/8384 54397/94 4550/8646
+name = Ezekial Lovecraft
+models = 18191 230 10304 302 10980 10218 18194 14376
+headmodels = 63 18184 18187

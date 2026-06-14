@@ -1,0 +1,6 @@
+// loc 23947
+nonsolid = true
+ambient = 10
+active = 1
+models = 24815/4
+name = Bellows

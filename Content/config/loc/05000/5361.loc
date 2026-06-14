@@ -1,0 +1,9 @@
+// loc 5361
+wallwidth = 32
+sharelight = true
+occlude = true
+resizez = 128
+resizex = 128
+resizey = 192
+recol = 21534/16536 21530/16532 21526/16656 21522/16652 21646/16904 21642/17284
+models = 4463/0 4464/1 4465/2 4466/3 4467/9

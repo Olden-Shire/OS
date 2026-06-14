@@ -1,0 +1,8 @@
+// loc 3570
+nonsolid = true
+forcedecor = true
+active = 1
+op1 = Walk-on
+recol = 61/6449
+models = 3637/22
+name = Plank

@@ -1,0 +1,10 @@
+// obj 6820
+model = obj_relic
+xof2d = 7
+yof2d = 26
+zoom2d = 1590
+yan2d = 236
+xan2d = 256
+members = true
+iop5 = Destroy
+name = Relic

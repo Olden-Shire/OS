@@ -1,0 +1,6 @@
+// npc 5180
+walkanim = 358
+readyanim = 357
+size = 2
+vislevel = 1
+multivar = 3132, 65535, 5181 5182

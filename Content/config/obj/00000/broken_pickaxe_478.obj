@@ -1,0 +1,12 @@
+// obj 478
+model = obj_broken_pickaxe_468
+xof2d = -2
+yof2d = -19
+zoom2d = 1070
+yan2d = 1056
+xan2d = 224
+manwear = obj_broken_pickaxe_468_wear, 0
+womanwear = obj_broken_pickaxe_468_wear, 6
+cost = 1100
+recol = 61/36133
+name = Broken pickaxe

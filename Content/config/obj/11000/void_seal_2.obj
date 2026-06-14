@@ -1,0 +1,13 @@
+// obj 11672
+model = obj_void_seal_8
+xof2d = 1
+yof2d = -1
+zoom2d = 465
+xan2d = 332
+manwear = obj_void_seal_8_wear, 0
+womanwear = obj_void_seal_8_wear, 6
+iop2 = Wear
+iop4 = Rub
+members = true
+cost = 100
+name = Void seal(2)

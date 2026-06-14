@@ -1,0 +1,5 @@
+// seq 3032
+replaceheldright = 0
+replaceheldleft = 0
+reachforward = true
+frames = 5/0/235 4/1/235 4/2/235 4/3/235 5/4/235 3/5/235 7/6/235 6/7/235 5/8/235

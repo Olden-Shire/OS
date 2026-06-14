@@ -1,0 +1,16 @@
+// obj 4304
+cost = 75
+model = obj_ham_cloak_4304
+xof2d = 3
+yof2d = 6
+zoom2d = 2140
+yan2d = 948
+xan2d = 400
+iop2 = Wear
+manwear = obj_cape_1007_man, 0
+manwear2 = 5433
+womanwear = obj_cape_1007_woman, 0
+womanwear2 = 5433
+members = true
+recol = 926/61347 7700/61347 11200/61347 6032/61347
+name = Ham cloak

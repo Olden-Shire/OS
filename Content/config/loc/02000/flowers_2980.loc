@@ -1,0 +1,5 @@
+// loc 2980
+nonsolid = true
+anim = 912
+models_only = 237
+name = Flowers

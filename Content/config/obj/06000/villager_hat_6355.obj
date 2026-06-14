@@ -1,0 +1,16 @@
+// obj 6355
+cost = 200
+members = true
+iop2 = Wear
+model = obj_villager_hat_6345
+manwear = obj_villager_hat_6345_man, 0
+womanwear = obj_villager_hat_6345_woman, 0
+manhead = 8909
+womanhead = 8912
+xof2d = 3
+yof2d = -5
+zoom2d = 670
+yan2d = 156
+xan2d = 168
+recol = 4886/36036 5572/2157
+name = Villager hat

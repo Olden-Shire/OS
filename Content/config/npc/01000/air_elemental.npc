@@ -1,0 +1,7 @@
+// npc 1021
+readyanim = 1039
+walkanim = 1039
+op2 = Attack
+vislevel = 34
+name = Air elemental
+models = 172

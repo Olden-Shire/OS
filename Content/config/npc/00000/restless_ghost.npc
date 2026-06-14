@@ -1,0 +1,12 @@
+// npc 457
+vislevel = 0
+alwaysontop = true
+ambient = 35
+contrast = 35
+walkanims = 819, 820, 821, 822
+readyanim = 808
+op1 = Talk-to
+recol = 17467/21563
+name = Restless ghost
+models = 15003 5212 5219 5209 5216
+headmodels = 5203 14998

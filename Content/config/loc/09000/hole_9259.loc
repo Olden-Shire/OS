@@ -1,0 +1,10 @@
+// loc 9259
+active = 1
+sharelight = true
+hillskew = true
+contrast = 20
+ambient = 20
+blockwalk = true
+op1 = Use
+models = 24019/0
+name = Hole

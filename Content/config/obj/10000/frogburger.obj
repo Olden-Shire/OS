@@ -1,0 +1,12 @@
+// obj 10962
+model = obj_frogburger
+yof2d = 23
+zoom2d = 724
+yan2d = 1740
+xan2d = 268
+contrast = 15
+ambient = 15
+members = true
+iop1 = Eat
+cost = 10
+name = Frogburger
