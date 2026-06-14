@@ -1,7 +1,8 @@
 name: CI
 
 # Builds the whole OS project via build.ps1 (Rust client/server/panel/jaged +
-# wasm bundle + Java client + IntelliJ plugin) and runs the Rust test suite.
+# wasm bundle + Java client + IntelliJ plugin), runs the Rust test suite, and
+# (on push/dispatch) deploys the wasm bundle build.ps1 produced to GitHub Pages.
 # Windows runner because build.ps1 + the wasm build (LLVM, Git Bash) are Windows.
 
 on:
@@ -9,6 +10,11 @@ on:
     branches: [master, main]
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -52,6 +58,7 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
+            ~/.gradle/jdks
             runescript/.intellijPlatform
           key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle.kts', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-${{ runner.os }}-
@@ -87,3 +94,42 @@ jobs:
       - name: Test (cargo)
         shell: pwsh
         run: cargo test --workspace --no-fail-fast
+
+      # --- Pages (push/dispatch only) ---
+      # build.ps1 already produced crates/client/web/pkg; point the deployed
+      # client at the hosted server (override host with repo var OS_DEFAULT_SERVER;
+      # a ?server= in the URL still wins), then upload the bundle.
+      - name: Default client to the hosted server
+        if: github.event_name != 'pull_request'
+        shell: pwsh
+        run: |
+          $server = "${{ vars.OS_DEFAULT_SERVER }}"
+          if (-not $server) { $server = "game.idletree.net" }
+          $inject = "<script>(function(){var sp=new URLSearchParams(location.search);if(!sp.has('server')){sp.set('server','$server');history.replaceState(null,'',location.pathname+'?'+sp.toString()+location.hash);}})();</script>"
+          $idx = "crates/client/web/index.html"
+          $html = Get-Content $idx -Raw
+          if ($html -notmatch '<!-- OS_SERVER_INJECT -->') { throw "OS_SERVER_INJECT placeholder not found in $idx" }
+          $html.Replace('<!-- OS_SERVER_INJECT -->', $inject) | Set-Content $idx -NoNewline -Encoding utf8
+          Write-Host "deployed client defaults to server: $server"
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: crates/client/web
+
+  deploy:
+    name: deploy to Pages
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

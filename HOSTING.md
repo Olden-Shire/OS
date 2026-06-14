@@ -23,8 +23,9 @@ The server multiplexes JS5 + game on one port, so a single hostname covers both.
 
 ## Enable Pages (both options, one time)
 Repo **Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"**.
-`pages.yml` then builds the wasm bundle and deploys it on each client-code push
-(or "Run workflow"). Default URL: `https://olden-shire.github.io/OS/`.
+`ci.yml` then runs the full `build.ps1` and deploys the wasm bundle it produced to
+Pages on each push to master (PRs build+test only). Default URL:
+`https://olden-shire.github.io/OS/`.
 
 The deploy step bakes a default server into the page (`game.idletree.net`, or the
 repo variable `OS_DEFAULT_SERVER` if set), so the URL you hand out is just:
