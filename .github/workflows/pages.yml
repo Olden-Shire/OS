@@ -70,6 +70,21 @@ jobs:
         shell: pwsh
         run: .\crates\client\web\build.ps1
 
+      # Point the deployed client at the hosted server by default (the client
+      # connects with wss:// on this HTTPS page). Override the host with the repo
+      # variable OS_DEFAULT_SERVER; a ?server= in the URL still wins at runtime.
+      - name: Default client to the hosted server
+        shell: pwsh
+        run: |
+          $server = "${{ vars.OS_DEFAULT_SERVER }}"
+          if (-not $server) { $server = "game.idletree.net" }
+          $inject = "<script>(function(){var sp=new URLSearchParams(location.search);if(!sp.has('server')){sp.set('server','$server');history.replaceState(null,'',location.pathname+'?'+sp.toString()+location.hash);}})();</script>"
+          $idx = "crates/client/web/index.html"
+          $html = Get-Content $idx -Raw
+          if ($html -notmatch '<!-- OS_SERVER_INJECT -->') { throw "OS_SERVER_INJECT placeholder not found in $idx" }
+          $html.Replace('<!-- OS_SERVER_INJECT -->', $inject) | Set-Content $idx -NoNewline -Encoding utf8
+          Write-Host "deployed client defaults to server: $server"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

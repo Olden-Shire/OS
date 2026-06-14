@@ -11,6 +11,11 @@
 <head>
   <meta charset="utf-8">
   <title>Jagex</title>
+  <!-- OS_SERVER_INJECT -->
+  <!-- The Pages deploy (pages.yml) replaces the line above with a script that
+       defaults ?server= to the hosted game server, so the deployed client points
+       at it without a query param. Left as a comment here, so local/dev builds
+       keep targeting 127.0.0.1. An explicit ?server= in the URL always wins. -->
   <style>
     html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
     #game { display: flex; height: 100%; align-items: center; justify-content: center; }

@@ -26,12 +26,14 @@ Repo **Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"**.
 `pages.yml` then builds the wasm bundle and deploys it on each client-code push
 (or "Run workflow"). Default URL: `https://olden-shire.github.io/OS/`.
 
-The URL you hand out is the Pages URL plus a `?server=` override:
+The deploy step bakes a default server into the page (`game.idletree.net`, or the
+repo variable `OS_DEFAULT_SERVER` if set), so the URL you hand out is just:
 ```
-https://olden-shire.github.io/OS/?server=game.idletree.net
+https://olden-shire.github.io/OS/
 ```
-On an HTTPS page the client connects with `wss://` automatically (`ws_socket.rs`);
-locally, opening the bundle without `?server=` still targets `127.0.0.1`.
+On this HTTPS page the client connects with `wss://` automatically (`ws_socket.rs`).
+A `?server=host` in the URL still overrides the default; local/dev builds (the
+committed `index.html`, no inject) keep targeting `127.0.0.1`.
 
 ## A. Caddy + Let's Encrypt (direct IP)
 
