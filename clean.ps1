@@ -40,8 +40,9 @@ Remove-IfPresent (Join-Path $PSScriptRoot "crates\client\web\pkg") "wasm bundle 
 # Server's temp Content->cache pack (regenerated on every server boot).
 Remove-IfPresent (Join-Path $env:TEMP "os_content_cache") "temp content cache (`$TEMP\os_content_cache)"
 
-# Gradle build output (root Java client + IntelliJ plugin) and the stale audit target.
+# Gradle build output (root Java client + the IntelliJ plugin) and the stale audit target.
 Remove-IfPresent (Join-Path $PSScriptRoot "build") "Gradle build output (build\)"
+Remove-IfPresent (Join-Path $PSScriptRoot "runescript\plugin\build") "IntelliJ plugin build (runescript\plugin\build)"
 Remove-IfPresent (Join-Path $PSScriptRoot "target_audit") "stale audit target (target_audit\)"
 
 # Generated RuneScript bundle (recompiled from Content\scripts on the next server
