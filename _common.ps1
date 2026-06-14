@@ -39,9 +39,18 @@ function Invoke-Checked {
 # the newest C:\Program Files\Java\jdk-21*. Returns the path or $null. (This is
 # exactly what the running server probes, so it predicts whether scripts compile.)
 function Get-Jdk21Home {
-    if ($env:JAVA_HOME -and (Test-Path $env:JAVA_HOME) -and
-        (Split-Path $env:JAVA_HOME -Leaf) -like '*jdk-21*') {
-        return $env:JAVA_HOME
+    # CI (actions/setup-java) exposes JAVA_HOME_<ver>_<arch> for each installed JDK.
+    foreach ($v in @($env:JAVA_HOME_21_X64, $env:JAVA_HOME_21_x64, $env:JAVA_HOME_21_ARM64)) {
+        if ($v -and (Test-Path "$v\bin\java.exe")) { return $v }
+    }
+    # JAVA_HOME if it really is a 21 JDK. The path leaf varies by distro (e.g.
+    # `...\x64`), so confirm via the `release` file, not just the folder name.
+    if ($env:JAVA_HOME -and (Test-Path "$env:JAVA_HOME\bin\java.exe")) {
+        $rel = Join-Path $env:JAVA_HOME 'release'
+        if (((Split-Path $env:JAVA_HOME -Leaf) -like '*jdk-21*') -or
+            ((Test-Path $rel) -and (Select-String -Path $rel -SimpleMatch 'JAVA_VERSION="21' -Quiet))) {
+            return $env:JAVA_HOME
+        }
     }
     $javaDir = 'C:\Program Files\Java'
     if (Test-Path $javaDir) {
