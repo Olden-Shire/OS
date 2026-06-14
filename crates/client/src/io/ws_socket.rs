@@ -38,9 +38,41 @@ fn clog(msg: String) {
     web_sys::console::log_1(&msg.into());
 }
 
+/// Optional server override from the page URL (`?server=host[:port]`). Lets the
+/// same wasm bundle (e.g. hosted on GitHub Pages) point at a remote server
+/// instead of the built-in `127.0.0.1` dev target — the server multiplexes JS5
+/// and game on one port, so a single host[:port] (or bare host behind a
+/// TLS tunnel on 443) covers both.
+fn server_override() -> Option<String> {
+    let search = web_sys::window()?.location().search().ok()?;
+    let search = search.strip_prefix('?').unwrap_or(&search);
+    for pair in search.split('&') {
+        let mut kv = pair.splitn(2, '=');
+        if kv.next() == Some("server") {
+            let v = kv.next().unwrap_or("").trim();
+            if !v.is_empty() {
+                return Some(v.to_string());
+            }
+        }
+    }
+    None
+}
+
 impl WsSocket {
     pub fn connect(host: &str, port: i32) -> Result<Self, String> {
-        let url = format!("ws://{host}:{port}/");
+        // An HTTPS page can't open insecure ws:// (mixed content), so use wss://
+        // when the document is served over https; the tunnel/proxy in front of
+        // the server terminates TLS.
+        let secure = web_sys::window()
+            .and_then(|w| w.location().protocol().ok())
+            .is_some_and(|p| p == "https:");
+        let scheme = if secure { "wss" } else { "ws" };
+        // `?server=` (when set) overrides the built-in dev host/port; a bare host
+        // uses the scheme's default port (443 for wss behind a tunnel).
+        let url = match server_override() {
+            Some(target) => format!("{scheme}://{target}/"),
+            None => format!("{scheme}://{host}:{port}/"),
+        };
         clog(format!("[ws] connect {url}"));
         let ws = WebSocket::new(&url).map_err(|e| format!("{e:?}"))?;
         ws.set_binary_type(BinaryType::Arraybuffer);
