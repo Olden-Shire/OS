@@ -213,7 +213,7 @@ pub fn loop_tick() -> bool {
         let mut packet = Packet::with_size(4);
         packet.p1(1);
         packet.p3(key as i32);
-        eprintln!("[js5] -> urgent req key=0x{key:x} (archive={}, group={})", key >> 16, key & 0xffff);
+        dbg_log!("[js5] -> urgent req key=0x{key:x} (archive={}, group={})", key >> 16, key & 0xffff);
         if let Some(stream) = s.stream.as_mut() {
             if stream.write(&packet.data, 0, 4).is_err() {
                 return on_io_error(&mut s);
@@ -257,7 +257,7 @@ pub fn loop_tick() -> bool {
             break;
         }
         if _read_iter == 0 {
-            eprintln!("[js5] <- {available_bytes} bytes available");
+            dbg_log!("[js5] <- {available_bytes} bytes available");
         }
         s.timeout_ms = 0;
 
@@ -297,14 +297,14 @@ pub fn loop_tick() -> bool {
 
             if s.incoming_request.is_null() {
                 let dump: Vec<String> = s.incoming_transfer_header.data[..8].iter().map(|b| format!("{b:02x}")).collect();
-                eprintln!("[js5] header bytes = [{}]", dump.join(" "));
+                dbg_log!("[js5] header bytes = [{}]", dump.join(" "));
                 s.incoming_transfer_header.pos = 0;
                 let archive_id = s.incoming_transfer_header.g1();
                 let group_id = s.incoming_transfer_header.g2();
                 let compression_type = s.incoming_transfer_header.g1();
                 let compressed_size = s.incoming_transfer_header.g4();
                 let key = ((archive_id as i64) << 16) + group_id as i64;
-                eprintln!("[js5] <- header archive={archive_id} group={group_id} ctype={compression_type} clen={compressed_size} key=0x{key:x}");
+                dbg_log!("[js5] <- header archive={archive_id} group={group_id} ctype={compression_type} clen={compressed_size} key=0x{key:x}");
                 let request_ptr = s.urgent_queue.find(key);
                 s.incoming_urgent_request = true;
                 let request_ptr = if request_ptr.is_null() {
@@ -314,7 +314,7 @@ pub fn loop_tick() -> bool {
                     request_ptr
                 };
                 if request_ptr.is_null() {
-                    eprintln!("[js5] header for key=0x{key:x} not in queues — IO ERROR");
+                    dbg_log!("[js5] header for key=0x{key:x} not in queues — IO ERROR");
                     return on_io_error(&mut s);
                 }
                 let req = unsafe { req_from_linkable(request_ptr) };
@@ -332,13 +332,13 @@ pub fn loop_tick() -> bool {
                 let marker_byte = s.incoming_transfer_header.data[0];
                 let key = unsafe { (*linkable_of(s.incoming_request)).key };
                 if key == 0xff000f {
-                    eprintln!("[js5][a15] marker read = 0x{marker_byte:02x}");
+                    dbg_log!("[js5][a15] marker read = 0x{marker_byte:02x}");
                 }
                 if marker_byte as i8 == -1 {
                     s.incoming_chunk_pos = 1;
                     s.incoming_transfer_header.pos = 0;
                 } else {
-                    eprintln!("[js5] MARKER MISMATCH key=0x{key:x} byte=0x{marker_byte:02x} chunk_pos was reset to 0 but byte wasn't 0xff");
+                    dbg_log!("[js5] MARKER MISMATCH key=0x{key:x} byte=0x{marker_byte:02x} chunk_pos was reset to 0 but byte wasn't 0xff");
                     s.incoming_request = std::ptr::null_mut();
                 }
             }
@@ -386,7 +386,7 @@ pub fn loop_tick() -> bool {
                 let end = (new_buf_pos as usize).min(buf.data.len());
                 let start = end.saturating_sub(20);
                 let dump: Vec<String> = buf.data[start..end].iter().map(|b| format!("{b:02x}")).collect();
-                eprintln!("[js5][a15] chunk_remaining={} pos={} new_buf_pos={} chunk_pos={} remaining={} last20=[{}]", chunk_remaining, pos, new_buf_pos, s.incoming_chunk_pos, remaining_bytes, dump.join(" "));
+                dbg_log!("[js5][a15] chunk_remaining={} pos={} new_buf_pos={} chunk_pos={} remaining={} last20=[{}]", chunk_remaining, pos, new_buf_pos, s.incoming_chunk_pos, remaining_bytes, dump.join(" "));
             }
             if new_buf_pos == remaining_bytes {
                 let key = unsafe { (*linkable_of(s.incoming_request)).key };
@@ -426,7 +426,7 @@ pub fn loop_tick() -> bool {
                     let crc = hasher.finalize() as i32;
                     let expected = unsafe { (*s.incoming_request).expected_crc };
                     if expected != crc {
-                        eprintln!("[js5] CRC MISMATCH key=0x{key:x} expected=0x{expected:08x} got=0x{crc:08x} remaining={remaining}");
+                        dbg_log!("[js5] CRC MISMATCH key=0x{key:x} expected=0x{expected:08x} got=0x{crc:08x} remaining={remaining}");
                         if let Some(stream) = s.stream.as_mut() {
                             stream.close();
                         }
@@ -435,7 +435,7 @@ pub fn loop_tick() -> bool {
                         s.xor_key = (random_byte() as i8).max(1);
                         return false;
                     }
-                    eprintln!("[js5] group complete key=0x{key:x} size={remaining}");
+                    dbg_log!("[js5] group complete key=0x{key:x} size={remaining}");
                     s.crc_error_count = 0;
                     s.io_error_count = 0;
                     let req = s.incoming_request;
@@ -474,7 +474,7 @@ pub fn loop_tick() -> bool {
 }
 
 fn on_io_error(s: &mut Js5NetState) -> bool {
-    eprintln!("[js5] IO ERROR (count {} → {})", s.io_error_count, s.io_error_count + 1);
+    dbg_log!("[js5] IO ERROR (count {} → {})", s.io_error_count, s.io_error_count + 1);
     if let Some(stream) = s.stream.as_mut() {
         stream.close();
     }

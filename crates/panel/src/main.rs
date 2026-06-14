@@ -1,4 +1,4 @@
-//! OS1 server control panel — an eframe/egui app that runs the game server on
+//! OS server control panel — an eframe/egui app that runs the game server on
 //! a background thread and renders a live, in-depth admin GUI: a startup splash
 //! with boot progress, then a control panel with a tick-time performance graph
 //! and live player/npc tables. (3D admin scene view, chat, equipment and deeper
@@ -20,6 +20,30 @@ use egui_plot::{Line, Plot, PlotPoints};
 mod pix_bridge;
 mod scene;
 mod worldmap;
+
+/// `OS_DEBUG` gate for verbose diagnostic logging — checked once, cached.
+/// Set the env var `OS_DEBUG` (to any value) to surface gated `dbg_log!` output.
+pub fn debug_enabled() -> bool {
+    use std::sync::atomic::{AtomicU8, Ordering};
+    static STATE: AtomicU8 = AtomicU8::new(0);
+    match STATE.load(Ordering::Relaxed) {
+        1 => false,
+        2 => true,
+        _ => {
+            let on = std::env::var_os("OS_DEBUG").is_some();
+            STATE.store(if on { 2 } else { 1 }, Ordering::Relaxed);
+            on
+        }
+    }
+}
+
+/// `eprintln!` that only fires when `OS_DEBUG` is set (gated diagnostics).
+#[macro_export]
+macro_rules! dbg_log {
+    ($($arg:tt)*) => {
+        if $crate::debug_enabled() { eprintln!($($arg)*); }
+    };
+}
 
 /// Tick-time samples kept for the graph (~2.4 min at the 600ms tick).
 const TICK_HISTORY: usize = 240;
@@ -317,7 +341,7 @@ fn main() -> eframe::Result<()> {
             let prog_state = Arc::clone(&map_state);
             let baked = worldmap::bake_or_load("Content", move |done, total| {
                 if total > 0 && (done % 50 == 0 || done == total) {
-                    eprintln!("[worldmap] {done}/{total} regions");
+                    crate::dbg_log!("[worldmap] {done}/{total} regions");
                 }
                 let mut s = prog_state.lock().unwrap();
                 s.map_bake_done = done;
@@ -344,11 +368,11 @@ fn main() -> eframe::Result<()> {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([1200.0, 800.0])
             .with_min_inner_size([800.0, 560.0])
-            .with_title("OS1 Control Panel"),
+            .with_title("OS Control Panel"),
         ..Default::default()
     };
     eframe::run_native(
-        "OS1 Control Panel",
+        "OS Control Panel",
         options,
         Box::new(|cc| {
             cc.egui_ctx.set_visuals(egui::Visuals::dark());
@@ -552,7 +576,7 @@ impl eframe::App for PanelApp {
 
         // Live window title: at-a-glance population + tick.
         let title = format!(
-            "OS1 Control Panel — {} players · {} npcs · tick {}",
+            "OS Control Panel — {} players · {} npcs · tick {}",
             view.snap.players.len(), view.snap.npcs.len(), view.snap.tick
         );
         if title != self.last_title {
@@ -634,7 +658,7 @@ impl PanelApp {
             egui::ScrollArea::vertical().show(ui, |ui| {
                 ui.add_space(6.0);
                 ui.horizontal(|ui| {
-                    ui.heading("OS1");
+                    ui.heading("OS");
                     ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                         let paused = self.state.lock().unwrap().paused;
                         let label = if paused { "▶ Resume" } else { "⏸ Pause" };
@@ -1512,7 +1536,7 @@ fn splash(ctx: &egui::Context, state: &PanelState) {
     egui::CentralPanel::default().show(ctx, |ui| {
         ui.vertical_centered(|ui| {
             ui.add_space(ui.available_height() * 0.18);
-            ui.heading(egui::RichText::new("OS1").size(64.0).strong());
+            ui.heading(egui::RichText::new("OS").size(64.0).strong());
             ui.label(egui::RichText::new("Server Control Panel").size(20.0).weak());
             ui.add_space(28.0);
 

@@ -164,7 +164,7 @@ impl Js5Loader {
 
     // @ObfuscatedName("dq.bj(I[BZZB)V")
     pub fn write(&mut self, arg0: i32, arg1: Vec<u8>, arg2: bool, arg3: bool) {
-        eprintln!("[loader#{} archive={}] write group={} is_index={} urgent={} bytes={}", self.slot, self.archive, arg0, arg2, arg3, arg1.len());
+        dbg_log!("[loader#{} archive={}] write group={} is_index={} urgent={} bytes={}", self.slot, self.archive, arg0, arg2, arg3, arg1.len());
         if !arg2 {
             // Group payload write.
             let mut data = arg1;
@@ -188,7 +188,7 @@ impl Js5Loader {
         }
         self.base.decode_index(&arg1);
         self.load_all_local();
-        eprintln!("[loader#{} archive={}] post-write load_status={}", self.slot, self.archive, self.load_status.load(Ordering::SeqCst));
+        dbg_log!("[loader#{} archive={}] post-write load_status={}", self.slot, self.archive, self.load_status.load(Ordering::SeqCst));
     }
 
     // @ObfuscatedName("dq.bz(Lap;I[BZI)V")

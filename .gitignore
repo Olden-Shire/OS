@@ -27,9 +27,14 @@ Cargo.lock.bak
 # Reference trees (local-only)
 /Engine2007/
 /RuneScriptTS-main/
+/reference/
 
 # Derived cache unpack output
 /unpacked/
+
+# Compiled RuneScript bundle (regenerated from Content\scripts by the server on
+# boot when JDK 21 is present; see compile_server_scripts / RUN.md).
+/data/pack/
 
 # Gradle state anywhere (runescript/)
 .gradle/
@@ -37,11 +42,11 @@ Cargo.lock.bak
 # wasm-bindgen output (rebuilt from source; see crates/client/web/index.html)
 crates/client/web/pkg/
 
-# Root-level dev scratch: run logs, screenshots, one-off scripts
+# Root-level dev scratch: run logs and screenshots (the .ps1 launcher scripts in
+# root ARE tracked - CI and end users run them).
 /*.log
 /*.png
 /*.jpg
-/*.ps1
 /sanity_stacks.txt
 /cdp_targets.json
 /devnull.txt

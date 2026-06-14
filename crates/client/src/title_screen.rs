@@ -398,7 +398,7 @@ pub fn open(binary_slot: i32, sprites_slot: i32, songs_slot: i32) {
         if let Some(loader) = reg.get_mut(songs_slot as usize).and_then(|o| o.as_mut()) {
             if let Some(bytes) = loader.get_file_by_name("scape main", "") {
                 drop(reg);
-                eprintln!("[title] open: scape main ({} bytes) queued", bytes.len());
+                dbg_log!("[title] open: scape main ({} bytes) queued", bytes.len());
             }
         }
     }

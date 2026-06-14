@@ -362,11 +362,18 @@ pub fn build_npc_info(world: &mut World, pid: usize) -> ServerPacket {
         view.push(nid);
         adds += 1;
     }
-    // No 15-bit terminator here: the client's new-vis loop reads adds while
-    // `bitsLeft >= 27`, and a 15-bit end marker (the last thing in the packet)
-    // can never satisfy that — it would only inflate psize and leave the client
-    // consuming fewer bytes than sent (the fatal `gnp1 pos != psize` throw on
-    // the empty packet). The client stops naturally once <27 bits remain.
+    // 15-bit `32767` terminator — needed iff an extended-info block follows.
+    // The client's new-vis loop reads adds while `bitsLeft >= 27`; the byte-
+    // aligned extended block leaves >= 27 bits after the last add, so without a
+    // terminator the client reads the extended bytes as phantom npcs (java then
+    // eager-loads a garbage npc model → "Invalid GZIP header"; rust desyncs the
+    // extended read so real npcs never render). When NO extended block follows,
+    // the packet ends and the loop stops naturally on <27 bits — writing a
+    // terminator there would desync `pos != psize` (matches the player-info
+    // encoder, which always has appearance extended so writes it unconditionally).
+    if !extended.is_empty() {
+        buf.p_bit(15, 32767);
+    }
     buf.bit_end();
 
     // ── Extended info ─────────────────────────────────────────────

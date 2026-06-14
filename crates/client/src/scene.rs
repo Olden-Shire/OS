@@ -1215,13 +1215,6 @@ pub fn push_entities(c: &mut crate::client::Client) {
     let scene_cycle = crate::overlays::SCENE_CYCLE
         .load(std::sync::atomic::Ordering::Relaxed);
 
-    if c.loop_cycle % 100 == 0 {
-        let lp = c.local_player.as_ref();
-        eprintln!("[dbg-walk] cycle={} lp_present={} lp_ready={} player_count={}",
-                  c.loop_cycle, lp.is_some(),
-                  lp.map_or(false, |p| p.ready()), c.player_count);
-    }
-
     push_players(c, world, scene_cycle, true);
     push_npcs(c, world, scene_cycle, true);
     push_players(c, world, scene_cycle, false);
@@ -1317,15 +1310,8 @@ fn push_players(c: &mut crate::client::Client,
             p.get_temp_model(loop_cycle)
         };
         let Some(model) = model else {
-            if local && loop_cycle % 100 == 0 {
-                eprintln!("[dbg-walk] local player get_temp_model = None");
-            }
             continue;
         };
-        if local && loop_cycle % 100 == 0 {
-            eprintln!("[dbg-walk] local player model: faces={} y={} tile=({},{})",
-                      model.num_faces, y, tx, tz);
-        }
 
         let source = ModelSource::lit(std::sync::Arc::new(model));
         if loc_window {

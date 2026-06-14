@@ -6,7 +6,7 @@
 //!
 //! The *text shape* mirrors Engine-TS's `.jm2` (`==== MAP ====` / `==== LOC ====`
 //! sections) so the files are interchangeable for editing, but the *binary codec*
-//! follows OS1's rev1 client — exactly the inverse of the parent module's
+//! follows OS's rev1 client — exactly the inverse of the parent module's
 //! [`decode_tile`](super)/[`decode_locs`](super::decode_locs) — NOT Engine-TS's newer
 //! revision (whose height opcode lacks the rev1 `1 → 0` magic).
 //!

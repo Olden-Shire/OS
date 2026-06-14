@@ -112,6 +112,12 @@ impl Npc {
     pub fn new(nid: usize, type_id: i32, x: i32, z: i32, level: i32) -> Npc {
         let mut entity = PathingEntity::at(x, z, level);
         entity.face_entity_mask = MASK_FACE_ENTITY;
+        // Engine-TS Npc: MoveStrategy.NAIVE, blockWalk = NPC, blockWalkFlag =
+        // CollisionFlag.NPC. (Server npcs are 1×1; moverestrict defaults NORMAL
+        // since the 2007 cache carries no server npc config.)
+        entity.move_restrict = crate::entity::MoveRestrict::Normal;
+        entity.block_walk = crate::entity::BlockWalk::Npc;
+        entity.block_walk_flag = crate::collision::NPC;
         Npc {
             nid,
             type_id,
@@ -262,11 +268,11 @@ impl Npc {
     /// wedge the NPC as non-walking forever, since `process_movement` skips
     /// INSTANT. (The NOMOVE move-restrict gate and the AI walktrigger script
     /// hook need NPC config / AI scripts and are deferred until those land.)
-    pub fn update_movement(&mut self) -> bool {
+    pub fn update_movement(&mut self, collision: Option<&crate::collision::WorldCollision>) -> bool {
         if self.entity.move_speed != MoveSpeed::Instant {
             self.entity.move_speed = MoveSpeed::Walk;
         }
-        self.entity.process_movement();
+        self.entity.process_movement(collision);
         self.entity.x != self.entity.last_tick_x || self.entity.z != self.entity.last_tick_z
     }
 
@@ -403,7 +409,7 @@ mod tests {
         // Pretend a prior tick ended here so `moved` measures this step.
         n.entity.last_tick_x = n.entity.x;
         n.entity.last_tick_z = n.entity.z;
-        assert!(n.update_movement(), "stepped toward the waypoint");
+        assert!(n.update_movement(None), "stepped toward the waypoint");
         assert_eq!((n.entity.x, n.entity.z), (3201, 3200), "advanced one tile east");
     }
 
@@ -418,7 +424,7 @@ mod tests {
         n.entity.last_tick_x = n.entity.x;
         n.entity.last_tick_z = n.entity.z;
 
-        assert!(!n.update_movement(), "INSTANT tick takes no step");
+        assert!(!n.update_movement(None), "INSTANT tick takes no step");
         assert_eq!(n.entity.move_speed, MoveSpeed::Instant,
                    "updateMovement preserves INSTANT during its tick");
 
@@ -429,7 +435,7 @@ mod tests {
         // Next tick: now WALK, the queued route advances.
         n.entity.last_tick_x = n.entity.x;
         n.entity.last_tick_z = n.entity.z;
-        assert!(n.update_movement(), "walks now that INSTANT cleared");
+        assert!(n.update_movement(None), "walks now that INSTANT cleared");
         assert_eq!((n.entity.x, n.entity.z), (3201, 3200));
     }
 
@@ -439,7 +445,7 @@ mod tests {
         // default each tick (Engine-TS Npc.updateMovement).
         let mut n = Npc::new(0, 1, 3200, 3200, 0);
         n.entity.move_speed = MoveSpeed::Run;
-        n.update_movement();
+        n.update_movement(None);
         assert_eq!(n.entity.move_speed, MoveSpeed::Walk);
     }
 

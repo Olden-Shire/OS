@@ -325,10 +325,6 @@ impl PlayerModel {
                         }
                     }
                 }
-                if parts.is_empty() {
-                    eprintln!("[dbg-walk] PlayerModel parts EMPTY: slots={:?} gender={}",
-                              slots, self.gender);
-                }
                 let mut unlit = ModelUnlit::merge(&parts.iter().collect::<Vec<_>>());
                 for i in 0..5 {
                     let pal1 = recols::recol1d(i);

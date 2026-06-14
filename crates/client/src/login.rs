@@ -37,12 +37,12 @@ pub fn poll(c: &mut Client) {
 
     if c.login_step == 1 {
         if c.login_socket_req.is_none() {
-            eprintln!("[login] socketreq {}:{}", c.login_host, c.login_port);
+            dbg_log!("[login] socketreq {}:{}", c.login_host, c.login_port);
             c.login_socket_req = Some(c.signlink.socketreq(&c.login_host, c.login_port));
         }
         let status = c.login_socket_req.as_ref().map(|r| r.status()).unwrap_or(STATUS_ERROR);
         if status == STATUS_ERROR {
-            eprintln!("[login] socketreq ERROR");
+            dbg_log!("[login] socketreq ERROR");
             login_retry_or_error(c, -2);
             return;
         }
@@ -55,7 +55,7 @@ pub fn poll(c: &mut Client) {
             let socket = match stream_inner {
                 PReqResult::Socket(s) => s,
                 _ => {
-                    eprintln!("[login] socketreq DONE but no socket");
+                    dbg_log!("[login] socketreq DONE but no socket");
                     login_retry_or_error(c, -2);
                     return;
                 }
@@ -152,7 +152,7 @@ pub fn poll(c: &mut Client) {
         out.data[1] = (size >> 8) as u8;
         out.data[2] = size as u8;
 
-        eprintln!("[login] sending opcode 16, total {} bytes (payload size={})", out.pos, size);
+        dbg_log!("[login] sending opcode 16, total {} bytes (payload size={})", out.pos, size);
 
         let stream = c.login_stream.as_mut().unwrap();
         let n = out.pos as i32;
@@ -190,7 +190,7 @@ pub fn poll(c: &mut Client) {
             Ok(v) => v,
             Err(_) => { login_retry_or_error(c, -2); return; }
         };
-        eprintln!("[login] step 6: server replied opcode {var5}");
+        dbg_log!("[login] step 6: server replied opcode {var5}");
         if var5 == 21 && c.state == 20 {
             c.login_step = 7;
         } else if var5 == 2 {
@@ -272,7 +272,7 @@ pub fn poll(c: &mut Client) {
         // Java: in.g1Enc() — ISAAC-decoded. With NO_ISAAC, just g1.
         c.ptype = buf[5] as i32;
         c.psize = ((buf[6] as i32) << 8) | (buf[7] as i32);
-        eprintln!("[login] step 9: staff={} mod={} slot={} members={} ptype={} psize={}",
+        dbg_log!("[login] step 9: staff={} mod={} slot={} members={} ptype={} psize={}",
             c.staff_mod_level, c.player_mod, c.self_slot, c.members_account, c.ptype, c.psize);
         c.login_step = 10;
     }
@@ -285,7 +285,7 @@ pub fn poll(c: &mut Client) {
             login_retry_or_error(c, -2);
             return;
         }
-        eprintln!("[login] step 10: read {} byte first packet — login DONE", c.psize);
+        dbg_log!("[login] step 10: read {} byte first packet — login DONE", c.psize);
         login_done(c, buf);
     }
 }
@@ -362,7 +362,7 @@ pub fn game_tick(c: &mut Client) {
         c.psize = 0;
         // Each successful packet resets the server-silence timer.
         c.timeout_timer = 0;
-        eprintln!("[net-in] op={ptype} sz={}", buf.len());
+        dbg_log!("[net-in] op={ptype} sz={}", buf.len());
         handle_packet(c, ptype, &buf);
     }
 }
@@ -1550,7 +1550,7 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
         }
 
         _ => {
-            eprintln!("[game] opcode={opcode} size={} (no decoder)", buf.len());
+            dbg_log!("[game] opcode={opcode} size={} (no decoder)", buf.len());
         }
     }
 }
@@ -1884,7 +1884,7 @@ fn rebuild_packet(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32,
     if region {
         // The dynamic-region branch is not yet wired; bail and log so
         // we notice if Engine2007 starts using it.
-        eprintln!("[game] RebuildNormal(region) ignored, {psize} bytes");
+        dbg_log!("[game] RebuildNormal(region) ignored, {psize} bytes");
         return;
     }
     // Java drops these (var1, var2) — they're the local Z and X tile
@@ -1910,10 +1910,23 @@ fn rebuild_packet(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32,
     let mut idx: Vec<i32> = Vec::with_capacity(key_count_usize);
     let mut ground: Vec<i32> = Vec::with_capacity(key_count_usize);
     let mut location: Vec<i32> = Vec::with_capacity(key_count_usize);
+    // Tutorial-island map skip (Client.rebuildPacket, Client.java:4805-4822):
+    // the empty build-area mapsquares around tutorial island are OMITTED from
+    // the region list, and the server sends keys only for the non-skipped ones.
+    // We must skip the same here so `map_keys[i]` stays aligned with region `i`
+    // (client.rs:8035) — otherwise the loc files decrypt with a neighbour's key.
+    let tutorial = ((zone_x / 8 == 48 || zone_x / 8 == 49) && zone_z / 8 == 48)
+        || (zone_x / 8 == 48 && zone_z / 8 == 148);
     let mut reg = crate::js5::js5_net::LOADERS.lock().unwrap();
     if let Some(loader) = reg.get_mut(c.maps as usize).and_then(|o| o.as_mut()) {
         for mx in (zone_x - 6) / 8..=(zone_x + 6) / 8 {
             for mz in (zone_z - 6) / 8..=(zone_z + 6) / 8 {
+                let included = !tutorial
+                    || (mz != 49 && mz != 149 && mz != 147 && mx != 50
+                        && !(mx == 49 && mz == 47));
+                if !included {
+                    continue;
+                }
                 let map_idx = (mx << 8) + mz;
                 let g_name = format!("m{}_{}", mx, mz);
                 let l_name = format!("l{}_{}", mx, mz);
@@ -1943,7 +1956,7 @@ fn rebuild_packet(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32,
         lp.teleport(local_x, local_z, true);
         lp.level = level;
         c.minusedlevel = level;
-        eprintln!("[game] RebuildNormal seed: local=({local_x},{local_z}) world=({},{}) level={level}",
+        dbg_log!("[game] RebuildNormal seed: local=({local_x},{local_z}) world=({},{}) level={level}",
             c.map_build_base_x + local_x, c.map_build_base_z + local_z);
     }
 }
@@ -1959,7 +1972,7 @@ fn start_rebuild(c: &mut Client, zone_x: i32, zone_z: i32, level: i32) {
     c.map_build_center_zone_x = zone_x;
     c.map_build_center_zone_z = zone_z;
     c.last_built_level = if c.low_mem { level } else { 0 };
-    eprintln!("[game] startRebuild: zone=({zone_x},{zone_z}) level={level}, fetching {} ground + {} loc map groups",
+    dbg_log!("[game] startRebuild: zone=({zone_x},{zone_z}) level={level}, fetching {} ground + {} loc map groups",
         c.map_build_ground_file.iter().filter(|&&v| v >= 0).count(),
         c.map_build_location_file.iter().filter(|&&v| v >= 0).count(),
     );
@@ -2088,7 +2101,7 @@ fn get_player_pos(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32)
     // Java throws "gpp1" on a size mismatch; log instead so a desync
     // is diagnosable without killing the session.
     if psize != p.pos {
-        eprintln!("[game] PLAYER_INFO desync pos={} size={psize}", p.pos);
+        dbg_log!("[game] PLAYER_INFO desync pos={} size={psize}", p.pos);
     }
 }
 
@@ -2141,7 +2154,7 @@ fn get_player_pos_local(c: &mut Client, p: &mut crate::io::packet::Packet,
                 lp.level = level;
                 lp.teleport(x, z, jump);
             }
-            eprintln!("[game] localPlayer teleport: tile=({}, {}) level={level} jump={jump}",
+            dbg_log!("[game] localPlayer teleport: tile=({}, {}) level={level} jump={jump}",
                 c.map_build_base_x + x, c.map_build_base_z + z);
         }
         _ => {}
@@ -2159,7 +2172,7 @@ fn get_player_pos_old_vis(c: &mut Client, p: &mut crate::io::packet::Packet,
         }
     }
     if visible > prev_count {
-        eprintln!("[game] PLAYER_INFO gppov1 visible={visible} count={prev_count}");
+        dbg_log!("[game] PLAYER_INFO gppov1 visible={visible} count={prev_count}");
         return;
     }
     c.player_count = 0;
@@ -2490,7 +2503,7 @@ fn get_npc_pos(c: &mut Client, p: &mut crate::io::packet::Packet, psize: i32) {
         }
     }
     if psize != p.pos {
-        eprintln!("[game] NPC_INFO desync pos={} size={psize}", p.pos);
+        dbg_log!("[game] NPC_INFO desync pos={} size={psize}", p.pos);
     }
 }
 
@@ -2506,7 +2519,7 @@ fn get_npc_pos_old_vis(c: &mut Client, p: &mut crate::io::packet::Packet,
         }
     }
     if visible > prev_count {
-        eprintln!("[game] NPC_INFO gnpov1 visible={visible} count={prev_count}");
+        dbg_log!("[game] NPC_INFO gnpov1 visible={visible} count={prev_count}");
         return;
     }
     c.npc_count = 0;

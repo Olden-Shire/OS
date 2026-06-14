@@ -51,6 +51,32 @@ pub enum MoveSpeed {
     Instant,
 }
 
+/// Engine-TS `MoveRestrict` — how an entity is allowed to traverse the
+/// collision map. Maps to a [`crate::collision::CollisionStrategy`] in
+/// [`PathingEntity::collision_strategy`] (1:1 with `getCollisionStrategy`).
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub enum MoveRestrict {
+    #[default]
+    Normal,
+    Blocked,
+    BlockedNormal,
+    Indoors,
+    Outdoors,
+    NoMove,
+    PassThru,
+}
+
+/// Engine-TS `BlockWalk` — what occupancy an entity stamps onto the collision
+/// map (so others route around it). Drives `change_npc`/`change_player` in
+/// [`PathingEntity::sync_collision`] (1:1 with `refreshZonePresence`).
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub enum BlockWalk {
+    #[default]
+    None,
+    Npc,
+    All,
+}
+
 /// Movement + transient update state shared by players and NPCs.
 #[derive(Debug, Default, Clone)]
 pub struct PathingEntity {
@@ -66,6 +92,20 @@ pub struct PathingEntity {
     pub move_speed: MoveSpeed,
     /// CRAWL advances on alternating ticks; this flips each tick.
     pub last_crawl: bool,
+
+    /// How this entity traverses collision (Engine-TS `moveRestrict`).
+    pub move_restrict: MoveRestrict,
+    /// What occupancy this entity stamps on the collision map when it moves
+    /// (Engine-TS `blockWalk`).
+    pub block_walk: BlockWalk,
+    /// The occupancy flag this entity is itself blocked by — `NPC` for npcs,
+    /// `PLAYER` for players (Engine-TS `blockWalkFlag`). Passed as the
+    /// `extra_flag` to `can_travel` so entities don't step onto each other.
+    pub block_walk_flag: i32,
+    /// The tile `(x, z, level)` this entity currently has its occupancy stamped
+    /// on, or `None` if unstamped. [`sync_collision`] reconciles this against the
+    /// live position each tick (covers walk steps, teleports and spawns).
+    pub collision_stamp: Option<(i32, i32, i32)>,
 
     // Per-tick movement outputs.
     pub walk_dir: i32,
@@ -247,7 +287,7 @@ impl PathingEntity {
     /// Advance one tick of movement per [`MoveSpeed`], producing the 3-bit
     /// dir codes the info packets carry. Mirrors Engine-TS
     /// `PathingEntity.processMovement`. Returns whether movement was processed.
-    pub fn process_movement(&mut self) -> bool {
+    pub fn process_movement(&mut self, collision: Option<&crate::collision::WorldCollision>) -> bool {
         self.walk_dir = -1;
         self.run_dir = -1;
         self.steps_taken = 0;
@@ -263,21 +303,83 @@ impl PathingEntity {
             // Crawl only advances on alternating ticks.
             self.last_crawl = !self.last_crawl;
             if self.last_crawl {
-                self.walk_dir = self.validate_and_advance_step();
+                self.walk_dir = self.validate_and_advance_step(collision);
             }
         } else {
-            self.walk_dir = self.validate_and_advance_step();
+            self.walk_dir = self.validate_and_advance_step(collision);
             if self.move_speed == MoveSpeed::Run && self.walk_dir != -1 {
-                self.run_dir = self.validate_and_advance_step();
+                self.run_dir = self.validate_and_advance_step(collision);
             }
         }
         true
     }
 
-    /// Take one validated step toward the head waypoint, recording the
-    /// pre-step tile as the facing orientation and bumping `steps_taken`.
-    /// Engine-TS `validateAndAdvanceStep` (sans collision, which OS1 lacks).
-    fn validate_and_advance_step(&mut self) -> i32 {
+    /// rsmod `CollisionType` for this entity's `move_restrict` — Engine-TS
+    /// `getCollisionStrategy`. `None` = NOMOVE (no walking allowed).
+    fn collision_strategy(&self) -> Option<crate::collision::CollisionStrategy> {
+        use crate::collision::CollisionStrategy as C;
+        use MoveRestrict as R;
+        Some(match self.move_restrict {
+            R::Normal | R::PassThru => C::Normal,
+            R::Blocked => C::Blocked,
+            R::BlockedNormal => C::LineOfSight,
+            R::Indoors => C::Indoors,
+            R::Outdoors => C::Outdoors,
+            R::NoMove => return None,
+        })
+    }
+
+    /// rsmod `changeNpc`/`changePlayer` for this entity's footprint at a tile,
+    /// keyed off its `block_walk`. Used by [`sync_collision`].
+    fn stamp_collision(&self, c: &mut crate::collision::WorldCollision, x: i32, z: i32, level: i32, add: bool) {
+        match self.block_walk {
+            BlockWalk::None => {}
+            BlockWalk::Npc => c.change_npc(x, z, level, 1, add),
+            BlockWalk::All => {
+                c.change_npc(x, z, level, 1, add);
+                c.change_player(x, z, level, 1, add);
+            }
+        }
+    }
+
+    /// Engine-TS `refreshZonePresence` (collision half), reconciled once per
+    /// tick instead of mid-step: if this entity's tile changed since its last
+    /// stamp (by a walk step, teleport or spawn), move its occupancy footprint
+    /// to the current tile. Idempotent — a no-op when nothing moved. Driven by
+    /// the world loop after movement so every position-change path (step /
+    /// teleport / spawn) is covered without leaking stale flags.
+    pub fn sync_collision(&mut self, c: &mut crate::collision::WorldCollision) {
+        let cur = (self.x, self.z, self.level);
+        if self.collision_stamp == Some(cur) {
+            return;
+        }
+        if let Some((ox, oz, ol)) = self.collision_stamp {
+            self.stamp_collision(c, ox, oz, ol, false);
+        }
+        self.stamp_collision(c, cur.0, cur.1, cur.2, true);
+        self.collision_stamp = Some(cur);
+    }
+
+    /// Clear this entity's occupancy footprint (on despawn / logout).
+    pub fn clear_collision(&mut self, c: &mut crate::collision::WorldCollision) {
+        if let Some((ox, oz, ol)) = self.collision_stamp.take() {
+            self.stamp_collision(c, ox, oz, ol, false);
+        }
+    }
+
+    /// Take one validated step toward the head waypoint — Engine-TS
+    /// `validateAndAdvanceStep` + `takeStep`. With a collision map present the
+    /// step direction is gated by `can_travel`: a blocked diagonal slides onto
+    /// whichever component cardinal is clear, and a fully blocked tile takes no
+    /// step (keeps the waypoint, returns -1). With no collision (`None`, e.g.
+    /// unit tests) it steps directly as before.
+    fn validate_and_advance_step(&mut self, collision: Option<&crate::collision::WorldCollision>) -> i32 {
+        let strategy = match self.collision_strategy() {
+            Some(s) => s,
+            None => return -1, // NOMOVE
+        };
+        let extra = self.block_walk_flag;
+
         while let Some(&(tx, tz)) = self.waypoints.first() {
             let dx = tx - self.x;
             let dz = tz - self.z;
@@ -290,20 +392,49 @@ impl PathingEntity {
                 self.waypoints.clear();
                 return -1;
             };
+            let (sdx, sdz) = DIRECTION_DELTA[dir];
+
+            // Resolve the actual step against collision (takeStep): try the full
+            // direction, else slide along a clear component axis, else no step.
+            let step: Option<(i32, i32, usize)> = match collision {
+                Some(c) if c.is_loaded() => {
+                    if c.can_travel(self.level, self.x, self.z, sdx, sdz, 1, extra, strategy) {
+                        Some((sdx, sdz, dir))
+                    } else if sdx != 0
+                        && c.can_travel(self.level, self.x, self.z, sdx, 0, 1, extra, strategy)
+                    {
+                        direction_from_delta(sdx, 0).map(|d| (sdx, 0, d))
+                    } else if sdz != 0
+                        && c.can_travel(self.level, self.x, self.z, 0, sdz, 1, extra, strategy)
+                    {
+                        direction_from_delta(0, sdz).map(|d| (0, sdz, d))
+                    } else {
+                        None
+                    }
+                }
+                // No collision loaded → unrestricted step (tests / unbuilt area).
+                _ => Some((sdx, sdz, dir)),
+            };
+
+            let Some((mvx, mvz, mdir)) = step else {
+                // Blocked this tick; keep the waypoint and try again next tick.
+                return -1;
+            };
+
             self.last_step_x = self.x;
             self.last_step_z = self.z;
-            self.x += DIRECTION_DELTA[dir].0;
-            self.z += DIRECTION_DELTA[dir].1;
+            self.x += mvx;
+            self.z += mvz;
             // Orient toward the next tile in our travel direction — Engine-TS
-            // focuses one tile ahead after each step, so the entity faces the
-            // way it's heading.
-            self.face_angle_x = self.x + DIRECTION_DELTA[dir].0;
-            self.face_angle_z = self.z + DIRECTION_DELTA[dir].1;
+            // focuses one tile ahead after each step.
+            self.face_angle_x = self.x + mvx;
+            self.face_angle_z = self.z + mvz;
             self.steps_taken += 1;
+
             if self.x == tx && self.z == tz {
                 self.waypoints.remove(0);
             }
-            return dir as i32;
+            return mdir as i32;
         }
         -1
     }
@@ -511,7 +642,7 @@ mod tests {
     fn walk_takes_one_tile_per_tick() {
         let mut e = PathingEntity::at(3200, 3200, 0);
         e.route_to(3203, 3200, MoveSpeed::Walk);
-        assert!(e.process_movement());
+        assert!(e.process_movement(None));
         assert_eq!((e.x, e.z, e.steps_taken), (3201, 3200, 1));
         assert_eq!(e.walk_dir, 4); // east
         assert_eq!(e.run_dir, -1);
@@ -522,7 +653,7 @@ mod tests {
     fn run_takes_two_tiles_and_reports_run_dir() {
         let mut e = PathingEntity::at(3200, 3200, 0);
         e.route_to(3204, 3200, MoveSpeed::Run);
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!((e.x, e.steps_taken), (3202, 2));
         assert_ne!(e.walk_dir, -1);
         assert_ne!(e.run_dir, -1);
@@ -532,7 +663,7 @@ mod tests {
     fn run_with_single_step_left_walks() {
         let mut e = PathingEntity::at(3200, 3200, 0);
         e.route_to(3201, 3200, MoveSpeed::Run);
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!((e.x, e.steps_taken), (3201, 1));
         assert_eq!(e.run_dir, -1, "no second step available -> walk");
     }
@@ -541,11 +672,11 @@ mod tests {
     fn crawl_advances_every_other_tick() {
         let mut e = PathingEntity::at(3200, 3200, 0);
         e.route_to(3205, 3200, MoveSpeed::Crawl);
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!(e.x, 3201, "first tick crawls");
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!(e.x, 3201, "second tick rests");
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!(e.x, 3202, "third tick crawls");
     }
 
@@ -553,11 +684,11 @@ mod tests {
     fn instant_and_stationary_take_no_steps() {
         let mut e = PathingEntity::at(3200, 3200, 0);
         e.route_to(3205, 3200, MoveSpeed::Instant);
-        assert!(!e.process_movement());
+        assert!(!e.process_movement(None));
         assert_eq!((e.x, e.steps_taken), (3200, 0));
 
         e.move_speed = MoveSpeed::Stationary;
-        assert!(!e.process_movement());
+        assert!(!e.process_movement(None));
         assert_eq!(e.x, 3200);
     }
 
@@ -641,13 +772,13 @@ mod tests {
 
         // Walk east → faces east (DIRECTION_DELTA/ANGLE_TO_DIR index 4).
         e.route_to(3203, 3200, MoveSpeed::Walk);
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!(e.orientation_dir(), 4, "faces the way it walked (east)");
 
         // Then straight north from the new tile → faces north (1).
         let (cx, cz) = (e.x, e.z);
         e.route_to(cx, cz + 3, MoveSpeed::Walk);
-        e.process_movement();
+        e.process_movement(None);
         assert_eq!(e.orientation_dir(), 1, "re-orients north");
 
         // Teleport re-faces toward the destination — here (3300,3300) is NE of
@@ -687,7 +818,7 @@ mod tests {
         e.teleport(3300, 3300, 0, true);
         assert_eq!(e.move_speed, MoveSpeed::Instant);
         assert!(e.waypoints.is_empty());
-        assert!(!e.process_movement());
+        assert!(!e.process_movement(None));
     }
 
     #[test]

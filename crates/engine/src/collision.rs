@@ -1,6 +1,6 @@
 //! Server-side collision map.
 //!
-//! OS1 is 2007-rev, so the authoritative collision model is the one the
+//! OS is 2007-rev, so the authoritative collision model is the one the
 //! Java client uses (`jagex3 ... CollisionMap`, already ported verbatim in
 //! `crates/client/src/dash3d/collision_map.rs`). This module reuses that exact
 //! flag scheme and footprint logic, but world-spanning (region-bucketed) and
@@ -53,9 +53,34 @@ pub const RWALL_S: i32 = 0x4000;
 pub const RWALL_SW: i32 = 0x8000;
 pub const RWALL_W: i32 = 0x10000;
 pub const LOC_RANGE: i32 = 0x20000;
+/// Entity-occupancy flags (rsmod custom flags `CollisionFlag.NPC` / `.PLAYER`).
+/// An npc with `BlockWalk::Npc` stamps `NPC` on its footprint; a player or
+/// `BlockWalk::All` npc also stamps `PLAYER`. Passed as the `extra_flag` to
+/// [`WorldCollision::can_travel`] so entities route around each other 1:1 with
+/// Engine-TS (a moving npc checks `BLOCK_* | NPC`, a player checks `| PLAYER`).
+pub const NPC: i32 = 0x80000;
+pub const PLAYER: i32 = 0x100000;
 
-/// A tile you cannot stand on — Engine-TS `WALK_BLOCKED` minus entity flags.
+/// A tile you cannot stand on — Engine-TS `WALK_BLOCKED` minus entity flags
+/// (rsmod `FLOOR | FLOOR_DECORATION | LOC`; our `GROUND_DECOR == FLOOR_DECORATION`).
 pub const WALK_BLOCKED: i32 = FLOOR | LOC | GROUND_DECOR;
+
+/// rsmod `CollisionType` — chooses which flag set [`WorldCollision::can_travel`]
+/// tests, derived from an entity's `MoveRestrict` (Engine-TS
+/// `PathingEntity.getCollisionStrategy`). `Normal` is the walk case used by
+/// players and ordinary npcs; `Indoors`/`Outdoors` add a roof constraint.
+/// `Blocked`/`LineOfSight` (exotic npc move-restricts) fall back to `Normal`'s
+/// wall semantics — documented approximation, no 2007 npc uses them on tutorial
+/// island.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub enum CollisionStrategy {
+    #[default]
+    Normal,
+    Blocked,
+    Indoors,
+    Outdoors,
+    LineOfSight,
+}
 
 /// Per-region flag + roof grids, indexed `[level][x*RS + z]` (local 0..63).
 #[derive(Clone)]
@@ -399,16 +424,115 @@ impl WorldCollision {
         self.ray(level, x0, z0, x1, z1, true)
     }
 
-    /// Can a 1×1 entity move one step in 8-way direction `(dx, dz)`?
-    /// Diagonals require both component cardinals and the diagonal tile clear.
+    /// rsmod `canTravel` (Engine-TS `GameMap.canTravel`): can a `size`×`size`
+    /// entity at `(x, z)` step one tile in 8-way direction `(dx, dz)`? The
+    /// per-direction masks are the exact rsmod `BLOCK_*` constants (cardinal =
+    /// `WALK_BLOCKED | <near wall>`, diagonal = the corner mask on the
+    /// destination plus the two adjoining cardinals, which prevents corner
+    /// cutting). `extra_flag` is OR'd into every tested tile so npc/player
+    /// occupancy (`NPC`/`PLAYER`) blocks too. `strategy` adds the roof
+    /// constraint for `Indoors`/`Outdoors`.
+    #[must_use]
+    #[allow(clippy::too_many_arguments)]
+    pub fn can_travel(
+        &self, level: i32, x: i32, z: i32, dx: i32, dz: i32, size: i32,
+        extra_flag: i32, strategy: CollisionStrategy,
+    ) -> bool {
+        if dx == 0 && dz == 0 {
+            return true;
+        }
+        if size <= 1 {
+            return self.can_travel_unit(level, x, z, dx, dz, extra_flag, strategy);
+        }
+        // Multi-tile footprint: the entity occupies [x, x+size) × [z, z+size).
+        // Conservative 1:1-for-the-edge check — every tile the footprint newly
+        // sweeps into must be enterable as a unit from its in-footprint
+        // neighbour. (size-1 npcs hit the exact rsmod path above; >1 npcs are
+        // rare and never appear on tutorial island.)
+        for tx in x..x + size {
+            for tz in z..z + size {
+                let inside_next = (tx + dx) >= x && (tx + dx) < x + size
+                    && (tz + dz) >= z && (tz + dz) < z + size;
+                if inside_next {
+                    continue; // staying within the footprint, not a leading edge
+                }
+                if !self.can_travel_unit(level, tx, tz, dx, dz, extra_flag, strategy) {
+                    return false;
+                }
+            }
+        }
+        true
+    }
+
+    fn can_travel_unit(
+        &self, level: i32, x: i32, z: i32, dx: i32, dz: i32,
+        extra_flag: i32, strategy: CollisionStrategy,
+    ) -> bool {
+        let w = WALK_BLOCKED;
+        let blocked = |tx: i32, tz: i32, mask: i32| {
+            self.flag(tx, tz, level) & (mask | extra_flag) != 0
+        };
+        let walkable = match (dx, dz) {
+            (1, 0) => !blocked(x + 1, z, w | WALL_W),
+            (-1, 0) => !blocked(x - 1, z, w | WALL_E),
+            (0, 1) => !blocked(x, z + 1, w | WALL_S),
+            (0, -1) => !blocked(x, z - 1, w | WALL_N),
+            // BLOCK_NORTH_EAST on dest + BLOCK_EAST/BLOCK_NORTH on adjoiners.
+            (1, 1) => {
+                !blocked(x + 1, z + 1, w | WALL_W | WALL_S | WALL_SW)
+                    && !blocked(x + 1, z, w | WALL_W)
+                    && !blocked(x, z + 1, w | WALL_S)
+            }
+            (-1, 1) => {
+                !blocked(x - 1, z + 1, w | WALL_E | WALL_S | WALL_SE)
+                    && !blocked(x - 1, z, w | WALL_E)
+                    && !blocked(x, z + 1, w | WALL_S)
+            }
+            (1, -1) => {
+                !blocked(x + 1, z - 1, w | WALL_W | WALL_N | WALL_NW)
+                    && !blocked(x + 1, z, w | WALL_W)
+                    && !blocked(x, z - 1, w | WALL_N)
+            }
+            (-1, -1) => {
+                !blocked(x - 1, z - 1, w | WALL_E | WALL_N | WALL_NE)
+                    && !blocked(x - 1, z, w | WALL_E)
+                    && !blocked(x, z - 1, w | WALL_N)
+            }
+            _ => return true,
+        };
+        if !walkable {
+            return false;
+        }
+        match strategy {
+            CollisionStrategy::Indoors => self.is_indoors(x + dx, z + dz, level),
+            CollisionStrategy::Outdoors => !self.is_indoors(x + dx, z + dz, level),
+            _ => true,
+        }
+    }
+
+    /// Can a 1×1 entity move one step in 8-way direction `(dx, dz)`? Thin
+    /// wrapper over [`can_travel`] for the BFS pathfinder (no entity occupancy).
     fn can_step(&self, x: i32, z: i32, level: i32, dx: i32, dz: i32) -> bool {
-        if dx != 0 && dz != 0 {
-            self.can_cardinal(x, z, level, dx, 0, false)
-                && self.can_cardinal(x, z, level, 0, dz, false)
-                && self.can_cardinal(x + dx, z, level, 0, dz, false)
-                && self.can_cardinal(x, z + dz, level, dx, 0, false)
-        } else {
-            self.can_cardinal(x, z, level, dx, dz, false)
+        self.can_travel(level, x, z, dx, dz, 1, 0, CollisionStrategy::Normal)
+    }
+
+    /// rsmod `changeNpc` (Engine-TS `changeNpcCollision`): stamp/clear the `NPC`
+    /// occupancy flag over an npc's `size`×`size` footprint at `(x, z)`.
+    pub fn change_npc(&mut self, x: i32, z: i32, level: i32, size: i32, add: bool) {
+        for tx in x..x + size.max(1) {
+            for tz in z..z + size.max(1) {
+                if add { self.add(tx, tz, level, NPC) } else { self.remove(tx, tz, level, NPC) }
+            }
+        }
+    }
+
+    /// rsmod `changePlayer` (Engine-TS `changePlayerCollision`): stamp/clear the
+    /// `PLAYER` occupancy flag over a `size`×`size` footprint at `(x, z)`.
+    pub fn change_player(&mut self, x: i32, z: i32, level: i32, size: i32, add: bool) {
+        for tx in x..x + size.max(1) {
+            for tz in z..z + size.max(1) {
+                if add { self.add(tx, tz, level, PLAYER) } else { self.remove(tx, tz, level, PLAYER) }
+            }
         }
     }
 
@@ -581,6 +705,40 @@ mod tests {
         let path = c.find_path(0, 3200, 3200, 3206, 3200, true);
         assert!(!path.is_empty(), "should find a detour path");
         assert_eq!(*path.last().unwrap(), (3206, 3200), "ends at the goal");
+    }
+
+    #[test]
+    fn can_travel_blocks_a_step_through_a_wall() {
+        let mut c = loaded();
+        // Open east step is fine.
+        assert!(c.can_travel(0, 3200, 3200, 1, 0, 1, 0, CollisionStrategy::Normal));
+        // A wall on the west edge of 3201 (shape 0 rot 0) blocks stepping east
+        // from 3200 → 3201, but not the reverse-side approaches.
+        c.apply_loc(3201, 3200, 0, 0, 0, 1, 1, 2, false, true);
+        assert!(!c.can_travel(0, 3200, 3200, 1, 0, 1, 0, CollisionStrategy::Normal));
+    }
+
+    #[test]
+    fn can_travel_diagonal_needs_both_adjoining_tiles() {
+        let mut c = loaded();
+        assert!(c.can_travel(0, 3200, 3200, 1, 1, 1, 0, CollisionStrategy::Normal));
+        // Block the north tile (floor): the NE diagonal can no longer be taken
+        // (corner cutting is disallowed).
+        c.block_ground(3200, 3201, 0);
+        assert!(!c.can_travel(0, 3200, 3200, 1, 1, 1, 0, CollisionStrategy::Normal));
+    }
+
+    #[test]
+    fn npc_occupancy_blocks_only_with_the_npc_extra_flag() {
+        let mut c = loaded();
+        c.change_npc(3201, 3200, 0, 1, true);
+        // An npc (extra_flag = NPC) can't step onto the occupied tile…
+        assert!(!c.can_travel(0, 3200, 3200, 1, 0, 1, NPC, CollisionStrategy::Normal));
+        // …but a player (extra_flag = PLAYER) walks right through it.
+        assert!(c.can_travel(0, 3200, 3200, 1, 0, 1, PLAYER, CollisionStrategy::Normal));
+        // Clearing the footprint frees the tile again.
+        c.change_npc(3201, 3200, 0, 1, false);
+        assert!(c.can_travel(0, 3200, 3200, 1, 0, 1, NPC, CollisionStrategy::Normal));
     }
 
     #[test]

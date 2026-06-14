@@ -1,6 +1,6 @@
-# RuneScript toolchain (OS1)
+# RuneScript toolchain (OS)
 
-Kotlin/JVM compiler, decompiler, and IntelliJ plugin for OS1 RuneScript — both
+Kotlin/JVM compiler, decompiler, and IntelliJ plugin for OS RuneScript — both
 **server scripts** (`.rs2`, compiled to the engine's `script.{dat,idx}` pack)
 and **clientscripts** (`.cs2`, compiled to the cs2 bytecode the client reads
 from cache archive 12). Faithful to the reference `RuneScriptTS-main/` (the

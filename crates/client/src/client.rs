@@ -3030,17 +3030,6 @@ pub fn game_input(c: &mut Client) {
             let src = c.local_player.as_ref().map(|lp| (lp.route_x[0], lp.route_z[0]));
             if let Some((src_x, src_z)) = src {
                 let success = try_move(c, src_x, src_z, gx, gz, true, 0, 0, 0, 0, 0, 0);
-                eprintln!("[dbg-walk] ground pick ({gx},{gz}) src ({src_x},{src_z}) try_move={success}");
-                if let Some(map) = c.collision[c.minusedlevel.clamp(0, 3) as usize].as_ref() {
-                    for dz in -1..=1i32 {
-                        let row: Vec<String> = (-1..=1i32).map(|dx| {
-                            let x = (src_x + dx).clamp(0, 103) as usize;
-                            let z = (src_z + dz).clamp(0, 103) as usize;
-                            format!("{:#x}", map.flags[x][z])
-                        }).collect();
-                        eprintln!("[dbg-walk] flags z{dz:+}: {}", row.join(" "));
-                    }
-                }
                 if success {
                     set_cross(1);
                 }
@@ -3941,13 +3930,6 @@ pub fn mouse_loop(c: &mut Client) {
         button = 2;
     }
 
-    if button == 1 {
-        let top = (c.menu_num_entries - 1).max(0) as usize;
-        eprintln!("[dbg-walk] left click entries={} top_action={} top='{}'",
-                  c.menu_num_entries,
-                  c.menu_action.get(top).copied().unwrap_or(-1),
-                  c.menu_verb.get(top).cloned().unwrap_or_default());
-    }
     if button == 1 && c.menu_num_entries > 0 {
         do_action(c, c.menu_num_entries - 1);
     } else if button == 2 && c.menu_num_entries > 0 {
@@ -4651,7 +4633,6 @@ pub fn do_action(c: &mut Client, entry: i32) {
         // (matches Java, whose Pix3D frame is areaViewport-relative).
         let mut cache = crate::scene::WORLD_CACHE.lock().unwrap();
         if let Some(world) = cache.world.as_mut() {
-            eprintln!("[dbg-walk] action23 arm pick at ({}, {})", b, cc);
             world.update_mouse_picking(c.minusedlevel.clamp(0, 3), b, cc);
         }
     }
@@ -7572,7 +7553,7 @@ impl Client {
         }
 
         if self.js5_connect_state == 0 {
-            eprintln!("[js5] socketreq {}:{}", self.login_host, self.login_port);
+            dbg_log!("[js5] socketreq {}:{}", self.login_host, self.login_port);
             self.js5_socket_req = Some(self.signlink.socketreq(&self.login_host, self.login_port));
             self.js5_connect_state += 1;
         }
@@ -7580,12 +7561,12 @@ impl Client {
         if self.js5_connect_state == 1 {
             let status = self.js5_socket_req.as_ref().map(|r| r.status()).unwrap_or(STATUS_ERROR);
             if status == STATUS_ERROR {
-                eprintln!("[js5] socketreq ERROR");
+                dbg_log!("[js5] socketreq ERROR");
                 self.js5_error(-1);
                 return;
             }
             if status == STATUS_DONE {
-                eprintln!("[js5] socketreq DONE");
+                dbg_log!("[js5] socketreq DONE");
                 self.js5_connect_state += 1;
             }
         }
@@ -7613,11 +7594,11 @@ impl Client {
             handshake.p1(15); // INIT_JS5REMOTE_CONNECTION
             handshake.p4(1); // revision
             if stream.write(&handshake.data, 0, 5).is_err() {
-                eprintln!("[js5] handshake write err");
+                dbg_log!("[js5] handshake write err");
                 self.js5_error(-3);
                 return;
             }
-            eprintln!("[js5] handshake sent (15, rev=1)");
+            dbg_log!("[js5] handshake sent (15, rev=1)");
             self.js5_stream = Some(stream);
             self.js5_connect_state += 1;
             self.js5_connect_time = game_shell::monotonic_ms();
@@ -7639,26 +7620,26 @@ impl Client {
                 let response = match stream.read_byte() {
                     Ok(r) => r,
                     Err(_) => {
-                        eprintln!("[js5] handshake read err");
+                        dbg_log!("[js5] handshake read err");
                         self.js5_error(-3);
                         return;
                     }
                 };
-                eprintln!("[js5] handshake response byte = {response}");
+                dbg_log!("[js5] handshake response byte = {response}");
                 if response != 0 {
                     self.js5_error(response);
                     return;
                 }
                 self.js5_connect_state += 1;
             } else if game_shell::monotonic_ms() - self.js5_connect_time > 30000 {
-                eprintln!("[js5] handshake timeout");
+                dbg_log!("[js5] handshake timeout");
                 self.js5_error(-2);
                 return;
             }
         }
 
         if self.js5_connect_state == 4 {
-            eprintln!("[js5] init() — entering JS5 mode");
+            dbg_log!("[js5] init() — entering JS5 mode");
             let stream = self.js5_stream.take().unwrap();
             js5_net::init(stream, self.state > 20);
             self.js5_socket_req = None;
@@ -7803,7 +7784,7 @@ impl GameShellLifecycle for Client {
                     .and_then(|l| l.get_file_by_name("scape main", ""));
                 drop(reg);
                 if let Some(midi) = midi {
-                    eprintln!("[audio] mainloop: scape_main arrived, {} bytes — calling swap_songs", midi.len());
+                    dbg_log!("[audio] mainloop: scape_main arrived, {} bytes — calling swap_songs", midi.len());
                     player.manager().lock().swap_songs(2, midi, false);
                     self.music_started = true;
                 }
@@ -7822,7 +7803,7 @@ impl GameShellLifecycle for Client {
             drop(reg);
             if let Some(table) = table {
                 crate::wordpack::set_huffman(crate::wordpack::Huffman::new(&table));
-                eprintln!("[wordpack] huffman table installed ({} symbols)", table.len());
+                dbg_log!("[wordpack] huffman table installed ({} symbols)", table.len());
             }
         }
 
@@ -8063,7 +8044,7 @@ fn map_build_loop(c: &mut Client) {
         return;
     }
 
-    eprintln!("[game] mapBuildLoop: all map data fetched, building {} chunk(s)", n);
+    dbg_log!("[game] mapBuildLoop: all map data fetched, building {} chunk(s)", n);
     crate::client_build::init();
     // Java's map-load flow resets every CollisionMap before the ground
     // decode re-marks loaded tiles (Client.java:5169-5171).
@@ -8094,7 +8075,7 @@ fn map_build_loop(c: &mut Client) {
             loc_total += after - before;
         }
     }
-    eprintln!("[game] mapBuildLoop: parsed {loc_total} locs, transitioning to state 30");
+    dbg_log!("[game] mapBuildLoop: parsed {loc_total} locs, transitioning to state 30");
     c.map_load_state = 0;
     c.set_main_state(30);
 }
@@ -8103,7 +8084,7 @@ impl Client {
     // @ObfuscatedName("client.dt(B)V") — Client.mainLoad
     pub fn main_load(&mut self) {
         if self.loop_cycle % 100 == 0 {
-            eprintln!("[main_load] state={} loading_step={}", self.state, self.loading_step);
+            dbg_log!("[main_load] state={} loading_step={}", self.state, self.loading_step);
         }
         match self.loading_step {
             0 => {
@@ -8178,7 +8159,7 @@ impl Client {
                 }
                 drop(reg);
                 if self.loop_cycle % 50 == 0 {
-                    eprintln!("[step40] total={} per_slot={:?}", total, per_slot);
+                    dbg_log!("[step40] total={} per_slot={:?}", total, per_slot);
                 }
                 let mut ts = title_screen::STATE.lock().unwrap();
                 if total != 100 {
@@ -8234,7 +8215,7 @@ impl Client {
                     ts.load_string = format!("Loading interface fonts - {}%", var24 * 100 / 3);
                     ts.load_pos = 40;
                 } else {
-                    eprintln!("[step50] all 3 fonts loaded — p11 ascent={}", self.p11.as_ref().unwrap().base.ascent);
+                    dbg_log!("[step50] all 3 fonts loaded — p11 ascent={}", self.p11.as_ref().unwrap().base.ascent);
                     ts.load_string = "Loaded interface fonts".to_string();
                     ts.load_pos = 40;
                     self.loading_step = 60;
@@ -8297,7 +8278,7 @@ impl Client {
                             .and_then(|l| l.get_file_by_name("scape main", ""));
                         drop(reg);
                     } else {
-                        eprintln!("[audio] step60: pcm_player not initialised");
+                        dbg_log!("[audio] step60: pcm_player not initialised");
                     }
                     self.set_main_state(5);
                     self.loading_step = 70;

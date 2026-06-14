@@ -15,7 +15,7 @@ use std::process::ExitCode;
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().collect();
     if args.len() < 2 {
-        usage(&args.first().map(String::as_str).unwrap_or("os1"));
+        usage(&args.first().map(String::as_str).unwrap_or("os"));
         return ExitCode::from(2);
     }
     let rest = &args[2..];
@@ -156,7 +156,7 @@ fn cmd_verify(args: &[String]) -> std::io::Result<()> {
     let baseline_path =
         arg_path(args, "--baseline").unwrap_or_else(|| PathBuf::from("cache/crc_baseline.json"));
     let tmp = arg_path(args, "--out")
-        .unwrap_or_else(|| std::env::temp_dir().join("os1_verify_repack"));
+        .unwrap_or_else(|| std::env::temp_dir().join("os_verify_repack"));
 
     let baseline = cache::verify::Baseline::load(&baseline_path)?;
     let report = cache::verify::verify_repack(&content_dir, &baseline, &tmp)?;

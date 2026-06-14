@@ -9,3 +9,5 @@ recol = 926/9104 7700/8078 11200/8078 8078/677 25238/8741 8741/425
 name = Survival Expert
 models = 384 481 456 343 356 431 361 482
 headmodels = 108
+//Server
+wanderrange=2

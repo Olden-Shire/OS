@@ -679,7 +679,7 @@ pub fn open_interface(id: i32, interfaces_slot: i32) -> bool {
     s.ensure(id as usize);
     s.list[id as usize] = Some(components);
     s.open[id as usize] = true;
-    eprintln!("[iftype] opened interface {id} with {} components", file_ids.len());
+    dbg_log!("[iftype] opened interface {id} with {} components", file_ids.len());
     true
 }
 

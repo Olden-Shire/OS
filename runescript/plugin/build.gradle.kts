@@ -36,8 +36,8 @@ dependencies {
 intellijPlatform {
     instrumentCode = false
     pluginConfiguration {
-        id = "com.os1.runescript"
-        name = "RuneScript (OS1)"
+        id = "com.os.runescript"
+        name = "RuneScript (OS)"
         version = project.version.toString()
         ideaVersion {
             sinceBuild = "253"
@@ -47,7 +47,7 @@ intellijPlatform {
             untilBuild = provider { null }
         }
         vendor {
-            name = "OS1"
+            name = "OS"
         }
     }
     buildSearchableOptions = false

@@ -11,7 +11,7 @@
 //!   rename_interface 549 welcome              # if_549 -> welcome
 //!   rename_interface 549:2 welcome_top        # if_549:com_2 -> welcome:welcome_top
 //!
-//! Operates on ./Content (override with $OS1_CONTENT). Reversible: run again
+//! Operates on ./Content (override with $OS_CONTENT). Reversible: run again
 //! with the original name.
 
 use std::path::PathBuf;
@@ -26,7 +26,7 @@ fn main() {
     }
     let target = &args[0];
     let new_name = &args[1];
-    let content = PathBuf::from(std::env::var("OS1_CONTENT").unwrap_or_else(|_| "Content".into()));
+    let content = PathBuf::from(std::env::var("OS_CONTENT").unwrap_or_else(|_| "Content".into()));
 
     let result = if let Some((p, c)) = target.split_once(':') {
         let parent: u32 = p.parse().expect("parent id");

@@ -614,7 +614,6 @@ fn flat_raster(
     if x_from >= x_to {
         return;
     }
-    clip_check_span("flat", x_from, x_to, 0, size_x, hclip);
     let len = pixels.len() as i32;
     let start = off + x_from;
     let count = x_to - x_from;
@@ -926,21 +925,6 @@ pub fn gouraud_triangle(
     }
 }
 
-// Diagnostic (set CLIENT_CLIP_CHECK=1): report any span a rasterizer is
-// about to draw outside its clip bounds — names the rasterizer, the
-// span, the bounds it believed, and the hclip flag. First 40 only.
-pub(crate) fn clip_check_span(label: &str, lo: i32, hi: i32, min: i32, max: i32, hclip: bool) {
-    use std::sync::atomic::{AtomicI32, Ordering};
-    static ON: std::sync::LazyLock<bool> =
-        std::sync::LazyLock::new(|| std::env::var("CLIENT_CLIP_CHECK").is_ok());
-    static LOGGED: AtomicI32 = AtomicI32::new(0);
-    if !*ON || hi <= lo { return; }
-    if lo >= min && hi <= max { return; }
-    if LOGGED.fetch_add(1, Ordering::Relaxed) < 40 {
-        eprintln!("[clipcheck] {label}: span {lo}..{hi} outside [{min},{max}) hclip={hclip}");
-    }
-}
-
 // @ObfuscatedName("fx.cs([IIIIIIII)V") — Pix3D.gouraudRaster. Verbatim
 // port of Pix3D.java:713-790 (Java's unused arg2/arg3 zeros dropped).
 // `x_from`/`x_to` are clip-left-relative; `off` is the absolute pixel
@@ -965,7 +949,6 @@ fn gouraud_raster(
     if x_from >= x_to {
         return;
     }
-    clip_check_span("gouraud", x_from, x_to, 0, size_x, hclip);
     let mut var8 = off + x_from;
     let mut var9 = x_from * dcdx + colour;
     let len = pixels.len() as i32;
@@ -2099,7 +2082,6 @@ fn texture_raster(
         if arg5 < ctx.min_x { arg5 = ctx.min_x; }
     }
     if arg5 >= arg6 { return; }
-    clip_check_span("texture_perspective", arg5, arg6, ctx.min_x, ctx.size_x, ctx.hclip);
     let mut var15 = arg4 + arg5;
     let mut var16 = arg5 * arg8 + arg7;
     let var17 = arg6 - arg5;
@@ -2394,7 +2376,6 @@ fn texture_raster_affine(
         if arg5 < ctx.min_x { arg5 = ctx.min_x; }
     }
     if arg5 >= arg6 { return; }
-    clip_check_span("texture_affine", arg5, arg6, ctx.min_x, ctx.size_x, ctx.hclip);
     let mut var15 = arg4 + arg5;
     let mut var16 = arg5 * arg8 + arg7;
     let var17 = arg6 - arg5;

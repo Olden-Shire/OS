@@ -163,7 +163,7 @@ impl JagEd {
             let c = Cache::open(src)?;
             return Ok((src.display().to_string(), c));
         }
-        let gen_dir = std::env::temp_dir().join("os1_jaged_cache");
+        let gen_dir = std::env::temp_dir().join("os_jaged_cache");
         cache::content::pack::pack(src, &gen_dir)?;
         let c = Cache::open(&gen_dir)?;
         Ok((format!("{} (packed → {})", src.display(), gen_dir.display()), c))

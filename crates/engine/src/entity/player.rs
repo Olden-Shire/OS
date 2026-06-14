@@ -410,6 +410,11 @@ impl Player {
     pub fn new(pid: usize, username: String, x: i32, z: i32, level: i32) -> Player {
         let mut entity = PathingEntity::at(x, z, level);
         entity.face_entity_mask = MASK_FACE_ENTITY;
+        // Engine-TS Player: MoveStrategy.SMART, blockWalk = NPC (a player blocks
+        // npcs from stepping onto it), blockWalkFlag = CollisionFlag.PLAYER.
+        entity.move_restrict = crate::entity::MoveRestrict::Normal;
+        entity.block_walk = crate::entity::BlockWalk::Npc;
+        entity.block_walk_flag = crate::collision::PLAYER;
         // Canonicalise the typed name to its account identity + display form, so
         // "Zezima"/"zezima"/"ZEZIMA" are one account (Engine-TS toSafeName).
         let display_name = crate::base37::to_display_name(&username);
@@ -764,7 +769,7 @@ impl Player {
     /// choose the speed from the run / temp-run flags, advance, then drop the
     /// one-path temp run once the route is exhausted. Returns whether a step
     /// was taken.
-    pub fn update_movement(&mut self) -> bool {
+    pub fn update_movement(&mut self, collision: Option<&crate::collision::WorldCollision>) -> bool {
         use crate::entity::MoveSpeed;
         if self.entity.move_speed != MoveSpeed::Instant {
             self.entity.move_speed = self.default_move_speed();
@@ -778,7 +783,7 @@ impl Player {
                 self.entity.move_speed = MoveSpeed::Run;
             }
         }
-        let processed = self.entity.process_movement();
+        let processed = self.entity.process_movement(collision);
         if !processed {
             self.temp_run = false;
         }
@@ -1083,7 +1088,7 @@ mod tests {
         assert_eq!(p.entity.move_speed, MoveSpeed::Walk, "INSTANT released after the cycle");
         // ...so a route queued next tick actually walks (no longer wedged).
         p.entity.queue_waypoints(&[(3226, 3225)]);
-        p.update_movement();
+        p.update_movement(None);
         assert_eq!(p.entity.x, 3226, "walks the tile after teleport instead of staying INSTANT");
     }
 
@@ -1095,7 +1100,7 @@ mod tests {
         p.run = true;
         p.run_anim = -1;
         p.entity.queue_waypoints(&[(3205, 3200)]);
-        p.update_movement();
+        p.update_movement(None);
         assert_eq!(p.entity.move_speed, MoveSpeed::Walk, "no run anim clamps to walk");
         assert_eq!(p.entity.x, 3201, "walked one tile, not two");
 
@@ -1104,7 +1109,7 @@ mod tests {
         p.run = true;
         p.run_anim = ANIM_RUN;
         p.entity.queue_waypoints(&[(3205, 3200)]);
-        p.update_movement();
+        p.update_movement(None);
         assert_eq!(p.entity.move_speed, MoveSpeed::Run);
         assert_eq!(p.entity.x, 3202, "ran two tiles");
 
@@ -1113,7 +1118,7 @@ mod tests {
         p.run_anim = -1;
         p.temp_run = true;
         p.entity.queue_waypoints(&[(3205, 3200)]);
-        p.update_movement();
+        p.update_movement(None);
         assert_eq!(p.entity.move_speed, MoveSpeed::Walk, "temp-run ignored without a run anim");
     }
 
@@ -1125,7 +1130,7 @@ mod tests {
         let mut p = player();
         p.run = true;
         p.entity.queue_waypoints(&[(3204, 3200)]);
-        p.update_movement();
+        p.update_movement(None);
         assert_eq!(p.entity.move_speed, MoveSpeed::Run, "run orb → run");
         assert_eq!(p.entity.x, 3202, "ran two tiles");
 
@@ -1133,10 +1138,10 @@ mod tests {
         let mut p = player();
         p.temp_run = true;
         p.entity.queue_waypoints(&[(3201, 3200)]);
-        p.update_movement();
+        p.update_movement(None);
         assert_eq!(p.entity.move_speed, MoveSpeed::Run, "temp run → run");
         assert!(p.temp_run, "temp run holds while the route is live");
-        p.update_movement(); // route exhausted
+        p.update_movement(None); // route exhausted
         assert!(!p.temp_run, "temp run drops when the route ends");
     }
 

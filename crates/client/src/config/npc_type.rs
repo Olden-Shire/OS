@@ -231,11 +231,24 @@ impl NpcType {
         Some(list(id))
     }
 
-    // @ObfuscatedName("em.t(B)Z") — NpcType.isMultiNpcVisible.
-    // Returns true if this multinpc would resolve to a real npc id.
-    // Used by the scene render to cull invisible multinpc variants.
+    // @ObfuscatedName("em.t(B)Z") — NpcType.isMultiNpcVisible (NpcType.java:408).
+    // A NORMAL npc (no multinpc table) is always visible — Java returns true
+    // immediately when `multinpc == null`. Only a multinpc-variant npc is culled,
+    // and only when its varbit/varp resolves out of range. The old
+    // `get_multi_npc().is_some()` form returned false for every normal npc, so
+    // the scene render skipped them all (dot on the minimap, no 3D model).
     pub fn is_multi_npc_visible(&self) -> bool {
-        self.get_multi_npc().is_some()
+        let Some(multinpc) = self.multinpc.as_ref() else {
+            return true;
+        };
+        let v = if self.multivarbit != -1 {
+            crate::config::var_cache::get_varbit(self.multivarbit)
+        } else if self.multivarp != -1 {
+            crate::config::var_cache::get_varp(self.multivarp)
+        } else {
+            -1
+        };
+        v >= 0 && (v as usize) < multinpc.len() && multinpc[v as usize] != -1
     }
 
     // @ObfuscatedName("em.u(Leo;ILeo;IB)Lfo;") — NpcType.getTempModel.

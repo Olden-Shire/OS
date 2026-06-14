@@ -8,3 +8,5 @@ readyanim = 447
 walkanim = 448
 name = Fishing spot
 models = 1491
+//Server
+wanderrange=0

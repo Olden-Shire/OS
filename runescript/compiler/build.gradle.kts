@@ -7,5 +7,5 @@ dependencies {
 }
 
 application {
-    mainClass.set("com.os1.runescript.compiler.MainKt")
+    mainClass.set("com.os.runescript.compiler.MainKt")
 }

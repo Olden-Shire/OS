@@ -1,10 +1,10 @@
 <idea-plugin>
-    <id>com.os1.runescript</id>
-    <name>RuneScript (OS1)</name>
-    <vendor>OS1</vendor>
+    <id>com.os.runescript</id>
+    <name>RuneScript (OS)</name>
+    <vendor>OS</vendor>
 
     <description><![CDATA[
-        RuneScript language support for OS1 server scripts (.rs2) and
+        RuneScript language support for OS server scripts (.rs2) and
         clientscripts (.cs2): syntax highlighting, pack-backed symbol
         resolution, completion, Compile/Decompile actions, a .cs2asm
         assembly-listing file type, and a side-by-side source/assembly
@@ -18,103 +18,103 @@
     <extensions defaultExtensionNs="com.intellij">
         <fileType
             name="RuneScript"
-            implementationClass="com.os1.runescript.plugin.lang.RuneScriptFileType"
+            implementationClass="com.os.runescript.plugin.lang.RuneScriptFileType"
             fieldName="INSTANCE"
             language="RuneScript"
             extensions="rs2;cs2"/>
 
         <lang.syntaxHighlighterFactory
             language="RuneScript"
-            implementationClass="com.os1.runescript.plugin.highlight.RuneScriptSyntaxHighlighterFactory"/>
+            implementationClass="com.os.runescript.plugin.highlight.RuneScriptSyntaxHighlighterFactory"/>
 
         <!-- Settings → Editor → Color Scheme → RuneScript (recolour all RS_* keys). -->
         <colorSettingsPage
-            implementation="com.os1.runescript.plugin.highlight.RuneScriptColorSettingsPage"/>
+            implementation="com.os.runescript.plugin.highlight.RuneScriptColorSettingsPage"/>
 
         <lang.parserDefinition
             language="RuneScript"
-            implementationClass="com.os1.runescript.plugin.psi.RuneScriptParserDefinition"/>
+            implementationClass="com.os.runescript.plugin.psi.RuneScriptParserDefinition"/>
 
         <annotator
             language="RuneScript"
-            implementationClass="com.os1.runescript.plugin.annotate.RuneScriptAnnotator"/>
+            implementationClass="com.os.runescript.plugin.annotate.RuneScriptAnnotator"/>
 
         <!-- Real syntax/error highlighting for .rs2 via the shared frontend parser. -->
         <externalAnnotator
             language="RuneScript"
-            implementationClass="com.os1.runescript.plugin.annotate.RuneScriptErrorAnnotator"/>
+            implementationClass="com.os.runescript.plugin.annotate.RuneScriptErrorAnnotator"/>
 
         <!-- Hover docs: show a symbol's kind + id (interface/var/config/command). -->
         <lang.documentationProvider
             language="RuneScript"
-            implementationClass="com.os1.runescript.plugin.doc.RuneScriptDocumentationProvider"/>
+            implementationClass="com.os.runescript.plugin.doc.RuneScriptDocumentationProvider"/>
 
         <!-- Ctrl-click: ~proc / @label jump to their [proc,name] / [label,name] header. -->
         <gotoDeclarationHandler
-            implementation="com.os1.runescript.plugin.nav.RuneScriptGotoDeclarationHandler"/>
+            implementation="com.os.runescript.plugin.nav.RuneScriptGotoDeclarationHandler"/>
         <!-- Ctrl-click: a com_N value in a config jumps to its [com_N] section. -->
         <gotoDeclarationHandler
-            implementation="com.os1.runescript.plugin.config.ConfigGotoDeclarationHandler"/>
+            implementation="com.os.runescript.plugin.config.ConfigGotoDeclarationHandler"/>
 
         <completion.contributor
             language="RuneScript"
-            implementationClass="com.os1.runescript.plugin.completion.RuneScriptCompletionContributor"/>
+            implementationClass="com.os.runescript.plugin.completion.RuneScriptCompletionContributor"/>
 
         <!-- Config text (interfaces/npc/loc/obj/seq/…) — key=value + sections. -->
         <fileType
             name="RsConfig"
-            implementationClass="com.os1.runescript.plugin.config.ConfigFileType"
+            implementationClass="com.os.runescript.plugin.config.ConfigFileType"
             fieldName="INSTANCE"
             language="RsConfig"
             extensions="if;npc;loc;obj;seq;flo;flu;idk;inv;spot;varbit;varp;enum"/>
         <lang.syntaxHighlighterFactory
             language="RsConfig"
-            implementationClass="com.os1.runescript.plugin.config.ConfigSyntaxHighlighterFactory"/>
+            implementationClass="com.os.runescript.plugin.config.ConfigSyntaxHighlighterFactory"/>
         <lang.parserDefinition
             language="RsConfig"
-            implementationClass="com.os1.runescript.plugin.config.ConfigParserDefinition"/>
+            implementationClass="com.os.runescript.plugin.config.ConfigParserDefinition"/>
         <colorSettingsPage
-            implementation="com.os1.runescript.plugin.config.ConfigColorSettingsPage"/>
+            implementation="com.os.runescript.plugin.config.ConfigColorSettingsPage"/>
         <completion.contributor
             language="RsConfig"
-            implementationClass="com.os1.runescript.plugin.config.ConfigCompletionContributor"/>
+            implementationClass="com.os.runescript.plugin.config.ConfigCompletionContributor"/>
 
         <!-- ClientScript assembly listings (.cs2asm) — the packer's faithful fallback
              format and the right-hand pane of the side-by-side cs2 editor. -->
         <fileType
             name="Cs2Asm"
-            implementationClass="com.os1.runescript.plugin.asm.Cs2AsmFileType"
+            implementationClass="com.os.runescript.plugin.asm.Cs2AsmFileType"
             fieldName="INSTANCE"
             language="Cs2Asm"
             extensions="cs2asm"/>
 
         <lang.syntaxHighlighterFactory
             language="Cs2Asm"
-            implementationClass="com.os1.runescript.plugin.asm.Cs2AsmSyntaxHighlighterFactory"/>
+            implementationClass="com.os.runescript.plugin.asm.Cs2AsmSyntaxHighlighterFactory"/>
 
         <lang.parserDefinition
             language="Cs2Asm"
-            implementationClass="com.os1.runescript.plugin.asm.Cs2AsmParserDefinition"/>
+            implementationClass="com.os.runescript.plugin.asm.Cs2AsmParserDefinition"/>
 
         <!-- Side-by-side source + live assembly for structured .cs2 clientscripts. -->
         <fileEditorProvider
-            implementation="com.os1.runescript.plugin.editor.Cs2PreviewEditorProvider"/>
+            implementation="com.os.runescript.plugin.editor.Cs2PreviewEditorProvider"/>
 
         <!-- Rename refactoring for interface symbols (if_549 / if_549:com_2):
              updates interface.pack, the .if filename/section, and all refs. -->
         <renameHandler
-            implementation="com.os1.runescript.plugin.refactor.RsInterfaceRenameHandler"/>
+            implementation="com.os.runescript.plugin.refactor.RsInterfaceRenameHandler"/>
     </extensions>
 
     <actions>
-        <action id="com.os1.runescript.CompileAction"
-                class="com.os1.runescript.plugin.action.CompileScriptsAction"
+        <action id="com.os.runescript.CompileAction"
+                class="com.os.runescript.plugin.action.CompileScriptsAction"
                 text="Compile RuneScript"
                 description="Compile the RuneScript source set to a pack">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
-        <action id="com.os1.runescript.DecompileAction"
-                class="com.os1.runescript.plugin.action.DecompileClientScriptAction"
+        <action id="com.os.runescript.DecompileAction"
+                class="com.os.runescript.plugin.action.DecompileClientScriptAction"
                 text="Decompile ClientScript..."
                 description="Decompile a cs2 clientscript to source">
             <add-to-group group-id="ToolsMenu" anchor="last"/>

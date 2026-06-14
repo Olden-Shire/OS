@@ -6,7 +6,7 @@ plugins {
 }
 
 allprojects {
-    group = "com.os1.runescript"
+    group = "com.os.runescript"
     version = "0.4.4"
 
     repositories {

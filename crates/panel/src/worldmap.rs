@@ -18,7 +18,7 @@ const REGION_TILES: i32 = 64;
 const TILE_W: usize = 104 * 4; // 416 — full build-area detail tile
 const OVERVIEW_PATH: &str = "cache/worldmap.bin";
 const TILES_PATH: &str = "cache/worldmap_tiles.bin";
-const MAGIC: u64 = 0x4F53_3157_4D41_5032; // "OS1WMAP2"
+const MAGIC: u64 = 0x4F53_3157_4D41_5032; // "OSWMAP2"
 const VERSION: u32 = 2;
 
 /// The low-res overview composite + the world-tile origin for positioning.

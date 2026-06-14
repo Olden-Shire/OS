@@ -130,7 +130,7 @@ mod tests {
         map.insert(0, "hans".to_string());
         map.insert(995, "coins".to_string());
         map.insert(2, "man2".to_string());
-        let tmp = std::env::temp_dir().join("os1_pack_file_test.pack");
+        let tmp = std::env::temp_dir().join("os_pack_file_test.pack");
         write(&tmp, &map).unwrap();
         let back = read(&tmp).unwrap();
         assert_eq!(back, map);
@@ -139,7 +139,7 @@ mod tests {
 
     #[test]
     fn ignores_comments_and_blank_lines() {
-        let tmp = std::env::temp_dir().join("os1_pack_file_comments.pack");
+        let tmp = std::env::temp_dir().join("os_pack_file_comments.pack");
         std::fs::write(&tmp, "// header\n0=hans\n\n  // indented comment\n1=man  // trailing\n").unwrap();
         let map = read(&tmp).unwrap();
         assert_eq!(map.get(&0), Some(&"hans".to_string()));

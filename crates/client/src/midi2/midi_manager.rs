@@ -142,7 +142,7 @@ impl MidiManager {
     // one loads after the fade completes. (Java defers the MIDI decode
     // to updateLoading; we decode up front — same bytes either way.)
     pub fn swap_songs(&mut self, fade_rate: i32, raw_midi: Vec<u8>, loop_song: bool) {
-        eprintln!("[audio] swap_songs: raw={} bytes, fade_rate={fade_rate}", raw_midi.len());
+        dbg_log!("[audio] swap_songs: raw={} bytes, fade_rate={fade_rate}", raw_midi.len());
         let midi = match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
             crate::midi2::jagex_codec::decode(&raw_midi)
         })) {
@@ -231,7 +231,7 @@ impl MidiManager {
         }
         if all_ready {
             let pending = self.pending.take().unwrap();
-            eprintln!("[audio] try_advance: ALL READY — starting song ({} patches, {} waves)",
+            dbg_log!("[audio] try_advance: ALL READY — starting song ({} patches, {} waves)",
                 self.patch_table.len(), self.wave_table.len());
             // Java updateLoading:168-171 — restore the pre-fade volume
             // and return to idle once the song actually starts.
@@ -243,7 +243,7 @@ impl MidiManager {
             static LAST_PRINT: AtomicUsize = AtomicUsize::new(0);
             let counter = LAST_PRINT.fetch_add(1, Ordering::Relaxed);
             if counter % 50 == 0 {
-                eprintln!("[audio] try_advance: patches {}/{}, waves {}/{}",
+                dbg_log!("[audio] try_advance: patches {}/{}, waves {}/{}",
                     self.patch_table.len(), patches.len(), waves_present, waves_needed);
             }
         }

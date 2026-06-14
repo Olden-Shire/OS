@@ -44,7 +44,7 @@ pub fn report() {
     let mut total_tracked = 0usize;
     let mut line = |label: &str, bytes: usize, detail: String| {
         total_tracked += bytes;
-        eprintln!("[mem] {} {label:<24} {detail}", kb(bytes));
+        dbg_log!("[mem] {} {label:<24} {detail}", kb(bytes));
     };
 
     // ── JS5 archives: packed (compressed) + unpacked (raw) bytes ───────
@@ -221,7 +221,7 @@ pub fn report() {
     }
 
     let heap = crate::perf::HEAP_BYTES.load(std::sync::atomic::Ordering::Relaxed);
-    eprintln!("[mem] {} tracked above", kb(total_tracked));
-    eprintln!("[mem] {} total live heap (untracked: {})",
+    dbg_log!("[mem] {} tracked above", kb(total_tracked));
+    dbg_log!("[mem] {} total live heap (untracked: {})",
               kb(heap), kb(heap.saturating_sub(total_tracked)));
 }

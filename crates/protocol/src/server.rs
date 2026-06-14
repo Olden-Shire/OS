@@ -3,7 +3,7 @@
 //! optional size prefix) when flushing.
 //!
 //! Opcodes/sizes mirror Engine2007
-//! src/network/os1/server/codec/game/*Encoder.ts; the byte layouts
+//! src/network/os/server/codec/game/*Encoder.ts; the byte layouts
 //! are the same ones crates/client's packet handlers decode.
 
 use io::packet::Packet;
@@ -376,13 +376,29 @@ pub fn rebuild_normal<F: FnMut(i32, i32) -> [i32; 4]>(
     p.p2(abs_z - ((zz - 6) << 3));
     p.p2_alt1(abs_x - ((zx - 6) << 3));
 
-    let mut mx = (zx - 6) >> 3;
+    // Tutorial-island map skip (Client.rebuildPacket, Client.java:4805-4822).
+    // Around tutorial island the client OMITS the empty build-area mapsquares
+    // from its region list, then assigns the sequentially-read `mapKeys[i]` to
+    // the i-th *non-skipped* region. We must skip the SAME mapsquares when
+    // emitting keys here, or every key after the first skip shifts by one and
+    // the loc file decrypts to garbage ("Invalid GZIP header!" on entry). The
+    // flag keys off the centre mapsquare (zx/8, zz/8). For non-tutorial regions
+    // `tutorial` is false and every mapsquare is emitted, as before.
+    let tutorial = ((zx / 8 == 48 || zx / 8 == 49) && zz / 8 == 48)
+        || (zx / 8 == 48 && zz / 8 == 148);
+
+    let mut mx = (zx - 6) >> 3; // == Java var11
     while mx <= (zx + 6) >> 3 {
-        let mut mz = (zz - 6) >> 3;
+        let mut mz = (zz - 6) >> 3; // == Java var12
         while mz <= (zz + 6) >> 3 {
-            let key = xtea_keys(mx, mz);
-            for k in key {
-                p.p4_alt2(k);
+            let included = !tutorial
+                || (mz != 49 && mz != 149 && mz != 147 && mx != 50
+                    && !(mx == 49 && mz == 47));
+            if included {
+                let key = xtea_keys(mx, mz);
+                for k in key {
+                    p.p4_alt2(k);
+                }
             }
             mz += 1;
         }

@@ -97,7 +97,7 @@ pub struct World {
     pub vars: Vec<i32>,
     pub scripts: Option<ScriptProvider>,
     /// Per-player engine queues (parallel to `players`) — delayed scripts that
-    /// fire on the owning player. Engine-TS stores this on the Player; OS1 keeps
+    /// fire on the owning player. Engine-TS stores this on the Player; OS keeps
     /// it World-side so `player.rs` stays decoupled from the script types.
     engine_queues: Vec<Vec<EngineQueueEntry>>,
     /// Per-player suspended script (Engine-TS `Player.activeScript`): a script
@@ -216,12 +216,40 @@ pub struct ObjInfo {
 }
 
 /// Npc config fields the config-query ops read (NC_NAME / SIZE / VISLEVEL / OP).
-#[derive(Debug, Clone, Default)]
+#[derive(Debug, Clone)]
 pub struct NpcInfo {
     pub name: String,
     pub size: i32,
     pub vislevel: i32,
     pub op: [Option<String>; 5],
+    // Server-side AI config (Engine-TS NpcType, opcodes 200+). Absent from the
+    // 2007 client cache; sourced from the `.npc` text by `load_server_npc_props`.
+    // Defaults mirror Engine-TS NpcType so an un-authored npc behaves as before.
+    pub wander_range: i32,
+    pub max_range: i32,
+    pub attack_range: i32,
+    pub hunt_range: i32,
+    pub hunt_mode: i32,
+    pub default_mode: i32,
+    pub give_chase: bool,
+}
+
+impl Default for NpcInfo {
+    fn default() -> Self {
+        NpcInfo {
+            name: String::new(),
+            size: 1,
+            vislevel: -1,
+            op: [None, None, None, None, None],
+            wander_range: NPC_WANDERRANGE,
+            max_range: NPC_MAXRANGE,
+            attack_range: NPC_ATTACKRANGE,
+            hunt_range: 0,
+            hunt_mode: -1,
+            default_mode: NPC_DEFAULTMODE,
+            give_chase: NPC_GIVECHASE,
+        }
+    }
 }
 
 /// EnumType key→value table for the ENUM / ENUM_GETOUTPUTCOUNT ops. `is_string`
@@ -381,7 +409,13 @@ impl World {
                 let nt = cache::config::npc::NpcType::decode(id, &bytes);
                 self.npc_info.insert(
                     id,
-                    NpcInfo { name: nt.name, size: nt.size, vislevel: nt.vislevel, op: nt.op },
+                    NpcInfo {
+                        name: nt.name,
+                        size: nt.size,
+                        vislevel: nt.vislevel,
+                        op: nt.op,
+                        ..Default::default()
+                    },
                 );
             }
         }
@@ -418,6 +452,97 @@ impl World {
                 self.seq_lengths.insert(id, total);
             }
         }
+    }
+
+    /// Overlay server-side npc AI config (wanderrange/maxrange/attackrange/…,
+    /// Engine-TS NpcType opcodes 200+) onto the `NpcInfo` loaded from the cache.
+    /// These props live ONLY in the `.npc` SOURCE text — the 2007 client cache
+    /// doesn't carry them — so they're read straight from `{content}/config/npc`.
+    /// Call AFTER [`World::load_configs`]. Missing keys keep the Engine-TS default.
+    pub fn load_server_npc_props(&mut self, content_dir: &std::path::Path) {
+        let mut stack = vec![content_dir.join("config").join("npc")];
+        let mut applied = 0u32;
+        while let Some(dir) = stack.pop() {
+            let Ok(rd) = std::fs::read_dir(&dir) else { continue };
+            for entry in rd.flatten() {
+                let p = entry.path();
+                if p.is_dir() {
+                    stack.push(p);
+                } else if p.extension().and_then(|e| e.to_str()) == Some("npc")
+                    && let Ok(text) = std::fs::read_to_string(&p)
+                    && self.apply_npc_server_props(&text)
+                {
+                    applied += 1;
+                }
+            }
+        }
+        if applied > 0 {
+            eprintln!("[engine] applied server AI config from {applied} .npc source file(s)");
+        }
+    }
+
+    /// Parse the server-only AI keys from one `.npc` text (id taken from the
+    /// `// npc {id}` header) and overlay them onto that type's `NpcInfo`. Returns
+    /// whether any recognised key was applied.
+    fn apply_npc_server_props(&mut self, text: &str) -> bool {
+        let id = text
+            .lines()
+            .find_map(|l| l.trim().strip_prefix("// npc ").and_then(|s| s.trim().parse::<i32>().ok()));
+        let Some(id) = id else { return false };
+        let Some(info) = self.npc_info.get_mut(&id) else { return false };
+        let mut applied = false;
+        for line in text.lines() {
+            let t = line.trim();
+            if t.is_empty() || t.starts_with("//") {
+                continue;
+            }
+            let Some((k, v)) = t.split_once('=') else { continue };
+            let (k, v) = (k.trim(), v.trim());
+            match k {
+                "wanderrange" => {
+                    if let Ok(n) = v.parse() {
+                        info.wander_range = n;
+                        applied = true;
+                    }
+                }
+                "maxrange" => {
+                    if let Ok(n) = v.parse() {
+                        info.max_range = n;
+                        applied = true;
+                    }
+                }
+                "attackrange" => {
+                    if let Ok(n) = v.parse() {
+                        info.attack_range = n;
+                        applied = true;
+                    }
+                }
+                "huntrange" => {
+                    if let Ok(n) = v.parse() {
+                        info.hunt_range = n;
+                        applied = true;
+                    }
+                }
+                "huntmode" => {
+                    if let Ok(n) = v.parse() {
+                        info.hunt_mode = n;
+                        applied = true;
+                    }
+                }
+                "defaultmode" => {
+                    if let Ok(n) = v.parse() {
+                        info.default_mode = n;
+                        applied = true;
+                    }
+                }
+                "givechase" => {
+                    info.give_chase = !matches!(v, "false" | "0" | "no");
+                    applied = true;
+                }
+                _ => {}
+            }
+        }
+        applied
     }
 
     /// Build the world collision map from every region in the cache — terrain
@@ -1003,11 +1128,12 @@ impl World {
     /// cycle).
     fn process_player_interaction(&mut self, pid: usize) {
         if !self.interaction_valid(pid) {
-            if let Some(p) = self.players[pid].as_mut() {
+            let World { players, collision, .. } = &mut *self;
+            if let Some(p) = players[pid].as_mut() {
                 p.interaction = None;
                 p.entity.clear_interaction();
                 p.unset_map_flag();
-                p.update_movement();
+                p.update_movement(Some(&*collision));
             }
             return;
         }
@@ -1015,8 +1141,11 @@ impl World {
         if !interacted {
             self.path_to_target(pid);
         }
-        if let Some(p) = self.players[pid].as_mut() {
-            p.update_movement();
+        {
+            let World { players, collision, .. } = &mut *self;
+            if let Some(p) = players[pid].as_mut() {
+                p.update_movement(Some(&*collision));
+            }
         }
         if !interacted && self.players[pid].as_ref().is_some_and(|p| p.interaction.is_some()) {
             let steps0 = self.players[pid].as_ref().map_or(true, |p| p.entity.steps_taken == 0);
@@ -1086,7 +1215,8 @@ impl World {
 
     /// updateMovement for an npc; returns whether it stepped.
     fn npc_move(&mut self, nid: usize) -> bool {
-        self.npcs[nid].as_mut().is_some_and(|n| n.update_movement())
+        let World { npcs, collision, .. } = self;
+        npcs[nid].as_mut().is_some_and(|n| n.update_movement(Some(&*collision)))
     }
 
     /// Engine-TS `Npc.aiMode`: interact before moving (incl. op scenery), else
@@ -1101,7 +1231,8 @@ impl World {
         }
         self.npc_path_to_target(nid);
         let moved = self.npc_move(nid);
-        if moved && !NPC_GIVECHASE {
+        let type_id = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
+        if moved && !self.npc_give_chase(type_id) {
             self.npc_reset_defaults(nid);
             return;
         }
@@ -1126,8 +1257,8 @@ impl World {
         let Some((tx, tz, tlevel, tw, tl, _)) = self.interact_footprint(target) else {
             return false;
         };
-        let Some((nx, nz, nlevel)) =
-            self.npcs[nid].as_ref().map(|n| (n.entity.x, n.entity.z, n.entity.level))
+        let Some((nx, nz, nlevel, npc_type)) =
+            self.npcs[nid].as_ref().map(|n| (n.entity.x, n.entity.z, n.entity.level, n.type_id))
         else {
             return false;
         };
@@ -1141,14 +1272,13 @@ impl World {
         let in_range = if is_op {
             dx + dz <= 1 && (pathing || allow_op_scenery)
         } else {
-            dx.max(dz) <= NPC_ATTACKRANGE
+            dx.max(dz) <= self.npc_attack_range(npc_type)
                 && !(dx == 0 && dz == 0)
                 && self.collision.line_of_sight(nlevel, nx, nz, tx, tz)
         };
         if !in_range {
             return false;
         }
-        let npc_type = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
         let has = self.scripts.as_ref().and_then(|s| s.get_by_trigger(trig, npc_type, -1)).is_some();
         if has {
             if let Some(n) = self.npcs[nid].as_mut() {
@@ -1228,12 +1358,32 @@ impl World {
     /// Engine-TS `Npc.resetDefaults`: clear the interaction and return to the
     /// npc's default mode (WANDER).
     fn npc_reset_defaults(&mut self, nid: usize) {
+        let type_id = self.npcs[nid].as_ref().map_or(-1, |n| n.type_id);
+        let mode = self.npc_default_mode(type_id);
         if let Some(n) = self.npcs[nid].as_mut() {
             n.target = None;
-            n.mode = NPC_DEFAULTMODE;
+            n.mode = mode;
             n.entity.clear_interaction();
             n.entity.waypoints.clear();
         }
+    }
+
+    // Per-type server AI config (Engine-TS NpcType), falling back to the
+    // Engine-TS defaults when an npc type carries no authored server props.
+    fn npc_wander_range(&self, type_id: i32) -> i32 {
+        self.npc_info.get(&type_id).map_or(NPC_WANDERRANGE, |i| i.wander_range)
+    }
+    fn npc_max_range(&self, type_id: i32) -> i32 {
+        self.npc_info.get(&type_id).map_or(NPC_MAXRANGE, |i| i.max_range)
+    }
+    fn npc_attack_range(&self, type_id: i32) -> i32 {
+        self.npc_info.get(&type_id).map_or(NPC_ATTACKRANGE, |i| i.attack_range)
+    }
+    fn npc_default_mode(&self, type_id: i32) -> i32 {
+        self.npc_info.get(&type_id).map_or(NPC_DEFAULTMODE, |i| i.default_mode)
+    }
+    fn npc_give_chase(&self, type_id: i32) -> bool {
+        self.npc_info.get(&type_id).map_or(NPC_GIVECHASE, |i| i.give_chase)
     }
 
     /// Engine-TS `Npc.wanderMode` + `randomWalk`: each tick a 1/8 chance to head
@@ -1242,17 +1392,22 @@ impl World {
     /// after 500 ticks away from spawn it teleports home. Default wanderrange /
     /// moverestrict=NORMAL (server npc config absent from our 2007 cache).
     fn process_npc_wander(&mut self, nid: usize) {
-        let Some((sx, sz, slevel, nx, nz, nlevel)) = self.npcs[nid].as_ref().map(|n| {
-            (n.spawn_x, n.spawn_z, n.spawn_level, n.entity.x, n.entity.z, n.entity.level)
+        let Some((sx, sz, slevel, nx, nz, nlevel, type_id)) = self.npcs[nid].as_ref().map(|n| {
+            (n.spawn_x, n.spawn_z, n.spawn_level, n.entity.x, n.entity.z, n.entity.level, n.type_id)
         }) else {
             return;
         };
         if self.next_rand_unit() < 0.125 {
-            let range = NPC_WANDERRANGE as f64;
+            let range = self.npc_wander_range(type_id) as f64;
             let dx = (self.next_rand_unit() * (range * 2.0) - range).round() as i32;
             let dz = (self.next_rand_unit() * (range * 2.0) - range).round() as i32;
             let (rx, rz) = (sx + dx, sz + dz);
             if (rx, rz) != (nx, nz) {
+                // Engine-TS `randomWalk`: queue the raw random tile. The
+                // collision-aware movement step (`PathingEntity::takeStep`)
+                // walks toward it and stops/slides at walls — no pathfinding for
+                // wander, 1:1 with Engine-TS naive movement.
+                let _ = nlevel;
                 if let Some(n) = self.npcs[nid].as_mut() {
                     n.entity.queue_waypoints(&[(rx, rz)]);
                 }
@@ -1289,14 +1444,14 @@ impl World {
             return false;
         }
         let (ddx, ddz) = ((tx - n.spawn_x).abs(), (tz - n.spawn_z).abs());
+        let maxrange = self.npc_max_range(n.type_id);
         match npc_mode_trigger(n.mode) {
             Some((_, true)) => {
                 // op trigger
-                ddx.max(ddz) <= NPC_MAXRANGE + 1
-                    && !(ddx == NPC_MAXRANGE + 1 && ddz == NPC_MAXRANGE + 1)
+                ddx.max(ddz) <= maxrange + 1 && !(ddx == maxrange + 1 && ddz == maxrange + 1)
             }
-            Some((_, false)) => ddx.max(ddz) <= NPC_MAXRANGE + NPC_ATTACKRANGE,
-            None => ddx.max(ddz) <= NPC_MAXRANGE + 1,
+            Some((_, false)) => ddx.max(ddz) <= maxrange + self.npc_attack_range(n.type_id),
+            None => ddx.max(ddz) <= maxrange + 1,
         }
     }
 
@@ -1335,7 +1490,7 @@ impl World {
 
     /// Load world npc spawns from a text list — one `type_id x z level` per line
     /// (`#` comments + blank lines skipped). The 2007 cache carries no Jagex
-    /// npc-spawn file, so this is OS1's own format for placing npcs; spawned npcs
+    /// npc-spawn file, so this is OS's own format for placing npcs; spawned npcs
     /// take the Engine-TS default mode (WANDER) and idle near their spawn.
     /// Missing file is a silent no-op.
     pub fn load_npc_spawns(&mut self, path: &std::path::Path) {
@@ -1356,8 +1511,9 @@ impl World {
                 continue;
             };
             if let Some(nid) = self.add_npc(id, x, z, level) {
+                let mode = self.npc_default_mode(id);
                 if let Some(n) = self.npcs[nid].as_mut() {
-                    n.mode = NPC_DEFAULTMODE;
+                    n.mode = mode;
                 }
                 count += 1;
             }
@@ -1390,8 +1546,9 @@ impl World {
             for n in &region.npcs {
                 let (wx, wz) = (rx * 64 + n.x as i32, ry * 64 + n.z as i32);
                 if let Some(nid) = self.add_npc(n.id, wx, wz, n.level as i32) {
+                    let mode = self.npc_default_mode(n.id);
                     if let Some(npc) = self.npcs[nid].as_mut() {
-                        npc.mode = NPC_DEFAULTMODE;
+                        npc.mode = mode;
                     }
                     count += 1;
                 }
@@ -1702,7 +1859,7 @@ impl World {
 
     /// Run a player's NORMAL/WEAK/STRONG/LONG script queues — 1:1 with Engine-TS
     /// `Player.processQueues`. A queued STRONG script first clears the weak queue
-    /// (the modal-interface close it also drives awaits OS1's modal tracking),
+    /// (the modal-interface close it also drives awaits OS's modal tracking),
     /// then the main queue and the weak queue each count down and fire their due
     /// entries while the player has protected access.
     fn process_queues(&mut self, pid: usize) {
@@ -1772,12 +1929,12 @@ impl World {
     }
 
     /// Close the player's open modal — 1:1 with Engine-TS `Player.closeModal`
-    /// for the parts OS1 can express: it always clears the weak queue, and — the
+    /// for the parts OS can express: it always clears the weak queue, and — the
     /// "a modal was open" branch — abandons a dialog-suspended script (a player
     /// who dismisses a dialog client-side or is pre-empted by a STRONG script
     /// drops the pause-button wait; Engine-TS nulls activeScript when its
     /// execution is PAUSEBUTTON/COUNTDIALOG). The modalState bitfield, the
-    /// [if_close] triggers, and the interface-close transmission await OS1's
+    /// [if_close] triggers, and the interface-close transmission await OS's
     /// modal-interface tracking.
     pub(crate) fn close_modal(&mut self, pid: usize) {
         if let Some(p) = self.players[pid].as_mut() {
@@ -1867,13 +2024,13 @@ impl World {
     }
 
     /// Whether the player has protected access this tick — 1:1 with Engine-TS
-    /// `Player.canAccess` (`!protect && !busy()`). OS1 expresses "busy" as being
+    /// `Player.canAccess` (`!protect && !busy()`). OS expresses "busy" as being
     /// delayed (P_DELAY) or having a script parked in `suspended` (a protected
     /// script mid-flight); the modal-interface half of `busy()` awaits the modal
     /// tracking system. NORMAL timers gate on this; SOFT timers ignore it.
     /// Whether the player is "busy" — 1:1 with Engine-TS `Player.busy()` plus the
     /// `loggingOut` BUSY check: action-locked (P_DELAY), mid-dialog (a parked
-    /// pause-button / count-dialog script — OS1's stand-in for an open CHAT/MAIN
+    /// pause-button / count-dialog script — OS's stand-in for an open CHAT/MAIN
     /// modal until modal tracking lands), or logging out.
     pub(crate) fn player_busy(&self, pid: usize) -> bool {
         let Some(p) = self.players.get(pid).and_then(|o| o.as_ref()) else {
@@ -2117,8 +2274,12 @@ impl World {
     }
 
     pub fn remove_npc(&mut self, nid: usize) {
-        if let Some(n) = self.npcs[nid].as_ref() {
-            self.zones.leave_npc(n.entity.zone_index, nid);
+        let World { npcs, collision, zones, .. } = self;
+        if let Some(n) = npcs[nid].as_mut() {
+            zones.leave_npc(n.entity.zone_index, nid);
+            // Engine-TS removeNpc: clear the npc's occupancy footprint so it
+            // doesn't leave a stale block behind.
+            n.entity.clear_collision(collision);
         }
         self.npcs[nid] = None;
         if let Some(slot) = self.npc_suspended.get_mut(nid) {
@@ -2915,7 +3076,7 @@ impl World {
         // Resume any NPC_DELAY-suspended AI scripts whose lock elapsed (the head
         // of Engine-TS Npc.turn), then fire due AI timers — both before npc
         // movement so a resumed/fired script can set up the npc's actions. (The
-        // reference runs timers just after regen; OS1 runs them a step earlier,
+        // reference runs timers just after regen; OS runs them a step earlier,
         // before the movement loop's regen — a negligible one-pulse stat lag.)
         self.resume_suspended_npc_scripts();
         self.process_npc_timers();
@@ -3003,8 +3164,11 @@ impl World {
             // queued waypoints.
             if self.players[pid].as_ref().is_some_and(|p| p.interaction.is_some()) {
                 self.process_player_interaction(pid);
-            } else if let Some(player) = self.players[pid].as_mut() {
-                player.update_movement();
+            } else {
+                let World { players, collision, .. } = &mut *self;
+                if let Some(player) = players[pid].as_mut() {
+                    player.update_movement(Some(&*collision));
+                }
             }
             let Some(player) = self.players[pid].as_mut() else { continue; };
             // Stamp the arrival tick when a step was taken (Engine-TS updateMovement
@@ -3098,15 +3262,26 @@ impl World {
         }
 
         // End-of-cycle transient reset (also releases a teleport's INSTANT and
-        // re-arms the one-chat-per-tick latch — see Player::reset_transient).
-        for slot in self.players.iter_mut() {
+        // re-arms the one-chat-per-tick latch — see Player::reset_transient),
+        // plus the once-per-tick occupancy reconcile (Engine-TS
+        // `refreshZonePresence`): every entity's `NPC`/`PLAYER` footprint is
+        // moved to its current tile so next tick's `can_travel` routes around
+        // it. Inactive npcs are unstamped so a dead/despawned npc stops blocking.
+        let World { players, npcs, collision, .. } = self;
+        for slot in players.iter_mut() {
             if let Some(p) = slot {
                 p.reset_transient();
+                p.entity.sync_collision(collision);
             }
         }
-        for slot in self.npcs.iter_mut() {
+        for slot in npcs.iter_mut() {
             if let Some(n) = slot {
                 n.reset_transient();
+                if n.active {
+                    n.entity.sync_collision(collision);
+                } else {
+                    n.entity.clear_collision(collision);
+                }
             }
         }
 
@@ -3454,7 +3629,7 @@ mod reorient_tests {
     #[test]
     fn npc_spawns_load_and_wander_near_spawn() {
         let mut world = World::new();
-        let path = std::env::temp_dir().join("os1_test_npcs.txt");
+        let path = std::env::temp_dir().join("os_test_npcs.txt");
         std::fs::write(&path, "# spawn list\n3 3210 3220 0\nbad\n").unwrap();
         world.load_npc_spawns(&path);
         let _ = std::fs::remove_file(&path);

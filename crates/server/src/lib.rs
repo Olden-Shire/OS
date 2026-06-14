@@ -21,6 +21,30 @@ use io::packet::Packet;
 use protocol::client as cproto;
 use protocol::server as sproto;
 
+/// `OS_DEBUG` gate for verbose diagnostic logging — checked once, cached.
+/// Set the env var `OS_DEBUG` (to any value) to surface gated `dbg_log!` output.
+pub fn debug_enabled() -> bool {
+    use std::sync::atomic::{AtomicU8, Ordering};
+    static STATE: AtomicU8 = AtomicU8::new(0);
+    match STATE.load(Ordering::Relaxed) {
+        1 => false,
+        2 => true,
+        _ => {
+            let on = std::env::var_os("OS_DEBUG").is_some();
+            STATE.store(if on { 2 } else { 1 }, Ordering::Relaxed);
+            on
+        }
+    }
+}
+
+/// `eprintln!` that only fires when `OS_DEBUG` is set (gated diagnostics).
+#[macro_export]
+macro_rules! dbg_log {
+    ($($arg:tt)*) => {
+        if $crate::debug_enabled() { eprintln!($($arg)*); }
+    };
+}
+
 /// Archives served over JS5 (idx0..idx15 + the master idx255).
 const ARCHIVE_COUNT: u8 = 16;
 const TICK: Duration = Duration::from_millis(600);
@@ -184,10 +208,14 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
     // lineofsight/walk, map_findsquare, …) and script-driven pathfinding.
     world.load_configs(&mut cache);
     world.load_map(&mut cache, &xtea);
-    // World npc spawns: the `==== NPC ====` section of each `.jm2` map, plus the
-    // legacy OS1 text list `npcs.txt` if present (the 2007 cache has no Jagex
-    // spawn file).
+    // Server-side npc AI config (wanderrange/maxrange/…) lives only in the .npc
+    // source text, not the client cache — overlay it before spawning so spawns
+    // pick up per-type default modes.
     let spawn_dir = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
+    world.load_server_npc_props(Path::new(&spawn_dir));
+    // World npc spawns: the `==== NPC ====` section of each `.jm2` map, plus the
+    // legacy OS text list `npcs.txt` if present (the 2007 cache has no Jagex
+    // spawn file).
     world.load_npc_spawns_from_maps(Path::new(&spawn_dir).join("maps").as_path());
     world.load_npc_spawns(Path::new(&spawn_dir).join("npcs.txt").as_path());
 
@@ -369,17 +397,17 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
 /// on any mismatch. Returns the directory to open and serve.
 ///
 /// Bootstrapping/fallback cases serve the vanilla `cache_dir` directly: when
-/// `OS1_SKIP_CACHE_VERIFY=1` is set, or no Content tree is present. A missing
+/// `OS_SKIP_CACHE_VERIFY=1` is set, or no Content tree is present. A missing
 /// baseline is non-fatal — the generated cache is served unverified (with a
-/// warning to run `os1 gen-baseline`).
+/// warning to run `os gen-baseline`).
 fn prepare_served_cache(
     config: &ServerConfig,
     stage: &mut dyn FnMut(&str),
 ) -> std::io::Result<std::path::PathBuf> {
     let cache_dir = std::path::PathBuf::from(&config.cache_dir);
 
-    if std::env::var_os("OS1_SKIP_CACHE_VERIFY").is_some() {
-        eprintln!("[server] OS1_SKIP_CACHE_VERIFY set — serving vanilla cache (no Content repack)");
+    if std::env::var_os("OS_SKIP_CACHE_VERIFY").is_some() {
+        eprintln!("[server] OS_SKIP_CACHE_VERIFY set — serving vanilla cache (no Content repack)");
         return Ok(cache_dir);
     }
 
@@ -394,7 +422,7 @@ fn prepare_served_cache(
     }
 
     // Pack Content → a real cache: these are the bytes we actually serve.
-    let gen_dir = std::env::temp_dir().join("os1_content_cache");
+    let gen_dir = std::env::temp_dir().join("os_content_cache");
     stage("packing cache");
     eprintln!("[server] packing Content ({}) -> {} …", content_dir.display(), gen_dir.display());
     cache::content::pack::pack_with_progress(content_dir, &gen_dir, &mut |done, total| {
@@ -410,7 +438,7 @@ fn prepare_served_cache(
     if !baseline_path.exists() {
         eprintln!(
             "[server] no CRC baseline at {} — serving generated cache UNVERIFIED \
-             (run `os1 gen-baseline` to enable the startup gate)",
+             (run `os gen-baseline` to enable the startup gate)",
             baseline_path.display()
         );
         return Ok(gen_dir);
@@ -429,7 +457,7 @@ fn prepare_served_cache(
         eprint!("{report}");
         Err(std::io::Error::new(
             std::io::ErrorKind::InvalidData,
-            "cache verification failed; refusing to start (set OS1_SKIP_CACHE_VERIFY=1 to override)",
+            "cache verification failed; refusing to start (set OS_SKIP_CACHE_VERIFY=1 to override)",
         ))
     }
 }
@@ -703,7 +731,7 @@ fn pump_game(conn: &mut Connection, pid: usize, world: &mut World) {
         let size = conn.packet_size as usize;
         conn.packet_type = -1;
 
-        eprintln!("[game] recv op={opcode} sz={size} body={:02x?}", &body[..body.len().min(16)]);
+        dbg_log!("[game] recv op={opcode} sz={size} body={:02x?}", &body[..body.len().min(16)]);
         let mut p = Packet::from_vec(body);
         let message = cproto::decode(opcode, &mut p, size);
         world.handle_message(pid, message);

@@ -107,7 +107,7 @@ pub fn unpack_with_names(
         // it, and rewrites _meta.json itself).
         if archive == crate::MAPS_ARCHIVE {
             let s = crate::content::maps_jm2::convert_maps_dir(&archive_dir)?;
-            eprintln!(
+            crate::dbg_log!(
                 "[unpack] maps → jm2: {} regions converted, {} kept as .dat",
                 s.converted, s.kept_dat
             );
@@ -117,7 +117,7 @@ pub fn unpack_with_names(
         // setup header — stays .dat). Same verify-then-convert contract.
         if archive == crate::VORBIS_ARCHIVE {
             let s = crate::vorbis_ogg::convert_vorbis_dir(&archive_dir)?;
-            eprintln!(
+            crate::dbg_log!(
                 "[unpack] vorbis → ogg: {} samples converted, {} kept as .dat",
                 s.converted, s.kept_dat
             );

@@ -243,7 +243,7 @@ pub fn to_ogg(sample: &JagSample, shared_setup: &[u8], serial: u32) -> Result<Ve
     // Comment header — carries the container ints the .ogg has no slot for.
     let mut cm = Vec::new();
     cm.extend_from_slice(b"\x03vorbis");
-    let vendor = "OS1 jag-rev1 vorbis";
+    let vendor = "OS jag-rev1 vorbis";
     cm.extend_from_slice(&(vendor.len() as u32).to_le_bytes());
     cm.extend_from_slice(vendor.as_bytes());
     let (loop_end, looped) = if sample.loop_end_raw < 0 {

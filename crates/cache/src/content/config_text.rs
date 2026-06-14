@@ -123,6 +123,36 @@ pub struct OpDef {
 
 pub type Schema = &'static [OpDef];
 
+/// Server-side npc config keys (Engine-TS `NpcType` opcodes 200+) that the 2007
+/// CLIENT cache does not carry. They may appear in a `.npc` SOURCE file (authored
+/// content like `wanderrange = 2`), but must NOT be written into the cache — the
+/// server reads them separately. `encode` skips any line with one of these keys
+/// instead of failing, so the repacked cache stays CRC-identical to vanilla.
+pub const NPC_SERVER_KEYS: &[&str] = &[
+    "wanderrange",
+    "maxrange",
+    "huntrange",
+    "timer",
+    "respawnrate",
+    "moverestrict",
+    "attackrange",
+    "blockwalk",
+    "huntmode",
+    "defaultmode",
+    "members",
+    "patrol",
+    "givechase",
+    "regenrate",
+    "params",
+    "debugname",
+];
+
+/// Is `key` a server-only config property (not a client-cache opcode)?
+#[must_use]
+pub fn is_server_only_key(key: &str) -> bool {
+    NPC_SERVER_KEYS.contains(&key)
+}
+
 /// Decode a config record to readable text iff it re-encodes BYTE-EXACTLY
 /// (else `None` → caller keeps `.dat`). First line is a `// <kind> <id>`
 /// context comment, ignored on encode.
@@ -216,7 +246,16 @@ pub fn encode(schema: Schema, text: &str, refs: &ModelRefs) -> Option<Vec<u8>> {
             continue;
         }
         let (key, val) = line.split_once('=')?;
-        let def = schema.iter().find(|d| d.name == key.trim())?;
+        let key = key.trim();
+        let Some(def) = schema.iter().find(|d| d.name == key) else {
+            // Server-side property (e.g. wanderrange): kept in the .npc source,
+            // not emitted into the client cache. Unknown non-server keys are a
+            // real error (typo / unsupported opcode) → fail the round-trip.
+            if is_server_only_key(key) {
+                continue;
+            }
+            return None;
+        };
         p.p1(i32::from(def.code));
         let val = val.trim();
 

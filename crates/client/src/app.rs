@@ -369,7 +369,7 @@ impl App {
                     .flat_map(|p| [(p >> 16) as u8, (p >> 8) as u8, *p as u8])
                     .collect();
                 let _ = image::save_buffer(&path, &rgb, WIDTH, HEIGHT, image::ColorType::Rgb8);
-                eprintln!("[framedump] wrote {path}");
+                dbg_log!("[framedump] wrote {path}");
             }
         }
         if let (Some(p), Some(overlay)) = (self.present.as_mut(), self.overlay.as_mut()) {

@@ -4,6 +4,7 @@
 //! in the reference). Entity-dependent ops resolve their handles
 //! through &mut World.
 
+use crate::dbg_log;
 use crate::entity::{npc, player};
 use crate::script::opcode as op;
 use crate::script::state::{Execution, Pointer, ScriptArg, ScriptState};
@@ -524,7 +525,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             let s = state.pop_string();
             let [start, end] = state.pop_ints::<2>();
             // JS `String.substring(start, end)`: clamp each index to [0, len]
-            // independently, then swap them when start > end. OS1 previously took
+            // independently, then swap them when start > end. OS previously took
             // `end - start` chars, returning empty for a reversed range instead.
             let len = s.chars().count() as i32;
             let a = start.clamp(0, len);
@@ -545,7 +546,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         op::STRING_INDEXOF_STRING => {
             // 1:1 with Engine-TS: `text = pop(); find = pop(); text.indexOf(find)` —
             // the first-popped (top) string is searched for the second-popped one.
-            // OS1 previously searched the other way round. `indexOf` is a character
+            // OS previously searched the other way round. `indexOf` is a character
             // index, but `str::find` is a byte offset, so convert.
             let text = state.pop_string();
             let find = state.pop_string();
@@ -609,7 +610,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             state.push_int(1);
         }
         op::MAP_LIVE => {
-            // Engine-TS MAP_LIVE: `NODE_PRODUCTION ? 1 : 0`. OS1 has no
+            // Engine-TS MAP_LIVE: `NODE_PRODUCTION ? 1 : 0`. OS has no
             // production/dev environment split (like MAP_MEMBERS, which is
             // hardcoded above) and runs as a dev server, so it's never live.
             state.push_int(0);
@@ -852,7 +853,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         op::ENUM => {
             // Engine-TS ENUM: look up `key` in enum `enum_id`, pushing the
             // matching value or the enum default. The popped input/output type
-            // args drive Engine-TS's type validation; OS1 instead decides
+            // args drive Engine-TS's type validation; OS instead decides
             // int-vs-string from the enum's stored data (the two agree for any
             // well-formed enum) so a type-arg convention mismatch can't abort a
             // script.
@@ -1479,7 +1480,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             state.push_int((level << 28) | (x << 14) | z);
         }
         op::OBJ_DEL => {
-            // Engine-TS OBJ_DEL: remove the active ground item. OS1's objs are
+            // Engine-TS OBJ_DEL: remove the active ground item. OS's objs are
             // DESPAWN-lifecycle, so there's no config respawn rate to schedule.
             let (x, z, level, id) = state.active_obj.ok_or("no active_obj")?;
             world.remove_obj_broadcast(x, z, level, id);
@@ -1488,7 +1489,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             // Engine-TS OBJ_ADD: drop a ground item owned by the active player
             // with a despawn duration, and make it the active obj. (The
             // stackable split for non-stackable count > 1 and the members /
-            // dummyitem gates need obj config; OS1 drops the one-pile model.)
+            // dummyitem gates need obj config; OS drops the one-pile model.)
             let [coord, obj_id, count, duration] = state.pop_ints::<4>();
             if obj_id != -1 && count != -1 {
                 let (cx, cz, clevel) = ((coord >> 14) & 0x3fff, coord & 0x3fff, (coord >> 28) & 0x3);
@@ -1502,7 +1503,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             // Engine-TS OBJ_ADDALL: like OBJ_ADD but the item is public the moment
             // it drops (Obj.NO_RECEIVER) — every nearby player sees it immediately,
             // with no private-reveal window — and it still becomes the active obj.
-            // (Stackable-split / members / dummyitem gates need obj config; OS1
+            // (Stackable-split / members / dummyitem gates need obj config; OS
             // keeps the one-pile model.)
             let [coord, obj_id, count, duration] = state.pop_ints::<4>();
             if obj_id != -1 && count != -1 {
@@ -1557,7 +1558,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         }
         op::LOC_ADD => {
             // Engine-TS LOC_ADD: spawn a map object (reverting after `duration`,
-            // or -1 = permanent) and make it the active loc. (OS1 keeps a flat
+            // or -1 = permanent) and make it the active loc. (OS keeps a flat
             // per-tile change list; the shape→layer replacement awaits the loc
             // config + base map.)
             let [coord, type_id, angle, shape, duration] = state.pop_ints::<5>();
@@ -1739,20 +1740,20 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             p.appearance_seq = p.appearance_seq.wrapping_add(1);
         }
         op::SESSION_LOG => {
-            // Engine-TS SESSION_LOG: record a session event. OS1 has no session
+            // Engine-TS SESSION_LOG: record a session event. OS has no session
             // DB, so log it (eventType is offset by +2 like the reference).
             let event = state.pop_string();
             let event_type = state.pop_int() + 2;
             let p = active_player(state, world)?;
-            eprintln!("[session] {} type={event_type}: {event}", p.username);
+            dbg_log!("[session] {} type={event_type}: {event}", p.username);
         }
         op::WEALTH_EVENT => {
             // Engine-TS WEALTH_EVENT: record a wealth-transfer event. No wealth
-            // DB in OS1 → log it.
+            // DB in OS → log it.
             let name = state.pop_string();
             let [event_type, count, value] = state.pop_ints::<3>();
             let p = active_player(state, world)?;
-            eprintln!(
+            dbg_log!(
                 "[wealth] {} type={event_type} {count}x{name} value={value}",
                 p.username
             );
@@ -2538,7 +2539,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             // Engine-TS P_RUN: set the *persistent* run toggle and sync the RUN
             // varp (the client's run orb). The move speed is derived from `run`
             // each tick by update_movement, so setting move_speed directly here (as
-            // OS1 did) was overwritten by that recompute before the step ran — the
+            // OS did) was overwritten by that recompute before the step ran — the
             // toggle had no effect and never persisted across ticks.
             state.pointer_check(Pointer::ProtectedActivePlayer)?;
             let run = state.pop_int();
@@ -2587,7 +2588,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         }
         op::RUNENERGY => {
             // Engine-TS RUNENERGY is a *getter* — push the player's run energy
-            // (0..=10000). OS1 previously implemented it as a setter, which both
+            // (0..=10000). OS previously implemented it as a setter, which both
             // corrupted the stack for a reader and silently overwrote the energy.
             let energy = active_player(state, world)?.run_energy;
             state.push_int(energy);
@@ -2776,7 +2777,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         op::NPC_TELE | op::NPC_TELEJUMP => {
             // NPC_TELE snaps but only *jumps* on a level change (jump=false);
             // NPC_TELEJUMP always jumps — 1:1 with the player P_TELEPORT /
-            // P_TELEJUMP split (Engine-TS `teleport` vs `teleJump`). OS1 previously
+            // P_TELEJUMP split (Engine-TS `teleport` vs `teleJump`). OS previously
             // forced a jump for both.
             let coord = state.pop_int();
             let jump = opcode == op::NPC_TELEJUMP;
@@ -2823,7 +2824,7 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         }
         op::NPC_SETHUNTMODE => {
             // Engine-TS NPC_SETHUNTMODE: set the hunt type id (-1 clears).
-            // Engine-TS validates against HuntType config; OS1 has no HuntType
+            // Engine-TS validates against HuntType config; OS has no HuntType
             // decode, so the id is stored unvalidated (the hunt system that
             // consumes it lands later).
             let hunt = state.pop_int();
@@ -3039,7 +3040,7 @@ fn drop_overflow(world: &mut World, pid: usize, obj: i32, count: i32) {
 }
 
 /// Engine-TS config-name fallback: the type's `name` if set, else `"null"`.
-/// (Engine-TS chains `name ?? debugname ?? 'null'`; OS1 configs don't decode a
+/// (Engine-TS chains `name ?? debugname ?? 'null'`; OS configs don't decode a
 /// debugname, so an empty name falls straight through to `"null"`.)
 fn config_name(name: Option<&String>) -> String {
     match name {
@@ -3553,7 +3554,7 @@ mod tests {
         );
         w.npc_info.insert(
             1,
-            NpcInfo { name: "Hans".into(), size: 1, vislevel: -1, op: [Some("Talk-to".into()), None, None, None, None] },
+            NpcInfo { name: "Hans".into(), size: 1, vislevel: -1, op: [Some("Talk-to".into()), None, None, None, None], ..Default::default() },
         );
 
         // Integer readers.
@@ -3593,7 +3594,7 @@ mod tests {
         let mut w = World::new();
         w.loc_info.insert(1530, LocInfo { name: "Door".into(), width: 1, length: 1, ..Default::default() });
         w.obj_info.insert(995, ObjInfo { name: "Coins".into(), ..Default::default() });
-        w.npc_info.insert(1, NpcInfo { name: "Hans".into(), size: 1, vislevel: -1, op: Default::default() });
+        w.npc_info.insert(1, NpcInfo { name: "Hans".into(), size: 1, vislevel: -1, op: Default::default(), ..Default::default() });
 
         // NPC_NAME reads the active npc's type.
         let nid = w.add_npc(1, 3200, 3200, 0).unwrap();
@@ -3958,7 +3959,7 @@ mod tests {
         let mut w = World::new();
         w.npc_info.insert(
             1,
-            NpcInfo { name: "x".into(), size: 1, vislevel: -1, op: [Some("Talk-to".into()), None, None, None, None] },
+            NpcInfo { name: "x".into(), size: 1, vislevel: -1, op: [Some("Talk-to".into()), None, None, None, None], ..Default::default() },
         );
         let pid = w.add_player("p".into(), 3200, 3200, 0).unwrap();
         let nid = w.add_npc(1, 3205, 3200, 0).unwrap();
@@ -4028,6 +4029,7 @@ mod tests {
                 size: 1,
                 vislevel: -1,
                 op: [Some("Talk-to".into()), None, Some("Trade".into()), None, None],
+                ..Default::default()
             },
         );
         let nid = w.add_npc(1, 3200, 3200, 0).unwrap();
@@ -4187,7 +4189,7 @@ mod tests {
     #[test]
     fn divide_and_modulo_by_zero_yield_zero() {
         // Engine-TS divides/mods in JS doubles then ToInt32s the result: a/0 is
-        // ±Infinity → 0, n%0 is NaN → 0, and the script keeps running. OS1 used
+        // ±Infinity → 0, n%0 is NaN → 0, and the script keeps running. OS used
         // to abort on a zero divisor — this pins the 1:1 behaviour.
         let mut world = World::new();
         assert_eq!(pushed(&mut world, &[7, 0], op::DIVIDE), 0, "7 / 0 == 0");
@@ -4223,14 +4225,14 @@ mod tests {
         // The toggle drives movement: update_movement derives Run (and would still
         // next tick — the old direct move_speed set was lost to the recompute).
         world.players[pid].as_mut().unwrap().entity.queue_waypoints(&[(3226, 3222)]);
-        world.players[pid].as_mut().unwrap().update_movement();
+        world.players[pid].as_mut().unwrap().update_movement(None);
         assert_eq!(world.players[pid].as_ref().unwrap().entity.move_speed, MoveSpeed::Run);
 
         // P_RUN 0 clears it → movement walks again.
         run_p_run(&mut world, 0);
         assert!(!world.players[pid].as_ref().unwrap().run, "the toggle is cleared");
         world.players[pid].as_mut().unwrap().entity.queue_waypoints(&[(3230, 3222)]);
-        world.players[pid].as_mut().unwrap().update_movement();
+        world.players[pid].as_mut().unwrap().update_movement(None);
         assert_eq!(world.players[pid].as_ref().unwrap().entity.move_speed, MoveSpeed::Walk);
     }
 
