@@ -144,23 +144,28 @@ impl Default for ServerConfig {
     }
 }
 
+/// Append a message to a crash log in the working dir (best-effort). Used by the
+/// panic hook and the non-panic "server exited" path so a crash is recorded to a
+/// file regardless of how the process was launched (no console/PowerShell
+/// redirection needed — that path is unreliable for a native GUI app on PS 5.1).
+pub fn append_crash_log(log_name: &str, msg: &str) {
+    if let Ok(mut f) = std::fs::OpenOptions::new().create(true).append(true).open(log_name) {
+        use std::io::Write;
+        let _ = f.write_all(msg.as_bytes());
+    }
+}
+
 /// Install a process-wide panic hook that appends each panic — thread name,
-/// payload, location, and a full backtrace — to `log_name` in the working dir,
-/// then chains the default (stderr) hook. Without this a panic on the panel's
-/// background server thread just kills that thread and scrolls off the console,
-/// so a "crash after a while" leaves nothing to diagnose. Call once at startup.
+/// payload, location, and a full backtrace — to `log_name`, then chains the
+/// default (stderr) hook. Without this a panic on the panel's background server
+/// thread just kills that thread and scrolls off the console, so a "crash after
+/// a while" leaves nothing to diagnose. Call once at startup.
 pub fn install_crash_logger(log_name: &'static str) {
     let default = std::panic::take_hook();
     std::panic::set_hook(Box::new(move |info| {
         let bt = std::backtrace::Backtrace::force_capture();
         let tname = std::thread::current().name().unwrap_or("<unnamed>").to_string();
-        let body = format!("\n==== PANIC (thread: {tname}) ====\n{info}\n--- backtrace ---\n{bt}\n");
-        if let Ok(mut f) =
-            std::fs::OpenOptions::new().create(true).append(true).open(log_name)
-        {
-            use std::io::Write;
-            let _ = f.write_all(body.as_bytes());
-        }
+        append_crash_log(log_name, &format!("\n==== PANIC (thread: {tname}) ====\n{info}\n--- backtrace ---\n{bt}\n"));
         default(info);
     }));
 }

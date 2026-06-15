@@ -32,9 +32,9 @@ $exe = Join-Path $PSScriptRoot "target\release\panel.exe"
 if (-not (Test-Path $exe)) { throw "panel.exe not found at $exe (build it without -NoBuild)." }
 
 Write-Host "==> starting server+panel: panel.exe --addr $Addr --content $Content" -ForegroundColor Green
-# Capture the full run to a log + ask for backtraces, so a crash leaves a trace.
-# A panic (incl. the background server thread) is also appended to panel_crash.log.
+# Ask for backtraces; the app appends any crash (panic or server-exit) to
+# panel_crash.log itself (don't pipe a native GUI app's stderr through PS — on
+# PS 5.1 that wraps each line as a NativeCommandError and can abort the app).
 $env:RUST_BACKTRACE = "1"
-$log = Join-Path $PSScriptRoot "server-gui.log"
-Write-Host "==> logging to $log (crashes also in panel_crash.log)" -ForegroundColor DarkGray
-& $exe --addr $Addr --content $Content 2>&1 | Tee-Object -FilePath $log
+Write-Host "==> crashes are logged to panel_crash.log" -ForegroundColor DarkGray
+& $exe --addr $Addr --content $Content

@@ -328,6 +328,7 @@ fn main() -> eframe::Result<()> {
         std::thread::spawn(move || {
             if let Err(e) = server::run(config) {
                 eprintln!("[panel] server exited: {e}");
+                server::append_crash_log("panel_crash.log", &format!("\n==== SERVER EXITED ====\n{e}\n"));
                 // Record the exit so the splash shows it (don't hang forever).
                 // Only meaningful if it died before reaching "listening".
                 let mut s = boot_state.lock().unwrap();

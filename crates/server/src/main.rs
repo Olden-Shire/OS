@@ -54,5 +54,9 @@ fn main() -> std::io::Result<()> {
         }
     }
 
-    server::run(config)
+    if let Err(e) = server::run(config) {
+        server::append_crash_log("server_crash.log", &format!("\n==== SERVER EXITED ====\n{e}\n"));
+        return Err(e);
+    }
+    Ok(())
 }
