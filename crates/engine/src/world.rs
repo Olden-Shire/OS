@@ -140,6 +140,9 @@ pub struct World {
     /// to resolve `param = name, ^const` values when loading server npc props.
     pub constants_int: std::collections::HashMap<String, i32>,
     pub constants_str: std::collections::HashMap<String, String>,
+    /// Category name→id (server-side registry from `category.pack`); resolves the
+    /// `category =` keys on npc/obj/loc. Backs the `*_category` ops.
+    pub category_ids: std::collections::HashMap<String, i32>,
     /// InvType sizes (config group 5), keyed by inv id — the capacity a player
     /// inventory is created at. Backs INV_SIZE and the INV_* slot ops.
     pub inv_sizes: std::collections::HashMap<i32, i32>,
@@ -208,10 +211,11 @@ pub struct LocInfo {
     pub width: i32,
     pub length: i32,
     pub op: [Option<String>; 5],
-    /// Server-side params (Engine-TS `LocType.params`) + category — not in the
-    /// 2007 cache; loaded from `.loc` source by [`World::load_server_loc_props`].
+    /// Server-side params (Engine-TS `LocType.params`) + category id (-1 = none)
+    /// — not in the 2007 cache; loaded from `.loc` source by
+    /// [`World::load_server_loc_props`].
     pub params: std::collections::HashMap<u32, ParamValue>,
-    pub category: Option<String>,
+    pub category: i32,
 }
 
 /// Obj config fields the config-query ops read (OC_NAME / COST / MEMBERS /
@@ -227,10 +231,10 @@ pub struct ObjInfo {
     pub op: [Option<String>; 5],
     pub iop: [Option<String>; 5],
     /// Server-side params (Engine-TS `ObjType.params`) — equipment bonuses,
-    /// death_drop, … — + category. Not in the 2007 cache; loaded from `.obj`
-    /// source by [`World::load_server_obj_props`].
+    /// death_drop, … — + category id (-1 = none). Not in the 2007 cache; loaded
+    /// from `.obj` source by [`World::load_server_obj_props`].
     pub params: std::collections::HashMap<u32, ParamValue>,
-    pub category: Option<String>,
+    pub category: i32,
 }
 
 /// Npc config fields the config-query ops read (NC_NAME / SIZE / VISLEVEL / OP).
@@ -263,9 +267,10 @@ pub struct NpcInfo {
     /// Type params (Engine-TS `NpcType.params`): param id → value, from the
     /// `param = name, value` lines. Read by NPC_PARAM / NC_PARAM.
     pub params: std::collections::HashMap<u32, ParamValue>,
-    /// Category name (Engine-TS NpcType opcode 18) — server-side here (not in
-    /// our 2007 cache). Stored for future category-driven behaviour.
-    pub category: Option<String>,
+    /// Category id (Engine-TS NpcType opcode 18) — server-side here (not in our
+    /// 2007 cache); resolved from the `category =` name via `category.pack`.
+    /// -1 = none. Read by NPC_CATEGORY / NC_CATEGORY.
+    pub category: i32,
 }
 
 /// A param value carried by a config (Engine-TS `ParamMap` value): int or string.
@@ -310,7 +315,7 @@ impl Default for NpcInfo {
             move_restrict: crate::entity::MoveRestrict::Normal,
             base_levels: [1; crate::entity::npc::NPC_STAT_COUNT],
             params: std::collections::HashMap::new(),
-            category: None,
+            category: -1,
         }
     }
 }
@@ -437,6 +442,7 @@ impl World {
             param_defs: std::collections::HashMap::new(),
             constants_int: std::collections::HashMap::new(),
             constants_str: std::collections::HashMap::new(),
+            category_ids: std::collections::HashMap::new(),
             inv_sizes: std::collections::HashMap::new(),
             delayed_objs: Vec::new(),
             npc_events: Vec::new(),
@@ -465,7 +471,7 @@ impl World {
                 );
                 self.loc_info.insert(
                     id,
-                    LocInfo { name: lt.name, width: lt.width, length: lt.length, op: lt.op, ..Default::default() },
+                    LocInfo { name: lt.name, width: lt.width, length: lt.length, op: lt.op, category: -1, ..Default::default() },
                 );
             }
         }
@@ -483,6 +489,7 @@ impl World {
                         certtemplate: ot.certtemplate,
                         op: ot.op,
                         iop: ot.iop,
+                        category: -1,
                         ..Default::default()
                     },
                 );
@@ -599,7 +606,7 @@ impl World {
                     continue;
                 };
                 let (params, category) = self.parse_server_params(&text);
-                if params.is_empty() && category.is_none() {
+                if params.is_empty() && category < 0 {
                     continue;
                 }
                 let info = match kind {
@@ -611,7 +618,7 @@ impl World {
                     if !params.is_empty() {
                         *p_out = params;
                     }
-                    if category.is_some() {
+                    if category >= 0 {
                         *c_out = category;
                     }
                     applied += 1;
@@ -628,9 +635,9 @@ impl World {
     fn parse_server_params(
         &self,
         text: &str,
-    ) -> (std::collections::HashMap<u32, ParamValue>, Option<String>) {
+    ) -> (std::collections::HashMap<u32, ParamValue>, i32) {
         let mut params = std::collections::HashMap::new();
-        let mut category = None;
+        let mut category = -1;
         let mut param_lines: Vec<(String, String)> = Vec::new();
         for line in text.lines() {
             let t = line.trim();
@@ -645,7 +652,7 @@ impl World {
                         param_lines.push((pn.trim().to_string(), pv.trim().to_string()));
                     }
                 }
-                "category" => category = Some(v.to_string()),
+                "category" => category = self.category_ids.get(v).copied().unwrap_or(-1),
                 _ => {}
             }
         }
@@ -670,9 +677,10 @@ impl World {
         let Some(id) = id else { return false };
         let Some(info) = self.npc_info.get_mut(&id) else { return false };
         let mut applied = false;
-        // `param = name, value` lines, resolved after the loop (resolution reads
-        // self.param_ids/defs/constants, which can't be borrowed while `info` is).
+        // `param =`/`category =` resolved after the loop (resolution reads
+        // self.param_ids/defs/constants/category_ids — can't borrow while `info` is).
         let mut param_lines: Vec<(String, String)> = Vec::new();
+        let mut category_name: Option<String> = None;
         for line in text.lines() {
             let t = line.trim();
             if t.is_empty() || t.starts_with("//") {
@@ -754,7 +762,7 @@ impl World {
                     }
                 }
                 "category" => {
-                    info.category = Some(v.to_string());
+                    category_name = Some(v.to_string());
                     applied = true;
                 }
                 _ => {}
@@ -769,6 +777,12 @@ impl World {
                 && let Some(info) = self.npc_info.get_mut(&id)
             {
                 info.params.insert(pid, value);
+            }
+        }
+        if let Some(cn) = category_name {
+            let cid = self.category_ids.get(&cn).copied().unwrap_or(-1);
+            if let Some(info) = self.npc_info.get_mut(&id) {
+                info.category = cid;
             }
         }
         applied
@@ -830,6 +844,19 @@ impl World {
                     let name = name.trim();
                     if name.parse::<u32>().is_err() {
                         self.param_ids.insert(name.to_string(), id);
+                    }
+                }
+            }
+        }
+        // category.pack — id = name (server-side id↔name registry).
+        if let Ok(t) = std::fs::read_to_string(content_dir.join("pack").join("category.pack")) {
+            for line in t.lines() {
+                if let Some((id, name)) = line.split_once('=')
+                    && let Ok(id) = id.trim().parse::<i32>()
+                {
+                    let name = name.trim();
+                    if name.parse::<i32>().is_err() {
+                        self.category_ids.insert(name.to_string(), id);
                     }
                 }
             }

@@ -847,6 +847,27 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             let params = world.loc_info.get(&type_id).map(|i| &i.params);
             push_param(state, &world.param_defs, params, param_id);
         }
+        // Category id (server-side, resolved from `category =`; -1 = none).
+        op::NC_CATEGORY => {
+            let id = state.pop_int();
+            state.push_int(world.npc_info.get(&id).map_or(-1, |i| i.category));
+        }
+        op::OC_CATEGORY => {
+            let id = state.pop_int();
+            state.push_int(world.obj_info.get(&id).map_or(-1, |i| i.category));
+        }
+        op::LC_CATEGORY => {
+            let id = state.pop_int();
+            state.push_int(world.loc_info.get(&id).map_or(-1, |i| i.category));
+        }
+        op::NPC_CATEGORY => {
+            let type_id = active_npc(state, world)?.type_id;
+            state.push_int(world.npc_info.get(&type_id).map_or(-1, |i| i.category));
+        }
+        op::LOC_CATEGORY => {
+            let id = state.active_loc.ok_or("no active_loc")?.3;
+            state.push_int(world.loc_info.get(&id).map_or(-1, |i| i.category));
+        }
         op::NC_SIZE => {
             let id = state.pop_int();
             state.push_int(world.npc_info.get(&id).map_or(1, |i| i.size));
@@ -3295,6 +3316,14 @@ mod tests {
         w.obj_info.insert(3, obj);
         assert_eq!(pushed(&mut w, &[3, 0], op::OC_PARAM), 7);
         assert_eq!(pushed(&mut w, &[999, 0], op::OC_PARAM), -1, "unknown obj -> default");
+
+        // category: `category =` name resolves to its id, read by NC_CATEGORY.
+        w.category_ids.insert("troll_spectator".into(), 151);
+        w.npc_info.insert(9, crate::world::NpcInfo::default());
+        assert!(w.apply_npc_server_props("// npc 9\ncategory=troll_spectator\n"));
+        assert_eq!(w.npc_info[&9].category, 151);
+        assert_eq!(pushed(&mut w, &[9], op::NC_CATEGORY), 151);
+        assert_eq!(pushed(&mut w, &[9999], op::NC_CATEGORY), -1, "unknown -> -1");
     }
 
     #[test]
