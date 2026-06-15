@@ -104,6 +104,11 @@
              updates interface.pack, the .if filename/section, and all refs. -->
         <renameHandler
             implementation="com.os.runescript.plugin.refactor.RsInterfaceRenameHandler"/>
+        <!-- Shift+F6 on a config named ref (readyanim=seq_447, models=model_1491,
+             npc/loc/obj names) renames the <type>.pack line, the sharded config/
+             model file, and every reference across config files. -->
+        <renameHandler
+            implementation="com.os.runescript.plugin.refactor.ConfigSymbolRenameHandler"/>
     </extensions>
 
     <actions>
