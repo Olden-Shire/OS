@@ -699,9 +699,10 @@ fn draw_layer(
                         // v1 graphic — just plot.
                         pix.plot_sprite(renderx, rendery);
                     }
-                } else {
-                    pix2d::draw_rect(renderx, rendery, com.width.max(1), com.height.max(1), 0x303030);
                 }
+                // Java draws nothing when the image is null (only
+                // `IfType.loadingAsset -> componentUpdated`, an async-load flag
+                // not yet ported); no placeholder box.
             }
             9 => {
                 // line — Bresenham via Pix2D::line. lineWidth > 1 follows

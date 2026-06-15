@@ -1,7 +1,7 @@
 // obj 3771
 cost = 250
 model = obj_fremennik_shirt_3767
-manwear = obj_fremennik_shirt_3767_man, 0
+manwear = obj_viking_top_darkbrown_manwear, 0
 manwear2 = 292
 manwear3 = 4391
 womanwear = obj_druids_robe_540_woman, 0

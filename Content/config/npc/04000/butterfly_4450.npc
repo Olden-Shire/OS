@@ -1,7 +1,7 @@
 // npc 4450
 size = 1
-walkanim = seq_362
-readyanim = seq_362
+walkanim = butterfly_hover
+readyanim = butterfly_hover
 vislevel = 0
 recol1s = 32889
 recol1d = 5351
@@ -10,4 +10,4 @@ recol2d = 5351
 recol3s = 39892
 recol3d = 5351
 name = Butterfly
-model1 = obj_butterfly_9972
+model1 = npc_butterfly2

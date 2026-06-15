@@ -1,10 +1,10 @@
 // npc 2722
-readyanim = seq_447
-walkanim = seq_448
+readyanim = fishingspot_ready
+walkanim = fishingspot_walk
 size = 1
 nominimap = true
 op1 = Use-rod
 op4 = hidden
 vislevel = 0
 name = Fishing spot
-model1 = model_1491
+model1 = compofishspot_8

@@ -1,7 +1,7 @@
 // npc 1280
 size = 1
-walkanim = seq_362
-readyanim = seq_362
+walkanim = butterfly_hover
+readyanim = butterfly_hover
 nominimap = true
 vislevel = 0
 recol1s = 39029
@@ -9,4 +9,4 @@ recol1d = 8501
 recol2s = 4506
 recol2d = 28839
 name = Butterfly
-model1 = obj_butterfly_9970
+model1 = npc_butterfly

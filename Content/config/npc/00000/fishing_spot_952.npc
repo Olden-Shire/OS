@@ -4,9 +4,11 @@ size = 1
 op1 = Net
 op3 = hidden
 nominimap = true
-readyanim = seq_447
-walkanim = seq_448
+readyanim = fishingspot_ready
+walkanim = fishingspot_walk
 name = Fishing spot
-model1 = model_1491
+model1 = compofishspot_8
 //Server
+desc=I can see fish swimming in the water.
 wanderrange=0
+moverestrict=nomove

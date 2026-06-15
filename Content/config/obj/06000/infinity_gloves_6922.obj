@@ -1,7 +1,7 @@
 // obj 6922
 model = obj_cooking_gauntlets
 manwear = obj_cooking_gauntlets_man, 0
-womanwear = obj_cooking_gauntlets_woman, 0
+womanwear = obj_gauntlets_of_cooking_womanwear, 0
 xof2d = 8
 yof2d = -8
 zoom2d = 930

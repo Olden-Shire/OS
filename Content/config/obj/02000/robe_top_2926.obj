@@ -1,6 +1,6 @@
 // obj 2926
 model = obj_priest_gown_426
-manwear = obj_druids_robe_540_man, 0
+manwear = obj_priest_gown_manwear2, 0
 womanwear = obj_druids_robe_540_woman, 0
 manwear2 = 292
 womanwear2 = 456

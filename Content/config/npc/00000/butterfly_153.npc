@@ -1,8 +1,11 @@
 // npc 153
 size = 1
-walkanim = seq_362
-readyanim = seq_362
+walkanim = butterfly_hover
+readyanim = butterfly_hover
 nominimap = true
 vislevel = 0
 name = Butterfly
-model1 = obj_butterfly_9970
+model1 = npc_butterfly
+//Server
+desc=These look much better in the wild.
+wanderrange=10

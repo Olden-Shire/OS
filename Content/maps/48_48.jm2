@@ -9028,23 +9028,23 @@
 3 56 56: 1793 21 3
 
 ==== NPC ====
-0 3 13: 942
-0 10 5: 153
-0 13 50: 949
-0 20 10: 153
-0 21 14: 155
+0 3 13: 942 // Master Chef
+0 10 5: 153 // Butterfly
+0 13 50: 949 // Quest Guide
+0 20 10: 153 // Butterfly
+0 21 14: 155 // Butterfly
 0 22 35: 945 // runescape guide
-0 25 13: 155
+0 25 13: 155 // Butterfly
 0 27 18: 952 // fishing spot
 0 29 20: 952 // fishing spot
 0 31 20: 952 // fishing spot
 0 31 23: 943 // survival expert
-0 37 18: 153
-0 40 21: 153
-0 48 53: 953
-0 50 53: 953
-0 53 12: 154
-0 53 34: 954
-0 55 52: 947
-0 57 19: 155
-0 63 12: 155
+0 37 18: 153 // Butterfly
+0 40 21: 153 // Butterfly
+0 48 53: 953 // Banker
+0 50 53: 953 // Banker
+0 53 12: 154 // Butterfly
+0 53 34: 954 // Brother Brace
+0 55 52: 947 // Financial Advisor
+0 57 19: 155 // Butterfly
+0 63 12: 155 // Butterfly

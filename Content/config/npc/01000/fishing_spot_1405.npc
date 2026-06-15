@@ -1,11 +1,11 @@
 // npc 1405
 vislevel = 0
-readyanim = seq_447
-walkanim = seq_448
+readyanim = fishingspot_ready
+walkanim = fishingspot_walk
 nominimap = true
 op1 = Net
 op3 = Harpoon
 op4 = hidden
 op5 = hidden
 name = Fishing spot
-model1 = model_1491
+model1 = compofishspot_8
