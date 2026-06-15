@@ -7,21 +7,18 @@ reaches your server over `wss://`.
 ```
 dev browser ── https ──> GitHub Pages (wasm client)
      │
-     └─ wss://game.idletree.net ──> TLS terminator (Caddy or Cloudflare) ──> 127.0.0.1:40001 (server)
+     └─ wss://game.idletree.net ──> Cloudflare Tunnel ──> 127.0.0.1:40001 (server)
 ```
 
 Pages is HTTPS-only, and a browser on an HTTPS page can only open a **secure**
 `wss://` socket. The server speaks plain `ws`, so something in front of it must
-terminate TLS. Two ways:
-
-- **A. Caddy + Let's Encrypt (direct IP)** - DNS A record -> your IP, Caddy gets a
-  real cert and reverse-proxies `wss`->`ws`. The active setup.
-- **B. Cloudflare Tunnel** - no port-forwarding, hides your IP, but DNS must be on
-  Cloudflare.
+terminate TLS. We use **Cloudflare Tunnel**: no port-forwarding, hides your IP,
+and `cloudflared` terminates TLS and proxies the WebSocket upgrade to the local
+server. (DNS must be on Cloudflare.)
 
 The server multiplexes JS5 + game on one port, so a single hostname covers both.
 
-## Enable Pages (both options, one time)
+## Enable Pages (one time)
 Repo **Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"**.
 `ci.yml` then runs the full `build.ps1` and deploys the wasm bundle it produced to
 Pages on each push to master (PRs build+test only). Default URL:
@@ -36,40 +33,7 @@ On this HTTPS page the client connects with `wss://` automatically (`ws_socket.r
 A `?server=host` in the URL still overrides the default; local/dev builds (the
 committed `index.html`, no inject) keep targeting `127.0.0.1`.
 
-## A. Caddy + Let's Encrypt (direct IP)
-
-DNS A record `game.idletree.net` -> your public IP, **Cloudflare DNS-only (grey
-cloud)** so Let's Encrypt can validate this origin (orange cloud intercepts 80/443
-and serves Cloudflare's cert instead). Forward TCP **80 + 443** on the router to
-this PC.
-
-```powershell
-winget install CaddyServer.Caddy
-.\run-server.ps1                          # server on 0.0.0.0:40001
-caddy run --config deploy\Caddyfile       # gets the cert, proxies wss -> :40001
-```
-`deploy/Caddyfile`:
-```
-game.idletree.net {
-    reverse_proxy 127.0.0.1:40001
-}
-```
-Caddy auto-obtains + renews the cert (HTTP-01 on :80 / TLS-ALPN on :443) and
-upgrades WebSocket connections.
-
-**Keep the orange cloud?** Use Caddy's DNS-01 challenge instead of opening :80:
-install the Cloudflare-DNS build from caddyserver.com/download (module
-`github.com/caddy-dns/cloudflare`), make a Cloudflare API token (Zone:DNS:Edit),
-and use:
-```
-game.idletree.net {
-    tls { dns cloudflare {env.CF_API_TOKEN} }
-    reverse_proxy 127.0.0.1:40001
-}
-```
-Then only :443 needs forwarding and the record can stay proxied.
-
-## B. Cloudflare Tunnel (alternative, no port-forward)
+## Cloudflare Tunnel
 
 Needs the domain's DNS on Cloudflare (Add a site -> set the given nameservers at
 your registrar).
@@ -96,5 +60,5 @@ prints a `https://<random>.trycloudflare.com` - use it as `?server=<random>.tryc
 ## Notes
 - A custom Pages domain (e.g. `play.idletree.net` -> CNAME `olden-shire.github.io`,
   set in Pages settings) gives `https://play.idletree.net/?server=game.idletree.net`.
-- Allow the server through the local firewall on :40001 (Caddy/cloudflared reach it
-  on localhost, so usually fine).
+- Allow the server through the local firewall on :40001 (cloudflared reaches it on
+  localhost, so usually fine).
