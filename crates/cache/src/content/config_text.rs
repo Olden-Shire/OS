@@ -234,6 +234,9 @@ pub type Schema = &'static [OpDef];
 /// server reads them separately. `encode` skips any line with one of these keys
 /// instead of failing, so the repacked cache stays CRC-identical to vanilla.
 pub const NPC_SERVER_KEYS: &[&str] = &[
+    // examine text — server-authored from rev1 on (dropped from the client cache
+    // config, where it was npc opcode 3 in the 2004 engine).
+    "desc",
     "wanderrange",
     "maxrange",
     "huntrange",

@@ -222,6 +222,9 @@ pub struct NpcInfo {
     pub size: i32,
     pub vislevel: i32,
     pub op: [Option<String>; 5],
+    /// Examine text (`desc` in the `.npc` source). Server-authored — not in the
+    /// 2007 client cache — and sent to the client on OPNPCE (examine).
+    pub desc: String,
     // Server-side AI config (Engine-TS NpcType, opcodes 200+). Absent from the
     // 2007 client cache; sourced from the `.npc` text by `load_server_npc_props`.
     // Defaults mirror Engine-TS NpcType so an un-authored npc behaves as before.
@@ -241,6 +244,7 @@ impl Default for NpcInfo {
             size: 1,
             vislevel: -1,
             op: [None, None, None, None, None],
+            desc: String::new(),
             wander_range: NPC_WANDERRANGE,
             max_range: NPC_MAXRANGE,
             attack_range: NPC_ATTACKRANGE,
@@ -537,6 +541,10 @@ impl World {
                 }
                 "givechase" => {
                     info.give_chase = !matches!(v, "false" | "0" | "no");
+                    applied = true;
+                }
+                "desc" => {
+                    info.desc = v.to_string();
                     applied = true;
                 }
                 _ => {}
@@ -2925,6 +2933,23 @@ impl World {
                     while self.chat_log.len() > 256 {
                         self.chat_log.pop_front();
                     }
+                }
+            }
+            ClientMessage::ExamineNpc { type_id } => {
+                // Reply with the npc's server-authored examine text (`desc`),
+                // falling back to a neutral line for un-authored npcs.
+                let (desc, name) = self.npc_info.get(&type_id)
+                    .map(|i| (i.desc.clone(), i.name.clone()))
+                    .unwrap_or_default();
+                let text = if !desc.is_empty() {
+                    desc
+                } else if !name.is_empty() {
+                    format!("It's {name}.")
+                } else {
+                    "Nothing interesting happens.".to_string()
+                };
+                if let Some(p) = self.players[pid].as_mut() {
+                    p.write(msg::message_game(&text));
                 }
             }
             ClientMessage::CloseModal => {

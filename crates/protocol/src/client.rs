@@ -121,6 +121,10 @@ pub enum ClientMessage {
     /// The player closed the open modal interface client-side (Escape / click
     /// away). Empty body; defers a modal close on the server.
     CloseModal,
+    /// OPNPCE — the player examined an npc. Carries the npc CONFIG type id (the
+    /// client resolves the multinpc redirect before sending); the server replies
+    /// with that type's `desc` examine text.
+    ExamineNpc { type_id: i32 },
     NoOp,
 }
 
@@ -170,6 +174,8 @@ pub fn decode(opcode: u8, buf: &mut Packet, length: usize) -> ClientMessage {
         27 => ClientMessage::ResumeCountDialog { value: buf.g4() },
         // CLOSE_MODAL — the player dismissed the open interface (empty body).
         129 => ClientMessage::CloseModal,
+        // OPNPCE — examine npc: p2(type id) (client sends `p1_enc(52); p2(id)`).
+        52 => ClientMessage::ExamineNpc { type_id: buf.g2() },
         _ => ClientMessage::NoOp,
     }
 }
