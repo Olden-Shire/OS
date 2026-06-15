@@ -421,8 +421,26 @@ fn prepare_served_cache(
         return Ok(cache_dir);
     }
 
-    // Pack Content → a real cache: these are the bytes we actually serve.
     let gen_dir = std::env::temp_dir().join("os_content_cache");
+    let hash_path = gen_dir.join(".content_hash");
+    stage("checking content");
+    let content_hash = content_source_hash(content_dir, &mut |d, t| {
+        stage(&format!("checking content {d}/{t}"));
+    })
+    .to_string();
+
+    // Skip the (slow) repack + verify when the Content tree is unchanged since the
+    // last successful build AND the generated cache is still on disk. The hash is
+    // written only after a successful verify, so a previously-failed build never
+    // gets skipped, and a wiped temp dir forces a fresh pack.
+    let cached_ok = gen_dir.join("main_file_cache.dat2").exists()
+        && std::fs::read_to_string(&hash_path).map(|s| s.trim() == content_hash).unwrap_or(false);
+    if cached_ok {
+        eprintln!("[server] Content unchanged; reusing cached pack at {}", gen_dir.display());
+        return Ok(gen_dir);
+    }
+
+    // Pack Content → a real cache: these are the bytes we actually serve.
     stage("packing cache");
     eprintln!("[server] packing Content ({}) -> {} …", content_dir.display(), gen_dir.display());
     cache::content::pack::pack_with_progress(content_dir, &gen_dir, &mut |done, total| {
@@ -441,6 +459,7 @@ fn prepare_served_cache(
              (run `os gen-baseline` to enable the startup gate)",
             baseline_path.display()
         );
+        let _ = std::fs::write(&hash_path, &content_hash);
         return Ok(gen_dir);
     }
 
@@ -452,6 +471,7 @@ fn prepare_served_cache(
     })?;
     if report.is_ok() {
         eprintln!("[server] {report}");
+        let _ = std::fs::write(&hash_path, &content_hash);
         Ok(gen_dir)
     } else {
         eprint!("{report}");
@@ -551,6 +571,47 @@ fn compile_server_scripts(config: &ServerConfig) -> Result<(), String> {
 
 /// Fingerprint every `.rs2` source (path + size + mtime) so we only recompile on
 /// change.
+/// Cheap change-detection hash of the whole Content tree (every file's path +
+/// length + mtime). Lets `prepare_served_cache` skip the slow repack+verify when
+/// nothing changed since the last successful build. Mirrors `scripts_source_hash`
+/// but covers all files, not just `.rs2`.
+fn content_source_hash(dir: &Path, progress: &mut dyn FnMut(usize, usize)) -> u64 {
+    let mut files: Vec<PathBuf> = Vec::new();
+    let mut stack = vec![dir.to_path_buf()];
+    while let Some(d) = stack.pop() {
+        if let Ok(rd) = std::fs::read_dir(&d) {
+            for e in rd.flatten() {
+                let p = e.path();
+                if p.is_dir() {
+                    stack.push(p);
+                } else {
+                    files.push(p);
+                }
+            }
+        }
+    }
+    files.sort();
+    let total = files.len();
+    let mut h = std::collections::hash_map::DefaultHasher::new();
+    for (i, f) in files.iter().enumerate() {
+        f.to_string_lossy().hash(&mut h);
+        if let Ok(md) = std::fs::metadata(f) {
+            md.len().hash(&mut h);
+            if let Ok(t) = md.modified() {
+                if let Ok(d) = t.duration_since(std::time::UNIX_EPOCH) {
+                    d.as_secs().hash(&mut h);
+                }
+            }
+        }
+        // The stat loop over ~185k files is the bulk of a restart's boot time —
+        // report it so the splash shows a real bar instead of hanging silently.
+        if i % 4096 == 0 || i + 1 == total {
+            progress(i + 1, total);
+        }
+    }
+    h.finish()
+}
+
 fn scripts_source_hash(dir: &Path) -> u64 {
     let mut files: Vec<PathBuf> = Vec::new();
     let mut stack = vec![dir.to_path_buf()];
