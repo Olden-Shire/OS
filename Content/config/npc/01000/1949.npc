@@ -1,5 +1,5 @@
 // npc 1949
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 vislevel = 1
 multivar = 382, 65535, 65535 65535 65535 65535 1950 1950

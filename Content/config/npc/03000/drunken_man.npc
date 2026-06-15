@@ -1,12 +1,12 @@
 // npc 3222
 size = 1
-walkanim = 2769
-readyanim = 2770
+walkanim = seq_2769
+readyanim = seq_2770
 op2 = Attack
 op3 = Pickpocket
 op1 = Talk-to
 vislevel = 3
 recol = 25238/32916 8741/10508 4626/908
 name = Drunken man
-models = 215 246 11811 170 10218 254 185
-headmodels = 53
+models = obj_fremennik_helm_man model_246 model_11811 obj_druids_robe_540_man model_10218 obj_mime_legs_man obj_boots_of_lightness_88_man
+headmodels = obj_man

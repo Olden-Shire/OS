@@ -2,10 +2,10 @@
 size = 1
 resizeh = 135
 resizev = 140
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 name = Denath
-models = 9999 6131 10001 9998 10000 181 9986
-headmodels = 63 6129 9997
+models = model_9999 model_6131 model_10001 model_9998 model_10000 obj_vyrewatch_shoes_9638_man obj_demonic_sigil_wear
+headmodels = obj_rogue model_6129 model_9997

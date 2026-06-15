@@ -1,10 +1,10 @@
 // npc 931
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op2 = Attack
 vislevel = 90
 recol = 4550/5681 43072/5681 61/6044 25238/6044 908/6044 4626/5681
 name = Jungle savage
-models = 231 246 309 173 176 266 181 540
-headmodels = 64
+models = model_231 model_246 model_309 model_173 model_176 obj_iron_plateskirt_1081_man obj_vyrewatch_shoes_9638_man obj_bronze_spear_1237_wear
+headmodels = model_64

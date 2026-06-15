@@ -1,7 +1,7 @@
 // npc 3844
 size = 1
-walkanim = 5479
-readyanim = 5483
+walkanim = seq_5479
+readyanim = seq_5483
 vislevel = 64
 name = Skeleton Mage
-models = 21196
+models = model_21196

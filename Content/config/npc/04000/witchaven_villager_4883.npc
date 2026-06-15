@@ -1,10 +1,10 @@
 // npc 4883
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 4626/4550 43072/4550 21526/12467
 name = Witchaven villager
-models = 14339 217 10304 12085 173 177 10218 15005 181 4390
-headmodels = 14335 55 18187
+models = model_14339 model_217 model_10304 model_12085 model_173 obj_leather_vambraces_1063_man model_10218 model_15005 obj_vyrewatch_shoes_9638_man model_4390
+headmodels = model_14335 obj_farmer model_18187

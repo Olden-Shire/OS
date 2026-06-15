@@ -1,8 +1,8 @@
 // npc 4762
 vislevel = 0
 size = 1
-readyanim = 6539
-walkanim = 6541
+readyanim = seq_6539
+walkanim = seq_6541
 name = Shadowy figure
-models = 26160
-headmodels = 26112
+models = model_26160
+headmodels = model_26112

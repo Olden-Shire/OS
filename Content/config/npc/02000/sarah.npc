@@ -1,11 +1,11 @@
 // npc 2304
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 alwaysontop = true
 recol = 54397/3268 25238/4387 8741/2355 43072/4550 6798/6817
 name = Sarah
-models = 378 467 348 353 421 7366
-headmodels = 103
+models = model_378 obj_white_apron_1005_woman obj_druids_robe_540_woman model_353 obj_desert_robes_6386_woman obj_gardening_boots_5345_woman
+headmodels = model_103

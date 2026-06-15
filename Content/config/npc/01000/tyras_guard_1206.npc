@@ -1,11 +1,11 @@
 // npc 1206
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 vislevel = 0
 recol = 10004/61 4626/61 7566/61 7446/41 25238/61 54397/41410
 name = Tyras guard
-models = 164 185 179 4019 3329 313 555
-headmodels = 17348
+models = model_164 obj_boots_of_lightness_88_man obj_cooking_gauntlets_man obj_tyras_helm_9629_man model_3329 model_313 obj_bronze_halberd_3190_wear
+headmodels = model_17348

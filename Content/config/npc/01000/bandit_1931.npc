@@ -1,12 +1,12 @@
 // npc 1931
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op3 = Pickpocket
 op2 = Attack
 op1 = Talk-to
 vislevel = 57
 recol = 4550/4647 25238/127 6798/10508 8741/127 7700/926 11200/926
 name = Bandit
-models = 215 254 248 170 176 181 323 292 188 533
-headmodels = 53 80 30
+models = obj_fremennik_helm_man obj_mime_legs_man model_248 obj_druids_robe_540_man model_176 obj_vyrewatch_shoes_9638_man obj_cape_1007_man obj_priest_gown_426_man model_188 obj_iron_dagger_1203_wear
+headmodels = obj_man model_80 model_30

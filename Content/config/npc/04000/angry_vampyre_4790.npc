@@ -2,10 +2,10 @@
 op2 = Attack
 resizeh = 190
 resizev = 158
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 64
 recol = 25238/0 4626/94 4550/94 908/0 7236/94 54375/931
 name = Angry vampyre
-models = 4089 16346 10133 16345 176 275 181
-headmodels = 6216
+models = model_4089 model_16346 model_10133 model_16345 model_176 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
+headmodels = model_6216

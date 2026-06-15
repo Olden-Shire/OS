@@ -1,8 +1,8 @@
 // npc 121
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op2 = Attack
 vislevel = 9
 name = Dwarf
-models = 2970 2980 2978 2984 2985 2993
+models = model_2970 model_2980 model_2978 model_2984 model_2985 model_2993

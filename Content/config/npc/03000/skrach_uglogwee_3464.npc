@@ -1,10 +1,10 @@
 // npc 3464
 vislevel = 0
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 recol = 6482/6478 784/22412 8722/22412
 name = Skrach Uglogwee
-models = 6760 8682
-headmodels = 141
+models = model_6760 model_8682
+headmodels = model_141

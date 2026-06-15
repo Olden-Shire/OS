@@ -1,10 +1,10 @@
 // npc 1617
 size = 2
-walkanim = 1544
-readyanim = 1545
+walkanim = seq_1544
+readyanim = seq_1545
 resizeh = 110
 resizev = 110
 op2 = Attack
 vislevel = 61
 name = Basilisk
-models = 5064
+models = obj_basilisk

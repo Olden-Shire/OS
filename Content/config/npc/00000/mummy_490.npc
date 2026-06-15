@@ -1,6 +1,6 @@
 // npc 490
 size = 2
 vislevel = 0
-readyanim = 6856
+readyanim = seq_6856
 name = Mummy
-models = 27112
+models = model_27112

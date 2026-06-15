@@ -1,10 +1,10 @@
 // npc 265
 vislevel = 0
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 22426/53155 8741/53155
 name = Jeremy Servil
-models = 2918 2910 2906
-headmodels = 53
+models = model_2918 model_2910 model_2906
+headmodels = obj_man

@@ -1,9 +1,9 @@
 // npc 627
 size = 1
 vislevel = 0
-walkanim = 205
-readyanim = 205
+walkanim = seq_205
+readyanim = seq_205
 recol = 37/5049
 name = Gnome baller
-models = 2914 2905 2924
-headmodels = 21
+models = model_2914 model_2905 model_2924
+headmodels = obj_gnome

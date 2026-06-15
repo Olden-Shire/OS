@@ -1,9 +1,9 @@
 // npc 1676
 size = 2
-walkanim = 1624
-readyanim = 1625
+walkanim = seq_1624
+readyanim = seq_1625
 op2 = Attack
 alwaysontop = true
 vislevel = 51
 name = Experiment
-models = 5176
+models = model_5176

@@ -1,10 +1,10 @@
 // npc 3158
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Return-Home
 recol = 8741/542 25238/788 7281/6490 22177/2721 61/6856 6798/6453
 name = Bill Teach
-models = 190 215 246 14187 162 10218 5218
-headmodels = 53 31
+models = obj_pirates_hat_2651_man obj_fremennik_helm_man model_246 model_14187 obj_fremennik_shirt_3767_man model_10218 model_5218
+headmodels = obj_man model_31

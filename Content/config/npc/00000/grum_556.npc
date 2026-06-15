@@ -1,11 +1,11 @@
 // npc 556
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 43072/4550 8741/53159 25238/46364 10659/46364 9104/54587 5652/55178
 name = Grum
-models = 198 215 245 247 292 327 151 176 257
-headmodels = 53 79 40 78
+models = obj_blue_beret_2633_man obj_fremennik_helm_man model_245 model_247 obj_priest_gown_426_man model_327 model_151 model_176 model_257
+headmodels = obj_man model_79 model_40 model_78

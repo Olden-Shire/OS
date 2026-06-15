@@ -1,11 +1,11 @@
 // npc 1526
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op4 = Trade-with
 recol = 6798/61 4550/4574 8741/1604 906/0 25238/0
 name = Lanthus
-models = 235 250 292 162 176 274 185 326 3189 238
-headmodels = 67 70 82
+models = model_235 model_250 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 model_274 obj_boots_of_lightness_88_man model_326 obj_cape_of_legends_1052_man model_238
+headmodels = model_67 model_70 model_82

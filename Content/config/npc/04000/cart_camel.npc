@@ -1,11 +1,11 @@
 // npc 4979
 vislevel = 0
 size = 4
-readyanim = 5044
+readyanim = seq_5044
 resizeh = 228
 resizev = 228
 op1 = Talk-to
 turnspeed = 0
 name = Cart Camel
-models = 19325 19326 19324
-headmodels = 9840
+models = model_19325 model_19326 model_19324
+headmodels = model_9840

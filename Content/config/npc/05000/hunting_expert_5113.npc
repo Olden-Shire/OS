@@ -2,10 +2,10 @@
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 ambient = 10
 contrast = 10
 name = Hunting expert
-models = 19862 19871 19856 10706 19866 358 19873
-headmodels = 19805
+models = obj_larupia_hat_10045_woman obj_larupia_top_10043_woman model_19856 model_10706 obj_larupia_legs_10041_woman model_358 model_19873
+headmodels = model_19805

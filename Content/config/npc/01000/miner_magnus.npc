@@ -1,10 +1,10 @@
 // npc 1396
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 6935
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_6935
 op1 = Talk-to
 recol = 25238/2343 43072/2343 8741/22408 4550/4552 6798/9133 6587/8088
 name = Miner Magnus
-models = 215 247 299 168 179 4226 4218 509
-headmodels = 53 79
+models = obj_fremennik_helm_man model_247 model_299 model_168 obj_cooking_gauntlets_man model_4226 model_4218 obj_bronze_pickaxe_1265_wear
+headmodels = obj_man model_79

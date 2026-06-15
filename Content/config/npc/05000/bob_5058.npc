@@ -1,7 +1,7 @@
 // npc 5058
-walkanim = 5150
-readyanim = 5146
+walkanim = seq_5150
+readyanim = seq_5146
 vislevel = 0
 recol = 8741/5285 4626/5285 908/5409
 name = Bob
-models = 18086 246 310 18125 10218 495 15005 18129
+models = model_18086 model_246 model_310 model_18125 model_10218 model_495 model_15005 model_18129

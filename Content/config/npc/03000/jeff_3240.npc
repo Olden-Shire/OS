@@ -1,11 +1,11 @@
 // npc 3240
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 op3 = Pickpocket
 vislevel = 2
 recol = 8741/4502 25238/5786 4626/2952
 name = Jeff
-models = 226 246 292 163 10218 11339 181
-headmodels = 61
+models = model_226 model_246 obj_priest_gown_426_man model_163 model_10218 model_11339 obj_vyrewatch_shoes_9638_man
+headmodels = model_61

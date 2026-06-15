@@ -1,8 +1,8 @@
 // npc 71
 size = 1
-walkanim = 229
-readyanim = 232
+walkanim = seq_229
+readyanim = seq_232
 op1 = Talk-to
 vislevel = 20
 name = Orc
-models = 2926
+models = model_2926

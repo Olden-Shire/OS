@@ -1,11 +1,11 @@
 // npc 4565
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Steal-from
 recol = 25238/40237 54397/9110 8741/37941 40237/39333 40117/39333 10004/7054
 name = Digsite workman
-models = 214 246 305 151 179 5218
-headmodels = 52
+models = model_214 model_246 obj_white_apron_1005_man model_151 obj_cooking_gauntlets_man model_5218
+headmodels = model_52

@@ -4,5 +4,5 @@ size = 1
 op1 = Talk-to
 recol = 8741/9106 25238/9106 4550/4822
 name = Stranger
-models = 208 250 292 170 176 3599 26135
-headmodels = 48 82 3483
+models = model_208 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_3599 model_26135
+headmodels = model_48 model_82 model_3483

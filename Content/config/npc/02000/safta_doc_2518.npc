@@ -6,5 +6,5 @@ resizeh = 130
 resizev = 130
 recol = 4550/5795 5916/5458 5219/123 43072/5795 6798/3148
 name = Safta Doc
-models = 210 250 285 8928 173 8918 566 8925 8919
-headmodels = 49 82
+models = model_210 model_250 obj_beads_of_the_dead_man obj_tribal_top_6341_man model_173 obj_villager_armband_6347_man obj_machete_975_wear obj_villager_robe_6343_man obj_villager_sandals_6349_man
+headmodels = model_49 model_82

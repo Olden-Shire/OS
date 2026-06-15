@@ -1,8 +1,8 @@
 // npc 4959
-readyanim = 4986
+readyanim = seq_4986
 size = 1
 resizeh = 100
 resizev = 100
 vislevel = 0
 name = My Arm
-models = 19165 19110 19113
+models = model_19165 model_19110 model_19113

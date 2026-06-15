@@ -1,10 +1,10 @@
 // npc 1472
 size = 3
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 turnspeed = 16
 op2 = Attack
 vislevel = 195
 recol = 910/14990 912/14866 1938/14742 1814/14746 1690/14622 0/9127
 name = Jungle Demon
-models = 17375 17391 17384 17399
+models = model_17375 model_17391 model_17384 model_17399

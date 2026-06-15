@@ -2,6 +2,6 @@
 vislevel = 0
 nominimap = true
 turnspeed = 0
-readyanim = 6106
+readyanim = seq_6106
 name = Bench
-models = 23946
+models = model_23946

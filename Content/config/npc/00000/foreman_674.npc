@@ -1,10 +1,10 @@
 // npc 674
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 23
 recol = 25238/8472 6798/7236 8741/61
 name = Foreman
-models = 214 247 302 173 179 254 185
-headmodels = 52 79
+models = model_214 model_247 model_302 model_173 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man
+headmodels = model_52 model_79

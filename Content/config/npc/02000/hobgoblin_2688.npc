@@ -1,11 +1,11 @@
 // npc 2688
 resizeh = 142
 resizev = 142
-walkanim = 162
-readyanim = 166
+walkanim = seq_162
+readyanim = seq_166
 op2 = Attack
 ambient = 10
 vislevel = 28
 recol = 6046/5786 5309/6439 28/5276 8877/5268 8078/5652
 name = Hobgoblin
-models = 9463 2995
+models = model_9463 model_2995

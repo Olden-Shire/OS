@@ -1,13 +1,13 @@
 // npc 5569
 resizeh = 126
 resizev = 126
-walkanim = 841
-readyanim = 842
+walkanim = seq_841
+readyanim = seq_842
 op1 = Talk-to
 nominimap = true
 alwaysontop = true
 vislevel = 0
 recol = 61/33 8741/37 25238/28 43072/33
 name = Scout
-models = 10376 247 22314 152 176 10377 14175
-headmodels = 22331
+models = model_10376 model_247 model_22314 model_152 model_176 model_10377 model_14175
+headmodels = model_22331

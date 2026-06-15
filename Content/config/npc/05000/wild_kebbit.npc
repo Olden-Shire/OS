@@ -1,9 +1,9 @@
 // npc 5089
 size = 1
-walkanim = 5272
-readyanim = 5273
+walkanim = seq_5272
+readyanim = seq_5273
 op5 = Hidden
 vislevel = 0
 recol = 5008/5532
 name = Wild kebbit
-models = 19381 19389 19385
+models = model_19381 model_19389 model_19385

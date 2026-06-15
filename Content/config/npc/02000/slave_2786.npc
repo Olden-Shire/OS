@@ -1,7 +1,7 @@
 // npc 2786
 vislevel = 0
-readyanim = 830
-walkanims = 819, 820, 821, 822
+readyanim = seq_830
+walkanims = seq_819, seq_820, seq_821, seq_822
 recol = 4626/4548 43072/4548 25238/10518
 name = Slave
-models = 214 251 315 173 176 496 254 181
+models = model_214 model_251 obj_veracs_brassard_4757_man model_173 model_176 obj_spade_952_wear obj_mime_legs_man obj_vyrewatch_shoes_9638_man

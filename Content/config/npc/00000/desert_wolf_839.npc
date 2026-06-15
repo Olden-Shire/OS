@@ -1,8 +1,8 @@
 // npc 839
 size = 2
-readyanim = 6580
-walkanim = 6556
+readyanim = seq_6580
+walkanim = seq_6556
 op2 = Attack
 vislevel = 27
 name = Desert Wolf
-models = 26265
+models = model_26265

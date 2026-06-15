@@ -2,12 +2,12 @@
 alwaysontop = true
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizev = 135
 resizeh = 135
 op1 = Talk-to
 recol = 8741/6581 41372/5409 8887/5425 8747/7587 123/8530
 name = Big Dave
-models = 14339 203 252 299 321 167 179 562 14381 14376
-headmodels = 45 84 14335
+models = model_14339 model_203 model_252 model_299 model_321 model_167 obj_cooking_gauntlets_man obj_fishing_rod_307_wear model_14381 model_14376
+headmodels = model_45 model_84 model_14335

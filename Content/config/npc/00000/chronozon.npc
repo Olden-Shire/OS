@@ -1,11 +1,11 @@
 // npc 667
 size = 3
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 resizeh = 110
 resizev = 110
 vislevel = 170
 recol = 0/1577 910/2962 912/2964 1938/1942 1814/1944 1690/1946
 name = Chronozon
-models = 17375 17391 17384 17399
+models = model_17375 model_17391 model_17384 model_17399

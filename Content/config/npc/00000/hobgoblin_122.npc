@@ -1,8 +1,8 @@
 // npc 122
 size = 1
-walkanim = 162
-readyanim = 166
+walkanim = seq_162
+readyanim = seq_166
 op2 = Attack
 vislevel = 28
 name = Hobgoblin
-models = 2994
+models = model_2994

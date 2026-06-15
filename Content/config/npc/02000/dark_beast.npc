@@ -1,8 +1,8 @@
 // npc 2783
 size = 3
-walkanim = 2729
-readyanim = 2730
+walkanim = seq_2729
+readyanim = seq_2730
 op2 = Attack
 vislevel = 182
 name = Dark beast
-models = 26395
+models = obj_dark_beast

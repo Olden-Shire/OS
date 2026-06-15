@@ -1,9 +1,9 @@
 // npc 2139
-readyanim = 195
-walkanim = 189
+readyanim = seq_195
+walkanim = seq_189
 op1 = Talk-to
 vislevel = 0
 recol = 22422/414 37/10644 22426/4643 49/10518
 name = Gnome traveller
-models = 2890 2914 2917
-headmodels = 21
+models = model_2890 model_2914 model_2917
+headmodels = obj_gnome

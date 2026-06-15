@@ -1,9 +1,9 @@
 // npc 3767
 size = 1
 op2 = Attack
-walkanim = 3919
-readyanim = 3918
+walkanim = seq_3919
+readyanim = seq_3918
 vislevel = 67
 recol = 49189/2479 47275/1820 117/10584
 name = Defiler
-models = 14546
+models = model_14546

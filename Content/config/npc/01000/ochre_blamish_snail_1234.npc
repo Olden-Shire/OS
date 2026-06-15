@@ -1,9 +1,9 @@
 // npc 1234
 size = 1
-walkanim = 1274
-readyanim = 1276
+walkanim = seq_1274
+readyanim = seq_1276
 op2 = Attack
 vislevel = 15
 recol = 10545/9653 12589/10671 12713/10667 7494/8772 7605/8875
 name = Ochre Blamish Snail
-models = 4109
+models = model_4109

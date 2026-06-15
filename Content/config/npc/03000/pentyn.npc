@@ -1,9 +1,9 @@
 // npc 3126
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 61/5421 57/5413 7952/5413 41/3608 4550/5347 6798/7281
 name = Pentyn
-models = 10981 250 3379 10838 157 10218 268 185 317
-headmodels = 10976 82
+models = model_10981 model_250 obj_black_platebody_t_2583_man model_10838 model_157 model_10218 obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_fremennik_cloak_3759_man
+headmodels = model_10976 model_82

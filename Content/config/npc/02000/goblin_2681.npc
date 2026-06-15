@@ -1,7 +1,7 @@
 // npc 2681
 size = 1
-readyanim = 6181
-walkanim = 6180
+readyanim = seq_6181
+walkanim = seq_6180
 op2 = Attack
 resizev = 124
 resizeh = 124
@@ -9,4 +9,4 @@ ambient = 15
 vislevel = 2
 recol = 11941/13501 12060/13493 6323/6315 6348/6340 6955/8993 7104/9137
 name = Goblin
-models = 24458 24485 24436 24475 24441 24448
+models = model_24458 model_24485 model_24436 model_24475 model_24441 model_24448

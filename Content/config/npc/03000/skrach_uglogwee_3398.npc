@@ -1,10 +1,10 @@
 // npc 3398
 vislevel = 0
 size = 2
-walkanim = 3383
-readyanim = 3383
+walkanim = seq_3383
+readyanim = seq_3383
 turnspeed = 0
 recol = 6482/6478 784/22412 8722/22412
 name = Skrach Uglogwee
-models = 6760 8682 13427
-headmodels = 141
+models = model_6760 model_8682 model_13427
+headmodels = model_141

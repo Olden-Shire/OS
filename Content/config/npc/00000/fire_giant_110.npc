@@ -2,9 +2,9 @@
 size = 2
 contrast = 25
 ambient = 50
-walkanim = 4660
-readyanim = 4662
+walkanim = seq_4660
+readyanim = seq_4662
 op2 = Attack
 vislevel = 86
 name = Fire giant
-models = 17452 17437
+models = model_17452 model_17437

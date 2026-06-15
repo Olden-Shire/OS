@@ -1,8 +1,8 @@
 // npc 4326
 size = 1
-readyanim = 6040
-walkanim = 6041
+readyanim = seq_6040
+walkanim = seq_6041
 vislevel = 0
 name = Zanik
-models = 23650
-headmodels = 23242
+models = model_23650
+headmodels = model_23242

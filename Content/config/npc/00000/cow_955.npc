@@ -1,8 +1,8 @@
 // npc 955
 size = 2
-walkanim = 5848
-readyanim = 5852
+walkanim = seq_5848
+readyanim = seq_5852
 op2 = Attack
 vislevel = 2
 name = Cow
-models = 23896
+models = model_23896

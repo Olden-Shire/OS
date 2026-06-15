@@ -1,10 +1,10 @@
 // npc 514
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 4550/4785 8741/37181 906/41872 8472/41872 4626/37181
 name = Seravel
-models = 235 253 311 170 176 274 181
-headmodels = 53 85
+models = model_235 model_253 obj_leather_body_1129_man obj_druids_robe_540_man model_176 model_274 obj_vyrewatch_shoes_9638_man
+headmodels = obj_man model_85

@@ -1,9 +1,9 @@
 // npc 177
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 25
 recol = 25238/10508 8741/10508 38814/10508 8741/10508
 name = Witch
-models = 405 470 348 353 428 361 377
+models = model_405 obj_ham_shirt_4298_woman obj_druids_robe_540_woman model_353 obj_priest_gown_428_woman obj_boots_of_lightness_88_woman obj_wizard_hat_579_woman

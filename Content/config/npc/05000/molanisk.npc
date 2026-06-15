@@ -1,10 +1,10 @@
 // npc 5751
-walkanim = 6011
-readyanim = 6010
+walkanim = seq_6011
+readyanim = seq_6010
 op2 = Attack
 ambient = -30
 contrast = -30
 alwaysontop = true
 vislevel = 51
 name = Molanisk
-models = 23855
+models = obj_molanisk

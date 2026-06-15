@@ -3,4 +3,4 @@ vislevel = 0
 size = 1
 nominimap = true
 name = A pile of broken glass
-models = 2676
+models = obj_broken_glass_690

@@ -1,8 +1,8 @@
 // npc 6127
 size = 1
-readyanim = 6831
+readyanim = seq_6831
 vislevel = 0
 op1 = Talk-to
 name = Greasycheeks
-models = 24465 24485 24432 24472 24441 24448 24501
-headmodels = 24217
+models = model_24465 model_24485 model_24432 model_24472 model_24441 model_24448 model_24501
+headmodels = model_24217

@@ -1,8 +1,8 @@
 // npc 127
 size = 1
-walkanim = 181
-readyanim = 187
+walkanim = seq_181
+readyanim = seq_187
 op2 = Attack
 vislevel = 42
 name = Magic axe
-models = 3000
+models = model_3000

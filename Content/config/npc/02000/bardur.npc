@@ -1,11 +1,11 @@
 // npc 2879
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op2 = Attack
 op1 = Talk-to
 vislevel = 94
 recol = 8741/6550 25238/7566 8078/7725 6798/6713 7952/13072 7073/5404
 name = Bardur
-models = 4220 252 292 162 179 4226 4218 4236 326 4235 317 4219
-headmodels = 4210 84
+models = model_4220 model_252 obj_priest_gown_426_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_4226 model_4218 obj_fremennik_blade_wear model_326 obj_fremennik_shield_3758_wear obj_fremennik_cloak_3759_man model_4219
+headmodels = obj_fremennik model_84

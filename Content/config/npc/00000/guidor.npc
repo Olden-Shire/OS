@@ -1,10 +1,10 @@
 // npc 343
 vislevel = 0
 size = 1
-readyanim = 4780
+readyanim = seq_4780
 op1 = Talk-to
 turnspeed = 0
 recol = 4550/3404
 name = Guidor
-models = 230 253 25673 25664
-headmodels = 63 85
+models = obj_desert_disguise_man model_253 model_25673 model_25664
+headmodels = obj_rogue model_85

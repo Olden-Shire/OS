@@ -1,9 +1,9 @@
 // npc 4439
 vislevel = 0
 size = 2
-walkanim = 4310
-readyanim = 4311
+walkanim = seq_4310
+readyanim = seq_4311
 op1 = Talk-to
 name = Centaur
-models = 16195 16201 16198 16197 16200
-headmodels = 16212 16211
+models = model_16195 model_16201 model_16198 model_16197 model_16200
+headmodels = model_16212 model_16211

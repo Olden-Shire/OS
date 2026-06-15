@@ -1,9 +1,9 @@
 // npc 2286
 vislevel = 0
 size = 1
-readyanim = 2253
+readyanim = seq_2253
 op1 = Talk-to
 recol = 70/99 5532/82 41/82 61/99 7700/103 6798/6430
 name = Sir Tinley
-models = 214 249 306 323 164 179 546 7723 268 184
-headmodels = 52 81
+models = model_214 model_249 obj_khazard_armour_man obj_cape_1007_man model_164 obj_cooking_gauntlets_man obj_bronze_2h_sword_1307_wear model_7723 obj_iron_platelegs_1067_man model_184
+headmodels = model_52 model_81

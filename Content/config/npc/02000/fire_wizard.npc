@@ -1,10 +1,10 @@
 // npc 2709
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op2 = Attack
 vislevel = 13
 recol = 8741/1577 25238/1577 7700/1944 926/916 11200/916 43117/960
 name = Fire wizard
-models = 9456 181 246 292 170 176 265 534 567 323
-headmodels = 9446
+models = model_9456 obj_vyrewatch_shoes_9638_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_dramen_staff_wear model_567 obj_cape_1007_man
+headmodels = model_9446

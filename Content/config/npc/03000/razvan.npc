@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 125
 resizev = 113
-walkanims = 819, 820, 821, 822
-readyanim = 3557
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_3557
 op1 = Talk-to
 recol = 25238/18960 4626/10450 43072/10450 6798/26661 4550/10450 6443/14866
 name = Razvan
-models = 6848 253 8845 168 176 254 181 10087
-headmodels = 5787 85 9822
+models = model_6848 model_253 model_8845 model_168 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man model_10087
+headmodels = model_5787 model_85 model_9822

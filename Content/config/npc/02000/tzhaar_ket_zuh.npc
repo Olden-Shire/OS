@@ -2,12 +2,12 @@
 vislevel = 0
 op1 = Talk-to
 op3 = Bank
-walkanim = 2601
-readyanim = 2603
+walkanim = seq_2601
+readyanim = seq_2603
 contrast = 0
 ambient = 10
 resizeh = 140
 resizev = 140
 name = TzHaar-Ket-Zuh
-models = 9301 9300 9303 9302 9306
-headmodels = 9251
+models = model_9301 model_9300 model_9303 model_9302 model_9306
+headmodels = model_9251

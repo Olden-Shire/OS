@@ -5,5 +5,5 @@ op1 = Talk-to
 vislevel = 0
 recol = 6798/103
 name = Sinco Doar
-models = 25362
-headmodels = 14337 83
+models = model_25362
+headmodels = model_14337 model_83

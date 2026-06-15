@@ -1,7 +1,7 @@
 // npc 3281
-walkanim = 3207
-readyanim = 3208
+walkanim = seq_3207
+readyanim = seq_3208
 vislevel = 0
 recol = 8485/8633 61/4550 33/11175 22/5788 2578/0 5784/3604
 name = Engineering assistant
-models = 2971 7059 2978 7045 2985 11817
+models = model_2971 model_7059 model_2978 model_7045 model_2985 model_11817

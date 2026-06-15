@@ -1,10 +1,10 @@
 // npc 4249
-readyanim = 3719
+readyanim = seq_3719
 op1 = Talk-to
 turnspeed = 0
 vislevel = 0
 alwaysontop = true
 recol = 6798/103 8090/127 25238/8741 8741/38808 926/43131
 name = Sir Renitee
-models = 6848 15145 246 8970 14091 8778 181 12857
-headmodels = 15141 5787
+models = model_6848 model_15145 model_246 model_8970 model_14091 obj_prince_leggings_man obj_vyrewatch_shoes_9638_man model_12857
+headmodels = model_15141 model_5787

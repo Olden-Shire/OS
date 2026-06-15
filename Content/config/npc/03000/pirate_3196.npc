@@ -1,10 +1,10 @@
 // npc 3196
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 op2 = Attack
 vislevel = 57
 recol = 8741/929 9104/123 25238/21778 22177/40609 39145/22032 6798/0
 name = Pirate
-models = 190 214 236 250 5222 326 151 3660 11196 259
-headmodels = 52 82 68 31
+models = obj_pirates_hat_2651_man model_214 obj_eye_patch_1025_man model_250 model_5222 model_326 model_151 obj_pirates_hook_2997_man model_11196 model_259
+headmodels = model_52 model_82 model_68 model_31

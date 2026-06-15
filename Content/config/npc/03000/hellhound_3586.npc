@@ -1,8 +1,8 @@
 // npc 3586
 size = 2
-readyanim = 6561
-walkanim = 6583
+readyanim = seq_6561
+walkanim = seq_6583
 op2 = Attack
 vislevel = 122
 name = Hellhound
-models = 26258
+models = obj_hellhound

@@ -1,8 +1,8 @@
 // npc 2828
-walkanim = 5585
-readyanim = 5586
+walkanim = seq_5585
+readyanim = seq_5586
 op1 = Talk-to
 vislevel = 0
 name = 50% Luke
-models = 21391
-headmodels = 21395
+models = model_21391
+headmodels = model_21395

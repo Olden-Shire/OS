@@ -2,13 +2,13 @@
 size = 1
 resizeh = 100
 resizev = 100
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 op2 = Attack
 op3 = Pickpocket
 vislevel = 1
 recol = 22426/11592
 name = Gnome child
-models = 2909 2899 2918
-headmodels = 16
+models = model_2909 model_2899 model_2918
+headmodels = model_16

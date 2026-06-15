@@ -2,11 +2,11 @@
 size = 1
 resizeh = 130
 vislevel = 0
-walkanim = 2154
-readyanim = 2155
+walkanim = seq_2154
+readyanim = seq_2155
 op1 = Talk-to
 op3 = Trade
 recol = 7473/5669 2578/57 8604/3350
 name = Tati
-models = 7029 7071 2983 2979 7075 2980 2985
-headmodels = 6988 6996
+models = model_7029 model_7071 model_2983 model_2979 model_7075 model_2980 model_2985
+headmodels = model_6988 model_6996

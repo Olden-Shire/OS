@@ -1,7 +1,7 @@
 // npc 830
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 op3 = Watch
@@ -9,5 +9,5 @@ alwaysontop = true
 vislevel = 47
 recol = 49054/6932 25238/6579 10512/5555 10378/6550 4550/5685 7952/5281
 name = Mercenary Captain
-models = 6130 10561 9458 7605 179 19336 15417 7609 16473 317
-headmodels = 6128 10560
+models = obj_menap_headgear_6392_man model_10561 model_9458 model_7605 obj_cooking_gauntlets_man model_19336 obj_defensive_shield_wear obj_rogue_trousers_man obj_moonclan_boots_man obj_fremennik_cloak_3759_man
+headmodels = model_6128 model_10560

@@ -1,10 +1,10 @@
 // npc 6071
-walkanim = 6614
-readyanim = 6613
+walkanim = seq_6614
+readyanim = seq_6613
 vislevel = 0
 size = 1
 op1 = Talk-to
 alwaysontop = true
 name = Impling
-models = 26374
-headmodels = 26278
+models = model_26374
+headmodels = model_26278

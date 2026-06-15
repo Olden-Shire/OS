@@ -1,9 +1,9 @@
 // npc 4704
 size = 3
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 vislevel = 172
 recol = 910/898 912/4 1938/8 1814/12 1690/16 0/5206
 name = Black Demon
-models = 17379 17396 17385 17400 17390
+models = model_17379 model_17396 model_17385 model_17400 model_17390

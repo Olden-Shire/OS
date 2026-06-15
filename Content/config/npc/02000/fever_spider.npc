@@ -2,10 +2,10 @@
 size = 2
 resizeh = 78
 resizev = 78
-walkanim = 5317
-readyanim = 5318
+walkanim = seq_5317
+readyanim = seq_5318
 op2 = Attack
 vislevel = 49
 recol = 56256/6953 960/4894 33728/20 22443/6930 50099/5029 11200/5388
 name = Fever spider
-models = 20302 20301
+models = model_20302 model_20301

@@ -1,8 +1,8 @@
 // npc 6129
 size = 1
-readyanim = 6833
+readyanim = seq_6833
 vislevel = 0
 op1 = Talk-to
 name = Creakyknees
-models = 24466 24483 24436 24476 24443 24448 24500
-headmodels = 24218
+models = model_24466 model_24483 model_24436 model_24476 model_24443 model_24448 model_24500
+headmodels = model_24218

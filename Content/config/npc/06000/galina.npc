@@ -1,9 +1,9 @@
 // npc 6038
-walkanims = 6531, 6532, 821, 822
-readyanim = 808
+walkanims = seq_6531, seq_6532, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Galina
-models = 12141 26156 26140 26151 26142
-headmodels = 12134
+models = model_12141 model_26156 model_26140 model_26151 model_26142
+headmodels = model_12134

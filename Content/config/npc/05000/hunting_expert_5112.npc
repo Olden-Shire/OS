@@ -2,11 +2,11 @@
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 ambient = 10
 contrast = 10
 recol = 4626/4283 10004/4283
 name = Hunting expert
-models = 19820 253 19830 19809 179 19825 185
-headmodels = 19800 85
+models = obj_kyatt_hat_10039_man model_253 obj_kyatt_top_10037_man model_19809 obj_cooking_gauntlets_man obj_kyatt_legs_10035_man obj_boots_of_lightness_88_man
+headmodels = model_19800 model_85

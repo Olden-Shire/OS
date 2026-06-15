@@ -1,8 +1,8 @@
 // npc 4930
 size = 1
-walkanim = 249
-readyanim = 252
+walkanim = seq_249
+readyanim = seq_252
 op2 = Attack
 vislevel = 23
 name = Goat
-models = 18906
+models = model_18906

@@ -1,11 +1,11 @@
 // npc 1860
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 8741/12698 25238/12942 43072/4550 6798/5537 17294/6806 15252/8088
 name = Brian
-models = 206 252 292 326 163 176 254 4929 9607
-headmodels = 46 84
+models = model_206 model_252 obj_priest_gown_426_man model_326 model_163 model_176 obj_mime_legs_man obj_ranger_boots_2577_man model_9607
+headmodels = model_46 model_84

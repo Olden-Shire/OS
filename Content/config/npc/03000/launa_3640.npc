@@ -1,9 +1,9 @@
 // npc 3640
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/2283 8993/2283 0/43301
 name = Launa
-models = 398 471 348 10706 13900 358
-headmodels = 106
+models = obj_castlewars_hood_4513_woman model_471 obj_druids_robe_540_woman model_10706 model_13900 model_358
+headmodels = obj_female_h_a_m

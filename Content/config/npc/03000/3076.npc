@@ -1,5 +1,5 @@
 // npc 3076
 size = 2
-readyanim = 2995
+readyanim = seq_2995
 vislevel = 1
 multivar = 1467, 65535, 65535 3077

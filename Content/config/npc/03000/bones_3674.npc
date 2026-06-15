@@ -1,7 +1,7 @@
 // npc 3674
 size = 1
-readyanim = 3840
+readyanim = seq_3840
 vislevel = 0
 name = Bones
-models = 13700
-headmodels = 13700
+models = model_13700
+headmodels = model_13700

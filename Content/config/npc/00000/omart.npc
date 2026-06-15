@@ -1,10 +1,10 @@
 // npc 350
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 926/43270 8741/6936 7073/6032 11200/43270
 name = Omart
-models = 207 185 252 311 163 179 274
-headmodels = 47 84
+models = model_207 obj_boots_of_lightness_88_man model_252 obj_leather_body_1129_man model_163 obj_cooking_gauntlets_man model_274
+headmodels = model_47 model_84

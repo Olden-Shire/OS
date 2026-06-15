@@ -1,6 +1,6 @@
 // npc 6123
-readyanim = 6834
+readyanim = seq_6834
 vislevel = 0
 recol = 6331/59478 6323/59466 6040/54435 6955/54550 2960/54550
 name = Naghead
-models = 26901 24487 24435 24474 24442 24451
+models = model_26901 model_24487 model_24435 model_24474 model_24442 model_24451

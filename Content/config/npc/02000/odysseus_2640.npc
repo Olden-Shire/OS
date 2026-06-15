@@ -1,10 +1,10 @@
 // npc 2640
 vislevel = 0
 size = 2
-walkanim = 2667
-readyanim = 2668
+walkanim = seq_2667
+readyanim = seq_2668
 op1 = Talk-to
 recol = 61/12 16/12 127/33
 name = Odysseus
-models = 9390
-headmodels = 6435
+models = model_9390
+headmodels = model_6435

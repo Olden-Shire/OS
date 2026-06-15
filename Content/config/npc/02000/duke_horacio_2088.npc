@@ -1,9 +1,9 @@
 // npc 2088
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 926/43916 6323/54670 6435/54414 6674/55172 7700/43914 11200/43934
 name = Duke Horacio
-models = 235 251 281 26605 323 26603 176 26604 23921
-headmodels = 67 83
+models = model_235 model_251 obj_perfect_necklace_man model_26605 obj_cape_1007_man model_26603 model_176 model_26604 model_23921
+headmodels = model_67 model_83

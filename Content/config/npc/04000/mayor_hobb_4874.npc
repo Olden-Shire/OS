@@ -1,11 +1,11 @@
 // npc 4874
 vislevel = 0
 size = 1
-readyanim = 808
+readyanim = seq_808
 resizeh = 140
 resizev = 124
 op1 = Talk-to
 recol = 10828/47502 10692/49308 25238/47502 6038/43067 8741/49308 4550/8646
 name = Mayor Hobb
-models = 11330 18192 18193 18197 15008 330 10301 10218 263 14374
-headmodels = 11402 18186 80
+models = obj_red_boater_7319_man model_18192 model_18193 model_18197 model_15008 model_330 model_10301 model_10218 model_263 model_14374
+headmodels = model_11402 model_18186 model_80

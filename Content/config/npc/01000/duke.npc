@@ -1,10 +1,10 @@
 // npc 1442
-walkanim = 1385
-readyanim = 1386
+walkanim = seq_1385
+readyanim = seq_1386
 resizeh = 180
 resizev = 180
 op2 = Attack
 vislevel = 149
 name = Duke
-models = 4821 4828 4832
-headmodels = 4660
+models = model_4821 model_4828 model_4832
+headmodels = model_4660

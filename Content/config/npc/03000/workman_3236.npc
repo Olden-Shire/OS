@@ -2,10 +2,10 @@
 vislevel = 0
 contrast = 10
 ambient = 10
-readyanim = 808
-walkanim = 819
+readyanim = seq_808
+walkanim = seq_819
 op1 = Talk-to
 recol = 25238/7452 54397/7376 8741/8371 933/5285
 name = Workman
-models = 6848 248 302 163 10218 491 263 185
-headmodels = 5787 80
+models = model_6848 model_248 model_302 model_163 model_10218 obj_hammer_2347_wear model_263 obj_boots_of_lightness_88_man
+headmodels = model_5787 model_80

@@ -1,8 +1,8 @@
 // npc 4391
 size = 2
-walkanim = 1189
-readyanim = 1183
+walkanim = seq_1189
+readyanim = seq_1183
 op2 = Attack
 vislevel = 41
 name = Flesh Crawler
-models = 16018
+models = model_16018

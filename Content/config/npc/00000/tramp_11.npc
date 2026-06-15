@@ -1,10 +1,10 @@
 // npc 11
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/6558 25238/41129 4550/4418 6798/26 4626/21642 7331/10401
 name = Tramp
-models = 18190 203 11190 310 18126 10218 15005 18127
-headmodels = 45 11188 18185
+models = model_18190 model_203 model_11190 model_310 model_18126 model_10218 model_15005 model_18127
+headmodels = model_45 model_11188 model_18185

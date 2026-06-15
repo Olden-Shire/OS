@@ -1,9 +1,9 @@
 // npc 338
 vislevel = 0
-readyanim = 2713
+readyanim = seq_2713
 op1 = Talk-to
 turnspeed = 0
 recol = 8741/16796 25238/10638 6798/5665 7719/16916 8084/1575 43072/4548
 name = Chancy
-models = 217 246 292 5432 170 176 9623 264 4391
-headmodels = 55
+models = model_217 model_246 obj_priest_gown_426_man model_5432 obj_druids_robe_540_man model_176 model_9623 model_264 model_4391
+headmodels = obj_farmer

@@ -1,9 +1,9 @@
 // npc 2779
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 2728
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2728
 op2 = Attack
 recol = 22424/99 22416/82 23442/82 8741/82 6674/99 4626/74
 name = Ranger
-models = 221 253 314 170 179 563 258 185 9651
-headmodels = 58 85
+models = model_221 model_253 obj_green_dhide_body_1135_man obj_druids_robe_540_man obj_cooking_gauntlets_man obj_longbow_839_wear obj_green_dhide_chaps_1099_man obj_boots_of_lightness_88_man model_9651
+headmodels = model_58 model_85

@@ -1,11 +1,11 @@
 // npc 5836
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 vislevel = 0
 alwaysontop = true
 recol = 4550/6806 0/10508 40918/8613 40384/7838 119/7341 39009/8617
 name = Zaff
-models = 215 251 299 4952 4953 553 11338 181
-headmodels = 53 83
+models = obj_fremennik_helm_man model_251 model_299 obj_mystic_robe_top_4091_man obj_mystic_gloves_4095_man model_553 model_11338 obj_vyrewatch_shoes_9638_man
+headmodels = obj_man model_83

@@ -1,11 +1,11 @@
 // npc 644
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 recol = 8741/16 25238/16 48010/16
 name = Straven
-models = 25659 10039 25676 25644 25653 176 25667 19948
-headmodels = 25636
+models = model_25659 model_10039 model_25676 model_25644 model_25653 model_176 model_25667 model_19948
+headmodels = model_25636

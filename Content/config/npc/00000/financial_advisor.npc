@@ -1,11 +1,11 @@
 // npc 947
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 6798/127 8741/8 7070/11200 10667/127 25238/8 43072/8
 name = Financial Advisor
-models = 215 247 292 163 176 267 185 327
-headmodels = 53 79
+models = obj_fremennik_helm_man model_247 obj_priest_gown_426_man model_163 model_176 model_267 obj_boots_of_lightness_88_man model_327
+headmodels = obj_man model_79

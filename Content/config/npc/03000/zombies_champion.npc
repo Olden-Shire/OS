@@ -1,8 +1,8 @@
 // npc 3066
 size = 2
-readyanim = 5573
-walkanim = 5582
+readyanim = seq_5573
+walkanim = seq_5582
 op2 = Attack
 vislevel = 51
 name = Zombies Champion
-models = 20949
+models = model_20949

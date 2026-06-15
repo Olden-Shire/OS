@@ -2,8 +2,8 @@
 vislevel = 0
 nominimap = true
 size = 2
-readyanim = 1753
+readyanim = seq_1753
 resizev = 45
 resizeh = 45
 name = Slagilith
-models = 5654
+models = model_5654

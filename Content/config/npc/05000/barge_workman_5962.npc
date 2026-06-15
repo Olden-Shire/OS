@@ -1,8 +1,8 @@
 // npc 5962
-readyanim = 6457
+readyanim = seq_6457
 turnspeed = 0
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 name = Barge workman
-models = 25813 25812 25801 25802
+models = model_25813 model_25812 model_25801 model_25802

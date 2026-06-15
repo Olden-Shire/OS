@@ -1,9 +1,9 @@
 // npc 2041
 vislevel = 0
 size = 2
-readyanim = 2089
+readyanim = seq_2089
 op1 = Talk-to
 turnspeed = 0
 name = Grug
-models = 6768
-headmodels = 141
+models = model_6768
+headmodels = model_141

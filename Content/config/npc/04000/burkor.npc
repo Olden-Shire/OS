@@ -1,9 +1,9 @@
 // npc 4601
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 name = Burkor
-models = 17019 16996 16985 17031
-headmodels = 16974
+models = model_17019 model_16996 model_16985 model_17031
+headmodels = model_16974

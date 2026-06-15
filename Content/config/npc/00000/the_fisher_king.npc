@@ -1,10 +1,10 @@
 // npc 220
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 4626/107 61/107 41/82 4550/5442 9104/107 57/107
 name = The Fisher King
-models = 215 14440 165 179 268 185 534 252 192 323
-headmodels = 53 35 84
+models = obj_fremennik_helm_man model_14440 model_165 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_dramen_staff_wear model_252 model_192 obj_cape_1007_man
+headmodels = obj_man model_35 model_84

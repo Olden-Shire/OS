@@ -1,9 +1,9 @@
 // npc 1264
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 108
 recol = 926/12221 7700/12221 11200/99 25238/99 8741/99
 name = Saradomin wizard
-models = 230 181 249 292 323 170 176 265 539
+models = obj_desert_disguise_man obj_vyrewatch_shoes_9638_man model_249 obj_priest_gown_426_man obj_cape_1007_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_dragon_dagger_1215_wear

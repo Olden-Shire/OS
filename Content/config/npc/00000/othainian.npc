@@ -1,10 +1,10 @@
 // npc 998
 size = 3
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 resizeh = 110
 resizev = 110
 vislevel = 91
 name = Othainian
-models = 17375 17391 17384 17399 17390
+models = model_17375 model_17391 model_17384 model_17399 model_17390

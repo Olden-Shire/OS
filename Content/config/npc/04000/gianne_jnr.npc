@@ -1,9 +1,9 @@
 // npc 4572
-readyanim = 4536
+readyanim = seq_4536
 op1 = Talk-to
 vislevel = 0
 turnspeed = 0
 recol = 22424/41 22426/40237 11162/8082
 name = Gianne jnr.
-models = 17009 16994 16984 16992
-headmodels = 16970
+models = model_17009 model_16994 model_16984 model_16992
+headmodels = model_16970

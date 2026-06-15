@@ -1,9 +1,9 @@
 // npc 1682
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 name = Golrie
-models = 2900 2914 2915
-headmodels = 23
+models = model_2900 model_2914 model_2915
+headmodels = model_23

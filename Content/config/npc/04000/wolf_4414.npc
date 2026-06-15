@@ -1,9 +1,9 @@
 // npc 4414
 size = 2
-readyanim = 6580
-walkanim = 6556
+readyanim = seq_6580
+walkanim = seq_6556
 op2 = Attack
 vislevel = 11
 recol = 10287/10279 10295/10287 10304/10295 8398/7223 82/10295
 name = Wolf
-models = 26266
+models = model_26266

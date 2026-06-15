@@ -3,4 +3,4 @@ size = 5
 alwaysontop = true
 vislevel = 1
 name = Buinn
-models = 15359 15360 15361 15355 15362
+models = model_15359 model_15360 model_15361 model_15355 model_15362

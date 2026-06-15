@@ -1,11 +1,11 @@
 // npc 6085
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 8741/43233 22177/689 25238/65205 9104/45400
 name = Cabin boy Jenkins
-models = 211 249 292 3667 167 179 271 181
-headmodels = 50 81
+models = model_211 model_249 obj_priest_gown_426_man model_3667 model_167 obj_cooking_gauntlets_man model_271 obj_vyrewatch_shoes_9638_man
+headmodels = model_50 model_81

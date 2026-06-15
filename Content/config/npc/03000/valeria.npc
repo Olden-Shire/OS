@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 120
 resizev = 120
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/25886 8741/24850 61/10450 933/5675 43072/10450 4550/10450
 name = Valeria
-models = 382 8849 347 353 438 361
-headmodels = 105 11429
+models = model_382 obj_citizen_top_9640_woman model_347 model_353 model_438 obj_boots_of_lightness_88_woman
+headmodels = model_105 model_11429

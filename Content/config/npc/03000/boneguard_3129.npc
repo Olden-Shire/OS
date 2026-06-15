@@ -2,9 +2,9 @@
 vislevel = 0
 size = 2
 op2 = Talk-to
-walkanim = 3078
-readyanim = 3073
+walkanim = seq_3078
+readyanim = seq_3073
 turnspeed = 0
 name = Boneguard
-models = 10972
-headmodels = 11016
+models = model_10972
+headmodels = model_11016

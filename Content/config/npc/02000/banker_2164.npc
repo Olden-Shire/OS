@@ -1,11 +1,11 @@
 // npc 2164
 size = 1
-walkanim = 101
-readyanim = 101
+walkanim = seq_101
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 op3 = Bank
 recol = 803/7834 7473/7834 6356/7834 61/29574 4626/898
 name = Banker
-models = 2972 6020 6017 2978 2981 2985
-headmodels = 2
+models = model_2972 model_6020 model_6017 model_2978 model_2981 model_2985
+headmodels = model_2

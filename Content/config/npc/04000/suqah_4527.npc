@@ -2,11 +2,11 @@
 size = 2
 resizeh = 134
 resizev = 128
-walkanim = 4383
-readyanim = 4386
+walkanim = seq_4383
+readyanim = seq_4386
 op2 = Attack
 ambient = 14
 contrast = 8
 vislevel = 111
 name = Suqah
-models = 16589 16594 16588 16591
+models = obj_suqah_monster model_16594 model_16588 model_16591

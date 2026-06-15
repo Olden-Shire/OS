@@ -2,10 +2,10 @@
 size = 1
 resizeh = 80
 resizev = 80
-walkanim = 5385
-readyanim = 5386
+walkanim = seq_5385
+readyanim = seq_5386
 op2 = Attack
 vislevel = 1
 recol = 6474/5662 6470/5786 6466/5910
 name = Chicken
-models = 23905
+models = model_23905

@@ -1,11 +1,11 @@
 // npc 5050
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op4 = Fly
 vislevel = 0
 alwaysontop = true
 recol = 4626/0
 name = Auguste
-models = 19470 246 19476 19467 177 19472 181
-headmodels = 359
+models = model_19470 model_246 model_19476 model_19467 obj_leather_vambraces_1063_man model_19472 obj_vyrewatch_shoes_9638_man
+headmodels = model_359

@@ -1,11 +1,11 @@
 // npc 1863
 size = 1
-readyanim = 1322
+readyanim = seq_1322
 op1 = Talk-to
 vislevel = 0
 turnspeed = 0
 alwaysontop = true
 recol = 8741/10351 25238/10351 4550/5555 43072/5555
 name = Drunken Ali
-models = 211 6087 292 173 3599 176 6098 4234
-headmodels = 6081 50
+models = model_211 model_6087 obj_priest_gown_426_man model_173 model_3599 model_176 obj_beer_1917_wear model_4234
+headmodels = model_6081 model_50

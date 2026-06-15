@@ -1,8 +1,8 @@
 // npc 5414
 size = 1
-walkanim = 5595
-readyanim = 5594
+walkanim = seq_5595
+readyanim = seq_5594
 op2 = Attack
 vislevel = 50
 name = Animated spade
-models = 21381
+models = model_21381

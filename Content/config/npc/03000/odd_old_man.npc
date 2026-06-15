@@ -1,11 +1,11 @@
 // npc 3670
-walkanim = 1739
-readyanim = 1740
+walkanim = seq_1739
+readyanim = seq_1740
 size = 2
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 6798/94 6443/7331
 name = Odd Old Man
-models = 6848 11752 14321 4985 168 176 14320 7121
-headmodels = 13704 5787
+models = model_6848 model_11752 model_14321 model_4985 model_168 model_176 model_14320 obj_gardening_boots_5345_man
+headmodels = model_13704 model_5787

@@ -5,5 +5,5 @@ op3 = Pickpocket
 vislevel = 3
 recol = 8741/10351 25238/10351 4550/5555
 name = Villager
-models = 390 364 456 348 429 358 353
-headmodels = 113 88
+models = model_390 model_364 obj_priest_gown_426_woman obj_druids_robe_540_woman model_429 model_358 model_353
+headmodels = obj_warrior_woman model_88

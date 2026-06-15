@@ -1,9 +1,9 @@
 // npc 4772
 op1 = Talk-to
-readyanim = 4702
-walkanim = 4699
+readyanim = seq_4702
+walkanim = seq_4699
 ambient = -25
 vislevel = 54
 name = Juvinate guard
-models = 17968 17986
-headmodels = 18046
+models = model_17968 model_17986
+headmodels = model_18046

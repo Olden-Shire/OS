@@ -1,8 +1,8 @@
 // npc 3481
-readyanim = 3525
+readyanim = seq_3525
 op1 = Talk-to
 vislevel = 0
 turnspeed = 0
 name = Mizaru
-models = 13878 13879 13880
-headmodels = 13891 13890
+models = model_13878 model_13879 model_13880
+headmodels = model_13891 model_13890

@@ -1,10 +1,10 @@
 // npc 936
 size = 1
-walkanim = 5481
-readyanim = 5483
+walkanim = seq_5481
+readyanim = seq_5483
 op1 = Talk-to
 op2 = Attack
 vislevel = 106
 name = San Tojalon
-models = 21195
-headmodels = 21404 21409
+models = model_21195
+headmodels = model_21404 model_21409

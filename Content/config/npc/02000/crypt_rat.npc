@@ -1,9 +1,9 @@
 // npc 2032
-walkanim = 239
-readyanim = 242
+walkanim = seq_239
+readyanim = seq_242
 op2 = Attack
 nominimap = true
 vislevel = 43
 recol = 61/21679 2512/13501
 name = Crypt rat
-models = 2927
+models = model_2927

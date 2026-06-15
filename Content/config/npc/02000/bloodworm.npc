@@ -1,8 +1,8 @@
 // npc 2031
-walkanim = 2069
-readyanim = 2071
+walkanim = seq_2069
+readyanim = seq_2071
 op2 = Attack
 vislevel = 52
 recol = 4940/9899 2756/8099 2749/7070 1837/5012 3980/22404
 name = Bloodworm
-models = 6632
+models = model_6632

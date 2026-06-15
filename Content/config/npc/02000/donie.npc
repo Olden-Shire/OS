@@ -1,10 +1,10 @@
 // npc 2238
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 vislevel = 0
 recol = 25238/7622 8741/6930 43072/4550
 name = Donie
-models = 390 456 332 353 419 361 534
-headmodels = 113
+models = model_390 obj_priest_gown_426_woman model_332 model_353 obj_mime_legs_woman obj_boots_of_lightness_88_woman obj_dramen_staff_wear
+headmodels = obj_warrior_woman

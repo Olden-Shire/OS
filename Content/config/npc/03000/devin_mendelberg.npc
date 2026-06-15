@@ -1,9 +1,9 @@
 // npc 3825
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 23326/17694 8887/7609 7097/7991 43422/41131 6976/8111
 name = Devin Mendelberg
-models = 14107 14383 14841 176 14380 14375 14850
-headmodels = 14325 13703 14830
+models = model_14107 model_14383 model_14841 model_176 model_14380 model_14375 model_14850
+headmodels = model_14325 model_13703 model_14830

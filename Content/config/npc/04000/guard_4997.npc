@@ -1,11 +1,11 @@
 // npc 4997
 op1 = Talk-to
 op2 = Attack
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 ambient = 15
 vislevel = 45
 recol = 926/10382 43059/8472 4550/4645 10353/8472 61/10382 8741/8472
 name = Guard
-models = 220 253 294 160 179 19336 521 6090 16473 11768
-headmodels = 15407 85
+models = obj_leather_cowl_1167_man model_253 obj_iron_chainbody_1101_man model_160 obj_cooking_gauntlets_man model_19336 model_521 obj_desert_legs_6390_man obj_moonclan_boots_man model_11768
+headmodels = model_15407 model_85

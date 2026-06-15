@@ -1,7 +1,7 @@
 // npc 5860
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op2 = Attack
 resizev = 134
 resizeh = 134
@@ -9,5 +9,5 @@ op2 = Attack
 vislevel = 30
 recol = 8741/61347 25238/61347 7952/61347 61/5784 4550/6730
 name = H.A.M. Mage
-models = 169 176 534 246 181 265 296 5434 5430 5433 317
-headmodels = 5428
+models = model_169 model_176 obj_dramen_staff_wear model_246 obj_vyrewatch_shoes_9638_man obj_priest_gown_428_man obj_hardleather_body_1131_man obj_h_a_m_logo_4306_wear obj_ham_hood_4302_man model_5433 obj_fremennik_cloak_3759_man
+headmodels = obj_male_h_a_m

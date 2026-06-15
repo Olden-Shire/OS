@@ -1,12 +1,12 @@
 // npc 5566
 size = 1
-walkanim = 841
-readyanim = 842
+walkanim = seq_841
+readyanim = seq_842
 op1 = Talk-to
 vislevel = 0
 nominimap = true
 alwaysontop = true
 recol = 4626/12
 name = General Khazard
-models = 22310 22313 22316 22307 22309 22318 22312 22308
-headmodels = 149
+models = model_22310 model_22313 model_22316 model_22307 model_22309 model_22318 model_22312 model_22308
+headmodels = model_149

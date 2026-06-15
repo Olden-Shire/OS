@@ -1,8 +1,8 @@
 // npc 3063
 size = 2
-walkanim = 2932
-readyanim = 2931
+walkanim = seq_2932
+readyanim = seq_2931
 op2 = Attack
 vislevel = 107
 name = Jogre Champion
-models = 10280 10282 10281
+models = model_10280 model_10282 model_10281

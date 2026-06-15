@@ -1,8 +1,8 @@
 // npc 5805
-walkanim = 6057
-readyanim = 6058
+walkanim = seq_6057
+readyanim = seq_6058
 vislevel = 0
 op1 = Talk-to
 name = Nipper
-models = 23712
-headmodels = 23245
+models = model_23712
+headmodels = model_23245

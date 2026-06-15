@@ -1,11 +1,11 @@
 // npc 209
 size = 1
 vislevel = 0
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 op3 = Trade
 recol = 5417/10638 61/8598 5784/3986 5665/1936 10347/43119
 name = Nulodion
-models = 7030 7062 2978 7044 2985
-headmodels = 6989
+models = model_7030 model_7062 model_2978 model_7044 model_2985
+headmodels = model_6989

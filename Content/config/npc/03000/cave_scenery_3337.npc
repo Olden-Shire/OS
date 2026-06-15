@@ -6,4 +6,4 @@ turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Cave Scenery
-models = 12015
+models = model_12015

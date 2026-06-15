@@ -1,11 +1,11 @@
 // npc 5920
-walkanim = 6486
-readyanim = 6487
+walkanim = seq_6486
+readyanim = seq_6487
 op2 = Attack
 op3 = Pickpocket
 ambient = 20
 contrast = 15
 vislevel = 21
 name = Guard
-models = 25672 25685 25684
-headmodels = 25633
+models = model_25672 model_25685 model_25684
+headmodels = model_25633

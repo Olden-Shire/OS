@@ -1,11 +1,11 @@
 // npc 1101
 size = 1
-readyanim = 286
-walkanim = 283
+readyanim = seq_286
+walkanim = seq_283
 resizeh = 112
 resizev = 112
 op2 = Attack
 vislevel = 67
 recol = 61/7469 21570/6439
 name = Thrower Troll
-models = 3753 3758 3755 3765
+models = model_3753 obj_troll_guard model_3755 model_3765

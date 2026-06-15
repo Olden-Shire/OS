@@ -1,8 +1,8 @@
 // npc 72
 size = 1
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 op2 = Attack
 vislevel = 69
 name = Troll
-models = 3752
+models = model_3752

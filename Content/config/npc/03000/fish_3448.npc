@@ -1,7 +1,7 @@
 // npc 3448
 size = 3
-walkanim = 3443
-readyanim = 3444
+walkanim = seq_3443
+readyanim = seq_3444
 ambient = 25
 vislevel = 0
 resizeh = 300
@@ -10,4 +10,4 @@ turnspeed = 15
 nominimap = true
 recol = 33740/52341 960/231 6606/47337 6589/46309
 name = Fish
-models = 13835
+models = model_13835

@@ -1,8 +1,8 @@
 // npc 387
 vislevel = 0
 size = 1
-walkanim = 6257
-readyanim = 6258
+walkanim = seq_6257
+readyanim = seq_6258
 op1 = Pick-up
 name = Kharid Scorpion
-models = 24612
+models = model_24612

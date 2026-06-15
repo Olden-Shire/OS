@@ -1,10 +1,10 @@
 // npc 180
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 5
 recol = 7700/12 11200/54676 926/12 8741/8076 25238/63909
 name = Highwayman
-models = 215 246 292 170 176 254 185 243 323 519
-headmodels = 53 76
+models = obj_fremennik_helm_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_highwayman_mask_2631_man obj_cape_1007_man obj_bronze_sword_1277_wear
+headmodels = obj_man model_76

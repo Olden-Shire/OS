@@ -1,9 +1,9 @@
 // npc 992
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 43072/10419 4550/10419 27548/10419 38814/59274 25238/59274
 name = Kardia
-models = 405 474 347 421 353 361 479 447 534 377
+models = model_405 model_474 model_347 obj_desert_robes_6386_woman model_353 obj_boots_of_lightness_88_woman obj_fremennik_cloak_3759_woman obj_glarials_amulet_woman obj_dramen_staff_wear obj_wizard_hat_579_woman

@@ -1,10 +1,10 @@
 // npc 3423
 size = 2
-walkanim = 3432
-readyanim = 3431
+walkanim = seq_3432
+readyanim = seq_3431
 resizeh = 256
 resizev = 256
 op2 = Attack
 vislevel = 31
 name = Mudskipper
-models = 13832 13833
+models = model_13832 model_13833

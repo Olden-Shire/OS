@@ -1,7 +1,7 @@
 // npc 5829
 size = 1
-walkanim = 6088
-readyanim = 6089
+walkanim = seq_6088
+readyanim = seq_6089
 ambient = 30
 resizeh = 120
 resizev = 110
@@ -9,4 +9,4 @@ op2 = Attack
 vislevel = 2
 recol = 5413/5210 5417/5330 5421/5322
 name = Rabbit
-models = 23901
+models = model_23901

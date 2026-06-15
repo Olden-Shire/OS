@@ -1,9 +1,9 @@
 // npc 2695
-walkanims = 819, 820, 821, 822
-readyanim = 2701
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2701
 op2 = Attack
 vislevel = 23
 recol = 22177/2737 8741/41290 9104/41273 43072/4550 25238/38177 0/7062
 name = Pirate
-models = 211 236 246 292 3667 173 176 271 185
-headmodels = 50 68
+models = model_211 obj_eye_patch_1025_man model_246 obj_priest_gown_426_man model_3667 model_173 model_176 model_271 obj_boots_of_lightness_88_man
+headmodels = model_50 model_68

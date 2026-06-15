@@ -1,10 +1,10 @@
 // npc 1099
-readyanim = 286
-walkanim = 283
+readyanim = seq_286
+walkanim = seq_283
 size = 2
 resizeh = 145
 resizev = 145
 vislevel = 0
 recol = 61/8363 21570/7465 107/7370
 name = Dung
-models = 3753 3759 3755 3772 3767
+models = model_3753 model_3759 model_3755 model_3772 model_3767

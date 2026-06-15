@@ -1,10 +1,10 @@
 // npc 664
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/43301 25238/43540 24/7104 4626/33030 6798/6327
 name = Dimintheis
-models = 14340 5215 25864 10313 163 10218 11339 181
-headmodels = 14337 5207
+models = model_14340 model_5215 model_25864 model_10313 model_163 model_10218 model_11339 obj_vyrewatch_shoes_9638_man
+headmodels = model_14337 model_5207

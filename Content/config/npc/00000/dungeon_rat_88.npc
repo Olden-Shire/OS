@@ -1,9 +1,9 @@
 // npc 88
 size = 2
-walkanim = 4931
-readyanim = 4932
+walkanim = seq_4931
+readyanim = seq_4932
 op2 = Attack
 vislevel = 12
 recol = 10295/21576 10291/21584 10287/21576 10283/21580 10279/21572 10275/21568
 name = Dungeon rat
-models = 18891 18889 18894 18888
+models = model_18891 model_18889 model_18894 model_18888

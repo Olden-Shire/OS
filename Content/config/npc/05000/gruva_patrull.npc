@@ -1,12 +1,12 @@
 // npc 5500
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 size = 1
 vislevel = 0
 alwaysontop = true
 recol = 8741/59437 25238/156 8078/59445 6798/6713 7952/13072 7073/5404
 name = Gruva Patrull
-models = 4219 230 11750 292 317 162 179 4236 517 4226 4218
-headmodels = 4210 11808
+models = model_4219 obj_desert_disguise_man model_11750 obj_priest_gown_426_man obj_fremennik_cloak_3759_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man obj_fremennik_blade_wear obj_wooden_shield_1171_wear model_4226 model_4218
+headmodels = obj_fremennik model_11808

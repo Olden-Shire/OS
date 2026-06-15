@@ -1,11 +1,11 @@
 // npc 3798
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 op1 = Talk-to
 op3 = Trade
 recol = 43072/4550
 name = Squire
-models = 217 249 301 173 10218 14565 181
-headmodels = 55 81
+models = model_217 model_249 obj_bronze_chainbody_1103_man model_173 model_10218 model_14565 obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer model_81

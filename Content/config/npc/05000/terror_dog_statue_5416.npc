@@ -3,4 +3,4 @@ size = 3
 turnspeed = 0
 vislevel = 0
 name = Terror dog statue
-models = 21382
+models = obj_terror_dog

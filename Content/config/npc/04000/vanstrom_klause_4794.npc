@@ -1,8 +1,8 @@
 // npc 4794
 vislevel = 0
-readyanim = 4690
-walkanim = 4684
+readyanim = seq_4690
+walkanim = seq_4684
 size = 3
 name = Vanstrom Klause
-models = 18004 18003
-headmodels = 18051
+models = model_18004 model_18003
+headmodels = model_18051

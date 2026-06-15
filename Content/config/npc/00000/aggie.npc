@@ -1,10 +1,10 @@
 // npc 922
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 25238/10508 6798/16916 38814/10508 8741/10508 7952/10508 4550/3266
 name = Aggie
-models = 377 16459 456 479 348 353 428 361
-headmodels = 16447 102
+models = obj_wizard_hat_579_woman model_16459 obj_priest_gown_426_woman obj_fremennik_cloak_3759_woman obj_druids_robe_540_woman model_353 obj_priest_gown_428_woman obj_boots_of_lightness_88_woman
+headmodels = model_16447 model_102

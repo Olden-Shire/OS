@@ -1,6 +1,6 @@
 // npc 1110
-walkanim = 1139
-readyanim = 926
+walkanim = seq_1139
+readyanim = seq_926
 size = 1
 resizeh = 138
 resizev = 138
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 69
 recol = 61/8367 10355/10578 10355/7768
 name = Mountain troll
-models = 3753 3759 3756 3762 3766
+models = model_3753 model_3759 model_3756 model_3762 model_3766

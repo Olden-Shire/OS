@@ -1,6 +1,6 @@
 // npc 1433
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 resizeh = 170
 resizev = 150
 op1 = Talk-to
@@ -8,5 +8,5 @@ op3 = Trade
 vislevel = 0
 recol = 7469/40130 20/28
 name = Solihib
-models = 4820 4827
-headmodels = 4659
+models = model_4820 model_4827
+headmodels = model_4659

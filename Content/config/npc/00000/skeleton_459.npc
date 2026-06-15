@@ -1,10 +1,10 @@
 // npc 459
 alwaysontop = true
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 ambient = 5
 op2 = Attack
 vislevel = 13
 recol = 5231/7510 0/6689 10291/3253 10394/4267 6364/6482
 name = Skeleton
-models = 6744 15002
+models = model_6744 model_15002

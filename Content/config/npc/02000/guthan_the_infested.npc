@@ -1,10 +1,10 @@
 // npc 2027
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op2 = Attack
 ambient = 50
 contrast = 50
 alwaysontop = true
 vislevel = 115
 name = Guthan the Infested
-models = 6654 6673 6642 6666 6679 6710
+models = model_6654 model_6673 model_6642 model_6666 model_6679 model_6710

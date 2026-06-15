@@ -1,7 +1,7 @@
 // npc 5061
-walkanim = 5153
-readyanim = 5149
+walkanim = seq_5153
+readyanim = seq_5149
 vislevel = 0
 recol = 43072/4550 8741/5285 908/7326 4626/5285 78/6689 6798/6689
 name = Larry
-models = 214 11190 8845 173 10218 495 15005 18129
+models = model_214 model_11190 model_8845 model_173 model_10218 model_495 model_15005 model_18129

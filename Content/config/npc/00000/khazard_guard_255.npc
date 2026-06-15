@@ -1,11 +1,11 @@
 // npc 255
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 23
 recol = 61/20 25238/3974
 name = Khazard Guard
-models = 219 246 306 152 176 254 185 550
-headmodels = 57
+models = obj_khazard_helmet_man model_246 obj_khazard_armour_man model_152 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_iron_battleaxe_1363_wear
+headmodels = obj_watchman

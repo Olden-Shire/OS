@@ -1,8 +1,8 @@
 // npc 5879
 vislevel = 0
-readyanim = 6040
-walkanim = 6041
+readyanim = seq_6040
+walkanim = seq_6041
 op1 = Talk-to
 name = Ticket goblin
-models = 24523 24526 23629
-headmodels = 23246 24534
+models = model_24523 model_24526 model_23629
+headmodels = model_23246 model_24534

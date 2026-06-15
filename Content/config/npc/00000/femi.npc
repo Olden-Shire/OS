@@ -1,9 +1,9 @@
 // npc 676
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22422/937 22426/8472 22418/8472
 name = Femi
-models = 2907 2911 2922
-headmodels = 21
+models = model_2907 model_2911 model_2922
+headmodels = obj_gnome

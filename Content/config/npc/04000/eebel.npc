@@ -1,10 +1,10 @@
 // npc 4591
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22426/10549 22424/8604 22422/10652 22420/17705
 name = Eebel
-models = 17008 2909 14825
-headmodels = 16967
+models = model_17008 model_2909 model_14825
+headmodels = model_16967

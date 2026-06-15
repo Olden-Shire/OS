@@ -1,9 +1,9 @@
 // npc 2253
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 vislevel = 0
 op1 = Talk-to
 recol = 8741/8856 7700/42787 926/43963 11200/8617 25238/8856
 name = Wise Old Man
-models = 187 9103 4925 292 323 170 176 3711 265 181
-headmodels = 9102 7380
+models = obj_red_partyhat_1038_man model_9103 model_4925 obj_priest_gown_426_man obj_cape_1007_man obj_druids_robe_540_man model_176 model_3711 obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man
+headmodels = model_9102 model_7380

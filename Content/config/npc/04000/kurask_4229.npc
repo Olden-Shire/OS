@@ -2,5 +2,5 @@
 vislevel = 0
 size = 1
 name = Kurask
-models = 3010 3006
-headmodels = 14438
+models = model_3010 obj_witchs_cat
+headmodels = model_14438

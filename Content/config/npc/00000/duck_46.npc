@@ -1,9 +1,9 @@
 // npc 46
 size = 1
-walkanim = 6817
-readyanim = 6818
+walkanim = seq_6817
+readyanim = seq_6818
 op2 = Attack
 nominimap = true
 vislevel = 1
 name = Duck
-models = 26873
+models = model_26873

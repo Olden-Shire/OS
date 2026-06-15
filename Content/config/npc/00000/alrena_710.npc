@@ -1,10 +1,10 @@
 // npc 710
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/18646 25238/24914 8078/17523 926/16499 8082/21809 11200/19084
 name = Alrena
-models = 390 361 469 348 353 421 481 447
-headmodels = 113
+models = model_390 obj_boots_of_lightness_88_woman model_469 obj_druids_robe_540_woman model_353 obj_desert_robes_6386_woman obj_cape_1007_woman obj_glarials_amulet_woman
+headmodels = obj_warrior_woman

@@ -1,6 +1,6 @@
 // npc 3710
 size = 1
-readyanim = 6126
+readyanim = seq_6126
 vislevel = 0
 name = Ulfric
-models = 24151
+models = model_24151

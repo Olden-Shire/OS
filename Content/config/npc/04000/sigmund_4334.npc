@@ -1,10 +1,10 @@
 // npc 4334
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 headicon = 2
 op2 = Attack
 vislevel = 50
 recol = 8741/61347 25238/61347 7952/61347 61/68 8078/61347 11200/177
 name = Sigmund
-models = 5430 5215 283 296 317 24536 177 518 24537 181
-headmodels = 5428 5207
+models = obj_ham_hood_4302_man model_5215 obj_glarials_amulet_man obj_hardleather_body_1131_man obj_fremennik_cloak_3759_man model_24536 obj_leather_vambraces_1063_man obj_bronze_longsword_1291_wear model_24537 obj_vyrewatch_shoes_9638_man
+headmodels = obj_male_h_a_m model_5207

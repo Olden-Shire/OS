@@ -1,8 +1,8 @@
 // npc 3760
 size = 1
 op2 = Attack
-walkanim = 3879
-readyanim = 3878
+walkanim = seq_3879
+readyanim = seq_3878
 vislevel = 91
 name = Torcher
-models = 14552
+models = model_14552

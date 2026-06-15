@@ -1,6 +1,6 @@
 // npc 5476
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 resizeh = 120
 resizev = 120
 op2 = Attack
@@ -8,4 +8,4 @@ alwaysontop = true
 vislevel = 102
 recol = 61/43131 21570/43121
 name = Ice troll grunt
-models = 21921 3759 21918
+models = model_21921 model_3759 model_21918

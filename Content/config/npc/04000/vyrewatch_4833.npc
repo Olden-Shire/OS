@@ -1,10 +1,10 @@
 // npc 4833
 op2 = Attack
 op1 = Talk-to
-readyanim = 4689
-walkanim = 4683
+readyanim = seq_4689
+walkanim = seq_4683
 size = 3
 vislevel = 105
 name = Vyrewatch
-models = 17955 17959
-headmodels = 18056
+models = model_17955 model_17959
+headmodels = model_18056

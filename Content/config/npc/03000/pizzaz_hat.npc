@@ -3,5 +3,5 @@ size = 1
 op1 = Talk-to
 vislevel = 1
 name = Pizzaz Hat
-models = 10633
-headmodels = 10626
+models = model_10633
+headmodels = model_10626

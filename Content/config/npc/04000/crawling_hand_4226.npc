@@ -2,5 +2,5 @@
 vislevel = 0
 size = 1
 name = Crawling hand
-models = 3010 3006
-headmodels = 12735
+models = model_3010 obj_witchs_cat
+headmodels = model_12735

@@ -1,12 +1,12 @@
 // npc 2984
 vislevel = 0
 size = 1
-readyanim = 317
-walkanim = 314
+readyanim = seq_317
+walkanim = seq_314
 resizeh = 70
 resizev = 70
 alwaysontop = true
 op2 = hidden
 recol = 61/7060 16/61
 name = Pusskins
-models = 9428 9426
+models = model_9428 obj_wily_cat_6555

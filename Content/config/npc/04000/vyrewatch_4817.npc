@@ -2,10 +2,10 @@
 op1 = Talk-to
 op2 = Attack
 alwaysontop = true
-readyanim = 4702
-walkanim = 4699
+readyanim = seq_4702
+walkanim = seq_4699
 ambient = -25
 vislevel = 105
 name = Vyrewatch
-models = 17969 18000 17987
-headmodels = 18056
+models = model_17969 model_18000 model_17987
+headmodels = model_18056

@@ -1,10 +1,10 @@
 // npc 1613
 size = 1
-walkanim = 1526
-readyanim = 1527
+walkanim = seq_1526
+readyanim = seq_1527
 op2 = Attack
 ambient = -25
 contrast = -15
 vislevel = 115
 name = Nechryael
-models = 5074
+models = obj_nechryael

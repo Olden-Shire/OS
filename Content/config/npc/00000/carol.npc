@@ -1,11 +1,11 @@
 // npc 816
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 6798/9152 8741/43934 25238/933 8741/43934 43072/4550 4626/2712
 name = Carol
-models = 391 414 456 332 353 419 361
-headmodels = 114 131
+models = obj_fremennik_helm_woman model_414 obj_priest_gown_426_woman model_332 model_353 obj_mime_legs_woman obj_boots_of_lightness_88_woman
+headmodels = model_114 model_131

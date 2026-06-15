@@ -1,9 +1,9 @@
 // npc 2042
 vislevel = 0
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 name = Ogre guard
-models = 2880 2874
-headmodels = 141
+models = model_2880 model_2874
+headmodels = model_141

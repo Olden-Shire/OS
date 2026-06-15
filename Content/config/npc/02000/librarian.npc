@@ -1,9 +1,9 @@
 // npc 2165
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 61/6356 4550/2394
 name = Librarian
-models = 7029 7071 6017 7037 7045 2985
-headmodels = 6988 6996
+models = model_7029 model_7071 model_6017 model_7037 model_7045 model_2985
+headmodels = model_6988 model_6996

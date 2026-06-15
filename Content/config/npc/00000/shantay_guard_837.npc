@@ -1,11 +1,11 @@
 // npc 837
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 22
 recol = 8741/8472 25238/8472 43072/4550 43072/4550 908/945
 name = Shantay Guard
-models = 230 246 311 167 176 254 276 185 519
-headmodels = 63
+models = obj_desert_disguise_man model_246 obj_leather_body_1129_man model_167 model_176 obj_mime_legs_man model_276 obj_boots_of_lightness_88_man obj_bronze_sword_1277_wear
+headmodels = obj_rogue

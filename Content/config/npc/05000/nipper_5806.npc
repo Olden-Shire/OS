@@ -1,10 +1,10 @@
 // npc 5806
-readyanim = 6059
-walkanim = 6057
+readyanim = seq_6059
+walkanim = seq_6057
 vislevel = 0
 turnspeed = 0
 op1 = Talk-to
 recol = 10452/13526 10448/13522 7504/10349 7500/10349 41139/6315 41135/6439
 name = Nipper
-models = 23712
-headmodels = 23245
+models = model_23712
+headmodels = model_23245

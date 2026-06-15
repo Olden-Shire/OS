@@ -1,9 +1,9 @@
 // npc 359
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 43072/5662 25238/3980 8741/6449 4550/5662
 name = Man
-models = 230 185 250 299 159 179 275
-headmodels = 63 82
+models = obj_desert_disguise_man obj_boots_of_lightness_88_man model_250 model_299 model_159 obj_cooking_gauntlets_man obj_citizen_trousers_9642_man
+headmodels = obj_rogue model_82

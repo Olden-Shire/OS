@@ -2,10 +2,10 @@
 op1 = Talk-to
 op3 = Claim-Tokens
 vislevel = 0
-walkanim = 2562
-readyanim = 2561
+walkanim = seq_2562
+readyanim = seq_2561
 alwaysontop = true
 recol = 8741/939 7700/801 41/10337 8076/914 61/7370 6798/0
 name = Shanomi
-models = 208 250 306 4604 15302 176 10318 15313 185
-headmodels = 48 82
+models = model_208 model_250 obj_khazard_armour_man obj_hooded_cloak_4041_man model_15302 model_176 model_10318 model_15313 obj_boots_of_lightness_88_man
+headmodels = model_48 model_82

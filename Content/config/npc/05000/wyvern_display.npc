@@ -1,8 +1,8 @@
 // npc 5980
-readyanim = 6445
+readyanim = seq_6445
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 4
 name = Wyvern display
-models = 25496 25497 25499 25498 25493 25494
+models = model_25496 model_25497 model_25499 model_25498 model_25493 model_25494

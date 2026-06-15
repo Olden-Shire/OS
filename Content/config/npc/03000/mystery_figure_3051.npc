@@ -1,9 +1,9 @@
 // npc 3051
 vislevel = 0
 size = 2
-readyanim = 2939
-walkanims = 2562, 2562, 2562, 2562
+readyanim = seq_2939
+walkanims = seq_2562, seq_2562, seq_2562, seq_2562
 recol = 61/43286 57/9152 41/40334 10004/40334 4626/40334 6798/9562
 name = Mystery figure
-models = 9452 250 306 10298 179 268 185 10314 10311
-headmodels = 9448 250
+models = model_9452 model_250 obj_khazard_armour_man model_10298 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man model_10314 model_10311
+headmodels = model_9448 model_250

@@ -1,9 +1,9 @@
 // npc 5301
 size = 1
 op2 = Attack
-readyanim = 5565
-walkanims = 5566, 5790, 5788, 5789
+readyanim = seq_5565
+walkanims = seq_5566, seq_5790, seq_5788, seq_5789
 vislevel = 13
 recol = 13506/32819 13501/32819 13493/32811 13489/32811 13497/32815
 name = Zombie
-models = 21005 20975 20956 20993 21018 20986 21036
+models = model_21005 model_20975 model_20956 model_20993 model_21018 model_20986 model_21036

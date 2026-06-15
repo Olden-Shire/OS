@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 107
 resizev = 107
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 22424/14490 6798/2981 22426/21530 8741/21530 4550/10450 11162/10450
 name = Helena
-models = 2895 2909 2918
-headmodels = 138
+models = model_2895 model_2909 model_2918
+headmodels = model_138

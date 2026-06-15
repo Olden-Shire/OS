@@ -1,7 +1,7 @@
 // npc 4611
-walkanim = 189
-readyanim = 1412
+walkanim = seq_189
+readyanim = seq_1412
 vislevel = 0
 name = Saboteur
-models = 4703 4704 4697
-headmodels = 4653
+models = model_4703 model_4704 model_4697
+headmodels = model_4653

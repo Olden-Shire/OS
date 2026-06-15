@@ -1,11 +1,11 @@
 // npc 1438
 size = 2
-walkanim = 1399
-readyanim = 1401
+walkanim = seq_1399
+readyanim = seq_1401
 resizeh = 180
 resizev = 180
 op1 = Talk-to
 vislevel = 0
 name = Hafuba
-models = 4811 4813 4814
-headmodels = 4664
+models = model_4811 model_4813 model_4814
+headmodels = model_4664

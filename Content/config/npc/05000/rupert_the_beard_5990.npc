@@ -2,5 +2,5 @@
 nominimap = true
 vislevel = 1
 name = Rupert the Beard
-models = 26050
-headmodels = 26082 26081
+models = model_26050
+headmodels = model_26082 model_26081

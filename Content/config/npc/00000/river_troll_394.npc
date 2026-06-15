@@ -2,11 +2,11 @@
 size = 1
 resizev = 96
 resizeh = 160
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 op2 = Attack
 alwaysontop = true
 vislevel = 79
 recol = 61/26925
 name = River troll
-models = 3752
+models = model_3752

@@ -1,6 +1,6 @@
 // npc 1097
-walkanim = 1139
-readyanim = 926
+walkanim = seq_1139
+readyanim = seq_926
 size = 2
 resizeh = 174
 resizev = 160
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 91
 recol = 61/8478 21570/7580 10355/7768
 name = Pee Hat
-models = 3753 3758 3756 3766 3762
+models = model_3753 obj_troll_guard model_3756 model_3766 model_3762

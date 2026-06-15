@@ -1,10 +1,10 @@
 // npc 276
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 vislevel = 0
 op1 = Talk-to
 recol = 8741/926 25238/52112 38814/16 8082/43920 11200/56995 4550/84
 name = Winelda
-models = 393 377 462 348 353 481 440 454 534
-headmodels = 115 102
+models = model_393 obj_wizard_hat_579_woman model_462 obj_druids_robe_540_woman model_353 obj_cape_1007_woman model_440 obj_amulet_of_accuracy_1478_woman obj_dramen_staff_wear
+headmodels = model_115 model_102

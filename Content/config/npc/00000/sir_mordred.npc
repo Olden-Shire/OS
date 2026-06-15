@@ -1,11 +1,11 @@
 // npc 247
 size = 1
-walkanim = 6486
-readyanim = 6487
+walkanim = seq_6486
+readyanim = seq_6487
 op1 = Talk-to
 op2 = Attack
 vislevel = 39
 recol = 41/43156 49/43160 57/43280 7888/54802
 name = Sir Mordred
-models = 27128 25685 27199
-headmodels = 27206 27561
+models = model_27128 model_25685 model_27199
+headmodels = model_27206 model_27561

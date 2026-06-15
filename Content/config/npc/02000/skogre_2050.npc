@@ -1,10 +1,10 @@
 // npc 2050
-walkanim = 358
-readyanim = 2099
+walkanim = seq_358
+readyanim = seq_2099
 resizeh = 120
 resizev = 120
 op2 = Attack
 size = 2
 vislevel = 44
 name = Skogre
-models = 6770
+models = model_6770

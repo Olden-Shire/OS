@@ -1,11 +1,11 @@
 // npc 348
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 recol = 926/43270 8741/6936 11200/43270 8090/6936
 name = Mourner
-models = 212 295 150 273 185 323
-headmodels = 51
+models = obj_gas_mask_man obj_plague_jacket_man model_150 model_273 obj_boots_of_lightness_88_man obj_cape_1007_man
+headmodels = model_51

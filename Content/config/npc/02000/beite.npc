@@ -1,13 +1,13 @@
 // npc 2648
 vislevel = 0
 size = 1
-walkanim = 2662
-readyanim = 2664
+walkanim = seq_2662
+readyanim = seq_2664
 op1 = Talk-to
 resizeh = 30
 resizev = 32
 alwaysontop = true
 recol = 61/43150
 name = Beite
-models = 9386 9388
-headmodels = 6438
+models = model_9386 model_9388
+headmodels = model_6438

@@ -1,10 +1,10 @@
 // npc 355
 vislevel = 0
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 25238/3980 22426/21534 11162/8596 4550/4300 4292/4661
 name = Child
-models = 2897 2910 2918
-headmodels = 139 11430
+models = model_2897 model_2910 model_2918
+headmodels = model_139 model_11430

@@ -5,5 +5,5 @@ op1 = Talk-To
 op3 = Sober-Up
 recol = 25238/21530 43072/6490 6443/10405 4550/6490
 name = Skippy
-models = 6364 210 253 8845 168 176 275 9823
-headmodels = 49 85 6212 9822
+models = model_6364 model_210 model_253 model_8845 model_168 model_176 obj_citizen_trousers_9642_man model_9823
+headmodels = model_49 model_85 model_6212 model_9822

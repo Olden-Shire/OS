@@ -1,11 +1,11 @@
 // npc 814
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 op1 = Talk-to
 recol = 6798/5056 8741/935 25238/22418 8741/960 43072/4550 9529/935
 name = Anna
-models = 390 417 11360 332 353 419 361
-headmodels = 113
+models = model_390 model_417 model_11360 model_332 model_353 obj_mime_legs_woman obj_boots_of_lightness_88_woman
+headmodels = obj_warrior_woman

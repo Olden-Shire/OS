@@ -1,10 +1,10 @@
 // npc 1302
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 623
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_623
 op1 = Talk-to
 vislevel = 0
 recol = 8741/6554 25238/7566 8078/7609 6798/5815
 name = Fisherman
-models = 208 252 292 162 179 4226 4218 562 326 417 4390 317
-headmodels = 48 84
+models = model_208 model_252 obj_priest_gown_426_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_4226 model_4218 obj_fishing_rod_307_wear model_326 model_417 model_4390 obj_fremennik_cloak_3759_man
+headmodels = model_48 model_84

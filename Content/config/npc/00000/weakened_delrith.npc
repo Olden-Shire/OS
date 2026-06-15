@@ -2,11 +2,11 @@
 size = 2
 resizeh = 86
 resizev = 86
-readyanim = 4619
-walkanim = 63
+readyanim = seq_4619
+walkanim = seq_63
 op1 = Banish
 alwaysontop = true
 vislevel = 1
 recol = 918/3486
 name = Weakened Delrith
-models = 17382 17387 17392 17389
+models = model_17382 model_17387 model_17392 model_17389

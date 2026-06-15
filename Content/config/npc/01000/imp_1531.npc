@@ -1,11 +1,11 @@
 // npc 1531
 size = 1
-walkanim = 168
-readyanim = 171
+walkanim = seq_168
+readyanim = seq_171
 resizeh = 132
 resizev = 132
 ambient = 30
 vislevel = 1
 recol = 10306/10549 10297/10421 40210/40838 7461/7952 7469/7704
 name = Imp
-models = 19982
+models = obj_imp

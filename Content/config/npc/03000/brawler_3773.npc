@@ -1,9 +1,9 @@
 // npc 3773
 size = 2
 op2 = Attack
-walkanim = 3892
-readyanim = 3893
+walkanim = seq_3892
+readyanim = seq_3893
 vislevel = 76
 recol = 18320/924 16278/1955 15011/3757 13867/3635 12725/4539 10553/5437
 name = Brawler
-models = 14545
+models = model_14545

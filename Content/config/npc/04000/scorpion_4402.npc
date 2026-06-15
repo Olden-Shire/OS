@@ -1,8 +1,8 @@
 // npc 4402
 size = 2
-walkanim = 6253
-readyanim = 6252
+walkanim = seq_6253
+readyanim = seq_6252
 op2 = Attack
 vislevel = 59
 name = Scorpion
-models = 24609
+models = model_24609

@@ -1,11 +1,11 @@
 // npc 3354
 vislevel = 0
-walkanims = 4226, 4227, 821, 822
-readyanim = 4591
+walkanims = seq_4226, seq_4227, seq_821, seq_822
+readyanim = seq_4591
 size = 1
 alwaysontop = true
 op1 = Talk-to
 recol = 8741/1451 8078/64156 8741/64049 25238/8396 5231/7496
 name = Cap'n Hand
-models = 13335 13333 14187 162 3660 5218 190 12758 16846
-headmodels = 13871
+models = model_13335 obj_fishbowl_helmet_man model_14187 obj_fremennik_shirt_3767_man obj_pirates_hook_2997_man model_5218 obj_pirates_hat_2651_man obj_diving_apparatus_man obj_phoenix_crossbow_767_wear
+headmodels = model_13871

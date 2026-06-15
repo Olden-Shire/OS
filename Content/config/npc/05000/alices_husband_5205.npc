@@ -1,10 +1,10 @@
 // npc 5205
-walkanim = 5373
-readyanim = 5371
+walkanim = seq_5373
+readyanim = seq_5371
 ambient = 40
 contrast = 40
 vislevel = 0
 recol = 17467/18626
 name = Alice's husband
-models = 5212 20460 5219 20421 5209 20426 5216
-headmodels = 5203
+models = model_5212 obj_crone_made_amulet_man model_5219 model_20421 model_5209 obj_empty_sack_10486 model_5216
+headmodels = model_5203

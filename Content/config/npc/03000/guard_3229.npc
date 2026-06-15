@@ -1,10 +1,10 @@
 // npc 3229
 size = 1
-walkanims = 4226, 4227, 821, 822
-readyanim = 4591
+walkanims = seq_4226, seq_4227, seq_821, seq_822
+readyanim = seq_4591
 op2 = Attack
 op3 = Pickpocket
 vislevel = 22
 recol = 25238/10508 8741/6930 61/5652
 name = Guard
-models = 233 249 294 10374 176 254 185 16846
+models = model_233 model_249 obj_iron_chainbody_1101_man model_10374 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_phoenix_crossbow_767_wear

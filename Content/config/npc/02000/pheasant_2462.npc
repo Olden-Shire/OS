@@ -1,7 +1,7 @@
 // npc 2462
 size = 1
-walkanim = 2369
-readyanim = 2370
+walkanim = seq_2369
+readyanim = seq_2370
 resizeh = 180
 resizev = 180
 op2 = Attack
@@ -10,4 +10,4 @@ resizeh = 30
 resizev = 30
 vislevel = 3
 name = Pheasant
-models = 8839 8843
+models = model_8839 model_8843

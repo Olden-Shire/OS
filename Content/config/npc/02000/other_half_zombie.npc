@@ -1,8 +1,8 @@
 // npc 2871
-walkanim = 2824
-readyanim = 2826
+walkanim = seq_2824
+readyanim = seq_2826
 op1 = Talk-To
 vislevel = 0
 name = Other Half-Zombie
-models = 9914
-headmodels = 9920
+models = model_9914
+headmodels = model_9920

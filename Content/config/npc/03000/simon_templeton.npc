@@ -1,10 +1,10 @@
 // npc 3123
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/6447 25238/6932 4550/4541
 name = Simon Templeton
-models = 6364 215 244 246 292 4391 151 10218 271 185
-headmodels = 53 6212 77
+models = model_6364 obj_fremennik_helm_man model_244 model_246 obj_priest_gown_426_man model_4391 model_151 model_10218 model_271 obj_boots_of_lightness_88_man
+headmodels = obj_man model_6212 model_77

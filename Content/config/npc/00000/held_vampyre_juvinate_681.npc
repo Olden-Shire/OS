@@ -2,11 +2,11 @@
 op2 = Attack
 ambient = -25
 turnspeed = 0
-readyanim = 3551
+readyanim = seq_3551
 resizeh = 143
 resizev = 140
 vislevel = 59
 recol = 4550/21584 40229/24745 40237/24749 40241/24753 11138/16536 12/16536
 name = Held vampyre juvinate
-models = 14042 14039 14046 14041 14044
-headmodels = 13943
+models = model_14042 model_14039 model_14046 model_14041 model_14044
+headmodels = model_13943

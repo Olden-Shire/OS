@@ -1,9 +1,9 @@
 // npc 3395
 vislevel = 0
 size = 1
-walkanim = 3396
-readyanim = 3396
+walkanim = seq_3396
+readyanim = seq_3396
 recol = 70/99 5532/82 41/82 61/99 7700/103 57/99
 name = Sir Amik Varze
-models = 215 306 164 179 268 184 201 249 12799
-headmodels = 53 81 43
+models = obj_fremennik_helm_man obj_khazard_armour_man model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man model_184 obj_red_headband_2645_man model_249 model_12799
+headmodels = obj_man model_81 model_43

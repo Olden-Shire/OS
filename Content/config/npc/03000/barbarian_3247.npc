@@ -1,11 +1,11 @@
 // npc 3247
 resizeh = 137
-walkanims = 2562, 2562, 2562, 2562
-readyanim = 2561
+walkanims = seq_2562, seq_2562, seq_2562, seq_2562
+readyanim = seq_2561
 op2 = Attack
 op1 = Talk-to
 vislevel = 10
 recol = 943/1944 939/1944 935/1944
 name = Barbarian
-models = 11738 214 11747 251 11758 11728 11731 11754 11733 11763 11793
-headmodels = 52 83 11803 11807
+models = model_11738 model_214 model_11747 model_251 model_11758 model_11728 model_11731 model_11754 model_11733 model_11763 model_11793
+headmodels = model_52 model_83 model_11803 model_11807

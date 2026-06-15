@@ -1,8 +1,8 @@
 // npc 4645
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 recol = 4758/16 22420/20 99/82 10275/12
 name = Glouphrie the Untrusted
-models = 16997 17007 16989
-headmodels = 16969
+models = model_16997 model_17007 model_16989
+headmodels = model_16969

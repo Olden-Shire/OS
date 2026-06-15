@@ -1,9 +1,9 @@
 // npc 977
 size = 1
-walkanim = 5325
-readyanim = 5326
+walkanim = seq_5325
+readyanim = seq_5326
 op2 = Attack
 vislevel = 39
 recol = 960/10690 33728/38156 22443/38160 11200/38408 56256/10826 50099/10954
 name = Blessed spider
-models = 20309 20312
+models = model_20309 model_20312

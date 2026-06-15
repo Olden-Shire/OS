@@ -1,8 +1,8 @@
 // npc 1788
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 recol = 22426/16821 22422/437
 name = Lumdo
-models = 2914 14924 2919
-headmodels = 21
+models = model_2914 model_14924 model_2919
+headmodels = obj_gnome

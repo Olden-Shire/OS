@@ -1,8 +1,8 @@
 // npc 129
 size = 1
-walkanim = 254
-readyanim = 257
+walkanim = seq_254
+readyanim = seq_257
 op2 = Attack
 vislevel = 2
 name = Skavid
-models = 20388
+models = model_20388

@@ -1,8 +1,8 @@
 // npc 5277
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 recol = 4550/6563 49054/2700 926/2700 10275/5392 10304/9019 10283/5656
 name = Menaphite guard
-models = 20750 5104 11758 20754 20747 10218 9955 20751 185 20755 11762
-headmodels = 20743 5095
+models = model_20750 obj_facemask_4164_man model_11758 model_20754 model_20747 model_10218 obj_seercull_6724_wear model_20751 obj_boots_of_lightness_88_man model_20755 model_11762
+headmodels = model_20743 model_5095

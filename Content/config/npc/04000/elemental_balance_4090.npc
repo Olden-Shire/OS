@@ -1,9 +1,9 @@
 // npc 4090
-readyanim = 3584
+readyanim = seq_3584
 vislevel = 0
 size = 1
 op2 = Banish
 turnspeed = 0
 recol = 127/32883
 name = Elemental balance
-models = 12960
+models = obj_magical_balance_1

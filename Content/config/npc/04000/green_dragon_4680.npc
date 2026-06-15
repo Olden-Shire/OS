@@ -2,10 +2,10 @@
 size = 4
 resizeh = 110
 resizev = 110
-walkanim = 79
-readyanim = 90
+walkanim = seq_79
+readyanim = seq_90
 op2 = Attack
 vislevel = 79
 recol = 2469/16695 912/16801 1938/16677 1814/16681 2588/17713 910/16796
 name = Green dragon
-models = 17407 17426 17418 17423
+models = model_17407 model_17426 model_17418 model_17423

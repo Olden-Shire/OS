@@ -1,12 +1,12 @@
 // npc 572
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 25238/6554 8078/6554 8741/2733 61/2733 4550/5683
 name = Spice seller
-models = 217 292 250 162 176 260 185 280 201
-headmodels = 55 43 82
+models = model_217 obj_priest_gown_426_man model_250 obj_fremennik_shirt_3767_man model_176 model_260 obj_boots_of_lightness_88_man obj_unblessed_symbol_1716_man obj_red_headband_2645_man
+headmodels = obj_farmer model_43 model_82

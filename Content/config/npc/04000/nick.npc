@@ -1,7 +1,7 @@
 // npc 4569
 vislevel = 0
-readyanim = 4594
+readyanim = seq_4594
 turnspeed = 0
 recol = 25238/33052 8741/3625 8860/3633 6798/10161
 name = Nick
-models = 217 246 292 10980 10218 17284 271 181
+models = model_217 model_246 obj_priest_gown_426_man model_10980 model_10218 obj_panning_tray_677_wear model_271 obj_vyrewatch_shoes_9638_man

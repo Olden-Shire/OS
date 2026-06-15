@@ -1,12 +1,12 @@
 // npc 3320
 size = 1
 op2 = Attack
-walkanim = 3261
-readyanim = 3259
+walkanim = seq_3261
+readyanim = seq_3259
 resizeh = 70
 resizev = 80
 vislevel = 45
 recol = 6600/8361 7473/7333 7469/8481 7461/7452
 name = Baby tanglefoot
-models = 11979
-headmodels = 11987
+models = model_11979
+headmodels = model_11987

@@ -2,9 +2,9 @@
 vislevel = 0
 nominimap = true
 size = 2
-readyanim = 1754
-walkanim = 1754
+readyanim = seq_1754
+walkanim = seq_1754
 resizev = 40
 resizeh = 40
 name = Rock pile
-models = 5654
+models = model_5654

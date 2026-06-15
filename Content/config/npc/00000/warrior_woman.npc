@@ -1,10 +1,10 @@
 // npc 15
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op3 = Pickpocket
 op2 = Attack
 vislevel = 24
 recol = 6798/6854 4626/24
 name = Warrior woman
-models = 390 468 337 353 432 361 376 519 541
+models = model_390 obj_khazard_armour_woman model_337 model_353 obj_iron_platelegs_1067_woman obj_boots_of_lightness_88_woman obj_red_headband_2645_woman obj_bronze_sword_1277_wear obj_bronze_sq_shield_1173_wear

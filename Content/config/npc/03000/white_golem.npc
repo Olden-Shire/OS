@@ -1,12 +1,12 @@
 // npc 3027
 resizeh = 150
 resizev = 150
-readyanim = 1913
-walkanim = 1912
+readyanim = seq_1913
+walkanim = seq_1912
 op2 = Attack
 alwaysontop = true
 alwaysontop = true
 vislevel = 75
 recol = 4521/8423 4391/8423 5413/7393 6435/6373 8481/5338 61/3290
 name = White golem
-models = 6146 6147 6149
+models = model_6146 model_6147 model_6149

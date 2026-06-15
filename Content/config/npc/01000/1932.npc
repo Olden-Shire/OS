@@ -1,7 +1,7 @@
 // npc 1932
 alwaysontop = true
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 vislevel = 0
 resizeh = 72
 resizev = 72

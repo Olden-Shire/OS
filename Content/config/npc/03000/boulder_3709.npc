@@ -1,8 +1,8 @@
 // npc 3709
 size = 2
-walkanim = 6120
+walkanim = seq_6120
 vislevel = 0
 nominimap = true
 turnspeed = 0
 name = Boulder
-models = 24149
+models = model_24149

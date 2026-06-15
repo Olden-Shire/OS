@@ -1,10 +1,10 @@
 // npc 862
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 op2 = Attack
 vislevel = 83
 name = City guard
-models = 20379 20374
-headmodels = 20413
+models = model_20379 model_20374
+headmodels = model_20413

@@ -1,9 +1,9 @@
 // npc 654
 vislevel = 0
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 name = Shamus
-models = 2909 2896 2915
-headmodels = 24
+models = model_2909 model_2896 model_2915
+headmodels = model_24

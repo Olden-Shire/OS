@@ -1,8 +1,8 @@
 // npc 2035
-walkanim = 5325
-readyanim = 5326
+walkanim = seq_5325
+readyanim = seq_5326
 op2 = Attack
 vislevel = 79
 recol = 960/32922 33728/30100 22443/37270 11200/21776 56256/21675 50099/33048
 name = Giant crypt spider
-models = 20315 20316
+models = model_20315 model_20316

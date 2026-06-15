@@ -1,10 +1,10 @@
 // npc 2711
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op2 = Attack
 vislevel = 13
 recol = 8741/17961 25238/17961 7700/18328 926/22420 11200/22420 43117/3501
 name = Earth wizard
-models = 9455 181 249 292 170 176 265 534 567 323
-headmodels = 9445 81
+models = model_9455 obj_vyrewatch_shoes_9638_man model_249 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_dramen_staff_wear model_567 obj_cape_1007_man
+headmodels = model_9445 model_81

@@ -1,8 +1,8 @@
 // npc 5903
 size = 3
-readyanim = 6343
-walkanim = 6344
+readyanim = seq_6343
+walkanim = seq_6344
 op2 = Attack
 vislevel = 223
 name = The Everlasting
-models = 24998
+models = model_24998

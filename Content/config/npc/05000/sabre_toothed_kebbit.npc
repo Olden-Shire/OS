@@ -1,9 +1,9 @@
 // npc 5087
 size = 1
-walkanim = 5272
-readyanim = 5273
+walkanim = seq_5272
+readyanim = seq_5273
 op5 = Hidden
 vislevel = 0
 recol = 5008/40041 5532/40047 5537/41077 5413/40057 5417/32893 5656/40041
 name = Sabre-toothed kebbit
-models = 19382 19389 19384
+models = model_19382 model_19389 model_19384

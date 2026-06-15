@@ -1,10 +1,10 @@
 // npc 5922
-walkanim = 6486
-readyanim = 6487
+walkanim = seq_6486
+readyanim = seq_6487
 ambient = 20
 contrast = 15
 vislevel = 0
 op1 = Talk-to
 name = Captain
-models = 25672 25685 25684
-headmodels = 25633
+models = model_25672 model_25685 model_25684
+headmodels = model_25633

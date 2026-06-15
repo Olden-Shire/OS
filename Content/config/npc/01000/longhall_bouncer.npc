@@ -1,10 +1,10 @@
 // npc 1278
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 8741/6554 25238/7566 8078/7609 6798/5815
 name = Longhall Bouncer
-models = 4220 252 291 162 179 4226 4218 550 4222 317 4219
-headmodels = 4210 84 4212
+models = model_4220 model_252 model_291 obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_4226 model_4218 obj_iron_battleaxe_1363_wear model_4222 obj_fremennik_cloak_3759_man model_4219
+headmodels = obj_fremennik model_84 model_4212

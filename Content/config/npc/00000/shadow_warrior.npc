@@ -1,10 +1,10 @@
 // npc 158
 size = 1
-walkanim = 841
-readyanim = 842
+walkanim = seq_841
+readyanim = seq_842
 nominimap = true
 op2 = Attack
 vislevel = 48
 recol = 61/10258 41/10382 57/10382 7073/10382 4550/11138 10004/11138
 name = Shadow warrior
-models = 213 306 164 179 268 184 550
+models = model_213 obj_khazard_armour_man model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man model_184 obj_iron_battleaxe_1363_wear

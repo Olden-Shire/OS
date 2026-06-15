@@ -1,6 +1,6 @@
 // npc 1125
-walkanim = 1140
-readyanim = 925
+walkanim = seq_1140
+readyanim = seq_925
 size = 3
 resizeh = 224
 resizev = 224
@@ -9,5 +9,5 @@ op2 = Attack
 vislevel = 101
 recol = 61/7343 21570/5293
 name = Dad
-models = 3753 3759 3756 3773 3761
-headmodels = 3791 3789
+models = model_3753 model_3759 model_3756 model_3773 model_3761
+headmodels = model_3791 model_3789

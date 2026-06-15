@@ -1,11 +1,11 @@
 // npc 638
 size = 1
 op1 = Talk-to
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 alwaysontop = true
 recol = 6798/10320 8860/5305 8741/5305 33030/61070 107/7244 25238/5272
 name = Apothecary
-models = 25657 253 11811 10980 10218 12138 8919
-headmodels = 25631 85
+models = model_25657 model_253 model_11811 model_10980 model_10218 model_12138 obj_villager_sandals_6349_man
+headmodels = model_25631 model_85

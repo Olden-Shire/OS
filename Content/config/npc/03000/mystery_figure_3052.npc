@@ -1,7 +1,7 @@
 // npc 3052
 vislevel = 0
 size = 2
-readyanim = 2942
+readyanim = seq_2942
 name = Mystery figure
-models = 10321 10327 10325 10322 10324 10328
-headmodels = 10236 10237
+models = model_10321 model_10327 model_10325 model_10322 model_10324 model_10328
+headmodels = model_10236 model_10237

@@ -1,9 +1,9 @@
 // npc 1180
 size = 2
-walkanim = 6774
-readyanim = 6772
+walkanim = seq_6774
+readyanim = seq_6772
 ambient = 20
 nominimap = true
 vislevel = 0
 name = Cormorant
-models = 26840 26838
+models = model_26840 model_26838

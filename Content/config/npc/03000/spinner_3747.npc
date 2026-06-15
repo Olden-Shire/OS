@@ -1,8 +1,8 @@
 // npc 3747
 size = 1
 op2 = Attack
-walkanim = 3907
-readyanim = 3906
+walkanim = seq_3907
+readyanim = seq_3906
 vislevel = 36
 name = Spinner
-models = 14549
+models = model_14549

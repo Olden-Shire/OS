@@ -1,10 +1,10 @@
 // npc 2030
-walkanim = 2060
-readyanim = 2061
+walkanim = seq_2060
+readyanim = seq_2061
 op2 = Attack
 ambient = 50
 contrast = 50
 alwaysontop = true
 vislevel = 115
 name = Verac the Defiled
-models = 6678 6705
+models = model_6678 model_6705

@@ -1,8 +1,8 @@
 // npc 5902
 size = 5
-readyanim = 6317
-walkanim = 6317
+readyanim = seq_6317
+walkanim = seq_6317
 op2 = Attack
 vislevel = 343
 name = The Inadequacy
-models = 25000 25006 25001 25002 25003 25004 25005
+models = model_25000 model_25006 model_25001 model_25002 model_25003 model_25004 model_25005

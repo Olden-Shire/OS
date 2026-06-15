@@ -1,12 +1,12 @@
 // npc 1068
 size = 1
-walkanims = 1144, 1144, 1144, 1144
-readyanim = 1144
+walkanims = seq_1144, seq_1144, seq_1144, seq_1144
+readyanim = seq_1144
 resizeh = 128
 resizev = 128
 op1 = Talk-to
 vislevel = 0
 recol = 8090/0 61/0 25238/0 4626/0 6798/0
 name = Soldier
-models = 214 295 150 264 3710 246
-headmodels = 55
+models = model_214 obj_plague_jacket_man model_150 model_264 model_3710 model_246
+headmodels = obj_farmer

@@ -1,11 +1,11 @@
 // npc 1623
 size = 1
-walkanim = 1564
-readyanim = 1566
+walkanim = seq_1564
+readyanim = seq_1566
 resizeh = 110
 resizev = 110
 op2 = Attack
 vislevel = 29
 recol = 6829/14883
 name = Rockslug
-models = 5084
+models = obj_rockslug

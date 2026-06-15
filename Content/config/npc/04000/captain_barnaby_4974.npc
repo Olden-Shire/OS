@@ -5,5 +5,5 @@ op1 = Talk-to
 op3 = Pay-fare
 recol = 6798/115 8741/38821 25238/38821 43072/6709 4550/6709 906/7104
 name = Captain Barnaby
-models = 214 250 299 159 263 176 185 326
-headmodels = 52 82
+models = model_214 model_250 model_299 model_159 model_263 model_176 obj_boots_of_lightness_88_man model_326
+headmodels = model_52 model_82

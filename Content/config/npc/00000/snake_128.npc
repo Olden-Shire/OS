@@ -1,8 +1,8 @@
 // npc 128
 size = 1
-walkanim = 274
-readyanim = 277
+walkanim = seq_274
+readyanim = seq_277
 op2 = Attack
 vislevel = 5
 name = Snake
-models = 3002
+models = model_3002

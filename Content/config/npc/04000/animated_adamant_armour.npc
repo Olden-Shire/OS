@@ -1,10 +1,10 @@
 // npc 4283
 size = 1
 op2 = Attack
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 alwaysontop = true
 vislevel = 113
 recol = 61/21662 41/21776 24/22026 37/21776 7110/21660 6550/22406
 name = Animated Adamant Armour
-models = 15311 15316 15301 15304 546 15314 15303
+models = model_15311 model_15316 model_15301 model_15304 obj_bronze_2h_sword_1307_wear model_15314 model_15303

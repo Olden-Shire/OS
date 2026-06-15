@@ -1,11 +1,11 @@
 // npc 682
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 6674/8111 23442/4003 6798/7073 25238/3998 8741/3998
 name = Armour salesman
-models = 246 303 18930 167 179 563 486 262 185
-headmodels = 18912
+models = model_246 obj_studded_body_1133_man model_18930 model_167 obj_cooking_gauntlets_man obj_longbow_839_wear obj_bronze_kiteshield_1189_wear obj_leather_chaps_1095_man obj_boots_of_lightness_88_man
+headmodels = model_18912

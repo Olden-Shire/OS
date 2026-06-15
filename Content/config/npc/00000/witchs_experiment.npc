@@ -1,9 +1,9 @@
 // npc 897
 size = 1
-walkanim = 254
-readyanim = 257
+walkanim = seq_254
+readyanim = seq_257
 op2 = Attack
 vislevel = 19
 recol = 9647/52120 127/23506
 name = Witch's experiment
-models = 2999
+models = model_2999

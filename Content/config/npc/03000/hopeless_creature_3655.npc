@@ -1,8 +1,8 @@
 // npc 3655
 size = 2
-walkanim = 3825
-readyanim = 3822
+walkanim = seq_3825
+readyanim = seq_3822
 op2 = Attack
 vislevel = 40
 name = Hopeless creature
-models = 14283
+models = model_14283

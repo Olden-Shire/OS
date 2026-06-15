@@ -3,4 +3,4 @@ vislevel = 0
 size = 1
 nominimap = true
 name = Fly trap
-models = 14207
+models = model_14207

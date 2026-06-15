@@ -2,8 +2,8 @@
 size = 1
 contrast = 12
 ambient = 12
-walkanim = 5187
-readyanim = 5188
+walkanim = seq_5187
+readyanim = seq_5188
 vislevel = 0
 name = Ferret
-models = 19373
+models = obj_ferret

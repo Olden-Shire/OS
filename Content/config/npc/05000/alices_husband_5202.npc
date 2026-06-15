@@ -1,6 +1,6 @@
 // npc 5202
-walkanim = 5372
-readyanim = 5370
+walkanim = seq_5372
+readyanim = seq_5370
 ambient = 40
 contrast = 40
 op1 = Talk-to
@@ -8,5 +8,5 @@ vislevel = 0
 alwaysontop = true
 recol = 17467/18626
 name = Alice's husband
-models = 5212 5219 20421 5209 5231 5216
-headmodels = 5203
+models = model_5212 model_5219 model_20421 model_5209 model_5231 model_5216
+headmodels = model_5203

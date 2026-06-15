@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 125
 resizev = 120
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 43072/10450 25238/11148 4550/10450 6443/14494 4886/13592
 name = Luscion
-models = 210 250 8845 326 168 176 275 8919
-headmodels = 49 82 9822
+models = model_210 model_250 model_8845 model_326 model_168 model_176 obj_citizen_trousers_9642_man obj_villager_sandals_6349_man
+headmodels = model_49 model_82 model_9822

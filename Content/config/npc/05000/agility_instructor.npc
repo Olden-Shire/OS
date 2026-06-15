@@ -1,6 +1,6 @@
 // npc 5447
-walkanim = 5676
-readyanim = 5677
+walkanim = seq_5676
+readyanim = seq_5677
 resizeh = 75
 resizev = 75
 size = 1
@@ -8,5 +8,5 @@ vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 name = Agility Instructor
-models = 21547 21548
-headmodels = 21525
+models = model_21547 model_21548
+headmodels = model_21525

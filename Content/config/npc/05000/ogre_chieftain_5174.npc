@@ -1,8 +1,8 @@
 // npc 5174
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 vislevel = 81
 name = Ogre chieftain
-models = 20379 20373
-headmodels = 20381
+models = model_20379 model_20373
+headmodels = model_20381

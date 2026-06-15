@@ -1,10 +1,10 @@
 // npc 1620
 size = 2
-walkanim = 1559
-readyanim = 1561
+walkanim = seq_1559
+readyanim = seq_1561
 resizeh = 120
 resizev = 120
 op2 = Attack
 vislevel = 37
 name = Cockatrice
-models = 5070
+models = obj_cockatrice

@@ -1,7 +1,7 @@
 // npc 2611
 op2 = Attack
-walkanim = 2601
-readyanim = 2603
+walkanim = seq_2601
+readyanim = seq_2603
 contrast = 0
 ambient = 10
 resizeh = 140
@@ -9,5 +9,5 @@ resizev = 140
 vislevel = 149
 recol = 3005/3010 406/4634
 name = TzHaar-Ket
-models = 9301 9300 9303 9302
-headmodels = 9251
+models = model_9301 model_9300 model_9303 model_9302
+headmodels = model_9251

@@ -1,8 +1,8 @@
 // npc 130
 size = 3
-walkanim = 293
-readyanim = 296
+walkanim = seq_293
+readyanim = seq_296
 op2 = Attack
 vislevel = 58
 name = Yeti
-models = 3001
+models = model_3001

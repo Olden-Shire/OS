@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 110
 resizev = 110
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/6038 25238/49317 8078/5012 6798/5027 43072/4550
 name = Hild
-models = 399 470 343 353 429 358
-headmodels = 118
+models = model_399 obj_ham_shirt_4298_woman model_343 model_353 model_429 model_358
+headmodels = model_118

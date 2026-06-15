@@ -1,7 +1,7 @@
 // npc 2934
 vislevel = 0
-readyanim = 2893
+readyanim = seq_2893
 ambient = 40
 contrast = -112
 name = Melina
-models = 10010
+models = model_10010

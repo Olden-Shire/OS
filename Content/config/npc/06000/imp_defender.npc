@@ -1,10 +1,10 @@
 // npc 6074
 size = 1
-walkanim = 168
-readyanim = 171
+walkanim = seq_168
+readyanim = seq_171
 nowalksmoothing = true
 vislevel = 0
 alwaysontop = true
 name = Imp defender
-models = 26394
-headmodels = 20045
+models = model_26394
+headmodels = model_20045

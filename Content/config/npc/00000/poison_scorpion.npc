@@ -1,9 +1,9 @@
 // npc 108
 size = 2
-walkanim = 6253
-readyanim = 6252
+walkanim = seq_6253
+readyanim = seq_6252
 op2 = Attack
 vislevel = 20
 recol = 4525/6573 4645/6693 4636/6684 4884/6932 142/59660 3974/902
 name = Poison Scorpion
-models = 24609
+models = model_24609

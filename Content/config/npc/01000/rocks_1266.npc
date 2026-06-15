@@ -1,8 +1,8 @@
 // npc 1266
 vislevel = 0
 size = 1
-walkanim = 1311
-readyanim = 1315
+walkanim = seq_1311
+readyanim = seq_1315
 nominimap = true
 name = Rocks
-models = 4399 4400
+models = model_4399 model_4400

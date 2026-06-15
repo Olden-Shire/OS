@@ -1,11 +1,11 @@
 // npc 1590
 size = 4
-walkanim = 79
-readyanim = 90
+walkanim = seq_79
+readyanim = seq_90
 ambient = 15
 contrast = 15
 op2 = Attack
 vislevel = 131
 recol = 43280/5904 38172/5652 38177/6550 38057/6554 38065/5409 38090/5285
 name = Bronze dragon
-models = 24576 24585 24581 17423
+models = model_24576 model_24585 model_24581 model_17423

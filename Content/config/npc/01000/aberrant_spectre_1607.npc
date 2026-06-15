@@ -1,10 +1,10 @@
 // npc 1607
 size = 2
-walkanim = 1505
-readyanim = 1506
+walkanim = seq_1505
+readyanim = seq_1506
 op2 = Attack
 resizeh = 77
 resizev = 77
 vislevel = 96
 name = Aberrant spectre
-models = 5085
+models = obj_aberrant_spectre

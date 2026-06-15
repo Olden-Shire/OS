@@ -1,12 +1,12 @@
 // npc 2738
 size = 1
 op2 = Attack
-readyanim = 2624
-walkanim = 2623
+readyanim = seq_2624
+walkanim = seq_2623
 resizeh = 80
 resizev = 80
 ambient = 40
 contrast = 40
 vislevel = 22
 name = Tz-Kek
-models = 9325
+models = model_9325

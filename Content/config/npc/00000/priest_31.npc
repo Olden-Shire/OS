@@ -1,8 +1,8 @@
 // npc 31
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 25238/43414 8741/43660 8078/43111
 name = Priest
-models = 223 249 292 162 176 265 185 325
+models = model_223 model_249 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 obj_priest_gown_428_man obj_boots_of_lightness_88_man model_325

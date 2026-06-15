@@ -2,10 +2,10 @@
 size = 3
 resizeh = 110
 resizev = 110
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 vislevel = 92
 recol = 1690/1447 1814/1571 1938/1566 912/540 910/538 0/7357
 name = Greater demon
-models = 17378 17396 17386 17400 17390
+models = model_17378 model_17396 model_17386 model_17400 model_17390

@@ -1,11 +1,11 @@
 // npc 1321
 size = 1
-readyanim = 1242
-walkanim = 1243
+readyanim = seq_1242
+walkanim = seq_1243
 resizeh = 92
 resizev = 92
 op2 = Attack
 vislevel = 2
 recol = 10145/7958 43928/2952 117/5435
 name = Bunny
-models = 4042
+models = obj_rabbit

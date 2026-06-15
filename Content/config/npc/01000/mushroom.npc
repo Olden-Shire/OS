@@ -1,10 +1,10 @@
 // npc 1139
-walkanim = 283
-readyanim = 1159
+walkanim = seq_283
+readyanim = seq_1159
 size = 2
 resizeh = 142
 resizev = 142
 vislevel = 0
 recol = 61/7465 21570/6439 10355/7626
 name = Mushroom
-models = 3754 3758 3756 3769
+models = model_3754 obj_troll_guard model_3756 model_3769

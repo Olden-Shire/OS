@@ -1,8 +1,8 @@
 // npc 3390
 size = 1
-walkanim = 3379
-readyanim = 3379
+walkanim = seq_3379
+readyanim = seq_3379
 vislevel = 0
 name = Mountain Dwarf
-models = 2970 2980 2978 2984 2985 13414 2992
-headmodels = 0
+models = model_2970 model_2980 model_2978 model_2984 model_2985 model_13414 model_2992
+headmodels = model_0

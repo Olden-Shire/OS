@@ -5,4 +5,4 @@ resizev = 140
 resizev = 140
 recol = 4550/3303 8741/0 25238/0 9104/794 7952/914 8078/908
 name = Count Draynor
-models = 227 238 246 292 320 11107 256 181 317 11122
+models = model_227 model_238 model_246 obj_priest_gown_426_man model_320 model_11107 model_256 obj_vyrewatch_shoes_9638_man obj_fremennik_cloak_3759_man model_11122

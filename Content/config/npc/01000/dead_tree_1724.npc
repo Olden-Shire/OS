@@ -1,11 +1,11 @@
 // npc 1724
 size = 1
-walkanim = 5751
-readyanim = 5751
+walkanim = seq_5751
+readyanim = seq_5751
 vislevel = 0
 op1 = Chop down
 op3 = hidden
 turnspeed = 0
 recol = 6028/3470 7054/3470
 name = Dead tree
-models = 21828
+models = model_21828

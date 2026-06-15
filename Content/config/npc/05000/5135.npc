@@ -1,7 +1,7 @@
 // npc 5135
 size = 3
-walkanim = 5279
-readyanim = 5280
+walkanim = seq_5279
+readyanim = seq_5280
 alwaysontop = true
 vislevel = 0
 recol = 10357/9519 5543/7333 5667/8481 6697/7452 6573/8472 5551/8596

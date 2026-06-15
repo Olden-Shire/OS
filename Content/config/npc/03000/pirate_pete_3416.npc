@@ -1,11 +1,11 @@
 // npc 3416
 size = 1
 vislevel = 0
-walkanim = 3396
-readyanim = 3396
+walkanim = seq_3396
+readyanim = seq_3396
 op1 = Talk-to
 turnspeed = 0
 alwaysontop = true
 recol = 39145/6938 11162/5008 28318/8 22177/12 8741/10902
 name = Pirate Pete
-models = 190 211 236 11190 5222 162 177 259 12760
+models = obj_pirates_hat_2651_man model_211 obj_eye_patch_1025_man model_11190 model_5222 obj_fremennik_shirt_3767_man obj_leather_vambraces_1063_man model_259 model_12760

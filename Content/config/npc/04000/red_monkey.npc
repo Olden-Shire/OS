@@ -1,8 +1,8 @@
 // npc 4372
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 vislevel = 1
 recol = 20/414 24/538
 name = Red Monkey
-models = 4817 4824
-headmodels = 4656
+models = model_4817 model_4824
+headmodels = model_4656

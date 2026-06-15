@@ -1,6 +1,6 @@
 // npc 40
 size = 1
-walkanim = 10
+walkanim = seq_10
 vislevel = 1
 name = Shark
-models = 2848
+models = model_2848

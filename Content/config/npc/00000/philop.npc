@@ -1,9 +1,9 @@
 // npc 782
 vislevel = 0
-readyanim = 6485
+readyanim = seq_6485
 op1 = Talk-to
 turnspeed = 0
 recol = 22426/8390 22294/59557 6550/2871
 name = Philop
-models = 14289 25846 2915 25848
-headmodels = 14287
+models = model_14289 model_25846 model_2915 model_25848
+headmodels = model_14287

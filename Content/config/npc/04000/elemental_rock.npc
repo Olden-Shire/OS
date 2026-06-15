@@ -1,9 +1,9 @@
 // npc 4911
-readyanim = 4864
-walkanim = 4864
+readyanim = seq_4864
+walkanim = seq_4864
 op1 = Mine
 turnspeed = 1024
 nominimap = true
 vislevel = 0
 name = Elemental rock
-models = 18649
+models = model_18649

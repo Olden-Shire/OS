@@ -1,7 +1,7 @@
 // npc 5862
-walkanim = 6150
-readyanim = 6151
+walkanim = seq_6150
+readyanim = seq_6151
 size = 2
 vislevel = 0
 name = Sigmund and Zanik
-models = 24422
+models = model_24422

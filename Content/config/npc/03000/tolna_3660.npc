@@ -1,8 +1,8 @@
 // npc 3660
 size = 3
-walkanim = 3828
-readyanim = 3828
+walkanim = seq_3828
+readyanim = seq_3828
 op2 = Attack
 vislevel = 46
 name = Tolna
-models = 14284
+models = model_14284

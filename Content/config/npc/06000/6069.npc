@@ -1,9 +1,9 @@
 // npc 6069
 size = 1
-walkanim = 168
-readyanim = 171
+walkanim = seq_168
+readyanim = seq_171
 vislevel = 0
 nominimap = true
 inactive = true
 recol = 39029/947
-models = 19982
+models = obj_imp

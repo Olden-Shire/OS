@@ -1,9 +1,9 @@
 // npc 2332
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 38814/12702 8741/10520 25238/12702 43072/4550 908/8078
 name = Selena
-models = 377 390 456 343 353 7368 428 361
-headmodels = 102 113
+models = obj_wizard_hat_579_woman model_390 obj_priest_gown_426_woman model_343 model_353 obj_watering_can_5331_wear obj_priest_gown_428_woman obj_boots_of_lightness_88_woman
+headmodels = model_102 obj_warrior_woman

@@ -1,9 +1,9 @@
 // npc 2330
-walkanim = 2164
-readyanim = 2163
+walkanim = seq_2164
+readyanim = seq_2163
 vislevel = 0
 op1 = Talk-to
 recol = 8741/1581 9104/65180 25238/35102 10378/6674 43072/4550 13122/3243
 name = Garth
-models = 193 215 247 292 3667 151 176 496 5218
-headmodels = 53 79 36
+models = model_193 obj_fremennik_helm_man model_247 obj_priest_gown_426_man model_3667 model_151 model_176 obj_spade_952_wear model_5218
+headmodels = obj_man model_79 model_36

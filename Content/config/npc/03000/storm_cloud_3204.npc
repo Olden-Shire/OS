@@ -1,7 +1,7 @@
 // npc 3204
 vislevel = 0
-readyanim = 3168
-walkanim = 3167
+readyanim = seq_3168
+walkanim = seq_3167
 nominimap = true
 name = Storm Cloud
-models = 11266
+models = model_11266

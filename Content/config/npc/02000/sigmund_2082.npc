@@ -1,10 +1,10 @@
 // npc 2082
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 op3 = Pickpocket
 recol = 25238/38321 8741/38321 8078/38354 926/37997 7700/37997 11200/37997
 name = Sigmund
-models = 6848 292 162 265 181 176 323 283 5215
-headmodels = 5787 5207
+models = model_6848 obj_priest_gown_426_man obj_fremennik_shirt_3767_man obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man model_176 obj_cape_1007_man obj_glarials_amulet_man model_5215
+headmodels = model_5787 model_5207

@@ -1,6 +1,6 @@
 // npc 1465
-walkanim = 1382
-readyanim = 1386
+walkanim = seq_1382
+readyanim = seq_1386
 resizeh = 190
 resizev = 190
 op2 = Attack
@@ -8,4 +8,4 @@ turnspeed = 6
 vislevel = 98
 recol = 20/23849 7721/17734 0/65455
 name = Monkey Zombie
-models = 4817 4824
+models = model_4817 model_4824

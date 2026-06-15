@@ -1,8 +1,8 @@
 // npc 3062
 size = 1
-walkanim = 168
-readyanim = 171
+walkanim = seq_168
+readyanim = seq_171
 op2 = Attack
 vislevel = 14
 name = Imp Champion
-models = 20046
+models = model_20046

@@ -2,11 +2,11 @@
 size = 1
 resizeh = 135
 resizev = 135
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 2578/61 12/61 61/7473
 name = Riki the sculptor's model
-models = 2974 2983 2978 2980 2985
-headmodels = 4
+models = model_2974 model_2983 model_2978 model_2980 model_2985
+headmodels = model_4

@@ -1,9 +1,9 @@
 // npc 1461
 size = 2
-walkanim = 1399
-readyanim = 1401
+walkanim = seq_1399
+readyanim = seq_1401
 op1 = Talk-to
 vislevel = 0
 name = Elder Guard
-models = 4809 4813
-headmodels = 4663
+models = model_4809 model_4813
+headmodels = model_4663

@@ -1,9 +1,9 @@
 // npc 6045
-walkanims = 6531, 6532, 821, 822
-readyanim = 808
+walkanims = seq_6531, seq_6532, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Liliya
-models = 26146 26152 26136 26149 26141
-headmodels = 26275
+models = model_26146 model_26152 model_26136 model_26149 model_26141
+headmodels = model_26275

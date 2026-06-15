@@ -1,9 +1,9 @@
 // npc 3457
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 recol = 27548/11586 4550/11586 38814/21902 25238/21902 8741/21902 43072/11586
 name = ? ? ? ?
-models = 377 405 462 348 353 421 360 12771
-headmodels = 122 102
+models = obj_wizard_hat_579_woman model_405 model_462 obj_druids_robe_540_woman model_353 obj_desert_robes_6386_woman model_360 model_12771
+headmodels = model_122 model_102

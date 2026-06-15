@@ -1,10 +1,10 @@
 // npc 2270
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 43072/138 25238/5388 10138/5392 13196/5640
 name = Martin Thwait
-models = 214 296 18958 173 4924 274 185 246
-headmodels = 52
+models = model_214 obj_hardleather_body_1131_man model_18958 model_173 model_4924 model_274 obj_boots_of_lightness_88_man model_246
+headmodels = model_52

@@ -1,7 +1,7 @@
 // npc 2782
-walkanim = 2737
-readyanim = 2740
+walkanim = seq_2737
+readyanim = seq_2740
 op2 = Attack
 vislevel = 73
 name = Shadow
-models = 9739
+models = model_9739

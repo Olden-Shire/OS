@@ -1,10 +1,10 @@
 // npc 1618
 size = 2
-walkanim = 1549
-readyanim = 1551
+walkanim = seq_1549
+readyanim = seq_1551
 resizeh = 245
 resizev = 245
 op2 = Attack
 vislevel = 76
 name = Bloodveld
-models = 5065
+models = obj_bloodveld

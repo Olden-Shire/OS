@@ -1,11 +1,11 @@
 // npc 5895
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 op3 = Inspect
 alwaysontop = true
 recol = 4550/5568 127/17633 61/21662
 name = Cyrisus
-models = 4115 215 244 248 24987 24979 10218 24988 24984 4954
-headmodels = 24973 77
+models = obj_splitbark_helm_3385_man obj_fremennik_helm_man model_244 model_248 model_24987 model_24979 model_10218 model_24988 model_24984 obj_bronze_boots_4119_man
+headmodels = model_24973 model_77

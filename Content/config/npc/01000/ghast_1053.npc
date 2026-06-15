@@ -1,8 +1,8 @@
 // npc 1053
 size = 2
-walkanim = 1085
-readyanim = 1086
+walkanim = seq_1085
+readyanim = seq_1086
 op2 = Attack
 vislevel = 30
 name = Ghast
-models = 3559
+models = model_3559

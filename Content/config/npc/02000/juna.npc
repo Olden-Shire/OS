@@ -1,5 +1,5 @@
 // npc 2023
 vislevel = 0
 name = Juna
-models = 6511
-headmodels = 6567
+models = model_6511
+headmodels = model_6567

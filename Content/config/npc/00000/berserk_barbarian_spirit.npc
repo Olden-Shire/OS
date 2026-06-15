@@ -1,8 +1,8 @@
 // npc 751
-walkanim = 6730
-readyanim = 6729
+walkanim = seq_6730
+readyanim = seq_6729
 op2 = Attack
 vislevel = 166
 recol = 528/43146 652/43150 43150/902 43146/528 43034/904 43030/652
 name = Berserk barbarian spirit
-models = 26675 26676
+models = model_26675 model_26676

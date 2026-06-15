@@ -1,10 +1,10 @@
 // npc 4775
 op1 = Talk-to
 op2 = Attack
-readyanim = 4703
-walkanim = 4700
+readyanim = seq_4703
+walkanim = seq_4700
 ambient = -25
 vislevel = 45
 name = Vampyre juvenile
-models = 17961 17979
-headmodels = 18043
+models = model_17961 model_17979
+headmodels = model_18043

@@ -1,10 +1,10 @@
 // npc 345
 vislevel = 0
 size = 1
-walkanims = 4226, 4227, 821, 822
-readyanim = 4591
+walkanims = seq_4226, seq_4227, seq_821, seq_822
+readyanim = seq_4591
 op1 = Talk-to
 recol = 61/8472
 name = Guard
-models = 208 185 248 311 151 179 254 276 16846
-headmodels = 48 80
+models = model_208 obj_boots_of_lightness_88_man model_248 obj_leather_body_1129_man model_151 obj_cooking_gauntlets_man obj_mime_legs_man model_276 obj_phoenix_crossbow_767_wear
+headmodels = model_48 model_80

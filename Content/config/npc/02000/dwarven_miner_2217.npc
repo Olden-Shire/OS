@@ -1,10 +1,10 @@
 // npc 2217
-readyanim = 101
-walkanim = 98
+readyanim = seq_101
+walkanim = seq_98
 vislevel = 0
 vislevel = 0
 size = 1
 recol = 2578/5404 10659/1701 61/3350
 name = Dwarven Miner
-models = 2972 6019 7059 2978 2990 7053 7045 2985
-headmodels = 2
+models = model_2972 model_6019 model_7059 model_2978 model_2990 model_7053 model_7045 model_2985
+headmodels = model_2

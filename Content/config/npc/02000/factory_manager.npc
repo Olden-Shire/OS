@@ -1,11 +1,11 @@
 // npc 2171
 resizeh = 130
 resizev = 120
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 61/5417 10347/49 5784/7836 4626/5662
 name = Factory Manager
-models = 2970 7063 7037 7044 2985
-headmodels = 0
+models = model_2970 model_7063 model_7037 model_7044 model_2985
+headmodels = model_0

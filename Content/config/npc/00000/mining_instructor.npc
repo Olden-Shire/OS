@@ -1,11 +1,11 @@
 // npc 948
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 8741/4550 6798/10159 22177/53793 25238/53793 61/36133
 name = Mining Instructor
-models = 211 249 315 167 509 271 185 280 179
-headmodels = 50 81
+models = model_211 model_249 obj_veracs_brassard_4757_man model_167 obj_bronze_pickaxe_1265_wear model_271 obj_boots_of_lightness_88_man obj_unblessed_symbol_1716_man obj_cooking_gauntlets_man
+headmodels = model_50 model_81

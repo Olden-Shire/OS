@@ -1,8 +1,8 @@
 // npc 3120
-walkanim = 3050
-readyanim = 3049
+walkanim = seq_3050
+readyanim = seq_3049
 nominimap = true
 op1 = Pop
 vislevel = 0
 name = Balloon Animal
-models = 10735
+models = model_10735

@@ -1,8 +1,8 @@
 // npc 2448
-readyanim = 2358
+readyanim = seq_2358
 turnspeed = 0
 vislevel = 0
 nominimap = true
 recol = 32798/21522 32803/32790 32807/32794 32811/32798 32815/32803
 name = Door
-models = 8718
+models = model_8718

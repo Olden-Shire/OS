@@ -8,4 +8,4 @@ ambient = 15
 turnspeed = 0
 nominimap = true
 name = Rock
-models = 14183
+models = model_14183

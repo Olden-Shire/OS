@@ -1,10 +1,10 @@
 // npc 1451
-walkanim = 1380
-readyanim = 1388
+walkanim = seq_1380
+readyanim = seq_1388
 resizeh = 180
 resizev = 180
 op1 = Talk-to
 vislevel = 0
 name = Sleeping Monkey
-models = 4817 4827 4830
-headmodels = 4659
+models = model_4817 model_4827 model_4830
+headmodels = model_4659

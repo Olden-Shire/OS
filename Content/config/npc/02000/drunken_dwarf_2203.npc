@@ -1,9 +1,9 @@
 // npc 2203
 vislevel = 0
 size = 1
-readyanim = 900
-walkanim = 104
+readyanim = seq_900
+walkanim = seq_104
 op1 = Talk-to
 name = Drunken Dwarf
-models = 2974 6019 2983 2979 2992 7045 2985
-headmodels = 4 6026
+models = model_2974 model_6019 model_2983 model_2979 model_2992 model_7045 model_2985
+headmodels = model_4 model_6026

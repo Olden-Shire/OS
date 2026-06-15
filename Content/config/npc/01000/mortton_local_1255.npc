@@ -1,10 +1,10 @@
 // npc 1255
 vislevel = 0
 size = 1
-walkanim = 819
-readyanim = 808
+walkanim = seq_819
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/7070 8741/7062 43072/4550
 name = Mort'ton Local
-models = 217 246 292 170 176 274 181
-headmodels = 55
+models = model_217 model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_274 obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer

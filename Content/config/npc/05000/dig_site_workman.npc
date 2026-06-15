@@ -1,8 +1,8 @@
 // npc 5958
 vislevel = 0
 size = 1
-readyanim = 6425
+readyanim = seq_6425
 alwaysontop = true
 recol = 25238/40237 933/9106 8741/4288 40237/40231 40117/40239 10004/7054
 name = Dig Site workman
-models = 215 246 10705 167 179 5218 10723 25696
+models = obj_fremennik_helm_man model_246 model_10705 model_167 obj_cooking_gauntlets_man model_5218 model_10723 model_25696

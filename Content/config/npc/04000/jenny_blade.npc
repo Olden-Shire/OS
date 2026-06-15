@@ -1,11 +1,11 @@
 // npc 4555
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 39145/10415
 name = Jenny Blade
-models = 388 410 469 348 353 490 434 358
-headmodels = 111 136 126
+models = model_388 obj_eye_patch_1025_woman model_469 obj_druids_robe_540_woman model_353 obj_bronze_scimitar_1321_wear model_434 model_358
+headmodels = model_111 model_136 model_126

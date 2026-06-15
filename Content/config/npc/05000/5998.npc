@@ -1,6 +1,6 @@
 // npc 5998
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 alwaysontop = true
 alwaysontop = true
 op1 = Talk-to

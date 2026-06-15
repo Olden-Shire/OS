@@ -1,8 +1,8 @@
 // npc 3165
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 4550/7062 8741/908 43072/11187 6798/4
 name = Mama
-models = 378 8786 8846 353 11119 358
-headmodels = 103
+models = model_378 obj_prince_tunic_woman model_8846 model_353 model_11119 model_358
+headmodels = model_103

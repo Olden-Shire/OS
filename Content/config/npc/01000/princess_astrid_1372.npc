@@ -1,10 +1,10 @@
 // npc 1372
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/22408 8472/22408 8741/4205 4550/2524 6798/7613
 name = Princess Astrid
-models = 378 466 347 354 429 3708 446
-headmodels = 103
+models = model_378 obj_studded_body_1133_woman model_347 obj_leather_vambraces_1063_woman model_429 obj_climbing_boots_3105_woman obj_pendant_of_lucien_woman
+headmodels = model_103

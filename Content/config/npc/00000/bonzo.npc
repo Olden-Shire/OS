@@ -2,11 +2,11 @@
 vislevel = 0
 size = 1
 alwaysontop = true
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Pay
 recol = 4550/7062 23326/13974 8887/8747 7097/7587 7446/7062 5815/8986
 name = Bonzo
-models = 14339 230 246 14383 10980 177 14380 14375
-headmodels = 63 14335
+models = model_14339 obj_desert_disguise_man model_246 model_14383 model_10980 obj_leather_vambraces_1063_man model_14380 model_14375
+headmodels = obj_rogue model_14335

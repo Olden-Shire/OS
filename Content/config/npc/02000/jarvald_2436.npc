@@ -1,11 +1,11 @@
 // npc 2436
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 vislevel = 0
 op1 = Talk-to
 recol = 25238/10388 8741/7461
 name = Jarvald
-models = 8747 252 292 162 176 4236 4235 4226 4218
-headmodels = 8745 84
+models = model_8747 model_252 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 obj_fremennik_blade_wear obj_fremennik_shield_3758_wear model_4226 model_4218
+headmodels = model_8745 model_84

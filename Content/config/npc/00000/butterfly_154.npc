@@ -1,8 +1,8 @@
 // npc 154
 size = 1
-walkanim = 362
-readyanim = 362
+walkanim = seq_362
+readyanim = seq_362
 nominimap = true
 vislevel = 0
 name = Butterfly
-models = 3023
+models = obj_butterfly_9972

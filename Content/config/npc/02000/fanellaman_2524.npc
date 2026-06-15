@@ -6,5 +6,5 @@ resizeh = 130
 resizev = 130
 recol = 4550/5795 5916/5458 5219/123 43072/5795 25238/5458 6798/5819
 name = Fanellaman
-models = 210 252 8928 173 8918 566 275 8919
-headmodels = 49 84
+models = model_210 model_252 obj_tribal_top_6341_man model_173 obj_villager_armband_6347_man obj_machete_975_wear obj_citizen_trousers_9642_man obj_villager_sandals_6349_man
+headmodels = model_49 model_84

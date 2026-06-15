@@ -1,8 +1,8 @@
 // npc 5974
-readyanim = 6435
+readyanim = seq_6435
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 3
 name = Monkey display
-models = 25871 25786 25785 25787
+models = model_25871 model_25786 model_25785 model_25787

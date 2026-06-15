@@ -1,9 +1,9 @@
 // npc 5666
-readyanim = 5893
-walkanim = 5892
+readyanim = seq_5893
+walkanim = seq_5892
 op2 = Attack
 size = 3
 vislevel = 190
 alwaysontop = true
 name = Barrelchest
-models = 22790
+models = model_22790

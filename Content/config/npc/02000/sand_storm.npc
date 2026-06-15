@@ -1,11 +1,11 @@
 // npc 2921
 size = 3
-walkanim = 2882
-readyanim = 2882
+walkanim = seq_2882
+readyanim = seq_2882
 resizev = 220
 resizeh = 190
 ambient = 20
 vislevel = 0
 nominimap = true
 name = Sand storm
-models = 9994
+models = model_9994

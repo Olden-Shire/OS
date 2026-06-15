@@ -1,9 +1,9 @@
 // npc 3738
 size = 1
 op2 = Attack
-walkanim = 3898
-readyanim = 3899
+walkanim = seq_3898
+readyanim = seq_3899
 vislevel = 90
 recol = 790/4750 947/6969 3505/9164 12/0
 name = Shifter
-models = 14548
+models = model_14548

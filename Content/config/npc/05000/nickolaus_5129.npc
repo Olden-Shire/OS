@@ -4,5 +4,5 @@ alwaysontop = true
 vislevel = 0
 recol = 7700/7766 8741/7766 25238/6589 9104/6589 43072/4550 28/9112
 name = Nickolaus
-models = 251 230 292 327 19859 151 179 566 3704 275 6364 20097
-headmodels = 63 83 19802 6212 78
+models = model_251 obj_desert_disguise_man obj_priest_gown_426_man model_327 obj_eagle_cape_man model_151 obj_cooking_gauntlets_man obj_machete_975_wear obj_climbing_boots_3105_man obj_citizen_trousers_9642_man model_6364 obj_fake_beak_man
+headmodels = obj_rogue model_83 model_19802 model_6212 model_78

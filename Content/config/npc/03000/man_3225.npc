@@ -1,12 +1,12 @@
 // npc 3225
 size = 1
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 op2 = Attack
 op3 = Pickpocket
 op1 = Talk-to
 vislevel = 2
 recol = 8741/59437 25238/7331
 name = Man
-models = 217 247 292 3707 162 10218 320 254 181
-headmodels = 55 79
+models = model_217 model_247 obj_priest_gown_426_man model_3707 obj_fremennik_shirt_3767_man model_10218 model_320 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer model_79

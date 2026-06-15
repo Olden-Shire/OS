@@ -1,6 +1,6 @@
 // npc 2813
 size = 2
 vislevel = 0
-walkanim = 45
-readyanim = 51
+walkanim = seq_45
+readyanim = seq_51
 multivar = 1353, 65535, 80 2814

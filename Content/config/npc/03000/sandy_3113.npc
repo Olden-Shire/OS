@@ -1,9 +1,9 @@
 // npc 3113
-walkanims = 819, 820, 821, 822
-readyanim = 3036
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_3036
 size = 1
 vislevel = 0
 recol = 43569/5285 8084/99 8741/41253 25238/6439 908/6682
 name = Sandy
-models = 194 215 247 5221 4391 163 10218 274 185
-headmodels = 53 37 79
+models = model_194 obj_fremennik_helm_man model_247 obj_desert_top_6388_man model_4391 model_163 model_10218 model_274 obj_boots_of_lightness_88_man
+headmodels = obj_man model_37 model_79

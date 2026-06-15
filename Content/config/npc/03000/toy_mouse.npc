@@ -1,9 +1,9 @@
 // npc 3597
 size = 1
-walkanim = 3718
-readyanim = 3718
+walkanim = seq_3718
+readyanim = seq_3718
 op1 = Pick-up
 vislevel = 0
 nominimap = true
 name = Toy Mouse
-models = 13226
+models = model_13226

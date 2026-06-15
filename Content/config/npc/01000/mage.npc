@@ -1,9 +1,9 @@
 // npc 1513
 vislevel = 0
 op1 = Talk-to
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 recol = 4626/127 7756/40167 7845/40499 7591/40499
 name = Mage
-models = 5033 393 5035 5603 5029 5030 14589 5034 358 567
-headmodels = 4951 115
+models = obj_mystic_hat_4089_woman model_393 model_5035 obj_team_9_cape_4331_woman obj_mystic_robe_top_4091_woman obj_mystic_gloves_4095_woman model_14589 obj_mystic_robe_bottom_4093_woman model_358 model_567
+headmodels = model_4951 model_115

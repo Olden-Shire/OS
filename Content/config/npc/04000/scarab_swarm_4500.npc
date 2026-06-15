@@ -1,7 +1,7 @@
 // npc 4500
-walkanim = 1945
-readyanim = 1947
+walkanim = seq_1945
+readyanim = seq_1947
 op2 = Attack
 vislevel = 98
 name = Scarab swarm
-models = 6276
+models = model_6276

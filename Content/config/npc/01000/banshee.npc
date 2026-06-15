@@ -1,8 +1,8 @@
 // npc 1612
 size = 2
-walkanim = 1521
-readyanim = 1522
+walkanim = seq_1521
+readyanim = seq_1522
 op2 = Attack
 vislevel = 23
 name = Banshee
-models = 5063 5079
+models = obj_banshee model_5079

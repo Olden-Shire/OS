@@ -1,9 +1,9 @@
 // npc 1822
-readyanim = 6040
-walkanim = 6041
+readyanim = seq_6040
+walkanim = seq_6041
 op1 = Talk-to
 op2 = Attack
 vislevel = 3
 name = Cave goblin
-models = 23663 23694 23629
-headmodels = 23246
+models = model_23663 model_23694 model_23629
+headmodels = model_23246

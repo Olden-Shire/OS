@@ -1,10 +1,10 @@
 // npc 1378
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/8472 43072/8472 8741/1686 4550/2524 6798/7613
 name = Flower Girl
-models = 390 471 348 353 428 358
-headmodels = 113
+models = model_390 model_471 obj_druids_robe_540_woman model_353 obj_priest_gown_428_woman model_358
+headmodels = obj_warrior_woman

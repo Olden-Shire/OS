@@ -1,6 +1,6 @@
 // npc 2402
-walkanim = 2333
-readyanim = 2334
+walkanim = seq_2333
+readyanim = seq_2334
 resizev = 112
 resizeh = 112
 ambient = 35
@@ -10,5 +10,5 @@ vislevel = 0
 nominimap = true
 recol = 4550/4537 8741/7700 61/5648 25238/27152 11200/11169 57/10270
 name = Mysterious ghost
-models = 230 252 3379 317 164 178 519 268 181
-headmodels = 8373 8376
+models = obj_desert_disguise_man model_252 obj_black_platebody_t_2583_man obj_fremennik_cloak_3759_man model_164 obj_green_dhide_vamb_1065_man obj_bronze_sword_1277_wear obj_iron_platelegs_1067_man obj_vyrewatch_shoes_9638_man
+headmodels = model_8373 model_8376

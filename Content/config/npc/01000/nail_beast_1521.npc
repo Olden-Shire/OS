@@ -1,8 +1,8 @@
 // npc 1521
 op2 = Attack
 size = 2
-walkanim = 5987
-readyanim = 5986
+walkanim = seq_5987
+readyanim = seq_5986
 vislevel = 69
 name = Nail beast
-models = 23212
+models = model_23212

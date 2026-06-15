@@ -1,10 +1,10 @@
 // npc 698
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 8741/26130 41372/8082 8887/24 43072/4550 8860/26518
 name = Holgart
-models = 18487 215 18490 250 299 10980 177 18493 176 14381 14376
-headmodels = 18497 63 82 18340
+models = model_18487 obj_fremennik_helm_man model_18490 model_250 model_299 model_10980 obj_leather_vambraces_1063_man model_18493 model_176 model_14381 model_14376
+headmodels = model_18497 obj_rogue model_82 model_18340

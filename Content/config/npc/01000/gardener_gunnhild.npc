@@ -1,10 +1,10 @@
 // npc 1398
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 2273
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2273
 op1 = Talk-to
 recol = 4550/2524 25238/5425 43072/18836 6798/9133 7952/13072 8741/13072
 name = Gardener Gunnhild
-models = 390 478 332 356 421 358 480 7125
-headmodels = 113
+models = model_390 obj_veracs_brassard_4757_woman model_332 obj_cooking_gauntlets_woman obj_desert_robes_6386_woman model_358 model_480 obj_rake_5341_wear
+headmodels = obj_warrior_woman

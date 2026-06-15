@@ -1,10 +1,10 @@
 // npc 1213
 size = 2
-walkanims = 819, 820, 821, 822
-readyanim = 619
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_619
 op1 = Talk-to
 vislevel = 0
 recol = 25238/127 8741/127 6798/127
 name = Tegid
-models = 217 181 250 292 170 176 260 4054
-headmodels = 55 82
+models = model_217 obj_vyrewatch_shoes_9638_man model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_260 model_4054
+headmodels = obj_farmer model_82

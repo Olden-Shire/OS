@@ -1,11 +1,11 @@
 // npc 1815
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 31
 recol = 4550/5551
 name = Camp dweller
-models = 210 250 5674 5672 5667 5725
-headmodels = 49 82
+models = model_210 model_250 model_5674 model_5672 model_5667 model_5725
+headmodels = model_49 model_82

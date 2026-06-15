@@ -4,5 +4,5 @@ size = 1
 op1 = Talk-to
 recol = 9447/7836
 name = Fairy Godfather
-models = 11880
-headmodels = 3178
+models = model_11880
+headmodels = model_3178

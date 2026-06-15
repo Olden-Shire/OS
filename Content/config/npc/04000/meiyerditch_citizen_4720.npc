@@ -1,10 +1,10 @@
 // npc 4720
 vislevel = 0
 op1 = Talk-to
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 100
 recol = 4550/94 8741/16540 21526/16540
 name = Meiyerditch citizen
-models = 10302 246 292 18074 177 275 181
-headmodels = 18038
+models = model_10302 model_246 obj_priest_gown_426_man model_18074 obj_leather_vambraces_1063_man obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
+headmodels = model_18038

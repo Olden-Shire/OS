@@ -1,10 +1,10 @@
 // npc 4900
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 8741/41282 6430/41273 36015/41282 25238/99 6439/41282 6674/41393
 name = Crafting tutor
-models = 217 10304 11761 15412 167 177 10218 267 181
-headmodels = 55
+models = model_217 model_10304 model_11761 model_15412 model_167 obj_leather_vambraces_1063_man model_10218 model_267 obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer

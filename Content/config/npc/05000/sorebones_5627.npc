@@ -1,9 +1,9 @@
 // npc 5627
-readyanim = 5641
-walkanim = 5642
+readyanim = seq_5641
+walkanim = seq_5642
 op2 = Attack
 size = 1
 vislevel = 57
 name = Sorebones
-models = 21430 21481 21420 21445 21461 21457 21421
-headmodels = 22785
+models = model_21430 model_21481 model_21420 model_21445 model_21461 model_21457 model_21421
+headmodels = model_22785

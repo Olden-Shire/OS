@@ -1,8 +1,8 @@
 // npc 1535
 nominimap = true
 vislevel = 0
-readyanim = 475
+readyanim = seq_475
 op2 = Attack
 recol = 5669/4762 2396/2376
 name = Barricade
-models = 14205 4495
+models = obj_barricade_4053 model_4495

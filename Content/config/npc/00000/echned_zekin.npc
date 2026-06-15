@@ -1,8 +1,8 @@
 // npc 940
-readyanim = 5538
-walkanim = 5539
+readyanim = seq_5538
+walkanim = seq_5539
 op1 = Talk-to
 vislevel = 187
 name = Echned Zekin
-models = 21153
-headmodels = 21403
+models = model_21153
+headmodels = model_21403

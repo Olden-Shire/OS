@@ -2,10 +2,10 @@
 vislevel = 0
 size = 1
 ambient = 20
-walkanim = 5334
-readyanim = 5335
+walkanim = seq_5334
+readyanim = seq_5335
 op1 = Talk-to
 recol = 0/22 20/5272 24/5173 28/5181 33/5186 37/3144
 name = Sheep
-models = 20290 20291
-headmodels = 20271
+models = model_20290 model_20291
+headmodels = model_20271

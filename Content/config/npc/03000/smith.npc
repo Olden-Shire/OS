@@ -2,11 +2,11 @@
 vislevel = 0
 resizeh = 145
 resizev = 130
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 8741/1451 8078/64156 8741/64049 25238/8396 5231/7496
 name = Smith
-models = 193 214 236 250 11115 11106 10218 5218 11191
-headmodels = 52 82 36 68
+models = model_193 model_214 obj_eye_patch_1025_man model_250 model_11115 model_11106 model_10218 model_5218 model_11191
+headmodels = model_52 model_82 model_36 model_68

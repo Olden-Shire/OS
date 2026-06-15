@@ -1,7 +1,7 @@
 // npc 6131
 size = 2
-readyanim = 6855
+readyanim = seq_6855
 vislevel = 0
 recol = 13506/32819 13501/32819 13493/32811 13489/32811 13497/32815
 name = Zombie
-models = 27113
+models = model_27113

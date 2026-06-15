@@ -1,10 +1,10 @@
 // npc 2072
-walkanim = 6005
-readyanim = 6006
+walkanim = seq_6005
+readyanim = seq_6006
 op1 = Talk-to
 op2 = Attack
 vislevel = 11
 recol = 8609/14494 8602/14490 8598/14614 8086/16912 8976/17806
 name = Cave goblin miner
-models = 23667 23703 23632 23681
-headmodels = 23246 23231
+models = model_23667 model_23703 model_23632 model_23681
+headmodels = model_23246 model_23231

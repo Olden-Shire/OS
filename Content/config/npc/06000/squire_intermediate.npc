@@ -1,10 +1,10 @@
 // npc 6140
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 alwaysontop = true
 op1 = Talk-to
 recol = 4550/5421 61/16 7073/5772 8741/24 9104/16 5648/12
 name = Squire (Intermediate)
-models = 230 248 301 19329 19332 553 14565 181 8233 27146
-headmodels = 63 80
+models = obj_desert_disguise_man model_248 obj_bronze_chainbody_1103_man model_19329 model_19332 model_553 model_14565 obj_vyrewatch_shoes_9638_man model_8233 model_27146
+headmodels = obj_rogue model_80

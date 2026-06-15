@@ -1,8 +1,8 @@
 // npc 3382
 size = 1
-readyanim = 2704
-walkanim = 2703
+readyanim = seq_2704
+walkanim = seq_2703
 nominimap = true
 vislevel = 0
 name = Hell-Rat
-models = 13433
+models = model_13433

@@ -1,7 +1,7 @@
 // npc 5079
-walkanim = 5181
-readyanim = 5182
+walkanim = seq_5181
+readyanim = seq_5182
 op2 = Attack
 vislevel = 1
 name = Chinchompa
-models = 19371
+models = model_19371

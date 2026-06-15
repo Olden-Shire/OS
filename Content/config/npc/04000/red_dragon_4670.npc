@@ -2,10 +2,10 @@
 size = 4
 resizeh = 110
 resizev = 110
-walkanim = 79
-readyanim = 90
+walkanim = seq_79
+readyanim = seq_90
 op2 = Attack
 vislevel = 152
 recol = 910/906 912/908 1938/910 1814/64400 2588/3610 2469/3491
 name = Red dragon
-models = 17409 17425 17420 17423
+models = model_17409 model_17425 model_17420 model_17423

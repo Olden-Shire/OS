@@ -1,10 +1,10 @@
 // npc 5210
 size = 1
 vislevel = 123
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 alwaysontop = true
 recol = 61/36133 41/37270 57/38226 25238/37270 10004/30600
 name = Cow31337Killer
-models = 215 6651 306 323 164 4954 6702 179 266
-headmodels = 53 6569
+models = obj_fremennik_helm_man obj_dharoks_helm_4716_man obj_khazard_armour_man obj_cape_1007_man model_164 obj_bronze_boots_4119_man obj_dharoks_greataxe_4718_wear obj_cooking_gauntlets_man obj_iron_plateskirt_1081_man
+headmodels = obj_man model_6569

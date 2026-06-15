@@ -1,9 +1,9 @@
 // npc 2323
-walkanim = 2164
-readyanim = 2163
+walkanim = seq_2164
+readyanim = seq_2163
 vislevel = 0
 op1 = Talk-to
 recol = 8741/40107 25238/8604 4550/3422 6798/6065
 name = Elstan
-models = 210 252 292 326 170 176 496 274 7121
-headmodels = 49 84
+models = model_210 model_252 obj_priest_gown_426_man model_326 obj_druids_robe_540_man model_176 obj_spade_952_wear model_274 obj_gardening_boots_5345_man
+headmodels = model_49 model_84

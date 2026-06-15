@@ -2,9 +2,9 @@
 vislevel = 0
 size = 1
 resizeh = 137
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 op1 = Talk-to
 name = Barbarian guard
-models = 11739 214 11747 252 11758 11762 11727 11732 11753 11733 11764 11788
-headmodels = 52 84 11804 11807
+models = model_11739 model_214 model_11747 model_252 model_11758 model_11762 model_11727 model_11732 model_11753 model_11733 model_11764 model_11788
+headmodels = model_52 model_84 model_11804 model_11807

@@ -1,7 +1,7 @@
 // npc 5201
 vislevel = 0
 op1 = Talk-to
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 multivar = 65535, 32, 65535 65535 65535 5200

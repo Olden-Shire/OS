@@ -1,9 +1,9 @@
 // npc 2749
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 recol = 4550/4769 61/5268 57/5392 41/5388 5400/5640 5648/6020
 name = Lord Daquarius
-models = 217 246 3379 317 164 179 268 4954
-headmodels = 55
+models = model_217 model_246 obj_black_platebody_t_2583_man obj_fremennik_cloak_3759_man model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man obj_bronze_boots_4119_man
+headmodels = obj_farmer

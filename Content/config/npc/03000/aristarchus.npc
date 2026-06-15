@@ -1,9 +1,9 @@
 // npc 3127
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 4550/4645 6798/48247 24/9019 25238/49054 8741/49054 4886/22024
 name = Aristarchus
-models = 230 253 10984 9607 10979 10218 10982 8919
-headmodels = 63 85
+models = obj_desert_disguise_man model_253 model_10984 model_9607 obj_wizard_robe_g_7390_man model_10218 obj_blue_skirt_g_7386_man obj_villager_sandals_6349_man
+headmodels = obj_rogue model_85

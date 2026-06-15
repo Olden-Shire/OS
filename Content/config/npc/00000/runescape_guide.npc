@@ -1,13 +1,13 @@
 // npc 945
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 6798/5173 41/931 61/931 11187/931 10659/931 25238/931
 name = RuneScape Guide
-models = 230 249 313 157 198 267 185 176 3330
-headmodels = 63 81 40
+models = obj_desert_disguise_man model_249 model_313 model_157 obj_blue_beret_2633_man model_267 obj_boots_of_lightness_88_man model_176 model_3330
+headmodels = obj_rogue model_81 model_40
 //Server
 wanderrange=2

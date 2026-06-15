@@ -1,10 +1,10 @@
 // npc 28
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 25238/6488 8741/8099 43072/4550 43569/6488
 name = Zoo keeper
-models = 215 292 250 151 176 271 185 194 327 495
-headmodels = 53 82 37
+models = obj_fremennik_helm_man obj_priest_gown_426_man model_250 model_151 model_176 model_271 obj_boots_of_lightness_88_man model_194 model_327 model_495
+headmodels = obj_man model_82 model_37

@@ -1,6 +1,6 @@
 // npc 1702
-walkanim = 808
-readyanim = 808
+walkanim = seq_808
+readyanim = seq_808
 resizev = 112
 resizeh = 112
 ambient = 40
@@ -11,5 +11,5 @@ op1 = Talk-to
 op3 = Bank
 recol = 17467/18626
 name = Ghost banker
-models = 5212 5220 5209 5216
-headmodels = 5203
+models = model_5212 model_5220 model_5209 model_5216
+headmodels = model_5203

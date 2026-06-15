@@ -1,10 +1,10 @@
 // npc 5769
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 op1 = Talk-to
 vislevel = 0
 op3 = Pickpocket
 recol = 6024/5297 900/5293 84/2225 80/2221 8604/4651 8609/4655
 name = Cave goblin
-models = 23647 23692 23625
-headmodels = 23240
+models = model_23647 model_23692 model_23625
+headmodels = model_23240

@@ -1,11 +1,11 @@
 // npc 2047
 resizeh = 120
 resizev = 120
-walkanim = 2104
-readyanim = 357
+walkanim = seq_2104
+readyanim = seq_357
 op2 = Attack
 size = 2
 vislevel = 44
 recol = 6482/10444 8722/12820 99/64448 6478/10436
 name = Zogre
-models = 6762 6771
+models = model_6762 model_6771

@@ -1,12 +1,12 @@
 // npc 594
 vislevel = 0
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 61/4550 803/36756 7473/36756 33/127
 name = Nurmof
-models = 2970 2983 2979 2981 2985
-headmodels = 0
+models = model_2970 model_2983 model_2979 model_2981 model_2985
+headmodels = model_0

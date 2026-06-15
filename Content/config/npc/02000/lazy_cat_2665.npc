@@ -1,8 +1,8 @@
 // npc 2665
 vislevel = 0
 size = 1
-walkanim = 314
-readyanim = 317
+walkanim = seq_314
+readyanim = seq_317
 op1 = Pick-up
 op3 = Talk-to
 op4 = Interact-with
@@ -11,5 +11,5 @@ resizeh = 70
 resizev = 70
 recol = 61/12 16/12 127/33
 name = Lazy cat
-models = 9427 9425
-headmodels = 9422
+models = model_9427 obj_lazy_cat_6549
+headmodels = model_9422

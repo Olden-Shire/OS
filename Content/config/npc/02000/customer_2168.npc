@@ -1,9 +1,9 @@
 // npc 2168
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/12973 25238/7582
 name = Customer
-models = 378 456 480 348 353 419 358
-headmodels = 103
+models = model_378 obj_priest_gown_426_woman model_480 obj_druids_robe_540_woman model_353 obj_mime_legs_woman model_358
+headmodels = model_103

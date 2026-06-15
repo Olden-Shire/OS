@@ -1,9 +1,9 @@
 // npc 3183
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 8741/1822 9104/123 25238/5784 22177/40609 39145/5784 11162/5640
 name = Pirate
-models = 211 10304 292 326 162 3660 540 259
-headmodels = 50 11187
+models = model_211 model_10304 obj_priest_gown_426_man model_326 obj_fremennik_shirt_3767_man obj_pirates_hook_2997_man obj_bronze_spear_1237_wear model_259
+headmodels = model_50 model_11187

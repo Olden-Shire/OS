@@ -1,9 +1,9 @@
 // npc 5455
 size = 2
 op2 = Attack
-walkanim = 5721
-readyanim = 5722
+walkanim = seq_5721
+readyanim = seq_5722
 alwaysontop = true
 vislevel = 51
 name = Icelord
-models = 21805 21801
+models = model_21805 model_21801

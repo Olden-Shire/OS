@@ -1,7 +1,7 @@
 // npc 1541
 size = 1
-readyanim = 5543
-walkanim = 5543
+readyanim = seq_5543
+walkanim = seq_5543
 vislevel = 95
 name = Ghost
-models = 21152
+models = model_21152

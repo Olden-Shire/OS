@@ -1,9 +1,9 @@
 // npc 5915
 op1 = Talk-to
-readyanim = 6478
+readyanim = seq_6478
 ambient = 20
 vislevel = 0
 recol = 6798/86 8076/6439 6707/6451 7952/6563 8741/57536 25238/4283
 name = Elsie
-models = 25705 393 471 15123 10706 12805 11357 358 25690 25682 25706
-headmodels = 16233 15255 16234
+models = model_25705 model_393 model_471 model_15123 model_10706 model_12805 obj_blue_skirt_g_7386_woman model_358 model_25690 model_25682 model_25706
+headmodels = model_16233 model_15255 model_16234

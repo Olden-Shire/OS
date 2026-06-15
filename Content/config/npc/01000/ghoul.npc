@@ -1,9 +1,9 @@
 // npc 1218
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 1275
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_1275
 op2 = Attack
 vislevel = 42
 recol = 4626/10460 4550/10460 25238/21530
 name = Ghoul
-models = 4077 4078 4076 275 181
+models = model_4077 model_4078 model_4076 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man

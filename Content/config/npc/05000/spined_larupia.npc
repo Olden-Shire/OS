@@ -1,8 +1,8 @@
 // npc 5104
-walkanim = 5226
-readyanim = 5225
+walkanim = seq_5226
+readyanim = seq_5225
 size = 2
 op1 = Tease
 vislevel = 40
 name = Spined larupia
-models = 19376
+models = model_19376

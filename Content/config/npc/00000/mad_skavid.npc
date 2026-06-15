@@ -1,10 +1,10 @@
 // npc 864
 vislevel = 0
 size = 2
-walkanim = 254
-readyanim = 257
+walkanim = seq_254
+readyanim = seq_257
 op1 = Talk-to
 recol = 9647/11154
 name = Mad skavid
-models = 20388
-headmodels = 20394
+models = model_20388
+headmodels = model_20394

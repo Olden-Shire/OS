@@ -1,9 +1,9 @@
 // npc 3826
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 23326/17694 8887/7609 7097/7991 43422/41131 6976/8111
 name = George Laxmeister
-models = 14853 14383 14841 14844 14380 14375 14850
-headmodels = 13702 14836 14830
+models = model_14853 model_14383 model_14841 model_14844 model_14380 model_14375 model_14850
+headmodels = model_13702 model_14836 model_14830

@@ -1,10 +1,10 @@
 // npc 604
 vislevel = 0
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 recol = 803/5652 4550/5314
 name = Thurgo
-models = 7034 7049 7041 7057 2985 19100
-headmodels = 6993
+models = model_7034 model_7049 model_7041 model_7057 model_2985 model_19100
+headmodels = model_6993

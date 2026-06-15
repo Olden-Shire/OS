@@ -1,10 +1,10 @@
 // npc 2454
 size = 1
-walkanim = 2361
-readyanim = 1338
+walkanim = seq_2361
+readyanim = seq_1338
 resizeh = 60
 resizev = 60
 op2 = Attack
 vislevel = 42
 name = Dagannoth spawn
-models = 8740
+models = model_8740

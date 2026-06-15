@@ -1,11 +1,11 @@
 // npc 744
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 25238/43569 8741/127 43072/4550
 name = Klarense
-models = 194 215 253 26420 151 177 176 254 181
-headmodels = 53 85 37
+models = model_194 obj_fremennik_helm_man model_253 model_26420 model_151 obj_leather_vambraces_1063_man model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = obj_man model_85 model_37

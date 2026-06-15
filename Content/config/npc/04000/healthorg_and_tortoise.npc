@@ -1,6 +1,6 @@
 // npc 4643
 size = 3
-readyanim = 3952
+readyanim = seq_3952
 vislevel = 0
 name = Healthorg and tortoise
-models = 14803 14801 14799 17273
+models = model_14803 model_14801 model_14799 model_17273

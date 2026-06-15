@@ -1,8 +1,8 @@
 // npc 6115
-walkanim = 6819
-readyanim = 6815
+walkanim = seq_6819
+readyanim = seq_6815
 ambient = 20
 op2 = Attack
 vislevel = 2
 name = Seagull
-models = 26874
+models = model_26874

@@ -1,11 +1,11 @@
 // npc 221
 size = 1
-walkanim = 127
-readyanim = 130
+walkanim = seq_127
+readyanim = seq_130
 op1 = Talk-to
 op2 = Attack
 vislevel = 120
 recol = 920/0 11200/50105 960/41 4550/41 39145/0 955/33
 name = Black Knight Titan
-models = 2864 2872
-headmodels = 4091
+models = model_2864 model_2872
+headmodels = model_4091

@@ -3,4 +3,4 @@ op1 = Hit
 vislevel = 0
 recol = 10295/10349 10304/10469
 name = Combat stone
-models = 13203 13213 13204 13205 13206 13211 13212 13209
+models = model_13203 obj_clay_attack_stone model_13204 model_13205 model_13206 model_13211 model_13212 model_13209

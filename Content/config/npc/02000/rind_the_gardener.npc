@@ -1,9 +1,9 @@
 // npc 2170
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 61/8604 803/16532 5784/9775
 name = Rind the gardener
-models = 2973 7069 7062 2979 2981 2985
-headmodels = 3 6949
+models = model_2973 model_7069 model_7062 model_2979 model_2981 model_2985
+headmodels = model_3 model_6949

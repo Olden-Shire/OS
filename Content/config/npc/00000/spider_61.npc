@@ -1,8 +1,8 @@
 // npc 61
 size = 1
-readyanim = 6247
-walkanim = 6248
+readyanim = seq_6247
+walkanim = seq_6248
 op2 = Attack
 vislevel = 1
 name = Spider
-models = 24613
+models = model_24613

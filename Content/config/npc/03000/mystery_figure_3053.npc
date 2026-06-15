@@ -1,8 +1,8 @@
 // npc 3053
 vislevel = 0
 size = 2
-walkanim = 189
-readyanim = 2943
+walkanim = seq_189
+readyanim = seq_2943
 name = Mystery figure
-models = 10338 10340 10341 10339
-headmodels = 10238
+models = model_10338 model_10340 model_10341 model_10339
+headmodels = model_10238

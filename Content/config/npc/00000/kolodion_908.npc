@@ -1,8 +1,8 @@
 // npc 908
 vislevel = 0
-walkanim = 127
-readyanim = 130
+walkanim = seq_127
+readyanim = seq_130
 op2 = Attack
 recol = 9649/8732 4550/8732 2337/8732 44605/43920 53041/43920 7073/10512
 name = Kolodion
-models = 2863 2871
+models = model_2863 model_2871

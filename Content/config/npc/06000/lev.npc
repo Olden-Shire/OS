@@ -1,9 +1,9 @@
 // npc 6032
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Lev
-models = 26124 26131 26116 26126 26119
-headmodels = 26271
+models = model_26124 model_26131 model_26116 model_26126 model_26119
+headmodels = model_26271

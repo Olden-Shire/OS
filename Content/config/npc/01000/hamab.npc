@@ -1,6 +1,6 @@
 // npc 1437
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 resizeh = 140
 resizev = 140
 op1 = Talk-to
@@ -8,5 +8,5 @@ op3 = Trade
 vislevel = 0
 recol = 7469/5462
 name = Hamab
-models = 4819 4826
-headmodels = 4658
+models = model_4819 model_4826
+headmodels = model_4658

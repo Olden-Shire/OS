@@ -1,11 +1,11 @@
 // npc 1379
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 1
 recol = 25238/10279 43072/2524 8741/8088 4550/2524 6798/7731 6587/22408
 name = Ragnar
-models = 4220 250 292 151 176 4226 4218 4219
-headmodels = 4210 82
+models = model_4220 model_250 obj_priest_gown_426_man model_151 model_176 model_4226 model_4218 model_4219
+headmodels = obj_fremennik model_82

@@ -1,9 +1,9 @@
 // npc 5391
 size = 1
-walkanim = 5479
-readyanim = 5483
+walkanim = seq_5479
+readyanim = seq_5483
 op2 = Attack
 vislevel = 63
 recol = 43270/5392
 name = Skeleton
-models = 21168 21179 21160 21157 21182 21188 21202
+models = model_21168 model_21179 model_21160 model_21157 model_21182 model_21188 model_21202

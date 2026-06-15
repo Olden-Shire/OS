@@ -1,11 +1,11 @@
 // npc 3326
 vislevel = 0
 size = 1
-readyanim = 3281
+readyanim = seq_3281
 turnspeed = 0
 ambient = 10
 contrast = 5
 recol = 25238/54447 8741/10574 8615/10448
 name = Martina Scorsby
-models = 12140 391 470 12139 428 358 12144
-headmodels = 114 12133
+models = obj_moonclan_hat_9069_woman obj_fremennik_helm_woman obj_ham_shirt_4298_woman model_12139 obj_priest_gown_428_woman model_358 model_12144
+headmodels = model_114 model_12133

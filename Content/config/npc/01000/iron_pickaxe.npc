@@ -1,9 +1,9 @@
 // npc 1537
 op1 = Take
 size = 1
-walkanim = 181
-readyanim = 1445
+walkanim = seq_181
+readyanim = seq_1445
 vislevel = 0
 nominimap = true
 name = Iron pickaxe
-models = 4922
+models = model_4922

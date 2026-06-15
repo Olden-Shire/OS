@@ -1,8 +1,8 @@
 // npc 5824
 size = 1
-walkanim = 6061
-readyanim = 6062
+walkanim = seq_6061
+readyanim = seq_6062
 nominimap = true
 vislevel = 0
 name = Goblin fish
-models = 23713 23714
+models = model_23713 model_23714

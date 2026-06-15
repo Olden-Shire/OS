@@ -1,9 +1,9 @@
 // npc 5074
-walkanim = 6773
-readyanim = 6771
+walkanim = seq_6773
+readyanim = seq_6771
 ambient = 20
 vislevel = 0
 op5 = hidden
 vislevel = 0
 name = Cerulean twitch
-models = 26850 26844
+models = model_26850 model_26844

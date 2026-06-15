@@ -1,9 +1,9 @@
 // npc 2745
 size = 5
 op2 = Attack
-walkanim = 2651
-readyanim = 2650
+walkanim = seq_2651
+readyanim = seq_2650
 ambient = 60
 vislevel = 702
 name = TzTok-Jad
-models = 9319
+models = model_9319

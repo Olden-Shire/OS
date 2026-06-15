@@ -2,9 +2,9 @@
 vislevel = 0
 resizeh = 125
 resizev = 120
-readyanim = 1144
+readyanim = seq_1144
 op1 = Talk-to
 recol = 43072/10450 25238/11148 4550/10450 6443/10398
 name = Calin
-models = 210 250 8845 168 176 264
-headmodels = 49 82 9822
+models = model_210 model_250 model_8845 model_168 model_176 model_264
+headmodels = model_49 model_82 model_9822

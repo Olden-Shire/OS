@@ -1,9 +1,9 @@
 // npc 1030
-walkanim = 6614
-readyanim = 6613
+walkanim = seq_6614
+readyanim = seq_6613
 vislevel = 0
 op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Gourmet impling
-models = 26371 26367
+models = model_26371 model_26367

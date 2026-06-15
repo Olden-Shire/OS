@@ -2,10 +2,10 @@
 op1 = Talk-to
 resizeh = 130
 resizev = 145
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 recol = 4550/4552 7473/35998 22/32794 4626/4382 7062/10512
 name = Tombar
-models = 7028 2983 2979 7045 2985
-headmodels = 6987
+models = model_7028 model_2983 model_2979 model_7045 model_2985
+headmodels = model_6987

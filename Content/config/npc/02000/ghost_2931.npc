@@ -1,9 +1,9 @@
 // npc 2931
 size = 1
-readyanim = 5530
-walkanim = 5531
+readyanim = seq_5530
+walkanim = seq_5531
 ambient = 20
 contrast = 20
 vislevel = 0
 name = Ghost
-models = 21144
+models = model_21144

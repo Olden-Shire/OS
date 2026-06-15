@@ -2,9 +2,9 @@
 size = 2
 resizev = 110
 resizeh = 110
-walkanim = 3819
-readyanim = 3815
+walkanim = seq_3819
+readyanim = seq_3815
 op2 = Attack
 vislevel = 63
 name = Confusion beast
-models = 14278
+models = model_14278

@@ -1,6 +1,6 @@
 // npc 487
 size = 2
 vislevel = 0
-readyanim = 6857
+readyanim = seq_6857
 name = Giant
-models = 27114
+models = model_27114

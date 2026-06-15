@@ -2,10 +2,10 @@
 vislevel = 0
 size = 1
 alwaysontop = true
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 4550/7273 7700/0 11200/0 6032/926
 name = Sinister Stranger
-models = 227 246 14382 14372 14379 14374 562 323 14341
-headmodels = 62 14338
+models = model_227 model_246 model_14382 model_14372 model_14379 model_14374 obj_fishing_rod_307_wear obj_cape_1007_man model_14341
+headmodels = model_62 model_14338

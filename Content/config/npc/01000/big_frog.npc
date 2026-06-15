@@ -1,9 +1,9 @@
 // npc 1829
 resizeh = 64
 resizev = 64
-walkanim = 1797
-readyanim = 1796
+walkanim = seq_1797
+readyanim = seq_1796
 op2 = Attack
 vislevel = 24
 name = Big frog
-models = 6947
+models = model_6947

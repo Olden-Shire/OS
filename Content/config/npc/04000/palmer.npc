@@ -2,12 +2,12 @@
 size = 1
 resizeh = 131
 resizev = 121
-walkanims = 819, 820, 821, 822
-readyanim = 4402
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_4402
 op2 = Attack
 alwaysontop = true
 vislevel = 37
 recol = 25238/10398 8741/6808 127/6798 8111/7954
 name = Palmer
-models = 6848 236 4925 292 173 176 6099 271 185
-headmodels = 5787 7380 68
+models = model_6848 obj_eye_patch_1025_man model_4925 obj_priest_gown_426_man model_173 model_176 obj_oak_blackjack_wear model_271 obj_boots_of_lightness_88_man
+headmodels = model_5787 model_7380 model_68

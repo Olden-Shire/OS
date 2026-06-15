@@ -1,8 +1,8 @@
 // npc 5592
 resizeh = 129
 resizev = 129
-walkanims = 819, 820, 821, 822
-readyanim = 5818
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_5818
 ambient = 25
 contrast = 25
 vislevel = 0
@@ -12,5 +12,5 @@ turnspeed = 0
 alwaysontop = true
 recol = 25238/7331 8741/4550
 name = 'The Guns'
-models = 230 22599 11190 315 19329 19332 271 19947 22607
-headmodels = 63 22592 11188
+models = obj_desert_disguise_man obj_hard_hat_10862_man model_11190 obj_veracs_brassard_4757_man model_19329 model_19332 model_271 obj_lumberjack_boots_man model_22607
+headmodels = obj_rogue model_22592 model_11188

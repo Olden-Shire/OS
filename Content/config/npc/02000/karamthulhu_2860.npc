@@ -1,6 +1,6 @@
 // npc 2860
-walkanim = 2798
-readyanim = 2799
+walkanim = seq_2798
+readyanim = seq_2799
 vislevel = 1
 name = Karamthulhu
-models = 9893
+models = model_9893

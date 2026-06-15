@@ -1,11 +1,11 @@
 // npc 1309
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 op3 = Pickpocket
 vislevel = 48
 recol = 6798/6585 25238/7465 8741/5404 8078/5409 8084/7601
 name = Pontak
-models = 4220 252 292 162 176 4221 4219 4226 4218 4236 317 4391
-headmodels = 53 84 4210
+models = model_4220 model_252 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 model_4221 model_4219 model_4226 model_4218 obj_fremennik_blade_wear obj_fremennik_cloak_3759_man model_4391
+headmodels = obj_man model_84 obj_fremennik

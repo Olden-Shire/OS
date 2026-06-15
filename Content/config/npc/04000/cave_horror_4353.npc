@@ -1,8 +1,8 @@
 // npc 4353
-walkanim = 4236
-readyanim = 4231
+walkanim = seq_4236
+readyanim = seq_4231
 size = 2
 op2 = Attack
 vislevel = 80
 name = Cave horror
-models = 15651 15654
+models = model_15651 model_15654

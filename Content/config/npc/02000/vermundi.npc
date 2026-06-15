@@ -1,11 +1,11 @@
 // npc 2162
 size = 1
-walkanim = 2156
-readyanim = 2157
+walkanim = seq_2156
+readyanim = seq_2157
 vislevel = 0
 op1 = Talk-to
 op3 = Trade
 recol = 61/6845 43055/813 7062/7987
 name = Vermundi
-models = 7032 7060 7038 7048 7068
-headmodels = 6991
+models = model_7032 model_7060 model_7038 model_7048 model_7068
+headmodels = model_6991

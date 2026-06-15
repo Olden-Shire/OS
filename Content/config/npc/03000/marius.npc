@@ -5,5 +5,5 @@ op1 = Talk-to
 turnspeed = 0
 recol = 933/5675
 name = Marius
-models = 14035
-headmodels = 55 85 9822
+models = model_14035
+headmodels = obj_farmer model_85 model_9822

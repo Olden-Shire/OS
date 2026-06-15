@@ -1,10 +1,10 @@
 // npc 1439
-walkanim = 1380
-readyanim = 1387
+walkanim = seq_1380
+readyanim = seq_1387
 resizeh = 180
 resizev = 180
 op1 = Talk-to
 vislevel = 0
 name = Denadu
-models = 4815 4824 4829
-headmodels = 4656
+models = model_4815 model_4824 model_4829
+headmodels = model_4656

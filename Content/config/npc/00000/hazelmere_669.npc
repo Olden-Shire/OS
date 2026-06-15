@@ -1,11 +1,11 @@
 // npc 669
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 28434/4911 22426/4899 4539/4506 26710/4899 5223/74 4550/4387
 name = Hazelmere
-models = 17023 17001 2917 17022
-headmodels = 16967 16981
+models = model_17023 model_17001 model_2917 model_17022
+headmodels = model_16967 model_16981

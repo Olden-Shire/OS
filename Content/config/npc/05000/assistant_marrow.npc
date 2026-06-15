@@ -1,11 +1,11 @@
 // npc 5055
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 op4 = Fly
 alwaysontop = true
 recol = 25238/32922 99/2593 9104/1829 13122/2452 6798/6445 10378/3346
 name = Assistant Marrow
-models = 206 252 19474 19465 10218 5218
-headmodels = 46 84
+models = model_206 model_252 model_19474 model_19465 model_10218 model_5218
+headmodels = model_46 model_84

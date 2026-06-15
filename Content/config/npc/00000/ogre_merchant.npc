@@ -1,11 +1,11 @@
 // npc 874
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 name = Ogre merchant
-models = 2874 14116
-headmodels = 141
+models = model_2874 model_14116
+headmodels = model_141

@@ -2,9 +2,9 @@
 alwaysontop = true
 vislevel = 0
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 name = Austri
-models = 2970 2984 2978 2990 2980 2985
-headmodels = 0
+models = model_2970 model_2984 model_2978 model_2990 model_2980 model_2985
+headmodels = model_0

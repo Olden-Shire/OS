@@ -1,10 +1,10 @@
 // npc 2996
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 61/5429 910/27152 10347/35895
 name = Anleif
-models = 7035 7064 7038 7048 7068
-headmodels = 6994
+models = model_7035 model_7064 model_7038 model_7048 model_7068
+headmodels = model_6994

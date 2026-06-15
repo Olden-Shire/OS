@@ -1,11 +1,11 @@
 // npc 3415
 size = 1
-readyanim = 6181
-walkanim = 6180
-walkanim = 3401
-readyanim = 3401
+readyanim = seq_6181
+walkanim = seq_6180
+walkanim = seq_3401
+readyanim = seq_3401
 turnspeed = 1024
 vislevel = 0
 name = Goblin Cook
-models = 24459 24481 24430 24479 24445 24453 24504
-headmodels = 24212
+models = model_24459 model_24481 model_24430 model_24479 model_24445 model_24453 model_24504
+headmodels = model_24212

@@ -1,12 +1,12 @@
 // npc 3808
 size = 3
 alwaysontop = true
-walkanim = 3953
-readyanim = 3952
+walkanim = seq_3953
+readyanim = seq_3952
 ambient = 10
 contrast = 15
 turnspeed = 15
 op2 = Attack
 vislevel = 92
 name = Tortoise
-models = 14801 14803 14799 14795 14797 14796
+models = model_14801 model_14803 model_14799 model_14795 model_14797 model_14796

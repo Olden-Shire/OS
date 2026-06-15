@@ -1,11 +1,11 @@
 // npc 2104
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 2578/2165 7062/107 61/7475 12/7475
 name = White Chisel Director
-models = 7028 7059 2979 2980 2985
-headmodels = 6987
+models = model_7028 model_7059 model_2979 model_2980 model_2985
+headmodels = model_6987

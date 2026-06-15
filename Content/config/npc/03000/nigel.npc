@@ -1,9 +1,9 @@
 // npc 3681
 size = 1
-walkanims = 3865, 3865, 3865, 3865
-readyanim = 808
+walkanims = seq_3865, seq_3865, seq_3865, seq_3865
+readyanim = seq_808
 vislevel = 0
 recol = 8741/10316 6798/74 4626/10508
 name = Nigel
-models = 18086 253 24038 151 10218 13938 24036 185
-headmodels = 19101 85
+models = model_18086 model_253 model_24038 model_151 model_10218 model_13938 model_24036 obj_boots_of_lightness_88_man
+headmodels = model_19101 model_85

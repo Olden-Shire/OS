@@ -1,10 +1,10 @@
 // npc 500
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 43072/4785 4550/4785 4550/4785
 name = Mosol Rei
-models = 206 249 315 173 176 279 181 553
-headmodels = 46 81
+models = model_206 model_249 obj_veracs_brassard_4757_man model_173 model_176 model_279 obj_vyrewatch_shoes_9638_man model_553
+headmodels = model_46 model_81

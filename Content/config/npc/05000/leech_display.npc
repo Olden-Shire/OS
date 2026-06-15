@@ -1,8 +1,8 @@
 // npc 5971
-readyanim = 6429
+readyanim = seq_6429
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 3
 name = Leech display
-models = 4083 25759 25760 25492
+models = model_4083 model_25759 model_25760 model_25492

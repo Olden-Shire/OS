@@ -1,10 +1,10 @@
 // npc 5200
 op1 = Talk-to
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 alwaysontop = true
 recol = 27548/7490 4550/7490 25238/152 8741/3350 40241/3350 40233/3346
 name = Witch
-models = 9608 405 9361 9359 353 440
-headmodels = 122 9601
+models = model_9608 model_405 model_9361 model_9359 model_353 model_440
+headmodels = model_122 model_9601

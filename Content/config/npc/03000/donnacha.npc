@@ -1,11 +1,11 @@
 // npc 3087
 resizeh = 150
 resizev = 150
-readyanim = 3008
-walkanim = 3012
+readyanim = seq_3008
+walkanim = seq_3012
 vislevel = 0
 op1 = Talk-to
 recol = 15779/805 1573/21797 42283/21797 4550/10304 127/21627
 name = Donnacha
-models = 10506 10521 10511 10512 10528 10524
-headmodels = 10400 10394
+models = model_10506 model_10521 model_10511 model_10512 model_10528 model_10524
+headmodels = model_10400 model_10394

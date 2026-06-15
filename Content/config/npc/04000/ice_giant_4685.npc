@@ -1,9 +1,9 @@
 // npc 4685
 size = 2
-walkanim = 4669
-readyanim = 4670
+walkanim = seq_4669
+readyanim = seq_4670
 op2 = Attack
 vislevel = 53
 recol = 32999/32993 33112/29908 33228/33094 33088/33081
 name = Ice giant
-models = 17454 17442 17460
+models = model_17454 model_17442 model_17460

@@ -2,10 +2,10 @@
 alwaysontop = true
 vislevel = 0
 size = 1
-readyanim = 3845
+readyanim = seq_3845
 op1 = Talk-to
 turnspeed = 0
 recol = 41282/4288 8741/5400 43288/3608 40117/5541 40237/3350 41251/169
 name = Morris
-models = 14340 247 10705 14373 177 14377
-headmodels = 14337 79
+models = model_14340 model_247 model_10705 model_14373 obj_leather_vambraces_1063_man model_14377
+headmodels = model_14337 model_79

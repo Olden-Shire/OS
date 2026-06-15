@@ -1,8 +1,8 @@
 // npc 6025
 size = 1
-readyanim = 6539
-walkanim = 6541
+readyanim = seq_6539
+walkanim = seq_6541
 op2 = Attack
 vislevel = 88
 name = Werewolf
-models = 26164 26170 26169
+models = model_26164 model_26170 model_26169

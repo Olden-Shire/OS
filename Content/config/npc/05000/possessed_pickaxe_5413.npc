@@ -1,8 +1,8 @@
 // npc 5413
 size = 1
-walkanim = 5593
-readyanim = 5589
+walkanim = seq_5593
+readyanim = seq_5589
 op2 = Attack
 vislevel = 50
 name = Possessed pickaxe
-models = 21380
+models = model_21380

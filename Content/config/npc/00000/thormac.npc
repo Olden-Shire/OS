@@ -2,9 +2,9 @@
 vislevel = 0
 size = 1
 op1 = Talk-to
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 recol = 8741/38814 25238/38814 43072/4550 6798/43100 7073/43914 43117/50130
 name = Thormac
-models = 202 214 250 292 170 176 256 283 553 567
-headmodels = 44 52 82
+models = obj_wizard_hat_579_man model_214 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_256 obj_glarials_amulet_man model_553 model_567
+headmodels = model_44 model_52 model_82

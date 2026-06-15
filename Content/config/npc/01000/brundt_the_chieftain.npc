@@ -1,10 +1,10 @@
 // npc 1294
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 5161/6856 24/6856 6798/6707 25238/7333 61/5276 41/5268
 name = Brundt the Chieftain
-models = 4220 250 3379 164 176 4226 4218 542 236 4221 4219
-headmodels = 4210 82 68 4211
+models = model_4220 model_250 obj_black_platebody_t_2583_man model_164 model_176 model_4226 model_4218 obj_iron_warhammer_1335_wear obj_eye_patch_1025_man model_4221 model_4219
+headmodels = obj_fremennik model_82 model_68 model_4211

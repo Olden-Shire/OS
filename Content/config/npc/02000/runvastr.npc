@@ -1,9 +1,9 @@
 // npc 2190
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 vislevel = 0
 recol = 61/8377 22/43063 7062/66 910/127
 name = Runvastr
-models = 7028 7059 7036 7045 2985
-headmodels = 6987
+models = model_7028 model_7059 model_7036 model_7045 model_2985
+headmodels = model_6987

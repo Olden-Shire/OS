@@ -1,8 +1,8 @@
 // npc 1016
 vislevel = 0
 size = 1
-walkanim = 6768
-readyanim = 6768
+walkanim = seq_6768
+readyanim = seq_6768
 op4 = Pluck
 name = Chompy bird
-models = 26861
+models = model_26861

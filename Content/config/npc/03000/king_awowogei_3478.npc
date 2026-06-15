@@ -1,8 +1,8 @@
 // npc 3478
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 op1 = Talk-to
 vislevel = 0
 name = King Awowogei
-models = 4816 4823
-headmodels = 4655
+models = model_4816 model_4823
+headmodels = model_4655

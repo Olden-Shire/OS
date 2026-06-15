@@ -1,9 +1,9 @@
 // npc 5120
-readyanim = 1773
-walkanim = 1773
+readyanim = seq_1773
+walkanim = seq_1773
 size = 3
 resizeh = 40
 resizev = 40
 vislevel = 0
 name = Eagle
-models = 5728
+models = model_5728

@@ -2,10 +2,10 @@
 size = 1
 resizeh = 140
 resizev = 128
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 recol = 6356/61 4626/8 33/43088
 name = Silver Cog Director
-models = 7029 6017 7037 7045 2985
-headmodels = 6988
+models = model_7029 model_6017 model_7037 model_7045 model_2985
+headmodels = model_6988

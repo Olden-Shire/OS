@@ -1,8 +1,8 @@
 // npc 132
 size = 1
-walkanim = 219
-readyanim = 222
+walkanim = seq_219
+readyanim = seq_222
 op2 = Attack
 vislevel = 3
 name = Monkey
-models = 3004
+models = model_3004

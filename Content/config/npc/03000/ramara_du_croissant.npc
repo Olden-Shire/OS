@@ -1,9 +1,9 @@
 // npc 3827
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 23326/17694 8887/7609 7097/7991 43422/41131 6976/8111
 name = Ramara du Croissant
-models = 14866 14868 14862 14863 14867 14864 14865
-headmodels = 14839 14838
+models = model_14866 model_14868 model_14862 model_14863 model_14867 model_14864 model_14865
+headmodels = model_14839 model_14838

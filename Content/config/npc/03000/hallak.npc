@@ -1,10 +1,10 @@
 // npc 3025
 vislevel = 0
 alwaysontop = true
-walkanim = 2907
-readyanim = 2906
+walkanim = seq_2907
+readyanim = seq_2906
 op1 = Talk-to
 ambient = 20
 name = Hallak
-models = 10213
-headmodels = 10121
+models = model_10213
+headmodels = model_10121

@@ -1,9 +1,9 @@
 // npc 119
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op2 = Attack
 vislevel = 48
 recol = 7473/61 4550/2619
 name = Chaos dwarf
-models = 2970 2982 2977 2983 2985 2989 2993 2991
+models = model_2970 model_2982 model_2977 model_2983 model_2985 model_2989 model_2993 model_2991

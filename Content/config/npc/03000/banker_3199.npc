@@ -1,10 +1,10 @@
 // npc 3199
 vislevel = 0
-walkanim = 808
-readyanim = 808
+walkanim = seq_808
+readyanim = seq_808
 op1 = Talk-to
 op3 = Bank
 recol = 25238/10295 8741/10283 9104/10270
 name = Banker
-models = 215 193 246 292 320 10301 10218 254 181
-headmodels = 53 36
+models = obj_fremennik_helm_man model_193 model_246 obj_priest_gown_426_man model_320 model_10301 model_10218 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = obj_man model_36

@@ -1,10 +1,10 @@
 // npc 133
 size = 2
-readyanim = 6374
-walkanim = 6373
+readyanim = seq_6374
+walkanim = seq_6373
 resizeh = 110
 resizev = 110
 op2 = Attack
 vislevel = 27
 name = Black unicorn
-models = 25754 25756
+models = model_25754 model_25756

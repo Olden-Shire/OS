@@ -1,9 +1,9 @@
 // npc 794
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 107/123 8741/66 25238/9147
 name = Charlie the cook
-models = 235 199 302 263 176 185 151 249
-headmodels = 67 81 41
+models = model_235 obj_chefs_hat_1949_man model_302 model_263 model_176 obj_boots_of_lightness_88_man model_151 model_249
+headmodels = model_67 model_81 model_41

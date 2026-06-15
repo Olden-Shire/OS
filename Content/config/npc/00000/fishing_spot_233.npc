@@ -1,9 +1,9 @@
 // npc 233
 vislevel = 0
-readyanim = 447
-walkanim = 448
+readyanim = seq_447
+walkanim = seq_448
 size = 1
 nominimap = true
 op1 = Bait
 name = Fishing spot
-models = 1491
+models = model_1491

@@ -1,11 +1,11 @@
 // npc 183
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 23
 recol = 6798/10508 8741/10508 43072/4550
 name = Pirate
-models = 215 252 299 159 176 259 193 236 518
-headmodels = 53 84 68 36
+models = obj_fremennik_helm_man model_252 model_299 model_159 model_176 model_259 model_193 obj_eye_patch_1025_man obj_bronze_longsword_1291_wear
+headmodels = obj_man model_84 model_68 model_36

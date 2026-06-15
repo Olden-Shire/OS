@@ -1,9 +1,9 @@
 // npc 503
 size = 1
-walkanim = 5479
-readyanim = 5483
+walkanim = seq_5479
+readyanim = seq_5483
 op2 = Attack
 vislevel = 61
 recol = 10308/11726 10304/11722 10299/11718 10295/11726 10291/11726 10287/10685
 name = Undead one
-models = 21169 21161 21157 21181 21204 21188
+models = model_21169 model_21161 model_21157 model_21181 model_21204 model_21188

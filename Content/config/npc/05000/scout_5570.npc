@@ -1,13 +1,13 @@
 // npc 5570
 resizeh = 129
 resizev = 129
-walkanim = 841
-readyanim = 842
+walkanim = seq_841
+readyanim = seq_842
 op1 = Talk-to
 nominimap = true
 alwaysontop = true
 vislevel = 0
 recol = 61/33 8741/49 36007/28 33300/33 10768/28 10644/41
 name = Scout
-models = 16480 22314 152 179 6664 4954 3707
-headmodels = 22332
+models = obj_lunar_helm_9096_man model_22314 model_152 obj_cooking_gauntlets_man obj_karils_leatherskirt_4738_man obj_bronze_boots_4119_man model_3707
+headmodels = model_22332

@@ -1,10 +1,10 @@
 // npc 284
 vislevel = 0
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 recol = 8485/801 7473/920 5784/4521 10330/10322
 name = Doric
-models = 2971 2986 10825 2979 2993 7046 2985
-headmodels = 1 6
+models = model_2971 model_2986 model_10825 model_2979 model_2993 model_7046 model_2985
+headmodels = model_1 model_6

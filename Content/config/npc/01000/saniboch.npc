@@ -1,7 +1,7 @@
 // npc 1595
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 135
 resizev = 128
 vislevel = 0
@@ -9,5 +9,5 @@ op1 = Talk-to
 op3 = Pay
 recol = 4550/6806 43072/6806
 name = Saniboch
-models = 231 246 315 173 176 279 181 281
-headmodels = 64
+models = model_231 model_246 obj_veracs_brassard_4757_man model_173 model_176 model_279 obj_vyrewatch_shoes_9638_man obj_perfect_necklace_man
+headmodels = model_64

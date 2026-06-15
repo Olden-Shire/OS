@@ -1,8 +1,8 @@
 // npc 2737
 size = 2
 op2 = Attack
-readyanim = 2624
-walkanim = 2623
+readyanim = seq_2624
+walkanim = seq_2623
 resizeh = 160
 resizev = 160
 ambient = 40
@@ -10,4 +10,4 @@ contrast = 40
 vislevel = 45
 recol = 4019/60044 4023/786 2989/61962 1959/520 4027/2979
 name = Tz-Kek
-models = 9325
+models = model_9325

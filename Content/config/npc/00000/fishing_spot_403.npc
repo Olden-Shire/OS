@@ -1,7 +1,7 @@
 // npc 403
 vislevel = 0
 size = 1
-readyanim = 456
+readyanim = seq_456
 resizeh = 32
 resizev = 32
 op1 = Lure
@@ -10,4 +10,4 @@ op4 = hidden
 op5 = hidden
 alwaysontop = true
 name = Fishing spot
-models = 2320
+models = model_2320

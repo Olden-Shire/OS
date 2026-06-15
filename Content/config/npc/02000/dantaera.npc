@@ -1,9 +1,9 @@
 // npc 2324
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 25238/8604 8741/14746 6798/7762 43072/4550
 name = Dantaera
-models = 378 471 4392 348 353 7368 421 7366
-headmodels = 103
+models = model_378 model_471 model_4392 obj_druids_robe_540_woman model_353 obj_watering_can_5331_wear obj_desert_robes_6386_woman obj_gardening_boots_5345_woman
+headmodels = model_103

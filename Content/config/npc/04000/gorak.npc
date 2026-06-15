@@ -2,10 +2,10 @@
 size = 2
 resizeh = 100
 resizev = 100
-walkanim = 4298
-readyanim = 4299
+walkanim = seq_4298
+readyanim = seq_4299
 op2 = Attack
 alwaysontop = true
 vislevel = 145
 name = Gorak
-models = 16205
+models = model_16205

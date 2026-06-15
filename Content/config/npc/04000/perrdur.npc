@@ -1,9 +1,9 @@
 // npc 4587
-readyanim = 4538
+readyanim = seq_4538
 op1 = Talk-to
 vislevel = 0
 turnspeed = 0
 recol = 22426/7333 22424/8596 11162/8844
 name = Perrdur
-models = 17008 16994 2915 16992
-headmodels = 16967
+models = model_17008 model_16994 model_2915 model_16992
+headmodels = model_16967

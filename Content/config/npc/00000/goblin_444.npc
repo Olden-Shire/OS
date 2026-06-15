@@ -1,7 +1,7 @@
 // npc 444
 size = 1
-readyanim = 6181
-walkanim = 6180
+readyanim = seq_6181
+walkanim = seq_6180
 op2 = Attack
 op1 = Talk-to
 resizev = 126
@@ -10,5 +10,5 @@ ambient = 15
 vislevel = 5
 recol = 11941/9891 12060/10010 6331/2974
 name = Goblin
-models = 24468 24483 24433 24474 24441 24449 24498
-headmodels = 24220
+models = model_24468 model_24483 model_24433 model_24474 model_24441 model_24449 model_24498
+headmodels = model_24220

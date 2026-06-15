@@ -1,8 +1,8 @@
 // npc 3153
 size = 1
-walkanim = 3108
-readyanim = 3108
+walkanim = seq_3108
+readyanim = seq_3108
 op2 = Attack
 vislevel = 46
 name = Harpie Bug Swarm
-models = 11075
+models = obj_swarm

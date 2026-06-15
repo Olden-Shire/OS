@@ -1,8 +1,8 @@
 // npc 4784
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 4550/5338 78/7465 6798/78
 name = Former vampyre
-models = 18086 246 18097 18078 18083 18093 18080
-headmodels = 18030
+models = model_18086 model_246 model_18097 model_18078 model_18083 model_18093 model_18080
+headmodels = model_18030

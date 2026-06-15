@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 125
 resizev = 120
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/17566 8741/12942 43072/10450 933/10450 4550/10450
 name = Ileana
-models = 387 474 9359 353 438 358
-headmodels = 110 11429
+models = model_387 model_474 model_9359 model_353 model_438 model_358
+headmodels = model_110 model_11429

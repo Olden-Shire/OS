@@ -1,10 +1,10 @@
 // npc 4896
 vislevel = 0
 size = 1
-walkanim = 4824
-readyanim = 808
+walkanim = seq_4824
+readyanim = seq_808
 op1 = Talk-to
 recol = 10353/40117 8741/8648 8860/10576 5305/43330 5289/43061 4550/8646
 name = Jeb
-models = 18190 230 217 10304 10705 10980 177 10218 18195 18188
-headmodels = 18185 18338
+models = model_18190 obj_desert_disguise_man model_217 model_10304 model_10705 model_10980 obj_leather_vambraces_1063_man model_10218 model_18195 model_18188
+headmodels = model_18185 model_18338

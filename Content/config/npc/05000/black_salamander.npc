@@ -1,8 +1,8 @@
 // npc 5116
 size = 1
-walkanim = 5262
-readyanim = 5263
+walkanim = seq_5262
+readyanim = seq_5263
 vislevel = 0
 recol = 61/8
 name = Black salamander
-models = 19391
+models = model_19391

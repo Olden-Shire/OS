@@ -6,4 +6,4 @@ turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Bullrush
-models = 1674
+models = model_1674

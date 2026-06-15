@@ -1,6 +1,6 @@
 // npc 4651
-readyanim = 808
-walkanims = 819, 820, 821, 822
+readyanim = seq_808
+walkanims = seq_819, seq_820, seq_821, seq_822
 vislevel = 0
 op1 = Talk-To
 op3 = Trade
@@ -8,5 +8,5 @@ op4 = Charter
 alwaysontop = true
 recol = 8741/33030 25238/33030 4626/33030
 name = Trader Crewmember
-models = 17352 10039 10305 163 177 267 185
-headmodels = 17364 10030
+models = model_17352 model_10039 model_10305 model_163 obj_leather_vambraces_1063_man model_267 obj_boots_of_lightness_88_man
+headmodels = model_17364 model_10030

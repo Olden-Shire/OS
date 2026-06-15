@@ -1,10 +1,10 @@
 // npc 2215
-readyanim = 2150
-walkanim = 2150
+readyanim = seq_2150
+walkanim = seq_2150
 vislevel = 0
 turnspeed = 5000
 size = 1
 recol = 2578/5404 10659/1701 61/3350
 name = Dwarven Miner
-models = 2972 6019 7059 2978 2990 7053 7045 7066
-headmodels = 2
+models = model_2972 model_6019 model_7059 model_2978 model_2990 model_7053 model_7045 model_7066
+headmodels = model_2

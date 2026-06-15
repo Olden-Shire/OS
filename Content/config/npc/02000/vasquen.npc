@@ -1,9 +1,9 @@
 // npc 2333
-walkanim = 2164
-readyanim = 2163
+walkanim = seq_2164
+readyanim = seq_2163
 vislevel = 0
 op1 = Talk-to
 recol = 38814/12702 8741/10520 25238/12702 43072/4550 908/8078
 name = Vasquen
-models = 4843 217 248 292 151 176 496 254 4390 185
-headmodels = 5534 55 80
+models = model_4843 model_217 model_248 obj_priest_gown_426_man model_151 model_176 obj_spade_952_wear obj_mime_legs_man model_4390 obj_boots_of_lightness_88_man
+headmodels = model_5534 obj_farmer model_80

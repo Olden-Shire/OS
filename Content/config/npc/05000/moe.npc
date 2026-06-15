@@ -1,7 +1,7 @@
 // npc 5060
-walkanim = 5152
-readyanim = 5148
+walkanim = seq_5152
+readyanim = seq_5148
 vislevel = 0
 recol = 43072/4550 8741/5285 908/7326 4626/5285 78/6689 6798/6689
 name = Moe
-models = 6848 11190 310 173 10218 495 18132 18127
+models = model_6848 model_11190 model_310 model_173 model_10218 model_495 model_18132 model_18127

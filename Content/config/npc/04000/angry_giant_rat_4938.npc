@@ -1,8 +1,8 @@
 // npc 4938
 size = 2
 vislevel = 45
-walkanim = 4931
-readyanim = 4932
+walkanim = seq_4931
+readyanim = seq_4932
 resizeh = 64
 resizev = 64
 op2 = Attack
@@ -10,4 +10,4 @@ contrast = 30
 ambient = 30
 recol = 10295/3387 10291/3387 10287/3383 10283/3387 10279/3383 10275/3379
 name = Angry giant rat
-models = 18892 18890 18895 18887
+models = model_18892 model_18890 model_18895 model_18887

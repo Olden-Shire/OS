@@ -1,11 +1,11 @@
 // npc 5056
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 op1 = Talk-to
 op4 = Fly
 alwaysontop = true
 recol = 22422/22032
 name = Assistant Le Smith
-models = 19773 19772 10340
-headmodels = 21
+models = model_19773 model_19772 model_10340
+headmodels = obj_gnome

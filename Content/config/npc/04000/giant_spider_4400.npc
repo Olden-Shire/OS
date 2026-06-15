@@ -1,9 +1,9 @@
 // npc 4400
 size = 1
-walkanim = 5325
-readyanim = 5326
+walkanim = seq_5325
+readyanim = seq_5326
 op2 = Attack
 vislevel = 50
 recol = 960/3992 33728/5002 22443/908 11200/4015 56256/532 50099/3010
 name = Giant spider
-models = 20309 20310
+models = model_20309 model_20310

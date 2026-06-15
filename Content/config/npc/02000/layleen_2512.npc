@@ -6,5 +6,5 @@ resizeh = 116
 resizev = 114
 recol = 8741/5572 4550/5553 61/16937
 name = Layleen
-models = 390 444 8849 8931 8933 8940 8934
-headmodels = 113
+models = model_390 obj_unblessed_symbol_1716_woman obj_citizen_top_9640_woman model_8931 obj_villager_armband_6347_woman obj_villager_robe_6343_woman obj_villager_sandals_6349_woman
+headmodels = obj_warrior_woman

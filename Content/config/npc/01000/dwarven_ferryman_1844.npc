@@ -1,10 +1,10 @@
 // npc 1844
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 61/6464
 name = Dwarven Ferryman
-models = 2970 2980 2979 2983 2985
-headmodels = 0
+models = model_2970 model_2980 model_2979 model_2983 model_2985
+headmodels = model_0

@@ -1,10 +1,10 @@
 // npc 2581
-walkanims = 819, 820, 821, 822
-readyanim = 2578
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2578
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 recol = 13248/939 8741/29204 25238/29204 6032/9026 12224/9026 43072/9026
 name = Ellamaria
-models = 9112 390 8786 481 8846 353 9113 358
-headmodels = 113 9231
+models = model_9112 model_390 obj_prince_tunic_woman obj_cape_1007_woman model_8846 model_353 model_9113 model_358
+headmodels = obj_warrior_woman model_9231

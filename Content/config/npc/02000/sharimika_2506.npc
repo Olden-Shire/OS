@@ -4,5 +4,5 @@ size = 1
 op1 = Talk-to
 recol = 4550/4645 5572/62013 4886/3173
 name = Sharimika
-models = 210 8921 249 8928 8916 8918 8925 8919
-headmodels = 49 81 8909
+models = model_210 obj_villager_hat_6345_man model_249 obj_tribal_top_6341_man model_8916 obj_villager_armband_6347_man obj_villager_robe_6343_man obj_villager_sandals_6349_man
+headmodels = model_49 model_81 model_8909

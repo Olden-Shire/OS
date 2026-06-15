@@ -1,9 +1,9 @@
 // npc 1031
-walkanim = 6614
-readyanim = 6613
+walkanim = seq_6614
+readyanim = seq_6613
 vislevel = 0
 op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Earth impling
-models = 26369 26367
+models = model_26369 model_26367

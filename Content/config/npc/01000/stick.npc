@@ -1,6 +1,6 @@
 // npc 1096
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 size = 2
 resizeh = 185
 resizev = 162
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 104
 recol = 61/8363 21570/7465
 name = Stick
-models = 3754 3758 3756 3766 3763
+models = model_3754 obj_troll_guard model_3756 model_3766 model_3763

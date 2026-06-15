@@ -1,11 +1,11 @@
 // npc 4935
 size = 1
-walkanim = 249
-readyanim = 252
+walkanim = seq_249
+readyanim = seq_252
 op2 = Attack
 resizeh = 110
 resizev = 110
 vislevel = 33
 recol = 3974/7362 5537/8654 7498/109 6563/8753
 name = Billy Goat
-models = 18908
+models = model_18908

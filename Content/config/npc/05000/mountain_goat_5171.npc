@@ -1,8 +1,8 @@
 // npc 5171
 vislevel = 0
 size = 1
-walkanim = 5340
-readyanim = 5339
+walkanim = seq_5340
+readyanim = seq_5339
 recol = 8390/4510 8384/6550 8371/8720 5268/7498 5388/8518 5392/8514
 name = Mountain goat
-models = 20273 20280 20277
+models = model_20273 model_20280 model_20277

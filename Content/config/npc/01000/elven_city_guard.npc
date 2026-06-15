@@ -1,9 +1,9 @@
 // npc 1185
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 name = Elven city guard
-models = 4014 4018 4022 4024 4033
-headmodels = 4010
+models = model_4014 model_4018 model_4022 model_4024 model_4033
+headmodels = model_4010

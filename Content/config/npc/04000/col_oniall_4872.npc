@@ -1,10 +1,10 @@
 // npc 4872
 vislevel = 0
 size = 1
-readyanim = 4780
+readyanim = seq_4780
 op1 = Talk-to
 turnspeed = 0
 recol = 4550/4546 8860/42287 8741/42279
 name = Col. O'Niall
-models = 18190 214 11190 8780 10980 177 10218 18196
-headmodels = 18185 52 11188
+models = model_18190 model_214 model_11190 obj_lederhosen_top_6180_man model_10980 obj_leather_vambraces_1063_man model_10218 model_18196
+headmodels = model_18185 model_52 model_11188

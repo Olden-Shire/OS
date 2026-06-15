@@ -1,10 +1,10 @@
 // npc 611
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 alwaysontop = true
 recol = 25238/33030 8741/33030 38814/33030 908/10508 8741/398 4550/27548
 name = Witch
-models = 11354 405 470 17165 353 17166 361 17164
-headmodels = 122 11407
+models = obj_wizard_hat_g_7394_woman model_405 obj_ham_shirt_4298_woman model_17165 model_353 model_17166 obj_boots_of_lightness_88_woman model_17164
+headmodels = model_122 model_11407

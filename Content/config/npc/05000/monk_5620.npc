@@ -1,10 +1,10 @@
 // npc 5620
-walkanim = 5645
-readyanim = 5646
+walkanim = seq_5645
+readyanim = seq_5646
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 recol = 28744/4550 28740/4550 28727/4550
 name = Monk
-models = 21428 21469 21412 21440 21460 21448 21422
-headmodels = 22783
+models = model_21428 model_21469 model_21412 model_21440 model_21460 model_21448 model_21422
+headmodels = model_22783

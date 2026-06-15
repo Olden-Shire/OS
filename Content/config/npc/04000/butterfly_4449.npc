@@ -1,8 +1,8 @@
 // npc 4449
 size = 1
-walkanim = 362
-readyanim = 362
+walkanim = seq_362
+readyanim = seq_362
 vislevel = 0
 recol = 32889/9139 39386/960 39892/9139
 name = Butterfly
-models = 3023
+models = obj_butterfly_9972

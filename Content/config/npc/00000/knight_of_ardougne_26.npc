@@ -1,9 +1,9 @@
 // npc 26
 size = 1
-walkanims = 819, 820, 821, 822
+walkanims = seq_819, seq_820, seq_821, seq_822
 op2 = Attack
 op3 = Pickpocket
 vislevel = 46
 recol = 11187/54185 5532/82 54397/48064 6798/48064
 name = Knight of Ardougne
-models = 232 313 164 179 268 185 518 3330
+models = model_232 model_313 model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_bronze_longsword_1291_wear model_3330

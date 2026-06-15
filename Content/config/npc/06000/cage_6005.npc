@@ -4,4 +4,4 @@ nominimap = true
 turnspeed = 0
 vislevel = 0
 name = Cage
-models = 26108
+models = model_26108

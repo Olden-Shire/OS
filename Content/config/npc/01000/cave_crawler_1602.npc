@@ -1,11 +1,11 @@
 // npc 1602
 size = 2
-walkanim = 225
-readyanim = 226
+walkanim = seq_225
+readyanim = seq_226
 op2 = Attack
 resizeh = 131
 resizev = 131
 vislevel = 23
 recol = 21656/21658 21652/18836 10421/12471
 name = Cave crawler
-models = 5066 5067 5069
+models = obj_cave_crawler model_5067 model_5069

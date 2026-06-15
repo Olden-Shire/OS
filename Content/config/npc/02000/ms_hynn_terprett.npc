@@ -1,10 +1,10 @@
 // npc 2289
 vislevel = 0
 size = 2
-readyanim = 2255
+readyanim = seq_2255
 op1 = Talk-to
 turnspeed = 0
 recol = 70/99 4626/99 41/82 61/99 7700/103 6798/7622
 name = Ms. Hynn Terprett
-models = 376 390 468 344 356 7720 432 361
-headmodels = 113 101
+models = obj_red_headband_2645_woman model_390 obj_khazard_armour_woman model_344 obj_cooking_gauntlets_woman model_7720 obj_iron_platelegs_1067_woman obj_boots_of_lightness_88_woman
+headmodels = obj_warrior_woman model_101

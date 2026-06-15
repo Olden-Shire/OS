@@ -1,9 +1,9 @@
 // npc 3918
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 1321
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_1321
 recol = 7952/920 43072/2524 25238/1686 4550/2524 6798/7613 8741/920
 name = Prince Brand
-models = 235 246 311 162 179 4226 4218 281 317 4394
-headmodels = 67
+models = model_235 model_246 obj_leather_body_1129_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_4226 model_4218 obj_perfect_necklace_man obj_fremennik_cloak_3759_man obj_unstrung_lyre_wear
+headmodels = model_67

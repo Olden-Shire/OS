@@ -6,5 +6,5 @@ op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 name = Fenkenstrain's Monster
-models = 5175
-headmodels = 5119
+models = model_5175
+headmodels = model_5119

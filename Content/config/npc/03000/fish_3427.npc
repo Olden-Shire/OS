@@ -1,10 +1,10 @@
 // npc 3427
-walkanim = 3441
-readyanim = 3442
+walkanim = seq_3441
+readyanim = seq_3442
 ambient = 25
 vislevel = 0
 resizeh = 150
 resizev = 150
 nominimap = true
 name = Fish
-models = 13807
+models = model_13807

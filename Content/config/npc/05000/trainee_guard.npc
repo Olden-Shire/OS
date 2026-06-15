@@ -1,8 +1,8 @@
 // npc 5921
-walkanim = 6486
-readyanim = 6487
+walkanim = seq_6486
+readyanim = seq_6487
 ambient = 20
 contrast = 15
 vislevel = 0
 name = Trainee Guard
-models = 25671 25685 25684
+models = model_25671 model_25685 model_25684

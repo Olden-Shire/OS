@@ -1,8 +1,8 @@
 // npc 2849
 size = 2
-walkanim = 2802
-readyanim = 2803
+walkanim = seq_2802
+readyanim = seq_2803
 op2 = Attack
 vislevel = 150
 name = Evil spirit
-models = 9892
+models = model_9892

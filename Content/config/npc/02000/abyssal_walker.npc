@@ -1,8 +1,8 @@
 // npc 2265
 size = 1
-walkanim = 2190
-readyanim = 2191
+walkanim = seq_2190
+readyanim = seq_2191
 op2 = Attack
 vislevel = 81
 name = Abyssal walker
-models = 7464
+models = model_7464

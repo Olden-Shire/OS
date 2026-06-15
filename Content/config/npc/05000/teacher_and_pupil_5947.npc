@@ -1,7 +1,7 @@
 // npc 5947
-walkanim = 6412
-readyanim = 6413
+walkanim = seq_6412
+readyanim = seq_6413
 vislevel = 0
 op1 = Talk-to
 name = Teacher and pupil
-models = 25793 25794 25795 25796 25797
+models = model_25793 model_25794 model_25795 model_25796 model_25797

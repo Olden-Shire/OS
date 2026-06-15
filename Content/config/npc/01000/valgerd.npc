@@ -1,11 +1,11 @@
 // npc 1388
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 2
 recol = 25238/8076 8741/7830 8078/7582 7700/7830 6798/7746 4550/2524
 name = Valgerd
-models = 390 343 456 421 353 479 361 417
-headmodels = 113 136
+models = model_390 model_343 obj_priest_gown_426_woman obj_desert_robes_6386_woman model_353 obj_fremennik_cloak_3759_woman obj_boots_of_lightness_88_woman model_417
+headmodels = obj_warrior_woman model_136

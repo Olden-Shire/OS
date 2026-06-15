@@ -1,6 +1,6 @@
 // npc 2021
-walkanim = 2051
-readyanim = 2051
+walkanim = seq_2051
+readyanim = seq_2051
 vislevel = 0
 name = Light creature
-models = 6541
+models = model_6541

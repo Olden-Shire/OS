@@ -1,10 +1,10 @@
 // npc 1397
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 1363
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_1363
 op1 = Talk-to
 recol = 8741/6435 25238/5537 8078/7609 6798/6705 7952/13072 123/8088
 name = Fisherman Frodi
-models = 215 248 292 162 179 254 358 562 327 317
-headmodels = 53 80
+models = obj_fremennik_helm_man model_248 obj_priest_gown_426_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man obj_mime_legs_man model_358 obj_fishing_rod_307_wear model_327 obj_fremennik_cloak_3759_man
+headmodels = obj_man model_80

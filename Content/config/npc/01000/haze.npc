@@ -1,10 +1,10 @@
 // npc 1550
 size = 1
-readyanim = 5543
-walkanim = 5543
+readyanim = seq_5543
+walkanim = seq_5543
 ambient = 20
 contrast = 20
 vislevel = 0
 nominimap = true
 name = Haze
-models = 21154
+models = model_21154

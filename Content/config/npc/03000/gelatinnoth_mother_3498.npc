@@ -1,9 +1,9 @@
 // npc 3498
 size = 3
-walkanim = 1339
-readyanim = 1338
+walkanim = seq_1339
+readyanim = seq_1338
 op2 = Attack
 vislevel = 130
 recol = 935/5056
 name = Gelatinnoth Mother
-models = 13442
+models = model_13442

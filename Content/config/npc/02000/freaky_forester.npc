@@ -1,11 +1,11 @@
 // npc 2458
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 8741/119
 name = Freaky Forester
-models = 215 249 299 170 176 8777 185 8781 8775
-headmodels = 53 81 8769
+models = obj_fremennik_helm_man model_249 model_299 obj_druids_robe_540_man model_176 obj_lederhosen_shorts_man obj_boots_of_lightness_88_man model_8781 obj_lederhosen_hat_man
+headmodels = obj_man model_81 model_8769

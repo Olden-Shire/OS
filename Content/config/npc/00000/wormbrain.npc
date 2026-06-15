@@ -1,11 +1,11 @@
 // npc 745
-readyanim = 6181
-walkanim = 6180
+readyanim = seq_6181
+walkanim = seq_6180
 op1 = Talk-to
 op2 = Attack
 ambient = 15
 alwaysontop = true
 vislevel = 2
 name = Wormbrain
-models = 24455 24485 24431 24476 24441 24449
-headmodels = 24209
+models = model_24455 model_24485 model_24431 model_24476 model_24441 model_24449
+headmodels = model_24209

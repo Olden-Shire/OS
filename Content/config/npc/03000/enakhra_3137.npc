@@ -1,10 +1,10 @@
 // npc 3137
 vislevel = 0
 resizev = 140
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/920 8741/920 8844/43146 11200/906 7700/63376 926/945
 name = Enakhra
-models = 383 10842 481 10839 10706 440
-headmodels = 107
+models = model_383 model_10842 obj_cape_1007_woman model_10839 model_10706 model_440
+headmodels = model_107

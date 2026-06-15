@@ -1,10 +1,10 @@
 // npc 703
 vislevel = 0
 size = 1
-walkanim = 4779
-readyanim = 4825
+walkanim = seq_4779
+readyanim = seq_4825
 op1 = Talk-to
 recol = 4550/8646 8741/8497 5281/532 25238/7700 8887/21526 36015/8497
 name = Fisherman
-models = 10741 215 10304 11761 162 177 562 176 4226 14376
-headmodels = 18334 18341 10739
+models = model_10741 obj_fremennik_helm_man model_10304 model_11761 obj_fremennik_shirt_3767_man obj_leather_vambraces_1063_man obj_fishing_rod_307_wear model_176 model_4226 model_14376
+headmodels = model_18334 model_18341 model_10739

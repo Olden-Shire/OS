@@ -1,8 +1,8 @@
 // npc 2414
 vislevel = 0
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 recol = 4626/43051 16/926 49/937
 name = Red Axe Henchman
-models = 8637 8639 8638 8640 2985 7073 8641
-headmodels = 8393 8394
+models = model_8637 model_8639 model_8638 model_8640 model_2985 model_7073 model_8641
+headmodels = model_8393 model_8394

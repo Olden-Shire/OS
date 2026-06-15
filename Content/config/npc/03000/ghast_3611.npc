@@ -1,9 +1,9 @@
 // npc 3611
 op2 = Attack
 size = 2
-walkanim = 1085
-readyanim = 1086
+walkanim = seq_1085
+readyanim = seq_1086
 vislevel = 139
 recol = 10355/16617 12224/22757 61/24635 7236/24640 7471/14499 920/6028
 name = Ghast
-models = 3559
+models = model_3559

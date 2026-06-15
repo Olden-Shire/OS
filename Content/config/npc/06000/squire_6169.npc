@@ -1,11 +1,11 @@
 // npc 6169
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 alwaysontop = true
 recol = 8741/5210 25238/7333 7073/7467 10297/5206 9104/7452 906/8596
 name = Squire
-models = 191 217 253 297 163 179 553 254 9617 4390 3707
-headmodels = 55 85 34
+models = model_191 model_217 model_253 model_297 model_163 obj_cooking_gauntlets_man model_553 obj_mime_legs_man model_9617 model_4390 model_3707
+headmodels = obj_farmer model_85 model_34

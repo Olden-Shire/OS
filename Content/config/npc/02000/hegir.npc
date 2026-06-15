@@ -1,9 +1,9 @@
 // npc 2188
-walkanim = 2154
-readyanim = 2155
+walkanim = seq_2154
+readyanim = seq_2155
 op1 = Talk-to
 vislevel = 0
 recol = 61/8377
 name = Hegir
-models = 7026 7071 7059 7036 7075 7045 2985
-headmodels = 6985 6996
+models = model_7026 model_7071 model_7059 model_7036 model_7075 model_7045 model_2985
+headmodels = model_6985 model_6996

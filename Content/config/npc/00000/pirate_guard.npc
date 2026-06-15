@@ -1,10 +1,10 @@
 // npc 799
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 19
 recol = 8741/12 25238/12 61/12
 name = Pirate Guard
-models = 219 294 151 254 185 179 246 518
-headmodels = 57
+models = obj_khazard_helmet_man obj_iron_chainbody_1101_man model_151 obj_mime_legs_man obj_boots_of_lightness_88_man obj_cooking_gauntlets_man model_246 obj_bronze_longsword_1291_wear
+headmodels = obj_watchman

@@ -1,7 +1,7 @@
 // npc 930
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 150
 resizev = 150
 op1 = Talk-to
@@ -9,5 +9,5 @@ op2 = Attack
 vislevel = 169
 recol = 4550/5027 8741/103 25238/103 6798/200 926/5027 0/960
 name = Ungadulu
-models = 214 250 292 170 176 265 181 534
-headmodels = 52 82
+models = model_214 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man obj_dramen_staff_wear
+headmodels = model_52 model_82

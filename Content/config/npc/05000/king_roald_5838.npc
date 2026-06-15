@@ -1,10 +1,10 @@
 // npc 5838
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 47
 recol = 10644/1814 8741/1814 8078/10341 10768/10341 10892/5231
 name = King Roald
-models = 1808 215 249 23939 162 176 23931 181
-headmodels = 53 2938 81
+models = model_1808 obj_fremennik_helm_man model_249 model_23939 obj_fremennik_shirt_3767_man model_176 model_23931 obj_vyrewatch_shoes_9638_man
+headmodels = obj_man model_2938 model_81

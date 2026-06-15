@@ -1,9 +1,9 @@
 // npc 2906
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 name = Eric
-models = 9981 181 246 9983 9979 9980 9982
-headmodels = 53 9976
+models = model_9981 obj_vyrewatch_shoes_9638_man model_246 model_9983 model_9979 model_9980 model_9982
+headmodels = obj_man model_9976

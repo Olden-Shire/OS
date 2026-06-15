@@ -1,9 +1,9 @@
 // npc 1047
 vislevel = 30
 size = 2
-walkanim = 16
-readyanim = 17
+walkanim = seq_16
+readyanim = seq_17
 op2 = Attack
 recol = 7070/10270 912/951 127/94
 name = Temple guardian
-models = 2934
+models = model_2934

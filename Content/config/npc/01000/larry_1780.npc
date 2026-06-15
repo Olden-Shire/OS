@@ -1,11 +1,11 @@
 // npc 1780
 size = 2
-walkanim = 1739
-readyanim = 1740
+walkanim = seq_1739
+readyanim = seq_1740
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 recol = 43072/80
 name = Larry
-models = 230 246 5614 173 176 269 181 293
-headmodels = 63
+models = obj_desert_disguise_man model_246 model_5614 model_173 model_176 model_269 obj_vyrewatch_shoes_9638_man model_293
+headmodels = obj_rogue

@@ -2,13 +2,13 @@
 vislevel = 0
 resizeh = 124
 resizev = 124
-walkanim = 5822
-readyanim = 808
+walkanim = seq_5822
+readyanim = seq_808
 ambient = 25
 contrast = 25
 op1 = Talk-to
 alwaysontop = true
 recol = 6798/43117
 name = Effigy
-models = 214 250 22605 22596 177 22602 181
-headmodels = 52 82
+models = model_214 model_250 model_22605 model_22596 obj_leather_vambraces_1063_man model_22602 obj_vyrewatch_shoes_9638_man
+headmodels = model_52 model_82

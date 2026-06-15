@@ -1,9 +1,9 @@
 // npc 3308
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 25238/10508 8741/10508 6798/10334
 name = Zandar Horfyre
-models = 208 251 292 170 176 534 265 181
-headmodels = 48 83
+models = model_208 model_251 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_dramen_staff_wear obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man
+headmodels = model_48 model_83

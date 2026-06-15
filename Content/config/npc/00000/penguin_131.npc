@@ -1,10 +1,10 @@
 // npc 131
 size = 1
-walkanim = 5666
-readyanim = 5668
+walkanim = seq_5666
+readyanim = seq_5668
 op2 = Attack
 resizeh = 75
 resizev = 75
 vislevel = 2
 name = Penguin
-models = 21547
+models = model_21547

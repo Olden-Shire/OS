@@ -1,8 +1,8 @@
 // npc 5247
 size = 5
-readyanim = 5410
-walkanim = 5409
+readyanim = seq_5410
+walkanim = seq_5409
 op2 = Attack
 vislevel = 209
 name = Penance Queen
-models = 20717 20715 20714 20709 20713 20712 20711 20710 20716
+models = model_20717 model_20715 model_20714 model_20709 model_20713 model_20712 model_20711 model_20710 model_20716

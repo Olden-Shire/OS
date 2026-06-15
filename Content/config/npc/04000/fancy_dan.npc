@@ -1,11 +1,11 @@
 // npc 4361
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 op3 = Join-Crew
 vislevel = 0
 alwaysontop = true
 recol = 7050/792 43311/792 6798/4 43422/916 25238/43530 43303/668
 name = Fancy Dan
-models = 193 214 250 15978 15973 177 5218
-headmodels = 52 82 36
+models = model_193 model_214 model_250 obj_blue_naval_shirt_man model_15973 obj_leather_vambraces_1063_man model_5218
+headmodels = model_52 model_82 model_36

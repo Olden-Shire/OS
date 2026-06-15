@@ -1,11 +1,11 @@
 // npc 827
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 10
 recol = 25238/8741 908/8741 4550/4645 10297/11187
 name = Rowdy slave
-models = 217 250 292 170 176 265 185 509
-headmodels = 55 82
+models = model_217 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_boots_of_lightness_88_man obj_bronze_pickaxe_1265_wear
+headmodels = obj_farmer model_82

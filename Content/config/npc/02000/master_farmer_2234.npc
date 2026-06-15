@@ -1,9 +1,9 @@
 // npc 2234
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op3 = Pickpocket
 vislevel = 0
 recol = 8741/12583 25238/5400 6798/7465 9096/5400 54397/8497
 name = Master Farmer
-models = 6364 217 249 292 4391 170 176 7367 274 7121
-headmodels = 55 81 6212
+models = model_6364 model_217 model_249 obj_priest_gown_426_man model_4391 obj_druids_robe_540_man model_176 obj_gardening_trowel_5325_wear model_274 obj_gardening_boots_5345_man
+headmodels = obj_farmer model_81 model_6212

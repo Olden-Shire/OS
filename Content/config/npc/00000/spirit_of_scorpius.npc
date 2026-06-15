@@ -1,9 +1,9 @@
 // npc 492
 vislevel = 0
 size = 1
-readyanim = 5538
-walkanim = 5539
+readyanim = seq_5538
+walkanim = seq_5539
 op1 = Talk-to
 name = Spirit of Scorpius
-models = 21155
-headmodels = 21405
+models = model_21155
+headmodels = model_21405

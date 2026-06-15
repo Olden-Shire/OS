@@ -2,9 +2,9 @@
 size = 2
 resizeh = 86
 resizev = 86
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 vislevel = 82
 name = Lesser demon
-models = 17377 17395 17386 17388 17390
+models = model_17377 model_17395 model_17386 model_17388 model_17390

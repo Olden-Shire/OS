@@ -1,10 +1,10 @@
 // npc 3419
 size = 2
-walkanim = 3437
-readyanim = 3436
+walkanim = seq_3437
+readyanim = seq_3436
 vislevel = 0
 op1 = Talk-to
 recol = 8722/10526 6482/5190 7073/8596 61/41
 name = Mogre Guard
-models = 13424 9809 13428
-headmodels = 13885
+models = model_13424 model_9809 model_13428
+headmodels = model_13885

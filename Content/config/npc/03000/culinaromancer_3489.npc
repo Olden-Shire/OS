@@ -1,8 +1,8 @@
 // npc 3489
-walkanims = 819, 820, 821, 822
-readyanim = 3846
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_3846
 vislevel = 0
 recol = 4550/101 43928/43171 4626/20 123/37 6798/123 107/45
 name = Culinaromancer
-models = 12749 215 244 6131 13897 13330 12750 181 12753
-headmodels = 41 53 77 6129
+models = model_12749 obj_fremennik_helm_man model_244 model_6131 model_13897 model_13330 model_12750 obj_vyrewatch_shoes_9638_man model_12753
+headmodels = model_41 obj_man model_77 model_6129

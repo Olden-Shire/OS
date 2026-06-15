@@ -1,6 +1,6 @@
 // npc 1555
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 op1 = Talk-to
 size = 2
 resizeh = 150
@@ -8,5 +8,5 @@ resizev = 150
 vislevel = 113
 recol = 61/6435 21570/4510
 name = Arrg
-models = 3754 3759 3756 3757 3770 3769
-headmodels = 3791
+models = model_3754 model_3759 model_3756 model_3757 model_3770 model_3769
+headmodels = model_3791

@@ -1,9 +1,9 @@
 // npc 4314
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 vislevel = 0
 op1 = Talk-to
 recol = 32811/51 32807/47 32798/39 32794/35 32790/30
 name = Dartog
-models = 23658 23700 23633 23676
-headmodels = 23228 23246
+models = model_23658 model_23700 model_23633 model_23676
+headmodels = model_23228 model_23246

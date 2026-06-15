@@ -4,4 +4,4 @@ vislevel = 0
 alwaysontop = true
 turnspeed = 1024
 name = Mine cart
-models = 4894
+models = model_4894

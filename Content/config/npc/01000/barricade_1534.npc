@@ -3,4 +3,4 @@ nominimap = true
 vislevel = 0
 op2 = Attack
 name = Barricade
-models = 14205
+models = obj_barricade_4053

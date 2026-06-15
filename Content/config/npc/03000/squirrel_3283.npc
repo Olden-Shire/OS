@@ -1,7 +1,7 @@
 // npc 3283
 vislevel = 0
-walkanim = 3210
-readyanim = 3211
+walkanim = seq_3210
+readyanim = seq_3211
 recol = 4300/5169 7240/7227 61/49 5173/5161
 name = Squirrel
-models = 11723
+models = model_11723

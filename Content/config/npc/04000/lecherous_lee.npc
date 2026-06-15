@@ -1,12 +1,12 @@
 // npc 4556
 size = 1
 resizev = 124
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 recol = 8741/43313 7281/15454 10004/16 25238/6439 28318/65315 22177/20
 name = 'Lecherous' Lee
-models = 211 249 7611 170 179 5218
-headmodels = 50 81
+models = model_211 model_249 obj_prince_tunic_man obj_druids_robe_540_man obj_cooking_gauntlets_man model_5218
+headmodels = model_50 model_81

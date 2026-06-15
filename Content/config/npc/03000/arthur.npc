@@ -1,11 +1,11 @@
 // npc 3779
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 57/5652 61/5652 25238/12 8741/12 7952/0
 name = Arthur
-models = 14575 294 317 151 177 254 185
-headmodels = 7667 27208 27204
+models = model_14575 obj_iron_chainbody_1101_man obj_fremennik_cloak_3759_man model_151 obj_leather_vambraces_1063_man obj_mime_legs_man obj_boots_of_lightness_88_man
+headmodels = model_7667 model_27208 model_27204

@@ -1,9 +1,9 @@
 // npc 1181
 size = 2
-walkanim = 6774
-readyanim = 6772
+walkanim = seq_6774
+readyanim = seq_6772
 ambient = 20
 nominimap = true
 vislevel = 0
 name = Pelican
-models = 26846 26838
+models = model_26846 model_26838

@@ -1,11 +1,11 @@
 // npc 2175
 resizeh = 133
 resizev = 133
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 7473/5417 4550/5440 61/5417 10347/20
 name = Factory Worker
-models = 2974 2983 2978 7045 2985
-headmodels = 4
+models = model_2974 model_2983 model_2978 model_7045 model_2985
+headmodels = model_4

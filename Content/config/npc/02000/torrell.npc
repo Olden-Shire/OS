@@ -1,9 +1,9 @@
 // npc 2338
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/4641 25238/4641 908/4641 43072/4550
 name = Torrell
-models = 223 248 299 163 176 7368 260 7121
-headmodels = 59 80
+models = model_223 model_248 model_299 model_163 model_176 obj_watering_can_5331_wear model_260 obj_gardening_boots_5345_man
+headmodels = model_59 model_80

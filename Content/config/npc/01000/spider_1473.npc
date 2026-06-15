@@ -1,11 +1,11 @@
 // npc 1473
 resizeh = 64
 resizev = 64
-readyanim = 6247
-walkanim = 6248
+readyanim = seq_6247
+walkanim = seq_6248
 nominimap = true
 op2 = Attack
 vislevel = 1
 recol = 10398/20 10394/16 10518/12 10514/8
 name = Spider
-models = 24613
+models = model_24613

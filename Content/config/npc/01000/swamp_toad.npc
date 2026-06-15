@@ -1,7 +1,7 @@
 // npc 1013
 vislevel = 0
 size = 1
-readyanim = 1018
-walkanim = 1021
+readyanim = seq_1018
+walkanim = seq_1021
 name = Swamp toad
-models = 3447
+models = obj_bloated_toad

@@ -1,8 +1,8 @@
 // npc 407
 size = 1
 vislevel = 0
-readyanim = 349
+readyanim = seq_349
 op1 = Pick
 alwaysontop = true
 name = Strange plant
-models = 3371
+models = model_3371

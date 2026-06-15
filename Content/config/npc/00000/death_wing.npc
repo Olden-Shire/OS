@@ -1,8 +1,8 @@
 // npc 79
 size = 2
-walkanim = 4913
-readyanim = 4914
+walkanim = seq_4913
+readyanim = seq_4914
 op2 = Attack
 vislevel = 83
 name = Death wing
-models = 18897
+models = model_18897

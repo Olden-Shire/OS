@@ -1,9 +1,9 @@
 // npc 4608
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 25238/4769 8741/4769 6798/9135
 name = Monk
-models = 223 181 246 292 170 176 260 280 284
-headmodels = 59
+models = model_223 obj_vyrewatch_shoes_9638_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_260 obj_unblessed_symbol_1716_man model_284
+headmodels = model_59

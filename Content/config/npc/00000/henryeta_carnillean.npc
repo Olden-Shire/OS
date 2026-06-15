@@ -1,10 +1,10 @@
 // npc 889
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/3990 25238/2855 8741/3990 8078/914 11183/78 37/78
 name = Henryeta Carnillean
-models = 378 361 470 343 353 421 482 447 412
-headmodels = 103 128
+models = model_378 obj_boots_of_lightness_88_woman obj_ham_shirt_4298_woman model_343 model_353 obj_desert_robes_6386_woman model_482 obj_glarials_amulet_woman model_412
+headmodels = model_103 model_128

@@ -1,9 +1,9 @@
 // npc 1481
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 resizeh = 180
 resizev = 180
 vislevel = 1
 name = Medium ninja monkey
-models = 4821 4828
-headmodels = 4660
+models = model_4821 model_4828
+headmodels = model_4660

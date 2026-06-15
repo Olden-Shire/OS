@@ -1,8 +1,8 @@
 // npc 5150
 vislevel = 0
 size = 1
-walkanim = 5340
-readyanim = 5339
+walkanim = seq_5340
+readyanim = seq_5339
 recol = 0/22 20/5272 24/5157 28/5165 33/5169 37/3127
 name = Sheep
-models = 20283 20289 20285
+models = model_20283 model_20289 model_20285

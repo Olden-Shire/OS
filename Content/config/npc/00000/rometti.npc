@@ -1,10 +1,10 @@
 // npc 601
-readyanim = 195
-walkanim = 189
+readyanim = seq_195
+walkanim = seq_189
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 recol = 22426/51121 22424/16 6038/53148 926/51121 11193/103
 name = Rometti
-models = 2900 2909 2916
-headmodels = 23
+models = model_2900 model_2909 model_2916
+headmodels = model_23

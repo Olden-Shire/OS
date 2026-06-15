@@ -1,9 +1,9 @@
 // npc 1911
 size = 2
 ambient = 40
-walkanim = 6808
-readyanim = 6809
+walkanim = seq_6808
+readyanim = seq_6809
 op3 = Grab-feather
 vislevel = 0
 name = Desert Phoenix
-models = 26852
+models = model_26852

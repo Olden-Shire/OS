@@ -1,9 +1,9 @@
 // npc 3863
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Grab
 recol = 25238/8640 8741/9152 24/8406 9529/9152 15242/8406 6798/9026
 name = Suspect
-models = 393 11360 348 10706 11357 358
-headmodels = 115
+models = model_393 model_11360 obj_druids_robe_540_woman model_10706 obj_blue_skirt_g_7386_woman model_358
+headmodels = model_115

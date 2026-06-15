@@ -1,6 +1,6 @@
 // npc 3469
-readyanim = 3473
-walkanim = 3474
+readyanim = seq_3473
+walkanim = seq_3474
 size = 5
 vislevel = 1
 multivar = 1908, 65535, 65535 3472

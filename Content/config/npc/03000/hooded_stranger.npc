@@ -1,11 +1,11 @@
 // npc 3092
 resizeh = 130
 resizev = 150
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/17820 8860/17940 6587/5198 43072/8 4550/6336 6798/90
 name = Hooded Stranger
-models = 208 10561 10541 10542 10531 176 10536 4218
-headmodels = 48 10560
+models = model_208 model_10561 model_10541 model_10542 model_10531 model_176 model_10536 model_4218
+headmodels = model_48 model_10560

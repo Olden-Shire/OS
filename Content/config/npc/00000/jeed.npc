@@ -1,12 +1,12 @@
 // npc 969
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
 vislevel = 0
 recol = 4550/6705 8741/7397 25238/7397 127/7397
 name = Jeed
-models = 390 456 348 353 428 358
-headmodels = 113
+models = model_390 obj_priest_gown_426_woman obj_druids_robe_540_woman model_353 obj_priest_gown_428_woman model_358
+headmodels = obj_warrior_woman

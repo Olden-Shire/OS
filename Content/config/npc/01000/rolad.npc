@@ -1,11 +1,11 @@
 // npc 1841
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 alwaysontop = true
 vislevel = 0
 op1 = Talk-to
 recol = 61/6356 12/4382 5784/7087
 name = Rolad
-models = 2971 2980 2978 6017 2985 6020
-headmodels = 1 70
+models = model_2971 model_2980 model_2978 model_6017 model_2985 model_6020
+headmodels = model_1 model_70

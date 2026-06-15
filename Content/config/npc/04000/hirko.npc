@@ -1,10 +1,10 @@
 // npc 4558
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 recol = 10330/8367 9635/7326 8478/7326 33/8367 37/8367
 name = Hirko
-models = 16947 16948 16946 7046 7067
-headmodels = 16945
+models = model_16947 model_16948 model_16946 model_7046 model_7067
+headmodels = model_16945

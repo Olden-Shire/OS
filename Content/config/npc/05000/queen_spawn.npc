@@ -1,7 +1,7 @@
 // npc 5248
-readyanim = 5090
-walkanim = 5089
+readyanim = seq_5090
+walkanim = seq_5089
 op2 = Attack
 vislevel = 63
 name = Queen spawn
-models = 20718
+models = model_20718

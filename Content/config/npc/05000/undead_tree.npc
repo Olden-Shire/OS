@@ -4,4 +4,4 @@ vislevel = 0
 nominimap = true
 recol = 7054/5388 6028/5388
 name = Undead tree
-models = 3014
+models = model_3014

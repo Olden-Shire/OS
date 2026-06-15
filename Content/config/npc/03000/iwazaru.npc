@@ -1,8 +1,8 @@
 // npc 3483
-readyanim = 3524
+readyanim = seq_3524
 op1 = Talk-to
 vislevel = 0
 turnspeed = 0
 name = Iwazaru
-models = 13878 13879 13880
-headmodels = 13891 13892
+models = model_13878 model_13879 model_13880
+headmodels = model_13891 model_13892

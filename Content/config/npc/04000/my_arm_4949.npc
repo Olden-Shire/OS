@@ -1,7 +1,7 @@
 // npc 4949
 vislevel = 0
-readyanim = 4986
-walkanim = 283
+readyanim = seq_4986
+walkanim = seq_283
 size = 1
 resizeh = 100
 resizev = 100
@@ -9,5 +9,5 @@ op1 = Talk-to
 alwaysontop = true
 recol = 61/10421
 name = My Arm
-models = 19109
-headmodels = 3790 19105
+models = model_19109
+headmodels = model_3790 model_19105

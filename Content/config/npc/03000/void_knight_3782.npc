@@ -1,9 +1,9 @@
 // npc 3782
 vislevel = 0
-readyanim = 3926
+readyanim = seq_3926
 turnspeed = 0
 op2 = hidden
 recol = 43072/4550
 name = Void Knight
-models = 230 249 14568 173 10218 14566 181 14580
-headmodels = 14584 63 81
+models = obj_desert_disguise_man model_249 model_14568 model_173 model_10218 obj_void_knight_robe_man obj_vyrewatch_shoes_9638_man obj_void_knight_mace_man
+headmodels = model_14584 obj_rogue model_81

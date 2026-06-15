@@ -1,10 +1,10 @@
 // npc 245
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/5537
 name = Sir Lucan
-models = 27126 27195 27203
-headmodels = 27208 27562 27204
+models = model_27126 model_27195 model_27203
+headmodels = model_27208 model_27562 model_27204

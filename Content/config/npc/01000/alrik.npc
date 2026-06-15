@@ -1,11 +1,11 @@
 // npc 1381
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 1
 recol = 25238/8472 43072/8472 8741/4288 4550/2524 6798/9133 61/7710
 name = Alrik
-models = 215 252 311 169 176 4226 4218 3706
-headmodels = 53 84 3713
+models = obj_fremennik_helm_man model_252 obj_leather_body_1129_man model_169 model_176 model_4226 model_4218 model_3706
+headmodels = obj_man model_84 model_3713

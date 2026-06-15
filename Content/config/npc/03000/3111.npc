@@ -1,6 +1,6 @@
 // npc 3111
-walkanims = 819, 820, 821, 822
-readyanim = 3036
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_3036
 size = 1
 vislevel = 1
 multivar = 1535, 65535, 65535 3113

@@ -1,8 +1,8 @@
 // npc 3496
 size = 1
-walkanim = 3506
-readyanim = 3504
+walkanim = seq_3506
+readyanim = seq_3504
 op2 = Attack
 vislevel = 121
 name = Dessourt
-models = 13694
+models = model_13694

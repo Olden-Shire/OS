@@ -2,5 +2,5 @@
 vislevel = 0
 size = 1
 name = Left head
-models = 3010 3006
-headmodels = 18506 18505 18509
+models = model_3010 obj_witchs_cat
+headmodels = model_18506 model_18505 model_18509

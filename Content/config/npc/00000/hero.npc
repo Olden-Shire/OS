@@ -1,10 +1,10 @@
 // npc 21
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 op3 = Pickpocket
 vislevel = 69
 recol = 70/36133 5532/39234 41/39234 61/36133 57/36133 4550/4657
 name = Hero
-models = 217 306 164 179 268 185 518 246 541
+models = model_217 obj_khazard_armour_man model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_bronze_longsword_1291_wear model_246 obj_bronze_sq_shield_1173_wear

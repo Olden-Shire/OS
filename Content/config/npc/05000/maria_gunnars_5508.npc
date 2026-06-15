@@ -1,12 +1,12 @@
 // npc 5508
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 op1 = Talk-to
 op3 = Ferry-Neitiznot
 recol = 25238/2223 8741/8363 6798/6057 5400/12 1942/5002 24/8084
 name = Maria Gunnars
-models = 383 470 479 11348 10706 428 358
-headmodels = 107
+models = model_383 obj_ham_shirt_4298_woman obj_fremennik_cloak_3759_woman obj_wizard_robe_g_7390_woman model_10706 obj_priest_gown_428_woman model_358
+headmodels = model_107

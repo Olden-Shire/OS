@@ -1,9 +1,9 @@
 // npc 783
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 22426/90 25238/37394 11162/8 38119/786 6550/9779
 name = Wilough
-models = 14289 17006 2918 17027
-headmodels = 14287 18123
+models = model_14289 model_17006 model_2918 model_17027
+headmodels = model_14287 model_18123

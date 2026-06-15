@@ -1,9 +1,9 @@
 // npc 2327
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/5665 25238/5665 6798/8379 43072/4550
 name = Francis
-models = 6848 250 292 170 176 7368 265 7121
-headmodels = 5787 82
+models = model_6848 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_watering_can_5331_wear obj_priest_gown_428_man obj_gardening_boots_5345_man
+headmodels = model_5787 model_82

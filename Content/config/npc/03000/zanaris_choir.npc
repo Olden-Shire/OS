@@ -1,11 +1,11 @@
 // npc 3312
 vislevel = 0
 size = 1
-walkanim = 3253
-readyanim = 3252
+walkanim = seq_3253
+readyanim = seq_3252
 op1 = Talk-to
 vislevel = 0
 recol = 8621/57127 8741/55203 8734/54179 8982/52133 9104/51111
 name = Zanaris choir
-models = 11978
-headmodels = 6309
+models = model_11978
+headmodels = model_6309

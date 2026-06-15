@@ -1,12 +1,12 @@
 // npc 6094
 size = 1
-readyanim = 5538
-walkanim = 5539
+readyanim = seq_5538
+walkanim = seq_5539
 ambient = 20
 contrast = 20
 op1 = Talk-to
 op2 = Attack
 vislevel = 19
 name = Ghost
-models = 21154
-headmodels = 21394
+models = model_21154
+headmodels = model_21394

@@ -1,11 +1,11 @@
 // npc 580
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 4550/4647 8741/10508 6798/7700 4626/24 25238/5281 54397/54298
 name = Flynn
-models = 215 254 249 170 176 185 305 10741
-headmodels = 53 81 10739
+models = obj_fremennik_helm_man obj_mime_legs_man model_249 obj_druids_robe_540_man model_176 obj_boots_of_lightness_88_man obj_white_apron_1005_man model_10741
+headmodels = obj_man model_81 model_10739

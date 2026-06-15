@@ -1,10 +1,10 @@
 // npc 1637
 size = 1
-walkanim = 1584
-readyanim = 1583
+walkanim = seq_1584
+readyanim = seq_1583
 op2 = Attack
 resizeh = 112
 resizev = 112
 vislevel = 78
 name = Jelly
-models = 5081
+models = obj_jelly

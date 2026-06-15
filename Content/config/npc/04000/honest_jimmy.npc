@@ -1,6 +1,6 @@
 // npc 4362
-walkanim = 4256
-readyanim = 4257
+walkanim = seq_4256
+readyanim = seq_4257
 op1 = Talk-To
 op3 = Trade
 op4 = Join-Team
@@ -8,5 +8,5 @@ vislevel = 0
 alwaysontop = true
 recol = 6798/24 49420/8 8741/22024 43406/8 28318/2954 21776/8
 name = Honest Jimmy
-models = 10038 15975 10304 14187 10301 177 15977
-headmodels = 15968 10027
+models = model_10038 model_15975 model_10304 model_14187 model_10301 obj_leather_vambraces_1063_man model_15977
+headmodels = model_15968 model_10027

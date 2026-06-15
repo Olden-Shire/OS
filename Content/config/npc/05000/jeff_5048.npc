@@ -2,9 +2,9 @@
 vislevel = 0
 op1 = Talk-to
 ambient = 20
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 recol = 8741/8493 11162/8720 22426/8493 22424/14746 4550/4645
 name = Jeff
-models = 2906 2909 2918
-headmodels = 139
+models = model_2906 model_2909 model_2918
+headmodels = model_139

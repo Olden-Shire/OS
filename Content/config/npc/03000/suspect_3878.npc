@@ -1,8 +1,8 @@
 // npc 3878
 size = 1
-readyanim = 3999
+readyanim = seq_3999
 vislevel = 0
-walkanim = 3999
+walkanim = seq_3999
 recol = 25238/43433 8741/43313 8078/43067 24/43239 15242/43239 6798/7993
 name = Suspect
-models = 10078 11359 343 10706 431 358 15009 14945
+models = model_10078 model_11359 model_343 model_10706 model_431 model_358 model_15009 model_14945

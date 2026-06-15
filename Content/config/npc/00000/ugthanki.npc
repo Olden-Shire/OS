@@ -1,10 +1,10 @@
 // npc 840
 size = 2
-walkanim = 45
-readyanim = 51
+walkanim = seq_45
+readyanim = seq_51
 op1 = Talk-to
 op2 = Attack
 vislevel = 42
 name = Ugthanki
-models = 2939
-headmodels = 9841
+models = model_2939
+headmodels = model_9841

@@ -1,10 +1,10 @@
 // npc 618
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/7075 8741/922 25238/910
 name = Examiner
-models = 378 418 470 332 10706 421 358
-headmodels = 103 137
+models = model_378 model_418 obj_ham_shirt_4298_woman model_332 model_10706 obj_desert_robes_6386_woman model_358
+headmodels = model_103 model_137

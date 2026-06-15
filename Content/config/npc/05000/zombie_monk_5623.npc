@@ -1,9 +1,9 @@
 // npc 5623
-readyanim = 5877
-walkanim = 5876
+readyanim = seq_5877
+walkanim = seq_5876
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 name = Zombie monk
-models = 21431 21469 21412 21440 21460 21446 21422
-headmodels = 21393
+models = model_21431 model_21469 model_21412 model_21440 model_21460 model_21446 model_21422
+headmodels = model_21393

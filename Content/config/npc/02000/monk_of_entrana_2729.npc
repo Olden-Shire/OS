@@ -1,10 +1,10 @@
 // npc 2729
 vislevel = 0
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 op3 = Take-boat
 recol = 25238/4769 8741/4769 43072/4550 6798/2138
 name = Monk of Entrana
-models = 208 250 292 170 176 3711 260 181
-headmodels = 48 83
+models = model_208 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_3711 model_260 obj_vyrewatch_shoes_9638_man
+headmodels = model_48 model_83

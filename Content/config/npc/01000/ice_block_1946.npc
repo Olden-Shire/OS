@@ -5,4 +5,4 @@ op1 = Talk-to
 op2 = Smash-ice
 turnspeed = 0
 name = Ice block
-models = 6323
+models = model_6323

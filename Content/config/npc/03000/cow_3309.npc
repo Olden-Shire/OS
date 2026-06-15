@@ -1,10 +1,10 @@
 // npc 3309
 size = 2
-walkanim = 5848
-readyanim = 5852
+walkanim = seq_5848
+readyanim = seq_5852
 op1 = Talk-to
 op2 = Attack
 vislevel = 2
 name = Cow
-models = 23889
-headmodels = 23888
+models = model_23889
+headmodels = model_23888

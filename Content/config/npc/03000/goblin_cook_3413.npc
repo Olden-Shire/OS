@@ -1,9 +1,9 @@
 // npc 3413
 op1 = Talk-to
 size = 1
-readyanim = 6181
-walkanim = 6180
+readyanim = seq_6181
+walkanim = seq_6180
 vislevel = 0
 name = Goblin Cook
-models = 24461 24490 24439 24480 24446 24452 24503
-headmodels = 24213
+models = model_24461 model_24490 model_24439 model_24480 model_24446 model_24452 model_24503
+headmodels = model_24213

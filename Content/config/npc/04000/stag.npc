@@ -1,11 +1,11 @@
 // npc 4440
 size = 2
-readyanim = 6374
-walkanim = 6373
+readyanim = seq_6374
+walkanim = seq_6373
 op2 = Attack
 resizeh = 100
 resizev = 100
 ambient = 25
 vislevel = 15
 name = Stag
-models = 25753 25756
+models = model_25753 model_25756

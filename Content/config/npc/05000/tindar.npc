@@ -1,9 +1,9 @@
 // npc 5795
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 op1 = Talk-to
 vislevel = 0
 recol = 417/5285 412/5409
 name = Tindar
-models = 23645 23684 23626
-headmodels = 23237 23220
+models = model_23645 model_23684 model_23626
+headmodels = model_23237 model_23220

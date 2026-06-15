@@ -1,10 +1,10 @@
 // npc 5965
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 10004/7465 8741/7465
 name = Orlando Smith
-models = 6364 217 10304 21813 151 179 21812 19947
-headmodels = 55 6212
+models = model_6364 model_217 model_10304 model_21813 model_151 obj_cooking_gauntlets_man model_21812 obj_lumberjack_boots_man
+headmodels = obj_farmer model_6212

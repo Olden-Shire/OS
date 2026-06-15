@@ -1,10 +1,10 @@
 // npc 1920
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 123/8 10004/55178 8741/55178 25238/55178 22177/55178 4550/7401
 name = Malak
-models = 227 292 170 179 267 185 3189
-headmodels = 62
+models = model_227 obj_priest_gown_426_man obj_druids_robe_540_man obj_cooking_gauntlets_man model_267 obj_boots_of_lightness_88_man obj_cape_of_legends_1052_man
+headmodels = model_62

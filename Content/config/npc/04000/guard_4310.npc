@@ -1,12 +1,12 @@
 // npc 4310
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 op3 = Pickpocket
 vislevel = 22
 recol = 8741/59299 25238/59299 7952/59299 61/5784 4550/6730 7073/8082
 name = Guard
-models = 169 176 517 250 181 265 296 5434 5430 5433 317 5437
-headmodels = 5428 82
+models = model_169 model_176 obj_wooden_shield_1171_wear model_250 obj_vyrewatch_shoes_9638_man obj_priest_gown_428_man obj_hardleather_body_1131_man obj_h_a_m_logo_4306_wear obj_ham_hood_4302_man model_5433 obj_fremennik_cloak_3759_man model_5437
+headmodels = obj_male_h_a_m model_82

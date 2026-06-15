@@ -1,11 +1,11 @@
 // npc 835
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 2702
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2702
 op1 = Talk-to
 ambient = 15
 recol = 25238/57579 24/57690 8741/45155 9529/45155 6798/5186 908/57571
 name = Irena
-models = 10078 456 7005 10706 11357 8934
-headmodels = 10031
+models = model_10078 obj_priest_gown_426_woman model_7005 model_10706 obj_blue_skirt_g_7386_woman obj_villager_sandals_6349_woman
+headmodels = model_10031

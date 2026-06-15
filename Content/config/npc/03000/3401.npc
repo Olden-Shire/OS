@@ -1,6 +1,6 @@
 // npc 3401
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 alwaysontop = true
 vislevel = 1
 multivar = 1890, 65535, 3402 3403

@@ -1,8 +1,8 @@
 // npc 1020
-readyanim = 4866
-walkanim = 4867
+readyanim = seq_4866
+walkanim = seq_4867
 op2 = Attack
 vislevel = 35
 recol = 54947/5425 54942/5417 55066/5413 55190/5537
 name = Earth elemental
-models = 18649
+models = model_18649

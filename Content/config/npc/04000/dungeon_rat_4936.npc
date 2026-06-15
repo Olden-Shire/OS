@@ -2,10 +2,10 @@
 size = 1
 resizeh = 64
 resizev = 64
-walkanim = 4931
-readyanim = 4932
+walkanim = seq_4931
+readyanim = seq_4932
 op2 = Attack
 vislevel = 12
 recol = 10295/21572 10291/21580 10287/21572 10283/21576 10279/21568 10275/21563
 name = Dungeon rat
-models = 18892 18890 18895 18888
+models = model_18892 model_18890 model_18895 model_18888

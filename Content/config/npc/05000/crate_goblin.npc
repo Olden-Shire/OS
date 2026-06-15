@@ -1,9 +1,9 @@
 // npc 5784
-walkanim = 6044
-readyanim = 6043
+walkanim = seq_6044
+readyanim = seq_6043
 op1 = Talk-to
 vislevel = 0
 recol = 5549/14627 5673/14622 5793/12694 8485/2475 8609/2471
 name = Crate goblin
-models = 23670 23705 23630 23678
-headmodels = 23249
+models = model_23670 model_23705 model_23630 model_23678
+headmodels = model_23249

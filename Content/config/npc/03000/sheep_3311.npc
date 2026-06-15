@@ -1,8 +1,8 @@
 // npc 3311
 vislevel = 0
 size = 1
-walkanim = 5340
-readyanim = 5339
+walkanim = seq_5340
+readyanim = seq_5339
 op1 = Talk-to
 name = Sheep
-models = 20283 20289 20285
+models = model_20283 model_20289 model_20285

@@ -1,9 +1,9 @@
 // npc 3892
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 6740/939 6604/931 6596/794 35245/912 8741/813
 name = Molly
-models = 378 11359 332 10706 10003 358 15010
-headmodels = 103 15001
+models = model_378 model_11359 model_332 model_10706 obj_robe_of_elidinis_6787_woman model_358 model_15010
+headmodels = model_103 model_15001

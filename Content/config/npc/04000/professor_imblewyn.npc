@@ -1,9 +1,9 @@
 // npc 4586
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22426/4397 22414/670 21784/154 6430/670 8598/670 22294/22426
 name = Professor Imblewyn
-models = 17016 10340 16983
-headmodels = 16975
+models = model_17016 model_10340 model_16983
+headmodels = model_16975

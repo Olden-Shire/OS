@@ -1,9 +1,9 @@
 // npc 5641
-readyanim = 5650
-walkanim = 5652
+readyanim = seq_5650
+walkanim = seq_5652
 op2 = Attack
 size = 1
 vislevel = 57
 recol = 21646/54540 21522/54420 21526/54544 21530/54420 21534/54424 7442/54540
 name = Zombie pirate
-models = 21432 21477 21415 21443 21463 21456 21421
+models = model_21432 model_21477 model_21415 model_21443 model_21463 model_21456 model_21421

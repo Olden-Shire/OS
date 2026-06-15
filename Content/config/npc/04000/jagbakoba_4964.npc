@@ -1,11 +1,11 @@
 // npc 4964
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 resizeh = 130
 resizev = 131
 recol = 4550/5671 6798/4783 4416/5572 43072/5572 6443/5572
 name = Jagbakoba
-models = 206 252 8845 173 176 540 8925 8919
-headmodels = 46 84
+models = model_206 model_252 model_8845 model_173 model_176 obj_bronze_spear_1237_wear obj_villager_robe_6343_man obj_villager_sandals_6349_man
+headmodels = model_46 model_84

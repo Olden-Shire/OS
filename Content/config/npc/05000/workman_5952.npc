@@ -1,9 +1,9 @@
 // npc 5952
 size = 2
-walkanim = 6414
-readyanim = 6415
+walkanim = seq_6414
+readyanim = seq_6415
 turnspeed = 1024
 vislevel = 0
 alwaysontop = true
 name = Workman
-models = 25832 25821 25833 25822 25836
+models = model_25832 model_25821 model_25833 model_25822 model_25836

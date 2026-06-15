@@ -1,9 +1,9 @@
 // npc 5871
-walkanim = 6152
-readyanim = 6153
+walkanim = seq_6152
+readyanim = seq_6153
 op1 = Talk-to
 alwaysontop = true
 vislevel = 51
 name = Sergeant Mossfists
-models = 24424 24425
-headmodels = 24222
+models = model_24424 model_24425
+headmodels = model_24222

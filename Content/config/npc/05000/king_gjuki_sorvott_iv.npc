@@ -1,11 +1,11 @@
 // npc 5478
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 19018/16912 25238/8 908/12224 24/94 6587/94 6798/94
 name = King Gjuki Sorvott IV
-models = 192 206 252 10984 323 10301 177 4226 4218
-headmodels = 46 77 2938 84
+models = model_192 model_206 model_252 model_10984 obj_cape_1007_man model_10301 obj_leather_vambraces_1063_man model_4226 model_4218
+headmodels = model_46 model_77 model_2938 model_84

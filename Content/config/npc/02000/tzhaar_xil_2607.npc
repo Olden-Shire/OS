@@ -1,7 +1,7 @@
 // npc 2607
 op2 = Attack
-walkanim = 2601
-readyanim = 2603
+walkanim = seq_2601
+readyanim = seq_2603
 contrast = 0
 ambient = 10
 resizeh = 115
@@ -9,5 +9,5 @@ resizev = 115
 vislevel = 133
 recol = 3005/918 406/8
 name = TzHaar-Xil
-models = 9311 9310 9313 9312 9304
-headmodels = 9251
+models = model_9311 model_9310 model_9313 model_9312 model_9304
+headmodels = model_9251

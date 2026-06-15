@@ -1,9 +1,9 @@
 // npc 3454
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 8078/926 8741/127 25238/926 4626/127 7700/926 11200/127
 name = ? ? ? ?
-models = 230 185 251 313 160 176 267 13922 323 12771
-headmodels = 63 83 2938
+models = obj_desert_disguise_man obj_boots_of_lightness_88_man model_251 model_313 model_160 model_176 model_267 model_13922 obj_cape_1007_man model_12771
+headmodels = obj_rogue model_83 model_2938

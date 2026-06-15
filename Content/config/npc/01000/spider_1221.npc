@@ -1,9 +1,9 @@
 // npc 1221
 vislevel = 0
 size = 1
-readyanim = 6247
-walkanim = 6248
+readyanim = seq_6247
+walkanim = seq_6248
 nominimap = true
 recol = 61/900 10394/268 10518/520 10514/900 10258/148 10262/268
 name = Spider
-models = 24613
+models = model_24613

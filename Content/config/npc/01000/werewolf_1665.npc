@@ -1,9 +1,9 @@
 // npc 1665
 size = 1
-readyanim = 6539
-walkanim = 6541
+readyanim = seq_6539
+walkanim = seq_6541
 vislevel = 0
 op1 = Talk-To
 name = Werewolf
-models = 26177 26188 26181
-headmodels = 26113
+models = model_26177 model_26188 model_26181
+headmodels = model_26113

@@ -3,5 +3,5 @@ op1 = talk
 size = 1
 vislevel = 1
 name = Gate of War
-models = 10302
-headmodels = 15913
+models = model_10302
+headmodels = model_15913

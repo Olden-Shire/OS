@@ -2,10 +2,10 @@
 alwaysontop = true
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/9804 8741/40377 43072/4550 10378/6585 10004/41389
 name = Joshua
-models = 12137 246 9606 10984 173 179 562 14378 7607
-headmodels = 14371
+models = model_12137 model_246 obj_yin_yang_amulet_man model_10984 model_173 obj_cooking_gauntlets_man obj_fishing_rod_307_wear model_14378 obj_rogue_boots_man
+headmodels = model_14371

@@ -1,10 +1,10 @@
 // npc 5084
 size = 1
-walkanim = 362
-readyanim = 362
+walkanim = seq_362
+readyanim = seq_362
 nominimap = true
 vislevel = 0
 op1 = Catch
 recol = 39029/32995
 name = Sapphire glacialis
-models = 3022
+models = obj_butterfly_9970

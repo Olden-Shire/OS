@@ -1,10 +1,10 @@
 // npc 1274
 vislevel = 0
 size = 1
-walkanims = 1323, 1324, 1325, 1326
-readyanim = 1137
+walkanims = seq_1323, seq_1324, seq_1325, seq_1326
+readyanim = seq_1137
 op1 = Talk-to
 recol = 6798/6722 25238/5272 8741/5545 8078/5421 906/4525
 name = Ospak
-models = 206 252 292 162 176 3599 326 4234
-headmodels = 46 84
+models = model_206 model_252 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 model_3599 model_326 model_4234
+headmodels = model_46 model_84

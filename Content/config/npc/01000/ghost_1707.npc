@@ -1,9 +1,9 @@
 // npc 1707
 size = 1
-readyanim = 1639
-walkanim = 1640
+readyanim = seq_1639
+walkanim = seq_1640
 vislevel = 1
 recol = 32854/7599
 name = Ghost (?)
-models = 5367
-headmodels = 5204
+models = model_5367
+headmodels = model_5204

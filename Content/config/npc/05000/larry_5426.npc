@@ -1,6 +1,6 @@
 // npc 5426
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 op3 = Tuxedo-time
@@ -8,5 +8,5 @@ op4 = Travel
 alwaysontop = true
 recol = 8741/7465 8860/6447 7585/6451 6798/5673 10407/7465 3226/7585
 name = Larry
-models = 10981 249 21813 14175 10980 21811 21812 19947
-headmodels = 10976 81
+models = model_10981 model_249 model_21813 model_14175 model_10980 model_21811 model_21812 obj_lumberjack_boots_man
+headmodels = model_10976 model_81

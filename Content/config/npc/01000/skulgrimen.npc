@@ -1,11 +1,11 @@
 // npc 1303
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 recol = 6798/6945 25238/4506 8741/10518 8078/10514 8084/7601
 name = Skulgrimen
-models = 206 252 299 162 176 4226 4218
-headmodels = 46 84
+models = model_206 model_252 model_299 obj_fremennik_shirt_3767_man model_176 model_4226 model_4218
+headmodels = model_46 model_84

@@ -2,10 +2,10 @@
 vislevel = 0
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/2454 25238/5400 8741/2590 8078/2471 8084/2714 43569/2721
 name = Gunnar Holdstrom
-models = 206 292 162 4226 253 4218 4391 176 194
-headmodels = 46 85 37
+models = model_206 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_4226 model_253 model_4218 model_4391 model_176 model_194
+headmodels = model_46 model_85 model_37

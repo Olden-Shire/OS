@@ -1,10 +1,10 @@
 // npc 4444
 vislevel = 0
 size = 1
-walkanim = 106
-readyanim = 112
+walkanim = seq_106
+readyanim = seq_112
 op1 = Talk-to
 recol = 22753/6856 4550/4556 9447/8666
 name = Fairy
-models = 16220
-headmodels = 11
+models = model_16220
+headmodels = model_11

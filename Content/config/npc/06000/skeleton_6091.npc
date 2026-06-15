@@ -1,9 +1,9 @@
 // npc 6091
-walkanim = 5481
-readyanim = 5483
+walkanim = seq_5481
+readyanim = seq_5483
 op2 = Attack
 ambient = 5
 vislevel = 22
 recol = 10308/6362 10304/6362 10299/6362 10295/6362 10291/6362 10287/6362
 name = Skeleton
-models = 21175 21179 21161 21156 21181 21205 21187
+models = model_21175 model_21179 model_21161 model_21156 model_21181 model_21205 model_21187

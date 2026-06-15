@@ -1,9 +1,9 @@
 // npc 3815
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op2 = Attack
 vislevel = 5
 recol = 22422/6942
 name = Gnome Driver
-models = 14806 2914 14811 14805
-headmodels = 22
+models = model_14806 model_2914 model_14811 model_14805
+headmodels = model_22

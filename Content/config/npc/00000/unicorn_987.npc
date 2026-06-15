@@ -1,7 +1,7 @@
 // npc 987
 size = 2
-walkanim = 288
-readyanim = 291
+walkanim = seq_288
+readyanim = seq_291
 vislevel = 15
 name = Unicorn
-models = 2933
+models = model_2933

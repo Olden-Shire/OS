@@ -2,9 +2,9 @@
 resizeh = 108
 resizev = 108
 vislevel = 0
-readyanim = 6181
-walkanim = 6180
+readyanim = seq_6181
+walkanim = seq_6180
 recol = 916/6798
 name = Grubfoot
-models = 24435 24442 24452 24455 24472 24487
-headmodels = 24209
+models = model_24435 model_24442 model_24452 model_24455 model_24472 model_24487
+headmodels = model_24209

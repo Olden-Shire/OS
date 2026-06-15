@@ -1,9 +1,9 @@
 // npc 6122
-walkanim = 6187
-readyanim = 6828
+walkanim = seq_6187
+readyanim = seq_6828
 op1 = Prod
 vislevel = 1
 recol = 43303/37790 6331/37790 7104/37786 6071/39832
 name = Sleeping guard
-models = 24466 24484 24436 24472 24446 24449 24507
-headmodels = 24218
+models = model_24466 model_24484 model_24436 model_24472 model_24446 model_24449 model_24507
+headmodels = model_24218

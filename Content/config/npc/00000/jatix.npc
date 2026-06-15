@@ -1,12 +1,12 @@
 // npc 587
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 8741/127 25238/127 61/40412 908/40412
 name = Jatix
-models = 207 292 170 265 250 176 181 552
-headmodels = 47 82
+models = model_207 obj_priest_gown_426_man obj_druids_robe_540_man obj_priest_gown_428_man model_250 model_176 obj_vyrewatch_shoes_9638_man obj_holy_water_wear
+headmodels = model_47 model_82

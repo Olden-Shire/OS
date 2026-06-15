@@ -1,8 +1,8 @@
 // npc 4350
-walkanim = 4236
-readyanim = 4231
+walkanim = seq_4236
+readyanim = seq_4231
 size = 2
 op2 = Attack
 vislevel = 70
 name = Jungle horror
-models = 15652 15655
+models = model_15652 model_15655

@@ -1,8 +1,8 @@
 // npc 5973
-readyanim = 6431
+readyanim = seq_6431
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 3
 name = Snail display
-models = 25486 25488 25786 25485
+models = model_25486 model_25488 model_25786 model_25485

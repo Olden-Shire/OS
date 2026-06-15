@@ -1,10 +1,10 @@
 // npc 1365
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 25238/22408 43072/8472 8741/2343 4550/2524 6798/7613 4626/29574
 name = Matilda
-models = 390 474 347 353 421 358 447
-headmodels = 113
+models = model_390 model_474 model_347 model_353 obj_desert_robes_6386_woman model_358 obj_glarials_amulet_woman
+headmodels = obj_warrior_woman

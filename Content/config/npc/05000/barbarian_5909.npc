@@ -1,11 +1,11 @@
 // npc 5909
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 op1 = Talk-to
 vislevel = 8
 recol = 8540/5648
 name = Barbarian
-models = 12142 11785 11771 11777 11782 11779
-headmodels = 12135
+models = model_12142 model_11785 model_11771 model_11777 model_11782 model_11779
+headmodels = model_12135

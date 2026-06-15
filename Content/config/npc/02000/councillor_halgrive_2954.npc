@@ -1,9 +1,9 @@
 // npc 2954
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 11183/37 8741/43674 25238/43662 9104/43662 54397/584 4626/0
 name = Councillor Halgrive
-models = 215 238 247 292 170 176 254 181 320
-headmodels = 53 70 79
+models = obj_fremennik_helm_man model_238 model_247 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man model_320
+headmodels = obj_man model_70 model_79

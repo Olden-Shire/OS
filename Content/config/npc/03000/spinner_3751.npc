@@ -1,9 +1,9 @@
 // npc 3751
 size = 1
 op2 = Attack
-walkanim = 3907
-readyanim = 3906
+walkanim = seq_3907
+readyanim = seq_3906
 vislevel = 88
 recol = 960/0 63836/57280 63597/10473 43239/13537 43119/15467 62693/38222
 name = Spinner
-models = 14549
+models = model_14549

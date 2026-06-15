@@ -1,9 +1,9 @@
 // npc 668
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/43189 8741/43189 8078/43181 24/43181 43072/4550 6798/6461
 name = Johnathon
-models = 10981 246 281 292 9607 162 176 10982 181
-headmodels = 10976
+models = model_10981 model_246 obj_perfect_necklace_man obj_priest_gown_426_man model_9607 obj_fremennik_shirt_3767_man model_176 obj_blue_skirt_g_7386_man obj_vyrewatch_shoes_9638_man
+headmodels = model_10976

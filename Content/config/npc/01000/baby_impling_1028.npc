@@ -1,9 +1,9 @@
 // npc 1028
-walkanim = 6614
-readyanim = 6613
+walkanim = seq_6614
+readyanim = seq_6613
 vislevel = 0
 op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Baby impling
-models = 26366 26367
+models = model_26366 model_26367

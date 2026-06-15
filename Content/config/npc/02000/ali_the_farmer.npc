@@ -1,10 +1,10 @@
 // npc 2821
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 8741/10473 25238/8297 4550/5555
 name = Ali the Farmer
-models = 4843 230 249 292 170 176 495 257
-headmodels = 5534 81 63
+models = model_4843 obj_desert_disguise_man model_249 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_495 model_257
+headmodels = model_5534 model_81 obj_rogue

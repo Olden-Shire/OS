@@ -1,9 +1,9 @@
 // npc 1476
-walkanim = 6773
-readyanim = 6771
+walkanim = seq_6773
+readyanim = seq_6771
 ambient = 20
 turnspeed = 64
 op2 = Attack
 vislevel = 5
 name = Bird
-models = 26849 26844
+models = model_26849 model_26844

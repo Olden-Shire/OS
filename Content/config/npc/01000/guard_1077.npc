@@ -1,7 +1,7 @@
 // npc 1077
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
@@ -9,5 +9,5 @@ op2 = Attack
 vislevel = 37
 recol = 25238/8741 6798/86 57/61 43072/4550
 name = Guard
-models = 219 253 298 159 179 263 185 542 541
-headmodels = 57 85
+models = obj_khazard_helmet_man model_253 model_298 model_159 obj_cooking_gauntlets_man model_263 obj_boots_of_lightness_88_man obj_iron_warhammer_1335_wear obj_bronze_sq_shield_1173_wear
+headmodels = obj_watchman model_85

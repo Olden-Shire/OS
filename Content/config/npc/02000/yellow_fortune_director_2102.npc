@@ -2,12 +2,12 @@
 size = 1
 resizeh = 135
 resizev = 128
-walkanim = 2156
-readyanim = 2157
+walkanim = seq_2156
+readyanim = seq_2157
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 6980/7516 43055/8138 61/9802 4550/4541 910/10816 22/10816
 name = Yellow Fortune Director
-models = 7031 7070 7058 7038 7045 7068
-headmodels = 6990 6995
+models = model_7031 model_7070 model_7058 model_7038 model_7045 model_7068
+headmodels = model_6990 model_6995

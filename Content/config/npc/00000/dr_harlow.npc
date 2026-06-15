@@ -1,10 +1,10 @@
 // npc 756
 vislevel = 0
 size = 1
-walkanims = 3039, 820, 821, 822
-readyanim = 3040
+walkanims = seq_3039, seq_820, seq_821, seq_822
+readyanim = seq_3040
 op1 = Talk-to
 recol = 6798/5223 8741/111 43072/4550 25238/142 7446/4550
 name = Dr Harlow
-models = 217 245 11190 302 3190 159 177 11194 254 181
-headmodels = 55 78 11188
+models = model_217 model_245 model_11190 model_302 model_3190 model_159 obj_leather_vambraces_1063_man model_11194 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer model_78 model_11188

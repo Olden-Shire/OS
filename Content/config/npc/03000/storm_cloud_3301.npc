@@ -1,11 +1,11 @@
 // npc 3301
 vislevel = 0
 size = 3
-readyanim = 3169
-walkanim = 3169
+readyanim = seq_3169
+walkanim = seq_3169
 resizev = 128
 resizeh = 256
 alwaysontop = true
 nominimap = true
 name = Storm cloud
-models = 11265
+models = model_11265

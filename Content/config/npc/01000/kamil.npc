@@ -1,10 +1,10 @@
 // npc 1913
 size = 1
-walkanim = 841
-readyanim = 842
+walkanim = seq_841
+readyanim = seq_842
 op2 = Attack
 vislevel = 154
 recol = 4550/5351 61/127 41/127 57/127
 name = Kamil
-models = 219 268 251 164 179 185 3379 518 317
-headmodels = 57 83
+models = obj_khazard_helmet_man obj_iron_platelegs_1067_man model_251 model_164 obj_cooking_gauntlets_man obj_boots_of_lightness_88_man obj_black_platebody_t_2583_man obj_bronze_longsword_1291_wear obj_fremennik_cloak_3759_man
+headmodels = obj_watchman model_83

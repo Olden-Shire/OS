@@ -1,6 +1,6 @@
 // npc 6199
-walkanim = 6919
-readyanim = 808
+walkanim = seq_6919
+readyanim = seq_808
 alwaysontop = true
 op1 = Talk-to
 vislevel = 1

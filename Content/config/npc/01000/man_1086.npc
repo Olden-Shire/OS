@@ -1,12 +1,12 @@
 // npc 1086
 size = 1
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 op2 = Attack
 op3 = Pickpocket
 op1 = Talk-to
 vislevel = 2
 recol = 8741/59437 25238/7331
 name = Man
-models = 215 246 292 3707 151 176 3711 254 181
-headmodels = 53
+models = obj_fremennik_helm_man model_246 obj_priest_gown_426_man model_3707 model_151 model_176 model_3711 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = obj_man

@@ -2,10 +2,10 @@
 size = 3
 resizeh = 95
 resizev = 95
-walkanim = 4674
-readyanim = 4675
+walkanim = seq_4674
+readyanim = seq_4675
 op2 = Attack
 vislevel = 100
 name = Agrith Naar
-models = 17380 17397 17384 17401
-headmodels = 17547
+models = model_17380 model_17397 model_17384 model_17401
+headmodels = model_17547

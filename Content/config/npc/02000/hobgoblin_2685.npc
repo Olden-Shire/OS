@@ -1,9 +1,9 @@
 // npc 2685
-walkanim = 162
-readyanim = 166
+walkanim = seq_162
+readyanim = seq_166
 op2 = Attack
 ambient = 10
 vislevel = 28
 recol = 6046/5675 5640/5524 8078/6798 28/5404 5309/5285
 name = Hobgoblin
-models = 9463
+models = model_9463

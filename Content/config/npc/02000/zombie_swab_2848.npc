@@ -1,6 +1,6 @@
 // npc 2848
-walkanim = 5645
-readyanim = 5646
+walkanim = seq_5645
+readyanim = seq_5646
 resizeh = 116
 resizev = 116
 op1 = Talk-to
@@ -10,5 +10,5 @@ size = 1
 vislevel = 55
 recol = 28744/16466 28740/15434 28736/16454 28731/15421 127/404
 name = Zombie swab
-models = 21437 21474 21419 21442 21460 21447 21423
-headmodels = 21398
+models = model_21437 model_21474 model_21419 model_21442 model_21460 model_21447 model_21423
+headmodels = model_21398

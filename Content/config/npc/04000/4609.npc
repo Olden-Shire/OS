@@ -1,8 +1,8 @@
 // npc 4609
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 inactive = true
-models = 17026 17003 16990
-headmodels = 22
+models = model_17026 model_17003 model_16990
+headmodels = model_22

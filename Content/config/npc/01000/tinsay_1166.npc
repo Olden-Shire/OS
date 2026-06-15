@@ -1,9 +1,9 @@
 // npc 1166
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 vislevel = 0
 recol = 6798/9118 43072/4645 5572/58797 4886/68 4550/6806 61/58797
 name = Tinsay
-models = 206 250 8928 8916 176 8925 8919 553 201
-headmodels = 46 82 43
+models = model_206 model_250 obj_tribal_top_6341_man model_8916 model_176 obj_villager_robe_6343_man obj_villager_sandals_6349_man model_553 obj_red_headband_2645_man
+headmodels = model_46 model_82 model_43

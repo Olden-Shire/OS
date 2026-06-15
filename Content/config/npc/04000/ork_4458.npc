@@ -1,10 +1,10 @@
 // npc 4458
 size = 1
-walkanim = 4319
-readyanim = 4318
+walkanim = seq_4319
+readyanim = seq_4318
 op1 = Talk-to
 vislevel = 20
 recol = 10520/16549 10644/16668 10768/16788 10892/16912
 name = Ork
-models = 16301 16305 16309 16323 16328 16317 16315 16316
-headmodels = 16216
+models = model_16301 model_16305 model_16309 model_16323 model_16328 model_16317 model_16315 model_16316
+headmodels = model_16216

@@ -1,10 +1,10 @@
 // npc 37
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 8741/7700 11187/61 11200/41 11187/41 926/43934
 name = Sigbert the Adventurer
-models = 313 208 167 268 185 179 250 323 553 3330
-headmodels = 48 82
+models = model_313 model_208 model_167 obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_cooking_gauntlets_man model_250 obj_cape_1007_man model_553 model_3330
+headmodels = model_48 model_82

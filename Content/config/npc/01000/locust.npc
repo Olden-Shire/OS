@@ -1,8 +1,8 @@
 // npc 1995
 size = 1
-walkanim = 2011
-readyanim = 2012
+walkanim = seq_2011
+readyanim = seq_2012
 op2 = Attack
 vislevel = 18
 name = Locust
-models = 6455
+models = model_6455

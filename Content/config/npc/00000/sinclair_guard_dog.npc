@@ -1,11 +1,11 @@
 // npc 821
 size = 1
 size = 1
-readyanim = 6561
-walkanim = 6560
+readyanim = seq_6561
+walkanim = seq_6560
 resizeh = 110
 resizev = 110
 vislevel = 0
 recol = 2221/47 2337/39 2328/30 272/20 3594/16
 name = Sinclair Guard dog
-models = 26255
+models = obj_guard_dog

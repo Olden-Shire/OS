@@ -2,10 +2,10 @@
 size = 1
 resizeh = 135
 resizev = 140
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 recol = 12/10508 280/10396
 name = Denath
-models = 17523 6131 17530 17513 17524
-headmodels = 63 6129 9997
+models = model_17523 model_6131 model_17530 model_17513 model_17524
+headmodels = obj_rogue model_6129 model_9997

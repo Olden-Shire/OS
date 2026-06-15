@@ -1,9 +1,9 @@
 // npc 3596
 size = 1
-walkanim = 3717
-readyanim = 3716
+walkanim = seq_3717
+readyanim = seq_3716
 op1 = Pick-up
 vislevel = 0
 nominimap = true
 name = Toy Doll
-models = 13225
+models = model_13225

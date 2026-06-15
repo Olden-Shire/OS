@@ -1,11 +1,11 @@
 // npc 1751
 size = 2
-walkanim = 1007
-readyanim = 1008
+walkanim = seq_1007
+readyanim = seq_1008
 resizeh = 110
 resizev = 110
 op2 = Attack
 vislevel = 28
 recol = 14753/24865 12579/17571 5056/3010 2997/6077
 name = Terrorbird
-models = 26856
+models = model_26856

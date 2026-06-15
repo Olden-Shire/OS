@@ -1,9 +1,9 @@
 // npc 3935
 vislevel = 0
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 recol = 61/35916 2578/43069 910/5400 7062/5388
 name = Jari
-models = 7032 7060 7038 7048 7068
-headmodels = 6991
+models = model_7032 model_7060 model_7038 model_7048 model_7068
+headmodels = model_6991

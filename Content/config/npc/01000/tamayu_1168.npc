@@ -1,10 +1,10 @@
 // npc 1168
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 recol = 4550/6806 43072/6806 61/926
 name = Tamayu
-models = 231 8919 246 315 173 176 8925 540 201
-headmodels = 64 43
+models = model_231 obj_villager_sandals_6349_man model_246 obj_veracs_brassard_4757_man model_173 model_176 obj_villager_robe_6343_man obj_bronze_spear_1237_wear obj_red_headband_2645_man
+headmodels = model_64 model_43

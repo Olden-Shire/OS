@@ -1,6 +1,6 @@
 // npc 2788
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 size = 1
 alwaysontop = true
 vislevel = 1

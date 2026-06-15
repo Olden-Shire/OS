@@ -1,10 +1,10 @@
 // npc 1363
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 25238/22408 54397/5425 8741/8088 4550/2524 6798/7613
 name = Moldof
-models = 210 250 305 168 176 4226 4218
-headmodels = 49 82
+models = model_210 model_250 obj_white_apron_1005_man model_168 model_176 model_4226 model_4218
+headmodels = model_49 model_82

@@ -1,8 +1,8 @@
 // npc 3675
 size = 2
 op2 = Attack
-readyanim = 2017
-walkanim = 2016
+readyanim = seq_2017
+walkanim = seq_2016
 vislevel = 31
 name = Vulture
-models = 6458
+models = model_6458

@@ -2,10 +2,10 @@
 size = 2
 resizeh = 78
 resizev = 78
-walkanim = 5317
-readyanim = 5318
+walkanim = seq_5317
+readyanim = seq_5318
 op2 = Attack
 vislevel = 81
 recol = 960/3992 33728/5002 22443/908 11200/4015 56256/532 50099/4750
 name = Huge spider
-models = 20307 20308
+models = model_20307 model_20308

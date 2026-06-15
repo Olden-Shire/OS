@@ -1,11 +1,11 @@
 // npc 5834
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 6798/6327
 name = Surok Magis
-models = 23925 214 250 23943 23915 177 23933 181
-headmodels = 82 52 23910
+models = model_23925 model_214 model_250 model_23943 model_23915 obj_leather_vambraces_1063_man model_23933 obj_vyrewatch_shoes_9638_man
+headmodels = model_82 model_52 model_23910

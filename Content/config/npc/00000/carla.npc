@@ -1,10 +1,10 @@
 // npc 712
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/5025 8741/50006 8741/50006 25238/50006 43072/4550 4626/53018
 name = Carla
-models = 390 471 332 353 428 358
-headmodels = 113
+models = model_390 model_471 model_332 model_353 obj_priest_gown_428_woman model_358
+headmodels = obj_warrior_woman

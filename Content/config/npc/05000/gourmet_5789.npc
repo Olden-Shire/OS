@@ -1,9 +1,9 @@
 // npc 5789
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 op1 = Talk-to
 vislevel = 0
 recol = 5305/8656 5301/8524 5293/8520 33/443 38044/1329 38036/2475
 name = Gourmet
-models = 23653 23699 23629
-headmodels = 23246 23227
+models = model_23653 model_23699 model_23629
+headmodels = model_23246 model_23227

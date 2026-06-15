@@ -1,8 +1,8 @@
 // npc 5979
-readyanim = 6447
+readyanim = seq_6447
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 5
 name = Dragon display
-models = 17407 17425 17418 25752 25751
+models = model_17407 model_17425 model_17418 model_25752 model_25751

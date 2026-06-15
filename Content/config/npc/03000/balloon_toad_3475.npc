@@ -1,6 +1,6 @@
 // npc 3475
 vislevel = 0
-readyanim = 3472
-walkanim = 3472
+readyanim = seq_3472
+walkanim = seq_3472
 name = Balloon Toad
-models = 13724
+models = model_13724

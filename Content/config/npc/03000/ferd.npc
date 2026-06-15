@@ -1,9 +1,9 @@
 // npc 3937
 vislevel = 0
-walkanim = 98
-readyanim = 4021
+walkanim = seq_98
+readyanim = seq_4021
 op1 = Talk-to
 recol = 61/4550 803/43164 910/54290 5784/152
 name = Ferd
-models = 2973 2986 7061 2978 2990 2981 2985
-headmodels = 3 6
+models = model_2973 model_2986 model_7061 model_2978 model_2990 model_2981 model_2985
+headmodels = model_3 model_6

@@ -1,8 +1,8 @@
 // npc 1019
-readyanim = 1027
-walkanim = 1028
+readyanim = seq_1027
+walkanim = seq_1028
 op2 = Attack
 ambient = 25
 vislevel = 35
 name = Fire elemental
-models = 335
+models = model_335

@@ -2,10 +2,10 @@
 vislevel = 0
 resizeh = 117
 resizev = 113
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/19986 4626/10450 43072/10450 6798/15397 4550/10450 6443/12818
 name = Grigore
-models = 6848 253 8845 168 176 254 181
-headmodels = 5787 85 9822
+models = model_6848 model_253 model_8845 model_168 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = model_5787 model_85 model_9822

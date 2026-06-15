@@ -2,10 +2,10 @@
 size = 1
 resizeh = 50
 resizev = 50
-walkanim = 3426
-readyanim = 3424
+walkanim = seq_3426
+readyanim = seq_3424
 vislevel = 0
 nominimap = true
 recol = 2859/4762 3408/6695 2739/5914 2624/6938
 name = Crab
-models = 13799
+models = model_13799

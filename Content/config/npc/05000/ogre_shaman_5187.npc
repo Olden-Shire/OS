@@ -1,10 +1,10 @@
 // npc 5187
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 op2 = Attack
 vislevel = 113
 name = Ogre shaman
-models = 20370 20375 20387
-headmodels = 20409
+models = model_20370 model_20375 model_20387
+headmodels = model_20409

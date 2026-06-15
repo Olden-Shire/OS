@@ -1,12 +1,12 @@
 // npc 588
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 8741/43340 25238/45976 4626/43340 908/57172
 name = Davon
-models = 299 170 245 281 290 230 246 263 176 181
-headmodels = 63 78
+models = model_299 obj_druids_robe_540_man model_245 obj_perfect_necklace_man obj_amulet_of_accuracy_1478_man obj_desert_disguise_man model_246 model_263 model_176 obj_vyrewatch_shoes_9638_man
+headmodels = obj_rogue model_78

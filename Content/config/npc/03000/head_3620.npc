@@ -1,9 +1,9 @@
 // npc 3620
 op2 = Attack
-walkanim = 3728
-readyanim = 3728
+walkanim = seq_3728
+readyanim = seq_3728
 ambient = 15
 vislevel = 140
 recol = 8753/12475 8745/12475 8993/12475 10355/12616
 name = Head
-models = 14162
+models = model_14162

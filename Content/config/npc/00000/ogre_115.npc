@@ -1,8 +1,8 @@
 // npc 115
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op2 = Attack
 vislevel = 53
 name = Ogre
-models = 2878 2876
+models = model_2878 model_2876

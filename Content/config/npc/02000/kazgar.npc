@@ -1,8 +1,8 @@
 // npc 2086
-readyanim = 6006
-walkanim = 6005
+readyanim = seq_6006
+walkanim = seq_6005
 vislevel = 0
 op1 = Talk-to
 name = Kazgar
-models = 23658 23700 23634 23676
-headmodels = 23228 23246
+models = model_23658 model_23700 model_23634 model_23676
+headmodels = model_23228 model_23246

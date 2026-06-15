@@ -1,11 +1,11 @@
 // npc 803
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 5
 recol = 25238/4769 8741/4769
 name = Monk
-models = 230 181 246 292 170 176 260
-headmodels = 63
+models = obj_desert_disguise_man obj_vyrewatch_shoes_9638_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_260
+headmodels = obj_rogue

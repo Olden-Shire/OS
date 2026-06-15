@@ -1,9 +1,9 @@
 // npc 1874
 size = 1
-walkanim = 274
-readyanim = 277
+walkanim = seq_274
+readyanim = seq_277
 op2 = Attack
 alwaysontop = true
 vislevel = 5
 name = Desert snake
-models = 3002
+models = model_3002

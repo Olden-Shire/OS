@@ -1,10 +1,10 @@
 // npc 3579
 vislevel = 0
-walkanim = 3568
-readyanim = 3569
+walkanim = seq_3568
+readyanim = seq_3569
 alwaysontop = true
 op1 = Shear
 op3 = Talk-to
 name = Sheep
-models = 14084 14085
-headmodels = 21525
+models = model_14084 model_14085
+headmodels = model_21525

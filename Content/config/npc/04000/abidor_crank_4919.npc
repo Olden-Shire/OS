@@ -1,8 +1,8 @@
 // npc 4919
 vislevel = 0
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 recol = 4550/10450 36015/16540 8741/16540 25238/14610 7073/6443 6798/5541
 name = Abidor Crank
-models = 223 253 11761 170 10218 265 8919 534 14175
-headmodels = 59 85 13945
+models = model_223 model_253 model_11761 obj_druids_robe_540_man model_10218 obj_priest_gown_428_man obj_villager_sandals_6349_man obj_dramen_staff_wear model_14175
+headmodels = model_59 model_85 model_13945

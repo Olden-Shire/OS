@@ -3,5 +3,5 @@ vislevel = 0
 size = 1
 turnspeed = 0
 name = Dummy
-models = 14035
-headmodels = 23170
+models = model_14035
+headmodels = model_23170

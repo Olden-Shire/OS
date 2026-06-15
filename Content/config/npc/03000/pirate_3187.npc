@@ -1,10 +1,10 @@
 // npc 3187
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 op2 = Attack
 vislevel = 57
 recol = 8741/807 9104/530 25238/7834 22177/807
 name = Pirate
-models = 211 249 292 3667 151 10218 555 5218
-headmodels = 50 81
+models = model_211 model_249 obj_priest_gown_426_man model_3667 model_151 model_10218 obj_bronze_halberd_3190_wear model_5218
+headmodels = model_50 model_81

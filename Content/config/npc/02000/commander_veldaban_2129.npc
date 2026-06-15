@@ -2,12 +2,12 @@
 size = 1
 resizeh = 140
 resizev = 130
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 4626/8 37/8 61/8 28/43055 7062/10838 7054/43055
 name = Commander Veldaban
-models = 7028 7050 7039 2991 7043 2985
-headmodels = 6987
+models = model_7028 model_7050 model_7039 model_2991 model_7043 model_2985
+headmodels = model_6987

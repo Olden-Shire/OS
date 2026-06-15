@@ -1,10 +1,10 @@
 // npc 852
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 op2 = Attack
 vislevel = 81
 name = Ogre chieftain
-models = 20379 20373
-headmodels = 20413
+models = model_20379 model_20373
+headmodels = model_20413

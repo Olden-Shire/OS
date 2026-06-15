@@ -1,10 +1,10 @@
 // npc 1834
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/2952 43072/4550 8741/32852 25238/8 4626/8
 name = Candle seller
-models = 210 250 302 167 176 274 185
-headmodels = 49 82
+models = model_210 model_250 model_302 model_167 model_176 model_274 obj_boots_of_lightness_88_man
+headmodels = model_49 model_82

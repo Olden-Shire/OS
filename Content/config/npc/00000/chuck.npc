@@ -1,8 +1,8 @@
 // npc 29
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 1
 recol = 25238/10128
 name = Chuck
-models = 210 250 315 173 179 271 185 196 510 280
+models = model_210 model_250 obj_veracs_brassard_4757_man model_173 obj_cooking_gauntlets_man model_271 obj_boots_of_lightness_88_man model_196 obj_iron_axe_1349_wear obj_unblessed_symbol_1716_man

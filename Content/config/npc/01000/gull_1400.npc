@@ -1,10 +1,10 @@
 // npc 1400
 size = 1
-walkanim = 6773
-readyanim = 6771
+walkanim = seq_6773
+readyanim = seq_6771
 ambient = 20
 op2 = Attack
 vislevel = 0
 nominimap = true
 name = Gull
-models = 26841 26844
+models = model_26841 model_26844

@@ -1,9 +1,9 @@
 // npc 4442
 vislevel = 0
-walkanim = 106
-readyanim = 112
+walkanim = seq_106
+readyanim = seq_112
 op1 = Talk-to
 recol = 6798/5206
 name = Fairy Very Wise
-models = 16218
-headmodels = 16233 16234
+models = model_16218
+headmodels = model_16233 model_16234

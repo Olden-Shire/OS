@@ -1,11 +1,11 @@
 // npc 6138
 size = 1
 op1 = Talk-to
-walkanim = 6867
-readyanim = 6864
+walkanim = seq_6867
+readyanim = seq_6864
 vislevel = 0
 alwaysontop = true
 recol = 39083/43420 39207/43544 39322/43540 39442/43662 39203/43540
 name = Town crier
-models = 27149 27153 27140 27141 27144 2847 27155 27152
-headmodels = 27190 27188 27189
+models = model_27149 model_27153 model_27140 model_27141 model_27144 model_2847 model_27155 model_27152
+headmodels = model_27190 model_27188 model_27189

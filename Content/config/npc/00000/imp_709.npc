@@ -1,9 +1,9 @@
 // npc 709
 size = 1
-walkanim = 168
-readyanim = 171
+walkanim = seq_168
+readyanim = seq_171
 op2 = Attack
 vislevel = 3
 recol = 673/662 540/414 668/538 790/910 796/662 54319/47159
 name = Imp
-models = 19982
+models = obj_imp

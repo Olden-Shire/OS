@@ -1,8 +1,8 @@
 // npc 5103
-walkanim = 5226
-readyanim = 5225
+walkanim = seq_5226
+readyanim = seq_5225
 size = 2
 op1 = Tease
 vislevel = 60
 name = Sabre-toothed kyatt
-models = 19375
+models = model_19375

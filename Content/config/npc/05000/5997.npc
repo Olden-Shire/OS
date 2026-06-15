@@ -1,5 +1,5 @@
 // npc 5997
-readyanim = 6507
+readyanim = seq_6507
 size = 3
 alwaysontop = true
 vislevel = 0

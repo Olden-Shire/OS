@@ -1,11 +1,11 @@
 // npc 1050
 vislevel = 0
 size = 1
-walkanim = 841
-readyanim = 842
+walkanim = seq_841
+readyanim = seq_842
 op1 = Talk-to
 alwaysontop = true
 recol = 4550/39388 8741/7062 25238/7062 6798/41191 1944/43968
 name = Filliman Tarlock
-models = 210 292 256 170 250 176 280
-headmodels = 49 82
+models = model_210 obj_priest_gown_426_man model_256 obj_druids_robe_540_man model_250 model_176 obj_unblessed_symbol_1716_man
+headmodels = model_49 model_82

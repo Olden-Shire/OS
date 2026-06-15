@@ -1,8 +1,8 @@
 // npc 3583
-walkanim = 162
-readyanim = 166
+walkanim = seq_162
+readyanim = seq_166
 op2 = Attack
 vislevel = 54
 recol = 28/5392 6554/3619 6808/4510 8078/4510 5309/5392
 name = Hobgoblin
-models = 14109
+models = obj_hobgoblin_guard

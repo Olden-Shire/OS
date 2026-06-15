@@ -1,9 +1,9 @@
 // npc 45
-walkanim = 1007
-readyanim = 1009
+walkanim = seq_1007
+readyanim = seq_1009
 op2 = Attack
 size = 2
 alwaysontop = true
 vislevel = 96
 name = Terror Bird
-models = 26856
+models = model_26856

@@ -1,7 +1,7 @@
 // npc 5748
 vislevel = 0
-readyanim = 2126
-walkanim = 2126
+readyanim = seq_2126
+walkanim = seq_2126
 size = 1
 nominimap = true
 op1 = Net
@@ -9,4 +9,4 @@ op3 = Bait
 op4 = hidden
 op5 = hidden
 name = Fishing spot
-models = 6568
+models = model_6568

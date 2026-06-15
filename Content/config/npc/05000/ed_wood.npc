@@ -1,10 +1,10 @@
 // npc 5964
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 111/24 8741/803 8860/922 25238/10409 947/803
 name = Ed Wood
-models = 15103 217 248 18546 10980 177 18541 21812 19947
-headmodels = 55 80
+models = model_15103 model_217 model_248 model_18546 model_10980 obj_leather_vambraces_1063_man model_18541 model_21812 obj_lumberjack_boots_man
+headmodels = obj_farmer model_80

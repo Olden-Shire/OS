@@ -1,9 +1,9 @@
 // npc 5858
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 vislevel = 0
 alwaysontop = true
 recol = 5532/406 5656/410 5652/286
 name = Ur-tag
-models = 23674 23710 23630
-headmodels = 23235 23246 23227
+models = model_23674 model_23710 model_23630
+headmodels = model_23235 model_23246 model_23227

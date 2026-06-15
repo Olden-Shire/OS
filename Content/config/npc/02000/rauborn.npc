@@ -1,10 +1,10 @@
 // npc 2991
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 61/6356
 name = Rauborn
-models = 2970 7071 6017 2978 2981 2985
-headmodels = 0 6996
+models = model_2970 model_7071 model_6017 model_2978 model_2981 model_2985
+headmodels = model_0 model_6996

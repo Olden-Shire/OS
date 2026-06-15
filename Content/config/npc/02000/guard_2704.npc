@@ -1,9 +1,9 @@
 // npc 2704
-walkanims = 819, 820, 821, 822
-readyanim = 2700
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2700
 vislevel = 0
 turnspeed = 0
 op1 = Talk-to
 recol = 25238/5413 8741/5421 906/5652 61/2225 926/2225
 name = Guard
-models = 9451 253 9458 9450 176 3599 9460
+models = model_9451 model_253 model_9458 model_9450 model_176 model_3599 model_9460

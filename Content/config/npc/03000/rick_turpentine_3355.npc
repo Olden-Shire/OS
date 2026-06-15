@@ -1,11 +1,11 @@
 // npc 3355
-walkanims = 4226, 4227, 821, 822
-readyanim = 4591
+walkanims = seq_4226, seq_4227, seq_821, seq_822
+readyanim = seq_4591
 op1 = Talk-To
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 8741/22 25238/18 10004/0 15252/0 28318/50469 7952/56869
 name = Rick Turpentine
-models = 13335 13333 7611 163 179 267 4929 12758 16846
-headmodels = 13871
+models = model_13335 obj_fishbowl_helmet_man obj_prince_tunic_man model_163 obj_cooking_gauntlets_man model_267 obj_ranger_boots_2577_man obj_diving_apparatus_man obj_phoenix_crossbow_767_wear
+headmodels = model_13871

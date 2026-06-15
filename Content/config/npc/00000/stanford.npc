@@ -1,11 +1,11 @@
 // npc 811
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 10128/8 43072/8 4626/8 25238/8 4550/7068
 name = Stanford
-models = 203 251 315 173 179 271 185 496 283
-headmodels = 45 83
+models = model_203 model_251 obj_veracs_brassard_4757_man model_173 obj_cooking_gauntlets_man model_271 obj_boots_of_lightness_88_man obj_spade_952_wear obj_glarials_amulet_man
+headmodels = model_45 model_83

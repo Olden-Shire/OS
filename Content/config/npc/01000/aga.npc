@@ -1,9 +1,9 @@
 // npc 1554
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 op1 = Talk-to
 vislevel = 0
 recol = 61/6447 21570/5545
 name = Aga
-models = 4941 4944 3755
-headmodels = 4940
+models = model_4941 model_4944 model_3755
+headmodels = model_4940

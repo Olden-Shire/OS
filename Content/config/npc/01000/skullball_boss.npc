@@ -1,9 +1,9 @@
 // npc 1660
 size = 1
-readyanim = 6539
-walkanim = 6541
+readyanim = seq_6539
+walkanim = seq_6541
 op1 = Talk-To
 vislevel = 0
 name = Skullball Boss
-models = 26177 26190 26184
-headmodels = 26113
+models = model_26177 model_26190 model_26184
+headmodels = model_26113

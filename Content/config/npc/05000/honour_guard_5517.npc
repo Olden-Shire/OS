@@ -1,9 +1,9 @@
 // npc 5517
 size = 1
 vislevel = 115
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 8741/6554 25238/7566 8078/7609 6798/6713 7952/13072 7073/5404
 name = Honour guard
-models = 4219 4220 242 252 21883 317 156 179 4236 19335 21878 19945
-headmodels = 4210 84
+models = model_4219 model_4220 model_242 model_252 obj_yak_hide_armour_10822_man obj_fremennik_cloak_3759_man model_156 obj_cooking_gauntlets_man obj_fremennik_blade_wear obj_fremennik_shield_10826_wear model_21878 model_19945
+headmodels = obj_fremennik model_84

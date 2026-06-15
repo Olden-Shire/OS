@@ -1,8 +1,8 @@
 // npc 4803
 vislevel = 0
-readyanim = 4690
-walkanim = 4684
+readyanim = seq_4690
+walkanim = seq_4684
 size = 3
 name = Ranis Drakan
-models = 18005 18002
-headmodels = 18047
+models = model_18005 model_18002
+headmodels = model_18047

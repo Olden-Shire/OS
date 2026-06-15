@@ -1,11 +1,11 @@
 // npc 1615
 size = 1
-walkanim = 1534
-readyanim = 1536
+walkanim = seq_1534
+readyanim = seq_1536
 resizeh = 64
 resizev = 64
 op2 = Attack
 vislevel = 124
 recol = 4015/528
 name = Abyssal demon
-models = 5062
+models = obj_abyssal_demon

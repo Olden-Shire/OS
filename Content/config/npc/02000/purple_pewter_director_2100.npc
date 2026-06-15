@@ -1,11 +1,11 @@
 // npc 2100
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 6356/51507 61/51507 74/9924 4626/41246
 name = Purple Pewter Director
-models = 7026 6020 6017 7037 7045 2985
-headmodels = 6985
+models = model_7026 model_6020 model_6017 model_7037 model_7045 model_2985
+headmodels = model_6985

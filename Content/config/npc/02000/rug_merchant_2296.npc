@@ -1,5 +1,5 @@
 // npc 2296
-readyanim = 1144
+readyanim = seq_1144
 op1 = Talk-to
 op3 = Travel
 vislevel = 0
@@ -7,5 +7,5 @@ turnspeed = 0
 alwaysontop = true
 recol = 39463/5400 25238/6470 8741/7390 4550/4544
 name = Rug Merchant
-models = 7743 215 247 292 163 176 264 326
-headmodels = 7741 53 79
+models = obj_fez_6382_man obj_fremennik_helm_man model_247 obj_priest_gown_426_man model_163 model_176 model_264 model_326
+headmodels = model_7741 obj_man model_79

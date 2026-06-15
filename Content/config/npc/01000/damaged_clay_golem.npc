@@ -1,10 +1,10 @@
 // npc 1909
 size = 1
-readyanim = 1913
-walkanim = 1912
+readyanim = seq_1913
+walkanim = seq_1912
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 name = Damaged clay golem
-models = 6146 6147 6150
-headmodels = 6145
+models = model_6146 model_6147 model_6150
+headmodels = model_6145

@@ -1,9 +1,9 @@
 // npc 660
-walkanims = 819, 820, 821, 822
-readyanim = 784
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_784
 op1 = Talk-to
 vislevel = 0
 recol = 5400/5214 5648/5206 41/5206 61/5223 57/7269 43311/926
 name = Knight
-models = 11744 306 164 13318 268 4954
-headmodels = 56
+models = model_11744 obj_khazard_armour_man model_164 model_13318 obj_iron_platelegs_1067_man obj_bronze_boots_4119_man
+headmodels = obj_knight_of_ardougne

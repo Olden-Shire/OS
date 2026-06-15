@@ -1,11 +1,11 @@
 // npc 3351
 vislevel = 0
 size = 1
-walkanim = 792
-readyanim = 792
+walkanim = seq_792
+readyanim = seq_792
 op1 = Talk-to
 alwaysontop = true
 recol = 4550/39888 6798/40627 926/43924 43072/13243 0/957 25238/54177
 name = Genie
-models = 13335 13333 315 173 176 264 270 12758
-headmodels = 13871
+models = model_13335 obj_fishbowl_helmet_man obj_veracs_brassard_4757_man model_173 model_176 model_264 model_270 obj_diving_apparatus_man
+headmodels = model_13871

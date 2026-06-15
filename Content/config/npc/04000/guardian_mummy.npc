@@ -1,12 +1,12 @@
 // npc 4476
 vislevel = 0
-walkanim = 5557
-readyanim = 5558
+walkanim = seq_5557
+readyanim = seq_5558
 resizeh = 140
 resizev = 138
 op1 = Talk-to
 op3 = Start-minigame
 alwaysontop = true
 name = Guardian mummy
-models = 20906
-headmodels = 21386
+models = model_20906
+headmodels = model_21386

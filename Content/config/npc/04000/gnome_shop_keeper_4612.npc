@@ -1,10 +1,10 @@
 // npc 4612
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 10365/5561
 name = Gnome shop keeper
-models = 2909 2901 2917
-headmodels = 17
+models = model_2909 model_2901 model_2917
+headmodels = model_17

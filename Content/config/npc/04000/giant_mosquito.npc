@@ -1,9 +1,9 @@
 // npc 4347
 size = 1
-walkanim = 2396
-readyanim = 2395
+walkanim = seq_2396
+readyanim = seq_2395
 nominimap = true
 op2 = Attack
 vislevel = 13
 name = Giant mosquito
-models = 15965
+models = model_15965

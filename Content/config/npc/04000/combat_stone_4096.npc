@@ -2,4 +2,4 @@
 vislevel = 0
 recol = 10295/6707 10304/6699
 name = Combat stone
-models = 13203 13214
+models = model_13203 model_13214

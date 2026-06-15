@@ -1,10 +1,10 @@
 // npc 4241
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 8741/920 25238/33030 4626/33030 6798/33030 10330/94
 name = Butler
-models = 6848 9620 12752 10301 12138 181
-headmodels = 5787 9449
+models = model_6848 model_9620 model_12752 model_10301 model_12138 obj_vyrewatch_shoes_9638_man
+headmodels = model_5787 model_9449

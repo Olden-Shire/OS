@@ -1,9 +1,9 @@
 // npc 1593
 size = 1
-readyanim = 6561
-walkanim = 6560
+readyanim = seq_6561
+walkanim = seq_6560
 op2 = Attack
 vislevel = 63
 recol = 5547/28 6461/28
 name = Wild dog
-models = 26263
+models = model_26263

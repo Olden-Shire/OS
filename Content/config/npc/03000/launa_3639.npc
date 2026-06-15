@@ -1,9 +1,9 @@
 // npc 3639
-walkanim = 1146
-readyanim = 808
+walkanim = seq_1146
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/2283 8993/2283 0/43303 43072/20
 name = Launa
-models = 6095 6097 6092 6093 13900 358 6102
-headmodels = 6083
+models = model_6095 model_6097 model_6092 model_6093 model_13900 model_358 model_6102
+headmodels = model_6083

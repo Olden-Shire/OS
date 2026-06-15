@@ -1,6 +1,6 @@
 // npc 1960
 vislevel = 96
-walkanim = 5563
-readyanim = 5563
+walkanim = seq_5563
+readyanim = seq_5563
 name = Mummy ashes
-models = 20904
+models = model_20904

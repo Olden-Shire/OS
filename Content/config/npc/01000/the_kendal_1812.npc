@@ -1,10 +1,10 @@
 // npc 1812
 size = 2
-readyanim = 1756
-walkanim = 1757
+readyanim = seq_1756
+walkanim = seq_1757
 vislevel = 70
 op1 = Talk-to
 op2 = Attack
 name = The Kendal
-models = 18904 18905
-headmodels = 18880
+models = model_18904 model_18905
+headmodels = model_18880

@@ -1,9 +1,9 @@
 // npc 1431
 size = 2
-walkanim = 1399
-readyanim = 1401
+walkanim = seq_1399
+readyanim = seq_1401
 op1 = Talk-to
 vislevel = 0
 name = Trefaji
-models = 4809 4812
-headmodels = 4662
+models = model_4809 model_4812
+headmodels = model_4662

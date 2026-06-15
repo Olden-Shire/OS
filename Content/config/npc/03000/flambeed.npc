@@ -2,9 +2,9 @@
 size = 5
 resizev = 90
 resizeh = 90
-walkanim = 1748
-readyanim = 1749
+walkanim = seq_1748
+readyanim = seq_1749
 op2 = Attack
 vislevel = 149
 name = Flambeed
-models = 13905 13906 13907
+models = model_13905 model_13906 model_13907

@@ -5,4 +5,4 @@ turnspeed = 0
 op2 = Melt
 nominimap = true
 name = Crust of ice
-models = 10884
+models = model_10884

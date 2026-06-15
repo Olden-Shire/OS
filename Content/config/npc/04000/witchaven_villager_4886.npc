@@ -1,10 +1,10 @@
 // npc 4886
 vislevel = 0
 size = 1
-walkanim = 4779
-readyanim = 808
+walkanim = seq_4779
+readyanim = seq_808
 op1 = Talk-to
 recol = 4550/8646 12/5532 14228/7475 4886/7475 7331/5285 8621/6435
 name = Witchaven villager
-models = 12140 390 11360 11775 10706 13347 8934
-headmodels = 12133 18345
+models = obj_moonclan_hat_9069_woman model_390 model_11360 model_11775 model_10706 obj_zombie_trousers_woman obj_villager_sandals_6349_woman
+headmodels = model_12133 model_18345

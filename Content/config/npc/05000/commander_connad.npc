@@ -1,10 +1,10 @@
 // npc 5029
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 op3 = Get-rewards
 alwaysontop = true
 name = Commander Connad
-models = 20096 230 251 11758 11765 11727 11732 19251 11735 11763 11762
-headmodels = 63 20094 83
+models = model_20096 obj_desert_disguise_man model_251 model_11758 model_11765 model_11727 model_11732 model_19251 model_11735 model_11763 model_11762
+headmodels = obj_rogue model_20094 model_83

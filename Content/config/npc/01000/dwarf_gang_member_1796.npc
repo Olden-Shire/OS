@@ -1,7 +1,7 @@
 // npc 1796
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 op2 = Attack
 resizev = 125
@@ -9,5 +9,5 @@ resizeh = 135
 vislevel = 48
 recol = 7473/0 803/0
 name = Dwarf gang member
-models = 2970 2979 2985 2980 2983 2993
-headmodels = 0
+models = model_2970 model_2979 model_2985 model_2980 model_2983 model_2993
+headmodels = model_0

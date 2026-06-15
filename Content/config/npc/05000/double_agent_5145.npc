@@ -1,9 +1,9 @@
 // npc 5145
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 108
 recol = 25238/61347 8741/61347 926/61347 7700/61347 11200/61347 6032/61347
 name = Double agent
-models = 13705 215 10039 292 323 170 177 8954 265 181 5434
-headmodels = 53 13701 10030
+models = model_13705 obj_fremennik_helm_man model_10039 obj_priest_gown_426_man obj_cape_1007_man obj_druids_robe_540_man obj_leather_vambraces_1063_man model_8954 obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man obj_h_a_m_logo_4306_wear
+headmodels = obj_man model_13701 model_10030

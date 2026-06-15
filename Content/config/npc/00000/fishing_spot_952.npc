@@ -4,9 +4,9 @@ size = 1
 op1 = Net
 op3 = hidden
 nominimap = true
-readyanim = 447
-walkanim = 448
+readyanim = seq_447
+walkanim = seq_448
 name = Fishing spot
-models = 1491
+models = model_1491
 //Server
 wanderrange=0

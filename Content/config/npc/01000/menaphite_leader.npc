@@ -4,5 +4,5 @@ op1 = Talk-to
 vislevel = 0
 recol = 8741/49054 4550/5555
 name = Menaphite Leader
-models = 6130 6131 6134 170 6132 176 6135
-headmodels = 6127 63 6129
+models = obj_menap_headgear_6392_man model_6131 model_6134 obj_druids_robe_540_man obj_menaphite_robe_6396_man model_176 model_6135
+headmodels = model_6127 obj_rogue model_6129

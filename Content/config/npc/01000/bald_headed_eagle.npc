@@ -1,9 +1,9 @@
 // npc 1821
 vislevel = 0
-readyanim = 1773
-walkanim = 1773
+readyanim = seq_1773
+walkanim = seq_1773
 size = 2
 resizeh = 30
 resizev = 30
 name = Bald Headed Eagle
-models = 5728
+models = model_5728

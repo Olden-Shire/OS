@@ -1,11 +1,11 @@
 // npc 1252
 vislevel = 0
 size = 1
-walkanim = 819
-readyanim = 808
+walkanim = seq_819
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 25238/4019 8741/4019 6798/70
 name = Ulsquire Shauncy
-models = 223 247 299 163 176 265 181
-headmodels = 59 79
+models = model_223 model_247 model_299 model_163 model_176 obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man
+headmodels = model_59 model_79

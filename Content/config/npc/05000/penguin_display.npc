@@ -1,5 +1,5 @@
 // npc 5976
-readyanim = 6439
+readyanim = seq_6439
 vislevel = 0
 turnspeed = 0
 nominimap = true
@@ -7,4 +7,4 @@ size = 3
 resizeh = 75
 resizev = 75
 name = Penguin display
-models = 25784
+models = model_25784

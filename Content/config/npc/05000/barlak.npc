@@ -1,10 +1,10 @@
 // npc 5828
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 5532/7479 5656/7475 5652/7471 20/7467 24/7463 11175/7587
 name = Barlak
-models = 23661 23708 23630
-headmodels = 23233 23246
+models = model_23661 model_23708 model_23630
+headmodels = model_23233 model_23246

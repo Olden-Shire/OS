@@ -1,6 +1,6 @@
 // npc 5441
-walkanim = 5666
-readyanim = 5668
+walkanim = seq_5666
+readyanim = seq_5668
 resizeh = 75
 resizev = 75
 size = 1
@@ -8,5 +8,5 @@ vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 name = KGP Agent
-models = 21552
-headmodels = 21528
+models = model_21552
+headmodels = model_21528

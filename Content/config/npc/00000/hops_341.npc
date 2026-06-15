@@ -1,9 +1,9 @@
 // npc 341
 vislevel = 0
-walkanims = 1323, 1324, 1325, 1326
-readyanim = 1322
+walkanims = seq_1323, seq_1324, seq_1325, seq_1326
+readyanim = seq_1322
 op1 = Talk-to
 recol = 6798/7353 8741/5409 25238/7442 43072/4550 1942/4764 906/5400
 name = Hops
-models = 6848 250 299 9621 170 176 6098 274 181 9607
-headmodels = 5787 82
+models = model_6848 model_250 model_299 model_9621 obj_druids_robe_540_man model_176 obj_beer_1917_wear model_274 obj_vyrewatch_shoes_9638_man model_9607
+headmodels = model_5787 model_82

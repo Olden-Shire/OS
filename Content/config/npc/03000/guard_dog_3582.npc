@@ -1,9 +1,9 @@
 // npc 3582
-readyanim = 6561
-walkanim = 6560
+readyanim = seq_6561
+walkanim = seq_6560
 resizeh = 110
 resizev = 110
 op2 = Attack
 vislevel = 44
 name = Guard dog
-models = 26255
+models = obj_guard_dog

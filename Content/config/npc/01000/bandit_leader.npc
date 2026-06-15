@@ -4,5 +4,5 @@ op1 = Talk-to
 vislevel = 0
 recol = 4550/5555
 name = Bandit Leader
-models = 6085 6087 6091 6084 6089 181 176 490
-headmodels = 6081 6080 53
+models = model_6085 model_6087 model_6091 model_6084 model_6089 obj_vyrewatch_shoes_9638_man model_176 obj_bronze_scimitar_1321_wear
+headmodels = model_6081 model_6080 obj_man

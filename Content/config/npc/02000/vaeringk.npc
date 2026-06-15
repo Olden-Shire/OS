@@ -1,10 +1,10 @@
 // npc 2992
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 7473/61
 name = Vaeringk
-models = 2973 2986 2983 7040 2992 2991 2980 2985
-headmodels = 3 6
+models = model_2973 model_2986 model_2983 model_7040 model_2992 model_2991 model_2980 model_2985
+headmodels = model_3 model_6

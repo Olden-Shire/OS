@@ -1,10 +1,10 @@
 // npc 5133
-walkanim = 5279
-readyanim = 5280
+walkanim = seq_5279
+readyanim = seq_5280
 size = 3
 op1 = Walk-past
 alwaysontop = true
 vislevel = 0
 recol = 5543/82 5667/78 6697/74 10357/103 5551/61 5559/49
 name = Eagle
-models = 19380
+models = obj_giant_eagle

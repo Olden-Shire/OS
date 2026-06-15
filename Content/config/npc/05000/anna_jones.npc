@@ -1,10 +1,10 @@
 // npc 5837
 vislevel = 0
 size = 1
-readyanim = 6106
+readyanim = seq_6106
 op1 = Talk-To
 turnspeed = 0
 alwaysontop = true
 name = Anna Jones
-models = 23955 23947 23956 19953
-headmodels = 115 23914
+models = model_23955 model_23947 model_23956 obj_lumberjack_boots_woman
+headmodels = model_115 model_23914

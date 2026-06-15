@@ -2,9 +2,9 @@
 vislevel = 0
 turnspeed = 0
 size = 1
-readyanim = 1952
+readyanim = seq_1952
 op1 = Talk-to
 recol = 4550/4647 25238/127 6798/10508 8741/127 7700/926 11200/926
 name = Bandit
-models = 215 3599 248 170 176 292 188 6230
-headmodels = 53 80 30
+models = obj_fremennik_helm_man model_3599 model_248 obj_druids_robe_540_man model_176 obj_priest_gown_426_man model_188 model_6230
+headmodels = obj_man model_80 model_30

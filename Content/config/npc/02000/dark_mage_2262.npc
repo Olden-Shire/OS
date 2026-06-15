@@ -1,11 +1,11 @@
 // npc 2262
 vislevel = 0
-walkanim = 2149
-readyanim = 2149
+walkanim = seq_2149
+readyanim = seq_2149
 size = 1
 turnspeed = 0
 op1 = Talk-to
 recol = 8741/0 25238/0 4550/4420
 name = Dark mage
-models = 5430 246 285 292 170 176 5441 270
-headmodels = 5428
+models = obj_ham_hood_4302_man model_246 obj_beads_of_the_dead_man obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_5441 model_270
+headmodels = obj_male_h_a_m

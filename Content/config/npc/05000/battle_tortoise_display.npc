@@ -1,8 +1,8 @@
 // npc 5981
-readyanim = 6449
+readyanim = seq_6449
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 5
 name = Battle tortoise display
-models = 25728 25727 25729 25730 25731 25732 25733
+models = model_25728 model_25727 model_25729 model_25730 model_25731 model_25732 model_25733

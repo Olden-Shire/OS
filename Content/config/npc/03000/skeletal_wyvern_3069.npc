@@ -1,9 +1,9 @@
 // npc 3069
 size = 3
 vislevel = 140
-walkanim = 2982
-readyanim = 2984
+walkanim = seq_2982
+readyanim = seq_2984
 op2 = Attack
 recol = 103/40030 82/41174 61/41162 41/41145 0/38061
 name = Skeletal Wyvern
-models = 10352 10353 10356
+models = model_10352 model_10353 model_10356

@@ -1,10 +1,10 @@
 // npc 2739
 size = 3
 op2 = Attack
-walkanim = 2632
-readyanim = 2631
+walkanim = seq_2632
+readyanim = seq_2631
 ambient = 60
 contrast = 60
 vislevel = 90
 name = Tok-Xil
-models = 9332 9330 9329 9331
+models = obj_tok_xil model_9330 model_9329 model_9331

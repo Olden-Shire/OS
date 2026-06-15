@@ -1,9 +1,9 @@
 // npc 1427
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22422/6942 22426/6945
 name = G.L.O. Caranock
-models = 2909 2890 2915
-headmodels = 21
+models = model_2909 model_2890 model_2915
+headmodels = obj_gnome

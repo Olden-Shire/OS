@@ -1,7 +1,7 @@
 // npc 1962
-walkanim = 5552
-readyanim = 5548
+walkanim = seq_5552
+readyanim = seq_5548
 op2 = Attack
 vislevel = 103
 name = Mummy
-models = 20928 20942 20911 20921 20922 20930 20918 20936
+models = model_20928 model_20942 model_20911 model_20921 model_20922 model_20930 model_20918 model_20936

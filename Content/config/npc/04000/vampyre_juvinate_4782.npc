@@ -1,8 +1,8 @@
 // npc 4782
 vislevel = 0
-readyanim = 4711
-walkanim = 4699
+readyanim = seq_4711
+walkanim = seq_4699
 ambient = -25
 name = Vampyre juvinate
-models = 17968 17999 17986
-headmodels = 18046
+models = model_17968 model_17999 model_17986
+headmodels = model_18046

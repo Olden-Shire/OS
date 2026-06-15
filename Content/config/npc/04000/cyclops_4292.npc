@@ -1,9 +1,9 @@
 // npc 4292
 size = 2
 op2 = Attack
-walkanim = 4649
-readyanim = 4650
+walkanim = seq_4649
+readyanim = seq_4650
 alwaysontop = true
 vislevel = 76
 name = Cyclops
-models = 26409 26401 17430 17466 17460
+models = model_26409 model_26401 model_17430 model_17466 model_17460

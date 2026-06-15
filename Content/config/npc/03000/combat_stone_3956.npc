@@ -1,4 +1,4 @@
 // npc 3956
 vislevel = 0
 name = Combat stone
-models = 13203 13214
+models = model_13203 model_13214

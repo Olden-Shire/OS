@@ -1,10 +1,10 @@
 // npc 1450
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 resizeh = 180
 resizev = 180
 op1 = Talk-to
 vislevel = 0
 name = Muruwoi
-models = 4822 4824
-headmodels = 4656
+models = model_4822 model_4824
+headmodels = model_4656

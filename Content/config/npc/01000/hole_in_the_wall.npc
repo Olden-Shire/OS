@@ -1,7 +1,7 @@
 // npc 1826
-readyanim = 1798
+readyanim = seq_1798
 nominimap = true
 vislevel = 0
 turnspeed = 0
 name = Hole in the wall
-models = 5788
+models = obj_swamp_wallbeast

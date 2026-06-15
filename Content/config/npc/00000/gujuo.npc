@@ -1,11 +1,11 @@
 // npc 928
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 op2 = Hidden
 recol = 4550/7062 43072/7062 25238/11939 8741/11939 908/12182 926/127
 name = Gujuo
-models = 231 246 309 167 176 265 181 540
-headmodels = 64
+models = model_231 model_246 model_309 model_167 model_176 obj_priest_gown_428_man obj_vyrewatch_shoes_9638_man obj_bronze_spear_1237_wear
+headmodels = model_64

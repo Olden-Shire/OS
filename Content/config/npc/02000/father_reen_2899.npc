@@ -1,12 +1,12 @@
 // npc 2899
 vislevel = 0
 size = 1
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 resizeh = 120
 resizev = 115
 op1 = Talk-to
 recol = 10353/7343 10351/7343 4663/5404 908/5404 8741/7343 4550/4407
 name = Father Reen
-models = 223 248 6091 170 176 6089 8919 534 284
-headmodels = 59 80
+models = model_223 model_248 model_6091 obj_druids_robe_540_man model_176 model_6089 obj_villager_sandals_6349_man obj_dramen_staff_wear model_284
+headmodels = model_59 model_80

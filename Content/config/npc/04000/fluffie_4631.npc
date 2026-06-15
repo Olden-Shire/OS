@@ -1,6 +1,6 @@
 // npc 4631
-readyanim = 4472
-walkanim = 4473
+readyanim = seq_4472
+walkanim = seq_4473
 vislevel = 0
 name = fluffie
-models = 16956 16954
+models = model_16956 model_16954

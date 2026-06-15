@@ -1,10 +1,10 @@
 // npc 5988
-walkanims = 6531, 6532, 6531, 6531
-readyanim = 808
+walkanims = seq_6531, seq_6532, seq_6531, seq_6531
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 recol = 6798/9143 43150/9143 70/127
 name = Miazrqa
-models = 26099 390 26102 26097 26098 26101 358
-headmodels = 18042 26086
+models = model_26099 model_390 model_26102 model_26097 model_26098 model_26101 model_358
+headmodels = model_18042 model_26086

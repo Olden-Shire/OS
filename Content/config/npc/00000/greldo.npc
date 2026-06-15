@@ -1,10 +1,10 @@
 // npc 612
 vislevel = 0
 size = 1
-readyanim = 6200
-walkanim = 6201
+readyanim = seq_6200
+walkanim = seq_6201
 ambient = 15
 recol = 6331/12 6955/6028 7075/2952 5169/5652 5161/6028 4515/6028
 name = Greldo
-models = 24463 24483 24433 24474 24441 24449 24508 24507
-headmodels = 24215
+models = model_24463 model_24483 model_24433 model_24474 model_24441 model_24449 model_24508 model_24507
+headmodels = model_24215

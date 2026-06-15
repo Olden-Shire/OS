@@ -1,8 +1,8 @@
 // npc 3094
 size = 1
-walkanim = 3023
-readyanim = 3023
+walkanim = seq_3023
+readyanim = seq_3023
 nominimap = true
 vislevel = 0
 name = Flying Book
-models = 10625
+models = model_10625

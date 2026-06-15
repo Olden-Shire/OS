@@ -2,9 +2,9 @@
 turnspeed = 0
 op1 = Talk-to
 op2 = Attack
-readyanim = 4768
+readyanim = seq_4768
 ambient = -25
 vislevel = 54
 name = Held vampyre juvinate
-models = 17962 17980
-headmodels = 18045
+models = model_17962 model_17980
+headmodels = model_18045

@@ -1,8 +1,8 @@
 // npc 3594
 size = 2
-walkanim = 3708
-readyanim = 3707
+walkanim = seq_3708
+readyanim = seq_3707
 op2 = Attack
 vislevel = 97
 name = Rocnar
-models = 13224
+models = obj_rocnar

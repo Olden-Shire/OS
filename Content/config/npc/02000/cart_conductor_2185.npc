@@ -1,9 +1,9 @@
 // npc 2185
-readyanim = 900
-walkanim = 104
+readyanim = seq_900
+walkanim = seq_104
 vislevel = 0
 op1 = Talk-to
 recol = 61/10266 7473/28 10330/286 10659/22 5784/5937 4550/4537
 name = Cart conductor
-models = 2973 6019 7063 2978 2992 7045 2985
-headmodels = 3 6026
+models = model_2973 model_6019 model_7063 model_2978 model_2992 model_7045 model_2985
+headmodels = model_3 model_6026

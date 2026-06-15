@@ -1,11 +1,11 @@
 // npc 296
 vislevel = 0
 size = 1
-walkanim = 308
-readyanim = 311
+walkanim = seq_308
+readyanim = seq_311
 op1 = Talk-to
 alwaysontop = true
 recol = 916/933 61/933 14238/11158
 name = General Bentnoze
-models = 2952 2953 2955 2956
-headmodels = 145
+models = model_2952 model_2953 model_2955 model_2956
+headmodels = model_145

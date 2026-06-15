@@ -1,9 +1,9 @@
 // npc 4522
-walkanim = 4372
-readyanim = 4372
+walkanim = seq_4372
+readyanim = seq_4372
 contrast = 12
 ambient = 12
 vislevel = 0
 nominimap = true
 name = Enchanted Broom
-models = 16738
+models = model_16738

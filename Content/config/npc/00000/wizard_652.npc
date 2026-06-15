@@ -1,10 +1,10 @@
 // npc 652
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 25238/38439 8741/38439 6798/127 40384/38439
 name = Wizard
-models = 215 181 251 292 170 176 4844 534 202
-headmodels = 53 83 44
+models = obj_fremennik_helm_man obj_vyrewatch_shoes_9638_man model_251 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_mystic_robe_bottom_4093_man obj_dramen_staff_wear obj_wizard_hat_579_man
+headmodels = obj_man model_83 model_44

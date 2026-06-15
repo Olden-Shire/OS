@@ -1,8 +1,8 @@
 // npc 5039
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 vislevel = 0
 op1 = Talk-to
 name = Sergeant Sambur
-models = 11740 230 252 11759 11729 11732 11788 19250 11735
-headmodels = 63 19238 84
+models = model_11740 obj_desert_disguise_man model_252 model_11759 model_11729 model_11732 model_11788 model_19250 model_11735
+headmodels = obj_rogue model_19238 model_84

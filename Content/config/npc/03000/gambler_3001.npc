@@ -1,9 +1,9 @@
 // npc 3001
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 50467/35102 7952/35994 25238/32786 7073/7704 4626/32906
 name = Gambler
-models = 215 186 249 10077 317 10073 10074 10076 185 326
-headmodels = 53 28 81
+models = obj_fremennik_helm_man obj_tan_cavalier_2639_man model_249 model_10077 obj_fremennik_cloak_3759_man model_10073 model_10074 model_10076 obj_boots_of_lightness_88_man model_326
+headmodels = obj_man model_28 model_81

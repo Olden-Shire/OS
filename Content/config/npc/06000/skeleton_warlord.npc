@@ -1,7 +1,7 @@
 // npc 6105
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 op2 = Attack
 vislevel = 132
 name = Skeleton warlord
-models = 26631 26636 26641 23932 26624 11788
+models = model_26631 model_26636 model_26641 model_23932 model_26624 model_11788

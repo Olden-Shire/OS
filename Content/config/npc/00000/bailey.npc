@@ -1,10 +1,10 @@
 // npc 695
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 5338/4550 43072/4550 33/6336 8741/6336 54397/43082 6439/5532
 name = Bailey
-models = 11111 247 302 18077 176 15104 10124
-headmodels = 11186 79
+models = obj_pirate_bandana_7112_man model_247 model_302 model_18077 model_176 model_15104 obj_shoes_man
+headmodels = model_11186 model_79

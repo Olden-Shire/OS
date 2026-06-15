@@ -1,8 +1,8 @@
 // npc 5591
 resizeh = 126
 resizev = 126
-walkanims = 819, 820, 821, 822
-readyanim = 5816
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_5816
 ambient = 25
 contrast = 25
 vislevel = 0
@@ -12,5 +12,5 @@ turnspeed = 0
 alwaysontop = true
 recol = 25238/7331 8741/8656 40237/7331 40233/5772 6798/6067
 name = 'Gummy'
-models = 230 22599 247 18498 159 179 271 19947
-headmodels = 63 22592 79
+models = obj_desert_disguise_man obj_hard_hat_10862_man model_247 model_18498 model_159 obj_cooking_gauntlets_man model_271 obj_lumberjack_boots_man
+headmodels = obj_rogue model_22592 model_79

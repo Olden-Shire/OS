@@ -1,10 +1,10 @@
 // npc 5861
 size = 2
-readyanim = 6149
+readyanim = seq_6149
 op1 = Talk-to
 alwaysontop = true
 turnspeed = 0
 vislevel = 0
 name = Zanik
-models = 23638 23693
-headmodels = 23243 15561
+models = model_23638 model_23693
+headmodels = model_23243 model_15561

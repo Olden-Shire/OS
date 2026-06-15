@@ -1,10 +1,10 @@
 // npc 5597
 size = 1
-walkanim = 2297
-readyanim = 2298
+walkanim = seq_2297
+readyanim = seq_2298
 op2 = Attack
 resizeh = 40
 resizev = 40
 vislevel = 19
 name = Newtroost
-models = 22631
+models = model_22631

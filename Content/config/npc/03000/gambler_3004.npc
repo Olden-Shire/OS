@@ -1,9 +1,9 @@
 // npc 3004
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 8741/15397 10659/1331 9529/1331 7952/12942 4550/7834 926/9531
 name = Gambler
-models = 373 390 9361 9359 9360 7008 8934
-headmodels = 98 113
+models = obj_blue_beret_2633_woman model_390 model_9361 model_9359 model_9360 obj_trousers_5036_woman obj_villager_sandals_6349_woman
+headmodels = model_98 obj_warrior_woman

@@ -1,12 +1,12 @@
 // npc 6046
 size = 2
 ambient = 30
-readyanim = 6580
-walkanim = 6556
+readyanim = seq_6580
+walkanim = seq_6556
 resizeh = 170
 resizev = 170
 op2 = Attack
 vislevel = 73
 recol = 10258/10312 20/74 10262/10304 10270/10324 262/10291 7219/10324
 name = Big Wolf
-models = 26264
+models = model_26264

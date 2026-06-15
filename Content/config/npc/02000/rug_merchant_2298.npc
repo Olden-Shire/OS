@@ -1,11 +1,11 @@
 // npc 2298
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Travel
 vislevel = 0
 alwaysontop = true
 recol = 4626/4550 39463/5660 8741/6470 10353/7390 10351/7390 4550/4544
 name = Rug Merchant
-models = 7743 214 249 280 292 6084 176 6090 4955
-headmodels = 7741 52 81
+models = obj_fez_6382_man model_214 model_249 obj_unblessed_symbol_1716_man obj_priest_gown_426_man model_6084 model_176 obj_desert_legs_6390_man obj_mystic_boots_4097_man
+headmodels = model_7741 model_52 model_81

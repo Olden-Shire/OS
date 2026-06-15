@@ -1,9 +1,9 @@
 // npc 3807
 vislevel = 0
-walkanim = 3997
-readyanim = 3950
+walkanim = seq_3997
+readyanim = seq_3950
 op1 = Talk-to
 recol = 908/33672 532/33676 536/33552 412/33300 417/33304 8741/33180
 name = Gillie Groats
-models = 391 417 467 14588 10706 11119 358 14794
-headmodels = 114 136
+models = obj_fremennik_helm_woman model_417 obj_white_apron_1005_woman model_14588 model_10706 model_11119 model_358 model_14794
+headmodels = model_114 model_136

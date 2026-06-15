@@ -1,7 +1,7 @@
 // npc 1014
 vislevel = 0
 size = 1
-readyanim = 1020
-walkanim = 1020
+readyanim = seq_1020
+walkanim = seq_1020
 name = Bloated Toad
-models = 3447
+models = obj_bloated_toad

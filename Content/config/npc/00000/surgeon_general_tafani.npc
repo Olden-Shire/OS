@@ -1,7 +1,7 @@
 // npc 961
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
@@ -9,5 +9,5 @@ op3 = Heal
 vislevel = 0
 recol = 8741/43228 25238/43228 6798/138 4550/6705
 name = Surgeon General Tafani
-models = 390 467 348 353 428 358 3193 3191 18979
-headmodels = 113 3186
+models = model_390 obj_white_apron_1005_woman obj_druids_robe_540_woman model_353 obj_priest_gown_428_woman model_358 model_3193 obj_nurse_hat_woman model_18979
+headmodels = obj_warrior_woman model_3186

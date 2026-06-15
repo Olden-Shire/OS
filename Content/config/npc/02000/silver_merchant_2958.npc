@@ -1,9 +1,9 @@
 // npc 2958
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 9152/107 11183/107 43072/4550 54397/5555 25238/5584
 name = Silver merchant
-models = 214 302 252 159 179 274 185 281 238
-headmodels = 52 84 70
+models = model_214 model_302 model_252 model_159 obj_cooking_gauntlets_man model_274 obj_boots_of_lightness_88_man obj_perfect_necklace_man model_238
+headmodels = model_52 model_84 model_70

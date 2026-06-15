@@ -1,10 +1,10 @@
 // npc 1283
 size = 1
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 6798/7380 25238/14494 8741/14494 7952/10512 7073/4510
 name = Swensen the Navigator
-models = 230 250 292 170 176 265 185 553 317 326
-headmodels = 63 82
+models = obj_desert_disguise_man model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_boots_of_lightness_88_man model_553 obj_fremennik_cloak_3759_man model_326
+headmodels = obj_rogue model_82

@@ -1,9 +1,9 @@
 // npc 2743
 size = 5
 op2 = Attack
-walkanim = 2643
-readyanim = 2642
+walkanim = seq_2643
+readyanim = seq_2642
 ambient = 40
 vislevel = 360
 name = Ket-Zek
-models = 9324 9323 9322 9321
+models = model_9324 model_9323 model_9322 model_9321

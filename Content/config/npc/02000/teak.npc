@@ -1,10 +1,10 @@
 // npc 2535
 size = 1
-walkanim = 5750
-readyanim = 5750
+walkanim = seq_5750
+readyanim = seq_5750
 vislevel = 0
 op1 = Chop down
 op3 = hidden
 turnspeed = 0
 name = Teak
-models = 21849
+models = model_21849

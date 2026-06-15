@@ -1,10 +1,10 @@
 // npc 3468
 size = 2
-walkanim = 3462
-readyanim = 3462
+walkanim = seq_3462
+readyanim = seq_3462
 op1 = Talk-to
 alwaysontop = true
 vislevel = 1
 name = Rantz
-models = 2878 2874
-headmodels = 141
+models = model_2878 model_2874
+headmodels = model_141

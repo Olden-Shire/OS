@@ -2,9 +2,9 @@
 vislevel = 0
 resizeh = 125
 resizev = 120
-readyanim = 1144
+readyanim = seq_1144
 op1 = Talk-to
 recol = 25238/14494 8741/12942 43072/10450 933/10450 4550/10450
 name = Nicoleta
-models = 387 474 9359 353 427
-headmodels = 110 11429
+models = model_387 model_474 model_9359 model_353 model_427
+headmodels = model_110 model_11429

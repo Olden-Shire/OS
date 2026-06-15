@@ -1,6 +1,6 @@
 // npc 436
-walkanim = 6282
-readyanim = 6282
+walkanim = seq_6282
+readyanim = seq_6282
 vislevel = 0
 turnspeed = 0
 op1 = Talk-to
@@ -8,5 +8,5 @@ op3 = Inspect
 alwaysontop = true
 recol = 14228/4550 10512/21526 43072/4550 4626/22 4550/5568
 name = Fallen Man
-models = 18086 244 248 15007 8915 176 13925 18129
-headmodels = 24975 77
+models = model_18086 model_244 model_248 model_15007 model_8915 model_176 obj_zombie_trousers_man model_18129
+headmodels = model_24975 model_77

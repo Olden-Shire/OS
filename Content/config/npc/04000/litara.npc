@@ -1,9 +1,9 @@
 // npc 4376
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 vislevel = 0
 op1 = Talk-to
 recol = 943/1944 939/1944 6798/7104 8538/16982
 name = Litara
-models = 390 414 11783 11772 11777 11781 11778 11791
-headmodels = 113 131
+models = model_390 model_414 model_11783 model_11772 model_11777 model_11781 model_11778 model_11791
+headmodels = obj_warrior_woman model_131

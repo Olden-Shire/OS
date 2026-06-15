@@ -1,7 +1,7 @@
 // npc 5600
 vislevel = 0
 turnspeed = 0
-readyanim = 5831
+readyanim = seq_5831
 size = 3
 alwaysontop = true
 multivar = 3359, 65535, 65535 5581

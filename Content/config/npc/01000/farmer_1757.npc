@@ -1,11 +1,11 @@
 // npc 1757
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op3 = Pickpocket
 op2 = Attack
 vislevel = 7
 recol = 25238/7843 8741/14748 9096/6028 906/6930 43072/4550
 name = Farmer
-models = 215 247 292 151 176 274 185 495
-headmodels = 53
+models = obj_fremennik_helm_man model_247 obj_priest_gown_426_man model_151 model_176 model_274 obj_boots_of_lightness_88_man model_495
+headmodels = obj_man

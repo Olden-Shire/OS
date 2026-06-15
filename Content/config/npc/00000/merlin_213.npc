@@ -1,10 +1,10 @@
 // npc 213
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 recol = 6798/103 8090/38814 25238/38814 4626/38814 43072/4550 8741/38814
 name = Merlin
-models = 214 292 170 176 265 183 250 553 567 202 324
-headmodels = 52 82 44
+models = model_214 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man model_183 model_250 model_553 model_567 obj_wizard_hat_579_man model_324
+headmodels = model_52 model_82 model_44

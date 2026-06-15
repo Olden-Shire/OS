@@ -2,9 +2,9 @@
 vislevel = 0
 op1 = Talk-to
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 926/1701 7700/1581 11200/1701 25238/1820 7469/7446
 name = Forester
-models = 12137 246 311 323 169 10218 563 262 185
-headmodels = 14371
+models = model_12137 model_246 obj_leather_body_1129_man obj_cape_1007_man model_169 model_10218 obj_longbow_839_wear obj_leather_chaps_1095_man obj_boots_of_lightness_88_man
+headmodels = model_14371

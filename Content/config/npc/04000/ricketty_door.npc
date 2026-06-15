@@ -3,5 +3,5 @@ op1 = talk
 size = 1
 vislevel = 1
 name = Ricketty door
-models = 10302
-headmodels = 15911
+models = model_10302
+headmodels = model_15911

@@ -1,9 +1,9 @@
 // npc 63
 size = 1
-walkanim = 5325
-readyanim = 5326
+walkanim = seq_5325
+readyanim = seq_5326
 op2 = Attack
 vislevel = 34
 recol = 960/699 33728/64414 22443/803 11200/4888 56256/43276 50099/43270
 name = Deadly red spider
-models = 20309 20312
+models = model_20309 model_20312

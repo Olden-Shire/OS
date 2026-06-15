@@ -1,10 +1,10 @@
 // npc 5926
 resizeh = 128
 resizev = 128
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 16
 recol = 7952/38156 8741/38160
 name = Thief
-models = 208 10304 25675 317 25643 25652 25668 25650
+models = model_208 model_10304 model_25675 obj_fremennik_cloak_3759_man model_25643 model_25652 model_25668 model_25650

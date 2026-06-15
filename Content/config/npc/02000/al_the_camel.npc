@@ -2,9 +2,9 @@
 op1 = Talk-to
 size = 2
 resizev = 126
-walkanim = 45
-readyanim = 51
+walkanim = seq_45
+readyanim = seq_51
 vislevel = 0
 name = Al the Camel
-models = 9846 9844 9849
-headmodels = 9840
+models = model_9846 model_9844 model_9849
+headmodels = model_9840

@@ -1,11 +1,11 @@
 // npc 353
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 4
 recol = 43072/4550 25238/3980 4550/7384
 name = Woman
-models = 390 474 351 353 438 358
-headmodels = 113 11429
+models = model_390 model_474 model_351 model_353 model_438 model_358
+headmodels = obj_warrior_woman model_11429

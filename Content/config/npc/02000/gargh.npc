@@ -1,10 +1,10 @@
 // npc 2063
 vislevel = 0
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 recol = 8722/13850
 name = Gargh
-models = 2878 3442
-headmodels = 141
+models = model_2878 model_3442
+headmodels = model_141

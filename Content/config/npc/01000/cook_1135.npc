@@ -1,10 +1,10 @@
 // npc 1135
-readyanim = 286
-walkanim = 283
+readyanim = seq_286
+walkanim = seq_283
 size = 2
 resizeh = 132
 resizev = 132
 vislevel = 0
 recol = 61/8478 21570/7580 10355/7632
 name = Cook
-models = 3754 3758 3756 3772 3764
+models = model_3754 obj_troll_guard model_3756 model_3772 model_3764

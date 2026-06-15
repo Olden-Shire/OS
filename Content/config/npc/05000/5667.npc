@@ -1,6 +1,6 @@
 // npc 5667
-walkanim = 5876
-readyanim = 5875
+walkanim = seq_5876
+readyanim = seq_5875
 op1 = Talk-to
 op3 = Transport
 vislevel = 0

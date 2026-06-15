@@ -1,9 +1,9 @@
 // npc 720
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 name = Recruiter
-models = 230 181 253 306 164 176 268 201 553
-headmodels = 63 85
+models = obj_desert_disguise_man obj_vyrewatch_shoes_9638_man model_253 obj_khazard_armour_man model_164 model_176 obj_iron_platelegs_1067_man obj_red_headband_2645_man model_553
+headmodels = obj_rogue model_85

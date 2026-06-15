@@ -2,11 +2,11 @@
 size = 1
 resizeh = 138
 resizev = 119
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 6740/12 6604/12 35245/280 6596/12 8741/12 43072/280
 name = Tanya
-models = 9984 390 9985 9359 353 10003 358
-headmodels = 113 9976
+models = model_9984 model_390 model_9985 model_9359 model_353 obj_robe_of_elidinis_6787_woman model_358
+headmodels = obj_warrior_woman model_9976

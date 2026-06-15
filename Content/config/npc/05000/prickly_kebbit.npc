@@ -1,8 +1,8 @@
 // npc 5086
 size = 1
-walkanim = 5272
-readyanim = 5273
+walkanim = seq_5272
+readyanim = seq_5273
 op5 = Hidden
 vislevel = 0
 name = Prickly kebbit
-models = 19381 19388 19384
+models = model_19381 model_19388 model_19384

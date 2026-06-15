@@ -1,7 +1,7 @@
 // npc 2405
 size = 1
-walkanim = 314
-readyanim = 2159
+walkanim = seq_314
+readyanim = seq_2159
 vislevel = 0
 turnspeed = 0
 multivar = 582, 65535, 2108

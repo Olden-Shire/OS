@@ -1,9 +1,9 @@
 // npc 3644
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 alwaysontop = true
 recol = 6550/9007 22426/35732 22424/7843 11162/11154
 name = Tolna
-models = 14289 2909 2915 14177
-headmodels = 14287
+models = model_14289 model_2909 model_2915 model_14177
+headmodels = model_14287

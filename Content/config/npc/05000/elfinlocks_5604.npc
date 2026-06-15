@@ -1,9 +1,9 @@
 // npc 5604
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 93
 alwaysontop = true
 recol = 6798/21415 926/43693
 name = Elfinlocks
-models = 363 390 7010 3194 7005 353 5409 8754 3331
+models = obj_red_partyhat_1038_woman model_390 obj_shirt_5030_woman obj_cape_of_legends_1052_woman model_7005 model_353 obj_abyssal_whip_4151_wear obj_spined_chaps_6135_woman model_3331

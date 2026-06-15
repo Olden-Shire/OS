@@ -1,11 +1,11 @@
 // npc 2718
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 43072/4550 6798/0 8741/55186 25238/0 9104/127 4550/5466
 name = Betty
-models = 378 446 469 332 353 421 361
-headmodels = 103
+models = model_378 obj_pendant_of_lucien_woman model_469 model_332 model_353 obj_desert_robes_6386_woman obj_boots_of_lightness_88_woman
+headmodels = model_103

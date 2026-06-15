@@ -1,12 +1,12 @@
 // npc 2135
 resizeh = 150
 resizev = 130
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 op2 = Attack
 vislevel = 66
 recol = 61/43150 908/43150 906/43150
 name = Black Guard Berserker
-models = 7025 7050 7039 2993 2991 7042
-headmodels = 6984
+models = model_7025 model_7050 model_7039 model_2993 model_2991 model_7042
+headmodels = model_6984

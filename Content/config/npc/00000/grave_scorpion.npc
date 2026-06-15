@@ -1,9 +1,9 @@
 // npc 493
 size = 1
-walkanim = 6257
-readyanim = 6258
+walkanim = seq_6257
+readyanim = seq_6258
 op2 = Attack
 vislevel = 12
 recol = 3974/10760 142/10512 4884/8481 4636/7333 4645/7341 4525/7349
 name = Grave scorpion
-models = 24612
+models = model_24612

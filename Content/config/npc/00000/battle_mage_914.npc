@@ -1,8 +1,8 @@
 // npc 914
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op2 = Attack
 vislevel = 54
 recol = 22426/8090 926/22426
 name = Battle mage
-models = 2909 2898 2920
+models = model_2909 model_2898 model_2920

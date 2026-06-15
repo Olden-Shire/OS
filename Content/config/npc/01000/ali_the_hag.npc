@@ -1,11 +1,11 @@
 // npc 1871
 size = 1
-walkanim = 1146
-readyanim = 808
+walkanim = seq_1146
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 8741/0 25238/0 4550/5555
 name = Ali the Hag
-models = 6095 6097 6092 428 6093 181 6102
-headmodels = 6083
+models = model_6095 model_6097 model_6092 obj_priest_gown_428_woman model_6093 obj_vyrewatch_shoes_9638_man model_6102
+headmodels = model_6083

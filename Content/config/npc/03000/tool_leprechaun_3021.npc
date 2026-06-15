@@ -1,9 +1,9 @@
 // npc 3021
-walkanim = 189
-readyanim = 2904
+walkanim = seq_189
+readyanim = seq_2904
 vislevel = 0
 op1 = Talk-to
 op3 = Exchange
 name = Tool Leprechaun
-models = 10220
-headmodels = 24
+models = model_10220
+headmodels = model_24

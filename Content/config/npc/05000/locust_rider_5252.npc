@@ -1,9 +1,9 @@
 // npc 5252
 size = 2
 op2 = Attack
-readyanim = 5447
-walkanim = 5446
+readyanim = seq_5447
+walkanim = seq_5446
 vislevel = 98
 recol = 40598/1938 6938/12056 7964/12058 5910/13076
 name = Locust rider
-models = 20816 20820 20818 20819
+models = model_20816 model_20820 model_20818 model_20819

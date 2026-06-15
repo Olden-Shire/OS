@@ -2,10 +2,10 @@
 vislevel = 0
 op1 = Talk-to
 op3 = Trade
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 recol = 8741/26822 25238/24458 6798/811 4626/796 4550/4440
 name = Lilly
-models = 399 470 15321 332 10706 433 361
-headmodels = 118
+models = model_399 obj_ham_shirt_4298_woman model_15321 model_332 model_10706 model_433 obj_boots_of_lightness_88_woman
+headmodels = model_118

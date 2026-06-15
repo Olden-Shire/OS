@@ -1,10 +1,10 @@
 // npc 349
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/3980 8472/3980
 name = Kilron
-models = 208 185 250 311 162 179 274
-headmodels = 48 82
+models = model_208 obj_boots_of_lightness_88_man model_250 obj_leather_body_1129_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_274
+headmodels = model_48 model_82

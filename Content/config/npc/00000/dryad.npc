@@ -1,7 +1,7 @@
 // npc 56
 size = 1
-walkanim = 93
-readyanim = 96
+walkanim = seq_93
+readyanim = seq_96
 vislevel = 1
 name = Dryad
-models = 2856
+models = model_2856

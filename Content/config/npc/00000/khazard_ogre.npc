@@ -1,8 +1,8 @@
 // npc 270
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op2 = Attack
 vislevel = 63
 name = Khazard Ogre
-models = 2880 2876
+models = model_2880 model_2876

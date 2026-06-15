@@ -1,10 +1,10 @@
 // npc 5501
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 recol = 7473/1701 61/2842 22/286 4626/10508 2578/10508 4550/5586
 name = Brendt
-models = 2974 7069 7059 2978 7045 2985
-headmodels = 4 6949
+models = model_2974 model_7069 model_7059 model_2978 model_7045 model_2985
+headmodels = model_4 model_6949

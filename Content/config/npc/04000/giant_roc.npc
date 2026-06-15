@@ -1,10 +1,10 @@
 // npc 4972
-readyanim = 5021
-walkanim = 5022
+readyanim = seq_5021
+walkanim = seq_5022
 op2 = Attack
 size = 5
 resizeh = 106
 resizev = 106
 vislevel = 172
 name = Giant Roc
-models = 19136 19137
+models = model_19136 model_19137

@@ -1,11 +1,11 @@
 // npc 1090
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 25238/0 8741/0 43072/4550 6798/0
 name = Hild
-models = 378 456 332 353 431 358 447
-headmodels = 103
+models = model_378 obj_priest_gown_426_woman model_332 model_353 model_431 model_358 obj_glarials_amulet_woman
+headmodels = model_103

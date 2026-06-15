@@ -1,8 +1,8 @@
 // npc 3056
 vislevel = 0
 size = 2
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 2940
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_2940
 name = Mystery figure
-models = 9660 9661 9659 4023 10310
-headmodels = 9658
+models = model_9660 model_9661 model_9659 model_4023 model_10310
+headmodels = model_9658

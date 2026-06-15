@@ -1,6 +1,6 @@
 // npc 3286
 vislevel = 0
-walkanim = 3214
-readyanim = 3213
+walkanim = seq_3214
+readyanim = seq_3213
 name = Raccoon
-models = 11724
+models = model_11724

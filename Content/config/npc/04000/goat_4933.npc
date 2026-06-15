@@ -1,11 +1,11 @@
 // npc 4933
 size = 1
-walkanim = 249
-readyanim = 252
+walkanim = seq_249
+readyanim = seq_252
 op2 = Attack
 resizeh = 100
 resizev = 100
 vislevel = 23
 recol = 3974/7362 5537/8654 7498/109 6563/8753
 name = Goat
-models = 18906
+models = model_18906

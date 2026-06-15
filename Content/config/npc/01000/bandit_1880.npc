@@ -6,5 +6,5 @@ op3 = Pickpocket
 vislevel = 56
 recol = 8741/10351 4550/5555
 name = Bandit
-models = 6086 247 292 173 6090 181 176 490 523
-headmodels = 79 6080 53
+models = model_6086 model_247 obj_priest_gown_426_man model_173 obj_desert_legs_6390_man obj_vyrewatch_shoes_9638_man model_176 obj_bronze_scimitar_1321_wear model_523
+headmodels = model_79 model_6080 obj_man

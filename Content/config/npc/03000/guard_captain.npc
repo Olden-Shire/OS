@@ -1,10 +1,10 @@
 // npc 3109
-walkanims = 3039, 820, 821, 822
-readyanim = 3040
+walkanims = seq_3039, seq_820, seq_821, seq_822
+readyanim = seq_3040
 size = 1
 vislevel = 0
 op1 = Talk-to
 recol = 25238/41 4550/3524 10004/33 5648/24 908/24 11200/926
 name = Guard Captain
-models = 233 247 312 323 152 179 6098 263 4954
-headmodels = 66 79
+models = model_233 model_247 model_312 obj_cape_1007_man model_152 obj_cooking_gauntlets_man obj_beer_1917_wear model_263 obj_bronze_boots_4119_man
+headmodels = obj_guard model_79

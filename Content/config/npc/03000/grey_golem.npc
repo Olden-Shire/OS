@@ -1,12 +1,12 @@
 // npc 3028
 resizeh = 150
 resizev = 150
-readyanim = 1913
-walkanim = 1912
+readyanim = seq_1913
+walkanim = seq_1912
 op2 = Attack
 alwaysontop = true
 alwaysontop = true
 vislevel = 75
 recol = 4521/6327 4391/8369 5413/6319 6435/6315 8481/6439 61/6439
 name = Grey golem
-models = 6146 6147 6150
+models = model_6146 model_6147 model_6150

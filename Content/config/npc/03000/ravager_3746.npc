@@ -1,9 +1,9 @@
 // npc 3746
 size = 1
 op2 = Attack
-walkanim = 3914
-readyanim = 3913
+walkanim = seq_3914
+readyanim = seq_3913
 vislevel = 106
 recol = 21667/158 13716/6969 10330/7467 103/9447 5557/7498 5547/7366
 name = Ravager
-models = 14547
+models = model_14547

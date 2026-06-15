@@ -1,9 +1,9 @@
 // npc 3616
 op2 = Attack
 alwaysontop = true
-walkanim = 1281
-readyanim = 1282
+walkanim = seq_1281
+readyanim = seq_1282
 vislevel = 110
 recol = 0/43914 916/43968
 name = Asyn shadow
-models = 4140 14167
+models = model_4140 model_14167

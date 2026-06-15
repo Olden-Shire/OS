@@ -2,10 +2,10 @@
 vislevel = 0
 size = 1
 alwaysontop = true
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 6798/7376
 name = Hamal the Chieftain
-models = 214 250 5674 5672 5668 5725 5726 5670
-headmodels = 52 82 5664
+models = model_214 model_250 model_5674 model_5672 model_5668 model_5725 model_5726 model_5670
+headmodels = model_52 model_82 model_5664

@@ -1,9 +1,9 @@
 // npc 1971
 vislevel = 0
 size = 2
-walkanim = 119
-readyanim = 125
+walkanim = seq_119
+readyanim = seq_125
 op1 = Talk-to
 name = Azzanadra
-models = 6236 6237 6238
-headmodels = 6363
+models = model_6236 model_6237 model_6238
+headmodels = model_6363

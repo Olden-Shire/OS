@@ -1,10 +1,10 @@
 // npc 1908
 size = 1
-readyanim = 1913
-walkanim = 1912
+readyanim = seq_1913
+walkanim = seq_1912
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 name = Broken clay golem
-models = 6146 6147 6149
-headmodels = 6145
+models = model_6146 model_6147 model_6149
+headmodels = model_6145

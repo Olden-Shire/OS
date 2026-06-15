@@ -1,10 +1,10 @@
 // npc 4906
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 803/41282 8741/41282 8860/42293 25238/92 7446/127 6798/7073
 name = Woodsman tutor
-models = 217 248 18546 10980 177 18541 12138 181 18957
-headmodels = 55 80
+models = model_217 model_248 model_18546 model_10980 obj_leather_vambraces_1063_man model_18541 model_12138 obj_vyrewatch_shoes_9638_man model_18957
+headmodels = obj_farmer model_80

@@ -1,7 +1,7 @@
 // npc 958
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
@@ -10,5 +10,5 @@ op4 = Buy
 vislevel = 0
 recol = 25238/8720 4550/6705 43072/6705
 name = Fadli
-models = 210 249 296 173 179 254 185
-headmodels = 49 81
+models = model_210 model_249 obj_hardleather_body_1131_man model_173 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man
+headmodels = model_49 model_81

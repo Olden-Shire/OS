@@ -1,9 +1,9 @@
 // npc 1337
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/2842 8741/2599 8078/2603 7700/2964 6798/7748 61/6038
 name = Larrissa
-models = 390 343 470 421 483 479 353 361 417 376
-headmodels = 113 136 101
+models = model_390 model_343 obj_ham_shirt_4298_woman obj_desert_robes_6386_woman model_483 obj_fremennik_cloak_3759_woman model_353 obj_boots_of_lightness_88_woman model_417 obj_red_headband_2645_woman
+headmodels = obj_warrior_woman model_136 model_101

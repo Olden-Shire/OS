@@ -1,11 +1,11 @@
 // npc 1658
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 recol = 50467/40384
 name = Robe Store owner
-models = 215 4955 250 5028 4952 4953 4844 5027 18941
-headmodels = 53 4950 82
+models = obj_fremennik_helm_man obj_mystic_boots_4097_man model_250 model_5028 obj_mystic_robe_top_4091_man obj_mystic_gloves_4095_man obj_mystic_robe_bottom_4093_man obj_mystic_hat_4089_man model_18941
+headmodels = obj_man model_4950 model_82

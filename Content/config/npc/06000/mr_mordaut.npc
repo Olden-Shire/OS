@@ -2,8 +2,8 @@
 size = 5
 vislevel = 0
 op1 = Talk-to
-readyanim = 6825
+readyanim = seq_6825
 ambient = 20
 name = Mr. Mordaut
-models = 26896 26898 26895 26897 26894
-headmodels = 26906
+models = model_26896 model_26898 model_26895 model_26897 model_26894
+headmodels = model_26906

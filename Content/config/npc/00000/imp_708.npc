@@ -1,9 +1,9 @@
 // npc 708
 size = 1
-walkanim = 168
-readyanim = 171
+walkanim = seq_168
+readyanim = seq_171
 op2 = Attack
 vislevel = 2
 name = Imp
-models = 19982
-headmodels = 20045
+models = obj_imp
+headmodels = model_20045

@@ -1,7 +1,7 @@
 // npc 5044
-readyanim = 5094
-walkanim = 5095
+readyanim = seq_5094
+walkanim = seq_5095
 op2 = Attack
 vislevel = 30
 name = Penance Fighter
-models = 20697 20696
+models = model_20697 model_20696

@@ -1,8 +1,8 @@
 // npc 50
 size = 5
-walkanim = 4635
-readyanim = 90
+walkanim = seq_4635
+readyanim = seq_90
 op2 = Attack
 vislevel = 276
 name = King Black Dragon
-models = 17414 17415 17429 17422 17423
+models = model_17414 model_17415 model_17429 model_17422 model_17423

@@ -2,8 +2,8 @@
 vislevel = 0
 resizeh = 32
 resizev = 32
-walkanim = 2297
-readyanim = 2298
+walkanim = seq_2297
+readyanim = seq_2298
 ambient = 15
 name = Rooster
-models = 7728
+models = model_7728

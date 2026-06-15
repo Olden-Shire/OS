@@ -1,7 +1,7 @@
 // npc 1483
-walkanim = 1399
-readyanim = 1401
+walkanim = seq_1399
+readyanim = seq_1401
 vislevel = 1
 name = Bearded gorilla
-models = 4810 4813
-headmodels = 4663
+models = model_4810 model_4813
+headmodels = model_4663

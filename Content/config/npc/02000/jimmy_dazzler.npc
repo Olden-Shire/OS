@@ -2,12 +2,12 @@
 size = 1
 contrast = 10
 ambient = 20
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 25238/45342 5532/43276
 name = Jimmy Dazzler
-models = 9618 6848 10075 10039 10077 10073 10074 3711 10076 185
-headmodels = 10028 10030 9442
+models = model_9618 model_6848 model_10075 model_10039 model_10077 model_10073 model_10074 model_3711 model_10076 obj_boots_of_lightness_88_man
+headmodels = model_10028 model_10030 model_9442

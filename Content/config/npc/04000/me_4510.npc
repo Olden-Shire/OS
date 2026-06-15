@@ -1,11 +1,11 @@
 // npc 4510
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op2 = Attack
 ambient = 40
 contrast = 40
 op2 = Attack
 vislevel = 79
 name = Me
-models = 16455 16505 16502 16497 16495 16507 16504 452 16492
-headmodels = 16468
+models = obj_lunar_helm_9096_woman obj_lunar_torso_woman obj_lunar_legs_woman obj_lunar_gloves_woman obj_lunar_boots_woman obj_lunar_cape_woman obj_lunar_amulet_woman model_452 model_16492
+headmodels = model_16468

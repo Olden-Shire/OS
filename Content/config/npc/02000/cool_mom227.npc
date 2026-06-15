@@ -1,11 +1,11 @@
 // npc 2579
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op3 = Walk here
 op4 = Follow
 op5 = Trade
 vislevel = 27
 recol = 8741/127
 name = Cool Mom227
-models = 374 399 456 3194 332 353 533 7007 7614
+models = obj_chefs_hat_1949_woman model_399 obj_priest_gown_426_woman obj_cape_of_legends_1052_woman model_332 model_353 obj_iron_dagger_1203_wear obj_skirt_5048_woman obj_rogue_boots_woman

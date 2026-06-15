@@ -2,9 +2,9 @@
 vislevel = 0
 op1 = Talk-to
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 4550/10450 926/7333 8741/8631 4626/5541 5572/8741 11200/8741
 name = Jayene Kliyn
-models = 10078 8849 14176 8931 10706 7007 358
-headmodels = 10031 11429
+models = model_10078 obj_citizen_top_9640_woman model_14176 model_8931 model_10706 obj_skirt_5048_woman model_358
+headmodels = model_10031 model_11429

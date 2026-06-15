@@ -1,9 +1,9 @@
 // npc 934
 size = 3
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 vislevel = 187
 recol = 910/898 912/4 1938/8 1814/12 1690/16 0/5206
 name = Nezikchened
-models = 17375 17391 17384 17399
+models = model_17375 model_17391 model_17384 model_17399

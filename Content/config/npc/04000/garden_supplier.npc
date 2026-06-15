@@ -1,11 +1,11 @@
 // npc 4251
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 alwaysontop = true
 recol = 25238/21652 54397/33674 8741/16540 8078/7326
 name = Garden supplier
-models = 11353 390 467 332 353 428 358 7366
-headmodels = 113 11406
+models = obj_red_boater_7319_woman model_390 obj_white_apron_1005_woman model_332 model_353 obj_priest_gown_428_woman model_358 obj_gardening_boots_5345_woman
+headmodels = obj_warrior_woman model_11406

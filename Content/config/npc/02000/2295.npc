@@ -1,5 +1,5 @@
 // npc 2295
-readyanim = 1144
+readyanim = seq_1144
 alwaysontop = true
 turnspeed = 0
 op1 = Talk-to

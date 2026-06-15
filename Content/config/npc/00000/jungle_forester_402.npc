@@ -1,10 +1,10 @@
 // npc 402
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/8741 11200/8741 926/7952 9104/7952
 name = Jungle forester
-models = 383 456 346 356 419 361 481 482 566
-headmodels = 107
+models = model_383 obj_priest_gown_426_woman model_346 obj_cooking_gauntlets_woman obj_mime_legs_woman obj_boots_of_lightness_88_woman obj_cape_1007_woman model_482 obj_machete_975_wear
+headmodels = model_107

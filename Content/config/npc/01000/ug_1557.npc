@@ -1,11 +1,11 @@
 // npc 1557
-walkanim = 283
-readyanim = 1480
+walkanim = seq_283
+readyanim = seq_1480
 op1 = Talk-to
 resizeh = 124
 resizev = 124
 vislevel = 1
 recol = 61/8367
 name = Ug
-models = 3753 3758 3755 3773 4947
-headmodels = 3790 3789
+models = model_3753 obj_troll_guard model_3755 model_3773 model_4947
+headmodels = model_3790 model_3789

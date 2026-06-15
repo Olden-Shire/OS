@@ -1,5 +1,5 @@
 // npc 4051
-readyanim = 3584
+readyanim = seq_3584
 vislevel = 0
 size = 1
 op2 = Banish
@@ -8,4 +8,4 @@ resizeh = 100
 resizev = 100
 recol = 127/970
 name = Elemental balance
-models = 12960
+models = obj_magical_balance_1

@@ -1,10 +1,10 @@
 // npc 5807
 resizeh = 86
 resizev = 86
-walkanim = 6042
-readyanim = 6040
+walkanim = seq_6042
+readyanim = seq_6040
 op1 = Talk-to
 vislevel = 0
 name = Cave goblin child
-models = 23654 23697 23633
-headmodels = 23244
+models = model_23654 model_23697 model_23633
+headmodels = model_23244

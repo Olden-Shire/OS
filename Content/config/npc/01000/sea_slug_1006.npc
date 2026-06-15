@@ -1,8 +1,8 @@
 // npc 1006
 vislevel = 0
-walkanim = 933
-readyanim = 932
+walkanim = seq_933
+readyanim = seq_932
 op1 = Take
 recol = 8501/5227 8497/794 8493/565 8617/313 8732/5437
 name = Sea slug
-models = 560
+models = model_560

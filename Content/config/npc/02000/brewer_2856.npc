@@ -1,10 +1,10 @@
 // npc 2856
 resizeh = 135
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 8741/10312 7281/10312 22177/12 4550/5807 25238/3350 4626/8
 name = Brewer
-models = 211 5215 7611 170 176 254 185
-headmodels = 50 5207
+models = model_211 model_5215 obj_prince_tunic_man obj_druids_robe_540_man model_176 obj_mime_legs_man obj_boots_of_lightness_88_man
+headmodels = model_50 model_5207

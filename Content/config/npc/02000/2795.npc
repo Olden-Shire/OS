@@ -1,6 +1,6 @@
 // npc 2795
-walkanim = 2769
-readyanim = 2770
+walkanim = seq_2769
+readyanim = seq_2770
 op1 = Talk-To
 op3 = Sober-Up
 vislevel = 48

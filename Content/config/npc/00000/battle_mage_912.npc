@@ -1,8 +1,8 @@
 // npc 912
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 54
 recol = 11200/926 7700/0 8741/20 25238/20 4550/5347 4626/0
 name = Battle mage
-models = 207 246 243 310 168 176 260 323 185 544
+models = model_207 model_246 obj_highwayman_mask_2631_man model_310 model_168 model_176 model_260 obj_cape_1007_man obj_boots_of_lightness_88_man obj_zamorak_staff_wear

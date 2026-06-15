@@ -1,10 +1,10 @@
 // npc 2547
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 43072/4550 8741/7289 25238/5243 10004/5243 6798/9325 11183/10270
 name = Dr Ford
-models = 6848 238 249 302 3190 159 176 263 185
-headmodels = 5787 81 70
+models = model_6848 model_238 model_249 model_302 model_3190 model_159 model_176 model_263 obj_boots_of_lightness_88_man
+headmodels = model_5787 model_81 model_70

@@ -2,11 +2,11 @@
 size = 1
 contrast = 12
 ambient = 12
-walkanims = 4426, 4427, 4428, 4429
-readyanim = 4424
+walkanims = seq_4426, seq_4427, seq_4428, seq_4429
+readyanim = seq_4424
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 name = Pauline Polaris
-models = 16500 12141 16506 16493 177 12143 16496 270
-headmodels = 12134 16465
+models = obj_moonclan_helm_woman model_12141 obj_moonclan_armour_woman model_16493 obj_leather_vambraces_1063_man obj_moonclan_skirt_woman obj_moonclan_boots_woman model_270
+headmodels = model_12134 model_16465

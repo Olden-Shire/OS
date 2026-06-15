@@ -1,8 +1,8 @@
 // npc 3065
 size = 1
-walkanim = 5511
-readyanim = 5510
+walkanim = seq_5511
+readyanim = seq_5510
 op2 = Attack
 vislevel = 40
 name = Skeleton Champion
-models = 21189
+models = model_21189

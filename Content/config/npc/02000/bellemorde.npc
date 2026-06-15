@@ -2,12 +2,12 @@
 size = 1
 resizeh = 58
 resizev = 58
-readyanim = 317
-walkanim = 314
+readyanim = seq_317
+walkanim = seq_314
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 61/7739 127/72 16/59449 64414/11204
 name = Bellemorde
-models = 9426 9428
-headmodels = 9424
+models = obj_wily_cat_6555 model_9428
+headmodels = model_9424

@@ -5,5 +5,5 @@ op1 = Talk-to
 vislevel = 0
 recol = 6798/8757
 name = Tinse Torpe
-models = 25362
-headmodels = 5787
+models = model_25362
+headmodels = model_5787

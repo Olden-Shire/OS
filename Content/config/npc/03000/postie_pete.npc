@@ -1,9 +1,9 @@
 // npc 3805
 size = 1
-walkanim = 3947
-readyanim = 3948
+walkanim = seq_3947
+readyanim = seq_3948
 vislevel = 0
 op1 = Talk-to
 name = Postie Pete
-models = 14826
-headmodels = 14790 14789
+models = model_14826
+headmodels = model_14790 model_14789

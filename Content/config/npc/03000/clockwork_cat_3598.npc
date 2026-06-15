@@ -1,8 +1,8 @@
 // npc 3598
 vislevel = 0
 size = 1
-readyanim = 317
-walkanim = 314
+readyanim = seq_317
+walkanim = seq_314
 op1 = Pick-up
 op5 = Shoo
 resizeh = 60
@@ -10,4 +10,4 @@ resizev = 60
 ambient = 40
 nominimap = true
 name = Clockwork cat
-models = 14104 14103
+models = model_14104 obj_toy_cat_7771

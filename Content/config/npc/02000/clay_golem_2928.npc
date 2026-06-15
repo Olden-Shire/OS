@@ -1,10 +1,10 @@
 // npc 2928
 size = 1
-readyanim = 1913
-walkanim = 1912
+readyanim = seq_1913
+walkanim = seq_1912
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 name = Clay golem
-models = 6146 10002 6150
-headmodels = 6145
+models = model_6146 model_10002 model_6150
+headmodels = model_6145

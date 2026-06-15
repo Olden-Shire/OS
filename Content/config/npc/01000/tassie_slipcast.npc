@@ -1,9 +1,9 @@
 // npc 1793
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/43038 8741/2714 6798/2974 4626/5012 54397/7335 43072/4550
 name = Tassie Slipcast
-models = 391 417 467 348 353 437 358
-headmodels = 114 136
+models = obj_fremennik_helm_woman model_417 obj_white_apron_1005_woman obj_druids_robe_540_woman model_353 model_437 model_358
+headmodels = model_114 model_136

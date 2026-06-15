@@ -1,12 +1,12 @@
 // npc 1071
 size = 1
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 resizeh = 128
 resizev = 128
 op1 = Talk-to
 vislevel = 0
 recol = 8741/74 25238/74 9096/61 8078/61
 name = Tenzing
-models = 230 253 292 162 179 274 3704 3706 3707 3711
-headmodels = 63 85 3713
+models = obj_desert_disguise_man model_253 obj_priest_gown_426_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_274 obj_climbing_boots_3105_man model_3706 model_3707 model_3711
+headmodels = obj_rogue model_85 model_3713

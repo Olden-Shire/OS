@@ -1,10 +1,10 @@
 // npc 5942
-readyanim = 6464
-walkanims = 819, 820, 821, 822
+readyanim = seq_6464
+walkanims = seq_819, seq_820, seq_821, seq_822
 vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 recol = 4626/0
 name = Museum guard
-models = 25655 6848 246 25679 25647 177 25667 181
-headmodels = 25629 5787
+models = model_25655 model_6848 model_246 model_25679 model_25647 obj_leather_vambraces_1063_man model_25667 obj_vyrewatch_shoes_9638_man
+headmodels = model_25629 model_5787

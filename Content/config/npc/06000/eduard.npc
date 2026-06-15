@@ -1,9 +1,9 @@
 // npc 6031
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Eduard
-models = 26123 26130 26115 26125 26119
-headmodels = 26270
+models = model_26123 model_26130 model_26115 model_26125 model_26119
+headmodels = model_26270

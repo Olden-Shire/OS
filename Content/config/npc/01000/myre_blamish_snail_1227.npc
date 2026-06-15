@@ -1,9 +1,9 @@
 // npc 1227
 size = 1
-walkanim = 1274
-readyanim = 1276
+walkanim = seq_1274
+readyanim = seq_1276
 op2 = Attack
 vislevel = 9
 recol = 10545/10545 12589/12589 12713/12713 6466/6466 6577/6577 6697/6697
 name = Myre Blamish Snail
-models = 4108
+models = model_4108

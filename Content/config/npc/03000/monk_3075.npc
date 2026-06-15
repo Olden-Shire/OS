@@ -4,5 +4,5 @@ size = 1
 op1 = Talk-to
 recol = 25238/4769 8741/4769 906/4888 6439/4626 6336/4502
 name = Monk
-models = 10375 246 292 326 170 179 260 10124 317
-headmodels = 10372
+models = model_10375 model_246 obj_priest_gown_426_man model_326 obj_druids_robe_540_man obj_cooking_gauntlets_man model_260 obj_shoes_man obj_fremennik_cloak_3759_man
+headmodels = model_10372

@@ -1,12 +1,12 @@
 // npc 531
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 25238/5652 8741/4769 6798/10508 43072/4550 54397/5551
 name = Shop assistant
-models = 217 254 246 305 151 176 181
-headmodels = 55
+models = model_217 obj_mime_legs_man model_246 obj_white_apron_1005_man model_151 model_176 obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer

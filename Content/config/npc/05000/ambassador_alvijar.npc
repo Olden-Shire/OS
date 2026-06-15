@@ -5,5 +5,5 @@ vislevel = 0
 alwaysontop = true
 recol = 61/24 4626/8 74/8722
 name = Ambassador Alvijar
-models = 7029 6020 23876 7037 7045 2985
-headmodels = 6988 15405
+models = model_7029 model_6020 model_23876 model_7037 model_7045 model_2985
+headmodels = model_6988 model_15405

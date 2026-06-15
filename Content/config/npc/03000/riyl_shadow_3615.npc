@@ -1,9 +1,9 @@
 // npc 3615
 alwaysontop = true
 op2 = Attack
-walkanim = 1281
-readyanim = 1282
+walkanim = seq_1281
+readyanim = seq_1282
 vislevel = 80
 recol = 0/906 916/960
 name = Riyl shadow
-models = 4140 14167
+models = model_4140 model_14167

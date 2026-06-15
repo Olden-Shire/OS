@@ -1,8 +1,8 @@
 // npc 4640
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 recol = 22426/21793 22422/21784 6798/1556 6430/21908 926/41370 8598/22032
 name = Gnome soldier
-models = 2898 2914 10341
-headmodels = 18
+models = model_2898 model_2914 model_10341
+headmodels = model_18

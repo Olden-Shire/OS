@@ -1,11 +1,11 @@
 // npc 299
 size = 1
-walkanim = 1738
-readyanim = 1737
+walkanim = seq_1738
+readyanim = seq_1737
 op2 = Attack
 op1 = Talk-to
 vislevel = 5
 recol = 916/933
 name = Goblin
-models = 2951 2953 2955 2956 2957
-headmodels = 144
+models = model_2951 model_2953 model_2955 model_2956 model_2957
+headmodels = model_144

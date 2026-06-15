@@ -1,9 +1,9 @@
 // npc 1415
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22426/13745 22422/8741
 name = Bunkdo
-models = 2914 4698 2919
-headmodels = 21
+models = model_2914 model_4698 model_2919
+headmodels = obj_gnome

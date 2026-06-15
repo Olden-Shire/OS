@@ -1,10 +1,10 @@
 // npc 5270
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 4550/6558 943/39822 926/39822 8741/37778 4626/9019 10353/39822
 name = Sophanem guard
-models = 20762 456 20761 10706 20757 20763 358
-headmodels = 20745
+models = model_20762 obj_priest_gown_426_woman model_20761 model_10706 model_20757 model_20763 model_358
+headmodels = model_20745

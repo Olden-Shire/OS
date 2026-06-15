@@ -1,11 +1,11 @@
 // npc 2130
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 op2 = Attack
 vislevel = 48
 recol = 61/12 57/12 37/12 7054/28
 name = Black Guard
-models = 2971 2986 7051 7040 7043 7065 2993
-headmodels = 1 6
+models = model_2971 model_2986 model_7051 model_7040 model_7043 model_7065 model_2993
+headmodels = model_1 model_6

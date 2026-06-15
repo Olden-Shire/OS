@@ -1,11 +1,11 @@
 // npc 1919
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
+readyanim = seq_808
 op2 = Attack
 vislevel = 95
 recol = 4550/4762 10004/8 8741/8 25238/8 22177/8 4626/8
 name = Stranger
-models = 211 248 292 151 179 254 185 6221 539
-headmodels = 50 6374
+models = model_211 model_248 obj_priest_gown_426_man model_151 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man model_6221 obj_dragon_dagger_1215_wear
+headmodels = model_50 model_6374

@@ -1,10 +1,10 @@
 // npc 1145
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 size = 1
 resizeh = 134
 resizev = 134
 vislevel = 0
 recol = 61/6435 21570/4510 6430/5404
 name = Guard
-models = 3753 3758 3755 3763
+models = model_3753 obj_troll_guard model_3755 model_3763

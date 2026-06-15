@@ -1,10 +1,10 @@
 // npc 464
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 43569/8741 8741/39461 25238/272 10262/41 6798/74 4550/6709
 name = Murphy
-models = 217 310 267 170 176 185 194 244 322 249
-headmodels = 55 81 37
+models = model_217 model_310 model_267 obj_druids_robe_540_man model_176 obj_boots_of_lightness_88_man model_194 model_244 model_322 model_249
+headmodels = obj_farmer model_81 model_37

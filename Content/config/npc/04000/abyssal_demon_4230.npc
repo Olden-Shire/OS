@@ -2,5 +2,5 @@
 vislevel = 0
 size = 1
 name = Abyssal demon
-models = 3010 3006
-headmodels = 14428
+models = model_3010 obj_witchs_cat
+headmodels = model_14428

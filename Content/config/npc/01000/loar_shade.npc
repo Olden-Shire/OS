@@ -1,10 +1,10 @@
 // npc 1241
 size = 1
-walkanim = 1281
-readyanim = 1282
+walkanim = seq_1281
+readyanim = seq_1282
 op2 = Attack
 alwaysontop = true
 vislevel = 40
 recol = 0/22410 916/22464
 name = Loar Shade
-models = 4140
+models = model_4140

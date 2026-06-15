@@ -1,8 +1,8 @@
 // npc 1993
 size = 2
-walkanim = 2036
-readyanim = 2037
+walkanim = seq_2036
+readyanim = seq_2037
 op2 = Attack
 vislevel = 63
 name = Crocodile
-models = 6454
+models = model_6454

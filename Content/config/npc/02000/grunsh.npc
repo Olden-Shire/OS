@@ -1,8 +1,8 @@
 // npc 2419
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 vislevel = 0
 name = Grunsh
-models = 8682 2877
-headmodels = 141
+models = model_8682 model_2877
+headmodels = model_141

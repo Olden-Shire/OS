@@ -1,4 +1,4 @@
 // npc 4255
-readyanim = 5335
+readyanim = seq_5335
 vislevel = 1
 multivar = 2233, 65535, 65535 2347

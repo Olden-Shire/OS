@@ -2,10 +2,10 @@
 vislevel = 0
 op1 = Talk-to
 op3 = Bank
-walkanim = 808
-readyanim = 808
+walkanim = seq_808
+readyanim = seq_808
 alwaysontop = true
 recol = 8741/10353 25238/43059 8078/902 6798/9019
 name = Jade
-models = 408 418 15320 343 10706 435
-headmodels = 114 137
+models = model_408 model_418 model_15320 model_343 model_10706 model_435
+headmodels = model_114 model_137

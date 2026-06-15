@@ -1,9 +1,9 @@
 // npc 3147
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 4550/6709 7719/10539 8741/10549 8860/10539 25238/10539 7073/7603
 name = Lazim
-models = 6848 246 292 10980 10218 534 265 8919 4391 9607
-headmodels = 5787
+models = model_6848 model_246 obj_priest_gown_426_man model_10980 model_10218 obj_dramen_staff_wear obj_priest_gown_428_man obj_villager_sandals_6349_man model_4391 model_9607
+headmodels = model_5787

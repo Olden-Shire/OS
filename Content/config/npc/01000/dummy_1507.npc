@@ -4,5 +4,5 @@ size = 1
 turnspeed = 0
 recol = 933/960
 name = Dummy
-models = 14035
-headmodels = 10031
+models = model_14035
+headmodels = model_10031

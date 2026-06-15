@@ -2,10 +2,10 @@
 size = 1
 resizeh = 69
 resizev = 69
-walkanim = 1339
-readyanim = 1338
+walkanim = seq_1339
+readyanim = seq_1338
 op2 = Attack
 vislevel = 74
 recol = 10291/10293 10287/10289 10283/7343 10279/7339
 name = Dagannoth
-models = 4587
+models = obj_dagannoth

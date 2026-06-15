@@ -2,10 +2,10 @@
 size = 1
 resizeh = 40
 resizev = 40
-walkanim = 2297
-readyanim = 2298
+walkanim = seq_2297
+readyanim = seq_2298
 op2 = Attack
 alwaysontop = true
 vislevel = 121
 name = Evil Chicken
-models = 7728
+models = model_7728

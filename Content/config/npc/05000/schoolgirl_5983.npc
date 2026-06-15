@@ -1,9 +1,9 @@
 // npc 5983
-walkanim = 6471
-readyanim = 6473
+walkanim = seq_6471
+readyanim = seq_6473
 vislevel = 0
 op1 = Talk-to
 recol = 206/43321 41145/6839 12/4626 11200/6724 189/43437 38003/231
 name = Schoolgirl
-models = 25847 25845 25844
-headmodels = 138
+models = model_25847 model_25845 model_25844
+headmodels = model_138

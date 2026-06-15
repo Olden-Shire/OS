@@ -1,7 +1,7 @@
 // npc 137
-readyanim = 6798
-walkanim = 6799
+readyanim = seq_6798
+walkanim = seq_6799
 vislevel = 0
 vislevel = 0
 name = Terrorchick gnome
-models = 26859
+models = model_26859

@@ -1,9 +1,9 @@
 // npc 1247
 size = 1
-readyanim = 1290
-walkanim = 1289
+readyanim = seq_1290
+walkanim = seq_1289
 op2 = Attack
 vislevel = 100
 recol = 0/43914
 name = Asyn Shadow
-models = 4143
+models = model_4143

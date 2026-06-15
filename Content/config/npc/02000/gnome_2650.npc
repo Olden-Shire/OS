@@ -1,10 +1,10 @@
 // npc 2650
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 2691
+walkanim = seq_189
+readyanim = seq_2691
 op1 = Talk-to
 recol = 22426/9641 22424/16931 22422/6697 127/10665
 name = Gnome
-models = 9432 2909 9434
-headmodels = 21
+models = model_9432 model_2909 model_9434
+headmodels = obj_gnome

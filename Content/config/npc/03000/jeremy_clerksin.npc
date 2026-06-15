@@ -1,11 +1,11 @@
 // npc 3327
 vislevel = 0
 size = 1
-readyanim = 3282
+readyanim = seq_3282
 turnspeed = 0
 ambient = 10
 contrast = 5
 recol = 8741/5297 25238/13592
 name = Jeremy Clerksin
-models = 6848 252 292 326 12136 274 181 12144
-headmodels = 5787 84
+models = model_6848 model_252 obj_priest_gown_426_man model_326 model_12136 model_274 obj_vyrewatch_shoes_9638_man model_12144
+headmodels = model_5787 model_84

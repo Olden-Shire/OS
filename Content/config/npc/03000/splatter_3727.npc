@@ -1,8 +1,8 @@
 // npc 3727
 size = 1
 op2 = Attack
-walkanim = 3887
-readyanim = 3886
+walkanim = seq_3887
+readyanim = seq_3886
 vislevel = 22
 name = Splatter
-models = 14550
+models = model_14550

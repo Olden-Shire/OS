@@ -1,12 +1,12 @@
 // npc 2741
 size = 4
 op2 = Attack
-walkanim = 2634
-readyanim = 2636
+walkanim = seq_2634
+readyanim = seq_2636
 ambient = 30
 contrast = 30
 resizeh = 140
 resizev = 140
 vislevel = 180
 name = Yt-MejKot
-models = 9326 9328 9327
+models = model_9326 model_9328 model_9327

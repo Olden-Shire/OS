@@ -1,7 +1,7 @@
 // npc 5098
 size = 1
-walkanim = 5272
-readyanim = 5273
+walkanim = seq_5272
+readyanim = seq_5273
 resizeh = 96
 resizev = 96
 op1 = Catch
@@ -9,4 +9,4 @@ turnspeed = 64
 vislevel = 0
 recol = 5008/0
 name = Spotted kebbit
-models = 19381 19389 19384
+models = model_19381 model_19389 model_19384

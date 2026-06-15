@@ -1,11 +1,11 @@
 // npc 5532
-walkanim = 5799
-readyanim = 5800
+walkanim = seq_5799
+readyanim = seq_5800
 op1 = Talk-to
 op4 = Teleport
 vislevel = 0
 alwaysontop = true
 recol = 9019/35008 25238/10471 61/10471 43072/10462
 name = Apprentice
-models = 22287 390 9026 347 353 428 361 22306
-headmodels = 113 22275
+models = model_22287 model_390 obj_menaphite_top_6394_woman model_347 model_353 obj_priest_gown_428_woman obj_boots_of_lightness_88_woman model_22306
+headmodels = obj_warrior_woman model_22275

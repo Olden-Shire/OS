@@ -1,9 +1,9 @@
 // npc 1511
 vislevel = 0
 op1 = Talk-to
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 recol = 43072/4550 7591/8753 7845/8879 7756/9174 6798/9015 6674/9135
 name = Ranger
-models = 390 477 5602 351 10706 23177 423 361
-headmodels = 113
+models = model_390 obj_green_dhide_body_1135_woman obj_team_8_cape_4329_woman model_351 model_10706 model_23177 obj_green_dhide_chaps_1099_woman obj_boots_of_lightness_88_woman
+headmodels = obj_warrior_woman

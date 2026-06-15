@@ -1,9 +1,9 @@
 // npc 805
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/5532 8741/37159 54397/4769 43072/4550 6798/2155 9096/5532
 name = Master Crafter
-models = 6848 245 247 305 151 176 274 181 18926
-headmodels = 5787 79 78
+models = model_6848 model_245 model_247 obj_white_apron_1005_man model_151 model_176 model_274 obj_vyrewatch_shoes_9638_man model_18926
+headmodels = model_5787 model_79 model_78

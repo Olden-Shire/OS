@@ -1,6 +1,6 @@
 // npc 1116
-walkanim = 1139
-readyanim = 926
+walkanim = seq_1139
+readyanim = seq_926
 size = 2
 resizeh = 200
 resizev = 200
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 113
 recol = 61/8367 10355/10578 21570/7469 926/7704
 name = Troll general
-models = 3754 3759 3756 3769 3770 3760 3757 3774
+models = model_3754 model_3759 model_3756 model_3769 model_3770 model_3760 model_3757 model_3774

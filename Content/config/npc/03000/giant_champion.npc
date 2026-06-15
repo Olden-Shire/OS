@@ -1,8 +1,8 @@
 // npc 3058
 size = 2
-readyanim = 6371
-walkanim = 6372
+readyanim = seq_6371
+walkanim = seq_6372
 op2 = Attack
 vislevel = 56
 name = Giant Champion
-models = 25624 25623 25622 17466
+models = model_25624 model_25623 model_25622 model_17466

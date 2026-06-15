@@ -2,13 +2,13 @@
 vislevel = 0
 op1 = Talk-to
 op3 = Trade
-walkanim = 2602
-readyanim = 2604
+walkanim = seq_2602
+readyanim = seq_2604
 contrast = 0
 ambient = 10
 resizeh = 120
 resizev = 115
 recol = 3005/960 406/933
 name = TzHaar-Mej-Roh
-models = 9311 9310 9313 9312
-headmodels = 9251
+models = model_9311 model_9310 model_9313 model_9312
+headmodels = model_9251

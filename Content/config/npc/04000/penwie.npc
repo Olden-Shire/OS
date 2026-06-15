@@ -1,9 +1,9 @@
 // npc 4578
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22040/14753 22426/10006 5202/13076 22292/13086 21795/14753 3226/10006
 name = Penwie
-models = 17013 14824 2917 14177
-headmodels = 16972
+models = model_17013 model_14824 model_2917 model_14177
+headmodels = model_16972

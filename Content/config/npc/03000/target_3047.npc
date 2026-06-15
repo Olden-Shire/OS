@@ -4,4 +4,4 @@ op2 = Shoot
 nominimap = true
 vislevel = 0
 name = Target
-models = 10210
+models = model_10210

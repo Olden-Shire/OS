@@ -1,10 +1,10 @@
 // npc 1690
 size = 1
-walkanim = 1647
-readyanim = 1646
+walkanim = seq_1647
+readyanim = seq_1646
 ambient = 90
 contrast = 50
 nominimap = true
 vislevel = 0
 inactive = true
-models = 5368
+models = model_5368

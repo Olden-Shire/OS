@@ -2,10 +2,10 @@
 size = 1
 ambient = 20
 contrast = 10
-walkanim = 5272
-readyanim = 5273
+walkanim = seq_5272
+readyanim = seq_5273
 vislevel = 0
 alwaysontop = true
 recol = 5008/6034 5656/6034 5532/6036 5537/6038 5413/6036 5417/5008
 name = Chocolate kebbit
-models = 19389 19381 19384
+models = model_19389 model_19381 model_19384

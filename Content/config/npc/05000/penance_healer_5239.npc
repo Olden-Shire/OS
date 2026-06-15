@@ -1,7 +1,7 @@
 // npc 5239
 vislevel = 0
-readyanim = 5104
-walkanim = 5107
+readyanim = seq_5104
+walkanim = seq_5107
 recol = 14391/14387 14395/14391 10425/10421 9403/9527 7485/7481 7481/8501
 name = Penance Healer
-models = 20698
+models = model_20698

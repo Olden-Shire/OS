@@ -1,10 +1,10 @@
 // npc 786
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/6709 25238/14234 4550/6709
 name = Civilian
-models = 214 299 173 176 263 185 246
-headmodels = 52
+models = model_214 model_299 model_173 model_176 model_263 obj_boots_of_lightness_88_man model_246
+headmodels = model_52

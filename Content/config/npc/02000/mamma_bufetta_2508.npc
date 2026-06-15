@@ -4,5 +4,5 @@ size = 1
 op1 = Talk-to
 recol = 9152/4886 41/5572 4886/5914 61/5572 4550/5532 6798/10328
 name = Mamma Bufetta
-models = 387 445 8943 341 8933 8940 8934 8947
-headmodels = 110
+models = model_387 obj_perfect_necklace_woman obj_tribal_top_6341_woman model_341 obj_villager_armband_6347_woman obj_villager_robe_6343_woman obj_villager_sandals_6349_woman model_8947
+headmodels = model_110

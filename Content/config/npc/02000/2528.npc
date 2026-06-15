@@ -1,5 +1,5 @@
 // npc 2528
-walkanims = 819, 820, 821, 822
-readyanim = 813
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_813
 vislevel = 1
 multivar = 900, 65535, 65535 2529 2530 2530 2530 2530 2530 2530

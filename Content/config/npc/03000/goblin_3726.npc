@@ -1,8 +1,8 @@
 // npc 3726
-readyanim = 6181
-walkanim = 6180
+readyanim = seq_6181
+walkanim = seq_6180
 vislevel = 0
 recol = 6331/22414 6323/22410 11941/10782 11045/11038
 name = Goblin
-models = 24435 24441 24451 24465 24472 24484 24429
-headmodels = 24217
+models = model_24435 model_24441 model_24451 model_24465 model_24472 model_24484 model_24429
+headmodels = model_24217

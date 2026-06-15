@@ -2,11 +2,11 @@
 size = 1
 resizeh = 139
 resizev = 139
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 op1 = Talk-to
 vislevel = 0
 recol = 61/43105 21570/43220
 name = Ice troll
-models = 4942 3758 3756 3762 4948
-headmodels = 3791 3789
+models = model_4942 obj_troll_guard model_3756 model_3762 model_4948
+headmodels = model_3791 model_3789

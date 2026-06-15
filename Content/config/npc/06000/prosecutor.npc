@@ -1,11 +1,11 @@
 // npc 6185
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 recol = 10341/40838 10349/37770 10361/36748 8741/35722 24/0 4626/0
 name = Prosecutor
-models = 14466 246 27563 10301 10218 20142 181
-headmodels = 27210
+models = model_14466 model_246 model_27563 model_10301 model_10218 obj_flared_trousers_10394_man obj_vyrewatch_shoes_9638_man
+headmodels = model_27210

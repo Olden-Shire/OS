@@ -1,10 +1,10 @@
 // npc 4595
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 22426/6451 22424/14614 11162/6451
 name = Captain Daerkin
-models = 2908 2909 2922
-headmodels = 25874
+models = model_2908 model_2909 model_2922
+headmodels = model_25874

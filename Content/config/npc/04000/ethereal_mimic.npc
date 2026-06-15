@@ -2,12 +2,12 @@
 vislevel = 0
 resizeh = 127
 resizev = 124
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 ambient = 40
 contrast = 40
 recol = 33676/60620 410/31058 33300/54606 36007/29910 6573/54371 33036/31058
 name = Ethereal Mimic
-models = 16480 16484 16471 16475 16482 16474 16483
-headmodels = 16468
+models = obj_lunar_helm_9096_man obj_lunar_torso_man model_16471 obj_lunar_gloves_man obj_lunar_legs_man obj_lunar_boots_man obj_lunar_amulet_man
+headmodels = model_16468

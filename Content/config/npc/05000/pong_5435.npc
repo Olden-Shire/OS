@@ -1,10 +1,10 @@
 // npc 5435
-readyanim = 5675
+readyanim = seq_5675
 resizeh = 75
 resizev = 75
 size = 1
 vislevel = 0
 alwaysontop = true
 name = Pong
-models = 21547 21545
-headmodels = 21525
+models = model_21547 model_21545
+headmodels = model_21525

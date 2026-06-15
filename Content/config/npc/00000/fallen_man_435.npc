@@ -1,6 +1,6 @@
 // npc 435
-walkanim = 6280
-readyanim = 6280
+walkanim = seq_6280
+readyanim = seq_6280
 vislevel = 0
 turnspeed = 0
 op1 = Talk-to
@@ -8,5 +8,5 @@ op3 = Inspect
 alwaysontop = true
 recol = 14228/4550 10512/21526 43072/4550 4626/22 4550/5568
 name = Fallen Man
-models = 24986
-headmodels = 24975 77
+models = model_24986
+headmodels = model_24975 model_77

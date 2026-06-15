@@ -1,11 +1,11 @@
 // npc 2660
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 recol = 25238/3484 8741/10543 43072/4550 6038/13611 54397/8472
 name = Reldo
-models = 215 181 248 292 163 176 254 245 244 320 4591
-headmodels = 53 80 78 77
+models = obj_fremennik_helm_man obj_vyrewatch_shoes_9638_man model_248 obj_priest_gown_426_man model_163 model_176 obj_mime_legs_man model_245 model_244 model_320 model_4591
+headmodels = obj_man model_80 model_78 model_77

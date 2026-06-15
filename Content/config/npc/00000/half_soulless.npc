@@ -1,8 +1,8 @@
 // npc 991
 size = 2
-walkanim = 800
-readyanim = 800
+walkanim = seq_800
+readyanim = seq_800
 vislevel = 1
 recol = 25238/8629 4626/8286 4550/8286 8741/8629 43072/8286
 name = Half-soulless
-models = 230 310 275 246 168 181 176
+models = obj_desert_disguise_man model_310 obj_citizen_trousers_9642_man model_246 model_168 obj_vyrewatch_shoes_9638_man model_176

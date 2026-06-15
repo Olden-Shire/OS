@@ -3,4 +3,4 @@ size = 3
 op2 = Attack
 vislevel = 111
 name = Gargoyle
-models = 5080 5079
+models = model_5080 model_5079

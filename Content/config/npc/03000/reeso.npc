@@ -1,10 +1,10 @@
 // npc 3116
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 size = 1
 vislevel = 0
 op1 = Talk-to
 recol = 25238/3226 6798/6344 933/8891 40117/3235 40237/3226 9096/40117
 name = Reeso
-models = 206 252 10705 10723 151 10218 4226 4218
-headmodels = 46 84
+models = model_206 model_252 model_10705 model_10723 model_151 model_10218 model_4226 model_4218
+headmodels = model_46 model_84

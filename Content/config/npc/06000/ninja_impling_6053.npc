@@ -1,9 +1,9 @@
 // npc 6053
-walkanim = 6614
-readyanim = 6613
+walkanim = seq_6614
+readyanim = seq_6613
 vislevel = 0
 op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Ninja impling
-models = 26376 26367
+models = model_26376 model_26367

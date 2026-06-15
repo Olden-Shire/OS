@@ -1,8 +1,8 @@
 // npc 1249
 size = 1
-readyanim = 1290
-walkanim = 1289
+readyanim = seq_1290
+walkanim = seq_1289
 op2 = Attack
 vislevel = 120
 name = Fiyr Shadow
-models = 4143
+models = model_4143

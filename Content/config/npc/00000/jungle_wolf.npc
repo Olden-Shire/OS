@@ -1,9 +1,9 @@
 // npc 143
 size = 2
-readyanim = 6580
-walkanim = 6556
+readyanim = seq_6580
+walkanim = seq_6556
 op2 = Attack
 vislevel = 64
 recol = 8373/10415 5293/8363 5289/8487 5285/8483 5268/8361 8390/8483
 name = Jungle Wolf
-models = 26265
+models = model_26265

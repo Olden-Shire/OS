@@ -4,4 +4,4 @@ size = 2
 op1 = Search
 recol = 25238/4769 8741/4769 906/4888
 name = Dead Monk
-models = 230 246 292 9607 170 10218 260 8919 326
+models = obj_desert_disguise_man model_246 obj_priest_gown_426_man model_9607 obj_druids_robe_540_man model_10218 model_260 obj_villager_sandals_6349_man model_326

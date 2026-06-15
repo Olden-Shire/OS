@@ -1,6 +1,6 @@
 // npc 5554
-readyanim = 5803
-walkanim = 5802
+readyanim = seq_5803
+walkanim = seq_5802
 size = 1
 ambient = 20
 resizeh = 80
@@ -9,4 +9,4 @@ vislevel = 0
 alwaysontop = true
 nowalksmoothing = true
 name = Winter Elemental
-models = 22272 22273 22274
+models = model_22272 model_22273 model_22274

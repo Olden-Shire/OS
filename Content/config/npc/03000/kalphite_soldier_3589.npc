@@ -1,11 +1,11 @@
 // npc 3589
 size = 3
-walkanim = 6220
-readyanim = 6218
+walkanim = seq_6220
+readyanim = seq_6218
 resizeh = 172
 resizev = 172
 op2 = Attack
 vislevel = 85
 recol = 10659/26506 22412/10894
 name = Kalphite Soldier
-models = 24593
+models = model_24593

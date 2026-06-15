@@ -1,9 +1,9 @@
 // npc 1425
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 11162/40247 22424/14878 127/40247 22426/40247
 name = Zooknock
-models = 2909 2915 4700
-headmodels = 4654
+models = model_2909 model_2915 model_4700
+headmodels = model_4654

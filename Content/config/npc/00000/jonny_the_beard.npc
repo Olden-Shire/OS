@@ -2,13 +2,13 @@
 size = 1
 resizeh = 130
 resizev = 124
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 alwaysontop = true
 vislevel = 2
 recol = 25238/3982 8741/10508 43072/4550 8596/39087
 name = Jonny the beard
-models = 25658 25663 299 16831 159 177 19250 25649
-headmodels = 25635 25638
+models = model_25658 model_25663 model_299 model_16831 model_159 obj_leather_vambraces_1063_man model_19250 model_25649
+headmodels = model_25635 model_25638

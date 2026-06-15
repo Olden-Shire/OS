@@ -1,10 +1,10 @@
 // npc 383
 vislevel = 0
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 recol = 803/5652 11200/414
 name = Stankers
-models = 2970 2981 2979 2983 2985 2990 2988
-headmodels = 0 8
+models = model_2970 model_2981 model_2979 model_2983 model_2985 model_2990 model_2988
+headmodels = model_0 model_8

@@ -1,9 +1,9 @@
 // npc 3079
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 recol = 25238/4769 8741/4769
 name = Monk
-models = 230 8919 246 292 170 176 260 553
-headmodels = 63
+models = obj_desert_disguise_man obj_villager_sandals_6349_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_260 model_553
+headmodels = obj_rogue

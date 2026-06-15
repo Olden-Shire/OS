@@ -1,9 +1,9 @@
 // npc 5170
 size = 1
-walkanim = 5344
-readyanim = 5345
+walkanim = seq_5344
+readyanim = seq_5345
 op2 = Attack
 vislevel = 2
 recol = 8526/6356 8396/8394 7479/8386 7467/7353 7463/7331
 name = Ram
-models = 20282 20288 20286
+models = model_20282 model_20288 model_20286

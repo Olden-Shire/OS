@@ -2,9 +2,9 @@
 vislevel = 0
 op1 = Talk-to
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 alwaysontop = true
 name = Thorgel
-models = 2970 2981 2979 2983 2985 2990
-headmodels = 0
+models = model_2970 model_2981 model_2979 model_2983 model_2985 model_2990
+headmodels = model_0

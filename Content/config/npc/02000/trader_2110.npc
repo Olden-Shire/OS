@@ -1,8 +1,8 @@
 // npc 2110
-walkanim = 2156
-readyanim = 2157
+walkanim = seq_2156
+readyanim = seq_2157
 vislevel = 0
 recol = 61/51507 910/58138 4626/54430 2578/51507 43055/59466 12/4550
 name = Trader
-models = 7035 7070 7060 7036 7048 7068
-headmodels = 6994 6995
+models = model_7035 model_7070 model_7060 model_7036 model_7048 model_7068
+headmodels = model_6994 model_6995

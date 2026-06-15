@@ -1,6 +1,6 @@
 // npc 1700
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizev = 110
 resizeh = 110
 ambient = 40
@@ -9,5 +9,5 @@ op1 = Talk-To
 vislevel = 0
 recol = 17467/18626
 name = Ghost innkeeper
-models = 5212 5219 5209 5216
-headmodels = 5203
+models = model_5212 model_5219 model_5209 model_5216
+headmodels = model_5203

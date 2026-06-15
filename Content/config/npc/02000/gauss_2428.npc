@@ -1,8 +1,8 @@
 // npc 2428
-walkanim = 104
-readyanim = 2337
+walkanim = seq_104
+readyanim = seq_2337
 vislevel = 0
 recol = 5181/4647 10347/8598 61/8390
 name = Gauss
-models = 7026 7062 2978 7045 2985 2992 8642
-headmodels = 6985
+models = model_7026 model_7062 model_2978 model_7045 model_2985 model_2992 model_8642
+headmodels = model_6985

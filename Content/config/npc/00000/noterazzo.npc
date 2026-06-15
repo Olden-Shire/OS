@@ -1,12 +1,12 @@
 // npc 597
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 25238/10508 8741/10508
 name = Noterazzo
-models = 207 181 247 292 170 176 254 326
-headmodels = 47 79
+models = model_207 obj_vyrewatch_shoes_9638_man model_247 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_mime_legs_man model_326
+headmodels = model_47 model_79

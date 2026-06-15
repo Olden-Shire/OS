@@ -1,11 +1,11 @@
 // npc 2832
 resizeh = 118
 resizev = 118
-readyanim = 5584
-walkanim = 5583
+readyanim = seq_5584
+walkanim = seq_5583
 op1 = Talk-to
 vislevel = 0
 recol = 13506/28866 13501/28866 13493/28973 13489/28973 13497/28857
 name = Zombie protester
-models = 21101 21072 21052 21096 21119 21076
-headmodels = 21390
+models = model_21101 model_21072 model_21052 model_21096 model_21119 model_21076
+headmodels = model_21390

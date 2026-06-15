@@ -1,11 +1,11 @@
 // npc 1975
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 alwaysontop = true
 vislevel = 174
 recol = 4550/4647 61/16 41/12 57/12
 name = Damis
-models = 215 254 248 173 176 181 315 546
-headmodels = 53 80
+models = obj_fremennik_helm_man obj_mime_legs_man model_248 model_173 model_176 obj_vyrewatch_shoes_9638_man obj_veracs_brassard_4757_man obj_bronze_2h_sword_1307_wear
+headmodels = obj_man model_80

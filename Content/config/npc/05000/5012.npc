@@ -1,6 +1,6 @@
 // npc 5012
 vislevel = 0
-walkanim = 5069
-readyanim = 5070
+walkanim = seq_5069
+readyanim = seq_5070
 alwaysontop = true
 multivar = 3196, 65535, 5017 5018 5019

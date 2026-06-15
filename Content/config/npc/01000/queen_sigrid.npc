@@ -1,10 +1,10 @@
 // npc 1359
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 size = 1
 op1 = Talk-to
 recol = 25238/1686 43072/5214 7056/1686 6798/7452 7700/5214 10004/5214
 name = Queen Sigrid
-models = 393 478 351 356 440 446 3675 481
-headmodels = 115
+models = model_393 obj_veracs_brassard_4757_woman model_351 obj_cooking_gauntlets_woman model_440 obj_pendant_of_lucien_woman model_3675 obj_cape_1007_woman
+headmodels = model_115

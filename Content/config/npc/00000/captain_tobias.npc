@@ -1,11 +1,11 @@
 // npc 376
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Pay-fare
 recol = 25238/43420 8741/40485 43072/4550 6798/10508
 name = Captain Tobias
-models = 215 253 299 151 176 254 181 194
-headmodels = 53 85 37
+models = obj_fremennik_helm_man model_253 model_299 model_151 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man model_194
+headmodels = obj_man model_85 model_37

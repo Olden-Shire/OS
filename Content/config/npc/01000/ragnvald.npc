@@ -1,11 +1,11 @@
 // npc 1392
 size = 1
-walkanims = 1146, 820, 821, 822
-readyanim = 813
+walkanims = seq_1146, seq_820, seq_821, seq_822
+readyanim = seq_813
 op1 = Talk-to
 op2 = Attack
 vislevel = 2
 recol = 6798/4771 25238/5413 8741/5413 7952/5532 10351/10574 4550/2524
 name = Ragnvald
-models = 208 252 292 170 176 265 185 317 4391 3711
-headmodels = 48 84
+models = model_208 model_252 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man obj_boots_of_lightness_88_man obj_fremennik_cloak_3759_man model_4391 model_3711
+headmodels = model_48 model_84

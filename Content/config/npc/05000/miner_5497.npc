@@ -1,9 +1,9 @@
 // npc 5497
-walkanims = 819, 820, 821, 822
-readyanim = 627
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_627
 vislevel = 0
 op1 = Talk-to
 recol = 22177/8472 4550/4558 8741/7446 8860/7326 25238/7227 13122/5210
 name = Miner
-models = 211 246 10984 10980 10218 509 5218
-headmodels = 50
+models = model_211 model_246 model_10984 model_10980 model_10218 obj_bronze_pickaxe_1265_wear model_5218
+headmodels = model_50

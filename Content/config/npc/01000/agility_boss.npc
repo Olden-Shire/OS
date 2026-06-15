@@ -1,9 +1,9 @@
 // npc 1661
 size = 1
-readyanim = 6539
-walkanim = 6548
+readyanim = seq_6539
+walkanim = seq_6548
 vislevel = 0
 op1 = Talk-To
 name = Agility Boss
-models = 26177 26189 26183 26173
-headmodels = 26113
+models = model_26177 model_26189 model_26183 model_26173
+headmodels = model_26113

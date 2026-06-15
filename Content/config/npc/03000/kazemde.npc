@@ -1,10 +1,10 @@
 // npc 3039
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 9019/6724 8741/6724 49054/54309 25238/54317 4550/4653
 name = Kazemde
-models = 9016 248 9017 326 151 176 6133 181 201
-headmodels = 9013 80
+models = model_9016 model_248 model_9017 model_326 model_151 model_176 obj_menap_action_kilt_6398_man obj_vyrewatch_shoes_9638_man obj_red_headband_2645_man
+headmodels = model_9013 model_80

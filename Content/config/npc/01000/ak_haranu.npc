@@ -6,5 +6,5 @@ op3 = Trade
 alwaysontop = true
 recol = 8741/65075 7281/65313 4550/5565 6798/43030 25238/65313
 name = Ak-Haranu
-models = 217 5215 5221 170 176 5217 181 241 5233
-headmodels = 55 73 5207
+models = model_217 model_5215 obj_desert_top_6388_man obj_druids_robe_540_man model_176 model_5217 obj_vyrewatch_shoes_9638_man model_241 model_5233
+headmodels = obj_farmer model_73 model_5207

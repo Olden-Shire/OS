@@ -1,10 +1,10 @@
 // npc 3230
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 op3 = Pickpocket
 vislevel = 19
 recol = 25238/10508 8741/6930 61/5652
 name = Guard
-models = 233 247 294 10374 176 254 185 550 541
+models = model_233 model_247 obj_iron_chainbody_1101_man model_10374 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_iron_battleaxe_1363_wear obj_bronze_sq_shield_1173_wear

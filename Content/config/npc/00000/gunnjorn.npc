@@ -1,9 +1,9 @@
 // npc 607
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 name = Gunnjorn
-models = 11741 214 11746 252 11759 11727 11732 11810 11736 11764
-headmodels = 52 84 11801 11806
+models = model_11741 model_214 model_11746 model_252 model_11759 model_11727 model_11732 model_11810 model_11736 model_11764
+headmodels = model_52 model_84 model_11801 model_11806

@@ -1,6 +1,6 @@
 // npc 3913
-walkanim = 1139
-readyanim = 4009
+walkanim = seq_1139
+readyanim = seq_4009
 size = 2
 resizeh = 178
 resizev = 162
@@ -8,5 +8,5 @@ vislevel = 0
 op1 = Talk-To
 recol = 61/6435 21570/4510
 name = Tilt
-models = 3753 3759 3756 15013
-headmodels = 3790
+models = model_3753 model_3759 model_3756 model_15013
+headmodels = model_3790

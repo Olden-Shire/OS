@@ -1,5 +1,5 @@
 // npc 3534
-readyanim = 3551
+readyanim = seq_3551
 resizeh = 142
 resizev = 142
 op2 = Attack
@@ -7,4 +7,4 @@ turnspeed = 0
 vislevel = 45
 recol = 25238/54294 8741/43038 4550/3288 7236/3288 4626/3346
 name = Held Vampyre Juvenile
-models = 4089 246 14047 151 10218 254 181
+models = model_4089 model_246 model_14047 model_151 model_10218 obj_mime_legs_man obj_vyrewatch_shoes_9638_man

@@ -1,7 +1,7 @@
 // npc 1659
 size = 1
-readyanim = 1607
-walkanim = 1608
+readyanim = seq_1607
+walkanim = seq_1608
 alwaysontop = true
 op1 = Tap
 op3 = Kick
@@ -10,4 +10,4 @@ op5 = Show-Goal
 vislevel = 0
 ambient = 20
 name = Skullball
-models = 5145
+models = model_5145

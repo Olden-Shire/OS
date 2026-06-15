@@ -5,5 +5,5 @@ op2 = Attack
 vislevel = 55
 recol = 25238/9019 8741/49054 4550/5555
 name = Menaphite Thug
-models = 6130 249 6134 151 6133 176 6099 185
-headmodels = 6127 53 85
+models = obj_menap_headgear_6392_man model_249 model_6134 model_151 obj_menap_action_kilt_6398_man model_176 obj_oak_blackjack_wear obj_boots_of_lightness_88_man
+headmodels = model_6127 obj_man model_85

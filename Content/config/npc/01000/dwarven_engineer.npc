@@ -1,10 +1,10 @@
 // npc 1840
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 2578/6439 61/6331 8728/6806
 name = Dwarven Engineer
-models = 2970 2980 2978 2984 2985 6021
-headmodels = 0
+models = model_2970 model_2980 model_2978 model_2984 model_2985 model_6021
+headmodels = model_0

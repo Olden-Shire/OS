@@ -1,9 +1,9 @@
 // npc 2707
-walkanim = 6773
-readyanim = 6771
+walkanim = seq_6773
+readyanim = seq_6771
 ambient = 20
 vislevel = 0
 nominimap = true
 vislevel = 0
 name = Seagull
-models = 26841 26844
+models = model_26841 model_26844

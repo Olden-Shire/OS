@@ -1,8 +1,8 @@
 // npc 3711
 size = 1
-walkanim = 2619
-readyanim = 2618
+walkanim = seq_2619
+readyanim = seq_2618
 op2 = Attack
 vislevel = 27
 name = Giant bat
-models = 24194
+models = model_24194

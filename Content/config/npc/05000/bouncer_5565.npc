@@ -1,7 +1,7 @@
 // npc 5565
 size = 2
-readyanim = 6580
-walkanim = 6582
+readyanim = seq_6580
+walkanim = seq_6582
 op2 = Attack
 resizeh = 87
 resizev = 87
@@ -11,4 +11,4 @@ nominimap = true
 alwaysontop = true
 vislevel = 160
 name = Bouncer
-models = 26259
+models = model_26259

@@ -1,10 +1,10 @@
 // npc 2565
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 op3 = Trade
 recol = 2578/6439 61/6331 8728/6806
 name = Jorzik
-models = 2972 7055 7037 2981 2985
-headmodels = 2
+models = model_2972 model_7055 model_7037 model_2981 model_2985
+headmodels = model_2

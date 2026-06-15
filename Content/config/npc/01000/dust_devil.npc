@@ -1,8 +1,8 @@
 // npc 1624
 size = 1
-walkanim = 1554
-readyanim = 1556
+walkanim = seq_1554
+readyanim = seq_1556
 op2 = Attack
 vislevel = 93
 name = Dust devil
-models = 5076 5077
+models = obj_dust_devil model_5077

@@ -1,6 +1,6 @@
 // npc 1126
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 size = 2
 resizeh = 142
 resizev = 142
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 71
 recol = 61/7465 21570/6439 10355/7626 57/7362 49/8369
 name = Twig
-models = 3754 3758 3756 3769 3771
+models = model_3754 obj_troll_guard model_3756 model_3769 model_3771

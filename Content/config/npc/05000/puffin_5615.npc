@@ -1,6 +1,6 @@
 // npc 5615
-readyanim = 5873
+readyanim = seq_5873
 turnspeed = 0
 vislevel = 0
 name = Puffin
-models = 22793
+models = model_22793

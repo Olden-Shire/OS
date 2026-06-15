@@ -1,9 +1,9 @@
 // npc 2179
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 op1 = Talk-to
 recol = 7473/419 8485/4506 4626/33030 4550/4416 61/4416
 name = Barman
-models = 2972 7061 2979 7046 2985
-headmodels = 2
+models = model_2972 model_7061 model_2979 model_7046 model_2985
+headmodels = model_2

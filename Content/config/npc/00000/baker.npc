@@ -1,12 +1,12 @@
 // npc 571
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 25238/127 107/127 8741/6470
 name = Baker
-models = 206 302 247 159 179 254 185 283 199
-headmodels = 46 41 79
+models = model_206 model_302 model_247 model_159 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man obj_glarials_amulet_man obj_chefs_hat_1949_man
+headmodels = model_46 model_41 model_79

@@ -1,4 +1,4 @@
 // npc 4617
 vislevel = 0
 name = Cute creature
-models = 16956 16954
+models = model_16956 model_16954

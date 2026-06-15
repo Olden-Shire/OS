@@ -1,11 +1,11 @@
 // npc 1735
 size = 2
-walkanim = 5750
-readyanim = 5750
+walkanim = seq_5750
+readyanim = seq_5750
 vislevel = 0
 op1 = Chop down
 op3 = hidden
 ambient = 25
 turnspeed = 0
 name = Maple tree
-models = 21839
+models = model_21839

@@ -2,10 +2,10 @@
 size = 1
 op1 = Talk-to
 op2 = Attack
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 13
 recol = 8741/24 25238/24 4550/5347 11200/10473
 name = Alomone
-models = 208 251 292 162 176 256 286
-headmodels = 48 83
+models = model_208 model_251 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 model_256 obj_hazeels_mark_man
+headmodels = model_48 model_83

@@ -1,8 +1,8 @@
 // npc 3673
 size = 1
-walkanim = 5334
-readyanim = 5335
+walkanim = seq_5334
+readyanim = seq_5335
 op2 = Attack
 vislevel = 2
 name = Ram
-models = 20292 20295 20294
+models = model_20292 model_20295 model_20294

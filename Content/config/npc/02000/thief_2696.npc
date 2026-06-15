@@ -1,9 +1,9 @@
 // npc 2696
-walkanims = 819, 820, 821, 822
-readyanim = 2702
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_2702
 op2 = Attack
 vislevel = 16
 recol = 8741/6684 54397/8497 25238/43045
 name = Thief
-models = 215 246 292 320 163 176 254 185
-headmodels = 53
+models = obj_fremennik_helm_man model_246 obj_priest_gown_426_man model_320 model_163 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man
+headmodels = obj_man

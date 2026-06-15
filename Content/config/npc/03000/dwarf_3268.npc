@@ -1,9 +1,9 @@
 // npc 3268
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op2 = Attack
 vislevel = 11
 recol = 61/4550
 name = Dwarf
-models = 2970 7061 2979 6021 7046 2985
-headmodels = 0
+models = model_2970 model_7061 model_2979 model_6021 model_7046 model_2985
+headmodels = model_0

@@ -1,7 +1,7 @@
 // npc 1074
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
@@ -9,5 +9,5 @@ op2 = Attack
 vislevel = 42
 recol = 6674/8111 6798/5772
 name = Archer
-models = 220 250 303 151 179 277 185 563
-headmodels = 32 63 80
+models = obj_leather_cowl_1167_man model_250 obj_studded_body_1133_man model_151 obj_cooking_gauntlets_man obj_studded_chaps_1097_man obj_boots_of_lightness_88_man obj_longbow_839_wear
+headmodels = model_32 obj_rogue model_80

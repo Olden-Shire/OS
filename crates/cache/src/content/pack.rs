@@ -254,13 +254,15 @@ fn read_group_payload(
         } else {
             None
         };
-        // Model-typed operands (obj model/manwear/womanwear) may reference models
-        // by their `model.pack` name — resolve those back to ids on encode.
+        // Model/seq-typed operands (obj model, npc readyanim/walkanim/models, …)
+        // may reference models/seqs by their pack name — resolve those back to ids
+        // on encode via model.pack + seq.pack.
         let model_refs = if config_codec.is_some() {
-            packs
-                .get("model")
-                .map(crate::content::config_text::ConfigRefs::from_pack)
-                .unwrap_or_default()
+            let empty = std::collections::BTreeMap::new();
+            crate::content::config_text::ConfigRefs::from_packs(
+                packs.get("model").unwrap_or(&empty),
+                packs.get("seq").unwrap_or(&empty),
+            )
         } else {
             crate::content::config_text::ConfigRefs::default()
         };

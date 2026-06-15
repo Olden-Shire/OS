@@ -2,7 +2,7 @@
 vislevel = 0
 nominimap = true
 size = 2
-walkanim = 1091
-readyanim = 1092
+walkanim = seq_1091
+readyanim = seq_1092
 name = Ghast
-models = 3559
+models = model_3559

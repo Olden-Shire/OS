@@ -1,11 +1,11 @@
 // npc 879
 size = 2
-walkanim = 63
-readyanim = 66
+walkanim = seq_63
+readyanim = seq_66
 op2 = Attack
 resizeh = 86
 resizev = 86
 alwaysontop = true
 vislevel = 27
 name = Delrith
-models = 17382 17387 17392
+models = model_17382 model_17387 model_17392

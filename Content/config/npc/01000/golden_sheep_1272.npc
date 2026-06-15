@@ -1,8 +1,8 @@
 // npc 1272
 vislevel = 0
 size = 1
-walkanim = 5344
-readyanim = 5345
+walkanim = seq_5344
+readyanim = seq_5345
 recol = 8526/9038 8396/9036 7479/9032 7467/8006 7463/7874
 name = Golden sheep
-models = 20282 20288 20286
+models = model_20282 model_20288 model_20286

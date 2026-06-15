@@ -1,9 +1,9 @@
 // npc 758
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 25238/40237 43072/4550 8741/4550 4626/12180
 name = Fred the Farmer
-models = 4843 217 246 10705 173 10218 254 185 13947
-headmodels = 55 5534
+models = model_4843 model_217 model_246 model_10705 model_173 model_10218 obj_mime_legs_man obj_boots_of_lightness_88_man model_13947
+headmodels = obj_farmer model_5534

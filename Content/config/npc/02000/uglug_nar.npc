@@ -1,10 +1,10 @@
 // npc 2039
 vislevel = 0
 size = 2
-walkanim = 358
-readyanim = 357
+walkanim = seq_358
+readyanim = seq_357
 op1 = Talk-to
 op3 = Trade
 name = Uglug Nar
-models = 6760 6769
-headmodels = 141
+models = model_6760 model_6769
+headmodels = model_141

@@ -1,10 +1,10 @@
 // npc 4909
 vislevel = 0
 alwaysontop = true
-walkanims = 819, 820, 821, 822
-readyanim = 4859
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_4859
 op1 = Talk-to
 recol = 8887/8478 8741/8478 23326/4007 10004/6430
 name = Fritz the Glassblower
-models = 14174 6848 247 14383 15412 151 179 14857 14848 515 9619
-headmodels = 5787 14173 79 9616
+models = model_14174 model_6848 model_247 model_14383 model_15412 model_151 obj_cooking_gauntlets_man model_14857 model_14848 obj_hollow_reed_727_wear model_9619
+headmodels = model_5787 model_14173 model_79 model_9616

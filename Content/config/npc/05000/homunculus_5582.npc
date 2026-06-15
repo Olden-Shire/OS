@@ -1,5 +1,5 @@
 // npc 5582
-readyanim = 5831
+readyanim = seq_5831
 size = 3
 ambient = 10
 vislevel = 0
@@ -7,5 +7,5 @@ op1 = Talk-to
 turnspeed = 0
 alwaysontop = true
 name = Homunculus
-models = 22772 22771 17460
-headmodels = 22774
+models = model_22772 model_22771 model_17460
+headmodels = model_22774

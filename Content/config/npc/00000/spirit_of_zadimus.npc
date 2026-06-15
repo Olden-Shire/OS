@@ -1,9 +1,9 @@
 // npc 501
 vislevel = 0
 size = 1
-readyanim = 5530
-walkanim = 5531
+readyanim = seq_5530
+walkanim = seq_5531
 op1 = Talk-to
 name = Spirit of Zadimus
-models = 21151
-headmodels = 21406
+models = model_21151
+headmodels = model_21406

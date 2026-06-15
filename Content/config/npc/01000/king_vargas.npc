@@ -1,10 +1,10 @@
 // npc 1373
-walkanim = 293
-readyanim = 296
+walkanim = seq_293
+readyanim = seq_296
 size = 2
 vislevel = 0
 op1 = Talk-to
 recol = 5351/5470
 name = King Vargas
-models = 3001
-headmodels = 4651
+models = model_3001
+headmodels = model_4651

@@ -1,9 +1,9 @@
 // npc 4575
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22424/41 22426/40237 11162/8082
 name = Spang
-models = 17009 2909 2915
-headmodels = 16970
+models = model_17009 model_2909 model_2915
+headmodels = model_16970

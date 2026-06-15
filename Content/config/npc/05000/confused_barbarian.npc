@@ -1,7 +1,7 @@
 // npc 5364
-walkanim = 2064
-readyanim = 2065
+walkanim = seq_2064
+readyanim = seq_2065
 op2 = Attack
 vislevel = 132
 name = Confused barbarian
-models = 26626 214 252 26640 26643 26620 26617 26622 11747 11788
+models = model_26626 model_214 model_252 model_26640 model_26643 model_26620 model_26617 model_26622 model_11747 model_11788

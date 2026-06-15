@@ -1,6 +1,6 @@
 // npc 1940
-walkanim = 1139
-readyanim = 926
+walkanim = seq_1139
+readyanim = seq_926
 size = 1
 resizeh = 138
 resizev = 138
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 120
 recol = 61/32865 21570/32852
 name = Ice troll
-models = 4942 4943 3756 3762 4948
+models = model_4942 model_4943 model_3756 model_3762 model_4948

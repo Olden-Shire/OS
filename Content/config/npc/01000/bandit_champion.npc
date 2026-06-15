@@ -1,11 +1,11 @@
 // npc 1885
 size = 1
 op2 = Attack
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 alwaysontop = true
 vislevel = 70
 recol = 8741/10351 4550/5555
 name = Bandit champion
-models = 6086 247 292 173 6090 181 176 490 523
-headmodels = 79 6080 53
+models = model_6086 model_247 obj_priest_gown_426_man model_173 obj_desert_legs_6390_man obj_vyrewatch_shoes_9638_man model_176 obj_bronze_scimitar_1321_wear model_523
+headmodels = model_79 model_6080 obj_man

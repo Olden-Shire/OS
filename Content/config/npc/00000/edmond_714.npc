@@ -1,10 +1,10 @@
 // npc 714
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 4550/5662 25238/10913 43072/5662 8741/5592
 name = Edmond
-models = 230 185 250 299 159 176 263 276 329 495
-headmodels = 63 82
+models = obj_desert_disguise_man obj_boots_of_lightness_88_man model_250 model_299 model_159 model_176 model_263 model_276 model_329 model_495
+headmodels = obj_rogue model_82

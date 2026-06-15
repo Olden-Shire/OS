@@ -7,5 +7,5 @@ alwaysontop = true
 alwaysontop = true
 recol = 33/7863 5784/16462 4515/16462 61/9112 2578/6024 12/6028
 name = Rohak
-models = 2970 2986 2984 7037 2980 10326
-headmodels = 0 6
+models = model_2970 model_2986 model_2984 model_7037 model_2980 model_10326
+headmodels = model_0 model_6

@@ -1,12 +1,12 @@
 // npc 2881
 vislevel = 303
 size = 3
-walkanim = 2849
-readyanim = 2850
+walkanim = seq_2849
+readyanim = seq_2850
 resizeh = 167
 resizev = 165
 contrast = 30
 ambient = 30
 op2 = Attack
 name = Dagannoth Supreme
-models = 9941 9943
+models = model_9941 model_9943

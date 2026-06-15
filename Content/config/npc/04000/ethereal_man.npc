@@ -1,11 +1,11 @@
 // npc 4501
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 ambient = 40
 contrast = 40
 recol = 33676/49346 410/29902 33300/50244 36007/231 6573/54371 33036/35404
 name = Ethereal Man
-models = 16480 16484 16487 16471 16475 16482 16474 16489 16483
-headmodels = 16468
+models = obj_lunar_helm_9096_man obj_lunar_torso_man obj_lunar_cape_man model_16471 obj_lunar_gloves_man obj_lunar_legs_man obj_lunar_boots_man obj_lunar_staff_wear obj_lunar_amulet_man
+headmodels = model_16468

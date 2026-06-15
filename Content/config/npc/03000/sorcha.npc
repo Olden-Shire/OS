@@ -1,11 +1,11 @@
 // npc 3083
 resizeh = 150
 resizev = 150
-readyanim = 3008
-walkanim = 3012
+readyanim = seq_3008
+walkanim = seq_3012
 vislevel = 0
 op1 = Talk-to
 recol = 25238/62790 42283/62790 1573/4550 15779/54492 4550/3416
 name = Sorcha
-models = 10508 10517 10511 10515 10527
-headmodels = 10410 10405
+models = model_10508 model_10517 model_10511 model_10515 model_10527
+headmodels = model_10410 model_10405

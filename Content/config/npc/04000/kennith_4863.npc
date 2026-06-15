@@ -1,9 +1,9 @@
 // npc 4863
 vislevel = 0
 size = 1
-walkanim = 4789
-readyanim = 808
+walkanim = seq_4789
+readyanim = seq_808
 op1 = Talk-to
 name = Kennith
-models = 18488 18492 18485 18491 18486
-headmodels = 14287
+models = model_18488 model_18492 model_18485 model_18491 model_18486
+headmodels = model_14287

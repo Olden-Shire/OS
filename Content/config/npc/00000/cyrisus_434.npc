@@ -1,10 +1,10 @@
 // npc 434
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = hidden
 alwaysontop = true
 vislevel = 126
 recol = 4550/5568 8741/10512 14490/10512
 name = Cyrisus
-models = 3378 215 244 248 3820 156 10218 6232 24985 10683
-headmodels = 24977 77
+models = obj_robin_hood_hat_2581_man obj_fremennik_helm_man model_244 model_248 obj_dragon_chainbody_3140_man model_156 model_10218 obj_ancient_staff_4675_wear model_24985 obj_infinity_boots_6920_man
+headmodels = model_24977 model_77

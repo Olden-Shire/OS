@@ -1,11 +1,11 @@
 // npc 3024
 vislevel = 0
 alwaysontop = true
-walkanim = 2907
-readyanim = 2908
+walkanim = seq_2907
+readyanim = seq_2908
 op1 = Talk-to
 ambient = 20
 turnspeed = 0
 name = Tirrie
-models = 10214 10211
-headmodels = 10122
+models = model_10214 model_10211
+headmodels = model_10122

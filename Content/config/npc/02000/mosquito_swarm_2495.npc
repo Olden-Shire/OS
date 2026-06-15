@@ -1,8 +1,8 @@
 // npc 2495
 size = 1
-walkanim = 2396
-readyanim = 2395
+walkanim = seq_2396
+readyanim = seq_2395
 op2 = Attack
 vislevel = 20
 name = Mosquito swarm
-models = 8906
+models = model_8906

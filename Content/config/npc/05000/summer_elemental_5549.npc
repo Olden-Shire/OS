@@ -1,6 +1,6 @@
 // npc 5549
-readyanim = 5801
-walkanim = 5802
+readyanim = seq_5801
+walkanim = seq_5802
 size = 1
 ambient = 40
 resizeh = 80
@@ -9,4 +9,4 @@ vislevel = 0
 alwaysontop = true
 nowalksmoothing = true
 name = Summer Elemental
-models = 22269 22270 22271
+models = model_22269 model_22270 model_22271

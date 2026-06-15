@@ -1,6 +1,6 @@
 // npc 2231
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 multivar = 579, 65535, 65535 2232

@@ -1,8 +1,8 @@
 // npc 3706
 size = 1
-walkanim = 6112
-readyanim = 6113
+walkanim = seq_6112
+readyanim = seq_6113
 op2 = Attack
 vislevel = 100
 name = Ulfric
-models = 24188 24050
+models = model_24188 model_24050

@@ -1,9 +1,9 @@
 // npc 216
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 10171/4884 25238/4769 6798/3594 4550/7062 8741/4769 4886/5648
 name = High Priest
-models = 223 246 284 292 9607 170 10218 265 8919
-headmodels = 59
+models = model_223 model_246 model_284 obj_priest_gown_426_man model_9607 obj_druids_robe_540_man model_10218 obj_priest_gown_428_man obj_villager_sandals_6349_man
+headmodels = model_59

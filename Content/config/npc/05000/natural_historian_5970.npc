@@ -1,9 +1,9 @@
 // npc 5970
-walkanim = 6395
-readyanim = 6393
+walkanim = seq_6395
+readyanim = seq_6393
 vislevel = 0
 alwaysontop = true
 recol = 8741/7465 6798/3140
 name = Natural historian
-models = 25656 6848 238 250 8970 14175 151 21811 21812 19947
-headmodels = 5787 25630 25637 82
+models = model_25656 model_6848 model_238 model_250 model_8970 model_14175 model_151 model_21811 model_21812 obj_lumberjack_boots_man
+headmodels = model_5787 model_25630 model_25637 model_82

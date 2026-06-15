@@ -2,7 +2,7 @@
 vislevel = 0
 size = 3
 turnspeed = 0
-walkanim = 4756
-readyanim = 4756
+walkanim = seq_4756
+readyanim = seq_4756
 name = Boat
-models = 17556 17555
+models = model_17556 model_17555

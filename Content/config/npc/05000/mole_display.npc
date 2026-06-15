@@ -1,8 +1,8 @@
 // npc 5982
-readyanim = 6451
+readyanim = seq_6451
 vislevel = 0
 turnspeed = 0
 nominimap = true
 size = 3
 name = Mole display
-models = 25482 25481 25483
+models = model_25482 model_25481 model_25483

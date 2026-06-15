@@ -1,9 +1,9 @@
 // npc 3476
 size = 3
-walkanim = 6804
-readyanim = 6803
+walkanim = seq_6804
+readyanim = seq_6803
 op5 = Attack
 alwaysontop = true
 vislevel = 9
 name = Jubbly bird
-models = 26863
+models = model_26863

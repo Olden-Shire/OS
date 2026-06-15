@@ -1,10 +1,10 @@
 // npc 5866
 size = 1
-walkanim = 98
-readyanim = 6207
+walkanim = seq_98
+readyanim = seq_6207
 op1 = Talk-to
 vislevel = 0
 recol = 61/119
 name = Builder
-models = 2971 23874 23878 2978 23875 2985
-headmodels = 1 24533
+models = model_2971 model_23874 model_23878 model_2978 model_23875 model_2985
+headmodels = model_1 model_24533

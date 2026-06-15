@@ -1,9 +1,9 @@
 // npc 4562
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 op1 = Talk-to
 recol = 22426/7465 22424/9108 22422/9108 11162/6930 908/6930
 name = Praistan Ebola
-models = 8238 2909 2922
-headmodels = 21
+models = model_8238 model_2909 model_2922
+headmodels = obj_gnome

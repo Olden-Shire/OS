@@ -4,5 +4,5 @@ size = 1
 op1 = Talk-to
 recol = 6798/11187 25238/8741 908/8741
 name = Ana
-models = 361
-headmodels = 118 19328
+models = obj_boots_of_lightness_88_woman
+headmodels = model_118 model_19328

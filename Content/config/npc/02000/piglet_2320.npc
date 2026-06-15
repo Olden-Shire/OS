@@ -1,9 +1,9 @@
 // npc 2320
 vislevel = 0
-walkanim = 2165
-readyanim = 2166
+walkanim = seq_2165
+readyanim = seq_2166
 resizeh = 64
 resizev = 64
 ambient = 15
 name = Piglet
-models = 8228
+models = model_8228

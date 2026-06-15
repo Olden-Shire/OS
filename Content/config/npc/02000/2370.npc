@@ -1,6 +1,6 @@
 // npc 2370
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 size = 1
 vislevel = 0
 multivar = 799, 65535, 65535 65535 65535 65535 65535 65535 65535 2371 2371 2371 2371 2371 2371 2371 2371 2371 2371 2371

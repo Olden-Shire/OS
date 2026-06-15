@@ -1,11 +1,11 @@
 // npc 4360
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 op3 = Join-Crew
 vislevel = 0
 alwaysontop = true
 recol = 127/43683 9529/103 8741/103 8078/90 39145/8 4550/4533
 name = San Fan
-models = 11118 456 343 353 15984 422
-headmodels = 11189
+models = obj_pirate_bandana_7112_woman obj_priest_gown_426_woman model_343 model_353 model_15984 model_422
+headmodels = model_11189

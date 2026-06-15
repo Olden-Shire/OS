@@ -1,7 +1,7 @@
 // npc 3580
 size = 1
-walkanim = 3617
-readyanim = 3617
+walkanim = seq_3617
+readyanim = seq_3617
 vislevel = 0
 name = Tentacle
-models = 13201
+models = model_13201

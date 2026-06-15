@@ -1,9 +1,9 @@
 // npc 3924
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/7473 8741/7473 4550/2524 6798/7362
 name = Runolf
-models = 208 252 292 4391 170 176 3711 265 185
-headmodels = 48 84
+models = model_208 model_252 obj_priest_gown_426_man model_4391 obj_druids_robe_540_man model_176 model_3711 obj_priest_gown_428_man obj_boots_of_lightness_88_man
+headmodels = model_48 model_84

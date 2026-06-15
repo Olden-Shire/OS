@@ -1,8 +1,8 @@
 // npc 5590
 resizeh = 120
 resizev = 120
-walkanims = 819, 820, 821, 822
-readyanim = 5815
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_5815
 ambient = 25
 contrast = 25
 vislevel = 0
@@ -12,5 +12,5 @@ turnspeed = 0
 alwaysontop = true
 recol = 40233/5772 8656/809 8741/809 5541/2576 41372/7331 40237/7331
 name = 'No fingers'
-models = 230 22599 10561 18498 19329 19332 14381 18128 22609
-headmodels = 63 22592 10560
+models = obj_desert_disguise_man obj_hard_hat_10862_man model_10561 model_18498 model_19329 model_19332 model_14381 model_18128 model_22609
+headmodels = obj_rogue model_22592 model_10560

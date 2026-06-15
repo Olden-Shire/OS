@@ -1,7 +1,7 @@
 // npc 4892
 size = 2
-walkanim = 6264
-readyanim = 6263
+walkanim = seq_6264
+readyanim = seq_6263
 vislevel = 0
 name = Giant lobster
-models = 24607
+models = model_24607

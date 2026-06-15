@@ -1,8 +1,8 @@
 // npc 1455
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 op2 = Attack
 vislevel = 149
 name = Monkey Guard
-models = 4821 4828 4833
-headmodels = 4660
+models = model_4821 model_4828 model_4833
+headmodels = model_4660

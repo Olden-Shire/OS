@@ -1,9 +1,9 @@
 // npc 4399
 size = 2
-walkanim = 4268
-readyanim = 4269
+walkanim = seq_4268
+readyanim = seq_4269
 op2 = Attack
 vislevel = 68
 recol = 21534/23843 21530/21790 21642/22032 21766/22156 18343/20413
 name = Catablepon
-models = 15914
+models = model_15914

@@ -1,9 +1,9 @@
 // npc 1875
 size = 1
-walkanim = 274
-readyanim = 277
-readyanim = 1900
+walkanim = seq_274
+readyanim = seq_277
+readyanim = seq_1900
 vislevel = 0
 alwaysontop = true
 name = Snake
-models = 6104
+models = model_6104

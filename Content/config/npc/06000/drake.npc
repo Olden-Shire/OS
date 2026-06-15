@@ -1,8 +1,8 @@
 // npc 6114
 size = 1
-walkanim = 6819
-readyanim = 6813
+walkanim = seq_6819
+readyanim = seq_6813
 vislevel = 0
 nominimap = true
 name = Drake
-models = 26873
+models = model_26873

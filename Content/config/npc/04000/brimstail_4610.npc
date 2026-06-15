@@ -1,9 +1,9 @@
 // npc 4610
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 vislevel = 0
 recol = 926/41624 22426/40090 4758/10378 22302/40094
 name = Brimstail
-models = 17000 16986 17014 17007
-headmodels = 18 16980
+models = model_17000 model_16986 model_17014 model_17007
+headmodels = model_18 model_16980

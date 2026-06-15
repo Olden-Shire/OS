@@ -1,10 +1,10 @@
 // npc 204
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 34
 recol = 25238/10508 8741/10508 7700/1950 11200/2749
 name = Speedy Keith
-models = 206 249 292 151 176 254 185 243 323 490
+models = model_206 model_249 obj_priest_gown_426_man model_151 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_highwayman_mask_2631_man obj_cape_1007_man obj_bronze_scimitar_1321_wear

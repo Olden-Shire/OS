@@ -1,6 +1,6 @@
 // npc 5523
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 resizeh = 134
 resizev = 134
 op2 = Attack
@@ -9,4 +9,4 @@ alwaysontop = true
 vislevel = 82
 recol = 61/43131 21570/43121
 name = Ice troll female
-models = 4941 4944 3755 3765
+models = model_4941 model_4944 model_3755 model_3765

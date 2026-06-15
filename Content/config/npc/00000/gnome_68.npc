@@ -1,12 +1,12 @@
 // npc 68
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 op2 = Attack
 op3 = Pickpocket
 vislevel = 1
 recol = 4550/5916 4541/5916 4537/5916
 name = Gnome
-models = 2909 2890 2915
-headmodels = 21
+models = model_2909 model_2890 model_2915
+headmodels = obj_gnome

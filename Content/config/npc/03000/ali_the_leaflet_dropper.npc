@@ -1,12 +1,12 @@
 // npc 3680
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 op3 = Take-flyer
 vislevel = 0
 alwaysontop = true
 recol = 4550/4521 11162/8613 6550/6020 25238/3164 22426/8497 908/19220
 name = Ali the Leaflet Dropper
-models = 14289 8363 2917 14386
-headmodels = 14287
+models = model_14289 model_8363 model_2917 model_14386
+headmodels = model_14287

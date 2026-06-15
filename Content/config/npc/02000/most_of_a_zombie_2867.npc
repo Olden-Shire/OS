@@ -1,8 +1,8 @@
 // npc 2867
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 vislevel = 0
 recol = 4550/14387 25238/32924 8741/10266 4626/16652 926/14387 43072/14387
 name = Most of a Zombie
-models = 224 310 168 176 275 181
+models = model_224 model_310 model_168 model_176 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man

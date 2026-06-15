@@ -1,9 +1,9 @@
 // npc 2334
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 recol = 6798/86 8741/115 25238/115 8844/5404 908/5404 43072/4550
 name = Rhonen
-models = 217 248 292 8233 170 176 7368 265 185
-headmodels = 55 80
+models = model_217 model_248 obj_priest_gown_426_man model_8233 obj_druids_robe_540_man model_176 obj_watering_can_5331_wear obj_priest_gown_428_man obj_boots_of_lightness_88_man
+headmodels = obj_farmer model_80

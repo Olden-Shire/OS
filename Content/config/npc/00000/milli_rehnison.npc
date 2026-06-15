@@ -1,10 +1,10 @@
 // npc 724
 vislevel = 0
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 22426/6449 22418/908 11162/3980
 name = Milli Rehnison
-models = 2902 2911 2918
-headmodels = 118
+models = model_2902 model_2911 model_2918
+headmodels = model_118

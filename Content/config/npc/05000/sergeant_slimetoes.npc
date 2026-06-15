@@ -1,10 +1,10 @@
 // npc 5872
-walkanim = 6152
-readyanim = 6153
+walkanim = seq_6152
+readyanim = seq_6153
 op1 = Talk-to
 alwaysontop = true
 vislevel = 51
 recol = 679/19742 920/19862 916/20110
 name = Sergeant Slimetoes
-models = 24423 24425
-headmodels = 24223
+models = model_24423 model_24425
+headmodels = model_24223

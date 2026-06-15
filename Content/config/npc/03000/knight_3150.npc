@@ -1,8 +1,8 @@
 // npc 3150
-walkanims = 2562, 2562, 2562, 2562
-readyanim = 2561
+walkanims = seq_2562, seq_2562, seq_2562, seq_2562
+readyanim = seq_2561
 vislevel = 0
 recol = 61/5181 57/5173 41/5165 12/5272 4626/5272 4550/5181
 name = Knight
-models = 213 3379 10838 164 10218 10844 268 181
-headmodels = 10828
+models = model_213 obj_black_platebody_t_2583_man model_10838 model_164 model_10218 model_10844 obj_iron_platelegs_1067_man obj_vyrewatch_shoes_9638_man
+headmodels = model_10828

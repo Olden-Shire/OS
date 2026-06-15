@@ -1,10 +1,10 @@
 // npc 5855
-readyanim = 6186
-walkanim = 6187
+readyanim = seq_6186
+walkanim = seq_6187
 resizev = 120
 resizeh = 120
 vislevel = 0
 recol = 6331/22414 6323/22410 11941/10782 11045/11038
 name = Goblin
-models = 24435 24441 24452 24455 24472 24486 24509
-headmodels = 24209
+models = model_24435 model_24441 model_24452 model_24455 model_24472 model_24486 model_24509
+headmodels = model_24209

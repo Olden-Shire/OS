@@ -1,9 +1,9 @@
 // npc 5883
 vislevel = 0
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 recol = 61/5417 22/43536
 name = Dwarf
-models = 2970 7072 7059 2978 7045 2985
-headmodels = 0 6997
+models = model_2970 model_7072 model_7059 model_2978 model_7045 model_2985
+headmodels = model_0 model_6997

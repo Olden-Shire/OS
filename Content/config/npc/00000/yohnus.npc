@@ -1,10 +1,10 @@
 // npc 513
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 4550/4785 6798/61 8741/4785 43072/4785 25238/0 54397/7070
 name = Yohnus
-models = 214 251 305 173 176 274 181
-headmodels = 52 83
+models = model_214 model_251 obj_white_apron_1005_man model_173 model_176 model_274 obj_vyrewatch_shoes_9638_man
+headmodels = model_52 model_83

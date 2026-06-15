@@ -1,7 +1,7 @@
 // npc 5059
-walkanim = 5151
-readyanim = 5147
+walkanim = seq_5151
+readyanim = seq_5147
 vislevel = 0
 recol = 43072/4550 25238/5285 908/7326 4626/5285 78/6689 6798/6689
 name = Curly
-models = 18086 11190 14321 173 10218 495 275 18127
+models = model_18086 model_11190 model_14321 model_173 model_10218 model_495 obj_citizen_trousers_9642_man model_18127

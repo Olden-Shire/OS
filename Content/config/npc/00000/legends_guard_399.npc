@@ -1,10 +1,10 @@
 // npc 399
 vislevel = 0
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 7952/127 61/43218 41/43181 926/127 57/43218 10004/127
 name = Legends guard
-models = 219 253 306 164 179 268 184 540 317
-headmodels = 57 85
+models = obj_khazard_helmet_man model_253 obj_khazard_armour_man model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man model_184 obj_bronze_spear_1237_wear obj_fremennik_cloak_3759_man
+headmodels = obj_watchman model_85

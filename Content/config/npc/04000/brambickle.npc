@@ -1,9 +1,9 @@
 // npc 4576
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22426/5202 22420/6348 22040/5276 10407/8396 3226/8367 6044/5276
 name = Brambickle
-models = 17011 14824 2922 14177
-headmodels = 16969
+models = model_17011 model_14824 model_2922 model_14177
+headmodels = model_16969

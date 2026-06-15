@@ -1,10 +1,10 @@
 // npc 3843
-walkanim = 3984
-readyanim = 3987
+walkanim = seq_3984
+readyanim = seq_3987
 op2 = Attack
 size = 1
 resizeh = 128
 resizev = 128
 vislevel = 101
 name = Sea troll
-models = 14911 14905 14909 14913
+models = model_14911 model_14905 model_14909 model_14913

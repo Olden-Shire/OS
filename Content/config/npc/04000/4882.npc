@@ -1,6 +1,6 @@
 // npc 4882
-walkanim = 4779
-readyanim = 808
+walkanim = seq_4779
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 1
 multivar = 2610, 65535, 65535 65535 65535 65535 65535 65535 65535 65535 65535 4888 4888 4888 4888 4888 4888

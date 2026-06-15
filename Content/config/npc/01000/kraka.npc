@@ -1,6 +1,6 @@
 // npc 1098
-walkanim = 1139
-readyanim = 926
+walkanim = seq_1139
+readyanim = seq_926
 size = 2
 resizeh = 178
 resizev = 162
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 91
 recol = 61/6435 21570/4510
 name = Kraka
-models = 3753 3759 3756 3773 3766 3763
+models = model_3753 model_3759 model_3756 model_3773 model_3766 model_3763

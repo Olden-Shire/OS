@@ -1,11 +1,11 @@
 // npc 1301
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 25238/412 8741/295 8078/299 10299/4550 6798/5962 7700/148
 name = Yrsa
-models = 378 343 470 421 483 479 353 361
-headmodels = 103
+models = model_378 model_343 obj_ham_shirt_4298_woman obj_desert_robes_6386_woman model_483 obj_fremennik_cloak_3759_woman model_353 obj_boots_of_lightness_88_woman
+headmodels = model_103

@@ -1,10 +1,10 @@
 // npc 1948
 size = 1
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 op1 = Talk-to
 vislevel = 0
 recol = 61/43105 21570/43220
 name = Troll father
-models = 4942 4943 3756
-headmodels = 3791 3789
+models = model_4942 model_4943 model_3756
+headmodels = model_3791 model_3789

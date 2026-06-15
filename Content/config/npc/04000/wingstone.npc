@@ -1,9 +1,9 @@
 // npc 4577
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22040/6466 22426/7502 5202/6577 22292/6484 21795/8394 10407/6575
 name = Wingstone
-models = 17013 14824 2917 14177
-headmodels = 16972
+models = model_17013 model_14824 model_2917 model_14177
+headmodels = model_16972

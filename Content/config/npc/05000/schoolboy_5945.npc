@@ -1,9 +1,9 @@
 // npc 5945
-walkanim = 6471
-readyanim = 6474
+walkanim = seq_6471
+readyanim = seq_6474
 vislevel = 0
 op1 = Talk-to
 recol = 22426/32819 25238/37394 11162/16 38119/786
 name = Schoolboy
-models = 14289 17006 25843 17027
-headmodels = 14287 18123
+models = model_14289 model_17006 model_25843 model_17027
+headmodels = model_14287 model_18123

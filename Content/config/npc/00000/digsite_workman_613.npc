@@ -1,11 +1,11 @@
 // npc 613
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Steal-from
 recol = 25238/40237 933/9106 8741/4288 40237/40231 40117/40239 10004/7054
 name = Digsite workman
-models = 215 246 10705 167 179 5218 10723
-headmodels = 53
+models = obj_fremennik_helm_man model_246 model_10705 model_167 obj_cooking_gauntlets_man model_5218 model_10723
+headmodels = obj_man

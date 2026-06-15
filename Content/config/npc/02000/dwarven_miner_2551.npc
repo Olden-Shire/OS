@@ -1,11 +1,11 @@
 // npc 2551
 op1 = Talk-to
-readyanim = 101
-walkanim = 98
+readyanim = seq_101
+walkanim = seq_98
 vislevel = 0
 vislevel = 0
 size = 1
 recol = 2578/5404 10659/3346 61/10285
 name = Dwarven Miner
-models = 2970 7059 2979 2993 7053 2980 2985
-headmodels = 0
+models = model_2970 model_7059 model_2979 model_2993 model_7053 model_2980 model_2985
+headmodels = model_0

@@ -1,9 +1,9 @@
 // npc 2378
 vislevel = 0
 size = 1
-walkanim = 5334
-readyanim = 5335
+walkanim = seq_5334
+readyanim = seq_5335
 alwaysontop = true
 recol = 127/17717 123/17713 115/17709 103/17833 99/17829 90/17953
 name = Sick-looking sheep (2)
-models = 20290 20291
+models = model_20290 model_20291

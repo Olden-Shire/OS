@@ -1,10 +1,10 @@
 // npc 1327
 size = 1
-walkanim = 4924
-readyanim = 4920
+walkanim = seq_4924
+readyanim = seq_4920
 resizeh = 108
 resizev = 108
 op2 = Attack
 vislevel = 15
 name = Bear Cub
-models = 18883 18885
+models = model_18883 model_18885

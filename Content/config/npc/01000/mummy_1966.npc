@@ -1,9 +1,9 @@
 // npc 1966
-walkanim = 5552
-readyanim = 5548
+walkanim = seq_5552
+readyanim = seq_5548
 op2 = Attack
 ambient = 60
 contrast = 60
 vislevel = 103
 name = Mummy
-models = 20904 20905
+models = model_20904 model_20905

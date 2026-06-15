@@ -1,12 +1,12 @@
 // npc 2647
 vislevel = 0
 size = 1
-walkanim = 2694
-readyanim = 2694
+walkanim = seq_2694
+readyanim = seq_2694
 resizeh = 60
 resizev = 60
 op1 = Talk-to
 recol = 61/12 16/12 127/33 64414/86
 name = Bob
-models = 3010 3006 9387
-headmodels = 6435 9366
+models = model_3010 obj_witchs_cat model_9387
+headmodels = model_6435 model_9366

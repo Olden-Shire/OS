@@ -1,12 +1,12 @@
 // npc 4635
 size = 1
-walkanim = 6141
-readyanim = 6140
+walkanim = seq_6141
+readyanim = seq_6140
 resizev = 121
 resizeh = 121
 vislevel = 0
 ambient = 15
 recol = 11941/10782 6331/916 6348/922 6356/693 12060/11154
 name = Goblin
-models = 24468 24484 24432 24472 24442 24450 24505 24497
-headmodels = 24220
+models = model_24468 model_24484 model_24432 model_24472 model_24442 model_24450 model_24505 model_24497
+headmodels = model_24220

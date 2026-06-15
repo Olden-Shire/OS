@@ -7,5 +7,5 @@ op5 = Knock-Out
 vislevel = 3
 recol = 8741/10351 25238/10351 6798/127 4550/5555
 name = Villager
-models = 215 6087 292 151 254 181 176
-headmodels = 6081 53
+models = obj_fremennik_helm_man model_6087 obj_priest_gown_426_man model_151 obj_mime_legs_man obj_vyrewatch_shoes_9638_man model_176
+headmodels = model_6081 obj_man

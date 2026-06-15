@@ -1,9 +1,9 @@
 // npc 665
 vislevel = 0
 size = 1
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 name = Boot
-models = 2971 2981 2979 2983 2985 2990
-headmodels = 1
+models = model_2971 model_2981 model_2979 model_2983 model_2985 model_2990
+headmodels = model_1

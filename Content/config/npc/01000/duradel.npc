@@ -1,12 +1,12 @@
 // npc 1599
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op4 = Trade
 alwaysontop = true
 recol = 4550/4785 25238/6032 43072/4785 33/36133 41/36141 49/36021
 name = Duradel
-models = 231 241 246 309 173 176 254 181 3780 18949
-headmodels = 64 73
+models = model_231 model_241 model_246 model_309 model_173 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man obj_bronze_claws_3095_wear model_18949
+headmodels = model_64 model_73

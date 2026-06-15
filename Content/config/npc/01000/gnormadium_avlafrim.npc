@@ -1,10 +1,10 @@
 // npc 1800
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 8741/54397 22424/43173 40910/11185 22426/4510
 name = Gnormadium Avlafrim
-models = 2909 4696 2922
-headmodels = 5619
+models = model_2909 model_4696 model_2922
+headmodels = model_5619

@@ -1,8 +1,8 @@
 // npc 1832
 op2 = Attack
-walkanim = 6077
-readyanim = 6078
+walkanim = seq_6077
+readyanim = seq_6078
 vislevel = 6
 recol = 1585/1699 431/4766 551/545 8088/7062
 name = Cave bug
-models = 23854
+models = model_23854

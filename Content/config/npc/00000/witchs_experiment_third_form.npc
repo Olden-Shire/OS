@@ -1,6 +1,6 @@
 // npc 899
-walkanim = 4923
-readyanim = 4919
+walkanim = seq_4923
+readyanim = seq_4919
 resizeh = 108
 resizev = 108
 size = 2
@@ -8,4 +8,4 @@ op2 = Attack
 vislevel = 42
 recol = 10262/54550 41/21691 10258/54670 49/21679 10266/54794
 name = Witch's experiment (third form)
-models = 18882 18886
+models = model_18882 model_18886

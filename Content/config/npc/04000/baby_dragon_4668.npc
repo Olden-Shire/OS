@@ -2,10 +2,10 @@
 size = 2
 resizeh = 105
 resizev = 105
-walkanim = 21
-readyanim = 27
+walkanim = seq_21
+readyanim = seq_27
 op2 = Attack
 vislevel = 48
 recol = 910/2954 912/1932 1938/3982 1814/1810 2588/3486 2469/3367
 name = Baby dragon
-models = 17413 17427 17421 17424
+models = model_17413 model_17427 model_17421 model_17424

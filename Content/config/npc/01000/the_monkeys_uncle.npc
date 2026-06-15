@@ -1,11 +1,11 @@
 // npc 1453
-walkanim = 1380
-readyanim = 1386
+walkanim = seq_1380
+readyanim = seq_1386
 resizeh = 140
 resizev = 180
 op1 = Talk-to
 vislevel = 0
 recol = 24/57
 name = The Monkey's Uncle
-models = 4820 4827
-headmodels = 4659
+models = model_4820 model_4827
+headmodels = model_4659

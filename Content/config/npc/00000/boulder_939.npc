@@ -1,8 +1,8 @@
 // npc 939
 size = 2
-walkanim = 6
+walkanim = seq_6
 op1 = Push
 vislevel = 0
 nominimap = true
 name = Boulder
-models = 2846
+models = model_2846

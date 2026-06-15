@@ -1,9 +1,9 @@
 // npc 4451
 size = 1
 ambient = 35
-readyanim = 4314
+readyanim = seq_4314
 turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Starflower
-models = 16194
+models = model_16194

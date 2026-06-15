@@ -1,11 +1,11 @@
 // npc 609
 size = 1
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 op2 = Attack
 vislevel = 20
 recol = 25238/10508 8741/6930 61/33
 name = Fortress Guard
-models = 7668 246 294 151 176 254 185 540
-headmodels = 7667
+models = model_7668 model_246 obj_iron_chainbody_1101_man model_151 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_bronze_spear_1237_wear
+headmodels = model_7667

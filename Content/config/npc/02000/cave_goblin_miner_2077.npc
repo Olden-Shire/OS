@@ -1,9 +1,9 @@
 // npc 2077
-readyanim = 6004
-walkanim = 6005
+readyanim = seq_6004
+walkanim = seq_6005
 op1 = Talk-to
 op2 = Attack
 vislevel = 11
 name = Cave goblin miner
-models = 23649 23703 23632 23681
-headmodels = 23246 23231
+models = model_23649 model_23703 model_23632 model_23681
+headmodels = model_23246 model_23231

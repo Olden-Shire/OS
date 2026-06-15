@@ -1,10 +1,10 @@
 // npc 730
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 43072/5662 25238/3980 8741/6449 4550/5662
 name = Man
-models = 214 185 250 310 173 179 275
-headmodels = 52 82
+models = model_214 obj_boots_of_lightness_88_man model_250 model_310 model_173 obj_cooking_gauntlets_man obj_citizen_trousers_9642_man
+headmodels = model_52 model_82

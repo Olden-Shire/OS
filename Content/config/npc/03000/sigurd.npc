@@ -2,10 +2,10 @@
 size = 1
 vislevel = 0
 resizev = 133
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 recol = 943/1944 939/1944 935/1944 5161/7054 4550/4539
 name = Sigurd
-models = 11739 214 11746 252 11759 11764 11727 11732 12087 11810 11736
-headmodels = 52 84 11804 11806
+models = model_11739 model_214 model_11746 model_252 model_11759 model_11764 model_11727 model_11732 obj_paddle_7414_wear model_11810 model_11736
+headmodels = model_52 model_84 model_11804 model_11806

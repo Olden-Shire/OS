@@ -1,13 +1,13 @@
 // npc 4969
 size = 1
 alwaysontop = true
-walkanim = 283
-readyanim = 286
+walkanim = seq_283
+readyanim = seq_286
 vislevel = 0
 resizeh = 66
 resizev = 66
 op1 = Talk-to
 recol = 61/8478 21570/7580 10355/7768
 name = Drunken dwarf's leg
-models = 4942 6239 3756
-headmodels = 3791 3789
+models = model_4942 model_6239 model_3756
+headmodels = model_3791 model_3789

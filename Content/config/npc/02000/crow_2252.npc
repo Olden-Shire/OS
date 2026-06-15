@@ -1,8 +1,8 @@
 // npc 2252
 vislevel = 0
 size = 1
-readyanim = 6785
-walkanim = 6784
+readyanim = seq_6785
+walkanim = seq_6784
 nominimap = true
 name = Crow
-models = 26851
+models = model_26851

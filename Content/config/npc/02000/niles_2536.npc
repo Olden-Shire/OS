@@ -1,13 +1,13 @@
 // npc 2536
 resizeh = 120
 resizev = 136
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
 recol = 8741/33 25238/24 4626/0 28318/4 908/4
 name = Niles
-models = 215 247 7611 163 176 254 181 8954
-headmodels = 53 79
+models = obj_fremennik_helm_man model_247 obj_prince_tunic_man model_163 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man model_8954
+headmodels = obj_man model_79

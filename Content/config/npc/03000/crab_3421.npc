@@ -1,10 +1,10 @@
 // npc 3421
 size = 2
-walkanim = 3426
-readyanim = 3424
+walkanim = seq_3426
+readyanim = seq_3424
 resizeh = 256
 resizev = 256
 op2 = Attack
 vislevel = 23
 name = Crab
-models = 13799
+models = model_13799

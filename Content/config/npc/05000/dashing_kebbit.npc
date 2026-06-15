@@ -1,7 +1,7 @@
 // npc 5100
 size = 1
-walkanim = 5272
-readyanim = 5273
+walkanim = seq_5272
+readyanim = seq_5273
 resizeh = 96
 resizev = 96
 op1 = Catch
@@ -9,4 +9,4 @@ turnspeed = 64
 vislevel = 0
 recol = 5417/6356 5413/6356 5537/5557 5532/5559 5656/5563 5008/0
 name = Dashing kebbit
-models = 19389 19381 19384
+models = model_19389 model_19381 model_19384

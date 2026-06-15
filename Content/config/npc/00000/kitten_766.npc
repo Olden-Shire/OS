@@ -1,8 +1,8 @@
 // npc 766
 vislevel = 0
 size = 1
-walkanim = 2662
-readyanim = 317
+walkanim = seq_2662
+readyanim = seq_317
 op1 = Pick-up
 op2 = Hidden
 op3 = Talk-to
@@ -12,5 +12,5 @@ resizeh = 30
 resizev = 40
 recol = 61/43175 16/10304
 name = Kitten
-models = 9386 9388
-headmodels = 6438
+models = model_9386 model_9388
+headmodels = model_6438

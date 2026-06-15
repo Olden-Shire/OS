@@ -1,11 +1,11 @@
 // npc 409
 vislevel = 0
 size = 1
-walkanim = 792
-readyanim = 792
+walkanim = seq_792
+readyanim = seq_792
 op1 = Talk-to
 alwaysontop = true
 recol = 4550/39888 6798/40627 926/43924 43072/13243 0/957 25238/54177
 name = Genie
-models = 231 241 252 315 173 176 264 270
-headmodels = 64 73 84
+models = model_231 model_241 model_252 obj_veracs_brassard_4757_man model_173 model_176 model_264 model_270
+headmodels = model_64 model_73 model_84

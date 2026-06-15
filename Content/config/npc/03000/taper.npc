@@ -1,8 +1,8 @@
 // npc 3208
-walkanim = 3183
-readyanim = 3183
+walkanim = seq_3183
+readyanim = seq_3183
 vislevel = 0
 turnspeed = 0
 nominimap = true
 name = Taper
-models = 11313
+models = model_11313

@@ -1,7 +1,7 @@
 // npc 1655
 size = 2
-walkanim = 1589
-readyanim = 1588
+walkanim = seq_1589
+readyanim = seq_1588
 op2 = Attack
 resizeh = 208
 resizev = 208
@@ -9,4 +9,4 @@ ambient = 30
 vislevel = 11
 recol = 21553/26673 21549/32813 21545/26665 21665/26785 21660/26780 21656/26776
 name = Crawling Hand
-models = 5071
+models = model_5071

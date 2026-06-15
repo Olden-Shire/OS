@@ -1,10 +1,10 @@
 // npc 2884
 size = 1
-walkanim = 2363
-readyanim = 2364
+walkanim = seq_2363
+readyanim = seq_2364
 resizeh = 110
 resizev = 110
 op2 = Attack
 vislevel = 98
 name = Wallasalki
-models = 8715
+models = model_8715

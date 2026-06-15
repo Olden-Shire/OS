@@ -1,10 +1,10 @@
 // npc 629
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Tackle
 recol = 37/10165
 name = Gnome baller
-models = 2914 2905 2924
-headmodels = 21
+models = model_2914 model_2905 model_2924
+headmodels = obj_gnome

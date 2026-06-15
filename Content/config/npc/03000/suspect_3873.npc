@@ -1,7 +1,7 @@
 // npc 3873
-readyanim = 3999
+readyanim = seq_3999
 vislevel = 0
-walkanim = 3999
+walkanim = seq_3999
 recol = 6740/27420 6604/27540 6596/27536 35245/28554 8741/28327 24/26822
 name = Suspect
-models = 378 11359 332 10706 10003 358 15010 15009 14945
+models = model_378 model_11359 model_332 model_10706 obj_robe_of_elidinis_6787_woman model_358 model_15010 model_15009 model_14945

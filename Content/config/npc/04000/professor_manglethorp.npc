@@ -1,9 +1,9 @@
 // npc 4583
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22424/5301 22426/5206 11162/138 54397/43123
 name = Professor Manglethorp
-models = 17015 2909 2915
-headmodels = 16973
+models = model_17015 model_2909 model_2915
+headmodels = model_16973

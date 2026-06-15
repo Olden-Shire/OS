@@ -1,9 +1,9 @@
 // npc 1625
 size = 1
-walkanim = 1554
-readyanim = 1556
+walkanim = seq_1554
+readyanim = seq_1556
 op2 = Attack
 vislevel = 93
 recol = 4824/5675 6872/7723 5848/6699 4822/5801 7896/8747 4692/5799
 name = Smokedevil
-models = 5076 5077
+models = obj_dust_devil model_5077

@@ -1,7 +1,7 @@
 // npc 1471
-walkanim = 5518
-readyanim = 5517
+walkanim = seq_5518
+readyanim = seq_5517
 op2 = Attack
 vislevel = 142
 name = Skeleton
-models = 21190
+models = model_21190

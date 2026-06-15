@@ -1,10 +1,10 @@
 // npc 201
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 47
 recol = 61/20 41/12 926/20 57/20
 name = Jailer
-models = 230 306 268 253 185 156 179
+models = obj_desert_disguise_man obj_khazard_armour_man obj_iron_platelegs_1067_man model_253 obj_boots_of_lightness_88_man model_156 obj_cooking_gauntlets_man

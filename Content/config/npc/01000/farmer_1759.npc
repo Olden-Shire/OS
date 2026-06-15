@@ -1,9 +1,9 @@
 // npc 1759
 vislevel = 0
 size = 1
-readyanim = 1728
-walkanims = 1205, 1206, 1207, 1208
+readyanim = seq_1728
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
 recol = 25238/7599 8741/6930 43072/4550
 name = Farmer
-models = 217 246 292 151 176 254 185 5442 4843
-headmodels = 55
+models = model_217 model_246 obj_priest_gown_426_man model_151 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man model_5442 model_4843
+headmodels = obj_farmer

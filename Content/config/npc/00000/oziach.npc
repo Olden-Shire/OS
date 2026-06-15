@@ -1,12 +1,12 @@
 // npc 747
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 61/35241 41/36133 6798/7054 25238/58522
 name = Oziach
-models = 235 247 312 26422 164 177 176 254 181
-headmodels = 67 79
+models = model_235 model_247 model_312 model_26422 model_164 obj_leather_vambraces_1063_man model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
+headmodels = model_67 model_79

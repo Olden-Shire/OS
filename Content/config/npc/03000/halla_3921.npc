@@ -1,10 +1,10 @@
 // npc 3921
 vislevel = 0
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 recol = 4550/2524 8741/2343 25238/904 43072/2524 11200/9152 6798/5656
 name = Halla
-models = 390 470 9359 353 8784 358
-headmodels = 113
+models = model_390 obj_ham_shirt_4298_woman model_9359 model_353 obj_prince_leggings_woman model_358
+headmodels = obj_warrior_woman

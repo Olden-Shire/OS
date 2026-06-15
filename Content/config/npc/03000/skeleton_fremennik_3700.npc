@@ -1,8 +1,8 @@
 // npc 3700
 size = 1
-walkanim = 6112
-readyanim = 6113
+walkanim = seq_6112
+readyanim = seq_6113
 op2 = Attack
 vislevel = 50
 name = Skeleton fremennik
-models = 24182 24190 24186 24192 24053
+models = model_24182 model_24190 model_24186 model_24192 model_24053

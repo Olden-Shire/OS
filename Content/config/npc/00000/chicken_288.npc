@@ -1,11 +1,11 @@
 // npc 288
 vislevel = 0
 size = 1
-walkanim = 2297
-readyanim = 2298
+walkanim = seq_2297
+readyanim = seq_2298
 resizeh = 32
 resizev = 32
 recol = 6575/37192 6695/37060 6814/38073 7062/37039 7060/36003 8078/32794
 name = Chicken
-models = 7728
-headmodels = 55
+models = model_7728
+headmodels = obj_farmer

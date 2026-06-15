@@ -1,9 +1,9 @@
 // npc 3059
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 1275
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_1275
 op2 = Attack
 vislevel = 85
 recol = 4626/10460 4550/10460 25238/10401 908/5272 933/10446
 name = Ghoul Champion
-models = 10303 10306 10299 275 181 10315
+models = model_10303 model_10306 model_10299 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man model_10315

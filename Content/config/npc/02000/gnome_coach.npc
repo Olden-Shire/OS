@@ -1,10 +1,10 @@
 // npc 2802
 size = 1
 vislevel = 0
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 recol = 22426/5563 22424/3123 6587/5524 127/5351
 name = Gnome Coach
-models = 9832 4245 2915 9833
-headmodels = 9364
+models = model_9832 model_4245 model_2915 model_9833
+headmodels = model_9364

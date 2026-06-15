@@ -1,9 +1,9 @@
 // npc 3595
 size = 1
-walkanim = 3713
-readyanim = 3712
+walkanim = seq_3713
+readyanim = seq_3712
 op1 = Pick-up
 vislevel = 0
 nominimap = true
 name = Toy Soldier
-models = 13227
+models = model_13227

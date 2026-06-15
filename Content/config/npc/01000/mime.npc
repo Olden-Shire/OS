@@ -1,8 +1,8 @@
 // npc 1056
 vislevel = 0
 size = 1
-readyanim = 808
+readyanim = seq_808
 alwaysontop = true
 recol = 9104/43117 25238/8 4626/8 10004/43117 8741/8 10659/8
 name = Mime
-models = 3598 3667 292 163 179 254 185 198 230
+models = obj_mime_mask_3057_man model_3667 obj_priest_gown_426_man model_163 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man obj_blue_beret_2633_man obj_desert_disguise_man

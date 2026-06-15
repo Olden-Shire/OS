@@ -1,11 +1,11 @@
 // npc 5841
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 vislevel = 0
 alwaysontop = true
 recol = 6798/6327
 name = Sil'as Dahcsnu
-models = 23929 23917 23934
-headmodels = 63 23912 83
+models = model_23929 model_23917 model_23934
+headmodels = obj_rogue model_23912 model_83

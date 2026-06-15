@@ -1,8 +1,8 @@
 // npc 2236
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op2 = Attack
 vislevel = 20
 recol = 25238/12698 43072/3660 61/2229 11200/2349
 name = Market Guard
-models = 232 251 293 317 169 176 518 523 274 185
+models = model_232 model_251 model_293 obj_fremennik_cloak_3759_man model_169 model_176 obj_bronze_longsword_1291_wear model_523 model_274 obj_boots_of_lightness_88_man

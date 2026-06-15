@@ -1,10 +1,10 @@
 // npc 2244
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 recol = 6466/127 5541/41282 6457/127 8844/6478 6798/54397
 name = Lumbridge Guide
-models = 214 250 5674 5668 5672 7127 7123
-headmodels = 52 82
+models = model_214 model_250 model_5674 model_5668 model_5672 model_7127 model_7123
+headmodels = model_52 model_82

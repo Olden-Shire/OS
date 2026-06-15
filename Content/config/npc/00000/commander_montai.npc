@@ -1,12 +1,12 @@
 // npc 470
 vislevel = 0
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 resizeh = 150
 resizev = 150
 recol = 41/933
 name = Commander Montai
-models = 2909 2903 2919
-headmodels = 22
+models = model_2909 model_2903 model_2919
+headmodels = model_22

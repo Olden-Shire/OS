@@ -1,9 +1,9 @@
 // npc 5996
 size = 4
-readyanim = 6504
-walkanim = 6505
+readyanim = seq_6504
+walkanim = seq_6505
 op2 = Attack
 alwaysontop = true
 vislevel = 138
 name = Glod
-models = 26074
+models = model_26074

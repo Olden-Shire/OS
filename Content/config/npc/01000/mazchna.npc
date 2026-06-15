@@ -1,12 +1,12 @@
 // npc 1596
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op4 = Trade
 alwaysontop = true
 recol = 8741/21671 25238/21782 4550/918 23442/21667 41/21776 61/21662
 name = Mazchna
-models = 221 306 174 176 278 182 5114 246
-headmodels = 58
+models = model_221 obj_khazard_armour_man model_174 model_176 model_278 model_182 model_5114 model_246
+headmodels = model_58

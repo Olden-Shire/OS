@@ -1,10 +1,10 @@
 // npc 2868
-walkanim = 2818
-readyanim = 2818
+walkanim = seq_2818
+readyanim = seq_2818
 op1 = Catch
 op2 = Talk-To
 vislevel = 0
 recol = 4550/14387 25238/32924 8741/10266 4626/16652 6798/41 43072/14387
 name = Zombie Head
-models = 6848 246 9925
-headmodels = 5787 9924
+models = model_6848 model_246 model_9925
+headmodels = model_5787 model_9924

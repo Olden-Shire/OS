@@ -1,8 +1,8 @@
 // npc 1828
-readyanim = 1796
-walkanim = 1797
+readyanim = seq_1796
+walkanim = seq_1797
 op2 = Attack
 size = 2
 vislevel = 99
 name = Giant frog
-models = 6947
+models = model_6947

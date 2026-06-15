@@ -1,7 +1,7 @@
 // npc 4797
 vislevel = 0
-walkanim = 4699
-readyanim = 4703
+walkanim = seq_4699
+readyanim = seq_4703
 name = Vanescula Drakan
-models = 17964 17982
-headmodels = 18042
+models = model_17964 model_17982
+headmodels = model_18042

@@ -1,6 +1,6 @@
 // npc 4904
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 resizev = 110
@@ -8,5 +8,5 @@ resizeh = 100
 alwaysontop = true
 recol = 10004/41282 8084/41271 8741/127 25238/41490 7719/41418 4626/43150
 name = Smithing apprentice
-models = 215 246 292 4391 151 179 274 185
-headmodels = 53
+models = obj_fremennik_helm_man model_246 obj_priest_gown_426_man model_4391 model_151 obj_cooking_gauntlets_man model_274 obj_boots_of_lightness_88_man
+headmodels = obj_man

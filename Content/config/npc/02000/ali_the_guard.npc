@@ -2,11 +2,11 @@
 size = 1
 resizeh = 154
 resizev = 139
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 recol = 4550/4653 8741/10347 25238/10347
 name = Ali the Guard
-models = 6085 6131 299 167 176 8973 263 185
-headmodels = 63 6129 6080
+models = model_6085 model_6131 model_299 model_167 model_176 obj_oak_blackjack_o_6408_wear model_263 obj_boots_of_lightness_88_man
+headmodels = obj_rogue model_6129 model_6080

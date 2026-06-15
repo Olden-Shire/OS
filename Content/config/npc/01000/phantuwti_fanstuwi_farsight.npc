@@ -1,10 +1,10 @@
 // npc 1798
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 25238/82 8741/82 6798/90 7952/119 908/119
 name = Phantuwti Fanstuwi Farsight
-models = 170 256 292 317 217 249 176
-headmodels = 55 81
+models = obj_druids_robe_540_man model_256 obj_priest_gown_426_man obj_fremennik_cloak_3759_man model_217 model_249 model_176
+headmodels = obj_farmer model_81

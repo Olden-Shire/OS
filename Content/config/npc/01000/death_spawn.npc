@@ -1,11 +1,11 @@
 // npc 1614
 size = 1
-walkanim = 1539
-readyanim = 1539
+walkanim = seq_1539
+readyanim = seq_1539
 resizev = 96
 resizeh = 96
 op2 = Attack
 vislevel = 46
 recol = 5353/918 8/918 0/7054 8741/7054 25238/7054
 name = Death spawn
-models = 5100 4978 171 180 278 182 5079
+models = model_5100 model_4978 model_171 model_180 model_278 model_182 model_5079

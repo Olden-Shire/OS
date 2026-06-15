@@ -1,11 +1,11 @@
 // npc 1628
 size = 2
-walkanim = 1593
-readyanim = 1594
+walkanim = seq_1593
+readyanim = seq_1594
 op2 = Attack
 resizeh = 210
 resizev = 210
 vislevel = 87
 recol = 10357/317 5351/185
 name = Turoth
-models = 5086
+models = obj_turoth

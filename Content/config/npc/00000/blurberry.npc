@@ -1,11 +1,11 @@
 // npc 848
 vislevel = 0
 size = 1
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 alwaysontop = true
 op1 = Talk-to
 recol = 22426/37780 6038/37793 11162/12
 name = Blurberry
-models = 2909 2900 2917
-headmodels = 23
+models = model_2909 model_2900 model_2917
+headmodels = model_23

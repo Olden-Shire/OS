@@ -1,10 +1,10 @@
 // npc 6190
-readyanim = 6918
+readyanim = seq_6918
 ambient = 20
 contrast = 15
 turnspeed = 0
 vislevel = 0
 alwaysontop = true
 name = Guard
-models = 27131 27198 27201
-headmodels = 25634
+models = model_27131 model_27198 model_27201
+headmodels = model_25634

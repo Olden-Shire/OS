@@ -1,6 +1,6 @@
 // npc 2400
-walkanim = 2333
-readyanim = 2334
+walkanim = seq_2333
+readyanim = seq_2334
 resizev = 112
 resizeh = 112
 ambient = 35
@@ -10,5 +10,5 @@ vislevel = 0
 nominimap = true
 recol = 25238/43150 43072/4537 4550/4537 6587/54290
 name = Mysterious ghost
-models = 230 246 280 315 173 176 4226 4218
-headmodels = 8373
+models = obj_desert_disguise_man model_246 obj_unblessed_symbol_1716_man obj_veracs_brassard_4757_man model_173 model_176 model_4226 model_4218
+headmodels = model_8373

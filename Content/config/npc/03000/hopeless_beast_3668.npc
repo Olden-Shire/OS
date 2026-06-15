@@ -2,9 +2,9 @@
 size = 2
 resizev = 106
 resizeh = 106
-walkanim = 3825
-readyanim = 3822
+walkanim = seq_3825
+readyanim = seq_3822
 op2 = Attack
 vislevel = 71
 name = Hopeless beast
-models = 14283
+models = model_14283

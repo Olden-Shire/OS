@@ -1,8 +1,8 @@
 // npc 4861
 vislevel = 0
-walkanims = 819, 820, 821, 822
+walkanims = seq_819, seq_820, seq_821, seq_822
 resizeh = 100
-readyanim = 808
+readyanim = seq_808
 name = Sarius Guile
-models = 18111 18118 18120 18105 18110 18114 18106
-headmodels = 18069
+models = model_18111 model_18118 model_18120 model_18105 model_18110 model_18114 model_18106
+headmodels = model_18069

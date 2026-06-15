@@ -1,9 +1,9 @@
 // npc 5886
 vislevel = 0
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 op1 = Talk-to
 recol = 61/39203 22/39322
 name = Ticket dwarf
-models = 2970 23873 7050 2978 7045 2985 23879
-headmodels = 0 24532
+models = model_2970 model_23873 model_7050 model_2978 model_7045 model_2985 model_23879
+headmodels = model_0 model_24532

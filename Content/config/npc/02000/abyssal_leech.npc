@@ -1,8 +1,8 @@
 // npc 2263
 size = 1
-walkanim = 2179
-readyanim = 2180
+walkanim = seq_2179
+readyanim = seq_2180
 op2 = Attack
 vislevel = 41
 name = Abyssal leech
-models = 7461
+models = model_7461

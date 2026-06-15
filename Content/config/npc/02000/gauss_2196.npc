@@ -1,9 +1,9 @@
 // npc 2196
 op1 = Talk-to
-walkanim = 98
-readyanim = 101
+walkanim = seq_98
+readyanim = seq_101
 vislevel = 0
 recol = 5181/4647 10347/8598 61/8390
 name = Gauss
-models = 7026 7062 2978 7045 2985 2992
-headmodels = 6985
+models = model_7026 model_7062 model_2978 model_7045 model_2985 model_2992
+headmodels = model_6985

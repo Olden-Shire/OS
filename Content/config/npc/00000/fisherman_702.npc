@@ -1,10 +1,10 @@
 // npc 702
 vislevel = 0
 size = 1
-walkanim = 4779
-readyanim = 4825
+walkanim = seq_4779
+readyanim = seq_4825
 op1 = Talk-to
 recol = 4550/8646 43072/8646 8741/8656 40237/41364 23326/41364 5305/24
 name = Fisherman
-models = 18190 230 11190 18498 159 177 562 176 14380 14848
-headmodels = 18334 18185 18343
+models = model_18190 obj_desert_disguise_man model_11190 model_18498 model_159 obj_leather_vambraces_1063_man obj_fishing_rod_307_wear model_176 model_14380 model_14848
+headmodels = model_18334 model_18185 model_18343

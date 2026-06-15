@@ -1,10 +1,10 @@
 // npc 3533
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 resizeh = 142
 resizev = 142
 op2 = Attack
 vislevel = 45
 recol = 25238/54294 8741/43038 4550/3288 7236/3288 4626/3346
 name = Vampyre Juvenile
-models = 4089 246 14047 151 10218 254 181
+models = model_4089 model_246 model_14047 model_151 model_10218 obj_mime_legs_man obj_vyrewatch_shoes_9638_man

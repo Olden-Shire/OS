@@ -1,9 +1,9 @@
 // npc 3591
 size = 3
-walkanim = 1339
-readyanim = 1338
+walkanim = seq_1339
+readyanim = seq_1338
 op2 = Attack
 vislevel = 135
 recol = 10291/5165 10287/5161 10283/5157 10279/5281
 name = Dagannoth
-models = 4587 14117
+models = obj_dagannoth model_14117

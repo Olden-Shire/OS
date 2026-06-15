@@ -1,12 +1,12 @@
 // npc 590
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 recol = 25238/5652 8741/4769 6798/45 43072/4550 11200/6798 926/6798
 name = Aemad
-models = 206 274 253 292 167 176 185 323
-headmodels = 46 85
+models = model_206 model_274 model_253 obj_priest_gown_426_man model_167 model_176 obj_boots_of_lightness_88_man obj_cape_1007_man
+headmodels = model_46 model_85

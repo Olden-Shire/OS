@@ -1,11 +1,11 @@
 // npc 5908
 size = 1
-walkanim = 5750
-readyanim = 5750
+walkanim = seq_5750
+readyanim = seq_5750
 vislevel = 0
 op1 = Chop down
 op3 = hidden
 turnspeed = 0
 recol = 11024/7587 17298/7582 11148/7706 18320/7830 11146/7954 19342/8078
 name = Dying tree
-models = 25749
+models = model_25749

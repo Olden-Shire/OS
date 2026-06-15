@@ -1,11 +1,11 @@
 // npc 1257
 size = 1
-walkanim = 1306
-readyanim = 808
+walkanim = seq_1306
+readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 37
 recol = 25238/7070 8741/7062 4550/13640 6798/12828 43072/13640 43303/960
 name = Afflicted
-models = 217 246 292 170 176 275 181
-headmodels = 55
+models = model_217 model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
+headmodels = obj_farmer

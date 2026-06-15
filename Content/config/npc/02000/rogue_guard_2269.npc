@@ -2,11 +2,11 @@
 vislevel = 0
 resizeh = 133
 resizev = 133
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op3 = hidden
 vislevel = 0
 recol = 5442/18 41/138 25238/8 37/12 4626/16652 49/1688
 name = Rogue Guard
-models = 6655 307 165 490 274 185
-headmodels = 6571
+models = obj_karils_coif_4732_man model_307 model_165 obj_bronze_scimitar_1321_wear model_274 obj_boots_of_lightness_88_man
+headmodels = model_6571

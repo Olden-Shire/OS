@@ -1,9 +1,9 @@
 // npc 3817
-walkanim = 189
-readyanim = 195
+walkanim = seq_189
+readyanim = seq_195
 op1 = Talk-to
 vislevel = 0
 recol = 22426/6323 49/10419 21784/17818
 name = Lieutenant Schepbur
-models = 10338 10340 14814 14810
-headmodels = 10238
+models = model_10338 model_10340 model_14814 model_14810
+headmodels = model_10238

@@ -1,9 +1,9 @@
 // npc 3040
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 9019/6724 8741/6724 49054/289 25238/54317 8078/289 4550/4653
 name = Awusah the Mayor
-models = 6130 248 6134 326 162 176 6135 6132 181
-headmodels = 6128 80
+models = obj_menap_headgear_6392_man model_248 model_6134 model_326 obj_fremennik_shirt_3767_man model_176 model_6135 obj_menaphite_robe_6396_man obj_vyrewatch_shoes_9638_man
+headmodels = model_6128 model_80

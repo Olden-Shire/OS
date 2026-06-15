@@ -1,8 +1,8 @@
 // npc 3424
 size = 1
-walkanim = 3426
-readyanim = 3424
+walkanim = seq_3426
+readyanim = seq_3424
 op2 = Attack
 vislevel = 21
 name = Crab
-models = 13799
+models = model_13799

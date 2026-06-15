@@ -1,9 +1,9 @@
 // npc 3044
 vislevel = 0
-walkanims = 1205, 1206, 1207, 1208
-readyanim = 813
+walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+readyanim = seq_813
 op1 = Talk-to
 recol = 49054/37155 9019/4428 6740/4428 35245/37155 6596/8375 4550/4387
 name = Shiratti the Custodian
-models = 9021 9026 10126 353 6135 10003 361
-headmodels = 9014
+models = obj_menap_headgear_6392_woman obj_menaphite_top_6394_woman model_10126 model_353 model_6135 obj_robe_of_elidinis_6787_woman obj_boots_of_lightness_88_woman
+headmodels = model_9014

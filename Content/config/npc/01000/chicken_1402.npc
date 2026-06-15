@@ -1,11 +1,11 @@
 // npc 1402
 size = 1
-walkanim = 5385
-readyanim = 5386
+walkanim = seq_5385
+readyanim = seq_5386
 op2 = Attack
 resizeh = 85
 resizev = 85
 vislevel = 1
 recol = 6474/5660 6470/6932 6466/7056 8896/8121
 name = Chicken
-models = 23905
+models = model_23905

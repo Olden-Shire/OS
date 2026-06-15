@@ -1,9 +1,9 @@
 // npc 5793
-walkanim = 6041
-readyanim = 6040
+walkanim = seq_6041
+readyanim = seq_6040
 op1 = Talk-to
 vislevel = 0
 recol = 24627/38053 24751/38177 24747/38172
 name = Markog
-models = 23663 23698 23629
-headmodels = 23226 23246
+models = model_23663 model_23698 model_23629
+headmodels = model_23226 model_23246

@@ -1,7 +1,7 @@
 // npc 5228
 vislevel = 0
-readyanim = 5099
-walkanim = 5100
+readyanim = seq_5099
+walkanim = seq_5100
 recol = 14387/14610 14391/14614 14395/14490 10427/10650 9403/9754 7485/8732
 name = Penance Runner
-models = 20721
+models = model_20721

@@ -1,10 +1,10 @@
 // npc 649
 vislevel = 0
 size = 1
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-to
 recol = 8741/17959 10004/6579 39145/17959 6024/6579 926/6579 123/6579
 name = Archer
-models = 390 414 477 3194 332 356 563 422
-headmodels = 113 131
+models = model_390 model_414 obj_green_dhide_body_1135_woman obj_cape_of_legends_1052_woman model_332 obj_cooking_gauntlets_woman obj_longbow_839_wear model_422
+headmodels = obj_warrior_woman model_131

@@ -1,9 +1,9 @@
 // npc 1694
-walkanims = 819, 820, 821, 822
-readyanim = 808
+walkanims = seq_819, seq_820, seq_821, seq_822
+readyanim = seq_808
 op1 = Talk-To
 vislevel = 0
 recol = 4626/16912 25238/17818 8741/13731 7952/13596
 name = Robin
-models = 215 249 292 151 179 254 181 3378 317 563
-headmodels = 53 3384 81
+models = obj_fremennik_helm_man model_249 obj_priest_gown_426_man model_151 obj_cooking_gauntlets_man obj_mime_legs_man obj_vyrewatch_shoes_9638_man obj_robin_hood_hat_2581_man obj_fremennik_cloak_3759_man obj_longbow_839_wear
+headmodels = obj_man model_3384 model_81
