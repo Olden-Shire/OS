@@ -1389,6 +1389,7 @@ impl PanelApp {
                         }
                     }
                     markers.push(scene::Marker {
+                        id: pl.pid as i32,
                         x: pl.x,
                         z: pl.z,
                         color: if sel { egui::Color32::YELLOW } else { egui::Color32::LIGHT_GREEN },
@@ -1409,6 +1410,7 @@ impl PanelApp {
                 if (n.x >> 6, n.z >> 6) == region {
                     let sel = self.selected == Selection::Npc(n.nid);
                     markers.push(scene::Marker {
+                        id: 0x4000_0000 | n.nid as i32, // namespace npc ids off player pids
                         x: n.x,
                         z: n.z,
                         color: if sel { egui::Color32::YELLOW } else { egui::Color32::from_rgb(90, 150, 230) },
@@ -1418,7 +1420,7 @@ impl PanelApp {
                     picks.push(Selection::Npc(n.nid));
                 }
             }
-            if let Some(i) = self.scene.show(ui, fx, fz, level, &markers) {
+            if let Some(i) = self.scene.show(ui, fx, fz, level, snap.tick, &markers) {
                 if let Some(sel) = picks.get(i) {
                     self.selected = *sel;
                 }

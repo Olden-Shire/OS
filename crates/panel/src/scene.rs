@@ -48,11 +48,29 @@ pub enum MarkerKind {
 
 /// An entity rendered as a real model in the 3D scene + labelled in the overlay.
 pub struct Marker {
+    /// Stable id across ticks (player pid / namespaced npc nid) so the scene can
+    /// keep a persistent [`Actor`] per entity and interpolate it between ticks.
+    pub id: i32,
     pub x: i32,
     pub z: i32,
     pub color: egui::Color32,
     pub label: Option<String>,
     pub kind: MarkerKind,
+}
+
+/// Persistent client-entity for one tracked actor — the real `ClientEntity` the
+/// game client uses, so `move_entity` (route interpolation + walk/turn anim
+/// selection) drives smooth movement and animation between server ticks. Fed a
+/// route step per tick via `teleport(tile, jump=false)`; advanced per 50Hz cycle.
+struct Actor {
+    entity: client::dash3d::ClientEntity,
+    kind: MarkerKind,
+    label: Option<String>,
+    /// NPC `walksmoothing` (players: true) — passed to `move_entity`.
+    smoothing: bool,
+    /// Local build-area tile (0..103) it was last told to walk to, so we only
+    /// feed a new route step when the target tile actually changes.
+    target: (i32, i32),
 }
 
 /// 3D scene state held by the panel.
@@ -90,6 +108,15 @@ pub struct Scene {
     mapscene: Option<Vec<client::graphics::pix8::Pix8>>,
     /// Map-function icons (quest, bank, shop, altar, …) keyed by loc mapfunction.
     mapfunction: Option<Vec<client::graphics::pix32::Pix32>>,
+    /// Persistent per-entity client-entities, keyed by marker id. Synced from the
+    /// snapshot once per tick; advanced by `move_entity` every cycle for smooth
+    /// movement + walk anims (real scene composition, not per-tick snapping).
+    actors: std::collections::HashMap<i32, Actor>,
+    /// The snapshot tick the actors were last synced from (feed routes once/tick).
+    actors_tick: u32,
+    /// The region the actors' local coords are anchored to; on change we reset
+    /// them (local origin shifts when the camera follows into a new region).
+    actors_region: Option<(u32, u32)>,
 }
 
 impl Default for Scene {
@@ -114,6 +141,9 @@ impl Default for Scene {
             map_w: 0,
             mapscene: None,
             mapfunction: None,
+            actors: std::collections::HashMap::new(),
+            actors_tick: u32::MAX,
+            actors_region: None,
         }
     }
 }
@@ -326,10 +356,54 @@ impl Scene {
     /// Render the region containing `(px, pz, level)` (a player's coord). Orbit
     /// with drag, zoom with scroll. Returns the index of a marker the user
     /// clicked (for select-in-3D), if any.
-    pub fn show(&mut self, ui: &mut egui::Ui, px: i32, pz: i32, level: i32, markers: &[Marker]) -> Option<usize> {
+    /// Reconcile the persistent [`Actor`] set with this tick's markers: create
+    /// new actors (snapped to their tile), feed a route step to movers
+    /// (`teleport(tile, jump=false)` queues a walk, or snaps if >8 tiles), and
+    /// drop actors that left view. Only runs when the snapshot tick changes, so
+    /// each move is fed exactly once and `move_entity` interpolates it per cycle.
+    fn sync_actors(&mut self, markers: &[Marker], rx: u32, ry: u32, tick: u32) {
+        // Local build-area coords are anchored to the region; reset on a change.
+        if self.actors_region != Some((rx, ry)) {
+            self.actors.clear();
+            self.actors_region = Some((rx, ry));
+            self.actors_tick = u32::MAX;
+        }
+        if self.actors_tick == tick {
+            return;
+        }
+        self.actors_tick = tick;
+
+        let mut seen = std::collections::HashSet::with_capacity(markers.len());
+        for m in markers {
+            seen.insert(m.id);
+            let lx = (REGION_BORDER + (m.x - rx as i32 * 64)).clamp(0, 103);
+            let lz = (REGION_BORDER + (m.z - ry as i32 * 64)).clamp(0, 103);
+            match self.actors.get_mut(&m.id) {
+                Some(a) => {
+                    a.kind = m.kind.clone();
+                    a.label = m.label.clone();
+                    if (lx, lz) != a.target {
+                        a.target = (lx, lz);
+                        a.entity.teleport(lx, lz, false);
+                    }
+                }
+                None => {
+                    let mut a = make_actor(&m.kind);
+                    a.label = m.label.clone();
+                    a.entity.teleport(lx, lz, true);
+                    a.target = (lx, lz);
+                    self.actors.insert(m.id, a);
+                }
+            }
+        }
+        self.actors.retain(|id, _| seen.contains(id));
+    }
+
+    pub fn show(&mut self, ui: &mut egui::Ui, px: i32, pz: i32, level: i32, tick: u32, markers: &[Marker]) -> Option<usize> {
         self.ensure_installed();
         let (rx, ry) = ((px >> 6) as u32, (pz >> 6) as u32);
         self.ensure_world(rx, ry);
+        self.sync_actors(markers, rx, ry, tick);
 
         if self.world.is_none() {
             ui.vertical_centered(|ui| {
@@ -361,17 +435,24 @@ impl Scene {
             return None;
         }
 
-        // Camera orbits the PLAYER's tile (centred in the 104² world), not the
-        // region centre — "go to their region" focuses on them.
-        let local_x = (REGION_BORDER + (px - rx as i32 * 64)).clamp(0, 103);
-        let local_z = (REGION_BORDER + (pz - ry as i32 * 64)).clamp(0, 103);
-        let pivot_y = self.height_at(level, local_x, local_z);
+        // Camera orbits the followed entity. Pivot on the selected actor's
+        // INTERPOLATED position (the YELLOW marker) so the camera tracks the
+        // smoothly-moving model instead of snapping to its tile each tick; fall
+        // back to the focus tile if that actor isn't tracked yet.
+        let focus_id = markers.iter().find(|m| m.color == egui::Color32::YELLOW).map(|m| m.id);
+        let (pivot_x, pivot_z) = focus_id
+            .and_then(|id| self.actors.get(&id))
+            .map(|a| (a.entity.x, a.entity.z))
+            .unwrap_or_else(|| {
+                let lx = (REGION_BORDER + (px - rx as i32 * 64)).clamp(0, 103);
+                let lz = (REGION_BORDER + (pz - ry as i32 * 64)).clamp(0, 103);
+                (lx * 128 + 64, lz * 128 + 64)
+            });
+        let pivot_y = self.height_at(level, (pivot_x >> 7).clamp(0, 103), (pivot_z >> 7).clamp(0, 103));
         let yaw = self.cam_yaw & 0x7FF;
         let pitch = self.cam_pitch.clamp(128, 383);
         let sin_t = pix3d::sin_table();
         let cos_t = pix3d::cos_table();
-        let pivot_x = local_x * 128 + 64;
-        let pivot_z = local_z * 128 + 64;
         let h_radius = (self.cam_dist * cos_t[pitch as usize]) >> 16;
         let cam_x = pivot_x + ((h_radius * sin_t[yaw as usize]) >> 16);
         let cam_y = pivot_y - ((self.cam_dist * sin_t[pitch as usize]) >> 16);
@@ -385,12 +466,26 @@ impl Scene {
         self.last_anim = Some(now);
         // 1 cycle = 20ms (50Hz), matching the client's per-frame seq stepping.
         self.anim_accum += elapsed / 20.0;
-        let ticks = self.anim_accum as i32;
-        if ticks > 0 {
-            self.anim_accum -= ticks as f64;
-            self.anim_cycle = self.anim_cycle.wrapping_add(ticks);
-            client::scene::LOOP_CYCLE.store(self.anim_cycle, std::sync::atomic::Ordering::Relaxed);
+        let raw = self.anim_accum as i32;
+        if raw > 0 {
+            self.anim_accum -= raw as f64;
+            let ticks = raw.min(10); // cap catch-up after a long stall
             client::dash3d::texture_manager::run_anims(ticks);
+            // Advance each tracked actor one client cycle at a time: move_entity
+            // interpolates its route (smooth movement) and route_move selects the
+            // walk/turn seq, so animation + motion are the real client pipeline.
+            let empty: std::collections::HashMap<i32, (i32, i32)> = std::collections::HashMap::new();
+            let mut sounds: Vec<(i32, i32)> = Vec::new();
+            for _ in 0..ticks {
+                self.anim_cycle = self.anim_cycle.wrapping_add(1);
+                let cyc = self.anim_cycle;
+                for a in self.actors.values_mut() {
+                    let size = a.entity.size.max(1);
+                    client::client::move_entity(&mut a.entity, size, cyc, false, a.smoothing,
+                        &empty, &empty, -1, 0, 0, false, &mut sounds);
+                }
+            }
+            client::scene::LOOP_CYCLE.store(self.anim_cycle, std::sync::atomic::Ordering::Relaxed);
         }
 
         // Build each entity's animated model up front (global config state, no
@@ -400,32 +495,24 @@ impl Scene {
         // Drawing them on top afterward (obj_render) ignored scene depth, so
         // players punched through walls and floors.
         let clock = self.anim_cycle;
-        let mut entity_models: Vec<(std::sync::Arc<client::dash3d::model_lit::ModelLit>, i32, i32, i32)> = Vec::new();
-        for m in markers {
-            let lx = (REGION_BORDER + (m.x - rx as i32 * 64)).clamp(0, 103);
-            let lz = (REGION_BORDER + (m.z - ry as i32 * 64)).clamp(0, 103);
-            let (ex, ez) = (lx * 128 + 64, lz * 128 + 64);
-            let ey = self.height_at(level, lx, lz);
-            let kind = m.kind.clone();
+        let level_c = level.clamp(0, 3);
+        // Build each actor's animated model from its (interpolated) ClientEntity:
+        // position is the entity's fine coord (smoothly tweened by move_entity) and
+        // the seq is whatever route_move/entity_anim set this cycle.
+        let mut entity_models: Vec<(std::sync::Arc<client::dash3d::model_lit::ModelLit>, i32, i32, i32, i32)> = Vec::new();
+        for a in self.actors.values() {
+            let (ex, ez) = (a.entity.x, a.entity.z);
+            let (lx, lz) = ((ex >> 7).clamp(0, 103), (ez >> 7).clamp(0, 103));
+            let ey = self.height_at(level_c, lx, lz);
+            let yaw = a.entity.yaw;
+            let kind = a.kind.clone();
+            let (p_id, p_f) = (a.entity.primary_seq_id, a.entity.primary_seq_frame);
+            let (s_id, s_f) = (a.entity.secondary_seq_id, a.entity.secondary_seq_frame);
             let built = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-                match kind {
-                    MarkerKind::Npc { type_id, moving } => {
-                        let nt = client::config::npc_type::list(type_id);
-                        let anim = if moving && nt.walkanim >= 0 { nt.walkanim } else { nt.readyanim };
-                        let (seq, frame) = anim_frame(anim, clock);
-                        nt.get_temp_model(seq.as_ref(), frame, None, -1)
-                    }
-                    MarkerKind::Player { worn, colours, female, ready_anim, walk_anim, moving } => {
-                        let mut pm = client::dash3d::player_model::PlayerModel::new();
-                        pm.apply_appearance(worn, colours, female, -1);
-                        let anim = if moving && walk_anim >= 0 { walk_anim } else { ready_anim };
-                        let (seq, frame) = anim_frame(anim, clock);
-                        pm.get_temp_model(seq.as_ref(), frame, None, -1)
-                    }
-                }
+                build_actor_model(&kind, p_id, p_f, s_id, s_f)
             }));
             if let Ok(Some(model)) = built {
-                entity_models.push((std::sync::Arc::new(model), ex, ey, ez));
+                entity_models.push((std::sync::Arc::new(model), ex, ey, ez, yaw));
             }
         }
         let drawn = entity_models.len();
@@ -438,33 +525,20 @@ impl Scene {
         pix3d::set_model_far_clip(16000);
         let rendered = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
             use client::dash3d::model_source::ModelSource;
-            for (model, ex, ey, ez) in &entity_models {
+            for (model, ex, ey, ez, eyaw) in &entity_models {
                 let source = ModelSource::lit(std::sync::Arc::clone(model));
                 // (level, x, z, y, radius, model, yaw, typecode, extend_by_yaw)
-                world.add_dynamic(level.clamp(0, 3), *ex, *ez, *ey, 60, Some(source), 0, 0, false);
+                world.add_dynamic(level_c, *ex, *ez, *ey, 60, Some(source), *eyaw, 0, false);
             }
-            world.render_all(cam_x, cam_y, cam_z, pitch, yaw, level.clamp(0, 3));
+            world.render_all(cam_x, cam_y, cam_z, pitch, yaw, level_c);
             world.remove_sprites();
         }));
-        // Diagnostic: clock + drawn count + the focused entity's anim state, so
-        // a "not animating" report carries the actual anim id / frame / total.
+        // Diagnostic: clock + actor count + a sample actor's live seq state, so a
+        // "not animating" report carries the actual secondary (walk/stand) seq.
         {
-            let mut d = format!("clk {clock} · ents {} · drawn {}", markers.len(), drawn);
-            let sample = markers.iter().find(|m| matches!(m.kind, MarkerKind::Player { .. }))
-                .or_else(|| markers.first());
-            if let Some(m) = sample {
-                let (tag, anim) = match &m.kind {
-                    MarkerKind::Player { ready_anim, walk_anim, moving, .. } =>
-                        ("P", if *moving && *walk_anim >= 0 { *walk_anim } else { *ready_anim }),
-                    MarkerKind::Npc { type_id, moving } => {
-                        let nt = client::config::npc_type::list(*type_id);
-                        ("N", if *moving && nt.walkanim >= 0 { nt.walkanim } else { nt.readyanim })
-                    }
-                };
-                let seq = client::config::seq_type::list(anim.max(0));
-                let n = if anim < 0 { 0 } else { seq.frames.as_ref().map_or(0, |f| f.len()) };
-                let (_, fr) = anim_frame(anim, clock);
-                d.push_str(&format!(" · {tag} anim={anim} f={fr}/{n}"));
+            let mut d = format!("clk {clock} · actors {} · drawn {}", self.actors.len(), drawn);
+            if let Some(a) = self.actors.values().next() {
+                d.push_str(&format!(" · seq2={} f={}", a.entity.secondary_seq_id, a.entity.secondary_seq_frame));
             }
             self.dbg = d;
         }
@@ -496,10 +570,16 @@ impl Scene {
         // Collect screen positions for click-to-select.
         let mut screen: Vec<(usize, egui::Pos2)> = Vec::new();
         for (i, m) in markers.iter().enumerate() {
-            let lx = (REGION_BORDER + (m.x - rx as i32 * 64)).clamp(0, 103);
-            let lz = (REGION_BORDER + (m.z - ry as i32 * 64)).clamp(0, 103);
-            let (ex, ez) = (lx * 128 + 64, lz * 128 + 64);
-            let my = self.height_at(level, lx, lz);
+            // Project the actor's interpolated position (falls back to the tile)
+            // so rings/labels track the smoothly-moving model, not the snapped tile.
+            let (ex, ez) = self.actors.get(&m.id)
+                .map(|a| (a.entity.x, a.entity.z))
+                .unwrap_or_else(|| {
+                    let lx = (REGION_BORDER + (m.x - rx as i32 * 64)).clamp(0, 103);
+                    let lz = (REGION_BORDER + (m.z - ry as i32 * 64)).clamp(0, 103);
+                    (lx * 128 + 64, lz * 128 + 64)
+                });
+            let my = self.height_at(level, (ex >> 7).clamp(0, 103), (ez >> 7).clamp(0, 103));
             let (sx, sy, _, _, vz) = pix3d::project_with_view_space(
                 ex - cam_x, my - cam_y, ez - cam_z, pitch, yaw, 512, w / 2, h / 2,
             );
@@ -574,6 +654,58 @@ fn anim_frame(anim_id: i32, ticks: i32) -> (Option<client::config::seq_type::Seq
         t -= d;
     }
     (Some(seq), frame)
+}
+
+/// Create a persistent [`Actor`] for a marker kind, seeding the ClientEntity's
+/// anim fields (walk/stand/turn seqs, size, turn speed) so `route_move` can pick
+/// the right stance as it moves — mirrors the client's NPC_INFO/appearance setup.
+fn make_actor(kind: &MarkerKind) -> Actor {
+    let mut e = client::dash3d::ClientEntity::default();
+    let smoothing;
+    match kind {
+        MarkerKind::Npc { type_id, .. } => {
+            let t = client::config::npc_type::list(*type_id);
+            e.size = t.size.max(1);
+            e.turnspeed = t.turnspeed;
+            e.walkanim = t.walkanim;
+            e.walkanim_b = t.walkanim_b;
+            e.walkanim_l = t.walkanim_r; // Java swaps l/r when copying from the type
+            e.walkanim_r = t.walkanim_l;
+            e.readyanim = t.readyanim;
+            e.turnleftanim = t.turnleftanim;
+            e.turnrightanim = t.turnrightanim;
+            smoothing = t.walksmoothing;
+        }
+        MarkerKind::Player { ready_anim, walk_anim, .. } => {
+            e.size = 1;
+            e.readyanim = *ready_anim;
+            e.walkanim = *walk_anim;
+            e.walkanim_b = *walk_anim;
+            e.walkanim_l = *walk_anim;
+            e.walkanim_r = *walk_anim;
+            smoothing = true;
+        }
+    }
+    Actor { entity: e, kind: kind.clone(), label: None, smoothing, target: (0, 0) }
+}
+
+/// Build an actor's animated model from its live ClientEntity seq state (the
+/// primary one-shot + secondary walk/stand seq route_move set this cycle).
+fn build_actor_model(
+    kind: &MarkerKind, p_id: i32, p_f: i32, s_id: i32, s_f: i32,
+) -> Option<client::dash3d::model_lit::ModelLit> {
+    use client::config::seq_type;
+    let primary = (p_id != -1).then(|| seq_type::list(p_id));
+    let secondary = (s_id != -1).then(|| seq_type::list(s_id));
+    match kind {
+        MarkerKind::Npc { type_id, .. } => client::config::npc_type::list(*type_id)
+            .get_temp_model(primary.as_ref(), p_f, secondary.as_ref(), s_f),
+        MarkerKind::Player { worn, colours, female, .. } => {
+            let mut pm = client::dash3d::player_model::PlayerModel::new();
+            pm.apply_appearance(*worn, *colours, *female, -1);
+            pm.get_temp_model(primary.as_ref(), p_f, secondary.as_ref(), s_f)
+        }
+    }
 }
 
 /// Build the client scene World for a region's raw map bytes, centred in the
