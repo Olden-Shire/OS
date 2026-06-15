@@ -158,9 +158,9 @@ pub enum Operand {
 }
 
 /// The npc 4-direction walk-anim labels (op-17), in wire order: forward, back,
-/// right, left (Engine-TS `NpcType`). The leading `walkanim` is shared with the
-/// single op-14, disambiguated on encode by whether the suffixed labels follow.
-const WALK_DIRS: &[&str] = &["walkanim", "walkanim_b", "walkanim_r", "walkanim_l"];
+/// right, left (Engine-TS `NpcType`). All suffixed (`_f` for forward) so the set
+/// is distinct from the single op-14 `walkanim`.
+const WALK_DIRS: &[&str] = &["walkanim_f", "walkanim_b", "walkanim_r", "walkanim_l"];
 
 /// Which half of an indexed line a key denotes, for [`encode`] grouping.
 #[derive(Clone, Copy, PartialEq)]
@@ -205,8 +205,8 @@ fn indexed_match(schema: Schema, key: &str) -> Option<(&'static OpDef, IndexKind
 }
 
 /// If a `LabeledSeqs` opcode's labels match `entries[at..]` exactly and in
-/// order, return that opcode and its labels (so a leading `walkanim` is only
-/// a 4-direction group when `walkanim_b`/… actually follow it).
+/// order, return that opcode (the whole `walkanim_f`/`walkanim_b`/… set must be
+/// present contiguously for it to encode as the 4-direction op).
 fn labeled_match_at(schema: Schema, entries: &[(&str, &str)], at: usize) -> Option<&'static OpDef> {
     for def in schema {
         if let [Operand::LabeledSeqs { labels }] = def.operands
@@ -470,9 +470,8 @@ pub fn encode(schema: Schema, text: &str, refs: &ConfigRefs) -> Option<Vec<u8>> 
             continue;
         }
 
-        // Labeled seq group (npc 4-direction `walkanim`/`walkanim_b`/…): only a
-        // group when every label follows in order, so a lone `walkanim` stays
-        // the single op-14.
+        // Labeled seq group (npc 4-direction `walkanim_f`/`walkanim_b`/…),
+        // emitted only when the whole set is present contiguously.
         if let Some(def) = labeled_match_at(schema, &entries, i) {
             let [Operand::LabeledSeqs { labels }] = def.operands else { return None };
             p.p1(i32::from(def.code));
@@ -772,9 +771,8 @@ pub const LOC: Schema = &[
 pub const NPC: Schema = &[
     // models / heads / recol / retex use content-old's indexed-line form
     // (`model1`, `head1`, `recol1s`/`recol1d`); op17 is the 4-direction walk
-    // broken into `walkanim`/`walkanim_b`/`walkanim_r`/`walkanim_l` — the
-    // leading `walkanim` is name-shared with the single op14 and resolved by
-    // whether the suffixed labels follow it.
+    // broken into `walkanim_f`/`walkanim_b`/`walkanim_r`/`walkanim_l` — all
+    // suffixed, so the set is distinct from the single op14 `walkanim`.
     OpDef { code: 1, name: "models", operands: &[Operand::ModelsIndexed { stem: "model" }] },
     OpDef { code: 2, name: "name", operands: &[Str] },
     OpDef { code: 12, name: "size", operands: &[n(U8)] },

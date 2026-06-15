@@ -25,8 +25,10 @@ use cache::content::pack_file;
 /// Seq-valued keys (each a single id now that the 4-direction walk is broken
 /// into `walkanim`/`walkanim_b`/`walkanim_r`/`walkanim_l`). Comma-split is kept
 /// for resilience against any still-joined `walkanim` line.
-const SEQ_KEYS: &[&str] =
-    &["readyanim", "walkanim", "walkanim_b", "walkanim_r", "walkanim_l", "turnleftanim", "turnrightanim"];
+const SEQ_KEYS: &[&str] = &[
+    "readyanim", "walkanim", "walkanim_f", "walkanim_b", "walkanim_r", "walkanim_l",
+    "turnleftanim", "turnrightanim",
+];
 
 /// A model-ref line in content-old's indexed form: `model<N>` / `head<N>`,
 /// each a single id. (Replaces the old joined `models`/`headmodels` lists.)

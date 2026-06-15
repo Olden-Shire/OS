@@ -5,9 +5,9 @@
 //!   `walkanims = a, b, c, d`
 //! The codec change in `config_text.rs` breaks them into one line each —
 //! `model1`/`head1`, `recol1s`/`recol1d`, and the 4-direction walk as
-//! `walkanim`/`walkanim_b`/`walkanim_r`/`walkanim_l` — so this rewrites the
-//! on-disk `.npc` text to that shape. Every other line (name, ops, single
-//! anims, server-only keys, comments) is passed through verbatim.
+//! `walkanim_f`/`walkanim_b`/`walkanim_r`/`walkanim_l` — so this rewrites the
+//! on-disk `.npc` text to that shape. Every other line (name, ops, the single
+//! `walkanim` op-14, server-only keys, comments) is passed through verbatim.
 //!
 //! Byte-neutral: the new codec re-encodes the indexed form to the exact same
 //! cache bytes (verify with `--example verify_content -- Content`). Idempotent.
@@ -51,8 +51,9 @@ fn main() {
 
 /// Rewrite the list fields of one `.npc` file's text to the indexed form.
 fn reformat(text: &str) -> String {
+    let lines: Vec<&str> = text.lines().collect();
     let mut out = String::with_capacity(text.len() + text.len() / 8);
-    for line in text.lines() {
+    for (i, &line) in lines.iter().enumerate() {
         let trimmed = line.trim_start();
         if trimmed.starts_with("//") || !line.contains('=') {
             out.push_str(line);
@@ -68,10 +69,15 @@ fn reformat(text: &str) -> String {
             "recol" => emit_pairs(&mut out, "recol", val),
             "retex" => emit_pairs(&mut out, "retex", val),
             // The 4-direction walk: legacy `walkanims`, or `walkanim` once it
-            // carries commas (from the earlier joined reformat). A comma-free
-            // `walkanim` is the single op-14 and passes through untouched.
+            // carries commas (from the earlier joined reformat).
             "walkanims" => emit_walk(&mut out, val),
             "walkanim" if val.contains(',') => emit_walk(&mut out, val),
+            // First line of the already-broken group → `walkanim_f` (the back/
+            // right/left lines pass through). A comma-free `walkanim` not
+            // followed by `walkanim_b` is the single op-14, left untouched.
+            "walkanim" if line_key(lines.get(i + 1)) == Some("walkanim_b") => {
+                out.push_str(&format!("walkanim_f = {val}\n"));
+            }
             _ => {
                 out.push_str(line);
                 out.push('\n');
@@ -79,6 +85,12 @@ fn reformat(text: &str) -> String {
         }
     }
     out
+}
+
+/// The `key` of a `key = value` line (None for comments / blank / no `=`).
+fn line_key<'a>(line: Option<&&'a str>) -> Option<&'a str> {
+    let l: &'a str = *line?;
+    l.split_once('=').map(|(k, _)| k.trim())
 }
 
 /// `a b c` → `<stem>1 = a` / `<stem>2 = b` / … (one line each).
@@ -93,7 +105,7 @@ fn emit_list(out: &mut String, stem: &str, val: &str) {
 fn emit_walk(out: &mut String, val: &str) {
     let toks: Vec<&str> = val.split(',').map(str::trim).collect();
     if toks.len() == 4 {
-        for (label, tok) in ["walkanim", "walkanim_b", "walkanim_r", "walkanim_l"].iter().zip(&toks) {
+        for (label, tok) in ["walkanim_f", "walkanim_b", "walkanim_r", "walkanim_l"].iter().zip(&toks) {
             out.push_str(&format!("{label} = {tok}\n"));
         }
     } else {

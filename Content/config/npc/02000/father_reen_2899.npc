@@ -1,7 +1,7 @@
 // npc 2899
 vislevel = 0
 size = 1
-walkanim = seq_1146
+walkanim_f = seq_1146
 walkanim_b = seq_820
 walkanim_r = seq_821
 walkanim_l = seq_822

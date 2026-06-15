@@ -1,6 +1,6 @@
 // npc 3681
 size = 1
-walkanim = seq_3865
+walkanim_f = seq_3865
 walkanim_b = seq_3865
 walkanim_r = seq_3865
 walkanim_l = seq_3865

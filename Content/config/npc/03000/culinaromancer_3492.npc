@@ -1,5 +1,5 @@
 // npc 3492
-walkanim = seq_3357
+walkanim_f = seq_3357
 walkanim_b = seq_3357
 walkanim_r = seq_3357
 walkanim_l = seq_3357

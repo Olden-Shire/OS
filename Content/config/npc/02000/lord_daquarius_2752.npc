@@ -1,6 +1,6 @@
 // npc 2752
 vislevel = 0
-walkanim = seq_2724
+walkanim_f = seq_2724
 walkanim_b = seq_2724
 walkanim_r = seq_2724
 walkanim_l = seq_2724

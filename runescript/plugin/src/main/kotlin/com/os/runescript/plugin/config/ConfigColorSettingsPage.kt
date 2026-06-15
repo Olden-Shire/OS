@@ -25,7 +25,7 @@ class ConfigColorSettingsPage : ColorSettingsPage {
         name = Hans
         vislevel = 0
         size = 1
-        walkanim = seq_819
+        walkanim_f = seq_819
         walkanim_b = seq_820
         walkanim_r = seq_821
         walkanim_l = seq_822

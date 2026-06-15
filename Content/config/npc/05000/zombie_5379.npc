@@ -1,6 +1,6 @@
 // npc 5379
 readyanim = seq_5576
-walkanim = seq_5577
+walkanim_f = seq_5577
 walkanim_b = seq_5793
 walkanim_r = seq_5792
 walkanim_l = seq_5791

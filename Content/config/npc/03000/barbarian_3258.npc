@@ -1,6 +1,6 @@
 // npc 3258
 resizeh = 137
-walkanim = seq_2562
+walkanim_f = seq_2562
 walkanim_b = seq_2562
 walkanim_r = seq_2562
 walkanim_l = seq_2562

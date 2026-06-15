@@ -1,7 +1,7 @@
 // npc 3057
 size = 1
 readyanim = seq_2945
-walkanim = seq_2947
+walkanim_f = seq_2947
 walkanim_b = seq_2948
 walkanim_r = seq_2949
 walkanim_l = seq_2950

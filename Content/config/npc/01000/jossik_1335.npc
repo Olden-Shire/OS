@@ -1,6 +1,6 @@
 // npc 1335
 size = 2
-walkanim = seq_1147
+walkanim_f = seq_1147
 walkanim_b = seq_1147
 walkanim_r = seq_1147
 walkanim_l = seq_1147
