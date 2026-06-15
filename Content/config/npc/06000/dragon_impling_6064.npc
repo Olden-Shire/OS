@@ -6,4 +6,5 @@ op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Dragon impling
-models = model_26368 model_26367
+model1 = model_26368
+model2 = model_26367

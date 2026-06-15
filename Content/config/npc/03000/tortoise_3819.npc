@@ -11,4 +11,6 @@ resizev = 120
 op2 = Attack
 vislevel = 79
 name = Tortoise
-models = model_14800 model_14802 model_14798
+model1 = model_14800
+model2 = model_14802
+model3 = model_14798

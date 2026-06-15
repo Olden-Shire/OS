@@ -5,4 +5,5 @@ readyanim = seq_1556
 op2 = Attack
 vislevel = 93
 name = Dust devil
-models = obj_dust_devil model_5077
+model1 = obj_dust_devil
+model2 = model_5077

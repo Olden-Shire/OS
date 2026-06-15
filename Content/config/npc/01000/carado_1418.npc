@@ -2,7 +2,12 @@
 walkanim = seq_189
 readyanim = seq_195
 vislevel = 0
-recol = 22426/13739 22422/15799
+recol1s = 22426
+recol1d = 13739
+recol2s = 22422
+recol2d = 15799
 name = Carado
-models = model_2914 model_14924 model_2919
-headmodels = obj_gnome
+model1 = model_2914
+model2 = model_14924
+model3 = model_2919
+head1 = obj_gnome

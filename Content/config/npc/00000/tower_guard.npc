@@ -1,11 +1,22 @@
 // npc 877
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 28
-recol = 25238/12 8741/12
+recol1s = 25238
+recol1d = 12
+recol2s = 8741
+recol2d = 12
 name = Tower guard
-models = model_233 model_246 obj_bronze_chainbody_1103_man model_151 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man obj_wooden_shield_1171_wear obj_bronze_sword_1277_wear
-headmodels = obj_guard
+model1 = model_233
+model2 = model_246
+model3 = obj_bronze_chainbody_1103_man
+model4 = model_151
+model5 = obj_cooking_gauntlets_man
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_wooden_shield_1171_wear
+model9 = obj_bronze_sword_1277_wear
+head1 = obj_guard

@@ -5,4 +5,6 @@ walkanim = seq_5334
 readyanim = seq_5335
 op1 = Shear
 name = Sheep
-models = model_20292 model_20295 model_20293
+model1 = model_20292
+model2 = model_20295
+model3 = model_20293

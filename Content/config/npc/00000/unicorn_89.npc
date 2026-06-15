@@ -8,4 +8,5 @@ ambient = 25
 op2 = Attack
 vislevel = 15
 name = Unicorn
-models = model_25755 model_25756
+model1 = model_25755
+model2 = model_25756

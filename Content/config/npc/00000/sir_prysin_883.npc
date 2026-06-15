@@ -1,11 +1,16 @@
 // npc 883
 vislevel = 124
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 name = Sir Prysin
-models = model_17522 model_17529 model_17515 model_17520 model_17526 model_17517
-headmodels = model_17532
+model1 = model_17522
+model2 = model_17529
+model3 = model_17515
+model4 = model_17520
+model5 = model_17526
+model6 = model_17517
+head1 = model_17532

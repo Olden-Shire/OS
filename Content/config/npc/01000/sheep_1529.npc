@@ -7,4 +7,5 @@ resizev = 108
 ambient = 20
 vislevel = 1
 name = Sheep
-models = model_20290 model_20291
+model1 = model_20290
+model2 = model_20291

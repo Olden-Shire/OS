@@ -1,5 +1,6 @@
 // npc 5948
 vislevel = 1
 name = Teacher and pupil
-models = model_2214
-headmodels = model_14337 model_80
+model1 = model_2214
+head1 = model_14337
+head2 = model_80

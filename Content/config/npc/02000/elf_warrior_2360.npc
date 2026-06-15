@@ -1,11 +1,20 @@
 // npc 2360
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 127
 resizev = 120
 size = 1
 op2 = Attack
 vislevel = 108
-recol = 9137/9112 6449/7646 4550/6829
+recol1s = 9137
+recol1d = 9112
+recol2s = 6449
+recol2d = 7646
+recol3s = 4550
+recol3d = 6829
 name = Elf warrior
-models = model_8266 model_4025 model_4016 model_4033 model_4023
+model1 = model_8266
+model2 = model_4025
+model3 = model_4016
+model4 = model_4033
+model5 = model_4023

@@ -9,4 +9,6 @@ vislevel = 0
 alwaysontop = true
 nowalksmoothing = true
 name = Autumn Elemental
-models = model_22264 model_22265 model_22263
+model1 = model_22264
+model2 = model_22265
+model3 = model_22263

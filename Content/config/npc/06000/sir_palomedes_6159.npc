@@ -1,11 +1,20 @@
 // npc 6159
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Hidden
 op1 = Talk-to
 vislevel = 118
-recol = 7888/127 5537/5652 6798/5652
+recol1s = 7888
+recol1d = 127
+recol2s = 5537
+recol2d = 5652
+recol3s = 6798
+recol3d = 5652
 name = Sir Palomedes
-models = model_27126 model_27195 model_27203
-headmodels = model_27208 model_27562 model_27204
+model1 = model_27126
+model2 = model_27195
+model3 = model_27203
+head1 = model_27208
+head2 = model_27562
+head3 = model_27204

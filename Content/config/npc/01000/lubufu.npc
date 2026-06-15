@@ -1,9 +1,16 @@
 // npc 1171
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
-recol = 6798/32865
+recol1s = 6798
+recol1d = 32865
 name = Lubufu
-models = obj_boots_of_lightness_88_man model_246 model_3873 model_173 model_176 obj_mime_legs_man
-headmodels = obj_rogue model_81
+model1 = obj_boots_of_lightness_88_man
+model2 = model_246
+model3 = model_3873
+model4 = model_173
+model5 = model_176
+model6 = obj_mime_legs_man
+head1 = obj_rogue
+head2 = model_81

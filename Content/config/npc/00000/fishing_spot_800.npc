@@ -7,4 +7,4 @@ nominimap = true
 op1 = Bait
 op3 = hidden
 name = Fishing spot
-models = model_2331
+model1 = model_2331

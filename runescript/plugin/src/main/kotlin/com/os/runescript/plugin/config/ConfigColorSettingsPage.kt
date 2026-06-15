@@ -25,8 +25,11 @@ class ConfigColorSettingsPage : ColorSettingsPage {
         name = Hans
         vislevel = 0
         size = 1
-        walkanims = 819, 820, 821, 822
-        recol = 8078/792 8741/1950 43072/4550
+        walkanim = seq_819, seq_820, seq_821, seq_822
+        model1 = model_390
+        model2 = obj_boots_of_lightness_88_woman
+        recol1s = 8078
+        recol1d = 792
         op1 = Talk-to
 
         [com_2 close_button]

@@ -5,4 +5,4 @@ vislevel = 0
 turnspeed = 0
 alwaysontop = true
 name = Cage
-models = model_22771
+model1 = model_22771

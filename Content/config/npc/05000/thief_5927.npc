@@ -1,10 +1,20 @@
 // npc 5927
 resizeh = 134
 resizev = 134
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 16
-recol = 6798/7634 127/38408
+recol1s = 6798
+recol1d = 7634
+recol2s = 127
+recol2d = 38408
 name = Thief
-models = obj_pirate_bandana_7112_man model_25661 model_5215 model_25677 model_25645 model_25654 model_25669 model_25651
+model1 = obj_pirate_bandana_7112_man
+model2 = model_25661
+model3 = model_5215
+model4 = model_25677
+model5 = model_25645
+model6 = model_25654
+model7 = model_25669
+model8 = model_25651

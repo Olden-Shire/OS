@@ -6,4 +6,5 @@ op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Eclectic impling
-models = model_26370 model_26367
+model1 = model_26370
+model2 = model_26367

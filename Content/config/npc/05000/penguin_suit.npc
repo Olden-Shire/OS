@@ -8,5 +8,5 @@ vislevel = 0
 nominimap = true
 op1 = Pick-up
 name = Penguin suit
-models = model_21544
-headmodels = model_21523
+model1 = model_21544
+head1 = model_21523

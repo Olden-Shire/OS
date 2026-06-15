@@ -1,11 +1,23 @@
 // npc 3050
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 resizeh = 145
 resizev = 122
-recol = 8741/33030 25238/32910 4626/33030
+recol1s = 8741
+recol1d = 33030
+recol2s = 25238
+recol2d = 32910
+recol3s = 4626
+recol3d = 33030
 name = Larxus
-models = model_10038 model_10302 model_10304 model_10305 model_10301 obj_mime_legs_man obj_boots_of_lightness_88_man
-headmodels = model_10239 model_10027
+model1 = model_10038
+model2 = model_10302
+model3 = model_10304
+model4 = model_10305
+model5 = model_10301
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+head1 = model_10239
+head2 = model_10027

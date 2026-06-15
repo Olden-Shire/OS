@@ -4,5 +4,5 @@ walkanim = seq_5539
 op1 = Talk-to
 vislevel = 187
 name = Echned Zekin
-models = model_21153
-headmodels = model_21403
+model1 = model_21153
+head1 = model_21403

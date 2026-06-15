@@ -7,4 +7,4 @@ ambient = 60
 contrast = 60
 vislevel = 43
 name = Pyrefiend
-models = obj_pyrefiend
+model1 = obj_pyrefiend

@@ -7,7 +7,7 @@ plugins {
 
 allprojects {
     group = "com.os.runescript"
-    version = "0.4.6"
+    version = "0.4.7"
 
     repositories {
         mavenCentral()

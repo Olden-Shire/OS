@@ -1,5 +1,5 @@
 // npc 1683
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizev = 120
 resizeh = 120
@@ -7,7 +7,11 @@ ambient = 50
 contrast = 50
 vislevel = 0
 op1 = Talk-To
-recol = 17467/18626
+recol1s = 17467
+recol1d = 18626
 name = Velorina
-models = model_5226 model_5228 model_5225 model_5227
-headmodels = model_5208
+model1 = model_5226
+model2 = model_5228
+model3 = model_5225
+model4 = model_5227
+head1 = model_5208

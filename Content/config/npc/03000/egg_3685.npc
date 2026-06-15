@@ -5,4 +5,4 @@ ambient = 50
 contrast = 30
 turnspeed = 1024
 name = Egg
-models = obj_easter_egg_7928
+model1 = obj_easter_egg_7928

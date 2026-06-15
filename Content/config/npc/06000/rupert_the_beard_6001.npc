@@ -2,5 +2,11 @@
 op1 = Talk-to
 vislevel = 0
 name = Rupert the Beard
-models = model_26105 model_26107 model_26103 model_26106 model_26104 model_26109
-headmodels = model_26082 model_26081
+model1 = model_26105
+model2 = model_26107
+model3 = model_26103
+model4 = model_26106
+model5 = model_26104
+model6 = model_26109
+head1 = model_26082
+head2 = model_26081

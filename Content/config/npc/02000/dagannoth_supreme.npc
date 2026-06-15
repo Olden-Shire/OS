@@ -9,4 +9,5 @@ contrast = 30
 ambient = 30
 op2 = Attack
 name = Dagannoth Supreme
-models = model_9941 model_9943
+model1 = model_9941
+model2 = model_9943

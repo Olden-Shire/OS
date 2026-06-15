@@ -1,8 +1,15 @@
 // npc 5844
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 32
 name = Outlaw
-models = model_23923 model_228 model_11190 model_23941 model_23945 model_23919 model_23948 model_23936
+model1 = model_23923
+model2 = model_228
+model3 = model_11190
+model4 = model_23941
+model5 = model_23945
+model6 = model_23919
+model7 = model_23948
+model8 = model_23936

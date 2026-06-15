@@ -1,10 +1,19 @@
 // npc 3571
 vislevel = 0
 op1 = Talk-to
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 ambient = -25
-recol = 4550/54352
+recol1s = 4550
+recol1d = 54352
 name = Liam
-models = model_210 model_250 model_16342 model_16341 obj_leather_vambraces_1063_man model_176 model_14044
-headmodels = model_49 model_82 model_9822
+model1 = model_210
+model2 = model_250
+model3 = model_16342
+model4 = model_16341
+model5 = obj_leather_vambraces_1063_man
+model6 = model_176
+model7 = model_14044
+head1 = model_49
+head2 = model_82
+head3 = model_9822

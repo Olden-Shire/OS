@@ -6,4 +6,4 @@ op1 = Pick-up
 vislevel = 0
 nominimap = true
 name = Toy Soldier
-models = model_13227
+model1 = model_13227

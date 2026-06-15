@@ -8,4 +8,6 @@ resizev = 86
 alwaysontop = true
 vislevel = 27
 name = Delrith
-models = model_17382 model_17387 model_17392
+model1 = model_17382
+model2 = model_17387
+model3 = model_17392

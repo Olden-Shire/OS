@@ -1,9 +1,22 @@
 // npc 4664
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 alwaysontop = true
 vislevel = 1
-recol = 7750/5272 10326/5173 10334/5181
+recol1s = 7750
+recol1d = 5272
+recol2s = 10326
+recol2d = 5173
+recol3s = 10334
+recol3d = 5181
 name = Wally
-models = obj_desert_disguise_man model_11190 model_17529 model_17515 model_17520 obj_silverlight_2402_wear obj_iron_platelegs_1067_man model_17517
-headmodels = obj_rogue model_11188
+model1 = obj_desert_disguise_man
+model2 = model_11190
+model3 = model_17529
+model4 = model_17515
+model5 = model_17520
+model6 = obj_silverlight_2402_wear
+model7 = obj_iron_platelegs_1067_man
+model8 = model_17517
+head1 = obj_rogue
+head2 = model_11188

@@ -3,5 +3,5 @@ op1 = Talk-to
 vislevel = 0
 nominimap = true
 name = Drain pipe
-models = model_26050
-headmodels = model_26087
+model1 = model_26050
+head1 = model_26087

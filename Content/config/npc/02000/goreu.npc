@@ -1,12 +1,20 @@
 // npc 2363
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 127
 resizev = 113
 op3 = Pickpocket
 op1 = Talk-to
 vislevel = 0
-recol = 16701/7613 9137/5429 25886/7646
+recol1s = 16701
+recol1d = 7613
+recol2s = 9137
+recol2d = 5429
+recol3s = 25886
+recol3d = 7646
 name = Goreu
-models = model_8266 model_6977 model_6975 model_4023
-headmodels = model_8261
+model1 = model_8266
+model2 = model_6977
+model3 = model_6975
+model4 = model_4023
+head1 = model_8261

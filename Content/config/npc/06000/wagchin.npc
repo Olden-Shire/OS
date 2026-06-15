@@ -1,6 +1,22 @@
 // npc 6124
 readyanim = seq_6835
 vislevel = 0
-recol = 6323/38340 6331/38331 2960/39828 6040/39580 6356/40243 6348/40251
+recol1s = 6323
+recol1d = 38340
+recol2s = 6331
+recol2d = 38331
+recol3s = 2960
+recol3d = 39828
+recol4s = 6040
+recol4d = 39580
+recol5s = 6356
+recol5d = 40243
+recol6s = 6348
+recol6d = 40251
 name = Wagchin
-models = model_26900 model_24486 model_24435 model_24476 model_24442 model_24452
+model1 = model_26900
+model2 = model_24486
+model3 = model_24435
+model4 = model_24476
+model5 = model_24442
+model6 = model_24452

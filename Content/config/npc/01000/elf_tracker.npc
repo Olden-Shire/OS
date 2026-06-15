@@ -1,10 +1,20 @@
 // npc 1199
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 16701/25886 7595/6689 9152/12 8119/12
+recol1s = 16701
+recol1d = 25886
+recol2s = 7595
+recol2d = 6689
+recol3s = 9152
+recol3d = 12
+recol4s = 8119
+recol4d = 12
 name = Elf Tracker
-models = model_4014 model_4020 model_4022 model_4025
-headmodels = obj_elf
+model1 = model_4014
+model2 = model_4020
+model3 = model_4022
+model4 = model_4025
+head1 = obj_elf

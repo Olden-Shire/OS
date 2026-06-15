@@ -4,5 +4,5 @@ readyanim = seq_222
 op1 = Talk-to
 vislevel = 3
 name = Monkey
-models = model_3004
-headmodels = model_4661
+model1 = model_3004
+head1 = model_4661

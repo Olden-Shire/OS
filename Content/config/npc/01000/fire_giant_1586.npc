@@ -7,4 +7,5 @@ readyanim = seq_4663
 op2 = Attack
 vislevel = 86
 name = Fire giant
-models = model_17450 model_17438
+model1 = model_17450
+model2 = model_17438

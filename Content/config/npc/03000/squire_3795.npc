@@ -1,9 +1,23 @@
 // npc 3795
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 alwaysontop = true
-recol = 43072/4550 61/16 7073/5772 8741/24 9104/16
+recol1s = 43072
+recol1d = 4550
+recol2s = 61
+recol2d = 16
+recol3s = 7073
+recol3d = 5772
+recol4s = 8741
+recol4d = 24
+recol5s = 9104
+recol5d = 16
 name = Squire
-models = model_378 model_14442 model_14588 model_10706 model_14574 model_358
-headmodels = model_103
+model1 = model_378
+model2 = model_14442
+model3 = model_14588
+model4 = model_10706
+model5 = model_14574
+model6 = model_358
+head1 = model_103

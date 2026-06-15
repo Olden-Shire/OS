@@ -1,10 +1,21 @@
 // npc 584
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
 name = Herquin
-models = model_235 model_11748 model_9620 model_11760 model_11769 model_11326 model_10218 model_11869 obj_vyrewatch_shoes_9638_man model_11770
-headmodels = model_67 model_9449 model_11868
+model1 = model_235
+model2 = model_11748
+model3 = model_9620
+model4 = model_11760
+model5 = model_11769
+model6 = model_11326
+model7 = model_10218
+model8 = model_11869
+model9 = obj_vyrewatch_shoes_9638_man
+model10 = model_11770
+head1 = model_67
+head2 = model_9449
+head3 = model_11868

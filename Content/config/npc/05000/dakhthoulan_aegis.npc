@@ -1,11 +1,16 @@
 // npc 5840
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-To
 vislevel = 0
 alwaysontop = true
-recol = 6798/6327
+recol1s = 6798
+recol1d = 6327
 name = Dakh'thoulan Aegis
-models = model_23927 model_23917 model_23934
-headmodels = obj_rogue model_23912 model_82
+model1 = model_23927
+model2 = model_23917
+model3 = model_23934
+head1 = obj_rogue
+head2 = model_23912
+head3 = model_82

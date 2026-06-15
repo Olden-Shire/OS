@@ -1,9 +1,16 @@
 // npc 3456
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 16701/16945 9152/111
+recol1s = 16701
+recol1d = 16945
+recol2s = 9152
+recol2d = 111
 name = ? ? ? ?
-models = model_4015 model_4020 model_4023 model_4025 model_12771
-headmodels = obj_elf
+model1 = model_4015
+model2 = model_4020
+model3 = model_4023
+model4 = model_4025
+model5 = model_12771
+head1 = obj_elf

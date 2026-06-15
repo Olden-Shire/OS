@@ -4,4 +4,4 @@ vislevel = 0
 nominimap = true
 op1 = Pick
 name = Thistle
-models = obj_troll_thistle
+model1 = obj_troll_thistle

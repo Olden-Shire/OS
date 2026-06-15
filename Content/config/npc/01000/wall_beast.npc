@@ -4,4 +4,4 @@ op2 = Attack
 turnspeed = 0
 vislevel = 49
 name = Wall beast
-models = obj_swamp_wallbeast
+model1 = obj_swamp_wallbeast

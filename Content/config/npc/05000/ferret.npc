@@ -6,4 +6,4 @@ walkanim = seq_5187
 readyanim = seq_5188
 vislevel = 0
 name = Ferret
-models = obj_ferret
+model1 = obj_ferret

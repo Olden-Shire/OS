@@ -1,10 +1,23 @@
 // npc 5195
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
-recol = 6798/6327 123/38831
+recol1s = 6798
+recol1d = 6327
+recol2s = 123
+recol2d = 38831
 name = Wizard
-models = model_20398 model_214 model_250 model_20404 obj_cape_of_legends_1052_man model_20395 obj_leather_vambraces_1063_man model_20402 obj_vyrewatch_shoes_9638_man
-headmodels = model_82 model_52 model_20392
+model1 = model_20398
+model2 = model_214
+model3 = model_250
+model4 = model_20404
+model5 = obj_cape_of_legends_1052_man
+model6 = model_20395
+model7 = obj_leather_vambraces_1063_man
+model8 = model_20402
+model9 = obj_vyrewatch_shoes_9638_man
+head1 = model_82
+head2 = model_52
+head3 = model_20392

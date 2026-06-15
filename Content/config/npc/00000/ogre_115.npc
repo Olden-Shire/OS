@@ -5,4 +5,5 @@ readyanim = seq_357
 op2 = Attack
 vislevel = 53
 name = Ogre
-models = model_2878 model_2876
+model1 = model_2878
+model2 = model_2876

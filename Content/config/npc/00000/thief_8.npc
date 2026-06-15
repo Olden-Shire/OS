@@ -1,10 +1,20 @@
 // npc 8
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 16
-recol = 25238/47399 8741/6930
+recol1s = 25238
+recol1d = 47399
+recol2s = 8741
+recol2d = 6930
 name = Thief
-models = obj_fremennik_helm_man model_246 obj_priest_gown_426_man model_151 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man model_320
-headmodels = obj_man
+model1 = obj_fremennik_helm_man
+model2 = model_246
+model3 = obj_priest_gown_426_man
+model4 = model_151
+model5 = obj_cooking_gauntlets_man
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+model8 = model_320
+head1 = obj_man

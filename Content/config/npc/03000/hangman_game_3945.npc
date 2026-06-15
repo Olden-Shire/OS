@@ -4,4 +4,5 @@ op1 = Guess-letter
 vislevel = 0
 op3 = Banish
 name = Hangman game
-models = obj_hangman_game model_12977
+model1 = obj_hangman_game
+model2 = model_12977

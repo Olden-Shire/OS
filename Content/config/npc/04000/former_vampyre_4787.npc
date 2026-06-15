@@ -1,8 +1,16 @@
 // npc 4787
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 4550/5338 54375/931
+recol1s = 4550
+recol1d = 5338
+recol2s = 54375
+recol2d = 931
 name = Former vampyre
-models = model_16456 model_18117 model_18102 model_18109 model_18113 obj_vyrewatch_shoes_9638_woman
-headmodels = model_16443
+model1 = model_16456
+model2 = model_18117
+model3 = model_18102
+model4 = model_18109
+model5 = model_18113
+model6 = obj_vyrewatch_shoes_9638_woman
+head1 = model_16443

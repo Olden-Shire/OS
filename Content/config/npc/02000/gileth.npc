@@ -1,8 +1,15 @@
 // npc 2344
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 name = Gileth
-models = model_390 obj_ham_shirt_4298_woman model_482 model_332 model_353 obj_watering_can_5331_wear obj_priest_gown_428_woman obj_gardening_boots_5345_woman
-headmodels = obj_warrior_woman
+model1 = model_390
+model2 = obj_ham_shirt_4298_woman
+model3 = model_482
+model4 = model_332
+model5 = model_353
+model6 = obj_watering_can_5331_wear
+model7 = obj_priest_gown_428_woman
+model8 = obj_gardening_boots_5345_woman
+head1 = obj_warrior_woman

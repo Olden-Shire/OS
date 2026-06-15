@@ -1,9 +1,18 @@
 // npc 3822
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 name = Herman Caranos
-models = model_14843 model_176 model_14855 model_14851 model_14376 model_14381 model_14384 model_14870
-headmodels = model_14834 model_14837 model_14831
+model1 = model_14843
+model2 = model_176
+model3 = model_14855
+model4 = model_14851
+model5 = model_14376
+model6 = model_14381
+model7 = model_14384
+model8 = model_14870
+head1 = model_14834
+head2 = model_14837
+head3 = model_14831

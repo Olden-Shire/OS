@@ -5,4 +5,5 @@ readyanim = seq_6062
 nominimap = true
 vislevel = 0
 name = Goblin fish
-models = model_23713 model_23714
+model1 = model_23713
+model2 = model_23714

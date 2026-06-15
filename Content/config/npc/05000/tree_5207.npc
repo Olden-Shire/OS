@@ -1,6 +1,9 @@
 // npc 5207
 vislevel = 0
 nominimap = true
-recol = 7054/5388 6028/5388
+recol1s = 7054
+recol1d = 5388
+recol2s = 6028
+recol2d = 5388
 name = Tree
-models = model_3014
+model1 = model_3014

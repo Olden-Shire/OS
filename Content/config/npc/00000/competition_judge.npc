@@ -1,10 +1,20 @@
 // npc 693
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 6674/8111
+recol1s = 6674
+recol1d = 8111
 name = Competition Judge
-models = obj_leather_cowl_1167_man obj_boots_of_lightness_88_man model_253 obj_hardleather_body_1131_man model_151 obj_cooking_gauntlets_man obj_leather_chaps_1095_man obj_longbow_839_wear
-headmodels = obj_rogue model_85 model_32
+model1 = obj_leather_cowl_1167_man
+model2 = obj_boots_of_lightness_88_man
+model3 = model_253
+model4 = obj_hardleather_body_1131_man
+model5 = model_151
+model6 = obj_cooking_gauntlets_man
+model7 = obj_leather_chaps_1095_man
+model8 = obj_longbow_839_wear
+head1 = obj_rogue
+head2 = model_85
+head3 = model_32

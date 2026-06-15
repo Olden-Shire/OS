@@ -5,4 +5,5 @@ walkanim = seq_4756
 readyanim = seq_4755
 turnspeed = 0
 name = Boat
-models = model_17556 model_17555
+model1 = model_17556
+model2 = model_17555

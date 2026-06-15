@@ -8,5 +8,5 @@ op1 = Talk-to
 op3 = Start-minigame
 alwaysontop = true
 name = Guardian mummy
-models = model_20906
-headmodels = model_21386
+model1 = model_20906
+head1 = model_21386

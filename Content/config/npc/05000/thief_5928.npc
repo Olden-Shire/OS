@@ -1,10 +1,17 @@
 // npc 5928
 resizeh = 126
 resizev = 126
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 16
-recol = 6798/4913
+recol1s = 6798
+recol1d = 4913
 name = Thief
-models = model_16459 model_25707 model_25714 model_25699 model_25703 model_25710 model_25701
+model1 = model_16459
+model2 = model_25707
+model3 = model_25714
+model4 = model_25699
+model5 = model_25703
+model6 = model_25710
+model7 = model_25701

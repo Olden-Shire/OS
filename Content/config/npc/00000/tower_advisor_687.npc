@@ -1,9 +1,18 @@
 // npc 687
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Tower Advisor
-models = model_208 obj_boots_of_lightness_88_man model_253 obj_hardleather_body_1131_man model_151 obj_cooking_gauntlets_man obj_leather_chaps_1095_man obj_longbow_839_wear obj_fremennik_cloak_3759_man
-headmodels = model_48 model_85
+model1 = model_208
+model2 = obj_boots_of_lightness_88_man
+model3 = model_253
+model4 = obj_hardleather_body_1131_man
+model5 = model_151
+model6 = obj_cooking_gauntlets_man
+model7 = obj_leather_chaps_1095_man
+model8 = obj_longbow_839_wear
+model9 = obj_fremennik_cloak_3759_man
+head1 = model_48
+head2 = model_85

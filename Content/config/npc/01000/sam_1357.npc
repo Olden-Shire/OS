@@ -1,10 +1,20 @@
 // npc 1357
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
-recol = 8741/43185 25238/41 6798/8518
+recol1s = 8741
+recol1d = 43185
+recol2s = 25238
+recol2d = 41
+recol3s = 6798
+recol3d = 8518
 name = Sam
-models = model_393 obj_white_apron_1005_woman obj_druids_robe_540_woman model_353 obj_mime_legs_woman model_358
-headmodels = model_115
+model1 = model_393
+model2 = obj_white_apron_1005_woman
+model3 = obj_druids_robe_540_woman
+model4 = model_353
+model5 = obj_mime_legs_woman
+model6 = model_358
+head1 = model_115

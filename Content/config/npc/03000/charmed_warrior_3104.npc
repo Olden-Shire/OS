@@ -7,4 +7,6 @@ walkanim = seq_3027
 readyanim = seq_3026
 op1 = Talk-to
 name = Charmed Warrior
-models = model_10641 model_10642 model_10643
+model1 = model_10641
+model2 = model_10642
+model3 = model_10643

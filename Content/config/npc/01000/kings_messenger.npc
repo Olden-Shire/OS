@@ -1,9 +1,16 @@
 // npc 1210
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Kings messenger
-models = model_151 model_176 model_235 model_253 model_273 obj_priest_gown_426_man obj_fremennik_cloak_3759_man
-headmodels = model_67 model_85
+model1 = model_151
+model2 = model_176
+model3 = model_235
+model4 = model_253
+model5 = model_273
+model6 = obj_priest_gown_426_man
+model7 = obj_fremennik_cloak_3759_man
+head1 = model_67
+head2 = model_85

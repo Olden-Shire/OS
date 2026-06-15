@@ -1,10 +1,11 @@
 // npc 6076
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 ambient = 35
 contrast = 35
 op1 = Talk-To
 vislevel = 0
-recol = 17467/18626
+recol1s = 17467
+recol1d = 18626
 multivar = 3732, 65535, 65535 1685

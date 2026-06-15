@@ -1,9 +1,13 @@
 // npc 6044
-walkanims = seq_6531, seq_6532, seq_821, seq_822
+walkanim = seq_6531, seq_6532, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Zoja
-models = model_26143 model_26156 model_26137 model_26149 model_26141
-headmodels = model_26272
+model1 = model_26143
+model2 = model_26156
+model3 = model_26137
+model4 = model_26149
+model5 = model_26141
+head1 = model_26272

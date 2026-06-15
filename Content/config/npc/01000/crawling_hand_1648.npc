@@ -8,4 +8,4 @@ resizev = 112
 ambient = 30
 vislevel = 8
 name = Crawling Hand
-models = model_5071
+model1 = model_5071

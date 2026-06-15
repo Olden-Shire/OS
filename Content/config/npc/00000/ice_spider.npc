@@ -6,4 +6,5 @@ nominimap = true
 op2 = Attack
 vislevel = 61
 name = Ice spider
-models = model_20303 model_20304
+model1 = model_20303
+model2 = model_20304

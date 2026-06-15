@@ -7,4 +7,4 @@ ambient = -25
 contrast = -15
 vislevel = 115
 name = Nechryael
-models = obj_nechryael
+model1 = obj_nechryael

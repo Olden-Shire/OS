@@ -9,4 +9,6 @@ vislevel = 0
 alwaysontop = true
 nowalksmoothing = true
 name = Winter Elemental
-models = model_22272 model_22273 model_22274
+model1 = model_22272
+model2 = model_22273
+model3 = model_22274

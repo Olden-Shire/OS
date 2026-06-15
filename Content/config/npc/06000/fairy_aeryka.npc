@@ -7,5 +7,5 @@ op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 name = Fairy Aeryka
-models = model_2857
-headmodels = model_11
+model1 = model_2857
+head1 = model_11

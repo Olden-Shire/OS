@@ -1,8 +1,18 @@
 // npc 5033
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 name = Private Pierreb
-models = model_11740 obj_desert_disguise_man model_250 model_11759 model_11726 model_11732 model_11790 model_19250 model_11735
-headmodels = obj_rogue model_19238 model_82
+model1 = model_11740
+model2 = obj_desert_disguise_man
+model3 = model_250
+model4 = model_11759
+model5 = model_11726
+model6 = model_11732
+model7 = model_11790
+model8 = model_19250
+model9 = model_11735
+head1 = obj_rogue
+head2 = model_19238
+head3 = model_82

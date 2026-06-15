@@ -1,10 +1,11 @@
 // npc 6168
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 name = Sir Kay
-models = model_27130
-headmodels = model_27211 model_27561
+model1 = model_27130
+head1 = model_27211
+head2 = model_27561

@@ -10,4 +10,5 @@ resizev = 60
 ambient = 40
 nominimap = true
 name = Clockwork cat
-models = model_14104 obj_toy_cat_7771
+model1 = model_14104
+model2 = obj_toy_cat_7771

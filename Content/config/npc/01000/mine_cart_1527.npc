@@ -3,4 +3,4 @@ size = 1
 turnspeed = 1024
 vislevel = 0
 name = Mine cart
-models = model_4894
+model1 = model_4894

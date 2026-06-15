@@ -1,11 +1,21 @@
 // npc 2357
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
-recol = 107/7390 7595/6480 8792/6583
+recol1s = 107
+recol1d = 7390
+recol2s = 7595
+recol2d = 6480
+recol3s = 8792
+recol3d = 6583
 name = Gethin
-models = model_8357 model_8263 model_8268 model_6975 model_6976
-headmodels = model_8257 model_41
+model1 = model_8357
+model2 = model_8263
+model3 = model_8268
+model4 = model_6975
+model5 = model_6976
+head1 = model_8257
+head2 = model_41

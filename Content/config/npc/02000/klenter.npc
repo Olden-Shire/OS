@@ -7,5 +7,5 @@ ambient = 20
 contrast = 20
 vislevel = 0
 name = Klenter
-models = model_21154
-headmodels = model_21394
+model1 = model_21154
+head1 = model_21394

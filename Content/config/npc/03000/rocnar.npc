@@ -5,4 +5,4 @@ readyanim = seq_3707
 op2 = Attack
 vislevel = 97
 name = Rocnar
-models = obj_rocnar
+model1 = obj_rocnar

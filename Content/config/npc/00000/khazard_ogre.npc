@@ -5,4 +5,5 @@ readyanim = seq_357
 op2 = Attack
 vislevel = 63
 name = Khazard Ogre
-models = model_2880 model_2876
+model1 = model_2880
+model2 = model_2876

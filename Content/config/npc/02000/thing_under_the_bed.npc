@@ -5,4 +5,4 @@ turnspeed = 0
 size = 2
 op2 = Attack
 name = Thing under the bed
-models = model_7381
+model1 = model_7381

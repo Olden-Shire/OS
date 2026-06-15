@@ -6,4 +6,4 @@ nominimap = true
 op1 = Roll
 turnspeed = 0
 name = Boulder
-models = model_24149
+model1 = model_24149

@@ -6,4 +6,4 @@ op1 = Pick-up
 vislevel = 0
 nominimap = true
 name = Toy Mouse
-models = model_13226
+model1 = model_13226

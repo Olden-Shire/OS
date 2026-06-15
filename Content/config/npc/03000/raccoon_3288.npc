@@ -2,6 +2,11 @@
 vislevel = 0
 walkanim = seq_3214
 readyanim = seq_3215
-recol = 5161/3243 5165/3247 7240/2235
+recol1s = 5161
+recol1d = 3243
+recol2s = 5165
+recol2d = 3247
+recol3s = 7240
+recol3d = 2235
 name = Raccoon
-models = model_11724
+model1 = model_11724

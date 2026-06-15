@@ -1,4 +1,4 @@
 // npc 3152
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 vislevel = 1
 multivar = 1606, 65535, 3140 3141 3142

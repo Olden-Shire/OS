@@ -7,4 +7,4 @@ resizeh = 75
 resizev = 75
 vislevel = 96
 name = Aberrant spectre
-models = obj_aberrant_spectre
+model1 = obj_aberrant_spectre

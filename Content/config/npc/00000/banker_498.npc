@@ -6,5 +6,5 @@ readyanim = seq_112
 op1 = Talk-to
 op3 = Bank
 name = Banker
-models = model_2860
-headmodels = model_14
+model1 = model_2860
+head1 = model_14

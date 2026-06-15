@@ -1,7 +1,17 @@
 // npc 3081
 vislevel = 0
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
-recol = 10004/43270 61/43297 43026/43150
+recol1s = 10004
+recol1d = 43270
+recol2s = 61
+recol2d = 43297
+recol3s = 43026
+recol3d = 43150
 name = Assassin
-models = model_10374 model_10376 model_10378 model_10377 obj_bow_sword_wear obj_cooking_gauntlets_man
+model1 = model_10374
+model2 = model_10376
+model3 = model_10378
+model4 = model_10377
+model5 = obj_bow_sword_wear
+model6 = obj_cooking_gauntlets_man

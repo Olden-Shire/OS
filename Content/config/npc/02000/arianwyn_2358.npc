@@ -1,9 +1,13 @@
 // npc 2358
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Arianwyn
-models = model_4015 model_4021 model_4023 model_4025 model_4027
-headmodels = model_4012
+model1 = model_4015
+model2 = model_4021
+model3 = model_4023
+model4 = model_4025
+model5 = model_4027
+head1 = model_4012

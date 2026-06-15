@@ -1,10 +1,20 @@
 // npc 1679
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 16701/25145 9137/8 4550/7062
+recol1s = 16701
+recol1d = 25145
+recol2s = 9137
+recol2d = 8
+recol3s = 4550
+recol3d = 7062
 name = Eluned
-models = model_4030 model_4032 model_4028 model_4031 model_4029
-headmodels = model_4013 model_8262
+model1 = model_4030
+model2 = model_4032
+model3 = model_4028
+model4 = model_4031
+model5 = model_4029
+head1 = model_4013
+head2 = model_8262

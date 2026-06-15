@@ -4,4 +4,4 @@ size = 1
 readyanim = seq_1018
 walkanim = seq_1021
 name = Swamp toad
-models = obj_bloated_toad
+model1 = obj_bloated_toad

@@ -7,4 +7,5 @@ readyanim = seq_1310
 op2 = Attack
 vislevel = 137
 name = Giant Rock Crab
-models = model_8741 model_8742
+model1 = model_8741
+model2 = model_8742

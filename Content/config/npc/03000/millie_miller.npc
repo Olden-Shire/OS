@@ -1,9 +1,15 @@
 // npc 3806
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/293
+recol1s = 8741
+recol1d = 293
 name = Millie Miller
-models = model_399 obj_white_apron_1005_woman model_8846 model_10706 model_11119 model_358
-headmodels = model_118
+model1 = model_399
+model2 = obj_white_apron_1005_woman
+model3 = model_8846
+model4 = model_10706
+model5 = model_11119
+model6 = model_358
+head1 = model_118

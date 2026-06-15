@@ -4,5 +4,5 @@ walkanim = seq_358
 readyanim = seq_357
 vislevel = 113
 name = Ogre shaman
-models = model_20322
-headmodels = model_20413
+model1 = model_20322
+head1 = model_20413

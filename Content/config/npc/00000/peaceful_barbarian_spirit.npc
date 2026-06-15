@@ -1,4 +1,10 @@
 // npc 754
 vislevel = 0
 name = Peaceful barbarian spirit
-models = model_26616 model_26634 model_26644 model_26619 model_26618 model_26633 model_26630
+model1 = model_26616
+model2 = model_26634
+model3 = model_26644
+model4 = model_26619
+model5 = model_26618
+model6 = model_26633
+model7 = model_26630

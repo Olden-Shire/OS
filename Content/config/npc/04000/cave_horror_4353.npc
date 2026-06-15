@@ -5,4 +5,5 @@ size = 2
 op2 = Attack
 vislevel = 80
 name = Cave horror
-models = model_15651 model_15654
+model1 = model_15651
+model2 = model_15654

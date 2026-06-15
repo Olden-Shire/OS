@@ -1,10 +1,19 @@
 // npc 824
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 25238/8741 908/8741
+recol1s = 25238
+recol1d = 8741
+recol2s = 908
+recol2d = 8741
 name = Female slave
-models = model_393 model_471 obj_druids_robe_540_woman model_353 obj_priest_gown_428_woman obj_boots_of_lightness_88_woman obj_bronze_pickaxe_1265_wear
-headmodels = model_115
+model1 = model_393
+model2 = model_471
+model3 = obj_druids_robe_540_woman
+model4 = model_353
+model5 = obj_priest_gown_428_woman
+model6 = obj_boots_of_lightness_88_woman
+model7 = obj_bronze_pickaxe_1265_wear
+head1 = model_115

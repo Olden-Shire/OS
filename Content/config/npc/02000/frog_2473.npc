@@ -6,5 +6,5 @@ readyanim = seq_1796
 vislevel = 0
 ambient = 70
 name = Frog
-models = model_6947
-headmodels = model_8850
+model1 = model_6947
+head1 = model_8850

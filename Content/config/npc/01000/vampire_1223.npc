@@ -1,9 +1,23 @@
 // npc 1223
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 61
-recol = 4550/5353 7236/5353 25238/6036 8741/8076 4626/5353
+recol1s = 4550
+recol1d = 5353
+recol2s = 7236
+recol2d = 5353
+recol3s = 25238
+recol3d = 6036
+recol4s = 8741
+recol4d = 8076
+recol5s = 4626
+recol5d = 5353
 name = Vampire
-models = model_4089 model_310 model_151 model_4088 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
+model1 = model_4089
+model2 = model_310
+model3 = model_151
+model4 = model_4088
+model5 = obj_citizen_trousers_9642_man
+model6 = obj_vyrewatch_shoes_9638_man

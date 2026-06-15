@@ -1,6 +1,15 @@
 // npc 2062
 vislevel = 1
-recol = 25238/4626 4550/3418 11200/262 38814/40099 33/4399
+recol1s = 25238
+recol1d = 4626
+recol2s = 4550
+recol2d = 3418
+recol3s = 11200
+recol3d = 262
+recol4s = 38814
+recol4d = 40099
+recol5s = 33
+recol5d = 4399
 name = Sithik Ints
-models = model_6810
-headmodels = model_6753
+model1 = model_6810
+head1 = model_6753

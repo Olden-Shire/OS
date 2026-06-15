@@ -9,4 +9,4 @@ resizev = 256
 turnspeed = 15
 nominimap = true
 name = Fish
-models = model_13836
+model1 = model_13836

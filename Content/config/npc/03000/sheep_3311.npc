@@ -5,4 +5,6 @@ walkanim = seq_5340
 readyanim = seq_5339
 op1 = Talk-to
 name = Sheep
-models = model_20283 model_20289 model_20285
+model1 = model_20283
+model2 = model_20289
+model3 = model_20285

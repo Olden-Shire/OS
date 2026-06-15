@@ -6,5 +6,5 @@ op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 name = Zanik
-models = model_23650
-headmodels = model_23242
+model1 = model_23650
+head1 = model_23242

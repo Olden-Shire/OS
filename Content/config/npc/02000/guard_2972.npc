@@ -1,8 +1,21 @@
 // npc 2972
 size = 1
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 25238/10508 8741/6930 61/5652
+recol1s = 25238
+recol1d = 10508
+recol2s = 8741
+recol2d = 6930
+recol3s = 61
+recol3d = 5652
 name = Guard
-models = model_233 model_246 obj_iron_chainbody_1101_man model_151 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_bronze_sword_1277_wear obj_bronze_sq_shield_1173_wear
+model1 = model_233
+model2 = model_246
+model3 = obj_iron_chainbody_1101_man
+model4 = model_151
+model5 = model_176
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_bronze_sword_1277_wear
+model9 = obj_bronze_sq_shield_1173_wear

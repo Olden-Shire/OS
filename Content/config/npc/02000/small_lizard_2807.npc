@@ -9,4 +9,5 @@ readyanim = seq_2774
 op2 = Attack
 vislevel = 12
 name = Small Lizard
-models = obj_desert_lizard model_9830
+model1 = obj_desert_lizard
+model2 = model_9830

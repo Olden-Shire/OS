@@ -1,8 +1,23 @@
 // npc 4394
 readyanim = seq_5576
-walkanims = seq_5577, seq_5793, seq_5792, seq_5791
+walkanim = seq_5577, seq_5793, seq_5792, seq_5791
 op2 = Attack
 vislevel = 53
-recol = 13506/10304 13501/10304 13493/10295 13489/10295 13497/10299
+recol1s = 13506
+recol1d = 10304
+recol2s = 13501
+recol2d = 10304
+recol3s = 13493
+recol3d = 10295
+recol4s = 13489
+recol4d = 10295
+recol5s = 13497
+recol5d = 10299
 name = Zombie
-models = model_21104 model_21057 model_21037 model_21086 model_21113 model_21073 model_21132
+model1 = model_21104
+model2 = model_21057
+model3 = model_21037
+model4 = model_21086
+model5 = model_21113
+model6 = model_21073
+model7 = model_21132

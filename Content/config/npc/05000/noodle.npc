@@ -8,5 +8,5 @@ vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 name = Noodle
-models = model_21550
-headmodels = model_21526
+model1 = model_21550
+head1 = model_21526

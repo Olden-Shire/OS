@@ -2,7 +2,10 @@
 vislevel = 0
 size = 1
 turnspeed = 0
-recol = 933/11200 6798/5421
+recol1s = 933
+recol1d = 11200
+recol2s = 6798
+recol2d = 5421
 name = Dummy
-models = model_14035
-headmodels = model_67
+model1 = model_14035
+head1 = model_67

@@ -1,7 +1,7 @@
 // npc 748
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 alwaysontop = true
 multivar = 65535, 176, 6085 6085 6085 6085 6085 6085 6085 6085

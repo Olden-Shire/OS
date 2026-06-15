@@ -7,4 +7,5 @@ resizev = 110
 op2 = Attack
 vislevel = 27
 name = Black unicorn
-models = model_25754 model_25756
+model1 = model_25754
+model2 = model_25756

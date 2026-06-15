@@ -1,11 +1,21 @@
 // npc 516
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
-recol = 4550/4785 25238/8741
+recol1s = 4550
+recol1d = 4785
+recol2s = 25238
+recol2d = 8741
 name = Obli
-models = model_223 model_247 model_302 obj_druids_robe_540_man model_176 model_274 obj_vyrewatch_shoes_9638_man
-headmodels = model_59 model_79
+model1 = model_223
+model2 = model_247
+model3 = model_302
+model4 = obj_druids_robe_540_man
+model5 = model_176
+model6 = model_274
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_59
+head2 = model_79

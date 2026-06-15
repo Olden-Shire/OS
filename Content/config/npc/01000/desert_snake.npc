@@ -6,4 +6,4 @@ op2 = Attack
 alwaysontop = true
 vislevel = 5
 name = Desert snake
-models = model_3002
+model1 = model_3002

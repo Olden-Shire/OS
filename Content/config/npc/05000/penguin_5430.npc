@@ -7,5 +7,5 @@ size = 1
 vislevel = 0
 alwaysontop = true
 name = Penguin
-models = model_21547
-headmodels = model_21525
+model1 = model_21547
+head1 = model_21525

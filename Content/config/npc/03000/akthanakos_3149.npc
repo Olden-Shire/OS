@@ -1,8 +1,22 @@
 // npc 3149
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 8741/5157 25238/5157 4550/5202 908/5157 4886/5161
+recol1s = 8741
+recol1d = 5157
+recol2s = 25238
+recol2d = 5157
+recol3s = 4550
+recol3d = 5202
+recol4s = 908
+recol4d = 5157
+recol5s = 4886
+recol5d = 5161
 name = Akthanakos
-models = model_10835 obj_priest_gown_426_man obj_druids_robe_540_man model_10218 obj_priest_gown_428_man obj_villager_sandals_6349_man
-headmodels = model_11018
+model1 = model_10835
+model2 = obj_priest_gown_426_man
+model3 = obj_druids_robe_540_man
+model4 = model_10218
+model5 = obj_priest_gown_428_man
+model6 = obj_villager_sandals_6349_man
+head1 = model_11018

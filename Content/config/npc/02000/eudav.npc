@@ -1,13 +1,19 @@
 // npc 2352
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 127
 resizev = 120
 op1 = Talk-to
 op3 = Trade
-recol = 7595/6587 8792/7634
+recol1s = 7595
+recol1d = 6587
+recol2s = 8792
+recol2d = 7634
 name = Eudav
-models = model_8264 model_8268 model_6975 model_8267
-headmodels = model_8258
+model1 = model_8264
+model2 = model_8268
+model3 = model_6975
+model4 = model_8267
+head1 = model_8258

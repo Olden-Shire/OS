@@ -2,7 +2,7 @@
 vislevel = 0
 nominimap = true
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 name = Sinclair
-models = model_27192
+model1 = model_27192

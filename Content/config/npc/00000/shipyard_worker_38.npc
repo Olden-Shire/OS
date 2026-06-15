@@ -1,10 +1,22 @@
 // npc 38
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 11
-recol = 25238/8472 6798/5921 8741/61
+recol1s = 25238
+recol1d = 8472
+recol2s = 6798
+recol2d = 5921
+recol3s = 8741
+recol3d = 61
 name = Shipyard worker
-models = obj_fremennik_helm_man model_247 obj_white_apron_1005_man model_151 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man
-headmodels = obj_man model_79
+model1 = obj_fremennik_helm_man
+model2 = model_247
+model3 = obj_white_apron_1005_man
+model4 = model_151
+model5 = obj_cooking_gauntlets_man
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+head1 = obj_man
+head2 = model_79

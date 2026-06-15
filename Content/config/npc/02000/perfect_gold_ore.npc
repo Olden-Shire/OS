@@ -1,6 +1,9 @@
 // npc 2563
 vislevel = 0
 size = 3
-recol = 7062/8128 45/8128
+recol1s = 7062
+recol1d = 8128
+recol2s = 45
+recol2d = 8128
 name = Perfect gold ore
-models = model_9071
+model1 = model_9071

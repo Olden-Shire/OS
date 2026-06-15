@@ -1,6 +1,7 @@
 // npc 2562
 vislevel = 0
 size = 3
-recol = 7062/10508
+recol1s = 7062
+recol1d = 10508
 name = Coal
-models = model_9071
+model1 = model_9071

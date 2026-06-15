@@ -1,11 +1,23 @@
 // npc 692
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
-recol = 4550/6806 43072/6806
+recol1s = 4550
+recol1d = 6806
+recol2s = 43072
+recol2d = 6806
 name = Tribal Weapon Salesman
-models = model_231 obj_vyrewatch_shoes_9638_man model_246 obj_veracs_brassard_4757_man model_173 model_176 model_279 obj_cape_1007_man obj_red_headband_2645_man
-headmodels = model_64 model_43
+model1 = model_231
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_246
+model4 = obj_veracs_brassard_4757_man
+model5 = model_173
+model6 = model_176
+model7 = model_279
+model8 = obj_cape_1007_man
+model9 = obj_red_headband_2645_man
+head1 = model_64
+head2 = model_43

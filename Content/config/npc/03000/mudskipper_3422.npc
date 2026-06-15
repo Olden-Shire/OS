@@ -5,4 +5,5 @@ readyanim = seq_3431
 op2 = Attack
 vislevel = 30
 name = Mudskipper
-models = model_13832 model_13833
+model1 = model_13832
+model2 = model_13833

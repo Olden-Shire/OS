@@ -1,7 +1,11 @@
 // npc 6107
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 132
 name = Skeleton thug
-models = model_26629 model_26635 model_26642 model_26614 model_26624
+model1 = model_26629
+model2 = model_26635
+model3 = model_26642
+model4 = model_26614
+model5 = model_26624

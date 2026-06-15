@@ -1,10 +1,22 @@
 // npc 727
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 43072/4550 25238/3980 8741/7609
+recol1s = 43072
+recol1d = 4550
+recol2s = 25238
+recol2d = 3980
+recol3s = 8741
+recol3d = 7609
 name = Man
-models = model_235 obj_boots_of_lightness_88_man model_250 model_310 model_151 obj_cooking_gauntlets_man obj_citizen_trousers_9642_man
-headmodels = model_67 model_82
+model1 = model_235
+model2 = obj_boots_of_lightness_88_man
+model3 = model_250
+model4 = model_310
+model5 = model_151
+model6 = obj_cooking_gauntlets_man
+model7 = obj_citizen_trousers_9642_man
+head1 = model_67
+head2 = model_82

@@ -2,5 +2,6 @@
 vislevel = 0
 size = 1
 name = Cockatrice
-models = model_3010 obj_witchs_cat
-headmodels = model_14430
+model1 = model_3010
+model2 = obj_witchs_cat
+head1 = model_14430

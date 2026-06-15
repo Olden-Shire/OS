@@ -6,5 +6,5 @@ walkanim = seq_3078
 readyanim = seq_3073
 resizev = 100
 name = Boneguard
-models = model_10971
-headmodels = model_11015
+model1 = model_10971
+head1 = model_11015

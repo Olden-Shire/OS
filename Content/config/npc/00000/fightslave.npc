@@ -1,10 +1,19 @@
 // npc 262
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 4626/4550 25238/4626
+recol1s = 4626
+recol1d = 4550
+recol2s = 25238
+recol2d = 4626
 name = Fightslave
-models = model_214 model_246 model_310 model_151 model_176 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
-headmodels = model_52
+model1 = model_214
+model2 = model_246
+model3 = model_310
+model4 = model_151
+model5 = model_176
+model6 = obj_citizen_trousers_9642_man
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_52

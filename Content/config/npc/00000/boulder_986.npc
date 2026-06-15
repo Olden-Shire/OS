@@ -5,4 +5,4 @@ op1 = Push
 vislevel = 0
 nominimap = true
 name = Boulder
-models = model_2846
+model1 = model_2846

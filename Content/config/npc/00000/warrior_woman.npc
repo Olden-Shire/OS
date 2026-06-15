@@ -1,10 +1,21 @@
 // npc 15
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op3 = Pickpocket
 op2 = Attack
 vislevel = 24
-recol = 6798/6854 4626/24
+recol1s = 6798
+recol1d = 6854
+recol2s = 4626
+recol2d = 24
 name = Warrior woman
-models = model_390 obj_khazard_armour_woman model_337 model_353 obj_iron_platelegs_1067_woman obj_boots_of_lightness_88_woman obj_red_headband_2645_woman obj_bronze_sword_1277_wear obj_bronze_sq_shield_1173_wear
+model1 = model_390
+model2 = obj_khazard_armour_woman
+model3 = model_337
+model4 = model_353
+model5 = obj_iron_platelegs_1067_woman
+model6 = obj_boots_of_lightness_88_woman
+model7 = obj_red_headband_2645_woman
+model8 = obj_bronze_sword_1277_wear
+model9 = obj_bronze_sq_shield_1173_wear

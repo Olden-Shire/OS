@@ -3,4 +3,5 @@ readyanim = seq_4472
 walkanim = seq_4473
 vislevel = 0
 name = fluffie
-models = model_16956 model_16954
+model1 = model_16956
+model2 = model_16954

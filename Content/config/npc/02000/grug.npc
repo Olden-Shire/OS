@@ -5,5 +5,5 @@ readyanim = seq_2089
 op1 = Talk-to
 turnspeed = 0
 name = Grug
-models = model_6768
-headmodels = model_141
+model1 = model_6768
+head1 = model_141

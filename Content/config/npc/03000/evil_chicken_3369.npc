@@ -8,4 +8,5 @@ op2 = Attack
 alwaysontop = true
 vislevel = 81
 name = Evil Chicken
-models = model_7728 model_13902
+model1 = model_7728
+model2 = model_13902

@@ -7,5 +7,5 @@ op1 = Talk-to
 ambient = 20
 contrast = 10
 name = Easter Bunny
-models = model_23995
-headmodels = model_23994
+model1 = model_23995
+head1 = model_23994

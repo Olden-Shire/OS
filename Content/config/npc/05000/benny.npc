@@ -1,9 +1,17 @@
 // npc 5925
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 6798/5165
+recol1s = 6798
+recol1d = 5165
 name = Benny
-models = model_217 model_253 model_25670 model_25641 obj_leather_vambraces_1063_man model_25666 obj_vyrewatch_shoes_9638_man
-headmodels = obj_farmer model_85
+model1 = model_217
+model2 = model_253
+model3 = model_25670
+model4 = model_25641
+model5 = obj_leather_vambraces_1063_man
+model6 = model_25666
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = obj_farmer
+head2 = model_85

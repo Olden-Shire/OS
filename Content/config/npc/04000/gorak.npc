@@ -8,4 +8,4 @@ op2 = Attack
 alwaysontop = true
 vislevel = 145
 name = Gorak
-models = model_16205
+model1 = model_16205

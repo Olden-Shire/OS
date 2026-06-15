@@ -9,4 +9,6 @@ vislevel = 0
 alwaysontop = true
 nowalksmoothing = true
 name = Summer Elemental
-models = model_22269 model_22270 model_22271
+model1 = model_22269
+model2 = model_22270
+model3 = model_22271

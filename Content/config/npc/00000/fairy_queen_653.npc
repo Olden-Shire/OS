@@ -3,5 +3,5 @@ vislevel = 0
 size = 1
 op1 = Talk-to
 name = Fairy Queen
-models = model_2858
-headmodels = model_12
+model1 = model_2858
+head1 = model_12

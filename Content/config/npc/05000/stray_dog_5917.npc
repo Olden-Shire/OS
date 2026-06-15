@@ -6,4 +6,6 @@ ambient = 20
 vislevel = 0
 op5 = Shoo-away
 name = Stray dog
-models = model_18168 model_18170 model_18167
+model1 = model_18168
+model2 = model_18170
+model3 = model_18167

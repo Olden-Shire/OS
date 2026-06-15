@@ -5,4 +5,6 @@ readyanim = seq_195
 op2 = Attack
 vislevel = 12
 name = Leprechaun
-models = model_2909 model_2896 model_2915
+model1 = model_2909
+model2 = model_2896
+model3 = model_2915

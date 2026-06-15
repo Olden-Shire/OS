@@ -1,8 +1,24 @@
 // npc 2571
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 20
-recol = 25238/12698 43072/3660 61/2229 11200/2349
+recol1s = 25238
+recol1d = 12698
+recol2s = 43072
+recol2d = 3660
+recol3s = 61
+recol3d = 2229
+recol4s = 11200
+recol4d = 2349
 name = Market Guard
-models = model_232 model_251 model_293 obj_fremennik_cloak_3759_man model_169 model_176 obj_bronze_longsword_1291_wear model_523 model_274 obj_boots_of_lightness_88_man
+model1 = model_232
+model2 = model_251
+model3 = model_293
+model4 = obj_fremennik_cloak_3759_man
+model5 = model_169
+model6 = model_176
+model7 = obj_bronze_longsword_1291_wear
+model8 = model_523
+model9 = model_274
+model10 = obj_boots_of_lightness_88_man

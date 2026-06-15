@@ -5,4 +5,4 @@ readyanim = seq_3108
 op2 = Attack
 vislevel = 46
 name = Harpie Bug Swarm
-models = obj_swarm
+model1 = obj_swarm

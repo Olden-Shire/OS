@@ -1,9 +1,19 @@
 // npc 2784
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 size = 1
 vislevel = 0
-recol = 4550/7632 926/5904 11200/8088
+recol1s = 4550
+recol1d = 7632
+recol2s = 926
+recol2d = 5904
+recol3s = 11200
+recol3d = 8088
 name = Mourner
-models = obj_gas_mask_man obj_plague_jacket_man model_150 model_4033 model_273 obj_cape_1007_man
-headmodels = model_51
+model1 = obj_gas_mask_man
+model2 = obj_plague_jacket_man
+model3 = model_150
+model4 = model_4033
+model5 = model_273
+model6 = obj_cape_1007_man
+head1 = model_51

@@ -1,8 +1,10 @@
 // npc 5419
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 name = Tarn
-models = model_20854 model_20861 model_20857
-headmodels = model_21485
+model1 = model_20854
+model2 = model_20861
+model3 = model_20857
+head1 = model_21485

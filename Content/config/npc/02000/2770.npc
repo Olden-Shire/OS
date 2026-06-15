@@ -1,5 +1,5 @@
 // npc 2770
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 alwaysontop = true
 vislevel = 1

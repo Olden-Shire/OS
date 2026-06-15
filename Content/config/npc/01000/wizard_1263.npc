@@ -1,9 +1,18 @@
 // npc 1263
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Wizard
-models = obj_fremennik_helm_man obj_splitbark_boots_3393_man model_250 obj_splitbark_body_3387_man model_4112 obj_splitbark_gauntlets_3391_man obj_splitbark_legs_3389_man obj_splitbark_helm_3385_man
-headmodels = obj_man model_4110 model_82
+model1 = obj_fremennik_helm_man
+model2 = obj_splitbark_boots_3393_man
+model3 = model_250
+model4 = obj_splitbark_body_3387_man
+model5 = model_4112
+model6 = obj_splitbark_gauntlets_3391_man
+model7 = obj_splitbark_legs_3389_man
+model8 = obj_splitbark_helm_3385_man
+head1 = obj_man
+head2 = model_4110
+head3 = model_82

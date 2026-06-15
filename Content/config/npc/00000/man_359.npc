@@ -1,9 +1,23 @@
 // npc 359
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 43072/5662 25238/3980 8741/6449 4550/5662
+recol1s = 43072
+recol1d = 5662
+recol2s = 25238
+recol2d = 3980
+recol3s = 8741
+recol3d = 6449
+recol4s = 4550
+recol4d = 5662
 name = Man
-models = obj_desert_disguise_man obj_boots_of_lightness_88_man model_250 model_299 model_159 obj_cooking_gauntlets_man obj_citizen_trousers_9642_man
-headmodels = obj_rogue model_82
+model1 = obj_desert_disguise_man
+model2 = obj_boots_of_lightness_88_man
+model3 = model_250
+model4 = model_299
+model5 = model_159
+model6 = obj_cooking_gauntlets_man
+model7 = obj_citizen_trousers_9642_man
+head1 = obj_rogue
+head2 = model_82

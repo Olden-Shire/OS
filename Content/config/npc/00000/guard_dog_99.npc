@@ -5,4 +5,4 @@ walkanim = seq_6560
 op2 = Attack
 vislevel = 44
 name = Guard dog
-models = obj_guard_dog
+model1 = obj_guard_dog

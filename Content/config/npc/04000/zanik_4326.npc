@@ -4,5 +4,5 @@ readyanim = seq_6040
 walkanim = seq_6041
 vislevel = 0
 name = Zanik
-models = model_23650
-headmodels = model_23242
+model1 = model_23650
+head1 = model_23242

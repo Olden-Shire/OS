@@ -1,6 +1,20 @@
 // npc 6123
 readyanim = seq_6834
 vislevel = 0
-recol = 6331/59478 6323/59466 6040/54435 6955/54550 2960/54550
+recol1s = 6331
+recol1d = 59478
+recol2s = 6323
+recol2d = 59466
+recol3s = 6040
+recol3d = 54435
+recol4s = 6955
+recol4d = 54550
+recol5s = 2960
+recol5d = 54550
 name = Naghead
-models = model_26901 model_24487 model_24435 model_24474 model_24442 model_24451
+model1 = model_26901
+model2 = model_24487
+model3 = model_24435
+model4 = model_24474
+model5 = model_24442
+model6 = model_24451

@@ -1,10 +1,20 @@
 // npc 5513
 size = 1
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 64417/13716 6798/8293
+recol1s = 64417
+recol1d = 13716
+recol2s = 6798
+recol2d = 8293
 name = Lisse Isaakson
-models = model_408 model_417 model_21914 model_21899 model_10706 model_21911 model_358
-headmodels = model_125 model_136
+model1 = model_408
+model2 = model_417
+model3 = model_21914
+model4 = model_21899
+model5 = model_10706
+model6 = model_21911
+model7 = model_358
+head1 = model_125
+head2 = model_136

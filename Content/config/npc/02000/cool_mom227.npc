@@ -1,11 +1,20 @@
 // npc 2579
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op3 = Walk here
 op4 = Follow
 op5 = Trade
 vislevel = 27
-recol = 8741/127
+recol1s = 8741
+recol1d = 127
 name = Cool Mom227
-models = obj_chefs_hat_1949_woman model_399 obj_priest_gown_426_woman obj_cape_of_legends_1052_woman model_332 model_353 obj_iron_dagger_1203_wear obj_skirt_5048_woman obj_rogue_boots_woman
+model1 = obj_chefs_hat_1949_woman
+model2 = model_399
+model3 = obj_priest_gown_426_woman
+model4 = obj_cape_of_legends_1052_woman
+model5 = model_332
+model6 = model_353
+model7 = obj_iron_dagger_1203_wear
+model8 = obj_skirt_5048_woman
+model9 = obj_rogue_boots_woman

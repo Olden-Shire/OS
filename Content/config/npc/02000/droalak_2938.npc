@@ -1,11 +1,15 @@
 // npc 2938
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 ambient = 40
 contrast = 40
 op1 = Talk-To
 vislevel = 0
-recol = 17467/18626
+recol1s = 17467
+recol1d = 18626
 name = Droalak
-models = model_5212 model_5219 model_5209 model_10024
-headmodels = model_5203
+model1 = model_5212
+model2 = model_5219
+model3 = model_5209
+model4 = model_10024
+head1 = model_5203

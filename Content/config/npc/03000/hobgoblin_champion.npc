@@ -7,4 +7,5 @@ readyanim = seq_2958
 op2 = Attack
 vislevel = 56
 name = Hobgoblin Champion
-models = model_10334 model_10335
+model1 = model_10334
+model2 = model_10335

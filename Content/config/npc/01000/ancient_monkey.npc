@@ -2,7 +2,11 @@
 walkanim = seq_1399
 readyanim = seq_1401
 vislevel = 1
-recol = 37/43968 45/37
+recol1s = 37
+recol1d = 43968
+recol2s = 45
+recol2d = 37
 name = Ancient monkey
-models = model_4809 model_4813
-headmodels = model_4663
+model1 = model_4809
+model2 = model_4813
+head1 = model_4663

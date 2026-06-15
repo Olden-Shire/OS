@@ -5,4 +5,4 @@ readyanim = seq_6078
 op2 = Attack
 vislevel = 96
 name = Cave bug
-models = obj_swamp_cave_bug
+model1 = obj_swamp_cave_bug

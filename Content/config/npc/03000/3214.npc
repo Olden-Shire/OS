@@ -1,6 +1,6 @@
 // npc 3214
 vislevel = 0
 size = 1
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 multivar = 1783, 65535, 65535 714

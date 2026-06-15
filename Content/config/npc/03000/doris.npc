@@ -1,11 +1,21 @@
 // npc 3381
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
-recol = 8741/40247 43072/4550
+recol1s = 8741
+recol1d = 40247
+recol2s = 43072
+recol2d = 4550
 name = Doris
-models = model_408 model_13345 model_465 model_8846 model_353 model_13346 model_13339
-headmodels = model_12741 model_13306
+model1 = model_408
+model2 = model_13345
+model3 = model_465
+model4 = model_8846
+model5 = model_353
+model6 = model_13346
+model7 = model_13339
+head1 = model_12741
+head2 = model_13306

@@ -5,4 +5,6 @@ readyanim = seq_2931
 op2 = Attack
 vislevel = 107
 name = Jogre Champion
-models = model_10280 model_10282 model_10281
+model1 = model_10280
+model2 = model_10282
+model3 = model_10281

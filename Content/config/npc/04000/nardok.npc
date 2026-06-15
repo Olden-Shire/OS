@@ -5,5 +5,5 @@ op3 = Trade
 vislevel = 0
 alwaysontop = true
 name = Nardok
-models = model_23851
-headmodels = model_23247
+model1 = model_23851
+head1 = model_23247

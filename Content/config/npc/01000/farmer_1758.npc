@@ -1,11 +1,21 @@
 // npc 1758
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op3 = Pickpocket
 op2 = Attack
 vislevel = 7
-recol = 25238/7843 906/6930
+recol1s = 25238
+recol1d = 7843
+recol2s = 906
+recol2d = 6930
 name = Farmer
-models = obj_fremennik_helm_man model_250 obj_priest_gown_426_man model_151 model_176 model_274 obj_boots_of_lightness_88_man model_495
-headmodels = obj_man
+model1 = obj_fremennik_helm_man
+model2 = model_250
+model3 = obj_priest_gown_426_man
+model4 = model_151
+model5 = model_176
+model6 = model_274
+model7 = obj_boots_of_lightness_88_man
+model8 = model_495
+head1 = obj_man

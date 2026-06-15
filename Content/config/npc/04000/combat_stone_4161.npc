@@ -1,5 +1,9 @@
 // npc 4161
 vislevel = 0
-recol = 10295/10349 10304/10469
+recol1s = 10295
+recol1d = 10349
+recol2s = 10304
+recol2d = 10469
 name = Combat stone
-models = model_13203 model_13214
+model1 = model_13203
+model2 = model_13214

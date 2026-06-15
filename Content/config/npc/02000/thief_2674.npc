@@ -1,9 +1,22 @@
 // npc 2674
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 16
-recol = 25238/3486 8741/8728
+recol1s = 25238
+recol1d = 3486
+recol2s = 8741
+recol2d = 8728
 name = Thief
-models = obj_fremennik_helm_man model_228 model_246 obj_priest_gown_426_man model_326 obj_druids_robe_540_man obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man obj_fremennik_cloak_3759_man
-headmodels = obj_man model_76
+model1 = obj_fremennik_helm_man
+model2 = model_228
+model3 = model_246
+model4 = obj_priest_gown_426_man
+model5 = model_326
+model6 = obj_druids_robe_540_man
+model7 = obj_cooking_gauntlets_man
+model8 = obj_mime_legs_man
+model9 = obj_boots_of_lightness_88_man
+model10 = obj_fremennik_cloak_3759_man
+head1 = obj_man
+head2 = model_76

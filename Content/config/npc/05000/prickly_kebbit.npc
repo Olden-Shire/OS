@@ -5,4 +5,6 @@ readyanim = seq_5273
 op5 = Hidden
 vislevel = 0
 name = Prickly kebbit
-models = model_19381 model_19388 model_19384
+model1 = model_19381
+model2 = model_19388
+model3 = model_19384

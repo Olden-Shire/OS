@@ -4,5 +4,5 @@ size = 1
 readyanim = seq_6539
 walkanim = seq_6541
 name = Shadowy figure
-models = model_26160
-headmodels = model_26112
+model1 = model_26160
+head1 = model_26112

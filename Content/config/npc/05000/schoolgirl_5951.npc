@@ -1,5 +1,5 @@
 // npc 5951
 vislevel = 1
 name = Schoolgirl
-models = model_2214
-headmodels = model_138
+model1 = model_2214
+head1 = model_138

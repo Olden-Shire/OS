@@ -1,8 +1,9 @@
 //! Name the SEQS and MODELS referenced by npc configs, in their packs + on disk,
 //! then rewrite the `.npc` text to reference them by name.
 //!
-//! NPC anim fields (`readyanim`, `walkanim`, `turnleftanim`, `turnrightanim`,
-//! `walkanims`) point at seq-config ids; `models`/`headmodels` at model ids. We
+//! NPC anim fields (`readyanim`, `walkanim`, `turnleftanim`, `turnrightanim`)
+//! point at seq-config ids; the indexed `model<N>`/`head<N>` lines at model
+//! ids. We
 //! give each referenced seq the generic name `seq_<id>` (the IDE plugin renames
 //! them to something meaningful later) and each referenced model its existing
 //! `model.pack` name, or `model_<id>` if unnamed. Config-file stems come from the
@@ -21,12 +22,23 @@ use std::path::{Path, PathBuf};
 
 use cache::content::pack_file;
 
-/// `key = id` (single seq each).
-const SEQ_SINGLE: &[&str] = &["readyanim", "walkanim", "turnleftanim", "turnrightanim"];
-/// `walkanims = id, id, id, id` (comma-separated seqs).
-const SEQ_QUAD: &str = "walkanims";
-/// `key = id id id` (space-separated model ids).
-const MODEL_LIST: &[&str] = &["models", "headmodels"];
+/// Seq-valued keys, all comma-split (`walkanim` is single OR the 4-direction
+/// set — splitting on `,` handles both; the others are always single).
+const SEQ_KEYS: &[&str] = &["readyanim", "walkanim", "turnleftanim", "turnrightanim"];
+
+/// A model-ref line in content-old's indexed form: `model<N>` / `head<N>`,
+/// each a single id. (Replaces the old joined `models`/`headmodels` lists.)
+fn is_model_key(key: &str) -> bool {
+    for stem in ["model", "head"] {
+        if let Some(rest) = key.strip_prefix(stem)
+            && !rest.is_empty()
+            && rest.bytes().all(|b| b.is_ascii_digit())
+        {
+            return true;
+        }
+    }
+    false
+}
 
 fn main() {
     let write = std::env::args().any(|a| a == "--write");
@@ -47,16 +59,12 @@ fn main() {
         for line in text.lines() {
             let Some((key, val)) = line.split_once('=') else { continue };
             let key = key.trim();
-            if SEQ_SINGLE.contains(&key) {
-                if let Some(id) = num(val) { seq_ids.insert(id); }
-            } else if key == SEQ_QUAD {
+            if SEQ_KEYS.contains(&key) {
                 for tok in val.split(',') {
                     if let Some(id) = num(tok) { seq_ids.insert(id); }
                 }
-            } else if MODEL_LIST.contains(&key) {
-                for tok in val.split_whitespace() {
-                    if let Some(id) = num(tok) { model_ids.insert(id); }
-                }
+            } else if is_model_key(key) {
+                if let Some(id) = num(val) { model_ids.insert(id); }
             }
         }
     }
@@ -148,12 +156,10 @@ fn rewrite_line(line: &str, seq: &HashMap<u32, String>, model: &HashMap<u32, Str
             None => tok.trim().to_string(),
         }
     };
-    let new_val = if SEQ_SINGLE.contains(&key) {
-        map_tok(val, seq)
-    } else if key == SEQ_QUAD {
+    let new_val = if SEQ_KEYS.contains(&key) {
         val.split(',').map(|t| map_tok(t, seq)).collect::<Vec<_>>().join(", ")
-    } else if MODEL_LIST.contains(&key) {
-        val.split_whitespace().map(|t| map_tok(t, model)).collect::<Vec<_>>().join(" ")
+    } else if is_model_key(key) {
+        map_tok(val, model)
     } else {
         return line.to_string();
     };

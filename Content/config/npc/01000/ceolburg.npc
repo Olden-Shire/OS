@@ -1,11 +1,20 @@
 // npc 1089
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 4
-recol = 25238/427 8741/322
+recol1s = 25238
+recol1d = 427
+recol2s = 8741
+recol2d = 322
 name = Ceolburg
-models = obj_castlewars_hood_4513_woman obj_ham_shirt_4298_woman obj_druids_robe_540_woman obj_cooking_gauntlets_woman obj_desert_robes_6386_woman obj_boots_of_lightness_88_woman obj_unblessed_symbol_1716_woman
-headmodels = obj_female_h_a_m
+model1 = obj_castlewars_hood_4513_woman
+model2 = obj_ham_shirt_4298_woman
+model3 = obj_druids_robe_540_woman
+model4 = obj_cooking_gauntlets_woman
+model5 = obj_desert_robes_6386_woman
+model6 = obj_boots_of_lightness_88_woman
+model7 = obj_unblessed_symbol_1716_woman
+head1 = obj_female_h_a_m

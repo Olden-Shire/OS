@@ -1,8 +1,11 @@
 // npc 4441
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Wood Dryad
-models = model_16296 model_16295 model_16298 model_16297
-headmodels = model_16210
+model1 = model_16296
+model2 = model_16295
+model3 = model_16298
+model4 = model_16297
+head1 = model_16210

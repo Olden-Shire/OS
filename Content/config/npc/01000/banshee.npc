@@ -5,4 +5,5 @@ readyanim = seq_1522
 op2 = Attack
 vislevel = 23
 name = Banshee
-models = obj_banshee model_5079
+model1 = obj_banshee
+model2 = model_5079

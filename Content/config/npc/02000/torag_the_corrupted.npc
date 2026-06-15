@@ -1,5 +1,5 @@
 // npc 2029
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 ambient = 50
@@ -7,4 +7,9 @@ contrast = 50
 alwaysontop = true
 vislevel = 115
 name = Torag the Corrupted
-models = model_6657 model_6677 model_6645 model_6663 model_6708 model_6679
+model1 = model_6657
+model2 = model_6677
+model3 = model_6645
+model4 = model_6663
+model5 = model_6708
+model6 = model_6679

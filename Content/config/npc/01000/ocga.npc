@@ -1,11 +1,21 @@
 // npc 1085
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 5
-recol = 25238/10508 8741/43297
+recol1s = 25238
+recol1d = 10508
+recol2s = 8741
+recol2d = 43297
 name = Ocga
-models = model_208 model_249 obj_priest_gown_426_man model_163 obj_cooking_gauntlets_man obj_mime_legs_man obj_boots_of_lightness_88_man
-headmodels = model_48 model_81
+model1 = model_208
+model2 = model_249
+model3 = obj_priest_gown_426_man
+model4 = model_163
+model5 = obj_cooking_gauntlets_man
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+head1 = model_48
+head2 = model_81

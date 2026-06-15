@@ -5,4 +5,6 @@ resizeh = 100
 resizev = 100
 vislevel = 0
 name = My Arm
-models = model_19165 model_19110 model_19113
+model1 = model_19165
+model2 = model_19110
+model3 = model_19113

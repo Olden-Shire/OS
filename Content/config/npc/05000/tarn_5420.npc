@@ -1,9 +1,11 @@
 // npc 5420
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 alwaysontop = true
 vislevel = 69
 name = Tarn
-models = model_20855 model_20860 model_20856
+model1 = model_20855
+model2 = model_20860
+model3 = model_20856

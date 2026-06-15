@@ -8,4 +8,4 @@ readyanim = seq_2774
 op2 = Attack
 vislevel = 42
 name = Lizard
-models = obj_desert_lizard
+model1 = obj_desert_lizard

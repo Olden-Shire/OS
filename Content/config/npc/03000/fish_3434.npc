@@ -5,4 +5,4 @@ ambient = 25
 vislevel = 0
 nominimap = true
 name = Fish
-models = model_13810
+model1 = model_13810

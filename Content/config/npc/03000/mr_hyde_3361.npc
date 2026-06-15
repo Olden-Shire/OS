@@ -1,8 +1,23 @@
 // npc 3361
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 29
-recol = 8741/8485 4626/0 25238/12 6798/10308 7236/4550
+recol1s = 8741
+recol1d = 8485
+recol2s = 4626
+recol2d = 0
+recol3s = 25238
+recol3d = 12
+recol4s = 6798
+recol4d = 10308
+recol5s = 7236
+recol5d = 4550
 name = Mr Hyde
-models = model_13335 obj_fishbowl_helmet_man model_8952 model_263 obj_vyrewatch_shoes_9638_man model_4088 obj_diving_apparatus_man
+model1 = model_13335
+model2 = obj_fishbowl_helmet_man
+model3 = model_8952
+model4 = model_263
+model5 = obj_vyrewatch_shoes_9638_man
+model6 = model_4088
+model7 = obj_diving_apparatus_man

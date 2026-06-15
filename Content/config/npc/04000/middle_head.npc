@@ -2,5 +2,8 @@
 vislevel = 0
 size = 1
 name = Middle head
-models = model_3010 obj_witchs_cat
-headmodels = model_18507 model_18504 model_18509
+model1 = model_3010
+model2 = obj_witchs_cat
+head1 = model_18507
+head2 = model_18504
+head3 = model_18509

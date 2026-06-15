@@ -1,10 +1,12 @@
 // npc 6175
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 alwaysontop = true
 vislevel = 115
 name = Sir Tristram
-models = model_27127 model_27195 model_27203
-headmodels = model_27212
+model1 = model_27127
+model2 = model_27195
+model3 = model_27203
+head1 = model_27212

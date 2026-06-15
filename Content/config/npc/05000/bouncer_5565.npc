@@ -11,4 +11,4 @@ nominimap = true
 alwaysontop = true
 vislevel = 160
 name = Bouncer
-models = model_26259
+model1 = model_26259

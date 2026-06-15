@@ -3,4 +3,5 @@ readyanim = seq_5094
 walkanim = seq_5095
 vislevel = 0
 name = Penance Fighter
-models = model_20697 model_20696
+model1 = model_20697
+model2 = model_20696

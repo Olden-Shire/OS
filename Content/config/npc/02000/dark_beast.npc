@@ -5,4 +5,4 @@ readyanim = seq_2730
 op2 = Attack
 vislevel = 182
 name = Dark beast
-models = obj_dark_beast
+model1 = obj_dark_beast

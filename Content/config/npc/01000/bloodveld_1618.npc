@@ -7,4 +7,4 @@ resizev = 245
 op2 = Attack
 vislevel = 76
 name = Bloodveld
-models = obj_bloodveld
+model1 = obj_bloodveld

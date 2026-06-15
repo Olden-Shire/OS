@@ -5,4 +5,6 @@ turnspeed = 0
 nominimap = true
 size = 3
 name = Mole display
-models = model_25482 model_25481 model_25483
+model1 = model_25482
+model2 = model_25481
+model3 = model_25483

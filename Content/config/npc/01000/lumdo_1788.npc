@@ -2,7 +2,12 @@
 walkanim = seq_189
 readyanim = seq_195
 vislevel = 0
-recol = 22426/16821 22422/437
+recol1s = 22426
+recol1d = 16821
+recol2s = 22422
+recol2d = 437
 name = Lumdo
-models = model_2914 model_14924 model_2919
-headmodels = obj_gnome
+model1 = model_2914
+model2 = model_14924
+model3 = model_2919
+head1 = obj_gnome

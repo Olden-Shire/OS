@@ -4,4 +4,4 @@ vislevel = 0
 alwaysontop = true
 turnspeed = 0
 name = Crusher
-models = model_21591
+model1 = model_21591

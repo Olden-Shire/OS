@@ -1,11 +1,19 @@
 // npc 3118
 size = 1
 alwaysontop = true
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
-recol = 926/0
+recol1s = 926
+recol1d = 0
 name = Prison Pete
-models = obj_desert_disguise_man model_246 model_10741 model_10743 model_10742 obj_vyrewatch_shoes_9638_man
-headmodels = obj_rogue model_10739 model_9822
+model1 = obj_desert_disguise_man
+model2 = model_246
+model3 = model_10741
+model4 = model_10743
+model5 = model_10742
+model6 = obj_vyrewatch_shoes_9638_man
+head1 = obj_rogue
+head2 = model_10739
+head3 = model_9822

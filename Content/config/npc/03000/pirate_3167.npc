@@ -1,9 +1,23 @@
 // npc 3167
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/695 9104/231 25238/7591 22177/40609
+recol1s = 8741
+recol1d = 695
+recol2s = 9104
+recol2d = 231
+recol3s = 25238
+recol3d = 7591
+recol4s = 22177
+recol4d = 40609
 name = Pirate
-models = model_211 model_10304 obj_priest_gown_426_man model_3667 model_151 model_10218 model_5218
-headmodels = model_50 model_11187
+model1 = model_211
+model2 = model_10304
+model3 = obj_priest_gown_426_man
+model4 = model_3667
+model5 = model_151
+model6 = model_10218
+model7 = model_5218
+head1 = model_50
+head2 = model_11187

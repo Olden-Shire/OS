@@ -1,9 +1,21 @@
 // npc 788
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/12 25238/12 61/12
+recol1s = 8741
+recol1d = 12
+recol2s = 25238
+recol2d = 12
+recol3s = 61
+recol3d = 12
 name = Garv
-models = obj_khazard_helmet_man obj_iron_chainbody_1101_man model_151 obj_mime_legs_man obj_boots_of_lightness_88_man obj_cooking_gauntlets_man model_246 obj_iron_battleaxe_1363_wear
-headmodels = obj_watchman
+model1 = obj_khazard_helmet_man
+model2 = obj_iron_chainbody_1101_man
+model3 = model_151
+model4 = obj_mime_legs_man
+model5 = obj_boots_of_lightness_88_man
+model6 = obj_cooking_gauntlets_man
+model7 = model_246
+model8 = obj_iron_battleaxe_1363_wear
+head1 = obj_watchman

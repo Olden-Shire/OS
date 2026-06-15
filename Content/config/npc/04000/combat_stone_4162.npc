@@ -1,6 +1,16 @@
 // npc 4162
 op1 = Hit
 vislevel = 0
-recol = 10295/10349 10304/10469
+recol1s = 10295
+recol1d = 10349
+recol2s = 10304
+recol2d = 10469
 name = Combat stone
-models = model_13203 obj_clay_attack_stone model_13210 model_13211 model_13212 model_13207 model_13208 model_13209
+model1 = model_13203
+model2 = obj_clay_attack_stone
+model3 = model_13210
+model4 = model_13211
+model5 = model_13212
+model6 = model_13207
+model7 = model_13208
+model8 = model_13209

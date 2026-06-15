@@ -6,4 +6,5 @@ readyanim = seq_5722
 alwaysontop = true
 vislevel = 51
 name = Icelord
-models = model_21805 model_21801
+model1 = model_21805
+model2 = model_21801

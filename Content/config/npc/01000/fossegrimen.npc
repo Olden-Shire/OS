@@ -1,10 +1,21 @@
 // npc 1273
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 ambient = 80
-recol = 4550/54338 6798/40239 25238/37650 8741/35222 8078/35102 908/35222
+recol1s = 4550
+recol1d = 54338
+recol2s = 6798
+recol2d = 40239
+recol3s = 25238
+recol3d = 37650
+recol4s = 8741
+recol4d = 35222
+recol5s = 8078
+recol5d = 35102
+recol6s = 908
+recol6d = 35222
 name = Fossegrimen
-models = model_6142
-headmodels = model_4389
+model1 = model_6142
+head1 = model_4389

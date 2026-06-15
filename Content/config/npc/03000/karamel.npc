@@ -1,5 +1,5 @@
 // npc 3495
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 ambient = 50
@@ -7,4 +7,4 @@ contrast = 50
 alwaysontop = true
 vislevel = 136
 name = Karamel
-models = model_13337
+model1 = model_13337

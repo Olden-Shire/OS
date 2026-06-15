@@ -6,4 +6,4 @@ turnspeed = 1024
 nominimap = true
 vislevel = 0
 name = Elemental rock
-models = model_18649
+model1 = model_18649

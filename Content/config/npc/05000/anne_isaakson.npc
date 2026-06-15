@@ -1,10 +1,16 @@
 // npc 5512
 size = 1
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 6798/99
+recol1s = 6798
+recol1d = 99
 name = Anne Isaakson
-models = model_390 obj_priest_gown_426_woman model_332 model_353 obj_desert_robes_6386_woman model_358
-headmodels = obj_warrior_woman
+model1 = model_390
+model2 = obj_priest_gown_426_woman
+model3 = model_332
+model4 = model_353
+model5 = obj_desert_robes_6386_woman
+model6 = model_358
+head1 = obj_warrior_woman

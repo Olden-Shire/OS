@@ -1,9 +1,20 @@
 // npc 2793
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 25238/5652 8741/4502 43072/4550
+recol1s = 25238
+recol1d = 5652
+recol2s = 8741
+recol2d = 4502
+recol3s = 43072
+recol3d = 4550
 name = Tramp
-models = model_214 model_246 model_310 model_151 model_176 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
-headmodels = model_52
+model1 = model_214
+model2 = model_246
+model3 = model_310
+model4 = model_151
+model5 = model_176
+model6 = obj_citizen_trousers_9642_man
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_52

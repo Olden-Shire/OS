@@ -1,8 +1,20 @@
 // npc 30
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 25238/24 8741/10378 43072/4550
+recol1s = 25238
+recol1d = 24
+recol2s = 8741
+recol2d = 10378
+recol3s = 43072
+recol3d = 4550
 name = Barman
-models = obj_desert_disguise_man model_247 model_299 model_159 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man model_321
+model1 = obj_desert_disguise_man
+model2 = model_247
+model3 = model_299
+model4 = model_159
+model5 = model_176
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+model8 = model_321

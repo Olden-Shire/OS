@@ -6,4 +6,4 @@ ambient = 12
 vislevel = 0
 nominimap = true
 name = Enchanted Broom
-models = model_16738
+model1 = model_16738

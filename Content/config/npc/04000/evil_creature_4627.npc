@@ -2,4 +2,5 @@
 op2 = Attack
 vislevel = 0
 name = Evil creature
-models = model_16957 model_16955
+model1 = model_16957
+model2 = model_16955

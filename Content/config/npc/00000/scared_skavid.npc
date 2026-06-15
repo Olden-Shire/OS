@@ -5,5 +5,5 @@ walkanim = seq_254
 readyanim = seq_257
 op1 = Talk-to
 name = Scared skavid
-models = model_20388
-headmodels = model_20394
+model1 = model_20388
+head1 = model_20394

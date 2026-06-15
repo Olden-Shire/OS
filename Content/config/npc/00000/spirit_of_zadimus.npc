@@ -5,5 +5,5 @@ readyanim = seq_5530
 walkanim = seq_5531
 op1 = Talk-to
 name = Spirit of Zadimus
-models = model_21151
-headmodels = model_21406
+model1 = model_21151
+head1 = model_21406

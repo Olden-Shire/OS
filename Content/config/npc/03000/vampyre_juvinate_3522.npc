@@ -1,12 +1,17 @@
 // npc 3522
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 143
 resizev = 140
 op2 = Attack
 ambient = -25
 vislevel = 54
-recol = 4550/54352
+recol1s = 4550
+recol1d = 54352
 name = Vampyre Juvinate
-models = model_14042 model_14039 model_14046 model_14041 model_14044
-headmodels = model_13943
+model1 = model_14042
+model2 = model_14039
+model3 = model_14046
+model4 = model_14041
+model5 = model_14044
+head1 = model_13943

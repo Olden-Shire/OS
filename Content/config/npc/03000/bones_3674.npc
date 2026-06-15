@@ -3,5 +3,5 @@ size = 1
 readyanim = seq_3840
 vislevel = 0
 name = Bones
-models = model_13700
-headmodels = model_13700
+model1 = model_13700
+head1 = model_13700

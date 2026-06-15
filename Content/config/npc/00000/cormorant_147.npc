@@ -6,4 +6,5 @@ ambient = 20
 nominimap = true
 vislevel = 0
 name = Cormorant
-models = model_26840 model_26838
+model1 = model_26840
+model2 = model_26838

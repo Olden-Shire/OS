@@ -2,6 +2,9 @@
 vislevel = 0
 size = 1
 nominimap = true
-recol = 7054/13592 6028/13592
+recol1s = 7054
+recol1d = 13592
+recol2s = 6028
+recol2d = 13592
 name = Tree
-models = model_3014
+model1 = model_3014

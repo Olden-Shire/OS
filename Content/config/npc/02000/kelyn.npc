@@ -1,10 +1,18 @@
 // npc 2367
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op3 = Pickpocket
 op1 = Talk-to
 vislevel = 0
-recol = 16701/7613 9137/5429 25886/7646
+recol1s = 16701
+recol1d = 7613
+recol2s = 9137
+recol2d = 5429
+recol3s = 25886
+recol3d = 7646
 name = Kelyn
-models = model_4030 model_6981 model_6978 model_6979
-headmodels = model_4013
+model1 = model_4030
+model2 = model_6981
+model3 = model_6978
+model4 = model_6979
+head1 = model_4013

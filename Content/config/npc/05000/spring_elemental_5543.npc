@@ -9,4 +9,6 @@ vislevel = 0
 alwaysontop = true
 nowalksmoothing = true
 name = Spring Elemental
-models = model_22266 model_22267 model_22268
+model1 = model_22266
+model2 = model_22267
+model3 = model_22268

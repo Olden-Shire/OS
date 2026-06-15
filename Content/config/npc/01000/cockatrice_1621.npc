@@ -7,4 +7,4 @@ resizev = 180
 op2 = Attack
 vislevel = 37
 name = Cockatrice
-models = obj_cockatrice
+model1 = obj_cockatrice

@@ -6,5 +6,5 @@ readyanim = seq_2906
 op1 = Talk-to
 ambient = 20
 name = Hallak
-models = model_10213
-headmodels = model_10121
+model1 = model_10213
+head1 = model_10121

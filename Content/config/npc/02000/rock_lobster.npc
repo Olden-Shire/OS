@@ -9,4 +9,5 @@ readyanim = seq_2858
 op2 = Attack
 vislevel = 127
 name = Rock lobster
-models = model_9945 model_9946
+model1 = model_9945
+model2 = model_9946

@@ -2,6 +2,6 @@
 alwaysontop = true
 op1 = Talk-To
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 multivar = 3527, 65535, 5834 5835

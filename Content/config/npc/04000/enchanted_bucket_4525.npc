@@ -6,4 +6,4 @@ ambient = 12
 vislevel = 0
 nominimap = true
 name = Enchanted Bucket
-models = model_16739
+model1 = model_16739

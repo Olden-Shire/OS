@@ -6,4 +6,4 @@ op5 = Attack
 alwaysontop = true
 vislevel = 6
 name = Chompy bird
-models = model_26861
+model1 = model_26861

@@ -1,9 +1,13 @@
 // npc 6035
-walkanims = seq_6531, seq_6532, seq_821, seq_822
+walkanim = seq_6531, seq_6532, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Irina
-models = model_26144 model_26153 model_26137 model_26148 model_26141
-headmodels = model_26273
+model1 = model_26144
+model2 = model_26153
+model3 = model_26137
+model4 = model_26148
+model5 = model_26141
+head1 = model_26273

@@ -1,6 +1,7 @@
 // npc 4967
 vislevel = 0
 size = 1
-recol = 12/3988
+recol1s = 12
+recol1d = 3988
 name = Flies
-models = model_2950
+model1 = model_2950

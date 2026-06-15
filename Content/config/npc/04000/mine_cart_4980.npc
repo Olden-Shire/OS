@@ -2,4 +2,5 @@
 vislevel = 0
 nominimap = true
 name = Mine Cart
-models = model_19284 model_19283
+model1 = model_19284
+model2 = model_19283

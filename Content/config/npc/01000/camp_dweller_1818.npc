@@ -1,13 +1,19 @@
 // npc 1818
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 130
 resizev = 100
 op1 = Talk-to
 op2 = Attack
 vislevel = 25
-recol = 8741/5541 23442/5541
+recol1s = 8741
+recol1d = 5541
+recol2s = 23442
+recol2d = 5541
 name = Camp dweller
-models = model_385 model_5678 model_5677 model_5675
-headmodels = model_109
+model1 = model_385
+model2 = model_5678
+model3 = model_5677
+model4 = model_5675
+head1 = model_109

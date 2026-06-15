@@ -1,6 +1,7 @@
 // npc 2558
 vislevel = 0
 size = 3
-recol = 7062/21662
+recol1s = 7062
+recol1d = 21662
 name = Adamantite ore
-models = model_9071
+model1 = model_9071

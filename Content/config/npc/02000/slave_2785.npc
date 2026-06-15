@@ -1,7 +1,19 @@
 // npc 2785
 vislevel = 0
 readyanim = seq_1728
-walkanims = seq_819, seq_820, seq_821, seq_822
-recol = 4626/4548 43072/4548 25238/16532
+walkanim = seq_819, seq_820, seq_821, seq_822
+recol1s = 4626
+recol1d = 4548
+recol2s = 43072
+recol2d = 4548
+recol3s = 25238
+recol3d = 16532
 name = Slave
-models = model_235 model_253 obj_veracs_brassard_4757_man model_173 model_176 obj_bronze_pickaxe_1265_wear obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
+model1 = model_235
+model2 = model_253
+model3 = obj_veracs_brassard_4757_man
+model4 = model_173
+model5 = model_176
+model6 = obj_bronze_pickaxe_1265_wear
+model7 = obj_citizen_trousers_9642_man
+model8 = obj_vyrewatch_shoes_9638_man

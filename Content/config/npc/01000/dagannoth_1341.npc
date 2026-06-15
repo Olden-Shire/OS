@@ -7,4 +7,4 @@ readyanim = seq_1338
 op2 = Attack
 vislevel = 92
 name = Dagannoth
-models = obj_dagannoth
+model1 = obj_dagannoth

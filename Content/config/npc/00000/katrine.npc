@@ -1,11 +1,19 @@
 // npc 642
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
-recol = 6798/9436
+recol1s = 6798
+recol1d = 9436
 name = Katrine
-models = model_393 model_414 model_25716 model_25698 model_353 model_25694 model_25709
-headmodels = model_115 model_131
+model1 = model_393
+model2 = model_414
+model3 = model_25716
+model4 = model_25698
+model5 = model_353
+model6 = model_25694
+model7 = model_25709
+head1 = model_115
+head2 = model_131

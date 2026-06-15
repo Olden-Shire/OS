@@ -1,10 +1,23 @@
 // npc 696
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 25238/8518 8741/8518 5400/7331 24/7331
+recol1s = 25238
+recol1d = 8518
+recol2s = 8741
+recol2d = 8518
+recol3s = 5400
+recol3d = 7331
+recol4s = 24
+recol4d = 7331
 name = Caroline
-models = model_390 model_11359 model_18120 model_9359 model_10706 model_440 model_358
-headmodels = model_10031
+model1 = model_390
+model2 = model_11359
+model3 = model_18120
+model4 = model_9359
+model5 = model_10706
+model6 = model_440
+model7 = model_358
+head1 = model_10031

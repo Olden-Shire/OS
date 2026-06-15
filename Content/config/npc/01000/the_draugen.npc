@@ -1,9 +1,10 @@
 // npc 1279
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 ambient = 80
 vislevel = 69
-recol = 6253/6488
+recol1s = 6253
+recol1d = 6488
 name = The Draugen
-models = model_6141
+model1 = model_6141

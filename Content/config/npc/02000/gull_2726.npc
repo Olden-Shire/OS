@@ -6,4 +6,5 @@ ambient = 20
 vislevel = 0
 vislevel = 0
 name = Gull
-models = model_26841 model_26844
+model1 = model_26841
+model2 = model_26844

@@ -1,10 +1,22 @@
 // npc 658
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Take-boat
-recol = 25238/4769 8741/4769 6798/6854
+recol1s = 25238
+recol1d = 4769
+recol2s = 8741
+recol2d = 4769
+recol3s = 6798
+recol3d = 6854
 name = Monk of Entrana
-models = model_223 obj_vyrewatch_shoes_9638_man model_251 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_260
-headmodels = model_59 model_83
+model1 = model_223
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_251
+model4 = obj_priest_gown_426_man
+model5 = obj_druids_robe_540_man
+model6 = model_176
+model7 = model_260
+head1 = model_59
+head2 = model_83

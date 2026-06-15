@@ -7,4 +7,5 @@ contrast = 50
 alwaysontop = true
 vislevel = 115
 name = Verac the Defiled
-models = model_6678 model_6705
+model1 = model_6678
+model2 = model_6705

@@ -6,4 +6,4 @@ walkanim = seq_356
 op2 = Attack
 alwaysontop = true
 name = Strange plant
-models = model_3371
+model1 = model_3371

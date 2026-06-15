@@ -1,8 +1,23 @@
 // npc 2474
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
-recol = 8741/48039 6024/8844 8078/8844 25238/127
+recol1s = 8741
+recol1d = 48039
+recol2s = 6024
+recol2d = 8844
+recol3s = 8078
+recol3d = 8844
+recol4s = 25238
+recol4d = 127
 name = Frog prince
-models = model_8774 model_235 obj_prince_tunic_man obj_fremennik_shirt_3767_man model_257 model_8233 model_176 model_246
-headmodels = model_67 model_6951
+model1 = model_8774
+model2 = model_235
+model3 = obj_prince_tunic_man
+model4 = obj_fremennik_shirt_3767_man
+model5 = model_257
+model6 = model_8233
+model7 = model_176
+model8 = model_246
+head1 = model_67
+head2 = model_6951

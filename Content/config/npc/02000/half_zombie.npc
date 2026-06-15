@@ -4,5 +4,5 @@ readyanim = seq_2825
 op1 = Talk-To
 vislevel = 0
 name = Half-Zombie
-models = model_9913
-headmodels = model_9919
+model1 = model_9913
+head1 = model_9919

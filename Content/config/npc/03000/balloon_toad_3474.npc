@@ -2,6 +2,7 @@
 vislevel = 0
 readyanim = seq_3469
 walkanim = seq_3469
-recol = 5790/49
+recol1s = 5790
+recol1d = 49
 name = Balloon Toad
-models = model_13723
+model1 = model_13723

@@ -1,9 +1,16 @@
 // npc 3797
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 alwaysontop = true
 op1 = Talk-to
 name = Squire
-models = model_214 model_252 obj_bronze_chainbody_1103_man model_14587 model_10218 model_14565 obj_vyrewatch_shoes_9638_man
-headmodels = model_52 model_84
+model1 = model_214
+model2 = model_252
+model3 = obj_bronze_chainbody_1103_man
+model4 = model_14587
+model5 = model_10218
+model6 = model_14565
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_52
+head2 = model_84

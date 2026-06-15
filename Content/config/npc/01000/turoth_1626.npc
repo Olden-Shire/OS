@@ -5,4 +5,4 @@ readyanim = seq_1594
 op2 = Attack
 vislevel = 86
 name = Turoth
-models = obj_turoth
+model1 = obj_turoth

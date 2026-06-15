@@ -1,9 +1,20 @@
 // npc 174
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 7
-recol = 25238/10508 8741/10508 6798/10508
+recol1s = 25238
+recol1d = 10508
+recol2s = 8741
+recol2d = 10508
+recol3s = 6798
+recol3d = 10508
 name = Dark wizard
-models = model_208 obj_vyrewatch_shoes_9638_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man
+model1 = model_208
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_246
+model4 = obj_priest_gown_426_man
+model5 = obj_druids_robe_540_man
+model6 = model_176
+model7 = obj_priest_gown_428_man

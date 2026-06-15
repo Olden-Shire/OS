@@ -1,10 +1,20 @@
 // npc 1580
 vislevel = 0
 size = 2
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/2714 25238/2714 4550/7236
+recol1s = 8741
+recol1d = 2714
+recol2s = 25238
+recol2d = 2714
+recol3s = 4550
+recol3d = 7236
 name = Vanstrom Klause
-models = model_4977 model_4978 obj_druids_robe_540_man model_4088 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
-headmodels = model_4976
+model1 = model_4977
+model2 = model_4978
+model3 = obj_druids_robe_540_man
+model4 = model_4088
+model5 = obj_mime_legs_man
+model6 = obj_vyrewatch_shoes_9638_man
+head1 = model_4976

@@ -5,4 +5,6 @@ vislevel = 0
 op1 = Talk-to
 alwaysontop = true
 name = Barge workman
-models = model_25811 model_25810 model_25817
+model1 = model_25811
+model2 = model_25810
+model3 = model_25817

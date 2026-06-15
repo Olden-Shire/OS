@@ -11,4 +11,4 @@ ambient = 10
 contrast = 10
 turnspeed = 0
 name = Tree
-models = model_21845
+model1 = model_21845

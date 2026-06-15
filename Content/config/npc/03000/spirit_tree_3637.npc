@@ -7,5 +7,5 @@ alwaysontop = true
 op1 = Talk-to
 vislevel = 0
 name = Spirit tree
-models = model_2851
-headmodels = model_148
+model1 = model_2851
+head1 = model_148

@@ -8,4 +8,4 @@ ambient = 20
 vislevel = 0
 nominimap = true
 name = Sand storm
-models = model_9994
+model1 = model_9994

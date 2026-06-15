@@ -5,4 +5,5 @@ readyanim = seq_6113
 op2 = Attack
 vislevel = 100
 name = Ulfric
-models = model_24188 model_24050
+model1 = model_24188
+model2 = model_24050

@@ -5,5 +5,5 @@ walkanim = seq_45
 readyanim = seq_51
 vislevel = 0
 name = Ali the Camel
-models = model_2939
-headmodels = model_9841
+model1 = model_2939
+head1 = model_9841

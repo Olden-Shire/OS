@@ -1,9 +1,14 @@
 // npc 1186
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Idris
-models = model_4016 model_4020 model_4023 model_4025 model_4017
-headmodels = obj_elf model_4009
+model1 = model_4016
+model2 = model_4020
+model3 = model_4023
+model4 = model_4025
+model5 = model_4017
+head1 = obj_elf
+head2 = model_4009

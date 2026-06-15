@@ -4,4 +4,6 @@ readyanim = seq_6411
 vislevel = 0
 op1 = Talk-to
 name = Teacher and pupil
-models = model_25798 model_25799 model_25800
+model1 = model_25798
+model2 = model_25799
+model3 = model_25800

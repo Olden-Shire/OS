@@ -6,4 +6,5 @@ op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Ninja impling
-models = model_26376 model_26367
+model1 = model_26376
+model2 = model_26367

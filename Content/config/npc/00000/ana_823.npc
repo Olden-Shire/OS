@@ -2,7 +2,13 @@
 vislevel = 0
 size = 1
 op1 = Talk-to
-recol = 6798/11187 25238/8741 908/8741
+recol1s = 6798
+recol1d = 11187
+recol2s = 25238
+recol2d = 8741
+recol3s = 908
+recol3d = 8741
 name = Ana
-models = obj_boots_of_lightness_88_woman
-headmodels = model_118 model_19328
+model1 = obj_boots_of_lightness_88_woman
+head1 = model_118
+head2 = model_19328

@@ -5,5 +5,5 @@ walkanim = seq_106
 readyanim = seq_112
 op1 = Talk-to
 name = Fairy
-models = model_2857
-headmodels = model_11
+model1 = model_2857
+head1 = model_11

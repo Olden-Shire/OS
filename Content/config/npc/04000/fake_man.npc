@@ -1,5 +1,5 @@
 // npc 4460
 vislevel = 1
 name = Fake Man
-models = obj_fake_man
-headmodels = model_4053
+model1 = obj_fake_man
+head1 = model_4053

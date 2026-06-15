@@ -4,4 +4,4 @@ readyanim = seq_1790
 op2 = Attack
 vislevel = 23
 name = Cave slime
-models = obj_swamp_cave_slime
+model1 = obj_swamp_cave_slime

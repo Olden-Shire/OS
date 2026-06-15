@@ -1,9 +1,23 @@
 // npc 735
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/6034 25238/6034 43072/4550
+recol1s = 8741
+recol1d = 6034
+recol2s = 25238
+recol2d = 6034
+recol3s = 43072
+recol3d = 4550
 name = Bartender
-models = model_203 model_253 obj_eye_patch_1025_man model_291 model_263 model_176 model_159 obj_boots_of_lightness_88_man
-headmodels = model_45 model_85 model_68
+model1 = model_203
+model2 = model_253
+model3 = obj_eye_patch_1025_man
+model4 = model_291
+model5 = model_263
+model6 = model_176
+model7 = model_159
+model8 = obj_boots_of_lightness_88_man
+head1 = model_45
+head2 = model_85
+head3 = model_68

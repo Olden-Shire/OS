@@ -1,8 +1,15 @@
 // npc 4783
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 4550/5338
+recol1s = 4550
+recol1d = 5338
 name = Former vampyre
-models = model_12137 model_246 model_16346 model_18077 model_18081 model_18091 model_18079
-headmodels = model_14371
+model1 = model_12137
+model2 = model_246
+model3 = model_16346
+model4 = model_18077
+model5 = model_18081
+model6 = model_18091
+model7 = model_18079
+head1 = model_14371

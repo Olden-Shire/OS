@@ -1,6 +1,6 @@
 // npc 335
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 1
 multivar = 1784, 65535, 65535 3209

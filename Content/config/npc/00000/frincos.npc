@@ -1,12 +1,21 @@
 // npc 578
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 alwaysontop = true
-recol = 25238/4769 8741/4769
+recol1s = 25238
+recol1d = 4769
+recol2s = 8741
+recol2d = 4769
 name = Frincos
-models = obj_desert_disguise_man obj_vyrewatch_shoes_9638_man model_246 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_260
-headmodels = obj_rogue
+model1 = obj_desert_disguise_man
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_246
+model4 = obj_priest_gown_426_man
+model5 = obj_druids_robe_540_man
+model6 = model_176
+model7 = model_260
+head1 = obj_rogue

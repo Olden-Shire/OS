@@ -1,5 +1,5 @@
 // npc 4510
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 op2 = Attack
 ambient = 40
@@ -7,5 +7,13 @@ contrast = 40
 op2 = Attack
 vislevel = 79
 name = Me
-models = obj_lunar_helm_9096_woman obj_lunar_torso_woman obj_lunar_legs_woman obj_lunar_gloves_woman obj_lunar_boots_woman obj_lunar_cape_woman obj_lunar_amulet_woman model_452 model_16492
-headmodels = model_16468
+model1 = obj_lunar_helm_9096_woman
+model2 = obj_lunar_torso_woman
+model3 = obj_lunar_legs_woman
+model4 = obj_lunar_gloves_woman
+model5 = obj_lunar_boots_woman
+model6 = obj_lunar_cape_woman
+model7 = obj_lunar_amulet_woman
+model8 = model_452
+model9 = model_16492
+head1 = model_16468

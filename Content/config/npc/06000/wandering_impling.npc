@@ -6,5 +6,5 @@ op1 = Talk-to
 alwaysontop = true
 vislevel = 0
 name = Wandering impling
-models = model_26374
-headmodels = model_26278
+model1 = model_26374
+head1 = model_26278

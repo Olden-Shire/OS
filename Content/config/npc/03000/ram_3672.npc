@@ -5,4 +5,6 @@ readyanim = seq_5339
 op2 = Attack
 vislevel = 2
 name = Ram
-models = model_20283 model_20289 model_20287
+model1 = model_20283
+model2 = model_20289
+model3 = model_20287

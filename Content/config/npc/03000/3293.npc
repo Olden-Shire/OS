@@ -2,5 +2,8 @@
 vislevel = 0
 walkanim = seq_3220
 inactive = true
-recol = 4886/8070 5908/8844
-models = model_11470
+recol1s = 4886
+recol1d = 8070
+recol2s = 5908
+recol2d = 8844
+model1 = model_11470

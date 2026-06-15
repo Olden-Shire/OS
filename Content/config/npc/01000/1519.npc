@@ -1,5 +1,5 @@
 // npc 1519
-walkanims = seq_2562, seq_2562, seq_2562, seq_2562
+walkanim = seq_2562, seq_2562, seq_2562, seq_2562
 readyanim = seq_2561
 alwaysontop = true
 vislevel = 1

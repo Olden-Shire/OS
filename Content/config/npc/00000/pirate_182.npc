@@ -1,11 +1,23 @@
 // npc 182
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 23
-recol = 25238/1950 8741/5652
+recol1s = 25238
+recol1d = 1950
+recol2s = 8741
+recol2d = 5652
 name = Pirate
-models = model_211 model_246 obj_priest_gown_426_man model_173 model_176 model_271 obj_vyrewatch_shoes_9638_man obj_bronze_scimitar_1321_wear obj_eye_patch_1025_man
-headmodels = model_50 model_68
+model1 = model_211
+model2 = model_246
+model3 = obj_priest_gown_426_man
+model4 = model_173
+model5 = model_176
+model6 = model_271
+model7 = obj_vyrewatch_shoes_9638_man
+model8 = obj_bronze_scimitar_1321_wear
+model9 = obj_eye_patch_1025_man
+head1 = model_50
+head2 = model_68

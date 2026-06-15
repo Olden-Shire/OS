@@ -7,4 +7,5 @@ op2 = Attack
 vislevel = 0
 nominimap = true
 name = Gull
-models = model_26841 model_26844
+model1 = model_26841
+model2 = model_26844

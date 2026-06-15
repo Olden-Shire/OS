@@ -6,4 +6,4 @@ readyanim = seq_1900
 vislevel = 0
 alwaysontop = true
 name = Snake
-models = model_6104
+model1 = model_6104

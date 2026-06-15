@@ -5,5 +5,5 @@ readyanim = seq_171
 op2 = Attack
 vislevel = 2
 name = Imp
-models = obj_imp
-headmodels = model_20045
+model1 = obj_imp
+head1 = model_20045

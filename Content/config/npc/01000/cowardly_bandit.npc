@@ -1,10 +1,23 @@
 // npc 1886
 size = 1
 op1 = Talk-to
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 56
-recol = 8741/10351 4550/5555
+recol1s = 8741
+recol1d = 10351
+recol2s = 4550
+recol2d = 5555
 name = Cowardly Bandit
-models = model_6086 model_247 obj_priest_gown_426_man model_173 obj_desert_legs_6390_man obj_vyrewatch_shoes_9638_man model_176 obj_bronze_scimitar_1321_wear model_523
-headmodels = model_79 model_6080 obj_man
+model1 = model_6086
+model2 = model_247
+model3 = obj_priest_gown_426_man
+model4 = model_173
+model5 = obj_desert_legs_6390_man
+model6 = obj_vyrewatch_shoes_9638_man
+model7 = model_176
+model8 = obj_bronze_scimitar_1321_wear
+model9 = model_523
+head1 = model_79
+head2 = model_6080
+head3 = obj_man

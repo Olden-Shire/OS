@@ -1,8 +1,18 @@
 // npc 29
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 1
-recol = 25238/10128
+recol1s = 25238
+recol1d = 10128
 name = Chuck
-models = model_210 model_250 obj_veracs_brassard_4757_man model_173 obj_cooking_gauntlets_man model_271 obj_boots_of_lightness_88_man model_196 obj_iron_axe_1349_wear obj_unblessed_symbol_1716_man
+model1 = model_210
+model2 = model_250
+model3 = obj_veracs_brassard_4757_man
+model4 = model_173
+model5 = obj_cooking_gauntlets_man
+model6 = model_271
+model7 = obj_boots_of_lightness_88_man
+model8 = model_196
+model9 = obj_iron_axe_1349_wear
+model10 = obj_unblessed_symbol_1716_man

@@ -5,5 +5,5 @@ vislevel = 0
 op1 = Talk-to
 op3 = Exchange
 name = Tool Leprechaun
-models = model_10220
-headmodels = model_24
+model1 = model_10220
+head1 = model_24

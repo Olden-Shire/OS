@@ -6,4 +6,4 @@ turnspeed = 0
 vislevel = 0
 nominimap = true
 name = Egg
-models = model_8712
+model1 = model_8712

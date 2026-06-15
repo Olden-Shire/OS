@@ -1,10 +1,21 @@
 // npc 36
 size = 1
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/36015
+recol1s = 8741
+recol1d = 36015
 name = Wyson the gardener
-models = obj_desert_disguise_man model_253 model_11761 model_10301 obj_cooking_gauntlets_man model_11757 obj_boots_of_lightness_88_man model_4843 obj_spade_952_wear
-headmodels = obj_rogue model_5534 model_85
+model1 = obj_desert_disguise_man
+model2 = model_253
+model3 = model_11761
+model4 = model_10301
+model5 = obj_cooking_gauntlets_man
+model6 = model_11757
+model7 = obj_boots_of_lightness_88_man
+model8 = model_4843
+model9 = obj_spade_952_wear
+head1 = obj_rogue
+head2 = model_5534
+head3 = model_85

@@ -7,4 +7,5 @@ resizev = 108
 op2 = Attack
 vislevel = 15
 name = Bear Cub
-models = model_18883 model_18885
+model1 = model_18883
+model2 = model_18885

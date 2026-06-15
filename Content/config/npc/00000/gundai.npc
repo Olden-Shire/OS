@@ -1,10 +1,22 @@
 // npc 902
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Bank
-recol = 25238/61 8741/61
+recol1s = 25238
+recol1d = 61
+recol2s = 8741
+recol2d = 61
 name = Gundai
-models = obj_fremennik_helm_man model_253 model_245 obj_studded_body_1133_man model_167 model_176 model_274 obj_boots_of_lightness_88_man
-headmodels = obj_man model_85 model_78
+model1 = obj_fremennik_helm_man
+model2 = model_253
+model3 = model_245
+model4 = obj_studded_body_1133_man
+model5 = model_167
+model6 = model_176
+model7 = model_274
+model8 = obj_boots_of_lightness_88_man
+head1 = obj_man
+head2 = model_85
+head3 = model_78

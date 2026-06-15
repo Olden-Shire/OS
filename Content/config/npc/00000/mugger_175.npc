@@ -1,9 +1,24 @@
 // npc 175
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 6
-recol = 17825/6674 8741/1569 10341/6554 10324/6554 19986/6554 10353/6674
+recol1s = 17825
+recol1d = 6674
+recol2s = 8741
+recol2d = 1569
+recol3s = 10341
+recol3d = 6554
+recol4s = 10324
+recol4d = 6554
+recol5s = 19986
+recol5d = 6554
+recol6s = 10353
+recol6d = 6674
 name = Mugger
-models = model_20749 model_310 model_9450 model_176 model_25665
+model1 = model_20749
+model2 = model_310
+model3 = model_9450
+model4 = model_176
+model5 = model_25665

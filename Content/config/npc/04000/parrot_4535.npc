@@ -3,5 +3,5 @@ size = 1
 op1 = Talk-to
 vislevel = 1
 name = Parrot
-models = model_214
-headmodels = model_26869
+model1 = model_214
+head1 = model_26869

@@ -1,9 +1,16 @@
 // npc 1805
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Guard
-models = model_214 model_250 model_5674 model_5672 model_5668 model_5725 obj_fremennik_blade_wear
-headmodels = model_52 model_82
+model1 = model_214
+model2 = model_250
+model3 = model_5674
+model4 = model_5672
+model5 = model_5668
+model6 = model_5725
+model7 = obj_fremennik_blade_wear
+head1 = model_52
+head2 = model_82

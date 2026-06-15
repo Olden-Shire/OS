@@ -4,4 +4,5 @@ walkanim = seq_5030
 op2 = Attack
 vislevel = 75
 name = Baby Roc
-models = model_19139 model_19138
+model1 = model_19139
+model2 = model_19138

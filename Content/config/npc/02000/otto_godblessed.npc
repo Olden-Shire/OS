@@ -1,10 +1,22 @@
 // npc 2725
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
-recol = 8596/5388
+recol1s = 8596
+recol1d = 5388
 name = Otto Godblessed
-models = model_18192 model_11747 model_22163 obj_unblessed_symbol_1716_man model_11759 model_11764 model_11727 model_11731 model_19250 model_11733
-headmodels = model_26661 model_11807 model_26830
+model1 = model_18192
+model2 = model_11747
+model3 = model_22163
+model4 = obj_unblessed_symbol_1716_man
+model5 = model_11759
+model6 = model_11764
+model7 = model_11727
+model8 = model_11731
+model9 = model_19250
+model10 = model_11733
+head1 = model_26661
+head2 = model_11807
+head3 = model_26830

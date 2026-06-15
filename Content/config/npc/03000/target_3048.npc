@@ -3,4 +3,4 @@ turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Target
-models = model_10209
+model1 = model_10209

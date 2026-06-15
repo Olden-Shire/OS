@@ -5,4 +5,6 @@ ambient = 20
 contrast = 15
 vislevel = 0
 name = Trainee Guard
-models = model_25671 model_25685 model_25684
+model1 = model_25671
+model2 = model_25685
+model3 = model_25684

@@ -1,12 +1,17 @@
 // npc 2366
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 123
 resizev = 110
 op3 = Pickpocket
 op1 = Talk-to
 vislevel = 0
-recol = 14517/7595
+recol1s = 14517
+recol1d = 7595
 name = Mawrth
-models = model_4030 model_6980 model_480 model_6978 model_6979
-headmodels = model_4013
+model1 = model_4030
+model2 = model_6980
+model3 = model_480
+model4 = model_6978
+model5 = model_6979
+head1 = model_4013

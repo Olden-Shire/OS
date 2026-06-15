@@ -6,4 +6,4 @@ turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Trees
-models = model_12022
+model1 = model_12022

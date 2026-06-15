@@ -1,6 +1,9 @@
 // npc 2560
 vislevel = 0
 size = 3
-recol = 7062/43096 45/43096
+recol1s = 7062
+recol1d = 43096
+recol2s = 45
+recol2d = 43096
 name = Silver ore
-models = model_9071
+model1 = model_9071

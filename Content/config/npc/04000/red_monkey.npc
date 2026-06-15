@@ -2,7 +2,11 @@
 walkanim = seq_1380
 readyanim = seq_1386
 vislevel = 1
-recol = 20/414 24/538
+recol1s = 20
+recol1d = 414
+recol2s = 24
+recol2d = 538
 name = Red Monkey
-models = model_4817 model_4824
-headmodels = model_4656
+model1 = model_4817
+model2 = model_4824
+head1 = model_4656

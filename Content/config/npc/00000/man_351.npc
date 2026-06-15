@@ -1,11 +1,23 @@
 // npc 351
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 4
-recol = 43072/5662 25238/3980 4550/5289
+recol1s = 43072
+recol1d = 5662
+recol2s = 25238
+recol2d = 3980
+recol3s = 4550
+recol3d = 5289
 name = Man
-models = obj_fremennik_helm_man obj_boots_of_lightness_88_man model_249 model_310 model_173 model_176 obj_citizen_trousers_9642_man
-headmodels = obj_man model_81
+model1 = obj_fremennik_helm_man
+model2 = obj_boots_of_lightness_88_man
+model3 = model_249
+model4 = model_310
+model5 = model_173
+model6 = model_176
+model7 = obj_citizen_trousers_9642_man
+head1 = obj_man
+head2 = model_81

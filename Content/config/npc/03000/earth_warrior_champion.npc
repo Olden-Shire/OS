@@ -1,8 +1,12 @@
 // npc 3057
 size = 1
 readyanim = seq_2945
-walkanims = seq_2947, seq_2948, seq_2949, seq_2950
+walkanim = seq_2947, seq_2948, seq_2949, seq_2950
 op2 = Attack
 vislevel = 102
 name = Earth Warrior Champion
-models = model_10274 model_10278 model_10276 model_10277 model_10275
+model1 = model_10274
+model2 = model_10278
+model3 = model_10276
+model4 = model_10277
+model5 = model_10275

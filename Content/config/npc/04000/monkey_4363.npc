@@ -7,5 +7,5 @@ op1 = Catch
 vislevel = 0
 vislevel = 0
 name = Monkey
-models = model_3004
-headmodels = model_4661
+model1 = model_3004
+head1 = model_4661

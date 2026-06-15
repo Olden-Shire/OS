@@ -2,7 +2,11 @@
 walkanim = seq_1380
 readyanim = seq_1386
 vislevel = 1
-recol = 20/43311 24/43307
+recol1s = 20
+recol1d = 43311
+recol2s = 24
+recol2d = 43307
 name = Blue Monkey
-models = model_4817 model_4824
-headmodels = model_4656
+model1 = model_4817
+model2 = model_4824
+head1 = model_4656

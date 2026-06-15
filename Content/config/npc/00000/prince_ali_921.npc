@@ -1,9 +1,20 @@
 // npc 921
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
-recol = 25238/62699 8741/55194 6798/6854
+recol1s = 25238
+recol1d = 62699
+recol2s = 8741
+recol2d = 55194
+recol3s = 6798
+recol3d = 6854
 name = Prince Ali
-models = model_214 obj_vyrewatch_shoes_9638_man model_246 obj_priest_gown_426_man model_151 model_176 obj_priest_gown_428_man
-headmodels = model_52
+model1 = model_214
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_246
+model4 = obj_priest_gown_426_man
+model5 = model_151
+model6 = model_176
+model7 = obj_priest_gown_428_man
+head1 = model_52

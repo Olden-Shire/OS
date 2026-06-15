@@ -8,4 +8,4 @@ op1 = Push
 turnspeed = 0
 nominimap = true
 name = Boulder
-models = model_20088
+model1 = model_20088

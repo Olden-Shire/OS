@@ -1,9 +1,20 @@
 // npc 478
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 48
-recol = 61/20 57/20
+recol1s = 61
+recol1d = 20
+recol2s = 57
+recol2d = 20
 name = Khazard commander
-models = model_206 model_252 obj_khazard_armour_man model_152 model_176 obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_bronze_spear_1237_wear obj_cape_1007_man
+model1 = model_206
+model2 = model_252
+model3 = obj_khazard_armour_man
+model4 = model_152
+model5 = model_176
+model6 = obj_iron_platelegs_1067_man
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_bronze_spear_1237_wear
+model9 = obj_cape_1007_man

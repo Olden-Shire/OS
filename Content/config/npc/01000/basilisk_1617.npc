@@ -7,4 +7,4 @@ resizev = 110
 op2 = Attack
 vislevel = 61
 name = Basilisk
-models = obj_basilisk
+model1 = obj_basilisk

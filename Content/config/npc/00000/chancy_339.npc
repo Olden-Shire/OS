@@ -1,8 +1,8 @@
 // npc 339
 vislevel = 0
-walkanims = seq_1323, seq_1324, seq_1325, seq_1326
+walkanim = seq_1323, seq_1324, seq_1325, seq_1326
 readyanim = seq_1322
 op1 = Talk-to
 name = Chancy
-models = model_25362
-headmodels = obj_farmer
+model1 = model_25362
+head1 = obj_farmer

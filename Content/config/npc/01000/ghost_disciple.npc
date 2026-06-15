@@ -1,5 +1,5 @@
 // npc 1686
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 resizev = 114
 resizeh = 114
@@ -7,7 +7,13 @@ ambient = 40
 contrast = 40
 op1 = Talk-To
 vislevel = 0
-recol = 17467/18626
+recol1s = 17467
+recol1d = 18626
 name = Ghost disciple
-models = model_5212 model_5219 model_5209 model_5216 model_5223 model_5230
-headmodels = model_5203
+model1 = model_5212
+model2 = model_5219
+model3 = model_5209
+model4 = model_5216
+model5 = model_5223
+model6 = model_5230
+head1 = model_5203

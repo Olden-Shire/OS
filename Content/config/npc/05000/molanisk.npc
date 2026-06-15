@@ -7,4 +7,4 @@ contrast = -30
 alwaysontop = true
 vislevel = 51
 name = Molanisk
-models = obj_molanisk
+model1 = obj_molanisk

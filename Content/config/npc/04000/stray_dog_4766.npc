@@ -6,4 +6,6 @@ walkanim = seq_4773
 readyanim = seq_4777
 nominimap = true
 name = Stray dog
-models = model_18168 model_18169 model_18167
+model1 = model_18168
+model2 = model_18169
+model3 = model_18167

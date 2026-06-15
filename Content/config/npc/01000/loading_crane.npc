@@ -2,6 +2,11 @@
 size = 3
 vislevel = 0
 nominimap = true
-recol = 6032/7050 7068/6674 5673/6554
+recol1s = 6032
+recol1d = 7050
+recol2s = 7068
+recol2d = 6674
+recol3s = 5673
+recol3d = 6554
 name = Loading crane
-models = model_4909
+model1 = model_4909

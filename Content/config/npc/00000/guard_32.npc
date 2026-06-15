@@ -1,10 +1,19 @@
 // npc 32
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 op3 = Pickpocket
 vislevel = 20
-recol = 25238/811 8741/43939
+recol1s = 25238
+recol1d = 811
+recol2s = 8741
+recol2d = 43939
 name = Guard
-models = model_225 obj_bronze_chainbody_1103_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_274 obj_boots_of_lightness_88_man obj_iron_mace_1420_wear
+model1 = model_225
+model2 = obj_bronze_chainbody_1103_man
+model3 = obj_fremennik_shirt_3767_man
+model4 = obj_cooking_gauntlets_man
+model5 = model_274
+model6 = obj_boots_of_lightness_88_man
+model7 = obj_iron_mace_1420_wear

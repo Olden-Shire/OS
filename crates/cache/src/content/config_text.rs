@@ -140,6 +140,57 @@ pub enum Operand {
     /// multiloc / npc multivar lists, whose g1 count is one less than the
     /// element count). Single-column only.
     CountedP1 { count: Prim, col: Prim },
+    /// A `U8` count then `count` × `U16` model ids (model.pack resolved),
+    /// rendered as INDEXED separate lines `<stem>1 = a`, `<stem>2 = b`, …
+    /// (content-old style — `model1`/`head1`). Must be an opcode's sole
+    /// operand; on encode the contiguous `<stem>N` run is grouped back.
+    ModelsIndexed { stem: &'static str },
+    /// A `U8` count then `count` × (`U16` src, `U16` dst) recolour/retexture
+    /// pairs, rendered as indexed lines `<stem>1s = src`, `<stem>1d = dst`, …
+    /// (content-old `recol1s`/`recol1d`). Must be an opcode's sole operand.
+    PairsIndexed { stem: &'static str },
+}
+
+/// Which half of an indexed line a key denotes, for [`encode`] grouping.
+#[derive(Clone, Copy, PartialEq)]
+enum IndexKind {
+    /// a `<stem>N` model line
+    Model,
+    /// a `<stem>Ns` recolour-source line
+    PairS,
+    /// a `<stem>Nd` recolour-dest line
+    PairD,
+}
+
+/// If `key` is an indexed line for some schema opcode (`model3`, `recol2s`),
+/// return that opcode, which half it is, and its 1-based index.
+fn indexed_match(schema: Schema, key: &str) -> Option<(&'static OpDef, IndexKind, u32)> {
+    fn digits(s: &str) -> Option<u32> {
+        if !s.is_empty() && s.bytes().all(|b| b.is_ascii_digit()) { s.parse().ok() } else { None }
+    }
+    for def in schema {
+        match def.operands {
+            [Operand::ModelsIndexed { stem }] => {
+                if let Some(rest) = key.strip_prefix(stem)
+                    && let Some(idx) = digits(rest)
+                {
+                    return Some((def, IndexKind::Model, idx));
+                }
+            }
+            [Operand::PairsIndexed { stem }] => {
+                if let Some(rest) = key.strip_prefix(stem) {
+                    if let Some(idx) = rest.strip_suffix('s').and_then(digits) {
+                        return Some((def, IndexKind::PairS, idx));
+                    }
+                    if let Some(idx) = rest.strip_suffix('d').and_then(digits) {
+                        return Some((def, IndexKind::PairD, idx));
+                    }
+                }
+            }
+            _ => {}
+        }
+    }
+    None
 }
 
 /// A single opcode's schema: wire code, readable field name, operands.
@@ -212,6 +263,38 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ConfigRefs) -> Option<Vec<S
             return Some(lines);
         }
         let def = schema.iter().find(|d| d.code == code)?;
+
+        // Indexed multi-line opcodes (models/heads, recol/retex pairs) expand
+        // to one `<stem>N …` line per element instead of a single joined line.
+        match def.operands {
+            [Operand::ModelsIndexed { stem }] => {
+                let n = p.g1() as usize;
+                if n == 0 {
+                    return None; // empty list can't round-trip from zero lines
+                }
+                for idx in 1..=n {
+                    let id = p.g2();
+                    let name = refs.model.name_of(id).map_or_else(|| id.to_string(), str::to_string);
+                    lines.push(format!("{stem}{idx} = {name}"));
+                }
+                continue;
+            }
+            [Operand::PairsIndexed { stem }] => {
+                let n = p.g1() as usize;
+                if n == 0 {
+                    return None;
+                }
+                for idx in 1..=n {
+                    let s = p.g2();
+                    let d = p.g2();
+                    lines.push(format!("{stem}{idx}s = {s}"));
+                    lines.push(format!("{stem}{idx}d = {d}"));
+                }
+                continue;
+            }
+            _ => {}
+        }
+
         let mut parts: Vec<String> = Vec::new();
         for op in def.operands {
             match op {
@@ -264,6 +347,9 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ConfigRefs) -> Option<Vec<S
                         (0..n).map(|_| col.read(&mut p).to_string()).collect();
                     parts.push(vals.join(" "));
                 }
+                // Indexed operands are an opcode's sole operand and handled
+                // before this loop; reaching here means a malformed schema.
+                Operand::ModelsIndexed { .. } | Operand::PairsIndexed { .. } => return None,
             }
         }
         // No-operand opcodes are presence flags (members, stackable): the byte
@@ -282,24 +368,96 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ConfigRefs) -> Option<Vec<S
 /// unparseable line.
 pub fn encode(schema: Schema, text: &str, refs: &ConfigRefs) -> Option<Vec<u8>> {
     let mut p = Packet::from_vec(Vec::new());
+    // Significant `key = value` lines in order (comments/blank dropped); a
+    // line without `=` is malformed and fails the whole round-trip.
+    let mut entries: Vec<(&str, &str)> = Vec::new();
     for raw in text.lines() {
         let line = raw.trim();
         if line.is_empty() || line.starts_with("//") {
             continue;
         }
-        let (key, val) = line.split_once('=')?;
-        let key = key.trim();
-        let Some(def) = schema.iter().find(|d| d.name == key) else {
-            // Server-side property (e.g. wanderrange): kept in the .npc source,
-            // not emitted into the client cache. Unknown non-server keys are a
-            // real error (typo / unsupported opcode) → fail the round-trip.
-            if is_server_only_key(key) {
-                continue;
+        let (k, v) = line.split_once('=')?;
+        entries.push((k.trim(), v.trim()));
+    }
+
+    let mut i = 0;
+    while i < entries.len() {
+        let (key, val) = entries[i];
+
+        // Indexed multi-line opcodes (model1.., recol1s/recol1d..): gather the
+        // contiguous run of same-opcode lines and emit a single opcode.
+        if let Some((def, _, _)) = indexed_match(schema, key) {
+            let mut models: Vec<(u32, &str)> = Vec::new();
+            let mut src: BTreeMap<u32, i32> = BTreeMap::new();
+            let mut dst: BTreeMap<u32, i32> = BTreeMap::new();
+            while i < entries.len() {
+                let Some((d2, kind, idx)) = indexed_match(schema, entries[i].0) else { break };
+                if d2.code != def.code {
+                    break;
+                }
+                match kind {
+                    IndexKind::Model => models.push((idx, entries[i].1)),
+                    IndexKind::PairS => {
+                        src.insert(idx, entries[i].1.parse().ok()?);
+                    }
+                    IndexKind::PairD => {
+                        dst.insert(idx, entries[i].1.parse().ok()?);
+                    }
+                }
+                i += 1;
             }
-            return None;
+            p.p1(i32::from(def.code));
+            match def.operands {
+                [Operand::ModelsIndexed { .. }] => {
+                    models.sort_by_key(|(idx, _)| *idx);
+                    p.p1(models.len() as i32);
+                    for (_, name) in models {
+                        let id = match name.parse::<i32>() {
+                            Ok(n) => n,
+                            Err(_) => refs.model.id_of(name)?,
+                        };
+                        p.p2(id);
+                    }
+                }
+                [Operand::PairsIndexed { .. }] => {
+                    if src.len() != dst.len() {
+                        return None; // every index needs both a src and a dst
+                    }
+                    p.p1(src.len() as i32);
+                    for (idx, s) in &src {
+                        p.p2(*s);
+                        p.p2(*dst.get(idx)?);
+                    }
+                }
+                _ => return None,
+            }
+            continue;
+        }
+
+        // Normal single-line opcode. Opcode names can collide (npc `walkanim`
+        // is both single op-14 and 4-direction op-17); disambiguate by the
+        // value's comma-field count.
+        let def = {
+            let cands: Vec<&OpDef> = schema.iter().filter(|d| d.name == key).collect();
+            match cands.as_slice() {
+                [] => {
+                    // Server-side property (e.g. wanderrange): kept in the .npc
+                    // source, not emitted into the client cache. Unknown
+                    // non-server keys are a real error → fail the round-trip.
+                    if is_server_only_key(key) {
+                        i += 1;
+                        continue;
+                    }
+                    return None;
+                }
+                [one] => *one,
+                many => {
+                    let n = val.split(',').count();
+                    *many.iter().find(|d| d.operands.len() == n)?
+                }
+            }
         };
         p.p1(i32::from(def.code));
-        let val = val.trim();
 
         // A trailing Str operand consumes the remainder of the line, so we
         // split the value into (operand_count) comma fields where the last
@@ -400,8 +558,12 @@ pub fn encode(schema: Schema, text: &str, refs: &ConfigRefs) -> Option<Vec<u8>> 
                         col.write(&mut p, v);
                     }
                 }
+                // Sole-operand indexed opcodes are emitted by the grouping
+                // branch above; never reached through the per-field loop.
+                Operand::ModelsIndexed { .. } | Operand::PairsIndexed { .. } => return None,
             }
         }
+        i += 1;
     }
     p.p1(0);
     Some(p.data)
@@ -564,22 +726,26 @@ pub const LOC: Schema = &[
 
 // ── npc (group 9) ─ opcode 106 (multivar n+1 list) omitted ──────────────
 pub const NPC: Schema = &[
-    OpDef { code: 1, name: "models", operands: &[Operand::ModelList] },
+    // models / heads / recol / retex use content-old's indexed-line form
+    // (`model1`, `head1`, `recol1s`/`recol1d`); op17 is `walkanim` (the
+    // 4-direction set), name-shared with the single op14 `walkanim` and
+    // disambiguated on encode by field count.
+    OpDef { code: 1, name: "models", operands: &[Operand::ModelsIndexed { stem: "model" }] },
     OpDef { code: 2, name: "name", operands: &[Str] },
     OpDef { code: 12, name: "size", operands: &[n(U8)] },
     OpDef { code: 13, name: "readyanim", operands: &[Operand::Seq] },
     OpDef { code: 14, name: "walkanim", operands: &[Operand::Seq] },
     OpDef { code: 15, name: "turnleftanim", operands: &[Operand::Seq] },
     OpDef { code: 16, name: "turnrightanim", operands: &[Operand::Seq] },
-    OpDef { code: 17, name: "walkanims", operands: &[Operand::Seq, Operand::Seq, Operand::Seq, Operand::Seq] },
+    OpDef { code: 17, name: "walkanim", operands: &[Operand::Seq, Operand::Seq, Operand::Seq, Operand::Seq] },
     OpDef { code: 30, name: "op1", operands: &[Str] },
     OpDef { code: 31, name: "op2", operands: &[Str] },
     OpDef { code: 32, name: "op3", operands: &[Str] },
     OpDef { code: 33, name: "op4", operands: &[Str] },
     OpDef { code: 34, name: "op5", operands: &[Str] },
-    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
-    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
-    OpDef { code: 60, name: "headmodels", operands: &[Operand::ModelList] },
+    OpDef { code: 40, name: "recol", operands: &[Operand::PairsIndexed { stem: "recol" }] },
+    OpDef { code: 41, name: "retex", operands: &[Operand::PairsIndexed { stem: "retex" }] },
+    OpDef { code: 60, name: "headmodels", operands: &[Operand::ModelsIndexed { stem: "head" }] },
     OpDef { code: 93, name: "nominimap", operands: &[] },
     OpDef { code: 95, name: "vislevel", operands: &[n(U16)] },
     OpDef { code: 97, name: "resizeh", operands: &[n(U16)] },

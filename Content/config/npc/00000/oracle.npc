@@ -1,11 +1,21 @@
 // npc 746
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
-recol = 43072/4550 41193/4550 4550/41071 22430/926
+recol1s = 43072
+recol1d = 4550
+recol2s = 41193
+recol2d = 4550
+recol3s = 4550
+recol3d = 41071
+recol4s = 22430
+recol4d = 926
 name = Oracle
-models = model_26441 model_26426 model_26435 model_26433
-headmodels = model_26599
+model1 = model_26441
+model2 = model_26426
+model3 = model_26435
+model4 = model_26433
+head1 = model_26599

@@ -4,5 +4,5 @@ readyanim = seq_6058
 vislevel = 0
 op1 = Talk-to
 name = Young 'un
-models = model_23711
-headmodels = model_23245
+model1 = model_23711
+head1 = model_23245

@@ -7,4 +7,5 @@ resizeh = 30
 resizev = 30
 vislevel = 3
 name = Pheasant
-models = model_8839 model_8840
+model1 = model_8839
+model2 = model_8840

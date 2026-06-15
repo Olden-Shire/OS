@@ -7,4 +7,4 @@ resizev = 60
 op2 = Attack
 vislevel = 42
 name = Dagannoth spawn
-models = model_8740
+model1 = model_8740

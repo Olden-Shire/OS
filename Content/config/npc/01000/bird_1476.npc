@@ -6,4 +6,5 @@ turnspeed = 64
 op2 = Attack
 vislevel = 5
 name = Bird
-models = model_26849 model_26844
+model1 = model_26849
+model2 = model_26844

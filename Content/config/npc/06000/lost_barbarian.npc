@@ -1,7 +1,14 @@
 // npc 6102
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 132
 name = Lost barbarian
-models = model_26625 model_214 model_252 model_26638 model_26646 model_26620 model_26613 model_26622
+model1 = model_26625
+model2 = model_214
+model3 = model_252
+model4 = model_26638
+model5 = model_26646
+model6 = model_26620
+model7 = model_26613
+model8 = model_26622

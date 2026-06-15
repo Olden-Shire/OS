@@ -6,4 +6,5 @@ op1 = Catch
 nowalksmoothing = true
 alwaysontop = true
 name = Essence impling
-models = model_26372 model_26367
+model1 = model_26372
+model2 = model_26367

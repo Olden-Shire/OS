@@ -2,7 +2,13 @@
 walkanim = seq_98
 readyanim = seq_101
 vislevel = 0
-recol = 61/2165
+recol1s = 61
+recol1d = 2165
 name = Trader
-models = model_2972 model_6020 model_7062 model_2979 model_7044 model_2985
-headmodels = model_2
+model1 = model_2972
+model2 = model_6020
+model3 = model_7062
+model4 = model_2979
+model5 = model_7044
+model6 = model_2985
+head1 = model_2

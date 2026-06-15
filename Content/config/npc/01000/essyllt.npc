@@ -1,9 +1,13 @@
 // npc 1187
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Essyllt
-models = model_4014 model_4018 model_4022 model_4024 obj_longbow_839_wear
-headmodels = model_4010
+model1 = model_4014
+model2 = model_4018
+model3 = model_4022
+model4 = model_4024
+model5 = obj_longbow_839_wear
+head1 = model_4010

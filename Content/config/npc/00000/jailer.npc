@@ -1,10 +1,23 @@
 // npc 201
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 47
-recol = 61/20 41/12 926/20 57/20
+recol1s = 61
+recol1d = 20
+recol2s = 41
+recol2d = 12
+recol3s = 926
+recol3d = 20
+recol4s = 57
+recol4d = 20
 name = Jailer
-models = obj_desert_disguise_man obj_khazard_armour_man obj_iron_platelegs_1067_man model_253 obj_boots_of_lightness_88_man model_156 obj_cooking_gauntlets_man
+model1 = obj_desert_disguise_man
+model2 = obj_khazard_armour_man
+model3 = obj_iron_platelegs_1067_man
+model4 = model_253
+model5 = obj_boots_of_lightness_88_man
+model6 = model_156
+model7 = obj_cooking_gauntlets_man

@@ -1,9 +1,16 @@
 // npc 1810
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Jokul
-models = model_203 model_250 model_5673 model_5672 model_5667 model_5725 model_553
-headmodels = model_45 model_82
+model1 = model_203
+model2 = model_250
+model3 = model_5673
+model4 = model_5672
+model5 = model_5667
+model6 = model_5725
+model7 = model_553
+head1 = model_45
+head2 = model_82

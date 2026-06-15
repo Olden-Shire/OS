@@ -1,9 +1,17 @@
 // npc 4381
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 size = 1
 vislevel = 75
-recol = 27955/61099 29113/819 20715/8394 22488/960
+recol1s = 27955
+recol1d = 61099
+recol2s = 29113
+recol2d = 819
+recol3s = 20715
+recol3d = 8394
+recol4s = 22488
+recol4d = 960
 name = Ankou
-models = model_16016 model_16017
+model1 = model_16016
+model2 = model_16017

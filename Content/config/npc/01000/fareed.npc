@@ -1,8 +1,12 @@
 // npc 1977
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 167
 name = Fareed
-models = model_6223 model_6226 model_6219 model_6365 model_6366
+model1 = model_6223
+model2 = model_6226
+model3 = model_6219
+model4 = model_6365
+model5 = model_6366

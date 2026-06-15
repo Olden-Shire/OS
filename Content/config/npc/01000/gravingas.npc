@@ -1,11 +1,16 @@
 // npc 1685
-walkanims = seq_1422, seq_1423, seq_1424, seq_1425
+walkanim = seq_1422, seq_1423, seq_1424, seq_1425
 readyanim = seq_1421
 ambient = 35
 contrast = 35
 op1 = Talk-To
 vislevel = 0
-recol = 17467/18626
+recol1s = 17467
+recol1d = 18626
 name = Gravingas
-models = model_5398 model_5219 model_5209 model_5216 model_5399
-headmodels = model_5392
+model1 = model_5398
+model2 = model_5219
+model3 = model_5209
+model4 = model_5216
+model5 = model_5399
+head1 = model_5392

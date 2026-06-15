@@ -2,6 +2,13 @@
 vislevel = 0
 walkanim = seq_3210
 readyanim = seq_3212
-recol = 4300/5276 7240/7343 61/37 5173/5276
+recol1s = 4300
+recol1d = 5276
+recol2s = 7240
+recol2d = 7343
+recol3s = 61
+recol3d = 37
+recol4s = 5173
+recol4d = 5276
 name = Squirrel
-models = model_11723
+model1 = model_11723

@@ -5,4 +5,5 @@ readyanim = seq_3144
 op2 = Attack
 vislevel = 305
 name = Chaos Elemental
-models = model_11216 model_11217
+model1 = model_11216
+model2 = model_11217

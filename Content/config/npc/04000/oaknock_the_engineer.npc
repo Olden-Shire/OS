@@ -2,7 +2,12 @@
 walkanim = seq_189
 readyanim = seq_195
 vislevel = 0
-recol = 22426/39442 278/39442
+recol1s = 22426
+recol1d = 39442
+recol2s = 278
+recol2d = 39442
 name = Oaknock the Engineer
-models = model_17021 model_16999 model_16987
-headmodels = model_16979
+model1 = model_17021
+model2 = model_16999
+model3 = model_16987
+head1 = model_16979

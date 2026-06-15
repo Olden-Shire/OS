@@ -5,4 +5,4 @@ op2 = Attack
 ambient = 25
 vislevel = 35
 name = Fire elemental
-models = model_335
+model1 = model_335

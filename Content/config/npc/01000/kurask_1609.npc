@@ -7,4 +7,4 @@ resizeh = 205
 resizev = 205
 vislevel = 106
 name = Kurask
-models = obj_kurask
+model1 = obj_kurask

@@ -1,5 +1,5 @@
 // npc 2257
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 1
 multivar = 65535, 492, 2258 2258 2258 2258 2259

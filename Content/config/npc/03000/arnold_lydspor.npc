@@ -1,12 +1,21 @@
 // npc 3824
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
 op3 = Trade
 op4 = Bank
-recol = 25238/10508 8741/10508
+recol1s = 25238
+recol1d = 10508
+recol2s = 8741
+recol2d = 10508
 name = Arnold Lydspor
-models = model_14852 model_14859 model_14840 model_176 model_14856 obj_vyrewatch_shoes_9638_man
-headmodels = model_14832 model_14835
+model1 = model_14852
+model2 = model_14859
+model3 = model_14840
+model4 = model_176
+model5 = model_14856
+model6 = obj_vyrewatch_shoes_9638_man
+head1 = model_14832
+head2 = model_14835

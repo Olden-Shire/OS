@@ -6,4 +6,4 @@ size = 2
 alwaysontop = true
 vislevel = 110
 name = Terror dog
-models = obj_terror_dog
+model1 = obj_terror_dog

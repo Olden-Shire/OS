@@ -1,11 +1,23 @@
 // npc 644
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
 vislevel = 0
-recol = 8741/16 25238/16 48010/16
+recol1s = 8741
+recol1d = 16
+recol2s = 25238
+recol2d = 16
+recol3s = 48010
+recol3d = 16
 name = Straven
-models = model_25659 model_10039 model_25676 model_25644 model_25653 model_176 model_25667 model_19948
-headmodels = model_25636
+model1 = model_25659
+model2 = model_10039
+model3 = model_25676
+model4 = model_25644
+model5 = model_25653
+model6 = model_176
+model7 = model_25667
+model8 = model_19948
+head1 = model_25636

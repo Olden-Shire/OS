@@ -11,4 +11,6 @@ op1 = Go-inside
 nominimap = true
 vislevel = 0
 name = House
-models = model_16736 model_16735 model_16737
+model1 = model_16736
+model2 = model_16735
+model3 = model_16737

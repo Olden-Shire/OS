@@ -1,11 +1,18 @@
 // npc 5052
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op4 = Fly
 vislevel = 0
 alwaysontop = true
-recol = 4626/0
+recol1s = 4626
+recol1d = 0
 name = Auguste
-models = model_19470 model_246 model_19476 model_19467 obj_leather_vambraces_1063_man model_19472 obj_vyrewatch_shoes_9638_man
-headmodels = model_359
+model1 = model_19470
+model2 = model_246
+model3 = model_19476
+model4 = model_19467
+model5 = obj_leather_vambraces_1063_man
+model6 = model_19472
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_359

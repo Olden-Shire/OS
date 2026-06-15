@@ -1,8 +1,13 @@
 // npc 6121
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 name = Observatory professor
-models = model_26890 model_26885 model_26892 model_26886 model_26889 model_26887
-headmodels = model_26905
+model1 = model_26890
+model2 = model_26885
+model3 = model_26892
+model4 = model_26886
+model5 = model_26889
+model6 = model_26887
+head1 = model_26905

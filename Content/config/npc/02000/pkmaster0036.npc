@@ -1,8 +1,23 @@
 // npc 2589
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 87
-recol = 70/24 5532/10508 41/10508 61/24 57/24
+recol1s = 70
+recol1d = 24
+recol2s = 5532
+recol2d = 10508
+recol3s = 41
+recol3d = 10508
+recol4s = 61
+recol4d = 24
+recol5s = 57
+recol5d = 24
 name = PKMaster0036
-models = obj_iron_full_helm_1153_man obj_khazard_armour_man model_164 obj_cooking_gauntlets_man obj_iron_platelegs_1067_man obj_boots_of_lightness_88_man obj_bronze_longsword_1291_wear
+model1 = obj_iron_full_helm_1153_man
+model2 = obj_khazard_armour_man
+model3 = model_164
+model4 = obj_cooking_gauntlets_man
+model5 = obj_iron_platelegs_1067_man
+model6 = obj_boots_of_lightness_88_man
+model7 = obj_bronze_longsword_1291_wear

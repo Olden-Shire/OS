@@ -1,10 +1,21 @@
 // npc 845
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 43072/4550
+recol1s = 43072
+recol1d = 4550
 name = Horacio
-models = model_214 obj_boots_of_lightness_88_man model_250 model_299 model_159 model_176 model_271 model_276 model_329 model_495
-headmodels = model_52 model_82
+model1 = model_214
+model2 = obj_boots_of_lightness_88_man
+model3 = model_250
+model4 = model_299
+model5 = model_159
+model6 = model_176
+model7 = model_271
+model8 = model_276
+model9 = model_329
+model10 = model_495
+head1 = model_52
+head2 = model_82

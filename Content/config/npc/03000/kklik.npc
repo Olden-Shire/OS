@@ -2,5 +2,7 @@
 vislevel = 0
 readyanim = seq_3346
 name = K'klik
-models = model_13850 model_13848 model_13849
-headmodels = model_13847
+model1 = model_13850
+model2 = model_13848
+model3 = model_13849
+head1 = model_13847

@@ -9,4 +9,6 @@ resizeh = 160
 resizev = 160
 vislevel = 84
 name = Moss giant
-models = model_17458 model_17439 model_17460
+model1 = model_17458
+model2 = model_17439
+model3 = model_17460

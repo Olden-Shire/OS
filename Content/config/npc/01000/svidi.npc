@@ -1,9 +1,14 @@
 // npc 1809
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Svidi
-models = obj_desert_disguise_man model_246 model_5673 model_5671 model_5667 model_5725
-headmodels = obj_rogue
+model1 = obj_desert_disguise_man
+model2 = model_246
+model3 = model_5673
+model4 = model_5671
+model5 = model_5667
+model6 = model_5725
+head1 = obj_rogue

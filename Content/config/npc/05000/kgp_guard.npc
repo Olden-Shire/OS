@@ -7,5 +7,5 @@ size = 1
 vislevel = 0
 alwaysontop = true
 name = KGP Guard
-models = model_21552
-headmodels = model_21528
+model1 = model_21552
+head1 = model_21528

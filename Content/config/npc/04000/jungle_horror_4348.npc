@@ -5,4 +5,5 @@ readyanim = seq_4231
 op2 = Attack
 vislevel = 70
 name = Jungle horror
-models = model_15653 model_15656
+model1 = model_15653
+model2 = model_15656

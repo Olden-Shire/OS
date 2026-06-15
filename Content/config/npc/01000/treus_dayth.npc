@@ -6,5 +6,5 @@ op2 = Attack
 alwaysontop = true
 vislevel = 95
 name = Treus Dayth
-models = model_21152
-headmodels = model_21401
+model1 = model_21152
+head1 = model_21401

@@ -1,11 +1,16 @@
 // npc 6173
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 alwaysontop = true
 vislevel = 120
-recol = 6798/5537
+recol1s = 6798
+recol1d = 5537
 name = Sir Lucan
-models = model_27126 model_27195 model_27203
-headmodels = model_27208 model_27562 model_27204
+model1 = model_27126
+model2 = model_27195
+model3 = model_27203
+head1 = model_27208
+head2 = model_27562
+head3 = model_27204

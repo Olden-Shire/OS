@@ -6,4 +6,5 @@ ambient = 20
 nominimap = true
 vislevel = 0
 name = Pelican
-models = model_26846 model_26838
+model1 = model_26846
+model2 = model_26838

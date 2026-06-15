@@ -11,4 +11,5 @@ resizev = 60
 op2 = Attack
 vislevel = 70
 name = Dagannoth fledgeling
-models = model_9828 model_9829
+model1 = model_9828
+model2 = model_9829

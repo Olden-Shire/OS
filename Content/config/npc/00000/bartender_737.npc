@@ -1,9 +1,16 @@
 // npc 737
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Bartender
-models = model_214 model_248 obj_white_apron_1005_man model_151 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man
-headmodels = model_52 model_80
+model1 = model_214
+model2 = model_248
+model3 = obj_white_apron_1005_man
+model4 = model_151
+model5 = model_176
+model6 = obj_mime_legs_man
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_52
+head2 = model_80

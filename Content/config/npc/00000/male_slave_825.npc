@@ -1,10 +1,21 @@
 // npc 825
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 25238/8741 908/8741
+recol1s = 25238
+recol1d = 8741
+recol2s = 908
+recol2d = 8741
 name = Male slave
-models = model_217 model_250 obj_priest_gown_426_man obj_druids_robe_540_man model_176 model_19179 model_19175 obj_bronze_pickaxe_1265_wear
-headmodels = obj_farmer model_82
+model1 = model_217
+model2 = model_250
+model3 = obj_priest_gown_426_man
+model4 = obj_druids_robe_540_man
+model5 = model_176
+model6 = model_19179
+model7 = model_19175
+model8 = obj_bronze_pickaxe_1265_wear
+head1 = obj_farmer
+head2 = model_82

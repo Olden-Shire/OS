@@ -1,11 +1,22 @@
 // npc 3237
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 op3 = Pickpocket
 vislevel = 3
-recol = 25238/33166 8741/6550 6798/10673
+recol1s = 25238
+recol1d = 33166
+recol2s = 8741
+recol2d = 6550
+recol3s = 6798
+recol3d = 10673
 name = Cuffs
-models = model_217 model_246 model_11760 obj_fremennik_shirt_3767_man model_10218 model_274 obj_vyrewatch_shoes_9638_man
-headmodels = obj_farmer
+model1 = model_217
+model2 = model_246
+model3 = model_11760
+model4 = obj_fremennik_shirt_3767_man
+model5 = model_10218
+model6 = model_274
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = obj_farmer

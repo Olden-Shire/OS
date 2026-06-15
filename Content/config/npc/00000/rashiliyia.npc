@@ -5,5 +5,5 @@ readyanim = seq_5530
 walkanim = seq_5531
 op1 = Talk-to
 name = Rashiliyia
-models = model_21141
-headmodels = model_21410
+model1 = model_21141
+head1 = model_21410

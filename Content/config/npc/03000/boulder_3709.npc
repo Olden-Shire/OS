@@ -5,4 +5,4 @@ vislevel = 0
 nominimap = true
 turnspeed = 0
 name = Boulder
-models = model_24149
+model1 = model_24149

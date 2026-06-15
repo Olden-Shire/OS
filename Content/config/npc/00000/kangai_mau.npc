@@ -1,9 +1,22 @@
 // npc 846
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 4550/7062 25238/926 6798/12
+recol1s = 4550
+recol1d = 7062
+recol2s = 25238
+recol2d = 926
+recol3s = 6798
+recol3d = 12
 name = Kangai Mau
-models = obj_fremennik_helm_man model_246 obj_priest_gown_426_man model_173 model_276 obj_cooking_gauntlets_man obj_boots_of_lightness_88_man obj_mime_legs_man model_326
-headmodels = obj_man
+model1 = obj_fremennik_helm_man
+model2 = model_246
+model3 = obj_priest_gown_426_man
+model4 = model_173
+model5 = model_276
+model6 = obj_cooking_gauntlets_man
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_mime_legs_man
+model9 = model_326
+head1 = obj_man

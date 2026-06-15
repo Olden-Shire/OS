@@ -7,5 +7,5 @@ size = 1
 vislevel = 0
 alwaysontop = true
 name = Pescaling Pax
-models = model_21551
-headmodels = model_21527
+model1 = model_21551
+head1 = model_21527

@@ -1,10 +1,21 @@
 // npc 787
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 8741/17308 25238/4884 6798/8107
+recol1s = 8741
+recol1d = 17308
+recol2s = 25238
+recol2d = 4884
+recol3s = 6798
+recol3d = 8107
 name = Civilian
-models = obj_desert_disguise_man model_293 obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_271 obj_boots_of_lightness_88_man model_246
-headmodels = obj_rogue
+model1 = obj_desert_disguise_man
+model2 = model_293
+model3 = obj_fremennik_shirt_3767_man
+model4 = obj_cooking_gauntlets_man
+model5 = model_271
+model6 = obj_boots_of_lightness_88_man
+model7 = model_246
+head1 = obj_rogue

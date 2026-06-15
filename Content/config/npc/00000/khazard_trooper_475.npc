@@ -1,9 +1,18 @@
 // npc 475
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 vislevel = 19
-recol = 61/20
+recol1s = 61
+recol1d = 20
 name = Khazard trooper
-models = obj_khazard_helmet_man model_252 obj_khazard_armour_man model_152 model_176 model_269 obj_boots_of_lightness_88_man obj_iron_mace_1420_wear model_523
+model1 = obj_khazard_helmet_man
+model2 = model_252
+model3 = obj_khazard_armour_man
+model4 = model_152
+model5 = model_176
+model6 = model_269
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_iron_mace_1420_wear
+model9 = model_523

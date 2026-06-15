@@ -1,9 +1,22 @@
 // npc 3002
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
-recol = 8741/12700 25238/18836 43072/4550 7952/12942
+recol1s = 8741
+recol1d = 12700
+recol2s = 25238
+recol2d = 18836
+recol3s = 43072
+recol3d = 4550
+recol4s = 7952
+recol4d = 12942
 name = Gambler
-models = model_378 model_9361 obj_fremennik_cloak_3759_woman model_332 model_353 obj_priest_gown_428_woman obj_rogue_boots_woman
-headmodels = model_103
+model1 = model_378
+model2 = model_9361
+model3 = obj_fremennik_cloak_3759_woman
+model4 = model_332
+model5 = model_353
+model6 = obj_priest_gown_428_woman
+model7 = obj_rogue_boots_woman
+head1 = model_103

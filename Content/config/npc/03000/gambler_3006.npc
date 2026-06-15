@@ -1,9 +1,18 @@
 // npc 3006
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 vislevel = 0
 op1 = Talk-to
-recol = 25238/10258 43072/4550
+recol1s = 25238
+recol1d = 10258
+recol2s = 43072
+recol2d = 4550
 name = Gambler
-models = model_9452 model_246 obj_veracs_brassard_4757_man model_173 model_176 obj_citizen_trousers_9642_man obj_vyrewatch_shoes_9638_man
-headmodels = model_9448
+model1 = model_9452
+model2 = model_246
+model3 = obj_veracs_brassard_4757_man
+model4 = model_173
+model5 = model_176
+model6 = obj_citizen_trousers_9642_man
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_9448

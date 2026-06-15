@@ -1,8 +1,22 @@
 // npc 2697
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_2701
 op2 = Attack
 vislevel = 6
-recol = 25238/6674 8741/1569 6798/5921 43072/4550
+recol1s = 25238
+recol1d = 6674
+recol2s = 8741
+recol2d = 1569
+recol3s = 6798
+recol3d = 5921
+recol4s = 43072
+recol4d = 4550
 name = Mugger
-models = obj_desert_disguise_man obj_highwayman_mask_2631_man model_246 model_310 model_167 model_176 obj_citizen_trousers_9642_man obj_boots_of_lightness_88_man
+model1 = obj_desert_disguise_man
+model2 = obj_highwayman_mask_2631_man
+model3 = model_246
+model4 = model_310
+model5 = model_167
+model6 = model_176
+model7 = obj_citizen_trousers_9642_man
+model8 = obj_boots_of_lightness_88_man

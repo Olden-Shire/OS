@@ -1,8 +1,22 @@
 // npc 1170
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_813
 vislevel = 0
-recol = 4550/6806 43072/6806 61/926
+recol1s = 4550
+recol1d = 6806
+recol2s = 43072
+recol2d = 6806
+recol3s = 61
+recol3d = 926
 name = Tamayu
-models = model_231 obj_villager_sandals_6349_man model_246 obj_veracs_brassard_4757_man model_173 model_176 obj_villager_robe_6343_man obj_bronze_spear_1237_wear obj_red_headband_2645_man
-headmodels = model_64 model_43
+model1 = model_231
+model2 = obj_villager_sandals_6349_man
+model3 = model_246
+model4 = obj_veracs_brassard_4757_man
+model5 = model_173
+model6 = model_176
+model7 = obj_villager_robe_6343_man
+model8 = obj_bronze_spear_1237_wear
+model9 = obj_red_headband_2645_man
+head1 = model_64
+head2 = model_43

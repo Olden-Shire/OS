@@ -6,4 +6,4 @@ nominimap = true
 op2 = Attack
 vislevel = 13
 name = Giant mosquito
-models = model_15965
+model1 = model_15965

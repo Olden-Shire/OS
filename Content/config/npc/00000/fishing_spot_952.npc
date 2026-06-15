@@ -7,6 +7,6 @@ nominimap = true
 readyanim = seq_447
 walkanim = seq_448
 name = Fishing spot
-models = model_1491
+model1 = model_1491
 //Server
 wanderrange=0

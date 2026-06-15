@@ -5,4 +5,6 @@ readyanim = seq_4670
 op2 = Attack
 vislevel = 53
 name = Ice giant
-models = model_17453 model_17442 model_17460
+model1 = model_17453
+model2 = model_17442
+model3 = model_17460

@@ -5,5 +5,5 @@ op1 = Confront
 vislevel = 0
 alwaysontop = true
 name = Mi-Gor
-models = model_22791
-headmodels = model_22782
+model1 = model_22791
+head1 = model_22782

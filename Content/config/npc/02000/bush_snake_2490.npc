@@ -6,4 +6,4 @@ op2 = Attack
 turnspeed = 1024
 vislevel = 35
 name = Bush snake
-models = model_3002
+model1 = model_3002

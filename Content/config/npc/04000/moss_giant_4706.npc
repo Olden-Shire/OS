@@ -5,4 +5,6 @@ readyanim = seq_4656
 op2 = Attack
 vislevel = 48
 name = Moss giant
-models = model_17456 model_17445 model_17460
+model1 = model_17456
+model2 = model_17445
+model3 = model_17460

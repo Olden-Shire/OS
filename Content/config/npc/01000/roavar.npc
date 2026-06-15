@@ -1,10 +1,14 @@
 // npc 1042
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Trade
 name = Roavar
-models = model_26123 model_26132 model_26116 model_26127 model_26119
-headmodels = model_26270
+model1 = model_26123
+model2 = model_26132
+model3 = model_26116
+model4 = model_26127
+model5 = model_26119
+head1 = model_26270

@@ -5,4 +5,5 @@ readyanim = seq_4919
 op2 = Attack
 vislevel = 21
 name = Grizzly bear
-models = model_18884 model_18886
+model1 = model_18884
+model2 = model_18886

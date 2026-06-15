@@ -6,5 +6,5 @@ op1 = Talk-to
 op2 = Attack
 vislevel = 42
 name = Ugthanki
-models = model_2939
-headmodels = model_9841
+model1 = model_2939
+head1 = model_9841

@@ -1,10 +1,20 @@
 // npc 792
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 22
-recol = 39145/61 11142/9104 5442/4550
+recol1s = 39145
+recol1d = 61
+recol2s = 11142
+recol2d = 9104
+recol3s = 5442
+recol3d = 4550
 name = Grip
-models = obj_iron_full_helm_1153_man obj_iron_chainbody_1101_man model_246 model_165 model_259 obj_iron_battleaxe_1363_wear
-headmodels = obj_knight_of_ardougne
+model1 = obj_iron_full_helm_1153_man
+model2 = obj_iron_chainbody_1101_man
+model3 = model_246
+model4 = model_165
+model5 = model_259
+model6 = obj_iron_battleaxe_1363_wear
+head1 = obj_knight_of_ardougne

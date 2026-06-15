@@ -8,5 +8,5 @@ alwaysontop = true
 vislevel = 0
 op1 = Talk-to
 name = Penguin
-models = model_21547
-headmodels = model_21525
+model1 = model_21547
+head1 = model_21525

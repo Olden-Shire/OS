@@ -1,9 +1,23 @@
 // npc 3458
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 25238/127 8741/90 43072/90
+recol1s = 25238
+recol1d = 127
+recol2s = 8741
+recol2d = 90
+recol3s = 43072
+recol3d = 90
 name = ? ? ? ?
-models = obj_desert_disguise_man model_245 model_246 obj_plague_jacket_man model_151 model_176 obj_mime_legs_man obj_vyrewatch_shoes_9638_man model_12771
-headmodels = obj_rogue model_78
+model1 = obj_desert_disguise_man
+model2 = model_245
+model3 = model_246
+model4 = obj_plague_jacket_man
+model5 = model_151
+model6 = model_176
+model7 = obj_mime_legs_man
+model8 = obj_vyrewatch_shoes_9638_man
+model9 = model_12771
+head1 = obj_rogue
+head2 = model_78

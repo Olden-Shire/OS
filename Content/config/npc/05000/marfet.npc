@@ -1,9 +1,20 @@
 // npc 5940
 vislevel = 0
 size = 1
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 op1 = Talk-to
 name = Marfet
-models = obj_splitbark_helm_3385_man obj_fremennik_helm_man model_251 obj_splitbark_body_3387_man model_4112 obj_splitbark_gauntlets_3391_man obj_dramen_staff_wear obj_elemental_shield_2890_wear obj_splitbark_legs_3389_man obj_splitbark_boots_3393_man
-headmodels = obj_man model_4110 model_83
+model1 = obj_splitbark_helm_3385_man
+model2 = obj_fremennik_helm_man
+model3 = model_251
+model4 = obj_splitbark_body_3387_man
+model5 = model_4112
+model6 = obj_splitbark_gauntlets_3391_man
+model7 = obj_dramen_staff_wear
+model8 = obj_elemental_shield_2890_wear
+model9 = obj_splitbark_legs_3389_man
+model10 = obj_splitbark_boots_3393_man
+head1 = obj_man
+head2 = model_4110
+head3 = model_83

@@ -1,8 +1,10 @@
 // npc 337
 vislevel = 0
-walkanims = seq_1323, seq_1324, seq_1325, seq_1326
+walkanim = seq_1323, seq_1324, seq_1325, seq_1326
 readyanim = seq_1322
 op1 = Talk-to
 name = Da Vinci
-models = model_25362
-headmodels = obj_farmer model_9449 model_9442
+model1 = model_25362
+head1 = obj_farmer
+head2 = model_9449
+head3 = model_9442

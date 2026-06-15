@@ -1,11 +1,22 @@
 // npc 354
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 3
-recol = 43072/5662 25238/3980 4550/5289
+recol1s = 43072
+recol1d = 5662
+recol2s = 25238
+recol2d = 3980
+recol3s = 4550
+recol3d = 5289
 name = Woman
-models = model_378 model_474 model_351 model_353 model_438 model_358
-headmodels = model_103 model_11429
+model1 = model_378
+model2 = model_474
+model3 = model_351
+model4 = model_353
+model5 = model_438
+model6 = model_358
+head1 = model_103
+head2 = model_11429

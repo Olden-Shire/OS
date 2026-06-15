@@ -5,4 +5,6 @@ walkanim = seq_6541
 op2 = Attack
 vislevel = 88
 name = Werewolf
-models = model_26164 model_26170 model_26169
+model1 = model_26164
+model2 = model_26170
+model3 = model_26169

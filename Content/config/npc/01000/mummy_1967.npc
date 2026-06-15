@@ -6,4 +6,5 @@ ambient = 60
 contrast = 60
 vislevel = 103
 name = Mummy
-models = model_20903 model_20902
+model1 = model_20903
+model2 = model_20902

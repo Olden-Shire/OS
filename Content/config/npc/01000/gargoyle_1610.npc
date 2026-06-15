@@ -5,4 +5,5 @@ readyanim = seq_1516
 op2 = Attack
 vislevel = 111
 name = Gargoyle
-models = model_5078 model_5079
+model1 = model_5078
+model2 = model_5079

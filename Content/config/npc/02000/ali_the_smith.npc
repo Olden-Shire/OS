@@ -1,10 +1,22 @@
 // npc 2820
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
-recol = 8741/10351 4626/4657
+recol1s = 8741
+recol1d = 10351
+recol2s = 4626
+recol2d = 4657
 name = Ali the Smith
-models = model_6086 model_6087 model_302 model_6084 model_176 obj_hammer_2347_wear obj_desert_legs_6390_man obj_boots_of_lightness_88_man
-headmodels = model_6080 model_6081 obj_rogue
+model1 = model_6086
+model2 = model_6087
+model3 = model_302
+model4 = model_6084
+model5 = model_176
+model6 = obj_hammer_2347_wear
+model7 = obj_desert_legs_6390_man
+model8 = obj_boots_of_lightness_88_man
+head1 = model_6080
+head2 = model_6081
+head3 = obj_rogue

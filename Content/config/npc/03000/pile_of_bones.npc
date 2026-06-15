@@ -4,4 +4,4 @@ size = 2
 op1 = Climb-over
 turnspeed = 0
 name = Pile of bones
-models = model_10874
+model1 = model_10874

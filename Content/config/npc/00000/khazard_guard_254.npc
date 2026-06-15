@@ -1,11 +1,22 @@
 // npc 254
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 23
-recol = 61/20 25238/3974
+recol1s = 61
+recol1d = 20
+recol2s = 25238
+recol2d = 3974
 name = Khazard Guard
-models = obj_desert_disguise_man model_253 obj_khazard_armour_man model_152 model_176 obj_mime_legs_man obj_boots_of_lightness_88_man obj_iron_battleaxe_1363_wear
-headmodels = obj_rogue model_85
+model1 = obj_desert_disguise_man
+model2 = model_253
+model3 = obj_khazard_armour_man
+model4 = model_152
+model5 = model_176
+model6 = obj_mime_legs_man
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_iron_battleaxe_1363_wear
+head1 = obj_rogue
+head2 = model_85

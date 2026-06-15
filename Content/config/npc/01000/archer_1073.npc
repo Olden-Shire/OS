@@ -1,13 +1,23 @@
 // npc 1073
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
 op2 = Attack
 vislevel = 42
-recol = 6674/8111
+recol1s = 6674
+recol1d = 8111
 name = Archer
-models = obj_leather_cowl_1167_man model_246 obj_studded_body_1133_man model_167 obj_cooking_gauntlets_man obj_studded_chaps_1097_man obj_boots_of_lightness_88_man obj_longbow_839_wear
-headmodels = model_32 obj_rogue model_80
+model1 = obj_leather_cowl_1167_man
+model2 = model_246
+model3 = obj_studded_body_1133_man
+model4 = model_167
+model5 = obj_cooking_gauntlets_man
+model6 = obj_studded_chaps_1097_man
+model7 = obj_boots_of_lightness_88_man
+model8 = obj_longbow_839_wear
+head1 = model_32
+head2 = obj_rogue
+head3 = model_80

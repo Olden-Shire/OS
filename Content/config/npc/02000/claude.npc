@@ -8,4 +8,5 @@ resizeh = 30
 resizev = 40
 alwaysontop = true
 name = Claude
-models = model_9386 model_9388
+model1 = model_9386
+model2 = model_9388

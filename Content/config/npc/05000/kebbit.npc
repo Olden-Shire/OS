@@ -6,4 +6,6 @@ walkanim = seq_5301
 alwaysontop = true
 vislevel = 13
 name = Kebbit
-models = model_20090 model_20091 model_20093
+model1 = model_20090
+model2 = model_20091
+model3 = model_20093

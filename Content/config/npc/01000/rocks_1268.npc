@@ -7,4 +7,5 @@ resizeh = 84
 resizev = 84
 nominimap = true
 name = Rocks
-models = model_4399 model_4400
+model1 = model_4399
+model2 = model_4400

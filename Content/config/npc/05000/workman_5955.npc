@@ -6,4 +6,6 @@ alwaysontop = true
 vislevel = 0
 alwaysontop = true
 name = Workman
-models = model_25837 model_25840 model_25838
+model1 = model_25837
+model2 = model_25840
+model3 = model_25838

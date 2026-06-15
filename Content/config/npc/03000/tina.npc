@@ -1,9 +1,20 @@
 // npc 3218
 vislevel = 0
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 43072/4550 25238/12 8741/10471
+recol1s = 43072
+recol1d = 4550
+recol2s = 25238
+recol2d = 12
+recol3s = 8741
+recol3d = 10471
 name = Tina
-models = model_378 obj_white_apron_1005_woman model_11787 model_332 model_353 obj_mime_legs_woman model_358
-headmodels = model_103
+model1 = model_378
+model2 = obj_white_apron_1005_woman
+model3 = model_11787
+model4 = model_332
+model5 = model_353
+model6 = obj_mime_legs_woman
+model7 = model_358
+head1 = model_103

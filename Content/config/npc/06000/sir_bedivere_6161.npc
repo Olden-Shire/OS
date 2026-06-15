@@ -1,11 +1,16 @@
 // npc 6161
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Hidden
 op1 = Talk-to
 vislevel = 110
-recol = 5673/10328 6798/10328
+recol1s = 5673
+recol1d = 10328
+recol2s = 6798
+recol2d = 10328
 name = Sir Bedivere
-models = model_27191 model_27202
-headmodels = model_27209 model_27205
+model1 = model_27191
+model2 = model_27202
+head1 = model_27209
+head2 = model_27205

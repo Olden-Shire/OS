@@ -1,12 +1,19 @@
 // npc 1078
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 128
 resizev = 128
 op1 = Talk-to
 vislevel = 0
-recol = 25238/8741
+recol1s = 25238
+recol1d = 8741
 name = Harold
-models = obj_khazard_helmet_man model_246 obj_iron_chainbody_1101_man model_167 obj_cooking_gauntlets_man model_274 obj_boots_of_lightness_88_man
-headmodels = obj_watchman
+model1 = obj_khazard_helmet_man
+model2 = model_246
+model3 = obj_iron_chainbody_1101_man
+model4 = model_167
+model5 = obj_cooking_gauntlets_man
+model6 = model_274
+model7 = obj_boots_of_lightness_88_man
+head1 = obj_watchman

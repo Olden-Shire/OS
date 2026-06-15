@@ -6,4 +6,4 @@ turnspeed = 0
 size = 2
 op1 = Kick
 name = Bed
-models = model_7381
+model1 = model_7381

@@ -6,4 +6,4 @@ turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Starflower
-models = model_16194
+model1 = model_16194

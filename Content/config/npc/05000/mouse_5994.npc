@@ -6,4 +6,4 @@ op2 = Attack
 alwaysontop = true
 vislevel = 95
 name = Mouse
-models = model_26075
+model1 = model_26075

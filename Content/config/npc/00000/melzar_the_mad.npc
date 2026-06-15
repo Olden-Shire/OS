@@ -1,11 +1,23 @@
 // npc 753
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op2 = Attack
 alwaysontop = true
 vislevel = 43
-recol = 25238/10508 8741/10508 6798/10508
+recol1s = 25238
+recol1d = 10508
+recol2s = 8741
+recol2d = 10508
+recol3s = 6798
+recol3d = 10508
 name = Melzar the Mad
-models = model_208 obj_vyrewatch_shoes_9638_man model_251 obj_priest_gown_426_man obj_druids_robe_540_man model_176 obj_priest_gown_428_man
-headmodels = model_48 model_83
+model1 = model_208
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_251
+model4 = obj_priest_gown_426_man
+model5 = obj_druids_robe_540_man
+model6 = model_176
+model7 = obj_priest_gown_428_man
+head1 = model_48
+head2 = model_83

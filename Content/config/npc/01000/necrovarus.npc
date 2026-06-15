@@ -1,12 +1,18 @@
 // npc 1684
-walkanims = seq_1205, seq_1206, seq_1207, seq_1208
+walkanim = seq_1205, seq_1206, seq_1207, seq_1208
 readyanim = seq_813
 ambient = 50
 contrast = 50
 vislevel = 0
 op1 = Talk-To
 size = 1
-recol = 17467/18626
+recol1s = 17467
+recol1d = 18626
 name = Necrovarus
-models = model_5213 model_5219 model_5209 model_5216 model_5223 model_5232
-headmodels = model_5205
+model1 = model_5213
+model2 = model_5219
+model3 = model_5209
+model4 = model_5216
+model5 = model_5223
+model6 = model_5232
+head1 = model_5205

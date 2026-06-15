@@ -1,11 +1,15 @@
 // npc 6166
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
-recol = 5673/7729 6798/7729
+recol1s = 5673
+recol1d = 7729
+recol2s = 6798
+recol2d = 7729
 name = Sir Pelleas
-models = model_27125
-headmodels = model_27209 model_81
+model1 = model_27125
+head1 = model_27209
+head2 = model_81

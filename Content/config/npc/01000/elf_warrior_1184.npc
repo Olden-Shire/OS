@@ -1,8 +1,12 @@
 // npc 1184
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_813
 op2 = Attack
 vislevel = 108
 name = Elf warrior
-models = model_4014 model_4018 model_4022 model_4024 model_4033
+model1 = model_4014
+model2 = model_4018
+model3 = model_4022
+model4 = model_4024
+model5 = model_4033

@@ -1,11 +1,20 @@
 // npc 5833
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
-recol = 6798/9893
+recol1s = 6798
+recol1d = 9893
 name = Rat Burgiss
-models = model_23924 obj_desert_disguise_man model_253 model_23942 model_23920 model_23938 model_23921
-headmodels = obj_rogue model_85 model_23913
+model1 = model_23924
+model2 = obj_desert_disguise_man
+model3 = model_253
+model4 = model_23942
+model5 = model_23920
+model6 = model_23938
+model7 = model_23921
+head1 = obj_rogue
+head2 = model_85
+head3 = model_23913

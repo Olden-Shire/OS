@@ -1,9 +1,13 @@
 // npc 6041
-walkanims = seq_6531, seq_6532, seq_821, seq_822
+walkanim = seq_6531, seq_6532, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 vislevel = 24
 name = Yadviga
-models = model_26145 model_26154 model_26138 model_26150 model_26142
-headmodels = model_26274
+model1 = model_26145
+model2 = model_26154
+model3 = model_26138
+model4 = model_26150
+model5 = model_26142
+head1 = model_26274

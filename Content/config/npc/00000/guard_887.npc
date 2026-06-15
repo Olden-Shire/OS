@@ -1,10 +1,18 @@
 // npc 887
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
-recol = 25238/811 8741/43939
+recol1s = 25238
+recol1d = 811
+recol2s = 8741
+recol2d = 43939
 name = Guard
-models = model_225 obj_bronze_chainbody_1103_man obj_fremennik_shirt_3767_man obj_cooking_gauntlets_man model_274 obj_boots_of_lightness_88_man
-headmodels = model_60
+model1 = model_225
+model2 = obj_bronze_chainbody_1103_man
+model3 = obj_fremennik_shirt_3767_man
+model4 = obj_cooking_gauntlets_man
+model5 = model_274
+model6 = obj_boots_of_lightness_88_man
+head1 = model_60

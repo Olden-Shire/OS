@@ -4,5 +4,5 @@ readyanim = seq_5586
 op1 = Talk-to
 vislevel = 0
 name = 50% Luke
-models = model_21391
-headmodels = model_21395
+model1 = model_21391
+head1 = model_21395

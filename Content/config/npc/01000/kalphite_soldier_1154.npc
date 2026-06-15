@@ -5,4 +5,4 @@ readyanim = seq_6218
 op2 = Attack
 vislevel = 85
 name = Kalphite Soldier
-models = obj_kalphite_soldier
+model1 = obj_kalphite_soldier

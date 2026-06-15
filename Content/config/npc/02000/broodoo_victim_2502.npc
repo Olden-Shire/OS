@@ -1,9 +1,18 @@
 // npc 2502
 size = 1
 readyanim = seq_2400
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 turnspeed = 1024
 vislevel = 1
-recol = 4550/64 43072/64
+recol1s = 4550
+recol1d = 64
+recol2s = 43072
+recol2d = 64
 name = Broodoo victim
-models = obj_tribal_mask_6335_man obj_vyrewatch_shoes_9638_man obj_veracs_brassard_4757_man model_173 model_176 model_8926 obj_desert_disguise_man
+model1 = obj_tribal_mask_6335_man
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = obj_veracs_brassard_4757_man
+model4 = model_173
+model5 = model_176
+model6 = model_8926
+model7 = obj_desert_disguise_man

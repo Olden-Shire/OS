@@ -1,12 +1,20 @@
 // npc 4359
 resizeh = 130
 resizev = 130
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op3 = Sew
 vislevel = 0
 alwaysontop = true
 name = Patchy
-models = model_15931 model_15934 model_15936 model_15939 model_15925 model_15927 model_15937 model_15926 model_15930
-headmodels = model_15919
+model1 = model_15931
+model2 = model_15934
+model3 = model_15936
+model4 = model_15939
+model5 = model_15925
+model6 = model_15927
+model7 = model_15937
+model8 = model_15926
+model9 = model_15930
+head1 = model_15919

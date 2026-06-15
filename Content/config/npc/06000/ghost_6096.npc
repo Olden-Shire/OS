@@ -8,5 +8,5 @@ op1 = Talk-to
 op2 = Attack
 vislevel = 19
 name = Ghost
-models = model_21143
-headmodels = model_26600
+model1 = model_21143
+head1 = model_26600

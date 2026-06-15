@@ -1,7 +1,7 @@
 // npc 4520
 vislevel = 1
 vislevel = 0
-walkanims = seq_4426, seq_4427, seq_4428, seq_4429
+walkanim = seq_4426, seq_4427, seq_4428, seq_4429
 readyanim = seq_4424
 resizeh = 120
 resizev = 120
@@ -9,5 +9,12 @@ contrast = 12
 ambient = 12
 alwaysontop = true
 name = Clan Guard
-models = obj_lunar_helm_9096_man obj_lunar_torso_man obj_lunar_cape_man model_16471 obj_lunar_gloves_man obj_lunar_legs_man obj_lunar_boots_man model_270
-headmodels = model_16468
+model1 = obj_lunar_helm_9096_man
+model2 = obj_lunar_torso_man
+model3 = obj_lunar_cape_man
+model4 = model_16471
+model5 = obj_lunar_gloves_man
+model6 = obj_lunar_legs_man
+model7 = obj_lunar_boots_man
+model8 = model_270
+head1 = model_16468

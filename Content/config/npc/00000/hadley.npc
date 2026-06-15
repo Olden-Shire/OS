@@ -1,10 +1,22 @@
 // npc 302
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
-recol = 43072/4550 25238/6492
+recol1s = 43072
+recol1d = 4550
+recol2s = 25238
+recol2d = 6492
 name = Hadley
-models = obj_fremennik_helm_man obj_vyrewatch_shoes_9638_man model_250 model_299 model_159 model_176 obj_mime_legs_man model_329 model_245
-headmodels = obj_man model_82
+model1 = obj_fremennik_helm_man
+model2 = obj_vyrewatch_shoes_9638_man
+model3 = model_250
+model4 = model_299
+model5 = model_159
+model6 = model_176
+model7 = obj_mime_legs_man
+model8 = model_329
+model9 = model_245
+head1 = obj_man
+head2 = model_82

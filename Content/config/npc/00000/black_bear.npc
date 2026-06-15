@@ -5,4 +5,5 @@ readyanim = seq_4919
 op2 = Attack
 vislevel = 19
 name = Black bear
-models = model_18882 model_18886
+model1 = model_18882
+model2 = model_18886

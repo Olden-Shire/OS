@@ -6,4 +6,4 @@ turnspeed = 0
 nominimap = true
 vislevel = 0
 name = Cavemouth
-models = model_12018
+model1 = model_12018

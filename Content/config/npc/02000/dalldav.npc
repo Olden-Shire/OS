@@ -1,13 +1,21 @@
 // npc 2356
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizeh = 127
 resizev = 120
 op1 = Talk-to
 op3 = Trade
-recol = 8792/7634 7595/13867 8741/13867
+recol1s = 8792
+recol1d = 7634
+recol2s = 7595
+recol2d = 13867
+recol3s = 8741
+recol3d = 13867
 name = Dalldav
-models = model_4021 model_6977 model_6975 model_8267
-headmodels = model_4012
+model1 = model_4021
+model2 = model_6977
+model3 = model_6975
+model4 = model_8267
+head1 = model_4012

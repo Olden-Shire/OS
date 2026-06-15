@@ -1,11 +1,22 @@
 // npc 3240
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack
 op3 = Pickpocket
 vislevel = 2
-recol = 8741/4502 25238/5786 4626/2952
+recol1s = 8741
+recol1d = 4502
+recol2s = 25238
+recol2d = 5786
+recol3s = 4626
+recol3d = 2952
 name = Jeff
-models = model_226 model_246 obj_priest_gown_426_man model_163 model_10218 model_11339 obj_vyrewatch_shoes_9638_man
-headmodels = model_61
+model1 = model_226
+model2 = model_246
+model3 = obj_priest_gown_426_man
+model4 = model_163
+model5 = model_10218
+model6 = model_11339
+model7 = obj_vyrewatch_shoes_9638_man
+head1 = model_61

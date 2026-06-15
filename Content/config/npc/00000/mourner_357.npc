@@ -1,10 +1,23 @@
 // npc 357
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_813
 op2 = Attack
 vislevel = 18
-recol = 926/43270 8741/6936 11200/43270 8090/6936
+recol1s = 926
+recol1d = 43270
+recol2s = 8741
+recol2d = 6936
+recol3s = 11200
+recol3d = 43270
+recol4s = 8090
+recol4d = 6936
 name = Mourner
-models = obj_gas_mask_man obj_plague_jacket_man model_150 model_273 obj_boots_of_lightness_88_man obj_cape_1007_man model_553
-headmodels = model_51
+model1 = obj_gas_mask_man
+model2 = obj_plague_jacket_man
+model3 = model_150
+model4 = model_273
+model5 = obj_boots_of_lightness_88_man
+model6 = obj_cape_1007_man
+model7 = model_553
+head1 = model_51

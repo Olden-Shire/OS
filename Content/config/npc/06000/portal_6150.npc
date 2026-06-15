@@ -8,4 +8,6 @@ walkanim = seq_3933
 readyanim = seq_3933
 ambient = 40
 name = Portal
-models = model_14533 model_14527 model_14528
+model1 = model_14533
+model2 = model_14527
+model3 = model_14528

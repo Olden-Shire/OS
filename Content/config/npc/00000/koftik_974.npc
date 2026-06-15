@@ -1,9 +1,17 @@
 // npc 974
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 name = Koftik
-models = model_163 obj_boots_of_lightness_88_man model_176 model_208 model_249 model_274 obj_priest_gown_426_man model_326
-headmodels = model_48 model_81
+model1 = model_163
+model2 = obj_boots_of_lightness_88_man
+model3 = model_176
+model4 = model_208
+model5 = model_249
+model6 = model_274
+model7 = obj_priest_gown_426_man
+model8 = model_326
+head1 = model_48
+head2 = model_81

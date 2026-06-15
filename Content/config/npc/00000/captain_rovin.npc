@@ -1,11 +1,20 @@
 // npc 884
 vislevel = 52
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
 name = Captain Rovin
-models = obj_desert_disguise_man model_17531 obj_fremennik_cloak_3759_man model_17516 model_17521 obj_bronze_longsword_1291_wear model_17527 model_17518 model_247
-headmodels = obj_rogue model_79
+model1 = obj_desert_disguise_man
+model2 = model_17531
+model3 = obj_fremennik_cloak_3759_man
+model4 = model_17516
+model5 = model_17521
+model6 = obj_bronze_longsword_1291_wear
+model7 = model_17527
+model8 = model_17518
+model9 = model_247
+head1 = obj_rogue
+head2 = model_79

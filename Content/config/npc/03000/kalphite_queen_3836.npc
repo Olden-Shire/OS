@@ -6,4 +6,6 @@ op2 = Attack
 headicon = 0
 vislevel = 333
 name = Kalphite Queen
-models = model_24602 model_24605 model_24606
+model1 = model_24602
+model2 = model_24605
+model3 = model_24606

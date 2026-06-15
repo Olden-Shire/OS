@@ -1,8 +1,20 @@
 // npc 31
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
-recol = 25238/43414 8741/43660 8078/43111
+recol1s = 25238
+recol1d = 43414
+recol2s = 8741
+recol2d = 43660
+recol3s = 8078
+recol3d = 43111
 name = Priest
-models = model_223 model_249 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 obj_priest_gown_428_man obj_boots_of_lightness_88_man model_325
+model1 = model_223
+model2 = model_249
+model3 = obj_priest_gown_426_man
+model4 = obj_fremennik_shirt_3767_man
+model5 = model_176
+model6 = obj_priest_gown_428_man
+model7 = obj_boots_of_lightness_88_man
+model8 = model_325

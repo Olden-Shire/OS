@@ -8,4 +8,5 @@ resizev = 100
 ambient = 25
 vislevel = 15
 name = Stag
-models = model_25753 model_25756
+model1 = model_25753
+model2 = model_25756

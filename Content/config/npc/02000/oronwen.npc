@@ -1,12 +1,19 @@
 // npc 2353
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 resizev = 129
 op1 = Talk-to
 op3 = Trade
 vislevel = 0
 size = 1
-recol = 7595/6587 8792/16706
+recol1s = 7595
+recol1d = 6587
+recol2s = 8792
+recol2d = 16706
 name = Oronwen
-models = model_4030 model_6981 model_480 model_6978 model_8270
-headmodels = model_4013
+model1 = model_4030
+model2 = model_6981
+model3 = model_480
+model4 = model_6978
+model5 = model_8270
+head1 = model_4013

@@ -6,4 +6,5 @@ vislevel = 0
 op5 = hidden
 vislevel = 0
 name = Copper longtail
-models = model_26848 model_26844
+model1 = model_26848
+model2 = model_26844

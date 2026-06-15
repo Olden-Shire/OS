@@ -7,4 +7,6 @@ readyanim = seq_1749
 op2 = Attack
 vislevel = 149
 name = Flambeed
-models = model_13905 model_13906 model_13907
+model1 = model_13905
+model2 = model_13906
+model3 = model_13907

@@ -1,11 +1,23 @@
 // npc 820
 vislevel = 0
 size = 1
-walkanims = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819, seq_820, seq_821, seq_822
 readyanim = seq_808
 op1 = Talk-to
 alwaysontop = true
-recol = 6798/943 8741/7073 8078/7075 25238/7073
+recol1s = 6798
+recol1d = 943
+recol2s = 8741
+recol2d = 7073
+recol3s = 8078
+recol3d = 7075
+recol4s = 25238
+recol4d = 7073
 name = Poison Salesman
-models = model_217 model_246 obj_priest_gown_426_man obj_fremennik_shirt_3767_man model_176 model_257
-headmodels = obj_farmer
+model1 = model_217
+model2 = model_246
+model3 = obj_priest_gown_426_man
+model4 = obj_fremennik_shirt_3767_man
+model5 = model_176
+model6 = model_257
+head1 = obj_farmer

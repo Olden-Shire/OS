@@ -7,4 +7,4 @@ resizeh = 112
 resizev = 112
 vislevel = 78
 name = Jelly
-models = obj_jelly
+model1 = obj_jelly
