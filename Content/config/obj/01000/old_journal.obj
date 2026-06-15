@@ -1,13 +1,9 @@
-// obj 1493
+// obj 1494
 cost = 1
-model = obj_shamans_tome
+model = obj_nulodions_notes
 zoom2d = 840
 yan2d = 152
 xan2d = 256
 members = true
 iop1 = Read
-recol1s = 5018
-recol1d = 9104
-recol2s = 10351
-recol2d = 5330
-name = Old journal
+name = History of iban

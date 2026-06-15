@@ -1,6 +1,7 @@
-// loc 6880
+// loc 6856
 hillskew = true
+mapscene = 51
 nonblockrange = true
 recol = 9556/8514
 models_only = 6788
-name = Ogre barricade
+name = Barricade
