@@ -24,8 +24,12 @@ pub const MASK_CHANGE_TYPE: i32 = 0x40;
 pub const MASK_DAMAGE: i32 = 0x80;
 
 /// NpcStat indices (Engine-TS `NpcStat`) — six combat stats.
+pub const NPC_STAT_ATTACK: usize = 0;
+pub const NPC_STAT_DEFENCE: usize = 1;
 pub const NPC_STAT_STRENGTH: usize = 2;
 pub const NPC_STAT_HITPOINTS: usize = 3;
+pub const NPC_STAT_RANGED: usize = 4;
+pub const NPC_STAT_MAGIC: usize = 5;
 pub const NPC_STAT_COUNT: usize = 6;
 /// Default regen cadence (ticks) until the npc config (`regenrate`) loads.
 pub const DEFAULT_REGEN_INTERVAL: i32 = 100;

@@ -252,7 +252,16 @@ pub const NPC_SERVER_KEYS: &[&str] = &[
     "givechase",
     "regenrate",
     "params",
+    "param",
     "debugname",
+    // Combat base stats — cache opcodes 74-79 in the 2004 engine, server-side
+    // from rev1 on (dropped from the client cache).
+    "hitpoints",
+    "attack",
+    "strength",
+    "defence",
+    "ranged",
+    "magic",
 ];
 
 /// Is `key` a server-only config property (not a client-cache opcode)?

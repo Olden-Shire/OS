@@ -238,6 +238,10 @@ pub struct NpcInfo {
     /// How this npc type may traverse collision (Engine-TS `moverestrict`);
     /// `nomove` keeps it rooted to its spawn tile.
     pub move_restrict: crate::entity::MoveRestrict,
+    /// Combat base levels indexed by NpcStat (attack/defence/strength/hitpoints/
+    /// ranged/magic) — server-authored (`hitpoints`/`attack`/… in `.npc`), not in
+    /// the 2007 cache. Default all-1 (Engine-TS); applied to the spawned npc.
+    pub base_levels: [i32; crate::entity::npc::NPC_STAT_COUNT],
 }
 
 impl Default for NpcInfo {
@@ -256,6 +260,7 @@ impl Default for NpcInfo {
             default_mode: NPC_DEFAULTMODE,
             give_chase: NPC_GIVECHASE,
             move_restrict: crate::entity::MoveRestrict::Normal,
+            base_levels: [1; crate::entity::npc::NPC_STAT_COUNT],
         }
     }
 }
@@ -570,6 +575,22 @@ impl World {
                 "moverestrict" => {
                     if let Some(mr) = parse_move_restrict(v) {
                         info.move_restrict = mr;
+                        applied = true;
+                    }
+                }
+                // Combat base levels (server-side; absent from the 2007 cache).
+                "attack" | "defence" | "strength" | "hitpoints" | "ranged" | "magic" => {
+                    use crate::entity::npc::*;
+                    let stat = match k {
+                        "attack" => NPC_STAT_ATTACK,
+                        "defence" => NPC_STAT_DEFENCE,
+                        "strength" => NPC_STAT_STRENGTH,
+                        "hitpoints" => NPC_STAT_HITPOINTS,
+                        "ranged" => NPC_STAT_RANGED,
+                        _ => NPC_STAT_MAGIC,
+                    };
+                    if let Ok(n) = v.parse() {
+                        info.base_levels[stat] = n;
                         applied = true;
                     }
                 }
@@ -2283,6 +2304,11 @@ impl World {
         // Overlay the type's server-authored moverestrict (e.g. `nomove`) — the
         // movement step refuses to advance a NoMove entity.
         npc.entity.move_restrict = self.npc_move_restrict(type_id);
+        // Overlay server-authored combat base levels; spawn at full (= base).
+        if let Some(info) = self.npc_info.get(&type_id) {
+            npc.base_levels = info.base_levels;
+            npc.levels = info.base_levels;
+        }
         self.zones.enter_npc(npc.entity.zone_index, nid);
         self.npcs[nid] = Some(npc);
         // Engine-TS addNpc queues the [ai_spawn] trigger.
