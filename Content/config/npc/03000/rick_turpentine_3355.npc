@@ -1,8 +1,8 @@
 // npc 3355
 walkanim_f = seq_4226
 walkanim_b = seq_4227
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_4591
 op1 = Talk-To
 vislevel = 0
@@ -26,7 +26,7 @@ model2 = obj_fishbowl_helmet_man
 model3 = obj_prince_tunic_man
 model4 = model_163
 model5 = obj_cooking_gauntlets_man
-model6 = model_267
+model6 = idk_man_legs_flares
 model7 = obj_ranger_boots_2577_man
 model8 = obj_diving_apparatus_man
 model9 = obj_phoenix_crossbow_767_wear

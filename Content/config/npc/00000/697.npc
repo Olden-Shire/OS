@@ -1,6 +1,6 @@
 // npc 697
 op1 = Talk-to
 walkanim = seq_844
-readyanim = seq_808
+readyanim = human_ready
 vislevel = 1
 multivar = 65535, 159, 4864 4864 4864 4864 4864 4864 4864 4864 4864 4864 4864

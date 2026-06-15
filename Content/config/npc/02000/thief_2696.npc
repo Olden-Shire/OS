@@ -1,8 +1,8 @@
 // npc 2696
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_2702
 op2 = Attack
 vislevel = 16
@@ -18,7 +18,7 @@ model2 = model_246
 model3 = obj_priest_gown_426_man
 model4 = model_320
 model5 = model_163
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = obj_mime_legs_man
-model8 = obj_boots_of_lightness_88_man
+model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_man

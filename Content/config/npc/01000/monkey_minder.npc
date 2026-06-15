@@ -1,9 +1,9 @@
 // npc 1469
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 vislevel = 0
 recol1s = 25238
@@ -19,9 +19,9 @@ model1 = obj_fremennik_helm_man
 model2 = obj_priest_gown_426_man
 model3 = model_250
 model4 = model_151
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = model_271
-model7 = obj_boots_of_lightness_88_man
+model7 = obj_ikov_bootsoflightness_manwear
 model8 = model_194
 model9 = model_327
 model10 = model_495

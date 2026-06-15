@@ -1,7 +1,7 @@
 // npc 3199
 vislevel = 0
-walkanim = seq_808
-readyanim = seq_808
+walkanim = human_ready
+readyanim = human_ready
 op1 = Talk-to
 op3 = Bank
 recol1s = 25238

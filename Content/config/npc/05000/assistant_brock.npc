@@ -1,9 +1,9 @@
 // npc 5054
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 op4 = Fly
@@ -25,7 +25,7 @@ model1 = model_6848
 model2 = model_247
 model3 = model_19474
 model4 = model_19465
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = model_274
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = model_5787

@@ -1,9 +1,9 @@
 // npc 2577
 walkanim_f = seq_1146
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 63
 op3 = Walk here
 op4 = Follow

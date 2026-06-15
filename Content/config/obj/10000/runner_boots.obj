@@ -1,6 +1,6 @@
 // obj 10552
 model = obj_boots_of_lightness_88
-manwear = obj_boots_of_lightness_88_man, 0
+manwear = obj_ikov_bootsoflightness_manwear, 0
 womanwear = obj_boots_of_lightness_88_woman, 0
 iop2 = Wear
 cost = 5000

@@ -1,9 +1,9 @@
 // npc 5894
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 op3 = Inspect
@@ -24,7 +24,7 @@ model2 = model_244
 model3 = model_248
 model4 = model_15007
 model5 = model_8915
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = obj_zombie_trousers_man
 model8 = model_18129
 head1 = model_24978

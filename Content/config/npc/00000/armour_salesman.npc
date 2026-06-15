@@ -1,11 +1,11 @@
 // npc 682
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 op3 = Trade
 recol1s = 6674
@@ -27,5 +27,5 @@ model5 = obj_cooking_gauntlets_man
 model6 = obj_longbow_839_wear
 model7 = obj_bronze_kiteshield_1189_wear
 model8 = obj_leather_chaps_1095_man
-model9 = obj_boots_of_lightness_88_man
+model9 = obj_ikov_bootsoflightness_manwear
 head1 = model_18912

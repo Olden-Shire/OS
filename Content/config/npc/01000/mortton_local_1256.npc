@@ -1,8 +1,8 @@
 // npc 1256
 vislevel = 0
 size = 1
-walkanim = seq_819
-readyanim = seq_808
+walkanim = human_walk_f
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 25238
 recol1d = 7070

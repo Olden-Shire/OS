@@ -1,9 +1,9 @@
 // npc 2867
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-To
 vislevel = 0
 recol1s = 4550
@@ -22,6 +22,6 @@ name = Most of a Zombie
 model1 = model_224
 model2 = model_310
 model3 = model_168
-model4 = model_176
+model4 = obj_cert_drill_top_manwear3
 model5 = obj_citizen_trousers_9642_man
 model6 = obj_vyrewatch_shoes_9638_man

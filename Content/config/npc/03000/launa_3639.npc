@@ -1,6 +1,6 @@
 // npc 3639
 walkanim = seq_1146
-readyanim = seq_808
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 recol1s = 8741

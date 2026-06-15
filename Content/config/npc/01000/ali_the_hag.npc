@@ -1,7 +1,7 @@
 // npc 1871
 size = 1
 walkanim = seq_1146
-readyanim = seq_808
+readyanim = human_ready
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true

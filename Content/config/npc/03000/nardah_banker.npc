@@ -1,6 +1,6 @@
 // npc 3046
-walkanim = seq_808
-readyanim = seq_808
+walkanim = human_ready
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 op3 = Bank
@@ -22,9 +22,9 @@ model2 = model_9016
 model3 = model_5215
 model4 = model_6134
 model5 = model_151
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = obj_menap_action_kilt_6398_man
-model8 = obj_boots_of_lightness_88_man
+model8 = obj_ikov_bootsoflightness_manwear
 head1 = model_43
 head2 = model_9013
 head3 = model_5207

@@ -1,11 +1,11 @@
 // npc 1552
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 nominimap = true
 alwaysontop = true
 op1 = Talk-to
@@ -31,6 +31,6 @@ model6 = obj_fremennik_shirt_3767_man
 model7 = model_4924
 model8 = model_4925
 model9 = model_4926
-head1 = obj_rogue
+head1 = obj_leather_cowl_manhead2
 head2 = model_82
 head3 = model_69

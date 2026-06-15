@@ -1,9 +1,9 @@
 // npc 4651
-readyanim = seq_808
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+readyanim = human_ready
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 vislevel = 0
 op1 = Talk-To
 op3 = Trade
@@ -21,7 +21,7 @@ model2 = model_10039
 model3 = model_10305
 model4 = model_163
 model5 = obj_leather_vambraces_1063_man
-model6 = model_267
-model7 = obj_boots_of_lightness_88_man
+model6 = idk_man_legs_flares
+model7 = obj_ikov_bootsoflightness_manwear
 head1 = model_17364
 head2 = model_10030

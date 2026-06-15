@@ -1,11 +1,11 @@
 // npc 826
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 recol1s = 8741
@@ -23,8 +23,8 @@ model1 = model_217
 model2 = model_250
 model3 = obj_priest_gown_426_man
 model4 = obj_druids_robe_540_man
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = obj_priest_gown_428_man
-model7 = obj_boots_of_lightness_88_man
+model7 = obj_ikov_bootsoflightness_manwear
 head1 = obj_farmer
 head2 = model_82

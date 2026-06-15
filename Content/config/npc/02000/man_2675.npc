@@ -1,9 +1,9 @@
 // npc 2675
 size = 1
 walkanim_f = seq_1146
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_813
 op2 = Attack
 op3 = Pickpocket
@@ -19,7 +19,7 @@ model2 = model_246
 model3 = obj_priest_gown_426_man
 model4 = model_3707
 model5 = model_151
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = model_3711
 model8 = obj_mime_legs_man
 model9 = obj_vyrewatch_shoes_9638_man

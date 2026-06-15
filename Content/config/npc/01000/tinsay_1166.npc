@@ -1,8 +1,8 @@
 // npc 1166
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_813
 op1 = Talk-to
 vislevel = 0
@@ -23,7 +23,7 @@ model1 = model_206
 model2 = model_250
 model3 = obj_tribal_top_6341_man
 model4 = model_8916
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = obj_villager_robe_6343_man
 model7 = obj_villager_sandals_6349_man
 model8 = model_553

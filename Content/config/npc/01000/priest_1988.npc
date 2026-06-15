@@ -1,10 +1,10 @@
 // npc 1988
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 vislevel = 0
 alwaysontop = true
@@ -27,7 +27,7 @@ model3 = model_6134
 model4 = model_165
 model5 = model_6135
 model6 = obj_menap_action_kilt_6398_man
-model7 = obj_boots_of_lightness_88_man
+model7 = obj_ikov_bootsoflightness_manwear
 head1 = model_80
 head2 = model_6128
 head3 = model_6462

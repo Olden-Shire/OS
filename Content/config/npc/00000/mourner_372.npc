@@ -1,11 +1,11 @@
 // npc 372
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 926
 recol1d = 43270
@@ -22,6 +22,6 @@ model1 = obj_gas_mask_man
 model2 = obj_plague_jacket_man
 model3 = model_150
 model4 = model_273
-model5 = obj_boots_of_lightness_88_man
+model5 = obj_ikov_bootsoflightness_manwear
 model6 = obj_cape_1007_man
 head1 = model_51

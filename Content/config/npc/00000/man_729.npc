@@ -1,11 +1,11 @@
 // npc 729
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 4550
 recol1d = 7384
@@ -24,7 +24,7 @@ model3 = model_8845
 model4 = model_11431
 model5 = model_10218
 model6 = obj_citizen_trousers_9642_man
-model7 = obj_boots_of_lightness_88_man
+model7 = obj_ikov_bootsoflightness_manwear
 head1 = model_52
 head2 = model_82
 head3 = model_11427

@@ -2,7 +2,7 @@
 vislevel = 0
 size = 1
 walkanim = seq_4789
-readyanim = seq_808
+readyanim = human_ready
 op1 = Talk-to
 name = Kennith
 model1 = model_18488

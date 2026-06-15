@@ -1,9 +1,9 @@
 // npc 3359
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 recol1s = 8741
@@ -21,6 +21,6 @@ model3 = model_8970
 model4 = model_6846
 model5 = model_263
 model6 = obj_vyrewatch_shoes_9638_man
-model7 = model_176
+model7 = obj_cert_drill_top_manwear3
 model8 = obj_diving_apparatus_man
 head1 = model_13871

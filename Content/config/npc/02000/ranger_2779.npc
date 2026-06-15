@@ -1,9 +1,9 @@
 // npc 2779
 vislevel = 0
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_2728
 op2 = Attack
 recol1s = 22424
@@ -26,7 +26,7 @@ model4 = obj_druids_robe_540_man
 model5 = obj_cooking_gauntlets_man
 model6 = obj_longbow_839_wear
 model7 = obj_green_dhide_chaps_1099_man
-model8 = obj_boots_of_lightness_88_man
+model8 = obj_ikov_bootsoflightness_manwear
 model9 = model_9651
 head1 = model_58
 head2 = model_85

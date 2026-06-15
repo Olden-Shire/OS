@@ -1,11 +1,11 @@
 // npc 262
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 4626
 recol1d = 4550
@@ -16,7 +16,7 @@ model1 = model_214
 model2 = model_246
 model3 = model_310
 model4 = model_151
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = obj_citizen_trousers_9642_man
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = model_52

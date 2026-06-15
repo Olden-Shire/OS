@@ -2,7 +2,7 @@
 vislevel = 0
 size = 1
 walkanim = seq_4824
-readyanim = seq_808
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 10353
 recol1d = 40117
@@ -18,7 +18,7 @@ recol6s = 4550
 recol6d = 8646
 name = Jeb
 model1 = model_18190
-model2 = obj_desert_disguise_man
+model2 = obj_feud_desert_disguise_manwear
 model3 = model_217
 model4 = model_10304
 model5 = model_10705

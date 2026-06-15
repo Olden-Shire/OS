@@ -1,11 +1,11 @@
 // npc 695
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 5338
 recol1d = 4550
@@ -24,7 +24,7 @@ model1 = obj_pirate_bandana_7112_man
 model2 = model_247
 model3 = model_302
 model4 = model_18077
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = model_15104
 model7 = obj_shoes_man
 head1 = model_11186

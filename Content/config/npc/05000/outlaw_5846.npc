@@ -1,10 +1,10 @@
 // npc 5846
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op2 = Attack
 vislevel = 32
 recol1s = 3235
@@ -14,7 +14,7 @@ recol2d = 66
 name = Outlaw
 model1 = model_23923
 model2 = model_228
-model3 = model_249
+model3 = idk_man_jaw_goatee
 model4 = model_23941
 model5 = model_23945
 model6 = model_23919

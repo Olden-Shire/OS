@@ -2,7 +2,7 @@
 cost = 35200
 model = obj_rock_shell_helm_6128
 iop2 = Wear
-manwear = obj_desert_disguise_man, 0
+manwear = obj_feud_desert_disguise_manwear, 0
 manwear2 = 8747
 womanwear = obj_desert_disguise_woman, 0
 womanwear2 = 8753

@@ -1,9 +1,9 @@
 // npc 2571
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op2 = Attack
 vislevel = 20
 recol1s = 25238
@@ -20,8 +20,8 @@ model2 = model_251
 model3 = model_293
 model4 = obj_fremennik_cloak_3759_man
 model5 = model_169
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = obj_bronze_longsword_1291_wear
 model8 = model_523
 model9 = model_274
-model10 = obj_boots_of_lightness_88_man
+model10 = obj_ikov_bootsoflightness_manwear

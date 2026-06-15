@@ -1,9 +1,9 @@
 // npc 2674
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op2 = Attack
 vislevel = 16
 recol1s = 25238
@@ -19,7 +19,7 @@ model5 = model_326
 model6 = obj_druids_robe_540_man
 model7 = obj_cooking_gauntlets_man
 model8 = obj_mime_legs_man
-model9 = obj_boots_of_lightness_88_man
+model9 = obj_ikov_bootsoflightness_manwear
 model10 = obj_fremennik_cloak_3759_man
 head1 = obj_man
 head2 = model_76

@@ -1,9 +1,9 @@
 // npc 476
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_813
 op2 = Attack
 vislevel = 19
@@ -14,7 +14,7 @@ model1 = obj_khazard_helmet_man
 model2 = model_252
 model3 = obj_khazard_armour_man
 model4 = model_152
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = model_269
-model7 = obj_boots_of_lightness_88_man
+model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_bronze_spear_1237_wear

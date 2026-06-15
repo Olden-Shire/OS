@@ -1,9 +1,9 @@
 // npc 2496
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_2400
 turnspeed = 1024
 vislevel = 32
@@ -17,7 +17,7 @@ model2 = obj_vyrewatch_shoes_9638_man
 model3 = model_246
 model4 = obj_veracs_brassard_4757_man
 model5 = model_173
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = model_279
 model8 = obj_bronze_spear_1237_wear
 model9 = obj_red_headband_2645_man

@@ -1,9 +1,9 @@
 // npc 437
-readyanim = seq_808
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+readyanim = human_ready
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 op1 = Talk-to
 op3 = Pay
 vislevel = 0
@@ -26,7 +26,7 @@ model5 = model_26875
 model6 = model_167
 model7 = obj_cooking_gauntlets_man
 model8 = model_271
-model9 = obj_boots_of_lightness_88_man
+model9 = obj_ikov_bootsoflightness_manwear
 model10 = model_18917
 head1 = model_49
 head2 = model_36

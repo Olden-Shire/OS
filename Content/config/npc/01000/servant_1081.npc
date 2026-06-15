@@ -1,10 +1,10 @@
 // npc 1081
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 resizeh = 128
 resizev = 128
 op1 = Talk-to
@@ -23,7 +23,7 @@ model1 = obj_fremennik_helm_man
 model2 = model_246
 model3 = obj_priest_gown_426_man
 model4 = obj_druids_robe_540_man
-model5 = model_176
-model6 = model_267
+model5 = obj_cert_drill_top_manwear3
+model6 = idk_man_legs_flares
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_man

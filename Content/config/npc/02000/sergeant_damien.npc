@@ -1,11 +1,11 @@
 // npc 2790
 resizev = 160
 resizeh = 160
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
@@ -24,7 +24,7 @@ model1 = model_229
 model2 = obj_camo_top_6654_man
 model3 = model_6755
 model4 = model_167
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = obj_camo_bottoms_6655_man
 model7 = model_182
 model8 = model_9763

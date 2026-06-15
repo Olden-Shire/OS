@@ -1,9 +1,9 @@
 // npc 3245
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op2 = Attack
 vislevel = 11
 recol1s = 25238
@@ -14,7 +14,7 @@ recol3s = 6798
 recol3d = 10508
 name = Dark wizard
 model1 = model_208
-model2 = model_249
+model2 = idk_man_jaw_goatee
 model3 = obj_priest_gown_426_man
 model4 = model_11766
 model5 = model_11809

@@ -1,6 +1,6 @@
 // npc 5598
 walkanim = seq_5822
-readyanim = seq_808
+readyanim = human_ready
 vislevel = 0
 alwaysontop = true
 multivar = 3337, 65535, 5578 65535 5578 5578 5578 65535 5578 65535 5578 65535 65535 5578 5578 65535 5578 65535 5578

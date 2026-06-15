@@ -1,9 +1,9 @@
 // npc 2059
 vislevel = 0
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_813
 op1 = Talk-to
 recol1s = 8741
@@ -26,7 +26,7 @@ model4 = obj_amulet_of_accuracy_1478_man
 model5 = obj_priest_gown_426_man
 model6 = obj_cape_1007_man
 model7 = obj_fremennik_shirt_3767_man
-model8 = model_176
+model8 = obj_cert_drill_top_manwear3
 model9 = obj_dramen_staff_wear
 model10 = model_256
 head1 = model_52

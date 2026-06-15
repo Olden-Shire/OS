@@ -1,7 +1,7 @@
 // npc 4874
 vislevel = 0
 size = 1
-readyanim = seq_808
+readyanim = human_ready
 resizeh = 140
 resizev = 124
 op1 = Talk-to

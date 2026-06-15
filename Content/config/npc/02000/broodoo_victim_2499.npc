@@ -1,9 +1,9 @@
 // npc 2499
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_2401
 op2 = Attack
 vislevel = 60
@@ -24,7 +24,7 @@ model1 = obj_tribal_mask_6335_man
 model2 = obj_vyrewatch_shoes_9638_man
 model3 = obj_veracs_brassard_4757_man
 model4 = model_173
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = model_8926
-model7 = obj_desert_disguise_man
+model7 = obj_feud_desert_disguise_manwear
 head1 = model_64

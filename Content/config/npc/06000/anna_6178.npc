@@ -2,7 +2,7 @@
 vislevel = 0
 size = 1
 walkanim = seq_6926
-readyanim = seq_808
+readyanim = human_ready
 alwaysontop = true
 op1 = Talk-to
 recol1s = 6798

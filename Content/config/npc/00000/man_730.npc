@@ -1,11 +1,11 @@
 // npc 730
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 43072
 recol1d = 5662
@@ -17,7 +17,7 @@ recol4s = 4550
 recol4d = 5662
 name = Man
 model1 = model_214
-model2 = obj_boots_of_lightness_88_man
+model2 = obj_ikov_bootsoflightness_manwear
 model3 = model_250
 model4 = model_310
 model5 = model_173

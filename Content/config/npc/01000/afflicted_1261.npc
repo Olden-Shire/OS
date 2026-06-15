@@ -1,7 +1,7 @@
 // npc 1261
 size = 1
 walkanim = seq_1306
-readyanim = seq_808
+readyanim = human_ready
 op1 = Talk-to
 op2 = Attack
 vislevel = 32
@@ -18,12 +18,12 @@ recol5d = 13640
 recol6s = 43303
 recol6d = 960
 name = Afflicted
-model1 = obj_desert_disguise_man
+model1 = obj_feud_desert_disguise_manwear
 model2 = model_251
 model3 = model_310
 model4 = model_151
-model5 = model_176
+model5 = obj_cert_drill_top_manwear3
 model6 = obj_priest_gown_428_man
 model7 = obj_vyrewatch_shoes_9638_man
-head1 = obj_rogue
+head1 = obj_leather_cowl_manhead2
 head2 = model_83

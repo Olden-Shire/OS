@@ -1,9 +1,9 @@
 // npc 1163
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 vislevel = 0
 recol1s = 4550
@@ -22,7 +22,7 @@ model2 = obj_villager_sandals_6349_man
 model3 = model_246
 model4 = obj_veracs_brassard_4757_man
 model5 = model_173
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = obj_villager_robe_6343_man
 model8 = obj_red_headband_2645_man
 model9 = obj_cat_training_medal_1575_man

@@ -1,11 +1,11 @@
 // npc 1713
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 recol1s = 8741
 recol1d = 60300
 recol2s = 25238
@@ -14,7 +14,7 @@ recol3s = 7952
 recol3d = 60300
 name = H.A.M. Deacon
 model1 = model_151
-model2 = model_176
+model2 = obj_cert_drill_top_manwear3
 model3 = model_248
 model4 = obj_vyrewatch_shoes_9638_man
 model5 = obj_priest_gown_428_man

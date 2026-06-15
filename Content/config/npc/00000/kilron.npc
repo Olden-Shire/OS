@@ -1,11 +1,11 @@
 // npc 349
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 25238
 recol1d = 3980
@@ -13,7 +13,7 @@ recol2s = 8472
 recol2d = 3980
 name = Kilron
 model1 = model_208
-model2 = obj_boots_of_lightness_88_man
+model2 = obj_ikov_bootsoflightness_manwear
 model3 = model_250
 model4 = obj_leather_body_1129_man
 model5 = obj_fremennik_shirt_3767_man

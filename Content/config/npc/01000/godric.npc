@@ -1,10 +1,10 @@
 // npc 1114
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 vislevel = 0
 resizeh = 118
@@ -26,6 +26,6 @@ model1 = obj_fremennik_helm_man
 model2 = obj_plague_jacket_man
 model3 = model_150
 model4 = obj_mime_legs_man
-model5 = obj_boots_of_lightness_88_man
+model5 = obj_ikov_bootsoflightness_manwear
 model6 = model_246
 head1 = model_67

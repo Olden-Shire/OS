@@ -1,11 +1,11 @@
 // npc 4996
 op1 = Talk-to
 op2 = Attack
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 ambient = 15
 vislevel = 45
 recol1s = 5161
@@ -32,5 +32,5 @@ model8 = model_523
 model9 = obj_desert_legs_6390_man
 model10 = obj_moonclan_boots_man
 head1 = model_11802
-head2 = obj_rogue
+head2 = obj_leather_cowl_manhead2
 head3 = model_85

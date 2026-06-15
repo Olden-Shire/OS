@@ -1,11 +1,11 @@
 // npc 608
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Talk-to
 recol1s = 70
 recol1d = 99
@@ -29,8 +29,8 @@ model6 = model_184
 model7 = obj_bronze_longsword_1291_wear
 model8 = obj_wooden_shield_1171_wear
 model9 = obj_red_headband_2645_man
-model10 = model_249
+model10 = idk_man_jaw_goatee
 model11 = obj_cape_1007_man
 head1 = obj_man
-head2 = model_81
+head2 = idk_man_jaw_goatee_head
 head3 = model_43

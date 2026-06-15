@@ -1,10 +1,10 @@
 // npc 282
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op2 = Attack
 vislevel = 14
 recol1s = 25238
@@ -16,5 +16,5 @@ model3 = obj_leather_body_1129_man
 model4 = model_169
 model5 = obj_cooking_gauntlets_man
 model6 = obj_mime_legs_man
-model7 = obj_boots_of_lightness_88_man
+model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_bronze_sword_1277_wear

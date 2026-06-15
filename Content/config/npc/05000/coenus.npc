@@ -1,9 +1,9 @@
 // npc 5278
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 recol1s = 4550
 recol1d = 6563
@@ -26,7 +26,7 @@ model5 = model_20747
 model6 = model_10218
 model7 = obj_seercull_6724_wear
 model8 = model_20751
-model9 = obj_boots_of_lightness_88_man
+model9 = obj_ikov_bootsoflightness_manwear
 model10 = model_20755
 model11 = model_11762
 head1 = model_20743

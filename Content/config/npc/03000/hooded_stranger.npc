@@ -1,11 +1,11 @@
 // npc 3092
 resizeh = 130
 resizev = 150
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 recol1s = 8741
@@ -26,7 +26,7 @@ model2 = model_10561
 model3 = model_10541
 model4 = model_10542
 model5 = model_10531
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = model_10536
 model8 = model_4218
 head1 = model_48

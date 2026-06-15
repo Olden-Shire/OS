@@ -1,7 +1,7 @@
 // npc 1056
 vislevel = 0
 size = 1
-readyanim = seq_808
+readyanim = human_ready
 alwaysontop = true
 recol1s = 9104
 recol1d = 43117
@@ -22,6 +22,6 @@ model3 = obj_priest_gown_426_man
 model4 = model_163
 model5 = obj_cooking_gauntlets_man
 model6 = obj_mime_legs_man
-model7 = obj_boots_of_lightness_88_man
-model8 = obj_blue_beret_2633_man
-model9 = obj_desert_disguise_man
+model7 = obj_ikov_bootsoflightness_manwear
+model8 = obj_berret_blue_manwear
+model9 = obj_feud_desert_disguise_manwear

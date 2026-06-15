@@ -1,8 +1,8 @@
 // npc 2633
 walkanim_f = seq_1146
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 readyanim = seq_813
 vislevel = 0
 op1 = Talk-to
@@ -20,7 +20,7 @@ model2 = obj_priest_gown_426_man
 model3 = obj_druids_robe_540_man
 model4 = obj_priest_gown_428_man
 model5 = obj_vyrewatch_shoes_9638_man
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = model_4925
 model8 = obj_cape_1007_man
 model9 = model_3711

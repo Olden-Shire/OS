@@ -1,5 +1,5 @@
 // npc 3625
 walkanim = seq_1146
-readyanim = seq_808
+readyanim = human_ready
 vislevel = 1
 multivar = 1954, 65535, 65535 3626

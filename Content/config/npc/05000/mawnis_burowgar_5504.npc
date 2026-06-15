@@ -1,10 +1,10 @@
 // npc 5504
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 alwaysontop = true
 op1 = Talk-to
@@ -24,7 +24,7 @@ model2 = model_22163
 model3 = model_21885
 model4 = model_21890
 model5 = model_21863
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = model_21878
 model8 = model_19945
 head1 = model_67

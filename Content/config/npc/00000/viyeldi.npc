@@ -1,6 +1,6 @@
 // npc 935
 size = 1
-readyanim = seq_808
+readyanim = human_ready
 op1 = Talk-to
 op2 = Attack
 vislevel = 79

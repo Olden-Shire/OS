@@ -2,8 +2,8 @@
 vislevel = 0
 op1 = Talk-to
 op3 = Bank
-walkanim = seq_808
-readyanim = seq_808
+walkanim = human_ready
+readyanim = human_ready
 alwaysontop = true
 recol1s = 8741
 recol1d = 10353

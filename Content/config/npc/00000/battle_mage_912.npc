@@ -1,9 +1,9 @@
 // npc 912
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op2 = Attack
 vislevel = 54
 recol1s = 11200
@@ -24,8 +24,8 @@ model2 = model_246
 model3 = obj_highwayman_mask_2631_man
 model4 = model_310
 model5 = model_168
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = model_260
 model8 = obj_cape_1007_man
-model9 = obj_boots_of_lightness_88_man
+model9 = obj_ikov_bootsoflightness_manwear
 model10 = obj_zamorak_staff_wear

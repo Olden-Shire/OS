@@ -1,8 +1,8 @@
 // npc 2355
 vislevel = 0
 size = 1
-walkanim = seq_808
-readyanim = seq_808
+walkanim = human_ready
+readyanim = human_ready
 resizeh = 135
 resizev = 130
 op1 = Talk-to

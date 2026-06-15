@@ -1,9 +1,9 @@
 // npc 4650
-readyanim = seq_808
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
+readyanim = human_ready
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
 vislevel = 0
 op1 = Talk-To
 op3 = Trade
@@ -26,7 +26,7 @@ model4 = model_17354
 model5 = model_17351
 model6 = obj_leather_vambraces_1063_man
 model7 = model_17366
-model8 = model_267
+model8 = idk_man_legs_flares
 model9 = obj_snakeskin_boots_6328_man
 head1 = model_5787
 head2 = model_28

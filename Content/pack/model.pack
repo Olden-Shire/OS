@@ -38,7 +38,7 @@
 37=model_37
 38=38
 39=model_39
-40=model_40
+40=obj_berret_blue_manhead
 41=model_41
 42=42
 43=model_43
@@ -61,7 +61,7 @@
 60=model_60
 61=model_61
 62=model_62
-63=obj_rogue
+63=obj_leather_cowl_manhead2
 64=model_64
 65=model_65
 66=obj_guard
@@ -79,7 +79,7 @@
 78=model_78
 79=model_79
 80=model_80
-81=model_81
+81=idk_man_jaw_goatee_head
 82=model_82
 83=model_83
 84=model_84
@@ -155,7 +155,7 @@
 154=154
 155=obj_elemental_shield_2890
 156=model_156
-157=model_157
+157=obj_khazard_platemail_manwear2
 158=158
 159=model_159
 160=model_160
@@ -174,7 +174,7 @@
 173=model_173
 174=model_174
 175=175
-176=model_176
+176=obj_cert_drill_top_manwear3
 177=obj_leather_vambraces_1063_man
 178=obj_green_dhide_vamb_1065_man
 179=obj_cooking_gauntlets_man
@@ -183,7 +183,7 @@
 182=model_182
 183=model_183
 184=model_184
-185=obj_boots_of_lightness_88_man
+185=obj_ikov_bootsoflightness_manwear
 186=obj_tan_cavalier_2639_man
 187=obj_red_partyhat_1038_man
 188=model_188
@@ -196,7 +196,7 @@
 195=195
 196=model_196
 197=197
-198=obj_blue_beret_2633_man
+198=obj_berret_blue_manwear
 199=obj_chefs_hat_1949_man
 200=200
 201=obj_red_headband_2645_man
@@ -228,7 +228,7 @@
 227=model_227
 228=model_228
 229=model_229
-230=obj_desert_disguise_man
+230=obj_feud_desert_disguise_manwear
 231=model_231
 232=model_232
 233=model_233
@@ -247,7 +247,7 @@
 246=model_246
 247=model_247
 248=model_248
-249=model_249
+249=idk_man_jaw_goatee
 250=model_250
 251=model_251
 252=model_252
@@ -265,7 +265,7 @@
 264=model_264
 265=obj_priest_gown_428_man
 266=obj_iron_plateskirt_1081_man
-267=model_267
+267=idk_man_legs_flares
 268=obj_iron_platelegs_1067_man
 269=model_269
 270=model_270
@@ -311,7 +311,7 @@
 310=model_310
 311=obj_leather_body_1129_man
 312=model_312
-313=model_313
+313=npc_paladin
 314=obj_green_dhide_body_1135_man
 315=obj_veracs_brassard_4757_man
 316=316
@@ -3328,7 +3328,7 @@
 3327=3327
 3328=3328
 3329=model_3329
-3330=model_3330
+3330=obj_rune_platebody_saradomin_manwear3
 3331=model_3331
 3332=model_3332
 3333=obj_toy_horsey_2520_wear
@@ -27610,3 +27610,15 @@
 27609=obj_golden_needle
 27610=model_27610
 27611=27611
+
+
+
+
+
+
+
+
+
+
+
+

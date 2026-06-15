@@ -1,11 +1,11 @@
 // npc 694
 vislevel = 0
 size = 1
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 op1 = Trade
 recol1s = 6674
 recol1d = 8111
@@ -19,7 +19,7 @@ recol5s = 8741
 recol5d = 916
 name = Ticket Merchant
 model1 = model_221
-model2 = obj_boots_of_lightness_88_man
+model2 = obj_ikov_bootsoflightness_manwear
 model3 = model_246
 model4 = obj_studded_body_1133_man
 model5 = model_167

@@ -1,9 +1,9 @@
 // npc 2082
-walkanim_f = seq_819
-walkanim_b = seq_820
-walkanim_r = seq_821
-walkanim_l = seq_822
-readyanim = seq_808
+walkanim_f = human_walk_f
+walkanim_b = human_walk_b
+walkanim_r = human_walk_r
+walkanim_l = human_walk_l
+readyanim = human_ready
 vislevel = 0
 op1 = Talk-to
 op3 = Pickpocket
@@ -25,7 +25,7 @@ model2 = obj_priest_gown_426_man
 model3 = obj_fremennik_shirt_3767_man
 model4 = obj_priest_gown_428_man
 model5 = obj_vyrewatch_shoes_9638_man
-model6 = model_176
+model6 = obj_cert_drill_top_manwear3
 model7 = obj_cape_1007_man
 model8 = obj_glarials_amulet_man
 model9 = model_5215
