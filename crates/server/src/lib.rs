@@ -241,6 +241,9 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
     // source text, not the client cache — overlay it before spawning so spawns
     // pick up per-type default modes.
     let spawn_dir = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
+    // Param registry + RuneScript constants first — load_server_npc_props
+    // resolves `param =` lines against them.
+    world.load_param_configs(Path::new(&spawn_dir));
     world.load_server_npc_props(Path::new(&spawn_dir));
     // World npc spawns: the `==== NPC ====` section of each `.jm2` map, plus the
     // legacy OS text list `npcs.txt` if present (the 2007 cache has no Jagex

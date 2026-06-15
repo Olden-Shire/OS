@@ -105,6 +105,28 @@ fn active_npc<'w>(state: &ScriptState, world: &'w mut World)
         .ok_or_else(|| "active_npc slot empty".to_string())
 }
 
+/// Push an npc TYPE's param onto the right stack — Engine-TS `npc_param`/
+/// `nc_param` via `ParamHelper`. Missing value → the param's default (int -1 /
+/// string "null" when the param type itself is unknown).
+fn push_npc_param(state: &mut ScriptState, world: &World, type_id: i32, param_id: i32) {
+    let pid = u32::try_from(param_id).unwrap_or(u32::MAX);
+    let def = world.param_defs.get(&pid);
+    let value = world.npc_info.get(&type_id).and_then(|i| i.params.get(&pid));
+    if def.is_some_and(|d| d.is_string) {
+        let s = match value {
+            Some(crate::world::ParamValue::Str(s)) => s.clone(),
+            _ => def.and_then(|d| d.default_string.clone()).unwrap_or_else(|| "null".to_string()),
+        };
+        state.push_string(s);
+    } else {
+        let n = match value {
+            Some(crate::world::ParamValue::Int(n)) => *n,
+            _ => def.map_or(-1, |d| d.default_int),
+        };
+        state.push_int(n);
+    }
+}
+
 /// Pop a typed argument list described by a leading typespec string — 1:1 with
 /// Engine-TS `popScriptArgs`. The typespec (one char per arg, 's' = string) is
 /// on top of the string stack; values are then popped in reverse so the result
@@ -780,6 +802,17 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             let id = state.pop_int();
             let n = config_name(world.npc_info.get(&id).map(|i| &i.name));
             state.push_string(n);
+        }
+        op::NPC_PARAM => {
+            // Param on the active npc's type (Engine-TS NPC_PARAM).
+            let param_id = state.pop_int();
+            let type_id = active_npc(state, world)?.type_id;
+            push_npc_param(state, world, type_id, param_id);
+        }
+        op::NC_PARAM => {
+            // Param on a given npc type (Engine-TS NC_PARAM).
+            let [type_id, param_id] = state.pop_ints::<2>();
+            push_npc_param(state, world, type_id, param_id);
         }
         op::NC_SIZE => {
             let id = state.pop_int();
@@ -3198,6 +3231,30 @@ mod tests {
     fn pushed(world: &mut World, ints: &[i32], op_code: u16) -> i32 {
         let st = run_op(world, None, ints, op_code);
         *st.int_stack.last().expect("op pushed a result")
+    }
+
+    #[test]
+    fn npc_param_resolves_constant_and_reads_via_ops() {
+        use crate::world::{NpcInfo, ParamDef, ParamValue};
+        let mut w = World::new();
+        // Registry: damagetype = param 0 (int); constant ^crush_style = 2.
+        w.param_ids.insert("damagetype".into(), 0);
+        w.param_defs.insert(0, ParamDef { is_string: false, default_int: -1, default_string: None });
+        w.constants_int.insert("crush_style".into(), 2);
+        // An npc TYPE carrying `param = damagetype, ^crush_style`.
+        w.npc_info.insert(7, NpcInfo::default());
+        assert!(w.apply_npc_server_props("// npc 7\nparam=damagetype,^crush_style\n"));
+        assert!(matches!(w.npc_info[&7].params.get(&0), Some(ParamValue::Int(2))));
+
+        // NC_PARAM(type=7, param=0) -> 2; an unset param -> the def default (-1).
+        assert_eq!(pushed(&mut w, &[7, 0], op::NC_PARAM), 2);
+        w.npc_info.insert(8, NpcInfo::default());
+        assert_eq!(pushed(&mut w, &[8, 0], op::NC_PARAM), -1, "missing -> default");
+
+        // NPC_PARAM reads the active npc's type param.
+        let nid = w.add_npc(7, 3224, 3223, 0).unwrap();
+        let st = run_op_npc(&mut w, nid, &[0], op::NPC_PARAM);
+        assert_eq!(*st.int_stack.last().unwrap(), 2);
     }
 
     #[test]

@@ -131,6 +131,15 @@ pub struct World {
     pub npc_info: std::collections::HashMap<i32, NpcInfo>,
     /// EnumType tables (config group 8) for ENUM / ENUM_GETOUTPUTCOUNT.
     pub enums: std::collections::HashMap<i32, EnumData>,
+    /// Param-type registry (server-side; absent from the 2007 cache): name→id
+    /// from `param.pack`, id→definition (value type + default) from `.param`
+    /// configs. Backs the `*_param` ops + `.npc` `param=` resolution.
+    pub param_ids: std::collections::HashMap<String, u32>,
+    pub param_defs: std::collections::HashMap<u32, ParamDef>,
+    /// RuneScript `^constant` tables from `Content/scripts/**/*.constant`, used
+    /// to resolve `param = name, ^const` values when loading server npc props.
+    pub constants_int: std::collections::HashMap<String, i32>,
+    pub constants_str: std::collections::HashMap<String, String>,
     /// InvType sizes (config group 5), keyed by inv id — the capacity a player
     /// inventory is created at. Backs INV_SIZE and the INV_* slot ops.
     pub inv_sizes: std::collections::HashMap<i32, i32>,
@@ -242,6 +251,33 @@ pub struct NpcInfo {
     /// ranged/magic) — server-authored (`hitpoints`/`attack`/… in `.npc`), not in
     /// the 2007 cache. Default all-1 (Engine-TS); applied to the spawned npc.
     pub base_levels: [i32; crate::entity::npc::NPC_STAT_COUNT],
+    /// Type params (Engine-TS `NpcType.params`): param id → value, from the
+    /// `param = name, value` lines. Read by NPC_PARAM / NC_PARAM.
+    pub params: std::collections::HashMap<u32, ParamValue>,
+}
+
+/// A param value carried by a config (Engine-TS `ParamMap` value): int or string.
+#[derive(Debug, Clone)]
+pub enum ParamValue {
+    Int(i32),
+    Str(String),
+}
+
+/// A param-type definition (Engine-TS `ParamType`): its value kind + default.
+#[derive(Debug, Clone)]
+pub struct ParamDef {
+    /// String-valued param (`type = string`); everything else is int-valued
+    /// (int / boolean / typed refs all live on the int stack).
+    pub is_string: bool,
+    pub default_int: i32,
+    pub default_string: Option<String>,
+}
+
+impl Default for ParamDef {
+    fn default() -> Self {
+        // Engine-TS ParamType defaults: int param, defaultInt -1, no string.
+        ParamDef { is_string: false, default_int: -1, default_string: None }
+    }
 }
 
 impl Default for NpcInfo {
@@ -261,6 +297,7 @@ impl Default for NpcInfo {
             give_chase: NPC_GIVECHASE,
             move_restrict: crate::entity::MoveRestrict::Normal,
             base_levels: [1; crate::entity::npc::NPC_STAT_COUNT],
+            params: std::collections::HashMap::new(),
         }
     }
 }
@@ -383,6 +420,10 @@ impl World {
             obj_info: std::collections::HashMap::new(),
             npc_info: std::collections::HashMap::new(),
             enums: std::collections::HashMap::new(),
+            param_ids: std::collections::HashMap::new(),
+            param_defs: std::collections::HashMap::new(),
+            constants_int: std::collections::HashMap::new(),
+            constants_str: std::collections::HashMap::new(),
             inv_sizes: std::collections::HashMap::new(),
             delayed_objs: Vec::new(),
             npc_events: Vec::new(),
@@ -513,13 +554,16 @@ impl World {
     /// Parse the server-only AI keys from one `.npc` text (id taken from the
     /// `// npc {id}` header) and overlay them onto that type's `NpcInfo`. Returns
     /// whether any recognised key was applied.
-    fn apply_npc_server_props(&mut self, text: &str) -> bool {
+    pub(crate) fn apply_npc_server_props(&mut self, text: &str) -> bool {
         let id = text
             .lines()
             .find_map(|l| l.trim().strip_prefix("// npc ").and_then(|s| s.trim().parse::<i32>().ok()));
         let Some(id) = id else { return false };
         let Some(info) = self.npc_info.get_mut(&id) else { return false };
         let mut applied = false;
+        // `param = name, value` lines, resolved after the loop (resolution reads
+        // self.param_ids/defs/constants, which can't be borrowed while `info` is).
+        let mut param_lines: Vec<(String, String)> = Vec::new();
         for line in text.lines() {
             let t = line.trim();
             if t.is_empty() || t.starts_with("//") {
@@ -594,10 +638,157 @@ impl World {
                         applied = true;
                     }
                 }
+                "param" => {
+                    if let Some((pname, pval)) = v.split_once(',') {
+                        param_lines.push((pname.trim().to_string(), pval.trim().to_string()));
+                        applied = true;
+                    }
+                }
                 _ => {}
             }
         }
+        // `info`'s borrow ends here (last used in the loop), so resolution may
+        // read the param registry + constants and re-borrow npc_info.
+        for (pname, pval) in param_lines {
+            let Some(&pid) = self.param_ids.get(&pname) else { continue };
+            let is_string = self.param_defs.get(&pid).is_some_and(|d| d.is_string);
+            if let Some(value) = self.resolve_param_value(is_string, &pval)
+                && let Some(info) = self.npc_info.get_mut(&id)
+            {
+                info.params.insert(pid, value);
+            }
+        }
         applied
+    }
+
+    /// Resolve a `.npc` param value token to a [`ParamValue`]: a `^constant`
+    /// (looked up in the loaded constant tables), a plain int, or a literal
+    /// string. `None` if an int-typed value can't be resolved.
+    fn resolve_param_value(&self, is_string: bool, raw: &str) -> Option<ParamValue> {
+        if is_string {
+            let s = raw
+                .strip_prefix('^')
+                .and_then(|c| self.constants_str.get(c).cloned())
+                .unwrap_or_else(|| raw.to_string());
+            return Some(ParamValue::Str(s));
+        }
+        let n = match raw.strip_prefix('^') {
+            Some(c) => self.constants_int.get(c).copied()?,
+            None => raw.parse::<i32>().ok()?,
+        };
+        Some(ParamValue::Int(n))
+    }
+
+    /// Load the server-side param registry + RuneScript `^constants` from the
+    /// content tree (both absent from the 2007 cache): `pack/param.pack` gives
+    /// param name→id, `scripts/**/*.param` give each param's value type +
+    /// default, `scripts/**/*.constant` give `^name = value`. Call BEFORE
+    /// [`World::load_server_npc_props`] (it resolves `param =` lines against these).
+    pub fn load_param_configs(&mut self, content_dir: &std::path::Path) {
+        let (mut constant_files, mut param_files) = (Vec::new(), Vec::new());
+        let mut stack = vec![content_dir.join("scripts")];
+        while let Some(dir) = stack.pop() {
+            let Ok(rd) = std::fs::read_dir(&dir) else { continue };
+            for e in rd.flatten() {
+                let p = e.path();
+                if p.is_dir() {
+                    stack.push(p);
+                } else {
+                    match p.extension().and_then(|x| x.to_str()) {
+                        Some("constant") => constant_files.push(p),
+                        Some("param") => param_files.push(p),
+                        _ => {}
+                    }
+                }
+            }
+        }
+        // Constants first (param defaults may reference them).
+        for p in &constant_files {
+            if let Ok(t) = std::fs::read_to_string(p) {
+                self.parse_constants(&t);
+            }
+        }
+        // param.pack — id = name (numeric-stub names skipped).
+        if let Ok(t) = std::fs::read_to_string(content_dir.join("pack").join("param.pack")) {
+            for line in t.lines() {
+                if let Some((id, name)) = line.split_once('=')
+                    && let Ok(id) = id.trim().parse::<u32>()
+                {
+                    let name = name.trim();
+                    if name.parse::<u32>().is_err() {
+                        self.param_ids.insert(name.to_string(), id);
+                    }
+                }
+            }
+        }
+        // .param defs — [name] / type= / default=.
+        for p in &param_files {
+            if let Ok(t) = std::fs::read_to_string(p) {
+                self.parse_param_defs(&t);
+            }
+        }
+    }
+
+    /// Parse one `.constant` file's `^name = value` lines into the int/string
+    /// constant tables (stored without the leading `^`).
+    fn parse_constants(&mut self, text: &str) {
+        for line in text.lines() {
+            let t = line.trim();
+            if t.is_empty() || t.starts_with("//") {
+                continue;
+            }
+            let Some((name, val)) = t.split_once('=') else { continue };
+            let name = name.trim().trim_start_matches('^').to_string();
+            let val = val.trim();
+            if let Ok(n) = val.parse::<i32>() {
+                self.constants_int.insert(name, n);
+            } else {
+                self.constants_str.insert(name, val.to_string());
+            }
+        }
+    }
+
+    /// Parse `.param` config sections (`[name]` / `type=` / `default=`) into the
+    /// param-def table, keyed by the id from `param.pack` (unmapped names skipped).
+    fn parse_param_defs(&mut self, text: &str) {
+        let mut sections: Vec<(String, Option<String>, Option<String>)> = Vec::new();
+        let mut cur: Option<(String, Option<String>, Option<String>)> = None;
+        for line in text.lines() {
+            let t = line.trim();
+            if t.is_empty() || t.starts_with("//") {
+                continue;
+            }
+            if let Some(inner) = t.strip_prefix('[').and_then(|s| s.strip_suffix(']')) {
+                if let Some(c) = cur.take() {
+                    sections.push(c);
+                }
+                cur = Some((inner.trim().to_string(), None, None));
+            } else if let Some((k, v)) = t.split_once('=')
+                && let Some(c) = cur.as_mut()
+            {
+                match k.trim() {
+                    "type" => c.1 = Some(v.trim().to_string()),
+                    "default" => c.2 = Some(v.trim().to_string()),
+                    _ => {}
+                }
+            }
+        }
+        if let Some(c) = cur.take() {
+            sections.push(c);
+        }
+        for (name, type_s, default_s) in sections {
+            let Some(&id) = self.param_ids.get(&name) else { continue };
+            let is_string = type_s.as_deref() == Some("string");
+            let mut def = ParamDef { is_string, default_int: -1, default_string: None };
+            if let Some(d) = default_s.filter(|d| d != "null") {
+                match self.resolve_param_value(is_string, &d) {
+                    Some(ParamValue::Int(n)) => def.default_int = n,
+                    Some(ParamValue::Str(s)) => def.default_string = Some(s),
+                    None => {}
+                }
+            }
+            self.param_defs.insert(id, def);
+        }
     }
 
     /// Build the world collision map from every region in the cache — terrain

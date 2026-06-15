@@ -1,0 +1,5 @@
+// Combat param types (server-side; not in the 2007 cache). Values authored on
+// npcs via `param = <name>, <value>` and read by npc_param / nc_param.
+
+[damagetype]
+type=int
