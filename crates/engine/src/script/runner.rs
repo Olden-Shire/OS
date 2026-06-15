@@ -105,13 +105,18 @@ fn active_npc<'w>(state: &ScriptState, world: &'w mut World)
         .ok_or_else(|| "active_npc slot empty".to_string())
 }
 
-/// Push an npc TYPE's param onto the right stack — Engine-TS `npc_param`/
-/// `nc_param` via `ParamHelper`. Missing value → the param's default (int -1 /
-/// string "null" when the param type itself is unknown).
-fn push_npc_param(state: &mut ScriptState, world: &World, type_id: i32, param_id: i32) {
+/// Push a config TYPE's param onto the right stack — Engine-TS `*_param` via
+/// `ParamHelper`. Missing value → the param's default (int -1 / string "null"
+/// when the param type itself is unknown). `params` is the holder's param map.
+fn push_param(
+    state: &mut ScriptState,
+    param_defs: &std::collections::HashMap<u32, crate::world::ParamDef>,
+    params: Option<&std::collections::HashMap<u32, crate::world::ParamValue>>,
+    param_id: i32,
+) {
     let pid = u32::try_from(param_id).unwrap_or(u32::MAX);
-    let def = world.param_defs.get(&pid);
-    let value = world.npc_info.get(&type_id).and_then(|i| i.params.get(&pid));
+    let def = param_defs.get(&pid);
+    let value = params.and_then(|m| m.get(&pid));
     if def.is_some_and(|d| d.is_string) {
         let s = match value {
             Some(crate::world::ParamValue::Str(s)) => s.clone(),
@@ -807,12 +812,40 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             // Param on the active npc's type (Engine-TS NPC_PARAM).
             let param_id = state.pop_int();
             let type_id = active_npc(state, world)?.type_id;
-            push_npc_param(state, world, type_id, param_id);
+            let params = world.npc_info.get(&type_id).map(|i| &i.params);
+            push_param(state, &world.param_defs, params, param_id);
         }
         op::NC_PARAM => {
             // Param on a given npc type (Engine-TS NC_PARAM).
             let [type_id, param_id] = state.pop_ints::<2>();
-            push_npc_param(state, world, type_id, param_id);
+            let params = world.npc_info.get(&type_id).map(|i| &i.params);
+            push_param(state, &world.param_defs, params, param_id);
+        }
+        op::OBJ_PARAM => {
+            // Param on the active ground-obj's type.
+            let param_id = state.pop_int();
+            let id = state.active_obj.ok_or("no active_obj")?.3;
+            let params = world.obj_info.get(&id).map(|i| &i.params);
+            push_param(state, &world.param_defs, params, param_id);
+        }
+        op::OC_PARAM => {
+            // Param on a given obj type.
+            let [type_id, param_id] = state.pop_ints::<2>();
+            let params = world.obj_info.get(&type_id).map(|i| &i.params);
+            push_param(state, &world.param_defs, params, param_id);
+        }
+        op::LOC_PARAM => {
+            // Param on the active loc's type.
+            let param_id = state.pop_int();
+            let id = state.active_loc.ok_or("no active_loc")?.3;
+            let params = world.loc_info.get(&id).map(|i| &i.params);
+            push_param(state, &world.param_defs, params, param_id);
+        }
+        op::LC_PARAM => {
+            // Param on a given loc type.
+            let [type_id, param_id] = state.pop_ints::<2>();
+            let params = world.loc_info.get(&type_id).map(|i| &i.params);
+            push_param(state, &world.param_defs, params, param_id);
         }
         op::NC_SIZE => {
             let id = state.pop_int();
@@ -3255,6 +3288,13 @@ mod tests {
         let nid = w.add_npc(7, 3224, 3223, 0).unwrap();
         let st = run_op_npc(&mut w, nid, &[0], op::NPC_PARAM);
         assert_eq!(*st.int_stack.last().unwrap(), 2);
+
+        // obj path shares push_param: OC_PARAM reads ObjInfo.params.
+        let mut obj = crate::world::ObjInfo::default();
+        obj.params.insert(0, ParamValue::Int(7));
+        w.obj_info.insert(3, obj);
+        assert_eq!(pushed(&mut w, &[3, 0], op::OC_PARAM), 7);
+        assert_eq!(pushed(&mut w, &[999, 0], op::OC_PARAM), -1, "unknown obj -> default");
     }
 
     #[test]

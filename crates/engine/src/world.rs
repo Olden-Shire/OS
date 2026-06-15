@@ -208,6 +208,10 @@ pub struct LocInfo {
     pub width: i32,
     pub length: i32,
     pub op: [Option<String>; 5],
+    /// Server-side params (Engine-TS `LocType.params`) + category — not in the
+    /// 2007 cache; loaded from `.loc` source by [`World::load_server_loc_props`].
+    pub params: std::collections::HashMap<u32, ParamValue>,
+    pub category: Option<String>,
 }
 
 /// Obj config fields the config-query ops read (OC_NAME / COST / MEMBERS /
@@ -222,6 +226,11 @@ pub struct ObjInfo {
     pub certtemplate: i32,
     pub op: [Option<String>; 5],
     pub iop: [Option<String>; 5],
+    /// Server-side params (Engine-TS `ObjType.params`) — equipment bonuses,
+    /// death_drop, … — + category. Not in the 2007 cache; loaded from `.obj`
+    /// source by [`World::load_server_obj_props`].
+    pub params: std::collections::HashMap<u32, ParamValue>,
+    pub category: Option<String>,
 }
 
 /// Npc config fields the config-query ops read (NC_NAME / SIZE / VISLEVEL / OP).
@@ -456,7 +465,7 @@ impl World {
                 );
                 self.loc_info.insert(
                     id,
-                    LocInfo { name: lt.name, width: lt.width, length: lt.length, op: lt.op },
+                    LocInfo { name: lt.name, width: lt.width, length: lt.length, op: lt.op, ..Default::default() },
                 );
             }
         }
@@ -474,6 +483,7 @@ impl World {
                         certtemplate: ot.certtemplate,
                         op: ot.op,
                         iop: ot.iop,
+                        ..Default::default()
                     },
                 );
             }
@@ -553,6 +563,101 @@ impl World {
         if applied > 0 {
             eprintln!("[engine] applied server AI config from {applied} .npc source file(s)");
         }
+    }
+
+    /// Overlay server-side obj/loc params + category from their `.obj`/`.loc`
+    /// source onto `obj_info`/`loc_info` (Engine-TS Obj/LocType.params — absent
+    /// from the 2007 cache). Call AFTER [`World::load_param_configs`] (resolution
+    /// uses the param registry + constants).
+    pub fn load_server_obj_props(&mut self, content_dir: &std::path::Path) {
+        self.load_server_config_params(content_dir, "obj");
+    }
+    pub fn load_server_loc_props(&mut self, content_dir: &std::path::Path) {
+        self.load_server_config_params(content_dir, "loc");
+    }
+
+    fn load_server_config_params(&mut self, content_dir: &std::path::Path, kind: &str) {
+        let header = format!("// {kind} ");
+        let mut stack = vec![content_dir.join("config").join(kind)];
+        let mut applied = 0u32;
+        while let Some(dir) = stack.pop() {
+            let Ok(rd) = std::fs::read_dir(&dir) else { continue };
+            for entry in rd.flatten() {
+                let p = entry.path();
+                if p.is_dir() {
+                    stack.push(p);
+                    continue;
+                }
+                if p.extension().and_then(|e| e.to_str()) != Some(kind) {
+                    continue;
+                }
+                let Ok(text) = std::fs::read_to_string(&p) else { continue };
+                let Some(id) = text
+                    .lines()
+                    .find_map(|l| l.trim().strip_prefix(&header).and_then(|s| s.trim().parse::<i32>().ok()))
+                else {
+                    continue;
+                };
+                let (params, category) = self.parse_server_params(&text);
+                if params.is_empty() && category.is_none() {
+                    continue;
+                }
+                let info = match kind {
+                    "obj" => self.obj_info.get_mut(&id).map(|i| (&mut i.params, &mut i.category)),
+                    "loc" => self.loc_info.get_mut(&id).map(|i| (&mut i.params, &mut i.category)),
+                    _ => None,
+                };
+                if let Some((p_out, c_out)) = info {
+                    if !params.is_empty() {
+                        *p_out = params;
+                    }
+                    if category.is_some() {
+                        *c_out = category;
+                    }
+                    applied += 1;
+                }
+            }
+        }
+        if applied > 0 {
+            eprintln!("[engine] applied server params to {applied} .{kind} config(s)");
+        }
+    }
+
+    /// Parse `param =`/`category` server keys from a config text into resolved
+    /// params (id→value, via the param registry + constants) + category.
+    fn parse_server_params(
+        &self,
+        text: &str,
+    ) -> (std::collections::HashMap<u32, ParamValue>, Option<String>) {
+        let mut params = std::collections::HashMap::new();
+        let mut category = None;
+        let mut param_lines: Vec<(String, String)> = Vec::new();
+        for line in text.lines() {
+            let t = line.trim();
+            if t.is_empty() || t.starts_with("//") {
+                continue;
+            }
+            let Some((k, v)) = t.split_once('=') else { continue };
+            let (k, v) = (k.trim(), v.trim());
+            match k {
+                "param" => {
+                    if let Some((pn, pv)) = v.split_once(',') {
+                        param_lines.push((pn.trim().to_string(), pv.trim().to_string()));
+                    }
+                }
+                "category" => category = Some(v.to_string()),
+                _ => {}
+            }
+        }
+        for (pname, pval) in param_lines {
+            if let Some(&pid) = self.param_ids.get(&pname) {
+                let is_string = self.param_defs.get(&pid).is_some_and(|d| d.is_string);
+                if let Some(val) = self.resolve_param_value(is_string, &pval) {
+                    params.insert(pid, val);
+                }
+            }
+        }
+        (params, category)
     }
 
     /// Parse the server-only AI keys from one `.npc` text (id taken from the
