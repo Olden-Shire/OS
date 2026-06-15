@@ -129,7 +129,10 @@ impl Default for ServerConfig {
         ServerConfig {
             addr: "0.0.0.0:43594".to_string(),
             cache_dir: "cache".to_string(),
-            script_dir: None,
+            // Where `compile_server_scripts` writes the bundle, so the headless
+            // server loads compiled scripts by default (override with --scripts).
+            // load_scripts falls back gracefully if the bundle isn't present.
+            script_dir: Some("data/pack".to_string()),
             content_dir: None,
             baseline_path: None,
             worldid: 1,

@@ -11,6 +11,23 @@ if_opensub(welcome:welcome_message_of_the_week_layer, welcome_message_of_the_wee
 
 [proc,login]
 if_opentop(if_548); //inauthentic
+// Fixed (548) gameframe tab + chat layout — each toplevel slot gets its
+// sidepanel/chat interface (mirrors the engine's old fallback UI).
+if_opensub(if_548:com_90, if_137, 1);  // chatbox
+if_opensub(if_548:com_99, if_92, 1);   // combat
+if_opensub(if_548:com_100, if_320, 1); // stats
+if_opensub(if_548:com_101, if_274, 1); // quest journal
+if_opensub(if_548:com_102, if_149, 1); // inventory
+if_opensub(if_548:com_103, if_387, 1); // worn equipment
+if_opensub(if_548:com_104, if_271, 1); // prayer
+if_opensub(if_548:com_105, if_192, 1); // magic
+if_opensub(if_548:com_106, if_589, 1); // clan chat
+if_opensub(if_548:com_107, if_550, 1); // friends
+if_opensub(if_548:com_108, if_551, 1); // ignore
+if_opensub(if_548:com_109, if_182, 1); // logout
+if_opensub(if_548:com_110, if_261, 1); // options
+if_opensub(if_548:com_111, if_464, 1); // emotes
+if_opensub(if_548:com_112, if_239, 1); // music
 
 mes("Welcome to RuneScape.");
 //cam_reset;
