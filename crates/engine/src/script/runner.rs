@@ -105,6 +105,42 @@ fn active_npc<'w>(state: &ScriptState, world: &'w mut World)
         .ok_or_else(|| "active_npc slot empty".to_string())
 }
 
+/// Approximate per-character pixel width by font id. Placeholder until the
+/// engine carries real font glyph widths — chat/dialogue (p12) averages ~7px.
+fn approx_char_width(_font_id: i32) -> i32 {
+    7
+}
+
+/// Greedy word-wrap `text` to `max_width` pixels (Engine-TS `FontType.split`);
+/// the caller paginates the lines. Honors explicit `\n`. Always returns ≥1 line.
+/// Width is approximated (see [`approx_char_width`]) so page counts match vanilla
+/// for short dialogue and degrade gracefully for long text.
+fn font_split(text: &str, max_width: i32, font_id: i32) -> Vec<String> {
+    let cw = approx_char_width(font_id).max(1);
+    let mut lines = Vec::new();
+    for raw in text.split('\n') {
+        let mut cur = String::new();
+        for word in raw.split(' ') {
+            let cand = if cur.is_empty() {
+                word.chars().count()
+            } else {
+                cur.chars().count() + 1 + word.chars().count()
+            };
+            if cur.is_empty() || (cand as i32) * cw <= max_width {
+                if !cur.is_empty() {
+                    cur.push(' ');
+                }
+                cur.push_str(word);
+            } else {
+                lines.push(std::mem::take(&mut cur));
+                cur.push_str(word);
+            }
+        }
+        lines.push(cur);
+    }
+    lines
+}
+
 /// Push a config TYPE's param onto the right stack — Engine-TS `*_param` via
 /// `ParamHelper`. Missing value → the param's default (int -1 / string "null"
 /// when the param type itself is unknown). `params` is the holder's param map.
@@ -867,6 +903,58 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         op::LOC_CATEGORY => {
             let id = state.active_loc.ok_or("no active_loc")?.3;
             state.push_int(world.loc_info.get(&id).map_or(-1, |i| i.category));
+        }
+        // ── text pagination (dialogue/message boxes) ─────────────────────────
+        op::SPLIT_INIT => {
+            let [max_width, lines_per_page, font_id] = state.pop_ints::<3>();
+            let mut text = state.pop_string();
+            // Optional `<p,mesanim>` prefix — no mesanim configs yet, so strip + -1.
+            state.split_mesanim = -1;
+            if let Some(rest) = text.strip_prefix("<p,")
+                && let Some(end) = rest.find('>')
+            {
+                text = rest[end + 1..].to_string();
+            }
+            let lines = font_split(&text, max_width, font_id);
+            let per = (lines_per_page.max(1)) as usize;
+            state.split_pages = lines.chunks(per).map(<[String]>::to_vec).collect();
+            if state.split_pages.is_empty() {
+                state.split_pages.push(vec![String::new()]);
+            }
+        }
+        op::SPLIT_GET => {
+            let [page, line] = state.pop_ints::<2>();
+            let s = state
+                .split_pages
+                .get(page as usize)
+                .and_then(|p| p.get(line as usize))
+                .cloned()
+                .unwrap_or_default();
+            state.push_string(s);
+        }
+        op::SPLIT_PAGECOUNT => {
+            state.push_int(state.split_pages.len() as i32);
+        }
+        op::SPLIT_LINECOUNT => {
+            let page = state.pop_int();
+            state.push_int(state.split_pages.get(page as usize).map_or(0, |p| p.len() as i32));
+        }
+        op::SPLIT_GETANIM => {
+            let _page = state.pop_int();
+            state.push_int(-1); // no mesanim data yet
+        }
+        op::IF_OPENCHAT => {
+            // Open an interface as the chatbox modal (Engine-TS openChatModal).
+            // 2007 has no dedicated IF_OPENCHAT opcode — attach it as a modal sub
+            // on the fixed gameframe's chat slot (548:com_90). The exact attach
+            // point is TBD vs the client; refine when testing dialogue rendering.
+            const CHAT_SLOT: i32 = (548 << 16) | 90;
+            let component = state.pop_int();
+            if let Some(pid) = state.active_player
+                && let Some(p) = world.players[pid].as_mut()
+            {
+                p.write(msg::if_opensub(CHAT_SLOT, component, 0));
+            }
         }
         op::NC_SIZE => {
             let id = state.pop_int();
@@ -3324,6 +3412,66 @@ mod tests {
         assert_eq!(w.npc_info[&9].category, 151);
         assert_eq!(pushed(&mut w, &[9], op::NC_CATEGORY), 151);
         assert_eq!(pushed(&mut w, &[9999], op::NC_CATEGORY), -1, "unknown -> -1");
+    }
+
+    #[test]
+    fn font_split_wraps_and_honors_newlines() {
+        // cw=7: "aaaa"=28 fits in 30, "aaaa bbbb"=63 doesn't -> one word per line.
+        assert_eq!(super::font_split("aaaa bbbb cccc", 30, 1), vec!["aaaa", "bbbb", "cccc"]);
+        // Wide enough to keep on one line.
+        assert_eq!(super::font_split("aa bb", 100, 1), vec!["aa bb"]);
+        // Explicit newline forces a break regardless of width.
+        assert_eq!(super::font_split("a\nb", 100, 1), vec!["a", "b"]);
+        // Empty text -> a single empty line (never zero).
+        assert_eq!(super::font_split("", 100, 1), vec![String::new()]);
+    }
+
+    #[test]
+    fn split_init_paginates_text() {
+        let mut w = World::new();
+        // 6 single-char words, width 6 (one word/line at cw=7 since 1 char=7>6 but
+        // cur-empty always accepts), 4 lines/page -> pages [a b c d][e f].
+        let mut state = ScriptState::new(Arc::new(op_script(&[6, 4, 1], op::SPLIT_INIT)), &[]);
+        state.string_stack.push("a b c d e f".to_string());
+        assert_eq!(execute(&mut state, &mut w), Execution::Finished);
+        assert_eq!(state.split_pages.len(), 2);
+        assert_eq!(state.split_pages[0], ["a", "b", "c", "d"]);
+        assert_eq!(state.split_pages[1], ["e", "f"]);
+        // `<p,mesanim>` prefix is stripped (no mesanim configs -> -1).
+        let mut s2 = ScriptState::new(Arc::new(op_script(&[400, 4, 1], op::SPLIT_INIT)), &[]);
+        s2.string_stack.push("<p,nod>hello there".to_string());
+        execute(&mut s2, &mut w);
+        assert_eq!(s2.split_mesanim, -1);
+        assert_eq!(s2.split_pages[0][0], "hello there");
+    }
+
+    #[test]
+    fn split_read_ops() {
+        let mut w = World::new();
+        let pages = vec![
+            vec!["a".to_string(), "b".to_string()],
+            vec!["c".to_string()],
+        ];
+        // SPLIT_PAGECOUNT -> 2
+        let mut s = ScriptState::new(Arc::new(op_script(&[], op::SPLIT_PAGECOUNT)), &[]);
+        s.split_pages = pages.clone();
+        execute(&mut s, &mut w);
+        assert_eq!(*s.int_stack.last().unwrap(), 2);
+        // SPLIT_LINECOUNT(0) -> 2
+        let mut s = ScriptState::new(Arc::new(op_script(&[0], op::SPLIT_LINECOUNT)), &[]);
+        s.split_pages = pages.clone();
+        execute(&mut s, &mut w);
+        assert_eq!(*s.int_stack.last().unwrap(), 2);
+        // SPLIT_GET(1,0) -> "c"
+        let mut s = ScriptState::new(Arc::new(op_script(&[1, 0], op::SPLIT_GET)), &[]);
+        s.split_pages = pages.clone();
+        execute(&mut s, &mut w);
+        assert_eq!(s.string_stack.last().unwrap(), "c");
+        // out-of-bounds GET -> "" (no panic)
+        let mut s = ScriptState::new(Arc::new(op_script(&[9, 9], op::SPLIT_GET)), &[]);
+        s.split_pages = pages;
+        execute(&mut s, &mut w);
+        assert_eq!(s.string_stack.last().unwrap(), "");
     }
 
     #[test]

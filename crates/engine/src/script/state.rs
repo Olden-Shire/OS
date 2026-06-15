@@ -74,6 +74,12 @@ pub struct ScriptState {
     pub int_locals: Vec<i32>,
     pub string_locals: Vec<String>,
 
+    /// Paginated text from SPLIT_INIT (Engine-TS `splitPages`): pages of lines,
+    /// read back by SPLIT_GET/PAGECOUNT/LINECOUNT. Drives multi-page dialogue.
+    pub split_pages: Vec<Vec<String>>,
+    /// Mesanim id parsed from a `<p,name>` text prefix (-1 = none).
+    pub split_mesanim: i32,
+
     pointers: u32,
 
     // Active entity handles (slot indices into World).
@@ -144,6 +150,8 @@ impl ScriptState {
             string_stack: Vec::new(),
             int_locals,
             string_locals,
+            split_pages: Vec::new(),
+            split_mesanim: -1,
             pointers: 0,
             active_player: None,
             active_player2: None,
