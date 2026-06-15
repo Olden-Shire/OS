@@ -149,11 +149,16 @@ struct PanelState {
     map_bake_done: usize,
     map_bake_total: usize,
     map_bake_ready: bool,
-    /// Cache pack/verify progress (groups done / total) for the splash bars.
+    /// Content-hash / cache pack / verify progress for the splash step bars.
+    hash_done: usize,
+    hash_total: usize,
     pack_done: usize,
     pack_total: usize,
     verify_done: usize,
     verify_total: usize,
+    /// Ordered, de-duped boot-step keys for the splash feed (newest last); only
+    /// steps that actually ran appear (a cache hit never adds pack/verify).
+    boot_feed: Vec<String>,
     /// Set if the server script bundle failed to compile — startup halts and the
     /// splash shows this instead of hanging.
     script_error: Option<String>,
@@ -185,10 +190,13 @@ impl PanelState {
             map_bake_done: 0,
             map_bake_total: 0,
             map_bake_ready: false,
+            hash_done: 0,
+            hash_total: 0,
             pack_done: 0,
             pack_total: 0,
             verify_done: 0,
             verify_total: 0,
+            boot_feed: Vec::new(),
             script_error: None,
             boot_error: None,
         }
@@ -212,32 +220,27 @@ fn main() -> eframe::Result<()> {
             script_dir: Some("data/pack".to_string()),
             progress: Some(Box::new(move |stage: &str| {
                 let mut s = progress_state.lock().unwrap();
-                // "packing/verifying cache D/T" carry counts -> drive the bars.
+                // "<step> D/T" lines carry counts -> drive that step's bar.
+                if let Some(rest) = stage.strip_prefix("checking content ") {
+                    if let Some((d, t)) = parse_pair(rest) { s.hash_done = d; s.hash_total = t; }
+                    set_stage(&mut s, "checking content");
+                    return;
+                }
                 if let Some(rest) = stage.strip_prefix("packing cache ") {
-                    if let Some((d, t)) = rest.split_once('/') {
-                        if let (Ok(d), Ok(t)) = (d.parse(), t.parse()) {
-                            s.pack_done = d;
-                            s.pack_total = t;
-                        }
-                    }
-                    s.stage = "packing cache".to_string();
+                    if let Some((d, t)) = parse_pair(rest) { s.pack_done = d; s.pack_total = t; }
+                    set_stage(&mut s, "packing cache");
                     return;
                 }
                 if let Some(rest) = stage.strip_prefix("verifying cache ") {
-                    if let Some((d, t)) = rest.split_once('/') {
-                        if let (Ok(d), Ok(t)) = (d.parse(), t.parse()) {
-                            s.verify_done = d;
-                            s.verify_total = t;
-                        }
-                    }
-                    s.stage = "verifying cache".to_string();
+                    if let Some((d, t)) = parse_pair(rest) { s.verify_done = d; s.verify_total = t; }
+                    set_stage(&mut s, "verifying cache");
                     return;
                 }
                 if let Some(msg) = stage.strip_prefix("scripts error: ") {
                     s.script_error = Some(msg.to_string());
                     return;
                 }
-                s.stage = stage.to_string();
+                set_stage(&mut s, stage);
                 if stage == "listening" {
                     s.started = true;
                     s.started_at = Some(Instant::now());
@@ -398,6 +401,9 @@ fn main() -> eframe::Result<()> {
                 last_title: String::new(),
                 msg_text: String::new(),
                 scroll_sel: Selection::None,
+                last_screen: egui::Vec2::ZERO,
+                reanchor: false,
+                maximized_once: false,
             }))
         }),
     )
@@ -517,6 +523,13 @@ struct PanelApp {
     /// Last selection we auto-scrolled the side lists to (so we scroll on change
     /// — e.g. selecting via the map — without fighting manual scrolling).
     scroll_sel: Selection,
+    /// Viewport size last frame; when it changes the bubbles snap back to their
+    /// default corner positions (movable, but re-anchor on window resize).
+    last_screen: egui::Vec2,
+    reanchor: bool,
+    /// Maximize once after creation (doing it in ViewportBuilder leaves the
+    /// window frameless/janky on Windows until toggled).
+    maximized_once: bool,
 }
 
 /// A consistent copy of the shared state, taken under the lock once per frame so
@@ -536,12 +549,14 @@ struct View {
 
 impl eframe::App for PanelApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        // Live UI: repaint faster when the 3D scene is on (so it animates),
-        // otherwise a few times a second to track the snapshot.
-        let repaint_ms = if self.scene.enabled { 16 }
-            else if !matches!(self.selected, Selection::None) { 33 }
-            else { 120 };
-        ctx.request_repaint_after(Duration::from_millis(repaint_ms));
+        // Maximize once after the window exists — doing it in the ViewportBuilder
+        // leaves the window frameless/janky on Windows until toggled.
+        if !self.maximized_once {
+            self.maximized_once = true;
+            ctx.send_viewport_cmd(egui::ViewportCommand::Maximized(true));
+        }
+        // The scene is always rendering, so keep a smooth repaint cadence.
+        ctx.request_repaint_after(Duration::from_millis(16));
         {
             let state = self.state.lock().unwrap();
             // Hold on the splash until the server is listening AND the
@@ -569,10 +584,21 @@ impl eframe::App for PanelApp {
                 tiles: s.tiles.clone(),
             }
         };
-        self.left_panel(ctx, &view);
-        self.right_map(ctx, &view);
-        self.console_panel(ctx, &view);
+        // A viewport resize re-anchors the bubbles to their default corners
+        // (they're freely movable otherwise).
+        let screen = ctx.screen_rect().size();
+        self.reanchor = (screen - self.last_screen).length() > 0.5;
+        self.last_screen = screen;
+
+        // The 3D scene fills the whole window; every panel floats over it as a
+        // movable "bubble" so the world is always the backdrop.
         self.central_scene(ctx, &view);
+        self.scene_controls_window(ctx);
+        self.server_info_window(ctx, &view);
+        self.world_map_window(ctx, &view);
+        self.perf_window(ctx, &view);
+        self.entities_window(ctx, &view);
+        self.console_window(ctx, &view);
 
         // Live window title: at-a-glance population + tick.
         let title = format!(
@@ -594,9 +620,32 @@ impl PanelApp {
         push_event(&mut s.events, tick, msg.into());
     }
 
-    /// Bottom panel: tabbed Activity / world-Chat log + a broadcast composer.
-    fn console_panel(&mut self, ctx: &egui::Context, view: &View) {
-        egui::TopBottomPanel::bottom("console").resizable(true).default_height(170.0).show(ctx, |ui| {
+    /// Build a movable bubble window: dropped at its default corner, re-snapped
+    /// to that corner on a viewport resize, with the translucent bubble frame.
+    fn bubble<'a>(&self, ctx: &egui::Context, title: &'a str, ax: egui::Align, ay: egui::Align, w: f32, h: f32) -> egui::Window<'a> {
+        let pos = corner(ctx, ax, ay, w, h);
+        let mut win = egui::Window::new(title)
+            .default_pos(pos)
+            .collapsible(true)
+            .frame(bubble_frame(ctx));
+        if self.reanchor {
+            win = win.current_pos(pos);
+        }
+        win
+    }
+
+    /// Bottom-middle bubble: tabbed Activity / world-Chat log + broadcast composer.
+    fn console_window(&mut self, ctx: &egui::Context, view: &View) {
+        // A true bottom-centre anchor (like the top scene-control bar) — egui
+        // self-measures the width/height and re-pins on every viewport resize,
+        // which the manual default_pos/current_pos maths failed to do reliably.
+        egui::Window::new("💬 Chat / Broadcast")
+            .anchor(egui::Align2::CENTER_BOTTOM, [0.0, -8.0])
+            .collapsible(true)
+            .frame(bubble_frame(ctx))
+            .default_width(460.0)
+            .resizable(true)
+            .show(ctx, |ui| {
             ui.add_space(2.0);
             ui.horizontal(|ui| {
                 ui.selectable_value(&mut self.console_tab, ConsoleTab::Activity,
@@ -650,13 +699,22 @@ impl PanelApp {
         });
     }
 
-    /// Left column: stats, scene toggle, stacked frame-time graph, players
-    /// graph, and the selected-entity inspector.
-    fn left_panel(&mut self, ctx: &egui::Context, view: &View) {
+    /// Top-left bubble: title, pause/step controls, and live server stats.
+    fn server_info_window(&mut self, ctx: &egui::Context, view: &View) {
         let snap = &view.snap;
-        egui::SidePanel::left("left_col").exact_width(300.0).show(ctx, |ui| {
-            egui::ScrollArea::vertical().show(ui, |ui| {
-                ui.add_space(6.0);
+        // Nudged down 10px from the top-left corner.
+        let mut pos = corner(ctx, egui::Align::Min, egui::Align::Min, 248.0, 160.0);
+        pos.y += 10.0;
+        let mut win = egui::Window::new("Server")
+            .default_pos(pos)
+            .default_width(248.0)
+            .resizable(false)
+            .collapsible(true)
+            .frame(bubble_frame(ctx));
+        if self.reanchor {
+            win = win.current_pos(pos);
+        }
+        win.show(ctx, |ui| {
                 ui.horizontal(|ui| {
                     ui.heading("OS");
                     ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
@@ -678,21 +736,22 @@ impl PanelApp {
                         }
                     });
                 });
-                ui.label(egui::RichText::new("Server Control Panel").weak());
                 ui.separator();
-
                 kv(ui, "Uptime", &fmt_uptime(view.uptime));
                 kv(ui, "Tick", &snap.tick.to_string());
                 kv(ui, "Players", &format!("{}  (peak {})", snap.players.len(), view.peak));
                 kv(ui, "NPCs", &snap.npcs.len().to_string());
                 kv(ui, "Connections", &format!("{}  ({} js5)", snap.connections, snap.js5));
+            });
+    }
 
-                ui.add_space(6.0);
-                ui.checkbox(&mut self.scene.enabled, "3D scene view (selected player)");
-
-                ui.add_space(8.0);
-                ui.separator();
-                // Stacked server-tick time-accounting graph (client-overlay style).
+    /// Bottom-left bubble: server-tick time graph, players-over-time, analytics.
+    fn perf_window(&mut self, ctx: &egui::Context, view: &View) {
+        let snap = &view.snap;
+        self.bubble(ctx, "Performance", egui::Align::Min, egui::Align::Max, 340.0, 240.0)
+            .default_width(340.0)
+            .resizable(true)
+            .show(ctx, |ui| {
                 let total = snap.total_ms();
                 let free = (600.0 - total).max(0.0);
                 ui.horizontal(|ui| {
@@ -700,22 +759,14 @@ impl PanelApp {
                     ui.label(egui::RichText::new(format!("{total:.2} ms")).color(budget_color(total)));
                     ui.label(egui::RichText::new(format!("· {free:.0} of 600 free")).weak());
                 });
-                perf_graph(ui, &view.perf_hist, 120.0);
-
-                ui.add_space(8.0);
+                perf_graph(ui, &view.perf_hist, 100.0);
+                ui.add_space(6.0);
                 ui.label(egui::RichText::new("Players over time").strong());
                 graph(ui, "players_g", &view.player_hist, 5.0);
-
-                ui.add_space(8.0);
-                egui::CollapsingHeader::new("Analytics").default_open(true).show(ui, |ui| {
+                egui::CollapsingHeader::new("Analytics").default_open(false).show(ui, |ui| {
                     analytics(ui, view);
                 });
-
-                ui.add_space(8.0);
-                ui.separator();
-                self.inspector(ui, view);
             });
-        });
     }
 
     /// The selected-entity inspector (player: portrait/teleport/kick/message;
@@ -727,9 +778,9 @@ impl PanelApp {
                 ui.label(egui::RichText::new("SELECTED NPC").weak().size(11.0));
                 if let Some(n) = snap.npcs.iter().find(|n| n.nid == nid) {
                     let (tid, level, x, z, moving) = (n.type_id, n.level, n.x, n.z, n.moving);
-                    if let Some(px) = self.scene.npc_portrait(tid, 120, 160) {
-                        let tex = pix_bridge::upload_rgb(ui.ctx(), "npc_portrait", &px, 120, 160);
-                        ui.vertical_centered(|ui| ui.image((tex.id(), egui::vec2(120.0, 160.0))));
+                    if let Some(px) = self.scene.npc_portrait(tid, 150, 200) {
+                        let tex = pix_bridge::upload_rgb(ui.ctx(), "npc_portrait", &px, 150, 200);
+                        ui.vertical_centered(|ui| ui.image((tex.id(), egui::vec2(150.0, 200.0))));
                     }
                     let info = npc_info(tid);
                     if let Some((name, combat, size, ops)) = info {
@@ -758,9 +809,9 @@ impl PanelApp {
                         }
                     }
                     let anim = if p.ready_anim >= 0 { p.ready_anim } else { 808 };
-                    if let Some(px) = self.scene.portrait(worn, p.colours, p.gender == 1, anim, 120, 160) {
-                        let tex = pix_bridge::upload_rgb(ui.ctx(), "portrait", &px, 120, 160);
-                        ui.vertical_centered(|ui| ui.image((tex.id(), egui::vec2(120.0, 160.0))));
+                    if let Some(px) = self.scene.portrait(worn, p.colours, p.gender == 1, anim, 150, 200) {
+                        let tex = pix_bridge::upload_rgb(ui.ctx(), "portrait", &px, 150, 200);
+                        ui.vertical_centered(|ui| ui.image((tex.id(), egui::vec2(150.0, 200.0))));
                     }
                     kv(ui, "Name", &p.name);
                     kv(ui, "pid", &p.pid.to_string());
@@ -860,7 +911,7 @@ impl PanelApp {
             None => None,
         };
 
-        let side = ui.available_width().min(360.0);
+        let side = ui.available_width();
         let (rect, resp) = ui.allocate_exact_size(egui::vec2(side, side), egui::Sense::click());
         let painter = ui.painter_at(rect);
         painter.rect_filled(rect, 2.0, egui::Color32::from_rgb(18, 20, 26));
@@ -1003,7 +1054,9 @@ impl PanelApp {
         }
 
         let (ox, oz, ex, ez) = map.bounds();
-        let avail = egui::vec2(ui.available_width(), 380.0);
+        // Square viewport (matches the region map).
+        let side = ui.available_width();
+        let avail = egui::vec2(side, side);
         let fit_zoom = (avail.x / map.w as f32).min(avail.y / map.h as f32);
 
         // Region-level zoom ≈ 1.5 regions tall — the default "zoomed into the
@@ -1268,158 +1321,144 @@ impl PanelApp {
         }
     }
 
-    fn right_map(&mut self, ctx: &egui::Context, view: &View) {
-        let snap = &view.snap;
-        let selected = self.selected;
-        egui::SidePanel::right("world_map").resizable(true).default_width(360.0)
-            .width_range(260.0..=620.0).show(ctx, |ui| {
-            ui.horizontal(|ui| {
-                ui.label(egui::RichText::new("World map").strong());
+    /// Top-right bubble: the top-down world / region map.
+    fn world_map_window(&mut self, ctx: &egui::Context, view: &View) {
+        self.bubble(ctx, "World map", egui::Align::Max, egui::Align::Min, 340.0, 380.0)
+            .default_width(340.0)
+            .resizable(true)
+            .show(ctx, |ui| {
                 ui.checkbox(&mut self.map_whole_world, "whole world");
-            });
-            let clicked: Option<Selection> = if self.map_whole_world {
-                self.world_map_canvas(ui, view)
-            } else {
-                self.region_map_canvas(ui, view)
-            };
-            let _ = selected;
-            if let Some(sel) = clicked {
-                self.selected = sel;
-            }
-
-            ui.separator();
-            ui.add(egui::TextEdit::singleline(&mut self.filter).desired_width(f32::INFINITY).hint_text("filter by name / id…"));
-            let f = self.filter.trim().to_lowercase();
-            let pmatch = |p: &PlayerRow| f.is_empty() || p.name.to_lowercase().contains(&f) || p.pid.to_string().contains(&f);
-            let nmatch = |n: &NpcRow| f.is_empty() || n.nid.to_string().contains(&f) || n.type_id.to_string().contains(&f);
-            let np = snap.players.iter().filter(|p| pmatch(p)).count();
-            let nn = snap.npcs.iter().filter(|n| nmatch(n)).count();
-
-            // Scroll the lists to the selection when it changed (e.g. picked on
-            // the map / in 3D), without fighting manual scrolling.
-            let scroll_to = self.scroll_sel != self.selected;
-            ui.label(egui::RichText::new(format!("Players ({np})")).strong());
-            egui::ScrollArea::vertical().id_salt("players").max_height(180.0).show(ui, |ui| {
-                for p in snap.players.iter().filter(|p| pmatch(p)) {
-                    let text = format!("{}  {}  ({}, {})", p.pid, p.name, p.x, p.z);
-                    let sel = self.selected == Selection::Player(p.pid);
-                    let r = ui.selectable_label(sel, text);
-                    if r.clicked() {
-                        self.selected = Selection::Player(p.pid);
-                    }
-                    if sel && scroll_to {
-                        r.scroll_to_me(Some(egui::Align::Center));
-                    }
+                let clicked: Option<Selection> = if self.map_whole_world {
+                    self.world_map_canvas(ui, view)
+                } else {
+                    self.region_map_canvas(ui, view)
+                };
+                if let Some(sel) = clicked {
+                    self.selected = sel;
                 }
             });
-            ui.label(egui::RichText::new(format!("NPCs ({nn})")).strong());
-            egui::ScrollArea::vertical().id_salt("npcs").show(ui, |ui| {
-                for n in snap.npcs.iter().filter(|n| nmatch(n)) {
-                    let text = format!("{}  type {}  ({}, {})", n.nid, n.type_id, n.x, n.z);
-                    let sel = self.selected == Selection::Npc(n.nid);
-                    let r = ui.selectable_label(sel, text);
-                    if r.clicked() {
-                        self.selected = Selection::Npc(n.nid);
-                    }
-                    if sel && scroll_to {
-                        r.scroll_to_me(Some(egui::Align::Center));
-                    }
-                }
-            });
-            self.scroll_sel = self.selected;
-        });
     }
 
-    /// Centre: the 3D admin scene of the selected player's region.
+    /// Bottom-right bubble: browseable player + npc lists on the left, the
+    /// selected entity's inspector on the right (one merged "Entities" panel).
+    fn entities_window(&mut self, ctx: &egui::Context, view: &View) {
+        let snap = &view.snap;
+        self.bubble(ctx, "Entities", egui::Align::Max, egui::Align::Max, 560.0, 470.0)
+            .default_width(560.0)
+            .resizable(true)
+            .show(ctx, |ui| {
+                ui.add(egui::TextEdit::singleline(&mut self.filter)
+                    .desired_width(f32::INFINITY)
+                    .hint_text("filter players / npcs by name or id…"));
+                ui.add_space(4.0);
+                let f = self.filter.trim().to_lowercase();
+                let pmatch = |p: &PlayerRow| f.is_empty() || p.name.to_lowercase().contains(&f) || p.pid.to_string().contains(&f);
+                let nmatch = |n: &NpcRow| f.is_empty() || n.nid.to_string().contains(&f) || n.type_id.to_string().contains(&f);
+                let np = snap.players.iter().filter(|p| pmatch(p)).count();
+                let nn = snap.npcs.iter().filter(|n| nmatch(n)).count();
+                // Scroll the lists to the selection when it changed (e.g. picked
+                // on the map / in 3D), without fighting manual scrolling.
+                let scroll_to = self.scroll_sel != self.selected;
+
+                ui.columns(2, |cols| {
+                    // Left column: the browseable lists.
+                    let ui = &mut cols[0];
+                    ui.label(egui::RichText::new(format!("Players ({np})")).strong());
+                    egui::ScrollArea::vertical().id_salt("players").auto_shrink([false, false])
+                        .max_height(180.0).show(ui, |ui| {
+                        for p in snap.players.iter().filter(|p| pmatch(p)) {
+                            let sel = self.selected == Selection::Player(p.pid);
+                            let r = ui.selectable_label(sel, format!("{}  {}  ({}, {})", p.pid, p.name, p.x, p.z));
+                            if r.clicked() { self.selected = Selection::Player(p.pid); }
+                            if sel && scroll_to { r.scroll_to_me(Some(egui::Align::Center)); }
+                        }
+                    });
+                    ui.add_space(4.0);
+                    ui.label(egui::RichText::new(format!("NPCs ({nn})")).strong());
+                    egui::ScrollArea::vertical().id_salt("npcs").auto_shrink([false, false])
+                        .max_height(180.0).show(ui, |ui| {
+                        for n in snap.npcs.iter().filter(|n| nmatch(n)) {
+                            let sel = self.selected == Selection::Npc(n.nid);
+                            let r = ui.selectable_label(sel, format!("{}  type {}  ({}, {})", n.nid, n.type_id, n.x, n.z));
+                            if r.clicked() { self.selected = Selection::Npc(n.nid); }
+                            if sel && scroll_to { r.scroll_to_me(Some(egui::Align::Center)); }
+                        }
+                    });
+
+                    // Right column: the selected-entity inspector.
+                    let ui = &mut cols[1];
+                    egui::ScrollArea::vertical().id_salt("inspector").auto_shrink([false, false]).show(ui, |ui| {
+                        self.inspector(ui, view);
+                    });
+                });
+                self.scroll_sel = self.selected;
+            });
+    }
+
+    /// The 3D admin scene — fills the whole window as the backdrop. It follows
+    /// the selected entity, else the first online player, else a default region,
+    /// so there is always a world to look at.
     fn central_scene(&mut self, ctx: &egui::Context, view: &View) {
         let snap = &view.snap;
-        let selected = self.selected;
-        egui::CentralPanel::default().show(ctx, |ui| {
-            if !self.scene.enabled {
-                ui.centered_and_justified(|ui| {
-                    ui.label(egui::RichText::new("Enable “3D scene view” to render the world.").weak());
-                });
-                return;
-            }
-            // The scene follows whichever entity is selected — player OR npc.
-            let focus = match selected {
-                Selection::Player(pid) => snap.players.iter().find(|p| p.pid == pid).map(|p| (p.x, p.z, p.level, p.name.clone())),
-                Selection::Npc(nid) => snap.npcs.iter().find(|n| n.nid == nid).map(|n| (n.x, n.z, n.level, format!("npc {}", n.type_id))),
-                Selection::None => None,
-            };
-            let Some((fx, fz, flevel, fname)) = focus else {
-                ui.centered_and_justified(|ui| {
-                    ui.label(egui::RichText::new("Select a player or NPC to view its region in 3D.").weak());
-                });
-                return;
-            };
-            ui.horizontal(|ui| {
-                if ui.button("⟲ Reset view").clicked() {
-                    self.scene.reset_camera();
-                }
-                ui.separator();
-                ui.label("Plane:");
-                if ui.selectable_label(self.scene_view_level.is_none(), "auto").clicked() {
-                    self.scene_view_level = None;
-                }
-                for l in 0..=3 {
-                    if ui.selectable_label(self.scene_view_level == Some(l), l.to_string()).clicked() {
-                        self.scene_view_level = Some(l);
+        let (fx, fz, flevel) = match self.selected {
+            Selection::Player(pid) => snap.players.iter().find(|p| p.pid == pid).map(|p| (p.x, p.z, p.level)),
+            Selection::Npc(nid) => snap.npcs.iter().find(|n| n.nid == nid).map(|n| (n.x, n.z, n.level)),
+            Selection::None => None,
+        }
+        .or_else(|| snap.players.first().map(|p| (p.x, p.z, p.level)))
+        .unwrap_or((3222, 3222, 0));
+        let level = self.scene_view_level.unwrap_or(flevel);
+
+        // Overlay every entity in the focused region (players modelled + named,
+        // npcs as dots); `picks[i]` parallels `markers[i]` so a click selects it.
+        let region = (fx >> 6, fz >> 6);
+        let mut markers = Vec::new();
+        let mut picks: Vec<Selection> = Vec::new();
+        for pl in &snap.players {
+            if (pl.x >> 6, pl.z >> 6) == region {
+                let sel = self.selected == Selection::Player(pl.pid);
+                // 7 idk body parts -> the 12-slot worn appearance.
+                let mut worn = [0i32; 12];
+                for part in 0..7 {
+                    if pl.body[part] >= 0 {
+                        worn[client::dash3d::player_model::BASE_PART_MAP[part]] = 256 + pl.body[part];
                     }
                 }
-            });
-            let level = self.scene_view_level.unwrap_or(flevel);
-            ui.label(egui::RichText::new(format!(
-                "3D scene · {} · coord {} : {}, {} · region {},{} · drag = orbit, scroll = zoom",
-                fname, level, fx, fz, fx >> 6, fz >> 6
-            )).strong());
-            // Overlay every entity in this region (players named, npcs dots);
-            // `picks` parallels `markers` so a click in 3D selects the entity.
-            let region = (fx >> 6, fz >> 6);
-            let mut markers = Vec::new();
-            let mut picks: Vec<Selection> = Vec::new();
-            for pl in &snap.players {
-                if (pl.x >> 6, pl.z >> 6) == region {
-                    let sel = self.selected == Selection::Player(pl.pid);
-                    // 7 idk body parts -> the 12-slot worn appearance.
-                    let mut worn = [0i32; 12];
-                    for part in 0..7 {
-                        if pl.body[part] >= 0 {
-                            worn[client::dash3d::player_model::BASE_PART_MAP[part]] = 256 + pl.body[part];
-                        }
-                    }
-                    markers.push(scene::Marker {
-                        id: pl.pid as i32,
-                        x: pl.x,
-                        z: pl.z,
-                        color: if sel { egui::Color32::YELLOW } else { egui::Color32::LIGHT_GREEN },
-                        label: Some(pl.name.clone()),
-                        kind: scene::MarkerKind::Player {
-                            worn,
-                            colours: pl.colours,
-                            female: pl.gender == 1,
-                            ready_anim: pl.ready_anim,
-                            walk_anim: pl.walk_anim,
-                            moving: pl.moving,
-                        },
-                    });
-                    picks.push(Selection::Player(pl.pid));
-                }
+                markers.push(scene::Marker {
+                    id: pl.pid as i32,
+                    x: pl.x,
+                    z: pl.z,
+                    color: if sel { egui::Color32::YELLOW } else { egui::Color32::LIGHT_GREEN },
+                    label: Some(pl.name.clone()),
+                    kind: scene::MarkerKind::Player {
+                        worn,
+                        colours: pl.colours,
+                        female: pl.gender == 1,
+                        ready_anim: pl.ready_anim,
+                        walk_anim: pl.walk_anim,
+                        moving: pl.moving,
+                    },
+                });
+                picks.push(Selection::Player(pl.pid));
             }
-            for n in &snap.npcs {
-                if (n.x >> 6, n.z >> 6) == region {
-                    let sel = self.selected == Selection::Npc(n.nid);
-                    markers.push(scene::Marker {
-                        id: 0x4000_0000 | n.nid as i32, // namespace npc ids off player pids
-                        x: n.x,
-                        z: n.z,
-                        color: if sel { egui::Color32::YELLOW } else { egui::Color32::from_rgb(90, 150, 230) },
-                        label: None,
-                        kind: scene::MarkerKind::Npc { type_id: n.type_id, moving: n.moving },
-                    });
-                    picks.push(Selection::Npc(n.nid));
-                }
+        }
+        for n in &snap.npcs {
+            if (n.x >> 6, n.z >> 6) == region {
+                let sel = self.selected == Selection::Npc(n.nid);
+                markers.push(scene::Marker {
+                    id: 0x4000_0000 | n.nid as i32, // namespace npc ids off player pids
+                    x: n.x,
+                    z: n.z,
+                    color: if sel { egui::Color32::YELLOW } else { egui::Color32::from_rgb(90, 150, 230) },
+                    label: None,
+                    kind: scene::MarkerKind::Npc { type_id: n.type_id, moving: n.moving },
+                });
+                picks.push(Selection::Npc(n.nid));
             }
+        }
+
+        // No panel margin so the scene fills the window edge-to-edge.
+        egui::CentralPanel::default().frame(egui::Frame::NONE).show(ctx, |ui| {
             if let Some(i) = self.scene.show(ui, fx, fz, level, snap.tick, &markers) {
                 if let Some(sel) = picks.get(i) {
                     self.selected = *sel;
@@ -1427,6 +1466,61 @@ impl PanelApp {
             }
         });
     }
+
+    /// Thin top-centre bubble: scene camera reset + view-plane picker.
+    fn scene_controls_window(&mut self, ctx: &egui::Context) {
+        egui::Window::new("scene_controls")
+            .title_bar(false)
+            .anchor(egui::Align2::CENTER_TOP, [0.0, 8.0])
+            .resizable(false)
+            .frame(bubble_frame(ctx))
+            .show(ctx, |ui| {
+                ui.horizontal(|ui| {
+                    if ui.button("⟲ Reset view").clicked() {
+                        self.scene.reset_camera();
+                    }
+                    ui.separator();
+                    ui.label("Plane:");
+                    if ui.selectable_label(self.scene_view_level.is_none(), "auto").clicked() {
+                        self.scene_view_level = None;
+                    }
+                    for l in 0..=3 {
+                        if ui.selectable_label(self.scene_view_level == Some(l), l.to_string()).clicked() {
+                            self.scene_view_level = Some(l);
+                        }
+                    }
+                    ui.separator();
+                    ui.label(egui::RichText::new("drag = orbit · scroll = zoom").weak().size(11.0));
+                });
+            });
+    }
+
+}
+
+/// Translucent rounded frame for the floating control-panel bubbles.
+fn bubble_frame(ctx: &egui::Context) -> egui::Frame {
+    egui::Frame::window(&ctx.style())
+        .fill(egui::Color32::from_rgba_unmultiplied(18, 20, 26, 232))
+}
+
+/// Initial top-left position to drop a movable bubble of size (w,h) into a
+/// screen corner. egui honours this only on the window's FIRST appearance —
+/// after that the user's dragged position sticks (bubbles are freely movable
+/// because they're no longer `.anchor()`ed).
+fn corner(ctx: &egui::Context, ax: egui::Align, ay: egui::Align, w: f32, h: f32) -> egui::Pos2 {
+    let r = ctx.screen_rect();
+    let m = 8.0;
+    let x = match ax {
+        egui::Align::Min => r.left() + m,
+        egui::Align::Center => r.center().x - w / 2.0,
+        egui::Align::Max => r.right() - w - m,
+    };
+    let y = match ay {
+        egui::Align::Min => r.top() + m,
+        egui::Align::Center => r.center().y - h / 2.0,
+        egui::Align::Max => r.bottom() - h - m,
+    };
+    egui::pos2(x, y)
 }
 
 /// Colour a tick-ms value by the 600ms budget.
@@ -1519,32 +1613,60 @@ fn perf_graph(ui: &mut egui::Ui, hist: &VecDeque<PerfSample>, height: f32) {
     });
 }
 
-/// Ordered boot stages emitted by the server (server::run `stage!` calls),
-/// with display labels — drives the splash progress bar + checklist.
-const BOOT_STAGES: [(&str, &str); 6] = [
-    ("packing cache", "Packing Content -> cache"),
-    ("verifying cache", "Verifying cache CRCs vs vanilla"),
-    ("compiling scripts", "Compiling server scripts"),
-    ("loading scripts", "Loading RuneScript"),
-    ("loading map", "Loading world map + collision"),
-    ("listening", "Listening for connections"),
-];
+/// Parse a "D/T" progress fragment from a stage string.
+fn parse_pair(s: &str) -> Option<(usize, usize)> {
+    let (d, t) = s.split_once('/')?;
+    Some((d.trim().parse().ok()?, t.trim().parse().ok()?))
+}
 
-/// Startup splash: branding + a determinate progress bar + a per-step checklist.
+/// Record the current boot stage, appending it to the splash feed only when it's
+/// a NEW step — so the feed lists exactly the steps that ran (a cache hit never
+/// adds packing/verifying).
+fn set_stage(s: &mut PanelState, key: &str) {
+    if s.boot_feed.last().map(String::as_str) != Some(key) {
+        s.boot_feed.push(key.to_string());
+    }
+    s.stage = key.to_string();
+}
+
+/// Display label for a boot-stage key.
+fn stage_label(key: &str) -> &str {
+    match key {
+        "checking content" => "Checking Content for changes",
+        "packing cache" => "Packing Content into cache",
+        "verifying cache" => "Verifying cache CRCs vs vanilla",
+        "compiling scripts" => "Compiling server scripts",
+        "loading scripts" => "Loading RuneScript",
+        "loading map" => "Loading world map + collision",
+        "listening" => "Listening for connections",
+        other => other,
+    }
+}
+
+/// Per-step (done, total) for the keys that report counts (None = no bar).
+fn stage_progress(state: &PanelState, key: &str) -> Option<(usize, usize)> {
+    let (d, t) = match key {
+        "checking content" => (state.hash_done, state.hash_total),
+        "packing cache" => (state.pack_done, state.pack_total),
+        "verifying cache" => (state.verify_done, state.verify_total),
+        _ => return None,
+    };
+    (t > 0).then_some((d, t))
+}
+
+/// Startup splash: branding + a bottom-anchored feed of boot steps. The current
+/// step sits at the bottom with a spinner + live progress bar; finished steps
+/// rise above it and fade. Only steps that actually ran appear (a cache hit
+/// skips packing/verifying entirely).
 fn splash(ctx: &egui::Context, state: &PanelState) {
-    let cur = BOOT_STAGES.iter().position(|(k, _)| *k == state.stage);
-    let done = cur.map_or(0, |i| i); // steps fully completed = index of current
-    let frac = (done as f32 + 0.5) / BOOT_STAGES.len() as f32;
     egui::CentralPanel::default().show(ctx, |ui| {
         ui.vertical_centered(|ui| {
-            ui.add_space(ui.available_height() * 0.18);
+            ui.add_space(ui.available_height() * 0.16);
             ui.heading(egui::RichText::new("OS").size(64.0).strong());
             ui.label(egui::RichText::new("Server Control Panel").size(20.0).weak());
-            ui.add_space(28.0);
+            ui.add_space(30.0);
 
-            // Fatal: the server halted before listening (script compile error,
-            // cache pack/verify failure, bind error, …). Show it instead of
-            // spinning forever. script_error carries the nicer per-line detail.
+            // Fatal: the server halted before listening — show it, don't spin.
             let fatal = state.script_error.as_deref().map(|e| ("script compile failed", e))
                 .or_else(|| state.boot_error.as_deref().map(|e| ("startup failed", e)));
             if let Some((what, err)) = fatal {
@@ -1563,65 +1685,70 @@ fn splash(ctx: &egui::Context, state: &PanelState) {
                 return;
             }
 
-            let bar_w = (ui.available_width() * 0.5).clamp(280.0, 460.0);
-            ui.allocate_ui_with_layout(
-                egui::vec2(bar_w, 0.0),
-                egui::Layout::top_down(egui::Align::Min),
-                |ui| {
-                    ui.add(egui::ProgressBar::new(frac).animate(true)
-                        .text(format!("{} / {}", done.min(BOOT_STAGES.len()), BOOT_STAGES.len())));
-                    ui.add_space(14.0);
-                    for (i, (_, label)) in BOOT_STAGES.iter().enumerate() {
-                        let (glyph, col) = match cur {
-                            Some(c) if i < c => ("✔", egui::Color32::from_rgb(130, 199, 132)),
-                            Some(c) if i == c => ("▶", egui::Color32::from_rgb(255, 213, 79)),
-                            _ => ("○", egui::Color32::from_white_alpha(90)),
-                        };
-                        ui.horizontal(|ui| {
-                            ui.colored_label(col, glyph);
-                            ui.label(egui::RichText::new(*label).size(14.0)
-                                .color(if cur.is_some_and(|c| i <= c) { egui::Color32::from_white_alpha(230) } else { egui::Color32::from_white_alpha(120) }));
-                            if cur == Some(i) {
-                                ui.add(egui::Spinner::new().size(14.0));
-                            }
-                        });
-                        // The pack + verify steps get their own progress bars.
-                        if cur == Some(i) {
-                            let bar = match BOOT_STAGES[i].0 {
-                                "packing cache" if state.pack_total > 0 => Some((state.pack_done, state.pack_total)),
-                                "verifying cache" if state.verify_total > 0 => Some((state.verify_done, state.verify_total)),
-                                _ => None,
-                            };
-                            if let Some((d, t)) = bar {
-                                ui.add(egui::ProgressBar::new(d as f32 / t as f32)
-                                    .desired_height(10.0)
-                                    .text(format!("{d} / {t} groups")));
-                            }
-                        }
-                    }
+            let col_w = (ui.available_width() * 0.55).clamp(320.0, 520.0);
+            ui.allocate_ui_with_layout(egui::vec2(col_w, 0.0), egui::Layout::top_down(egui::Align::Min), |ui| {
+                let green = egui::Color32::from_rgb(130, 199, 132);
+                let amber = egui::Color32::from_rgb(255, 213, 79);
 
-                    // Whole-world map bake (only meaningful on first boot / after
-                    // the maps change; a cache hit flips straight to ready).
-                    ui.add_space(14.0);
-                    let (done, total, ready) = (state.map_bake_done, state.map_bake_total, state.map_bake_ready);
-                    let (glyph, col) = if ready {
-                        ("✔", egui::Color32::from_rgb(130, 199, 132))
-                    } else {
-                        ("▶", egui::Color32::from_rgb(255, 213, 79))
-                    };
+                let feed = &state.boot_feed;
+                const WINDOW: usize = 7;
+                let start = feed.len().saturating_sub(WINDOW);
+                let shown = &feed[start..];
+
+                if shown.is_empty() {
                     ui.horizontal(|ui| {
-                        ui.colored_label(col, glyph);
-                        ui.label(egui::RichText::new("Baking world map").size(14.0));
-                        if !ready {
-                            ui.add(egui::Spinner::new().size(14.0));
-                        }
+                        ui.add(egui::Spinner::new().size(15.0).color(amber));
+                        ui.label(egui::RichText::new("Starting server").size(16.0));
                     });
-                    if !ready && total > 0 {
-                        ui.add(egui::ProgressBar::new(done as f32 / total as f32)
-                            .text(format!("{done} / {total} regions")));
+                }
+
+                for (row, key) in shown.iter().enumerate() {
+                    let abs = start + row;
+                    let is_current = abs + 1 == feed.len();
+                    let age = (shown.len() - 1 - row) as f32; // 0 = newest
+                    // Each step fades in once (keyed on its stable feed index);
+                    // finished steps then fade by depth as newer ones push in.
+                    let appear = ctx.animate_bool_with_time(egui::Id::new(("bootfeed", abs)), true, 0.22);
+                    let depth = (235.0 - age * 40.0).max(45.0);
+                    let alpha = (depth * appear).clamp(0.0, 255.0) as u8;
+                    ui.horizontal(|ui| {
+                        if is_current {
+                            ui.add(egui::Spinner::new().size(14.0).color(amber));
+                        } else {
+                            ui.colored_label(egui::Color32::from_rgba_unmultiplied(130, 199, 132, alpha), "✔");
+                        }
+                        ui.label(egui::RichText::new(stage_label(key))
+                            .size(if is_current { 16.0 } else { 13.0 })
+                            .color(egui::Color32::from_white_alpha(alpha)));
+                    });
+                    if is_current {
+                        if let Some((d, t)) = stage_progress(state, key) {
+                            let unit = if key == "checking content" { "files" } else { "groups" };
+                            ui.add(egui::ProgressBar::new(d as f32 / t as f32)
+                                .desired_height(10.0).animate(true)
+                                .text(format!("{d} / {t} {unit}")));
+                        }
                     }
-                },
-            );
+                    ui.add_space(5.0);
+                }
+
+                // Whole-world map bake (concurrent; a cache hit flips to ready).
+                let (mdone, mtotal, ready) = (state.map_bake_done, state.map_bake_total, state.map_bake_ready);
+                ui.add_space(8.0);
+                ui.horizontal(|ui| {
+                    if ready {
+                        ui.colored_label(green, "✔");
+                    } else {
+                        ui.add(egui::Spinner::new().size(14.0).color(amber));
+                    }
+                    ui.label(egui::RichText::new("Baking world map").size(13.0)
+                        .color(egui::Color32::from_white_alpha(if ready { 150 } else { 230 })));
+                });
+                if !ready && mtotal > 0 {
+                    ui.add(egui::ProgressBar::new(mdone as f32 / mtotal as f32)
+                        .desired_height(10.0).text(format!("{mdone} / {mtotal} regions")));
+                }
+            });
         });
     });
 }

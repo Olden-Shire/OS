@@ -122,7 +122,7 @@ pub struct Scene {
 impl Default for Scene {
     fn default() -> Self {
         Scene {
-            enabled: false,
+            enabled: true,
             installed: false,
             content_dir: "Content".to_string(),
             world: None,
@@ -306,7 +306,12 @@ impl Scene {
         let (prev, pw, ph) = pix2d::swap_pixels(vec![0x0010_1218; (w * h) as usize], w, h);
         pix2d::set_clipping(0, 0, w, h);
         pix3d::set_clipping(0, 0, w, h);
-        pix3d::set_origin(w / 2, h / 2 + 12);
+        // Centre the model vertically. Its points span py in [-min_y, max_y], so
+        // the mid-height projects ~(max_y - min_y)*256/zoom px from the origin
+        // (perspective: screen_y ≈ origin_y + py*512/vz2, with vz2 ≈ zoom). Using
+        // the model's own bounds keeps feet-pivoted npc models from riding high.
+        let mid = ((model.max_y - model.min_y) * 256) / zoom.max(1);
+        pix3d::set_origin(w / 2, h / 2 - mid);
         let sin = pix3d::sin_table();
         let cos = pix3d::cos_table();
         let x_an = 150i32; // slight downward tilt (matches the client)
@@ -329,8 +334,10 @@ impl Scene {
             let mut pm = client::dash3d::player_model::PlayerModel::new();
             pm.apply_appearance(worn, colours, female, -1);
             let (seq, frame) = anim_frame(anim, clock);
-            let model = pm.get_temp_model(seq.as_ref(), frame, None, -1)?;
-            Some(self.paint_portrait(&model, 660, w, h))
+            let mut model = pm.get_temp_model(seq.as_ref(), frame, None, -1)?;
+            model.calc_bounding_cylinder(); // populate min_y/max_y for vertical centring
+            // Camera further back (bigger zoom) so the full body fits the card.
+            Some(self.paint_portrait(&model, 920, w, h))
         }))
         .ok()
         .flatten()
@@ -344,9 +351,10 @@ impl Scene {
         std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
             let nt = client::config::npc_type::list(type_id);
             let (seq, frame) = anim_frame(nt.readyanim, clock);
-            let model = nt.get_temp_model(seq.as_ref(), frame, None, -1)?;
+            let mut model = nt.get_temp_model(seq.as_ref(), frame, None, -1)?;
+            model.calc_bounding_cylinder(); // populate min_y/max_y for vertical centring
             // Bigger NPCs sit further from the camera so they still fit the card.
-            let zoom = 560 + (nt.size.max(1) - 1) * 420;
+            let zoom = 720 + (nt.size.max(1) - 1) * 420;
             Some(self.paint_portrait(&model, zoom, w, h))
         }))
         .ok()
