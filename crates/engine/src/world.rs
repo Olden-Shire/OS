@@ -3440,6 +3440,29 @@ impl World {
                     }
                 }
             }
+            "iftop" => {
+                // ::iftop <id> — open interface <id> as the toplevel (fullscreen).
+                if let (Some(id), Some(p)) = (arg(1), self.players[pid].as_mut()) {
+                    p.write(msg::if_opentop(id));
+                }
+            }
+            "if" => {
+                // ::if <id> — open interface <id> on the fixed gameframe's chat
+                // slot (548:com_90), for visually testing dialogue interfaces.
+                if let (Some(id), Some(p)) = (arg(1), self.players[pid].as_mut()) {
+                    p.write(msg::if_opensub((548 << 16) | 90, id, 0));
+                }
+            }
+            "ifsub" => {
+                // ::ifsub <parent> <child> <id> — open <id> on component
+                // (parent<<16|child) as a modal. Full control for finding the
+                // right attach point.
+                if let (Some(parent), Some(child), Some(id)) = (arg(1), arg(2), arg(3))
+                    && let Some(p) = self.players[pid].as_mut()
+                {
+                    p.write(msg::if_opensub((parent << 16) | child, id, 0));
+                }
+            }
             _ => {
                 if let Some(p) = self.players[pid].as_mut() {
                     p.write(msg::message_game(&format!("unknown command: {name}")));
@@ -3798,6 +3821,27 @@ mod reorient_tests {
         world.cycle();
         assert!(world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 211),
                 "once unlocked the queued script runs");
+    }
+
+    #[test]
+    fn interface_cheats_open_interfaces() {
+        let mut world = World::new();
+        let pid = world.add_player("p".into(), 3221, 3219, 0).unwrap();
+        // ::iftop -> IF_OPENTOP (147)
+        world.players[pid].as_mut().unwrap().out.clear();
+        world.handle_cheat(pid, "iftop 548");
+        assert!(world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 147),
+                "::iftop queues IF_OPENTOP");
+        // ::if <id> -> IF_OPENSUB (184) on the chat slot
+        world.players[pid].as_mut().unwrap().out.clear();
+        world.handle_cheat(pid, "if 231");
+        assert!(world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 184),
+                "::if queues IF_OPENSUB");
+        // ::ifsub <parent> <child> <id> -> IF_OPENSUB (184)
+        world.players[pid].as_mut().unwrap().out.clear();
+        world.handle_cheat(pid, "ifsub 548 90 231");
+        assert!(world.players[pid].as_ref().unwrap().out.iter().any(|m| m.opcode == 184),
+                "::ifsub queues IF_OPENSUB");
     }
 
     #[test]
