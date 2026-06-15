@@ -1,7 +1,10 @@
 // npc 3067
 size = 1
 readyanim = seq_2561
-walkanim = seq_2562, seq_2562, seq_2562, seq_2562
+walkanim = seq_2562
+walkanim_b = seq_2562
+walkanim_r = seq_2562
+walkanim_l = seq_2562
 op2 = Attack
 vislevel = 141
 recol1s = 61

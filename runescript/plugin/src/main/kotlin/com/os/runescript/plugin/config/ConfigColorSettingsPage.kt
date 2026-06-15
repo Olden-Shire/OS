@@ -25,7 +25,10 @@ class ConfigColorSettingsPage : ColorSettingsPage {
         name = Hans
         vislevel = 0
         size = 1
-        walkanim = seq_819, seq_820, seq_821, seq_822
+        walkanim = seq_819
+        walkanim_b = seq_820
+        walkanim_r = seq_821
+        walkanim_l = seq_822
         model1 = model_390
         model2 = obj_boots_of_lightness_88_woman
         recol1s = 8078

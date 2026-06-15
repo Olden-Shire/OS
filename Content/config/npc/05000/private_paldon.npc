@@ -1,5 +1,8 @@
 // npc 5034
-walkanim = seq_2562, seq_2562, seq_2562, seq_2562
+walkanim = seq_2562
+walkanim_b = seq_2562
+walkanim_r = seq_2562
+walkanim_l = seq_2562
 readyanim = seq_2561
 vislevel = 0
 op1 = Talk-to

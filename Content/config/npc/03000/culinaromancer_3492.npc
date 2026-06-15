@@ -1,5 +1,8 @@
 // npc 3492
-walkanim = seq_3357, seq_3357, seq_3357, seq_3357
+walkanim = seq_3357
+walkanim_b = seq_3357
+walkanim_r = seq_3357
+walkanim_l = seq_3357
 readyanim = seq_3357
 turnspeed = 15
 vislevel = 0

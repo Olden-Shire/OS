@@ -1,7 +1,10 @@
 // npc 4520
 vislevel = 1
 vislevel = 0
-walkanim = seq_4426, seq_4427, seq_4428, seq_4429
+walkanim = seq_4426
+walkanim_b = seq_4427
+walkanim_r = seq_4428
+walkanim_l = seq_4429
 readyanim = seq_4424
 resizeh = 120
 resizev = 120

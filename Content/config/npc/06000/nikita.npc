@@ -1,5 +1,8 @@
 // npc 6042
-walkanim = seq_6531, seq_6532, seq_821, seq_822
+walkanim = seq_6531
+walkanim_b = seq_6532
+walkanim_r = seq_821
+walkanim_l = seq_822
 readyanim = seq_808
 op1 = Talk-to
 op2 = Attack

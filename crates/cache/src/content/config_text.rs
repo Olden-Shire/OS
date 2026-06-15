@@ -149,7 +149,18 @@ pub enum Operand {
     /// pairs, rendered as indexed lines `<stem>1s = src`, `<stem>1d = dst`, …
     /// (content-old `recol1s`/`recol1d`). Must be an opcode's sole operand.
     PairsIndexed { stem: &'static str },
+    /// A fixed-arity run of `U16` seq ids (seq.pack resolved), one per label,
+    /// rendered as separate lines `<labels[0]> = a`, `<labels[1]> = b`, …
+    /// (the npc 4-direction walk: `walkanim`/`walkanim_b`/`walkanim_r`/
+    /// `walkanim_l`). Must be an opcode's sole operand; on encode the labels
+    /// are matched contiguously in order.
+    LabeledSeqs { labels: &'static [&'static str] },
 }
+
+/// The npc 4-direction walk-anim labels (op-17), in wire order: forward, back,
+/// right, left (Engine-TS `NpcType`). The leading `walkanim` is shared with the
+/// single op-14, disambiguated on encode by whether the suffixed labels follow.
+const WALK_DIRS: &[&str] = &["walkanim", "walkanim_b", "walkanim_r", "walkanim_l"];
 
 /// Which half of an indexed line a key denotes, for [`encode`] grouping.
 #[derive(Clone, Copy, PartialEq)]
@@ -188,6 +199,21 @@ fn indexed_match(schema: Schema, key: &str) -> Option<(&'static OpDef, IndexKind
                 }
             }
             _ => {}
+        }
+    }
+    None
+}
+
+/// If a `LabeledSeqs` opcode's labels match `entries[at..]` exactly and in
+/// order, return that opcode and its labels (so a leading `walkanim` is only
+/// a 4-direction group when `walkanim_b`/… actually follow it).
+fn labeled_match_at(schema: Schema, entries: &[(&str, &str)], at: usize) -> Option<&'static OpDef> {
+    for def in schema {
+        if let [Operand::LabeledSeqs { labels }] = def.operands
+            && at + labels.len() <= entries.len()
+            && labels.iter().enumerate().all(|(k, &lab)| entries[at + k].0 == lab)
+        {
+            return Some(def);
         }
     }
     None
@@ -292,6 +318,14 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ConfigRefs) -> Option<Vec<S
                 }
                 continue;
             }
+            [Operand::LabeledSeqs { labels }] => {
+                for label in *labels {
+                    let id = p.g2();
+                    let name = refs.seq.name_of(id).map_or_else(|| id.to_string(), str::to_string);
+                    lines.push(format!("{label} = {name}"));
+                }
+                continue;
+            }
             _ => {}
         }
 
@@ -347,9 +381,11 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ConfigRefs) -> Option<Vec<S
                         (0..n).map(|_| col.read(&mut p).to_string()).collect();
                     parts.push(vals.join(" "));
                 }
-                // Indexed operands are an opcode's sole operand and handled
-                // before this loop; reaching here means a malformed schema.
-                Operand::ModelsIndexed { .. } | Operand::PairsIndexed { .. } => return None,
+                // Indexed / labeled operands are an opcode's sole operand and
+                // handled before this loop; reaching here means a bad schema.
+                Operand::ModelsIndexed { .. }
+                | Operand::PairsIndexed { .. }
+                | Operand::LabeledSeqs { .. } => return None,
             }
         }
         // No-operand opcodes are presence flags (members, stackable): the byte
@@ -434,28 +470,34 @@ pub fn encode(schema: Schema, text: &str, refs: &ConfigRefs) -> Option<Vec<u8>> 
             continue;
         }
 
-        // Normal single-line opcode. Opcode names can collide (npc `walkanim`
-        // is both single op-14 and 4-direction op-17); disambiguate by the
-        // value's comma-field count.
-        let def = {
-            let cands: Vec<&OpDef> = schema.iter().filter(|d| d.name == key).collect();
-            match cands.as_slice() {
-                [] => {
-                    // Server-side property (e.g. wanderrange): kept in the .npc
-                    // source, not emitted into the client cache. Unknown
-                    // non-server keys are a real error → fail the round-trip.
-                    if is_server_only_key(key) {
-                        i += 1;
-                        continue;
-                    }
-                    return None;
-                }
-                [one] => *one,
-                many => {
-                    let n = val.split(',').count();
-                    *many.iter().find(|d| d.operands.len() == n)?
-                }
+        // Labeled seq group (npc 4-direction `walkanim`/`walkanim_b`/…): only a
+        // group when every label follows in order, so a lone `walkanim` stays
+        // the single op-14.
+        if let Some(def) = labeled_match_at(schema, &entries, i) {
+            let [Operand::LabeledSeqs { labels }] = def.operands else { return None };
+            p.p1(i32::from(def.code));
+            for k in 0..labels.len() {
+                let f = entries[i + k].1;
+                let id = match f.parse::<i32>() {
+                    Ok(n) => n,
+                    Err(_) => refs.seq.id_of(f)?,
+                };
+                p.p2(id);
             }
+            i += labels.len();
+            continue;
+        }
+
+        // Normal single-line opcode.
+        let Some(def) = schema.iter().find(|d| d.name == key) else {
+            // Server-side property (e.g. wanderrange): kept in the .npc source,
+            // not emitted into the client cache. Unknown non-server keys are a
+            // real error (typo / unsupported opcode) → fail the round-trip.
+            if is_server_only_key(key) {
+                i += 1;
+                continue;
+            }
+            return None;
         };
         p.p1(i32::from(def.code));
 
@@ -558,9 +600,11 @@ pub fn encode(schema: Schema, text: &str, refs: &ConfigRefs) -> Option<Vec<u8>> 
                         col.write(&mut p, v);
                     }
                 }
-                // Sole-operand indexed opcodes are emitted by the grouping
-                // branch above; never reached through the per-field loop.
-                Operand::ModelsIndexed { .. } | Operand::PairsIndexed { .. } => return None,
+                // Sole-operand indexed/labeled opcodes are emitted by the
+                // grouping branches above; never reached through this loop.
+                Operand::ModelsIndexed { .. }
+                | Operand::PairsIndexed { .. }
+                | Operand::LabeledSeqs { .. } => return None,
             }
         }
         i += 1;
@@ -727,9 +771,10 @@ pub const LOC: Schema = &[
 // ── npc (group 9) ─ opcode 106 (multivar n+1 list) omitted ──────────────
 pub const NPC: Schema = &[
     // models / heads / recol / retex use content-old's indexed-line form
-    // (`model1`, `head1`, `recol1s`/`recol1d`); op17 is `walkanim` (the
-    // 4-direction set), name-shared with the single op14 `walkanim` and
-    // disambiguated on encode by field count.
+    // (`model1`, `head1`, `recol1s`/`recol1d`); op17 is the 4-direction walk
+    // broken into `walkanim`/`walkanim_b`/`walkanim_r`/`walkanim_l` — the
+    // leading `walkanim` is name-shared with the single op14 and resolved by
+    // whether the suffixed labels follow it.
     OpDef { code: 1, name: "models", operands: &[Operand::ModelsIndexed { stem: "model" }] },
     OpDef { code: 2, name: "name", operands: &[Str] },
     OpDef { code: 12, name: "size", operands: &[n(U8)] },
@@ -737,7 +782,7 @@ pub const NPC: Schema = &[
     OpDef { code: 14, name: "walkanim", operands: &[Operand::Seq] },
     OpDef { code: 15, name: "turnleftanim", operands: &[Operand::Seq] },
     OpDef { code: 16, name: "turnrightanim", operands: &[Operand::Seq] },
-    OpDef { code: 17, name: "walkanim", operands: &[Operand::Seq, Operand::Seq, Operand::Seq, Operand::Seq] },
+    OpDef { code: 17, name: "walkanim_set", operands: &[Operand::LabeledSeqs { labels: WALK_DIRS }] },
     OpDef { code: 30, name: "op1", operands: &[Str] },
     OpDef { code: 31, name: "op2", operands: &[Str] },
     OpDef { code: 32, name: "op3", operands: &[Str] },

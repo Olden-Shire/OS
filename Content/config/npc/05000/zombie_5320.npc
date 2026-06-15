@@ -2,7 +2,10 @@
 size = 1
 op2 = Attack
 readyanim = seq_5565
-walkanim = seq_5570, seq_5790, seq_5788, seq_5789
+walkanim = seq_5570
+walkanim_b = seq_5790
+walkanim_r = seq_5788
+walkanim_l = seq_5789
 vislevel = 24
 recol1s = 13506
 recol1d = 54340

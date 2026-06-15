@@ -1,6 +1,9 @@
 // npc 1335
 size = 2
-walkanim = seq_1147, seq_1147, seq_1147, seq_1147
+walkanim = seq_1147
+walkanim_b = seq_1147
+walkanim_r = seq_1147
+walkanim_l = seq_1147
 readyanim = seq_1147
 vislevel = 0
 op1 = Talk-to

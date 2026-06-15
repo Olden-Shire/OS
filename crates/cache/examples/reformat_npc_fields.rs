@@ -3,11 +3,11 @@
 //! The cache codec used to render npc multi-value fields as one joined line:
 //!   `models = a b c` · `headmodels = a b` · `recol = s/d s/d` · `retex = …`
 //!   `walkanims = a, b, c, d`
-//! content-old (and the matching codec change in `config_text.rs`) breaks them
-//! into one indexed line each — `model1`/`head1`, `recol1s`/`recol1d`, and the
-//! 4-direction set as `walkanim` — so this rewrites the on-disk `.npc` text to
-//! that shape. Every other line (name, ops, single anims, server-only keys,
-//! comments) is passed through verbatim.
+//! The codec change in `config_text.rs` breaks them into one line each —
+//! `model1`/`head1`, `recol1s`/`recol1d`, and the 4-direction walk as
+//! `walkanim`/`walkanim_b`/`walkanim_r`/`walkanim_l` — so this rewrites the
+//! on-disk `.npc` text to that shape. Every other line (name, ops, single
+//! anims, server-only keys, comments) is passed through verbatim.
 //!
 //! Byte-neutral: the new codec re-encodes the indexed form to the exact same
 //! cache bytes (verify with `--example verify_content -- Content`). Idempotent.
@@ -67,11 +67,11 @@ fn reformat(text: &str) -> String {
             "headmodels" => emit_list(&mut out, "head", val),
             "recol" => emit_pairs(&mut out, "recol", val),
             "retex" => emit_pairs(&mut out, "retex", val),
-            "walkanims" => {
-                out.push_str("walkanim = ");
-                out.push_str(val);
-                out.push('\n');
-            }
+            // The 4-direction walk: legacy `walkanims`, or `walkanim` once it
+            // carries commas (from the earlier joined reformat). A comma-free
+            // `walkanim` is the single op-14 and passes through untouched.
+            "walkanims" => emit_walk(&mut out, val),
+            "walkanim" if val.contains(',') => emit_walk(&mut out, val),
             _ => {
                 out.push_str(line);
                 out.push('\n');
@@ -85,6 +85,19 @@ fn reformat(text: &str) -> String {
 fn emit_list(out: &mut String, stem: &str, val: &str) {
     for (i, tok) in val.split_whitespace().enumerate() {
         out.push_str(&format!("{stem}{} = {tok}\n", i + 1));
+    }
+}
+
+/// `a, b, c, d` → the four directional walk lines (wire order forward/back/
+/// right/left). Falls back to a verbatim `walkanim` line if not exactly 4.
+fn emit_walk(out: &mut String, val: &str) {
+    let toks: Vec<&str> = val.split(',').map(str::trim).collect();
+    if toks.len() == 4 {
+        for (label, tok) in ["walkanim", "walkanim_b", "walkanim_r", "walkanim_l"].iter().zip(&toks) {
+            out.push_str(&format!("{label} = {tok}\n"));
+        }
+    } else {
+        out.push_str(&format!("walkanim = {val}\n"));
     }
 }
 

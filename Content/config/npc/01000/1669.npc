@@ -1,5 +1,8 @@
 // npc 1669
-walkanim = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819
+walkanim_b = seq_820
+walkanim_r = seq_821
+walkanim_l = seq_822
 readyanim = seq_808
 vislevel = 1
 multivar = 65535, 399, 65535 65535 65535 65535 65535 65535 65535 65535 1670

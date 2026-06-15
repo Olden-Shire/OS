@@ -1,7 +1,10 @@
 // npc 345
 vislevel = 0
 size = 1
-walkanim = seq_4226, seq_4227, seq_821, seq_822
+walkanim = seq_4226
+walkanim_b = seq_4227
+walkanim_r = seq_821
+walkanim_l = seq_822
 readyanim = seq_4591
 op1 = Talk-to
 recol1s = 61

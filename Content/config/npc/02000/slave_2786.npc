@@ -1,7 +1,10 @@
 // npc 2786
 vislevel = 0
 readyanim = seq_830
-walkanim = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819
+walkanim_b = seq_820
+walkanim_r = seq_821
+walkanim_l = seq_822
 recol1s = 4626
 recol1d = 4548
 recol2s = 43072

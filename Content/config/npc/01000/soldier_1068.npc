@@ -1,6 +1,9 @@
 // npc 1068
 size = 1
-walkanim = seq_1144, seq_1144, seq_1144, seq_1144
+walkanim = seq_1144
+walkanim_b = seq_1144
+walkanim_r = seq_1144
+walkanim_l = seq_1144
 readyanim = seq_1144
 resizeh = 128
 resizev = 128

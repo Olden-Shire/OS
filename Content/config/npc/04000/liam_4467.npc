@@ -1,7 +1,10 @@
 // npc 4467
 vislevel = 0
 op1 = Talk-to
-walkanim = seq_819, seq_820, seq_821, seq_822
+walkanim = seq_819
+walkanim_b = seq_820
+walkanim_r = seq_821
+walkanim_l = seq_822
 readyanim = seq_808
 ambient = -25
 recol1s = 4550

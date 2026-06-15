@@ -1,5 +1,8 @@
 // npc 1685
-walkanim = seq_1422, seq_1423, seq_1424, seq_1425
+walkanim = seq_1422
+walkanim_b = seq_1423
+walkanim_r = seq_1424
+walkanim_l = seq_1425
 readyanim = seq_1421
 ambient = 35
 contrast = 35
