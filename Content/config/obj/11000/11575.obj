@@ -2,4 +2,7 @@
 model = obj_cheese_1985
 cost = 3
 zoom2d = 770
-recol = 9121/41 9139/61
+recol1s = 9121
+recol1d = 41
+recol2s = 9139
+recol2d = 61

@@ -7,5 +7,6 @@ resizez = 80
 zoom2d = 1450
 cost = 10000
 iop5 = Destroy
-recol = 43125/41
+recol1s = 43125
+recol1d = 41
 name = Small crystal seed

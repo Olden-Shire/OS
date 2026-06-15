@@ -6,5 +6,6 @@ yan2d = 152
 xan2d = 256
 members = true
 iop1 = Read
-recol = 5018/27608
+recol1s = 5018
+recol1d = 27608
 name = A handwritten book

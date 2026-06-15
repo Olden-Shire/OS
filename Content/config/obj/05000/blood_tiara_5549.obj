@@ -10,5 +10,6 @@ manhead = 7467
 womanhead = 7467
 members = true
 cost = 100
-recol = 43096/61532
+recol1s = 43096
+recol1d = 61532
 name = Blood tiara

@@ -9,5 +9,6 @@ yan2d = 263
 zan2d = 111
 xan2d = 664
 members = true
-recol = 5772/14742
+recol1s = 5772
+recol1d = 14742
 name = Branch

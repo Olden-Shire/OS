@@ -7,5 +7,6 @@ yan2d = 1904
 xan2d = 140
 members = true
 iop1 = Drink
-recol = 832/16844
+recol1s = 832
+recol1d = 16844
 name = Spring sq'irkjuice

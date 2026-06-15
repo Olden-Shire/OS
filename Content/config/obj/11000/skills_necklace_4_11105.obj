@@ -11,5 +11,6 @@ manwear = obj_perfect_necklace_man, 0
 womanwear = obj_perfect_necklace_woman, 0
 cost = 20200
 members = true
-recol = 41/51111
+recol1s = 41
+recol1d = 51111
 name = Skills necklace(4)

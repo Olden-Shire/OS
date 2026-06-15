@@ -2,4 +2,9 @@
 model = obj_needle
 cost = 3
 zoom2d = 850
-recol = 0/16 74/66 99/82
+recol1s = 0
+recol1d = 16
+recol2s = 74
+recol2d = 66
+recol3s = 99
+recol3d = 82

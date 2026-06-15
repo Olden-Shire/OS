@@ -9,5 +9,6 @@ womanwear = obj_mind_tiara_5529_woman, 0
 manhead = 7475
 womanhead = 7475
 cost = 100
-recol = 43096/1246
+recol1s = 43096
+recol1d = 1246
 name = Mind tiara

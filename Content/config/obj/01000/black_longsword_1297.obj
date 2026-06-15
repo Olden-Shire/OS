@@ -10,5 +10,6 @@ xan2d = 100
 iop2 = Wield
 manwear = obj_bronze_longsword_1291_wear, 0
 womanwear = obj_bronze_longsword_1291_wear, 6
-recol = 61/0
+recol1s = 61
+recol1d = 0
 name = Black longsword

@@ -7,5 +7,6 @@ yan2d = 84
 xan2d = 388
 members = true
 iop5 = Destroy
-recol = 38600/478
+recol1s = 38600
+recol1d = 478
 name = Rose tinted lens

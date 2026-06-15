@@ -5,5 +5,6 @@ yan2d = 221
 xan2d = 235
 members = true
 iop5 = Destroy
-recol = 119/54439
+recol1s = 119
+recol1d = 54439
 name = Poisoned tofu

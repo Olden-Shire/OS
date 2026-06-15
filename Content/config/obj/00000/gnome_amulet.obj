@@ -9,5 +9,6 @@ xan2d = 424
 iop2 = Wear
 manwear = obj_glarials_amulet_man, 0
 womanwear = obj_glarials_amulet_woman, 0
-recol = 11200/22464
+recol1s = 11200
+recol1d = 22464
 name = Gnome amulet

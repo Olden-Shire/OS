@@ -9,5 +9,6 @@ womanwear = obj_body_tiara_5533_woman, 0
 manhead = 7468
 womanhead = 7468
 cost = 100
-recol = 43096/78
+recol1s = 43096
+recol1d = 78
 name = Body tiara

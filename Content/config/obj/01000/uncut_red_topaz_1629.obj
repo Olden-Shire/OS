@@ -8,5 +8,6 @@ yan2d = 220
 zan2d = 1860
 xan2d = 368
 members = true
-recol = 61/61376
+recol1s = 61
+recol1d = 61376
 name = Uncut red topaz

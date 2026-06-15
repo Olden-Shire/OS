@@ -2,4 +2,7 @@
 model = obj_hammer_2347
 cost = 3
 zoom2d = 900
-recol = 45/41 6032/28
+recol1s = 45
+recol1d = 41
+recol2s = 6032
+recol2d = 28

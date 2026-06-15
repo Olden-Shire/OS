@@ -7,5 +7,6 @@ yan2d = 165
 xan2d = 114
 iop4 = Talk-To
 members = true
-recol = 20/414
+recol1s = 20
+recol1d = 414
 name = Red monkey

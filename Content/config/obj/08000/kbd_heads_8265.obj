@@ -5,5 +5,6 @@ yof2d = 46
 zoom2d = 2151
 yan2d = 1697
 xan2d = 90
-recol = 61/8
+recol1s = 61
+recol1d = 8
 name = Kbd heads

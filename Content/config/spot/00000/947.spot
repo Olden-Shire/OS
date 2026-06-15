@@ -1,6 +1,7 @@
 // spot 947
-model = 19920
+model = obj_kebbit_9953
 anim = 5274
 resizeh = 96
 resizev = 96
-recol = 5008/5532
+recol1s = 5008
+recol1d = 5532

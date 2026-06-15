@@ -2,4 +2,7 @@
 model = obj_tinderbox_590
 cost = 3
 zoom2d = 660
-recol = 6038/41 127/94
+recol1s = 6038
+recol1d = 41
+recol2s = 127
+recol2d = 94

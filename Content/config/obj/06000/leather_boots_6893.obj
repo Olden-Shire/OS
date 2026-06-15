@@ -8,5 +8,6 @@ yan2d = 160
 xan2d = 152
 iop2 = Wear
 members = true
-recol = 4626/2452
+recol1s = 4626
+recol1d = 2452
 name = Leather boots

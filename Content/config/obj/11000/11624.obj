@@ -2,4 +2,7 @@
 model = obj_magic_gold_feather
 cost = 3
 zoom2d = 800
-recol = 127/57 22406/20
+recol1s = 127
+recol1d = 57
+recol2s = 22406
+recol2d = 20

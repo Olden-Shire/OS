@@ -8,5 +8,6 @@ yan2d = 112
 xan2d = 292
 iop1 = Read
 members = true
-recol = 5018/60985
+recol1s = 5018
+recol1d = 60985
 name = Book of 'h.a.m'

@@ -1,6 +1,7 @@
 // spot 301
-model = 3091
+model = model_3091
 anim = 667
 ambient = 100
 contrast = 100
-recol = 48957/699
+recol1s = 48957
+recol1d = 699

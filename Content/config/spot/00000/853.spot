@@ -1,4 +1,7 @@
 // spot 853
-model = 2491
+model = obj_asgarnian_ale_1905
 anim = 3354
-recol = 7091/6059 7116/5943
+recol1s = 7091
+recol1d = 6059
+recol2s = 7116
+recol2d = 5943

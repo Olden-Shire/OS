@@ -10,5 +10,6 @@ members = true
 stackable = true
 iop2 = Wield
 cost = 1
-recol = 16/6940
+recol1s = 16
+recol1d = 6940
 name = Marrentill tar

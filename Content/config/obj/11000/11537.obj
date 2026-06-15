@@ -2,4 +2,9 @@
 model = obj_bronze_kiteshield_1189
 cost = 3
 zoom2d = 1560
-recol = 7054/28 61/41 0/8
+recol1s = 7054
+recol1d = 28
+recol2s = 61
+recol2d = 41
+recol3s = 0
+recol3d = 8

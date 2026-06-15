@@ -10,5 +10,6 @@ manwear = obj_perfect_necklace_man, 0
 womanwear = obj_perfect_necklace_woman, 0
 cost = 4050
 members = true
-recol = 41/111
+recol1s = 41
+recol1d = 111
 name = Phoenix necklace

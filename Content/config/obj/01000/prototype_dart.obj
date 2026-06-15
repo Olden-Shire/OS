@@ -9,5 +9,6 @@ yof2d = 11
 zoom2d = 720
 yan2d = 336
 xan2d = 396
-recol = 82/5652
+recol1s = 82
+recol1d = 5652
 name = Prototype dart

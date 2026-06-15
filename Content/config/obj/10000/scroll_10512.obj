@@ -10,5 +10,6 @@ iop1 = Read
 iop3 = Write-Role
 iop4 = Clear
 iop5 = Destroy
-recol = 10351/6356
+recol1s = 10351
+recol1d = 6356
 name = Scroll

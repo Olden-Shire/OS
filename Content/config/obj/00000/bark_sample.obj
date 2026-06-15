@@ -7,5 +7,6 @@ yof2d = 64
 zoom2d = 900
 yan2d = 76
 xan2d = 264
-recol = 6024/6028
+recol1s = 6024
+recol1d = 6028
 name = Bark sample

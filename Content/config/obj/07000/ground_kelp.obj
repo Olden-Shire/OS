@@ -7,5 +7,6 @@ yan2d = 1892
 xan2d = 264
 members = true
 cost = 1
-recol = 82/15120
+recol1s = 82
+recol1d = 15120
 name = Ground kelp

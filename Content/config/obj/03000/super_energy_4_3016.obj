@@ -8,5 +8,6 @@ yan2d = 1996
 xan2d = 84
 members = true
 iop4 = Empty
-recol = 61/58946
+recol1s = 61
+recol1d = 58946
 name = Super energy(4)

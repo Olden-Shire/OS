@@ -6,5 +6,6 @@ zoom2d = 1450
 yan2d = 128
 xan2d = 292
 members = true
-recol = 45/8472
+recol1s = 45
+recol1d = 8472
 name = Damaged armour

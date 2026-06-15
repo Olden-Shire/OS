@@ -7,5 +7,6 @@ xan2d = 156
 iop1 = Eat
 members = true
 cost = 45
-recol = 44263/6063
+recol1s = 44263
+recol1d = 6063
 name = Mushroom & onion

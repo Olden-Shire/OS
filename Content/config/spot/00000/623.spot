@@ -1,5 +1,5 @@
 // spot 623
-model = 13198
+model = obj_teleport_trap
 anim = 3682
 ambient = 40
 contrast = 30

@@ -10,5 +10,6 @@ iop2 = Wear
 manwear = obj_fremennik_cloak_3759_man, 0
 womanwear = obj_fremennik_cloak_3759_woman, 0
 members = true
-recol = 7952/43189
+recol1s = 7952
+recol1d = 43189
 name = Fremennik cloak

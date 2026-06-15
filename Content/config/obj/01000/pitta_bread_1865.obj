@@ -5,5 +5,6 @@ zoom2d = 980
 yan2d = 108
 xan2d = 248
 members = true
-recol = 10440/7395
+recol1s = 10440
+recol1d = 7395
 name = Pitta bread

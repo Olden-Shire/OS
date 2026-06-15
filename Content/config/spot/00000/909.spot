@@ -1,4 +1,15 @@
 // spot 909
-model = 19461
+model = model_19461
 anim = 5186
-recol = 5169/3988 7343/3988 7335/3982 7339/3986 7343/5014 5165/3988
+recol1s = 5169
+recol1d = 3988
+recol2s = 7343
+recol2d = 3988
+recol3s = 7335
+recol3d = 3982
+recol4s = 7339
+recol4d = 3986
+recol5s = 7343
+recol5d = 5014
+recol6s = 5165
+recol6d = 3988

@@ -12,5 +12,6 @@ manwear = obj_tan_cavalier_2639_man, 0
 womanwear = obj_tan_cavalier_2639_woman, 0
 manhead = 28
 womanhead = 86
-recol = 7073/5008
+recol1s = 7073
+recol1d = 5008
 name = Dark cavalier

@@ -1,5 +1,14 @@
 // spot 395
-model = 17550
+model = model_17550
 anim = 1990
 ambient = 60
-recol = 3755/127 6055/41077 5931/41191 5807/41438 5935/41558
+recol1s = 3755
+recol1d = 127
+recol2s = 6055
+recol2d = 41077
+recol3s = 5931
+recol3d = 41191
+recol4s = 5807
+recol4d = 41438
+recol5s = 5935
+recol5d = 41558

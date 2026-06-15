@@ -7,5 +7,6 @@ xan2d = 256
 members = true
 iop1 = Read
 iop5 = Destroy
-recol = 5018/14226
+recol1s = 5018
+recol1d = 14226
 name = Explorer's notes

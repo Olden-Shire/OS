@@ -3,4 +3,5 @@ model = obj_orange_2108
 zoom2d = 910
 yan2d = 120
 xan2d = 308
-recol = 6080/33
+recol1s = 6080
+recol1d = 33

@@ -9,5 +9,6 @@ manwear = obj_woven_top_5024_man, 0
 manwear2 = 6999
 womanwear = obj_woven_top_5024_woman, 0
 womanwear2 = 7005
-recol = 9529/43827
+recol1s = 9529
+recol1d = 43827
 name = Woven top

@@ -6,5 +6,6 @@ yof2d = 100
 zoom2d = 600
 yan2d = 84
 xan2d = 260
-recol = 127/701
+recol1s = 127
+recol1d = 701
 name = Unfermented wine

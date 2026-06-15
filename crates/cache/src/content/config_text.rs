@@ -695,8 +695,8 @@ pub const OBJ: Schema = &[
     OpDef { code: 37, name: "iop3", operands: &[Str] },
     OpDef { code: 38, name: "iop4", operands: &[Str] },
     OpDef { code: 39, name: "iop5", operands: &[Str] },
-    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
-    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+    OpDef { code: 40, name: "recol", operands: &[Operand::PairsIndexed { stem: "recol" }] },
+    OpDef { code: 41, name: "retex", operands: &[Operand::PairsIndexed { stem: "retex" }] },
     OpDef { code: 78, name: "manwear3", operands: &[n(U16)] },
     OpDef { code: 79, name: "womanwear3", operands: &[n(U16)] },
     OpDef { code: 90, name: "manhead", operands: &[n(U16)] },
@@ -857,15 +857,15 @@ pub const INV: Schema = &[OpDef { code: 2, name: "size", operands: &[n(U16)] }];
 
 // ── spot (group 13) ─────────────────────────────────────────────────────
 pub const SPOT: Schema = &[
-    OpDef { code: 1, name: "model", operands: &[n(U16)] },
+    OpDef { code: 1, name: "model", operands: &[Operand::Model] },
     OpDef { code: 2, name: "anim", operands: &[n(U16)] },
     OpDef { code: 4, name: "resizeh", operands: &[n(U16)] },
     OpDef { code: 5, name: "resizev", operands: &[n(U16)] },
     OpDef { code: 6, name: "angle", operands: &[n(U16)] },
     OpDef { code: 7, name: "ambient", operands: &[n(U8)] },
     OpDef { code: 8, name: "contrast", operands: &[n(U8)] },
-    OpDef { code: 40, name: "recol", operands: &[PAIRS] },
-    OpDef { code: 41, name: "retex", operands: &[PAIRS] },
+    OpDef { code: 40, name: "recol", operands: &[Operand::PairsIndexed { stem: "recol" }] },
+    OpDef { code: 41, name: "retex", operands: &[Operand::PairsIndexed { stem: "retex" }] },
 ];
 
 // ── varbit (group 14) ───────────────────────────────────────────────────

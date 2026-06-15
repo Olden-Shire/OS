@@ -4,5 +4,6 @@ yof2d = -592
 zoom2d = 4430
 yan2d = 1848
 xan2d = 236
-recol = 61/5652
+recol1s = 61
+recol1d = 5652
 name = Gnome

@@ -2,4 +2,11 @@
 model = obj_cup_of_tea_712
 cost = 3
 zoom2d = 500
-recol = 82/41 107/49 127/99 8101/37
+recol1s = 82
+recol1d = 41
+recol2s = 107
+recol2d = 49
+recol3s = 127
+recol3d = 99
+recol4s = 8101
+recol4d = 37

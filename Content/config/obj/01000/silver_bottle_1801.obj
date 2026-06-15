@@ -4,5 +4,6 @@ model = obj_silver_bottle_1800
 zoom2d = 1030
 yan2d = 1808
 xan2d = 76
-recol = 5012/82
+recol1s = 5012
+recol1d = 82
 name = Silver bottle

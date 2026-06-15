@@ -7,5 +7,6 @@ xan2d = 548
 iop2 = Wear
 manwear = obj_dhide_body_g_7370_man, 0
 womanwear = obj_dhide_body_g_7370_woman, 0
-recol = 24/21834
+recol1s = 24
+recol1d = 21834
 name = D'hide body (t)

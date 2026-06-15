@@ -7,5 +7,6 @@ zoom2d = 1270
 yan2d = 4
 xan2d = 120
 members = true
-recol = 50396/13266
+recol1s = 50396
+recol1d = 13266
 name = Locating crystal

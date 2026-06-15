@@ -1,3 +1,12 @@
 // spot 16
-model = 3136
-recol = 57/37340 61/37340 5012/37444 926/37340 5012/37340
+model = model_3136
+recol1s = 57
+recol1d = 37340
+recol2s = 61
+recol2d = 37340
+recol3s = 5012
+recol3d = 37444
+recol4s = 926
+recol4d = 37340
+recol5s = 5012
+recol5d = 37340

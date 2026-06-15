@@ -11,5 +11,6 @@ xan2d = 396
 manwear = obj_bronze_dart_wear, 0
 womanwear = obj_bronze_dart_wear, 6
 iop2 = Wield
-recol = 82/21662
+recol1s = 82
+recol1d = 21662
 name = Adamant dart

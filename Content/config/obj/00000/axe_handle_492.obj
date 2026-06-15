@@ -9,5 +9,6 @@ xan2d = 440
 manwear = obj_axe_handle_492_wear, 0
 womanwear = obj_axe_handle_492_wear, 6
 cost = 1
-recol = 6024/7073
+recol1s = 6024
+recol1d = 7073
 name = Axe handle

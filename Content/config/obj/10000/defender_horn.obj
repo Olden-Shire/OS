@@ -11,5 +11,6 @@ iop2 = Tell-worms
 iop3 = Tell-meat
 iop4 = Medic
 members = true
-recol = 935/42673
+recol1s = 935
+recol1d = 42673
 name = Defender horn

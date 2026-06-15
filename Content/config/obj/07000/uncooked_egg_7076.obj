@@ -6,5 +6,6 @@ yan2d = 36
 xan2d = 156
 members = true
 cost = 8
-recol = 44263/6063
+recol1s = 44263
+recol1d = 6063
 name = Uncooked egg

@@ -2,4 +2,13 @@
 model = obj_empty_sack_5418
 cost = 3
 zoom2d = 1220
-recol = 6689/41 6565/49 6569/57 6808/33 7056/24
+recol1s = 6689
+recol1d = 41
+recol2s = 6565
+recol2d = 49
+recol3s = 6569
+recol3d = 57
+recol4s = 6808
+recol4d = 33
+recol5s = 7056
+recol5d = 24

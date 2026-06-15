@@ -9,5 +9,6 @@ womanwear = obj_water_tiara_5531_woman, 0
 manhead = 7478
 womanhead = 7478
 cost = 100
-recol = 43096/41050
+recol1s = 43096
+recol1d = 41050
 name = Water tiara

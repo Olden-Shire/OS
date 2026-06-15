@@ -8,5 +8,6 @@ xan2d = 620
 iop2 = Wear
 manwear = obj_iron_plateskirt_1081_man, 0
 womanwear = obj_iron_plateskirt_1081_woman, 0
-recol = 25238/41
+recol1s = 25238
+recol1d = 41
 name = Steel plateskirt

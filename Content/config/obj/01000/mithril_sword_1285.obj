@@ -8,5 +8,6 @@ xan2d = 352
 iop2 = Wield
 manwear = obj_bronze_sword_1277_wear, 0
 womanwear = obj_bronze_sword_1277_wear, 6
-recol = 61/43297
+recol1s = 61
+recol1d = 43297
 name = Mithril sword

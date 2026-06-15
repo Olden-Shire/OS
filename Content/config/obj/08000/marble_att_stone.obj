@@ -3,5 +3,6 @@ model = obj_clay_attack_stone
 zoom2d = 3408
 yan2d = 1277
 xan2d = 120
-recol = 10295/9327
+recol1s = 10295
+recol1d = 9327
 name = Marble att. stone

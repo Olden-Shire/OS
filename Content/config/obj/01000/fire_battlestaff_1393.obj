@@ -12,5 +12,6 @@ manwear = obj_dramen_staff_wear, 0
 manwear2 = 567
 womanwear = obj_dramen_staff_wear, 6
 womanwear2 = 567
-recol = 43117/960
+recol1s = 43117
+recol1d = 960
 name = Fire battlestaff

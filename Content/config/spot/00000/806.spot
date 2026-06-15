@@ -1,4 +1,11 @@
 // spot 806
-model = 3142
+model = model_3142
 anim = 366
-recol = 61/127 57/111 5012/41366 926/41282
+recol1s = 61
+recol1d = 127
+recol2s = 57
+recol2d = 111
+recol3s = 5012
+recol3d = 41366
+recol4s = 926
+recol4d = 41282

@@ -2,4 +2,7 @@
 model = obj_nulodions_notes
 cost = 3
 zoom2d = 848
-recol = 10351/86 5018/41
+recol1s = 10351
+recol1d = 86
+recol2s = 5018
+recol2d = 41

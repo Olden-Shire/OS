@@ -10,5 +10,6 @@ yan2d = 1901
 xan2d = 75
 iop2 = Wear
 cost = 1056
-recol = 61/43146
+recol1s = 61
+recol1d = 43146
 name = Black helm (h4)

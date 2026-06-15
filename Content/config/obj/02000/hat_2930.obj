@@ -12,5 +12,6 @@ zoom2d = 800
 yan2d = 156
 xan2d = 152
 members = true
-recol = 38814/33678
+recol1s = 38814
+recol1d = 33678
 name = Hat

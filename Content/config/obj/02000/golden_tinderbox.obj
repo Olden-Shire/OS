@@ -9,5 +9,6 @@ yof2d = -10
 zoom2d = 660
 yan2d = 1968
 xan2d = 196
-recol = 127/9141
+recol1s = 127
+recol1d = 9141
 name = Golden tinderbox

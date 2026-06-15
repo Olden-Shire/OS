@@ -1,6 +1,11 @@
 // spot 159
-model = 3115
+model = model_3115
 anim = 692
 ambient = 50
 contrast = 50
-recol = 7104/82 6080/127 960/61
+recol1s = 7104
+recol1d = 82
+recol2s = 6080
+recol2d = 127
+recol3s = 960
+recol3d = 61

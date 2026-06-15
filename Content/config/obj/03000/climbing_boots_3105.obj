@@ -10,5 +10,6 @@ xan2d = 152
 iop2 = Wear
 manwear = obj_climbing_boots_3105_man, 0
 womanwear = obj_climbing_boots_3105_woman, 0
-recol = 4626/28
+recol1s = 4626
+recol1d = 28
 name = Climbing boots

@@ -1,5 +1,6 @@
 // spot 289
-model = 4050
+model = model_4050
 resizeh = 64
 resizev = 64
-recol = 22404/920
+recol1s = 22404
+recol1d = 920

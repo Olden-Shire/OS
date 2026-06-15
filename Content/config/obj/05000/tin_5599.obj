@@ -5,5 +5,6 @@ yan2d = 144
 xan2d = 172
 cost = 20
 members = true
-recol = 6379/24850
+recol1s = 6379
+recol1d = 24850
 name = Tin

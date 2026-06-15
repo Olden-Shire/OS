@@ -11,5 +11,6 @@ manwear = obj_khazard_helmet_man, 0
 womanwear = obj_khazard_helmet_woman, 0
 manhead = 57
 womanhead = 117
-recol = 61/8
+recol1s = 61
+recol1d = 8
 name = Black med helm

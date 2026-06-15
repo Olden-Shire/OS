@@ -5,5 +5,6 @@ zoom2d = 840
 yan2d = 152
 xan2d = 256
 iop1 = Read
-recol = 5018/28438
+recol1s = 5018
+recol1d = 28438
 name = Hazelmere's book

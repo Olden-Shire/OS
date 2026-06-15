@@ -7,5 +7,6 @@ zoom2d = 780
 yan2d = 220
 zan2d = 1860
 xan2d = 368
-recol = 61/127
+recol1s = 61
+recol1d = 127
 name = Uncut diamond

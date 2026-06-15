@@ -12,5 +12,6 @@ count3 = 5274, 4
 count4 = 5275, 5
 stackable = true
 cost = 177
-recol = 40237/52409
+recol1s = 40237
+recol1d = 52409
 name = Belladonna seed

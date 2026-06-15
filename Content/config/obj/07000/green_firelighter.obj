@@ -9,5 +9,6 @@ yan2d = 470
 xan2d = 221
 members = true
 cost = 15
-recol = 2857/13214
+recol1s = 2857
+recol1d = 13214
 name = Green firelighter

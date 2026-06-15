@@ -6,5 +6,6 @@ zoom2d = 1660
 yan2d = 1976
 xan2d = 152
 members = true
-recol = 61/127
+recol1s = 61
+recol1d = 127
 name = Naphtha mix

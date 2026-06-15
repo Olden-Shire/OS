@@ -8,5 +8,6 @@ yof2d = -28
 zoom2d = 1114
 xan2d = 553
 members = true
-recol = 22439/11200
+recol1s = 22439
+recol1d = 11200
 name = Collector icon

@@ -9,5 +9,6 @@ xan2d = 212
 ambient = 30
 contrast = 30
 cost = 1
-recol = 15013/22470
+recol1s = 15013
+recol1d = 22470
 name = Green toad

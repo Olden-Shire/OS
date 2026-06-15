@@ -1,5 +1,8 @@
 // obj 11649
-model = 27095
+model = model_27095
 cost = 3
 zoom2d = 1090
-recol = 6080/90 10473/70
+recol1s = 6080
+recol1d = 90
+recol2s = 10473
+recol2d = 70

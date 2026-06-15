@@ -9,5 +9,6 @@ xan2d = 80
 manwear = obj_holy_water_wear, 0
 womanwear = obj_holy_water_wear, 6
 iop2 = Wield
-recol = 61/43959
+recol1s = 61
+recol1d = 43959
 name = Holy water

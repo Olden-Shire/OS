@@ -1,9 +1,18 @@
 // obj 9413
-model = 16874
+model = model_16874
 xof2d = 3
 yof2d = 5
 zoom2d = 720
 yan2d = 117
 xan2d = 477
 stackable = true
-recol = 17971/43100 5537/43100 5532/43096 5656/43092 5652/43088
+recol1s = 17971
+recol1d = 43100
+recol2s = 5537
+recol2d = 43100
+recol3s = 5532
+recol3d = 43096
+recol4s = 5656
+recol4d = 43092
+recol5s = 5652
+recol5d = 43088

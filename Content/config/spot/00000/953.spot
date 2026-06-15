@@ -1,4 +1,9 @@
 // spot 953
-model = 19394
+model = model_19394
 anim = 5264
-recol = 926/22032 8094/22055 11200/22484
+recol1s = 926
+recol1d = 22032
+recol2s = 8094
+recol2d = 22055
+recol3s = 11200
+recol3d = 22484

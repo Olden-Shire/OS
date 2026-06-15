@@ -1,4 +1,15 @@
 // spot 83
-model = 3072
+model = model_3072
 anim = 649
-recol = 43187/906 43189/910 43063/914 43065/918 43067/922 61/926
+recol1s = 43187
+recol1d = 906
+recol2s = 43189
+recol2d = 910
+recol3s = 43063
+recol3d = 914
+recol4s = 43065
+recol4d = 918
+recol5s = 43067
+recol5d = 922
+recol6s = 61
+recol6d = 926

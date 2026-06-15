@@ -1,9 +1,12 @@
 // obj 925
 stackable = true
-model = 2422
+model = model_2422
 xof2d = 6
 yof2d = -29
 zoom2d = 1220
 yan2d = 100
 xan2d = 216
-recol = 61/43297 57/13221
+recol1s = 61
+recol1d = 43297
+recol2s = 57
+recol2d = 13221

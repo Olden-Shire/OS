@@ -1,9 +1,14 @@
 // obj 6503
-model = 9126
+model = model_9126
 xof2d = -8
 yof2d = 7
 zoom2d = 1260
 yan2d = 2008
 xan2d = 280
 stackable = true
-recol = 37991/59858 37974/61885 15547/15659
+recol1s = 37991
+recol1d = 59858
+recol2s = 37974
+recol2d = 61885
+recol3s = 15547
+recol3d = 15659

@@ -10,5 +10,6 @@ cost = 2
 members = true
 cost = 10
 ambient = 40
-recol = 127/677
+recol1s = 127
+recol1d = 677
 name = Red feather

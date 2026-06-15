@@ -7,5 +7,6 @@ zoom2d = 1400
 yan2d = 1576
 xan2d = 368
 members = true
-recol = 82/54397
+recol1s = 82
+recol1d = 54397
 name = Pot of quicklime

@@ -2,4 +2,7 @@
 model = obj_air_rune_556
 cost = 3
 zoom2d = 740
-recol = 61/41 127/115
+recol1s = 61
+recol1d = 41
+recol2s = 127
+recol2d = 115

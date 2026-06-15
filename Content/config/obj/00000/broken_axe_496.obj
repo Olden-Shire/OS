@@ -7,5 +7,6 @@ xan2d = 520
 manwear = obj_broken_axe_494_wear, 0
 womanwear = obj_broken_axe_494_wear, 6
 cost = 0
-recol = 61/33
+recol1s = 61
+recol1d = 33
 name = Broken axe

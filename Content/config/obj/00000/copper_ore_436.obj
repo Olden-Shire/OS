@@ -6,5 +6,6 @@ yof2d = 15
 zoom2d = 1400
 yan2d = 1576
 xan2d = 368
-recol = 7062/3912
+recol1s = 7062
+recol1d = 3912
 name = Copper ore

@@ -7,5 +7,6 @@ yan2d = 8
 xan2d = 112
 members = true
 iop2 = Empty
-recol = 127/10295
+recol1s = 127
+recol1d = 10295
 name = Bonemeal

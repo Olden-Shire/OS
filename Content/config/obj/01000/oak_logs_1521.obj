@@ -8,5 +8,6 @@ xan2d = 120
 ambient = 15
 op4 = Light
 op5 = hidden
-recol = 5559/5545
+recol1s = 5559
+recol1d = 5545
 name = Oak logs

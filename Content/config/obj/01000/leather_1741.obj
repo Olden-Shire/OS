@@ -7,5 +7,6 @@ yan2d = 116
 xan2d = 440
 manwear = obj_leather_1741_wear, 0
 womanwear = obj_leather_1741_wear, 0
-recol = 127/10128
+recol1s = 127
+recol1d = 10128
 name = Leather

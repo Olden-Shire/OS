@@ -2,4 +2,5 @@
 model = obj_cooking_gauntlets
 cost = 3
 zoom2d = 930
-recol = 10004/41
+recol1s = 10004
+recol1d = 41

@@ -7,5 +7,6 @@ zoom2d = 1020
 yan2d = 188
 xan2d = 316
 iop1 = Rub-together
-recol = 5010/5392
+recol1s = 5010
+recol1d = 5392
 name = Dry sticks

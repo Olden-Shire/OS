@@ -2,4 +2,7 @@
 model = obj_pirates_hat_2651
 cost = 3
 zoom2d = 600
-recol = 7690/24 127/82
+recol1s = 7690
+recol1d = 24
+recol2s = 127
+recol2d = 82

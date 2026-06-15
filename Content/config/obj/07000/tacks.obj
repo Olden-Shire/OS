@@ -12,5 +12,6 @@ zoom2d = 1030
 yan2d = 52
 xan2d = 660
 members = true
-recol = 28/7952
+recol1s = 28
+recol1d = 7952
 name = Tacks

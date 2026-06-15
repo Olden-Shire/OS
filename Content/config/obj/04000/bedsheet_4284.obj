@@ -5,5 +5,6 @@ yof2d = -15
 zoom2d = 1360
 xan2d = 368
 iop2 = Wear
-recol = 7390/7599
+recol1s = 7390
+recol1d = 7599
 name = Bedsheet

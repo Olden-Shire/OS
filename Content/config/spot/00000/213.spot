@@ -1,3 +1,6 @@
 // spot 213
-model = 3139
-recol = 61/33 57/33
+model = model_3139
+recol1s = 61
+recol1d = 33
+recol2s = 57
+recol2d = 33

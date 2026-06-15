@@ -4,5 +4,6 @@ xof2d = 4
 yof2d = -6
 zoom2d = 3310
 members = true
-recol = 37824/17061
+recol1s = 37824
+recol1d = 17061
 name = Agility jump

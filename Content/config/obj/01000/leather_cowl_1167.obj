@@ -13,5 +13,6 @@ manhead = 32
 womanhead = 90
 manhead2 = 63
 womanhead2 = 120
-recol = 43059/8596
+recol1s = 43059
+recol1d = 8596
 name = Leather cowl

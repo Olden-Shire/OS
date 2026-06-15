@@ -9,5 +9,6 @@ yan2d = 135
 zan2d = 2024
 xan2d = 322
 iop2 = Wear
-recol = 127/43951
+recol1s = 127
+recol1d = 43951
 name = Ring of recoil

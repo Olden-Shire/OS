@@ -10,5 +10,6 @@ xan2d = 460
 iop2 = Wield
 manwear = obj_longbow_839_wear, 0
 womanwear = obj_longbow_839_wear, 6
-recol = 6674/9135
+recol1s = 6674
+recol1d = 9135
 name = Yew longbow

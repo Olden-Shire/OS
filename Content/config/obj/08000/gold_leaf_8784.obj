@@ -6,5 +6,6 @@ yof2d = -15
 zoom2d = 1360
 yan2d = 1658
 xan2d = 218
-recol = 127/54722
+recol1s = 127
+recol1d = 54722
 name = Gold leaf

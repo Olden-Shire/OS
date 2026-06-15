@@ -5,4 +5,5 @@ womanwear = 26829, 6
 cost = 40
 members = true
 iop4 = Empty
-recol = 61/11080
+recol1s = 61
+recol1d = 11080

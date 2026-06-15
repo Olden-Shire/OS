@@ -2,4 +2,7 @@
 model = obj_pirate_boots_7114
 cost = 3
 zoom2d = 770
-recol = 11200/82 8/12
+recol1s = 11200
+recol1d = 82
+recol2s = 8
+recol2d = 12

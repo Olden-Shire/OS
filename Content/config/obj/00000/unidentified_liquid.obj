@@ -6,5 +6,6 @@ yan2d = 1996
 xan2d = 84
 members = true
 iop2 = Empty
-recol = 61/6080
+recol1s = 61
+recol1d = 6080
 name = Unidentified liquid

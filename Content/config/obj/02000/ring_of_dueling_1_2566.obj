@@ -10,5 +10,6 @@ zan2d = 2024
 xan2d = 322
 iop2 = Wear
 iop4 = Rub
-recol = 127/22443
+recol1s = 127
+recol1d = 22443
 name = Ring of dueling(1)

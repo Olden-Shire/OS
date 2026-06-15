@@ -12,5 +12,6 @@ zan2d = 1978
 xan2d = 166
 members = true
 cost = 225
-recol = 926/22464
+recol1s = 926
+recol1d = 22464
 name = Green boater

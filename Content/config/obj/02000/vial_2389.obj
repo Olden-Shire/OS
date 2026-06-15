@@ -6,5 +6,6 @@ yan2d = 1996
 xan2d = 84
 members = true
 iop5 = Destroy
-recol = 61/19241
+recol1s = 61
+recol1d = 19241
 name = Vial

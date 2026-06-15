@@ -1,10 +1,19 @@
 // obj 9253
 stackable = true
-model = 16871
+model = model_16871
 xof2d = 3
 yof2d = 5
 zoom2d = 720
 yan2d = 117
 xan2d = 477
 ambient = 7
-recol = 10465/39023 5537/57 5532/53 5656/49 5652/45
+recol1s = 10465
+recol1d = 39023
+recol2s = 5537
+recol2d = 57
+recol3s = 5532
+recol3d = 53
+recol4s = 5656
+recol4d = 49
+recol5s = 5652
+recol5d = 45

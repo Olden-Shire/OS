@@ -10,5 +10,6 @@ manwear2 = 170
 womanwear = obj_ham_shirt_4298_woman, 0
 womanwear2 = 348
 iop2 = Wear
-recol = 8741/61347
+recol1s = 8741
+recol1d = 61347
 name = Ham shirt

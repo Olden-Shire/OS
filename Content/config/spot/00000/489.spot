@@ -1,6 +1,7 @@
 // spot 489
-model = 3097
+model = model_3097
 anim = 673
 ambient = 40
 contrast = 40
-recol = 127/23512
+recol1s = 127
+recol1d = 23512

@@ -12,5 +12,6 @@ manwear2 = 151
 womanwear = obj_priest_gown_426_woman, 0
 womanwear2 = 332
 members = true
-recol = 8741/127
+recol1s = 8741
+recol1d = 127
 name = Doctors' gown

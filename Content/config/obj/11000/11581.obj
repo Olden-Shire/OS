@@ -2,4 +2,13 @@
 model = obj_plant_pot_5350
 cost = 3
 zoom2d = 1210
-recol = 2968/33 3994/37 3870/41 3875/45 3751/53
+recol1s = 2968
+recol1d = 33
+recol2s = 3994
+recol2d = 37
+recol3s = 3870
+recol3d = 41
+recol4s = 3875
+recol4d = 45
+recol5s = 3751
+recol5d = 53

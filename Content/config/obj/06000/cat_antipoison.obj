@@ -6,5 +6,6 @@ zoom2d = 550
 yan2d = 1996
 xan2d = 84
 iop4 = Empty
-recol = 61/23985
+recol1s = 61
+recol1d = 23985
 name = Cat antipoison

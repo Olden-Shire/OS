@@ -7,5 +7,6 @@ xan2d = 84
 members = true
 iop1 = Fill
 iop2 = Remove-one
-recol = 17325/815
+recol1s = 17325
+recol1d = 815
 name = Strawberries(2)

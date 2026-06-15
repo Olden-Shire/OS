@@ -5,5 +5,6 @@ resizex = 80
 resizey = 80
 resizez = 80
 zoom2d = 1450
-recol = 43125/41
+recol1s = 43125
+recol1d = 41
 name = Consecration seed

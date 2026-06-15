@@ -1,9 +1,14 @@
 // obj 4807
-model = 6818
+model = model_6818
 yof2d = -9
 zoom2d = 1700
 yan2d = 116
 xan2d = 324
 members = true
 stackable = true
-recol = 4771/7582 926/127 61/36133
+recol1s = 4771
+recol1d = 7582
+recol2s = 926
+recol2d = 127
+recol3s = 61
+recol3d = 36133

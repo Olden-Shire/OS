@@ -2,4 +2,7 @@
 model = obj_childs_blanket
 cost = 3
 zoom2d = 1360
-recol = 7390/103 7510/94
+recol1s = 7390
+recol1d = 103
+recol2s = 7510
+recol2d = 94

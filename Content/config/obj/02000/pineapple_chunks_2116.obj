@@ -9,5 +9,6 @@ zoom2d = 870
 yan2d = 2004
 zan2d = 36
 xan2d = 244
-recol = 6080/8136
+recol1s = 6080
+recol1d = 8136
 name = Pineapple chunks

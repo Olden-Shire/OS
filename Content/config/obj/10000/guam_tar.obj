@@ -9,5 +9,6 @@ xan2d = 224
 members = true
 stackable = true
 iop2 = Wield
-recol = 16/16545
+recol1s = 16
+recol1d = 16545
 name = Guam tar

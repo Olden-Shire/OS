@@ -10,5 +10,6 @@ zan2d = 2024
 xan2d = 322
 members = true
 iop2 = Wear
-recol = 127/51111
+recol1s = 127
+recol1d = 51111
 name = Ring of wealth

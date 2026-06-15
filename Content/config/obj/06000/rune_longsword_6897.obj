@@ -9,5 +9,6 @@ zan2d = 96
 xan2d = 100
 iop2 = Wield
 members = true
-recol = 61/36133
+recol1s = 61
+recol1d = 36133
 name = Rune longsword

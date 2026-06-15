@@ -2,4 +2,5 @@
 model = obj_blamish_snail_slime
 manwear = 16451, 0
 womanwear = 16451, 0
-recol = 78/43932
+recol1s = 78
+recol1d = 43932

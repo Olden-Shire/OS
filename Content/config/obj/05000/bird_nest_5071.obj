@@ -6,5 +6,6 @@ yan2d = 60
 xan2d = 172
 members = true
 iop1 = Search
-recol = 43484/20948
+recol1s = 43484
+recol1d = 20948
 name = Bird nest

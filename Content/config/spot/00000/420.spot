@@ -1,6 +1,7 @@
 // spot 420
-model = 8328
+model = model_8328
 anim = 2328
 resizeh = 115
 resizev = 115
-recol = 15013/2731
+recol1s = 15013
+recol1d = 2731

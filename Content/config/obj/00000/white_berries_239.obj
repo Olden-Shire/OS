@@ -7,5 +7,6 @@ yan2d = 668
 xan2d = 404
 members = true
 cost = 10
-recol = 960/127
+recol1s = 960
+recol1d = 127
 name = White berries

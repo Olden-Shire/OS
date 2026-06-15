@@ -9,5 +9,6 @@ manwear = obj_thatch_spar_light_6281_wear, 0
 womanwear = obj_thatch_spar_light_6281_wear, 6
 members = true
 cost = 15
-recol = 7461/7841
+recol1s = 7461
+recol1d = 7841
 name = Thatch spar med

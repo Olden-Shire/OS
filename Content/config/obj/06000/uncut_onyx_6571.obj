@@ -8,5 +8,6 @@ yan2d = 220
 zan2d = 1860
 xan2d = 368
 cost = 200000
-recol = 61/43528
+recol1s = 61
+recol1d = 43528
 name = Uncut onyx

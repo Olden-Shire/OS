@@ -7,5 +7,6 @@ yan2d = 196
 xan2d = 300
 ambient = 15
 members = true
-recol = 6740/6606
+recol1s = 6740
+recol1d = 6606
 name = Statuette

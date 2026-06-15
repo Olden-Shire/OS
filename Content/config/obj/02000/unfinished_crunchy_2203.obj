@@ -5,5 +5,6 @@ zoom2d = 650
 xan2d = 220
 iop1 = Eat
 members = true
-recol = 3974/5345
+recol1s = 3974
+recol1d = 5345
 name = Unfinished crunchy

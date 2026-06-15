@@ -7,5 +7,6 @@ xan2d = 104
 iop1 = Drink
 members = true
 cost = 20
-recol = 37811/21460
+recol1s = 37811
+recol1d = 21460
 name = Poison chalice

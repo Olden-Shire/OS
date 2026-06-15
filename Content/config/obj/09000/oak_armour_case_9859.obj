@@ -4,5 +4,6 @@ cost = 10
 members = true
 zoom2d = 1762
 xan2d = 512
-recol = 12393/22439
+recol1s = 12393
+recol1d = 22439
 name = Oak armour case

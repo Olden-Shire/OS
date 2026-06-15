@@ -9,5 +9,6 @@ zan2d = 2024
 xan2d = 268
 iop2 = Wear
 members = true
-recol = 127/960
+recol1s = 127
+recol1d = 960
 name = 'perfect' ring

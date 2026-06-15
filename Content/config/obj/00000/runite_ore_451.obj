@@ -6,5 +6,6 @@ yof2d = 15
 zoom2d = 1400
 yan2d = 1576
 xan2d = 368
-recol = 7062/36133
+recol1s = 7062
+recol1d = 36133
 name = Runite ore

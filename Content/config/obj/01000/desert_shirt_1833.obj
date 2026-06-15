@@ -10,5 +10,6 @@ manwear = obj_priest_gown_426_man, 0
 manwear2 = 170
 womanwear = obj_priest_gown_426_woman, 0
 womanwear2 = 348
-recol = 8741/127
+recol1s = 8741
+recol1d = 127
 name = Desert shirt

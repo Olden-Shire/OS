@@ -6,5 +6,6 @@ zoom2d = 340
 xan2d = 120
 members = true
 iop5 = Destroy
-recol = 127/55232
+recol1s = 127
+recol1d = 55232
 name = Magenta crystal

@@ -10,5 +10,6 @@ ambient = 40
 contrast = 40
 members = true
 iop4 = Empty
-recol = 61/10939
+recol1s = 61
+recol1d = 10939
 name = Saradomin brew(3)

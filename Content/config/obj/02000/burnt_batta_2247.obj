@@ -8,5 +8,6 @@ zoom2d = 780
 yan2d = 136
 xan2d = 236
 iop1 = Empty Tin
-recol = 8642/24
+recol1s = 8642
+recol1d = 24
 name = Burnt batta

@@ -8,5 +8,6 @@ xan2d = 84
 members = true
 iop1 = Drink
 iop4 = Empty
-recol = 61/10411
+recol1s = 61
+recol1d = 10411
 name = Antidote+(3)

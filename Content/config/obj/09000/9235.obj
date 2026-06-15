@@ -1,8 +1,19 @@
 // obj 9235
-model = 16866
+model = model_16866
 xof2d = 1
 zoom2d = 300
 yan2d = 66
 xan2d = 453
 members = true
-recol = 10465/28 10334/28 5537/28 5532/28 5656/28 5652/28
+recol1s = 10465
+recol1d = 28
+recol2s = 10334
+recol2d = 28
+recol3s = 5537
+recol3d = 28
+recol4s = 5532
+recol4d = 28
+recol5s = 5656
+recol5d = 28
+recol6s = 5652
+recol6d = 28

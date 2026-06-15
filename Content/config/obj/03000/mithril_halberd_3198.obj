@@ -8,5 +8,6 @@ womanwear = obj_bronze_halberd_3190_wear, 6
 zoom2d = 2130
 yan2d = 48
 xan2d = 604
-recol = 61/43297
+recol1s = 61
+recol1d = 43297
 name = Mithril halberd

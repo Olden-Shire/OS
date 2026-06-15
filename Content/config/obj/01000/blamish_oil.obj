@@ -7,5 +7,6 @@ zoom2d = 550
 yan2d = 1996
 xan2d = 84
 members = true
-recol = 42436/16495
+recol1s = 42436
+recol1d = 16495
 name = Blamish oil

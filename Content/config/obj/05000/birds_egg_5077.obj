@@ -4,5 +4,6 @@ zoom2d = 650
 yan2d = 16
 xan2d = 76
 members = true
-recol = 476/43484
+recol1s = 476
+recol1d = 43484
 name = Bird's egg

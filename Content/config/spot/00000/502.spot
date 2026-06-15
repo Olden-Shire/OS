@@ -1,5 +1,8 @@
 // spot 502
-model = 3085
+model = model_3085
 anim = 662
 ambient = 40
-recol = 960/38835 6080/35788
+recol1s = 960
+recol1d = 38835
+recol2s = 6080
+recol2d = 35788

@@ -11,5 +11,6 @@ xan2d = 156
 members = true
 manwear = obj_empty_cup_7728_wear, 0
 womanwear = obj_empty_cup_7728_wear, 6
-recol = 49/10547
+recol1s = 49
+recol1d = 10547
 name = Cup of tea

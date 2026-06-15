@@ -10,5 +10,6 @@ xan2d = 384
 iop2 = Wield
 manwear = obj_seercull_6724_wear, 0
 womanwear = obj_seercull_6724_wear, 6
-recol = 6674/6049
+recol1s = 6674
+recol1d = 6049
 name = Seercull

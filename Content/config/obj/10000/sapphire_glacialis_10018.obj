@@ -8,5 +8,6 @@ xan2d = 280
 iop4 = Release
 members = true
 cost = 30
-recol = 39892/33088
+recol1s = 39892
+recol1d = 33088
 name = Sapphire glacialis

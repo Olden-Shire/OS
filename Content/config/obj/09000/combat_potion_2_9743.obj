@@ -10,5 +10,6 @@ iop4 = Empty
 ambient = 15
 contrast = 15
 members = true
-recol = 61/18882
+recol1s = 61
+recol1d = 18882
 name = Combat potion(2)

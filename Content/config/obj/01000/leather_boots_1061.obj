@@ -9,5 +9,6 @@ xan2d = 152
 iop2 = Wear
 manwear = obj_boots_of_lightness_88_man, 0
 womanwear = obj_boots_of_lightness_88_woman, 0
-recol = 4626/2452
+recol1s = 4626
+recol1d = 2452
 name = Leather boots

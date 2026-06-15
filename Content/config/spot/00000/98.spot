@@ -1,6 +1,11 @@
 // spot 98
-model = 3082
+model = model_3082
 anim = 660
 ambient = 30
 contrast = 30
-recol = 926/10138 947/10155 11200/22464
+recol1s = 926
+recol1d = 10138
+recol2s = 947
+recol2d = 10155
+recol3s = 11200
+recol3d = 22464

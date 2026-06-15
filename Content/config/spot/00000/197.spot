@@ -1,6 +1,11 @@
 // spot 197
-model = 2267
+model = model_2267
 anim = 901
 resizeh = 128
 resizev = 384
-recol = 8128/43146 7104/45993 5056/127
+recol1s = 8128
+recol1d = 43146
+recol2s = 7104
+recol2d = 45993
+recol3s = 5056
+recol3d = 127

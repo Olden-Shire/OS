@@ -7,5 +7,6 @@ zoom2d = 1410
 yan2d = 368
 xan2d = 400
 iop1 = Bury
-recol = 127/10326
+recol1s = 127
+recol1d = 10326
 name = Wolf bones

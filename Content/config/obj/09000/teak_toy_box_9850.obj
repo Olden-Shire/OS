@@ -4,5 +4,6 @@ cost = 10
 members = true
 zoom2d = 1762
 xan2d = 512
-recol = 12393/6067
+recol1s = 12393
+recol1d = 6067
 name = Teak toy box

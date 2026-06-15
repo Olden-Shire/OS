@@ -4,5 +4,6 @@ model = obj_red_bead_1470
 zoom2d = 1020
 yan2d = 68
 xan2d = 68
-recol = 127/960
+recol1s = 127
+recol1d = 960
 name = Red bead

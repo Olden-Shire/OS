@@ -12,5 +12,6 @@ womanwear3 = 19985
 iop2 = Wear
 members = true
 cost = 20
-recol = 8741/5532
+recol1s = 8741
+recol1d = 5532
 name = Wood camo top

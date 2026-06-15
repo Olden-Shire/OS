@@ -9,5 +9,6 @@ cost = 2
 iop1 = Drink
 manwear = obj_karamjan_rum_3164_wear, 0
 womanwear = obj_karamjan_rum_3164_wear, 6
-recol = 1942/43311
+recol1s = 1942
+recol1d = 43311
 name = Rum

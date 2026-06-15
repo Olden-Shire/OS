@@ -7,5 +7,6 @@ yof2d = 20
 zoom2d = 2250
 yan2d = 1980
 xan2d = 320
-recol = 10529/25048
+recol1s = 10529
+recol1d = 25048
 name = Karambwan paste

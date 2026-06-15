@@ -8,5 +8,6 @@ xan2d = 112
 members = true
 cost = 10
 iop4 = Empty
-recol = 127/6371
+recol1s = 127
+recol1d = 6371
 name = Pot of cornflour

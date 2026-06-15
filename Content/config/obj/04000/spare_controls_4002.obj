@@ -6,5 +6,6 @@ yof2d = 8
 zoom2d = 1820
 xan2d = 388
 iop1 = View
-recol = 61/7566
+recol1s = 61
+recol1d = 7566
 name = Spare controls

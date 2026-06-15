@@ -9,5 +9,6 @@ zoom2d = 919
 yan2d = 1024
 xan2d = 567
 members = true
-recol = 22439/947
+recol1s = 22439
+recol1d = 947
 name = Attacker icon

@@ -10,5 +10,6 @@ cost = 2
 members = true
 cost = 13
 ambient = 40
-recol = 127/8883
+recol1s = 127
+recol1d = 8883
 name = Yellow feather

@@ -7,5 +7,6 @@ yan2d = 8
 xan2d = 112
 members = true
 members = true
-recol = 127/6618
+recol1s = 127
+recol1d = 6618
 name = Ale yeast

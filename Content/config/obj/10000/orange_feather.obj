@@ -10,5 +10,6 @@ cost = 2
 members = true
 cost = 15
 ambient = 40
-recol = 127/3767
+recol1s = 127
+recol1d = 3767
 name = Orange feather

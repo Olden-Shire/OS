@@ -1,6 +1,15 @@
 // spot 577
-model = 12641
+model = model_12641
 anim = 3330
 ambient = 10
 contrast = 10
-recol = 6371/10448 7386/15434 7376/21563 10301/24751 3491/1843
+recol1s = 6371
+recol1d = 10448
+recol2s = 7386
+recol2d = 15434
+recol3s = 7376
+recol3d = 21563
+recol4s = 10301
+recol4d = 24751
+recol5s = 3491
+recol5d = 1843

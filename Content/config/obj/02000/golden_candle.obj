@@ -6,5 +6,6 @@ yof2d = -2
 zoom2d = 570
 yan2d = 1864
 xan2d = 168
-recol = 127/9141
+recol1s = 127
+recol1d = 9141
 name = Golden candle

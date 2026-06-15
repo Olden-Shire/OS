@@ -7,5 +7,6 @@ xan2d = 204
 iop4 = Empty
 members = true
 cost = 1
-recol = 39834/6369
+recol1s = 39834
+recol1d = 6369
 name = Magic glue

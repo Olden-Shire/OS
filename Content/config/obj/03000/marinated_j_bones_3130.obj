@@ -7,5 +7,6 @@ zoom2d = 2410
 yan2d = 132
 xan2d = 396
 iop1 = Bury
-recol = 127/21970
+recol1s = 127
+recol1d = 21970
 name = Marinated j' bones

@@ -2,4 +2,5 @@
 model = obj_rats_tail
 cost = 3
 zoom2d = 590
-recol = 5702/53
+recol1s = 5702
+recol1d = 53

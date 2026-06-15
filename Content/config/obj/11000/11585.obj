@@ -2,4 +2,7 @@
 model = obj_blamish_snail_slime
 cost = 3
 zoom2d = 760
-recol = 61/94 8757/78
+recol1s = 61
+recol1d = 94
+recol2s = 8757
+recol2d = 78

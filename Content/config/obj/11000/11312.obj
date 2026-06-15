@@ -2,4 +2,5 @@
 model = obj_shortbow_841
 manwear = 26650, 0
 womanwear = 26650, 6
-recol = 6674/31516
+recol1s = 6674
+recol1d = 31516

@@ -11,5 +11,6 @@ yan2d = 1932
 xan2d = 332
 members = true
 cost = 35
-recol = 8741/6470
+recol1s = 8741
+recol1d = 6470
 name = Desert top

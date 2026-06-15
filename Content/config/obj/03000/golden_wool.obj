@@ -8,5 +8,6 @@ xan2d = 152
 ambient = 30
 contrast = 30
 members = true
-recol = 10353/8666
+recol1s = 10353
+recol1d = 8666
 name = Golden wool

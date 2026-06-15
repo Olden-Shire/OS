@@ -11,5 +11,6 @@ manwear = obj_wizard_hat_g_7394_man, 0
 womanwear = obj_wizard_hat_g_7394_woman, 0
 manhead = 11403
 womanhead = 11407
-recol = 24/4
+recol1s = 24
+recol1d = 4
 name = Wizard hat (t)

@@ -2,4 +2,7 @@
 model = obj_harpoon_311
 cost = 3
 zoom2d = 1030
-recol = 61/99 7070/41
+recol1s = 61
+recol1d = 99
+recol2s = 7070
+recol2d = 41

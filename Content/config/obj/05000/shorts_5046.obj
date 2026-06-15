@@ -9,5 +9,6 @@ xan2d = 584
 iop2 = Wear
 manwear = obj_shorts_5042_man, 0
 womanwear = obj_shorts_5042_woman, 0
-recol = 9529/43827
+recol1s = 9529
+recol1d = 43827
 name = Shorts

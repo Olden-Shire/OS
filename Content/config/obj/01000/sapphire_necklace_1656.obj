@@ -9,5 +9,6 @@ xan2d = 290
 iop2 = Wear
 manwear = obj_perfect_necklace_man, 0
 womanwear = obj_perfect_necklace_woman, 0
-recol = 41/43951
+recol1s = 41
+recol1d = 43951
 name = Sapphire necklace

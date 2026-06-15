@@ -2,4 +2,5 @@
 model = obj_bread_2309
 cost = 3
 zoom2d = 830
-recol = 8107/41
+recol1s = 8107
+recol1d = 41

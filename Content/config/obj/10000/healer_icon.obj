@@ -9,5 +9,6 @@ zoom2d = 1049
 yan2d = 1024
 xan2d = 512
 members = true
-recol = 22439/22451
+recol1s = 22439
+recol1d = 22451
 name = Healer icon

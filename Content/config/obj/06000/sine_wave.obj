@@ -5,5 +5,6 @@ model = obj_priest_gown_428
 yof2d = 1
 zoom2d = 1940
 xan2d = 572
-recol = 25238/62928
+recol1s = 25238
+recol1d = 62928
 name = Sine wave

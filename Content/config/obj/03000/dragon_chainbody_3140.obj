@@ -10,5 +10,6 @@ manwear2 = 156
 womanwear = obj_dragon_chainbody_3140_woman, 0
 womanwear2 = 337
 members = true
-recol = 61/926
+recol1s = 61
+recol1d = 926
 name = Dragon chainbody

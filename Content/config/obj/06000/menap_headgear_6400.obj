@@ -10,5 +10,6 @@ zoom2d = 930
 xan2d = 588
 members = true
 cost = 35
-recol = 49054/64431
+recol1s = 49054
+recol1d = 64431
 name = Menap headgear

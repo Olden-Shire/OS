@@ -7,5 +7,6 @@ yan2d = 692
 xan2d = 428
 stackable = true
 cost = 2
-recol = 127/127
+recol1s = 127
+recol1d = 127
 name = Wimpy feather

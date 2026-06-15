@@ -1,4 +1,15 @@
 // spot 1084
-model = 26196
+model = model_26196
 anim = 6543
-recol = 18597/10320 18721/10312 18716/10304 43074/10320 43065/10312 43057/10304
+recol1s = 18597
+recol1d = 10320
+recol2s = 18721
+recol2d = 10312
+recol3s = 18716
+recol3d = 10304
+recol4s = 43074
+recol4d = 10320
+recol5s = 43065
+recol5d = 10312
+recol6s = 43057
+recol6d = 10304

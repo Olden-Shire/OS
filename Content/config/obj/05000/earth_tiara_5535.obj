@@ -9,5 +9,6 @@ womanwear = obj_earth_tiara_5535_woman, 0
 manhead = 7472
 womanhead = 7472
 cost = 100
-recol = 43096/3280
+recol1s = 43096
+recol1d = 3280
 name = Earth tiara

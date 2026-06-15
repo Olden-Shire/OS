@@ -10,5 +10,6 @@ iop2 = Wear
 manwear = obj_perfect_necklace_man, 0
 womanwear = obj_perfect_necklace_woman, 0
 members = true
-recol = 41/960
+recol1s = 41
+recol1d = 960
 name = Clean necklace

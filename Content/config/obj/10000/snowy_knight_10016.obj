@@ -8,5 +8,6 @@ xan2d = 280
 iop4 = Release
 members = true
 cost = 50
-recol = 39892/10361
+recol1s = 39892
+recol1d = 10361
 name = Snowy knight

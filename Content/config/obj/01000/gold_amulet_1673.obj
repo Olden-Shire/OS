@@ -6,5 +6,6 @@ yof2d = 106
 zoom2d = 370
 yan2d = 100
 xan2d = 304
-recol = 127/12209
+recol1s = 127
+recol1d = 12209
 name = Gold amulet

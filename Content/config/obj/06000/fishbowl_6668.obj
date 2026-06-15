@@ -10,5 +10,6 @@ members = true
 iop3 = Empty
 ambient = 40
 contrast = 20
-recol = 41938/42330
+recol1s = 41938
+recol1d = 42330
 name = Fishbowl

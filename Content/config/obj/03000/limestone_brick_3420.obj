@@ -6,5 +6,6 @@ yof2d = -41
 yan2d = 164
 xan2d = 220
 members = true
-recol = 7062/10295
+recol1s = 7062
+recol1d = 10295
 name = Limestone brick

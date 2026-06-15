@@ -8,5 +8,6 @@ ambient = 10
 members = true
 cost = 13
 iop4 = Empty
-recol = 8724/14767
+recol1s = 8724
+recol1d = 14767
 name = Apple mush

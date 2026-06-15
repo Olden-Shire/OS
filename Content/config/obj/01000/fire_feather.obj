@@ -7,5 +7,6 @@ zoom2d = 700
 yan2d = 692
 xan2d = 428
 members = true
-recol = 127/4032
+recol1s = 127
+recol1d = 4032
 name = Fire feather

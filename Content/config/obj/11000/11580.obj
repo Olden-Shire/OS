@@ -2,4 +2,7 @@
 model = obj_salmon_329
 cost = 3
 zoom2d = 1370
-recol = 61/74 103/86
+recol1s = 61
+recol1d = 74
+recol2s = 103
+recol2d = 86

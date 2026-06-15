@@ -7,5 +7,6 @@ yof2d = 10
 zoom2d = 700
 yan2d = 692
 xan2d = 428
-recol = 127/9141
+recol1s = 127
+recol1d = 9141
 name = Golden feather

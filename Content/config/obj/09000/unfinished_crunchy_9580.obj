@@ -5,5 +5,6 @@ model = obj_odd_crunchies_2197
 xof2d = -2
 zoom2d = 650
 xan2d = 220
-recol = 8642/6829
+recol1s = 8642
+recol1d = 6829
 name = Unfinished crunchy

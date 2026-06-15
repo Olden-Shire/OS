@@ -8,5 +8,6 @@ yan2d = 148
 xan2d = 224
 members = true
 stackable = true
-recol = 16/28
+recol1s = 16
+recol1d = 28
 name = Raw swamp paste

@@ -2,4 +2,9 @@
 model = obj_logs_1511
 cost = 3
 zoom2d = 1100
-recol = 5665/41 5784/24 5559/53
+recol1s = 5665
+recol1d = 41
+recol2s = 5784
+recol2d = 24
+recol3s = 5559
+recol3d = 53

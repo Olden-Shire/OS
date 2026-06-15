@@ -7,5 +7,6 @@ yan2d = 1976
 xan2d = 152
 members = true
 cost = 1
-recol = 61/22356
+recol1s = 61
+recol1d = 22356
 name = Toxic naphtha

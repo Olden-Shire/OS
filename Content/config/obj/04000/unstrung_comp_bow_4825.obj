@@ -5,5 +5,6 @@ zoom2d = 2070
 yan2d = 48
 xan2d = 232
 members = true
-recol = 9538/61
+recol1s = 9538
+recol1d = 61
 name = Unstrung comp bow

@@ -9,5 +9,6 @@ xan2d = 508
 iop2 = Wield
 manwear = obj_shortbow_841_wear, 0
 womanwear = obj_shortbow_841_wear, 6
-recol = 6674/6049
+recol1s = 6674
+recol1d = 6049
 name = Shortbow

@@ -6,5 +6,6 @@ yan2d = 152
 xan2d = 256
 members = true
 iop1 = Read
-recol = 5018/14226
+recol1s = 5018
+recol1d = 14226
 name = Eastern discovery

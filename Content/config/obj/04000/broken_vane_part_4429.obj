@@ -5,5 +5,6 @@ zoom2d = 940
 yan2d = 1772
 xan2d = 176
 members = true
-recol = 4535/3627
+recol1s = 4535
+recol1d = 3627
 name = Broken vane part

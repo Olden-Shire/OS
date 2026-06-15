@@ -5,5 +5,6 @@ zoom2d = 1090
 xan2d = 584
 members = true
 cost = 210
-recol = 8103/43026
+recol1s = 8103
+recol1d = 43026
 name = Dark kebbit fur

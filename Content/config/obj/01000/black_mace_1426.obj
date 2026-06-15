@@ -8,5 +8,6 @@ yof2d = -1
 zoom2d = 1030
 yan2d = 1188
 xan2d = 392
-recol = 61/0
+recol1s = 61
+recol1d = 0
 name = Black mace

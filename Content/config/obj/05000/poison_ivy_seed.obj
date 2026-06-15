@@ -12,5 +12,6 @@ count2 = 5221, 3
 count3 = 5222, 4
 count4 = 5223, 5
 cost = 166
-recol = 431/90
+recol1s = 431
+recol1d = 90
 name = Poison ivy seed

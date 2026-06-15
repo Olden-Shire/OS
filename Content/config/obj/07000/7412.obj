@@ -1,5 +1,5 @@
 // obj 7412
-model = 12144
+model = model_12144
 manwear = 12144, 0
 womanwear = 12144, 0
 members = true
@@ -8,4 +8,5 @@ yof2d = -1
 zoom2d = 550
 yan2d = 1996
 xan2d = 84
-recol = 61/58316
+recol1s = 61
+recol1d = 58316

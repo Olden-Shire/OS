@@ -11,5 +11,6 @@ yan2d = 160
 xan2d = 152
 members = true
 iop5 = Destroy
-recol = 4626/14387
+recol1s = 4626
+recol1d = 14387
 name = Runner boots

@@ -8,5 +8,6 @@ xan2d = 84
 members = true
 iop1 = Drink
 iop4 = Empty
-recol = 61/4550
+recol1s = 61
+recol1d = 4550
 name = Relicym's balm(2)

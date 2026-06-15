@@ -5,5 +5,6 @@ yan2d = 648
 xan2d = 216
 iop1 = Bury
 members = true
-recol = 127/10295
+recol1s = 127
+recol1d = 10295
 name = Dagannoth bones

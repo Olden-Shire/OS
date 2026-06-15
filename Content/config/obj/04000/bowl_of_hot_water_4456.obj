@@ -6,5 +6,6 @@ zoom2d = 1030
 xan2d = 104
 iop4 = Empty
 members = true
-recol = 44263/48361
+recol1s = 44263
+recol1d = 48361
 name = Bowl of hot water

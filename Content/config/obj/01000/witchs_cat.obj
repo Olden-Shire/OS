@@ -7,5 +7,6 @@ yan2d = 152
 zan2d = 1940
 xan2d = 32
 members = true
-recol = 61/16
+recol1s = 61
+recol1d = 16
 name = Witch's cat

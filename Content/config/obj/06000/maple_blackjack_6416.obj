@@ -9,5 +9,6 @@ yan2d = 468
 xan2d = 372
 members = true
 cost = 1200
-recol = 8111/5960
+recol1s = 8111
+recol1d = 5960
 name = Maple blackjack

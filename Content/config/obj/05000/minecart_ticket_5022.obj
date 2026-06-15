@@ -4,5 +4,6 @@ zoom2d = 990
 yan2d = 56
 xan2d = 468
 members = true
-recol = 10562/10458
+recol1s = 10562
+recol1d = 10458
 name = Minecart ticket

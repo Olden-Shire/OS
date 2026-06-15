@@ -8,5 +8,6 @@ xan2d = 236
 iop1 = Eat
 members = true
 cost = 120
-recol = 15283/11200
+recol1s = 15283
+recol1d = 11200
 name = Premade c+t batta

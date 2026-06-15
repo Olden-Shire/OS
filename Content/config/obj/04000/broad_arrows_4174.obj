@@ -8,5 +8,6 @@ stackable = true
 members = true
 model = obj_broad_arrows_4174
 iop2 = Wield
-recol = 5012/5404
+recol1s = 5012
+recol1d = 5404
 name = Broad arrows

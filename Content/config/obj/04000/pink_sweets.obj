@@ -10,5 +10,6 @@ yan2d = 1268
 xan2d = 484
 cost = 0
 iop1 = Eat
-recol = 39896/55256
+recol1s = 39896
+recol1d = 55256
 name = Pink sweets

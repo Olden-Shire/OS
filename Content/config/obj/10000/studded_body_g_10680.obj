@@ -6,5 +6,6 @@ xan2d = 580
 iop2 = Wear
 manwear = obj_studded_body_g_7362_man, 0
 womanwear = obj_studded_body_g_7362_woman, 0
-recol = 24/7114
+recol1s = 24
+recol1d = 7114
 name = Studded body (g)

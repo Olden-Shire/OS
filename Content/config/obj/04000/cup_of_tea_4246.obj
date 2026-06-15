@@ -8,5 +8,6 @@ zoom2d = 620
 yan2d = 84
 xan2d = 156
 members = true
-recol = 61/14507
+recol1s = 61
+recol1d = 14507
 name = Cup of tea

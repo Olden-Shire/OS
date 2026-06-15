@@ -2,4 +2,5 @@
 model = obj_knife_946
 cost = 3
 zoom2d = 580
-recol = 6036/41
+recol1s = 6036
+recol1d = 41

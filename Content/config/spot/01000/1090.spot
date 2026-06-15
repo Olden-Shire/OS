@@ -1,4 +1,9 @@
 // spot 1090
-model = 26205
+model = model_26205
 anim = 6543
-recol = 9544/80 9521/72 10531/64
+recol1s = 9544
+recol1d = 80
+recol2s = 9521
+recol2d = 72
+recol3s = 10531
+recol3d = 64

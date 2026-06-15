@@ -12,5 +12,6 @@ womanwear = obj_rune_kiteshield_8724_woman, 0
 ambient = 10
 members = true
 cost = 900
-recol = 8128/35763
+recol1s = 8128
+recol1d = 35763
 name = Steel kiteshield

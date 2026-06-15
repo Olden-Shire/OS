@@ -6,5 +6,6 @@ zoom2d = 600
 yan2d = 84
 xan2d = 260
 cost = 1
-recol = 127/61
+recol1s = 127
+recol1d = 61
 name = Jug

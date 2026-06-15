@@ -9,5 +9,6 @@ zan2d = 1860
 xan2d = 368
 manwear = obj_diamond_1601_wear, 0
 womanwear = obj_diamond_1601_wear, 6
-recol = 127/931
+recol1s = 127
+recol1d = 931
 name = Ruby

@@ -7,5 +7,6 @@ zoom2d = 2250
 yan2d = 1980
 xan2d = 320
 iop1 = Bury
-recol = 10529/10316
+recol1s = 10529
+recol1d = 10316
 name = Pasty jogre bones

@@ -7,5 +7,6 @@ xan2d = 204
 members = true
 cost = 85
 iop4 = Empty
-recol = 8724/13592
+recol1s = 8724
+recol1d = 13592
 name = Supercompost

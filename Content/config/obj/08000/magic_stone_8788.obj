@@ -7,5 +7,6 @@ yof2d = 1
 zoom2d = 720
 yan2d = 1888
 xan2d = 403
-recol = 7062/10295
+recol1s = 7062
+recol1d = 10295
 name = Magic stone

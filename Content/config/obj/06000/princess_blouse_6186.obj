@@ -9,5 +9,6 @@ yof2d = 9
 zoom2d = 1140
 xan2d = 400
 cost = 0
-recol = 8741/127
+recol1s = 8741
+recol1d = 127
 name = Princess blouse

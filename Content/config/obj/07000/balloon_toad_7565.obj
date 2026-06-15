@@ -9,5 +9,6 @@ members = true
 iop1 = Drop
 iop4 = Release-all
 iop5 = Release
-recol = 5790/49
+recol1s = 5790
+recol1d = 49
 name = Balloon toad

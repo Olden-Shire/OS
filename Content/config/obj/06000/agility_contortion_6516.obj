@@ -4,5 +4,6 @@ xof2d = 28
 yof2d = 38
 zoom2d = 3100
 members = true
-recol = 37824/7104
+recol1s = 37824
+recol1d = 7104
 name = Agility contortion

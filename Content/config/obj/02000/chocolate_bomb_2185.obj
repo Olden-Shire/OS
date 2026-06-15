@@ -7,5 +7,6 @@ yan2d = 1888
 xan2d = 192
 iop1 = Eat
 members = true
-recol = 3980/3738
+recol1s = 3980
+recol1d = 3738
 name = Chocolate bomb

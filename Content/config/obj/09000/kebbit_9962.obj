@@ -5,5 +5,6 @@ yof2d = -101
 zoom2d = 1580
 yan2d = 272
 xan2d = 168
-recol = 5008/5532
+recol1s = 5008
+recol1d = 5532
 name = Kebbit

@@ -7,5 +7,6 @@ xan2d = 264
 members = true
 cost = 20
 iop5 = Destroy
-recol = 82/7741
+recol1s = 82
+recol1d = 7741
 name = Ground astral rune

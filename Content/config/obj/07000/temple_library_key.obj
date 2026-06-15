@@ -9,5 +9,6 @@ yan2d = 20
 xan2d = 328
 model = obj_shiny_key
 iop5 = Destroy
-recol = 8128/15009
+recol1s = 8128
+recol1d = 15009
 name = Temple library key

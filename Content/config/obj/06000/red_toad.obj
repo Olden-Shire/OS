@@ -7,5 +7,6 @@ zoom2d = 1430
 yan2d = 204
 xan2d = 212
 cost = 1
-recol = 15013/2731
+recol1s = 15013
+recol1d = 2731
 name = Red toad

@@ -1,4 +1,5 @@
 // obj 3073
-model = 3677
+model = model_3677
 zoom2d = 1500
-recol = 115/8749
+recol1s = 115
+recol1d = 8749

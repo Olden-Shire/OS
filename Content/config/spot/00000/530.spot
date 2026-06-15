@@ -1,5 +1,8 @@
 // spot 530
-model = 10973
+model = model_10973
 anim = 3084
 ambient = 50
-recol = 8152/5056 7399/5056
+recol1s = 8152
+recol1d = 5056
+recol2s = 7399
+recol2d = 5056

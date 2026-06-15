@@ -4,5 +4,6 @@ zoom2d = 760
 yan2d = 1800
 xan2d = 44
 members = true
-recol = 61/19641
+recol1s = 61
+recol1d = 19641
 name = Strange potion

@@ -11,5 +11,6 @@ womanwear = obj_yak_hide_armour_10822_woman, 0
 womanwear2 = 337
 members = true
 cost = 500
-recol = 4550/3226
+recol1s = 4550
+recol1d = 3226
 name = Yak-hide armour

@@ -1,5 +1,12 @@
 // spot 910
-model = 19460
+model = model_19460
 anim = 5214
 ambient = 10
-recol = 39892/916 39386/0 32889/916 9694/943
+recol1s = 39892
+recol1d = 916
+recol2s = 39386
+recol2d = 0
+recol3s = 32889
+recol3d = 916
+recol4s = 9694
+recol4d = 943

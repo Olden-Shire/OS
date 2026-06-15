@@ -9,5 +9,6 @@ womanwear = obj_fire_tiara_5537_woman, 0
 manhead = 7473
 womanhead = 7473
 cost = 100
-recol = 43096/214
+recol1s = 43096
+recol1d = 214
 name = Fire tiara

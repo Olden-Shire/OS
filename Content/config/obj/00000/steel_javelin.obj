@@ -11,5 +11,6 @@ yan2d = 1964
 xan2d = 268
 stackable = true
 members = true
-recol = 22451/61
+recol1s = 22451
+recol1d = 61
 name = Steel javelin

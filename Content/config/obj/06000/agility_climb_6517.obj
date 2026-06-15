@@ -2,5 +2,6 @@
 model = obj_agility_climb_6517
 zoom2d = 3200
 members = true
-recol = 37824/7104
+recol1s = 37824
+recol1d = 7104
 name = Agility climb

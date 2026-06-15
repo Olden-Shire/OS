@@ -8,5 +8,6 @@ yan2d = 1984
 xan2d = 308
 members = true
 stackable = true
-recol = 28/32906
+recol1s = 28
+recol1d = 32906
 name = Black nails

@@ -11,5 +11,6 @@ xan2d = 1960
 manwear = obj_dragon_spear_1249_wear, 0
 womanwear = obj_dragon_spear_1249_wear, 6
 iop2 = Wield
-recol = 22457/25048
+recol1s = 22457
+recol1d = 25048
 name = Dragon spear(kp)

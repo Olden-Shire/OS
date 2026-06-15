@@ -11,5 +11,6 @@ womanhead = 7474
 members = true
 cost = 100
 iop5 = Destroy
-recol = 43096/43098
+recol1s = 43096
+recol1d = 43098
 name = Law tiara

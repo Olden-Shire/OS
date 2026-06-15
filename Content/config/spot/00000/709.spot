@@ -1,5 +1,6 @@
 // spot 709
-model = 15836
+model = model_15836
 anim = 4252
 angle = 180
-recol = 20/414
+recol1s = 20
+recol1d = 414

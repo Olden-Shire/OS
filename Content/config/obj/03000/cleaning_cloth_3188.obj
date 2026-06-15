@@ -5,5 +5,6 @@ yof2d = -15
 zoom2d = 1360
 xan2d = 368
 members = true
-recol = 7390/52446
+recol1s = 7390
+recol1d = 52446
 name = Cleaning cloth

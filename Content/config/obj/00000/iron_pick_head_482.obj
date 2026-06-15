@@ -6,5 +6,6 @@ zoom2d = 1070
 yan2d = 1056
 xan2d = 224
 cost = 139
-recol = 61/33
+recol1s = 61
+recol1d = 33
 name = Iron pick head

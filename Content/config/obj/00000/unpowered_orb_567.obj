@@ -8,5 +8,6 @@ xan2d = 316
 cost = 100
 members = true
 cost = 100
-recol = 43117/127
+recol1s = 43117
+recol1d = 127
 name = Unpowered orb

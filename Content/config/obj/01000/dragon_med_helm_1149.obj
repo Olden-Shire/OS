@@ -16,5 +16,6 @@ yan2d = 136
 xan2d = 92
 iop2 = Wear
 members = true
-recol = 61/924
+recol1s = 61
+recol1d = 924
 name = Dragon med helm

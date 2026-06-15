@@ -6,5 +6,6 @@ zoom2d = 550
 yan2d = 1996
 xan2d = 84
 members = true
-recol = 61/10708
+recol1s = 61
+recol1d = 10708
 name = Unfinished potion

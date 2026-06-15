@@ -1,5 +1,10 @@
 // spot 959
-model = 20089
+model = model_20089
 anim = 5287
 angle = 90
-recol = 7070/61 9123/61 11200/61
+recol1s = 7070
+recol1d = 61
+recol2s = 9123
+recol2d = 61
+recol3s = 11200
+recol3d = 61

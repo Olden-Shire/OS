@@ -6,5 +6,6 @@ zoom2d = 1360
 yan2d = 1616
 xan2d = 201
 members = true
-recol = 0/960
+recol1s = 0
+recol1d = 960
 name = Red flowers

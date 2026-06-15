@@ -2,4 +2,5 @@
 model = obj_shiny_key
 cost = 3
 zoom2d = 700
-recol = 8128/86
+recol1s = 8128
+recol1d = 86

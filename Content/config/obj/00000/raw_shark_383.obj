@@ -7,5 +7,6 @@ yan2d = 12
 xan2d = 344
 cost = 300
 members = true
-recol = 103/86
+recol1s = 103
+recol1d = 86
 name = Raw shark

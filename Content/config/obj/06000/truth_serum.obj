@@ -6,5 +6,6 @@ yan2d = 1996
 xan2d = 84
 members = true
 iop5 = Destroy
-recol = 61/6728
+recol1s = 61
+recol1d = 6728
 name = Truth serum

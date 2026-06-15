@@ -1,4 +1,13 @@
 // spot 1136
-model = 26381
+model = model_26381
 anim = 6619
-recol = 43030/54480 43034/54480 43038/10157 43043/54480 555/54348
+recol1s = 43030
+recol1d = 54480
+recol2s = 43034
+recol2d = 54480
+recol3s = 43038
+recol3d = 10157
+recol4s = 43043
+recol4d = 54480
+recol5s = 555
+recol5d = 54348

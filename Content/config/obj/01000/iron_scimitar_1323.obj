@@ -9,5 +9,6 @@ xan2d = 300
 iop2 = Wield
 manwear = obj_bronze_scimitar_1321_wear, 0
 womanwear = obj_bronze_scimitar_1321_wear, 6
-recol = 61/33
+recol1s = 61
+recol1d = 33
 name = Iron scimitar

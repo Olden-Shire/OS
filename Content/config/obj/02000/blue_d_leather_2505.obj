@@ -7,5 +7,6 @@ zoom2d = 1190
 yan2d = 116
 xan2d = 440
 members = true
-recol = 127/43926
+recol1s = 127
+recol1d = 43926
 name = Blue d-leather

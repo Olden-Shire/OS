@@ -10,5 +10,6 @@ members = true
 stackable = true
 iop2 = Wield
 cost = 1
-recol = 16/28
+recol1s = 16
+recol1d = 28
 name = Harralander tar

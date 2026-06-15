@@ -10,5 +10,6 @@ members = true
 stackable = true
 count1 = 6320, 100
 count2 = 6321, 1000
-recol = 28/4205
+recol1s = 28
+recol1d = 4205
 name = Proboscis

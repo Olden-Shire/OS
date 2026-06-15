@@ -9,5 +9,6 @@ iop2 = Wield
 iop5 = Destroy
 manwear = obj_shortbow_841_wear, 0
 womanwear = obj_shortbow_841_wear, 6
-recol = 6674/41282
+recol1s = 6674
+recol1d = 41282
 name = Training bow

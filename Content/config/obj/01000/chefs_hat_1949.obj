@@ -10,5 +10,6 @@ womanwear = obj_chefs_hat_1949_woman, 0
 manhead = 41
 womanhead = 99
 iop2 = Wear
-recol = 61/127
+recol1s = 61
+recol1d = 127
 name = Chef's hat

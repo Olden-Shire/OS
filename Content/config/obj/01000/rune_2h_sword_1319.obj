@@ -9,5 +9,6 @@ xan2d = 204
 iop2 = Wield
 manwear = obj_bronze_2h_sword_1307_wear, 0
 womanwear = obj_bronze_2h_sword_1307_wear, 6
-recol = 61/36133
+recol1s = 61
+recol1d = 36133
 name = Rune 2h sword

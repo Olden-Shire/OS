@@ -11,5 +11,6 @@ zan2d = 373
 xan2d = 290
 womanwear = obj_vyrewatch_shoes_9638_woman, 0
 manwear = obj_vyrewatch_shoes_9638_man, 0
-recol = 4626/0
+recol1s = 4626
+recol1d = 0
 name = Vyrewatch shoes

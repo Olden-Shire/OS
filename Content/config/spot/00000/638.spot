@@ -1,6 +1,7 @@
 // spot 638
-model = 7412
+model = model_7412
 anim = 1571
 resizeh = 64
 resizev = 64
-recol = 17069/55207
+recol1s = 17069
+recol1d = 55207

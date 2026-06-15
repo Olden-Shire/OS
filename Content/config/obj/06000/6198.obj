@@ -1,8 +1,11 @@
 // obj 6198
-model = 8831
+model = model_8831
 xof2d = 1
 yof2d = 16
 zoom2d = 620
 yan2d = 68
 xan2d = 424
-recol = 41/103 9152/61
+recol1s = 41
+recol1d = 103
+recol2s = 9152
+recol2d = 61

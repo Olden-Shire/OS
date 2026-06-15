@@ -7,5 +7,6 @@ yan2d = 84
 xan2d = 260
 cost = 1
 iop4 = Empty
-recol = 127/43486
+recol1s = 127
+recol1d = 43486
 name = Jug of water

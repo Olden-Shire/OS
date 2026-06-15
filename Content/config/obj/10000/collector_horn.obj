@@ -12,5 +12,6 @@ iop3 = Tell-style3
 iop4 = Tell-style4
 iop5 = Medic
 members = true
-recol = 935/11200
+recol1s = 935
+recol1d = 11200
 name = Collector horn

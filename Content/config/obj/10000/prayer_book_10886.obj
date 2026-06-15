@@ -3,5 +3,6 @@ model = obj_battered_book
 manwear = obj_prayer_book_10886_wear, 0
 womanwear = obj_prayer_book_10886_wear, 6
 members = true
-recol = 5018/5652
+recol1s = 5018
+recol1d = 5652
 name = Prayer book

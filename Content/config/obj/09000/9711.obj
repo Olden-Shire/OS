@@ -1,9 +1,18 @@
 // obj 9711
-model = 18549
+model = model_18549
 yof2d = 26
 zoom2d = 750
 yan2d = 124
 xan2d = 276
 cost = 1
 ambient = 15
-recol = 142/40350 6036/40274 5788/40350 829/41492 9550/117
+recol1s = 142
+recol1d = 40350
+recol2s = 6036
+recol2d = 40274
+recol3s = 5788
+recol3d = 40350
+recol4s = 829
+recol4d = 41492
+recol5s = 9550
+recol5d = 117

@@ -9,5 +9,6 @@ yan2d = 124
 xan2d = 508
 manwear = obj_shortbow_u_50_wear, 0
 womanwear = obj_shortbow_u_50_wear, 6
-recol = 6674/6049
+recol1s = 6674
+recol1d = 6049
 name = Shortbow (u)

@@ -9,5 +9,6 @@ xan2d = 156
 iop1 = Drink
 members = true
 iop4 = Empty
-recol = 8101/22959
+recol1s = 8101
+recol1d = 22959
 name = Guthix rest(1)

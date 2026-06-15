@@ -8,5 +8,6 @@ zoom2d = 700
 yan2d = 692
 xan2d = 428
 iop1 = Blow-on
-recol = 127/10820
+recol1s = 127
+recol1d = 10820
 name = Magic gold feather

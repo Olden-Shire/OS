@@ -9,5 +9,6 @@ yan2d = 180
 zan2d = 2024
 xan2d = 268
 iop2 = Wear
-recol = 127/12209
+recol1s = 127
+recol1d = 12209
 name = Ring of visibility

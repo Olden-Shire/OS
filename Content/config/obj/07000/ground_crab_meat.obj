@@ -7,5 +7,6 @@ zoom2d = 710
 yan2d = 148
 xan2d = 224
 cost = 1
-recol = 16/3408
+recol1s = 16
+recol1d = 3408
 name = Ground crab meat

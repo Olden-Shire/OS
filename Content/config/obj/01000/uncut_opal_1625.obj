@@ -8,5 +8,6 @@ yan2d = 220
 zan2d = 1860
 xan2d = 368
 members = true
-recol = 61/10465
+recol1s = 61
+recol1d = 10465
 name = Uncut opal

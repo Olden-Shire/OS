@@ -7,5 +7,6 @@ xof2d = 5
 zoom2d = 720
 yan2d = 308
 xan2d = 344
-recol = 82/43297
+recol1s = 82
+recol1d = 43297
 name = Mithril dart tip

@@ -12,5 +12,6 @@ zoom2d = 720
 yan2d = 225
 xan2d = 444
 cost = 100
-recol = 10363/819
+recol1s = 10363
+recol1d = 819
 name = Bandana eyepatch

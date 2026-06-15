@@ -2,4 +2,11 @@
 model = obj_silly_jester_hat
 cost = 3
 zoom2d = 700
-recol = 11200/103 19367/28 11177/74 939/41
+recol1s = 11200
+recol1d = 103
+recol2s = 19367
+recol2d = 28
+recol3s = 11177
+recol3d = 74
+recol4s = 939
+recol4d = 41

@@ -2,4 +2,7 @@
 model = obj_iron_battleaxe_1363
 cost = 3
 zoom2d = 1180
-recol = 61/16 7073/41
+recol1s = 61
+recol1d = 16
+recol2s = 7073
+recol2d = 41

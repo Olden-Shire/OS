@@ -1,9 +1,10 @@
 // obj 5149
-model = 7337
+model = model_7337
 xof2d = 1
 yof2d = -5
 zoom2d = 620
 yan2d = 1992
 xan2d = 396
 stackable = true
-recol = 520/7616
+recol1s = 520
+recol1d = 7616

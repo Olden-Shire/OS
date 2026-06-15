@@ -6,5 +6,6 @@ yan2d = 152
 xan2d = 256
 members = true
 iop1 = Read
-recol = 5018/796
+recol1s = 5018
+recol1d = 796
 name = Crystal of seren

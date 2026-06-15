@@ -2,4 +2,9 @@
 model = obj_uncooked_pizza_2287
 cost = 3
 zoom2d = 990
-recol = 10665/61 926/70 11200/99
+recol1s = 10665
+recol1d = 61
+recol2s = 926
+recol2d = 70
+recol3s = 11200
+recol3d = 99

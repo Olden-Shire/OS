@@ -11,5 +11,6 @@ iop2 = Tell-crackers
 iop3 = Tell-worms
 iop4 = Medic
 members = true
-recol = 935/23213
+recol1s = 935
+recol1d = 23213
 name = Healer horn

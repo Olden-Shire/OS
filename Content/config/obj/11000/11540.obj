@@ -2,4 +2,13 @@
 model = obj_robin_hood_hat_2581
 cost = 3
 zoom2d = 650
-recol = 15252/41 17294/33 15009/49 922/24 4003/28
+recol1s = 15252
+recol1d = 41
+recol2s = 17294
+recol2d = 33
+recol3s = 15009
+recol3d = 49
+recol4s = 922
+recol4d = 24
+recol5s = 4003
+recol5d = 28

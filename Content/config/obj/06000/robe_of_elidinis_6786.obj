@@ -9,5 +9,6 @@ manwear2 = 10123
 womanwear = obj_priest_gown_426_woman, 0
 womanwear2 = 10126
 members = true
-recol = 8741/6740
+recol1s = 8741
+recol1d = 6740
 name = Robe of elidinis

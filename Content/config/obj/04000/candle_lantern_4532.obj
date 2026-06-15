@@ -6,5 +6,6 @@ yan2d = 1904
 xan2d = 140
 cost = 15
 members = true
-recol = 8417/8
+recol1s = 8417
+recol1d = 8
 name = Candle lantern

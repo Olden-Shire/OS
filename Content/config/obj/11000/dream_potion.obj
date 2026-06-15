@@ -9,5 +9,6 @@ xan2d = 129
 manwear = obj_empty_vial_wear, 0
 womanwear = obj_empty_vial_wear, 6
 iop5 = Destroy
-recol = 33300/6573
+recol1s = 33300
+recol1d = 6573
 name = Dream potion

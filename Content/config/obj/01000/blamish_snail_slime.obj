@@ -6,5 +6,6 @@ zoom2d = 760
 yan2d = 1920
 xan2d = 124
 members = true
-recol = 61/16495
+recol1s = 61
+recol1d = 16495
 name = Blamish snail slime

@@ -10,5 +10,6 @@ yan2d = 828
 xan2d = 420
 members = true
 cost = 6052
-recol = 10004/43528
+recol1s = 10004
+recol1d = 43528
 name = Void knight gloves

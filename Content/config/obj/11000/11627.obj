@@ -2,4 +2,5 @@
 model = obj_cape_of_legends_1052
 cost = 3
 zoom2d = 1370
-recol = 9327/94
+recol1s = 9327
+recol1d = 94

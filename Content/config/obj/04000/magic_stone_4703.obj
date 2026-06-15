@@ -8,5 +8,6 @@ zan2d = 1860
 xan2d = 368
 members = true
 cost = 1
-recol = 61/43069
+recol1s = 61
+recol1d = 43069
 name = Magic stone

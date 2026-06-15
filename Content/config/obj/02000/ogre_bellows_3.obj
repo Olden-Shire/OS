@@ -5,5 +5,6 @@ yof2d = -4
 zoom2d = 970
 yan2d = 36
 xan2d = 112
-recol = 6457/20007
+recol1s = 6457
+recol1d = 20007
 name = Ogre bellows (3)

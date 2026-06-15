@@ -7,5 +7,6 @@ zoom2d = 1240
 yan2d = 1976
 xan2d = 188
 members = true
-recol = 6558/7054
+recol1s = 6558
+recol1d = 7054
 name = Rope

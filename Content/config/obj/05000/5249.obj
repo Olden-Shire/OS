@@ -1,8 +1,9 @@
 // obj 5249
-model = 7273
+model = model_7273
 xof2d = 2
 zoom2d = 930
 yan2d = 1932
 xan2d = 320
 stackable = true
-recol = 520/1560
+recol1s = 520
+recol1d = 1560

@@ -1,4 +1,11 @@
 // spot 742
-model = 16822
+model = model_16822
 anim = 4420
-recol = 26735/24687 38594/9327 2768/127 14569/9327
+recol1s = 26735
+recol1d = 24687
+recol2s = 38594
+recol2d = 9327
+recol3s = 2768
+recol3d = 127
+recol4s = 14569
+recol4d = 9327

@@ -6,5 +6,6 @@ yan2d = 1012
 xan2d = 528
 members = true
 ambient = 30
-recol = 61/840
+recol1s = 61
+recol1d = 840
 name = Board game piece

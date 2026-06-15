@@ -10,5 +10,6 @@ manwear = obj_red_partyhat_1038_man, 0
 womanwear = obj_red_partyhat_1038_woman, 0
 manhead = 29
 womanhead = 87
-recol = 926/11200
+recol1s = 926
+recol1d = 11200
 name = Yellow partyhat

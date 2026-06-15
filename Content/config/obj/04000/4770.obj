@@ -1,6 +1,11 @@
 // obj 4770
-model = 6741
+model = model_6741
 zoom2d = 400
 yan2d = 18
 xan2d = 136
-recol = 62119/27036 61999/26917 59612/22748
+recol1s = 62119
+recol1d = 27036
+recol2s = 61999
+recol2d = 26917
+recol3s = 59612
+recol3d = 22748

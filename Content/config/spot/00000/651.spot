@@ -1,5 +1,12 @@
 // spot 651
-model = 14558
+model = model_14558
 anim = 3889
 ambient = 30
-recol = 4550/12587 4546/12583 4541/12707 4537/12702
+recol1s = 4550
+recol1d = 12587
+recol2s = 4546
+recol2d = 12583
+recol3s = 4541
+recol3d = 12707
+recol4s = 4537
+recol4d = 12702

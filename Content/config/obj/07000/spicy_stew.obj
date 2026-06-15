@@ -8,5 +8,6 @@ xan2d = 204
 members = true
 iop2 = Smell
 iop5 = Destroy
-recol = 44263/7062
+recol1s = 44263
+recol1d = 7062
 name = Spicy stew

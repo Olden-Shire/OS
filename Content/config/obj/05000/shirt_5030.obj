@@ -10,5 +10,6 @@ manwear = obj_shirt_5030_man, 0
 manwear2 = 6999
 womanwear = obj_shirt_5030_woman, 0
 womanwear2 = 7005
-recol = 9529/10130
+recol1s = 9529
+recol1d = 10130
 name = Shirt

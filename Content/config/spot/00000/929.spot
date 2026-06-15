@@ -1,6 +1,17 @@
 // spot 929
-model = 19389
+model = model_19389
 anim = 5272
 resizeh = 96
 resizev = 96
-recol = 5008/0 5532/8 5537/43026 5413/24 5417/33 5656/43026
+recol1s = 5008
+recol1d = 0
+recol2s = 5532
+recol2d = 8
+recol3s = 5537
+recol3d = 43026
+recol4s = 5413
+recol4d = 24
+recol5s = 5417
+recol5d = 33
+recol6s = 5656
+recol6d = 43026

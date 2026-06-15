@@ -2,4 +2,7 @@
 model = obj_trowel
 cost = 3
 zoom2d = 1030
-recol = 6042/41 61/66
+recol1s = 6042
+recol1d = 41
+recol2s = 61
+recol2d = 66

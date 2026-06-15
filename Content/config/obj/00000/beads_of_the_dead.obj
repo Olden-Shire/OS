@@ -10,5 +10,6 @@ iop5 = Destroy
 manwear = obj_beads_of_the_dead_man, 0
 womanwear = obj_beads_of_the_dead_woman, 0
 members = true
-recol = 28/4032
+recol1s = 28
+recol1d = 4032
 name = Beads of the dead

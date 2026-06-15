@@ -7,5 +7,6 @@ yan2d = 128
 xan2d = 216
 members = true
 iop5 = Destroy
-recol = 18522/10167
+recol1s = 18522
+recol1d = 10167
 name = Crystal

@@ -7,5 +7,6 @@ yan2d = 1576
 xan2d = 368
 members = true
 cost = 5
-recol = 7062/50087
+recol1s = 7062
+recol1d = 50087
 name = Elemental ore

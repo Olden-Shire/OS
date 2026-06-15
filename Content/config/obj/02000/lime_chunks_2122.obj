@@ -9,5 +9,6 @@ zoom2d = 870
 yan2d = 2004
 zan2d = 36
 xan2d = 244
-recol = 6080/18663
+recol1s = 6080
+recol1d = 18663
 name = Lime chunks

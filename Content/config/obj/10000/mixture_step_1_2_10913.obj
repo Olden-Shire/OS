@@ -7,5 +7,6 @@ yof2d = -1
 zoom2d = 550
 yan2d = 1996
 xan2d = 84
-recol = 61/62379
+recol1s = 61
+recol1d = 62379
 name = Mixture - step 1(2)

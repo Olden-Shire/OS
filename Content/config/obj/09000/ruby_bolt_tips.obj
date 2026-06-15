@@ -11,5 +11,6 @@ count1 = 9219, 2
 count2 = 9220, 3
 count3 = 9221, 4
 count4 = 9222, 5
-recol = 10465/563
+recol1s = 10465
+recol1d = 563
 name = Ruby bolt tips

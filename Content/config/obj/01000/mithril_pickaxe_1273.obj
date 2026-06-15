@@ -9,5 +9,6 @@ zoom2d = 1070
 yan2d = 1056
 xan2d = 224
 iop2 = Wield
-recol = 61/43297
+recol1s = 61
+recol1d = 43297
 name = Mithril pickaxe

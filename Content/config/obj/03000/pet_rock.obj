@@ -9,5 +9,6 @@ xan2d = 136
 members = true
 iop1 = Interact
 iop2 = Wield
-recol = 59294/41
+recol1s = 59294
+recol1d = 41
 name = Pet rock

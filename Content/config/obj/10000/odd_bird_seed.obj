@@ -6,5 +6,6 @@ yan2d = 1892
 xan2d = 264
 members = true
 stackable = true
-recol = 82/7741
+recol1s = 82
+recol1d = 7741
 name = Odd bird seed

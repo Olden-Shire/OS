@@ -7,5 +7,6 @@ xan2d = 204
 iop4 = Empty
 members = true
 cost = 30
-recol = 39834/5027
+recol1s = 39834
+recol1d = 5027
 name = Bucket of sap

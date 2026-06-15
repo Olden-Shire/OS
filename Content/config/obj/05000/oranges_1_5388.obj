@@ -7,5 +7,6 @@ xan2d = 84
 members = true
 iop1 = Fill
 iop2 = Remove-one
-recol = 17325/6080
+recol1s = 17325
+recol1d = 6080
 name = Oranges(1)

@@ -4,5 +4,6 @@ yof2d = -30
 zoom2d = 2530
 yan2d = 1888
 xan2d = 16
-recol = 61/5652
+recol1s = 61
+recol1d = 5652
 name = Guard

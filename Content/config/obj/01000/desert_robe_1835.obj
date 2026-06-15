@@ -8,5 +8,6 @@ zoom2d = 1940
 xan2d = 572
 manwear = obj_priest_gown_428_man, 0
 womanwear = obj_priest_gown_428_woman, 0
-recol = 25238/127
+recol1s = 25238
+recol1d = 127
 name = Desert robe

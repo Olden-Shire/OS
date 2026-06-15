@@ -7,5 +7,6 @@ zoom2d = 580
 yan2d = 156
 xan2d = 444
 members = true
-recol = 42570/1575
+recol1s = 42570
+recol1d = 1575
 name = Paladin's badge

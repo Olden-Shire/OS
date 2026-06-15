@@ -7,5 +7,6 @@ zan2d = 4
 xan2d = 284
 iop1 = Bury
 members = true
-recol = 127/8514
+recol1s = 127
+recol1d = 8514
 name = Zogre bones

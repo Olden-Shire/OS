@@ -2,4 +2,9 @@
 model = obj_staff_of_armadyl
 cost = 3
 zoom2d = 1900
-recol = 7073/41 61/49 43117/82
+recol1s = 7073
+recol1d = 41
+recol2s = 61
+recol2d = 49
+recol3s = 43117
+recol3d = 82

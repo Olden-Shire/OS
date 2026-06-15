@@ -2,4 +2,7 @@
 model = obj_raw_herring_345
 cost = 3
 zoom2d = 900
-recol = 61/45 103/61
+recol1s = 61
+recol1d = 45
+recol2s = 103
+recol2d = 61

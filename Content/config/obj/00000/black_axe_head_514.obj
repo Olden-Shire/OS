@@ -5,5 +5,6 @@ zoom2d = 1060
 yan2d = 1196
 xan2d = 520
 cost = 383
-recol = 61/0
+recol1s = 61
+recol1d = 0
 name = Black axe head

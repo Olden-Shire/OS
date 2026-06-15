@@ -1,3 +1,4 @@
 // spot 315
-model = 3137
-recol = 61/43297
+model = model_3137
+recol1s = 61
+recol1d = 43297

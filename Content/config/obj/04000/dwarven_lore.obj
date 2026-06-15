@@ -7,5 +7,6 @@ yan2d = 116
 xan2d = 244
 members = true
 iop1 = Read
-recol = 5018/13200
+recol1s = 5018
+recol1d = 13200
 name = Dwarven lore

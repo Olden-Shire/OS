@@ -1,9 +1,10 @@
 // obj 3825
 stackable = true
-model = 4413
+model = model_4413
 xof2d = -1
 yof2d = -42
 zoom2d = 640
 yan2d = 4
 xan2d = 244
-recol = 20/5018
+recol1s = 20
+recol1d = 5018

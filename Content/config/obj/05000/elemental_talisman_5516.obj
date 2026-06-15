@@ -8,5 +8,6 @@ yan2d = 160
 xan2d = 352
 iop4 = Locate
 members = true
-recol = 61/931
+recol1s = 61
+recol1d = 931
 name = Elemental talisman

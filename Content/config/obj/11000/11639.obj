@@ -2,4 +2,7 @@
 model = obj_kitchen_knife_7447
 cost = 3
 zoom2d = 700
-recol = 78/66 5790/45
+recol1s = 78
+recol1d = 66
+recol2s = 5790
+recol2d = 45

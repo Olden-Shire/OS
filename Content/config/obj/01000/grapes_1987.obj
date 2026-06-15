@@ -6,5 +6,6 @@ zoom2d = 970
 yan2d = 668
 xan2d = 404
 cost = 1
-recol = 960/59301
+recol1s = 960
+recol1d = 59301
 name = Grapes

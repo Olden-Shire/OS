@@ -7,5 +7,6 @@ xan2d = 264
 members = true
 cost = 1
 cost = 10
-recol = 82/10330
+recol1s = 82
+recol1d = 10330
 name = Garlic powder

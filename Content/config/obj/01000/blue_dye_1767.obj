@@ -5,5 +5,6 @@ yof2d = -2
 zoom2d = 760
 yan2d = 1920
 xan2d = 124
-recol = 61/43968
+recol1s = 61
+recol1d = 43968
 name = Blue dye

@@ -4,5 +4,6 @@ model = obj_red_bead_1470
 zoom2d = 1020
 yan2d = 68
 xan2d = 68
-recol = 127/11200
+recol1s = 127
+recol1d = 11200
 name = Yellow bead

@@ -9,5 +9,6 @@ womanwear = obj_holy_water_wear, 0
 cost = 40
 members = true
 iop4 = Empty
-recol = 61/15925
+recol1s = 61
+recol1d = 15925
 name = Plant cure

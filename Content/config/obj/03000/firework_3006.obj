@@ -9,5 +9,6 @@ members = true
 op4 = hidden
 op5 = Light
 iop4 = Empty
-recol = 61/6868
+recol1s = 61
+recol1d = 6868
 name = Firework

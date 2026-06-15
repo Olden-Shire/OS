@@ -9,5 +9,6 @@ xan2d = 472
 iop2 = Wield
 manwear = obj_iron_dagger_p_1219_wear, 0
 womanwear = obj_iron_dagger_p_1219_wear, 6
-recol = 22459/13221
+recol1s = 22459
+recol1d = 13221
 name = Steel dagger(p++)

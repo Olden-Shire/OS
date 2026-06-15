@@ -1,5 +1,5 @@
 // obj 9279
-model = 16869
+model = model_16869
 xof2d = 3
 yof2d = 5
 zoom2d = 720
@@ -7,4 +7,15 @@ yan2d = 117
 xan2d = 477
 stackable = true
 ambient = 25
-recol = 17971/36141 5537/36141 5532/36137 5656/36133 5652/36257 10465/50752
+recol1s = 17971
+recol1d = 36141
+recol2s = 5537
+recol2d = 36141
+recol3s = 5532
+recol3d = 36137
+recol4s = 5656
+recol4d = 36133
+recol5s = 5652
+recol5d = 36257
+recol6s = 10465
+recol6d = 50752

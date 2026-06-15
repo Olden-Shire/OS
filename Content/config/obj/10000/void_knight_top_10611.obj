@@ -10,5 +10,6 @@ manwear2 = 173
 womanwear = obj_void_knight_top_8839_woman, 0
 womanwear2 = 14570
 members = true
-recol = 43072/4550
+recol1s = 43072
+recol1d = 4550
 name = Void knight top

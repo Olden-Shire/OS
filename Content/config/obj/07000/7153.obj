@@ -1,5 +1,5 @@
 // obj 7153
-model = 11150
+model = model_11150
 stackable = true
 xof2d = -9
 yof2d = 5
@@ -7,4 +7,5 @@ zoom2d = 1030
 yan2d = 52
 xan2d = 660
 members = true
-recol = 28/7952
+recol1s = 28
+recol1d = 7952

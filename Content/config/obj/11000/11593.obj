@@ -2,4 +2,7 @@
 model = obj_iron_mace_1420
 cost = 3
 zoom2d = 1030
-recol = 61/49 8722/33
+recol1s = 61
+recol1d = 49
+recol2s = 8722
+recol2d = 33

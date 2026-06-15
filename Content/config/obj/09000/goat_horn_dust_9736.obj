@@ -7,5 +7,6 @@ zoom2d = 848
 yan2d = 1859
 xan2d = 192
 cost = 12
-recol = 82/8371
+recol1s = 82
+recol1d = 8371
 name = Goat horn dust

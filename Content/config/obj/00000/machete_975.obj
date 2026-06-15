@@ -10,5 +10,6 @@ xan2d = 200
 iop2 = Wield
 manwear = obj_machete_975_wear, 0
 womanwear = obj_machete_975_wear, 6
-recol = 61/33
+recol1s = 61
+recol1d = 33
 name = Machete

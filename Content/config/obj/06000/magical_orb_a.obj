@@ -4,5 +4,6 @@ zoom2d = 540
 model = obj_scrying_orb_5518
 members = true
 iop5 = Destroy
-recol = 21584/127
+recol1s = 21584
+recol1d = 127
 name = Magical orb (a)

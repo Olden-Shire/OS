@@ -9,5 +9,6 @@ womanwear = obj_holy_water_wear, 0
 members = true
 cost = 120
 iop4 = Empty
-recol = 61/1325
+recol1s = 61
+recol1d = 1325
 name = Compost potion(4)

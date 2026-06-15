@@ -9,5 +9,6 @@ manwear = obj_druids_robe_540_man, 0
 womanwear = obj_druids_robe_540_woman, 0
 manwear2 = 292
 womanwear2 = 456
-recol = 8741/38814
+recol1s = 8741
+recol1d = 38814
 name = Wizard robe

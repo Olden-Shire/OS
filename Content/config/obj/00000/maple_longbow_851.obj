@@ -9,5 +9,6 @@ xan2d = 460
 iop2 = Wield
 manwear = obj_longbow_839_wear, 0
 womanwear = obj_longbow_839_wear, 6
-recol = 6674/2250
+recol1s = 6674
+recol1d = 2250
 name = Maple longbow

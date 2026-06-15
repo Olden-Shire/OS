@@ -2,4 +2,9 @@
 model = obj_basket_5376
 cost = 3
 zoom2d = 1220
-recol = 6565/41 6445/49 6684/33
+recol1s = 6565
+recol1d = 41
+recol2s = 6445
+recol2d = 49
+recol3s = 6684
+recol3d = 33

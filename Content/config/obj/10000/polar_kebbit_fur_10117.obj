@@ -5,5 +5,6 @@ zoom2d = 1090
 xan2d = 584
 members = true
 cost = 10
-recol = 8103/41077
+recol1s = 8103
+recol1d = 41077
 name = Polar kebbit fur

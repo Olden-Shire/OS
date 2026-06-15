@@ -3,5 +3,6 @@ members = true
 model = obj_orb_of_protection
 zoom2d = 1260
 xan2d = 48
-recol = 127/19410
+recol1s = 127
+recol1d = 19410
 name = Orb of protection

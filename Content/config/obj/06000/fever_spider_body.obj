@@ -5,5 +5,6 @@ yof2d = 30
 zoom2d = 1850
 yan2d = 92
 xan2d = 264
-recol = 8128/6059
+recol1s = 8128
+recol1d = 6059
 name = Fever spider body

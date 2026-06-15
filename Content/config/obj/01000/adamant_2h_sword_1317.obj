@@ -9,5 +9,6 @@ xan2d = 204
 iop2 = Wield
 manwear = obj_bronze_2h_sword_1307_wear, 0
 womanwear = obj_bronze_2h_sword_1307_wear, 6
-recol = 61/21662
+recol1s = 61
+recol1d = 21662
 name = Adamant 2h sword

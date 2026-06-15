@@ -6,5 +6,6 @@ yan2d = 1892
 xan2d = 264
 cost = 52
 members = true
-recol = 82/10502
+recol1s = 82
+recol1d = 10502
 name = Gunpowder

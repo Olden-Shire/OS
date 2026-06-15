@@ -2,4 +2,9 @@
 model = obj_ranger_boots_2577
 cost = 3
 zoom2d = 770
-recol = 17294/28 15252/41 23077/57
+recol1s = 17294
+recol1d = 28
+recol2s = 15252
+recol2d = 41
+recol3s = 23077
+recol3d = 57

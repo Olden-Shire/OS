@@ -7,4 +7,5 @@ xan2d = 120
 ambient = 15
 manwear = obj_logs_1511_wear, 0
 womanwear = obj_logs_1511_wear, 0
-recol = 6049/7582
+recol1s = 6049
+recol1d = 7582

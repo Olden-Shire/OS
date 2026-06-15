@@ -4,5 +4,6 @@ model = obj_golden_bowl_723
 zoom2d = 910
 yan2d = 1856
 xan2d = 204
-recol = 44263/43069
+recol1s = 44263
+recol1d = 43069
 name = Incomplete stew

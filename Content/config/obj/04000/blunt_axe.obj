@@ -6,5 +6,6 @@ yan2d = 1196
 xan2d = 520
 cost = 56
 members = true
-recol = 926/61
+recol1s = 926
+recol1d = 61
 name = Blunt axe

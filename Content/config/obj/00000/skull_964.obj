@@ -6,5 +6,6 @@ zoom2d = 530
 yan2d = 64
 zan2d = 1996
 xan2d = 160
-recol = 5231/7514
+recol1s = 5231
+recol1d = 7514
 name = Skull

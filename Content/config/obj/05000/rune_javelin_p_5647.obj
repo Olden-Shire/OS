@@ -11,5 +11,6 @@ yan2d = 1964
 xan2d = 268
 stackable = true
 members = true
-recol = 61/36133
+recol1s = 61
+recol1d = 36133
 name = Rune javelin(p+)

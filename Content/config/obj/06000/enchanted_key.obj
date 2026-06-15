@@ -9,5 +9,6 @@ ambient = 20
 members = true
 iop1 = Feel
 iop5 = Destroy
-recol = 8128/5553
+recol1s = 8128
+recol1d = 5553
 name = Enchanted key

@@ -2,4 +2,7 @@
 model = obj_thread
 cost = 3
 zoom2d = 590
-recol = 74/66 6032/41
+recol1s = 74
+recol1d = 66
+recol2s = 6032
+recol2d = 41

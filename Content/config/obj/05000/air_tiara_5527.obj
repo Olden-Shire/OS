@@ -9,5 +9,6 @@ womanwear = obj_air_tiara_5527_woman, 0
 manhead = 7466
 womanhead = 7466
 cost = 100
-recol = 43096/99
+recol1s = 43096
+recol1d = 99
 name = Air tiara

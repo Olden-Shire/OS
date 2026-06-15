@@ -10,5 +10,6 @@ yan2d = 1828
 xan2d = 324
 members = true
 cost = 25
-recol = 25238/7390
+recol1s = 25238
+recol1d = 7390
 name = Desert robes

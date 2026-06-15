@@ -7,5 +7,6 @@ zoom2d = 1710
 yan2d = 436
 xan2d = 300
 members = true
-recol = 10258/10518
+recol1s = 10258
+recol1d = 10518
 name = Spider on shaft

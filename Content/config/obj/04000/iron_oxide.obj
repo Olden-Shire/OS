@@ -6,5 +6,6 @@ zoom2d = 760
 yan2d = 1920
 xan2d = 124
 members = true
-recol = 61/2851
+recol1s = 61
+recol1d = 2851
 name = Iron oxide

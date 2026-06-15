@@ -9,5 +9,6 @@ xan2d = 240
 members = true
 stackable = true
 iop1 = Plant
-recol = 43288/22433
+recol1s = 43288
+recol1d = 22433
 name = Mithril seeds

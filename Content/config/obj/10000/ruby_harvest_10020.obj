@@ -8,5 +8,6 @@ xan2d = 280
 iop4 = Release
 members = true
 cost = 18
-recol = 39892/943
+recol1s = 39892
+recol1d = 943
 name = Ruby harvest

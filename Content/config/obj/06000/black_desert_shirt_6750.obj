@@ -10,5 +10,6 @@ womanwear = obj_druids_robe_540_woman, 0
 manwear2 = 292
 womanwear2 = 456
 members = true
-recol = 8741/10508
+recol1s = 8741
+recol1d = 10508
 name = Black desert shirt

@@ -1,4 +1,7 @@
 // spot 537
-model = 6379
+model = model_6379
 anim = 1969
-recol = 1994/5219 955/5181
+recol1s = 1994
+recol1d = 5219
+recol2s = 955
+recol2d = 5181

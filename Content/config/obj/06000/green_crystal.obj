@@ -6,5 +6,6 @@ zoom2d = 340
 xan2d = 120
 members = true
 iop5 = Destroy
-recol = 127/22464
+recol1s = 127
+recol1d = 22464
 name = Green crystal

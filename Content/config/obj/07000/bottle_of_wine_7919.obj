@@ -7,5 +7,6 @@ xan2d = 104
 cost = 500
 iop1 = Drink
 members = true
-recol = 1942/2987
+recol1s = 1942
+recol1d = 2987
 name = Bottle of wine

@@ -1,6 +1,11 @@
 // spot 576
-model = 12642
+model = model_12642
 anim = 3336
 ambient = 20
 contrast = 20
-recol = 33728/43906 39896/43906 37312/43906
+recol1s = 33728
+recol1d = 43906
+recol2s = 39896
+recol2d = 43906
+recol3s = 37312
+recol3d = 43906

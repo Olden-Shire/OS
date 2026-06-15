@@ -8,5 +8,6 @@ xan2d = 192
 contrast = 10
 ambient = 10
 cost = 5
-recol = 5683/5665
+recol1s = 5683
+recol1d = 5665
 name = Part wild pie

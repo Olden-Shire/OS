@@ -11,5 +11,6 @@ yan2d = 828
 xan2d = 420
 members = true
 cost = 600
-recol = 10004/12
+recol1s = 10004
+recol1d = 12
 name = Gloves of silence

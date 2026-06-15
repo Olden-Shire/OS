@@ -7,5 +7,6 @@ xan2d = 204
 members = true
 iop4 = Empty
 iop5 = Destroy
-recol = 39834/6371
+recol1s = 39834
+recol1d = 6371
 name = Milky mixture

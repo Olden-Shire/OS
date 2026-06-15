@@ -1,6 +1,7 @@
 // spot 247
-model = 2318
+model = obj_parlour
 anim = 1055
 ambient = 60
 contrast = 60
-recol = 11218/42572
+recol1s = 11218
+recol1d = 42572

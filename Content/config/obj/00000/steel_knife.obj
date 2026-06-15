@@ -12,5 +12,6 @@ zan2d = 1860
 xan2d = 204
 iop2 = Wield
 stackable = true
-recol = 57/61
+recol1s = 57
+recol1d = 61
 name = Steel knife

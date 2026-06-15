@@ -10,5 +10,6 @@ iop2 = Wield
 manwear = obj_silver_sickle_2961_wear, 0
 womanwear = obj_silver_sickle_2961_wear, 6
 members = true
-recol = 24/7073
+recol1s = 24
+recol1d = 7073
 name = Iron sickle

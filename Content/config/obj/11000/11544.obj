@@ -2,4 +2,9 @@
 model = obj_khali_brew
 cost = 3
 zoom2d = 970
-recol = 1942/41 8757/28 127/82
+recol1s = 1942
+recol1d = 41
+recol2s = 8757
+recol2d = 28
+recol3s = 127
+recol3d = 82

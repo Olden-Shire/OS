@@ -1,8 +1,13 @@
 // spot 505
-model = 3116
+model = model_3116
 anim = 693
 ambient = 60
 contrast = 60
 resizeh = 64
 resizev = 64
-recol = 7104/60112 6080/59972 960/59959
+recol1s = 7104
+recol1d = 60112
+recol2s = 6080
+recol2d = 59972
+recol3s = 960
+recol3d = 59959

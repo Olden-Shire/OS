@@ -11,5 +11,6 @@ womanwear = obj_bearhead_woman, 0
 manhead = 5663
 womanhead = 5665
 members = true
-recol = 61/43297
+recol1s = 61
+recol1d = 43297
 name = Bearhead

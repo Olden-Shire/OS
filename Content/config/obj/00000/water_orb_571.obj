@@ -7,5 +7,6 @@ yan2d = 96
 xan2d = 316
 members = true
 cost = 300
-recol = 43117/43968
+recol1s = 43117
+recol1d = 43968
 name = Water orb

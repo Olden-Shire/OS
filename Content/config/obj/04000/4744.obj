@@ -1,9 +1,16 @@
 // obj 4744
-model = 6603
+model = model_6603
 xof2d = 1
 yof2d = 1
 zoom2d = 870
 yan2d = 1776
 xan2d = 72
 stackable = true
-recol = 10529/10388 8602/10512 10520/10508 8722/10760
+recol1s = 10529
+recol1d = 10388
+recol2s = 8602
+recol2d = 10512
+recol3s = 10520
+recol3d = 10508
+recol4s = 8722
+recol4d = 10760

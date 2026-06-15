@@ -8,5 +8,6 @@ zoom2d = 360
 yan2d = 1948
 xan2d = 104
 members = true
-recol = 127/24
+recol1s = 127
+recol1d = 24
 name = Blackened crystal

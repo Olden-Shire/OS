@@ -7,5 +7,6 @@ zan2d = 8
 xan2d = 308
 members = true
 stackable = true
-recol = 16714/6581
+recol1s = 16714
+recol1d = 6581
 name = Agility arena ticket

@@ -11,5 +11,6 @@ manwear = obj_perfect_necklace_man, 0
 womanwear = obj_perfect_necklace_woman, 0
 iop4 = Rub
 members = true
-recol = 41/43951
+recol1s = 41
+recol1d = 43951
 name = Games necklace(6)

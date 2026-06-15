@@ -8,5 +8,6 @@ yan2d = 84
 xan2d = 260
 cost = 1
 stackable = true
-recol = 127/701
+recol1s = 127
+recol1d = 701
 name = Jug of bad wine

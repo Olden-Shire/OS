@@ -7,5 +7,6 @@ xan2d = 204
 iop2 = Drink
 iop3 = Empty
 members = true
-recol = 44263/24914
+recol1s = 44263
+recol1d = 24914
 name = Nettle-water

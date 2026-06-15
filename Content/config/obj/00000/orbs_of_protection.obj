@@ -4,5 +4,6 @@ model = obj_orbs_of_protection
 zoom2d = 1550
 yan2d = 1976
 xan2d = 92
-recol = 127/19410
+recol1s = 127
+recol1d = 19410
 name = Orbs of protection

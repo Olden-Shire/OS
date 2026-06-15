@@ -8,5 +8,6 @@ xan2d = 260
 cost = 1
 iop4 = Empty
 members = true
-recol = 127/152
+recol1s = 127
+recol1d = 152
 name = Jug of vinegar

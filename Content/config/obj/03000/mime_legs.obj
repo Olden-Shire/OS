@@ -9,5 +9,6 @@ zoom2d = 1690
 yan2d = 2044
 zan2d = 32
 xan2d = 620
-recol = 25238/8
+recol1s = 25238
+recol1d = 8
 name = Mime legs

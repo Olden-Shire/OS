@@ -1,9 +1,10 @@
 // obj 9210
-model = 16861
+model = model_16861
 xof2d = 1
 zoom2d = 300
 yan2d = 66
 xan2d = 453
 stackable = true
 members = true
-recol = 10465/64326
+recol1s = 10465
+recol1d = 64326

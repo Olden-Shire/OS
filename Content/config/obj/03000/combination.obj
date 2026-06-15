@@ -7,5 +7,6 @@ zoom2d = 760
 yan2d = 28
 xan2d = 552
 iop1 = Read
-recol = 7516/6744
+recol1s = 7516
+recol1d = 6744
 name = Combination

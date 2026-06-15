@@ -6,5 +6,6 @@ yan2d = 1852
 xan2d = 156
 cost = 1
 members = true
-recol = 12/803
+recol1s = 12
+recol1d = 803
 name = Stone ball

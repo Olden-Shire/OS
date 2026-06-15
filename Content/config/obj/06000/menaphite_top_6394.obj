@@ -11,5 +11,6 @@ yan2d = 1024
 xan2d = 456
 members = true
 cost = 20
-recol = 8741/49054
+recol1s = 8741
+recol1d = 49054
 name = Menaphite top

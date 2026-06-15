@@ -8,5 +8,6 @@ yan2d = 120
 xan2d = 380
 iop1 = Read
 members = true
-recol = 10351/43344
+recol1s = 10351
+recol1d = 43344
 name = Bervirius notes

@@ -13,5 +13,6 @@ ambient = 15
 iop2 = Wield
 manwear = obj_a_jester_stick_man, 0
 womanwear = obj_a_jester_stick_woman, 6
-recol = 61/36133
+recol1s = 61
+recol1d = 36133
 name = A jester stick

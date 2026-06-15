@@ -5,5 +5,6 @@ yof2d = -1
 zoom2d = 1000
 yan2d = 192
 xan2d = 116
-recol = 5012/82
+recol1s = 5012
+recol1d = 82
 name = Silver bottle

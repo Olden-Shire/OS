@@ -7,5 +7,6 @@ zoom2d = 700
 yan2d = 20
 xan2d = 328
 members = true
-recol = 8128/43239
+recol1s = 8128
+recol1d = 43239
 name = Prize key

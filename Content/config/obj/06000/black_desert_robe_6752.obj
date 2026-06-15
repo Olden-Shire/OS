@@ -8,5 +8,6 @@ iop2 = Wear
 manwear = obj_priest_gown_428_man, 0
 womanwear = obj_priest_gown_428_woman, 0
 members = true
-recol = 25238/10508
+recol1s = 25238
+recol1d = 10508
 name = Black desert robe

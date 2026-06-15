@@ -8,5 +8,6 @@ xan2d = 112
 members = true
 iop4 = Empty
 iop5 = Destroy
-recol = 8423/9664
+recol1s = 8423
+recol1d = 9664
 name = Brulee
