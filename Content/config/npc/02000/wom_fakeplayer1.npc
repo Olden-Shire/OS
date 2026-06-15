@@ -26,3 +26,5 @@ model6 = obj_dark_dagger_wear
 model7 = obj_wooden_shield_1171_wear
 model8 = obj_macro_mime_legs_manwear
 model9 = obj_ikov_bootsoflightness_manwear
+//Server
+desc=A player.

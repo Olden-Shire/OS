@@ -29,3 +29,6 @@ model5 = obj_gauntlets_of_cooking_womanwear
 model6 = model_429
 model7 = obj_ikov_bootsoflightness_womanwear
 head1 = model_118
+//Server
+desc=A student busily digging.
+param=death_sound,female_death

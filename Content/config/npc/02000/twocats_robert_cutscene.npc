@@ -31,3 +31,5 @@ model6 = obj_rock_shell_legs_6130_man
 model7 = obj_spined_boots_6143_man
 head1 = model_8745
 head2 = idk_man_jaw_long_head
+//Server
+desc=A battle hardened hero.

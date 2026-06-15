@@ -26,3 +26,13 @@ model7 = obj_cert_drill_top_manwear3
 model8 = idk_man_torso_jacket
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Smartly dressed, and ready to deliver food.
+hitpoints=7
+param=damagetype,^crush_style
+category=shop_keeper
+param=owned_shop,fishrestaurant
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,750
+param=shop_delta,30
+param=shop_title,The Shrimp and Parrot

@@ -10,3 +10,13 @@ model1 = model_2909
 model2 = model_2901
 model3 = model_2917
 head1 = model_17
+//Server
+desc=It's a tree gnome.
+category=shop_keeper
+param=owned_shop,gnomeshop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Bolkoy's Village Shop
+param=death_anim,midget_death
+param=death_sound,gnome_death

@@ -6,3 +6,5 @@ name = Bearded gorilla
 model1 = model_4810
 model2 = model_4813
 head1 = model_4663
+//Server
+desc=It's a gorilla.

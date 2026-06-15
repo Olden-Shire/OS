@@ -30,3 +30,5 @@ model10 = model_184
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_goatee_head
 head3 = model_43
+//Server
+desc=An observer for the Temple Knights.

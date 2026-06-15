@@ -29,3 +29,6 @@ model7 = obj_fishing_rod_307_wear
 model8 = model_14378
 model9 = obj_rogue_boots_man
 head1 = model_14371
+//Server
+desc=He loves to fish!
+wanderrange=1

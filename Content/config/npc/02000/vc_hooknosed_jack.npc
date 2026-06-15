@@ -34,3 +34,5 @@ model6 = obj_cooking_gauntlets_man
 model7 = npc_captain_barnaby
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = model_10029
+//Server
+desc=Obviously punches above his weight.

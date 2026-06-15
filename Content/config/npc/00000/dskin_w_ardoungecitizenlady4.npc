@@ -25,3 +25,13 @@ model5 = model_437
 model6 = model_358
 head1 = model_121
 head2 = model_11428
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=100
+hitpoints=13
+attack=10
+strength=10
+defence=10
+param=damagetype,^crush_style
+param=defend_sound,female_hit
+param=death_sound,female_death

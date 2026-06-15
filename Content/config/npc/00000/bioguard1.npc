@@ -30,3 +30,7 @@ model9 = model_14848
 model10 = model_25687
 head1 = model_25628
 head2 = obj_leather_cowl_manhead2
+//Server
+desc=He tries to keep order around here.
+wanderrange=0
+moverestrict=nomove

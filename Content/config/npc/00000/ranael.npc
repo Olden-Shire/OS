@@ -31,3 +31,13 @@ model6 = obj_ikov_bootsoflightness_womanwear
 model7 = obj_red_headband_2645_woman
 head1 = obj_warrior_woman
 head2 = model_43
+//Server
+desc=She's an expert on armoured skirts!
+category=shop_keeper
+param=owned_shop,skirtshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,650
+param=shop_delta,10
+param=shop_title,Ranael's Super Skirt Store.
+moverestrict=indoors
+param=death_sound,female_death

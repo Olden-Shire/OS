@@ -22,3 +22,12 @@ model6 = model_274
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_tonsure_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=An intelligent-looking shop owner.
+wanderrange=2
+param=owned_shop,shilojunglestore
+param=shop_sell_multiplier,1500
+param=shop_buy_multiplier,500
+param=shop_delta,20
+param=shop_title,Obli's General Store.
+category=shop_keeper

@@ -7,3 +7,5 @@ vislevel = 0
 nominimap = true
 name = Egg
 model1 = model_8714
+//Server
+desc=I wonder what was inside it?

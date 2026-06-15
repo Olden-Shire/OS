@@ -7,3 +7,5 @@ recol2s = 45
 recol2d = 43096
 name = Silver ore
 model1 = model_9071
+//Server
+desc=Some ore going into the furnace.

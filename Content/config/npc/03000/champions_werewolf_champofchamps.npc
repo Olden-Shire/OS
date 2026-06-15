@@ -6,3 +6,7 @@ name = Mystery figure
 model1 = model_26163
 model2 = model_26161
 head1 = model_26111
+//Server
+desc=A mysterious watcher...
+wanderrange=0
+moverestrict=nomove

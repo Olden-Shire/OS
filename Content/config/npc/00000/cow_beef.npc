@@ -6,3 +6,6 @@ op2 = Attack
 vislevel = 2
 name = Cow
 model1 = model_23896
+//Server
+desc=A cow by any other name would smell as sweet.
+param=slayer_category,^slayer_cow

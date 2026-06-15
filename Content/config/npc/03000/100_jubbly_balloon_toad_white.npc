@@ -6,3 +6,5 @@ recol1s = 5790
 recol1d = 49
 name = Balloon Toad
 model1 = model_13723
+//Server
+desc=A toad inflated with swamp gas and tied up like a balloon.

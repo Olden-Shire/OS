@@ -27,3 +27,14 @@ model8 = model_194
 head1 = model_5787
 head2 = model_85
 head3 = model_37
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

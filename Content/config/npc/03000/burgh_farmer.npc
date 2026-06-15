@@ -33,3 +33,5 @@ model9 = model_9823
 head1 = obj_farmer
 head2 = model_9822
 head3 = model_6212
+//Server
+desc=He tries to grow the crops in this area.

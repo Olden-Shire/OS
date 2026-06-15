@@ -30,3 +30,10 @@ model7 = model_19250
 model8 = model_25649
 head1 = model_25635
 head2 = model_25638
+//Server
+desc=Looks kind of shifty...
+wanderrange=4
+maxrange=6
+respawnrate=74
+hitpoints=8
+param=damagetype,^crush_style

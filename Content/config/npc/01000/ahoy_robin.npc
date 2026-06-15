@@ -28,3 +28,5 @@ model10 = obj_longbow_839_wear
 head1 = obj_pickpocket_guide_man
 head2 = model_3384
 head3 = idk_man_jaw_goatee_head
+//Server
+desc=A master bowman.

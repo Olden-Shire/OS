@@ -18,3 +18,6 @@ recol4s = 2477
 recol4d = 2595
 name = Dagannoth Rex
 model1 = model_9941
+//Server
+desc=Firstborn of the legendary dagannoth kings.
+param=slayer_category,^slayer_dagannoth

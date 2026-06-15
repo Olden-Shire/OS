@@ -6,3 +6,15 @@ op2 = Attack
 vislevel = 41
 name = Mammoth
 model1 = model_3005
+//Server
+desc=A woolly elephantine monster.
+param=damagetype,^stab_style
+param=attack_anim,mammoth_attack
+param=defend_anim,mammoth_block
+param=death_anim,mammoth_death
+param=attack_sound,mammoth_attack
+param=defend_sound,mammoth_hit
+param=death_sound,mammoth_death
+param=death_drop,big_bones
+huntmode=cowardly
+huntrange=3

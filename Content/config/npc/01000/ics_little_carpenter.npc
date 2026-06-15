@@ -33,3 +33,5 @@ model8 = obj_ikov_bootsoflightness_manwear
 head1 = idk_man_jaw_long_head
 head2 = obj_leather_cowl_manhead2
 head3 = model_6462
+//Server
+desc=A block of a man.

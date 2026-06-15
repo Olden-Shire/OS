@@ -31,3 +31,6 @@ model8 = obj_eye_patch_1025_man
 head1 = model_46
 head2 = idk_man_jaw_moustache_head
 head3 = model_68
+//Server
+desc=An elderly White Knight.
+wanderrange=8

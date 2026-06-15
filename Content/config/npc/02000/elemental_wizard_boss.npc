@@ -28,3 +28,5 @@ model7 = obj_priest_gown_428_man
 model8 = obj_cape_1007_man
 head1 = model_9444
 head2 = idk_man_jaw_long_head
+//Server
+desc=A master of necromancy!

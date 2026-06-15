@@ -8,3 +8,5 @@ vislevel = 0
 name = Cormorant
 model1 = model_26840
 model2 = model_26838
+//Server
+desc=A sea bird.

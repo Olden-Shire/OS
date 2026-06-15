@@ -11,3 +11,5 @@ recol2d = 43239
 name = Fairy Nuff
 model1 = model_11883
 head1 = model_14
+//Server
+desc=A healing fairy.

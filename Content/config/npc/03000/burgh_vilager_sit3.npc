@@ -22,3 +22,7 @@ model4 = model_353
 model5 = model_427
 head1 = model_110
 head2 = model_11429
+//Server
+desc=A citizen of Burgh de Rott.
+wanderrange=0
+moverestrict=nomove

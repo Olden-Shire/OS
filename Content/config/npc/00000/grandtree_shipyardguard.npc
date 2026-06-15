@@ -22,3 +22,12 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Builds ships for a living.
+wanderrange=2
+hitpoints=10
+attack=10
+strength=10
+defence=10
+param=damagetype,^crush_style
+category=shipyardworker

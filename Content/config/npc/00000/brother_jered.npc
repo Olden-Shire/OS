@@ -25,3 +25,11 @@ model8 = obj_amulet_of_ghostspeak_manwear
 model9 = obj_stringstar_manwear2
 model10 = model_18944
 head1 = idk_man_hair_tonsure_head
+//Server
+desc=A holy man.
+wanderrange=3
+hitpoints=15
+attack=2
+strength=2
+defence=3
+param=damagetype,^crush_style

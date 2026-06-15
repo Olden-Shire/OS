@@ -22,3 +22,12 @@ model10 = model_11770
 head1 = idk_man_hair_cropped_head
 head2 = model_9449
 head3 = model_11868
+//Server
+desc=Seems very well-off.
+category=shop_keeper
+param=owned_shop,gemshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,30
+param=shop_title,Herquin's Gems.
+moverestrict=indoors

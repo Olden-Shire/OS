@@ -33,3 +33,15 @@ model7 = obj_cert_drill_top_manwear3
 model8 = model_256
 model9 = obj_vyrewatch_shoes_9638_man
 model10 = obj_fremennik_cloak_3759_man
+//Server
+desc=Stop looking and run!
+hitpoints=35
+attack=30
+strength=25
+defence=30
+param=stabdefence,2
+param=slashdefence,1
+param=crushdefence,3
+param=damagetype,^crush_style
+param=defend_anim,human_unarmedblock
+param=combat_xp_multiplier,100

@@ -25,3 +25,5 @@ model8 = obj_spade_952_wear
 model9 = model_5218
 head1 = obj_farmer
 head2 = model_3713
+//Server
+desc=A master at farming.

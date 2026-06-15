@@ -254,6 +254,9 @@ pub struct NpcInfo {
     /// Type params (Engine-TS `NpcType.params`): param id → value, from the
     /// `param = name, value` lines. Read by NPC_PARAM / NC_PARAM.
     pub params: std::collections::HashMap<u32, ParamValue>,
+    /// Category name (Engine-TS NpcType opcode 18) — server-side here (not in
+    /// our 2007 cache). Stored for future category-driven behaviour.
+    pub category: Option<String>,
 }
 
 /// A param value carried by a config (Engine-TS `ParamMap` value): int or string.
@@ -298,6 +301,7 @@ impl Default for NpcInfo {
             move_restrict: crate::entity::MoveRestrict::Normal,
             base_levels: [1; crate::entity::npc::NPC_STAT_COUNT],
             params: std::collections::HashMap::new(),
+            category: None,
         }
     }
 }
@@ -643,6 +647,10 @@ impl World {
                         param_lines.push((pname.trim().to_string(), pval.trim().to_string()));
                         applied = true;
                     }
+                }
+                "category" => {
+                    info.category = Some(v.to_string());
+                    applied = true;
                 }
                 _ => {}
             }

@@ -24,3 +24,12 @@ model7 = model_14378
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=Appears slightly drunk.
+wanderrange=3
+category=shop_keeper
+param=owned_shop,boozeshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,20
+param=shop_title,Karamja Wines, Spirits, and Beers.

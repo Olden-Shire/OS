@@ -28,3 +28,6 @@ model7 = obj_macro_mime_legs_manwear
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_cropped_head
 head2 = model_80
+//Server
+desc=I could get a beer from him.
+wanderrange=2

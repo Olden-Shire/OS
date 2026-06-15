@@ -8,3 +8,5 @@ vislevel = 103
 name = Mummy
 model1 = model_20903
 model2 = model_20902
+//Server
+desc=A victim of poor first aid.

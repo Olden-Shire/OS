@@ -20,3 +20,6 @@ name = Dagannoth Prime
 model1 = model_9940
 model2 = model_9943
 model3 = model_9942
+//Server
+desc=A legendary dagannoth king, rumoured to fly on the North winds.
+param=slayer_category,^slayer_dagannoth

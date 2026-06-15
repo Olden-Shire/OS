@@ -29,3 +29,6 @@ model10 = model_4391
 head1 = model_14337
 head2 = model_11188
 head3 = model_15000
+//Server
+desc=The owner of the banana plantation.
+moverestrict=indoors

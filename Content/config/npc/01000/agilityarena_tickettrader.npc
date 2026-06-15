@@ -25,3 +25,6 @@ model4 = obj_gauntlets_of_cooking_womanwear
 model5 = model_433
 model6 = obj_ikov_bootsoflightness_womanwear
 head1 = model_111
+//Server
+desc=Ticket trader for the Brimhaven Agility Arena.
+moverestrict=indoors

@@ -31,3 +31,7 @@ model9 = obj_nurse_hat_woman
 head1 = model_115
 head2 = model_136
 head3 = model_3186
+//Server
+desc=Trained to deal with all sorts of injuries.
+moverestrict=indoors
+category=healer

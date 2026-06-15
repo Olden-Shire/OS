@@ -15,3 +15,5 @@ recol3s = 3895
 recol3d = 14893
 name = Dead swamp snake
 model1 = model_14171
+//Server
+desc=A dead snake, it thrived in the swamp until it met you.

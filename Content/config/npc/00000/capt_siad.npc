@@ -32,3 +32,6 @@ model8 = obj_cert_drill_top_manwear3
 model9 = model_3599
 head1 = model_5787
 head2 = model_85
+//Server
+desc=He's in control of the whole mining camp.
+wanderrange=3

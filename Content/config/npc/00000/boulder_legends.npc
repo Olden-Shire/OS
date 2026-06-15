@@ -6,3 +6,6 @@ vislevel = 0
 nominimap = true
 name = Boulder
 model1 = model_2846
+//Server
+desc=I wonder what this is doing here.
+wanderrange=0

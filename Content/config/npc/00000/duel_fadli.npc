@@ -27,3 +27,11 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = model_49
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=Looks kinda bored.
+wanderrange=2
+param=owned_shop,duel_rottenfruitshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,550
+param=shop_delta,10
+param=shop_title,Shop of Distate

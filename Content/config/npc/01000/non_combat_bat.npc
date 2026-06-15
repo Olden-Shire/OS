@@ -6,3 +6,9 @@ vislevel = 0
 nominimap = true
 name = Giant bat
 model1 = model_18898
+//Server
+desc=Annoying flappy thing.
+wanderrange=8
+param=death_anim,bat_death
+param=death_sound,bat_death
+param=death_drop,null

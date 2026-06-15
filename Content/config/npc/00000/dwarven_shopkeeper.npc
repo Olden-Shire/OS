@@ -20,3 +20,14 @@ model4 = model_2983
 model5 = model_2985
 model6 = model_2990
 head1 = model_1
+//Server
+desc=I wonder if he wants to buy my junk?
+category=shop_keeper
+param=owned_shop,generaldwarf
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,300
+param=shop_delta,30
+param=shop_title,Dwarven shopping store
+wanderrange=13
+param=damagetype,^stab_style
+param=death_anim,dwarf_death

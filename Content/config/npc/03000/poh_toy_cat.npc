@@ -12,3 +12,5 @@ nominimap = true
 name = Clockwork cat
 model1 = model_14104
 model2 = obj_toy_cat_7771
+//Server
+desc=An amazing piece of crafting.

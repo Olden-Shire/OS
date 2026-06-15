@@ -6,3 +6,6 @@ op2 = Attack
 vislevel = 182
 name = Dark beast
 model1 = obj_dark_beast
+//Server
+desc=From a darker dimension.
+param=slayer_category,^slayer_darkbeast

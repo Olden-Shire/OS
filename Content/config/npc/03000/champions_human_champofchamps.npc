@@ -30,3 +30,7 @@ model8 = model_10314
 model9 = model_10311
 head1 = model_9448
 head2 = idk_man_jaw_long
+//Server
+desc=A mysterious watcher...
+wanderrange=0
+moverestrict=nomove

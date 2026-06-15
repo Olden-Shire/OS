@@ -9,3 +9,7 @@ name = Og
 model1 = model_20372
 model2 = model_20383
 head1 = model_20415
+//Server
+desc=A senior member of the ogre community.
+param=death_anim,giant_death
+param=death_sound,giant_death

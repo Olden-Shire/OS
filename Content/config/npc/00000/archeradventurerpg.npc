@@ -30,3 +30,6 @@ model7 = obj_longbow_839_wear
 model8 = model_422
 head1 = obj_warrior_woman
 head2 = model_131
+//Server
+desc=She looks quite experienced.
+param=death_sound,female_death

@@ -31,3 +31,5 @@ model7 = npc_paladin
 model8 = obj_bronze_halberd_3190_wear
 head1 = obj_farmer
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Leader of King Tyras's men.

@@ -29,3 +29,6 @@ model6 = obj_ikov_bootsoflightness_manwear
 model7 = idk_man_jaw_none
 model8 = model_318
 head1 = model_65
+//Server
+desc=One of the Knights of the Round Table.
+wanderrange=1

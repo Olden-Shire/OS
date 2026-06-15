@@ -24,3 +24,7 @@ model4 = model_24476
 model5 = model_24443
 model6 = model_24450
 head1 = model_24208
+//Server
+desc=An ugly green creature.
+wanderrange=0
+moverestrict=nomove

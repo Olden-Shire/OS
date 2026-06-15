@@ -30,3 +30,5 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = idk_man_torso_shirt
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=The Carnillean family butler.

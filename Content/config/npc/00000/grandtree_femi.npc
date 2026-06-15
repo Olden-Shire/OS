@@ -14,3 +14,8 @@ model1 = model_2907
 model2 = model_2911
 model3 = model_2922
 head1 = obj_gnome
+//Server
+desc=A gnome trader.
+wanderrange=1
+param=death_anim,midget_death
+param=death_sound,gnome_death

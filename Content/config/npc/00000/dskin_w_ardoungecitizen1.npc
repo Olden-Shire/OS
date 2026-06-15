@@ -24,3 +24,12 @@ model6 = obj_cert_drill_top_manwear3
 model7 = obj_citizen_trousers_9642_man
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=100
+hitpoints=13
+attack=2
+param=stabdefence,1
+param=slashdefence,1
+param=crushdefence,1
+param=damagetype,^crush_style

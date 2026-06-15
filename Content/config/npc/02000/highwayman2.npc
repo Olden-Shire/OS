@@ -28,3 +28,5 @@ model9 = obj_hooded_cloak_4041_man
 model10 = obj_bronze_sword_1277_wear
 head1 = model_48
 head2 = model_76
+//Server
+desc=He holds up passers by.

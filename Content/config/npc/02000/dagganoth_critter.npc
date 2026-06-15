@@ -8,3 +8,6 @@ op2 = Attack
 vislevel = 42
 name = Dagannoth spawn
 model1 = model_8740
+//Server
+desc=A teeny-tiny horror from the ocean depths...
+param=slayer_category,^slayer_dagannoth

@@ -7,3 +7,5 @@ nominimap = true
 vislevel = 0
 name = Trees
 model1 = model_12021
+//Server
+desc=Trees and such.

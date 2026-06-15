@@ -27,3 +27,6 @@ model5 = model_14589
 model6 = model_414
 head1 = obj_warrior_woman
 head2 = model_131
+//Server
+desc=An evil and powerful sorceress.
+param=death_sound,female_death

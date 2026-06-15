@@ -29,3 +29,7 @@ model7 = model_3193
 model8 = obj_nurse_hat_woman
 head1 = model_114
 head2 = model_3186
+//Server
+desc=Wow! She's made a statement with that hair!
+moverestrict=indoors
+category=healer

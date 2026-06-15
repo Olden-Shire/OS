@@ -13,3 +13,7 @@ model1 = model_2918
 model2 = model_2910
 model3 = model_2906
 head1 = obj_pickpocket_guide_man
+//Server
+desc=A young squire. He looks worse for wear.
+wanderrange=1
+param=death_anim,midget_death

@@ -33,3 +33,5 @@ model10 = obj_perfect_necklace_man
 head1 = obj_pickpocket_guide_man
 head2 = model_80
 head3 = model_30
+//Server
+desc=The chancellor to the Emir.

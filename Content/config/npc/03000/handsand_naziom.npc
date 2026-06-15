@@ -29,3 +29,5 @@ model6 = model_10218
 model7 = npc_druid
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = idk_man_hair_tonsure_head
+//Server
+desc=Mazion seems to be covered in sand.

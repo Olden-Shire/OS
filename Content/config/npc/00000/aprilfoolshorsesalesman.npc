@@ -34,3 +34,12 @@ model9 = model_730
 head1 = model_28
 head2 = obj_farmer
 head3 = model_85
+//Server
+desc=He smells funny.
+wanderrange=3
+category=shop_keeper
+param=owned_shop,aprilfoolshorseshop
+param=shop_sell_multiplier,1500
+param=shop_buy_multiplier,500
+param=shop_delta,20
+param=shop_title,Diango's Toy Store

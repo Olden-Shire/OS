@@ -27,3 +27,16 @@ model6 = obj_priest_gown_manwear2
 model7 = obj_cert_drill_top_manwear3
 model8 = obj_priest_gown_428_man
 model9 = obj_zamorak_staff_wear
+//Server
+desc=A servant of Zamorak.
+wanderrange=3
+maxrange=5
+attackrange=5
+hitpoints=76
+attack=24
+strength=24
+defence=24
+magic=80
+ranged=1
+param=magicdefence,3
+param=damagetype,^crush_style

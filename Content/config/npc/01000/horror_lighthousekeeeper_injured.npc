@@ -31,3 +31,7 @@ model8 = model_194
 head1 = model_46
 head2 = model_85
 head3 = model_37
+//Server
+desc=Looks like he's in trouble...
+wanderrange=0
+moverestrict=nomove

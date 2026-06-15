@@ -18,3 +18,17 @@ model3 = model_9313
 model4 = model_9312
 model5 = model_9307
 head1 = model_9251
+//Server
+desc=Doesn't look very social.
+respawnrate=50
+hitpoints=120
+attack=140
+strength=100
+defence=100
+ranged=120
+param=damagetype,^ranged_style
+param=attack_anim,thzaar_ring_attack
+param=death_anim,thzaar_death
+param=attack_sound,tzhaar_xil_attack_ring
+param=defend_sound,tzhaar_xil_hit
+param=death_sound,tzhaar_xil_death

@@ -28,3 +28,7 @@ model9 = obj_vyrewatch_shoes_9638_man
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
 head3 = model_78
+//Server
+desc=A bureaucratic administrator.
+wanderrange=0
+moverestrict=nomove

@@ -27,3 +27,6 @@ model6 = idk_man_legs_flares
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Yanni Salika - He buys and sells antiques.
+wanderrange=2

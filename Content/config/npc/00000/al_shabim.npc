@@ -34,3 +34,6 @@ model10 = obj_cape_1007_man
 head1 = obj_pickpocket_guide_man
 head2 = model_30
 head3 = model_85
+//Server
+desc=He's the leader of the Bedabin tribe.
+wanderrange=3

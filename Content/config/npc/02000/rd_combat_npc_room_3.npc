@@ -31,3 +31,5 @@ model7 = obj_bronze_spear_1237_wear
 model8 = obj_iron_platelegs_1067_man
 model9 = model_184
 head1 = obj_guard
+//Server
+desc=A warrior blessed by Saradomin.

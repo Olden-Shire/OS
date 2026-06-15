@@ -27,3 +27,13 @@ model4 = model_332
 model5 = model_353
 model6 = model_358
 head1 = obj_warrior_woman
+//Server
+desc=She's here on work experience.
+category=shop_keeper
+param=owned_shop,generalshop5
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Edgeville General Store
+moverestrict=indoors
+param=death_sound,female_death

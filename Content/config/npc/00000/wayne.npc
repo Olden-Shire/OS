@@ -28,3 +28,12 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = obj_hammer_2347_wear
 head1 = obj_pickpocket_guide_man
 head2 = model_84
+//Server
+desc=An armourer.
+category=shop_keeper
+param=owned_shop,chainmailshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,650
+param=shop_delta,10
+param=shop_title,Wayne's Chains! - Chainmail specialist.
+moverestrict=indoors

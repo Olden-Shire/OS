@@ -34,3 +34,12 @@ model9 = obj_ikov_bootsoflightness_manwear
 model10 = idk_man_jaw_none
 head1 = obj_farmer
 head2 = model_28
+//Server
+desc=An expert on fishing.
+category=shop_keeper
+param=owned_shop,fishingshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,10
+param=shop_title,Gerrant's Fishy Business.
+moverestrict=indoors

@@ -10,3 +10,5 @@ recol2s = 4506
 recol2d = 28839
 name = Butterfly
 model1 = npc_butterfly
+//Server
+desc=Flutter by oh butterfly.

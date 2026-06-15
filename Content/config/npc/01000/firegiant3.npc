@@ -9,3 +9,5 @@ vislevel = 86
 name = Fire giant
 model1 = model_17450
 model2 = model_17438
+//Server
+desc=A very large elemental adversary.

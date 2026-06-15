@@ -20,3 +20,5 @@ model6 = obj_villager_armband_6347_man
 model7 = obj_villager_robe_6343_man
 model8 = obj_villager_sandals_6349_man
 head1 = obj_leather_cowl_manhead2
+//Server
+desc=A native of Tai Bwo Wannai.

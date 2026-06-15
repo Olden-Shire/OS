@@ -37,3 +37,6 @@ head1 = obj_pickpocket_guide_man
 head2 = model_83
 head3 = model_78
 head4 = model_44
+//Server
+desc=An old wizard.
+moverestrict=indoors

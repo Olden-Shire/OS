@@ -29,3 +29,5 @@ model5 = model_3329
 model6 = npc_paladin
 model7 = obj_bronze_halberd_3190_wear
 head1 = model_17348
+//Server
+desc=One of King Tyras's men.

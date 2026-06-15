@@ -5,3 +5,5 @@ recol1s = 7062
 recol1d = 43297
 name = Mithril ore
 model1 = model_9071
+//Server
+desc=Some ore going into the furnace.

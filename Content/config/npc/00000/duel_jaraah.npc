@@ -32,3 +32,6 @@ model8 = npc_newbie_cook_instructor
 model9 = model_3190
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_long_head
+//Server
+desc=Has the messy job of putting players back together again.
+moverestrict=indoors

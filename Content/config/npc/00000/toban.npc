@@ -9,3 +9,7 @@ name = Toban
 model1 = model_20374
 model2 = model_20385
 head1 = model_20417
+//Server
+desc=Ogre-ish.
+param=death_anim,giant_death
+param=death_sound,giant_death

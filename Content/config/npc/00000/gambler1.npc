@@ -26,3 +26,6 @@ model7 = model_9623
 model8 = model_264
 model9 = model_4391
 head1 = obj_farmer
+//Server
+desc=He's ready for a bet.
+wanderrange=3

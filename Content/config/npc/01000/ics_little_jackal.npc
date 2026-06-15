@@ -6,3 +6,6 @@ op2 = Attack
 vislevel = 21
 name = Jackal
 model1 = model_26260
+//Server
+desc=He has had his day...
+param=slayer_category,^slayer_dog

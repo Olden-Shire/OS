@@ -25,3 +25,7 @@ model6 = obj_cert_drill_top_manwear3
 model7 = obj_amulet_of_ghostspeak_manwear
 head1 = model_49
 head2 = idk_man_jaw_long_head
+//Server
+desc=The animated spirit of a soul not at rest.
+wanderrange=0
+moverestrict=nomove

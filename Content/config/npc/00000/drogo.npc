@@ -16,3 +16,14 @@ model4 = model_2983
 model5 = model_2985
 model6 = model_2990
 head1 = model_0
+//Server
+desc=He runs a mining store.
+category=shop_keeper
+param=owned_shop,miningstore
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,20
+param=shop_title,Drogo's Mining Emporium.
+wanderrange=13
+param=damagetype,^stab_style
+param=death_anim,dwarf_death

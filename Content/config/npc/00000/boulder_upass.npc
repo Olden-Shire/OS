@@ -6,3 +6,7 @@ vislevel = 0
 nominimap = true
 name = Boulder
 model1 = model_2846
+//Server
+desc=Precariously balanced....
+wanderrange=0
+moverestrict=nomove

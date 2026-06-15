@@ -30,3 +30,13 @@ model5 = model_353
 model6 = model_429
 model7 = model_358
 head1 = model_121
+//Server
+desc=Goods for sale and trade!
+moverestrict=indoors
+category=shop_keeper
+param=owned_shop,junglestore
+param=shop_sell_multiplier,1500
+param=shop_buy_multiplier,500
+param=shop_delta,20
+param=shop_title,Jiminua's Jungle Store.
+param=death_sound,female_death

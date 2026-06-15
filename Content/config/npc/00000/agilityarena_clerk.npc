@@ -30,3 +30,7 @@ model9 = obj_ikov_bootsoflightness_manwear
 model10 = model_18917
 head1 = model_49
 head2 = model_36
+//Server
+desc=Entrance clerk for the Brimhaven Agility Arena.
+timer=1
+moverestrict=indoors

@@ -6,3 +6,5 @@ readyanim = seq_1261
 alwaysontop = true
 name = Mist
 model1 = model_4086
+//Server
+desc=A billowing cloud of fine mist...it looks creepy.

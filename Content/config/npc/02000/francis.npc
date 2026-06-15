@@ -25,3 +25,5 @@ model7 = obj_priest_gown_428_man
 model8 = obj_gardening_boots_5345_man
 head1 = model_5787
 head2 = idk_man_jaw_long_head
+//Server
+desc=Perhaps this gardener might look after your crops for you.

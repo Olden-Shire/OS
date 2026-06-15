@@ -12,3 +12,7 @@ name = Ana
 model1 = obj_ikov_bootsoflightness_womanwear
 head1 = model_118
 head2 = model_19328
+//Server
+desc=Stuffed.
+wanderrange=0
+moverestrict=nomove

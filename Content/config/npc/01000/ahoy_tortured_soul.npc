@@ -18,3 +18,6 @@ model2 = model_5219
 model3 = model_5209
 model4 = model_5216
 head1 = model_5203
+//Server
+desc=This poor soul cannot understand why it has not passed to the next world.
+param=slayer_category,^slayer_ghost

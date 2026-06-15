@@ -28,3 +28,5 @@ model9 = npc_druid
 model10 = obj_vyrewatch_shoes_9638_man
 head1 = model_9102
 head2 = model_7380
+//Server
+desc=A venerable and rich sage.

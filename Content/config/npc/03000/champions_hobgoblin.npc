@@ -9,3 +9,5 @@ vislevel = 56
 name = Hobgoblin Champion
 model1 = model_10334
 model2 = model_10335
+//Server
+desc=Champion of the Hobgoblin!

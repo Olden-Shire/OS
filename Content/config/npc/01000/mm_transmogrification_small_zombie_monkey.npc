@@ -12,3 +12,5 @@ name = Small zombie monkey
 model1 = model_4817
 model2 = model_4824
 head1 = model_4656
+//Server
+desc=It's a monkey.

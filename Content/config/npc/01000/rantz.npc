@@ -8,3 +8,9 @@ name = Rantz
 model1 = model_2878
 model2 = model_3442
 head1 = model_141
+//Server
+desc=A large dim looking humanoid.
+wanderrange=2
+param=damagetype,^crush_style
+param=death_anim,ogre_death
+param=death_sound,giant_death

@@ -24,3 +24,5 @@ model7 = obj_cert_drill_top_manwear3
 model8 = obj_bronze_claws_3095_wear
 model9 = obj_green_dhide_chaps_1099_man
 model10 = obj_ikov_bootsoflightness_manwear
+//Server
+desc=A player.

@@ -6,3 +6,13 @@ op2 = Attack
 vislevel = 2
 name = Skavid
 model1 = model_20388
+//Server
+desc=Servant race to the ogres.
+hitpoints=6
+param=damagetype,^crush_style
+param=attack_anim,skavid_attack
+param=defend_anim,skavid_block
+param=death_anim,skavid_death
+param=attack_sound,imp_attack
+param=defend_sound,imp_hit
+param=death_sound,imp_death

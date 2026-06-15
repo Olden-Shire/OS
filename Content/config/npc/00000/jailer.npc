@@ -24,3 +24,15 @@ model4 = model_253
 model5 = obj_ikov_bootsoflightness_manwear
 model6 = model_156
 model7 = obj_cooking_gauntlets_man
+//Server
+desc=Guards prisoners for the black knights.
+respawnrate=100
+hitpoints=47
+attack=40
+strength=40
+defence=40
+param=stabdefence,79
+param=slashdefence,63
+param=crushdefence,47
+param=damagetype,^crush_style
+param=defend_sound,brassclash2

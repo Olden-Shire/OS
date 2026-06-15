@@ -24,3 +24,5 @@ model7 = npc_druid
 model8 = model_9607
 head1 = idk_man_hair_tonsure_head
 head2 = model_83
+//Server
+desc=Holy looking.

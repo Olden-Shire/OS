@@ -13,3 +13,6 @@ model4 = model_2990
 model5 = model_2980
 model6 = model_2985
 head1 = model_0
+//Server
+desc=He looks short and grumpy.
+param=death_anim,dwarf_death

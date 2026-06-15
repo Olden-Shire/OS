@@ -20,3 +20,5 @@ recol3d = 4397
 name = King rat
 model1 = model_9610
 head1 = model_10035
+//Server
+desc=The master of all rats.

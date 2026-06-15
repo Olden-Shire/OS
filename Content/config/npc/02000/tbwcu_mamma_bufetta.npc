@@ -24,3 +24,5 @@ model6 = obj_villager_robe_6343_woman
 model7 = obj_villager_sandals_6349_woman
 model8 = model_8947
 head1 = model_110
+//Server
+desc=A native of Tai Bwo Wannai.

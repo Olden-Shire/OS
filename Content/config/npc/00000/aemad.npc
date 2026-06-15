@@ -32,3 +32,12 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_cape_1007_man
 head1 = model_46
 head2 = model_85
+//Server
+desc=He runs the adventurers' shop.
+category=shop_keeper
+param=owned_shop,adventurershop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,20
+param=shop_title,Aemad's Adventuring Supplies.
+moverestrict=indoors

@@ -25,3 +25,6 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_farmer
 head2 = model_84
+//Server
+desc=This is Kaleb Paramaya - a warm and friendly inn owner.
+wanderrange=3

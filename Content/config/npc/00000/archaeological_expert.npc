@@ -27,3 +27,5 @@ model7 = obj_cooking_gauntlets_man
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_farmer
 head2 = idk_man_jaw_long_head
+//Server
+desc=An expert on archaeology.

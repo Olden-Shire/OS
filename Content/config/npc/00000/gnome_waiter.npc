@@ -16,3 +16,14 @@ model1 = model_2909
 model2 = model_2900
 model3 = model_2915
 head1 = model_23
+//Server
+desc=He can serve you gnome food.
+wanderrange=3
+category=shop_keeper
+param=owned_shop,giannerestaurant
+param=shop_title,Gianne's Restaurant
+param=shop_buy_multiplier,250
+param=shop_sell_multiplier,1000
+param=shop_delta,10
+param=death_anim,midget_death
+param=death_sound,gnome_death

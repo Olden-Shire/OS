@@ -31,3 +31,12 @@ model6 = obj_cert_drill_top_manwear3
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_farmer
 head2 = model_85
+//Server
+desc=If crafting's your thing, he's your man!
+category=shop_keeper
+param=owned_shop,craftingshop2
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,650
+param=shop_delta,20
+param=shop_title,Dommiks Crafting Store.
+moverestrict=indoors

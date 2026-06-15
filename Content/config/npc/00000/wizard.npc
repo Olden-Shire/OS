@@ -32,3 +32,13 @@ model9 = obj_cape_of_legends_1052_man
 model10 = model_326
 head1 = obj_pickpocket_guide_man
 head2 = model_44
+//Server
+desc=Slightly magical.
+attackrange=8
+respawnrate=60
+hitpoints=14
+attack=8
+strength=8
+defence=5
+param=magicdefence,3
+param=damagetype,^crush_style

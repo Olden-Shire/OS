@@ -8,3 +8,6 @@ vislevel = 2
 name = Cow
 model1 = model_23889
 head1 = model_23888
+//Server
+desc=Converts grass to beef.
+param=slayer_category,^slayer_cow

@@ -4,3 +4,5 @@ nominimap = true
 vislevel = 34
 name = Suspicious water
 model1 = model_6318
+//Server
+desc=If I didn't know better, I'd swear there's something in there...

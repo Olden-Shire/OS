@@ -7,3 +7,5 @@ name = Ogre shaman
 model1 = model_8682
 model2 = model_2877
 head1 = model_141
+//Server
+desc=Seems intelligent... for an ogre.

@@ -10,3 +10,5 @@ recol2s = 15017
 recol2d = 11707
 name = Plague frog
 model1 = obj_bloated_toad
+//Server
+desc=A very smelly frog.

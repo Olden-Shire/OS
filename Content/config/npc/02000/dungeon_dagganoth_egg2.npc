@@ -9,3 +9,5 @@ vislevel = 0
 nominimap = true
 name = Egg
 model1 = model_8713
+//Server
+desc=Moving eggs are worrying...

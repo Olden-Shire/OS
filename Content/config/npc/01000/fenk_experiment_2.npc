@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 25
 name = Experiment
 model1 = model_5143
+//Server
+desc=One of Fenkenstrain's failed experiments.

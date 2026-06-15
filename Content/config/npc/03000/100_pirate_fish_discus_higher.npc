@@ -8,3 +8,5 @@ resizev = 150
 nominimap = true
 name = Fish
 model1 = model_13804
+//Server
+desc=A Discus Fish.

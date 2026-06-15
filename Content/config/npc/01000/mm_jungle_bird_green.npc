@@ -8,3 +8,5 @@ vislevel = 11
 name = Bird
 model1 = model_26847
 model2 = model_26844
+//Server
+desc=It's a brightly coloured bird of the jungle.

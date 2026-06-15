@@ -5,3 +5,6 @@ op1 = Talk-to
 name = Fairy Queen
 model1 = model_2858
 head1 = model_12
+//Server
+desc=Looks otherworldy...
+param=death_anim,fairy_death

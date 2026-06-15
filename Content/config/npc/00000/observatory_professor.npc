@@ -15,3 +15,6 @@ model4 = model_26886
 model5 = model_26889
 model6 = model_26887
 head1 = model_26905
+//Server
+desc=A learned man in the ways of the stars.
+moverestrict=indoors

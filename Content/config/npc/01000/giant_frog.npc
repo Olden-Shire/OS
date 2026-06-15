@@ -6,3 +6,5 @@ size = 2
 vislevel = 99
 name = Giant frog
 model1 = model_6947
+//Server
+desc=It didn't get that big eating flies.

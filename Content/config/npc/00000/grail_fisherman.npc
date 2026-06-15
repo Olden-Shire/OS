@@ -35,3 +35,5 @@ head1 = obj_leather_cowl_manhead2
 head2 = model_37
 head3 = model_68
 head4 = model_83
+//Server
+desc=It's a fisherman.

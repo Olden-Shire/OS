@@ -7,3 +7,5 @@ op2 = Attack
 vislevel = 132
 name = Ice wolf
 model1 = model_26266
+//Server
+desc=Not man's best friend.

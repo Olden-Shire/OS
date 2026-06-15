@@ -21,3 +21,6 @@ model8 = model_17518
 model9 = idk_man_jaw_moustache
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=The head of the palace guard.
+moverestrict=indoors

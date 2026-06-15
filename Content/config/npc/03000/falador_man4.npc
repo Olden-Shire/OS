@@ -25,3 +25,14 @@ model8 = obj_macro_mime_legs_manwear
 model9 = obj_vyrewatch_shoes_9638_man
 head1 = obj_farmer
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=One of RuneScape's many citizens. He looks worried about something.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

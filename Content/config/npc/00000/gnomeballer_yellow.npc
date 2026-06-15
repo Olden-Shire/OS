@@ -11,3 +11,14 @@ model1 = model_2914
 model2 = model_2905
 model3 = model_2924
 head1 = obj_gnome
+//Server
+desc=A professional gnome baller.
+wanderrange=4
+maxrange=4
+param=gnome_hasball,gnomeballer_yellow_withball
+param=gnome_tackled,gnomeballer_yellow_tackled
+param=gnome_fallen,gnomeballer_yellow_tackled2
+param=death_anim,midget_death
+param=death_sound,gnome_death
+huntrange=1
+huntmode=gnomeball_tackler

@@ -31,3 +31,14 @@ model6 = obj_ranger_boots_2577_woman
 model7 = model_414
 head1 = model_114
 head2 = model_131
+//Server
+desc=One of RuneScape's many citizens. She looks rich.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

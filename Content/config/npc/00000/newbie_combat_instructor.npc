@@ -34,3 +34,6 @@ model10 = obj_amulet_of_accuracy_1478_man
 model11 = obj_red_headband_2645_man
 head1 = model_64
 head2 = model_84
+//Server
+desc=An expert on all forms of combat.
+wanderrange=2

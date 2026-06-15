@@ -7,3 +7,7 @@ model1 = model_4816
 model2 = model_4823
 model3 = model_13414
 head1 = model_4655
+//Server
+desc=A rather dapper little monkey.
+wanderrange=0
+moverestrict=nomove

@@ -15,3 +15,6 @@ recol5s = 8732
 recol5d = 5437
 name = Sea slug
 model1 = model_560
+//Server
+desc=A rather nasty looking crustacean.
+wanderrange=1

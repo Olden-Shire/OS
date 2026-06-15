@@ -21,3 +21,6 @@ model5 = model_151
 model6 = obj_cert_drill_top_manwear3
 model7 = obj_priest_gown_428_man
 head1 = model_52
+//Server
+desc=Now that's an effective disguise!
+respawnrate=200

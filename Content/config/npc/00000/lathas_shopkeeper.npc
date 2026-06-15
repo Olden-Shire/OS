@@ -26,3 +26,13 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = model_329
 head1 = model_48
 head2 = model_85
+//Server
+desc=Could stand to lose a few pounds.
+wanderrange=0
+moverestrict=nomove
+category=shop_keeper
+param=owned_shop,lathastrainingstore
+param=shop_sell_multiplier,1500
+param=shop_buy_multiplier,500
+param=shop_delta,10
+param=shop_title,Armoury

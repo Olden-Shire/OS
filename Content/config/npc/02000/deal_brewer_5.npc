@@ -30,3 +30,5 @@ model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_leather_cowl_manhead2
 head2 = model_83
 head3 = model_32
+//Server
+desc=A worker in the brewery.

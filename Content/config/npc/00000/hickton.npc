@@ -31,3 +31,12 @@ model9 = model_322
 model10 = model_18937
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=A master fletcher.
+category=shop_keeper
+param=owned_shop,archeryshop2
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,500
+param=shop_delta,10
+param=shop_title,Hicktons Archery Emporium.
+moverestrict=indoors

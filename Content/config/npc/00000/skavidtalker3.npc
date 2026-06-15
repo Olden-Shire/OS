@@ -7,3 +7,7 @@ op1 = Talk-to
 name = Skavid
 model1 = model_20388
 head1 = model_20394
+//Server
+desc=A skavid.
+param=death_anim,skavid_death
+param=death_sound,imp_death

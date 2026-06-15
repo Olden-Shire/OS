@@ -15,3 +15,8 @@ model1 = model_2902
 model2 = model_2911
 model3 = model_2918
 head1 = model_118
+//Server
+desc=She doesn't seem very happy.
+moverestrict=indoors
+param=death_anim,midget_death
+param=death_sound,female_death

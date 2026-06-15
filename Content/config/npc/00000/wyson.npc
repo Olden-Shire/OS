@@ -22,3 +22,13 @@ model9 = obj_spade_952_wear
 head1 = obj_leather_cowl_manhead2
 head2 = model_5534
 head3 = model_85
+//Server
+desc=The head gardener.
+respawnrate=50
+hitpoints=7
+attack=2
+defence=5
+param=damagetype,^stab_style
+param=attack_anim,human_farmersfork_stab
+param=defend_anim,human_farmersfork_def
+param=attack_sound,staff_stab

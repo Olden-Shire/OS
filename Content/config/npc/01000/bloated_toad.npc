@@ -5,3 +5,7 @@ readyanim = seq_1020
 walkanim = seq_1020
 name = Bloated Toad
 model1 = obj_bloated_toad
+//Server
+desc=A green skinned croaker.
+wanderrange=0
+moverestrict=nomove

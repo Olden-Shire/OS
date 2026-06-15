@@ -29,3 +29,7 @@ model8 = model_328
 model9 = model_239
 head1 = model_64
 head2 = model_71
+//Server
+desc=An evil being raised from the dead.
+wanderrange=0
+moverestrict=nomove

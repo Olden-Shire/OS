@@ -38,3 +38,14 @@ model10 = model_18947
 head1 = model_14337
 head2 = model_70
 head3 = model_83
+//Server
+desc=Runes are his passion.
+category=shop_keeper
+param=owned_shop,runeshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,1
+param=shop_title,Aubury's Rune Shop.
+moverestrict=indoors
+param=shop_buy_multiplier,550
+param=shop_delta,10

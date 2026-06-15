@@ -34,3 +34,5 @@ model11 = obj_fremennik_cloak_3759_man
 model12 = model_4219
 head1 = obj_fremennik
 head2 = model_84
+//Server
+desc=Keeps the stalls secure.

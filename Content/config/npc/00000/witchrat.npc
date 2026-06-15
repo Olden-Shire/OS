@@ -7,3 +7,9 @@ recol1s = 61
 recol1d = 5431
 name = Mouse
 model1 = model_2927
+//Server
+desc=Deceptively mouse shaped.
+wanderrange=0
+moverestrict=nomove
+param=death_anim,rat_death
+param=death_sound,rat_death

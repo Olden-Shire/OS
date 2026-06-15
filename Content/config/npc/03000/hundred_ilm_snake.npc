@@ -10,3 +10,5 @@ op2 = Attack
 vislevel = 84
 name = Big Snake
 model1 = model_13910
+//Server
+desc=A big snake.

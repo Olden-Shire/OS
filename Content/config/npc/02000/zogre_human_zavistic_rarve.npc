@@ -32,3 +32,5 @@ model10 = model_256
 head1 = model_52
 head2 = model_83
 head3 = model_44
+//Server
+desc=The Grand Secretary of the Wizards' Guild in Yanille.

@@ -31,3 +31,6 @@ model8 = obj_glarials_amulet_woman
 model9 = model_412
 head1 = model_103
 head2 = model_128
+//Server
+desc=Ceril Carnilleans' wife.
+param=death_sound,female_death

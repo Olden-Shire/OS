@@ -29,3 +29,6 @@ model8 = obj_iron_platelegs_1067_man
 model9 = model_183
 head1 = model_52
 head2 = model_84
+//Server
+desc=What a boring job he has.
+wanderrange=2

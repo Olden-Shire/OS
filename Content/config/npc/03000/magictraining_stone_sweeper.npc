@@ -14,3 +14,5 @@ recol3d = 10279
 name = Sweeper
 model1 = model_10641
 model2 = model_1760
+//Server
+desc=Keeps this magic area tidy.

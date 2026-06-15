@@ -29,3 +29,5 @@ model7 = obj_blue_skirt_g_7386_man
 model8 = obj_villager_sandals_6349_man
 head1 = obj_leather_cowl_manhead2
 head2 = model_85
+//Server
+desc=A travelling scholar from Menaphos.

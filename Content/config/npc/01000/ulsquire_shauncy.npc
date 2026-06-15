@@ -21,3 +21,5 @@ model6 = obj_priest_gown_428_man
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_tonsure_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=A local villager of Mort'ton.

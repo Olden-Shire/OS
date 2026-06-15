@@ -9,3 +9,7 @@ name = Grew
 model1 = model_20373
 model2 = model_20384
 head1 = model_20416
+//Server
+desc=Very probably an ogre.
+param=death_anim,giant_death
+param=death_sound,giant_death

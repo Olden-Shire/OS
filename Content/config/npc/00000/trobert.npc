@@ -29,3 +29,10 @@ model9 = obj_amulet_of_accuracy_1478_man
 model10 = obj_bronze_longsword_1291_wear
 model11 = model_326
 head1 = idk_man_hair_cropped_head
+//Server
+desc=A well dressed thief.
+hitpoints=13
+attack=4
+strength=3
+defence=5
+param=damagetype,^slash_style

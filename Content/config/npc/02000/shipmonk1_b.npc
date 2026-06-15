@@ -26,3 +26,5 @@ model7 = npc_druid
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = model_5787
 head2 = model_83
+//Server
+desc=Holy looking.

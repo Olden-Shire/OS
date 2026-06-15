@@ -28,3 +28,5 @@ model7 = obj_macro_mime_legs_manwear
 model8 = obj_vyrewatch_shoes_9638_man
 model9 = obj_cape_1007_man
 head1 = obj_pickpocket_guide_man
+//Server
+desc=A well dressed nobleman.

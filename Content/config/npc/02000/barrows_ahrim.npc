@@ -11,3 +11,5 @@ alwaysontop = true
 vislevel = 98
 name = Ahrim the Blighted
 model1 = model_6668
+//Server
+desc=A vengeful spirit corrupted by dark magic.

@@ -12,3 +12,13 @@ model4 = model_2983
 model5 = model_2985
 model6 = model_2990
 head1 = model_1
+//Server
+desc=A short angry guy.
+hitpoints=16
+attack=8
+strength=8
+defence=7
+param=attackrate,5
+param=strengthbonus,5
+param=damagetype,^stab_style
+param=death_anim,dwarf_death

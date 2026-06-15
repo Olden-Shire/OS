@@ -33,3 +33,5 @@ model10 = model_4219
 head1 = obj_pickpocket_guide_man
 head2 = model_84
 head3 = obj_fremennik
+//Server
+desc=One of Rellekka's many citizens.

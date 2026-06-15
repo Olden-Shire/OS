@@ -28,3 +28,8 @@ model4 = model_10706
 model5 = obj_blue_skirt_g_7386_woman
 model6 = obj_villager_sandals_6349_woman
 head1 = model_10031
+//Server
+desc=A resident of Al-Kharid.
+wanderrange=2
+param=defend_sound,female_hit
+param=death_sound,female_death

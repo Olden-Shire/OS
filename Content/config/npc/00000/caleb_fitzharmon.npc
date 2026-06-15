@@ -29,3 +29,5 @@ model8 = obj_vyrewatch_shoes_9638_man
 model9 = obj_chefs_hat_manwear
 head1 = obj_pickpocket_guide_man
 head2 = obj_chefs_hat_manhead
+//Server
+desc=A well dressed nobleman.

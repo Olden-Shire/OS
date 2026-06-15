@@ -8,3 +8,5 @@ recol1s = 34341
 recol1d = 10444
 name = Zombie
 model1 = model_6775
+//Server
+desc=A human zombie.

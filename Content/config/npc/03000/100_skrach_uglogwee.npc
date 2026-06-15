@@ -15,3 +15,7 @@ model1 = model_6760
 model2 = model_8682
 model3 = model_13427
 head1 = model_141
+//Server
+desc=An ogre.
+wanderrange=0
+moverestrict=nomove

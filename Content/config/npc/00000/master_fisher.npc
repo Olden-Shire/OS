@@ -28,3 +28,6 @@ model9 = model_18933
 head1 = obj_leather_cowl_manhead2
 head2 = model_77
 head3 = model_80
+//Server
+desc=The man in charge of the fishing guild.
+wanderrange=3

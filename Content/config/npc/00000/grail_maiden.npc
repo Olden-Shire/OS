@@ -26,3 +26,6 @@ model5 = obj_desert_robes_6386_woman
 model6 = model_358
 model7 = obj_pendant_of_lucien_woman
 head1 = npc_grail_maiden_head
+//Server
+desc=She looks serene.
+param=death_sound,female_death

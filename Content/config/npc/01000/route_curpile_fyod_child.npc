@@ -31,3 +31,5 @@ model8 = obj_bronze_sword_1277_wear
 model9 = model_521
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=A typical, if overly heavy handed, jobs worth guard.

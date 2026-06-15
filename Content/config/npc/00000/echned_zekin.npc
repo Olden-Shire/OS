@@ -6,3 +6,13 @@ vislevel = 187
 name = Echned Zekin
 model1 = model_21153
 head1 = model_21403
+//Server
+desc=A spirit of the underworld.
+hitpoints=150
+attack=165
+strength=168
+defence=167
+param=undead,^true
+param=death_anim,ghost_death
+param=death_sound,ghost_death
+param=death_drop,null

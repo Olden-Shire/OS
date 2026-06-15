@@ -30,3 +30,5 @@ model9 = obj_fremennik_cloak_3759_man
 model10 = model_326
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_long_head
+//Server
+desc=A Fremennik navigator.

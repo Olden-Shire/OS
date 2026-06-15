@@ -7,3 +7,5 @@ alwaysontop = true
 vislevel = 5
 name = Desert snake
 model1 = model_3002
+//Server
+desc=A slithering serpent.

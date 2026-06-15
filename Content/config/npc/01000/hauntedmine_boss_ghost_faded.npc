@@ -5,3 +5,5 @@ walkanim = seq_5543
 vislevel = 95
 name = Ghost
 model1 = model_21152
+//Server
+desc=Eeek! A ghost!

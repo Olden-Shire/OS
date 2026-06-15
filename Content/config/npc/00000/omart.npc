@@ -25,3 +25,7 @@ model6 = obj_cooking_gauntlets_man
 model7 = model_274
 head1 = model_47
 head2 = model_84
+//Server
+desc=A nervous looking fellow.
+wanderrange=0
+moverestrict=nomove

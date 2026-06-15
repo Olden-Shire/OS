@@ -23,3 +23,6 @@ model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_pickpocket_guide_man
 head2 = model_85
 head3 = model_78
+//Server
+desc=He must get lonely out here.
+category=bank_teller

@@ -20,3 +20,6 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = model_12144
 head1 = model_5787
 head2 = model_84
+//Server
+desc=Rather more tired than most.
+moverestrict=nomove

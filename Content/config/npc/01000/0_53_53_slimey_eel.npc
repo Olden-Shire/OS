@@ -9,3 +9,5 @@ op3 = hidden
 op5 = hidden
 name = Fishing spot
 model1 = compofishspot_8
+//Server
+desc=I can see 'things' swimming in the water.

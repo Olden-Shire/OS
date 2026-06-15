@@ -26,3 +26,5 @@ model7 = obj_bronze_halberd_3190_wear
 model8 = model_5218
 head1 = model_50
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=An enemy pirate.

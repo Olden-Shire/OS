@@ -12,3 +12,5 @@ model1 = model_2909
 model2 = model_2890
 model3 = model_2915
 head1 = obj_gnome
+//Server
+desc=An official looking Gnome with small beady eyes.

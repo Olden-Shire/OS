@@ -6,3 +6,5 @@ nominimap = true
 vislevel = 0
 name = Cave bug larva
 model1 = model_5785
+//Server
+desc=A little slimy beetle-thing.

@@ -24,3 +24,5 @@ model6 = obj_watering_can_5331_wear
 model7 = obj_desert_robes_6386_woman
 model8 = obj_gardening_boots_5345_woman
 head1 = model_103
+//Server
+desc=Perhaps this gardener might look after your crops for you.

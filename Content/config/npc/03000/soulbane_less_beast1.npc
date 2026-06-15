@@ -8,3 +8,5 @@ op2 = Attack
 vislevel = 71
 name = Hopeless beast
 model1 = model_14283
+//Server
+desc=A hopeless poor creature.

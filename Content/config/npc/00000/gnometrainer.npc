@@ -11,3 +11,7 @@ model1 = model_2909
 model2 = model_2890
 model3 = model_2922
 head1 = obj_gnome
+//Server
+desc=He can advise on training.
+param=death_anim,midget_death
+param=death_sound,gnome_death

@@ -33,3 +33,5 @@ model8 = obj_demonic_sigil_wear
 model9 = obj_stringstar_manwear2
 head1 = idk_man_hair_tonsure_head
 head2 = model_80
+//Server
+desc=Looks a bit lost.

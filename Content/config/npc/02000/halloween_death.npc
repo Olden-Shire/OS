@@ -27,3 +27,5 @@ model3 = obj_priest_gown_manwear2
 model4 = obj_cooking_gauntlets_man
 model5 = model_256
 model6 = obj_scythe_1419_wear
+//Server
+desc=Do not fear the Reaper.

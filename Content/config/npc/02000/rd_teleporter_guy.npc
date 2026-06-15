@@ -25,3 +25,7 @@ model5 = model_184
 head1 = model_5787
 head2 = idk_man_jaw_long_head
 head3 = model_70
+//Server
+desc=Head of recruitment for the Temple Knights.
+wanderrange=0
+moverestrict=nomove

@@ -25,3 +25,6 @@ model5 = obj_mime_legs_woman
 model6 = model_358
 model7 = model_483
 head1 = model_103
+//Server
+desc=She looks like she enjoys her job.
+param=death_sound,female_death

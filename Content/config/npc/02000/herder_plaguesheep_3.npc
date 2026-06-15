@@ -20,3 +20,8 @@ recol6d = 38226
 name = Sick-looking sheep (3)
 model1 = model_20290
 model2 = model_20291
+//Server
+desc=The sheep looks distinctly unwell and has a slight blue tinge.
+wanderrange=3
+param=death_anim,sheep_death
+category=diseased_sheep

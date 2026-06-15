@@ -23,3 +23,5 @@ model7 = npc_druid
 model8 = obj_shoes_man
 model9 = obj_fremennik_cloak_3759_man
 head1 = model_10372
+//Server
+desc=A hooded monk.

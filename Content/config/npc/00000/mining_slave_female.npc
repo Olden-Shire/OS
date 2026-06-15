@@ -20,3 +20,7 @@ model5 = obj_priest_gown_428_woman
 model6 = obj_ikov_bootsoflightness_womanwear
 model7 = obj_bronze_pickaxe_1265_wear
 head1 = model_115
+//Server
+desc=She looks like she's been down here a long time.
+wanderrange=3
+param=death_sound,female_death

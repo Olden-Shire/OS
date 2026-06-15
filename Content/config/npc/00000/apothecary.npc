@@ -30,3 +30,6 @@ model6 = model_12138
 model7 = obj_villager_sandals_6349_man
 head1 = model_25631
 head2 = model_85
+//Server
+desc=A dealer in potions.
+moverestrict=indoors

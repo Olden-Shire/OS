@@ -9,3 +9,6 @@ vislevel = 15
 name = Bear Cub
 model1 = model_18883
 model2 = model_18885
+//Server
+desc=Cute.  But deadly.
+param=slayer_category,^slayer_bear

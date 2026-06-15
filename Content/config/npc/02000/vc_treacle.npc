@@ -14,3 +14,5 @@ recol2d = 10304
 name = Treacle
 model1 = model_3010
 model2 = obj_witchs_cat
+//Server
+desc=A sticky character.

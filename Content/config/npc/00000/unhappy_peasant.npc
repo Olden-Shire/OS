@@ -27,3 +27,6 @@ model6 = obj_ikov_bootsoflightness_manwear
 model7 = idk_man_jaw_moustache
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=He looks unhappy...
+wanderrange=2

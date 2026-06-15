@@ -27,3 +27,12 @@ model6 = obj_ikov_bootsoflightness_manwear
 model7 = obj_priest_gown_manwear
 head1 = model_47
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=For the finest in armoured legware.
+category=shop_keeper
+param=owned_shop,legsshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,650
+param=shop_delta,10
+param=shop_title,Louie's Armoured Legs Bazaar.
+moverestrict=indoors

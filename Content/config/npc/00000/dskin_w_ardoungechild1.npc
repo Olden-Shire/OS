@@ -21,3 +21,6 @@ model1 = model_2897
 model2 = model_2909
 model3 = model_2922
 head1 = model_139
+//Server
+desc=One of RuneScape's many citizens.
+param=death_anim,midget_death

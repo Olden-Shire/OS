@@ -30,3 +30,11 @@ model6 = obj_priest_gown_428_woman
 model7 = obj_gardening_boots_5345_woman
 head1 = model_115
 head2 = model_136
+//Server
+desc=She's a seed merchant.
+category=shop_keeper
+param=owned_shop,seed_stall
+param=shop_sell_multiplier,1200
+param=shop_buy_multiplier,600
+param=shop_delta,30
+param=shop_title,Draynor Seed Market.

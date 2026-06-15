@@ -6,3 +6,5 @@ vislevel = 0
 nominimap = true
 name = Fish
 model1 = model_13800
+//Server
+desc=An Angel Fish.

@@ -32,3 +32,17 @@ model9 = obj_bronze_scimitar_1321_wear
 head1 = obj_leather_cowl_manhead2
 head2 = model_30
 head3 = model_80
+//Server
+desc=A bedabin nomad guard - it looks like he's protecting an area.
+wanderrange=0
+respawnrate=100
+hitpoints=70
+attack=51
+strength=47
+defence=60
+param=attackbonus,9
+param=strengthbonus,14
+param=damagetype,^slash_style
+param=attack_anim,human_sword_slash
+param=defend_anim,human_sword_def
+param=attack_sound,hacksword_slash

@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 13
 name = Large mosquito
 model1 = model_8904
+//Server
+desc=A flying blood sucker.

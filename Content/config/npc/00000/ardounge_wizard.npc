@@ -24,3 +24,6 @@ model8 = model_20403
 model9 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = model_44
+//Server
+desc=The hat is a dead give away.
+moverestrict=indoors

@@ -5,3 +5,17 @@ op2 = Attack
 vislevel = 34
 name = Air elemental
 model1 = model_172
+//Server
+desc=An air elemental.
+respawnrate=100
+hitpoints=30
+attack=40
+strength=20
+defence=30
+param=damagetype,^stab_style
+param=attack_anim,elemental_air_attack
+param=defend_anim,elemental_air_defend
+param=death_anim,elemental_air_death
+param=attack_sound,air_elemental_attack
+param=defend_sound,air_elemental_hit
+param=death_sound,air_elemental_death

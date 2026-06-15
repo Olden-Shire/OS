@@ -11,3 +11,7 @@ model1 = model_2911
 model2 = model_2907
 model3 = model_2917
 head1 = obj_gnome
+//Server
+desc=Glough's girlfriend.
+param=death_anim,midget_death
+param=death_sound,gnome_death

@@ -30,3 +30,6 @@ model7 = obj_priest_gown_428_woman
 model8 = obj_ikov_bootsoflightness_womanwear
 head1 = model_16447
 head2 = model_102
+//Server
+desc=A witch.
+param=death_sound,female_death

@@ -28,3 +28,5 @@ model6 = obj_cooking_gauntlets_man
 model7 = obj_iron_platelegs_1067_man
 model8 = obj_bronze_boots_4119_man
 head1 = obj_farmer
+//Server
+desc=Wears a stylish suit of armour.

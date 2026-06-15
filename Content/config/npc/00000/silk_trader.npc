@@ -26,3 +26,6 @@ model6 = obj_vyrewatch_shoes_9638_man
 model7 = obj_priest_gown_manwear
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
+//Server
+desc=Very snappily dressed!
+wanderrange=2

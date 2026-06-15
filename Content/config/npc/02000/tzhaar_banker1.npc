@@ -15,3 +15,6 @@ model3 = model_9303
 model4 = model_9302
 model5 = model_9306
 head1 = model_9251
+//Server
+desc=Maybe it'll guard my possessions.
+category=bank_teller

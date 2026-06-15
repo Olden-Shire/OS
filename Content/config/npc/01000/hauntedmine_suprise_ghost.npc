@@ -8,3 +8,5 @@ op2 = Attack
 vislevel = 29
 name = Ghost
 model1 = model_21154
+//Server
+desc=Eeek! A ghost!

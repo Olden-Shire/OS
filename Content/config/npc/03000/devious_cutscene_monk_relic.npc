@@ -20,3 +20,5 @@ model8 = obj_villager_sandals_6349_man
 model9 = model_326
 model10 = model_10380
 head1 = obj_leather_cowl_manhead2
+//Server
+desc=A holy man.

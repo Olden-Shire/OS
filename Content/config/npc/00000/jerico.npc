@@ -24,3 +24,6 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_amulet_of_ghostspeak_manwear
 head1 = model_52
 head2 = idk_man_jaw_long_head
+//Server
+desc=He looks friendly enough.
+moverestrict=indoors

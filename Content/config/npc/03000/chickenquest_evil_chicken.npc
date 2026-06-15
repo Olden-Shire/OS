@@ -9,3 +9,5 @@ alwaysontop = true
 vislevel = 159
 name = Evil Chicken
 model1 = model_7728
+//Server
+desc=A fowl beast.

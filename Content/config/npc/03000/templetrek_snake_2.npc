@@ -25,3 +25,5 @@ recol6s = 17562
 recol6d = 14614
 name = Swamp snake
 model1 = model_14171
+//Server
+desc=A large snake that thrives in swamps.

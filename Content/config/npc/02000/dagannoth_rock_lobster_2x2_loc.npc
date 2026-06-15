@@ -9,3 +9,5 @@ turnspeed = 0
 nominimap = true
 name = Rock
 model1 = model_14183
+//Server
+desc=A Rock.

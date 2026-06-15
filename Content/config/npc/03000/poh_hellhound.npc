@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 122
 name = Hellhound
 model1 = obj_hellhound
+//Server
+desc=Good doggie...

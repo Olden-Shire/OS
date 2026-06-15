@@ -27,3 +27,5 @@ model8 = obj_oak_blackjack_wear
 head1 = model_6080
 head2 = obj_leather_cowl_manhead2
 head3 = idk_man_jaw_goatee_head
+//Server
+desc=A market stall keeper.

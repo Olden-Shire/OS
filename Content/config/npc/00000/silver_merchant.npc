@@ -32,3 +32,13 @@ model9 = model_238
 head1 = model_52
 head2 = model_84
 head3 = model_70
+//Server
+desc=Looks fairly well fed.
+category=shop_keeper
+param=owned_shop,silverstall
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,20
+param=shop_title,Ardougne Silver Stall.
+wanderrange=0
+moverestrict=nomove

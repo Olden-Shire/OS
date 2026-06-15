@@ -6,3 +6,13 @@ op2 = Attack
 vislevel = 22
 name = Lizard man
 model1 = model_2888
+//Server
+desc=A scaly reptilian creature.
+param=attack_anim,lizardman_attack
+param=defend_anim,lizardman_block
+param=death_anim,lizardman_death
+param=attack_sound,lizardman_attack
+param=defend_sound,lizardman_hit
+param=death_sound,lizardman_death
+huntmode=cowardly
+huntrange=2

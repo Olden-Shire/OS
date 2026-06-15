@@ -7,3 +7,5 @@ vislevel = 0
 ambient = 15
 name = Frog
 model1 = model_6947
+//Server
+desc=Didn't the mage say this procedure was totally safe?

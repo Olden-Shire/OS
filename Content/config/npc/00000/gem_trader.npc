@@ -30,3 +30,12 @@ model9 = model_188
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
 head3 = model_30
+//Server
+desc=Makes his money selling rocks.
+category=shop_keeper
+param=owned_shop,gemshop2
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,30
+param=shop_title,Gem Trader.
+wanderrange=2

@@ -26,3 +26,12 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = model_326
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Has a fine moustache!
+category=shop_keeper
+param=owned_shop,khazardshop
+param=shop_sell_multiplier,1400
+param=shop_buy_multiplier,400
+param=shop_delta,10
+param=shop_title,Khazard General Store
+moverestrict=indoors

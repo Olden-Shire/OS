@@ -15,3 +15,13 @@ model3 = model_26118
 model4 = model_26128
 model5 = model_26119
 head1 = model_26268
+//Server
+desc=There's something strange about him...
+category=shop_keeper
+param=owned_shop,werewolfstore1
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,700
+param=shop_delta,30
+param=shop_title,Rufus' Meat Emporium
+moverestrict=indoors
+wanderrange=5

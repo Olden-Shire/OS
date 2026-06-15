@@ -32,3 +32,11 @@ model8 = model_730
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_long_head
 head3 = model_28
+//Server
+desc=A travelling merchant.
+category=shop_keeper
+param=owned_shop,rasoolshop1
+param=shop_sell_multiplier,2000
+param=shop_buy_multiplier,50
+param=shop_delta,20
+param=shop_title,Rasolo the Wandering Merchant.

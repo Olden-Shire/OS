@@ -22,3 +22,15 @@ model6 = obj_ikov_bootsoflightness_manwear
 model7 = obj_bronze_2h_sword_1307_wear
 model8 = obj_cape_1007_man
 head1 = model_149
+//Server
+desc=He looks really nasty. Smells bad too.
+wanderrange=1
+maxrange=25
+hitpoints=170
+attack=75
+strength=78
+defence=80
+param=damagetype,^slash_style
+param=attack_anim,human_dhsword_chop
+param=defend_anim,human_dhsword_def
+param=attack_sound,2H_slash

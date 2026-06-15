@@ -23,3 +23,7 @@ model4 = model_353
 model5 = obj_desert_robes_6386_woman
 model6 = model_358
 head1 = model_103
+//Server
+desc=She looks rather concerned.
+moverestrict=indoors
+param=death_sound,female_death

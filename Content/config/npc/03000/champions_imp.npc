@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 14
 name = Imp Champion
 model1 = model_20046
+//Server
+desc=Champion of the Imps!

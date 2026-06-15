@@ -23,3 +23,13 @@ model6 = model_414
 model7 = obj_ikov_bootsoflightness_womanwear
 head1 = model_115
 head2 = model_131
+//Server
+desc=Sells top quality plate mail armour.
+moverestrict=indoors
+param=death_sound,female_death
+category=shop_keeper
+param=owned_shop,topshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Zenesha's Plate Mail Body Shop.

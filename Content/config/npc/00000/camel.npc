@@ -11,3 +11,8 @@ recol2d = 0
 name = Camel
 model1 = model_2939
 head1 = model_9841
+//Server
+desc=Oh, it's a camel.
+moverestrict=outdoors
+param=death_anim,camel_death
+param=death_sound,cow_death

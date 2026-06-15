@@ -26,3 +26,13 @@ model4 = model_273
 model5 = obj_cape_1007_man
 model6 = model_499
 head1 = model_51
+//Server
+desc=A mourner, or plague healer.
+respawnrate=140
+hitpoints=25
+attack=20
+strength=20
+defence=20
+param=stabdefence,2
+param=slashdefence,1
+param=crushdefence,3

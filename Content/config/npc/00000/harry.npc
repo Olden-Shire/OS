@@ -27,3 +27,12 @@ model5 = obj_cert_drill_top_manwear3
 model6 = obj_ikov_bootsoflightness_manwear
 model7 = npc_shilogeneralstore
 head1 = obj_pickpocket_guide_man
+//Server
+desc=Something fishy about him.
+category=shop_keeper
+param=owned_shop,fishingshop2
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,10
+param=shop_title,Harrys Fishing Shop.
+moverestrict=indoors

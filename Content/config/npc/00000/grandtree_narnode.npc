@@ -10,3 +10,8 @@ model1 = model_2909
 model2 = model_2891
 model3 = model_2916
 head1 = model_20
+//Server
+desc=An important looking gnome.
+wanderrange=2
+param=death_anim,midget_death
+param=death_sound,gnome_death

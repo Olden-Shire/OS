@@ -27,3 +27,7 @@ model6 = obj_vyrewatch_shoes_9638_man
 model7 = idk_man_jaw_long
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_long_head
+//Server
+desc=He looks very hungry...
+wanderrange=0
+moverestrict=nomove

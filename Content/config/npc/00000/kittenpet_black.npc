@@ -20,3 +20,9 @@ name = Kitten
 model1 = model_9386
 model2 = model_9388
 head1 = model_6438
+//Server
+desc=A friendly little pet.
+param=death_anim,cat_death
+category=petcat
+param=pet_item_id,kittenobject_black
+param=cat_next_id,growncat_black

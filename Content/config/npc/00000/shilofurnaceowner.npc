@@ -29,3 +29,6 @@ model6 = model_274
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = model_52
 head2 = model_83
+//Server
+desc=This is Yohnus - he runs the local smithery.
+wanderrange=1

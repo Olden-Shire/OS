@@ -18,3 +18,5 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_long_head
+//Server
+desc=Knows how to keep warm in the winter.

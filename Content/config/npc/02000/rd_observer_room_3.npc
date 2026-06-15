@@ -28,3 +28,5 @@ model9 = obj_iron_platelegs_1067_man
 model10 = model_184
 head1 = obj_farmer
 head2 = model_85
+//Server
+desc=An observer for the Temple Knights.

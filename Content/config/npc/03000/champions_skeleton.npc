@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 40
 name = Skeleton Champion
 model1 = model_21189
+//Server
+desc=Champion of the Skeletons!

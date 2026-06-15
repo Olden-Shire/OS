@@ -20,3 +20,5 @@ name = Wily cat
 model1 = model_9428
 model2 = obj_wily_cat_6555
 head1 = model_9424
+//Server
+desc=A friendly little pet.

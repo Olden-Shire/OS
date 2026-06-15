@@ -8,3 +8,5 @@ vislevel = 0
 name = Fenkenstrain's Monster
 model1 = model_5175
 head1 = model_5119
+//Server
+desc=A hideous mix of human flesh.

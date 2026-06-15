@@ -26,3 +26,8 @@ model7 = obj_red_cape_womanwear
 model8 = npc_ikov_guardianfemale
 model9 = obj_machete_975_wear
 head1 = model_107
+//Server
+desc=She deals in exotic types of wood.
+wanderrange=3
+param=damagetype,^slash_style
+param=death_sound,female_death

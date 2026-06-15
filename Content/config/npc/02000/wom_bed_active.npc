@@ -6,3 +6,5 @@ size = 2
 op2 = Attack
 name = Thing under the bed
 model1 = model_7381
+//Server
+desc=It's just like that dream I use to have when I was little.

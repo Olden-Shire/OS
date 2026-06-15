@@ -18,3 +18,5 @@ model6 = model_10218
 model7 = npc_druid
 model8 = obj_villager_sandals_6349_man
 model9 = model_326
+//Server
+desc=A recently deceased follower of Saradomin.

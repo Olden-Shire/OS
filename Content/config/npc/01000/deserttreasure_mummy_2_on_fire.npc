@@ -8,3 +8,5 @@ vislevel = 103
 name = Mummy
 model1 = model_20904
 model2 = model_20905
+//Server
+desc=A tightly wrapped monster.

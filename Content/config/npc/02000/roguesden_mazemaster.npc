@@ -28,3 +28,5 @@ model5 = idk_man_jaw_none
 model6 = idk_man_legs_flares
 model7 = model_730
 head1 = model_7601
+//Server
+desc=Head of the maze.

@@ -9,3 +9,13 @@ model1 = model_2909
 model2 = model_2890
 model3 = model_2917
 head1 = obj_gnome
+//Server
+desc=It's a young tree gnome.
+wanderrange=0
+moverestrict=nomove
+hitpoints=3
+attack=3
+strength=3
+defence=3
+param=death_anim,midget_death
+param=death_sound,gnome_death

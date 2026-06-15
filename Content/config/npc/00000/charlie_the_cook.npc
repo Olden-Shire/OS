@@ -24,3 +24,10 @@ model8 = idk_man_jaw_goatee
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_goatee_head
 head3 = obj_chefs_hat_manhead
+//Server
+desc=Distinctly cook-like.
+hitpoints=3
+attack=10
+strength=10
+defence=10
+param=damagetype,^crush_style

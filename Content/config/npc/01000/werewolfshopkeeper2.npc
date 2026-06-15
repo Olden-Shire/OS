@@ -15,3 +15,13 @@ model3 = model_26114
 model4 = model_26129
 model5 = model_26119
 head1 = model_26269
+//Server
+desc=Has a distinguished air about him.
+category=shop_keeper
+param=owned_shop,werewolfstore2
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Barkers' Habidashery
+moverestrict=indoors
+wanderrange=5

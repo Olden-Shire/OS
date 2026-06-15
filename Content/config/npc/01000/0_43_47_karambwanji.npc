@@ -8,3 +8,5 @@ op1 = Net
 op4 = hidden
 name = Fishing spot
 model1 = compofishspot_8
+//Server
+desc=There are brightly coloured fish swimming in the water.

@@ -22,3 +22,6 @@ model9 = obj_iron_mace_1420_wear
 model10 = obj_bronze_sq_shield_1173_wear
 head1 = model_48
 head2 = model_80
+//Server
+desc=He tries to keep order around here.
+wanderrange=1

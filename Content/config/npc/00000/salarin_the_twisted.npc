@@ -21,3 +21,12 @@ model4 = obj_priest_gown_manwear
 model5 = obj_priest_gown_manwear2
 model6 = obj_cert_drill_top_manwear3
 model7 = npc_druid
+//Server
+desc=A crazy evil druid
+respawnrate=100
+hitpoints=70
+attack=58
+strength=58
+defence=62
+param=damagetype,^crush_style
+param=max_dealt,0

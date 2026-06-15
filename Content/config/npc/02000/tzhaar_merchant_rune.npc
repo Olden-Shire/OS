@@ -18,3 +18,11 @@ model2 = model_9310
 model3 = model_9313
 model4 = model_9312
 head1 = model_9251
+//Server
+desc=Another one of those mystic-types.
+category=shop_keeper
+param=owned_shop,tzhaar_shop_rune
+param=shop_sell_multiplier,1500
+param=shop_buy_multiplier,150
+param=shop_delta,20
+param=shop_title,TzHaar-Mej-Roh's Rune Store.

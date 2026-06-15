@@ -9,3 +9,7 @@ recol1d = 11154
 name = Mad skavid
 model1 = model_20388
 head1 = model_20394
+//Server
+desc=Looks mad.
+param=death_anim,skavid_death
+param=death_sound,imp_death

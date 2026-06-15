@@ -4,3 +4,5 @@ size = 1
 nominimap = true
 name = A pile of broken glass
 model1 = obj_broken_glass_690
+//Server
+desc=It looks like some broken bottles

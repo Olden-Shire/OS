@@ -21,3 +21,6 @@ model5 = obj_cert_drill_top_manwear3
 model6 = obj_priest_gown_428_man
 model7 = obj_ikov_bootsoflightness_manwear
 model8 = model_325
+//Server
+desc=A holy man.
+moverestrict=indoors

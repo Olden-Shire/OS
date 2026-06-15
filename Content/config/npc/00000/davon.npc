@@ -30,3 +30,13 @@ model9 = obj_cert_drill_top_manwear3
 model10 = obj_vyrewatch_shoes_9638_man
 head1 = obj_leather_cowl_manhead2
 head2 = model_78
+//Server
+desc=An amulet trader.
+wanderrange=0
+moverestrict=nomove
+category=shop_keeper
+param=owned_shop,amuletshop
+param=shop_sell_multiplier,1200
+param=shop_buy_multiplier,900
+param=shop_delta,20
+param=shop_title,Davon's Amulet Store

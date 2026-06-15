@@ -13,3 +13,7 @@ model2 = model_10278
 model3 = model_10276
 model4 = model_10277
 model5 = model_10275
+//Server
+desc=Champion of the Earth Warriors!
+wanderrange=0
+moverestrict=nomove

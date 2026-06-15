@@ -29,3 +29,5 @@ model7 = obj_beer_1917_wear
 model8 = model_5218
 model9 = obj_fremennik_cloak_3759_man
 head1 = model_50
+//Server
+desc=A strange man with a strange name. Probably a strange past, too.

@@ -16,3 +16,8 @@ model1 = model_2909
 model2 = model_2900
 model3 = model_2917
 head1 = model_23
+//Server
+desc=He seems to run the cocktail bar.
+wanderrange=3
+param=death_anim,midget_death
+param=death_sound,gnome_death

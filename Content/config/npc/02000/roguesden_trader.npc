@@ -25,3 +25,11 @@ model6 = model_274
 model7 = obj_ikov_bootsoflightness_manwear
 model8 = idk_man_jaw_none
 head1 = model_52
+//Server
+desc=A loveable rogue.
+category=shop_keeper
+param=owned_shop,roguesden_shop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Martin Thwait's Lost and Found.

@@ -28,3 +28,5 @@ model9 = obj_perfect_necklace_man
 model10 = obj_red_headband_2645_man
 head1 = obj_farmer
 head2 = model_43
+//Server
+desc=Head of the Carnillean household.

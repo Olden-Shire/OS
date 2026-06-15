@@ -31,3 +31,5 @@ model9 = idk_man_torso_jacket
 head1 = obj_pickpocket_guide_man
 head2 = model_70
 head3 = idk_man_jaw_moustache_head
+//Server
+desc=An official of Ardougne.

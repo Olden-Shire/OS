@@ -30,3 +30,7 @@ model6 = obj_priest_gown_428_man
 model7 = obj_vyrewatch_shoes_9638_man
 model8 = obj_bronze_spear_1237_wear
 head1 = model_64
+//Server
+desc=A dark, charismatic jungle native.
+huntmode=gujuo
+huntrange=3

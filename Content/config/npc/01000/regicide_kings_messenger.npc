@@ -17,3 +17,5 @@ model6 = obj_priest_gown_manwear
 model7 = obj_fremennik_cloak_3759_man
 head1 = idk_man_hair_cropped_head
 head2 = model_85
+//Server
+desc=One of King Lathas' messengers.

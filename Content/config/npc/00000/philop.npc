@@ -15,3 +15,7 @@ model2 = model_25846
 model3 = model_2915
 model4 = model_25848
 head1 = model_14287
+//Server
+desc=One of Gertrude's sons.
+moverestrict=indoors
+param=death_anim,midget_death

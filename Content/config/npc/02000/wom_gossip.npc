@@ -17,3 +17,7 @@ model4 = model_9360
 model5 = model_5431
 model6 = model_9363
 head1 = model_9358
+//Server
+desc=A busy-body who loves a bit of gossip.
+wanderrange=0
+moverestrict=nomove

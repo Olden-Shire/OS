@@ -26,3 +26,8 @@ model6 = obj_ikov_bootsoflightness_womanwear
 model7 = obj_wizard_hat_579_woman
 head1 = model_122
 head2 = model_102
+//Server
+desc=Distinctly witchey.
+maxrange=50
+defaultmode=patrol
+timer=1

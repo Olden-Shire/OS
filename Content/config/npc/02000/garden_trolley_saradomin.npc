@@ -19,3 +19,5 @@ recol4d = 8483
 name = Trolley
 model1 = obj_trolley
 model2 = model_9226
+//Server
+desc=This statue of Saradomin has been 'borrowed' for a while.

@@ -34,3 +34,11 @@ head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_moustache_head
 head3 = obj_berret_blue_manhead
 head4 = model_78
+//Server
+desc=Loves his gold!
+category=shop_keeper
+param=owned_shop,goldshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,20
+param=shop_title,Grum's Gold Exchange.

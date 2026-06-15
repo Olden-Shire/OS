@@ -19,3 +19,16 @@ model4 = model_9302
 model5 = model_9306
 model6 = model_9315
 head1 = model_9251
+//Server
+desc=Must be a guard or something.
+respawnrate=50
+hitpoints=140
+attack=120
+strength=140
+defence=120
+param=damagetype,^crush_style
+param=attack_anim,thzaar_armed_attack
+param=death_anim,thzaar_death
+param=attack_sound,tzhaar_ket_attack_club
+param=defend_sound,tzhaar_ket_hit
+param=death_sound,tzhaar_ket_death

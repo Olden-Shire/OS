@@ -7,3 +7,10 @@ op1 = Talk-to
 name = Spirit of Zadimus
 model1 = model_21151
 head1 = model_21406
+//Server
+desc=An unquiet soul.
+wanderrange=0
+moverestrict=nomove
+param=death_anim,ghost_death
+param=death_sound,ghost_death
+param=undead,^true

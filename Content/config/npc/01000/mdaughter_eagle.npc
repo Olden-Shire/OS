@@ -7,3 +7,5 @@ resizeh = 30
 resizev = 30
 name = Bald Headed Eagle
 model1 = model_5728
+//Server
+desc=A big birdy.

@@ -16,3 +16,6 @@ name = Ice giant
 model1 = model_17454
 model2 = model_17442
 model3 = model_17460
+//Server
+desc=He's got icicles in his beard.
+param=slayer_category,^slayer_icegiant

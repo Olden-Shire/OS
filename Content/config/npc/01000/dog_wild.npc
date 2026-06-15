@@ -10,3 +10,6 @@ recol2s = 6461
 recol2d = 28
 name = Wild dog
 model1 = model_26263
+//Server
+desc=Looks like it's got Rabies!
+param=slayer_category,^slayer_dog

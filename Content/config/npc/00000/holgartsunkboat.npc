@@ -33,3 +33,6 @@ head1 = model_18497
 head2 = obj_leather_cowl_manhead2
 head3 = idk_man_jaw_long_head
 head4 = model_18340
+//Server
+desc=A very good sailor.
+wanderrange=2

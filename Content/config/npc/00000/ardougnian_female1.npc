@@ -23,3 +23,15 @@ model6 = obj_priest_gown_428_woman
 model7 = model_483
 model8 = obj_perfect_necklace_woman
 head1 = model_103
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+param=defend_sound,female_hit
+param=death_sound,female_death

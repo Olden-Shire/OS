@@ -27,3 +27,12 @@ model6 = obj_cert_drill_top_manwear3
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=An expert on axes.
+category=shop_keeper
+param=owned_shop,battleaxeshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,550
+param=shop_delta,10
+param=shop_title,Brian's Battleaxe Bazaar.
+moverestrict=indoors

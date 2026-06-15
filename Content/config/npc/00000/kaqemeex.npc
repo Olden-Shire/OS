@@ -26,3 +26,5 @@ model7 = npc_druid
 model8 = model_18936
 head1 = obj_farmer
 head2 = idk_man_jaw_long_head
+//Server
+desc=A wise druid.

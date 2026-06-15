@@ -31,3 +31,5 @@ model11 = obj_iron_axe_1349_wear
 head1 = obj_farmer
 head2 = idk_man_jaw_moustache_head
 head3 = model_39
+//Server
+desc=He likes to cut down trees.

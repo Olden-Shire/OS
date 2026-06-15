@@ -7,3 +7,5 @@ nominimap = true
 vislevel = 0
 name = Cavemouth
 model1 = model_12018
+//Server
+desc=A cave entrance.

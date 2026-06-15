@@ -9,3 +9,7 @@ model2 = model_10340
 model3 = model_10341
 model4 = model_10339
 head1 = model_10238
+//Server
+desc=A mysterious watcher...
+wanderrange=0
+moverestrict=nomove

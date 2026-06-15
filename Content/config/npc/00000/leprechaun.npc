@@ -8,3 +8,17 @@ name = Leprechaun
 model1 = model_2909
 model2 = model_2896
 model3 = model_2915
+//Server
+desc=A funny little man normally associated with rainbows.
+respawnrate=100
+hitpoints=16
+attack=10
+strength=10
+defence=7
+param=damagetype,^crush_style
+param=attack_anim,midget_attackunarmed
+param=defend_anim,midget_block
+param=death_anim,midget_death
+param=attack_sound,gnome_attack
+param=defend_sound,gnome_hit
+param=death_sound,gnome_death

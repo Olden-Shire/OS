@@ -8,3 +8,5 @@ name = Ogre guard
 model1 = model_2880
 model2 = model_2874
 head1 = model_141
+//Server
+desc=An ogre that guards.

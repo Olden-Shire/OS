@@ -4,3 +4,6 @@ walkanim = seq_10
 vislevel = 1
 name = Shark
 model1 = model_2848
+//Server
+desc=Let's not go skinny dipping eh?
+moverestrict=blocked

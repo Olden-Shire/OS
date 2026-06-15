@@ -26,3 +26,6 @@ model5 = model_167
 model6 = obj_leather_chaps_1095_man
 model7 = obj_cooking_gauntlets_man
 head1 = model_58
+//Server
+desc=Sells equipment in exchange for archery tickets.
+wanderrange=3

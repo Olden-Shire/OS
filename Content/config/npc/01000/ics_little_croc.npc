@@ -6,3 +6,6 @@ op2 = Attack
 vislevel = 63
 name = Crocodile
 model1 = model_6454
+//Server
+desc=Never smile at a...
+param=slayer_category,^slayer_crocodile

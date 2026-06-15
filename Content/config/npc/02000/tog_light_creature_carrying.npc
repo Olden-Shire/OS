@@ -7,3 +7,5 @@ resizev = 220
 vislevel = 0
 name = Light creature
 model1 = model_6541
+//Server
+desc=That one is carrying someone!

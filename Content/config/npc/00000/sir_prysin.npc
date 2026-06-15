@@ -17,3 +17,6 @@ model4 = model_17520
 model5 = model_17526
 model6 = model_17517
 head1 = model_17532
+//Server
+desc=One of the king's knights.
+moverestrict=indoors

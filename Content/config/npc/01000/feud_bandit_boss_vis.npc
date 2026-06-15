@@ -16,3 +16,5 @@ model8 = obj_bronze_scimitar_1321_wear
 head1 = model_6081
 head2 = model_6080
 head3 = obj_pickpocket_guide_man
+//Server
+desc=Leads the Bandits.

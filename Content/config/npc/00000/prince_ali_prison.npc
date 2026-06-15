@@ -27,3 +27,6 @@ model8 = obj_vyrewatch_shoes_9638_man
 model9 = obj_red_headband_2645_man
 head1 = obj_pickpocket_guide_man
 head2 = model_43
+//Server
+desc=A young prince.
+wanderrange=2

@@ -29,3 +29,14 @@ model7 = npc_druid
 model8 = obj_cape_1007_man
 model9 = obj_ikov_bootsoflightness_manwear
 model10 = obj_zamorak_staff_wear
+//Server
+desc=He kills in the name of Zamorak.
+category=battle_mage
+maxrange=10
+attackrange=5
+respawnrate=300
+hitpoints=120
+param=damagetype,^crush_style
+param=defend_anim,human_staff_block
+huntmode=battle_mage_hunt
+huntrange=3

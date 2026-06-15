@@ -20,3 +20,7 @@ recol6d = 32794
 name = Chicken
 model1 = model_7728
 head1 = obj_farmer
+//Server
+desc=A strange chicken.
+param=death_anim,chicken_death
+param=death_sound,chicken_death

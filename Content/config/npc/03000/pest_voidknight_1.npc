@@ -22,3 +22,5 @@ model8 = obj_void_knight_mace_man
 head1 = model_14584
 head2 = obj_leather_cowl_manhead2
 head3 = idk_man_jaw_goatee_head
+//Server
+desc=A powerful knight of balance.

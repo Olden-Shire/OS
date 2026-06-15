@@ -17,3 +17,5 @@ recol4d = 8483
 name = Trolley
 model1 = obj_trolley
 model2 = model_9227
+//Server
+desc=This statue of a king has been 'borrowed' for a while.

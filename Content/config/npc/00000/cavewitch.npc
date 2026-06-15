@@ -28,3 +28,6 @@ model7 = obj_fremennik_cloak_3759_woman
 model8 = obj_glarials_amulet_woman
 model9 = obj_dramen_staff_wear
 model10 = obj_wizard_hat_579_woman
+//Server
+desc=A dark and evil crone.
+param=death_sound,female_death

@@ -29,3 +29,5 @@ model7 = obj_castlewars_hood_4513_woman
 model8 = model_5433
 model9 = obj_fremennik_cloak_3759_man
 head1 = obj_female_h_a_m
+//Server
+desc=A member of the 'Humans Against Monsters' group.

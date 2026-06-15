@@ -9,3 +9,5 @@ alwaysontop = true
 nominimap = true
 name = Storm Cloud
 model1 = model_11265
+//Server
+desc=A very small storm!

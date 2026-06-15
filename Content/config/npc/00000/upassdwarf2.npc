@@ -17,3 +17,6 @@ model3 = model_2981
 model4 = model_2979
 model5 = model_2985
 head1 = model_1
+//Server
+desc=A dwarven maker of gauntlets.
+param=death_anim,dwarf_death

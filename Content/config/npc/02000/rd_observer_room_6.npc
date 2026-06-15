@@ -26,3 +26,5 @@ model7 = obj_iron_platelegs_1067_woman
 model8 = obj_ikov_bootsoflightness_womanwear
 head1 = model_115
 head2 = model_101
+//Server
+desc=An observer for the Temple Knights.

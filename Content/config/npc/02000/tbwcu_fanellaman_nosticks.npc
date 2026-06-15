@@ -27,3 +27,5 @@ model7 = obj_citizen_trousers_9642_man
 model8 = obj_villager_sandals_6349_man
 head1 = model_49
 head2 = model_84
+//Server
+desc=A native of Tai Bwo Wannai.

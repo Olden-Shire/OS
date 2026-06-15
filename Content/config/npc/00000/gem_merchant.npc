@@ -33,3 +33,13 @@ head1 = obj_leather_cowl_manhead2
 head2 = model_70
 head3 = model_83
 head4 = model_28
+//Server
+desc=Seems very well off.
+category=shop_keeper
+param=owned_shop,ardougnegemstall
+param=shop_sell_multiplier,1500
+param=shop_buy_multiplier,800
+param=shop_delta,30
+param=shop_title,Ardougne Gem Stall.
+wanderrange=0
+moverestrict=nomove

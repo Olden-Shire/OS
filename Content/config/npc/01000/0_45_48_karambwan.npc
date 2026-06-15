@@ -7,3 +7,5 @@ nominimap = true
 op1 = Fish
 name = Fishing spot
 model1 = compofishspot_8
+//Server
+desc=Something dark green is lurking in these waters.

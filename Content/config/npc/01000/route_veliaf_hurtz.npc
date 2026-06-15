@@ -32,3 +32,5 @@ model8 = obj_stringstar_manwear2
 model9 = npc_master_fisher
 head1 = model_49
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Looks like the leader of the Myreque.

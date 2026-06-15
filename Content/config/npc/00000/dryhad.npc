@@ -5,3 +5,11 @@ readyanim = seq_96
 vislevel = 1
 name = Dryad
 model1 = model_2856
+//Server
+desc=A wood nymph.
+param=attack_anim,dryhad_attack
+param=defend_anim,dryhad_block
+param=death_anim,dryhad_death
+param=attack_sound,null
+param=defend_sound,null
+param=death_sound,null

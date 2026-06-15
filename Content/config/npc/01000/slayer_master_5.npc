@@ -34,3 +34,11 @@ model9 = obj_bronze_claws_3095_wear
 model10 = model_18949
 head1 = model_64
 head2 = model_73
+//Server
+desc=He looks dangerous!
+category=slayer_master
+param=owned_shop,slayershop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,1
+param=shop_title,Slayer Equipment

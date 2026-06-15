@@ -18,3 +18,5 @@ model7 = obj_priest_gown_manwear
 model8 = model_326
 head1 = model_48
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=The cave guide.

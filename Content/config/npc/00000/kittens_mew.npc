@@ -17,3 +17,7 @@ recol6s = 6806
 recol6d = 8078
 name = Crate
 model1 = obj_crate_7630
+//Server
+desc=Can I hear kittens?
+wanderrange=0
+moverestrict=nomove

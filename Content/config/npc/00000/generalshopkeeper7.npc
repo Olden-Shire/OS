@@ -32,3 +32,12 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = model_245
 head1 = obj_pickpocket_guide_man
 head2 = model_78
+//Server
+desc=Clearly takes pride in his appearance.
+category=shop_keeper
+param=owned_shop,generalshop7
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Karamja General Store
+moverestrict=indoors

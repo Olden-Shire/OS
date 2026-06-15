@@ -27,3 +27,5 @@ model9 = obj_wooden_shield_1171_wear
 model10 = obj_cape_1007_man
 head1 = obj_watchman
 head2 = model_80
+//Server
+desc=An officer of the Law.

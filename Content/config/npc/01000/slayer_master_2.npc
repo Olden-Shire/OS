@@ -31,3 +31,11 @@ model6 = model_182
 model7 = model_5114
 model8 = idk_man_jaw_none
 head1 = model_58
+//Server
+desc=He looks dangerous!
+category=slayer_master
+param=owned_shop,slayershop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,1
+param=shop_title,Slayer Equipment

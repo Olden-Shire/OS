@@ -7,3 +7,5 @@ vislevel = 0
 alwaysontop = true
 name = Snake
 model1 = model_6104
+//Server
+desc=A toothless old Snake.

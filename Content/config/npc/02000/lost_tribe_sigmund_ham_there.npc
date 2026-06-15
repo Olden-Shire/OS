@@ -30,3 +30,5 @@ model10 = obj_fremennik_cloak_3759_man
 model11 = obj_glarials_amulet_man
 head1 = obj_male_h_a_m
 head2 = model_5207
+//Server
+desc=Former advisor to the Duke of Lumbridge.

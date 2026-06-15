@@ -8,3 +8,6 @@ recol2s = 6028
 recol2d = 13592
 name = Tree
 model1 = model_3014
+//Server
+desc=Its bark is worse than its swipe.
+moverestrict=nomove

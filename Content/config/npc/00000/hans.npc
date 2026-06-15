@@ -29,3 +29,7 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_ikov_bootsoflightness_manwear
 model8 = idk_man_torso_jacket
 head1 = obj_farmer
+//Server
+desc=Servant of the Duke of Lumbridge.
+maxrange=50
+moverestrict=outdoors

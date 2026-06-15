@@ -21,3 +21,6 @@ model1 = model_3010
 model2 = obj_witchs_cat
 model3 = model_7024
 head1 = model_6436
+//Server
+desc=Very protective of his master... and his property.
+moverestrict=nomove

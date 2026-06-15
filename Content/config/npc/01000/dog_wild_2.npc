@@ -16,3 +16,6 @@ recol4s = 5268
 recol4d = 5400
 name = Wild dog
 model1 = model_26263
+//Server
+desc=An unsuitable pet.
+param=slayer_category,^slayer_dog

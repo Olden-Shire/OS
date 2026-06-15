@@ -29,3 +29,12 @@ model7 = obj_bronze_kiteshield_1189_wear
 model8 = obj_leather_chaps_1095_man
 model9 = obj_ikov_bootsoflightness_manwear
 head1 = model_18912
+//Server
+desc=Supplier of Rangers armour.
+wanderrange=2
+category=shop_keeper
+param=owned_shop,ranging_guild_armourshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,500
+param=shop_delta,10
+param=shop_title,Aaron's Archery Appendages.

@@ -15,3 +15,5 @@ recol5s = 5309
 recol5d = 5392
 name = Hobgoblin
 model1 = obj_hobgoblin_guard
+//Server
+desc=He doesn't look very welcoming.

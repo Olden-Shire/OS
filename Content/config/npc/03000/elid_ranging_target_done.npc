@@ -4,3 +4,5 @@ nominimap = true
 vislevel = 0
 name = Target
 model1 = model_10209
+//Server
+desc=Needs to be shot with a bow and arrow.

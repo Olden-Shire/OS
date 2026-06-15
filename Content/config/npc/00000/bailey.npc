@@ -29,3 +29,6 @@ model6 = model_15104
 model7 = obj_shoes_man
 head1 = model_11186
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=He smells of fish...
+moverestrict=indoors

@@ -8,3 +8,5 @@ walkanim = seq_3241
 readyanim = seq_3242
 name = Swan
 model1 = model_11725
+//Server
+desc=A graceful bird.

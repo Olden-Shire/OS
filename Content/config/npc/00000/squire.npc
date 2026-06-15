@@ -34,3 +34,6 @@ model11 = model_3707
 head1 = obj_farmer
 head2 = model_85
 head3 = model_34
+//Server
+desc=Indentured servant of a Knight.
+wanderrange=4

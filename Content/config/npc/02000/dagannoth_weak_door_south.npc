@@ -15,3 +15,5 @@ recol5s = 32815
 recol5d = 32803
 name = Door-support
 model1 = model_8718
+//Server
+desc=This support is propping the door closed.

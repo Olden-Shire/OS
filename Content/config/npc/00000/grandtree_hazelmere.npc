@@ -24,3 +24,7 @@ model3 = model_2917
 model4 = model_17022
 head1 = model_16967
 head2 = model_16981
+//Server
+desc=An ancient looking gnome.
+param=death_anim,midget_death
+param=death_sound,gnome_death

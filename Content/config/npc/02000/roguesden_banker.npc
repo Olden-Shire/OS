@@ -29,3 +29,6 @@ model6 = model_273
 model7 = idk_man_jaw_none
 head1 = obj_leather_cowl_manhead2
 head2 = model_70
+//Server
+desc=A rich banker man... Some say too rich.
+category=bank_teller

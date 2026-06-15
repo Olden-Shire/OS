@@ -21,3 +21,17 @@ model4 = obj_priest_gown_manwear
 model5 = obj_priest_gown_manwear2
 model6 = obj_cert_drill_top_manwear3
 model7 = obj_priest_gown_428_man
+//Server
+desc=He works evil magic.
+wanderrange=3
+maxrange=5
+attackrange=5
+respawnrate=100
+hitpoints=12
+attack=5
+strength=2
+defence=5
+param=magicdefence,3
+param=damagetype,^crush_style
+huntmode=ranged
+huntrange=3

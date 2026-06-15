@@ -29,3 +29,11 @@ model8 = obj_macro_mime_legs_manwear
 model9 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=A strange little man.
+wanderrange=3
+param=owned_shop,runeplateshop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,oziach

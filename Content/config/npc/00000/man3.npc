@@ -24,3 +24,14 @@ model7 = idk_man_legs_flares
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_cropped_head
 head2 = model_85
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

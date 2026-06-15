@@ -28,3 +28,12 @@ model7 = model_257
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_cropped_head
 head2 = model_68
+//Server
+desc=Sells arrows.
+category=shop_keeper
+param=owned_shop,archeryshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,550
+param=shop_delta,10
+param=shop_title,Lowe's Archery Emporium
+moverestrict=indoors

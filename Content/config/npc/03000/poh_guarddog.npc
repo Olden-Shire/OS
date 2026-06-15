@@ -7,3 +7,5 @@ op2 = Attack
 vislevel = 44
 name = Guard dog
 model1 = obj_guard_dog
+//Server
+desc=Beware of the dog!

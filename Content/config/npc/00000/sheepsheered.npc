@@ -7,3 +7,8 @@ name = Sheep
 model1 = model_20283
 model2 = model_20289
 model3 = model_20285
+//Server
+desc=Freshly sheared.
+param=attack_anim,sheep_attack
+param=defend_anim,sheep_block
+param=death_anim,sheep_death

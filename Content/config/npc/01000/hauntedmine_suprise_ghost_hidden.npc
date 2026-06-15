@@ -8,3 +8,5 @@ vislevel = 0
 nominimap = true
 name = Haze
 model1 = model_21154
+//Server
+desc=A strange disturbance in the air.

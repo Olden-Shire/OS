@@ -7,3 +7,10 @@ op1 = Talk-to
 name = Rashiliyia
 model1 = model_21141
 head1 = model_21410
+//Server
+desc=The animated spirit of Rashiliyia the Zombie Queen.
+wanderrange=3
+param=damagetype,^slash_style
+param=death_anim,ghost_death
+param=death_sound,ghost_death
+param=undead,^true

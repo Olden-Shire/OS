@@ -21,3 +21,7 @@ model6 = obj_cooking_gauntlets_man
 model7 = model_274
 head1 = model_48
 head2 = idk_man_jaw_long_head
+//Server
+desc=He looks shifty.
+wanderrange=0
+moverestrict=nomove

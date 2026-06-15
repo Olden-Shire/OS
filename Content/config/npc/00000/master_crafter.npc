@@ -31,3 +31,6 @@ model9 = model_18926
 head1 = model_5787
 head2 = idk_man_jaw_moustache_head
 head3 = model_78
+//Server
+desc=He's in charge of the Crafting Guild.
+moverestrict=indoors

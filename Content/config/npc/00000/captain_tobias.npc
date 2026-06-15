@@ -28,3 +28,6 @@ model8 = model_194
 head1 = obj_pickpocket_guide_man
 head2 = model_85
 head3 = model_37
+//Server
+desc=An old sea dog.
+category=sailor

@@ -33,3 +33,5 @@ model10 = idk_man_torso_jacket
 head1 = model_30
 head2 = obj_leather_cowl_manhead2
 head3 = idk_man_jaw_goatee_head
+//Server
+desc=One of Ali Morrisane's associates. Those scissors look sharp.

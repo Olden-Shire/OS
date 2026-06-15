@@ -8,3 +8,15 @@ readyanim = seq_5386
 op2 = Attack
 name = Chicken
 model1 = model_23905
+//Server
+desc=Yep definitely a chicken.
+hitpoints=3
+param=magicdefence,-100
+param=attack_anim,chicken_attack
+param=defend_anim,chicken_block
+param=death_anim,chicken_death
+param=attack_sound,chicken_attack
+param=defend_sound,chicken_hit
+param=death_sound,chicken_death
+param=death_drop,newbiebones
+category=chicken

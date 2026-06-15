@@ -15,3 +15,5 @@ recol3d = 65455
 name = Monkey Zombie
 model1 = model_4817
 model2 = model_4824
+//Server
+desc=A large and lumbering undead monkey.

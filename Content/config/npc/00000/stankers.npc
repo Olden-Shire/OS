@@ -18,3 +18,8 @@ model6 = model_2990
 model7 = model_2988
 head1 = model_0
 head2 = model_8
+//Server
+desc=He's in control of the coal trucks.
+wanderrange=2
+param=damagetype,^stab_style
+param=death_anim,dwarf_death

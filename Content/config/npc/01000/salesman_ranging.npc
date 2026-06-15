@@ -32,3 +32,11 @@ model8 = obj_ranger_boots_2577_man
 model9 = model_9607
 head1 = model_46
 head2 = model_84
+//Server
+desc=He sells ranging equipment.
+category=shop_keeper
+param=owned_shop,salesman_ranging
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Brian's Archery Supplies.

@@ -26,3 +26,13 @@ model9 = obj_tan_cavalier_2639_man
 head1 = obj_leather_cowl_manhead2
 head2 = model_84
 head3 = model_28
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style

@@ -7,3 +7,17 @@ alwaysontop = true
 vislevel = 6
 name = Chompy bird
 model1 = model_26861
+//Server
+desc=A large boisterous bird, a delicacy for ogres.
+wanderrange=3
+hitpoints=10
+attack=5
+strength=5
+defence=3
+param=attack_anim,chompy_attack
+param=defend_anim,pog_terror_bird_defend
+param=death_anim,pog_terror_bird_ready_extra
+param=attack_sound,chompy_bird_attack
+param=defend_sound,chompy_bird_hit
+param=death_sound,chompy_bird_death
+huntrange=2

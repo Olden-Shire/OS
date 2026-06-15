@@ -34,3 +34,6 @@ model11 = model_324
 head1 = model_52
 head2 = idk_man_jaw_long_head
 head3 = model_44
+//Server
+desc=A powerful Wizard of the Knights of the Round Table.
+wanderrange=1

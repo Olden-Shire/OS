@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 120
 name = Fiyr Shadow
 model1 = model_4143
+//Server
+desc=A shadowy sort of entity, kind of creepy looking.

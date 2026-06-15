@@ -30,3 +30,11 @@ model7 = obj_cert_drill_top_manwear3
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=He seems to sell tea.
+wanderrange=2
+param=owned_shop,teashop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Ye Olde Tea Shoppe

@@ -28,3 +28,7 @@ model9 = model_324
 model10 = obj_machete_975_wear
 head1 = model_47
 head2 = idk_man_jaw_long_head
+//Server
+desc=He deals in exotic types of wood.
+wanderrange=3
+param=damagetype,^slash_style

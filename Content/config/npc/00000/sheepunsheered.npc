@@ -7,3 +7,8 @@ op1 = Shear
 name = Sheep
 model1 = model_20290
 model2 = model_20291
+//Server
+desc=White and fluffy.
+param=attack_anim,sheep_attack
+param=defend_anim,sheep_block
+param=death_anim,sheep_death

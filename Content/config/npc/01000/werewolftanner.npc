@@ -15,3 +15,6 @@ model3 = model_26115
 model4 = model_26126
 model5 = model_26119
 head1 = model_26269
+//Server
+desc=Has a faint smell of chemicals about him.
+wanderrange=5

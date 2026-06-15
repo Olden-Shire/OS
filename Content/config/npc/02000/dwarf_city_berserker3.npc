@@ -23,3 +23,6 @@ model3 = model_7039
 model4 = model_7073
 model5 = model_7042
 head1 = model_6984
+//Server
+desc=An elite member of the Black Guard.
+param=slayer_category,^slayer_dwarf

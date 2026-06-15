@@ -6,3 +6,16 @@ op2 = Attack
 vislevel = 58
 name = Yeti
 model1 = model_3001
+//Server
+desc=The abominable snowman.
+hitpoints=55
+attack=48
+strength=60
+defence=39
+param=damagetype,^crush_style
+param=attack_anim,yeti_attack
+param=defend_anim,yeti_block
+param=death_anim,yeti_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death

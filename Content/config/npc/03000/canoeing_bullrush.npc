@@ -7,3 +7,5 @@ nominimap = true
 vislevel = 0
 name = Bullrush
 model1 = model_5564
+//Server
+desc=A Bullrush.

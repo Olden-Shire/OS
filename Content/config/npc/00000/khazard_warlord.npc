@@ -26,3 +26,17 @@ model8 = obj_iron_warhammer_1335_wear
 model9 = model_523
 model10 = obj_cape_1007_man
 head1 = model_60
+//Server
+desc=He looks real nasty, smells bad too.
+wanderrange=8
+maxrange=10
+respawnrate=300
+hitpoints=170
+attack=75
+strength=78
+defence=80
+param=damagetype,^crush_style
+param=attack_anim,human_blunt_pound
+param=defend_anim,human_blunt_def
+param=attack_sound,warhammer_crush
+param=defend_sound,blade2

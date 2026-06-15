@@ -13,3 +13,13 @@ recol2d = 38854
 name = Jukat
 model1 = model_2857
 head1 = model_13
+//Server
+desc=A being from a mysterious other realm.
+category=shop_keeper
+param=owned_shop,dragonswordshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,10
+param=shop_title,jakut
+wanderrange=2
+param=death_anim,fairy_death

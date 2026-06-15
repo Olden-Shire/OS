@@ -25,3 +25,14 @@ model4 = model_10706
 model5 = obj_desert_robes_6386_woman
 model6 = model_358
 head1 = obj_warrior_woman
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

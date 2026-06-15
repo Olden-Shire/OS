@@ -8,3 +8,5 @@ resizev = 40
 resizeh = 40
 name = Rock pile
 model1 = model_5654
+//Server
+desc=A pile of boulders.

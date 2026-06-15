@@ -6,3 +6,5 @@ op2 = Melt
 nominimap = true
 name = Crust of ice
 model1 = model_10884
+//Server
+desc=Very thick, and very cold.

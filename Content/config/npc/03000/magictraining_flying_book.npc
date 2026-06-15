@@ -6,3 +6,5 @@ nominimap = true
 vislevel = 0
 name = Flying Book
 model1 = model_10625
+//Server
+desc=The book moves by itself!

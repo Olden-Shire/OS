@@ -8,3 +8,7 @@ op1 = Bait
 op3 = hidden
 name = Fishing spot
 model1 = model_2331
+//Server
+desc=I can see eels swimming in the lava.
+moverestrict=nomove
+param=fishing_movement_enum,fishing_movement_taverley_dungeon_enum

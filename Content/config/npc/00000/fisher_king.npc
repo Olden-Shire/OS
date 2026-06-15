@@ -33,3 +33,5 @@ model10 = obj_cape_1007_man
 head1 = obj_pickpocket_guide_man
 head2 = model_35
 head3 = model_84
+//Server
+desc=He doesn't look very well...

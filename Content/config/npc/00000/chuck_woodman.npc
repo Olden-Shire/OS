@@ -19,3 +19,9 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = model_196
 model9 = obj_iron_axe_1349_wear
 model10 = obj_amulet_of_ghostspeak_manwear
+//Server
+desc=He's a lumberjack, and he's ok.
+param=strengthbonus,7
+param=stabdefence,6
+param=slashdefence,7
+param=crushdefence,7

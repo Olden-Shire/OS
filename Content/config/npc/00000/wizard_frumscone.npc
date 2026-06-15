@@ -25,3 +25,10 @@ model8 = obj_wizard_hat_579_man
 head1 = model_52
 head2 = model_44
 head3 = idk_man_jaw_goatee_head
+//Server
+desc=A Wizard of the Magic Guild.
+hitpoints=14
+attack=8
+strength=8
+defence=5
+param=damagetype,^crush_style

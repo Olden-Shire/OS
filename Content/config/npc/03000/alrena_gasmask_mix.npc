@@ -30,3 +30,5 @@ model7 = obj_red_cape_womanwear
 model8 = obj_glarials_amulet_woman
 model9 = model_11434
 head1 = obj_warrior_woman
+//Server
+desc=She looks concerned.

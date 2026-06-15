@@ -10,3 +10,5 @@ turnspeed = 15
 nominimap = true
 name = Fish
 model1 = model_13834
+//Server
+desc=A shoal of Neon Tetra.

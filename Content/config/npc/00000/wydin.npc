@@ -27,3 +27,12 @@ model5 = obj_macro_mime_legs_manwear
 model6 = obj_vyrewatch_shoes_9638_man
 model7 = idk_man_jaw_none
 head1 = obj_farmer
+//Server
+desc=Likes his food to be kept fresh.
+category=shop_keeper
+param=owned_shop,wydinstore
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,10
+param=shop_title,Food Store
+moverestrict=indoors

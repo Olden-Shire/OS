@@ -30,3 +30,5 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_bronze_pickaxe_1265_wear
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Supposedly fixes things around RuneScape.

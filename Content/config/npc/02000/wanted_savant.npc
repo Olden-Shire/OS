@@ -25,3 +25,5 @@ model6 = obj_priest_gown_428_woman
 model7 = obj_ikov_bootsoflightness_womanwear
 head1 = obj_female_h_a_m
 head2 = model_9656
+//Server
+desc=Assigned to help tracking down Solus Dellagar.

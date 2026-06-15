@@ -7,3 +7,5 @@ op2 = Attack
 vislevel = 55
 name = Killerwatt
 model1 = model_11264
+//Server
+desc=An angry electrical shock!

@@ -11,3 +11,5 @@ vislevel = 127
 name = Rock lobster
 model1 = model_9945
 model2 = model_9946
+//Server
+desc=It wasn't a rock... it was a rock lobster!

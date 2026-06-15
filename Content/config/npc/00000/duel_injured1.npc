@@ -29,3 +29,6 @@ model8 = obj_eye_patch_1025_man
 head1 = model_46
 head2 = model_85
 head3 = model_68
+//Server
+desc='Battle scarred'.
+moverestrict=indoors

@@ -5,3 +5,5 @@ op2 = Attack
 vislevel = 142
 name = Skeleton
 model1 = model_21190
+//Server
+desc=It looks just a bit ... underfed.

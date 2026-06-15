@@ -5,3 +5,5 @@ alwaysontop = true
 turnspeed = 1024
 name = Mine cart
 model1 = model_4894
+//Server
+desc=Big, metal, and wheeled.

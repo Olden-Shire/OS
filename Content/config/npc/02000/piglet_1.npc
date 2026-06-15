@@ -7,3 +7,5 @@ resizev = 50
 ambient = 15
 name = Piglet
 model1 = model_7364
+//Server
+desc=Hog.

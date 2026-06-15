@@ -13,3 +13,13 @@ model1 = model_2892
 model2 = model_2909
 model3 = model_2915
 head1 = obj_gnome
+//Server
+desc=He sells weapons.
+param=death_anim,midget_death
+param=death_sound,gnome_death
+category=shop_keeper
+param=owned_shop,gnomeshop_gulluck
+param=shop_title,Gulluck and Sons
+param=shop_buy_multiplier,250
+param=shop_sell_multiplier,1000
+param=shop_delta,10

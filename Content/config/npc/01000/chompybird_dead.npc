@@ -6,3 +6,7 @@ readyanim = seq_6768
 op4 = Pluck
 name = Chompy bird
 model1 = model_26861
+//Server
+desc=A once boisterous bird, closer to being an ogre delicacy.
+wanderrange=0
+moverestrict=nomove

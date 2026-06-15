@@ -13,3 +13,5 @@ recol3d = 65455
 name = Monkey Zombie
 model1 = model_4817
 model2 = model_4824
+//Server
+desc=A recently deceased monkey. Its flesh seems to be worse for the wear.

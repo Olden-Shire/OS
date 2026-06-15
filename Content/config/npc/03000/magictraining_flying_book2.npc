@@ -10,3 +10,5 @@ recol2s = 154
 recol2d = 920
 name = Flying Book
 model1 = model_10625
+//Server
+desc=The book moves by itself!

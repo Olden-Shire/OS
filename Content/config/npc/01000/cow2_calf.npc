@@ -8,3 +8,5 @@ op2 = Attack
 vislevel = 2
 name = Cow calf
 model1 = model_23890
+//Server
+desc=Prelude to a steak!

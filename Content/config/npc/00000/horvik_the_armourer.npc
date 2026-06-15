@@ -30,3 +30,12 @@ model7 = obj_hammer_2347_wear
 model8 = model_12138
 model9 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
+//Server
+desc=The man with the armour.
+category=shop_keeper
+param=owned_shop,armourshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Horvik's Armour Shop.
+moverestrict=indoors

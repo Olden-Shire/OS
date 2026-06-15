@@ -8,3 +8,5 @@ ambient = 20
 name = Hallak
 model1 = model_10213
 head1 = model_10121
+//Server
+desc=An elemental waterspirit.

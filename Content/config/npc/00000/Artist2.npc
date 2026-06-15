@@ -11,3 +11,7 @@ model1 = model_25362
 head1 = obj_farmer
 head2 = model_9449
 head3 = model_9442
+//Server
+desc=He has a colourful personality.
+wanderrange=3
+moverestrict=indoors

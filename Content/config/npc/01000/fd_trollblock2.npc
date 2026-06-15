@@ -6,3 +6,5 @@ op2 = Smash-ice
 turnspeed = 0
 name = Ice block
 model1 = model_6323
+//Server
+desc=A troll frozen in a block of ice.

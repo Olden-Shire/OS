@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 17
 name = Mosquito swarm
 model1 = model_8905
+//Server
+desc=A swarm of three highly agile mosquitoes.

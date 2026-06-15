@@ -28,3 +28,14 @@ model6 = obj_hazeels_mark_man
 model7 = model_251
 model8 = obj_priest_gown_428_man
 head1 = model_83
+//Server
+desc=The great and dreadful Lord Iban
+wanderrange=0
+moverestrict=nomove
+respawnrate=100
+hitpoints=87
+attack=76
+strength=78
+defence=77
+wanderrange=0
+moverestrict=nomove

@@ -28,3 +28,6 @@ model6 = model_274
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=A cart driver, it looks like he's quite experienced.
+wanderrange=3

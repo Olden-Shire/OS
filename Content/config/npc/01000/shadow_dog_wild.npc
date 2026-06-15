@@ -14,3 +14,6 @@ recol4s = 5268
 recol4d = 138
 name = Shadow Hound
 model1 = model_26263
+//Server
+desc=Looks hungry!
+param=slayer_category,^slayer_dog

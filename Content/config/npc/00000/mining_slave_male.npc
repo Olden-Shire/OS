@@ -22,3 +22,6 @@ model7 = model_19175
 model8 = obj_bronze_pickaxe_1265_wear
 head1 = obj_farmer
 head2 = idk_man_jaw_long_head
+//Server
+desc=It looks like he's been here a long time.
+wanderrange=3

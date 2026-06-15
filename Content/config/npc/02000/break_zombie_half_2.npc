@@ -6,3 +6,5 @@ vislevel = 0
 name = Other Half-Zombie
 model1 = model_9914
 head1 = model_9920
+//Server
+desc=Clearly someones better half.

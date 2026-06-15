@@ -7,3 +7,5 @@ turnspeed = 0
 name = Pilg
 model1 = model_6768
 head1 = model_141
+//Server
+desc=They're done for!

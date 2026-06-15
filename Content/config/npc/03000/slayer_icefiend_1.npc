@@ -8,3 +8,5 @@ contrast = 60
 vislevel = 13
 name = Icefiend
 model1 = model_13915
+//Server
+desc=A small ice demon.

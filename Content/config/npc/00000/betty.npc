@@ -29,3 +29,13 @@ model5 = model_353
 model6 = obj_desert_robes_6386_woman
 model7 = obj_ikov_bootsoflightness_womanwear
 head1 = model_103
+//Server
+desc=She seems like a nice sort of person.
+category=shop_keeper
+param=owned_shop,magicshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,10
+param=shop_title,Betty's Magic Emporium.
+moverestrict=indoors
+param=death_sound,female_death

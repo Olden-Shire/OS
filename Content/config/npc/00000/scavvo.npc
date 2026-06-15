@@ -27,3 +27,12 @@ model6 = obj_cert_drill_top_manwear3
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = model_46
 head2 = model_85
+//Server
+desc=He's got the best armour around!
+category=shop_keeper
+param=owned_shop,runiteshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Scavvo's Rune Store.
+moverestrict=indoors

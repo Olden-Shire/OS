@@ -5,3 +5,5 @@ contrast = 10
 turnspeed = 1024
 name = Egg
 model1 = obj_easter_egg_7933
+//Server
+desc=A rolling chocolate egg.

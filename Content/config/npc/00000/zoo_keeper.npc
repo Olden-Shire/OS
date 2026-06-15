@@ -29,3 +29,10 @@ model10 = model_495
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
 head3 = model_37
+//Server
+desc=Enjoys locking up animals in small pens.
+hitpoints=20
+attack=10
+strength=10
+defence=10
+param=damagetype,^stab_style

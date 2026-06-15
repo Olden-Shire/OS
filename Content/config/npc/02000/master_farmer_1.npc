@@ -30,3 +30,5 @@ model10 = obj_gardening_boots_5345_man
 head1 = obj_farmer
 head2 = idk_man_jaw_goatee_head
 head3 = model_6212
+//Server
+desc=A master at farming.

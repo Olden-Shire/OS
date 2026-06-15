@@ -31,3 +31,5 @@ model9 = obj_mystic_boots_4097_man
 head1 = model_7741
 head2 = obj_leather_cowl_manhead2
 head3 = idk_man_jaw_moustache_head
+//Server
+desc=A man who deals in rugs.

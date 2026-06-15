@@ -16,3 +16,7 @@ model1 = model_3754
 model2 = obj_troll_guard
 model3 = model_3756
 model4 = model_3769
+//Server
+desc=He's fast asleep.
+wanderrange=0
+moverestrict=nomove

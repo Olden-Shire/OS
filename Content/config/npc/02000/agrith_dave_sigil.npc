@@ -19,3 +19,5 @@ model8 = obj_demonic_sigil_wear
 head1 = obj_pickpocket_guide_man
 head2 = model_9976
 head3 = model_85
+//Server
+desc=He seems to like wearing black.

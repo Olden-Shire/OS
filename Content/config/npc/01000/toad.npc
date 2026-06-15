@@ -5,3 +5,5 @@ readyanim = seq_1018
 walkanim = seq_1021
 name = Swamp toad
 model1 = obj_bloated_toad
+//Server
+desc=A green skinned croaker, loves the swamp.

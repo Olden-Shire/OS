@@ -21,3 +21,7 @@ model3 = model_17014
 model4 = model_17007
 head1 = model_18
 head2 = model_16980
+//Server
+desc=Small but powerful.
+param=death_anim,midget_death
+param=death_sound,gnome_death

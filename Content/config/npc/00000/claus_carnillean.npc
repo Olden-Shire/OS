@@ -28,3 +28,5 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = obj_chefs_hat_manwear
 head1 = obj_leather_cowl_manhead2
 head2 = obj_chefs_hat_manhead
+//Server
+desc=The Carnillean family chef.

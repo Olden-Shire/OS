@@ -32,3 +32,6 @@ model8 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = obj_chefs_hat_manhead
 head3 = idk_man_jaw_moustache_head
+//Server
+desc=The head cook of Lumbridge castle.
+moverestrict=indoors

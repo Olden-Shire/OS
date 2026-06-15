@@ -25,3 +25,6 @@ model6 = model_274
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = model_10976
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=A mad scientist if ever I saw one!
+wanderrange=2

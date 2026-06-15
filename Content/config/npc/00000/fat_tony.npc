@@ -29,3 +29,13 @@ model8 = obj_vyrewatch_shoes_9638_man
 head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
 head3 = obj_chefs_hat_manhead
+//Server
+desc=An expert on Pizzas. Both making and eating.
+wanderrange=3
+category=shop_keeper
+param=owned_shop,pizzabaseshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,30
+param=shop_title,Tony's Pizza Bases
+moverestrict=indoors

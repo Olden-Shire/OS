@@ -33,3 +33,12 @@ model6 = model_10218
 model7 = model_12138
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = model_14337
+//Server
+desc=Helps the shop keeper sell swords.
+category=shop_keeper
+param=owned_shop,swordshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Varrock Swordshop.
+moverestrict=indoors

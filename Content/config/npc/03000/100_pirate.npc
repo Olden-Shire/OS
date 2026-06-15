@@ -23,3 +23,7 @@ model6 = model_3329
 model7 = obj_ikov_bootsoflightness_manwear
 model8 = model_12799
 head1 = obj_male_h_a_m
+//Server
+desc=A shifty-looking character.
+wanderrange=0
+moverestrict=nomove

@@ -26,3 +26,10 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_fremennik_cloak_3759_man
 head1 = model_52
 head2 = idk_man_jaw_long_head
+//Server
+desc=He hasn't seen much sun lately.
+param=owned_shop,magearena_staffshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,0
+param=shop_delta,20
+param=shop_title,Mage Arena Staffs.

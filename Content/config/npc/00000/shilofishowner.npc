@@ -24,3 +24,12 @@ model6 = idk_man_legs_flares
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = model_45
 head2 = model_80
+//Server
+desc=This is Fernahei - he owns the local fishing tackle shop.
+wanderrange=2
+param=owned_shop,shilofishingshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,20
+param=shop_title,Fernahei's Fishing Hut.
+category=shop_keeper

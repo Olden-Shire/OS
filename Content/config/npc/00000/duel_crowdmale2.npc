@@ -29,3 +29,7 @@ model8 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
 head3 = model_30
+//Server
+desc=A citizen of Al Kharid.
+wanderrange=10
+hitpoints=7

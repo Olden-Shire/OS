@@ -5,3 +5,5 @@ nominimap = true
 op1 = Pick
 name = Thistle
 model1 = obj_troll_thistle
+//Server
+desc=It's a Troll Thistle.

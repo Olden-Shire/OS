@@ -33,3 +33,7 @@ model10 = obj_vyrewatch_shoes_9638_man
 head1 = model_52
 head2 = model_9600
 head3 = idk_man_jaw_long_head
+//Server
+desc=Master of the mystical make-over.
+wanderrange=4
+moverestrict=indoors

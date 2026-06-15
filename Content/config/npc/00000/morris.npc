@@ -26,3 +26,7 @@ model5 = obj_leather_vambraces_1063_man
 model6 = model_14377
 head1 = model_14337
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=He checks the entrants to the Fishing Contest.
+wanderrange=0
+moverestrict=nomove

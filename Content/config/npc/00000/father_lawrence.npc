@@ -21,3 +21,6 @@ model6 = obj_cert_drill_top_manwear3
 model7 = npc_druid
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = idk_man_hair_tonsure_head
+//Server
+desc=A religious man... And occasional drunk.
+moverestrict=indoors

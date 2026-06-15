@@ -9,3 +9,5 @@ nominimap = true
 name = Rocks
 model1 = model_4399
 model2 = model_4400
+//Server
+desc=A rocky outcrop.

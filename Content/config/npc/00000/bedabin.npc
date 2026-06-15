@@ -32,3 +32,12 @@ model7 = obj_priest_gown_428_man
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_farmer
 head2 = model_30
+//Server
+desc=A bedabin nomad, they live in the harshest extremes in the desert.
+wanderrange=3
+param=owned_shop,bedabincampshop
+param=shop_sell_multiplier,1200
+param=shop_buy_multiplier,800
+param=shop_delta,30
+param=shop_title,Bedabin Village Bartering
+category=shop_keeper

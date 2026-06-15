@@ -33,3 +33,12 @@ model8 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = model_78
 head3 = idk_man_jaw_moustache_head
+//Server
+desc=An interesting assortment of items for sale.
+category=shop_keeper
+param=owned_shop,generalshop6
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Rimmington General Store
+moverestrict=indoors

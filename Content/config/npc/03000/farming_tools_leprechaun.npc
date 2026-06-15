@@ -7,3 +7,5 @@ op3 = Exchange
 name = Tool Leprechaun
 model1 = model_10220
 head1 = model_24
+//Server
+desc=Looks after your farming tools.

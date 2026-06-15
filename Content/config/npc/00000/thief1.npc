@@ -21,3 +21,15 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_ikov_bootsoflightness_manwear
 model8 = idk_man_torso_jacket
 head1 = obj_pickpocket_guide_man
+//Server
+desc=Known for his light-fingered qualities.
+wanderrange=8
+maxrange=10
+respawnrate=50
+hitpoints=17
+attack=14
+strength=13
+defence=12
+param=damagetype,^crush_style
+wanderrange=7
+param=retreat,8

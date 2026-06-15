@@ -19,3 +19,5 @@ model6 = model_358
 model7 = obj_void_knight_mace_woman
 head1 = model_103
 head2 = model_14586
+//Server
+desc=A powerful knight of balance.

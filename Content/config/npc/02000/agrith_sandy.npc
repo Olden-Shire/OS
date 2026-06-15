@@ -9,3 +9,5 @@ vislevel = 0
 nominimap = true
 name = Sand storm
 model1 = model_9994
+//Server
+desc=A nasty sand storm.

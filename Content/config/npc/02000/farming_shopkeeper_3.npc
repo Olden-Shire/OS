@@ -27,3 +27,11 @@ model5 = model_274
 model6 = obj_gardening_boots_5345_man
 model7 = idk_man_jaw_none
 head1 = obj_farmer
+//Server
+desc=He sells farming equipment.
+category=shop_keeper
+param=owned_shop,farming_shop_3
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,1
+param=shop_title,Richard's Farming shop.

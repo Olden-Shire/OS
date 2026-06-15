@@ -7,3 +7,6 @@ nominimap = true
 op1 = Bait
 name = Fishing spot
 model1 = compofishspot_8
+//Server
+desc=I can fish here.
+moverestrict=nomove

@@ -27,3 +27,5 @@ model5 = obj_cooking_gauntlets_man
 model6 = model_3329
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = obj_male_h_a_m
+//Server
+desc=A shifty-looking character.

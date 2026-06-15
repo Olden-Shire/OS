@@ -7,3 +7,5 @@ nominimap = true
 vislevel = 0
 name = Cave Scenery
 model1 = model_12017
+//Server
+desc=Cave bits.

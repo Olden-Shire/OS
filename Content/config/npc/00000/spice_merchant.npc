@@ -32,3 +32,12 @@ model9 = obj_red_headband_2645_man
 head1 = obj_farmer
 head2 = model_43
 head3 = idk_man_jaw_long_head
+//Server
+desc=Has a very exotic aroma about him.
+category=shop_keeper
+param=owned_shop,spicestall
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Ardougne Spice Stall.
+wanderrange=2

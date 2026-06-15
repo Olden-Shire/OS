@@ -13,3 +13,13 @@ recol2d = 5045
 name = Fairy shop assistant
 model1 = model_2857
 head1 = model_13
+//Server
+desc=Sells stuff.
+category=shop_keeper
+param=owned_shop,generalshop8
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Zanaris General Store
+wanderrange=2
+param=death_anim,fairy_death

@@ -10,3 +10,7 @@ name = Tirrie
 model1 = model_10214
 model2 = model_10211
 head1 = model_10122
+//Server
+desc=An elemental waterspirit.
+wanderrange=0
+moverestrict=nomove

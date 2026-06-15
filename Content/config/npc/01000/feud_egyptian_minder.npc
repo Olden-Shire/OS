@@ -25,3 +25,5 @@ model7 = obj_bronze_scimitar_1321_wear
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = model_6127
 head2 = obj_pickpocket_guide_man
+//Server
+desc=Smooth operator.

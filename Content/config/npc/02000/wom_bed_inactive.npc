@@ -7,3 +7,5 @@ size = 2
 op1 = Kick
 name = Bed
 model1 = model_7381
+//Server
+desc=It's a fairly ordinary bed, but...

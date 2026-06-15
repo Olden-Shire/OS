@@ -29,3 +29,6 @@ model6 = obj_desert_robes_6386_woman
 model7 = obj_red_cape_womanwear
 model8 = obj_glarials_amulet_woman
 head1 = obj_warrior_woman
+//Server
+desc=She looks concerned.
+param=death_sound,female_death

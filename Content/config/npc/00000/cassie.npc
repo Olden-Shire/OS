@@ -30,3 +30,13 @@ model5 = model_435
 model6 = model_414
 head1 = model_115
 head2 = model_131
+//Server
+desc=Nice eyes.
+category=shop_keeper
+param=owned_shop,shieldshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Cassies' Shield Shop.
+moverestrict=indoors
+param=death_sound,female_death

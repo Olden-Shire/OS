@@ -25,3 +25,6 @@ model4 = model_273
 model5 = obj_cape_1007_man
 model6 = model_499
 head1 = model_51
+//Server
+desc=A mourner, or plague healer.
+maxrange=10

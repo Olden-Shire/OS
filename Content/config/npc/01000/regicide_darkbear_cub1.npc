@@ -13,3 +13,6 @@ recol2d = 5272
 name = Grizzly bear cub
 model1 = model_18883
 model2 = model_18885
+//Server
+desc=Eek! A bear cub!
+param=slayer_category,^slayer_bear

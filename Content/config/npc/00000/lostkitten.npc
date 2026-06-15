@@ -8,3 +8,6 @@ resizev = 40
 name = Kitten
 model1 = model_9386
 model2 = model_9388
+//Server
+desc=It looks lost.
+param=death_anim,cat_death

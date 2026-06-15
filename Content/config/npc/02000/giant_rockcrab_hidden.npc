@@ -6,3 +6,5 @@ resizev = 250
 turnspeed = 0
 name = Boulder
 model1 = model_8743
+//Server
+desc=Heavy rock!

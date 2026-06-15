@@ -7,3 +7,5 @@ turnspeed = 900
 op2 = Attack
 name = Killerwatt
 model1 = model_11263
+//Server
+desc=A ball of electrical energy.

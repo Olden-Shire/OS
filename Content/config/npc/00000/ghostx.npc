@@ -19,3 +19,7 @@ model4 = model_5209
 model5 = model_5216
 head1 = model_5203
 head2 = model_14998
+//Server
+desc=Eek! A ghost!
+moverestrict=indoors
+param=death_sound,ghost_death

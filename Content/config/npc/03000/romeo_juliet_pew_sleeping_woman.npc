@@ -21,3 +21,6 @@ model6 = model_358
 model7 = model_12144
 head1 = model_114
 head2 = model_12133
+//Server
+desc=A less enthusiastic ecclesiastic woman, she seems slightly tired.
+moverestrict=nomove

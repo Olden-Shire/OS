@@ -29,3 +29,5 @@ model5 = idk_man_jaw_none
 model6 = model_3329
 model7 = npc_paladin
 head1 = obj_pickpocket_guide_man
+//Server
+desc=Responsible for the food and equipment of the troops.

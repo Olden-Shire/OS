@@ -10,3 +10,5 @@ name = Charmed Warrior
 model1 = model_10641
 model2 = model_10642
 model3 = model_10643
+//Server
+desc=Equipment that moves by itself!

@@ -22,3 +22,6 @@ model5 = obj_priest_gown_manwear2
 model6 = obj_cert_drill_top_manwear3
 model7 = npc_druid
 head1 = obj_leather_cowl_manhead2
+//Server
+desc=A holy man.
+wanderrange=2

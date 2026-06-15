@@ -5,3 +5,16 @@ readyanim = seq_291
 vislevel = 15
 name = Unicorn
 model1 = model_2933
+//Server
+desc=The animal is caged here.
+wanderrange=1
+hitpoints=19
+attack=11
+strength=13
+defence=13
+param=damagetype,^stab_style
+param=attack_anim,unicorn_attack
+param=defend_anim,unicorn_block
+param=death_anim,unicorn_death
+param=attack_sound,cow_attack
+param=defend_sound,horse_hit

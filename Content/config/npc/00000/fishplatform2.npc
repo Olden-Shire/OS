@@ -30,3 +30,6 @@ model10 = model_14376
 head1 = model_18334
 head2 = model_18341
 head3 = model_10739
+//Server
+desc=He smells of salty fish.
+category=fisherman_platform

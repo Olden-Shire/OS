@@ -15,3 +15,11 @@ recol3d = 43282
 name = Chaeldar
 model1 = model_5044
 head1 = model_2925
+//Server
+desc=She looks dangerous!
+category=slayer_master
+param=owned_shop,slayershop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,1
+param=shop_title,Slayer Equipment

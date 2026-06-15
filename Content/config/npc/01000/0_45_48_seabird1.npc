@@ -10,3 +10,5 @@ vislevel = 0
 name = Gull
 model1 = model_26841
 model2 = model_26844
+//Server
+desc=A sea bird.

@@ -8,3 +8,6 @@ op2 = Attack
 vislevel = 74
 name = Dagannoth
 model1 = obj_dagannoth
+//Server
+desc=A horror from the ocean depths...
+param=slayer_category,^slayer_dagannoth

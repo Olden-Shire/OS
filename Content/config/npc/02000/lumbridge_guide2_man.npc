@@ -25,3 +25,5 @@ model8 = obj_dramen_staff_wear
 model9 = model_7365
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
+//Server
+desc=A local farmer. He may be able to provide some useful information.

@@ -23,3 +23,5 @@ model6 = obj_cooking_gauntlets_man
 model7 = obj_citizen_trousers_9642_man
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_long_head
+//Server
+desc=One of RuneScape's many citizens.

@@ -22,3 +22,7 @@ model6 = model_2993
 model7 = model_2988
 head1 = model_10236
 head2 = model_8
+//Server
+desc=A dwarf who looks after the mining guild.
+wanderrange=2
+param=death_anim,dwarf_death

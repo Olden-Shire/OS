@@ -3,3 +3,7 @@ readyanim = seq_2268
 vislevel = 0
 name = Sheepdog
 model1 = model_7755
+//Server
+desc=Farmer-sheep liaison officer. Go on - give the dog a bone!
+wanderrange=0
+moverestrict=nomove

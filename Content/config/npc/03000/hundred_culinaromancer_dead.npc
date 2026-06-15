@@ -32,3 +32,5 @@ head1 = obj_chefs_hat_manhead
 head2 = obj_pickpocket_guide_man
 head3 = model_77
 head4 = model_6129
+//Server
+desc=A demented evil wizard who specialises in food spells.

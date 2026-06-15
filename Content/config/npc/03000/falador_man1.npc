@@ -21,3 +21,14 @@ model5 = model_10218
 model6 = obj_macro_mime_legs_manwear
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = obj_pickpocket_guide_man
+//Server
+desc=One of RuneScape's many citizens, currently incapacitated by alcohol.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

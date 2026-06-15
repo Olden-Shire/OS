@@ -9,3 +9,11 @@ model1 = model_2909
 model2 = model_2890
 model3 = model_2917
 head1 = obj_gnome
+//Server
+desc=He looks lost.
+hitpoints=3
+attack=3
+strength=3
+defence=3
+param=death_anim,midget_death
+param=death_sound,gnome_death

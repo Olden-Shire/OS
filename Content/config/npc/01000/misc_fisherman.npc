@@ -32,3 +32,5 @@ model9 = idk_man_torso_shirt
 model10 = obj_fremennik_cloak_3759_man
 head1 = obj_pickpocket_guide_man
 head2 = model_80
+//Server
+desc=There's something fishy about him.

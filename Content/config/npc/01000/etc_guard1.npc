@@ -36,3 +36,5 @@ model12 = model_4391
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
 head3 = obj_fremennik
+//Server
+desc=A warrior of Etceteria.

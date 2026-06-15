@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 97
 name = Rocnar
 model1 = obj_rocnar
+//Server
+desc=It's full of pent-up aggression.

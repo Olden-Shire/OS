@@ -27,3 +27,5 @@ model7 = obj_priest_gown_428_woman
 model8 = obj_ikov_bootsoflightness_womanwear
 head1 = model_102
 head2 = obj_warrior_woman
+//Server
+desc=Perhaps this gardener might look after your crops for you.

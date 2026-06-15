@@ -21,3 +21,5 @@ name = Mountain goat
 model1 = model_20273
 model2 = model_20280
 model3 = model_20279
+//Server
+desc=This beast doesn't need climbing boots.

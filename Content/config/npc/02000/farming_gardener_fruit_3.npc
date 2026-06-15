@@ -28,3 +28,5 @@ model9 = model_5218
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_moustache_head
 head3 = model_36
+//Server
+desc=Perhaps this gardener might look after your crops for you.

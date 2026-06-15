@@ -26,3 +26,13 @@ model3 = model_11775
 model4 = model_353
 model5 = model_435
 head1 = obj_warrior_woman
+//Server
+desc=Interesting assortment of clothes on offer...
+category=shop_keeper
+param=owned_shop,clotheshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,550
+param=shop_delta,10
+param=shop_title,Thessalia Fine Clothes.
+moverestrict=indoors
+param=death_sound,female_death

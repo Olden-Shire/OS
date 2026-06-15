@@ -5,3 +5,5 @@ op2 = Attack
 vislevel = 73
 name = Shadow
 model1 = model_9739
+//Server
+desc=A shadow.

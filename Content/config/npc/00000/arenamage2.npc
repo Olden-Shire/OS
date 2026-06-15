@@ -30,3 +30,7 @@ model9 = obj_amulet_of_accuracy_1478_man
 head1 = model_48
 head2 = idk_man_jaw_long_head
 head3 = model_68
+//Server
+desc=He runs the mage arena.
+wanderrange=0
+moverestrict=nomove

@@ -18,3 +18,5 @@ recol6s = 0
 recol6d = 7715
 name = Furnace grate
 model1 = model_10996
+//Server
+desc=It seems to be blocked.

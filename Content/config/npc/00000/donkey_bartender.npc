@@ -25,3 +25,6 @@ model8 = obj_vyrewatch_shoes_9638_man
 model9 = model_25869
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=I could get a beer from him.
+wanderrange=2

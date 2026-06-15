@@ -8,3 +8,5 @@ op2 = Attack
 vislevel = 23
 name = Crab
 model1 = model_13799
+//Server
+desc=Nice claw!

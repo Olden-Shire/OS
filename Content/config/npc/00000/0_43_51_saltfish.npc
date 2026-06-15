@@ -10,3 +10,9 @@ op4 = hidden
 op5 = hidden
 name = Fishing spot
 model1 = compofishspot_8
+//Server
+desc=I can see fish swimming in the water.
+moverestrict=nomove
+category=saltfish
+param=whirlpool,macro_whirlpool_saltfish
+param=fishing_movement_enum,fishing_movement_fishing_platform_enum

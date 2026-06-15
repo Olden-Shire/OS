@@ -22,3 +22,11 @@ model5 = obj_priest_gown_manwear2
 model6 = obj_cert_drill_top_manwear3
 model7 = npc_druid
 model8 = model_328
+//Server
+desc=A crazy evil necromancer.
+respawnrate=500
+hitpoints=40
+attack=18
+strength=18
+defence=18
+param=damagetype,^crush_style

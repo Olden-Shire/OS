@@ -34,3 +34,6 @@ model9 = model_15106
 model10 = idk_man_torso_shirt
 head1 = idk_man_hair_cropped_head
 head2 = idk_man_jaw_long_head
+//Server
+desc=I could get a beer from him.
+wanderrange=2

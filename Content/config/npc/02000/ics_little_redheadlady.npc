@@ -27,3 +27,5 @@ model8 = obj_priest_gown_428_woman
 model9 = obj_ikov_bootsoflightness_womanwear
 head1 = obj_warrior_woman
 head2 = model_6461
+//Server
+desc=A red haired woman.

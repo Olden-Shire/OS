@@ -22,3 +22,5 @@ model5 = obj_mime_legs_woman
 model6 = obj_ikov_bootsoflightness_womanwear
 model7 = obj_dramen_staff_wear
 head1 = obj_warrior_woman
+//Server
+desc=A local farmer. She may be able to provide some useful information.

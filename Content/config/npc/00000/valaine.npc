@@ -25,3 +25,13 @@ model4 = model_353
 model5 = obj_desert_robes_6386_woman
 model6 = model_358
 head1 = obj_warrior_woman
+//Server
+desc=A champion of a sales woman!
+category=shop_keeper
+param=owned_shop,championshop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Valaine's Shop of Champions.
+moverestrict=indoors
+param=death_sound,female_death

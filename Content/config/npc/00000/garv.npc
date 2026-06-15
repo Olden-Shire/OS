@@ -22,3 +22,11 @@ model6 = obj_cooking_gauntlets_man
 model7 = idk_man_jaw_none
 model8 = obj_iron_battleaxe_1363_wear
 head1 = obj_watchman
+//Server
+desc=A diligent guard.
+wanderrange=1
+hitpoints=104
+attack=95
+defence=91
+strength=94
+param=damagetype,^crush_style

@@ -16,3 +16,7 @@ recol4d = 11191
 name = Lunderwin
 model1 = model_2857
 head1 = model_14
+//Server
+desc=Smells strangely of cabbage.
+wanderrange=2
+param=death_anim,fairy_death

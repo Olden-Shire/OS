@@ -12,3 +12,7 @@ name = Gertrude's cat
 model1 = model_3010
 model2 = obj_witchs_cat
 head1 = model_6435
+//Server
+desc=A friendly feline?
+param=attack_anim,cat_attack
+param=death_anim,cat_death

@@ -5,3 +5,5 @@ vislevel = 1
 name = Pizzaz Hat
 model1 = model_10633
 head1 = model_10626
+//Server
+desc=A talking Hat!

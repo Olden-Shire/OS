@@ -27,3 +27,7 @@ model6 = model_274
 model7 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = model_85
+//Server
+desc=This is Seravel - he sells tickets for the 'Lady of the Waves'.
+wanderrange=0
+moverestrict=nomove

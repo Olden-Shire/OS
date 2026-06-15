@@ -11,3 +11,7 @@ model1 = model_2897
 model2 = model_2910
 model3 = model_2918
 head1 = model_139
+//Server
+desc=Looks young.
+wanderrange=1
+param=death_anim,midget_death

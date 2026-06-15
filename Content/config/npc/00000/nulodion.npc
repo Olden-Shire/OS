@@ -22,3 +22,11 @@ model3 = model_2978
 model4 = model_7044
 model5 = model_2985
 head1 = model_6989
+//Server
+desc=The Dwarven armoury engineer.
+param=death_anim,dwarf_death
+param=owned_shop,mcannonshop
+param=shop_sell_multiplier,1070
+param=shop_buy_multiplier,400
+param=shop_delta,10
+param=shop_title,Multi cannon parts for sale:

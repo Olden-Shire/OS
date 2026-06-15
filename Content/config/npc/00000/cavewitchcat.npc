@@ -13,3 +13,7 @@ name = Witch's cat
 model1 = model_3010
 model2 = obj_witchs_cat
 head1 = model_6435
+//Server
+desc=Curiosity is yet to kill this one...
+respawnrate=100
+param=death_anim,cat_death

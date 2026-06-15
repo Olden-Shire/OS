@@ -8,3 +8,5 @@ turnspeed = 0
 name = Boneguard
 model1 = model_10972
 head1 = model_11016
+//Server
+desc=A spirit is trapped within it.

@@ -5,3 +5,6 @@ walkanim = seq_10
 readyanim = seq_10
 name = Shark
 model1 = model_2848
+//Server
+desc=Let's not go skinny dipping eh?
+moverestrict=nomove

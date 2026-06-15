@@ -22,3 +22,12 @@ model5 = obj_priest_gown_manwear2
 model6 = obj_cert_drill_top_manwear3
 model7 = npc_druid
 head1 = obj_leather_cowl_manhead2
+//Server
+desc=Kind of funny looking.
+category=shop_keeper
+param=owned_shop,herbloreshop2
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,20
+param=shop_title,Frincos Fabulous Herb Store.
+moverestrict=indoors

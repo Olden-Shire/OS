@@ -8,3 +8,5 @@ op2 = Attack
 vislevel = 80
 name = Giant skeleton
 model1 = model_21165
+//Server
+desc=A giant skeleton.

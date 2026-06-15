@@ -21,3 +21,6 @@ model4 = model_353
 model5 = obj_priest_gown_428_woman
 model6 = model_358
 head1 = model_103
+//Server
+desc=She looks wealthy.
+param=death_sound,female_death

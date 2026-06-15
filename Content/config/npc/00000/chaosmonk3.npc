@@ -20,3 +20,16 @@ model3 = obj_priest_gown_manwear
 model4 = obj_priest_gown_manwear2
 model5 = obj_cert_drill_top_manwear3
 model6 = model_256
+//Server
+desc=An evil human cleric.
+wanderrange=12
+maxrange=14
+respawnrate=500
+hitpoints=40
+attack=38
+strength=38
+defence=42
+param=damagetype,^crush_style
+category=monk_of_zamorak
+huntmode=cowardly
+huntrange=1

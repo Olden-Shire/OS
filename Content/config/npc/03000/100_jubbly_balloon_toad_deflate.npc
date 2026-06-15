@@ -4,3 +4,5 @@ readyanim = seq_3472
 walkanim = seq_3472
 name = Balloon Toad
 model1 = model_13724
+//Server
+desc=A quickly deflating balloon toad.

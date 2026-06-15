@@ -27,3 +27,6 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = model_194
 head1 = obj_farmer
 head2 = model_37
+//Server
+desc=A young sailor.
+category=sailor

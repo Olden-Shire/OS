@@ -5,3 +5,5 @@ op1 = Climb-over
 turnspeed = 0
 name = Pile of bones
 model1 = model_10874
+//Server
+desc=These used to be alive.

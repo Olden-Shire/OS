@@ -28,3 +28,16 @@ model9 = model_191
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_goatee_head
 head3 = model_34
+//Server
+desc=Guards the border.
+wanderrange=0
+moverestrict=nomove
+hitpoints=22
+attack=18
+strength=18
+defence=17
+param=strengthbonus,5
+param=stabdefence,5
+param=slashdefence,7
+param=crushdefence,7
+param=damagetype,^crush_style

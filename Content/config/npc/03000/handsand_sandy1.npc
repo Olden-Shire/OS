@@ -29,3 +29,5 @@ model9 = obj_ikov_bootsoflightness_manwear
 head1 = obj_pickpocket_guide_man
 head2 = model_37
 head3 = idk_man_jaw_moustache_head
+//Server
+desc=He seems to be distracted, looking out of the window at something.

@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 50
 name = Possessed pickaxe
 model1 = model_4922
+//Server
+desc=How does it move of its own accord?

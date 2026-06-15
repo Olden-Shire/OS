@@ -10,3 +10,6 @@ recol2s = 2512
 recol2d = 13501
 name = Crypt rat
 model1 = model_2927
+//Server
+desc=A nasty little rodent.
+param=slayer_category,^slayer_rat

@@ -31,3 +31,15 @@ model8 = model_18127
 head1 = model_45
 head2 = model_11188
 head3 = model_18185
+//Server
+desc=A man down on his luck.
+wanderrange=20
+maxrange=22
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style

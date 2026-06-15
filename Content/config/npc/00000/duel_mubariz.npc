@@ -31,3 +31,6 @@ model10 = obj_ikov_bootsoflightness_manwear
 head1 = obj_leather_cowl_manhead2
 head2 = model_84
 head3 = model_43
+//Server
+desc=Tough looking combat type.
+wanderrange=2

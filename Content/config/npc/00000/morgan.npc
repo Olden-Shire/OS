@@ -27,3 +27,6 @@ model6 = obj_macro_mime_legs_manwear
 model7 = obj_vyrewatch_shoes_9638_man
 model8 = obj_fremennik_cloak_3759_man
 head1 = obj_pickpocket_guide_man
+//Server
+desc=He looks scared.
+moverestrict=indoors

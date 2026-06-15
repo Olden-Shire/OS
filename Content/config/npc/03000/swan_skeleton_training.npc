@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 83
 name = Skeleton Mage
 model1 = model_21196
+//Server
+desc=Doesn't seem to want to go away.

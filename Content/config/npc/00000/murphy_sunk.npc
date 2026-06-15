@@ -33,3 +33,6 @@ model10 = idk_man_jaw_goatee
 head1 = obj_farmer
 head2 = idk_man_jaw_goatee_head
 head3 = model_37
+//Server
+desc=Salty old sea dog.
+wanderrange=1

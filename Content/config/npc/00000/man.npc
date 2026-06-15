@@ -27,3 +27,14 @@ model6 = obj_leather_vambraces_1063_man
 model7 = model_12138
 model8 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
+//Server
+desc=One of RuneScape's many citizens.
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen

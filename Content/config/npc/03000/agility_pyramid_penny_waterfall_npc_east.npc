@@ -6,3 +6,5 @@ nominimap = true
 turnspeed = 0
 name = Pyramid block
 model1 = model_10817
+//Server
+desc=A pyramid block.

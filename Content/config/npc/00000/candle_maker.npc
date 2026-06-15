@@ -31,3 +31,13 @@ model6 = obj_ikov_bootsoflightness_manwear
 model7 = idk_man_jaw_goatee
 head1 = obj_farmer
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=Has an odd smell about him.
+category=shop_keeper
+param=owned_shop,candleshop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Candle Shop
+wanderrange=2
+moverestrict=indoors

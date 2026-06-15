@@ -12,3 +12,5 @@ recol4s = 8363
 recol4d = 8483
 name = Trolley
 model1 = obj_trolley
+//Server
+desc=An empty trolley.

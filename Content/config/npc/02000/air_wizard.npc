@@ -30,3 +30,16 @@ model9 = model_567
 model10 = obj_cape_1007_man
 head1 = model_9443
 head2 = model_84
+//Server
+desc=At least he looks solid enough to fight.
+respawnrate=50
+hitpoints=25
+attack=5
+strength=5
+defence=10
+magic=10
+param=magicdefence,15
+param=attack_anim,human_staff_pummel
+param=defend_anim,human_staff_block
+param=attack_sound,staff_hit
+param=death_drop,ashes

@@ -25,3 +25,5 @@ model6 = npc_captain_barnaby
 model7 = obj_ikov_bootsoflightness_manwear
 head1 = idk_man_hair_cropped_head
 head2 = model_84
+//Server
+desc=A cynical old man.

@@ -24,3 +24,11 @@ model8 = obj_cape_1007_man
 model9 = obj_red_headband_2645_man
 head1 = model_64
 head2 = model_43
+//Server
+desc=Supplier of authentic throwing weapons.
+category=shop_keeper
+param=owned_shop,ranging_guild_tribalshop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,500
+param=shop_delta,10
+param=shop_title,Authentic Throwing Weapons.

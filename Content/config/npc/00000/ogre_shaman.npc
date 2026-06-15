@@ -9,3 +9,17 @@ name = Ogre shaman
 model1 = model_20369
 model2 = model_20381
 head1 = model_20413
+//Server
+desc=Seems intelligent... for an ogre.
+respawnrate=102
+hitpoints=99
+attack=99
+strength=99
+defence=99
+param=damagetype,^crush_style
+param=attack_anim,ogre_attack
+param=defend_anim,ogre_block
+param=death_anim,ogre_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death

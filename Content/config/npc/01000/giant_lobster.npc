@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 32
 name = Giant lobster
 model1 = model_24608
+//Server
+desc=An extremely vicious lobster.

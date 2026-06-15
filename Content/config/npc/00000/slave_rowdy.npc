@@ -27,3 +27,17 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_bronze_pickaxe_1265_wear
 head1 = obj_farmer
 head2 = idk_man_jaw_long_head
+//Server
+desc=He looks a bit aggressive.
+wanderrange=3
+maxrange=40
+respawnrate=100
+hitpoints=16
+attack=7
+strength=7
+defence=7
+param=damagetype,^crush_style
+param=defend_anim,human_unarmedblock
+param=attack_sound,baxe_crush
+huntmode=cowardly
+huntrange=1

@@ -5,3 +5,5 @@ vislevel = 0
 turnspeed = 0
 name = Hole in the wall
 model1 = obj_swamp_wallbeast
+//Server
+desc=What could be hiding in that crack in the wall?

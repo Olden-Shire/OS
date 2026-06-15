@@ -5,3 +5,7 @@ walkanim = seq_6560
 vislevel = 0
 name = Dog
 model1 = model_26253
+//Server
+desc=Bow wow.
+param=death_anim,dog_death
+param=death_sound,wolf_death

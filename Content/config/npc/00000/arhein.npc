@@ -30,3 +30,13 @@ model5 = obj_macro_mime_legs_manwear
 model6 = obj_ikov_bootsoflightness_manwear
 model7 = idk_man_jaw_none
 head1 = obj_pickpocket_guide_man
+//Server
+desc=He looks fairly well-to-do.
+category=shop_keeper
+param=owned_shop,arheinstore
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Arhein Store
+wanderrange=0
+moverestrict=nomove

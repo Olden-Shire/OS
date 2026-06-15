@@ -11,3 +11,6 @@ op2 = Attack
 name = Dagannoth Supreme
 model1 = model_9941
 model2 = model_9943
+//Server
+desc=The dagannoth king responsible for the death of the Bukalla.
+param=slayer_category,^slayer_dagannoth

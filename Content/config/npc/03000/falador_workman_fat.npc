@@ -24,3 +24,5 @@ model7 = npc_captain_barnaby
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = model_5787
 head2 = model_80
+//Server
+desc=A busy workman

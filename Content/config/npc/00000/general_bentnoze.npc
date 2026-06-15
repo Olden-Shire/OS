@@ -17,3 +17,8 @@ model2 = model_2953
 model3 = model_2955
 model4 = model_2956
 head1 = model_145
+//Server
+desc=An ugly green creature.
+wanderrange=3
+param=death_anim,goblin_death
+param=death_sound,goblin_death

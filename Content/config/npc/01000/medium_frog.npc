@@ -7,3 +7,5 @@ op2 = Attack
 vislevel = 24
 name = Big frog
 model1 = model_6947
+//Server
+desc=It didn't get that big eating flies.

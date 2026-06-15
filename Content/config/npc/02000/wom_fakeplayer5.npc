@@ -21,3 +21,5 @@ model6 = model_353
 model7 = obj_iron_dagger_1203_wear
 model8 = obj_skirt_5048_woman
 model9 = obj_rogue_boots_woman
+//Server
+desc=A player.

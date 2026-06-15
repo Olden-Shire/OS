@@ -30,3 +30,5 @@ model8 = obj_priest_gown_428_man
 model9 = obj_ikov_bootsoflightness_manwear
 head1 = obj_farmer
 head2 = model_80
+//Server
+desc=Perhaps this gardener might look after your crops for you.

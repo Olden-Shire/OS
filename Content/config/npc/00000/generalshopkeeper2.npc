@@ -33,3 +33,12 @@ model8 = model_12138
 model9 = obj_vyrewatch_shoes_9638_man
 head1 = obj_pickpocket_guide_man
 head2 = model_78
+//Server
+desc=Likes people spending money.
+category=shop_keeper
+param=owned_shop,generalshop2
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Varrock General Store
+moverestrict=indoors

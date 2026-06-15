@@ -30,3 +30,13 @@ model5 = obj_priest_gown_428_woman
 model6 = model_358
 head1 = model_103
 head2 = model_137
+//Server
+desc=A recipe for success...in cooking.
+moverestrict=indoors
+category=shop_keeper
+param=owned_shop,cookeryshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,550
+param=shop_delta,10
+param=shop_title,Frenita's Cookery Shop.
+param=death_sound,female_death

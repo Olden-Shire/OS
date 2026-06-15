@@ -19,3 +19,5 @@ recol6d = 8765
 name = Sick-looking sheep (4)
 model1 = model_20290
 model2 = model_20291
+//Server
+desc=This sheep is dyed yellow.

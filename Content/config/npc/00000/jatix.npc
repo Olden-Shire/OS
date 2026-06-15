@@ -28,3 +28,12 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = obj_holy_water_wear
 head1 = model_47
 head2 = idk_man_jaw_long_head
+//Server
+desc=He runs the Herblore Shop.
+category=shop_keeper
+param=owned_shop,herbloreshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,30
+param=shop_title,Jatix's Herblore Shop.
+moverestrict=indoors

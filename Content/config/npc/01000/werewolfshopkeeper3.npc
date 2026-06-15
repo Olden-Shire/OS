@@ -15,3 +15,13 @@ model3 = model_26114
 model4 = model_26125
 model5 = model_26119
 head1 = model_26268
+//Server
+desc=A lycanthrope shopkeeper.
+category=shop_keeper
+param=owned_shop,werewolfgeneralstore
+param=shop_sell_multiplier,2000
+param=shop_buy_multiplier,100
+param=shop_delta,30
+param=shop_title,General Store
+moverestrict=indoors
+wanderrange=5

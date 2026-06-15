@@ -15,3 +15,5 @@ model1 = model_2907
 model2 = model_2914
 model3 = model_2917
 head1 = obj_gnome
+//Server
+desc=The companion of the gnome emissary.

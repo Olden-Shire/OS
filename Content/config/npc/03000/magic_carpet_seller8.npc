@@ -30,3 +30,5 @@ model8 = obj_bronze_boots_4119_man
 head1 = model_7741
 head2 = obj_pickpocket_guide_man
 head3 = model_80
+//Server
+desc=A carpet merchant.

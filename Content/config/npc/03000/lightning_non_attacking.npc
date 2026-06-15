@@ -5,3 +5,5 @@ walkanim = seq_3167
 nominimap = true
 name = Storm Cloud
 model1 = model_11266
+//Server
+desc=A very small storm!

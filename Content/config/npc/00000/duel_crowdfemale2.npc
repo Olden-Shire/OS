@@ -27,3 +27,7 @@ model6 = idk_woman_legs_flares
 model7 = model_358
 head1 = model_114
 head2 = model_88
+//Server
+desc=A citizen of Al Kharid.
+wanderrange=10
+hitpoints=7

@@ -30,3 +30,7 @@ model9 = model_12799
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_goatee_head
 head3 = model_43
+//Server
+desc=Leader of the White Knights.
+wanderrange=0
+moverestrict=nomove

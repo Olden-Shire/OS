@@ -33,3 +33,5 @@ model9 = obj_ikov_bootsoflightness_manwear
 model10 = obj_priest_gown_428_man
 head1 = obj_leather_cowl_manhead2
 head2 = model_80
+//Server
+desc=His robes prominently display the star of Saradomin.

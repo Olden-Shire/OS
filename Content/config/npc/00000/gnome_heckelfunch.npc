@@ -17,3 +17,13 @@ model1 = model_2901
 model2 = model_2909
 model3 = model_2915
 head1 = model_17
+//Server
+desc=It's another jolly tree gnome.
+category=shop_keeper
+param=owned_shop,gnomeshop_heck
+param=shop_title,Funch's Fine Groceries
+param=shop_buy_multiplier,550
+param=shop_sell_multiplier,1000
+param=shop_delta,10
+param=death_anim,midget_death
+param=death_sound,gnome_death

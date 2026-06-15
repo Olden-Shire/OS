@@ -28,3 +28,7 @@ model7 = obj_amulet_of_ghostspeak_manwear
 model8 = obj_silver_sickle_2961_wear
 head1 = model_49
 head2 = idk_man_jaw_long_head
+//Server
+desc=A spirit of Nature.
+wanderrange=0
+moverestrict=nomove

@@ -27,3 +27,5 @@ model10 = obj_ikov_bootsoflightness_manwear
 head1 = model_5534
 head2 = obj_farmer
 head3 = model_80
+//Server
+desc=Perhaps this gardener might look after your crops for you.

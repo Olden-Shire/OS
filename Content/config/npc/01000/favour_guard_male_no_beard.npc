@@ -34,3 +34,5 @@ model10 = model_5433
 model11 = obj_fremennik_cloak_3759_man
 model12 = model_5437
 head1 = obj_male_h_a_m
+//Server
+desc=A guard for the humans against monster group.

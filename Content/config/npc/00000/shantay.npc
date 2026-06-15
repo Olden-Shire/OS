@@ -26,3 +26,11 @@ model7 = obj_macro_mime_legs_manwear
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_farmer
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=He's in control of the Shantay pass.
+wanderrange=3
+param=owned_shop,shantayshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,700
+param=shop_delta,10
+param=shop_title,Shantay Pass Shop

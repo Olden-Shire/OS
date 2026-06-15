@@ -21,3 +21,12 @@ model2 = obj_priest_gown_manwear2
 model3 = npc_druid
 model4 = obj_wizard_hat_579_man
 head1 = model_44
+//Server
+desc=Is he invisible or just a set of floating clothing?
+category=shop_keeper
+param=owned_shop,cheapringshop
+param=shop_sell_multiplier,500
+param=shop_buy_multiplier,300
+param=shop_delta,10
+param=shop_title,irksol
+wanderrange=3

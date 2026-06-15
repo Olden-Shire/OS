@@ -37,3 +37,12 @@ head1 = obj_leather_cowl_manhead2
 head2 = idk_man_jaw_moustache_head
 head3 = model_78
 head4 = model_7741
+//Server
+desc=For the interesting clothing items you just can't find elsewhere.
+category=shop_keeper
+param=owned_shop,fancyclothesstore
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,20
+param=shop_title,Fancy Clothes Store
+moverestrict=indoors

@@ -21,3 +21,5 @@ name = Pox
 model1 = obj_witchs_cat
 model2 = model_3010
 head1 = model_6435
+//Server
+desc=Not the healthiest cat you've ever seen.

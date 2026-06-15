@@ -6,3 +6,8 @@ readyanim = seq_6258
 op1 = Pick-up
 name = Kharid Scorpion
 model1 = model_24612
+//Server
+desc=Looks vicious!
+respawnrate=100
+param=death_anim,scorpion_death
+param=death_sound,insect_death

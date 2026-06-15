@@ -30,3 +30,8 @@ model7 = obj_ikov_bootsoflightness_manwear
 model8 = obj_fremennik_cloak_3759_man
 head1 = obj_pickpocket_guide_man
 head2 = idk_man_jaw_long_head
+//Server
+desc=Radimus is the Grand Vizier of the Legends Guild.
+wanderrange=3
+param=damagetype,^stab_style
+moverestrict=indoors

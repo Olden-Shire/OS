@@ -32,3 +32,5 @@ model10 = obj_red_headband_2645_woman
 head1 = obj_warrior_woman
 head2 = model_136
 head3 = model_101
+//Server
+desc=A fremennik girl.

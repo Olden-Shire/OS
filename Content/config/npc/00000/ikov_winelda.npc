@@ -31,3 +31,6 @@ model8 = obj_amulet_of_accuracy_1478_woman
 model9 = obj_dramen_staff_wear
 head1 = model_115
 head2 = model_102
+//Server
+desc=A witch.
+param=death_sound,female_death

@@ -9,3 +9,7 @@ ambient = 70
 contrast = 70
 name = Will o' the wisp
 model1 = model_3558
+//Server
+desc=Mysterious swamp lights...
+wanderrange=5
+moverestrict=blocked

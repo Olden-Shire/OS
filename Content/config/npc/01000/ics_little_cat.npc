@@ -10,3 +10,5 @@ alwaysontop = true
 name = Neite
 model1 = model_6439
 head1 = model_6437
+//Server
+desc=A graceful feline.

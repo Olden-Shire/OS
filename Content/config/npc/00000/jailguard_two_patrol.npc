@@ -27,3 +27,5 @@ model5 = obj_cooking_gauntlets_man
 model6 = model_257
 model7 = obj_iron_mace_1420_wear
 head1 = obj_pickpocket_guide_man
+//Server
+desc=I wonder who he's guarding?

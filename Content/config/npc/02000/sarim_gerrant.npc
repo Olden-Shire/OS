@@ -33,3 +33,5 @@ model9 = obj_ikov_bootsoflightness_manwear
 model10 = idk_man_jaw_none
 head1 = obj_farmer
 head2 = model_28
+//Server
+desc=An expert on fishing.

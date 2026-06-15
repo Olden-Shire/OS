@@ -19,3 +19,7 @@ model2 = model_4078
 model3 = model_4076
 model4 = obj_citizen_trousers_9642_man
 model5 = obj_vyrewatch_shoes_9638_man
+//Server
+desc=It's totally savage.
+param=undead,^true
+param=slayer_category,^slayer_ghost

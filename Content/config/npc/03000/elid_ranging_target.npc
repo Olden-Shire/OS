@@ -5,3 +5,5 @@ nominimap = true
 vislevel = 0
 name = Target
 model1 = model_10210
+//Server
+desc=Needs to be shot with a ranged weapon.

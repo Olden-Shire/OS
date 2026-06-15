@@ -6,3 +6,16 @@ op2 = Attack
 vislevel = 16
 name = Skeleton Mage
 model1 = model_21193
+//Server
+desc=An undead worker of dark magic.
+respawnrate=50
+hitpoints=17
+attack=14
+strength=14
+defence=14
+param=damagetype,^crush_style
+param=attack_sound,skeleton_attack
+param=defend_sound,skelly_hit
+param=death_sound,skeleton_death
+param=slayer_category,^slayer_skeleton
+param=undead,^true

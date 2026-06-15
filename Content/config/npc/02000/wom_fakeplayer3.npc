@@ -21,3 +21,5 @@ model5 = obj_slayers_staff_4170_wear
 model6 = obj_mirror_shield_4156_wear
 model7 = model_274
 model8 = obj_gardening_boots_5345_man
+//Server
+desc=A player.

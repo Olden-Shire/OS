@@ -10,3 +10,5 @@ name = Ancient monkey
 model1 = model_4809
 model2 = model_4813
 head1 = model_4663
+//Server
+desc=It's a monkey.

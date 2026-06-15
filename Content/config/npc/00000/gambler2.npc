@@ -9,3 +9,7 @@ op1 = Talk-to
 name = Chancy
 model1 = model_25362
 head1 = obj_farmer
+//Server
+desc=He's ready for a bet.
+wanderrange=3
+moverestrict=indoors

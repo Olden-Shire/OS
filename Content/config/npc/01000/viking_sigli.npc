@@ -31,3 +31,5 @@ model8 = obj_longbow_839_wear
 model9 = obj_fremennik_cloak_3759_man
 head1 = model_58
 head2 = model_84
+//Server
+desc=A Fremennik hunter.

@@ -29,3 +29,5 @@ model5 = obj_cooking_gauntlets_man
 model6 = model_5218
 model7 = model_10723
 head1 = obj_pickpocket_guide_man
+//Server
+desc=This person is working on the site.

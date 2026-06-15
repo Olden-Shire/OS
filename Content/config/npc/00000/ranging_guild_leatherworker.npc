@@ -28,3 +28,6 @@ model7 = obj_fremennik_cloak_3759_woman
 model8 = obj_unblessed_symbol_1716_woman
 head1 = model_120
 head2 = model_90
+//Server
+desc=An expert leatherworker.
+wanderrange=2

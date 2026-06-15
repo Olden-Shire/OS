@@ -8,3 +8,6 @@ op2 = Attack
 vislevel = 1
 name = Chicken
 model1 = model_23905
+//Server
+desc=Yep, definitely a chicken.
+param=slayer_category,^slayer_bird

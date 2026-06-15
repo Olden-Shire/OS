@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 51
 name = Zombies Champion
 model1 = model_20949
+//Server
+desc=Champion of the Zombies!

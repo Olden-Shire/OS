@@ -28,3 +28,7 @@ model7 = model_326
 model8 = model_4234
 head1 = model_46
 head2 = model_84
+//Server
+desc=Looks like he's had a few drinks already.
+wanderrange=0
+moverestrict=nomove

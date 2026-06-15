@@ -14,3 +14,8 @@ recol3d = 6055
 name = Fairy
 model1 = model_2857
 head1 = model_11
+//Server
+desc=Looks strange and mysterious.
+wanderrange=0
+moverestrict=nomove
+param=death_anim,fairy_death

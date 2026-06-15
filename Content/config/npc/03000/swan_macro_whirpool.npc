@@ -11,3 +11,5 @@ op5 = hidden
 alwaysontop = true
 name = Fishing spot
 model1 = model_2320
+//Server
+desc=I can see fish swimming in the water.

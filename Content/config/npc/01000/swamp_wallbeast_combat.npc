@@ -5,3 +5,5 @@ turnspeed = 0
 vislevel = 49
 name = Wall beast
 model1 = obj_swamp_wallbeast
+//Server
+desc=A big scary hand!

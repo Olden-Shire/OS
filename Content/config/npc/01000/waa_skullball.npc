@@ -11,3 +11,5 @@ vislevel = 0
 ambient = 20
 name = Skullball
 model1 = model_5145
+//Server
+desc=A human skull used as a ball.

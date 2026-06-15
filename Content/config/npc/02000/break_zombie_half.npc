@@ -6,3 +6,5 @@ vislevel = 0
 name = Half-Zombie
 model1 = model_9913
 head1 = model_9919
+//Server
+desc=Half the man he used to be.

@@ -30,3 +30,12 @@ model7 = model_276
 model8 = obj_ikov_bootsoflightness_manwear
 model9 = model_326
 head1 = idk_man_hair_cropped_head
+//Server
+desc=An expert on axes.
+category=shop_keeper
+param=owned_shop,axeshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,20
+param=shop_title,Bob's Brilliant Axes.
+moverestrict=indoors

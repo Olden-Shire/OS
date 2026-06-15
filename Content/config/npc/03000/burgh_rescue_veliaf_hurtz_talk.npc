@@ -33,3 +33,5 @@ model9 = npc_master_fisher
 model10 = obj_silver_sickle_2961_wear
 head1 = model_49
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=Looks like the leader of the Myreque.

@@ -25,3 +25,5 @@ model10 = obj_gardening_boots_5345_man
 head1 = model_52
 head2 = model_84
 head3 = obj_fremennik
+//Server
+desc=Perhaps this gardener might look after your crops for you.

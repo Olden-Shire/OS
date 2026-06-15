@@ -16,3 +16,17 @@ recol3s = 6470
 recol3d = 2452
 name = Oomlie bird
 model1 = model_23905
+//Server
+desc=A jungle version of the chicken, but more vicious.
+respawnrate=50
+hitpoints=40
+attack=40
+strength=40
+defence=40
+param=damagetype,^stab_style
+param=attack_anim,chicken_attack
+param=defend_anim,chicken_block
+param=death_anim,chicken_death
+param=attack_sound,chicken_attack
+param=defend_sound,chicken_hit
+param=death_sound,chicken_death

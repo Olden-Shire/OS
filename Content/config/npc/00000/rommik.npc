@@ -28,3 +28,12 @@ model7 = obj_vyrewatch_shoes_9638_man
 model8 = obj_grinder
 head1 = obj_farmer
 head2 = model_85
+//Server
+desc=If crafting's your thing, he's your man!
+category=shop_keeper
+param=owned_shop,craftingshop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,650
+param=shop_delta,20
+param=shop_title,Rommiks Crafty Supplies.
+moverestrict=indoors

@@ -17,3 +17,9 @@ name = Cat
 model1 = model_3010
 model2 = obj_witchs_cat
 head1 = model_6435
+//Server
+desc=A fully grown feline.
+param=death_anim,cat_death
+category=petcat
+param=pet_item_id,growncatobject_browngrey
+param=cat_next_id,overgrowncat_browngrey

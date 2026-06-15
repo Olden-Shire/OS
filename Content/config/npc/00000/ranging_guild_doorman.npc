@@ -21,3 +21,10 @@ model8 = obj_longbow_839_wear
 head1 = obj_leather_cowl_manhead2
 head2 = model_85
 head3 = model_32
+//Server
+desc=The keeper of the gates to the ranging guild.
+wanderrange=1
+hitpoints=50
+attack=20
+strength=20
+defence=40

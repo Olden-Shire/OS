@@ -7,3 +7,9 @@ op1 = Talk-to
 name = Spirit of Scorpius
 model1 = model_21155
 head1 = model_21405
+//Server
+desc=The essence of evil.
+wanderrange=2
+param=undead,^true
+param=death_anim,ghost_death
+param=death_sound,ghost_death

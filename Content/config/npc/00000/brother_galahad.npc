@@ -28,3 +28,6 @@ model7 = obj_stringstar_manwear2
 model8 = idk_man_jaw_goatee
 head1 = idk_man_hair_tonsure_head
 head2 = idk_man_jaw_goatee_head
+//Server
+desc=A former Knight of the Round Table.
+moverestrict=indoors

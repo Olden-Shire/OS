@@ -22,3 +22,5 @@ model5 = npc_captain_barnaby
 model6 = obj_ikov_bootsoflightness_manwear
 model7 = idk_man_jaw_none
 head1 = model_52
+//Server
+desc=A citizen of Ardougne.

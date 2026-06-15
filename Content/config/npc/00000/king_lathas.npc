@@ -32,3 +32,6 @@ model9 = obj_cape_1007_man
 head1 = obj_leather_cowl_manhead2
 head2 = model_83
 head3 = model_2938
+//Server
+desc=King Lathas of East Ardougne.
+wanderrange=2

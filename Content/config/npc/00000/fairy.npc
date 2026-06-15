@@ -7,3 +7,6 @@ op1 = Talk-to
 name = Fairy
 model1 = model_2857
 head1 = model_11
+//Server
+desc=A delicate creature from this strange realm.
+param=death_anim,fairy_death

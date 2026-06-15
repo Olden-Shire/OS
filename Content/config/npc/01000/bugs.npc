@@ -14,3 +14,9 @@ name = Bugs
 model1 = model_2878
 model2 = model_3441
 head1 = model_3444
+//Server
+desc=This must be Rantz's son.
+wanderrange=3
+param=damagetype,^crush_style
+param=death_anim,ogre_death
+param=death_sound,giant_death

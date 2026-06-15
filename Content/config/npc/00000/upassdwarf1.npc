@@ -20,3 +20,6 @@ model4 = model_2979
 model5 = model_2985
 model6 = model_2990
 head1 = model_0
+//Server
+desc=A strong and hardy dwarf.
+param=death_anim,dwarf_death

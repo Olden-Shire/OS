@@ -9,3 +9,9 @@ model1 = model_2913
 model2 = model_2904
 model3 = model_2923
 head1 = obj_gnome
+//Server
+desc=Cheerleading is a real sport!
+wanderrange=0
+moverestrict=nomove
+param=death_anim,midget_death
+param=death_sound,gnome_death

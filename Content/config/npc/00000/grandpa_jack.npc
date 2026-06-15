@@ -33,3 +33,6 @@ model9 = model_194
 head1 = model_45
 head2 = idk_man_jaw_long_head
 head3 = model_37
+//Server
+desc=He looks elderly.
+moverestrict=indoors

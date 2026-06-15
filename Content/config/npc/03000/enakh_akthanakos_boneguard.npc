@@ -8,3 +8,5 @@ resizev = 100
 name = Boneguard
 model1 = model_10971
 head1 = model_11015
+//Server
+desc=A spirit is trapped within it.

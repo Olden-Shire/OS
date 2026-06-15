@@ -8,3 +8,5 @@ vislevel = 0
 name = Spirit tree
 model1 = model_8110
 head1 = model_147
+//Server
+desc=A young sentient tree.

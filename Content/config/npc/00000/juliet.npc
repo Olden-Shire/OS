@@ -24,3 +24,6 @@ model3 = model_9359
 model4 = model_9360
 model5 = model_9113
 head1 = model_12135
+//Server
+desc=A tearful damsel, maybe I can help her?
+param=death_sound,female_death

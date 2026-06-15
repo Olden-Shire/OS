@@ -30,3 +30,6 @@ model6 = obj_mime_legs_woman
 model7 = obj_ikov_bootsoflightness_womanwear
 head1 = model_114
 head2 = model_131
+//Server
+desc=She's wearing a blue top and red trousers.
+param=death_sound,female_death

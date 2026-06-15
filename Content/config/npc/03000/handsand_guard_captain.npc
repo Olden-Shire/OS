@@ -31,3 +31,5 @@ model8 = npc_captain_barnaby
 model9 = obj_bronze_boots_4119_man
 head1 = obj_guard
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=This guard looks rather drunk and has beer stains down his armour.

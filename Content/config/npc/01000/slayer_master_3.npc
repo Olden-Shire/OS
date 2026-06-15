@@ -36,3 +36,11 @@ model11 = obj_red_headband_2645_man
 head1 = model_64
 head2 = model_84
 head3 = model_43
+//Server
+desc=He looks dangerous!
+category=slayer_master
+param=owned_shop,slayershop
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,600
+param=shop_delta,1
+param=shop_title,Slayer Equipment

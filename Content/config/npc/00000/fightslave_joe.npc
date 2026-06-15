@@ -27,3 +27,6 @@ model6 = obj_citizen_trousers_9642_man
 model7 = obj_vyrewatch_shoes_9638_man
 model8 = model_326
 head1 = model_46
+//Server
+desc=A fightslave. He looks mistreated and weak.
+wanderrange=1

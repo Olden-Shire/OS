@@ -30,3 +30,5 @@ model7 = obj_priest_gown_428_man
 model8 = obj_ikov_bootsoflightness_manwear
 head1 = obj_farmer
 head2 = model_30
+//Server
+desc=A very distinguished looking man.

@@ -33,3 +33,5 @@ model9 = obj_villager_sandals_6349_man
 head1 = obj_farmer
 head2 = obj_berret_blue_manhead
 head3 = idk_man_jaw_long_head
+//Server
+desc=A family baker, from the North.

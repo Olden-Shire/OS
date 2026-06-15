@@ -6,3 +6,5 @@ op2 = Attack
 vislevel = 35
 name = Bush snake
 model1 = model_3002
+//Server
+desc=A slithering serpent that likes to hide in the bush.

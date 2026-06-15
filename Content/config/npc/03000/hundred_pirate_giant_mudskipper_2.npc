@@ -9,3 +9,5 @@ vislevel = 31
 name = Mudskipper
 model1 = model_13832
 model2 = model_13833
+//Server
+desc=Not the most beautiful fish in the sea.

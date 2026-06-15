@@ -5,3 +5,5 @@ vislevel = 1
 name = Monkey
 model1 = model_3004
 head1 = model_4661
+//Server
+desc=It's a monkey.

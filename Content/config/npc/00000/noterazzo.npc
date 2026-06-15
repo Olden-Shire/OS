@@ -24,3 +24,13 @@ model7 = obj_macro_mime_legs_manwear
 model8 = model_326
 head1 = model_47
 head2 = idk_man_jaw_moustache_head
+//Server
+desc=The lawless shop keeper.
+wanderrange=3
+category=shop_keeper
+param=owned_shop,taxfree
+param=shop_sell_multiplier,900
+param=shop_buy_multiplier,600
+param=shop_delta,30
+param=shop_title,Bandit Duty Free
+moverestrict=indoors

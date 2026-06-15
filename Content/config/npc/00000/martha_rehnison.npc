@@ -21,3 +21,7 @@ model4 = model_351
 model5 = model_353
 model6 = model_438
 head1 = model_103
+//Server
+desc=A fairly poor looking woman.
+moverestrict=indoors
+param=death_sound,female_death
