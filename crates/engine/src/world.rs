@@ -235,6 +235,9 @@ pub struct NpcInfo {
     pub hunt_mode: i32,
     pub default_mode: i32,
     pub give_chase: bool,
+    /// How this npc type may traverse collision (Engine-TS `moverestrict`);
+    /// `nomove` keeps it rooted to its spawn tile.
+    pub move_restrict: crate::entity::MoveRestrict,
 }
 
 impl Default for NpcInfo {
@@ -252,8 +255,25 @@ impl Default for NpcInfo {
             hunt_mode: -1,
             default_mode: NPC_DEFAULTMODE,
             give_chase: NPC_GIVECHASE,
+            move_restrict: crate::entity::MoveRestrict::Normal,
         }
     }
+}
+
+/// Parse a `.npc` `moverestrict` value (Engine-TS `MoveRestrict`) — `None` for
+/// an unrecognised value, so it's ignored rather than silently mis-set.
+fn parse_move_restrict(v: &str) -> Option<crate::entity::MoveRestrict> {
+    use crate::entity::MoveRestrict as R;
+    Some(match v {
+        "normal" => R::Normal,
+        "blocked" => R::Blocked,
+        "blocked_normal" | "blockednormal" => R::BlockedNormal,
+        "indoors" => R::Indoors,
+        "outdoors" => R::Outdoors,
+        "nomove" => R::NoMove,
+        "passthru" | "passthrough" => R::PassThru,
+        _ => return None,
+    })
 }
 
 /// EnumType key→value table for the ENUM / ENUM_GETOUTPUTCOUNT ops. `is_string`
@@ -546,6 +566,12 @@ impl World {
                 "desc" => {
                     info.desc = v.to_string();
                     applied = true;
+                }
+                "moverestrict" => {
+                    if let Some(mr) = parse_move_restrict(v) {
+                        info.move_restrict = mr;
+                        applied = true;
+                    }
                 }
                 _ => {}
             }
@@ -1393,6 +1419,9 @@ impl World {
     fn npc_give_chase(&self, type_id: i32) -> bool {
         self.npc_info.get(&type_id).map_or(NPC_GIVECHASE, |i| i.give_chase)
     }
+    fn npc_move_restrict(&self, type_id: i32) -> crate::entity::MoveRestrict {
+        self.npc_info.get(&type_id).map_or(crate::entity::MoveRestrict::Normal, |i| i.move_restrict)
+    }
 
     /// Engine-TS `Npc.wanderMode` + `randomWalk`: each tick a 1/8 chance to head
     /// to a random tile within `wanderrange` of the spawn (`dst = start + round(
@@ -1405,6 +1434,11 @@ impl World {
         }) else {
             return;
         };
+        // A NoMove npc never wanders (Engine-TS wanderMode skips moverestrict ==
+        // NOMOVE); the movement step would refuse the step anyway.
+        if self.npc_move_restrict(type_id) == crate::entity::MoveRestrict::NoMove {
+            return;
+        }
         if self.next_rand_unit() < 0.125 {
             let range = self.npc_wander_range(type_id) as f64;
             let dx = (self.next_rand_unit() * (range * 2.0) - range).round() as i32;
@@ -2245,7 +2279,10 @@ impl World {
 
     pub fn add_npc(&mut self, type_id: i32, x: i32, z: i32, level: i32) -> Option<usize> {
         let nid = (0..MAX_NPCS).find(|&i| self.npcs[i].is_none())?;
-        let npc = Npc::new(nid, type_id, x, z, level);
+        let mut npc = Npc::new(nid, type_id, x, z, level);
+        // Overlay the type's server-authored moverestrict (e.g. `nomove`) — the
+        // movement step refuses to advance a NoMove entity.
+        npc.entity.move_restrict = self.npc_move_restrict(type_id);
         self.zones.enter_npc(npc.entity.zone_index, nid);
         self.npcs[nid] = Some(npc);
         // Engine-TS addNpc queues the [ai_spawn] trigger.
