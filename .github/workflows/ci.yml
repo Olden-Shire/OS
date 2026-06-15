@@ -94,9 +94,12 @@ jobs:
         shell: pwsh
         run: .\build.ps1
 
-      - name: Test (cargo)
+      # The heavy full-cache roundtrip tests live in the `cache` crate and run on
+      # the parallel `cache-tests` (ubuntu) job, so skip them here. compiled_login
+      # (engine) stays — it needs the data/pack build.ps1 just produced.
+      - name: Test (cargo, excl cache)
         shell: pwsh
-        run: cargo test --workspace --no-fail-fast
+        run: cargo test --workspace --exclude cache --no-fail-fast
 
       # --- Pages (push/dispatch only) ---
       # build.ps1 already produced crates/client/web/pkg; point the deployed
@@ -120,6 +123,26 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: crates/client/web
+
+  cache-tests:
+    name: cache roundtrips (ubuntu)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # The cache crate is pure Rust (no GUI/audio system deps) and its roundtrip
+      # tests only read cache/ (tracked) — so they run fast here on Linux, in
+      # parallel with the Windows build. No Content/ needed.
+      - name: Checkout (sparse, skip Content/)
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/Content/*
+          sparse-checkout-cone-mode: false
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Test (cargo, cache crate)
+        run: cargo test -p cache --no-fail-fast
 
   deploy:
     name: deploy to Pages
