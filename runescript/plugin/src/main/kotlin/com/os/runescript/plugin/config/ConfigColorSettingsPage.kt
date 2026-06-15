@@ -47,6 +47,7 @@ class ConfigColorSettingsPage : ColorSettingsPage {
             AttributesDescriptor("Number", ConfigColors.NUMBER),
             AttributesDescriptor("Value", ConfigColors.VALUE),
             AttributesDescriptor("Component reference (com_N)", ConfigColors.COMREF),
+            AttributesDescriptor("Pack reference (seq_/model_/renamed)", ConfigColors.PACKREF),
         )
     }
 }

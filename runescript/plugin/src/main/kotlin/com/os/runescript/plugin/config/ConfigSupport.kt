@@ -61,6 +61,12 @@ object ConfigColors {
             java.awt.Color(0xE8BF6A), null, null, null, java.awt.Font.PLAIN,
         ),
     )
+    // A pack-var reference: a config value that resolves to a known `*.pack`
+    // symbol (`readyanim=seq_447`, `models=model_1491`, and any renamed name).
+    // Painted "var purple" (same fallback as a RuneScript `%var`) by the
+    // project-aware ConfigPackRefAnnotator — the lexer can't tell renamed refs
+    // from plain strings, so this is a semantic, not lexical, colour.
+    val PACKREF = key("RSCFG_PACKREF", D.INSTANCE_FIELD)
     private fun key(name: String, fallback: TextAttributesKey) = createTextAttributesKey(name, fallback)
 }
 

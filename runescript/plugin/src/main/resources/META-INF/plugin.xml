@@ -78,6 +78,11 @@
         <completion.contributor
             language="RsConfig"
             implementationClass="com.os.runescript.plugin.config.ConfigCompletionContributor"/>
+        <!-- Paint config values that resolve to a *.pack symbol (seq_/model_ and
+             any renamed ref) in "var purple" — a project-aware semantic colour. -->
+        <annotator
+            language="RsConfig"
+            implementationClass="com.os.runescript.plugin.config.ConfigPackRefAnnotator"/>
 
         <!-- ClientScript assembly listings (.cs2asm) — the packer's faithful fallback
              format and the right-hand pane of the side-by-side cs2 editor. -->
