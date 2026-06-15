@@ -3,3 +3,5 @@ op1 = Look
 op2 = Search
 models_only = 1224
 name = Desk
+//Server
+desc=Rickety bamboo tables that are lashed together to make a desk.

@@ -9,3 +9,6 @@ xan2d = 501
 recol1s = 7062
 recol1d = 36133
 name = Bob
+//Server
+desc=Bobbity bob!
+weight=400g

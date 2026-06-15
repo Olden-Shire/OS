@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 1590
 name = Potted fern
+//Server
+desc=Better than weeding.

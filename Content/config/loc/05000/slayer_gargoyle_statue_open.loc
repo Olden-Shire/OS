@@ -9,3 +9,5 @@ resizey = 128
 recol = 61/21522 53/21522
 models_only = 4456 4457
 name = Statue
+//Server
+desc=A statue of a big monster.

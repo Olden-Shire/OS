@@ -4,3 +4,5 @@ op1 = Close
 recol = 6550/12818 5559/12818 5675/12698 6674/13194
 models = 5189/0
 name = Door
+//Server
+desc=Looks a bit tatty...

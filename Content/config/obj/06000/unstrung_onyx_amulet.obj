@@ -8,3 +8,6 @@ yan2d = 100
 xan2d = 304
 cost = 201000
 name = Onyx amulet
+//Server
+desc=It needs a string so I can wear it.
+weight=4g

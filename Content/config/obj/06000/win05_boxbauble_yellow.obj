@@ -6,3 +6,6 @@ zoom2d = 854
 yan2d = 1904
 xan2d = 138
 name = Box bauble
+//Server
+desc=A bauble shaped like a gift painted yellow.
+weight=200g

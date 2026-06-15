@@ -4,3 +4,6 @@ mirror = true
 op1 = Open
 models_only = 681
 name = Door
+//Server
+desc=A very big door.
+param=next_loc_stage,upass_templedoor_open_left

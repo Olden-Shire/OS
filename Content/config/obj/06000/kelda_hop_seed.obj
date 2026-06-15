@@ -16,3 +16,6 @@ iop5 = Destroy
 recol1s = 12587
 recol1d = 49205
 name = Kelda seed
+//Server
+desc=Kelda hop seeds can only be grown underground!
+weight=1g

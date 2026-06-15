@@ -8,3 +8,7 @@ yan2d = 1672
 xan2d = 288
 members = true
 name = Touch paper
+//Server
+desc=A special kind of paper.
+weight=10g
+tradeable=no

@@ -7,3 +7,6 @@ yan2d = 1644
 xan2d = 196
 members = true
 name = Chicken cage
+//Server
+desc=A large cage for transporting chickens.
+weight=1kg

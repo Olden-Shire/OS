@@ -8,3 +8,6 @@ members = true
 recol1s = 5669
 recol1d = 4544
 name = Granite (2kg)
+//Server
+desc=A small chunk of granite.
+weight=2kg

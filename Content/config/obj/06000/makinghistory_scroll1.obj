@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 10351
 recol1d = 6356
 name = Scroll
+//Server
+desc=A timeline of the outpost.
+weight=5g

@@ -17,3 +17,13 @@ recol1d = 20
 recol2s = 25238
 recol2d = 3974
 name = Khazard helmet
+//Server
+desc=A helmet, as worn by the minions of General Khazard.
+wearpos=hat
+wearpos2=head
+weight=6lb
+category=armour_helmet
+param=stabdefence,4
+param=slashdefence,5
+param=crushdefence,3
+tradeable=no

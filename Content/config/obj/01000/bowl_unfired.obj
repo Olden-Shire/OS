@@ -9,3 +9,7 @@ recol1d = 7062
 recol2s = 7081
 recol2d = 7062
 name = Unfired bowl
+//Server
+desc=I need to put this in a pottery oven.
+weight=24oz
+param=crafting_pottery_struct,unfired_bowl

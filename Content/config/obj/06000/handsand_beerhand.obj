@@ -10,3 +10,6 @@ iop5 = Destroy
 recol1s = 6618
 recol1d = 10432
 name = Beer soaked hand
+//Server
+desc=A severed hand dripping with beer.
+weight=500g

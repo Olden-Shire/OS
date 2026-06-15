@@ -9,3 +9,8 @@ zoom2d = 1710
 yan2d = 2004
 xan2d = 280
 name = Dharoks axe 0
+//Server
+desc=Dharok the Wretched's greataxe.
+weight=7lb
+wearpos=righthand
+wearpos2=lefthand

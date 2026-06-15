@@ -13,3 +13,6 @@ count3 = 5238, 4
 count4 = 5239, 5
 cost = 31
 name = Orange tree seed
+//Server
+desc=Plant in a plantpot of soil to grow a sapling.
+weight=1g

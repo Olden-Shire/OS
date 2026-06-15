@@ -8,3 +8,6 @@ members = true
 recol1s = 6930
 recol1d = 7054
 name = Yew sapling
+//Server
+desc=This sapling is ready to be replanted in a tree patch.
+weight=2lb

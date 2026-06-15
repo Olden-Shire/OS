@@ -15,3 +15,6 @@ cost = 166
 recol1s = 431
 recol1d = 90
 name = Blindweed seed
+//Server
+desc=A Blindweed seed - plant in a Blindweed patch.
+weight=1g

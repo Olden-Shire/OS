@@ -8,3 +8,6 @@ yan2d = 8
 xan2d = 112
 cost = 250
 name = Silver pot
+//Server
+desc=A silver pot made by Ruantun filled with blood, garlic and spices.
+weight=1lb

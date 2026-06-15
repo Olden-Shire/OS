@@ -5,3 +5,5 @@ op2 = Climb-up
 mapscene = 7
 models_only = 1183
 name = Ladder
+//Server
+desc=It's useless.

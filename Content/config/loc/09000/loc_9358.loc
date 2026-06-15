@@ -5,3 +5,5 @@ width = 3
 op1 = Enter
 models_only = 9288
 name = Cave entrance
+//Server
+desc=A cave deep into the volcano.

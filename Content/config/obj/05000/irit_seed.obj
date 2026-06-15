@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 64
 name = Irit seed
+//Server
+desc=An irit seed - plant in a herb patch.
+weight=1g

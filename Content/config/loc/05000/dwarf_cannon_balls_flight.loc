@@ -6,3 +6,5 @@ blockwalk = true
 nonblockrange = true
 models_only = 5869
 name = Cannonball
+//Server
+desc=Flying in mid-air!

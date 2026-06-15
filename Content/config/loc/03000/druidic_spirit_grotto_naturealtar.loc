@@ -6,3 +6,6 @@ mapscene = 8
 op1 = Pray-at
 models_only = 3571
 name = Altar of nature
+//Server
+desc=A grotto transformed into an altar of nature.
+category=prayer_altar

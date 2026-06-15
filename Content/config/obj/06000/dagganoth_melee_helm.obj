@@ -12,3 +12,8 @@ members = true
 zoom2d = 620
 xan2d = 60
 name = Rock-shell helm
+//Server
+desc=Protective headwear made from crabs. Better than that sounds.
+wearpos=hat
+wearpos2=head
+weight=6lb

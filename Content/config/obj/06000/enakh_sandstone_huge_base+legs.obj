@@ -8,3 +8,6 @@ xan2d = 132
 members = true
 iop5 = Destroy
 name = Sandstone (32kg)
+//Server
+desc=A huge thirty-two-kilo block of sandstone.
+weight=32kg

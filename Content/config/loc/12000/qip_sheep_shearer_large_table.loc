@@ -3,3 +3,5 @@ width = 2
 recol = 6451/5665 6443/5541 6439/5660 6563/5784
 models_only = 14827
 name = Table
+//Server
+desc=A table.

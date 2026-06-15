@@ -7,3 +7,6 @@ zoom2d = 1020
 yan2d = 956
 xan2d = 556
 name = Rock-shell shard
+//Server
+desc=A curved piece of rock-shell.
+weight=7lb

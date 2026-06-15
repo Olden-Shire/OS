@@ -18,3 +18,8 @@ womanhead = 4216
 womanhead2 = 4214
 members = true
 name = Archer helm
+//Server
+desc=This helmet is worn by archers.
+wearpos=hat
+wearpos2=head
+weight=6lb

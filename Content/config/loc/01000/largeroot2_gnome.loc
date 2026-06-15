@@ -6,3 +6,6 @@ active = 1
 nonblockrange = true
 models_only = 2153
 name = Root
+//Server
+desc=A large root.
+category=grandtree_root

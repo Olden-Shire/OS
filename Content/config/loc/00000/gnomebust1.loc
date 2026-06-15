@@ -1,3 +1,5 @@
 // loc 571
 models_only = 1318
 name = Gnome statue
+//Server
+desc=The head and shoulders of a famous gnome.

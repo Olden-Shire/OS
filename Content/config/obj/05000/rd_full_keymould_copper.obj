@@ -6,3 +6,6 @@ xan2d = 172
 cost = 20
 members = true
 name = Tin
+//Server
+desc=There is an impression of a key, filled with copper ore.
+weight=101g

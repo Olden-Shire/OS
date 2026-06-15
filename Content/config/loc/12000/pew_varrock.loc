@@ -4,3 +4,5 @@ ambient = 20
 contrast = 5
 models_only = 5582
 name = Church pew
+//Server
+desc=The sort of bench you get in churches.

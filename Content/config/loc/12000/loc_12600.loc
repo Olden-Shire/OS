@@ -4,3 +4,5 @@ ambient = 10
 active = 1
 models_only = 13618
 name = Snake
+//Server
+desc=A Snake.

@@ -8,3 +8,5 @@ mapscene = 15
 nonblockrange = true
 models = 2263/0 2264/1 2265/2
 name = Fire Wall
+//Server
+desc=A wall of magic fire.

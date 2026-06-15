@@ -5,3 +5,5 @@ mapscene = 43
 blockwalk = true
 models = 1175/22
 name = Trap door
+//Server
+desc=This leads to somewhere...but where?

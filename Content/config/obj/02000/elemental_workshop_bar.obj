@@ -10,3 +10,7 @@ cost = 8
 recol1s = 7062
 recol1d = 50087
 name = Elemental metal
+//Server
+desc=It's a bar of refined elemental ore.
+weight=4lb
+tradeable=no

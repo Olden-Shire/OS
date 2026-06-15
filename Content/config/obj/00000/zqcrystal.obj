@@ -8,3 +8,7 @@ xan2d = 120
 members = true
 iop1 = Activate
 name = Locating crystal
+//Server
+desc=A magical crystal sphere.
+weight=2lb
+tradeable=no

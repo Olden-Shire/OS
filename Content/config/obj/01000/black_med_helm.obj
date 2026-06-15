@@ -14,3 +14,16 @@ womanhead = 117
 recol1s = 61
 recol1d = 8
 name = Black med helm
+//Server
+desc=A medium sized helmet.
+wearpos=hat
+wearpos2=head
+weight=4lb
+category=armour_helmet
+param=rangeattack,-1
+param=magicattack,-3
+param=stabdefence,9
+param=slashdefence,10
+param=crushdefence,8
+param=magicdefence,-1
+param=rangedefence,9

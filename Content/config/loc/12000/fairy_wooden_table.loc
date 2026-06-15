@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 6451/8076 6443/7952 6439/7700 6563/7704
 models_only = 9590
 name = Table
+//Server
+desc=Generally used for putting things on.

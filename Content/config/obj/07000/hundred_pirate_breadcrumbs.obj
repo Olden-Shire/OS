@@ -7,3 +7,6 @@ yan2d = 2018
 xan2d = 273
 cost = 1
 name = Breadcrumbs
+//Server
+desc=Glad these aren't in my bed.
+weight=2lb

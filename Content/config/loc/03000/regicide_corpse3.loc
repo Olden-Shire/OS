@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 6241/21646
 models_only = 3906
 name = Corpse
+//Server
+desc=Now he's just too thin.

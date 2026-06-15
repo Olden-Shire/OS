@@ -16,3 +16,8 @@ xan2d = 228
 ambient = 30
 contrast = 30
 name = Skeletal helm
+//Server
+desc=Make your foes cower by wearing a skull as a helmet!
+wearpos=hat
+wearpos2=head
+weight=3lb

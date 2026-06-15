@@ -20,3 +20,7 @@ recol4d = 99
 recol5s = 103
 recol5d = 115
 name = White dagger
+//Server
+desc=A vicious white dagger.
+wearpos=righthand
+weight=1lb

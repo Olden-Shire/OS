@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 14228/31132
 models_only = 2157
 name = Mossy rock
+//Server
+desc=Looks slippery!

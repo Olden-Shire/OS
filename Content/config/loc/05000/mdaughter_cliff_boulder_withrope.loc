@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 6689/7331
 models_only = 5698
 name = Boulder
+//Server
+desc=Someone is climbing down there! Looks dangerous.

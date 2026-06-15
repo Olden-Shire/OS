@@ -4,3 +4,5 @@ ambient = 20
 op1 = Search
 models = 10818/4
 name = Damaged wall
+//Server
+desc=This wall really needs repairing.

@@ -4,3 +4,5 @@ active = 1
 op1 = Close
 models = 11962/0
 name = Magic door
+//Server
+desc=A magic door.

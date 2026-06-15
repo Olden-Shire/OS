@@ -4,3 +4,5 @@ op1 = Open
 raiseobject = 0
 models = 9476/0 9477/9
 name = Dungeon door
+//Server
+desc=An entranceway into the dungeon.

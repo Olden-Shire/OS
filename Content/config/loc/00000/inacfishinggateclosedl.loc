@@ -2,3 +2,5 @@
 active = 1
 models = 14353/0
 name = Gate
+//Server
+desc=A wooden gate.

@@ -15,3 +15,6 @@ recol1d = 5671
 recol2s = 5572
 recol2d = 5790
 name = Calquat tree seed
+//Server
+desc=Plant in a plantpot of soil to grow a sapling.
+weight=1g

@@ -3,3 +3,5 @@ ambient = 25
 nonblockrange = true
 models_only = 9529
 name = Anchor
+//Server
+desc=How much does this weigh?

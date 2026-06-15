@@ -9,3 +9,6 @@ yan2d = 208
 xan2d = 276
 iop1 = Eat
 name = Monkey bar
+//Server
+desc=It's a monkey bar. It looks highly nutritious.
+weight=150g

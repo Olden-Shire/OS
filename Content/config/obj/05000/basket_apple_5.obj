@@ -8,3 +8,6 @@ members = true
 iop1 = Fill
 iop2 = Remove-one
 name = Apples(5)
+//Server
+desc=A fruit basket filled with apples.
+weight=6oz

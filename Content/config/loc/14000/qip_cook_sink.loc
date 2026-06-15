@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6443/5541 6563/5665
 models_only = 8245
 name = Sink
+//Server
+desc=After working with livestock, why not wash your hands?

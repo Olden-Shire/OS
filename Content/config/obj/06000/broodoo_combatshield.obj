@@ -10,3 +10,7 @@ zoom2d = 1370
 yan2d = 264
 xan2d = 364
 name = Broodoo shield
+//Server
+desc=A scary broodoo shield.
+weight=12lb
+wearpos=lefthand

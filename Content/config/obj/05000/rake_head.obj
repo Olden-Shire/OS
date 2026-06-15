@@ -7,3 +7,6 @@ yan2d = 1992
 xan2d = 372
 members = true
 name = Rake head
+//Server
+desc=I need to reattach this to its handle.
+weight=2lb

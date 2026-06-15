@@ -2,3 +2,5 @@
 recol = 39841/127 127/16949 13239/127
 models_only = 1536
 name = Standard
+//Server
+desc=A standard of the gnome race.

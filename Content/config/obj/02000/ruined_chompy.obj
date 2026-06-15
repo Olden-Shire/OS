@@ -8,3 +8,6 @@ xan2d = 88
 recol1s = 4773
 recol1d = 6798
 name = Ruined chompy
+//Server
+desc=It's really burnt.
+weight=10kg

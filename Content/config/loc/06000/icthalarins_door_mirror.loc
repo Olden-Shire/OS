@@ -4,3 +4,5 @@ mirror = true
 op1 = Open
 models = 4474/0
 name = Door
+//Server
+desc=Hmm. A door.

@@ -3,3 +3,5 @@ length = 2
 op1 = Search
 models_only = 1263
 name = Bookcase
+//Server
+desc=Shelves filled with interesting books.

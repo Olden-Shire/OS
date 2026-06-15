@@ -4,3 +4,5 @@ ambient = 12
 contrast = 10
 models_only = 11251
 name = Table
+//Server
+desc=It's a table for putting objects on.

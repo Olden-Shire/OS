@@ -10,3 +10,6 @@ recol1d = 8373
 recol2s = 57
 recol2d = 41
 name = Cavern key
+//Server
+desc=Upon close examination, this seems to be a key.
+weight=5g

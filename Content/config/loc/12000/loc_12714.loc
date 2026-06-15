@@ -6,3 +6,5 @@ hillskew = true
 forceapproach = 11
 models_only = 13377
 name = Grave
+//Server
+desc=A recently filled in grave.

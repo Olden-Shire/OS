@@ -13,3 +13,6 @@ count3 = 5145, 4
 count4 = 5146, 5
 cost = 56
 name = Watermelon seed
+//Server
+desc=A watermelon seed - plant in an allotment.
+weight=1g

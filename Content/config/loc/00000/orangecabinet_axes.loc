@@ -3,3 +3,5 @@ length = 2
 recol = 8860/6080
 models_only = 1160
 name = Axe cabinet
+//Server
+desc=Break glass in case of emergency.

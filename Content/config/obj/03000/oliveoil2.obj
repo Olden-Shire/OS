@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 14272
 name = Olive oil(2)
+//Server
+desc=2 doses of olive oil.
+weight=25g
+category=olive_oil

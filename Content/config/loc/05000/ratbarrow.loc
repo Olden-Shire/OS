@@ -2,3 +2,5 @@
 hillskew = true
 models_only = 4647
 name = Rat-hole
+//Server
+desc=It smells like the rats aren't washing often enough.

@@ -11,3 +11,7 @@ recol1d = 43206
 recol2s = 103
 recol2d = 43082
 name = Raw cod
+//Server
+desc=I should try cooking this.
+weight=450g
+category=category_57

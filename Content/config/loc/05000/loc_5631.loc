@@ -5,3 +5,5 @@ length = 2
 bgsound = 2199, 5
 models_only = 5504 5505
 name = Fire
+//Server
+desc=Glowing embers.

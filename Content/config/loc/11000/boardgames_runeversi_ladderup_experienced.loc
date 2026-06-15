@@ -4,3 +4,5 @@ active = 1
 op1 = Climb-up
 models_only = 1208
 name = Ladder
+//Server
+desc=The ladder to the Runeversi challenge room for experienced players.

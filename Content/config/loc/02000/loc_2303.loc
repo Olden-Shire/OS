@@ -4,3 +4,5 @@ op1 = Walk-across
 blockwalk = true
 models = 1072/22
 name = Balancing ledge
+//Server
+desc=I can just about edge across here.

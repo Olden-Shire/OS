@@ -3,3 +3,5 @@ op1 = Wade-to
 op1 = Go-up
 models_only = 4897
 name = Lift
+//Server
+desc=It's a little waterlogged.  I hope it still works.

@@ -7,3 +7,7 @@ yan2d = 20
 xan2d = 328
 cost = 1
 name = Chest key
+//Server
+desc=A key to One eyed Hector's chest.
+weight=10g
+tradeable=no

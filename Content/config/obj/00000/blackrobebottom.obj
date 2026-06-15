@@ -10,3 +10,8 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 0
 name = Shade robe
+//Server
+desc=If a shade had knees, this would keep them nice and warm.
+wearpos=legs
+weight=2lb
+param=prayerbonus,4

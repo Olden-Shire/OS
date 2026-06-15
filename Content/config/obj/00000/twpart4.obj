@@ -8,3 +8,7 @@ xan2d = 160
 cost = 187500
 members = true
 name = Cannon furnace
+//Server
+desc=This powers the multicannon.
+weight=5kg
+category=cannon_parts

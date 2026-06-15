@@ -3,3 +3,5 @@ nonsolid = true
 recol = 43968/960 33728/11200
 models_only = 1569
 name = Flowerbed
+//Server
+desc=A bed of red flowers.

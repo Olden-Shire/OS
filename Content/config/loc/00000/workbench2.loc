@@ -4,3 +4,6 @@ nonblockrange = true
 retex = 22/16 29/16
 models_only = 2147
 name = Workbench
+//Server
+desc=A handy workbench for a handy person.
+category=unusable_table

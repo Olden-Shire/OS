@@ -5,3 +5,5 @@ nonsolid = true
 op1 = Jump-across
 models_only = 4556
 name = Basalt rock
+//Server
+desc=I can jump off this one.

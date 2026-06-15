@@ -17,3 +17,8 @@ recol2d = 99
 recol3s = 41
 recol3d = 82
 name = White platebody
+//Server
+desc=Provides excellent protection.
+wearpos=torso
+wearpos2=arms
+weight=22lb

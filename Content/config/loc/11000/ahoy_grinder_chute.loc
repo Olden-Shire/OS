@@ -5,3 +5,5 @@ forceapproach = 13
 sharelight = true
 models_only = 11021
 name = Bin
+//Server
+desc=A big grinding thing.

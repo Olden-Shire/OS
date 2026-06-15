@@ -10,3 +10,6 @@ cost = 9
 recol1s = 44263
 recol1d = 6063
 name = Spicy sauce
+//Server
+desc=A bowl of spicy sauce.
+weight=500g

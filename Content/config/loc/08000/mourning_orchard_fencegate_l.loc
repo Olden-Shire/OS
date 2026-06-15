@@ -5,3 +5,5 @@ raiseobject = 0
 nonblockrange = true
 models = 966/0 967/1 968/9
 name = Gate
+//Server
+desc=A wooden gate.

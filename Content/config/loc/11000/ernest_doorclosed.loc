@@ -2,3 +2,5 @@
 active = 1
 models_only = 11814
 name = Door
+//Server
+desc=This door is locked.

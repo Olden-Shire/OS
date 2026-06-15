@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6451/8472 6443/8596 6439/8720 6563/8844
 models_only = 9547
 name = Large Table
+//Server
+desc=A nice sturdy looking table.

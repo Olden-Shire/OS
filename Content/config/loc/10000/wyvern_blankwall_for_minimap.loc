@@ -3,4 +3,6 @@ nonsolid = true
 noshadow = true
 active = 1
 models = 2214/0 4873/2 2215/9
-name = 
+name =
+//Server
+desc=

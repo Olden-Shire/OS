@@ -12,3 +12,8 @@ recol1d = 52686
 recol2s = 103
 recol2d = 52574
 name = Giant carp
+//Server
+desc=Some nicely cooked fish.
+weight=500g
+category=category_58
+tradeable=no

@@ -3,3 +3,5 @@ anim = 471
 bgsound = 3124, 3
 models_only = 2283
 name = Flagpole
+//Server
+desc=The flag of Ardougne.

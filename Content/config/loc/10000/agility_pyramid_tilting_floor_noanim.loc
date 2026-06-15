@@ -4,3 +4,5 @@ length = 2
 nonsolid = true
 models_only = 10816
 name = Stone block
+//Server
+desc=A stone block.

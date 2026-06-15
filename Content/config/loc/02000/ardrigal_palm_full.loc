@@ -5,3 +5,5 @@ mapscene = 5
 op2 = Search
 models_only = 1612
 name = Palm tree
+//Server
+desc=A tall palm tree with some plants growing at its stem.

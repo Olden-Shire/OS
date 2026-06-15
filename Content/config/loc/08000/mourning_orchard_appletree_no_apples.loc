@@ -4,3 +4,5 @@ length = 2
 mapscene = 0
 models_only = 7921
 name = Apple Tree
+//Server
+desc=Nothing growing on this tree at the moment...

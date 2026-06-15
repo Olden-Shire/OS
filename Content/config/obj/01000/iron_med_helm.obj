@@ -14,3 +14,17 @@ womanhead = 117
 recol1s = 61
 recol1d = 33
 name = Iron med helm
+//Server
+desc=A medium sized helmet.
+wearpos=hat
+wearpos2=head
+weight=4lb
+category=armour_helmet
+respawnrate=500
+param=magicattack,-3
+param=rangeattack,-1
+param=stabdefence,4
+param=slashdefence,5
+param=crushdefence,3
+param=magicdefence,-1
+param=rangedefence,4

@@ -9,3 +9,6 @@ cost = 42
 recol1s = 44263
 recol1d = 6063
 name = Sliced mushrooms
+//Server
+desc=A bowl of sliced Bittercap mushrooms.
+weight=500g

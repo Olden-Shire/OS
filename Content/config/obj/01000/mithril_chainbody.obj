@@ -14,3 +14,14 @@ recol2d = 43177
 recol3s = 49
 recol3d = 43185
 name = Mithril chainbody
+//Server
+desc=A series of connected metal rings.
+wearpos=torso
+weight=13lb
+category=armour_body
+param=magicattack,-15
+param=stabdefence,25
+param=slashdefence,35
+param=crushdefence,42
+param=magicdefence,-3
+param=rangedefence,27

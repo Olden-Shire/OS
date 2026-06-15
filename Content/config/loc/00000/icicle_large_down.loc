@@ -3,3 +3,5 @@ nonsolid = true
 recol = 5916/119
 models_only = 707
 name = Icicle
+//Server
+desc=Frozen water has formed an icicle here.

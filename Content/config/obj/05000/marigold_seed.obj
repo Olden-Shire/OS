@@ -12,3 +12,6 @@ count3 = 5133, 4
 count4 = 5134, 5
 cost = 2
 name = Marigold seed
+//Server
+desc=A marigold seed - plant in a flower patch.
+weight=1g

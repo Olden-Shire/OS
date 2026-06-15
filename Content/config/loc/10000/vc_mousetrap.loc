@@ -3,3 +3,5 @@ active = 1
 op1 = Take
 models_only = 10052
 name = Rat trap
+//Server
+desc=A device for imposing human nature's arrogant will.

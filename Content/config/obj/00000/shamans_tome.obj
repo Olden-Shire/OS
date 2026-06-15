@@ -10,3 +10,7 @@ recol1d = 14226
 recol2s = 10351
 recol2d = 14247
 name = Shamans tome
+//Server
+desc=It looks like the Shamans personal notes...
+weight=18oz
+tradeable=no

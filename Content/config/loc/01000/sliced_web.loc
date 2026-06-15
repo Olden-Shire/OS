@@ -3,3 +3,5 @@ nonsolid = true
 retex = 12/26
 models_only = 800
 name = Sliced web
+//Server
+desc=I can walk through this tattered web.

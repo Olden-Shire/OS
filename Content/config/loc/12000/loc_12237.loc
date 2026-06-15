@@ -3,3 +3,5 @@ contrast = 25
 ambient = 25
 models_only = 12157
 name = Mounted swordfish
+//Server
+desc=A trophy of a master fisher.

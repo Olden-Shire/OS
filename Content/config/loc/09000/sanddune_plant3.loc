@@ -6,3 +6,5 @@ resizey = 70
 resizez = 70
 models_only = 9542
 name = Plant
+//Server
+desc=A fairly small plant.

@@ -7,3 +7,7 @@ xan2d = 104
 cost = 30
 iop4 = Drink
 name = Karamjan rum
+//Server
+desc=A very strong spirit brewed in Karamja.
+weight=2lb
+tradeable=no

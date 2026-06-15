@@ -5,3 +5,5 @@ nonsolid = true
 op1 = Cross
 models_only = 10772
 name = Ledge
+//Server
+desc=A narrow ledge.

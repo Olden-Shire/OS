@@ -5,3 +5,6 @@ xan2d = 384
 members = true
 iop1 = Assemble
 name = Base schematics
+//Server
+desc=These are the base schematics of a dwarven multicannon
+weight=2g

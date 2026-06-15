@@ -8,3 +8,6 @@ xan2d = 104
 manwear = obj_karamjan_rum_3164_wear, 0
 womanwear = obj_karamjan_rum_3164_wear, 6
 name = Karamjan rum
+//Server
+desc=The Karamjan rum has slices of banana floating in it.
+weight=2lb

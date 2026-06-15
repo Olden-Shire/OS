@@ -8,3 +8,6 @@ xan2d = 284
 members = true
 cost = 2
 name = Willow branch
+//Server
+desc=A branch from a willow tree.
+weight=2lb

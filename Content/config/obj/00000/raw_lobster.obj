@@ -9,3 +9,8 @@ cost = 150
 recol1s = 4032
 recol1d = 3875
 name = Raw lobster
+//Server
+desc=I should try cooking this.
+weight=400g
+category=category_57
+param=fishing_struct,fishing_struct_lobster

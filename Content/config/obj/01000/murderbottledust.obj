@@ -7,3 +7,12 @@ xan2d = 76
 recol1s = 5012
 recol1d = 82
 name = Silver bottle
+//Server
+desc=Carol's shiny silver coated bottle coated with a thin layer of flour.
+weight=90g
+category=murder_flourobj
+param=product,murderfingerprintc
+param=next_obj_stage,murderbottle
+param=game_message,You use the flypaper on the flour covered bottle.
+param=game_message2,You have a clean impression of Carol's finger prints.
+tradeable=no

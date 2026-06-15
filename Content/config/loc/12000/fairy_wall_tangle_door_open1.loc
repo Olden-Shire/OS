@@ -4,3 +4,5 @@ sharelight = true
 op1 = Squeeze-through
 models_only = 11917
 name = A gap through the wall
+//Server
+desc=It's going to be a tight squeeze!

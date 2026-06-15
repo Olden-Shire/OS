@@ -8,3 +8,7 @@ cost = 0
 iop4 = Empty
 members = true
 name = Bone in vinegar
+//Server
+desc=A Moss Giant's bone
+weight=3lb
+weight=2lb

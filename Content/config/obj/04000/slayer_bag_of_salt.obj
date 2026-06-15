@@ -11,3 +11,6 @@ womanwear = obj_bag_of_salt_wear, 6
 stackable = true
 members = true
 name = Bag of salt
+//Server
+desc=A bag of salt.
+weight=10g

@@ -1,3 +1,5 @@
 // loc 11874
 models_only = 11608
 name = Multicannon parts
+//Server
+desc=A crate containing parts for building a multicannon.

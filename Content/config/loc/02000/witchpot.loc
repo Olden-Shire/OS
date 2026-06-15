@@ -3,3 +3,5 @@ active = 1
 op1 = Look-under
 models_only = 1590
 name = Potted plant
+//Server
+desc=Very decorative!

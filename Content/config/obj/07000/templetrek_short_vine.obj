@@ -9,3 +9,6 @@ yan2d = 1976
 xan2d = 188
 members = true
 name = Short vine
+//Server
+desc=A short section of vines.
+weight=1lb

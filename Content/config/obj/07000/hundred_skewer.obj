@@ -11,3 +11,7 @@ manwear = obj_skewer_7443_wear, 0
 womanwear = obj_skewer_7443_wear, 6
 members = true
 name = Skewer
+//Server
+desc=Generally used for impaling fresh meat.
+wearpos=righthand
+weight=72oz

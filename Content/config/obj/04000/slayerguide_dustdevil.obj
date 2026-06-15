@@ -3,3 +3,5 @@ model = obj_dust_devil
 zoom2d = 3930
 yan2d = 84
 name = Dust devil
+//Server
+desc=A slayer monster.

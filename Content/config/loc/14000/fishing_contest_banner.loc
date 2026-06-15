@@ -6,3 +6,5 @@ ambient = 50
 contrast = 50
 models_only = 14370
 name = Fishing Contest Banner
+//Server
+desc=It looks like a fishing contest is taking place through here.

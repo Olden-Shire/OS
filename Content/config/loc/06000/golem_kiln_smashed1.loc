@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 6171
 name = Broken kiln
+//Server
+desc=Once upon a time this was used to make pottery.

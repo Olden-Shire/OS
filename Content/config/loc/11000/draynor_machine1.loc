@@ -3,3 +3,5 @@ ambient = 12
 contrast = 10
 models_only = 11243 11250
 name = Strange machine
+//Server
+desc=It's a strange machine.

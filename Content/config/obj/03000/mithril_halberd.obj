@@ -11,3 +11,8 @@ xan2d = 604
 recol1s = 61
 recol1d = 43297
 name = Mithril halberd
+//Server
+desc=A mithril halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=6lb

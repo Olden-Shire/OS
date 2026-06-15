@@ -13,3 +13,6 @@ recol2d = 12705
 recol3s = 11177
 recol3d = 12705
 name = Journal
+//Server
+desc=A book.
+weight=10g

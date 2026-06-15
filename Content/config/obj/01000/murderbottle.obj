@@ -8,3 +8,11 @@ xan2d = 116
 recol1s = 5012
 recol1d = 82
 name = Silver bottle
+//Server
+desc=Carol's shiny silver coated bottle.
+weight=90g
+category=murder_proofobj
+param=product,murderbottledust
+param=game_message,You sprinkle the flour on Carol's bottle.
+param=game_message2,The bottle is now coated with a thin layer of flour.
+tradeable=no

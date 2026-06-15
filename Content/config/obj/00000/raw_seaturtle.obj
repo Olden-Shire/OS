@@ -7,3 +7,8 @@ zoom2d = 1810
 yan2d = 1740
 xan2d = 236
 name = Raw sea turtle
+//Server
+desc=A rare catch.
+weight=400g
+category=category_57
+param=fishing_struct,fishing_struct_seaturtle

@@ -10,3 +10,7 @@ members = true
 manwear = obj_big_fishing_net_305_wear, 0
 womanwear = obj_big_fishing_net_305_wear, 6
 name = Big fishing net
+//Server
+desc=Useful for catching lots of fish.
+weight=18lb
+param=fish_equipment_struct,fish_equipment_big_net

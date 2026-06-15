@@ -9,3 +9,7 @@ iop5 = Destroy
 recol1s = 61
 recol1d = 22422
 name = Vial
+//Server
+desc=A mixture of jangerberries and guam leaves in a vial.
+weight=25g
+tradeable=no

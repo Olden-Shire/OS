@@ -5,3 +5,5 @@ nonsolid = true
 recol = 6315/11045 8497/11045
 models_only = 1770
 name = Rotten Yommi
+//Server
+desc=A rotten felled Yommi tree, it was left too long in the damp jungle.

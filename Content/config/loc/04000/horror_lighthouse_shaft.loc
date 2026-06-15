@@ -5,3 +5,5 @@ blockwalk = true
 anim = 1349
 models_only = 4571
 name = Lighting mechanism
+//Server
+desc=Part of the Lighthouse's lighting mechanism.

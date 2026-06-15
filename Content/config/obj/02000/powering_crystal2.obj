@@ -10,3 +10,7 @@ iop5 = Destroy
 recol1s = 18522
 recol1d = 55250
 name = Crystal
+//Server
+desc=Powers the Watchtower in Yanille.
+weight=2lb
+tradeable=no

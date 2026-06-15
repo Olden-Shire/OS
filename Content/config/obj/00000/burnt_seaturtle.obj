@@ -11,3 +11,7 @@ recol1d = 12
 recol2s = 17967
 recol2d = 28
 name = Burnt sea turtle
+//Server
+desc=Oops!
+weight=320g
+category=category_116

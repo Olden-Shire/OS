@@ -6,3 +6,6 @@ zoom2d = 2030
 yan2d = 28
 xan2d = 188
 name = Mud
+//Server
+desc=Yuck, it's sticky, dirty mud.
+weight=30g

@@ -5,3 +5,5 @@ blockwalk = true
 op1 = Repair
 models_only = 5173
 name = Lightning conductor
+//Server
+desc=At some point the lightning conductor has broken, rendering it useless.

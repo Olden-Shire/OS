@@ -13,3 +13,7 @@ recol1d = 18712
 recol2s = 10351
 recol2d = 10452
 name = Nulodion's notes
+//Server
+desc=Construction notes for Dwarf cannon ammo.
+weight=1oz
+tradeable=no

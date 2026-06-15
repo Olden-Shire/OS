@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 33/5921 8770/1218
 models_only = 1256
 name = Bed
+//Server
+desc=A drab-looking bed.

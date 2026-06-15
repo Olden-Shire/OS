@@ -19,3 +19,8 @@ recol3d = 10508
 recol4s = 8722
 recol4d = 10760
 name = Karils x-bow 25
+//Server
+desc=Karil the Tainted's repeating crossbow.
+weight=8lb
+wearpos=righthand
+wearpos2=lefthand

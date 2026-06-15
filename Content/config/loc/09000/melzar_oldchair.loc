@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 11148/5276 9098/5276
 models_only = 1558
 name = Chair
+//Server
+desc=This needs dusting before I'll sit on it.

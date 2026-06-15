@@ -9,3 +9,6 @@ members = true
 recol1s = 926
 recol1d = 66
 name = Sharpened axe
+//Server
+desc=A jungle forester's super sharp axe.
+weight=3lb

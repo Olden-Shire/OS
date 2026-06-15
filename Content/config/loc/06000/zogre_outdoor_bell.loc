@@ -2,3 +2,5 @@
 op1 = Ring
 models_only = 6811
 name = Bell
+//Server
+desc=A note says, 'Please ring for attention.'

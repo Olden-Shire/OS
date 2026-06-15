@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models_only = 3951
 name = Stagnant Lake
+//Server
+desc=A stagnant lake.

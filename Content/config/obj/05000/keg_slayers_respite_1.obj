@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Slayer's respite(1)
+//Server
+desc=This keg contains 1 pint of Slayer's Respite.
+weight=1oz

@@ -4,3 +4,5 @@ nonsolid = true
 op1 = Pass
 models_only = 3984
 name = Sticks
+//Server
+desc=An odd-looking group of tied sticks.

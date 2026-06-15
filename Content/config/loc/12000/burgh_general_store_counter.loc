@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 6451/12698 6443/12694 6439/12818 6563/12942 6558/13194 6682/13194
 models_only = 7906
 name = Counter
+//Server
+desc=Items are for sale here.

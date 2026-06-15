@@ -1,3 +1,5 @@
 // loc 2722
 models_only = 1382
 name = Hopper controls
+//Server
+desc=These control the flow of grain from the hopper to the millstones.

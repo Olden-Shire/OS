@@ -10,3 +10,5 @@ active = 1
 op1 = Walk-through
 models = 4528/0
 name = Doorway
+//Server
+desc=Lets you walk through walls!

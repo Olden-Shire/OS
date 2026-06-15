@@ -4,3 +4,5 @@ blockwalk = true
 op3 = Climb
 models_only = 5695
 name = Tall tree
+//Server
+desc=The tree stands tall at the edge of the pool.

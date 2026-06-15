@@ -22,3 +22,7 @@ recol4d = 924
 recol5s = 119
 recol5d = 924
 name = Mystic hat
+//Server
+desc=A dark magical hat.
+wearpos=hat
+weight=1lb

@@ -3,3 +3,5 @@ mapscene = 4
 nonblockrange = true
 models_only = 1604
 name = Cactus
+//Server
+desc=This cactus has recently had a chunk taken off.

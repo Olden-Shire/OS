@@ -3,3 +3,5 @@ ambient = 10
 width = 2
 models_only = 11536
 name = Creature
+//Server
+desc=I hope I never meet one of those.

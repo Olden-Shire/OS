@@ -5,3 +5,5 @@ length = 2
 ambient = 20
 models_only = 10722 10720
 name = Sandpit
+//Server
+desc=It's very sandy.

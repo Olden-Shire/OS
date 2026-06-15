@@ -12,3 +12,12 @@ womanwear = obj_perfect_necklace_woman, 0
 recol1s = 9152
 recol1d = 82
 name = Silver necklace
+//Server
+desc=Anna's shiny silver coated necklace.
+wearpos=front
+weight=10g
+category=murder_proofobj
+param=product,murdernecklacedust
+param=game_message,You sprinkle the flour on Anna's necklace.
+param=game_message2,The necklace is now coated with a thin layer of flour.
+tradeable=no

@@ -10,3 +10,12 @@ iop2 = Wear
 manwear = obj_leather_chaps_1095_man, 0
 womanwear = obj_leather_chaps_1095_woman, 0
 name = Leather chaps
+//Server
+desc=Better than no armour!
+wearpos=legs
+weight=6lb
+category=armour_legs
+param=rangeattack,4
+param=stabdefence,2
+param=slashdefence,2
+param=crushdefence,1

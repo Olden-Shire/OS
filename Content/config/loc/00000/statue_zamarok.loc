@@ -1,3 +1,5 @@
 // loc 587
 models_only = 1400
 name = Statue of Zamorak
+//Server
+desc=A depiction of the evil god Zamorak.

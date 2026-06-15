@@ -7,3 +7,5 @@ resizez = 100
 nonsolid = true
 models_only = 868
 name = Rubble
+//Server
+desc=Broken parts of an old wall.

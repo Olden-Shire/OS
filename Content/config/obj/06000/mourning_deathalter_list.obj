@@ -8,3 +8,6 @@ yan2d = 1380
 xan2d = 304
 members = true
 name = Item list
+//Server
+desc=It's a list of items I need to collect.
+weight=1oz

@@ -5,3 +5,5 @@ active = 1
 raiseobject = 0
 models = 605/0
 name = Door
+//Server
+desc=The door is closed.

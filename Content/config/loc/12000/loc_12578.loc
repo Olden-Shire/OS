@@ -6,3 +6,5 @@ op1 = Swing
 offsety = -120
 models_only = 11180
 name = Rope
+//Server
+desc=For swinging on.

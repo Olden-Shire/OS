@@ -11,3 +11,6 @@ cost = 11
 recol1s = 5683
 recol1d = 5665
 name = Part garden pie
+//Server
+desc=Still needs one more ingredient.
+weight=1g

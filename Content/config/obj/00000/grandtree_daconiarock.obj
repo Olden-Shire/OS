@@ -8,3 +8,7 @@ members = true
 recol1s = 5790
 recol1d = 41240
 name = Daconia rock
+//Server
+desc=An ancient rock with strange magical properties.
+weight=2lb
+tradeable=no

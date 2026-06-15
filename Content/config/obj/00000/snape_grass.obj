@@ -8,3 +8,9 @@ zoom2d = 1170
 yan2d = 48
 xan2d = 484
 name = Snape grass
+//Server
+desc=Strange spiky grass.
+weight=7g
+respawnrate=30
+param=brew_potion_struct,3doseprayerrestore
+param=brew_potion_struct_secondary,3dosefisherspotion

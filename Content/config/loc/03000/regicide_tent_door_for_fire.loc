@@ -4,3 +4,5 @@ ambient = 50
 contrast = 10
 models = 3974/0
 name = Tent flap
+//Server
+desc=A way to get into the tent.

@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 6164
 name = Golem foot
+//Server
+desc=A clay foot.

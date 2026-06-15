@@ -13,3 +13,13 @@ xan2d = 164
 recol1s = 61
 recol1d = 21662
 name = Adamant boots
+//Server
+desc=These will protect my feet.
+wearpos=feet
+weight=3lb
+param=magicattack,-3
+param=rangeattack,-1
+param=stabdefence,10
+param=slashdefence,11
+param=crushdefence,12
+param=strengthbonus,1

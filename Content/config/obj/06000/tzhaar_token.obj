@@ -13,3 +13,6 @@ count3 = 6532, 4
 count4 = 6533, 5
 count5 = 6534, 25
 name = Tokkul
+//Server
+desc=It's a token of some kind made from obsidian.
+weight=2g

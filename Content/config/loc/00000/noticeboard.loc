@@ -3,3 +3,5 @@ ambient = 50
 active = 1
 models = 2040/4
 name = Noticeboard
+//Server
+desc=Some helpful people have placed notes on here, how nice.

@@ -10,3 +10,6 @@ members = true
 recol1s = 10351
 recol1d = 231
 name = Note
+//Server
+desc=A list of 5 numbers.
+weight=20g

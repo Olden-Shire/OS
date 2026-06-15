@@ -10,3 +10,5 @@ stackable = true
 iop1 = Build
 cost = 50
 name = Rogue kit
+//Server
+desc=It can do almost anything!

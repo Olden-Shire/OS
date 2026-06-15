@@ -7,3 +7,6 @@ zoom2d = 1800
 yan2d = 2040
 xan2d = 396
 name = Arms
+//Server
+desc=A pair of limp, dead arms.
+weight=14lb

@@ -2,3 +2,5 @@
 ambient = 25
 models_only = 9164 7767
 name = Rose bush
+//Server
+desc=A rose bush.

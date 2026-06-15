@@ -8,3 +8,6 @@ yan2d = 1848
 xan2d = 303
 cost = 100
 name = Raw fishcake
+//Server
+desc=Would taste nicer if I cooked it.
+weight=2lb

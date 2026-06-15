@@ -5,3 +5,5 @@ active = 1
 nonblockrange = true
 models_only = 1329
 name = Crashed glider
+//Server
+desc=Probably pilot error.

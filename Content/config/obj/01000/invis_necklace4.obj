@@ -3,3 +3,6 @@ model = obj_sapphire_ring_1649
 yan2d = 4
 xan2d = 20
 name = Diamond necklace
+//Server
+desc=I wonder if this is valuable.
+param=crafting_jewelry_struct,diamond_necklace

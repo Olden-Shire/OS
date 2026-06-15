@@ -9,3 +9,6 @@ yan2d = 1948
 xan2d = 104
 members = true
 name = Newly made crystal
+//Server
+desc=A newly formed crystal.
+weight=15g

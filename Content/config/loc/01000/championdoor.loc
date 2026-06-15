@@ -5,3 +5,6 @@ active = 1
 op1 = Open
 models = 15236/0
 name = Door
+//Server
+desc=The door to the Champions' Guild.
+param=next_loc_stage,poordoor

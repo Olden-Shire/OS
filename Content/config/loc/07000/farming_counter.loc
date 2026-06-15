@@ -4,3 +4,5 @@ ambient = 15
 nonblockrange = true
 models_only = 7906
 name = Counter
+//Server
+desc=Items are for sale here.

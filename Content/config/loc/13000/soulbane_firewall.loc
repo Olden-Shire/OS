@@ -7,3 +7,5 @@ mapscene = 22
 nonsolid = true
 models_only = 14290
 name = Fire
+//Server
+desc=Very hot!

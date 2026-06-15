@@ -4,3 +4,5 @@ anim = 491
 bgsound = 3139, 5
 models_only = 2253
 name = Portal
+//Server
+desc=A magical border of teleportation.

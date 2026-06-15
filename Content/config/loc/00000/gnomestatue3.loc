@@ -1,3 +1,5 @@
 // loc 573
 models_only = 1304
 name = Gnome statue
+//Server
+desc=A depiction of a famous gnomeballer.

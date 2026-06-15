@@ -12,3 +12,6 @@ iop1 = Plant
 recol1s = 43288
 recol1d = 22433
 name = Mithril seeds
+//Server
+desc=Magical seeds in a mithril case.
+weight=1oz

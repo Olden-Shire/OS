@@ -7,3 +7,7 @@ ambient = 20
 recol = 6697/6453 6945/6449 6814/6445 6940/6569 4638/6565 4762/6689
 models = 639/0
 name = Castle door
+//Server
+desc=A grand door.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_11722

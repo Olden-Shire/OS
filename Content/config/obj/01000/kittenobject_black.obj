@@ -14,3 +14,9 @@ recol2d = 12
 recol3s = 127
 recol3d = 33
 name = Pet kitten
+//Server
+desc=This kitten seems to like you.
+weight=750g
+category=kitten
+param=follower_id,kittenpet_black
+tradeable=no

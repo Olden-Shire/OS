@@ -12,3 +12,6 @@ recol1d = 6053
 recol2s = 6071
 recol2d = 5025
 name = Burnt fishcake
+//Server
+desc=Darn thing's all burnt!
+weight=2lb

@@ -11,3 +11,6 @@ recol1d = 21673
 recol2s = 10351
 recol2d = 13522
 name = Edern's journal
+//Server
+desc=The journal of Nissyen Edern.
+weight=8oz

@@ -10,3 +10,6 @@ iop5 = Destroy
 recol1s = 127
 recol1d = 41280
 name = Full jug
+//Server
+desc=This jug is completely full. It has a 3 painted on its side.
+weight=1g

@@ -9,3 +9,6 @@ xan2d = 204
 recol1s = 39834
 recol1d = 6699
 name = Unsanitary swill
+//Server
+desc=Sorry, I mean a bucket of 'rum'.
+weight=7g

@@ -11,3 +11,8 @@ recol1d = 2576
 recol2s = 45
 recol2d = 2576
 name = Iron ore
+//Server
+desc=This needs refining.
+weight=5lb
+category=category_91
+param=smeltsto,iron_bar

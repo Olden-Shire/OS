@@ -9,3 +9,5 @@ offsetx = 20
 nonsolid = true
 models_only = 1586
 name = Wheat
+//Server
+desc=Baby bread.

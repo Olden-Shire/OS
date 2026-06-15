@@ -5,3 +5,5 @@ op1 = Enter
 mapscene = 70
 models_only = 3969
 name = Dense forest
+//Server
+desc=There are some broken twigs here.

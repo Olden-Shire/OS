@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 64
 name = Snapdragon seed
+//Server
+desc=A snapdragon seed - plant in a herb patch.
+weight=1g

@@ -7,3 +7,6 @@ yan2d = 44
 xan2d = 160
 members = true
 name = Frozen key
+//Server
+desc=A key encased in ice.
+weight=1g

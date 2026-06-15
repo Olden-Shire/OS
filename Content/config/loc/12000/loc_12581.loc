@@ -5,3 +5,5 @@ op1 = Enter
 blockwalk = true
 models = 13605/22
 name = Hole
+//Server
+desc=A vine-choked hole.

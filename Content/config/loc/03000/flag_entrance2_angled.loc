@@ -9,3 +9,5 @@ nonblockrange = true
 recol = 6932/6689
 models_only = 3319
 name = Entrance
+//Server
+desc=Flags marking the entrance to the arena.

@@ -9,3 +9,6 @@ iop1 = Eat
 recol1s = 44263
 recol1d = 10950
 name = Banana stew
+//Server
+desc=It's a bowl full of mushy banana.
+weight=250g

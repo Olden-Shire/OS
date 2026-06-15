@@ -6,3 +6,5 @@ resizey = 256
 resizez = 256
 models_only = 4969
 name = Tree
+//Server
+desc=An interesting-looking tree.

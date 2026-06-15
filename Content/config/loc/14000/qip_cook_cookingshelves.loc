@@ -3,3 +3,5 @@ ambient = 20
 recol = 7952/5541 33990/5904 8076/5665
 models_only = 1271
 name = Shelves
+//Server
+desc=Storage for cookery items.

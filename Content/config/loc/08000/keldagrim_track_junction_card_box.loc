@@ -3,3 +3,5 @@ forceapproach = 11
 op1 = Search
 models_only = 8660
 name = Box
+//Server
+desc=A strange box of some kind.

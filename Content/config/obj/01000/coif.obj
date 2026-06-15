@@ -14,3 +14,16 @@ womanhead = 90
 manhead2 = 63
 womanhead2 = 120
 name = Coif
+//Server
+desc=Light weight head protection.
+wearpos=hat
+wearpos2=head
+weight=2lb
+category=armour_helmet
+param=magicattack,-1
+param=rangeattack,2
+param=stabdefence,4
+param=slashdefence,6
+param=crushdefence,8
+param=magicdefence,4
+param=rangedefence,4

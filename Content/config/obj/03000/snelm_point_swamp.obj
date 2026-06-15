@@ -14,3 +14,7 @@ womanwear = obj_myre_snelm_3337_woman, 0
 manhead = 4096
 womanhead = 4098
 name = Myre snelm
+//Server
+desc=A swamp coloured pointed snail shell helmet.
+weight=2kg
+wearpos=hat

@@ -11,3 +11,7 @@ iop2 = Wear
 members = true
 ambient = 60
 name = Fox
+//Server
+desc=I don't think he likes being carried.
+wearpos=righthand
+weight=5kg

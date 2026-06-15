@@ -8,3 +8,7 @@ recol = 38119/21549 41067/32832 5421/8596 5413/8844 5532/8070
 retex = 2/23
 models = 11471/0
 name = Door
+//Server
+desc=The door is closed.
+category=door_open_and_close
+param=next_loc_stage,desertdoor_inactive

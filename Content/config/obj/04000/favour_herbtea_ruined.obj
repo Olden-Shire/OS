@@ -11,3 +11,6 @@ members = true
 recol1s = 8101
 recol1d = 4
 name = Ruined herb tea
+//Server
+desc=A ruined herb tea.
+weight=50g

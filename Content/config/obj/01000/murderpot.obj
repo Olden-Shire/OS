@@ -9,3 +9,11 @@ xan2d = 112
 recol1s = 4775
 recol1d = 82
 name = Silver pot
+//Server
+desc=Frank's shiny silver coated pot.
+weight=2lb
+category=murder_proofobj
+param=product,murderpotdust
+param=game_message,You sprinkle the flour on Frank's pot.
+param=game_message2,The Pot is now coated with a thin layer of flour.
+tradeable=no

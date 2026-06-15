@@ -5,3 +5,5 @@ resizez = 95
 recol = 6932/6443 6684/6554
 models_only = 5499
 name = Water barrel
+//Server
+desc=A barrel for collecting rain water.

@@ -5,3 +5,5 @@ contrast = 25
 bgsound = 2065, 3
 models_only = 2249
 name = Fireplace
+//Server
+desc=A fire burns brightly here.

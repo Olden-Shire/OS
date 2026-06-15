@@ -5,3 +5,5 @@ hillskew = true
 nonsolid = true
 models_only = 1076
 name = Damaged Earth
+//Server
+desc=This earth is damaged by cultivation, time will restore the fertility.

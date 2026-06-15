@@ -5,3 +5,5 @@ mirror = true
 resizey = 256
 models_only = 10911
 name = Wall
+//Server
+desc=A finished wall.

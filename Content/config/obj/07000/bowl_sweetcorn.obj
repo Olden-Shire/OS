@@ -10,3 +10,6 @@ cost = 13
 recol1s = 44263
 recol1d = 6063
 name = Sweetcorn
+//Server
+desc=A bowl of cooked sweetcorn.
+weight=500g

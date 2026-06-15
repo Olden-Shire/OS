@@ -15,3 +15,7 @@ cost = 225
 recol1s = 926
 recol1d = 22464
 name = Green boater
+//Server
+desc=Stylish!
+wearpos=hat
+weight=10g

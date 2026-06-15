@@ -3,3 +3,5 @@ nonsolid = true
 recol = 5916/7952
 models_only = 753
 name = Stalactite
+//Server
+desc=A tooth shaped rock formation protruding from the ceiling.

@@ -3,3 +3,6 @@ length = 2
 nonblockrange = true
 models_only = 917
 name = Table
+//Server
+desc=Useful for putting things on.
+category=usable_table

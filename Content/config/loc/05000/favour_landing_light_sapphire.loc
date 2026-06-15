@@ -8,3 +8,5 @@ contrast = 120
 op1 = Look
 models_only = 5645
 name = Flashing landing light
+//Server
+desc=A beacon so gnome gliders can safely land.

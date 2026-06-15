@@ -16,3 +16,7 @@ count4 = 4172, 5
 recol1s = 5012
 recol1d = 5404
 name = Broad arrows
+//Server
+desc=Arrows with a wider than normal tip.
+wearpos=quiver
+weight=16g

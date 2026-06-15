@@ -8,3 +8,6 @@ members = true
 recol1s = 7516
 recol1d = 7636
 name = Fremennik ballad
+//Server
+desc=A hauntingly beautiful love ballad.
+weight=5g

@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Mind bomb(m4)
+//Server
+desc=This keg contains 4 pints of mature Wizards Mind Bomb.
+weight=1oz

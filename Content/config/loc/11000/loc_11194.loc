@@ -9,3 +9,7 @@ nonblockrange = true
 recol = 10299/8101 24/10508
 models_only = 11025 11024
 name = Rocks
+//Server
+desc=A rocky outcrop.
+category=mining_rock_normal
+param=next_loc_stage_mining,loc_9726

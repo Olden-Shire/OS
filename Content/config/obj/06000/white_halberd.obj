@@ -13,3 +13,8 @@ recol1d = 99
 recol2s = 33
 recol2d = 74
 name = White halberd
+//Server
+desc=A white halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

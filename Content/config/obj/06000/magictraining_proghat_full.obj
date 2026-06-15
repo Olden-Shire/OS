@@ -27,3 +27,8 @@ recol5d = 8770
 recol6s = 13743
 recol6d = 13623
 name = Progress hat
+//Server
+desc=A magic training arena progress hat.
+weight=1g
+wearpos=hat
+wearpos2=head

@@ -9,3 +9,6 @@ members = true
 recol1s = 8128
 recol1d = 5943
 name = Bronze key
+//Server
+desc=I hope the mould was accurate enough...
+weight=10g

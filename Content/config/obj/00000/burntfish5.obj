@@ -12,3 +12,7 @@ recol1d = 28
 recol2s = 103
 recol2d = 41
 name = Burnt fish
+//Server
+desc=Oops!
+weight=300g
+category=category_116

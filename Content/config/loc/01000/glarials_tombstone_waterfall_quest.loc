@@ -4,3 +4,5 @@ length = 2
 op1 = Read
 models_only = 1370
 name = Glarial's tombstone
+//Server
+desc=There is an indent the size of a pebble in the stone's centre.

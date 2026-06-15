@@ -19,3 +19,7 @@ recol3d = 4517
 recol4s = 6798
 recol4d = 4882
 name = Large pouch
+//Server
+desc=A large pouch used for storing essence.
+weight=1kg
+weight=1kg

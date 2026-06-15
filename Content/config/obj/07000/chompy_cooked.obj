@@ -10,3 +10,6 @@ members = true
 recol1s = 4773
 recol1d = 5537
 name = Cooked chompy
+//Server
+desc=Roasted chompy bird.
+weight=1kg

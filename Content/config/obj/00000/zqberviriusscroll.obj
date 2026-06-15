@@ -10,3 +10,7 @@ members = true
 recol1s = 10351
 recol1d = 231
 name = Tattered scroll
+//Server
+desc=An ancient tattered scroll.
+weight=20g
+tradeable=no

@@ -10,3 +10,7 @@ xan2d = 344
 recol1s = 82
 recol1d = 28
 name = Iron dart tip
+//Server
+desc=A deadly looking dart tip made of iron - needs feathers for flight.
+weight=8g
+category=category_969

@@ -3,3 +3,5 @@ op1 = Climb
 mapscene = 7
 models_only = 1487
 name = Climbing rope
+//Server
+desc=You see a circle of light at the top.

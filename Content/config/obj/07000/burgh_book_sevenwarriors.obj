@@ -15,3 +15,6 @@ recol2d = 9118
 recol3s = 43486
 recol3d = 15244
 name = Ancient book
+//Server
+desc=A book about seven warrior priests, written about 200 years ago.
+weight=10g

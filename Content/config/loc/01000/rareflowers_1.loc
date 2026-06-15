@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 1623
 name = Flowers
+//Server
+desc=Don't flowers make you feel better?

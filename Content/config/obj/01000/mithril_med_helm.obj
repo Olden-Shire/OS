@@ -14,3 +14,16 @@ womanhead = 117
 recol1s = 61
 recol1d = 43297
 name = Mithril med helm
+//Server
+desc=A medium sized helmet.
+wearpos=hat
+wearpos2=head
+weight=3lb
+category=armour_helmet
+param=rangeattack,-1
+param=magicattack,-3
+param=stabdefence,10
+param=slashdefence,11
+param=crushdefence,9
+param=magicdefence,-1
+param=rangedefence,10

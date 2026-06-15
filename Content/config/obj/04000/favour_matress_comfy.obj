@@ -6,3 +6,6 @@ yan2d = 1956
 xan2d = 52
 members = true
 name = Comfy mattress
+//Server
+desc=A comfy-looking feather mattress.
+weight=15kg

@@ -11,3 +11,8 @@ iop2 = Wear
 recol1s = 127
 recol1d = 43951
 name = Sapphire ring
+//Server
+desc=A valuable ring.
+wearpos=ring
+weight=6g
+category=category_656

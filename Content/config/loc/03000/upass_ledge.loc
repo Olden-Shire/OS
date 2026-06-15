@@ -7,3 +7,5 @@ hillskew = true
 blockwalk = true
 models = 1804/22
 name = Ledge
+//Server
+desc=Maybe I can cross that.

@@ -1,3 +1,6 @@
 // loc 3994
 models_only = 3912
 name = Small furnace
+//Server
+desc=A small furnace.
+category=smithing_furnace

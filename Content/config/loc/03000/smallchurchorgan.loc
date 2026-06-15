@@ -6,3 +6,5 @@ resizey = 76
 op1 = Play
 models_only = 1732
 name = Church organ
+//Server
+desc=With skill I can play this.

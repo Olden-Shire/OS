@@ -3,3 +3,5 @@ active = 1
 nonblockrange = true
 models_only = 4598
 name = Table
+//Server
+desc=A table for board games.

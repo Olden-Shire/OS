@@ -9,3 +9,6 @@ xan2d = 148
 recol1s = 7479
 recol1d = 43968
 name = Blue thread
+//Server
+desc=Some blue thread.
+weight=2g

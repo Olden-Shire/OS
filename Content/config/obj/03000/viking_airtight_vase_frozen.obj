@@ -8,3 +8,6 @@ xan2d = 160
 members = true
 iop1 = Shake
 name = Frozen vase
+//Server
+desc=An unusually shaped vase full of ice. You can see something glinting inside.
+weight=1g

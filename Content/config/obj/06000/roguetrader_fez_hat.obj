@@ -13,3 +13,7 @@ iop2 = Wear
 members = true
 cost = 20
 name = Fez
+//Server
+desc=A Fez hat. Juss like that.
+wearpos=hat
+weight=5g

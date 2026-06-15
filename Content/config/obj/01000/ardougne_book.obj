@@ -8,3 +8,7 @@ xan2d = 256
 recol1s = 5018
 recol1d = 24
 name = Guide book
+//Server
+desc='A Tourists Guide To Ardougne'.
+weight=16lb
+tradeable=no

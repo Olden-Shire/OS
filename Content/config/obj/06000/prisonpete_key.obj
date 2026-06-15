@@ -9,3 +9,6 @@ iop1 = Return
 recol1s = 8128
 recol1d = 10508
 name = Prison key
+//Server
+desc=A key to the prison.
+weight=10g

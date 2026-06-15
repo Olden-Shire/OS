@@ -8,3 +8,6 @@ xan2d = 279
 iop1 = Read
 iop5 = Destroy
 name = Certificate
+//Server
+desc=I can use this to claim a reward from the King.
+weight=20g

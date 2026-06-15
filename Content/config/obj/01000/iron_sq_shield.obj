@@ -12,3 +12,15 @@ womanwear = obj_bronze_sq_shield_1173_wear, 6
 recol1s = 57
 recol1d = 33
 name = Iron sq shield
+//Server
+desc=A medium square shield.
+wearpos=lefthand
+weight=8lb
+category=armour_shield
+param=rangeattack,-2
+param=magicattack,-6
+param=stabdefence,8
+param=slashdefence,9
+param=crushdefence,7
+param=rangedefence,8
+param=defend_anim,human_shield_defence

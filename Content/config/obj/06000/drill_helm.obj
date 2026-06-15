@@ -8,3 +8,7 @@ womanwear = obj_camo_helmet_6656_wear, 6
 manhead = 9759
 womanhead = 9759
 name = Camo helmet
+//Server
+desc=Examine what?
+wearpos=hat
+weight=5lb

@@ -13,3 +13,12 @@ xan2d = 164
 recol1s = 61
 recol1d = 33
 name = Iron boots
+//Server
+desc=These will protect my feet.
+wearpos=feet
+weight=3lb
+param=magicattack,-3
+param=rangeattack,-1
+param=stabdefence,2
+param=slashdefence,3
+param=crushdefence,4

@@ -21,3 +21,6 @@ recol5d = 5537
 recol6s = 6583
 recol6d = 5532
 name = Champion scroll
+//Server
+desc=It's a challenge from the Earth Warrior Champion!
+weight=1g

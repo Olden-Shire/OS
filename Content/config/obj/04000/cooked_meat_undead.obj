@@ -13,3 +13,6 @@ recol1d = 21784
 recol2s = 127
 recol2d = 22057
 name = Cooked meat
+//Server
+desc=I wouldn't eat that if I were you.
+weight=10oz

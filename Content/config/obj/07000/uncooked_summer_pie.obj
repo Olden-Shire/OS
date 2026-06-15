@@ -9,3 +9,6 @@ contrast = 10
 ambient = 10
 cost = 70
 name = Raw summer pie
+//Server
+desc=Fresh fruit may be good for you, but I should really cook this.
+weight=1g

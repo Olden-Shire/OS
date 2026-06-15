@@ -15,3 +15,7 @@ iop2 = Wear
 members = true
 cost = 17000
 name = Infinity hat
+//Server
+desc=A mystic hat.
+wearpos=hat
+weight=1lb

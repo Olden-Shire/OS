@@ -11,3 +11,8 @@ yan2d = 1065
 zan2d = 124
 xan2d = 636
 name = Dragon 2h sword
+//Server
+desc=A two-handed Dragon Sword.
+wearpos=righthand
+wearpos2=lefthand
+weight=8lb

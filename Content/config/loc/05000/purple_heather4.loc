@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 5525 5527
 name = Heather
+//Server
+desc=The colour purple on stems.

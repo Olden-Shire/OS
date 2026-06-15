@@ -5,3 +5,5 @@ active = 1
 op1 = Squeeze-through
 models = 9247/0
 name = Crevice
+//Server
+desc=A few rocks short of a wall - very crevice like.

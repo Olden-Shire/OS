@@ -3,3 +3,5 @@ active = 1
 op1 = Squeeze-through
 models = 6914/4
 name = Hole
+//Server
+desc=A hole in the wall.

@@ -8,3 +8,6 @@ zoom2d = 1470
 yan2d = 888
 xan2d = 360
 name = Dagannoth hide
+//Server
+desc=A sturdy piece of dagannoth hide.
+weight=7lb

@@ -15,3 +15,7 @@ recol1d = 10266
 recol2s = 10270
 recol2d = 10262
 name = Rock-shell gloves
+//Server
+desc=Fremennik gloves stitched together from rock crab shell shards.
+weight=7lb
+wearpos=hands

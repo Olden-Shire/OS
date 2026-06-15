@@ -12,3 +12,6 @@ recol1d = 5351
 recol2s = 19639
 recol2d = 21714
 name = White tree fruit
+//Server
+desc=Looks delicious.
+weight=1oz

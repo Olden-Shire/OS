@@ -3,3 +3,5 @@ op1 = Pull
 active = 1
 models_only = 1796
 name = Pressure Lever
+//Server
+desc=This lever can't be operated right now.

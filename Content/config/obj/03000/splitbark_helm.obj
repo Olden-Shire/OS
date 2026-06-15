@@ -13,3 +13,7 @@ zoom2d = 1040
 yan2d = 200
 xan2d = 272
 name = Splitbark helm
+//Server
+desc=A wooden helmet.
+wearpos=hat
+weight=2lb

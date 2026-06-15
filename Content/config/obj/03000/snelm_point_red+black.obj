@@ -18,3 +18,7 @@ recol1d = 807
 recol2s = 7605
 recol2d = 8
 name = Blood'n'tar snelm
+//Server
+desc=A red and black pointed snail shell helmet.
+weight=2kg
+wearpos=hat

@@ -5,3 +5,7 @@ zoom2d = 1090
 xan2d = 344
 members = true
 name = Mirror
+//Server
+desc=A small mirror, probably used for grooming.
+weight=8oz
+tradeable=no

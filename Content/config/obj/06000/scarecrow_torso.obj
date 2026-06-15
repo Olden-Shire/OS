@@ -8,3 +8,6 @@ members = true
 members = true
 ambient = 15
 name = Hay sack
+//Server
+desc=A sack filled with hay.
+weight=4oz

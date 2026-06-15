@@ -2,3 +2,5 @@
 forceapproach = 14
 models_only = 1251
 name = Anvil
+//Server
+desc=It says "Property of Doric the dwarf." on the side.

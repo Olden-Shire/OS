@@ -7,3 +7,6 @@ xan2d = 249
 recol1s = 127
 recol1d = 701
 name = Teapot with leaves
+//Server
+desc=Add boiling water to make a tea.
+weight=1500g

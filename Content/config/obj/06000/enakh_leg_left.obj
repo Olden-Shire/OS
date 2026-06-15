@@ -7,3 +7,6 @@ yan2d = 1670
 xan2d = 198
 iop5 = Destroy
 name = Stone left leg
+//Server
+desc=The left leg of a large stone statue.
+weight=9kg

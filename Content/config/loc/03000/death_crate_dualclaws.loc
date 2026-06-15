@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 3719
 name = Crate
+//Server
+desc=Looks like the Imperial Guard's supply of Dual Claws.

@@ -10,3 +10,8 @@ manwear = obj_spined_body_6133_man, 0
 womanwear = obj_spined_body_6133_woman, 0
 members = true
 name = Spined body
+//Server
+desc=A constant reminder that I'm above a Dagannoth in the food chain.
+wearpos=torso
+wearpos2=arms
+weight=15lb

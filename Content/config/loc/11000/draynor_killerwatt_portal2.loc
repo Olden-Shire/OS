@@ -9,3 +9,5 @@ active = 1
 recol = 50072/103 49948/107 49953/111 49829/115 49705/119
 models_only = 11231
 name = Portal Home
+//Server
+desc=A gateway back to RuneScape.

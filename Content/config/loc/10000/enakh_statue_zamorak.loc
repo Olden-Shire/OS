@@ -6,3 +6,5 @@ hillskew = true
 ambient = 25
 models_only = 10905 10906
 name = Zamorak's statue
+//Server
+desc=Made of sandstone and granite.

@@ -4,3 +4,5 @@ width = 2
 nonblockrange = true
 models_only = 11604
 name = Dwarf bath
+//Server
+desc=A tin bath big enough for dwarfs, but too small for humans.

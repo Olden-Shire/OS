@@ -4,3 +4,6 @@ forceapproach = 14
 bgsound = 2209, 3
 models_only = 3912
 name = Small furnace
+//Server
+desc=A furnace; small but effective.
+category=smithing_furnace

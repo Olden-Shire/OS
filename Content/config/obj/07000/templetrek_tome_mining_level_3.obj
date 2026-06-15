@@ -19,3 +19,6 @@ recol4d = 5437
 recol5s = 7741
 recol5d = 3625
 name = Mining tome
+//Server
+desc=A tome of learning which focuses on the mining skill.
+weight=1kg

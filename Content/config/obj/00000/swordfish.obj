@@ -11,3 +11,7 @@ recol1d = 52541
 recol2s = 103
 recol2d = 52686
 name = Swordfish
+//Server
+desc=I'd better be careful eating this!
+weight=450g
+category=category_58

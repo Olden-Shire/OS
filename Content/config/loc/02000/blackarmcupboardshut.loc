@@ -7,3 +7,6 @@ op1 = Open
 forceapproach = 13
 models_only = 25046
 name = Cupboard
+//Server
+desc=Might be worth searching.
+param=cupboard_other,blackarmcupboardopen

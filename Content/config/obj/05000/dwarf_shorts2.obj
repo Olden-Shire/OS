@@ -12,3 +12,7 @@ womanwear = obj_shorts_5042_woman, 0
 recol1s = 9529
 recol1d = 7616
 name = Shorts
+//Server
+desc=Yellow shorts. Far too small for you.
+wearpos=legs
+weight=100g

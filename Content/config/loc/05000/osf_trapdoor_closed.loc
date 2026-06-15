@@ -7,3 +7,5 @@ raiseobject = 0
 blockwalk = true
 models = 5420/22
 name = Trapdoor
+//Server
+desc=I wonder what's under it?

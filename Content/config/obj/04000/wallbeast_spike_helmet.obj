@@ -13,3 +13,9 @@ xan2d = 444
 members = true
 iop2 = Wear
 name = Spiny helmet
+//Server
+desc=You don't want to wear it inside-out.
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=5lb

@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 14901
 name = Metal Press
+//Server
+desc=The pressing section of a metal pressing machine.

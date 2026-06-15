@@ -3,3 +3,5 @@ hillskew = true
 op1 = Enter
 models_only = 14220
 name = Confusing door
+//Server
+desc=Where does it lead?

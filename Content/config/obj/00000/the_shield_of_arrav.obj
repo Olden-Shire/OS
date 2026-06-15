@@ -7,3 +7,7 @@ zoom2d = 1232
 yan2d = 186
 xan2d = 264
 name = Book
+//Server
+desc=The Shield of Arrav by A R Wright.
+weight=200g
+tradeable=no

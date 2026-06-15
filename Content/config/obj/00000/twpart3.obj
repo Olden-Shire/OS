@@ -6,3 +6,7 @@ xan2d = 188
 cost = 187500
 members = true
 name = Cannon barrels
+//Server
+desc=The barrels of the multicannon.
+weight=15kg
+category=cannon_parts

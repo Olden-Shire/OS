@@ -5,3 +5,6 @@ zoom2d = 920
 xan2d = 232
 iop1 = Eat
 name = Sliced banana
+//Server
+desc=You swear you had more than three slices before.
+weight=1oz

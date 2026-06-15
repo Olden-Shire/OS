@@ -5,3 +5,7 @@ forceapproach = 13
 nonsolid = true
 models_only = 2245
 name = Cupboard
+//Server
+desc=Wonder what's in here...
+category=cupboard_closed
+param=cupboard_other,garliccupboardopen

@@ -15,3 +15,6 @@ recol2d = 43026
 recol3s = 918
 recol3d = 43906
 name = Black prism
+//Server
+desc=A very black prism.
+weight=1g

@@ -13,3 +13,6 @@ recol1d = 6466
 recol2s = 7070
 recol2d = 6554
 name = Animate rock scroll
+//Server
+desc=An animate rock spell is written on this parchment.
+weight=10g

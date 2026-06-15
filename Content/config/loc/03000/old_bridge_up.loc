@@ -5,3 +5,5 @@ active = 1
 nonblockrange = true
 models_only = 2293
 name = Bridge
+//Server
+desc=It looks like only the guide ropes are holding the bridge up.

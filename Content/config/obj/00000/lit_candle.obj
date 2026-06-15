@@ -8,3 +8,7 @@ yan2d = 1864
 xan2d = 168
 iop1 = Extinguish
 name = Lit candle
+//Server
+desc=A lit candle.
+weight=1oz
+category=light_source_lit

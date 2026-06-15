@@ -8,3 +8,6 @@ zoom2d = 840
 yan2d = 32
 xan2d = 344
 name = Worn key
+//Server
+desc=This key has seen a lot of use.
+weight=10g

@@ -11,3 +11,15 @@ iop2 = Wield
 manwear = obj_dragon_sq_shield_1187_wear, 0
 womanwear = obj_dragon_sq_shield_1187_wear, 6
 name = Dragon sq shield
+//Server
+desc=An ancient and powerful looking Dragon Square shield.
+wearpos=lefthand
+weight=7lb
+category=armour_shield
+param=rangeattack,-2
+param=magicattack,-6
+param=stabdefence,50
+param=slashdefence,52
+param=crushdefence,48
+param=rangedefence,50
+param=defend_anim,human_shield_defence

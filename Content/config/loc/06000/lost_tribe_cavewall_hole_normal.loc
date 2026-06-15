@@ -3,3 +3,5 @@ active = 1
 nonblockrange = true
 models = 6912/4
 name = Wall
+//Server
+desc=A rock wall.

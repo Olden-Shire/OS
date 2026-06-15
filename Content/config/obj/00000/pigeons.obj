@@ -9,3 +9,7 @@ xan2d = 192
 iop1 = Open
 members = true
 name = Pigeon cage
+//Server
+desc=It's full of pigeons.
+weight=2kg
+tradeable=no

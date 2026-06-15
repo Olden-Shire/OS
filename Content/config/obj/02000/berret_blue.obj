@@ -15,3 +15,8 @@ womanhead = 98
 recol1s = 10659
 recol1d = 41492
 name = Blue beret
+//Server
+desc=Parlez-vous francais?
+weight=40g
+wearpos=hat
+param=party_clean_exempt,^true

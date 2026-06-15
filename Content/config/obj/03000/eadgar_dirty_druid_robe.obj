@@ -8,3 +8,6 @@ zoom2d = 2010
 yan2d = 116
 xan2d = 408
 name = Dirty robe
+//Server
+desc=It's dirty and smelly.
+weight=1g

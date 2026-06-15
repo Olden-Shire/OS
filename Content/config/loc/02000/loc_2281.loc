@@ -2,3 +2,5 @@
 length = 2
 models_only = 2278
 name = Ropeswing
+//Server
+desc=Holds the rope up. Hopefuly.

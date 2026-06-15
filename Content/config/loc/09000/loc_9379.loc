@@ -8,3 +8,5 @@ resizez = 160
 noshadow = true
 models_only = 9296
 name = Egg
+//Server
+desc=An egg incubated in the lava.

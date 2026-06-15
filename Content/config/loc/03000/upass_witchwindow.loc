@@ -3,3 +3,5 @@ ambient = 50
 op1 = Search
 models = 2032/4
 name = Window
+//Server
+desc=A window.

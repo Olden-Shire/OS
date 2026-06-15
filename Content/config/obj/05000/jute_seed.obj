@@ -12,3 +12,6 @@ count3 = 5174, 4
 count4 = 5175, 5
 cost = 5
 name = Jute seed
+//Server
+desc=A jute plant seed - plant in a hops patch.
+weight=1g

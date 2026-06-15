@@ -11,3 +11,7 @@ iop2 = Wear
 manwear = obj_spined_boots_6143_man, 0
 womanwear = obj_spined_boots_6143_woman, 0
 name = Spined boots
+//Server
+desc=Some finely crafted Fremennik boots, made from spined dagannoth hide.
+weight=7lb
+wearpos=feet

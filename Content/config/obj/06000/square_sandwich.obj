@@ -7,3 +7,6 @@ xan2d = 316
 iop1 = Eat
 cost = 25
 name = Square sandwich
+//Server
+desc=A freshly made square sandwich
+weight=20g

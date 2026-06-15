@@ -2,3 +2,5 @@
 recol = 5669/8720 6707/8472 5788/9096
 models_only = 5439
 name = Standing torch
+//Server
+desc=A crude torch stuck in the ground.

@@ -16,3 +16,6 @@ recol4d = 6036
 recol5s = 119
 recol5d = 6036
 name = Burnt eel
+//Server
+desc=It looks like it's seen one too many fires.
+weight=2kg

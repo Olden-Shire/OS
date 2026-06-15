@@ -10,3 +10,6 @@ recol1d = 49
 recol2s = 78
 recol2d = 127
 name = Dyed orange
+//Server
+desc=Orange slices which have been dyed, but it looks more like they died.
+weight=1g

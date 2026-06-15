@@ -12,3 +12,7 @@ manhead = 10390
 womanhead = 10402
 iop5 = Destroy
 name = Bobble hat
+//Server
+desc=A woolly bobble hat.
+wearpos=hat
+weight=250g

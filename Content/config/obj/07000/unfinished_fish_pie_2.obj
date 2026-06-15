@@ -19,3 +19,6 @@ recol4d = 43082
 recol5s = 5683
 recol5d = 5665
 name = Part fish pie
+//Server
+desc=Still needs one more ingredient.
+weight=1g

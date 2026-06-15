@@ -5,3 +5,5 @@ op1 = Board
 op2 = Board ( Pay 10 )
 models_only = 4970
 name = Swamp Boaty
+//Server
+desc=A dirty little swamp boat.

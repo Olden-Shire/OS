@@ -7,3 +7,8 @@ zoom2d = 1040
 yan2d = 120
 xan2d = 380
 name = Hazeel scroll
+//Server
+desc=Scroll containing a powerful enchantment of restoration.
+weight=10g
+param=no_alchemy,1
+tradeable=no

@@ -9,3 +9,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 10574
 name = Unfinished potion
+//Server
+desc=A vial of coconut milk and Cactus spine.
+weight=35g
+category=potion

@@ -6,3 +6,6 @@ yan2d = 680
 xan2d = 504
 members = true
 name = Mort myre stem
+//Server
+desc=A cutting from a budding branch.
+weight=10g

@@ -10,3 +10,6 @@ iop2 = Empty
 recol1s = 127
 recol1d = 82
 name = Bonemeal
+//Server
+desc=A pot of crushed wolf bones.
+weight=1500g

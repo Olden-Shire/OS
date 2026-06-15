@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 8598/7706
 models_only = 2288
 name = Standing torch
+//Server
+desc=A crude torch stuck in the ground.

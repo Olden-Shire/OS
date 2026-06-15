@@ -9,3 +9,5 @@ nonblockrange = true
 recol = 6689/7331
 models_only = 819
 name = Rockslide
+//Server
+desc=You will need to climb over it.

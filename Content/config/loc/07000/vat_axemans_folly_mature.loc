@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 12500/3503 12492/4777 12484/6051
 models_only = 7778 7780 7782
 name = Fermenting Vat
+//Server
+desc=This vat is filled with mature Axeman's Folly.

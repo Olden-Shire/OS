@@ -11,3 +11,7 @@ cost = 300
 recol1s = 7719
 recol1d = 819
 name = Stripy pirate shirt
+//Server
+desc=A sea worthy shirt.
+wearpos=torso
+weight=1kg

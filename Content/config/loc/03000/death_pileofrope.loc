@@ -4,3 +4,5 @@ ambient = 30
 contrast = 30
 models_only = 1842
 name = Climbing Rope
+//Server
+desc=Some of the Sherpa's climbing rope.

@@ -10,3 +10,7 @@ iop1 = Eat
 recol1s = 4773
 recol1d = 8993
 name = Cooked chompy
+//Server
+desc=It might look delicious to an ogre.
+weight=10kg
+category=category_5

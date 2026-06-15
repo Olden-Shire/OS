@@ -7,3 +7,5 @@ nonsolid = true
 recol = 6932/6689 8662/664 7626/908
 models_only = 10348
 name = Dwarf Flag
+//Server
+desc=Flags flying the Dwarf colours.

@@ -3,3 +3,5 @@ width = 2
 mirror = true
 models_only = 627
 name = Wooden doors
+//Server
+desc=Large doors set into the hillside.

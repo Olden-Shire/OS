@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 563
 recol1d = 43208
 name = Bottled water
+//Server
+desc=A bottle of water.
+weight=50g

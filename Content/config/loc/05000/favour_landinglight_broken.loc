@@ -10,3 +10,5 @@ op1 = Look
 op5 = Search
 models_only = 5647
 name = Gnome landing light
+//Server
+desc=A candle, a lens and some sort of crystal all precariously balanced together.

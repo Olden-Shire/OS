@@ -8,3 +8,14 @@ iop2 = Wear
 manwear = obj_iron_chainbody_1101_man, 0
 womanwear = obj_iron_chainbody_1101_woman, 0
 name = Iron chainbody
+//Server
+desc=A series of connected metal rings.
+wearpos=torso
+category=armour_body
+weight=15lb
+param=magicattack,-15
+param=stabdefence,10
+param=slashdefence,15
+param=crushdefence,19
+param=magicdefence,-3
+param=rangedefence,12

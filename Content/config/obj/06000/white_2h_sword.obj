@@ -13,3 +13,8 @@ members = true
 recol1s = 61
 recol1d = 99
 name = White 2h sword
+//Server
+desc=A two handed sword.
+wearpos=righthand
+wearpos2=lefthand
+weight=8lb

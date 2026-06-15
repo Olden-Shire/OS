@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 24/7721
 models_only = 1388
 name = Cave rocks
+//Server
+desc=Solid rock from the cave floor.

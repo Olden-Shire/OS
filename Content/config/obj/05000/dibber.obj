@@ -10,3 +10,6 @@ womanwear = obj_seed_dibber_5343_wear, 0
 members = true
 cost = 6
 name = Seed dibber
+//Server
+desc=Use this to plant seeds with.
+weight=2g

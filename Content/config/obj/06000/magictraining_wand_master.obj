@@ -11,3 +11,7 @@ xan2d = 68
 cost = 2500
 members = true
 name = Master wand
+//Server
+desc=A master level wand.
+wearpos=righthand
+weight=7oz

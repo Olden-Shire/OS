@@ -2,3 +2,5 @@
 ambient = 35
 models_only = 9008 9010
 name = Crate of rune caskets
+//Server
+desc=A wooden crate containing caskets.

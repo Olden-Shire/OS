@@ -8,3 +8,6 @@ zoom2d = 680
 yan2d = 316
 xan2d = 180
 name = Pestle and mortar
+//Server
+desc=I can grind things for potions in this.
+weight=2oz

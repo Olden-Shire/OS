@@ -2,3 +2,5 @@
 active = 1
 models = 2125/4
 name = Blacksmith's tools
+//Server
+desc=Various implements for working with metal.

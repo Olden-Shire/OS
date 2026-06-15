@@ -2,3 +2,5 @@
 ambient = 20
 models_only = 5575 1452
 name = Statue
+//Server
+desc=An expertly carved statue of a former King of Misthalin.

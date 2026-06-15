@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 8286/9560 115/6364 4882/918
 models_only = 1239
 name = Bed
+//Server
+desc=It's a goldfish! No, wait, it's just a bed.

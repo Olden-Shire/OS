@@ -7,3 +7,6 @@ members = true
 recol1s = 10562
 recol1d = 10460
 name = Minecart ticket
+//Server
+desc=A ticket to take you from the passage under White Wolf Mountain to Keldagrim.
+weight=1g

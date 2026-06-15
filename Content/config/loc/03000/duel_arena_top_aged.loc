@@ -8,3 +8,5 @@ mapscene = 22
 nonblockrange = true
 models = 3309/0
 name = Wall
+//Server
+desc=Lean against the wall to get a better view!

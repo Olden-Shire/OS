@@ -2,3 +2,5 @@
 recol = 6695/18
 models_only = 14204
 name = Candles
+//Server
+desc=Posh candlesticks.

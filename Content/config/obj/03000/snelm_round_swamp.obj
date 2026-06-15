@@ -22,3 +22,7 @@ recol3d = 6577
 recol4s = 6697
 recol4d = 6697
 name = Myre snelm
+//Server
+desc=A marshy coloured snail shell helmet.
+weight=2kg
+wearpos=hat

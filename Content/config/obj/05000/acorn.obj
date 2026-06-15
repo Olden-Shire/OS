@@ -13,3 +13,6 @@ count3 = 5113, 4
 count4 = 5114, 5
 cost = 6
 name = Acorn
+//Server
+desc=Plant this in a plantpot of soil to grow a sapling.
+weight=2g

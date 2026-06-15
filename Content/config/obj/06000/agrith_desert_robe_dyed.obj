@@ -11,3 +11,7 @@ members = true
 recol1s = 25238
 recol1d = 10508
 name = Black desert robe
+//Server
+desc=A desert robe stained black with mushroom ink.
+wearpos=legs
+weight=2lb

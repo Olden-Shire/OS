@@ -15,3 +15,7 @@ recol1d = 17633
 recol2s = 70
 recol2d = 49
 name = Jade machete
+//Server
+desc=A jungle specific slashing device.
+wearpos=righthand
+weight=3lb

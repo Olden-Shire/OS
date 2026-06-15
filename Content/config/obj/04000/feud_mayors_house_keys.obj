@@ -7,3 +7,6 @@ zoom2d = 700
 yan2d = 20
 xan2d = 328
 name = Keys
+//Server
+desc=Keys to the Mayor's house.
+weight=10g

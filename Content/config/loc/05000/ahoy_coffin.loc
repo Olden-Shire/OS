@@ -5,3 +5,5 @@ op1 = Open
 nonblockrange = true
 models_only = 5254
 name = Coffin
+//Server
+desc=The resting place of Necrovarus' mortal body.

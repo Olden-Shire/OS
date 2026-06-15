@@ -20,3 +20,8 @@ recol3d = 11173
 recol4s = 61
 recol4d = 11181
 name = Chompy bird hat
+//Server
+desc=A symbol of your chompy bird hunting prowess.
+wearpos=hat
+weight=1lb
+tradeable=no

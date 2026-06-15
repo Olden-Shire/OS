@@ -1,3 +1,5 @@
 // loc 4959
 models_only = 1774
 name = Lever
+//Server
+desc=It has the letter 'F' inscribed on the end.

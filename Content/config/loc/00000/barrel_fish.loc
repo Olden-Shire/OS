@@ -1,3 +1,5 @@
 // loc 363
 models_only = 1457
 name = Barrel
+//Server
+desc=A wooden barrel containing lots of fish.

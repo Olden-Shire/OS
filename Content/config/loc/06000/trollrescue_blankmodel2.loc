@@ -2,3 +2,5 @@
 op1 = Step-off
 models_only = 6318
 name = Ice ledge
+//Server
+desc=Looks slippery.

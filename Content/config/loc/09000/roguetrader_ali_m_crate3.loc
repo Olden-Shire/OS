@@ -3,3 +3,5 @@ ambient = 35
 nonblockrange = true
 models_only = 9008 9009
 name = Crate
+//Server
+desc=A wooden crate containing Blackjacks.

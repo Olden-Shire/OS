@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 5403
 name = Market stall
+//Server
+desc=Doesn't look too good...

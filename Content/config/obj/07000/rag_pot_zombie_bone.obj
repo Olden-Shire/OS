@@ -8,3 +8,6 @@ cost = 0
 iop4 = Empty
 members = true
 name = Bone in vinegar
+//Server
+desc=There is a zombie bone in here.
+weight=3lb

@@ -3,3 +3,5 @@ blockwalk = true
 op1 = Open
 models = 609/0
 name = Door
+//Server
+desc=The door to the Tower.

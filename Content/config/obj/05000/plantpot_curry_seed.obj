@@ -7,3 +7,6 @@ members = true
 recol1s = 6930
 recol1d = 7054
 name = Curry seedling
+//Server
+desc=A curry tree seed has been sown in this plant pot.
+weight=2lb

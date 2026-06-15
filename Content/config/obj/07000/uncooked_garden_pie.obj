@@ -9,3 +9,6 @@ contrast = 10
 ambient = 10
 cost = 12
 name = Raw garden pie
+//Server
+desc=Needs cooking before I eat it.
+weight=1g

@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 7099
 name = Zamorak brew(4)
+//Server
+desc=4 doses of Zamorak Brew.
+weight=35g
+category=potion
+param=next_obj_stage,3dosepotionofzamorak
+param=decant_potion_enum,potion_potionofzamorak
+param=dose_count,4

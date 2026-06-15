@@ -16,3 +16,14 @@ recol2d = 43955
 recol3s = 53167
 recol3d = 43955
 name = Flowers
+//Server
+desc=A posy of flowers.
+wearpos=righthand
+weight=1oz
+category=flowers
+param=stabattack,-100
+param=slashattack,-100
+param=crushattack,-50
+param=strengthbonus,-10
+param=crushattack_anim,human_blunt_spike
+param=crush_sound,flower_attack

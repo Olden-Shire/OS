@@ -9,3 +9,7 @@ yan2d = 124
 xan2d = 488
 iop1 = Look through
 name = Sextant
+//Server
+desc=Used by navigators to find their position in RuneScape.
+weight=200g
+tradeable=no

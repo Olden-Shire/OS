@@ -3,3 +3,5 @@ sharelight = true
 op1 = Crawl-down
 models_only = 21233
 name = Cart tunnel
+//Server
+desc=It looks cramped and dark.

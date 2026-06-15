@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1792
 name = Carcass
+//Server
+desc=Whatever it was I'm glad it's not alive.

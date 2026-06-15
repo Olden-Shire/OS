@@ -7,3 +7,5 @@ op1 = Bait
 op3 = hidden
 models_only = 2331
 name = Fishing spot
+//Server
+desc=I can see eels swimming in the lava.

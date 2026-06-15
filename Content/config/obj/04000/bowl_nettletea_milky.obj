@@ -10,3 +10,6 @@ members = true
 recol1s = 44263
 recol1d = 14507
 name = Nettle tea
+//Server
+desc=It's a bowl of milky nettle tea.
+weight=2lb

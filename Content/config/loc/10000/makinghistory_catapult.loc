@@ -1,3 +1,5 @@
 // loc 10278
 models_only = 10017
 name = Catapult
+//Server
+desc=Looks like it's been out of use for some time.

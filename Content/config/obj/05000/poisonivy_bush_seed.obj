@@ -15,3 +15,6 @@ cost = 166
 recol1s = 431
 recol1d = 90
 name = Poison ivy seed
+//Server
+desc=A poison ivy bush seed - plant in a bush patch.
+weight=1g

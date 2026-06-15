@@ -5,3 +5,5 @@ nonsolid = true
 active = 1
 models = 1135/22
 name = Plank
+//Server
+desc=A plank.

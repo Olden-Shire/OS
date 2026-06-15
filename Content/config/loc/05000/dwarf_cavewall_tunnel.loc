@@ -5,3 +5,5 @@ op1 = Go-through
 recol = 6689/7335 6806/7326 6930/7446 5006/7566 900/8070
 models_only = 4968
 name = Cave entrance
+//Server
+desc=A small cave entrance.

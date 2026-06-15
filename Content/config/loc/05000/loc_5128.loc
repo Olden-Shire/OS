@@ -7,3 +7,5 @@ resizey = 192
 op1 = Close
 models = 5117/0
 name = Door
+//Server
+desc=A tall wooden door.

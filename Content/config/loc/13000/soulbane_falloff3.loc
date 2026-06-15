@@ -7,3 +7,5 @@ ambient = 25
 op1 = Enter
 models_only = 9810
 name = Rift
+//Server
+desc=Should I go down there?

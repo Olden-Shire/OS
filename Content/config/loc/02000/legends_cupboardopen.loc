@@ -5,3 +5,7 @@ op3 = Shut
 forceapproach = 13
 models_only = 2244
 name = Open Cupboard
+//Server
+desc=An antique by anyone's standards, however, it might have something interesting in it.
+category=cupboard_opened
+param=cupboard_other,legends_cupboard

@@ -7,3 +7,5 @@ op1 = Look
 op5 = Search
 models = 5650/4
 name = Sculpture
+//Server
+desc=An incredibly detailed stone sculpture.

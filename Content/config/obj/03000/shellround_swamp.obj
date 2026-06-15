@@ -15,3 +15,6 @@ recol3d = 6577
 recol4s = 6697
 recol4d = 6697
 name = Blamish myre shell
+//Server
+desc=A large 'Myre' coloured blamish snail shell, looks protective.
+weight=10kg

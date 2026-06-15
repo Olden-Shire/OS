@@ -8,3 +8,6 @@ members = true
 iop1 = Fill
 ambient = 15
 name = Empty sack
+//Server
+desc=An empty vegetable sack.
+weight=1lb

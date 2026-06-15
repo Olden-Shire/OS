@@ -9,3 +9,6 @@ xan2d = 204
 recol1s = 39834
 recol1d = 7766
 name = Bucket of wax
+//Server
+desc=It's a bucket of wax.
+weight=2500g

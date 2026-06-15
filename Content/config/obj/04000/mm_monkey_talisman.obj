@@ -8,3 +8,7 @@ yan2d = 4
 xan2d = 456
 iop2 = Hold
 name = Monkey talisman
+//Server
+desc=A magical talisman in the shape of a monkey head.
+weight=3oz
+wearpos=righthand

@@ -5,3 +5,5 @@ nonsolid = true
 recol = 5916/8076
 models_only = 722
 name = Trap
+//Server
+desc=Best not to get caught!

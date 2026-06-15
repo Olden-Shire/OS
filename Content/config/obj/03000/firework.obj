@@ -12,3 +12,6 @@ iop4 = Empty
 recol1s = 61
 recol1d = 6868
 name = Firework
+//Server
+desc=A firework potion, this'll look pretty!
+weight=35g

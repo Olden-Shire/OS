@@ -1,3 +1,5 @@
 // loc 346
 models_only = 1274
 name = Cabinet
+//Server
+desc=The perfect place to store things.

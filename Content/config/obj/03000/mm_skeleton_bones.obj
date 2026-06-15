@@ -8,3 +8,7 @@ yan2d = 368
 xan2d = 400
 iop1 = Bury
 name = Bones
+//Server
+desc=They seem to shake slightly... It might be a good idea to bury them.
+weight=500g
+category=bones

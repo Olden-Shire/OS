@@ -4,3 +4,5 @@ op1 = Jump-To
 nonsolid = true
 models_only = 3951
 name = Rock
+//Server
+desc=I can't see a rock!

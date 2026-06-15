@@ -9,3 +9,6 @@ zan2d = 2012
 xan2d = 344
 members = true
 name = Rod dust
+//Server
+desc=Rod of Ivandis dust.
+weight=50g

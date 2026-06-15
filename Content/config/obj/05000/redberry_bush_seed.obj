@@ -13,3 +13,6 @@ count3 = 5206, 4
 count4 = 5207, 5
 cost = 4
 name = Redberry seed
+//Server
+desc=A redberry bush seed - plant in a bush patch.
+weight=1g

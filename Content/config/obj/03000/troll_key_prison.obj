@@ -12,3 +12,7 @@ recol1d = 7646
 recol2s = 49
 recol2d = 7630
 name = Prison key
+//Server
+desc=The key to the troll prison.
+weight=55g
+tradeable=no

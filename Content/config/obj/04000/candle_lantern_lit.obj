@@ -8,3 +8,7 @@ xan2d = 140
 cost = 15
 members = true
 name = Candle lantern
+//Server
+desc=A flickering candle in a glass cage.
+weight=2lb
+category=light_source_lit

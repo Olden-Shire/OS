@@ -12,3 +12,7 @@ recol1d = 38814
 recol2s = 24
 recol2d = 4
 name = Blue skirt (t)
+//Server
+desc=Leg covering favoured by women and wizards. With a colourful trim!
+wearpos=legs
+weight=2lb

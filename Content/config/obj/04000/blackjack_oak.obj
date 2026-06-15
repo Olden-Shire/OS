@@ -10,3 +10,8 @@ manwear = obj_oak_blackjack_wear, 0
 womanwear = obj_oak_blackjack_wear, 6
 members = true
 name = Oak-blackjack
+//Server
+desc=A handy little club made out of oak.
+weight=1kg
+wearpos=righthand
+weight=4lb

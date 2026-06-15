@@ -8,3 +8,6 @@ zoom2d = 2128
 yan2d = 1985
 xan2d = 429
 name = Snake corpse
+//Server
+desc=Like a snake only not alive.
+weight=3kg

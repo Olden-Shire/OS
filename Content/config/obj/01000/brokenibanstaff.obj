@@ -7,3 +7,7 @@ xan2d = 216
 members = true
 cost = 20
 name = Iban's staff
+//Server
+desc=I'll need to get this repaired before I can use it.
+weight=4lb
+tradeable=no

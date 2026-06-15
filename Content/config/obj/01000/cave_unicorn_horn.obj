@@ -8,3 +8,7 @@ xan2d = 248
 members = true
 cost = 20
 name = Unicorn horn
+//Server
+desc=A withered unicorn horn.
+weight=7g
+tradeable=no

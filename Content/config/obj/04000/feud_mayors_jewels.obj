@@ -9,3 +9,6 @@ recol1d = 933
 recol2s = 127
 recol2d = 916
 name = Jewels
+//Server
+desc=The Mayor of Pollnivneach's wife's jewels.
+weight=10g

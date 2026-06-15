@@ -10,3 +10,6 @@ cost = 42
 recol1s = 44263
 recol1d = 6063
 name = Fried mushrooms
+//Server
+desc=A bowl of fried Bittercap mushrooms.
+weight=500g

@@ -4,3 +4,5 @@ ambient = 20
 nonsolid = true
 models_only = 5510
 name = Standard
+//Server
+desc=A standard of Lumbridge Castle.

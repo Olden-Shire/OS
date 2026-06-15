@@ -4,3 +4,5 @@ sharelight = true
 ambient = 50
 models_only = 14268
 name = Hope bridge
+//Server
+desc=Does that really exist?

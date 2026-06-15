@@ -13,3 +13,8 @@ womanwear = obj_seercull_6724_wear, 6
 recol1s = 6674
 recol1d = 6049
 name = Seercull
+//Server
+desc=An ancient Fremennik bow that was once used to battle the Moon Clan.
+wearpos=righthand
+wearpos2=lefthand
+weight=3lb

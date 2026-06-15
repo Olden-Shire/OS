@@ -2,3 +2,5 @@
 ambient = 40
 models_only = 5494
 name = Grain sacks
+//Server
+desc=A sack full of grain.

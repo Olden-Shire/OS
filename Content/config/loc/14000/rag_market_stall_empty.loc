@@ -4,3 +4,5 @@ length = 2
 op2 = Steal-From
 models_only = 1421
 name = Market stall
+//Server
+desc=The wine merchant's stall.

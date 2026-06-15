@@ -8,3 +8,6 @@ xan2d = 204
 members = true
 cost = 1
 name = Rock
+//Server
+desc=A rock.
+weight=1kg

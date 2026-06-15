@@ -7,3 +7,6 @@ zoom2d = 750
 yan2d = 1980
 xan2d = 292
 name = Half of a key
+//Server
+desc=The loop end of the mysterious Crystal Key. Can you find the other half?
+weight=5g

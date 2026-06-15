@@ -5,3 +5,6 @@ yan2d = 1708
 zan2d = 284
 xan2d = 176
 name = Bark
+//Server
+desc=Bark from a hollow tree.
+weight=1kg

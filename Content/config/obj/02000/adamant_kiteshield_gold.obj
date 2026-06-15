@@ -16,3 +16,16 @@ recol2d = 7114
 recol3s = 7054
 recol3d = 7114
 name = Adam kiteshield (g)
+//Server
+desc=Adamant kiteshield with gold trim.
+wearpos=lefthand
+weight=13lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,27
+param=slashdefence,31
+param=crushdefence,29
+param=magicdefence,-1
+param=rangedefence,29
+param=defend_anim,human_shield_defence

@@ -4,3 +4,5 @@ zoom2d = 740
 yan2d = 1492
 xan2d = 300
 name = Fishing explosive
+//Server
+desc=A vial that explodes in water.

@@ -7,3 +7,6 @@ yan2d = 138
 xan2d = 304
 members = true
 name = Mole claw
+//Server
+desc=A mole claw.
+weight=1g

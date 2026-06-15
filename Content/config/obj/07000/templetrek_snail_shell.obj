@@ -6,3 +6,6 @@ yan2d = 123
 xan2d = 81
 members = true
 name = Snail shell
+//Server
+desc=A shell from a Giant Snail.
+weight=7kg

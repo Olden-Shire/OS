@@ -7,3 +7,5 @@ forceapproach = 14
 mapscene = 7
 models_only = 9504
 name = Ladder
+//Server
+desc=I can climb down this.

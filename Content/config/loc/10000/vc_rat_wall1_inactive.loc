@@ -7,3 +7,5 @@ contrast = 7
 op1 = Spectate
 models = 10067/0 10068/1 10069/9
 name = Rat wall
+//Server
+desc=Observe the rats.

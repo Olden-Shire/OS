@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 1706
 name = Tropical leaves
+//Server
+desc=Leaves of a bamboo tree.

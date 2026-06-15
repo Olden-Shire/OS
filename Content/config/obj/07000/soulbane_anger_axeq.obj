@@ -11,3 +11,7 @@ manwear = obj_anger_battleaxe_wear, 0
 womanwear = obj_anger_battleaxe_wear, 6
 members = true
 name = Anger battleaxe
+//Server
+desc=A heavy duty axe.
+wearpos=righthand
+weight=6lb

@@ -5,3 +5,5 @@ mapscene = 7
 recol = 5541/7322 5665/7442
 models_only = 21232
 name = Ladder
+//Server
+desc=I can climb down this.

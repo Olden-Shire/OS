@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 13518/4292
 models_only = 7778 7779 7782
 name = Fermenting Vat
+//Server
+desc=This vat contains a mixture of water, barley malt, and Harralander.

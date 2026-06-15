@@ -5,3 +5,5 @@ hillskew = true
 op1 = Take-from
 models_only = 14898 14899
 name = Net
+//Server
+desc=There is seaweed all over this fishing net.

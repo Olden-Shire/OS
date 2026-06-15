@@ -4,3 +4,6 @@ length = 2
 nonblockrange = true
 models_only = 1453
 name = Picnic bench
+//Server
+desc=Sit back and enjoy the view.
+category=unusable_table

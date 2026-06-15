@@ -8,3 +8,5 @@ nonsolid = true
 noshadow = true
 models_only = 10941
 name = Light
+//Server
+desc=There's a hole in the roof!

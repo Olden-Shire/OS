@@ -6,3 +6,6 @@ yan2d = 1872
 xan2d = 124
 members = true
 name = Herbal tincture
+//Server
+desc=A strong medicinal brew for heavy chests.
+weight=150g

@@ -5,3 +5,6 @@ zoom2d = 661
 yan2d = 84
 xan2d = 138
 name = Bell bauble
+//Server
+desc=An unpainted bauble shaped like a bell.
+weight=200g

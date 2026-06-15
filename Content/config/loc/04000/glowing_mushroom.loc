@@ -2,3 +2,5 @@
 op1 = Pick
 models_only = 4892
 name = Glowing fungus
+//Server
+desc=A bizarre fungus.  It emits a pale blue light.

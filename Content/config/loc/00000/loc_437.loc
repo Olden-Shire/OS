@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6689/7952
 models_only = 779
 name = Rock
+//Server
+desc=A lump of rock.

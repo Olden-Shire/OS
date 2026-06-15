@@ -4,3 +4,5 @@ op2 = Use-quickly
 nonblockrange = true
 models_only = 11208
 name = Bank booth
+//Server
+desc=The bank teller will serve you from here.

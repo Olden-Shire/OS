@@ -10,3 +10,8 @@ recol1d = 9166
 recol2s = 7081
 recol2d = 9166
 name = Blessed gold bowl
+//Server
+desc=A specially made bowl constructed out of pure gold and blessed.
+weight=800g
+tradeable=no
+param=next_obj_stage,goldbowlbless_water

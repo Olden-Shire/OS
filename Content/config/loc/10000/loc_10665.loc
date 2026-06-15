@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 10463
 name = Gifts
+//Server
+desc=Boxes containing stuff.

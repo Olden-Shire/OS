@@ -4,3 +4,5 @@ ambient = 10
 active = 1
 models = 2075/4
 name = Stuffed swordfish
+//Server
+desc=It really was this big!

@@ -10,3 +10,6 @@ members = true
 recol1s = 127
 recol1d = 6618
 name = Ale yeast
+//Server
+desc=A pot filled with ale yeast.
+weight=100oz

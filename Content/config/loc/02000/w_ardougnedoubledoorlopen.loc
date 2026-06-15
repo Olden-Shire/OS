@@ -4,3 +4,7 @@ recol = 7089/61
 retex = 3/16
 models = 639/0
 name = Door
+//Server
+desc=A door.
+category=door_left_opened
+param=next_loc_stage,w_ardougnedoubledoorl

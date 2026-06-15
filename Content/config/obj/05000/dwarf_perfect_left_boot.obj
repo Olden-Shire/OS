@@ -8,3 +8,6 @@ xan2d = 100
 members = true
 iop1 = Wear
 name = Left boot
+//Server
+desc=One of a pair I assume.
+weight=500g

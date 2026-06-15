@@ -13,3 +13,7 @@ recol1d = 40171
 recol2s = 7070
 recol2d = 933
 name = Sketch
+//Server
+desc=A rough sketch of a bowl shaped vessel given to you by Gujuo.
+weight=20g
+tradeable=no

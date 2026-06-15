@@ -18,3 +18,14 @@ recol2d = 127
 recol3s = 4882
 recol3d = 127
 name = Holy symbol
+//Server
+desc=A blessed holy symbol of Saradomin.
+wearpos=front
+weight=7g
+param=stabdefence,2
+param=slashdefence,2
+param=crushdefence,2
+param=magicdefence,2
+param=rangedefence,2
+param=prayerbonus,8
+param=saradominitem,^true

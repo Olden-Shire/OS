@@ -8,3 +8,6 @@ zoom2d = 1450
 recol1s = 43125
 recol1d = 41
 name = Consecration seed
+//Server
+desc=This consecration seed looks grey and dead.
+weight=14g

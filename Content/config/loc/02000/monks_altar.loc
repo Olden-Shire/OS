@@ -3,3 +3,6 @@ width = 2
 op1 = Pray-at
 models_only = 1152
 name = Altar
+//Server
+desc=A shrine for the faithful to worship at.
+category=prayer_altar

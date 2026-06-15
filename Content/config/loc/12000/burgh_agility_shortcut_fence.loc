@@ -6,3 +6,5 @@ active = 1
 recol = 5404/12818
 models = 5391/0
 name = Low fence
+//Server
+desc=Looks slightly lower than the rest, perhaps you can jump it?

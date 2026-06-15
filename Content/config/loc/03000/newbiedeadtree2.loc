@@ -6,3 +6,6 @@ op1 = Chop down
 op3 = hidden
 models_only = 1716
 name = Tree
+//Server
+desc=One of the most common trees in RuneScape.
+param=next_loc_stage,deadtree1_stump

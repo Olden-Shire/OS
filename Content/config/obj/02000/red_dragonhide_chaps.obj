@@ -15,3 +15,15 @@ recol1d = 912
 recol2s = 22424
 recol2d = 540
 name = Red d'hide chaps
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=legs
+weight=12lb
+category=armour_legs
+param=magicattack,-10
+param=rangeattack,14
+param=stabdefence,28
+param=slashdefence,22
+param=crushdefence,30
+param=magicdefence,20
+param=rangedefence,28

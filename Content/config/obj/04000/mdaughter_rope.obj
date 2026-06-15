@@ -5,3 +5,7 @@ manwear = obj_rope_4498_wear, 0
 womanwear = obj_rope_4498_wear, 6
 yof2d = -1
 name = Rope
+//Server
+desc=It's the rope you're holding.
+weight=5g
+wearpos=righthand

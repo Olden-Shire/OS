@@ -23,3 +23,8 @@ recol4d = 10760
 recol5s = 10508
 recol5d = 11140
 name = Veracs top 75
+//Server
+desc=Verac the Defiled's brassard.
+weight=11lb
+wearpos=torso
+wearpos2=arms

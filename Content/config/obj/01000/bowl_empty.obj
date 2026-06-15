@@ -5,3 +5,7 @@ zoom2d = 910
 yan2d = 1856
 xan2d = 204
 name = Bowl
+//Server
+desc=Useful for mixing things.
+weight=1lb
+param=next_obj_stage,bowl_water

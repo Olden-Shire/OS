@@ -4,3 +4,5 @@ op2 = Prospect
 recol = 24/4510
 models_only = 1390
 name = Rocks
+//Server
+desc=A rocky outcrop.

@@ -9,3 +9,7 @@ manwear = obj_dragon_platelegs_4087_man, 0
 womanwear = obj_dragon_platelegs_4087_woman, 0
 members = true
 name = Dragon platelegs
+//Server
+desc=These look pretty heavy.
+wearpos=legs
+weight=20lb

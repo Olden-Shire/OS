@@ -4,3 +4,5 @@ length = 3
 nonsolid = true
 models_only = 1818
 name = Adult Yommi tree
+//Server
+desc=A fully grown Yommi tree, it won't get much taller than this.

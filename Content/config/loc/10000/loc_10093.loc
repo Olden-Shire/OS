@@ -8,3 +8,5 @@ contrast = 10
 nonblockrange = true
 models_only = 9837
 name = Dairy churn
+//Server
+desc=Turns milk into other dairy products.

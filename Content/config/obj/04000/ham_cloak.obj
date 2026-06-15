@@ -21,3 +21,7 @@ recol3d = 61347
 recol4s = 6032
 recol4d = 61347
 name = Ham cloak
+//Server
+desc=A HAM cape.
+wearpos=back
+weight=1lb

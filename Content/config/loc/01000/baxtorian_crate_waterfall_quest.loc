@@ -2,3 +2,5 @@
 op1 = Search
 models_only = 2142
 name = Crate
+//Server
+desc=A wooden crate for storage.

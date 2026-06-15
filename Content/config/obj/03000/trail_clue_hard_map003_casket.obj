@@ -9,3 +9,6 @@ cost = 50
 iop1 = Open
 members = true
 name = Casket
+//Server
+desc=I hope there's treasure in it.
+weight=5kg

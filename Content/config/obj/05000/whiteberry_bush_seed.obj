@@ -15,3 +15,6 @@ cost = 133
 recol1s = 431
 recol1d = 90
 name = Whiteberry seed
+//Server
+desc=A whiteberry bush seed - plant in a bush patch.
+weight=1g

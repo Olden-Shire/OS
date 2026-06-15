@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 6174
 name = Plinth
+//Server
+desc=Empty.

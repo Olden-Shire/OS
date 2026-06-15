@@ -4,3 +4,5 @@ op1 = Climb-Down
 forceapproach = 13
 models_only = 1203
 name = Ladder
+//Server
+desc=This leads downwards.

@@ -5,3 +5,5 @@ length = 2
 ambient = 20
 models_only = 8694 8695
 name = Viking Boat
+//Server
+desc=A short long boat!

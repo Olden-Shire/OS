@@ -5,3 +5,5 @@ bgsound = 2143, 10
 recol = 22435/35747
 models_only = 2241
 name = Aggie's Cauldron
+//Server
+desc=Aggie's cooking something, probably best not to think what...

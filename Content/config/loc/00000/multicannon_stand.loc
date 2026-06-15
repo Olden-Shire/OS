@@ -5,3 +5,5 @@ op1 = Pick-up
 nonsolid = true
 models_only = 1801
 name = Cannon stand
+//Server
+desc=The mounting for the multicannon.

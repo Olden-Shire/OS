@@ -15,3 +15,6 @@ recol2d = 4539
 recol3s = 8635
 recol3d = 4669
 name = Barley malt
+//Server
+desc=A handful of barley malt.
+weight=1oz

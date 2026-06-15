@@ -8,3 +8,7 @@ zoom2d = 700
 yan2d = 20
 xan2d = 328
 name = Battered key
+//Server
+desc=An old battered key.
+weight=10g
+tradeable=no

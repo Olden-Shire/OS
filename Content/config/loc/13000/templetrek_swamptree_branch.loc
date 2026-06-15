@@ -5,3 +5,5 @@ length = 2
 active = 1
 models_only = 14148
 name = Swamp tree
+//Server
+desc=Big swamp tree branch.

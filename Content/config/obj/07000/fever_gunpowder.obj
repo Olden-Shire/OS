@@ -9,3 +9,6 @@ members = true
 recol1s = 82
 recol1d = 10502
 name = Gunpowder
+//Server
+desc=Best keep this away from naked flames.
+weight=1g

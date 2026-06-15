@@ -12,3 +12,7 @@ recol1d = 10704
 recol2s = 103
 recol2d = 10467
 name = Raw mackerel
+//Server
+desc=I should try cooking this.
+weight=350g
+category=category_57

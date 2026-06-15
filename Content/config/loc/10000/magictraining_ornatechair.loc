@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 5559/7585 5681/5409 5677/4382 5673/4506
 models_only = 4633
 name = Chair
+//Server
+desc=A nicely carved wooden chair.

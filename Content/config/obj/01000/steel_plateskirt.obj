@@ -11,3 +11,15 @@ womanwear = obj_iron_plateskirt_1081_woman, 0
 recol1s = 25238
 recol1d = 41
 name = Steel plateskirt
+//Server
+desc=Designer leg protection.
+wearpos=legs
+weight=18lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,17
+param=slashdefence,16
+param=crushdefence,15
+param=magicdefence,-4
+param=rangedefence,16

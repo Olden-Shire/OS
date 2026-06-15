@@ -8,3 +8,5 @@ resizey = 192
 resizez = 128
 models_only = 10678
 name = Doorway
+//Server
+desc=A doorway made of light.

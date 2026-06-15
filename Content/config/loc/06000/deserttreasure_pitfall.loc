@@ -4,3 +4,5 @@ anim = 1939
 blockwalk = true
 models = 6268/22
 name = Pitfall
+//Server
+desc=Uh-oh!

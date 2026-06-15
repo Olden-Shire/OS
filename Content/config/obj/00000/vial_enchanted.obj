@@ -8,3 +8,7 @@ xan2d = 80
 manwear = obj_vial_229_wear, 0
 womanwear = obj_vial_229_wear, 6
 name = Enchanted vial
+//Server
+desc=An enchanted empty glass vial.
+weight=10g
+tradeable=no

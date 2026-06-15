@@ -6,3 +6,6 @@ xan2d = 96
 members = true
 cost = 10
 name = Slop of compromise
+//Server
+desc=Two out of two goblin generals prefer it!
+weight=1g

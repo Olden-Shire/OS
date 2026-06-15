@@ -3,3 +3,5 @@ op1 = Climb-up
 mapscene = 69
 models_only = 1487
 name = Rope
+//Server
+desc=This leads back up the dig shaft.

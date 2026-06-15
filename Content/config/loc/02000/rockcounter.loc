@@ -3,3 +3,6 @@ width = 2
 active = 1
 models_only = 17324
 name = Counter
+//Server
+desc=A counter made from a stone block.
+category=usable_table

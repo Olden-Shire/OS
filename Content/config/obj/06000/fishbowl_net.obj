@@ -13,3 +13,6 @@ iop2 = Untangle
 ambient = 40
 contrast = 20
 name = Fishbowl and net
+//Server
+desc=An empty fishbowl in a net.
+weight=5lb

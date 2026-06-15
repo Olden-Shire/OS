@@ -19,3 +19,8 @@ recol2d = 5904
 recol3s = 8078
 recol3d = 5656
 name = Fremennik shirt
+//Server
+desc=The latest in Fremennik fashion.
+wearpos=torso
+wearpos2=arms
+weight=2lb

@@ -7,3 +7,6 @@ cost = 20
 members = true
 iop5 = Destroy
 name = Raw guide cake
+//Server
+desc=Now all I need to do is cook it.
+weight=500g

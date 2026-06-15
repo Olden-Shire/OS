@@ -2,3 +2,7 @@
 nonsolid = true
 models_only = 3592
 name = Rotting branch
+//Server
+desc=Not sure if that's any use.
+param=next_loc_stage,branch_druidicspirit2
+param=open_sound,bloom_branch

@@ -11,3 +11,14 @@ xan2d = 232
 members = true
 cost = 190000
 name = Crystal shield 3/10
+//Server
+desc=A nice sturdy crystal shield.
+category=armour_shield
+wearpos=lefthand
+weight=6lb
+param=magicattack,-10
+param=rangeattack,-10
+param=stabdefence,37
+param=slashdefence,40
+param=crushdefence,39
+param=rangedefence,66

@@ -4,3 +4,5 @@ length = 2
 recol = 6371/8514
 models_only = 1421 1445
 name = Bakery stall
+//Server
+desc=Gone-off bread, cakes and pastries.

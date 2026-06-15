@@ -8,3 +8,7 @@ zoom2d = 700
 yan2d = 20
 xan2d = 328
 name = Shiny key
+//Server
+desc=It catches the light!
+weight=10g
+tradeable=no

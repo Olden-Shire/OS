@@ -10,3 +10,6 @@ iop5 = Destroy
 recol1s = 38600
 recol1d = 478
 name = Rose tinted lens
+//Server
+desc=This lens has a pinkish tinge to it.
+weight=50g

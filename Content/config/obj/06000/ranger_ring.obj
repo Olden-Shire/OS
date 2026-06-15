@@ -9,3 +9,9 @@ zoom2d = 630
 yan2d = 1904
 xan2d = 332
 name = Archers ring
+//Server
+desc=A fabled ring that improves the wearer's skill with a bow...
+wearpos=ring
+weight=4g
+param=rangeattack,4
+param=rangedefence,4

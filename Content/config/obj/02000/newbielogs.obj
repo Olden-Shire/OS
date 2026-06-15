@@ -7,3 +7,8 @@ yan2d = 1852
 xan2d = 120
 op4 = Light
 name = Logs
+//Server
+desc=A number of wooden logs.
+weight=3lb
+weight=3lb
+tradeable=no

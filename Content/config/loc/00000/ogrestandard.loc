@@ -1,3 +1,5 @@
 // loc 859
 models_only = 1427
 name = Standard
+//Server
+desc=The standard of the ogre race.

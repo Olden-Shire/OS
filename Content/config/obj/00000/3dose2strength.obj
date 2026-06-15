@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 119
 name = Super strength(3)
+//Server
+desc=3 doses of super strength potion.
+weight=30g
+category=potion
+param=next_obj_stage,2dose2strength
+param=decant_potion_enum,potion_2strength
+param=dose_count,3

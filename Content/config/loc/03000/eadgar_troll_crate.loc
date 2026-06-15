@@ -6,3 +6,6 @@ contrast = 15
 nonblockrange = true
 models_only = 3815
 name = Crate
+//Server
+desc=It probably hasn't got anything interesting inside.
+category=empty_crate

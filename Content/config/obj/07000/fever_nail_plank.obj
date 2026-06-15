@@ -13,3 +13,6 @@ recol1d = 4515
 recol2s = 12694
 recol2d = 4515
 name = Repair plank
+//Server
+desc=Quite short, but not that thick.
+weight=20g

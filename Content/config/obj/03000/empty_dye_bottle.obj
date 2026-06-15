@@ -7,3 +7,6 @@ yan2d = 1920
 xan2d = 124
 members = true
 name = Sample bottle
+//Server
+desc=An empty sample bottle.
+weight=20g

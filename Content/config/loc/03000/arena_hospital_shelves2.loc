@@ -5,3 +5,5 @@ contrast = 15
 recol = 7700/103 7952/99 8076/94
 models_only = 2134
 name = Hospital shelves
+//Server
+desc=Storage for drugs and bandages.

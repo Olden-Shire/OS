@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 5772/14742
 models_only = 14146
 name = Spiny bush
+//Server
+desc=A bush made up of long slender branches.

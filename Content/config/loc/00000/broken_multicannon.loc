@@ -4,3 +4,5 @@ width = 3
 op1 = Inspect
 models_only = 15336
 name = Broken multicannon
+//Server
+desc=A powerful ranging device, unfortunately not working.

@@ -10,3 +10,6 @@ womanwear = obj_watering_can_5331_wear, 0
 members = true
 cost = 8
 name = Watering can
+//Server
+desc=This watering can is empty.
+weight=100g

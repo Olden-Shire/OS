@@ -4,3 +4,5 @@ length = 3
 recol = 8770/21283 924/6080
 models_only = 1196
 name = Bed
+//Server
+desc=A bed fit for a king.

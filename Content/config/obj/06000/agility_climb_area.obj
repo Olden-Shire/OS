@@ -5,3 +5,7 @@ members = true
 recol1s = 37824
 recol1d = 17061
 name = Agility climb
+//Server
+desc=Ability to climb surfaces.
+weight=1g
+weight=1kg

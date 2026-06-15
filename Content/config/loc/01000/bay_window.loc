@@ -2,3 +2,5 @@
 length = 3
 models_only = 2144
 name = Bay window
+//Server
+desc=This lets in more light.

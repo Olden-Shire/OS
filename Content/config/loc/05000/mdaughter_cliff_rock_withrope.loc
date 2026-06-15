@@ -4,3 +4,5 @@ nonsolid = true
 recol = 6689/7331
 models_only = 5699
 name = Rock
+//Server
+desc=There is a rope going over it.

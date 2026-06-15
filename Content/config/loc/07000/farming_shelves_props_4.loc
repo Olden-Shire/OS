@@ -1,3 +1,5 @@
 // loc 7510
 models_only = 7908 7912
 name = Shelves
+//Server
+desc=Farming stock is kept here.

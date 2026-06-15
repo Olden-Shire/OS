@@ -15,3 +15,6 @@ recol3d = 6057
 recol4s = 6697
 recol4d = 926
 name = Blamish bark shell
+//Server
+desc=A large bark coloured blamish snail shell, looks protective.
+weight=10kg

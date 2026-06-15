@@ -3,3 +3,5 @@ hillskew = true
 recol = 6241/10310
 models_only = 13856
 name = Bones
+//Server
+desc=The remains of an ancient beast.

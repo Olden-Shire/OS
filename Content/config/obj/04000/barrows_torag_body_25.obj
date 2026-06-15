@@ -15,3 +15,8 @@ recol1d = 10388
 recol2s = 10291
 recol2d = 10508
 name = Torags body 25
+//Server
+desc=Torag the Corrupted's plate body armour.
+weight=22lb
+wearpos=torso
+wearpos2=arms

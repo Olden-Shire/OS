@@ -7,3 +7,5 @@ bgsound = 2199, 3
 recol = 5053/40654 53/43061 4533/41275
 models_only = 5504 5505
 name = Uncooking pot
+//Server
+desc=Steam seems to be condensing into the pot. Neat trick!

@@ -5,3 +5,6 @@ op1 = Open
 op2 = Search
 models = 611/10 607/1
 name = Carved doors
+//Server
+desc=These doors must have been hidden here for years.
+category=rashiliyia_tomb_door_closed

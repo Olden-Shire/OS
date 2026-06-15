@@ -4,3 +4,5 @@ length = 3
 op1 = Search
 models_only = 710
 name = Smashed cage
+//Server
+desc=The boulder has smashed through the cage.

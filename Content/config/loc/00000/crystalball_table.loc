@@ -4,3 +4,5 @@ length = 2
 nonblockrange = true
 models_only = 1190
 name = Crystal ball
+//Server
+desc=The scrying glass of a seer.

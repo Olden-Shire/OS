@@ -5,3 +5,5 @@ ambient = 15
 recol = 9104/5532 7050/5904 0/62342 24/7446
 models_only = 1951
 name = Wardrobe
+//Server
+desc=I wonder what's inside...

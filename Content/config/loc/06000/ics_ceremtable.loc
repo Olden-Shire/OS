@@ -3,3 +3,5 @@ length = 2
 nonblockrange = true
 models_only = 917
 name = Ceremonial table
+//Server
+desc=Useful for putting things on.

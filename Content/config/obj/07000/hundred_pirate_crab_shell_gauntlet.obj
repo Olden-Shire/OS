@@ -9,3 +9,7 @@ yan2d = 1895
 xan2d = 597
 cost = 1
 name = Crab claw
+//Server
+desc=If it's good enough for crabs, it's good enough for me!
+wearpos=hands
+weight=2lb

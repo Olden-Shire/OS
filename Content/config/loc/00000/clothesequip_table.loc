@@ -3,3 +3,6 @@ length = 2
 nonblockrange = true
 models_only = 1221
 name = Table
+//Server
+desc=Items for making clothes are kept on here.
+category=unusable_table

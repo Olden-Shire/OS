@@ -2,3 +2,5 @@
 active = 1
 models = 9562/4
 name = Range chimney
+//Server
+desc=Expels smoke from the range.

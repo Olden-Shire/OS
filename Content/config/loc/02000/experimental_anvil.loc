@@ -2,3 +2,5 @@
 op1 = Use
 models_only = 1251
 name = An experimental anvil
+//Server
+desc=I can try to make new items on this.

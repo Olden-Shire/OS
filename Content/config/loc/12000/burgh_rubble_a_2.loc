@@ -6,3 +6,5 @@ op3 = hidden
 nonblockrange = true
 models_only = 14032
 name = Rubble
+//Server
+desc=Hardened earth, with bits of rock in it, not easy to move, slightly broken up.

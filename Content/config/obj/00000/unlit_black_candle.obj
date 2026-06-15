@@ -9,3 +9,9 @@ xan2d = 168
 recol1s = 127
 recol1d = 8
 name = Black candle
+//Server
+desc=A spooky candle.
+weight=1oz
+category=light_source_unlit
+param=product,lit_black_candle
+tradeable=no

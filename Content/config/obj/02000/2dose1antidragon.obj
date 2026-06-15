@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 51109
 name = Antifire potion(2)
+//Server
+desc=2 doses of anti-firebreath potion.
+weight=25g
+category=potion
+param=next_obj_stage,1dose1antidragon
+param=decant_potion_enum,potion_1antidragon
+param=dose_count,2

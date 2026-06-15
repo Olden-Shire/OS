@@ -10,3 +10,6 @@ iop1 = Read
 recol1s = 10351
 recol1d = 231
 name = Note
+//Server
+desc=A note found in the Mayor's bedroom mentioning the word 'Fibonacci'.
+weight=20g

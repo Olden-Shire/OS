@@ -4,3 +4,5 @@ op1 = Take-decoration
 recol = 18343/3625 7104/61512
 models_only = 10458 10461
 name = Decorations Box
+//Server
+desc=A box containing unpainted decorations.

@@ -7,3 +7,6 @@ zoom2d = 2384
 yan2d = 207
 xan2d = 237
 name = Pyramid top
+//Server
+desc=It's a solid gold pyramid!
+weight=25lb

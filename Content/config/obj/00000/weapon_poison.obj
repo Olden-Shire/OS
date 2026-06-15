@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 39876
 name = Weapon poison
+//Server
+desc=For use on daggers and projectiles.
+weight=25g
+category=potion

@@ -6,3 +6,5 @@ forceapproach = 13
 bgsound = 2210, 5
 models_only = 9049
 name = Stove
+//Server
+desc=There's a fair amount of coke in the stove.

@@ -9,3 +9,6 @@ zoom2d = 460
 yan2d = 2044
 xan2d = 424
 name = Giant nib
+//Server
+desc=For making a giant pen.
+weight=35g

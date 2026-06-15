@@ -12,3 +12,9 @@ zan2d = 69
 xan2d = 346
 members = true
 name = Boxing gloves
+//Server
+desc=I think they look a bit silly.
+wearpos=righthand
+wearpos2=lefthand
+wearpos3=hands
+weight=1lb

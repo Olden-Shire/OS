@@ -13,3 +13,7 @@ xan2d = 166
 members = true
 cost = 225
 name = Red boater
+//Server
+desc=Stylish!
+wearpos=hat
+weight=10g

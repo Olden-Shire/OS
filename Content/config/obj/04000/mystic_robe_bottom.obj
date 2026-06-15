@@ -13,3 +13,7 @@ xan2d = 408
 ambient = 30
 contrast = 20
 name = Mystic robe bottom
+//Server
+desc=The lower half of a magical robe.
+wearpos=legs
+weight=4lb

@@ -10,3 +10,6 @@ iop2 = Slice
 iop3 = Peel
 iop4 = Mash
 name = Rotten potato
+//Server
+desc=Yuk!
+weight=4lb

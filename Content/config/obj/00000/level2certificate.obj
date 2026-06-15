@@ -16,3 +16,7 @@ recol3d = 815
 recol4s = 18062
 recol4d = 935
 name = Level 2 certificate
+//Server
+desc=The owner has passed Earth Sciences level 2 exam.
+weight=20g
+tradeable=no

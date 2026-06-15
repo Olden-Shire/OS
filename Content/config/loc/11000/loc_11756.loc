@@ -4,3 +4,5 @@ op1 = Read
 recol = 6470/5665 9152/6684
 models = 9557/4
 name = Notice board
+//Server
+desc='Customers are reminded NEVER to tell ANYONE their password.'

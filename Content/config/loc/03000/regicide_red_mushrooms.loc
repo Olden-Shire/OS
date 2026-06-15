@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 7283/7636 10378/7283 1742/7390
 models_only = 3917
 name = Mushrooms
+//Server
+desc=Poisonous no doubt.

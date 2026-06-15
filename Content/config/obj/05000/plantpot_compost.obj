@@ -5,3 +5,6 @@ yan2d = 2012
 xan2d = 104
 members = true
 name = Plant pot
+//Server
+desc=A plant pot filled with soil.
+weight=2lb

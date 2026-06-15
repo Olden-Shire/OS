@@ -6,3 +6,5 @@ bgsound = 3141, 5
 recol = 10349/41182
 models_only = 2317
 name = Mysterious glow
+//Server
+desc=Unusual energy is gathered here.

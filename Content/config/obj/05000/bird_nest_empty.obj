@@ -6,3 +6,6 @@ yan2d = 60
 xan2d = 172
 members = true
 name = Bird nest
+//Server
+desc=It's an empty bird's nest.
+weight=2g

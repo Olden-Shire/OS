@@ -10,3 +10,8 @@ recol1d = 52570
 recol2s = 103
 recol2d = 52459
 name = Raw swordfish
+//Server
+desc=I should try cooking this.
+weight=500g
+category=category_57
+param=fishing_struct,fishing_struct_swordfish

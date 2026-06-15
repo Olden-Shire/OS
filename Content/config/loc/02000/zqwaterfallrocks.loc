@@ -4,3 +4,5 @@ op1 = Look-at
 op2 = Search
 models_only = 805
 name = Waterfall rocks
+//Server
+desc=Wet rocks, it looks like you might be able to climb them.

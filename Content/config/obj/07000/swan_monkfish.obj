@@ -9,3 +9,6 @@ cost = 10
 iop1 = Eat
 members = true
 name = Fresh monkfish
+//Server
+desc=Freshly caught and cooked - perfect for storing. Not so good for eating.
+weight=400g

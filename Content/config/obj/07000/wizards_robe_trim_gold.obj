@@ -14,3 +14,8 @@ recol1d = 38814
 recol2s = 24
 recol2d = 7114
 name = Wizard robe (g)
+//Server
+desc=I can do magic better in this.
+wearpos=torso
+wearpos2=arms
+weight=2lb

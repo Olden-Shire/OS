@@ -5,3 +5,5 @@ occlude = true
 op1 = Enter
 models_only = 8686
 name = Cave entrance
+//Server
+desc=A deep and terrifying cave.

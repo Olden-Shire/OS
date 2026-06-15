@@ -3,3 +3,5 @@ op1 = Search
 nonblockrange = true
 models_only = 6799
 name = Stand
+//Server
+desc=A strange ogre plinth, this must be where the artefacts are stored.

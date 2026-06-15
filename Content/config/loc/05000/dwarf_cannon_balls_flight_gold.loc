@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 12/8885
 models_only = 5869
 name = Gold cannonball
+//Server
+desc=Flying in mid-air!

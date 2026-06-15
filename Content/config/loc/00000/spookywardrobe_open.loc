@@ -5,3 +5,5 @@ forceapproach = 13
 ambient = 20
 models_only = 1953 5531
 name = Wardrobe
+//Server
+desc=It smells funny in there.

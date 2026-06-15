@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6707/5547 7952/5667
 models_only = 10089
 name = Stool
+//Server
+desc=A wooden stool.

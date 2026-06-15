@@ -10,3 +10,6 @@ members = true
 recol1s = 127
 recol1d = 43926
 name = Blue d-leather
+//Server
+desc=It's a piece of prepared blue dragonhide.
+weight=7lb

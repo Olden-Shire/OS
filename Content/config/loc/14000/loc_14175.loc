@@ -7,3 +7,5 @@ contrast = 10
 op1 = Enter
 models_only = 14394
 name = Chute
+//Server
+desc=This chute looks like it's laying eggs!

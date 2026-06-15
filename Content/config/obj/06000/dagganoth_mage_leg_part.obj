@@ -7,3 +7,6 @@ zoom2d = 800
 yan2d = 1284
 xan2d = 244
 name = Fibula piece
+//Server
+desc=An interesting looking bone shard.
+weight=7lb

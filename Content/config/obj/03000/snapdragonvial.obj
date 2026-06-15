@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 6835
 name = Unfinished potion
+//Server
+desc=I need another ingredient to finish this Snapdragon potion.
+weight=2oz
+category=potion

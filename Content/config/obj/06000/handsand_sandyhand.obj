@@ -8,3 +8,6 @@ xan2d = 312
 members = true
 iop5 = Destroy
 name = Sandy hand
+//Server
+desc=A severed hand covered with sand.
+weight=500g

@@ -6,3 +6,5 @@ op1 = Climb-down
 blockwalk = true
 models = 13992/22
 name = Trapdoor
+//Server
+desc=Where does this go?

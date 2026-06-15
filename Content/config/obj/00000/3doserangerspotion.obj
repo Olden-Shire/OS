@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 36680
 name = Ranging potion(3)
+//Server
+desc=3 doses of ranging potion.
+weight=30g
+category=potion
+param=next_obj_stage,2doserangerspotion
+param=decant_potion_enum,potion_rangerspotion
+param=dose_count,3

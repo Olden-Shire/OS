@@ -11,3 +11,5 @@ resizez = 128
 mirror = true
 models_only = 10615
 name = Statue
+//Server
+desc=A statue.

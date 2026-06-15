@@ -7,3 +7,6 @@ yan2d = 160
 xan2d = 308
 members = true
 name = Magnet
+//Server
+desc=A very attractive magnet.
+weight=20g

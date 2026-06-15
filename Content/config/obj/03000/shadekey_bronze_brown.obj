@@ -17,3 +17,6 @@ recol4d = 5652
 recol5s = 43968
 recol5d = 5652
 name = Bronze key brown
+//Server
+desc=A bronze key with a brown painted eyelet.
+weight=10g

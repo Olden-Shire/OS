@@ -3,3 +3,7 @@ op1 = Open
 mirror = true
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=It's closed.
+category=double_door_open_and_close_right
+param=next_loc_stage,mournerquaters_gateropen

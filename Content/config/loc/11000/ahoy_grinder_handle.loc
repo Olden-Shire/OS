@@ -6,3 +6,5 @@ forceapproach = 13
 sharelight = true
 models_only = 11022
 name = Bone grinder
+//Server
+desc=A big grinding thing.

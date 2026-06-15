@@ -5,3 +5,6 @@ zoom2d = 912
 yan2d = 1876
 xan2d = 174
 name = Bones to peaches
+//Server
+desc=A spell to turn bones to peaches.
+weight=10g

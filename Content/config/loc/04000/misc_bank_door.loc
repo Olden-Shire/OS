@@ -3,3 +3,5 @@ active = 1
 mirror = true
 models = 4336/0
 name = Door
+//Server
+desc=Keeps the cold winds out.

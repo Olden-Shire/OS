@@ -8,3 +8,7 @@ xan2d = 380
 iop1 = Read
 cost = 1
 name = Pirate message
+//Server
+desc=Pirates don't have the best handwriting...
+weight=20g
+tradeable=no

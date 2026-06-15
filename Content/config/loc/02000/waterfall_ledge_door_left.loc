@@ -3,3 +3,5 @@ sharelight = true
 op1 = Open
 models_only = 1730
 name = Ledge
+//Server
+desc=A ledge.

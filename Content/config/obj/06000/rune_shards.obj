@@ -6,3 +6,6 @@ zoom2d = 1730
 yan2d = 164
 xan2d = 180
 name = Rune shards
+//Server
+desc=A rune essence chip that has been broken into shards.
+weight=1lb

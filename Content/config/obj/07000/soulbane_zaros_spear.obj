@@ -11,3 +11,8 @@ yan2d = 2045
 xan2d = 405
 cost = 625
 name = Zaros mjolnir
+//Server
+desc=A Zaros Mjolnir.
+wearpos=righthand
+wearpos2=lefthand
+weight=5lb

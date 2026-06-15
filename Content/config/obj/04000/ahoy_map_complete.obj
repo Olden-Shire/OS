@@ -8,3 +8,6 @@ iop1 = Read
 iop2 = Follow
 members = true
 name = Treasure map
+//Server
+desc=A complete treasure map.
+weight=10g

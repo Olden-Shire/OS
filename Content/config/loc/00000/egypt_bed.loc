@@ -2,3 +2,5 @@
 length = 2
 models_only = 937
 name = Chaise lounge
+//Server
+desc=A comfortable seat to recline and recuperate.

@@ -12,3 +12,7 @@ zoom2d = 1510
 yan2d = 92
 xan2d = 332
 name = Rubber chicken
+//Server
+desc=Perhaps not the most powerful weapon in RuneScape.
+wearpos=righthand
+weight=1lb

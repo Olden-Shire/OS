@@ -5,3 +5,7 @@ raiseobject = 0
 recol = 8596/3608 8720/3604 8844/3856
 models = 11474/0
 name = Door
+//Server
+desc=The door is closed.
+category=door_closed
+param=next_loc_stage,draynor_panelled_door_open

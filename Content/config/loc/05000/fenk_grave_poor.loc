@@ -6,3 +6,5 @@ forceapproach = 11
 mapscene = 34
 models_only = 1366
 name = Grave
+//Server
+desc=A poor grave marked by a simple, wooden cross.

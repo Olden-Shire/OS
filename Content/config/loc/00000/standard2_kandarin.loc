@@ -3,3 +3,5 @@ contrast = 100
 ambient = 10
 models_only = 1430
 name = Standard
+//Server
+desc=A standard of Kandarin.

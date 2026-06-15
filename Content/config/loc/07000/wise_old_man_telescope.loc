@@ -3,3 +3,5 @@ active = 1
 op1 = Observe
 models_only = 7401
 name = Telescope
+//Server
+desc=A telescope pointing southwards...

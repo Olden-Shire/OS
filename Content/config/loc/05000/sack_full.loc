@@ -2,3 +2,5 @@
 ambient = 40
 models_only = 5494
 name = Sack
+//Server
+desc=Full of animal feed.

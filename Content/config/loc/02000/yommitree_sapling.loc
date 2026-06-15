@@ -7,3 +7,5 @@ length = 3
 nonsolid = true
 models_only = 1818
 name = Yommi tree sapling
+//Server
+desc=An adolescent-looking Yommi tree, it has a mystical aura.

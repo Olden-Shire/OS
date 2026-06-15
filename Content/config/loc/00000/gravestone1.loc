@@ -4,3 +4,5 @@ contrast = 25
 nonblockrange = true
 models_only = 1368
 name = Gravestone
+//Server
+desc=The inscription is worn away and unreadable.

@@ -8,3 +8,5 @@ length = 2
 recol = 41/11173
 models_only = 6616
 name = Chest
+//Server
+desc=A large stone chest.

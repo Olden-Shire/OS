@@ -8,3 +8,6 @@ members = true
 ambient = 15
 cost = 4
 name = Nasturtiums
+//Server
+desc=A bunch of nasturtiums.
+weight=1oz

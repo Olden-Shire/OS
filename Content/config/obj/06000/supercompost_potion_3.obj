@@ -12,3 +12,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 1325
 name = Compost potion(3)
+//Server
+desc=Pour this on compost to turn it into super-compost.
+weight=30g
+category=supercompost_potion

@@ -13,3 +13,10 @@ iop4 = Rub
 recol1s = 127
 recol1d = 22443
 name = Ring of dueling(4)
+//Server
+desc=An enchanted ring.
+wearpos=ring
+weight=6g
+category=category_136
+param=next_obj_stage,ring_of_dueling_3
+param=charges,4

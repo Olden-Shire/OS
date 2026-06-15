@@ -1,3 +1,5 @@
 // loc 1087
 models_only = 1403
 name = Signpost
+//Server
+desc=South to the Wizards' Tower :: North to Draynor Village :: East to Lumbridge.

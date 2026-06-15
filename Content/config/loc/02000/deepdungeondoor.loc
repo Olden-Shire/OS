@@ -4,3 +4,5 @@ active = 1
 op1 = Open
 models = 609/0
 name = Gate
+//Server
+desc=It's a gate.

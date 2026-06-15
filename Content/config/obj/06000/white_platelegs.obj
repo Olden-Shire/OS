@@ -15,3 +15,7 @@ recol2d = 82
 recol3s = 57
 recol3d = 99
 name = White platelegs
+//Server
+desc=Big, White and heavy looking.
+wearpos=legs
+weight=20lb

@@ -4,3 +4,5 @@ mapscene = 14
 nonblockrange = true
 models_only = 1416
 name = Henge
+//Server
+desc=Looks like a stone doorway to me.

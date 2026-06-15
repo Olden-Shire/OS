@@ -4,3 +4,5 @@ length = 3
 recol = 6430/7618 7452/7605 8596/7721 8720/7845 8844/7969 9096/8088
 models_only = 11006
 name = Dead tree
+//Server
+desc=This tree has long been dead.

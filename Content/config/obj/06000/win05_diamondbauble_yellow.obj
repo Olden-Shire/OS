@@ -6,3 +6,6 @@ zoom2d = 724
 yan2d = 1980
 xan2d = 186
 name = Diamond bauble
+//Server
+desc=A bauble shaped like a diamond painted yellow.
+weight=200g

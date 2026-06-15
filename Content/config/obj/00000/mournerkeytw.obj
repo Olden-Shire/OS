@@ -8,3 +8,7 @@ yan2d = 20
 xan2d = 328
 members = true
 name = Key
+//Server
+desc=Opens things.
+weight=10g
+tradeable=no

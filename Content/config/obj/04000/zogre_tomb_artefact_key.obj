@@ -12,3 +12,6 @@ recol1d = 10169
 recol2s = 49
 recol2d = 12217
 name = Ogre gate key
+//Server
+desc=A key to some sort of special tomb area.
+weight=55g

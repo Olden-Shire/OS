@@ -8,3 +8,6 @@ iop1 = Read
 members = true
 cost = 1
 name = Goblin symbol book
+//Server
+desc=A book about the ancient goblin tribes.
+weight=1kg

@@ -21,3 +21,6 @@ recol5d = 21530
 recol6s = 60184
 recol6d = 21526
 name = Champion scroll
+//Server
+desc=It's a challenge from the Ghoul Champion!
+weight=1g

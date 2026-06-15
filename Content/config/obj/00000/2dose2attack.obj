@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 43848
 name = Super attack(2)
+//Server
+desc=2 doses of super attack potion.
+weight=25g
+category=potion
+param=next_obj_stage,1dose2attack
+param=decant_potion_enum,potion_2attack
+param=dose_count,2

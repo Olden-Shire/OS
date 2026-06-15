@@ -14,3 +14,7 @@ recol1d = 127
 recol2s = 4882
 recol2d = 127
 name = Diamond amulet
+//Server
+desc=I wonder if I can get this enchanted.
+wearpos=front
+weight=7g

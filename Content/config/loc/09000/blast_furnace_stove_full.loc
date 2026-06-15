@@ -7,3 +7,5 @@ bgsound = 2210, 5
 recol = 5958/3005
 models_only = 9049
 name = Stove
+//Server
+desc=There's lots of coke in the stove.

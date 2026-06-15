@@ -5,3 +5,5 @@ mirror = true
 op1 = Walk through
 models = 832/0
 name = Cave entrance
+//Server
+desc=A rather shadowy cavern entrance.

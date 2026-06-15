@@ -4,3 +4,5 @@ anim = 472
 bgsound = 2227, 25
 models_only = 2287
 name = Sails
+//Server
+desc=These sails use the wind to drive the windmill.

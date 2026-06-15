@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 4886/5656
 models_only = 1242
 name = Smashed chair
+//Server
+desc=Not so good for sitting on.

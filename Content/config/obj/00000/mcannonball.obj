@@ -8,3 +8,7 @@ stackable = true
 members = true
 cost = 5
 name = Cannonball
+//Server
+desc=Ammo for the Dwarf Cannon.
+weight=8lb
+category=category_1176

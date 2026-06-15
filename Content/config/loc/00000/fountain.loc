@@ -6,3 +6,6 @@ bgsound = 2150, 7
 nonblockrange = true
 models_only = 1497
 name = Fountain
+//Server
+desc=Everyone needs a water feature.
+category=watersource

@@ -4,3 +4,5 @@ length = 2
 recol = 6036/119 5008/90 1932/61 904/37 900/16
 models_only = 731
 name = Cave entrance
+//Server
+desc=It looks cold in there.

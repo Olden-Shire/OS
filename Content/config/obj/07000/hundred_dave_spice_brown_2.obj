@@ -10,3 +10,6 @@ recol1d = 4515
 recol2s = 37999
 recol2d = 4515
 name = Brown spice (2)
+//Server
+desc=Allows for equal distribution of spice.
+weight=1g

@@ -4,3 +4,5 @@ ambient = 15
 nonblockrange = true
 models_only = 8248
 name = Hay Bales
+//Server
+desc=I bet there's a needle in it somewhere.

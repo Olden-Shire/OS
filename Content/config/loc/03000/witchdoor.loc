@@ -3,3 +3,5 @@ active = 1
 op1 = Close
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=The door is open.

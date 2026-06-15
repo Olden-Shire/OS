@@ -12,3 +12,7 @@ recol2d = 7062
 recol3s = 61
 recol3d = 7062
 name = Unfired pie dish
+//Server
+desc=I need to put this in a pottery oven.
+weight=24oz
+param=crafting_pottery_struct,unfired_piedish

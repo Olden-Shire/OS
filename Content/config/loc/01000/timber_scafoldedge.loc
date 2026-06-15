@@ -3,3 +3,5 @@ sharelight = true
 active = 1
 models_only = 2196
 name = Scaffold
+//Server
+desc=A wooden structure used in the process of building.

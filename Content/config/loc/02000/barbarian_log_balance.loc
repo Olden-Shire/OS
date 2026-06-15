@@ -5,3 +5,5 @@ sharelight = true
 blockwalk = true
 models = 1115/22
 name = Log balance
+//Server
+desc=A slippery log I can walk across.

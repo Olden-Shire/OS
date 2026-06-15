@@ -7,3 +7,7 @@ yan2d = 2044
 xan2d = 116
 iop5 = Destroy
 name = Holy grail
+//Server
+desc=A holy and powerful artefact.
+weight=3oz
+tradeable=no

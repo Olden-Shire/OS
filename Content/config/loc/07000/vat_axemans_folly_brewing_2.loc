@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 13518/2357
 models_only = 7778 7781 7782
 name = Fermenting Vat
+//Server
+desc=Axeman's Folly is fermenting in this vat.

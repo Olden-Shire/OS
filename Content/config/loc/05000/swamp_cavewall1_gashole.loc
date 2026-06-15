@@ -3,3 +3,5 @@ anim = 523
 bgsound = 3073, 3
 models_only = 5791
 name = Gas hole
+//Server
+desc=Noxious fumes bubble up from the bowels of the earth.

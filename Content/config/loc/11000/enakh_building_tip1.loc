@@ -2,3 +2,5 @@
 hillskew = true
 models_only = 10879
 name = Ruins
+//Server
+desc=Looks like there was once a building here.

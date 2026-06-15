@@ -3,3 +3,5 @@ mapscene = 6
 recol = 6028/5388
 models_only = 2172
 name = Roots
+//Server
+desc=A gnarly old tree root.

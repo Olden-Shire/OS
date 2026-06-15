@@ -3,3 +3,5 @@ active = 1
 recol = 103/41410 17686/7364
 models = 3938/4
 name = Tent
+//Server
+desc=A tent.

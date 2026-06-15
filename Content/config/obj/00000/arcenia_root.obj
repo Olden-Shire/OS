@@ -7,3 +7,7 @@ yan2d = 380
 xan2d = 456
 members = true
 name = Arcenia root
+//Server
+desc=The root of an Arcenia plant.
+weight=10g
+tradeable=no

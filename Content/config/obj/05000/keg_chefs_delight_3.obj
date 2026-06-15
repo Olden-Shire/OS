@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Chef's delight(3)
+//Server
+desc=This keg contains 3 pints of Chef's Delight.
+weight=1oz

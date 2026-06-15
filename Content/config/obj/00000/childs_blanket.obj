@@ -6,3 +6,8 @@ xan2d = 368
 members = true
 cost = 5
 name = Child's blanket
+//Server
+desc=It's very soft!
+weight=2lb
+respawnrate=50
+tradeable=no

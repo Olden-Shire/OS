@@ -8,3 +8,6 @@ xan2d = 264
 recol1s = 8128
 recol1d = 6059
 name = Fever spider body
+//Server
+desc=A diseased deceased Fever Spider. Handle with care.
+weight=800g

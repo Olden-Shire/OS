@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6439/13592 6430/13840 6554/13964
 models = 7371/0
 name = Gate
+//Server
+desc=A wooden gate.

@@ -7,3 +7,6 @@ xan2d = 340
 iop1 = Open
 members = true
 name = Ruined backpack
+//Server
+desc=A broken and useless looking backpack with the moniker,'B.Vahn' in it.
+weight=20g

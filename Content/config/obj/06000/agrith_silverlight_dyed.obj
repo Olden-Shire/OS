@@ -16,3 +16,7 @@ recol1d = 0
 recol2s = 11200
 recol2d = 33
 name = Silverlight
+//Server
+desc=The magical sword 'Silverlight', stained black with mushroom ink.
+wearpos=righthand
+weight=4lb

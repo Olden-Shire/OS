@@ -3,3 +3,6 @@ active = 1
 op1 = Open
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=The door is closed.
+param=next_loc_stage,elenagateopen

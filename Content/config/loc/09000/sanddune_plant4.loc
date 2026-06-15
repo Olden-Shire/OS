@@ -3,3 +3,5 @@ ambient = 0
 contrast = 0
 models_only = 9540
 name = Plant
+//Server
+desc=Another plant.

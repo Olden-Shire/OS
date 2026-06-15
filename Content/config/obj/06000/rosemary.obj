@@ -9,3 +9,6 @@ members = true
 ambient = 15
 cost = 2
 name = Rosemary
+//Server
+desc=Some rosemary.
+weight=1oz

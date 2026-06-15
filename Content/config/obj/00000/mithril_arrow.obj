@@ -17,3 +17,15 @@ recol1d = 43297
 recol2s = 57
 recol2d = 43297
 name = Mithril arrow
+//Server
+desc=Arrows with mithril heads.
+wearpos=quiver
+weight=14g
+category=arrows
+param=rangebonus,22
+param=levelrequire,20
+param=proj_launch,mithril_arrow_launch
+param=proj_travel,mithril_arrow_travel
+param=weapon_poisoned,mithril_arrow_p
+param=weapon_poisoned_message,You poison some arrows.
+param=next_obj_stage,mithril_unlitarrow

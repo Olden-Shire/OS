@@ -3,3 +3,5 @@ op1 = Operate
 length = 2
 models_only = 1778
 name = Winch
+//Server
+desc=Used to move earth to, and from, the dig shaft.

@@ -7,3 +7,6 @@ yan2d = 1856
 xan2d = 168
 members = true
 name = Iron spit
+//Server
+desc=An iron spit.
+weight=1500g

@@ -3,3 +3,5 @@ active = 1
 blockwalk = true
 models = 13988/22
 name = Trapdoor
+//Server
+desc=This leads to the basement.

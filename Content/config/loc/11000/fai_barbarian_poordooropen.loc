@@ -6,3 +6,7 @@ raiseobject = 0
 recol = 6550/5547 5559/5543 5675/5667 6674/5662
 models = 5189/0
 name = Door
+//Server
+desc=It would keep the wind out better if it were closed.
+category=door_closed
+param=next_loc_stage,fai_barbarian_poordoor

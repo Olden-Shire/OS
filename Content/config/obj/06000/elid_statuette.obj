@@ -10,3 +10,6 @@ members = true
 recol1s = 6740
 recol1d = 6606
 name = Statuette
+//Server
+desc=A statue of the goddess Elidinis.
+weight=1g

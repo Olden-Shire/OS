@@ -4,3 +4,5 @@ contrast = 10
 active = 1
 models = 3971/0 3972/1 3973/9
 name = Tent wall
+//Server
+desc=A tent wall.

@@ -4,3 +4,5 @@ op1 = Open
 op2 = Knock
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=The door is closed.

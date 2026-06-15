@@ -5,3 +5,5 @@ width = 2
 recol = 61/34324
 models_only = 5515
 name = Rock
+//Server
+desc=A rock.

@@ -9,3 +9,7 @@ yan2d = 4
 xan2d = 328
 members = true
 name = Slayer gloves
+//Server
+desc=Especially good against diseased arachnids.
+wearpos=hands
+weight=8oz

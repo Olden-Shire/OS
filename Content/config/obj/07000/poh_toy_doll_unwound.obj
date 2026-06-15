@@ -9,3 +9,6 @@ members = true
 cost = 10
 iop1 = Wind
 name = Toy doll
+//Server
+desc=Nice bit of crafting!
+weight=1kg

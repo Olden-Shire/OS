@@ -10,3 +10,6 @@ members = true
 manwear = obj_kettle_7688_wear, 0
 womanwear = obj_kettle_7688_wear, 6
 name = Hot kettle
+//Server
+desc=It's full of boiling water.
+weight=1g

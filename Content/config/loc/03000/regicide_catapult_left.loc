@@ -3,3 +3,5 @@ length = 5
 active = 1
 models_only = 3963
 name = Catapult-winch
+//Server
+desc=There's a winch on this side.

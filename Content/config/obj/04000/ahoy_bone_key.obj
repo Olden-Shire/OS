@@ -9,3 +9,6 @@ members = true
 recol1s = 8128
 recol1d = 15814
 name = Bone key
+//Server
+desc=A key dropped by Necrovarus.
+weight=10g

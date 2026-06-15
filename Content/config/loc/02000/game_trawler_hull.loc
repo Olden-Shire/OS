@@ -5,3 +5,5 @@ nonsolid = true
 recol = 12579/5553 12574/5553 12698/5553 12694/5553 12818/5673
 models_only = 9594
 name = Hull
+//Server
+desc=This old trawler has seen better days.

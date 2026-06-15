@@ -10,3 +10,7 @@ manwear = obj_bobble_scarf_6857_man, 0
 womanwear = obj_bobble_scarf_6857_woman, 0
 iop5 = Destroy
 name = Bobble scarf
+//Server
+desc=A woolly scarf.
+wearpos=front
+weight=250g

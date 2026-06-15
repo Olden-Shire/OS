@@ -4,3 +4,7 @@ op1 = Open
 forceapproach = 13
 models_only = 2247
 name = Cupboard
+//Server
+desc=I wonder what's inside?
+category=cupboard_closed
+param=cupboard_other,alrenascupboardopen

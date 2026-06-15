@@ -7,3 +7,6 @@ yan2d = 4
 xan2d = 328
 members = true
 name = Snakeskin
+//Server
+desc=Scaly but not slimy!
+weight=500g

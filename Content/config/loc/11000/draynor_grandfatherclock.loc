@@ -6,3 +6,5 @@ resizez = 192
 bgsound = 3120, 3
 models_only = 11833
 name = Grandfather clock
+//Server
+desc=Looks a bit shabby...

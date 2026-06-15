@@ -10,3 +10,7 @@ yan2d = 1369
 xan2d = 553
 cost = 1040
 name = Harry's cutlass
+//Server
+desc=I hope he doesn't want it back.
+wearpos=righthand
+weight=4lb

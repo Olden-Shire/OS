@@ -6,3 +6,5 @@ blockwalk = true
 recol = 4892/7335 5921/7335 4899/7335
 models = 1127/22
 name = Rocks
+//Server
+desc=They seem to fit in the with the rocky surroundings, so as not to stick out.

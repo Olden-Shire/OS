@@ -11,3 +11,6 @@ recol1d = 8772
 recol2s = 7605
 recol2d = 8875
 name = Blamish ochre shell
+//Server
+desc=A large ochre coloured blamish snail shell, looks protective.
+weight=10kg

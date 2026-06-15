@@ -3,3 +3,5 @@ ambient = 40
 nonsolid = true
 models_only = 5567
 name = Dock leaf plant
+//Server
+desc=A cure for nettle stings.

@@ -7,3 +7,5 @@ forceapproach = 13
 blockwalk = true
 models = 13979/22
 name = Ladder
+//Server
+desc=A wooden ladder.

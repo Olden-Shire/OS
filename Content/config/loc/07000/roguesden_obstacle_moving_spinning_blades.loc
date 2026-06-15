@@ -5,3 +5,5 @@ forcedecor = true
 active = 1
 models_only = 7575
 name = Spin Blades
+//Server
+desc=I must not fear, fear is the little death that brings total oblivion.

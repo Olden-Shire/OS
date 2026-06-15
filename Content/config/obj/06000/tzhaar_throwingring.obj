@@ -14,3 +14,7 @@ manwear = obj_toktz_xil_ul_wear, 0
 womanwear = obj_toktz_xil_ul_wear, 6
 cost = 250
 name = Toktz-xil-ul
+//Server
+desc=A razor sharp ring of obsidian.
+wearpos=righthand
+weight=12oz

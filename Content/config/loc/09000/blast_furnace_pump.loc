@@ -4,3 +4,5 @@ forceapproach = 14
 nonsolid = true
 models_only = 9036
 name = Pump
+//Server
+desc=Used to pump hot air through the furnace.

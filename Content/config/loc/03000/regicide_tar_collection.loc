@@ -8,3 +8,5 @@ sharelight = true
 op1 = Take
 models_only = 3951
 name = Tar
+//Server
+desc=I don't wanna fall in that!

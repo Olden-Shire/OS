@@ -10,3 +10,8 @@ iop4 = Empty
 recol1s = 127
 recol1d = 43486
 name = Jug of water
+//Server
+desc=It's full of water.
+weight=1kg
+param=is_water_source,^true
+param=next_obj_stage,jug_empty

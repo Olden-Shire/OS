@@ -10,3 +10,6 @@ model = obj_grinder
 manwear = obj_grinder, 0
 womanwear = obj_grinder, 6
 name = Grinder
+//Server
+desc=A grinder.
+weight=1lb

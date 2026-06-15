@@ -14,3 +14,7 @@ recol2d = 4647
 recol3s = 5427
 recol3d = 4890
 name = Chart
+//Server
+desc=A navigator's chart of RuneScape.
+weight=10g
+tradeable=no

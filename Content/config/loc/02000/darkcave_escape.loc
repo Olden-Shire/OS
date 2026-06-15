@@ -2,3 +2,5 @@
 op1 = Climb
 models_only = 1487
 name = Climbing rope
+//Server
+desc=I hope this leads the way out.

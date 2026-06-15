@@ -11,3 +11,6 @@ yof2d = 7
 zoom2d = 1210
 xan2d = 328
 name = Holy wrench
+//Server
+desc=A shining paragon of wrenchly virtue.
+weight=5g

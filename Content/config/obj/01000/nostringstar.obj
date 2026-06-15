@@ -6,3 +6,7 @@ zoom2d = 600
 yan2d = 92
 xan2d = 352
 name = Unstrung symbol
+//Server
+desc=It needs a string so I can wear it.
+weight=4g
+param=crafting_jewelry_struct,unstrung_symbol

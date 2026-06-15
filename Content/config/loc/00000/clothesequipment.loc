@@ -2,3 +2,5 @@
 active = 1
 models = 2066/4
 name = Clothes equipment
+//Server
+desc=Essentials for a seamstress.

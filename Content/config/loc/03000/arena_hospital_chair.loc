@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 4886/99 5908/103
 models_only = 1170
 name = Chair
+//Server
+desc=Wait here for a nurse.

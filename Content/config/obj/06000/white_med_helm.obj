@@ -17,3 +17,8 @@ recol1d = 99
 recol2s = 926
 recol2d = 8125
 name = White med helm
+//Server
+desc=A medium sized helmet.
+wearpos=hat
+wearpos2=head
+weight=4lb

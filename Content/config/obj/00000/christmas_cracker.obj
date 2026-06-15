@@ -6,3 +6,6 @@ zoom2d = 630
 yan2d = 1728
 xan2d = 272
 name = Christmas cracker
+//Server
+desc=I need to pull this.
+weight=200g

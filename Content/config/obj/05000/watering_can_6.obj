@@ -9,3 +9,6 @@ manwear = obj_watering_can_5331_wear, 0
 womanwear = obj_watering_can_5331_wear, 0
 members = true
 name = Watering can(6)
+//Server
+desc=This watering can is three quarters full.
+weight=700g

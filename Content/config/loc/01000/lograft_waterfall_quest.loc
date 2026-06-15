@@ -3,3 +3,5 @@ length = 2
 op1 = Board
 models_only = 1461
 name = Log raft
+//Server
+desc=A primitive looking boat.

@@ -4,3 +4,5 @@ length = 2
 recol = 8084/4760 37/5157
 models_only = 1520
 name = Plough
+//Server
+desc=It's like a land rudder.

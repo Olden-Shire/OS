@@ -7,3 +7,6 @@ xan2d = 304
 iop1 = Eat
 cost = 5
 name = Frog spawn
+//Server
+desc=That's disgusting!
+weight=500g

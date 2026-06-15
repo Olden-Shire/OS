@@ -3,3 +3,5 @@ active = 1
 recol = 5012/6569 24/6569 6798/6569
 models = 2029/4
 name = Arrows
+//Server
+desc=Use these with bows.

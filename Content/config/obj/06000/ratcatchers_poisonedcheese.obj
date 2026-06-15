@@ -8,3 +8,6 @@ iop1 = Eat
 recol1s = 9139
 recol1d = 13227
 name = Poisoned cheese
+//Server
+desc=A little more smelly than usual.
+weight=200g

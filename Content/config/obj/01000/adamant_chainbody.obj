@@ -14,3 +14,14 @@ recol2d = 21675
 recol3s = 49
 recol3d = 21795
 name = Adamant chainbody
+//Server
+desc=A series of connected metal rings.
+wearpos=torso
+weight=17lb
+category=armour_body
+param=magicattack,-15
+param=stabdefence,36
+param=slashdefence,50
+param=crushdefence,61
+param=magicdefence,-3
+param=rangedefence,38

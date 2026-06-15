@@ -15,3 +15,7 @@ recol1d = 61347
 recol2s = 5532
 recol2d = 61347
 name = Gloves
+//Server
+desc=HAM gloves as worn by the Humans Against Monsters group.
+wearpos=hands
+weight=1lb

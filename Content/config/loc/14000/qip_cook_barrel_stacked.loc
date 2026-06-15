@@ -3,3 +3,5 @@ ambient = 15
 recol = 5524/5904
 models_only = 14828 14829
 name = Barrel
+//Server
+desc=A wooden barrel for storage.

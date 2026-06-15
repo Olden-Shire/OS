@@ -6,3 +6,5 @@ blockwalk = true
 recol = 6032/21776 33/21656
 models = 1205/22
 name = Trapdoor
+//Server
+desc=I wonder what's under it.

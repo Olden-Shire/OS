@@ -13,3 +13,8 @@ members = true
 recol1s = 41
 recol1d = 960
 name = 'perfect' necklace
+//Server
+desc=A perfect ruby necklace.
+wearpos=front
+weight=10g
+tradeable=no

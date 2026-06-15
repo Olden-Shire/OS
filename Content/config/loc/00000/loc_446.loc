@@ -3,3 +3,5 @@ nonsolid = true
 raiseobject = 0
 models_only = 1407
 name = Stones
+//Server
+desc=Some small stones.

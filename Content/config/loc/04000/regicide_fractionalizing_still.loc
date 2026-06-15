@@ -3,3 +3,5 @@ op1 = Operate
 ambient = 30
 models_only = 3911
 name = Fractionalizing still
+//Server
+desc=A still for fractionalizing oils.

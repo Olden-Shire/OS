@@ -12,3 +12,7 @@ womanwear = obj_perfect_necklace_woman, 0
 recol1s = 41
 recol1d = 22443
 name = Emerald necklace
+//Server
+desc=I wonder if this is valuable.
+wearpos=front
+weight=10g

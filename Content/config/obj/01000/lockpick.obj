@@ -8,3 +8,7 @@ xan2d = 512
 members = true
 cost = 20
 name = Lockpick
+//Server
+desc=For picking tough locks.
+weight=10g
+category=category_715

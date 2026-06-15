@@ -6,3 +6,7 @@ mapscene = 5
 ambient = 25
 models_only = 7935 7936
 name = Banana Tree
+//Server
+desc=Grows weird yellow fruit.
+category=banana_tree
+param=next_loc_stage,bananatreeempty

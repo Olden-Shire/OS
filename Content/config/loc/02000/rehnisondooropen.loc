@@ -2,3 +2,7 @@
 active = 1
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=A door.
+category=door_open_and_close
+param=next_loc_stage,rehnisondoorshut

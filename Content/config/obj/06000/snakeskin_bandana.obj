@@ -11,3 +11,8 @@ zoom2d = 860
 yan2d = 160
 xan2d = 208
 name = Snakeskin bandana
+//Server
+desc=Lightweight head protection.
+weight=2lb
+wearpos=hat
+wearpos2=head

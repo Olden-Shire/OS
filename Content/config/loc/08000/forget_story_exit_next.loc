@@ -6,3 +6,5 @@ op1 = Enter
 recol = 10270/10266
 models = 5854/0
 name = Cave entrance
+//Server
+desc=A small cave entrance.

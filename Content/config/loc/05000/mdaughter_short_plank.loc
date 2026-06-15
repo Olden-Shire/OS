@@ -3,3 +3,5 @@ active = 1
 blockwalk = true
 models = 5700/22
 name = Flat stone
+//Server
+desc=Someone put a plank on top of the stone! Clever...

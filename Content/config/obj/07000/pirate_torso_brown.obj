@@ -13,3 +13,7 @@ recol1d = 8070
 recol2s = 7719
 recol2d = 5679
 name = Stripy pirate shirt
+//Server
+desc=A sea worthy shirt.
+wearpos=torso
+weight=1kg

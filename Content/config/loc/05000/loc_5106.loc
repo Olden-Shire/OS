@@ -4,3 +4,6 @@ op1 = Chop-down
 op3 = hidden
 models_only = 5007
 name = Vines
+//Server
+desc=Thick vines blocking your way.
+category=dungeon_vines

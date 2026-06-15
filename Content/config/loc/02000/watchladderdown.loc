@@ -5,3 +5,5 @@ mapscene = 7
 recol = 5559/6439 5679/6435
 models_only = 4315
 name = Ladder
+//Server
+desc=This leads downwards.

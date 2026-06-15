@@ -2,3 +2,5 @@
 recol = 11200/24 61/57 9152/24
 models_only = 3338
 name = Barrel
+//Server
+desc=A barrel full of swords...

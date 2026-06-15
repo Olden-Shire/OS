@@ -10,3 +10,6 @@ womanwear = obj_leather_1741_wear, 0
 recol1s = 127
 recol1d = 10128
 name = Leather
+//Server
+desc=It's a piece of leather.
+weight=5lb

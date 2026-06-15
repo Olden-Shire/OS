@@ -8,3 +8,6 @@ members = true
 recol1s = 41193
 recol1d = 43951
 name = Sapphire lantern
+//Server
+desc=You need to add lamp oil before you can use it.
+weight=3lb

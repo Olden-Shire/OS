@@ -13,3 +13,7 @@ members = true
 recol1s = 7952
 recol1d = 35290
 name = Fremennik cloak
+//Server
+desc=The latest fashion in Rellekka.
+wearpos=back
+weight=1lb

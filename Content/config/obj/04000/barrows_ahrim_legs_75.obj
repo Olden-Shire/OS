@@ -13,3 +13,7 @@ recol1d = 10512
 recol2s = 45468
 recol2d = 43840
 name = Ahrims skirt 75
+//Server
+desc=Ahrim the Blighted's armoured robe skirt.
+weight=25lb
+wearpos=legs

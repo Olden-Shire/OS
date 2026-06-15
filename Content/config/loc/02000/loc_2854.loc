@@ -5,3 +5,5 @@ active = 1
 op1 = Knock-at
 models = 2212/0 2213/1 2176/2 2177/3 2178/9
 name = Wall
+//Server
+desc=Made of wood.

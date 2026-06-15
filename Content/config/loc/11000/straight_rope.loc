@@ -3,3 +3,5 @@ active = 1
 blockwalk = true
 models = 11441/22
 name = Rope
+//Server
+desc=A bit of rope.

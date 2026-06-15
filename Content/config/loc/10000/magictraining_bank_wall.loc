@@ -8,3 +8,5 @@ resizey = 192
 resizez = 128
 models_only = 10647
 name = Bank
+//Server
+desc=A place to put your money.

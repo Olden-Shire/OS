@@ -3,3 +3,5 @@ nonsolid = true
 recol = 17304/22449
 models_only = 1617
 name = Curling plant
+//Server
+desc=A large curling plant.

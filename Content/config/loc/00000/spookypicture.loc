@@ -4,3 +4,5 @@ anim = 470
 active = 1
 models = 2291/4
 name = Spooky picture
+//Server
+desc=Disturbingly its eyes look everywhere in the room except at you.

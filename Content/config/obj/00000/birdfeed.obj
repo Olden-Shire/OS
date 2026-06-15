@@ -8,3 +8,7 @@ yan2d = 1844
 xan2d = 116
 members = true
 name = Bird feed
+//Server
+desc=Birds love this stuff!
+weight=50g
+tradeable=no

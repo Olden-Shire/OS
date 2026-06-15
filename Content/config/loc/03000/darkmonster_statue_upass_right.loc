@@ -4,3 +4,5 @@ sharelight = true
 mirror = true
 models_only = 26396
 name = Eerie statue
+//Server
+desc=Intimidating!

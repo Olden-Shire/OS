@@ -8,3 +8,6 @@ members = true
 recol1s = 9108
 recol1d = 10520
 name = Magic roots
+//Server
+desc=The roots of the Magic tree.
+weight=1g

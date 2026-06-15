@@ -5,3 +5,5 @@ forceapproach = 14
 recol = 6443/8076 13194/7952 12818/7700 16536/7704 12698/7580 14499/7585
 models_only = 5273
 name = Open chest
+//Server
+desc=Perhaps I should search it.

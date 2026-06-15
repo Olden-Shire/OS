@@ -6,3 +6,6 @@ yan2d = 36
 xan2d = 256
 members = true
 name = Slimy eel
+//Server
+desc=A slime covered eel - yuck!
+weight=2kg

@@ -7,3 +7,6 @@ yan2d = 2012
 xan2d = 328
 members = true
 name = Stick
+//Server
+desc=For playing fetch with.
+weight=10g

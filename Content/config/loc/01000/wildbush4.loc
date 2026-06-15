@@ -4,3 +4,5 @@ mapscene = 9
 nonblockrange = true
 models_only = 1672
 name = Bush
+//Server
+desc=A wild bush.

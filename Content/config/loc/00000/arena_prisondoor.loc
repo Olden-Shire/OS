@@ -3,3 +3,5 @@ op1 = Open
 nonblockrange = true
 models = 609/0
 name = Prison Door
+//Server
+desc=Looks secure.

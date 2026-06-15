@@ -3,3 +3,5 @@ offsetx = 16
 op1 = Search
 models_only = 7392 7395
 name = Old Bookshelf
+//Server
+desc=Filled to the brim with knowledge.

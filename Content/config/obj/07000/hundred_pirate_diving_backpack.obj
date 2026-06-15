@@ -11,3 +11,7 @@ xan2d = 435
 members = true
 cost = 1
 name = Diving apparatus
+//Server
+desc=I'll need a helmet to make this work.
+wearpos=back
+weight=10kg

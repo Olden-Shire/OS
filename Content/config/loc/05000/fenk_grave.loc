@@ -6,3 +6,5 @@ forceapproach = 7
 mapscene = 34
 models_only = 5165
 name = Grave
+//Server
+desc=A grave, marked by an ostentatious memorial stone.

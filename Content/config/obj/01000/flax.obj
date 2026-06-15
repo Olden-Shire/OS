@@ -8,3 +8,7 @@ yan2d = 1076
 zan2d = 1840
 xan2d = 428
 name = Flax
+//Server
+desc=I should use this with a spinning wheel.
+weight=1lb
+param=crafting_spinning_struct,flax

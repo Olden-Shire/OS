@@ -18,3 +18,13 @@ recol1d = 36133
 recol2s = 57
 recol2d = 13221
 name = Rune arrow(p)
+//Server
+desc=Venomous looking arrows.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,49
+param=levelrequire,40
+param=proj_launch,rune_arrow_launch
+param=proj_travel,rune_arrow_travel
+param=poison_severity,20

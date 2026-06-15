@@ -9,3 +9,7 @@ xan2d = 148
 recol1s = 7479
 recol1d = 43968
 name = Criminal's thread
+//Server
+desc=Some blue thread found at the murder scene.
+weight=2g
+tradeable=no

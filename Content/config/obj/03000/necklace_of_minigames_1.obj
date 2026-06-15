@@ -14,3 +14,9 @@ members = true
 recol1s = 41
 recol1d = 43951
 name = Games necklace(1)
+//Server
+desc=An enchanted necklace.
+wearpos=front
+weight=10g
+category=necklace_of_minigames
+param=charges,1

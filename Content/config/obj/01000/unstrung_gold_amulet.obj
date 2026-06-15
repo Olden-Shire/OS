@@ -9,3 +9,7 @@ xan2d = 304
 recol1s = 127
 recol1d = 12209
 name = Gold amulet
+//Server
+desc=It needs a string so I can wear it.
+weight=4g
+param=crafting_jewelry_struct,unstrung_gold_amulet

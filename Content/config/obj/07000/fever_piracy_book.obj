@@ -8,3 +8,6 @@ xan2d = 420
 members = true
 iop1 = Read
 name = Book o' piracy
+//Server
+desc=By Cap'n Hook-Hand Morrisane.
+weight=1g

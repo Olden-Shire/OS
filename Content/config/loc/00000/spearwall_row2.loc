@@ -3,3 +3,5 @@ hillskew = true
 nonblockrange = true
 models_only = 642
 name = Spear wall
+//Server
+desc=Rows of sharp pointy spears.

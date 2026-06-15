@@ -9,3 +9,6 @@ contrast = 7
 ambient = 7
 cost = 27
 name = Raw mud pie
+//Server
+desc=Needs to be baked before I can use it.
+weight=1g

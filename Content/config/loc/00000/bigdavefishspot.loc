@@ -2,3 +2,5 @@
 op1 = Fish
 models_only = 1491
 name = Fishing spot
+//Server
+desc=Big Dave is fishing here.

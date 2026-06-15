@@ -6,3 +6,5 @@ blockwalk = true
 mapscene = 51
 models = 6510/0
 name = Weeping wall
+//Server
+desc=A rock wall infused with the power of Guthix.

@@ -7,3 +7,7 @@ xan2d = 180
 members = true
 iop2 = Read
 name = Stone tablet
+//Server
+desc=An old stone slab with writing on it.
+weight=800g
+tradeable=no

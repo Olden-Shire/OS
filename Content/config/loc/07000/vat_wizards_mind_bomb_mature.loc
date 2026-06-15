@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 12500/59462 12492/59453 12484/59445
 models_only = 7778 7780 7782
 name = Fermenting Vat
+//Server
+desc=This vat is filled with mature Wizards Mind Bomb.

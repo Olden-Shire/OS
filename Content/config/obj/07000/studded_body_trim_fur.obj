@@ -9,3 +9,7 @@ womanwear = obj_studded_body_g_7362_woman, 0
 recol1s = 24
 recol1d = 6020
 name = Studded body (t)
+//Server
+desc=Those studs should provide a bit more protection, nice trim too!
+wearpos=torso
+weight=12lb

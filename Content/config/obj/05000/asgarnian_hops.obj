@@ -9,3 +9,6 @@ ambient = 20
 members = true
 cost = 5
 name = Asgarnian hops
+//Server
+desc=A handful of Asgarnian Hops.
+weight=1oz

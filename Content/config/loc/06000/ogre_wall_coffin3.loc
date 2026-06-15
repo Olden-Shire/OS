@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 7442/6028 7446/7054 7322/6930 7326/6806 7331/6682 7335/6558
 models_only = 6806
 name = Ogre Coffin
+//Server
+desc=This coffin is open.

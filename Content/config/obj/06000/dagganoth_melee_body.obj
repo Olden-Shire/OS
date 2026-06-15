@@ -8,3 +8,8 @@ members = true
 zoom2d = 1190
 xan2d = 476
 name = Rock-shell plate
+//Server
+desc=A sturdy body armour made from rock crab pieces.
+wearpos=torso
+wearpos2=arms
+weight=22lb

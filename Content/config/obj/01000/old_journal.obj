@@ -7,3 +7,8 @@ xan2d = 256
 members = true
 iop1 = Read
 name = History of iban
+//Server
+desc=The tale of Iban.
+weight=8oz
+category=category_1328
+tradeable=no

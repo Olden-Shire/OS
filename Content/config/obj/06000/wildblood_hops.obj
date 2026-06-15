@@ -15,3 +15,6 @@ recol2d = 2597
 recol3s = 13095
 recol3d = 2477
 name = Wildblood hops
+//Server
+desc=A handful of Wildblood Hops.
+weight=1oz

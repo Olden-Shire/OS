@@ -3,3 +3,5 @@ ambient = 25
 nonblockrange = true
 models_only = 9532
 name = Chain
+//Server
+desc=A mooring chain.

@@ -17,3 +17,7 @@ recol2d = 10262
 recol3s = 3226
 recol3d = 10262
 name = Skeletal boots
+//Server
+desc=Some finely crafted Fremennik boots, made from the bones of a wallasalki.
+weight=7lb
+wearpos=feet

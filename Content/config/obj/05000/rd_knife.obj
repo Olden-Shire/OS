@@ -8,3 +8,6 @@ yan2d = 1260
 xan2d = 444
 members = true
 name = Knife
+//Server
+desc=A dangerous looking knife.
+weight=20g

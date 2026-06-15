@@ -8,3 +8,9 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_hard
+param=trail_desc,Snah? I feel all confused,|like one of those cakes...
+tradeable=no

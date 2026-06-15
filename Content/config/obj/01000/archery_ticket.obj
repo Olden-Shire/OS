@@ -9,3 +9,6 @@ xan2d = 320
 members = true
 stackable = true
 name = Archery ticket
+//Server
+desc=I can exchange this for equipment.
+weight=5g

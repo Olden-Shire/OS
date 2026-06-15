@@ -4,3 +4,5 @@ op1 = Open
 recol = 6945/1697 6940/1692 7064/1816 6038/1940
 models = 9476/0 9477/9
 name = Red door
+//Server
+desc=A blood-red door.

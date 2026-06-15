@@ -8,3 +8,6 @@ members = true
 recol1s = 9538
 recol1d = 61
 name = Unstrung comp bow
+//Server
+desc=An unstrung composite ogre bow.
+weight=5kg

@@ -9,3 +9,7 @@ yan2d = 204
 xan2d = 184
 cost = 250
 name = Rogue boots
+//Server
+desc=Black banded leather boots, a rogue's dream!
+wearpos=feet
+weight=1lb

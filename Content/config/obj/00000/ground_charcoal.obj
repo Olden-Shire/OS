@@ -8,3 +8,7 @@ xan2d = 264
 recol1s = 82
 recol1d = 12
 name = Ground charcoal
+//Server
+desc=Charcoal, crushed to small pieces!
+weight=8g
+tradeable=no

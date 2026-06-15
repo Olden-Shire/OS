@@ -7,3 +7,6 @@ yan2d = 8
 xan2d = 112
 cost = 10
 name = Pot of flour
+//Server
+desc=There is flour in this pot.
+weight=3lb

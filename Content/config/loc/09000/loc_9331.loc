@@ -5,3 +5,5 @@ op1 = Climb
 blockwalk = true
 models = 9237/22
 name = Rocks
+//Server
+desc=A rocky outcrop.

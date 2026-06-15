@@ -6,3 +6,5 @@ active = 1
 bgsound = 2066, 5
 models_only = 4609
 name = Fireplace
+//Server
+desc=A nice and cosy fire.

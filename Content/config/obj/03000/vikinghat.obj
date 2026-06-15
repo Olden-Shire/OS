@@ -15,3 +15,7 @@ members = true
 recol1s = 38814
 recol1d = 22416
 name = Fremennik hat
+//Server
+desc=A silly pointed hat.
+wearpos=hat
+weight=1lb

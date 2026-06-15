@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 62135
 name = Super restore(4)
+//Server
+desc=4 doses of super restore potion.
+weight=35g
+category=potion
+param=next_obj_stage,3dose2restore
+param=decant_potion_enum,potion_2restore
+param=dose_count,4

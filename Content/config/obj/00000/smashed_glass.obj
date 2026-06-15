@@ -8,3 +8,6 @@ zoom2d = 960
 yan2d = 32
 xan2d = 412
 name = Smashed glass
+//Server
+desc=Fragments of a broken container.
+weight=2g

@@ -5,3 +5,5 @@ nonsolid = true
 recol = 4899/21902 4892/21782 4899/21782
 models = 1139/22
 name = Soil
+//Server
+desc=Swampy dirt.

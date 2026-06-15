@@ -3,3 +3,5 @@ op1 = Repair
 op3 = hidden
 models_only = 4137
 name = Broken Wall
+//Server
+desc=The broken wall of a desecrated temple.

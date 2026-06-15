@@ -13,3 +13,8 @@ members = true
 recol1s = 8741
 recol1d = 22416
 name = Fremennik robe
+//Server
+desc=The latest fashion in Rellekka.
+wearpos=torso
+wearpos2=arms
+weight=2lb

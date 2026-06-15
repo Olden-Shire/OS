@@ -3,3 +3,5 @@ length = 2
 op1 = Fill-bucket
 models_only = 5936
 name = Sink
+//Server
+desc=Used for getting water.

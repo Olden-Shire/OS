@@ -1,3 +1,5 @@
 // loc 10975
 models_only = 10916 10921
 name = Fallen statue
+//Server
+desc=It has a right leg.

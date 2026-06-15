@@ -10,3 +10,6 @@ members = true
 recol1s = 1942
 recol1d = 2987
 name = Bottle of wine
+//Server
+desc=A very good vintage.
+weight=1kg

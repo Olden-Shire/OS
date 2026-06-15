@@ -10,3 +10,6 @@ members = true
 recol1s = 10353
 recol1d = 8666
 name = Golden fleece
+//Server
+desc=I can spin this into golden wool...
+weight=12g

@@ -7,3 +7,7 @@ yan2d = 88
 xan2d = 320
 members = true
 name = Unholy mould
+//Server
+desc=Used to make unholy symbols.
+weight=1lb
+tradeable=no

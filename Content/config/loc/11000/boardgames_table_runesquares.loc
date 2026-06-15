@@ -4,3 +4,5 @@ op1 = View-game
 nonblockrange = true
 models_only = 11104
 name = Table
+//Server
+desc=A game of runesquares is being played on this table.

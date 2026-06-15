@@ -9,3 +9,6 @@ zan2d = 1860
 xan2d = 368
 cost = 250
 name = Blood diamond
+//Server
+desc=The Diamond of Blood.
+weight=1g

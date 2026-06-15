@@ -20,3 +20,7 @@ recol4d = 64431
 recol5s = 8741
 recol5d = 64431
 name = Menaphite robe
+//Server
+desc=A cool light Menaphite robe.
+wearpos=legs
+weight=5g

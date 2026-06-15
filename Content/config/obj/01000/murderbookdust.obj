@@ -7,3 +7,12 @@ xan2d = 256
 recol1s = 5018
 recol1d = 82
 name = Silver book
+//Server
+desc=David's shiny silver coated book coated with a thin layer of flour.
+weight=8oz
+category=murder_flourobj
+param=product,murderfingerprintd
+param=next_obj_stage,murderbook
+param=game_message,You use the flypaper on the flour covered book.
+param=game_message2,You have a clean impression of David's finger prints.
+tradeable=no

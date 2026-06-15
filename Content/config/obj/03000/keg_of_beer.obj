@@ -10,3 +10,6 @@ xan2d = 128
 cost = 250
 members = true
 name = Keg of beer
+//Server
+desc=A lot of beer in a barrel.
+weight=20kg

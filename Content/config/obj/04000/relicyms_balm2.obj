@@ -11,3 +11,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 4550
 name = Relicym's balm(2)
+//Server
+desc=2 doses of Relicym's balm, which helps cure disease.
+weight=25g
+category=potion

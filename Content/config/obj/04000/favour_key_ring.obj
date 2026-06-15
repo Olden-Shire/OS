@@ -9,3 +9,6 @@ xan2d = 236
 iop1 = Check-keys
 members = true
 name = Steel key ring
+//Server
+desc=I can store my keys here.
+weight=1g

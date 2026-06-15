@@ -9,3 +9,6 @@ cost = 0
 iop4 = Empty
 members = true
 name = Pot of vinegar
+//Server
+desc=Well, this pot is certainly full of vinegar and no mistake.
+weight=3lb

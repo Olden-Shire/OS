@@ -2,3 +2,5 @@
 width = 2
 models_only = 5503 5500 5501
 name = Coop
+//Server
+desc=A lovely bare chicken coop.

@@ -10,3 +10,5 @@ blockwalk = true
 recol = 6798/8640
 models = 1465/10 20043/22
 name = Sand
+//Server
+desc=A large pile of sand

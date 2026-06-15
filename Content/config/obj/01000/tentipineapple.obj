@@ -10,3 +10,8 @@ xan2d = 216
 contrast = 15
 ambient = 15
 name = Tenti pineapple
+//Server
+desc=The most delicious of pineapples.
+weight=2lb
+category=category_120
+tradeable=no

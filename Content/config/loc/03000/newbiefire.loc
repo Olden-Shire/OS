@@ -6,3 +6,5 @@ contrast = 75
 bgsound = 2065, 3
 models_only = 2260
 name = Fire
+//Server
+desc=Hot!

@@ -11,3 +11,8 @@ xan2d = 604
 recol1s = 61
 recol1d = 5652
 name = Bronze halberd
+//Server
+desc=A bronze halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

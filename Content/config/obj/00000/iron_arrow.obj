@@ -17,3 +17,15 @@ recol1d = 33
 recol2s = 57
 recol2d = 33
 name = Iron arrow
+//Server
+desc=Arrows with iron heads.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,10
+param=levelrequire,1
+param=proj_launch,iron_arrow_launch
+param=proj_travel,iron_arrow_travel
+param=weapon_poisoned,iron_arrow_p
+param=weapon_poisoned_message,You poison some arrows.
+param=next_obj_stage,iron_unlitarrow

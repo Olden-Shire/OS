@@ -3,3 +3,5 @@ op1 = Open
 raiseobject = 0
 models = 639/0
 name = Large door
+//Server
+desc=A large church door.

@@ -17,3 +17,15 @@ recol1d = 21662
 recol2s = 57
 recol2d = 21662
 name = Adamant arrow
+//Server
+desc=Arrows with adamantite heads.
+wearpos=quiver
+weight=18g
+category=arrows
+param=rangebonus,31
+param=levelrequire,30
+param=proj_launch,adamant_arrow_launch
+param=proj_travel,adamant_arrow_travel
+param=weapon_poisoned,adamant_arrow_p
+param=weapon_poisoned_message,You poison some arrows.
+param=next_obj_stage,adamant_unlitarrow

@@ -5,3 +5,5 @@ mirror = true
 resizey = 256
 models_only = 10907
 name = Wall
+//Server
+desc=A ruined wall.

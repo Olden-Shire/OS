@@ -8,3 +8,6 @@ xan2d = 232
 cost = 5
 members = true
 name = Empty oyster
+//Server
+desc=It's empty.
+weight=80g

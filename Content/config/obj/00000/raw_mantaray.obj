@@ -11,3 +11,8 @@ recol1d = 42419
 recol2s = 33
 recol2d = 42304
 name = Raw manta ray
+//Server
+desc=A rare catch.
+weight=450g
+category=category_57
+param=fishing_struct,fishing_struct_mantaray

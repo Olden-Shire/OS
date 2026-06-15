@@ -5,3 +5,7 @@ zoom2d = 1640
 xan2d = 92
 members = true
 name = Iban's shadow
+//Server
+desc=A strange dark liquid.
+weight=25g
+tradeable=no

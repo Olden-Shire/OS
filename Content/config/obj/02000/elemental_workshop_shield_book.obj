@@ -20,3 +20,7 @@ recol4d = 4657
 recol5s = 8107
 recol5d = 4424
 name = Battered book
+//Server
+desc=A very thickly bound book.
+weight=4oz
+tradeable=no

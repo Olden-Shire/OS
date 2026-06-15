@@ -4,3 +4,5 @@ op1 = Repair
 op3 = hidden
 models_only = 4134
 name = Temple wall
+//Server
+desc=The starting of a wall.

@@ -9,3 +9,7 @@ xan2d = 424
 manwear = obj_yin_yang_amulet_man, 0
 womanwear = obj_yin_yang_amulet_woman, 0
 name = Yin yang amulet
+//Server
+desc=A non-magical copy of the make-over mage's amulet.
+wearpos=front
+weight=1g

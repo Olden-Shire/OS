@@ -5,3 +5,6 @@ op2 = Search
 op3 = Close
 models_only = 2244
 name = Cupboard
+//Server
+desc=This may be worth opening.
+param=cupboard_other,grandtree_cupboardclosed

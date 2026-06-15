@@ -4,3 +4,5 @@ hillskew = true
 op1 = Squeeze-through
 models = 14355/0
 name = Loose Railing
+//Server
+desc=Hmmm... I wonder if it's loose enough to get through.

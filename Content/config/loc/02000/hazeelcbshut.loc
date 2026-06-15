@@ -4,3 +4,6 @@ op1 = Open
 forceapproach = 13
 models_only = 2245
 name = Cupboard
+//Server
+desc=It's closed.
+param=cupboard_other,hazeelcbopen

@@ -2,3 +2,6 @@
 model = obj_sapphire_ring_1649
 xan2d = 68
 name = Sapphire ring
+//Server
+desc=A valuable ring.
+param=crafting_jewelry_struct,sapphire_ring

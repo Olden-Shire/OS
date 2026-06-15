@@ -5,3 +5,5 @@ hillskew = true
 recol = 6241/10306
 models_only = 14332
 name = Bones
+//Server
+desc=It might have once looked something like a human.

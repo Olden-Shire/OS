@@ -10,3 +10,7 @@ iop2 = Wear
 manwear = obj_white_apron_1005_man, 0
 womanwear = obj_white_apron_1005_woman, 0
 name = White apron
+//Server
+desc=A mostly clean apron.
+wearpos=torso
+weight=1lb

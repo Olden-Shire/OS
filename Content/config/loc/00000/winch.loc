@@ -2,3 +2,5 @@
 op1 = Operate
 models_only = 1835
 name = Winch
+//Server
+desc=Used for pulling things up.

@@ -2,3 +2,5 @@
 op1 = Buy
 models_only = 25038
 name = Crate
+//Server
+desc=Smells pretty bad!

@@ -4,3 +4,5 @@ forceapproach = 13
 bgsound = 2065, 3
 models_only = 11944
 name = Range
+//Server
+desc=Ideal for cooking on.

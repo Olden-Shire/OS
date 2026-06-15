@@ -8,3 +8,7 @@ yan2d = 18
 xan2d = 216
 members = true
 name = Molten glass
+//Server
+desc=Hot glass ready to be blown into useful objects.
+weight=3g
+weight=2lb

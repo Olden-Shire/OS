@@ -12,3 +12,7 @@ womanwear = obj_longbow_u_48_wear, 6
 recol1s = 6674
 recol1d = 6049
 name = Longbow (u)
+//Server
+desc=I need to find a string for this.
+weight=47oz
+category=unstrung_bow

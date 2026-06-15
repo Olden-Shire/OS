@@ -12,3 +12,6 @@ recol1d = 6453
 recol2s = 49
 recol2d = 6569
 name = Storeroom key
+//Server
+desc=The key to the Troll storeroom.
+weight=55g

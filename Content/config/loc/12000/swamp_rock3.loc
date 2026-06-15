@@ -8,3 +8,5 @@ resizez = 96
 recol = 37/5790 24/5008
 models_only = 3195
 name = Pile of Rock
+//Server
+desc=A pile of rock.

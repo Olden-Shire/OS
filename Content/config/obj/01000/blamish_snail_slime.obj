@@ -9,3 +9,8 @@ members = true
 recol1s = 61
 recol1d = 16495
 name = Blamish snail slime
+//Server
+desc=Yuck.
+weight=25g
+param=brew_potion_struct,blamish_oil
+tradeable=no

@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 8290
 name = Apple Barrel
+//Server
+desc=An empty barrel.

@@ -5,3 +5,7 @@ yof2d = 18
 yan2d = 148
 xan2d = 356
 name = Crest part
+//Server
+desc=A fragment of the Fitzharmon family crest.
+weight=3lb
+tradeable=no

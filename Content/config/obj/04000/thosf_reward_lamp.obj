@@ -12,3 +12,6 @@ recol1d = 840
 recol2s = 11183
 recol2d = 563
 name = Antique lamp
+//Server
+desc=I Wonder what happens if I rub it...
+weight=100g

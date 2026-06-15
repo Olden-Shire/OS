@@ -4,3 +4,5 @@ width = 5
 sharelight = true
 models_only = 6451
 name = Bridge
+//Server
+desc=Phew!! That's one big bridge.

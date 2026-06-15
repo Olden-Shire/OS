@@ -7,3 +7,6 @@ zoom2d = 1390
 yan2d = 160
 xan2d = 236
 name = Conductor mould
+//Server
+desc=A mould for making silver lightning conductors.
+weight=50g

@@ -17,3 +17,6 @@ recol4d = 5652
 recol5s = 43968
 recol5d = 5652
 name = Bronze key crimson
+//Server
+desc=A bronze key with a crimson painted eyelet.
+weight=10g

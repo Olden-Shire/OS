@@ -3,3 +3,5 @@ active = 1
 op1 = Open
 models_only = 6252
 name = Pyramid entrance
+//Server
+desc=A smooth, sandstone door that is slightly warm to the touch.

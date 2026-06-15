@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 21729
 name = ??? mixture
+//Server
+desc=A very warm vial of something or other. It's a bit lumpy.
+weight=2oz

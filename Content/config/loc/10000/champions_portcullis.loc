@@ -7,3 +7,5 @@ op1 = Open
 recol = 59/6344 47/6340
 models = 10259/0
 name = Portcullis
+//Server
+desc=A metal portcullis.

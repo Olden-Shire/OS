@@ -4,3 +4,6 @@ zoom2d = 790
 xan2d = 384
 members = true
 name = Book page 3
+//Server
+desc=A missing page from Rolad's book! It seems to be the third one.
+weight=2g

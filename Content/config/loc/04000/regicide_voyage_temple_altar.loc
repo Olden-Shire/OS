@@ -3,3 +3,6 @@ width = 2
 op1 = Pray-at
 models_only = 3903
 name = Altar
+//Server
+desc=Shrine to the glory of Saradomin.
+category=prayer_altar

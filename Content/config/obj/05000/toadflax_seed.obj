@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 34
 name = Toadflax seed
+//Server
+desc=A toadflax seed - plant in a herb patch.
+weight=1g

@@ -6,3 +6,5 @@ width = 2
 noshadow = true
 models_only = 9268
 name = TzHaar statue
+//Server
+desc=Who's the man?

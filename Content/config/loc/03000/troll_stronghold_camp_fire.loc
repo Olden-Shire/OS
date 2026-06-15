@@ -12,3 +12,6 @@ bgsound = 2065, 3
 nonblockrange = true
 models_only = 3818 3811
 name = Fire
+//Server
+desc=Hot!
+category=cooking_fire

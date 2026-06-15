@@ -21,3 +21,6 @@ recol5d = 10904
 recol6s = 6583
 recol6d = 10132
 name = Champion scroll
+//Server
+desc=It's a challenge from the Goblin Champion!
+weight=1g

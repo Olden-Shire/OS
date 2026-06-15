@@ -9,3 +9,7 @@ iop1 = Drink
 recol1s = 61
 recol1d = 5018
 name = Bravery potion
+//Server
+desc=A bravery potion for which Gujuo gave you the details, let's hope it works.
+weight=25g
+tradeable=no

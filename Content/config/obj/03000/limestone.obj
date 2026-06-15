@@ -7,3 +7,6 @@ yof2d = -41
 yan2d = 164
 xan2d = 220
 name = Limestone
+//Server
+desc=Some limestone.
+weight=5lb

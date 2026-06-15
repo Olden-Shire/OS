@@ -4,3 +4,5 @@ op1 = Climb-down
 blockwalk = true
 models = 10155/22
 name = Crevice
+//Server
+desc=I'm not going down there without a rope.

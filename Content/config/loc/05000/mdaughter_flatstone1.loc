@@ -4,3 +4,5 @@ blockwalk = true
 op1 = Jump-across
 models = 5686/22
 name = Flat stone
+//Server
+desc=Something put on top of this wouldn't fall off, it's quite smooth and flat.

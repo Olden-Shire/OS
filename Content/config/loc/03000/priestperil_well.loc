@@ -3,3 +3,5 @@ active = 1
 op1 = Search
 models_only = 3490
 name = Well
+//Server
+desc=An ornately carved well that draws water from the river Salve.

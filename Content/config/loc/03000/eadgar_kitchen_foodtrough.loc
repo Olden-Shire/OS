@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 3998/5532 61/5173
 models_only = 14206
 name = Food Trough
+//Server
+desc=It doesn't contain anything particularly appetising.

@@ -8,3 +8,7 @@ zan2d = 56
 xan2d = 524
 members = true
 name = Belt buckle
+//Server
+desc=Used to hold up trousers!
+weight=1kg
+tradeable=no

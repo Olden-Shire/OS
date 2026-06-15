@@ -7,3 +7,7 @@ cost = 20
 manwear = obj_lobster_pot_301_wear, 0
 womanwear = obj_lobster_pot_301_wear, 6
 name = Lobster pot
+//Server
+desc=Useful for catching lobsters.
+weight=9oz
+param=fish_equipment_struct,fish_equipment_lobster_pot

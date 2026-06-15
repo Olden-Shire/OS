@@ -8,3 +8,5 @@ mapscene = 25
 nonblockrange = true
 models_only = 820
 name = Rockslide
+//Server
+desc=A deposit of rocks.

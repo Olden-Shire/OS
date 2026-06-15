@@ -3,3 +3,5 @@ sharelight = true
 hillskew = true
 models_only = 9875
 name = Chimney Pipe
+//Server
+desc=A very large pipe.

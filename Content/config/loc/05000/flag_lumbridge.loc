@@ -3,3 +3,5 @@ anim = 1730
 ambient = 20
 models_only = 5509
 name = Standard
+//Server
+desc=A standard of Lumbridge Castle.

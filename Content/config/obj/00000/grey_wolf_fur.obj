@@ -9,3 +9,6 @@ members = true
 recol1s = 8103
 recol1d = 61
 name = Grey wolf fur
+//Server
+desc=This would make warm clothing.
+weight=3kg

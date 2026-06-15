@@ -10,3 +10,6 @@ xan2d = 204
 recol1s = 39834
 recol1d = 7616
 name = Bucket of sand
+//Server
+desc=One of the ingredients for making glass.
+weight=2500g

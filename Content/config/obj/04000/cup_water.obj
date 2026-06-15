@@ -11,3 +11,6 @@ iop4 = Empty
 recol1s = 8101
 recol1d = 38333
 name = Cup of water
+//Server
+desc=A cup of water.
+weight=50g

@@ -8,3 +8,7 @@ iop2 = Wear
 recol1s = 7390
 recol1d = 7599
 name = Bedsheet
+//Server
+desc=It's a bedsheet.
+weight=1kg
+wearpos=hat

@@ -14,3 +14,8 @@ cost = 15
 recol1s = 8741
 recol1d = 7390
 name = Desert top
+//Server
+desc=A bit itchy.
+wearpos=torso
+wearpos2=arms
+weight=5g

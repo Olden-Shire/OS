@@ -5,3 +5,5 @@ op1 = Close
 mirror = true
 models = 13228/0
 name = Door
+//Server
+desc=A desert door.

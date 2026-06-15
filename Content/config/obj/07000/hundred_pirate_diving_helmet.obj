@@ -14,3 +14,9 @@ xan2d = 27
 members = true
 cost = 1
 name = Fishbowl helmet
+//Server
+desc=You'll look daft, but at least you won't drown!
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=5kg

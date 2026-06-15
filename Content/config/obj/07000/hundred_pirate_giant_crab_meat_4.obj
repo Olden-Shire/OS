@@ -9,3 +9,6 @@ xan2d = 288
 iop1 = Eat
 cost = 40
 name = Cooked crab meat
+//Server
+desc=Nice and tasty!
+weight=2lb

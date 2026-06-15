@@ -8,3 +8,8 @@ iop1 = Bury
 recol1s = 127
 recol1d = 28
 name = Burnt jogre bones
+//Server
+desc=These blackened Jogre bones have been somehow burnt.
+weight=800g
+category=bones
+param=bone_exp,160

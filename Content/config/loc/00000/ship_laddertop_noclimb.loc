@@ -3,3 +3,5 @@ op1 = Climb-down
 recol = 12579/5665 12574/5660 12698/5784 12694/5784 12818/5665
 models_only = 5294
 name = Ladder
+//Server
+desc=I'm not allowed to climb this ladder.

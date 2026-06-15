@@ -6,3 +6,8 @@ yan2d = 368
 xan2d = 400
 iop1 = Bury
 name = Bones
+//Server
+desc=Bones are for burying!
+weight=500g
+category=bones
+param=bone_exp,45

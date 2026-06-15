@@ -11,3 +11,8 @@ iop2 = Wear
 manwear = obj_plague_trousers_man, 0
 womanwear = obj_plague_trousers_woman, 0
 name = Plague trousers
+//Server
+desc=These should protect me from the plague, I hope!
+wearpos=legs
+weight=5lb
+tradeable=no

@@ -19,3 +19,8 @@ recol2d = 11177
 recol3s = 10351
 recol3d = 61
 name = Holy book
+//Server
+desc=The holy book of Saradomin.
+weight=1kg
+wearpos=lefthand
+param=saradominitem,^true

@@ -12,3 +12,8 @@ members = true
 recol1s = 127
 recol1d = 960
 name = 'perfect' ring
+//Server
+desc=A perfect ruby ring.
+wearpos=ring
+weight=7g
+tradeable=no

@@ -7,3 +7,6 @@ xan2d = 368
 recol1s = 127
 recol1d = 54722
 name = Silk
+//Server
+desc=It's a sheet of silk.
+weight=1kg

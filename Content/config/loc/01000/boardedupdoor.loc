@@ -3,3 +3,5 @@ active = 1
 raiseobject = 0
 models = 2033/4
 name = Boarded-up door
+//Server
+desc=This door has been boarded up.

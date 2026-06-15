@@ -8,3 +8,7 @@ members = true
 manwear = obj_rusty_sword_7758_wear, 0
 womanwear = obj_rusty_sword_7758_wear, 6
 name = Rusty sword
+//Server
+desc=A decent enough weapon gone rusty.
+weight=5lb
+wearpos=righthand

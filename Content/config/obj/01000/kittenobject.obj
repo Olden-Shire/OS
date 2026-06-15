@@ -8,3 +8,9 @@ zan2d = 1940
 xan2d = 32
 members = true
 name = Pet kitten
+//Server
+desc=This kitten seems to like you.
+weight=750g
+category=kitten
+param=follower_id,kittenpet1
+tradeable=no

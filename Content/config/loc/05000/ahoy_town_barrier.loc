@@ -11,3 +11,5 @@ bgsound = 3139, 3
 recol = 61/20797
 models_only = 5397
 name = Energy Barrier
+//Server
+desc=A ghostly barrier.

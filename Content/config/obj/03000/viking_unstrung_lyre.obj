@@ -8,3 +8,7 @@ yan2d = 144
 xan2d = 464
 members = true
 name = Unstrung lyre
+//Server
+desc=It's almost a musical instrument.
+wearpos=righthand
+weight=4lb

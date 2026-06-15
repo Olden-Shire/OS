@@ -10,3 +10,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 6059
 name = Bedabin key
+//Server
+desc=A key to the chest in Captain Siad's room.
+weight=10g
+tradeable=no

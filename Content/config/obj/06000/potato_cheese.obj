@@ -9,3 +9,6 @@ iop1 = Eat
 members = true
 cost = 8
 name = Potato with cheese
+//Server
+desc=A baked potato with butter and cheese.
+weight=500g

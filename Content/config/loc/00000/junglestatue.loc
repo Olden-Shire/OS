@@ -3,3 +3,5 @@ width = 4
 length = 4
 models_only = 1729
 name = Mysterious statue
+//Server
+desc=Its eyes stare off into the distance...

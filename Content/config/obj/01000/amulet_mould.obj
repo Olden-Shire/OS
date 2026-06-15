@@ -7,3 +7,7 @@ zoom2d = 620
 yan2d = 96
 xan2d = 340
 name = Amulet mould
+//Server
+desc=Used to make gold amulets
+weight=1lb
+respawnrate=200

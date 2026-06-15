@@ -10,3 +10,7 @@ xan2d = 221
 members = true
 cost = 15
 name = Red firelighter
+//Server
+desc=Makes firelighting lots easier
+weight=1g
+weight=1g

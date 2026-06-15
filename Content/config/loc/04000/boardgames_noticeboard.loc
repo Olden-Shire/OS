@@ -4,3 +4,5 @@ active = 1
 op1 = Read
 models = 2040/4
 name = Noticeboard
+//Server
+desc=Has some board games news on it.

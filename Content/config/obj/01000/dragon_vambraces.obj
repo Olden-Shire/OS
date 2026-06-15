@@ -14,3 +14,14 @@ recol1d = 22416
 recol2s = 7446
 recol2d = 22408
 name = Green d'hide vamb
+//Server
+desc=Vambraces made from 100% real dragonhide.
+wearpos=hands
+weight=10oz
+category=category_16
+param=magicattack,-10
+param=rangeattack,8
+param=stabdefence,3
+param=slashdefence,2
+param=crushdefence,4
+param=magicdefence,2

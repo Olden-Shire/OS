@@ -14,3 +14,9 @@ recol2d = 61
 recol3s = 127
 recol3d = 45
 name = Pet cat
+//Server
+desc=This cat definitely likes you.
+weight=1500g
+category=cat
+param=follower_id,growncat_browngrey
+tradeable=no

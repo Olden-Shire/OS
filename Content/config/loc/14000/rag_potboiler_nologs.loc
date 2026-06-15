@@ -3,3 +3,5 @@ anim = 477
 active = 1
 models_only = 14095
 name = Pot-boiler
+//Server
+desc=Covered in a thick layer of grease.

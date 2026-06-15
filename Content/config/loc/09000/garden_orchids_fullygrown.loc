@@ -2,3 +2,5 @@
 ambient = 25
 models_only = 9159 9160 9157
 name = Orchids
+//Server
+desc=These pink orchids are fully grown.

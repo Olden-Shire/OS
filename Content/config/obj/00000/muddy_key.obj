@@ -8,3 +8,6 @@ xan2d = 328
 recol1s = 8128
 recol1d = 3625
 name = Muddy key
+//Server
+desc=It looks like the key to a chest.
+weight=10g

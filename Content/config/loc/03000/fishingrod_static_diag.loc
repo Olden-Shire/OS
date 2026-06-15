@@ -3,3 +3,5 @@ length = 2
 width = 2
 models_only = 3871
 name = Fishing rod
+//Server
+desc=It's stuck in the sand.

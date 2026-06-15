@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 86
 name = Gypsum
+//Server
+desc=A vial of something labelled 'Gypsum'.
+weight=2oz

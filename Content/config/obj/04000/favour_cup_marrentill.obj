@@ -11,3 +11,6 @@ iop4 = Empty
 recol1s = 8101
 recol1d = 36277
 name = Herb tea mix
+//Server
+desc=An unfinished herb tea made up of water and marrentill.
+weight=50g

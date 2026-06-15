@@ -4,3 +4,5 @@ length = 3
 nonsolid = true
 models_only = 1707
 name = Yommi tree baby
+//Server
+desc=A baby Yommi tree, it has a mystical aura.

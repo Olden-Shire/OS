@@ -4,3 +4,6 @@ members = true
 zoom2d = 1420
 xan2d = 12
 name = Snake basket
+//Server
+desc=This is used to hold snakes.
+weight=500g

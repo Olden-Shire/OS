@@ -3,3 +3,5 @@ width = 5
 length = 5
 models_only = 10491
 name = Evergreen.
+//Server
+desc=A decorated tree.

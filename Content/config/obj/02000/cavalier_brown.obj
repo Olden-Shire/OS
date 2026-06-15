@@ -13,3 +13,7 @@ womanwear = obj_tan_cavalier_2639_woman, 0
 manhead = 28
 womanhead = 86
 name = Tan cavalier
+//Server
+desc=All for one and one for all!
+weight=80g
+wearpos=hat

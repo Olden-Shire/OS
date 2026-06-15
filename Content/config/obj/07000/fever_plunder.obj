@@ -7,3 +7,6 @@ yan2d = 296
 xan2d = 220
 members = true
 name = Plunder
+//Server
+desc=Looks valuable.
+weight=5g

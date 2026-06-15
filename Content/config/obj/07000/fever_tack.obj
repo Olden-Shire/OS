@@ -15,3 +15,6 @@ members = true
 recol1s = 28
 recol1d = 7952
 name = Tacks
+//Server
+desc=Useful for pinning up paintings.
+weight=5g

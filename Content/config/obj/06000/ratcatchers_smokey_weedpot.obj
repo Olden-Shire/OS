@@ -9,3 +9,6 @@ xan2d = 112
 manwear = obj_smouldering_pot_wear, 0
 womanwear = obj_smouldering_pot_wear, 6
 name = Smouldering pot
+//Server
+desc=Contains slowly burning garden weeds.
+weight=500g

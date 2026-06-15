@@ -11,3 +11,7 @@ members = true
 recol1s = 10351
 recol1d = 43344
 name = Bervirius notes
+//Server
+desc=Notes taken from the tomb of Bervirius.
+weight=20g
+tradeable=no

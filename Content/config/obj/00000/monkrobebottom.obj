@@ -10,3 +10,9 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 4769
 name = Monk's robe
+//Server
+desc=Keeps a monk's knees nice and warm.
+wearpos=legs
+weight=2lb
+param=prayerbonus,6
+param=saradominitem,^true

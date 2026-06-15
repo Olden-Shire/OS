@@ -7,3 +7,5 @@ active = 1
 recol = 41/61
 models_only = 7666
 name = Blade
+//Server
+desc=That could really hurt!

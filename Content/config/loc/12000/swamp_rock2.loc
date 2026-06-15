@@ -5,3 +5,5 @@ op3 = hidden
 recol = 37/5790 24/5008
 models_only = 3183
 name = Pile of Rock
+//Server
+desc=A pile of rock.

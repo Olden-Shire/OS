@@ -4,3 +4,5 @@ ambient = 25
 contrast = 25
 models = 2111/4
 name = Plaque
+//Server
+desc=Something is written on it. I can't read what.

@@ -4,3 +4,5 @@ bgsound = 2199, 3
 recol = 7465/5904 7461/5665 7585/5784 7580/5541 7704/5904
 models_only = 14078
 name = Cooking pot
+//Server
+desc=Something is cooking nicely here.

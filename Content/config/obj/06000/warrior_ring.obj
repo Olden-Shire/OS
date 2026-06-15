@@ -9,3 +9,9 @@ zoom2d = 570
 yan2d = 1776
 xan2d = 348
 name = Warrior ring
+//Server
+desc=A legendary ring once worn by Fremennik warriors.
+wearpos=ring
+weight=4g
+param=slashattack,4
+param=slashdefence,4

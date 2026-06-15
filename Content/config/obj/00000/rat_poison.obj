@@ -5,3 +5,7 @@ zoom2d = 900
 yan2d = 1828
 xan2d = 68
 name = Rat poison
+//Server
+desc=Doesn't look very tasty.
+weight=5oz
+tradeable=no

@@ -8,3 +8,6 @@ zoom2d = 1040
 yan2d = 120
 xan2d = 380
 name = Crafting manual
+//Server
+desc=A set of instructions explaining how to construct a Karambwan vessel.
+weight=50g

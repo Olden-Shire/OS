@@ -9,3 +9,6 @@ members = true
 recol1s = 10351
 recol1d = 231
 name = Receipt
+//Server
+desc=A receipt for one 'Camelus Horribleus'.
+weight=20g

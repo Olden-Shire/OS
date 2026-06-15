@@ -11,3 +11,6 @@ cost = 69
 recol1s = 5683
 recol1d = 5665
 name = Part summer pie
+//Server
+desc=Still needs one more ingredient.
+weight=1g

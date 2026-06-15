@@ -7,3 +7,5 @@ bgsound = 3146, 3
 recol = 5545/6689 6466/6808 10287/5165
 models_only = 10388 10389
 name = Doric's Whetstone
+//Server
+desc=Used for sharpening blades.

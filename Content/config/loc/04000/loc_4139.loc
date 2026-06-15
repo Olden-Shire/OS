@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 6040/6689
 models = 966/0 967/1 968/9
 name = Gate
+//Server
+desc=Entrance to the Duel Arena.

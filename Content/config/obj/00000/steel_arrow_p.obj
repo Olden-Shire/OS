@@ -16,3 +16,13 @@ count4 = 917, 5
 recol1s = 57
 recol1d = 13221
 name = Steel arrow(p)
+//Server
+desc=Venomous looking arrows.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,16
+param=levelrequire,5
+param=proj_launch,steel_arrow_launch
+param=proj_travel,steel_arrow_travel
+param=poison_severity,20

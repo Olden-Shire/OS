@@ -10,3 +10,14 @@ iop2 = Wear
 manwear = obj_anti_dragon_shield_1540_wear, 0
 womanwear = obj_anti_dragon_shield_1540_wear, 6
 name = Anti-dragon shield
+//Server
+desc=This provides partial protection from dragon-breath attacks.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=stabdefence,7
+param=slashdefence,9
+param=crushdefence,8
+param=magicdefence,2
+param=rangedefence,8
+param=defend_anim,human_shield_defence

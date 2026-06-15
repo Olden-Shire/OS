@@ -6,3 +6,6 @@ xan2d = 516
 members = true
 iop1 = Assemble
 name = Schematic
+//Server
+desc=A transparent overlay - details of something?
+weight=4g

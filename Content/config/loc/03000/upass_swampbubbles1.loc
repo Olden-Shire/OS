@@ -3,3 +3,5 @@ anim = 480
 op1 = Cross
 models_only = 2259
 name = Swamp
+//Server
+desc=This area may not be safe...

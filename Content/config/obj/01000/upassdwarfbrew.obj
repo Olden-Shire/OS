@@ -9,3 +9,7 @@ xan2d = 204
 recol1s = 39834
 recol1d = 9135
 name = Dwarf brew
+//Server
+desc=Smells stronger than most spirits.
+weight=150g
+tradeable=no

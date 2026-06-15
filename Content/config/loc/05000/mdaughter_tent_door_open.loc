@@ -5,3 +5,5 @@ active = 1
 op1 = Close
 models = 5711/0
 name = Tent door
+//Server
+desc=It's barely a door, really.

@@ -8,3 +8,6 @@ members = true
 recol1s = 9108
 recol1d = 11152
 name = Yew roots
+//Server
+desc=The roots of the Yew tree.
+weight=1g

@@ -7,3 +7,7 @@ yan2d = 156
 xan2d = 168
 members = true
 name = Old boot
+//Server
+desc=Phew!
+weight=2oz
+tradeable=no

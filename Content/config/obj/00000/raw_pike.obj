@@ -10,3 +10,8 @@ recol1d = 21702
 recol2s = 103
 recol2d = 21739
 name = Raw pike
+//Server
+desc=I should try cooking this.
+weight=550g
+category=category_57
+param=fishing_struct,fishing_struct_pike

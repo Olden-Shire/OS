@@ -5,3 +5,5 @@ bgsound = 2197, 5
 recol = 3247/7700 3243/7952 3239/6798 3230/5772 3350/3594
 models_only = 695
 name = Well
+//Server
+desc=Well of the damned.

@@ -9,3 +9,6 @@ iop1 = Search
 recol1s = 43484
 recol1d = 984
 name = Bird nest
+//Server
+desc=It's a bird's nest with an egg in it.
+weight=2g

@@ -8,3 +8,7 @@ yan2d = 112
 xan2d = 236
 members = true
 name = Buttons
+//Server
+desc=Not Dick Whittington's helper at all!
+weight=1g
+tradeable=no

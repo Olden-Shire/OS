@@ -4,3 +4,6 @@ mirror = true
 sharelight = true
 models = 14356/0
 name = Gate
+//Server
+desc=It's locked.
+category=mcgrubor_gate

@@ -10,3 +10,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 7060
 name = Wrought iron key
+//Server
+desc=This key unlocks a very sturdy gate of some sort.
+weight=10g
+tradeable=no

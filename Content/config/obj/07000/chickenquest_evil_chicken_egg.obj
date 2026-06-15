@@ -8,3 +8,6 @@ xan2d = 290
 members = true
 iop5 = Destroy
 name = Evil chicken's egg
+//Server
+desc=What came first, the chicken or...
+weight=80g

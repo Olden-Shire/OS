@@ -3,3 +3,5 @@ width = 2
 length = 4
 models_only = 1820
 name = Crane
+//Server
+desc=It's used for loading and unloading fishing boats.

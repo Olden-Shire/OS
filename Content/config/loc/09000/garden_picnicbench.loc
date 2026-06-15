@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 5908/27028 5784/26904 5660/26908
 models_only = 1453
 name = Picnic bench
+//Server
+desc=Sit back and enjoy the view.

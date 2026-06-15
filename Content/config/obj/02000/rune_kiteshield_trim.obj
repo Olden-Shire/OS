@@ -16,3 +16,16 @@ recol2d = 36133
 recol3s = 7054
 recol3d = 38226
 name = Rune kiteshield (t)
+//Server
+desc=Rune kiteshield with trim.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,44
+param=slashdefence,48
+param=crushdefence,46
+param=magicdefence,-1
+param=rangedefence,46
+param=defend_anim,human_shield_defence

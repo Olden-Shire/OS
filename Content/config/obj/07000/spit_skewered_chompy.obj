@@ -7,3 +7,6 @@ yan2d = 1776
 xan2d = 234
 members = true
 name = Skewered chompy
+//Server
+desc=A skewered chompy bird.
+weight=2500g

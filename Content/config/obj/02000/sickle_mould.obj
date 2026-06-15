@@ -6,3 +6,6 @@ yan2d = 1100
 xan2d = 284
 members = true
 name = Sickle mould
+//Server
+desc=Used to make sickles.
+weight=1lb

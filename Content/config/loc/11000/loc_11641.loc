@@ -4,3 +4,5 @@ sharelight = true
 ambient = 10
 models_only = 11695
 name = City gate
+//Server
+desc=Keeps unwelcome folk out of Falador.

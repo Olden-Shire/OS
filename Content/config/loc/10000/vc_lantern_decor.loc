@@ -5,3 +5,5 @@ ambient = 43
 contrast = 22
 models = 10048/4
 name = Lantern
+//Server
+desc=Emits photons of light.

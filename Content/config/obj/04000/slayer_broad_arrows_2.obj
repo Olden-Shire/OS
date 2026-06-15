@@ -11,3 +11,5 @@ iop2 = Wield
 recol1s = 5012
 recol1d = 5404
 name = Broad arrows
+//Server
+desc=Arrows with a wider than normal tip.

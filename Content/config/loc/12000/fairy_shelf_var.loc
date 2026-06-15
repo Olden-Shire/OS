@@ -5,3 +5,5 @@ ambient = 20
 recol = 5947/19379 55083/949
 models = 11945/4
 name = Potion shelf
+//Server
+desc=A shelf of colourful potion gourds!

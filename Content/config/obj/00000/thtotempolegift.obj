@@ -15,3 +15,7 @@ recol3d = 670
 recol4s = 10126
 recol4d = 10178
 name = Gilded totem
+//Server
+desc=A gilded totem pole from the Kharazi tribe.
+weight=3kg
+tradeable=no

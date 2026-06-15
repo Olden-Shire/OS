@@ -20,3 +20,6 @@ recol5d = 904
 recol6s = 5351
 recol6d = 123
 name = Torn page
+//Server
+desc=A half torn necromantic page.
+weight=5g

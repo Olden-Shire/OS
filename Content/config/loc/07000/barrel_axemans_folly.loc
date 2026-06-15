@@ -4,3 +4,5 @@ op1 = Level
 nonblockrange = true
 models_only = 7775
 name = Axeman's Folly
+//Server
+desc=A barrel of Axeman's Folly.

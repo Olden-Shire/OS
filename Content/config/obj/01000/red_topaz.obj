@@ -19,3 +19,7 @@ recol3d = 63411
 recol4s = 127
 recol4d = 61376
 name = Red topaz
+//Server
+desc=A semi precious stone.
+weight=2g
+category=legends_gem

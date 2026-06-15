@@ -7,3 +7,7 @@ yan2d = 2012
 xan2d = 184
 members = true
 name = Coins
+//Server
+desc=Lovely money!
+weight=2g
+tradeable=no

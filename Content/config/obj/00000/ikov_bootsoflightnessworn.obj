@@ -13,3 +13,11 @@ iop2 = Wear
 recol1s = 4626
 recol1d = 43189
 name = Boots of lightness
+//Server
+desc=Magic boots that make you lighter than normal.
+wearpos=feet
+weight=-10lb
+param=stabdefence,1
+param=slashdefence,1
+param=crushdefence,1
+tradeable=no

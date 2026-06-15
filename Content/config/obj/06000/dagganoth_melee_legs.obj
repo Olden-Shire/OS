@@ -9,3 +9,7 @@ yof2d = 6
 zoom2d = 1720
 xan2d = 528
 name = Rock-shell legs
+//Server
+desc=Some tough leggings made from rock crab parts.
+wearpos=legs
+weight=20lb

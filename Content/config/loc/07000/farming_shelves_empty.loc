@@ -1,3 +1,5 @@
 // loc 7506
 models_only = 7908
 name = Shelves
+//Server
+desc=They're empty.

@@ -5,3 +5,6 @@ resizez = 100
 recol = 5652/5404 5656/5400 5532/6554 5537/7452 5413/8481 5417/5400
 models_only = 8658
 name = Crates
+//Server
+desc=Wooden crates with metal edges, contents unknown.
+category=empty_crate

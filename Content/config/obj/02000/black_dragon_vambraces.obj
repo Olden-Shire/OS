@@ -17,3 +17,14 @@ recol2d = 16
 recol3s = 22416
 recol3d = 4
 name = Black d'hide vamb
+//Server
+desc=Vambraces made from 100% real dragonhide.
+wearpos=hands
+weight=10oz
+category=category_16
+param=magicattack,-10
+param=rangeattack,11
+param=stabdefence,6
+param=slashdefence,5
+param=crushdefence,7
+param=magicdefence,8

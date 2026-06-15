@@ -3,3 +3,5 @@ ambient = 25
 active = 1
 models_only = 9183
 name = Diseased Grapevines
+//Server
+desc=These grapevines are suffering from some strange disease.

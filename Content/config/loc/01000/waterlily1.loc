@@ -4,3 +4,5 @@ noshadow = true
 nonsolid = true
 models_only = 1703
 name = Waterlily
+//Server
+desc=A home for frogs.

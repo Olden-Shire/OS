@@ -16,3 +16,8 @@ recol1d = 4886
 recol2s = 41
 recol2d = 1932
 name = Brown headband
+//Server
+desc=A minimalist's hat.
+weight=40g
+wearpos=hat
+param=party_clean_exempt,^true

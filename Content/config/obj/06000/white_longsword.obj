@@ -18,3 +18,7 @@ recol2d = 6550
 recol3s = 61
 recol3d = 99
 name = White longsword
+//Server
+desc=A razor sharp longsword.
+wearpos=righthand
+weight=4lb

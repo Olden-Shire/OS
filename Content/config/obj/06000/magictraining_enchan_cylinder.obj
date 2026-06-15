@@ -10,3 +10,6 @@ ambient = 10
 members = true
 cost = 0
 name = Cylinder
+//Server
+desc=A green cylinder.
+weight=1g

@@ -6,3 +6,5 @@ active = 1
 bgsound = 3123, 5
 models_only = 6275
 name = Wall Crusher
+//Server
+desc=That could hurt.

@@ -6,3 +6,5 @@ anim = 2380
 nonblockrange = true
 models_only = 8896
 name = Light Jungle
+//Server
+desc=This has broad leaves.

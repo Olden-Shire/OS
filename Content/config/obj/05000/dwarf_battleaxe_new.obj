@@ -8,3 +8,6 @@ xan2d = 356
 members = true
 iop1 = Wield
 name = Dwarven battleaxe
+//Server
+desc=This axe has a sharp blade and there are sapphires in the hilt.
+weight=2kg

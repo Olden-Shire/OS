@@ -19,3 +19,7 @@ recol4d = 8082
 recol5s = 1936
 recol5d = 7056
 name = Bone seeds
+//Server
+desc=An highly portable army of skeletal magi.
+weight=1g
+weight=4lb

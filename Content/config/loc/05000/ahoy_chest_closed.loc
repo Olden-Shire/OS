@@ -3,3 +3,5 @@ op1 = Open
 forceapproach = 14
 models_only = 5272
 name = Closed chest
+//Server
+desc=I wonder what's inside.

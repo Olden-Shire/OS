@@ -8,3 +8,6 @@ zoom2d = 620
 yan2d = 96
 xan2d = 340
 name = M'amulet mould
+//Server
+desc=It's an amulet mould shaped like a monkey head.
+weight=7g

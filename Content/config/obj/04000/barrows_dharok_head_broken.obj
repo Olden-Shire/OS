@@ -16,3 +16,8 @@ recol1d = 10388
 recol2s = 10388
 recol2d = 10508
 name = Dharoks helm 0
+//Server
+desc=Dharok the Wretched's helm.
+weight=4lb
+wearpos=hat
+wearpos2=head

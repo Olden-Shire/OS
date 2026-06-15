@@ -2,3 +2,5 @@
 active = 1
 models = 6887/4
 name = Rubble
+//Server
+desc=It looks like the hole in the wall has been blocked with rubble.

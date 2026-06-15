@@ -3,3 +3,5 @@ active = 1
 op3 = Take
 models_only = 3176
 name = Orb of Light
+//Server
+desc=A magical sphere that glimmers within.

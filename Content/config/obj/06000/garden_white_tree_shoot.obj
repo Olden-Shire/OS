@@ -16,3 +16,6 @@ recol3d = 2157
 recol4s = 5338
 recol4d = 5198
 name = White tree shoot
+//Server
+desc=A shoot that has been cut from a dying White Tree.
+weight=1g

@@ -9,3 +9,14 @@ iop2 = Wear
 manwear = obj_cape_of_legends_1052_man, 0
 womanwear = obj_cape_of_legends_1052_woman, 0
 name = Cape of legends
+//Server
+desc=The cape worn by members of the Legends Guild.
+wearpos=back
+weight=4lb
+category=armour_cape
+param=stabdefence,7
+param=slashdefence,7
+param=crushdefence,7
+param=magicdefence,7
+param=rangedefence,7
+tradeable=no

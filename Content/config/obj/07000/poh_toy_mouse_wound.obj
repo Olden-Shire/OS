@@ -9,3 +9,6 @@ members = true
 cost = 10
 iop5 = Release
 name = Toy mouse (wound)
+//Server
+desc=Nice bit of crafting!
+weight=1kg

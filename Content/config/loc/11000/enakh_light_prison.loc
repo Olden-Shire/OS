@@ -5,3 +5,5 @@ anim = 3097
 bgsound = 3131, 3
 models_only = 10935
 name = Magic spell
+//Server
+desc=He's been trapped in there for a long time.

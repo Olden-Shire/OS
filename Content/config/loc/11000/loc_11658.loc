@@ -1,3 +1,5 @@
 // loc 11658
 models_only = 11580
 name = Shelves
+//Server
+desc=Shelves for maces.

@@ -17,3 +17,8 @@ recol1d = 41408
 recol2s = 5572
 recol2d = 7112
 name = Tribal top
+//Server
+desc=Local dress.
+weight=1kg
+wearpos=torso
+wearpos2=arms

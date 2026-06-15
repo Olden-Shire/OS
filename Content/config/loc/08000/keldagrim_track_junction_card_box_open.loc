@@ -2,3 +2,5 @@
 forceapproach = 11
 models_only = 8661
 name = Box
+//Server
+desc=A strange box of some kind. It's open.

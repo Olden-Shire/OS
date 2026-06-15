@@ -3,3 +3,5 @@ sharelight = true
 op1 = Open
 models = 3693/0 3694/1 3695/2 3696/3 3697/9
 name = Wall
+//Server
+desc=It looks very sturdy.

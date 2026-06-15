@@ -5,3 +5,5 @@ anim = 2380
 nonblockrange = true
 models_only = 8899
 name = Light Jungle
+//Server
+desc=This has been chopped away.

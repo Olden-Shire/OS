@@ -3,3 +3,6 @@ length = 2
 op1 = Search
 models_only = 1275
 name = Bookcase
+//Server
+desc=Bamboo storage!
+category=bookcase

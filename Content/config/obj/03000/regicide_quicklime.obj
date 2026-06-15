@@ -9,3 +9,6 @@ members = true
 recol1s = 10295
 recol1d = 54397
 name = Quicklime
+//Server
+desc=Some quicklime.
+weight=5lb

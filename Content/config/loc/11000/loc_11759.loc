@@ -6,3 +6,5 @@ ambient = 10
 noshadow = true
 models_only = 11566
 name = Fountain
+//Server
+desc=Hope springs eternal.

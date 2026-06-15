@@ -7,3 +7,6 @@ yan2d = 1976
 xan2d = 152
 members = true
 name = Barrel bomb
+//Server
+desc=A barrel full of fire oil.
+weight=32kg

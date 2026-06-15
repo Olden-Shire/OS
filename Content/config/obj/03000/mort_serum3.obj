@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 35745
 name = Serum 207 (3)
+//Server
+desc=3 doses serum 207 as described in Herbi Flax's diary.
+weight=30g
+category=mort_serum

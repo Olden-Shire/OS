@@ -2,3 +2,5 @@
 length = 4
 models_only = 765
 name = Temple door
+//Server
+desc=A temple door.

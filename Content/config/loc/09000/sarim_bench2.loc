@@ -4,3 +4,5 @@ ambient = 35
 nonblockrange = true
 models_only = 5492
 name = Bench
+//Server
+desc=Sit back and relax...

@@ -10,3 +10,6 @@ xan2d = 328
 recol1s = 5351
 recol1d = 4267
 name = Letter
+//Server
+desc=A letter, clearly hastily written.
+weight=1g

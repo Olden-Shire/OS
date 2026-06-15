@@ -8,3 +8,5 @@ contrast = 60
 recol = 7335/4676 7331/4544 7326/4667 7322/4663 7446/4659 7442/4783
 models_only = 10156 10157
 name = Cave exit
+//Server
+desc=This leads back to the waterfall outside.

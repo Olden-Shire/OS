@@ -13,3 +13,6 @@ recol1d = 21962
 recol2s = 103
 recol2d = 21731
 name = Seasoned sardine
+//Server
+desc=Sardine flavoured with doogle leaves.
+weight=120g

@@ -15,3 +15,6 @@ recol3d = 46651
 recol4s = 10351
 recol4d = 127
 name = Book on costumes
+//Server
+desc=An old library book. It bears the title 'Scholars Guide to Dwarven Costumes'.
+weight=80g

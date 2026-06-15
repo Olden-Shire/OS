@@ -7,3 +7,7 @@ xan2d = 264
 recol1s = 82
 recol1d = 6589
 name = Clay
+//Server
+desc=Some hard dry clay.
+weight=1kg
+category=category_91

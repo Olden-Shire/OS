@@ -10,3 +10,7 @@ cost = 20
 recol1s = 37811
 recol1d = 21460
 name = Poison chalice
+//Server
+desc=A cup of a strange brew...
+weight=2oz
+category=potion

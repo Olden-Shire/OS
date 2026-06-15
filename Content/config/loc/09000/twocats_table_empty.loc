@@ -6,3 +6,5 @@ op1 = Inspect
 nonblockrange = true
 models_only = 1213 9412 9409
 name = Table
+//Server
+desc=A nice sturdy table.

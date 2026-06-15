@@ -8,3 +8,5 @@ ambient = 20
 contrast = 20
 models_only = 23891
 name = Dairy cow
+//Server
+desc=Fit for milking.

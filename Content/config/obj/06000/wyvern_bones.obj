@@ -9,3 +9,7 @@ xan2d = 292
 iop1 = Bury
 members = true
 name = Wyvern bones
+//Server
+desc=Bones of a large flying creature!
+weight=500g
+category=bones

@@ -6,3 +6,5 @@ raiseobject = 0
 nonblockrange = true
 models = 609/0
 name = Door
+//Server
+desc=Solid iron bars.

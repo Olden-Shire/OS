@@ -4,3 +4,5 @@ ambient = 25
 contrast = 25
 models = 2057/4
 name = Portrait
+//Server
+desc=A painting of the King looking royal.

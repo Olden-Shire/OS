@@ -4,3 +4,5 @@ anim = 1999
 op1 = Open
 models = 11873/0
 name = Doorway
+//Server
+desc=Opens into another area, come on, I know this.

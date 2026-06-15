@@ -6,3 +6,5 @@ hillskew = true
 forceapproach = 11
 models_only = 13375 13372
 name = Grave
+//Server
+desc=A grave with a coffin in.

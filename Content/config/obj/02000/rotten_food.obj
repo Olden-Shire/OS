@@ -7,3 +7,6 @@ zoom2d = 740
 xan2d = 236
 members = true
 name = Rotten food
+//Server
+desc=Erhhh! It stinks.
+weight=1lb

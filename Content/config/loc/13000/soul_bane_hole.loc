@@ -6,3 +6,5 @@ anim = 3835
 nonsolid = true
 models_only = 14271
 name = Hole
+//Server
+desc=What's that?

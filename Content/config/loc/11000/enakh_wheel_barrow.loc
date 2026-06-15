@@ -4,3 +4,5 @@ width = 2
 recol = 7830/7723 7954/7609
 models_only = 5402
 name = Wheelbarrow
+//Server
+desc=A wooden wheelbarrow.

@@ -6,3 +6,6 @@ yan2d = 42
 xan2d = 357
 members = true
 name = Giant rat bone
+//Server
+desc=This bone belongs in a museum!
+weight=3g

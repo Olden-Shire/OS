@@ -1,3 +1,5 @@
 // loc 382
 models_only = 892
 name = Basket
+//Server
+desc=A woven storage basket.

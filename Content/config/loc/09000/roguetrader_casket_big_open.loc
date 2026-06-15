@@ -1,3 +1,5 @@
 // loc 9075
 models_only = 9003
 name = rune casket
+//Server
+desc=boxy

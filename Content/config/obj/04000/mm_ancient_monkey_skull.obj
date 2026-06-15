@@ -7,3 +7,6 @@ zoom2d = 820
 yan2d = 136
 xan2d = 96
 name = Monkey skull
+//Server
+desc=It's a very ancient skull from some kind of ape.
+weight=500g

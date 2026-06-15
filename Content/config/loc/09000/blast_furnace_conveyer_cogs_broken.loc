@@ -4,3 +4,5 @@ op1 = Repair
 anim = 2451
 models_only = 9070
 name = Drive belt
+//Server
+desc=Fix it, quick!

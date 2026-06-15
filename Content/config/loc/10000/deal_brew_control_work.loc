@@ -6,3 +6,5 @@ anim = 2807
 bgsound = 3073, 5
 models_only = 14318
 name = Brewing control
+//Server
+desc=Chugging away nicely.

@@ -9,3 +9,6 @@ iop1 = Read
 recol1s = 5018
 recol1d = 14226
 name = The great divide
+//Server
+desc=A book about the great divide.
+weight=18oz

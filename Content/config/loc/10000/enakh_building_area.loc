@@ -5,3 +5,5 @@ noshadow = true
 recol = 5590/8656
 models_only = 10900
 name = Flat ground
+//Server
+desc=The perfect place for a picnic.

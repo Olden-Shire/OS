@@ -10,3 +10,7 @@ yan2d = 2036
 xan2d = 388
 cost = 500
 name = Rogue trousers
+//Server
+desc=Black banded leather armour, a rogue's dream!
+wearpos=legs
+weight=1lb

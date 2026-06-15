@@ -13,3 +13,7 @@ recol1d = 4391
 recol2s = 10351
 recol2d = 10452
 name = Instruction manual
+//Server
+desc=An old note book.
+weight=18oz
+tradeable=no

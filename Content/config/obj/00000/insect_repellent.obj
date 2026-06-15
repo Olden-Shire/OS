@@ -7,3 +7,6 @@ zoom2d = 1430
 yan2d = 1836
 xan2d = 124
 name = Insect repellent
+//Server
+desc=Drives away all known 6 legged creatures.
+weight=1oz

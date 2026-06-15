@@ -6,3 +6,6 @@ yof2d = -16
 zoom2d = 730
 xan2d = 328
 name = White pearl seed
+//Server
+desc=You can grow this seed even in cold mountain ranges!
+weight=25g

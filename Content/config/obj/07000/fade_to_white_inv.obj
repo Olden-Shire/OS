@@ -3,3 +3,6 @@ model = obj_dummy_7586
 zoom2d = 130
 xan2d = 512
 name = Dummy
+//Server
+desc=All is white!
+weight=1g

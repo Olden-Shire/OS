@@ -17,3 +17,6 @@ recol2d = 6075
 recol3s = 918
 recol3d = 6075
 name = Mystic jewel
+//Server
+desc=I can escape the Maze with this!
+weight=2g

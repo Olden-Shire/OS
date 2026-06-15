@@ -7,3 +7,6 @@ yan2d = 1760
 xan2d = 136
 op3 = Take
 name = Canopic jar
+//Server
+desc=Has a lid shaped like a man. I think it contains someone's liver. Yuck.
+weight=100g

@@ -4,3 +4,11 @@ op1 = Swing across
 nonsolid = true
 models_only = 1474
 name = Monkeybars
+//Server
+desc=I can traverse these.
+category=monkeybars
+param=agil_level_req,15
+param=start_coord,0_48_155_48_44
+param=end_coord,0_48_155_49_49
+param=obstacle_low_fail,256
+param=obstacle_high_fail,512

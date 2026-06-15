@@ -14,3 +14,8 @@ yan2d = 40
 zan2d = 1908
 xan2d = 456
 name = Progress hat
+//Server
+desc=A magic training arena progress hat.
+weight=1g
+wearpos=hat
+wearpos2=head

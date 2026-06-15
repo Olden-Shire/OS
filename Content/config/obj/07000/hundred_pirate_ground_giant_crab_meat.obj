@@ -10,3 +10,6 @@ cost = 1
 recol1s = 16
 recol1d = 3408
 name = Ground crab meat
+//Server
+desc=A smelly paste.
+weight=2lb

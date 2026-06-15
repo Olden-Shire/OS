@@ -1,3 +1,5 @@
 // loc 5494
 models_only = 5439
 name = Standing torch
+//Server
+desc=A crude torch stuck in the ground.

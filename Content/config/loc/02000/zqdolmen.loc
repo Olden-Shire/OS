@@ -5,3 +5,5 @@ op1 = Inspect
 op2 = Search
 models_only = 1470
 name = Tomb dolmen
+//Server
+desc=An ancient construct for supporting the bones of the deceased.

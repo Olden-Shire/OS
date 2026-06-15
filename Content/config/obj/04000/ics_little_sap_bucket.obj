@@ -10,3 +10,6 @@ cost = 30
 recol1s = 39834
 recol1d = 5027
 name = Bucket of sap
+//Server
+desc=It's a bucket of sap.
+weight=2500g

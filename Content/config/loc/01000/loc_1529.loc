@@ -5,3 +5,5 @@ nonsolid = true
 raiseobject = 0
 models = 879/0 880/9
 name = Curtain
+//Server
+desc=The curtain is open.

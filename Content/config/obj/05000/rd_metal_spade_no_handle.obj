@@ -7,3 +7,6 @@ yan2d = 1468
 xan2d = 304
 members = true
 name = Metal spade
+//Server
+desc=It's a metal spade without a handle.
+weight=4lb

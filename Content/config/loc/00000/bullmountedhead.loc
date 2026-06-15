@@ -4,3 +4,5 @@ ambient = 25
 contrast = 25
 models = 2052/4
 name = Bull's head
+//Server
+desc=Looks like the bull lost.

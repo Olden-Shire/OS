@@ -18,3 +18,6 @@ recol4d = 4003
 recol5s = 10545
 recol5d = 6059
 name = Fat snail meat
+//Server
+desc=A succulently slimy slice of sumptuous snail.
+weight=5kg

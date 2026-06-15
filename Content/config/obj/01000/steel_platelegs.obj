@@ -10,3 +10,16 @@ womanwear = obj_iron_platelegs_1067_woman, 0
 recol1s = 57
 recol1d = 61
 name = Steel platelegs
+//Server
+desc=These look pretty heavy.
+wearpos=legs
+weight=20lb
+category=armour_legs
+respawnrate=2000
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,17
+param=slashdefence,16
+param=crushdefence,15
+param=magicdefence,-4
+param=rangedefence,16

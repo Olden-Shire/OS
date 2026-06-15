@@ -4,3 +4,5 @@ op1 = Drink From
 bgsound = 2197, 3
 models_only = 2241
 name = Cauldron
+//Server
+desc=A large bubbling cauldron, smells... Ugh!

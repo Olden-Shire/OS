@@ -11,3 +11,6 @@ cost = 1
 recol1s = 61
 recol1d = 43069
 name = Magic stone
+//Server
+desc=Doesn't look very special.
+weight=5lb

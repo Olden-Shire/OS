@@ -6,3 +6,5 @@ resizez = 128
 op1 = Climb-up
 models_only = 9246
 name = Spikey chain
+//Server
+desc=A chain rope - looks pretty painful if you slip.

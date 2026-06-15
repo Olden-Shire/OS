@@ -3,3 +3,5 @@ width = 3
 anim = 1729
 models_only = 5520
 name = Water wheel
+//Server
+desc=The river makes it spin.

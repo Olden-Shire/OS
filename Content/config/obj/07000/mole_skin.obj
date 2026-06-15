@@ -7,3 +7,6 @@ zoom2d = 2216
 xan2d = 318
 members = true
 name = Mole skin
+//Server
+desc=The skin of a large mole.
+weight=1g

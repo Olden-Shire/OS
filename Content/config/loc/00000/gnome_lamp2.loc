@@ -2,3 +2,5 @@
 anim = 467
 models_only = 2286
 name = Lamp
+//Server
+desc=These insects love this light.

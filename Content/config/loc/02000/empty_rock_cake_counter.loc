@@ -4,3 +4,5 @@ active = 1
 op1 = Steal-From
 models_only = 17324
 name = Counter
+//Server
+desc=A counter made from a stone block.

@@ -5,3 +5,5 @@ mapscene = 35
 recol = 5231/6340
 models_only = 5141
 name = Goal
+//Server
+desc=A goal.

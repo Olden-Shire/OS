@@ -9,3 +9,6 @@ xan2d = 188
 members = true
 cost = 12
 name = Gardening trowel
+//Server
+desc=Not suitable for archaeological digs.
+weight=2oz

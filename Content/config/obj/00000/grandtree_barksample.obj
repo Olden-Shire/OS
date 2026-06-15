@@ -10,3 +10,7 @@ xan2d = 264
 recol1s = 6024
 recol1d = 6028
 name = Bark sample
+//Server
+desc=A sample of the bark from the Grand Tree.
+weight=15g
+tradeable=no

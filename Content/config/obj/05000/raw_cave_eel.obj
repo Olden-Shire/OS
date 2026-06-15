@@ -8,3 +8,6 @@ yan2d = 352
 xan2d = 296
 cost = 15
 name = Raw cave eel
+//Server
+desc=It's incredibly slimy.
+weight=500g

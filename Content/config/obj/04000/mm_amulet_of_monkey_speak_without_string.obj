@@ -6,3 +6,6 @@ yof2d = 32
 zoom2d = 330
 xan2d = 448
 name = M'speak amulet
+//Server
+desc=It's an unstrung Amulet of Monkey Speak. It makes vague chattering noises.
+weight=3lb

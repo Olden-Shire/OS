@@ -11,3 +11,5 @@ blockwalk = true
 recol = 5673/12818 5559/12698
 models = 1882/22
 name = Gangplank
+//Server
+desc=The tatty gangplank of a tatty ship.

@@ -7,3 +7,7 @@ zoom2d = 976
 yan2d = 210
 xan2d = 237
 name = Bow and arrow
+//Server
+desc=A safe arrow for indoor ranging games.
+wearpos=righthand
+weight=3lb

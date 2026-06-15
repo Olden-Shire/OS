@@ -4,3 +4,5 @@ length = 2
 op2 = Steal from
 models_only = 1421 7370
 name = Seed Stall
+//Server
+desc=Lots of seeds here.

@@ -8,3 +8,8 @@ zoom2d = 1420
 yan2d = 112
 xan2d = 288
 name = Picture
+//Server
+desc=A picture of a lady called Elena.
+weight=1lb
+respawnrate=5
+tradeable=no

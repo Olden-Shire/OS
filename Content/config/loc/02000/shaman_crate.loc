@@ -4,3 +4,5 @@ op2 = Search
 retex = 5/16 22/16
 models_only = 2143
 name = Crate
+//Server
+desc=An old crate for storage.

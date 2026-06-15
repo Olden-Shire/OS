@@ -5,3 +5,5 @@ op1 = Look-at
 op2 = Search
 models_only = 1500
 name = Broken cart
+//Server
+desc=This looks like it's being used to block entrance to the village.

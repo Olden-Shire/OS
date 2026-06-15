@@ -11,3 +11,6 @@ recol1d = 5285
 recol2s = 7362
 recol2d = 5293
 name = Stodgy mattress
+//Server
+desc=A half-filled feather mattress.
+weight=10kg

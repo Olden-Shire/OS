@@ -6,3 +6,7 @@ yan2d = 1984
 xan2d = 176
 iop1 = Swing
 name = Bull roarer
+//Server
+desc=It makes a loud but interesting sound when swung in the air.
+weight=20g
+tradeable=no

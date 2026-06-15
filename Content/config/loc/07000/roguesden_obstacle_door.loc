@@ -2,3 +2,5 @@
 op1 = Pick-lock
 models = 7563/0
 name = Door
+//Server
+desc=Locked.

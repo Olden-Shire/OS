@@ -8,3 +8,6 @@ xan2d = 156
 iop1 = Repair
 members = true
 name = Model ship
+//Server
+desc=A small wooden ship.
+weight=10g

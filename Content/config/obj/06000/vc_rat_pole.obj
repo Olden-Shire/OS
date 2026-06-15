@@ -8,3 +8,8 @@ yan2d = 1996
 xan2d = 268
 iop2 = Wield
 name = Rat pole
+//Server
+desc=A pole for putting rats on.
+wearpos=righthand
+wearpos2=lefthand
+weight=5lb

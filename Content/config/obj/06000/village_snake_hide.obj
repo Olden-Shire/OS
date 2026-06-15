@@ -17,3 +17,6 @@ recol4d = 10776
 recol5s = 10349
 recol5d = 10421
 name = Snake hide
+//Server
+desc=Scaly but not slimy!
+weight=500g

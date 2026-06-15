@@ -15,3 +15,6 @@ recol2d = 5916
 recol3s = 8745
 recol3d = 6040
 name = Cooked jubbly
+//Server
+desc=Lovely Jubbly!
+weight=10kg

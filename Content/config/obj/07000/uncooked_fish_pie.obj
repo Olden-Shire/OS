@@ -13,3 +13,6 @@ recol1d = 42419
 recol2s = 103
 recol2d = 42304
 name = Raw fish pie
+//Server
+desc=Raw fish is risky, better cook it.
+weight=1g

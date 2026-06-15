@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 1737
 name = Row boat
+//Server
+desc=I hope it doesn't sink.

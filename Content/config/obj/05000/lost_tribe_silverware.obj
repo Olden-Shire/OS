@@ -8,3 +8,6 @@ yan2d = 2020
 xan2d = 296
 cost = 1
 name = Silverware
+//Server
+desc=You found the Lumbridge silverware in the HAM cave.
+weight=50g

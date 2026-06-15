@@ -7,3 +7,7 @@ yan2d = 116
 xan2d = 136
 members = true
 name = Plague sample
+//Server
+desc=Probably best I don't keep this too long.
+weight=50g
+tradeable=no

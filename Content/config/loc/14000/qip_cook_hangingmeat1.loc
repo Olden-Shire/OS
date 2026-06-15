@@ -4,3 +4,5 @@ ambient = 50
 recol = 5404/5541 6697/5541
 models = 5972/4
 name = Hanging meat
+//Server
+desc=Dead animal parts dangling!

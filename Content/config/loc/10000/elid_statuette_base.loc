@@ -2,3 +2,5 @@
 ambient = 15
 models_only = 10190
 name = Statuette Plinth
+//Server
+desc=There should be a statue here.

@@ -19,3 +19,17 @@ recol3d = 10467
 recol4s = 11187
 recol4d = 10467
 name = Saradomin plate
+//Server
+desc=Rune platebody in the colours of Saradomin.
+wearpos=torso
+wearpos2=arms
+weight=22lb
+category=armour_body
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,82
+param=slashdefence,80
+param=crushdefence,72
+param=magicdefence,-6
+param=rangedefence,80
+param=saradominitem,^true

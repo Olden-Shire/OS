@@ -5,3 +5,5 @@ nonsolid = true
 op1 = Cross
 models_only = 4556
 name = Broken bridge
+//Server
+desc=I can jump off this one.

@@ -1,3 +1,5 @@
 // loc 871
 models_only = 1264
 name = Bath pipes
+//Server
+desc=Takes my dirty bath water away.

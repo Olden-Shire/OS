@@ -5,3 +5,5 @@ resizez = 107
 recol = 14614/70 14610/43107
 models_only = 4409
 name = Bed
+//Server
+desc=A wooden double bed.  For sleeping in...

@@ -15,3 +15,6 @@ cost = 8
 recol1s = 12587
 recol1d = 5557
 name = Krandorian seed
+//Server
+desc=A Krandorian hop seed - plant in a hops patch.
+weight=1g

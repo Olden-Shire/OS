@@ -11,3 +11,7 @@ xan2d = 512
 contrast = 15
 ambient = 15
 name = Shantay disclaimer
+//Server
+desc=Very important information.
+weight=10g
+tradeable=no

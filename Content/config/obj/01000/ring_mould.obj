@@ -6,3 +6,7 @@ zoom2d = 832
 yan2d = 94
 xan2d = 426
 name = Ring mould
+//Server
+desc=Used to make gold rings.
+weight=1lb
+respawnrate=200

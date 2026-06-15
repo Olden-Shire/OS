@@ -12,3 +12,7 @@ recol1d = 5276
 recol2s = 17967
 recol2d = 7068
 name = Sea turtle
+//Server
+desc=Tasty!
+weight=350g
+category=category_58

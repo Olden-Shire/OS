@@ -3,3 +3,5 @@ op1 = Pan
 bgsound = 2168, 3
 models_only = 1491
 name = Panning point
+//Server
+desc=A place where you can pan for gold.

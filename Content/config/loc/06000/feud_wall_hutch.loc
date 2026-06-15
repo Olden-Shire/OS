@@ -2,3 +2,5 @@
 width = 2
 models_only = 6079
 name = Hutch
+//Server
+desc=Useful for pets.

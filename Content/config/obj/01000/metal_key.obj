@@ -10,3 +10,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 6344
 name = Metal key
+//Server
+desc=A metal key, it's very crudely constructed.
+weight=10g
+tradeable=no

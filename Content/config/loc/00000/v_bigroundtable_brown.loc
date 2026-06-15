@@ -5,3 +5,6 @@ nonblockrange = true
 recol = 12/5543 796/38073
 models_only = 1212
 name = Table
+//Server
+desc=It's a banquet table.
+category=unusable_table

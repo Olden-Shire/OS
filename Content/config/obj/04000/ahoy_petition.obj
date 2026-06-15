@@ -10,3 +10,6 @@ xan2d = 328
 recol1s = 5351
 recol1d = 4267
 name = Petition form
+//Server
+desc=A scroll of paper containing signatures.
+weight=1g

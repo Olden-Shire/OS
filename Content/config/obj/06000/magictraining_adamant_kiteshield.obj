@@ -13,3 +13,6 @@ recol1d = 21662
 recol2s = 57
 recol2d = 7054
 name = Adamant kiteshield
+//Server
+desc=A large metal shield.
+weight=13lb

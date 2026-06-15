@@ -3,3 +3,5 @@ op1 = Search
 forceapproach = 13
 models_only = 9500
 name = Bookcase
+//Server
+desc=A case. With books.

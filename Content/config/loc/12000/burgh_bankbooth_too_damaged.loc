@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 13963
 name = Bank Booth
+//Server
+desc=This bank booth is too damaged to use.

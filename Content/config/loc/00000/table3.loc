@@ -3,3 +3,6 @@ width = 3
 nonblockrange = true
 models_only = 1197
 name = Table
+//Server
+desc=Useful for putting things on.
+category=unusable_table

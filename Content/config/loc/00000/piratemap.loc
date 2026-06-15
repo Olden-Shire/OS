@@ -4,3 +4,5 @@ ambient = 10
 active = 1
 models = 2035/4
 name = Pirate map
+//Server
+desc=X marks the spot.

@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 3572
 name = Bench
+//Server
+desc=An old bench, probably made from wood in this swamp.

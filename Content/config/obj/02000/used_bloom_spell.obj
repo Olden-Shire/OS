@@ -19,3 +19,7 @@ recol5d = 17344
 recol6s = 5351
 recol6d = 17344
 name = A used spell
+//Server
+desc=A used druidic spell given to you freely by the spirit of Filliman Tarlock.
+weight=20g
+tradeable=no

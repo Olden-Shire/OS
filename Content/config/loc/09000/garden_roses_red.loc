@@ -3,3 +3,5 @@ ambient = 25
 op1 = Take-seed
 models_only = 9162
 name = Roses
+//Server
+desc=Some red roses.

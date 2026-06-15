@@ -7,3 +7,6 @@ xan2d = 504
 cost = 1
 iop1 = Look-at
 name = Brooch
+//Server
+desc=A stone brooch with a symbol on it.
+weight=2g

@@ -11,3 +11,6 @@ noshadow = true
 bgsound = 2208, 5
 models_only = 9293
 name = Lava forge
+//Server
+desc=A natural forge using volcanic heat.
+category=smithing_furnace

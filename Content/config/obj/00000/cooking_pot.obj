@@ -10,3 +10,6 @@ recol2d = 6051
 recol3s = 22420
 recol3d = 5016
 name = Cooking pot
+//Server
+desc=A cooking pot.
+weight=1g

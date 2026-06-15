@@ -5,3 +5,6 @@ op2 = Search
 recol = 902/5231 898/5231
 models = 1762/0
 name = Tomb doors
+//Server
+desc=Large carved tomb doors, they look terrifying.
+category=zqtombdoor

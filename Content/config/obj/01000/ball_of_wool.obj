@@ -7,3 +7,6 @@ zoom2d = 720
 yan2d = 448
 xan2d = 152
 name = Ball of wool
+//Server
+desc=Spun from sheeps' wool.
+weight=12g

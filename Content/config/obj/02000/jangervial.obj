@@ -9,3 +9,7 @@ iop5 = Destroy
 recol1s = 61
 recol1d = 19241
 name = Vial
+//Server
+desc=An infusion of water and jangerberries.
+weight=15g
+tradeable=no

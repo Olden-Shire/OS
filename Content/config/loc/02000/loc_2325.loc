@@ -4,3 +4,5 @@ length = 6
 nonsolid = true
 models_only = 2277
 name = Ropeswing
+//Server
+desc=I can swing on this tree.

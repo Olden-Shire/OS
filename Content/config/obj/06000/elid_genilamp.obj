@@ -11,3 +11,6 @@ recol1d = 9649
 recol2s = 11183
 recol2d = 9645
 name = Lamp
+//Server
+desc=Ooh a nice shiny lamp.
+weight=100g

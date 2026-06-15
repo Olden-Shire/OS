@@ -2,3 +2,5 @@
 length = 2
 models_only = 12115
 name = Coffin
+//Server
+desc=Contains dead people.

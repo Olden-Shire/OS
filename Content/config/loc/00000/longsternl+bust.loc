@@ -2,3 +2,5 @@
 width = 4
 models_only = 1911
 name = Figurehead
+//Server
+desc=This figure brings luck to those who sail.

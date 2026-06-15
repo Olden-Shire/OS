@@ -3,3 +3,5 @@ active = 1
 recol = 41905/960
 models_only = 1793
 name = Clock spindle
+//Server
+desc=Seems to be some kind of clock part.

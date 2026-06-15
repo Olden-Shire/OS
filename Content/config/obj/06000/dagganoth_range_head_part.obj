@@ -7,3 +7,6 @@ zoom2d = 1200
 yan2d = 1096
 xan2d = 492
 name = Circular hide
+//Server
+desc=A toughened chunk of dagannoth hide.
+weight=7lb

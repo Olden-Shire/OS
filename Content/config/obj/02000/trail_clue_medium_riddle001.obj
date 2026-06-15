@@ -8,3 +8,9 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_medium
+param=trail_desc,You'll need to look for|a town with a central|fountain. Look for a locked|chest in the town's chapel.
+tradeable=no

@@ -3,3 +3,5 @@ hillskew = true
 active = 1
 models_only = 14064
 name = Pile of rubble.
+//Server
+desc=Just a bit pile of rubble, probably from the fallen down building which surrounds you.

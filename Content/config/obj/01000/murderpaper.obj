@@ -7,3 +7,7 @@ yan2d = 84
 xan2d = 320
 members = true
 name = Flypaper
+//Server
+desc=A piece of fly paper. It's sticky.
+weight=10g
+tradeable=no

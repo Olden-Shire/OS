@@ -7,3 +7,7 @@ recol = 6930/7566
 retex = 16/5
 models = 3544/0
 name = Large door
+//Server
+desc=Sturdy looking door.
+category=double_door_open_and_close_right
+param=next_loc_stage,inactivetempledoorr

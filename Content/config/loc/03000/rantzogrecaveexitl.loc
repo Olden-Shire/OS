@@ -5,3 +5,5 @@ mirror = true
 op1 = Walk through
 models = 832/0
 name = Cave exit
+//Server
+desc=Exit this way for fresh air and daylight.

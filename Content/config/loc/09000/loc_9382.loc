@@ -3,3 +3,6 @@ noshadow = true
 recol = 6806/8 6682/528 6558/532 6563/664 6439/538 6443/668
 models_only = 7700
 name = Crates
+//Server
+desc=Some wooden crates.
+category=empty_crate

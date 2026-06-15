@@ -3,3 +3,5 @@ length = 2
 recol = 7952/5665 6707/5541
 models_only = 5192
 name = Bed
+//Server
+desc=A well slept in bed.

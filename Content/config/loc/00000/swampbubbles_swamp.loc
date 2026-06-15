@@ -3,3 +3,5 @@ anim = 480
 recol = 18192/31514
 models_only = 2259
 name = Swamp bubbles
+//Server
+desc=The noxious liquid bubbles horribly.

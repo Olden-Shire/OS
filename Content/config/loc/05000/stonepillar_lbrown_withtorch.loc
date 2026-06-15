@@ -2,3 +2,5 @@
 anim = 473
 models_only = 5013
 name = Pillar
+//Server
+desc=A Large Pillar

@@ -6,3 +6,5 @@ op1 = Enter
 active = 1
 models_only = 9810
 name = Rift
+//Server
+desc=Should I go down there?

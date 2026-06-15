@@ -14,3 +14,16 @@ recol2d = 37270
 recol3s = 57
 recol3d = 21939
 name = Guthix platelegs
+//Server
+desc=Rune plate legs in the colours of Guthix.
+wearpos=legs
+weight=20lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,51
+param=slashdefence,49
+param=crushdefence,47
+param=magicdefence,-4
+param=rangedefence,49
+param=guthixitem,^true

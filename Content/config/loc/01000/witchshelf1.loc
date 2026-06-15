@@ -3,3 +3,5 @@ ambient = 50
 active = 1
 models = 2127/4
 name = Shelf
+//Server
+desc=What kind of sick person keeps a skull on their wall?

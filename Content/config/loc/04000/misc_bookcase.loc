@@ -5,3 +5,5 @@ contrast = 25
 forceapproach = 13
 models_only = 4285
 name = Bookcase
+//Server
+desc=A good source of books!

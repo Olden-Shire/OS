@@ -5,3 +5,5 @@ op4 = Guide
 recol = 20364/11148 19988/11026 19992/10902
 models_only = 7874 7766
 name = Diseased goutweed
+//Server
+desc=This goutweed has become diseased.

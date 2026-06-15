@@ -4,3 +4,5 @@ noshadow = true
 nonsolid = true
 models_only = 1704
 name = Waterlily
+//Server
+desc=Otherwise known as a lilypad.

@@ -3,3 +3,5 @@ length = 5
 anim = 1223
 models_only = 3961
 name = Catapult
+//Server
+desc=Good for smashing city walls.

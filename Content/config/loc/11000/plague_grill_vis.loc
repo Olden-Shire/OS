@@ -3,3 +3,5 @@ active = 1
 op1 = Open
 models = 11436/4
 name = Grill
+//Server
+desc=It's a grill.

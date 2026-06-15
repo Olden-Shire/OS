@@ -3,3 +3,5 @@ ambient = 25
 contrast = 25
 models_only = 9421
 name = Fireplace
+//Server
+desc=An empty fire place.

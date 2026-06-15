@@ -7,3 +7,7 @@ yan2d = 232
 zan2d = 260
 xan2d = 460
 name = Disk of returning
+//Server
+desc=Used to get out of Thordur's blackhole.
+weight=1lb
+param=party_clean_exempt,^true

@@ -7,3 +7,6 @@ xan2d = 120
 members = true
 iop5 = Destroy
 name = Fractured crystal
+//Server
+desc=A fractured crystal, one of the edges is clear.
+weight=15g

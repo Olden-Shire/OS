@@ -13,3 +13,6 @@ count2 = 6489, 3
 count3 = 6490, 4
 count4 = 6491, 5
 name = Pink rose seed
+//Server
+desc=A pink rosebush seed.
+weight=1g

@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 9869 7766
 name = Blindweed Patch
+//Server
+desc=Something is growing here.

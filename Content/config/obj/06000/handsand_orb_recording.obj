@@ -7,3 +7,6 @@ iop5 = Destroy
 recol1s = 21584
 recol1d = 127
 name = Magical orb (a)
+//Server
+desc=This magical scrying orb pulsates as it stores information.
+weight=20g

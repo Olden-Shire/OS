@@ -6,3 +6,5 @@ bgsound = 3117, 3
 nonblockrange = true
 models_only = 7778 7779 7782
 name = Fermenting Vat
+//Server
+desc=For fermenting beer.

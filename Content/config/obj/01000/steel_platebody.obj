@@ -12,3 +12,17 @@ womanwear2 = 344
 recol1s = 24
 recol1d = 61
 name = Steel platebody
+//Server
+desc=Provides excellent protection.
+wearpos=torso
+wearpos2=arms
+weight=22lb
+category=armour_body
+respawnrate=2000
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,32
+param=slashdefence,31
+param=crushdefence,24
+param=magicdefence,-6
+param=rangedefence,31

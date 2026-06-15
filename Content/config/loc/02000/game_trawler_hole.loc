@@ -3,3 +3,5 @@ width = 2
 active = 1
 models_only = 1860
 name = Hole
+//Server
+desc=This old trawler has seen better days.

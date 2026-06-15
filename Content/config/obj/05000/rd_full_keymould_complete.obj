@@ -6,3 +6,6 @@ xan2d = 172
 cost = 20
 members = true
 name = Tin
+//Server
+desc=There is a bronze key surrounded by plaster in this tin.
+weight=101g

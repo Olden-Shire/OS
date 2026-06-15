@@ -1,3 +1,5 @@
 // loc 8831
 models_only = 1398
 name = Mine cart
+//Server
+desc=You can 'cart' things around on this.

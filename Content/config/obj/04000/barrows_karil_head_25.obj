@@ -24,3 +24,9 @@ recol4d = 10760
 recol5s = 10762
 recol5d = 11140
 name = Karils coif 25
+//Server
+desc=Karil the Tainted's coif and facemask.
+weight=2lb
+wearpos=hat
+wearpos2=head
+wearpos3=jaw

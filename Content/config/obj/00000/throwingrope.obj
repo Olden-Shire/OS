@@ -7,3 +7,7 @@ zoom2d = 1810
 yan2d = 16
 xan2d = 1592
 name = Throwing rope
+//Server
+desc=A rope.
+wearpos=righthand
+weight=2lb

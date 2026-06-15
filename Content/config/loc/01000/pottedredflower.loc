@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 43968/939
 models_only = 1680
 name = Potted flower
+//Server
+desc=I bet bees like this.

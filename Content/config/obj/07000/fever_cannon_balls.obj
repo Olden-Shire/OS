@@ -6,3 +6,6 @@ yan2d = 220
 xan2d = 152
 members = true
 name = Cannon balls
+//Server
+desc=Some cannon balls.
+weight=5g

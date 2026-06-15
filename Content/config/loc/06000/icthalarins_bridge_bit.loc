@@ -3,3 +3,5 @@ sharelight = true
 mapscene = 46
 models_only = 6449
 name = Bridge
+//Server
+desc=Wow. More bridge. Awesome.

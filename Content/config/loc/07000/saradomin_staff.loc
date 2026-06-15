@@ -2,3 +2,5 @@
 active = 1
 models = 7405/4
 name = Saradomin staff
+//Server
+desc=A staff as used by Saradominist magi.

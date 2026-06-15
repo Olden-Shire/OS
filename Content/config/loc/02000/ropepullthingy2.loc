@@ -3,3 +3,5 @@ op1 = Look at
 op2 = Use
 models_only = 1779
 name = Winch bucket
+//Server
+desc=Slaves are placing barrels on this to haul them to the surface.

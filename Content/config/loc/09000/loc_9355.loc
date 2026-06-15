@@ -4,3 +4,5 @@ length = 2
 width = 3
 models_only = 9288
 name = Cave entrance
+//Server
+desc=A cave deep into the volcano.

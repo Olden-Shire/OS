@@ -6,3 +6,5 @@ blockwalk = true
 nonblockrange = true
 models_only = 821
 name = Rockslide
+//Server
+desc=A deposit of rocks.

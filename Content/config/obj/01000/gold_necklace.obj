@@ -12,3 +12,8 @@ womanwear = obj_perfect_necklace_woman, 0
 recol1s = 41
 recol1d = 9152
 name = Gold necklace
+//Server
+desc=I wonder if this is valuable.
+wearpos=front
+weight=7g
+param=crafting_jewelry_struct,gold_necklace

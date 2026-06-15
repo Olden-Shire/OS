@@ -4,3 +4,5 @@ op1 = Walk-through
 recol = 1948/53 1955/5181
 models = 884/0 885/9
 name = Tent door
+//Server
+desc=The entrance to the tent.

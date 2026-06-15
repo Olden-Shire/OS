@@ -11,3 +11,8 @@ zoom2d = 1870
 yan2d = 176
 xan2d = 376
 name = Mystic robe top
+//Server
+desc=The upper half of a magical robe.
+wearpos=torso
+wearpos2=arms
+weight=6lb

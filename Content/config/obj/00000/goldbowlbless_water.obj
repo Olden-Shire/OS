@@ -9,3 +9,9 @@ iop4 = Empty
 recol1s = 7081
 recol1d = 9166
 name = Golden bowl
+//Server
+desc=A blessed golden bowl. It has water in it.
+weight=1kg
+tradeable=no
+category=gold_bowl
+param=next_obj_stage,goldbowlbless_empty

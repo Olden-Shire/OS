@@ -9,3 +9,6 @@ model = obj_steam_rune
 ambient = 30
 members = true
 name = Steam rune
+//Server
+desc=A combined Water and Fire Rune.
+weight=2g

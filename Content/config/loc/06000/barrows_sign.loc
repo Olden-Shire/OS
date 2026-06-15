@@ -2,3 +2,5 @@
 recol = 7715/13200 6808/12952 7952/14098
 models_only = 1402
 name = Warning sign
+//Server
+desc=Danger... weak surface beyond gate. Digging may lead to cave-ins.

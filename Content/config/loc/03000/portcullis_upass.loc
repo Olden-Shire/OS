@@ -2,3 +2,5 @@
 width = 2
 models_only = 2294
 name = Portcullis
+//Server
+desc=You won't be able to lift that.

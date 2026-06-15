@@ -9,3 +9,8 @@ iop4 = Empty
 recol1s = 61
 recol1d = 42330
 name = Vial of water
+//Server
+desc=A glass vial containing water.
+weight=20g
+param=next_obj_stage,vial_empty
+category=potion

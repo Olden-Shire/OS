@@ -8,3 +8,7 @@ xan2d = 300
 manwear = obj_extended_brush_4193_wear, 0
 womanwear = obj_extended_brush_4193_wear, 0
 name = Extended brush
+//Server
+desc=A typical garden brush, with three canes tied to it.
+weight=1100g
+wearpos=righthand

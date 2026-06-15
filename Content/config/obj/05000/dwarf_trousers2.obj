@@ -11,3 +11,7 @@ womanwear = obj_trousers_5036_woman, 0
 recol1s = 9529
 recol1d = 61871
 name = Trousers
+//Server
+desc=A pair of long dwarven trousers... long for dwarves, of course.
+wearpos=legs
+weight=1kg

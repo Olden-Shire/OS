@@ -15,3 +15,6 @@ cost = 74
 recol1s = 520
 recol1d = 1560
 name = Pineapple seed
+//Server
+desc=Plant in a plantpot of soil to grow a sapling.
+weight=1g

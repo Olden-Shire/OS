@@ -22,3 +22,7 @@ recol3d = 45241
 recol4s = 6697
 recol4d = 45361
 name = Bruise blue snelm
+//Server
+desc=A moody blue snail shell helmet.
+weight=2kg
+wearpos=hat

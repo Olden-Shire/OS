@@ -5,3 +5,6 @@ zoom2d = 180
 yan2d = 2044
 members = true
 name = Salve shard
+//Server
+desc=An unstrung crystal imbued with the power of Saradomin.
+weight=7g

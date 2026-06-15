@@ -3,3 +3,5 @@ width = 2
 op1 = Search
 models_only = 10715
 name = Sandy's Desk
+//Server
+desc=Sandy's desk is piled high with paperwork towers.

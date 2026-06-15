@@ -6,3 +6,5 @@ active = 1
 recol = 127/7357 40004/7473 20/5392 5002/5392 61/7223 103/5214
 models_only = 4292 1421
 name = Fish stall
+//Server
+desc=There's something fishy about this stall.

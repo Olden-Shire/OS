@@ -11,3 +11,7 @@ xan2d = 1108
 cost = 2000
 members = true
 name = Teacher wand
+//Server
+desc=A teacher level wand.
+wearpos=righthand
+weight=8oz

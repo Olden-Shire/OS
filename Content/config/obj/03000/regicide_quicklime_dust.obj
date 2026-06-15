@@ -10,3 +10,6 @@ members = true
 recol1s = 82
 recol1d = 54397
 name = Pot of quicklime
+//Server
+desc=A pot of ground quicklime.
+weight=1lb

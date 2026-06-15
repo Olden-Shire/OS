@@ -3,3 +3,6 @@ width = 2
 nonblockrange = true
 models_only = 1291
 name = Study desk
+//Server
+desc=The ideal place to study.
+category=unusable_table

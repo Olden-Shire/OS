@@ -5,3 +5,5 @@ op1 = Enter
 recol = 6036/8099 5008/8099 1932/6695 904/5667 900/2452
 models_only = 731
 name = Cave entrance
+//Server
+desc=It looks like I can squeeze through here.

@@ -10,3 +10,6 @@ iop1 = Read
 iop5 = Destroy
 ambient = 10
 name = Symptoms list
+//Server
+desc=A list of the Fairy Queen's symptoms.
+weight=10g

@@ -3,3 +3,5 @@ mapscene = 6
 op1 = Step-over
 models_only = 1685
 name = Tree stump
+//Server
+desc=This tree has been cut down.

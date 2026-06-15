@@ -7,3 +7,6 @@ yan2d = 12
 xan2d = 288
 iop1 = Read
 name = Old man's message
+//Server
+desc=The Wise Old Man of Draynor Village asked you to take this to someone.
+weight=70g

@@ -4,3 +4,5 @@ mirror = true
 noshadow = true
 models_only = 9134 9135
 name = Statue
+//Server
+desc=An expertly carved statue of a former Queen of Misthalin.

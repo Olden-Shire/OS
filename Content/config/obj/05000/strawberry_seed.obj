@@ -15,3 +15,6 @@ cost = 18
 recol1s = 520
 recol1d = 7616
 name = Strawberry seed
+//Server
+desc=A strawberry seed - plant in an allotment.
+weight=1g

@@ -3,3 +3,5 @@ active = 1
 op1 = Shoot
 models_only = 1317
 name = Gnome goal
+//Server
+desc=Aim for the goal!

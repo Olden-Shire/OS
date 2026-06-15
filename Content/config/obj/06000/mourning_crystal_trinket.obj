@@ -7,3 +7,6 @@ xan2d = 120
 members = true
 iop5 = Destroy
 name = Crystal trinket
+//Server
+desc=A small crystal trinket.
+weight=10g

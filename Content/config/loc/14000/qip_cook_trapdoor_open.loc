@@ -6,3 +6,5 @@ forceapproach = 13
 blockwalk = true
 models = 14820/22
 name = Trapdoor
+//Server
+desc=I wonder what's down there?

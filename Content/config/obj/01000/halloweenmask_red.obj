@@ -10,3 +10,10 @@ zoom2d = 730
 xan2d = 516
 iop2 = Wear
 name = Red h'ween mask
+//Server
+desc=Aaaarrrghhh ... I'm a monster.
+weight=12oz
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+param=party_clean_exempt,^true

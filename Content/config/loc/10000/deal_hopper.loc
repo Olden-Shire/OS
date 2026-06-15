@@ -1,3 +1,5 @@
 // loc 10170
 models_only = 3951
 name = Hopper
+//Server
+desc=This is where the brewing ingredients go.

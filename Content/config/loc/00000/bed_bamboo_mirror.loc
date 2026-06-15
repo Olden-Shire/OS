@@ -3,3 +3,5 @@ length = 2
 mirror = true
 models_only = 1220
 name = Bed
+//Server
+desc=Bamboo's a versatile material.

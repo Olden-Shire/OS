@@ -9,3 +9,7 @@ yan2d = 184
 xan2d = 332
 iop1 = Read
 name = A scruffy note
+//Server
+desc=It seems to say "hongorer lure"...
+weight=10g
+tradeable=no

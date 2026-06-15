@@ -9,3 +9,7 @@ members = true
 iop1 = Read
 iop5 = Destroy
 name = Skavid map
+//Server
+desc=It's a map.
+weight=10g
+tradeable=no

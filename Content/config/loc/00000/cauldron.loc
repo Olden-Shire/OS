@@ -3,3 +3,5 @@ anim = 479
 bgsound = 3115, 3
 models_only = 2241
 name = Cauldron
+//Server
+desc=I don't even want to think about what's cooking in that.

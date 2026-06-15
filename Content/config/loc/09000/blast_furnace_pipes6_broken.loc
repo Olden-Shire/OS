@@ -4,3 +4,5 @@ active = 1
 op1 = Repair
 models_only = 9058
 name = Pipes
+//Server
+desc=Quick, fix them!

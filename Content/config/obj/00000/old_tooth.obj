@@ -7,3 +7,7 @@ yan2d = 276
 xan2d = 292
 members = true
 name = Old tooth
+//Server
+desc=Now if I can just find a tooth fairy to sell this to...
+weight=1g
+tradeable=no

@@ -3,3 +3,5 @@ width = 2
 anim = 2699
 models_only = 9538
 name = Hammock
+//Server
+desc=Perfect for snoozing in the sun.

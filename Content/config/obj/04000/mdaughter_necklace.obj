@@ -7,3 +7,6 @@ zoom2d = 550
 yan2d = 136
 xan2d = 304
 name = Asleif's necklace
+//Server
+desc=This used to belong to Asleif, daughter of the mountain camp chieftain.
+weight=100g

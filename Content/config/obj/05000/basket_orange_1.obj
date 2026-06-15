@@ -10,3 +10,6 @@ iop2 = Remove-one
 recol1s = 17325
 recol1d = 6080
 name = Oranges(1)
+//Server
+desc=A fruit basket filled with oranges.
+weight=2oz

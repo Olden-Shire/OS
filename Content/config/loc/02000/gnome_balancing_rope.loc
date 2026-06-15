@@ -6,3 +6,5 @@ op1 = Walk-on
 blockwalk = true
 models = 1878/22
 name = Balancing rope
+//Server
+desc=I can balance on this rope.

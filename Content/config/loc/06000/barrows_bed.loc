@@ -3,3 +3,5 @@ length = 2
 recol = 7952/13072 6707/12705 6319/12475 5016/16788
 models_only = 5192
 name = Bed
+//Server
+desc=The groundskeeper's bed.

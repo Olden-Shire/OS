@@ -10,3 +10,6 @@ cost = 250
 recol1s = 8128
 recol1d = 5553
 name = Warm key
+//Server
+desc=This key is unusually warm to the touch.
+weight=10g

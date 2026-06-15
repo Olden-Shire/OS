@@ -5,3 +5,5 @@ hillskew = true
 op1 = Swing Across
 models_only = 13583
 name = Monkeybars
+//Server
+desc=I can traverse these.

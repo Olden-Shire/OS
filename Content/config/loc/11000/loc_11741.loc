@@ -6,3 +6,5 @@ mapscene = 7
 recol = 7836/6453 7834/6449 7958/6445 6932/6569 6930/6565
 models_only = 11539
 name = Ladder
+//Server
+desc=Allows access to level below.

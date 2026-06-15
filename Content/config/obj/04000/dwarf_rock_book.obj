@@ -10,3 +10,6 @@ iop1 = Read
 recol1s = 5018
 recol1d = 13200
 name = Dwarven lore
+//Server
+desc=The book is almost falling apart, you'll have to handle it quite carefully.
+weight=80g

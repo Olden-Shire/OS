@@ -1,3 +1,5 @@
 // loc 209
 models = 1201/10 1272/4
 name = Chandelier
+//Server
+desc=An ornamental lighting fixture.

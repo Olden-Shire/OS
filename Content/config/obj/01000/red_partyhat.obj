@@ -11,3 +11,8 @@ womanwear = obj_red_partyhat_1038_woman, 0
 manhead = 29
 womanhead = 87
 name = Red partyhat
+//Server
+desc=A nice hat from a cracker.
+wearpos=hat
+weight=2oz
+param=party_clean_exempt,^true

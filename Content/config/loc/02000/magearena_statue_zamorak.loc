@@ -3,3 +3,5 @@ op1 = Pray at
 forceapproach = 11
 models_only = 1400
 name = Statue of Zamorak
+//Server
+desc=A depiction that chills one to the bone.

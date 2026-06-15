@@ -8,3 +8,7 @@ xan2d = 256
 members = true
 iop5 = Destroy
 name = Relic
+//Server
+desc=There seems to be bits missing...
+weight=1g
+weight=1g

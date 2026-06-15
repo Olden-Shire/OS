@@ -4,3 +4,5 @@ length = 2
 recol = 6371/37978 57/53 16/21784 12211/65333
 models_only = 1421 1524
 name = Jewellery stall
+//Server
+desc=The finest rings.

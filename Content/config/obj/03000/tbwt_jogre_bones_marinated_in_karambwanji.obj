@@ -8,3 +8,8 @@ iop1 = Bury
 recol1s = 127
 recol1d = 21619
 name = Marinated j' bones
+//Server
+desc=Jogre Bones marinated in Karambwanji sauce. Not quite right.
+weight=800g
+category=bones
+param=bone_exp,170

@@ -9,3 +9,6 @@ members = true
 recol1s = 44263
 recol1d = 48361
 name = Bowl of hot water
+//Server
+desc=It's a bowl of hot water.
+weight=2lb

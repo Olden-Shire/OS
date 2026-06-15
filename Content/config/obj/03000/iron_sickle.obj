@@ -13,3 +13,7 @@ members = true
 recol1s = 24
 recol1d = 7073
 name = Iron sickle
+//Server
+desc=Not as good as a pet frog.
+wearpos=righthand
+weight=56oz

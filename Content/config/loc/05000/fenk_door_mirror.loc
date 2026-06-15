@@ -5,3 +5,5 @@ mirror = true
 op1 = Open
 models = 4474/0
 name = Door
+//Server
+desc=Looks wooden. Feels wooden. I wonder is it wooden?

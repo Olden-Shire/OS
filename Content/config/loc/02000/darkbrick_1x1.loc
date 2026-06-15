@@ -1,3 +1,5 @@
 // loc 2347
 models_only = 1440
 name = Brick
+//Server
+desc=A large stone block.

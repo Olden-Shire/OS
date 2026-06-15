@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 127
 recol1d = 43968
 name = Blue crystal
+//Server
+desc=A blue crystal.
+weight=15g

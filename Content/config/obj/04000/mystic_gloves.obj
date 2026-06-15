@@ -9,3 +9,7 @@ yof2d = 3
 zoom2d = 830
 xan2d = 536
 name = Mystic gloves
+//Server
+desc=Magical gloves.
+wearpos=hands
+weight=1lb

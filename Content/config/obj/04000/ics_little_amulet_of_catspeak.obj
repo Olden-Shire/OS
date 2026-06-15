@@ -8,3 +8,7 @@ womanwear = obj_catspeak_amulet_wear, 6
 iop2 = Wear
 members = true
 name = Catspeak amulet
+//Server
+desc=It's an amulet of cat speak. It makes vague purring noises.
+weight=3lb
+wearpos=front

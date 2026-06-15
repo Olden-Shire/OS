@@ -17,3 +17,7 @@ recol2d = 7097
 recol3s = 57
 recol3d = 6057
 name = Gilded kiteshield
+//Server
+desc=Rune kiteshield with gold plate.
+wearpos=lefthand
+weight=12lb

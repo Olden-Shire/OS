@@ -10,3 +10,7 @@ xan2d = 280
 manwear = obj_banana_left_3177_wear, 0
 womanwear = obj_banana_left_3177_wear, 6
 name = Banana left
+//Server
+desc=Mmm this looks tasty.
+weight=1oz
+wearpos=lefthand

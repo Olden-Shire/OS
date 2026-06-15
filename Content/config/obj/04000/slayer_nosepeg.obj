@@ -14,3 +14,7 @@ womanhead = 5096
 iop2 = Wear
 members = true
 name = Nose peg
+//Server
+desc=Protects me from any bad smells.
+wearpos=hat
+weight=1g

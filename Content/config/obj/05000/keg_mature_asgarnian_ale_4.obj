@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Asgarnian ale(m4)
+//Server
+desc=This keg contains 4 pints of mature Asgarnian Ale.
+weight=1oz

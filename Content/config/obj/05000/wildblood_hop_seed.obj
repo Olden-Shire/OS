@@ -15,3 +15,6 @@ cost = 14
 recol1s = 12587
 recol1d = 2477
 name = Wildblood seed
+//Server
+desc=A Wildblood hop seed - plant in a hops patch.
+weight=1g

@@ -4,3 +4,5 @@ op1 = Pick-up
 recol = 61/6684
 models_only = 14202
 name = Dung
+//Server
+desc=Dry dung.

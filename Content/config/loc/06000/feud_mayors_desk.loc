@@ -4,3 +4,5 @@ op1 = Search
 nonblockrange = true
 models_only = 1291
 name = Study desk
+//Server
+desc=Laden with heaps of paper.

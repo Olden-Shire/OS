@@ -7,3 +7,6 @@ zoom2d = 1100
 yan2d = 1232
 xan2d = 280
 name = Safety guarantee
+//Server
+desc=The strange characters supposedly grant Svidi safe passage into Rellekka.
+weight=300g

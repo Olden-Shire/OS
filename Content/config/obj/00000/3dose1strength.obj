@@ -10,3 +10,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 11080
 name = Strength potion(3)
+//Server
+desc=3 doses of strength potion.
+weight=30g
+category=potion
+param=next_obj_stage,2dose1strength
+param=decant_potion_enum,potion_1strength
+param=dose_count,3

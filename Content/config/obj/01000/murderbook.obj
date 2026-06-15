@@ -7,3 +7,11 @@ xan2d = 256
 recol1s = 5018
 recol1d = 82
 name = Silver book
+//Server
+desc=David's shiny silver coated book.
+weight=8oz
+category=murder_proofobj
+param=product,murderbookdust
+param=game_message,You sprinkle the flour on David's book.
+param=game_message2,The Book is now coated with a thin layer of flour.
+tradeable=no

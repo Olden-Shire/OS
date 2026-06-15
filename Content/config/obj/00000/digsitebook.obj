@@ -14,3 +14,7 @@ recol2d = 24850
 recol3s = 11177
 recol3d = 24850
 name = Book on chemicals
+//Server
+desc=It's about chemicals, judging from its cover.
+weight=18oz
+tradeable=no

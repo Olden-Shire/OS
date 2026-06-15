@@ -10,3 +10,15 @@ iop2 = Wear
 manwear = obj_green_dhide_chaps_1099_man, 0
 womanwear = obj_green_dhide_chaps_1099_woman, 0
 name = Green d'hide chaps
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=legs
+weight=12lb
+category=armour_legs
+param=magicattack,-10
+param=rangeattack,8
+param=stabdefence,22
+param=slashdefence,16
+param=crushdefence,24
+param=magicdefence,8
+param=rangedefence,22

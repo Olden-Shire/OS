@@ -2,3 +2,6 @@
 nonblockrange = true
 models_only = 1199
 name = Table
+//Server
+desc=Useful for putting things on.
+category=unusable_table

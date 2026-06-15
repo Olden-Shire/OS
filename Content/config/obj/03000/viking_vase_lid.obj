@@ -6,3 +6,6 @@ zoom2d = 1260
 xan2d = 152
 members = true
 name = Vase lid
+//Server
+desc=This looks like a lid to some kind of container...
+weight=1g

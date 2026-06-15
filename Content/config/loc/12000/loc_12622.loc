@@ -5,3 +5,5 @@ op1 = Climb-down
 blockwalk = true
 models = 13584/22
 name = Vine
+//Server
+desc=A vine.

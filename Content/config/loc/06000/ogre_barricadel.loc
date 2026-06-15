@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 9556/8514
 models_only = 6790
 name = Barricade
+//Server
+desc=A barricade made from skulls and bones.

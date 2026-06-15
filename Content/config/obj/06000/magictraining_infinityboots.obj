@@ -11,3 +11,7 @@ iop2 = Wear
 members = true
 cost = 12000
 name = Infinity boots
+//Server
+desc=Mystical boots.
+wearpos=feet
+weight=1lb

@@ -7,3 +7,5 @@ bgsound = 2147, 5
 nonblockrange = true
 models_only = 2320
 name = Whirlpool
+//Server
+desc=Lots of water swirling around - fast.

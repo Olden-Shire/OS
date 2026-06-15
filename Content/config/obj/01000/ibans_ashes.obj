@@ -9,3 +9,7 @@ members = true
 recol1s = 82
 recol1d = 28
 name = Iban's ashes
+//Server
+desc=The burnt remains of Iban.
+weight=2oz
+tradeable=no

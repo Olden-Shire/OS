@@ -3,3 +3,5 @@ width = 2
 retex = 5/16 22/16
 models_only = 1210
 name = Table
+//Server
+desc=A wonderfully dressed table.

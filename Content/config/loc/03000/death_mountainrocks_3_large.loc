@@ -9,3 +9,5 @@ resizez = 256
 nonblockrange = true
 models_only = 3722
 name = Rocks
+//Server
+desc=It's a troll! Run! No, wait, it's just a rock.

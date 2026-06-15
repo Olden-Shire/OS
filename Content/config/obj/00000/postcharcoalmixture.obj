@@ -8,3 +8,7 @@ members = true
 recol1s = 61
 recol1d = 4003
 name = Mixed chemicals
+//Server
+desc=A mixture of strong chemicals.
+weight=35g
+tradeable=no

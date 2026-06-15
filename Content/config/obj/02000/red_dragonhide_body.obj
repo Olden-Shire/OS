@@ -13,3 +13,15 @@ recol1d = 912
 recol2s = 22424
 recol2d = 540
 name = Red d'hide body
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=torso
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=rangeattack,25
+param=stabdefence,50
+param=slashdefence,42
+param=crushdefence,55
+param=magicdefence,40
+param=rangedefence,50

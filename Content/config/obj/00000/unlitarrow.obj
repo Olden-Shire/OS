@@ -12,3 +12,15 @@ zoom2d = 1580
 yan2d = 1832
 xan2d = 336
 name = Bronze fire arrows
+//Server
+desc=Arrows with bronze heads and oil soaked cloth.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,7
+param=levelrequire,1
+param=proj_launch,black_arrow_launch
+param=proj_travel,black_arrow_travel
+param=next_obj_stage,litarrow
+param=unlit_arrow,^true
+tradeable=no

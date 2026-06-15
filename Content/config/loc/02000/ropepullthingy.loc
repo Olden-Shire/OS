@@ -4,3 +4,5 @@ op1 = Look at
 op2 = Use
 models_only = 1778
 name = Winch
+//Server
+desc=Slaves are using this to pull up barrels of rocks from down below.

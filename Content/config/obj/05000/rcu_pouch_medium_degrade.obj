@@ -17,3 +17,6 @@ recol3d = 10407
 recol4s = 6798
 recol4d = 11144
 name = Medium pouch
+//Server
+desc=A damaged medium-sized pouch used for storing essence.
+weight=1kg

@@ -4,3 +4,5 @@ op1 = Climb-down
 forceapproach = 14
 models_only = 9503
 name = Trapdoor
+//Server
+desc=What could be down here?

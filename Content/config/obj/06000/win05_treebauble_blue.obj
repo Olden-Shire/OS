@@ -4,3 +4,6 @@ zoom2d = 530
 recol1s = 11187
 recol1d = 40772
 name = Tree bauble
+//Server
+desc=A bauble shaped like a wintumber tree painted blue.
+weight=200g

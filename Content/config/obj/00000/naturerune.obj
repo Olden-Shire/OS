@@ -8,3 +8,8 @@ yan2d = 1012
 xan2d = 528
 ambient = 30
 name = Nature rune
+//Server
+desc=Used for alchemy spells.
+weight=2g
+respawnrate=200
+category=category_149

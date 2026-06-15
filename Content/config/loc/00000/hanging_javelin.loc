@@ -2,3 +2,5 @@
 active = 1
 models = 2099/4
 name = Javelin
+//Server
+desc=A powerful throwing weapon.

@@ -13,3 +13,6 @@ recol1d = 5537
 recol2s = 204
 recol2d = 5532
 name = Roast rabbit
+//Server
+desc=A delicious looking piece of roast rabbit.
+weight=300g

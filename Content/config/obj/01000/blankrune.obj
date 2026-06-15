@@ -8,3 +8,7 @@ xan2d = 528
 recol1s = 61
 recol1d = 45
 name = Rune essence
+//Server
+desc=An uncharged Rune Stone.
+weight=2g
+category=category_91

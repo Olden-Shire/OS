@@ -3,3 +3,5 @@ sharelight = true
 recol = 6689/7851
 models_only = 4887
 name = Dark tunnel
+//Server
+desc=It looks cramped and dark.

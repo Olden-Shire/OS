@@ -10,3 +10,8 @@ cost = 300
 recol1s = 43117
 recol1d = 3501
 name = Earth orb
+//Server
+desc=A magic glowing orb.
+weight=1lb
+category=craft_orb
+param=crafting_staff_struct,earth_orb

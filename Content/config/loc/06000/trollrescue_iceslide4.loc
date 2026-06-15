@@ -5,3 +5,5 @@ hillskew = true
 noshadow = true
 models_only = 6331
 name = Ice chunks
+//Server
+desc=Chunky pieces of ice.

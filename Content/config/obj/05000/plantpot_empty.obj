@@ -7,3 +7,6 @@ manwear = obj_plant_pot_5350_wear, 0
 womanwear = obj_plant_pot_5350_wear, 0
 members = true
 name = Plant pot
+//Server
+desc=An empty plant pot.
+weight=2lb

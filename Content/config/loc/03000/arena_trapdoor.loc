@@ -4,3 +4,5 @@ forcedecor = true
 sharelight = true
 models_only = 3253
 name = Trapdoor
+//Server
+desc=Access to the duel arena.

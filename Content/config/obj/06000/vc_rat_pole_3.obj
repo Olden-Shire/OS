@@ -11,3 +11,8 @@ xan2d = 268
 iop1 = Remove-rat
 iop2 = Wield
 name = Rat pole
+//Server
+desc=A pole with three rats on it.
+wearpos=righthand
+wearpos2=lefthand
+weight=5lb

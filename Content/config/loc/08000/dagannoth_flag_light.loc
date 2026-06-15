@@ -7,3 +7,5 @@ bgsound = 3124, 3
 recol = 5309/5223 5318/5231 5322/5235 5326/5239 5330/7289
 models_only = 8696
 name = Flag
+//Server
+desc=A tall flag blowing in the wind.

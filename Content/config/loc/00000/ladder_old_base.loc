@@ -3,3 +3,5 @@ length = 2
 sharelight = true
 models_only = 1521
 name = Broken ladder
+//Server
+desc=Looks a little too broken to climb.

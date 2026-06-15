@@ -9,3 +9,6 @@ iop1 = Eat
 members = true
 cost = 45
 name = Mushroom potato
+//Server
+desc=A baked potato with mushroom and onions.
+weight=500g

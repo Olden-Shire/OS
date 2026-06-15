@@ -17,3 +17,7 @@ recol4d = 6705
 recol5s = 5904
 recol5d = 6701
 name = Barrel
+//Server
+desc=An empty mining barrel.
+weight=22lb
+tradeable=no

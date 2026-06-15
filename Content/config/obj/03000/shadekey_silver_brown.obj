@@ -17,3 +17,6 @@ recol4d = 43086
 recol5s = 43968
 recol5d = 43086
 name = Silver key brown
+//Server
+desc=A silver key with a brown painted eyelet.
+weight=10g

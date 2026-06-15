@@ -10,3 +10,6 @@ xan2d = 204
 iop1 = Empty
 members = true
 name = Bailing bucket
+//Server
+desc=It's a bailing bucket full of salty water.
+weight=5kg

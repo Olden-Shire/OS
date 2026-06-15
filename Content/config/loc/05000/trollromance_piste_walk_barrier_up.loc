@@ -8,3 +8,5 @@ op1 = Slide
 nonblockrange = true
 models_only = 3951
 name = slope
+//Server
+desc=It's too dangerous to go down here by foot...

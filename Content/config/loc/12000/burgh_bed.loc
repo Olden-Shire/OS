@@ -3,3 +3,5 @@ length = 2
 recol = 7952/13477 6319/13596 6707/13716 6558/10768 5016/10892 6806/22420
 models_only = 5192
 name = Bed
+//Server
+desc=It's a bed!

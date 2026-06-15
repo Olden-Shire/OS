@@ -4,3 +4,5 @@ length = 2
 mapscene = 0
 models_only = 3451
 name = Achey Tree stump
+//Server
+desc=An Achey tree stump.

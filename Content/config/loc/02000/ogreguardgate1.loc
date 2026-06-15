@@ -4,3 +4,7 @@ raiseobject = 0
 recol = 46381/7446 5400/7442 3346/7566
 models = 20319/0
 name = City gate
+//Server
+desc=An entrance to Gu'Tanoth.
+category=double_door_open_and_close_left
+param=next_loc_stage,loc_1562

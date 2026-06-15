@@ -16,3 +16,6 @@ recol2d = 11160
 recol3s = 5018
 recol3d = 15244
 name = Leather book
+//Server
+desc=An ancient leather-bound tome.
+weight=18oz

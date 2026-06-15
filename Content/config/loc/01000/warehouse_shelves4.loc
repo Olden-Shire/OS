@@ -1,3 +1,5 @@
 // loc 1018
 models_only = 2135
 name = Shelves
+//Server
+desc=Storage for all needs.

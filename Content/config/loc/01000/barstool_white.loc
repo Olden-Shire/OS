@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 933/43105 3986/9096
 models_only = 1161
 name = Chair
+//Server
+desc=The perfect way to sit at the bar.

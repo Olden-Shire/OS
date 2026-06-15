@@ -7,3 +7,7 @@ xan2d = 268
 cost = 187500
 members = true
 name = Cannon stand
+//Server
+desc=The mounting for the multicannon.
+weight=2lb
+category=cannon_parts

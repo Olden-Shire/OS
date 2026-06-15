@@ -11,3 +11,12 @@ recol1d = 8090
 recol2s = 22428
 recol2d = 7083
 name = Ardrigal
+//Server
+desc=This herb is Ardrigal.
+weight=7g
+category=category_90
+param=identified_herb_level,3
+param=identified_herb_exp,25
+param=identified_herb_message,You identify the herb. It is Ardrigal.
+param=brew_potion_struct,ardrigal_mixture
+tradeable=no

@@ -7,3 +7,9 @@ zoom2d = 1380
 yan2d = 84
 xan2d = 320
 name = Anna's print
+//Server
+desc=An imprint of Anna's fingerprint.
+weight=10g
+category=murder_printobj
+param=murder_id_value,1
+tradeable=no

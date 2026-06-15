@@ -3,3 +3,5 @@ length = 2
 nonblockrange = true
 models_only = 5284
 name = Table
+//Server
+desc=Generally used for putting things on.

@@ -9,3 +9,7 @@ xan2d = 172
 members = true
 iop4 = Search
 name = Panning tray
+//Server
+desc=An empty tray for panning.
+weight=3oz
+tradeable=no

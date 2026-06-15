@@ -22,3 +22,15 @@ recol5d = 6028
 recol6s = 5904
 recol6d = 5002
 name = Phoenix crossbow
+//Server
+desc=Former property of the Phoenix Gang.
+wearpos=righthand
+weight=8lb
+category=weapon_crossbow
+param=rangeattack,6
+param=levelrequire,1
+param=attackrate,6
+param=attackrange,5
+param=rangeattack_anim,human_crossbow
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,crossbow

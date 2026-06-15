@@ -8,3 +8,7 @@ members = true
 recol1s = 37093
 recol1d = 5541
 name = Vase
+//Server
+desc=A vessel for holding plants.
+weight=500g
+tradeable=no

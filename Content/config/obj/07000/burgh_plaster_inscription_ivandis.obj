@@ -10,3 +10,6 @@ members = true
 iop1 = Read
 iop5 = Destroy
 name = Plaster fragment
+//Server
+desc=A frament of plaster with some impressions on it.
+weight=1kg

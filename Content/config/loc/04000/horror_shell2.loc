@@ -3,3 +3,5 @@ active = 1
 blockwalk = true
 models = 1437/22
 name = Shell
+//Server
+desc=This once belonged to a sea animal.

@@ -10,3 +10,7 @@ xan2d = 344
 recol1s = 82
 recol1d = 43297
 name = Mithril dart tip
+//Server
+desc=A deadly looking dart tip made of mithril - needs feathers for flight.
+weight=6g
+category=category_969

@@ -5,3 +5,5 @@ length = 3
 nonsolid = true
 models_only = 1789
 name = Totem pole
+//Server
+desc=A beautifully crafted totem pole carved from the trunk of the sacred Yommi tree.

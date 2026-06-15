@@ -4,3 +4,5 @@ active = 1
 recol = 7481/7618 8501/7609 8497/6707 8493/6703 8617/7595
 models = 10965/0
 name = Door
+//Server
+desc=There's a recess in it in the shape of a right arm.

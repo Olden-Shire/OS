@@ -8,3 +8,13 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=Perhaps someone at the observatory can teach me to navigate?
+weight=20g
+category=trail_clue_hard
+param=trail_desc,20 degrees 05 minutes North|21 degrees 52 minutes East
+param=trail_sextant,yes
+param=trail_casket,trail_clue_hard_sextant006_casket
+param=trail_coord,0_49_59_4_28
+param=trail_guardian,trail_hard
+tradeable=no

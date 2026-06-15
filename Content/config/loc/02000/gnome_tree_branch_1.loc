@@ -3,3 +3,5 @@ active = 1
 op1 = Climb
 models_only = 2001
 name = Tree branch
+//Server
+desc=I can climb up this.

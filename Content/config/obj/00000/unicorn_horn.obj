@@ -8,3 +8,8 @@ xan2d = 248
 members = true
 cost = 20
 name = Unicorn horn
+//Server
+desc=This horn has restorative properties.
+weight=7g
+param=grindable_ingredient_refined,unicorn_horn_dust
+param=grindable_ingredient_message,You grind the unicorn horn to dust.

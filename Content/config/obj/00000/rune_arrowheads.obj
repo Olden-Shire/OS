@@ -13,3 +13,7 @@ recol1d = 36133
 recol2s = 57
 recol2d = 36133
 name = Rune arrowtips
+//Server
+desc=I can make an arrow with these.
+weight=4g
+category=category_968

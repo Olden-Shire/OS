@@ -4,3 +4,5 @@ sharelight = true
 forceapproach = 13
 models_only = 13990
 name = Ladder
+//Server
+desc=A wooden ladder.

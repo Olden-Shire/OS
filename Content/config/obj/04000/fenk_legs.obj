@@ -7,3 +7,6 @@ zoom2d = 1760
 yan2d = 1784
 xan2d = 380
 name = Legs
+//Server
+desc=A pair of lifeless, rotting legs.
+weight=14lb

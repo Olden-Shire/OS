@@ -5,3 +5,5 @@ mapscene = 11
 recol = 61/10396 53/10396
 models_only = 4451 4457
 name = Statue
+//Server
+desc=Did that thing just twitch?

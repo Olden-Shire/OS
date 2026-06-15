@@ -12,3 +12,6 @@ recol2d = 5177
 recol3s = 70
 recol3d = 5190
 name = Spade handle
+//Server
+desc=I need to attach this to its head.
+weight=2lb

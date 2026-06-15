@@ -17,3 +17,9 @@ manhead2 = 63
 womanhead = 6211
 womanhead2 = 120
 name = Desert disguise
+//Server
+desc=A disguise suitable for the desert.
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=40g

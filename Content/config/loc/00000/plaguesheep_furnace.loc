@@ -4,3 +4,5 @@ length = 3
 forceapproach = 13
 models_only = 11546
 name = Incinerator
+//Server
+desc=A special furnace for destroying contaminated items.

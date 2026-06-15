@@ -2,3 +2,5 @@
 anim = 480
 models_only = 2259
 name = Swamp bubbles
+//Server
+desc=The noxious liquid bubbles horribly.

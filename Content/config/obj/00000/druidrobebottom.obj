@@ -11,3 +11,8 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 127
 name = Druid's robe
+//Server
+desc=Keeps a druid's knees nice and warm.
+wearpos=legs
+weight=2lb
+param=prayerbonus,4

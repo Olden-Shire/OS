@@ -10,3 +10,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 7349
 name = Cell door key
+//Server
+desc=A metallic key, usually used by prison guards.
+weight=10g
+tradeable=no

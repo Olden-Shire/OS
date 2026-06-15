@@ -5,3 +5,5 @@ forceapproach = 14
 bgsound = 3073, 3
 models_only = 9874
 name = Pressure Barrel
+//Server
+desc=An ominously stained barrel.

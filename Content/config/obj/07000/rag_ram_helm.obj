@@ -11,3 +11,8 @@ womanwear = obj_ram_skull_helm_woman, 0
 manhead = 2853
 womanhead = 2854
 name = Ram skull helm
+//Server
+desc=Makes me feel baaad to the bone.
+weight=3g
+wearpos=hat
+weight=7lb

@@ -3,3 +3,5 @@ length = 2
 hillskew = true
 models_only = 5693
 name = Burial cairn
+//Server
+desc=Asleif was given a proper burial on this spot.

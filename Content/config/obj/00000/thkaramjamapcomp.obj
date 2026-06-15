@@ -12,3 +12,7 @@ recol1d = 40171
 recol2s = 7070
 recol2d = 22433
 name = Radimus notes
+//Server
+desc=Notes given to you by Radimus Erkle, it includes a partially completed map.
+weight=20g
+tradeable=no

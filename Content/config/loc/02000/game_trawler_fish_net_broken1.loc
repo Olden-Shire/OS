@@ -4,3 +4,5 @@ length = 6
 op1 = Inspect
 models_only = 1901
 name = Trawler net
+//Server
+desc=A huge net to catch little fish.

@@ -5,3 +5,5 @@ active = 1
 blockwalk = true
 models_only = 9037
 name = Melting Pot
+//Server
+desc=The foreman refers to it as 'Bertha'.

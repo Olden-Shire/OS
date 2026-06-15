@@ -3,3 +3,5 @@ width = 4
 nonblockrange = true
 models_only = 1557
 name = Table
+//Server
+desc=This clearly isn't used for dining very often.

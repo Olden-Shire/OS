@@ -8,3 +8,5 @@ resizez = 128
 mapscene = 7
 models_only = 5187
 name = Ladder
+//Server
+desc=It leads up.

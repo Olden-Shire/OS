@@ -5,3 +5,5 @@ op1 = Climb-down
 recol = 5425/9106
 models_only = 831
 name = Pile of rubble
+//Server
+desc=I can climb down these rocks to another cave.

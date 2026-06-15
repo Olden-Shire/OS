@@ -6,3 +6,6 @@ yan2d = 2040
 xan2d = 476
 members = true
 name = Animals' bones
+//Server
+desc=Various animals' bones.
+weight=1g

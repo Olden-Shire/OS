@@ -12,3 +12,8 @@ recol1d = 21962
 recol2s = 103
 recol2d = 21731
 name = Raw sardine
+//Server
+desc=I should try cooking this.
+weight=140g
+category=category_57
+param=fishing_struct,fishing_struct_sardine

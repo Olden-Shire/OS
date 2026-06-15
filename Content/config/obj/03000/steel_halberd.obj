@@ -9,3 +9,8 @@ zoom2d = 2130
 yan2d = 48
 xan2d = 604
 name = Steel halberd
+//Server
+desc=A steel halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

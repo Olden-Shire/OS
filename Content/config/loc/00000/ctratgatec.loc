@@ -3,3 +3,5 @@ active = 1
 op1 = Go-through
 models = 609/0
 name = Gate
+//Server
+desc=Stops people walking past.

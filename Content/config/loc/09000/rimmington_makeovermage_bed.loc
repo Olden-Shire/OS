@@ -4,3 +4,5 @@ ambient = 10
 recol = 5016/38057 6707/6563 7952/6682
 models_only = 5192
 name = Bed
+//Server
+desc=The Make-over Mage's bed.

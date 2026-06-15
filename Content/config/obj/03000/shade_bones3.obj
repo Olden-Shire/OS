@@ -9,3 +9,6 @@ members = true
 recol1s = 10330
 recol1d = 906
 name = Riyl remains
+//Server
+desc=The remains of a deadly shade.
+weight=3lb

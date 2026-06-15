@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 1500
 name = Broken cart
+//Server
+desc=A used cart seller will probably try and sell it later.

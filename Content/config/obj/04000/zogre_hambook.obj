@@ -11,3 +11,7 @@ members = true
 recol1s = 5018
 recol1d = 60985
 name = Book of 'h.a.m'
+//Server
+desc=A book of H.A.M affiliation.
+weight=1kg
+wearpos=lefthand

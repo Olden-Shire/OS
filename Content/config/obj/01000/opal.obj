@@ -19,3 +19,7 @@ recol3d = 11852
 recol4s = 127
 recol4d = 10363
 name = Opal
+//Server
+desc=A semi precious stone.
+weight=2g
+category=legends_gem

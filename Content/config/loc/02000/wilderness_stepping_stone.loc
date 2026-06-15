@@ -9,3 +9,5 @@ active = 1
 op1 = Cross
 models = 14718/22
 name = Stepping stone
+//Server
+desc=Hop, hop, hoppity hop, and then you fall in molten lava.

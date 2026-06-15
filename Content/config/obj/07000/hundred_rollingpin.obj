@@ -10,3 +10,7 @@ yan2d = 183
 xan2d = 222
 members = true
 name = Rolling pin
+//Server
+desc=That's how I roll!
+wearpos=righthand
+weight=4lb

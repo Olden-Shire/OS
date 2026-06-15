@@ -2,3 +2,5 @@
 active = 1
 models = 6889/4
 name = Shelves
+//Server
+desc=How exciting, some shelves.

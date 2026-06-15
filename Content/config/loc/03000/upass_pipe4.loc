@@ -4,3 +4,5 @@ width = 2
 recol = 6689/7952
 models_only = 813
 name = Obstacle pipe
+//Server
+desc=I can open the grill from this side.

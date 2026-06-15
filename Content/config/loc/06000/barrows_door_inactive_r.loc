@@ -3,3 +3,5 @@ mirror = true
 active = 1
 models = 6623/0
 name = Door
+//Server
+desc=I wonder what is awaiting me on the other side?

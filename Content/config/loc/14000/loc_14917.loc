@@ -4,3 +4,5 @@ length = 2
 nonblockrange = true
 models_only = 13220 13215
 name = Sink
+//Server
+desc=There must be a source of fresh water somewhere nearby.

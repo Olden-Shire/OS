@@ -12,3 +12,7 @@ recol1d = 7362
 recol2s = 49
 recol2d = 8369
 name = Cell key 1
+//Server
+desc=The key to Godric's cell in the troll prison.
+weight=55g
+tradeable=no

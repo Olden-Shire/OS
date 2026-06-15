@@ -6,3 +6,6 @@ xan2d = 496
 contrast = 33
 ambient = 33
 name = Colour wheel
+//Server
+desc=A key to the nature of light itself.
+weight=1g

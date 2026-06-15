@@ -11,3 +11,8 @@ xan2d = 604
 recol1s = 61
 recol1d = 0
 name = Black halberd
+//Server
+desc=A black halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

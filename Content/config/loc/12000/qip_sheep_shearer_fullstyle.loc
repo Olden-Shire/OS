@@ -8,3 +8,5 @@ nonblockrange = true
 recol = 6430/5784 6550/5904 6439/5541
 models_only = 7378
 name = Stile
+//Server
+desc=I can climb over the fence with this.

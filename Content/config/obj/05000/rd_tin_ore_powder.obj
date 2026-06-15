@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 57
 name = Tin ore powder
+//Server
+desc=A vial of something labelled 'Powdered Tin Ore'.
+weight=2oz

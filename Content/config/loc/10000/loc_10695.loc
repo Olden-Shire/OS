@@ -8,3 +8,5 @@ op1 = Take
 recol = 43943/19992 6457/22305 6573/22424 5543/22416
 models_only = 10480 10482
 name = Puppet torsos
+//Server
+desc=Box containing green puppet torsos.

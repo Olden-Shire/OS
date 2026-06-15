@@ -4,3 +4,5 @@ op2 = Close
 blockwalk = true
 models_only = 1226
 name = Chest
+//Server
+desc=An open chest.

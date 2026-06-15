@@ -21,3 +21,6 @@ recol5d = 6323
 recol6s = 60184
 recol6d = 6319
 name = Champion scroll
+//Server
+desc=It's a challenge from the Skeleton Champion!
+weight=1g

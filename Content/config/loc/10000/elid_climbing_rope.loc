@@ -2,3 +2,5 @@
 op1 = Climb
 models_only = 1487
 name = Rope
+//Server
+desc=I can climb back to the surface.

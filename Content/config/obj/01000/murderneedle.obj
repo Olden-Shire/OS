@@ -9,3 +9,11 @@ xan2d = 368
 recol1s = 74
 recol1d = 82
 name = Silver needle
+//Server
+desc=Elizabeth's shiny silver coated needle.
+weight=1g
+category=murder_proofobj
+param=product,murderneedledust
+param=game_message,You sprinkle the flour on Elizabeth's needle.
+param=game_message2,The Needle is now coated with a thin layer of flour.
+tradeable=no

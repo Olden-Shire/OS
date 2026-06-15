@@ -10,3 +10,7 @@ iop1 = Drop
 iop4 = Release All
 iop5 = Release
 name = Bloated toad
+//Server
+desc=An inflated toad.
+weight=750g
+tradeable=no

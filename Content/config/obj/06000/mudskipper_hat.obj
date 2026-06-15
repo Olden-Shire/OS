@@ -13,3 +13,7 @@ xan2d = 220
 iop2 = Wear
 cost = 0
 name = Mudskipper hat
+//Server
+desc=Fishy, damp and smelly.
+wearpos=hat
+weight=1lb

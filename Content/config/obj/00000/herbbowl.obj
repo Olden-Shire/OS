@@ -7,3 +7,6 @@ yof2d = 33
 zoom2d = 470
 xan2d = 1896
 name = Herb bowl
+//Server
+desc=A bowl of herbs.
+weight=1lb

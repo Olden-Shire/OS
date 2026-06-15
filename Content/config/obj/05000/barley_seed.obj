@@ -12,3 +12,6 @@ count3 = 5169, 4
 count4 = 5170, 5
 cost = 2
 name = Barley seed
+//Server
+desc=A barley seed - plant in a hops patch.
+weight=1g

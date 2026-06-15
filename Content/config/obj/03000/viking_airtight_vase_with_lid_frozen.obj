@@ -8,3 +8,6 @@ xan2d = 160
 members = true
 iop1 = Remove-lid
 name = Sealed vase
+//Server
+desc=The lid is screwed on tightly. It is very cold.
+weight=1g

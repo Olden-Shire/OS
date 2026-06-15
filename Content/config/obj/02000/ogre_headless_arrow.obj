@@ -18,3 +18,6 @@ recol1d = 7582
 recol2s = 926
 recol2d = 127
 name = Flighted ogre arrow
+//Server
+desc=A wooden arrow shaft with four flights attached.
+weight=12g

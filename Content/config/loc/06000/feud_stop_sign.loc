@@ -3,3 +3,5 @@ width = 2
 ambient = 40
 models_only = 6078
 name = Stop!
+//Server
+desc=Stop for what, food?

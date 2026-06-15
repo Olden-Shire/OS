@@ -10,3 +10,6 @@ recol1d = 8138
 recol2s = 37999
 recol2d = 8138
 name = Yellow spice (2)
+//Server
+desc=Allows for equal distribution of spice.
+weight=1g

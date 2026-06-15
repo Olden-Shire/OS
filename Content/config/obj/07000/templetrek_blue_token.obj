@@ -14,3 +14,6 @@ recol1d = 42958
 recol2s = 6742
 recol2d = 42460
 name = Reward token
+//Server
+desc=Blue reward token.
+weight=10g

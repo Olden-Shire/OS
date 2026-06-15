@@ -4,3 +4,5 @@ anim = 1629
 bgsound = 2066, 3
 models_only = 5170
 name = Fireplace
+//Server
+desc=It looks like it needs a good sweep out.

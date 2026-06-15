@@ -7,3 +7,5 @@ blockwalk = true
 recol = 3868/7050 5016/7050 5018/7050 53/10262 41/10262
 models = 1395/22
 name = Track
+//Server
+desc=Tracks for the carts to run over.

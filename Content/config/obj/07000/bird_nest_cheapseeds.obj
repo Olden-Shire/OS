@@ -7,3 +7,6 @@ xan2d = 172
 members = true
 iop1 = Search
 name = Bird nest
+//Server
+desc=It's a bird's nest with some seeds in it.
+weight=2g

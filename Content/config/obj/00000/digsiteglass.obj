@@ -7,3 +7,7 @@ yan2d = 32
 xan2d = 412
 members = true
 name = Broken glass
+//Server
+desc=Watch those feet!
+weight=20g
+tradeable=no

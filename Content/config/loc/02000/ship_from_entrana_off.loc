@@ -4,3 +4,6 @@ active = 1
 op1 = Cross
 models_only = 1844
 name = Gangplank
+//Server
+desc=Handy for boarding the ship.
+category=gangplank_disembark

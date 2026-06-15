@@ -6,3 +6,5 @@ resizez = 64
 hillskew = true
 models_only = 11550
 name = Bush
+//Server
+desc=A dead bush.

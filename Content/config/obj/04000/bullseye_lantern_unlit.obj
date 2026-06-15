@@ -6,3 +6,8 @@ xan2d = 28
 cost = 420
 members = true
 name = Bullseye lantern
+//Server
+desc=A sturdy steel lantern.
+weight=3lb
+category=light_source_unlit
+param=product,bullseye_lantern_lit

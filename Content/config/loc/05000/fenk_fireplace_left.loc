@@ -3,3 +3,5 @@ mirror = true
 anim = 1630
 models_only = 5171
 name = Fireplace surround
+//Server
+desc=Mmm.. scented candles.

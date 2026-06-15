@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 1301
 name = Stool
+//Server
+desc=Gnomes sit on these.

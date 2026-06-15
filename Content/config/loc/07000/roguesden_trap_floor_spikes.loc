@@ -6,3 +6,5 @@ active = 1
 op5 = Search
 models_only = 7603
 name = Floor
+//Server
+desc=It's the floor...

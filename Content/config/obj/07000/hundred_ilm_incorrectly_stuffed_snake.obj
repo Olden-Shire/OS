@@ -8,3 +8,6 @@ zoom2d = 2128
 yan2d = 1985
 xan2d = 429
 name = Odd stuffed snake
+//Server
+desc=Is this really what you wanted to do?
+weight=3kg

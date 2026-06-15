@@ -263,6 +263,13 @@ pub const NPC_SERVER_KEYS: &[&str] = &[
     "defence",
     "ranged",
     "magic",
+    // obj server-side keys (not in our 2007 obj cache schema).
+    "weight",
+    "tradeable",
+    "wearpos",
+    "wearpos2",
+    "wearpos3",
+    "dummyitem",
 ];
 
 /// Is `key` a server-only config property (not a client-cache opcode)?

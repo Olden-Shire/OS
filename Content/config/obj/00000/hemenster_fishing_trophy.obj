@@ -7,3 +7,7 @@ zoom2d = 1190
 yan2d = 1931
 xan2d = 210
 name = Fishing trophy
+//Server
+desc=Hemenster fishing contest trophy.
+weight=3oz
+tradeable=no

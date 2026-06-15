@@ -11,3 +11,9 @@ members = true
 recol1s = 25238
 recol1d = 33678
 name = Robe bottoms
+//Server
+desc=Made by werewolves for werewolves.
+wearpos=legs
+weight=2lb
+param=slashdefence,2
+param=crushdefence,2

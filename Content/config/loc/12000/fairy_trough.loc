@@ -2,3 +2,5 @@
 width = 2
 models_only = 11949
 name = Water Trough
+//Server
+desc=Filled with tepid water.

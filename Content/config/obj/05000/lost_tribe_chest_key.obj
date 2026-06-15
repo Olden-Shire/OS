@@ -7,3 +7,6 @@ yan2d = 20
 xan2d = 328
 members = true
 name = Key
+//Server
+desc=The key you stole from Sigmund.
+weight=10g

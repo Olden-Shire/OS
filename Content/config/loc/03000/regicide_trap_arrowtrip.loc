@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 3976
 name = Twigs
+//Server
+desc=It's a trap!

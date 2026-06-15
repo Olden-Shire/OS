@@ -16,3 +16,6 @@ recol3d = 563
 recol4s = 61
 recol4d = 563
 name = Alchemical notes
+//Server
+desc=Looks like a pretty boring read.
+weight=18oz

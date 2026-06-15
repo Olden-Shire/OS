@@ -10,3 +10,8 @@ members = true
 recol1s = 103
 recol1d = 86
 name = Raw shark
+//Server
+desc=I should try cooking this.
+weight=700g
+category=category_57
+param=fishing_struct,fishing_struct_shark

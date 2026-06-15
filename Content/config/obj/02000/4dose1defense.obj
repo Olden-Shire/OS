@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 22344
 name = Defence potion(4)
+//Server
+desc=4 doses of defence potion.
+weight=35g
+category=potion
+param=next_obj_stage,3dose1defense
+param=decant_potion_enum,potion_1defense
+param=dose_count,4

@@ -7,3 +7,6 @@ zoom2d = 760
 yan2d = 176
 xan2d = 320
 name = Decapitated head
+//Server
+desc=A gruesome, decapitated head, whose brain has rotted away.
+weight=6lb

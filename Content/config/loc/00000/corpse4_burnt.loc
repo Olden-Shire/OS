@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6241/28
 models_only = 1081
 name = Corpse
+//Server
+desc=He hasn't eaten in a long time.

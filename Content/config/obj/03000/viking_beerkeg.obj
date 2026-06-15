@@ -8,3 +8,6 @@ yan2d = 4
 xan2d = 128
 members = true
 name = Keg of beer
+//Server
+desc=A lot of beer in a barrel.
+weight=20kg

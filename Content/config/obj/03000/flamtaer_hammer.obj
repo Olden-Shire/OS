@@ -8,3 +8,6 @@ yan2d = 1576
 xan2d = 488
 members = true
 name = Flamtaer hammer
+//Server
+desc=An exquisitely shaped tool specially designed for fixing temples.
+weight=3lb

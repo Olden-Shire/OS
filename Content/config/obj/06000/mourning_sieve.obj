@@ -7,3 +7,6 @@ xan2d = 52
 members = true
 cost = 10
 name = Sieve
+//Server
+desc=It's a sieve.
+weight=1g

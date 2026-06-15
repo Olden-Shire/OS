@@ -15,3 +15,7 @@ recol1d = 61376
 recol2s = 70
 recol2d = 49
 name = Red topaz machete
+//Server
+desc=A jungle specific slashing device.
+wearpos=righthand
+weight=3lb

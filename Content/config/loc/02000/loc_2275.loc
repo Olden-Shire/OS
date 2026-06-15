@@ -3,3 +3,5 @@ length = 2
 nonsolid = true
 models_only = 2272
 name = Rock
+//Server
+desc=An odd-looking rock formation.

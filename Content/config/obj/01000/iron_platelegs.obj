@@ -14,3 +14,15 @@ recol2d = 24
 recol3s = 57
 recol3d = 33
 name = Iron platelegs
+//Server
+desc=These look pretty heavy.
+wearpos=legs
+weight=20lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,11
+param=slashdefence,10
+param=crushdefence,10
+param=magicdefence,-4
+param=rangedefence,10

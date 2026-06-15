@@ -3,3 +3,5 @@ hillskew = true
 sharelight = true
 models_only = 6903
 name = Bone arch
+//Server
+desc=It's a bit like walking through a giant rib cage.

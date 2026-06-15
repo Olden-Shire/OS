@@ -1,3 +1,5 @@
 // loc 8806
 models_only = 1482
 name = Grain sacks
+//Server
+desc=These have grain in them.

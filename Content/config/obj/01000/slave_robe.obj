@@ -8,3 +8,8 @@ members = true
 manwear = obj_slave_robe_man, 0
 womanwear = obj_slave_robe_woman, 0
 name = Slave robe
+//Server
+desc=A filthy, smelly, flea infested robe.
+weight=2lb
+wearpos=legs
+tradeable=no

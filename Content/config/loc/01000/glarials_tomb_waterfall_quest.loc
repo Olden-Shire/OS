@@ -3,3 +3,5 @@ width = 2
 op1 = Search
 models_only = 1364
 name = Glarial's tomb
+//Server
+desc=A stone tomb surrounded by flowers.

@@ -9,3 +9,5 @@ members = true
 iop1 = Extinguish
 stackable = true
 name = Torch
+//Server
+desc=A lit home-made torch.

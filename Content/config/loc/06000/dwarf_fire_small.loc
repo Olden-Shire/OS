@@ -12,3 +12,5 @@ nonblockrange = true
 recol = 7104/42964 8128/43980 5056/44973 4019/43965 2987/43934
 models_only = 6022
 name = Blue Fire
+//Server
+desc=It's a tiny little blue flame. Is this the essence of the Arzinian Being?

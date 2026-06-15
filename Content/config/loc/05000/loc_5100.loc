@@ -4,3 +4,5 @@ width = 2
 recol = 7442/7054 7446/7056 7322/6932 7326/6808 7331/6684 7335/6689
 models_only = 4981
 name = Pipe
+//Server
+desc=A pipe I can squeeze through.

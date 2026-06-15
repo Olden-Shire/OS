@@ -9,3 +9,6 @@ contrast = 7
 ambient = 7
 cost = 26
 name = Part mud pie
+//Server
+desc=Still needs one more ingredient.
+weight=1g

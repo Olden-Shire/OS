@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Dwarven stout(m3)
+//Server
+desc=This keg contains 3 pints of mature Dwarven Stout.
+weight=1oz

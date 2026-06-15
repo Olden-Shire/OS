@@ -9,3 +9,7 @@ zoom2d = 1560
 yan2d = 2028
 xan2d = 272
 name = Villager robe
+//Server
+desc=A brightly coloured robe prized by the Tai Bwo Wannai peoples.
+weight=2kg
+wearpos=legs

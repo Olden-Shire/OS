@@ -13,3 +13,15 @@ members = true
 recol1s = 61
 recol1d = 926
 name = Dragon chainbody
+//Server
+desc=A series of connected metal rings.
+wearpos=torso
+wearpos2=arms
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=stabdefence,81
+param=slashdefence,93
+param=crushdefence,98
+param=magicdefence,-3
+param=rangedefence,82

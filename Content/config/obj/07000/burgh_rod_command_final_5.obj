@@ -16,3 +16,7 @@ recol2d = 24648
 recol3s = 37949
 recol3d = 24640
 name = Rod of ivandis(5)
+//Server
+desc=A partially charged rod.
+weight=1g
+wearpos=righthand

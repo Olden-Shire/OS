@@ -7,3 +7,7 @@ yan2d = 1412
 xan2d = 312
 members = true
 name = Trowel
+//Server
+desc=Used for digging!
+weight=2oz
+tradeable=no

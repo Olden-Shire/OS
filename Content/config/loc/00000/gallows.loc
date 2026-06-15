@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1498
 name = Gallows
+//Server
+desc=A macabre variation on the neck tie.

@@ -3,3 +3,5 @@ anim = 3180
 bgsound = 2220, 5
 models_only = 11294 11292
 name = Iron spit
+//Server
+desc=It's an iron spit.

@@ -13,3 +13,7 @@ recol1d = 8138
 recol2s = 40918
 recol2d = 103
 name = Mystic gloves
+//Server
+desc=Bright magical gloves.
+wearpos=hands
+weight=1lb

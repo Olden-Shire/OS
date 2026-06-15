@@ -4,3 +4,5 @@ op1 = Take-from
 blockwalk = true
 models_only = 5153
 name = Pile of canes
+//Server
+desc=A pile of garden canes.

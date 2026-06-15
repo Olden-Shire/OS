@@ -6,3 +6,5 @@ nonsolid = true
 mapscene = 31
 models_only = 1586
 name = Wheat
+//Server
+desc=Baby bread.

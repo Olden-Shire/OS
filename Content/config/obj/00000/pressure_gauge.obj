@@ -5,3 +5,7 @@ zoom2d = 660
 yan2d = 1232
 xan2d = 392
 name = Pressure gauge
+//Server
+desc=It looks like part of a machine.
+weight=2oz
+tradeable=no

@@ -13,3 +13,6 @@ recol1d = 3637
 recol2s = 7116
 recol2d = 3637
 name = Bandit's brew
+//Server
+desc=A cheeky little lager.
+weight=550g

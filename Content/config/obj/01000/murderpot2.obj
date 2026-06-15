@@ -9,3 +9,7 @@ xan2d = 112
 recol1s = 4775
 recol1d = 1959
 name = Pungent pot
+//Server
+desc=A pot found at the murder scene, with a sickly odour.
+weight=2lb
+tradeable=no

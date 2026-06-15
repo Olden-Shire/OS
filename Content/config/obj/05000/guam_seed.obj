@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 4
 name = Guam seed
+//Server
+desc=A guam seed - plant in a herb patch.
+weight=1g

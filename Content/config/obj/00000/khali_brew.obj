@@ -9,3 +9,7 @@ xan2d = 104
 recol1s = 1942
 recol1d = 22424
 name = Khali brew
+//Server
+desc=A bottle of Khazard's worst brew.
+weight=4oz
+tradeable=no

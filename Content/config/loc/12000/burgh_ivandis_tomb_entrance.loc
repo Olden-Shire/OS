@@ -4,3 +4,5 @@ hillskew = true
 op1 = Enter
 models_only = 4968
 name = Cave entrance
+//Server
+desc=A small cave entrance.

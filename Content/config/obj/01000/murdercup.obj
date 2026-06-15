@@ -7,3 +7,11 @@ zoom2d = 500
 yan2d = 1980
 xan2d = 156
 name = Silver cup
+//Server
+desc=Bob's shiny silver coated tea cup.
+weight=70g
+category=murder_proofobj
+param=product,murdercupdust
+param=game_message,You sprinkle the flour on Bob's cup.
+param=game_message2,The cup is now coated with a thin layer of flour.
+tradeable=no

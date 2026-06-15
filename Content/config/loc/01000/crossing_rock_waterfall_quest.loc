@@ -4,3 +4,5 @@ noshadow = true
 nonsolid = true
 models_only = 1805
 name = Rock
+//Server
+desc=I should be safe if I can reach this.

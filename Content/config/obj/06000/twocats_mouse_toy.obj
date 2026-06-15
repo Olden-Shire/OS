@@ -12,3 +12,7 @@ members = true
 cost = 1
 iop5 = Destroy
 name = Mouse toy
+//Server
+desc=An Advanced Combat Training Device.
+wearpos=righthand
+weight=100g

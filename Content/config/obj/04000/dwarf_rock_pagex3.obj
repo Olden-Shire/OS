@@ -8,3 +8,6 @@ zan2d = 136
 xan2d = 512
 members = true
 name = Pages
+//Server
+desc=A collection of missing pages from Rolad's book!
+weight=2g

@@ -2,3 +2,5 @@
 active = 1
 models_only = 14095 14097
 name = Pot-boiler
+//Server
+desc=Well, I have the logs in place, now to get something to boil.

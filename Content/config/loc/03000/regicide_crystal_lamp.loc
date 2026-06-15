@@ -3,3 +3,5 @@ anim = 1212
 active = 1
 models_only = 3952
 name = Elven lamp
+//Server
+desc=The lamp has a glowing crystal at its core.

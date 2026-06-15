@@ -6,3 +6,5 @@ recol = 24/4762
 retex = 2/45
 models = 609/0
 name = Door
+//Server
+desc=A secure door.

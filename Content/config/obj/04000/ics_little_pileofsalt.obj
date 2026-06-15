@@ -9,3 +9,6 @@ members = true
 recol1s = 82
 recol1d = 111
 name = Pile of salt
+//Server
+desc=A little heap of salt.
+weight=500g

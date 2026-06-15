@@ -4,3 +4,5 @@ op1 = Open
 active = 1
 models = 9476/0 9477/9
 name = Blacksmith's door
+//Server
+desc=The door is closed.

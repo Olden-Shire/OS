@@ -12,3 +12,6 @@ members = true
 recol1s = 9104
 recol1d = 951
 name = Super kebab
+//Server
+desc=A meaty and very hot kebab.
+weight=250g

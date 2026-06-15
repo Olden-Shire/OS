@@ -11,3 +11,8 @@ xan2d = 604
 recol1s = 61
 recol1d = 36133
 name = Rune halberd
+//Server
+desc=A rune halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

@@ -7,3 +7,6 @@ yan2d = 1960
 xan2d = 196
 members = true
 name = Sulphur
+//Server
+desc=A piece of sulphur formation.
+weight=10g

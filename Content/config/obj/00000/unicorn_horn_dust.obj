@@ -9,3 +9,8 @@ cost = 20
 recol1s = 82
 recol1d = 7741
 name = Unicorn horn dust
+//Server
+desc=Finely ground horn of Unicorn.
+weight=7g
+param=brew_potion_struct,3doseantipoison
+param=brew_potion_struct_secondary,3dose2antipoison

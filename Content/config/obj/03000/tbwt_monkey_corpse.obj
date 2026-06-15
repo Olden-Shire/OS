@@ -6,3 +6,6 @@ zoom2d = 1380
 yan2d = 188
 xan2d = 112
 name = Monkey corpse
+//Server
+desc=It's the body of a dead monkey.
+weight=1kg

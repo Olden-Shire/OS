@@ -3,3 +3,5 @@ op1 = Search
 nonblockrange = true
 models_only = 3819
 name = Goutweed Crate
+//Server
+desc=It's full of dried goutweed.

@@ -1,3 +1,5 @@
 // loc 582
 models_only = 916
 name = Statue
+//Server
+desc=An unusual symbol of ancient times.

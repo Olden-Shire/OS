@@ -3,3 +3,5 @@ length = 2
 bgsound = 3142, 3
 models_only = 5997
 name = Boiler
+//Server
+desc=Powers the boat.

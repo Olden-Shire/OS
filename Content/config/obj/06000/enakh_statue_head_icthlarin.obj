@@ -8,3 +8,6 @@ zan2d = 124
 xan2d = 1934
 iop5 = Destroy
 name = Stone head
+//Server
+desc=A granite head shaped like the god Icthlarin.
+weight=500g

@@ -17,3 +17,6 @@ recol3d = 50074
 recol4s = 127
 recol4d = 50752
 name = Dragonstone
+//Server
+desc=This looks valuable.
+weight=2g

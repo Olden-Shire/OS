@@ -3,3 +3,5 @@ ambient = 50
 active = 1
 models = 2086/4
 name = Magical symbol
+//Server
+desc=A magical wall decoration.

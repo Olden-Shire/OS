@@ -9,3 +9,7 @@ xan2d = 88
 recol1s = 4773
 recol1d = 6053
 name = Seasoned chompy
+//Server
+desc=It has been deliciously seasoned to taste wonderful for ogres.
+weight=10kg
+tradeable=no

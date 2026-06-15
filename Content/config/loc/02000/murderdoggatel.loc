@@ -5,3 +5,5 @@ ambient = 20
 recol = 6040/5537
 models = 966/0 967/1 968/9
 name = Sturdy wooden gate
+//Server
+desc=Luckily it seems able to keep that vicious dog inside.

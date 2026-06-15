@@ -4,3 +4,5 @@ anim = 1729
 bgsound = 2422, 20
 models_only = 5516
 name = Water wheel
+//Server
+desc=The river makes it spin.

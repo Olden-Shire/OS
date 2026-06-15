@@ -9,3 +9,6 @@ members = true
 recol1s = 7062
 recol1d = 10295
 name = Limestone brick
+//Server
+desc=A well carved limestone brick.
+weight=3lb

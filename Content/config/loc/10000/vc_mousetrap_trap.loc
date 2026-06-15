@@ -2,3 +2,5 @@
 anim = 2897
 models_only = 10052 10053
 name = Rat trap
+//Server
+desc=A device for imposing human-nature's arrogant will.

@@ -1,3 +1,5 @@
 // loc 2364
 models_only = 2143
 name = Crate
+//Server
+desc=A wooden container.

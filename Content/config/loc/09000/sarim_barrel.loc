@@ -3,3 +3,5 @@ ambient = 25
 nonblockrange = true
 models_only = 8232
 name = Barrel
+//Server
+desc=A wooden barrel for storage.

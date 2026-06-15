@@ -3,3 +3,5 @@ hillskew = true
 op1 = Search
 models = 801/9
 name = Filled Recess
+//Server
+desc=This recess has a glowing heart shaped crystal in it.

@@ -13,3 +13,6 @@ recol1d = 2613
 recol2s = 204
 recol2d = 5027
 name = Cooked rabbit
+//Server
+desc=Mmm this looks tasty.
+weight=5oz

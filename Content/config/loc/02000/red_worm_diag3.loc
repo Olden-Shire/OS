@@ -6,3 +6,6 @@ nonsolid = true
 recol = 929/1688 931/1812
 models = 1587/22
 name = Vine
+//Server
+desc=Known commonly as Red worm vine.
+category=red_vine

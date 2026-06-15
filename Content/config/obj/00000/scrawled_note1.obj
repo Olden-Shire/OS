@@ -20,3 +20,7 @@ recol5d = 8530
 recol6s = 5351
 recol6d = 8530
 name = Scrawled note
+//Server
+desc=A scrawled note with spidery writing on it.
+weight=20g
+tradeable=no

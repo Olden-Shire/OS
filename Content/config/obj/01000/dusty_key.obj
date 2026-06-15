@@ -9,3 +9,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 7087
 name = Dusty key
+//Server
+desc=I wonder what this unlocks?
+weight=10g
+tradeable=no

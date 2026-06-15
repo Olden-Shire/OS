@@ -5,3 +5,5 @@ op1 = Look-at
 op2 = Search
 models = 789/0 790/9
 name = Crevice
+//Server
+desc=A large crack in the wall.

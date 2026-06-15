@@ -6,3 +6,5 @@ bgsound = 3087, 3
 recol = 61/34324
 models = 5514/10 5515/1
 name = Rock
+//Server
+desc=A rock.

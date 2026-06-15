@@ -12,3 +12,14 @@ womanwear = obj_wooden_shield_1171_wear, 6
 recol1s = 61
 recol1d = 5784
 name = Wooden shield
+//Server
+desc=A solid wooden shield.
+wearpos=lefthand
+category=armour_shield
+weight=5lb
+param=stabdefence,4
+param=slashdefence,5
+param=crushdefence,3
+param=magicdefence,1
+param=rangedefence,4
+param=defend_anim,human_shield_defence

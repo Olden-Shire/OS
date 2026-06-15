@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Cider(2)
+//Server
+desc=This keg contains 2 pints of Cider.
+weight=1oz

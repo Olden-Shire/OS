@@ -4,3 +4,5 @@ ambient = 60
 active = 1
 models = 9000/4
 name = Hanging dye
+//Server
+desc=Mmmm pretty!

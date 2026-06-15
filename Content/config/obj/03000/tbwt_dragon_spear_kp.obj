@@ -14,3 +14,8 @@ iop2 = Wield
 recol1s = 22457
 recol1d = 25048
 name = Dragon spear(kp)
+//Server
+desc=A Karambwan poisoned dragon tipped spear.
+weight=5lb
+wearpos=righthand
+wearpos2=lefthand

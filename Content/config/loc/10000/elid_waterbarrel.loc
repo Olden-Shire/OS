@@ -3,3 +3,5 @@ ambient = 30
 nonblockrange = true
 models_only = 10145
 name = Barrel
+//Server
+desc=One of Ali's water barrels.

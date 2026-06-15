@@ -4,3 +4,5 @@ nonsolid = true
 bgsound = 2065, 3
 models_only = 3880
 name = Burning bones
+//Server
+desc=It's a pile of burning bones.

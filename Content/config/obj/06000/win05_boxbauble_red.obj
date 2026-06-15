@@ -8,3 +8,6 @@ xan2d = 138
 recol1s = 11187
 recol1d = 695
 name = Box bauble
+//Server
+desc=A bauble shaped like a gift painted red.
+weight=200g

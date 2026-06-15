@@ -4,3 +4,5 @@ op1 = Search
 recol = 5018/8076 10349/7838 70/24 49/33 916/3980
 models = 2034/4
 name = Shelf
+//Server
+desc=Strange items are stored here.

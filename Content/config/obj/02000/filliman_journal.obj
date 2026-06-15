@@ -12,3 +12,7 @@ recol1d = 22441
 recol2s = 10351
 recol2d = 17344
 name = Journal
+//Server
+desc=This must be Filliman Tarlocks personal journal.
+weight=18oz
+tradeable=no

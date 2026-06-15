@@ -5,3 +5,5 @@ ambient = 25
 contrast = 25
 models_only = 9357
 name = Bank Deposit Box
+//Server
+desc=Lets you put items into your bank.

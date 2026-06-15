@@ -4,3 +4,5 @@ ambient = 20
 nonblockrange = true
 models_only = 10196 10203 10194
 name = Water Channel
+//Server
+desc=The water is flowing again.

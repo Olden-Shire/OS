@@ -16,3 +16,17 @@ recol2d = 33
 recol3s = 41
 recol3d = 24
 name = Iron platebody
+//Server
+desc=Provides excellent protection.
+wearpos=torso
+wearpos2=arms
+weight=22lb
+category=armour_body
+respawnrate=1500
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,21
+param=slashdefence,20
+param=crushdefence,12
+param=magicdefence,-6
+param=rangedefence,20

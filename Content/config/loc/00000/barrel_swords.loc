@@ -1,3 +1,5 @@
 // loc 718
 models_only = 3338
 name = Barrel
+//Server
+desc=A barrel full of swords...

@@ -5,3 +5,5 @@ resizey = 200
 resizez = 200
 models_only = 9229 9230
 name = Candles
+//Server
+desc=Lit to remember the souls of the departed.

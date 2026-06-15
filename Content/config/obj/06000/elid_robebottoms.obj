@@ -8,3 +8,7 @@ womanwear = obj_robe_of_elidinis_6787_woman, 0
 iop2 = Wear
 members = true
 name = Robe of elidinis
+//Server
+desc=A patched up robe.
+wearpos=legs
+weight=5g

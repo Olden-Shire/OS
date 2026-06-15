@@ -5,3 +5,5 @@ forcedecor = true
 blockwalk = true
 models = 1046/22
 name = Stepping stone
+//Server
+desc=I can jump from this stepping stone.

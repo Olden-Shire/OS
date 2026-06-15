@@ -11,3 +11,7 @@ womanwear = obj_fremennik_blade_wear, 6
 members = true
 cost = 5000
 name = Fremennik blade
+//Server
+desc=A sword used only by Fremennik warriors.
+wearpos=righthand
+weight=4lb

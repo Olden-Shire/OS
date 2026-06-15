@@ -6,3 +6,7 @@ zoom2d = 720
 yan2d = 192
 xan2d = 280
 name = Stake
+//Server
+desc=A very pointy stick.
+weight=3oz
+tradeable=no

@@ -4,3 +4,5 @@ length = 2
 op1 = Look-in
 models_only = 6173
 name = Broken kiln
+//Server
+desc=There was a lot of pottery made here a long time ago.

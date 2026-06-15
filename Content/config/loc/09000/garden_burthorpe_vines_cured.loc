@@ -3,3 +3,5 @@ ambient = 25
 active = 1
 models_only = 9182
 name = Grapevines
+//Server
+desc=These grapevines look much healthier now.

@@ -18,3 +18,6 @@ recol2d = 41
 recol3s = 127
 recol3d = 914
 name = Zombie head
+//Server
+desc=Alas...I hardly knew him.
+weight=1kg

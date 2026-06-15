@@ -8,3 +8,6 @@ xan2d = 236
 stackable = true
 cost = 3
 name = Fishing bait
+//Server
+desc=For use with a fishing rod.
+weight=2g

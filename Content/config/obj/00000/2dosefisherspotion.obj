@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 24
 name = Fishing potion(2)
+//Server
+desc=2 doses of fishing potion.
+weight=25g
+category=potion
+param=next_obj_stage,1dosefisherspotion
+param=decant_potion_enum,potion_fisherspotion
+param=dose_count,2

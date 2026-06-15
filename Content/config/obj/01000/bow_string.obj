@@ -8,3 +8,6 @@ zoom2d = 530
 yan2d = 1881
 xan2d = 145
 name = Bow string
+//Server
+desc=I need a bow stave to attach this to.
+weight=14g

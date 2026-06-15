@@ -3,3 +3,5 @@ hillskew = true
 recol = 5916/7331
 models_only = 694
 name = Stalagmite
+//Server
+desc=A tooth shaped rock formation protruding from the floor.

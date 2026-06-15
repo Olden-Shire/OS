@@ -11,3 +11,7 @@ yan2d = 1994
 xan2d = 294
 members = true
 name = Anger mace
+//Server
+desc=A heavy duty mace.
+wearpos=righthand
+weight=4lb

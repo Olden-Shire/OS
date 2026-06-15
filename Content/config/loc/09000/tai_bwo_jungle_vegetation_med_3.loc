@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 6825/7841 6585/7851 15017/16037
 models_only = 8897
 name = Medium Jungle
+//Server
+desc=This has broad leaves.

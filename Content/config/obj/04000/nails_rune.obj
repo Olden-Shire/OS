@@ -11,3 +11,7 @@ stackable = true
 recol1s = 28
 recol1d = 36133
 name = Rune nails
+//Server
+desc=Keeps things in place fairly permanently.
+weight=5g
+category=category_74

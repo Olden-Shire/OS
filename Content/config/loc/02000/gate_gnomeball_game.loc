@@ -4,3 +4,6 @@ active = 1
 nonblockrange = true
 models = 1298/0
 name = Gate
+//Server
+desc=A gate to the Gnomeball pitch.
+param=next_loc_stage,gate_open_gnomeball_game

@@ -7,3 +7,6 @@ xan2d = 176
 cost = 25
 members = true
 name = Oil lamp
+//Server
+desc=An oil lamp with no oil in it.
+weight=1lb

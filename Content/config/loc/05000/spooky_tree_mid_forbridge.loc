@@ -3,3 +3,5 @@ forcedecor = true
 sharelight = true
 models_only = 4972
 name = Tree
+//Server
+desc=A well used tree.

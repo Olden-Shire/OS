@@ -5,3 +5,5 @@ ambient = 18
 contrast = 15
 models_only = 10597
 name = Cylinder Pile
+//Server
+desc=A pile of cylindrical shapes.

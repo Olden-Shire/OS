@@ -10,3 +10,6 @@ yan2d = 1732
 xan2d = 40
 iop1 = Play-with
 name = Toy horsey
+//Server
+desc=A brown toy horse.
+weight=50g

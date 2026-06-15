@@ -4,3 +4,5 @@ op1 = Close
 recol = 6550/5404
 models = 5189/0
 name = Door
+//Server
+desc=A simple door, now open.

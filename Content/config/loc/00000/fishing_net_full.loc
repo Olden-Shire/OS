@@ -1,3 +1,5 @@
 // loc 392
 models_only = 1432
 name = Full fishing net
+//Server
+desc=A fishing net full of fish.

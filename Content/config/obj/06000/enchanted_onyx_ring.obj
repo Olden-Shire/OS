@@ -16,3 +16,7 @@ recol2d = 1709
 recol3s = 127
 recol3d = 43528
 name = Ring of stone
+//Server
+desc=An enchanted ring.
+wearpos=ring
+weight=6g

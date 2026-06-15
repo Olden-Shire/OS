@@ -6,3 +6,6 @@ yan2d = 1772
 xan2d = 176
 members = true
 name = Directionals
+//Server
+desc=The weathervane directionals should work now.
+weight=1g

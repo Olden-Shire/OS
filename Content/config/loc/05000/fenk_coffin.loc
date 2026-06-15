@@ -7,3 +7,5 @@ forceapproach = 7
 mapscene = 34
 models_only = 5169
 name = Memorial
+//Server
+desc=A large, elaborately ornamented memorial stone.

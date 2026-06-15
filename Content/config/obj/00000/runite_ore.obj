@@ -9,3 +9,8 @@ xan2d = 368
 recol1s = 7062
 recol1d = 36133
 name = Runite ore
+//Server
+desc=This needs refining.
+weight=5lb
+category=category_91
+param=smeltsto,runite_bar

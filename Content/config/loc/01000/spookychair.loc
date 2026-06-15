@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 1950
 name = Chair
+//Server
+desc=Do I dare sit on this?

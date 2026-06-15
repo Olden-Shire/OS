@@ -5,3 +5,7 @@ ambient = 60
 op1 = Burst
 models = 2228/10 2226/1 2227/2
 name = Party Balloon
+//Server
+desc=A party balloon.
+category=party_balloon
+param=next_loc_stage,balloon_yellow_pop

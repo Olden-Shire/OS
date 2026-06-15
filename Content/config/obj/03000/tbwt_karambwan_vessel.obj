@@ -7,3 +7,7 @@ xan2d = 72
 manwear = obj_karambwan_vessel_3157_wear, 0
 womanwear = obj_karambwan_vessel_3157_wear, 6
 name = Karambwan vessel
+//Server
+desc=A wide bodied and thin necked vessel, encrusted with sea salt.
+weight=3kg
+wearpos=righthand

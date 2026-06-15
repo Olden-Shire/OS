@@ -4,3 +4,5 @@ length = 2
 sharelight = true
 models_only = 1872
 name = Sail
+//Server
+desc=Useful for making ships move.

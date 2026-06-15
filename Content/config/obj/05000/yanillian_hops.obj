@@ -15,3 +15,6 @@ recol2d = 10153
 recol3s = 13210
 recol3d = 9127
 name = Yanillian hops
+//Server
+desc=A handful of Yanillian Hops.
+weight=1oz

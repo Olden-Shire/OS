@@ -9,3 +9,6 @@ xan2d = 192
 iop1 = Eat
 members = true
 name = Gout tuber
+//Server
+desc=Plant this in a herb patch to grow Goutweed.
+weight=200g

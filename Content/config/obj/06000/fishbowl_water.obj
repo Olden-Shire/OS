@@ -13,3 +13,6 @@ contrast = 20
 recol1s = 41938
 recol1d = 42330
 name = Fishbowl
+//Server
+desc=A fishless fishbowl.
+weight=5lb

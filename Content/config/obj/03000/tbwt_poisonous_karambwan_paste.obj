@@ -10,3 +10,6 @@ xan2d = 320
 recol1s = 10529
 recol1d = 25048
 name = Karambwan paste
+//Server
+desc=Freshly made octopus paste. This smells quite nauseating.
+weight=10g

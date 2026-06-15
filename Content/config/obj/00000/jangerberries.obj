@@ -12,3 +12,9 @@ recol1d = 13223
 recol2s = 6040
 recol2d = 10136
 name = Jangerberries
+//Server
+desc=They don't look very ripe.
+weight=7g
+category=category_86
+respawnrate=30
+param=brew_potion_struct,3dosepotionofzamorak

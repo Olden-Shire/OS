@@ -6,3 +6,7 @@ yan2d = 648
 xan2d = 216
 iop1 = Bury
 name = Monkey bones
+//Server
+desc=These are quite large monkey bones.
+weight=800g
+category=bones

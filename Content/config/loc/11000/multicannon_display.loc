@@ -4,3 +4,5 @@ width = 3
 blockwalk = true
 models_only = 2328
 name = Dwarf multicannon
+//Server
+desc=A powerful ranging device that fires metal balls.

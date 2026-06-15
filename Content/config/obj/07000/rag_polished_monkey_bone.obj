@@ -7,3 +7,6 @@ yan2d = 1247
 xan2d = 243
 members = true
 name = Monkey paw
+//Server
+desc=This bone belongs in a museum!
+weight=3g

@@ -2,3 +2,5 @@
 width = 2
 models_only = 14206
 name = Trough
+//Server
+desc=Animal feeder.

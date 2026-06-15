@@ -7,3 +7,6 @@ yan2d = 144
 xan2d = 536
 members = true
 name = Potato seed
+//Server
+desc=A potato seed - plant in an allotment.
+weight=2g

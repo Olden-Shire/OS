@@ -5,3 +5,5 @@ mapscene = 4
 op1 = Hide-behind
 models_only = 1598
 name = Cactus
+//Server
+desc=Look at the size of this cactus.

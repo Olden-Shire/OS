@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 127
 recol1d = 33728
 name = Cyan crystal
+//Server
+desc=A cyan crystal.
+weight=15g

@@ -10,3 +10,7 @@ xan2d = 312
 members = true
 cost = 5
 name = Secateurs
+//Server
+desc=Good for pruning away diseased leaves.
+wearpos=righthand
+weight=1lb

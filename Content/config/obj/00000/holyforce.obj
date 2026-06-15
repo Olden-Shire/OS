@@ -7,3 +7,7 @@ yan2d = 112
 xan2d = 272
 iop1 = Cast Spell
 name = Holy force
+//Server
+desc=A powerful spell for good.
+weight=20g
+tradeable=no

@@ -12,3 +12,7 @@ womanwear = obj_longbow_u_48_wear, 6
 recol1s = 6674
 recol1d = 31516
 name = Magic longbow (u)
+//Server
+desc=An unstrung magic longbow, I need a bowstring for this.
+weight=47oz
+category=unstrung_bow

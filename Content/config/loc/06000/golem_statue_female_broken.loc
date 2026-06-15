@@ -2,3 +2,5 @@
 length = 2
 models_only = 6168
 name = Statue
+//Server
+desc=This statue has been tampered with.

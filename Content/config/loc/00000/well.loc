@@ -8,3 +8,6 @@ ambient = 20
 nonblockrange = true
 models_only = 1410
 name = Well
+//Server
+desc=Best used with a bucket.
+category=well

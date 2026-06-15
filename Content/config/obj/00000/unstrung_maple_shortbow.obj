@@ -12,3 +12,7 @@ womanwear = obj_shortbow_u_50_wear, 6
 recol1s = 6674
 recol1d = 2250
 name = Maple shortbow (u)
+//Server
+desc=An unstrung maple shortbow, I need a bowstring for this.
+weight=35oz
+category=unstrung_bow

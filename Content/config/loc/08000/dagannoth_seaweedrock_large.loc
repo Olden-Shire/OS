@@ -5,3 +5,5 @@ mapscene = 11
 nonblockrange = true
 models_only = 8691
 name = Rock
+//Server
+desc=A big slimy lump of rock.

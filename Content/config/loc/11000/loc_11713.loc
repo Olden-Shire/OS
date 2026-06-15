@@ -7,3 +7,5 @@ resizey = 156
 recol = 6945/6453 6940/6449 7064/6445 6038/6569 5272/6565 7566/6689
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=The door is closed.

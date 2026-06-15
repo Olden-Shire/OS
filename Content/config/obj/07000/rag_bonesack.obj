@@ -12,3 +12,7 @@ manwear = obj_bonesack_man, 0
 womanwear = obj_bonesack_woman, 0
 cost = 1
 name = Bonesack
+//Server
+desc=The Bonesack is a little old item that protects like leather.
+weight=3g
+wearpos=back

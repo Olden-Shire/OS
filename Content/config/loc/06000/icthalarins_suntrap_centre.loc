@@ -3,3 +3,5 @@ active = 1
 op1 = Search
 models_only = 905
 name = Centre piece
+//Server
+desc=The focus of the suntrap.

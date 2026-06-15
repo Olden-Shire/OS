@@ -5,3 +5,5 @@ ambient = 20
 recol = 14499/5421 5541/5413 5665/5421 5660/5532 5784/5413 5904/5532
 models_only = 8232
 name = Anna's barrel
+//Server
+desc=Looks like this is where Anna keeps her stuff.

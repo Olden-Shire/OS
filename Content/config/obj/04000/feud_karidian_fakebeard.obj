@@ -6,3 +6,6 @@ zan2d = 8
 xan2d = 320
 members = true
 name = Fake beard
+//Server
+desc=Makes me itch.
+weight=30g

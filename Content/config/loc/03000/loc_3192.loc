@@ -7,3 +7,5 @@ op1 = View
 active = 1
 models_only = 3293
 name = Scoreboard
+//Server
+desc=You can see the last 50 fights on here.

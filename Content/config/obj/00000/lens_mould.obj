@@ -7,3 +7,7 @@ xan2d = 196
 members = true
 iop5 = Destroy
 name = Lens mould
+//Server
+desc=An unusual clay mould in the shape of a disc.
+weight=1kg
+tradeable=no

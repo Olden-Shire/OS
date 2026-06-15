@@ -12,3 +12,7 @@ recol1d = 1211
 recol2s = 103
 recol2d = 1226
 name = Herring
+//Server
+desc=Some nicely cooked fish.
+weight=500g
+category=category_58

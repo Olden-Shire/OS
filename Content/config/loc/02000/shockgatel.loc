@@ -5,3 +5,7 @@ recol = 24/4762
 retex = 2/45
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=It's a gate.
+category=ball_irongate
+param=next_loc_stage,loc_1562

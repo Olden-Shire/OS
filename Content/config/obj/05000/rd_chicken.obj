@@ -11,3 +11,7 @@ womanwear = obj_chicken_wear, 6
 members = true
 ambient = 10
 name = Chicken
+//Server
+desc=He'd be easier to carry if I cooked and ate him first...
+wearpos=lefthand
+weight=5kg

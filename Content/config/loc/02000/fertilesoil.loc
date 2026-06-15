@@ -6,3 +6,5 @@ active = 1
 nonsolid = true
 models_only = 1076
 name = Fertile Soil
+//Server
+desc=This earth is particularly fertile.

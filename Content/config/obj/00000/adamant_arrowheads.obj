@@ -13,3 +13,7 @@ recol1d = 21662
 recol2s = 57
 recol2d = 21662
 name = Adamant arrowtips
+//Server
+desc=I can make an arrow with these.
+weight=5g
+category=category_968

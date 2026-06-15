@@ -12,3 +12,6 @@ recol1d = 9125
 recol2s = 49
 recol2d = 9125
 name = Ogre coffin key
+//Server
+desc=A key which opens coffins!
+weight=55g

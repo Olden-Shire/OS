@@ -4,3 +4,5 @@ op1 = Walk-through
 op2 = Look
 models = 584/0
 name = Shimmering field
+//Server
+desc=This looks like some sort of shimmering surface.

@@ -7,3 +7,6 @@ yan2d = 140
 xan2d = 392
 members = true
 name = Shield right half
+//Server
+desc=The right half of a dragon square shield.
+weight=6lb

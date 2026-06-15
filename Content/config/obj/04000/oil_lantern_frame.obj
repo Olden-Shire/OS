@@ -7,3 +7,6 @@ xan2d = 88
 cost = 90
 members = true
 name = Oil lantern frame
+//Server
+desc=Add the glass to complete.
+weight=1lb

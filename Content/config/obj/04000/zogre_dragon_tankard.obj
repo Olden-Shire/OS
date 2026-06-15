@@ -8,3 +8,6 @@ xan2d = 128
 members = true
 iop1 = Look-at
 name = Dragon inn tankard
+//Server
+desc=A white ceramic mug with a dragon insignia.
+weight=1g

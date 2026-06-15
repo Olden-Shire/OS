@@ -5,3 +5,6 @@ yan2d = 56
 xan2d = 468
 members = true
 name = Minecart ticket
+//Server
+desc=A ticket to take you from Keldagrim to the dwarven mines under Ice Mountain.
+weight=1g

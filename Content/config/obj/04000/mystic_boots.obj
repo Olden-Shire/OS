@@ -10,3 +10,7 @@ zoom2d = 770
 yan2d = 1988
 xan2d = 188
 name = Mystic boots
+//Server
+desc=Magical boots.
+wearpos=feet
+weight=1lb

@@ -3,3 +3,5 @@ anim = 3180
 bgsound = 2220, 5
 models_only = 11293 11292
 name = Raw Rabbit
+//Server
+desc=It's a raw Rabbit on a spit.

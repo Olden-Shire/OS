@@ -4,3 +4,5 @@ length = 2
 recol = 10401/8390 16540/8398 16532/8406
 models_only = 6617
 name = Waterpump
+//Server
+desc=A handy source of water.

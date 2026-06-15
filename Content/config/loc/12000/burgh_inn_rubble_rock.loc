@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 24/4645
 models_only = 1390
 name = Rubble
+//Server
+desc=A pile of rubble.

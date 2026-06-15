@@ -5,3 +5,5 @@ active = 1
 op1 = Enter
 models_only = 13591
 name = Pit
+//Server
+desc=A hole in the ground.

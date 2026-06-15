@@ -11,3 +11,11 @@ recol1d = 22408
 recol2s = 22428
 recol2d = 22414
 name = Toadflax
+//Server
+desc=A useful herb.
+weight=7g
+category=category_774
+param=identified_herb_level,30
+param=identified_herb_exp,80
+param=identified_herb_message,This herb is a Toadflax.
+param=brew_potion_struct,unf_toadflax_potion

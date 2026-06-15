@@ -12,3 +12,6 @@ count3 = 5234, 4
 count4 = 5235, 5
 cost = 20
 name = Banana tree seed
+//Server
+desc=Plant in a plantpot of soil to grow a sapling.
+weight=1g

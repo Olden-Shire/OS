@@ -4,3 +4,7 @@ manwear = obj_beer_glass_1919_wear, 0
 womanwear = obj_beer_glass_1919_wear, 6
 members = true
 name = Beer glass
+//Server
+desc=For drinking... if it were filled.
+wearpos=righthand
+weight=1g

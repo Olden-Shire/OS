@@ -5,3 +5,5 @@ mapscene = 5
 recol = 6028/21646 22455/29592
 models_only = 1593
 name = Plant
+//Server
+desc=An unusual tree grows here.

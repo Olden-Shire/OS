@@ -12,3 +12,6 @@ count3 = 5141, 4
 count4 = 5142, 5
 cost = 8
 name = Sweetcorn seed
+//Server
+desc=A sweetcorn seed - plant in an allotment.
+weight=1g

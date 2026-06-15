@@ -9,3 +9,8 @@ zan2d = 2024
 xan2d = 322
 iop2 = Wear
 name = Diamond ring
+//Server
+desc=A valuable ring.
+wearpos=ring
+weight=6g
+category=category_656

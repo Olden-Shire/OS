@@ -4,3 +4,5 @@ hillskew = true
 recol = 5916/8
 models_only = 749
 name = Stalactite
+//Server
+desc=A limestone ceiling growth.

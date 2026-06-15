@@ -11,3 +11,7 @@ members = true
 recol1s = 25238
 recol1d = 22416
 name = Fremennik skirt
+//Server
+desc=The latest fashion in Rellekka.
+wearpos=legs
+weight=2lb

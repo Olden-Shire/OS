@@ -6,3 +6,7 @@ yan2d = 1668
 xan2d = 192
 members = true
 name = Pigeon cage
+//Server
+desc=It's empty...
+weight=500g
+tradeable=no

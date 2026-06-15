@@ -13,3 +13,8 @@ womanwear2 = 7005
 recol1s = 9529
 recol1d = 61871
 name = Shirt
+//Server
+desc=Tiny!
+weight=70g
+wearpos=torso
+wearpos2=arms

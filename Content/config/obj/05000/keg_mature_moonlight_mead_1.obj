@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = M'light mead(m1)
+//Server
+desc=This keg contains 1 pint of mature Moonlight Mead.
+weight=1oz

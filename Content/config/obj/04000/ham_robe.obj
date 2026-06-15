@@ -11,3 +11,7 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 61347
 name = Ham robe
+//Server
+desc=A vivid crimson robe.
+wearpos=legs
+weight=2lb

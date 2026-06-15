@@ -8,3 +8,8 @@ model = obj_dwarf_remains
 iop1 = Bury
 members = true
 name = Zadimus corpse
+//Server
+desc=The remains of Zadimus.
+weight=500g
+category=bones
+tradeable=no

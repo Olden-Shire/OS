@@ -10,3 +10,6 @@ cost = 1
 recol1s = 15013
 recol1d = 37159
 name = Blue toad
+//Server
+desc=A blue dye filled toad.
+weight=750g

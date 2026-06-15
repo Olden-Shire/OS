@@ -4,3 +4,6 @@ nonblockrange = true
 retex = 5/16 22/16
 models_only = 1213
 name = Table
+//Server
+desc=A nice sturdy looking table.
+category=usable_table

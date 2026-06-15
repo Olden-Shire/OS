@@ -7,3 +7,6 @@ xan2d = 300
 members = true
 iop5 = Destroy
 name = A magic scroll
+//Server
+desc=This scroll glows with an inner light.
+weight=20g

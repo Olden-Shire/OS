@@ -8,3 +8,6 @@ yan2d = 213
 xan2d = 555
 cost = 1
 name = Broken crab claw
+//Server
+desc=Darn, it's useless now.
+weight=5g

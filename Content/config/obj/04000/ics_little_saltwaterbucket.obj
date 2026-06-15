@@ -8,3 +8,6 @@ xan2d = 204
 iop4 = Empty
 members = true
 name = Full bucket
+//Server
+desc=It's a bucket of salty water.
+weight=3kg

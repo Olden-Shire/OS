@@ -8,3 +8,9 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_hard
+param=trail_desc,My name is like a tree,|yet it is spelt with a 'g'.|Come see the fur|which is right near me.
+tradeable=no

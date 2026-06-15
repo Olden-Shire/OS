@@ -10,3 +10,7 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 10508
 name = Black skirt
+//Server
+desc=Clothing favoured by women and dark wizards.
+wearpos=legs
+weight=2lb

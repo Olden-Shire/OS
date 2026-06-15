@@ -11,3 +11,6 @@ recol1d = 26
 recol2s = 204
 recol2d = 22
 name = Burnt rabbit
+//Server
+desc=This could be mistaken for charcoal.
+weight=300g

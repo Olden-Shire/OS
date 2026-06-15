@@ -1,3 +1,5 @@
 // loc 1033
 models_only = 1449
 name = Signpost
+//Server
+desc=This tells you which way is which.

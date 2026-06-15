@@ -6,3 +6,5 @@ width = 2
 length = 3
 models_only = 14144
 name = Boat
+//Server
+desc=It's our transport across the swamp.

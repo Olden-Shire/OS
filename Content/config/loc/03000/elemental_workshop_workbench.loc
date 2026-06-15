@@ -3,3 +3,5 @@ width = 3
 recol = 61/7566
 models_only = 18586
 name = Workbench
+//Server
+desc=Used for fashioning metal items.

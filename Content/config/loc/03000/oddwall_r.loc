@@ -6,3 +6,7 @@ recol = 24/9098 20/7050
 retex = 2/23
 models = 3367/0
 name = Odd looking wall
+//Server
+desc=A strange crack cuts into the wall.
+category=double_door_open_and_close_right
+param=next_loc_stage,openoddwall_r

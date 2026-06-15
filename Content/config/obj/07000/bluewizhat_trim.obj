@@ -14,3 +14,9 @@ womanhead = 11407
 recol1s = 24
 recol1d = 4
 name = Wizard hat (t)
+//Server
+desc=A silly pointed hat, with colourful trim.
+wearpos=hat
+weight=1lb
+param=magicattack,2
+param=magicdefence,2

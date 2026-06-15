@@ -8,3 +8,6 @@ xan2d = 132
 cost = 5
 members = true
 name = Tankard
+//Server
+desc=A big cup for a big thirst.
+weight=50g

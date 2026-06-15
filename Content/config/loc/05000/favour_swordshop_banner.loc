@@ -3,3 +3,5 @@ anim = 1430
 recol = 5404/6932
 models_only = 5653
 name = Swordshop Sign
+//Server
+desc=This shop deals in antique swords.

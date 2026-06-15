@@ -1,3 +1,5 @@
 // loc 1950
 models_only = 840
 name = Bricks
+//Server
+desc=A pile of bricks.

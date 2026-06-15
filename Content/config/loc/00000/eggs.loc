@@ -1,3 +1,5 @@
 // loc 302
 models_only = 1463
 name = Eggs
+//Server
+desc=A home for baby creatures.

@@ -7,3 +7,6 @@ xan2d = 88
 cost = 120
 members = true
 name = Oil lantern
+//Server
+desc=Put oil in to complete it.
+weight=2lb

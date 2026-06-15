@@ -14,3 +14,9 @@ recol1d = 41
 recol2s = 5532
 recol2d = 41
 name = Gloves
+//Server
+desc=These will keep my hands warm!
+wearpos=hands
+weight=1lb
+param=slashdefence,1
+param=crushdefence,2

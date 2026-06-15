@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 9556/8514
 models_only = 6800
 name = An ogre standard
+//Server
+desc=Not very high.

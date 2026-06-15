@@ -3,3 +3,5 @@ length = 3
 active = 1
 models_only = 1333
 name = Blurberry bar
+//Server
+desc=The Blurberry bar - cocktails extraordinaire!

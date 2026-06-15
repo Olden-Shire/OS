@@ -9,3 +9,6 @@ bgsound = 2066, 3
 recol = 33676/0
 models = 9294/10 9295/22
 name = Sulphur vent
+//Server
+desc=Hot enough to cook your breakfast on.
+category=cooking_fire

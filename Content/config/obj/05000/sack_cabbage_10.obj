@@ -9,3 +9,6 @@ iop1 = Fill
 iop2 = Remove-one
 ambient = 15
 name = Cabbages(10)
+//Server
+desc=There are 10 cabbages in this sack.
+weight=11lb

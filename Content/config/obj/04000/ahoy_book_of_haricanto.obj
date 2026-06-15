@@ -7,3 +7,6 @@ yan2d = 116
 xan2d = 244
 members = true
 name = Book of haricanto
+//Server
+desc=The Book of Haricanto.
+weight=4lb

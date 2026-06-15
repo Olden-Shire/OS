@@ -19,3 +19,8 @@ womanhead2 = 4211
 members = true
 cost = 5000
 name = Fremennik helm
+//Server
+desc=A sturdy helm worn only by Fremennik clan members.
+wearpos=hat
+wearpos2=head
+weight=6lb

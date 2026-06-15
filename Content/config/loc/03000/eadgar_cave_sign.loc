@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6036/7446 127/7446
 models_only = 1552
 name = Sign
+//Server
+desc=Welcome to Mad Eadgar's! If I'm not in, I've probably been captured again.

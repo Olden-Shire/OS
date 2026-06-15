@@ -13,3 +13,16 @@ womanwear = obj_gauntlets_of_cooking_womanwear, 0
 recol1s = 10004
 recol1d = 1825
 name = Chaos gauntlets
+//Server
+desc=These gauntlets empower spell casters.
+wearpos=hands
+weight=8oz
+category=category_16
+param=stabattack,2
+param=slashattack,2
+param=crushattack,2
+param=stabdefence,8
+param=slashdefence,9
+param=crushdefence,7
+param=strengthbonus,2
+tradeable=no

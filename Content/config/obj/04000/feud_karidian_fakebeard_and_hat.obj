@@ -7,3 +7,6 @@ yan2d = 72
 xan2d = 340
 members = true
 name = Karidian disguise
+//Server
+desc=Makes my face itch.
+weight=100g

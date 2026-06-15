@@ -16,3 +16,17 @@ recol1d = 8
 recol2s = 926
 recol2d = 48030
 name = Black full helm
+//Server
+desc=A full face helmet.
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=6lb
+category=armour_helmet
+param=magicattack,-6
+param=rangeattack,-2
+param=stabdefence,12
+param=slashdefence,13
+param=crushdefence,10
+param=magicdefence,-1
+param=rangedefence,12

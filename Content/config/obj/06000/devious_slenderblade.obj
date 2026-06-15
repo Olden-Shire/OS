@@ -12,3 +12,9 @@ iop5 = Destroy
 recol1s = 61
 recol1d = 43297
 name = Slender blade
+//Server
+desc=A slender two-handed sword.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb
+weight=7lb

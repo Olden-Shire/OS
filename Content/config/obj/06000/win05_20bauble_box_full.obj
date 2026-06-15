@@ -6,3 +6,6 @@ yan2d = 207
 xan2d = 165
 iop5 = Destroy
 name = Bauble box
+//Server
+desc=A box full of painted baubles. Give to a Pixie or use to decorate a tree.
+weight=2kg

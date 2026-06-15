@@ -8,3 +8,8 @@ members = true
 iop2 = Eat
 iop5 = Destroy
 name = Rock cake
+//Server
+desc=Handy if you want to break all your teeth.
+weight=25g
+category=category_734
+tradeable=no

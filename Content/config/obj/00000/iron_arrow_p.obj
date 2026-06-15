@@ -18,3 +18,13 @@ recol1d = 33
 recol2s = 57
 recol2d = 13221
 name = Iron arrow(p)
+//Server
+desc=Venomous looking arrows.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,10
+param=levelrequire,1
+param=proj_launch,iron_arrow_launch
+param=proj_travel,iron_arrow_travel
+param=poison_severity,20

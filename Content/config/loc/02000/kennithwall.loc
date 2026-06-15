@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 2142
 name = Crates
+//Server
+desc=Crates of packed fish.

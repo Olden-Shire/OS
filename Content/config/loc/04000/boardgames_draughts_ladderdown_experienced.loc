@@ -4,3 +4,5 @@ active = 1
 op1 = Climb-Down
 models_only = 1215
 name = Ladder
+//Server
+desc=The ladder back to the Draughts challenge room.

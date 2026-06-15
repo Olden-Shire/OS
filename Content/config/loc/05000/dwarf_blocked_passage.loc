@@ -5,3 +5,5 @@ hillskew = true
 active = 1
 models_only = 5850
 name = Passage
+//Server
+desc=A blocked passage.

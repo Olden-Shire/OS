@@ -11,3 +11,7 @@ zoom2d = 380
 xan2d = 2032
 iop5 = Destroy
 name = Nurse hat
+//Server
+desc=A nurses hat, but does it have healing powers?
+wearpos=hat
+weight=200g

@@ -1,3 +1,5 @@
 // loc 2783
 models_only = 1251
 name = Anvil
+//Server
+desc=Used for fashioning metal items.

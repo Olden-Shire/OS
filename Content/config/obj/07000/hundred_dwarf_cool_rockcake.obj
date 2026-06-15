@@ -13,3 +13,6 @@ recol1d = 7465
 recol2s = 4781
 recol2d = 6435
 name = Dwarven rock cake
+//Server
+desc=Cool and heavy as a brick. Only for dwarf consumption.
+weight=1lb

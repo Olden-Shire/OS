@@ -1,3 +1,5 @@
 // loc 4945
 models_only = 21229
 name = Mine cart
+//Server
+desc=A sunken mine cart, how useful.

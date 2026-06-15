@@ -15,3 +15,6 @@ recol2d = 16
 recol3s = 478
 recol3d = 32852
 name = Shadow diamond
+//Server
+desc=The Diamond of Shadow.
+weight=1g

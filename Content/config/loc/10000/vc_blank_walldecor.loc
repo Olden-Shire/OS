@@ -2,3 +2,5 @@
 active = 1
 models = 10050/4
 name = Hole in wall
+//Server
+desc=Big enough for a cat to get in.

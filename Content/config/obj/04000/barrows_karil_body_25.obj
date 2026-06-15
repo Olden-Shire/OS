@@ -21,3 +21,8 @@ recol4d = 10508
 recol5s = 908
 recol5d = 10760
 name = Karils top 25
+//Server
+desc=Karil the Tainted's leather body armour.
+weight=15lb
+wearpos=torso
+wearpos2=arms

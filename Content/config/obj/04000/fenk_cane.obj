@@ -7,3 +7,6 @@ zoom2d = 1450
 yan2d = 1988
 xan2d = 684
 name = Garden cane
+//Server
+desc=A length of garden cane.
+weight=100g

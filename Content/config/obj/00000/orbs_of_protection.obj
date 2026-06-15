@@ -7,3 +7,7 @@ xan2d = 92
 recol1s = 127
 recol1d = 19410
 name = Orbs of protection
+//Server
+desc=Two strange glowing green orbs.
+weight=2kg
+tradeable=no

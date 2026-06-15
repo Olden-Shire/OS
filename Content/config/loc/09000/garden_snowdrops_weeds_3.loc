@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 9201 7766
 name = Snowdrop patch
+//Server
+desc=You can grow snowdrops in this Farming patch.

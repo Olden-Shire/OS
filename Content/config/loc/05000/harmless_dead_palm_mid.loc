@@ -5,3 +5,5 @@ op1 = Climb up
 op2 = Climb down
 models_only = 4971
 name = Tree
+//Server
+desc=A well used tree.

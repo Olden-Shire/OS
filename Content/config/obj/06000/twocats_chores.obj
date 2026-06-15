@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 7516
 recol1d = 6744
 name = Chores
+//Server
+desc=A list of chores that Bob gave you to do.
+weight=5g

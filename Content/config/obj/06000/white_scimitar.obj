@@ -13,3 +13,7 @@ members = true
 recol1s = 61
 recol1d = 99
 name = White scimitar
+//Server
+desc=A vicious, curved sword.
+wearpos=righthand
+weight=4lb

@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 6241/13601
 models_only = 1078
 name = Skeleton
+//Server
+desc=Looks like he's been dead a while now...

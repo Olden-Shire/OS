@@ -7,3 +7,6 @@ bgsound = 2209, 10
 forceapproach = 13
 models_only = 11546
 name = Furnace
+//Server
+desc=A hot furnace.
+category=smithing_furnace

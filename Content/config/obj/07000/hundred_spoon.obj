@@ -10,3 +10,7 @@ manwear = obj_wooden_spoon_7433_wear, 0
 womanwear = obj_wooden_spoon_7433_wear, 6
 members = true
 name = Wooden spoon
+//Server
+desc=Spoooooon!
+wearpos=righthand
+weight=1lb

@@ -13,3 +13,6 @@ count3 = 5262, 4
 count4 = 5263, 5
 cost = 86
 name = Mushroom spore
+//Server
+desc=A Bittercap mushroom spore - plant in a mushroom patch.
+weight=1g

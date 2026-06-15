@@ -3,3 +3,5 @@ active = 1
 op2 = Weave
 models_only = 3915
 name = Loom
+//Server
+desc=A loom.

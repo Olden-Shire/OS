@@ -2,3 +2,5 @@
 sharelight = true
 models_only = 10759
 name = Trawler net
+//Server
+desc=Smells like fish.

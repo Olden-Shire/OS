@@ -17,3 +17,16 @@ recol2d = 21776
 recol3s = 24
 recol3d = 14515
 name = Adam platebody (t)
+//Server
+desc=Adamant platebody with trim.
+wearpos=torso
+wearpos2=arms
+weight=25lb
+category=armour_body
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,65
+param=slashdefence,63
+param=crushdefence,55
+param=magicdefence,-6
+param=rangedefence,63

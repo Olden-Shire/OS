@@ -9,3 +9,9 @@ manwear = obj_enchanted_robe_7398_man, 0
 womanwear = obj_enchanted_robe_7398_woman, 0
 members = true
 name = Enchanted robe
+//Server
+desc=Enchanted Wizards robes.
+wearpos=legs
+weight=4lb
+param=magicattack,15
+param=magicdefence,15

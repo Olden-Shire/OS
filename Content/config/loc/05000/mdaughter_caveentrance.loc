@@ -6,3 +6,5 @@ op1 = Enter
 recol = 6036/119 5008/94 1932/70 904/45 900/20
 models_only = 731
 name = Cave entrance
+//Server
+desc=There's a nasty stench coming from the cave.

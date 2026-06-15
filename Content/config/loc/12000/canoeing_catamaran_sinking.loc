@@ -3,3 +3,5 @@ anim = 3305
 width = 3
 models_only = 11993
 name = A Sinking Canoe
+//Server
+desc=Glug glug glug

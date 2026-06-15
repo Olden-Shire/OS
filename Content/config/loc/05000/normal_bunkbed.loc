@@ -2,3 +2,5 @@
 length = 2
 models_only = 5440
 name = Bed
+//Server
+desc=A thoroughly used bed.

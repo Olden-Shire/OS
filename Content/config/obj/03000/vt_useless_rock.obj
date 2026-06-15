@@ -12,3 +12,8 @@ iop2 = Wield
 recol1s = 59294
 recol1d = 41
 name = Pet rock
+//Server
+desc=The lowest maintenance pet you will ever have.
+weight=3lb
+wearpos=righthand
+wearpos2=lefthand

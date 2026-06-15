@@ -8,3 +8,7 @@ xan2d = 443
 members = true
 iop1 = Look-at
 name = Level 1 certificate
+//Server
+desc=The owner has passed the Earth Sciences level 1 exam.
+weight=20g
+tradeable=no

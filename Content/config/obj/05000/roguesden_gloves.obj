@@ -11,3 +11,7 @@ yan2d = 60
 xan2d = 376
 cost = 250
 name = Rogue gloves
+//Server
+desc=Black banded leather gloves, a rogue's dream!
+wearpos=hands
+weight=1lb

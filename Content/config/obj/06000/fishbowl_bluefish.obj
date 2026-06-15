@@ -17,3 +17,7 @@ womanwear = obj_fishbowl_6670_wear, 6
 recol1s = 41938
 recol1d = 42330
 name = Fishbowl
+//Server
+desc=A fishbowl with a Tiny Bluefish in it.
+weight=5lb
+wearpos=righthand

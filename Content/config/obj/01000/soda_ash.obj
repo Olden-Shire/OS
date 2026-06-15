@@ -9,3 +9,6 @@ xan2d = 264
 recol1s = 82
 recol1d = 111
 name = Soda ash
+//Server
+desc=One of the ingredients for making glass.
+weight=2oz

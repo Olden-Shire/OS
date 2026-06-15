@@ -3,3 +3,5 @@ mirror = true
 active = 1
 models = 6069/0
 name = Door
+//Server
+desc=Open.

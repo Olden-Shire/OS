@@ -5,3 +5,6 @@ zoom2d = 670
 yan2d = 116
 xan2d = 116
 name = Garlic
+//Server
+desc=A clove of garlic.
+weight=1oz

@@ -10,3 +10,7 @@ manwear = obj_egg_whisk_7435_wear, 0
 womanwear = obj_egg_whisk_7435_wear, 6
 members = true
 name = Egg whisk
+//Server
+desc=A large whisk of death.
+wearpos=righthand
+weight=1lb

@@ -8,3 +8,6 @@ mapscene = 8
 op2 = Investigate
 models_only = 24520 24521
 name = Sinclair family fountain
+//Server
+desc=This fountain suits the garden.
+category=watersource

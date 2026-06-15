@@ -3,3 +3,5 @@ op1 = Open
 nonblockrange = true
 models = 9480/0
 name = Cell door
+//Server
+desc=A prison cell door.

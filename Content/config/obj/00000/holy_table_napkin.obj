@@ -8,3 +8,7 @@ zoom2d = 670
 yan2d = 1932
 xan2d = 440
 name = Holy table napkin
+//Server
+desc=A cloth given to me by Sir Galahad.
+weight=1oz
+tradeable=no

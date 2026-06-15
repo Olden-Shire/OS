@@ -5,3 +5,5 @@ op2 = Close
 blockwalk = true
 models = 1173/22
 name = Trapdoor
+//Server
+desc=I can see a holy barrier at the bottom.

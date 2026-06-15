@@ -1,3 +1,5 @@
 // loc 9548
 models_only = 9522
 name = Hot Coals
+//Server
+desc=A bucket full of red hot coals.

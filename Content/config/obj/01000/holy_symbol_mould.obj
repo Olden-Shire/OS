@@ -6,3 +6,7 @@ zoom2d = 800
 yan2d = 96
 xan2d = 320
 name = Holy mould
+//Server
+desc=Used to make Holy Symbols of Saradomin.
+weight=1lb
+respawnrate=200

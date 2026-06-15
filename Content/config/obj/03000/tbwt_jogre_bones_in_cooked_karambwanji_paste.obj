@@ -10,3 +10,8 @@ iop1 = Bury
 recol1s = 10529
 recol1d = 10316
 name = Pasty jogre bones
+//Server
+desc=Jogre bones smothered with cooked Karambwanji paste.
+weight=800g
+category=bones
+param=bone_exp,160

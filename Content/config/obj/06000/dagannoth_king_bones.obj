@@ -8,3 +8,7 @@ members = true
 recol1s = 127
 recol1d = 10295
 name = Dagannoth bones
+//Server
+desc=These would feed a dogfish for months!
+weight=1500g
+category=bones

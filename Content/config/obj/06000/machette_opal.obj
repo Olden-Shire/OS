@@ -15,3 +15,7 @@ recol1d = 10465
 recol2s = 70
 recol2d = 49
 name = Opal machete
+//Server
+desc=A jungle specific slashing device.
+wearpos=righthand
+weight=3lb

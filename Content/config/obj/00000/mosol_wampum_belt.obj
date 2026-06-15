@@ -6,3 +6,7 @@ yan2d = 2040
 xan2d = 436
 members = true
 name = Wampum belt
+//Server
+desc=A decorated belt used to trade information between distant villages.
+weight=1lb
+tradeable=no

@@ -3,3 +3,5 @@ op1 = Stand-on
 blockwalk = true
 models = 14143/22
 name = Bog
+//Server
+desc=Gloopy, sticky, muddy bog...

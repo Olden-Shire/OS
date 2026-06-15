@@ -4,3 +4,5 @@ length = 2
 recol = 6371/8514
 models_only = 1421 1456
 name = Fur stall
+//Server
+desc=These will keep you warm.

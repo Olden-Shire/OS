@@ -7,3 +7,7 @@ zoom2d = 1360
 yan2d = 1881
 xan2d = 498
 name = Fishing pass
+//Server
+desc=Pass to the Hemenster fishing contest.
+weight=6g
+tradeable=no

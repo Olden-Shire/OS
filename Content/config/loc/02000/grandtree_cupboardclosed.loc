@@ -4,3 +4,6 @@ forceapproach = 13
 op1 = Open
 models_only = 2247
 name = Cupboard
+//Server
+desc=This may be worth opening.
+param=cupboard_other,grandtree_cupboardopen

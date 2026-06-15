@@ -2,3 +2,5 @@
 op1 = Climb-down
 models_only = 5756
 name = Dark hole
+//Server
+desc=An entrance to the dark caves.

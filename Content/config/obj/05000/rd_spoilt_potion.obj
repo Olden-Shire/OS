@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 21729
 name = ??? mixture
+//Server
+desc=It looks horrible. I think I messed something up.
+weight=2oz

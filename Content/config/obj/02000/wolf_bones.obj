@@ -10,3 +10,8 @@ iop1 = Bury
 recol1s = 127
 recol1d = 10326
 name = Wolf bones
+//Server
+desc=Bones of a recently slain wolf.
+weight=500g
+category=bones
+param=bone_exp,45

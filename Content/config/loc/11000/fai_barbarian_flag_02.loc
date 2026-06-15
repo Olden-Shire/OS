@@ -4,3 +4,5 @@ ambient = 20
 blockwalk = true
 models_only = 11831
 name = Standard
+//Server
+desc=A barbarian flag.

@@ -8,3 +8,6 @@ xan2d = 152
 members = true
 cost = 1
 name = Naphtha apple mix
+//Server
+desc=A barrel full of rotten apples and naphtha.
+weight=32kg

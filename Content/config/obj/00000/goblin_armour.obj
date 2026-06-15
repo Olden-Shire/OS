@@ -6,3 +6,8 @@ zoom2d = 1244
 xan2d = 611
 iop2 = Wear
 name = Goblin mail
+//Server
+desc=Armour designed to fit goblins.
+weight=8lb
+wearpos=torso
+category=category_528

@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 5541/8602 5665/8598 5660/8846 5784/8722 5904/8844
 models_only = 8232 9531
 name = Barrel
+//Server
+desc=A wooden barrel full of stale beer.

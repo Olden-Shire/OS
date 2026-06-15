@@ -4,3 +4,5 @@ op1 = Open
 op2 = Pick-lock
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=A secure door.

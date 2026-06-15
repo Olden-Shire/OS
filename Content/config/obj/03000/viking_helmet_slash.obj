@@ -18,3 +18,8 @@ womanhead = 4216
 womanhead2 = 4215
 members = true
 name = Warrior helm
+//Server
+desc=This helmet is worn by warriors.
+wearpos=hat
+wearpos2=head
+weight=6lb

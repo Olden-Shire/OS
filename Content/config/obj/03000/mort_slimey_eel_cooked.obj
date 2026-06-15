@@ -17,3 +17,6 @@ recol4d = 1597
 recol5s = 119
 recol5d = 11173
 name = Cooked slimy eel
+//Server
+desc=A cooked slimy eel - not delicious, but pretty nutritious.
+weight=2kg

@@ -4,3 +4,5 @@ width = 4
 active = 1
 models_only = 5847
 name = Giant Dwarf
+//Server
+desc=A fine piece of sculpting.

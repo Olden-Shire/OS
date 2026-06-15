@@ -13,3 +13,8 @@ recol1d = 10324
 recol2s = 7116
 recol2d = 10328
 name = Moonlight mead
+//Server
+desc=A foul smelling brew.
+weight=550g
+category=alcoholic_drinks
+param=next_obj_stage,beer_glass

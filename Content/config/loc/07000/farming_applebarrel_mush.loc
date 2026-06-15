@@ -1,3 +1,5 @@
 // loc 7404
 models_only = 7763
 name = Apple Barrel
+//Server
+desc=A barrel full of mushed apples.

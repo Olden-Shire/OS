@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 8297
 name = Table
+//Server
+desc=A nice sturdy looking table.

@@ -3,3 +3,6 @@ nonblockrange = true
 recol = 6443/13596 6439/13592 6563/13716 6558/13840 6682/13964 6806/14216
 models_only = 7685
 name = Crate
+//Server
+desc=A wooden crate.
+category=empty_crate

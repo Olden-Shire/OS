@@ -14,3 +14,7 @@ recol1d = 4769
 recol2s = 54397
 recol2d = 4769
 name = Brown apron
+//Server
+desc=A mostly clean apron.
+wearpos=torso
+weight=1lb

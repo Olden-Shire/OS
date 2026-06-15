@@ -6,3 +6,6 @@ zoom2d = 780
 yan2d = 1828
 xan2d = 132
 name = Poison
+//Server
+desc=This stuff looks nasty.
+weight=20g

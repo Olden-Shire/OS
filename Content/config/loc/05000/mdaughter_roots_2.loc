@@ -4,3 +4,5 @@ op1 = Dig-below
 nonblockrange = true
 models_only = 2173
 name = Roots
+//Server
+desc=Sticky, dirty roots covered in sticky, dirty mud.

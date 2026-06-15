@@ -4,3 +4,5 @@ length = 2
 op1 = Enter
 models_only = 731
 name = Cave entrance
+//Server
+desc=It looks like I can squeeze through here.

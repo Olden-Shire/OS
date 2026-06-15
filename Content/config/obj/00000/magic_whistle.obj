@@ -8,3 +8,7 @@ yan2d = 1208
 xan2d = 152
 iop1 = Blow
 name = Magic whistle
+//Server
+desc=A small tin whistle.
+weight=5g
+tradeable=no

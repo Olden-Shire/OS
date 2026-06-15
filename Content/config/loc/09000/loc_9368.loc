@@ -8,3 +8,5 @@ bgsound = 2066, 3
 recol = 33676/0
 models_only = 9290
 name = Hot vent door
+//Server
+desc=A barrier of heat.

@@ -7,3 +7,6 @@ xan2d = 84
 members = true
 iop1 = Open
 name = Nitrous oxide
+//Server
+desc=A vial of something labelled 'Nitrous Oxide'.
+weight=2oz

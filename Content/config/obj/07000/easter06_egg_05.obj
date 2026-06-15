@@ -4,3 +4,6 @@ zoom2d = 789
 yan2d = 1411
 iop1 = Eat
 name = Easter egg
+//Server
+desc="Best before 24th April."
+weight=1g

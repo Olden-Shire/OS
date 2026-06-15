@@ -4,3 +4,5 @@ op1 = Climb-up
 mapscene = 7
 models_only = 1208
 name = Ladder
+//Server
+desc=A fancy hole in the ceiling.

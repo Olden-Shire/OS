@@ -12,3 +12,16 @@ womanwear = obj_bronze_kiteshield_1189_wear, 6
 recol1s = 57
 recol1d = 7054
 name = Steel kiteshield
+//Server
+desc=A large metal shield.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,13
+param=slashdefence,15
+param=crushdefence,14
+param=magicdefence,-1
+param=rangedefence,14
+param=defend_anim,human_shield_defence

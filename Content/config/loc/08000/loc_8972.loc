@@ -8,3 +8,5 @@ active = 1
 bgsound = 3139, 3
 models_only = 2318
 name = Portal
+//Server
+desc=A portal back to the real world...

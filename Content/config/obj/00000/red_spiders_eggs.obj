@@ -6,3 +6,8 @@ zoom2d = 1500
 yan2d = 12
 xan2d = 252
 name = Red spiders' eggs
+//Server
+desc=Ewww!
+weight=7g
+param=brew_potion_struct,3dose1restore
+param=brew_potion_struct_secondary,3dose2restore

@@ -10,3 +10,15 @@ yan2d = 236
 xan2d = 564
 members = true
 name = Granite shield
+//Server
+desc=A solid stone shield.
+weight=15lb
+wearpos=lefthand
+category=armour_shield
+param=magicattack,-12
+param=rangeattack,-8
+param=stabdefence,40
+param=slashdefence,42
+param=crushdefence,38
+param=magicdefence,-2
+param=rangedefence,65

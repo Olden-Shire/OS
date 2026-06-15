@@ -11,3 +11,6 @@ members = true
 recol1s = 10258
 recol1d = 9779
 name = Spider on shaft
+//Server
+desc=A nicely roasted spider threaded onto an arrow shaft.
+weight=900g

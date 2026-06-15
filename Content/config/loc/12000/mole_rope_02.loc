@@ -5,3 +5,5 @@ active = 1
 op1 = Climb
 models_only = 12039
 name = Rope
+//Server
+desc=I can climb out of this cave from here.

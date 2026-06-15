@@ -10,3 +10,9 @@ cost = 300
 recol1s = 43117
 recol1d = 43968
 name = Water orb
+//Server
+desc=A magic glowing orb.
+weight=1lb
+category=craft_orb
+category=craft_orb
+param=crafting_staff_struct,water_orb

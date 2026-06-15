@@ -5,3 +5,5 @@ ambient = 25
 contrast = 25
 models = 662/10 656/0
 name = Crumbling wall
+//Server
+desc=It looks like I might be able to climb over this piece of the wall...

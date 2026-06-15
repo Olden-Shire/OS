@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 14243
 name = Agility potion(3)
+//Server
+desc=3 doses of agility potion.
+weight=30g
+category=potion
+param=next_obj_stage,2dose1agility
+param=decant_potion_enum,potion_1agility
+param=dose_count,3

@@ -10,3 +10,7 @@ zoom2d = 750
 yan2d = 284
 xan2d = 308
 name = Splitbark gauntlets
+//Server
+desc=These should keep my hands safe.
+wearpos=hands
+weight=2lb

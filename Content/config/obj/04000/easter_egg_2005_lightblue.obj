@@ -13,3 +13,6 @@ iop1 = Eat
 recol1s = 39896
 recol1d = 38115
 name = Blue sweets
+//Server
+desc=Not likely to last until next Halloween.
+weight=10g

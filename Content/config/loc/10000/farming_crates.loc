@@ -2,3 +2,5 @@
 ambient = 15
 models_only = 7700
 name = Crates
+//Server
+desc=Securely sealed crates that seem to be full of farming equipment.

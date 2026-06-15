@@ -3,3 +3,5 @@ active = 1
 ambient = 10
 models_only = 12046
 name = Well
+//Server
+desc=A well, it is not safe to climb down.

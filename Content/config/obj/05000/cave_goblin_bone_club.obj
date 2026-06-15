@@ -10,3 +10,7 @@ yan2d = 464
 xan2d = 500
 iop2 = Wield
 name = Bone club
+//Server
+desc=Basic but brutal!
+weight=2lb
+wearpos=righthand

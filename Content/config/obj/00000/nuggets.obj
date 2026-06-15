@@ -7,3 +7,7 @@ xan2d = 320
 members = true
 stackable = true
 name = Nuggets
+//Server
+desc=Pure, lovely gold!
+weight=4oz
+tradeable=no

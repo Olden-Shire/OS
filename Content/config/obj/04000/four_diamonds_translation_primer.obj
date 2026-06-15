@@ -11,3 +11,6 @@ recol1d = 542
 recol2s = 10351
 recol2d = 10465
 name = Translation
+//Server
+desc=A rough translation made from archaeological etchings.
+weight=18oz

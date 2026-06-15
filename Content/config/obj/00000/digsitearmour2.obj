@@ -9,3 +9,7 @@ members = true
 recol1s = 45
 recol1d = 8472
 name = Broken armour
+//Server
+desc=No use to me...
+weight=17lb
+tradeable=no

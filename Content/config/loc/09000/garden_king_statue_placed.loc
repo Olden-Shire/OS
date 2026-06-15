@@ -3,3 +3,5 @@ ambient = 10
 noshadow = true
 models_only = 9133 9131
 name = Statue
+//Server
+desc=An expertly carved statue of a former King of Misthalin.

@@ -3,3 +3,5 @@ ambient = 35
 nonblockrange = true
 models_only = 7699
 name = Crate
+//Server
+desc=A wooden crate.

@@ -6,3 +6,7 @@ zoom2d = 630
 yan2d = 120
 xan2d = 320
 name = Wig
+//Server
+desc=A wig that has been dyed slightly blonde.
+weight=1lb
+tradeable=no

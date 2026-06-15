@@ -5,3 +5,5 @@ ambient = 20
 recol = 21526/7481
 models_only = 4476
 name = Pile of bricks
+//Server
+desc=Not the most inspired architectural design.

@@ -3,3 +3,5 @@ width = 2
 recol = 7465/7609 6439/7603 7461/7723 7326/16433
 models_only = 1510
 name = Scaffold
+//Server
+desc=An old-looking bit of scaffolding.

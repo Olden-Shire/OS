@@ -11,3 +11,6 @@ members = true
 recol1s = 127
 recol1d = 152
 name = Jug of vinegar
+//Server
+desc=This wine clearly did not age well.
+weight=1kg

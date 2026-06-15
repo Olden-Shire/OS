@@ -4,3 +4,5 @@ op1 = Enter
 ambient = 25
 models_only = 3996
 name = Huge Gate
+//Server
+desc=You'd need a big siege engine to force that.

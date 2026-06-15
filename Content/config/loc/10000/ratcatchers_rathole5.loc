@@ -4,3 +4,5 @@ contrast = 25
 active = 1
 models = 10051/4
 name = Rat hole
+//Server
+desc=A rats home.

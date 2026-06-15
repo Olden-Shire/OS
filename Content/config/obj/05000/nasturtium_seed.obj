@@ -13,3 +13,6 @@ count3 = 5198, 4
 count4 = 5199, 5
 cost = 11
 name = Nasturtium seed
+//Server
+desc=A nasturtium seed - plant in a flower patch.
+weight=1g

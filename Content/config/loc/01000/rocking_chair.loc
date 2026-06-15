@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 1188
 name = Rocking chair
+//Server
+desc=Good for rocking in!

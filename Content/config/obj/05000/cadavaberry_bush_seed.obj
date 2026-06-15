@@ -15,3 +15,6 @@ cost = 9
 recol1s = 431
 recol1d = 54577
 name = Cadavaberry seed
+//Server
+desc=A cadavaberry bush seed - plant in a bush patch.
+weight=1g

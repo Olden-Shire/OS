@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 64
 name = Lantadyme seed
+//Server
+desc=A lantadyme seed - plant in a herb patch.
+weight=1g

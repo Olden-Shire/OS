@@ -5,3 +5,5 @@ width = 2
 bgsound = 3087, 10
 models = 5514/10 5515/1
 name = Rock
+//Server
+desc=A rock.

@@ -6,3 +6,6 @@ yof2d = -1
 zoom2d = 1560
 yan2d = 1964
 name = Snake basket full
+//Server
+desc=This basket contains a snake.
+weight=1kg

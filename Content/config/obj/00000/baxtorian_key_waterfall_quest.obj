@@ -7,3 +7,7 @@ yan2d = 20
 xan2d = 328
 members = true
 name = A key
+//Server
+desc=This will unlock something.
+weight=10g
+tradeable=no

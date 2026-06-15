@@ -10,3 +10,5 @@ iop1 = Open
 members = true
 stackable = true
 name = Casket
+//Server
+desc=I hope there's treasure in it.

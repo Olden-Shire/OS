@@ -2,3 +2,5 @@
 op1 = Climb
 models = 2056/4
 name = Protruding rocks
+//Server
+desc=Looks like I can climb these.

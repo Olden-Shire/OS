@@ -6,3 +6,5 @@ sharelight = true
 op1 = Enter
 models_only = 6513
 name = Tunnel
+//Server
+desc=A tunnel leading upwards.

@@ -13,3 +13,9 @@ womanwear = obj_ikov_bootsoflightness_womanwear, 0
 recol1s = 4626
 recol1d = 8615
 name = Slave boots
+//Server
+desc=A set of filthy, smelly, flea infested desert slave boots.
+weight=24oz
+wearpos=feet
+category=category_118
+tradeable=no

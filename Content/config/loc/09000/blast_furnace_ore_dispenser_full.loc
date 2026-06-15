@@ -3,3 +3,5 @@ width = 2
 active = 1
 models_only = 9075
 name = Bar dispenser
+//Server
+desc=The bars are glowing hot!

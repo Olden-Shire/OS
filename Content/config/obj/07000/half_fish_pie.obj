@@ -20,3 +20,6 @@ recol4d = 7841
 recol5s = 4416
 recol5d = 6443
 name = Half a fish pie
+//Server
+desc=Bounty of the sea.
+weight=1g

@@ -13,3 +13,8 @@ womanhead = 87
 recol1s = 926
 recol1d = 11200
 name = Yellow partyhat
+//Server
+desc=A nice hat from a cracker.
+wearpos=hat
+weight=2oz
+param=party_clean_exempt,^true

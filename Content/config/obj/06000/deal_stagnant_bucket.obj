@@ -9,3 +9,6 @@ xan2d = 204
 recol1s = 39834
 recol1d = 28067
 name = Bucket of water
+//Server
+desc=It's a bucket of... water?
+weight=3kg

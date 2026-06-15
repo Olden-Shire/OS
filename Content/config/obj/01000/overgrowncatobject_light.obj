@@ -16,3 +16,9 @@ recol3d = 127
 recol4s = 123
 recol4d = 0
 name = Pet cat
+//Server
+desc=This cat is so well fed it can hardly move.
+weight=2500g
+category=overgrown
+param=follower_id,overgrowncat_light
+tradeable=no

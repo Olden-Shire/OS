@@ -9,3 +9,7 @@ yan2d = 68
 xan2d = 184
 cost = 1
 name = Stone bowl
+//Server
+desc=A magic stone bowl for catching the tears of Guthix.
+wearpos=righthand
+weight=4lb

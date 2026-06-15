@@ -15,3 +15,13 @@ recol1d = 937
 recol2s = 41
 recol2d = 43945
 name = Carnillean armour
+//Server
+desc=Decorative armour; an heirloom of the Carnillean family.
+wearpos=torso
+wearpos2=arms
+weight=20lb
+category=armour_body
+param=stabdefence,20
+param=slashdefence,14
+param=crushdefence,8
+tradeable=no

@@ -4,3 +4,5 @@ anim = 2899
 forceapproach = 11
 models_only = 10059
 name = Rat lever
+//Server
+desc=Opens the rat door.

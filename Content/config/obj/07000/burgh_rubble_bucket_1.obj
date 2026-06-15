@@ -10,3 +10,6 @@ members = true
 recol1s = 5161
 recol1d = 10512
 name = Bucket of rubble
+//Server
+desc=A bucket partially filled with rubble.
+weight=2500g

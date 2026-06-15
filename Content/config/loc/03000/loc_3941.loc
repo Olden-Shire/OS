@@ -5,3 +5,5 @@ op1 = Follow
 nonsolid = true
 models = 3910/22
 name = Tracks
+//Server
+desc=Tracks in the soil.

@@ -3,3 +3,5 @@ op1 = Smash
 recol = 33/677
 models_only = 1460
 name = Barrel
+//Server
+desc=Strangely, there's a locked barrel here, I wonder what's inside.

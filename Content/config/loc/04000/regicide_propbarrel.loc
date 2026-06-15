@@ -2,3 +2,5 @@
 anim = 1231
 models_only = 3965
 name = Barrel
+//Server
+desc=A barrel.

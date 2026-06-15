@@ -9,3 +9,7 @@ cost = 1
 recol1s = 4032
 recol1d = 28
 name = Burnt lobster
+//Server
+desc=Oops!
+weight=300g
+category=category_116

@@ -3,3 +3,5 @@ nonsolid = true
 recol = 6241/17459
 models_only = 1078
 name = Corpse
+//Server
+desc=How do you make a skeleton laugh?

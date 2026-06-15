@@ -3,3 +3,5 @@ nonsolid = true
 recol = 5660/6453
 models = 2100/10 7745/4
 name = Clothing shelves
+//Server
+desc=Tailor-made for needlework supplies.

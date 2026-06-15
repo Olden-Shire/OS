@@ -7,3 +7,5 @@ op1 = Add
 recol = 43943/19992 6457/22305 6573/22424 5543/22416
 models_only = 10479 10469
 name = Puppet arms
+//Server
+desc=Box containing green puppet arms.

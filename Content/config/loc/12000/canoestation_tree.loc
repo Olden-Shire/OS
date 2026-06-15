@@ -5,3 +5,5 @@ op1 = Chop-down
 op3 = Hidden
 models_only = 11990
 name = Canoe Station
+//Server
+desc=You can create a canoe here.

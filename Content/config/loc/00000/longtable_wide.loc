@@ -4,3 +4,6 @@ length = 2
 nonblockrange = true
 models_only = 1248
 name = Table
+//Server
+desc=A banquet could be eaten from this.
+category=unusable_table

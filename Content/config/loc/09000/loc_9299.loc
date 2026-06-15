@@ -5,3 +5,5 @@ active = 1
 op1 = Squeeze-through
 models = 9238/0
 name = Fence
+//Server
+desc=Ornate railing.

@@ -4,3 +4,6 @@ zoom2d = 540
 model = obj_scrying_orb_5519
 members = true
 name = Scrying orb
+//Server
+desc=This orb apparently contains a cypher spell.
+weight=50g

@@ -7,3 +7,5 @@ resizey = 100
 resizez = 100
 models_only = 1715
 name = Dead tree
+//Server
+desc=This tree has long been dead.

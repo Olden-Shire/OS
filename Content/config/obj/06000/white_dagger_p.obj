@@ -21,3 +21,7 @@ recol4d = 99
 recol5s = 103
 recol5d = 115
 name = White dagger(p)
+//Server
+desc=This dagger is poisoned.
+wearpos=righthand
+weight=1lb

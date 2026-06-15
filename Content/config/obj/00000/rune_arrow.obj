@@ -18,3 +18,15 @@ recol1d = 36133
 recol2s = 57
 recol2d = 36133
 name = Rune arrow
+//Server
+desc=Arrows with rune heads.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,49
+param=levelrequire,40
+param=proj_launch,rune_arrow_launch
+param=proj_travel,rune_arrow_travel
+param=weapon_poisoned,rune_arrow_p
+param=weapon_poisoned_message,You poison some arrows.
+param=next_obj_stage,rune_unlitarrow

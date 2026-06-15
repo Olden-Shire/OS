@@ -3,3 +3,5 @@ op1 = Open
 mirror = true
 models_only = 11450
 name = Sewer pipe
+//Server
+desc=An outlet to the sewer.

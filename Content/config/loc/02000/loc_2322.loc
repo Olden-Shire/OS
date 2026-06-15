@@ -4,3 +4,9 @@ length = 6
 nonsolid = true
 models_only = 2277
 name = Ropeswing
+//Server
+desc=Use this to swing across gaps.
+category=island_rope_swing
+param=start_coord,0_42_50_21_9
+param=end_coord,0_42_50_16_9
+param=dir,3

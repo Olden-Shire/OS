@@ -3,3 +3,5 @@ ambient = 50
 active = 1
 models = 2040/4
 name = Bank notice board
+//Server
+desc='Ask about our low, low interest rates!'

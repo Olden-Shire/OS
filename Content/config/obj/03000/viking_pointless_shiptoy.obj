@@ -10,3 +10,6 @@ xan2d = 68
 ambient = 20
 contrast = 20
 name = Toy ship
+//Server
+desc=Might be fun to play with in the bath.
+weight=400g

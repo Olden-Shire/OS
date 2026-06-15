@@ -6,3 +6,5 @@ resizey = 100
 resizez = 100
 models_only = 9541
 name = Plant
+//Server
+desc=A small plant, suitable for sandy soil.

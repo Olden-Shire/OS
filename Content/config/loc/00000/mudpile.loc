@@ -2,3 +2,5 @@
 length = 2
 models_only = 1411
 name = Mudpile
+//Server
+desc=A pile of something I hope is mud.

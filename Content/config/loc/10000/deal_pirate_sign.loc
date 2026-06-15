@@ -3,3 +3,5 @@ ambient = 20
 contrast = 10
 models_only = 9871
 name = Pirate Sign
+//Server
+desc=The blood-chilling flag of the Inebriated.

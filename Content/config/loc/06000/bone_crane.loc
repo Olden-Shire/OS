@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 6928 6929
 name = Bone Crane
+//Server
+desc=Looks like its no longer operational.

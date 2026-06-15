@@ -4,3 +4,5 @@ op2 = Search
 hillskew = true
 models_only = 1390
 name = Well stacked rocks
+//Server
+desc=Rocks that have been stacked at regular intervals.

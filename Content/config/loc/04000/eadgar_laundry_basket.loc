@@ -3,3 +3,5 @@ op1 = Search
 nonblockrange = true
 models_only = 4066
 name = Laundry Basket
+//Server
+desc=It's full of dirty robes.

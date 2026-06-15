@@ -6,3 +6,6 @@ xan2d = 415
 members = true
 iop5 = Destroy
 name = Dragon token
+//Server
+desc=It's got a dragon on it.
+weight=10g

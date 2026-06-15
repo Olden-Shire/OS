@@ -7,3 +7,6 @@ yan2d = 69
 xan2d = 699
 members = true
 name = Vanilla pod
+//Server
+desc=Surprise, it looks like a vanilla pod.
+weight=3g

@@ -13,3 +13,6 @@ recol1d = 10518
 recol2s = 6806
 recol2d = 16656
 name = Long vine
+//Server
+desc=A long section of vine made up of lots of shorter sections.
+weight=3lb

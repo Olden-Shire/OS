@@ -7,3 +7,5 @@ op3 = Climb-down
 mapscene = 7
 models_only = 4566 4567
 name = Iron ladder
+//Server
+desc=I could climb this if I wanted.

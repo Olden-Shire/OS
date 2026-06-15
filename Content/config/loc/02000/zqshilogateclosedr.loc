@@ -4,3 +4,6 @@ mirror = true
 nonblockrange = true
 models = 1509/0 1511/9
 name = Metal gate
+//Server
+desc=The gate is closed.
+category=shilo_metalgate

@@ -4,3 +4,5 @@ op1 = Pull
 op2 = Search for traps
 models = 2108/4
 name = Lever
+//Server
+desc=I don't like the look of this!

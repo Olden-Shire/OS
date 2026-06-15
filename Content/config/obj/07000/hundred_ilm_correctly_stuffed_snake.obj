@@ -20,3 +20,6 @@ recol5d = 21534
 recol6s = 21526
 recol6d = 21534
 name = Raw stuffed snake
+//Server
+desc=This snake is stuffed right up.
+weight=3kg

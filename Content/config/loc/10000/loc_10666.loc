@@ -4,3 +4,5 @@ length = 3
 op1 = Unwrap presents
 models_only = 10498 10463
 name = Gifts
+//Server
+desc=Boxes containing stuff.

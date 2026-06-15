@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 5525 5526
 name = Heather
+//Server
+desc=I ponder... Why is it purple?

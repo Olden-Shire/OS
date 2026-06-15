@@ -4,3 +4,7 @@ op4 = Pay-toll(10gp)
 mirror = true
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=The toll gate from Lumbridge to Al-Kharid.
+category=border_gate_toll_right
+param=next_loc_stage,loc_1563

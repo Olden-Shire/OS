@@ -4,3 +4,5 @@ active = 1
 op1 = Steal-From
 models_only = 17324 20323
 name = Counter
+//Server
+desc=An ogre is selling cakes here.

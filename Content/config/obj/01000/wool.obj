@@ -5,3 +5,7 @@ zoom2d = 1070
 yan2d = 160
 xan2d = 332
 name = Wool
+//Server
+desc=I think this came from a sheep.
+weight=3g
+param=crafting_spinning_struct,wool

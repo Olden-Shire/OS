@@ -18,3 +18,7 @@ recol3d = 1356
 recol4s = 926
 recol4d = 1325
 name = Cape
+//Server
+desc=It's a bit pink.
+wearpos=back
+weight=1lb

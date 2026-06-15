@@ -11,3 +11,8 @@ xan2d = 540
 members = true
 cost = 35
 name = Menap headgear
+//Server
+desc=Good for keeping the sun off my neck.
+wearpos=hat
+wearpos2=head
+weight=5g

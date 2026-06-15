@@ -3,3 +3,5 @@ op1 = Take
 nonsolid = true
 models_only = 6445
 name = Canopic Jar
+//Server
+desc=Has a lid shaped like a man. I think it contains someone's liver. Yuck.

@@ -13,3 +13,10 @@ manwear2 = 150
 womanwear = obj_plague_jacket_woman, 0
 womanwear2 = 331
 name = Plague jacket
+//Server
+desc=This should protect me from the plague, I hope!
+wearpos=torso
+wearpos2=arms
+wearpos3=hands
+weight=6lb
+tradeable=no

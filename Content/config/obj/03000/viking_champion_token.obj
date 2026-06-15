@@ -10,3 +10,6 @@ members = true
 recol1s = 9152
 recol1d = 6837
 name = Champions token
+//Server
+desc=Shows the wearer is worthy of the Champions table.
+weight=4g

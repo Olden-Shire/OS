@@ -8,3 +8,7 @@ xan2d = 84
 recol1s = 61
 recol1d = 8615
 name = Ardrigal mixture
+//Server
+desc=It's a mixture of Ardrigal and water. Needs another ingredient.
+weight=25g
+tradeable=no

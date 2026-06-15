@@ -9,3 +9,6 @@ iop1 = Read
 recol1s = 5018
 recol1d = 14226
 name = Prifddinas' history
+//Server
+desc=A book on the history of Prifddinas.
+weight=18oz

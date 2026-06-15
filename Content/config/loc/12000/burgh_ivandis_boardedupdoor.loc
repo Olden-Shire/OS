@@ -3,3 +3,5 @@ active = 1
 raiseobject = 0
 models = 2033/4
 name = Wooden boards
+//Server
+desc=This cave has been boarded up.

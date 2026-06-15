@@ -6,3 +6,5 @@ op5 = Search
 recol = 53/41
 models = 1799/22
 name = Stone
+//Server
+desc=A roughly hewn stone with some sort of symbol on it.

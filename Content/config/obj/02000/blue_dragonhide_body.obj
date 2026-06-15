@@ -13,3 +13,15 @@ recol1d = 43288
 recol2s = 22424
 recol2d = 43177
 name = Blue d'hide body
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=torso
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=rangeattack,20
+param=stabdefence,45
+param=slashdefence,37
+param=crushdefence,50
+param=magicdefence,30
+param=rangedefence,45

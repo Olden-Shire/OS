@@ -7,3 +7,6 @@ yan2d = 72
 xan2d = 464
 members = true
 name = Tomato seed
+//Server
+desc=A tomato seed - plant in an allotment.
+weight=1g

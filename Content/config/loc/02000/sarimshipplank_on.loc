@@ -5,3 +5,7 @@ active = 1
 sharelight = true
 models_only = 1844
 name = Gangplank
+//Server
+desc=Handy for boarding boats.
+category=gangplank_board
+param=board_message,You must speak to the Customs Officer before it will set sail.

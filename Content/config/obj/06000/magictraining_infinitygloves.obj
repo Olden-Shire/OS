@@ -12,3 +12,7 @@ cost = 12000
 recol1s = 10004
 recol1d = 43299
 name = Infinity gloves
+//Server
+desc=Mystical gloves.
+wearpos=hands
+weight=1lb

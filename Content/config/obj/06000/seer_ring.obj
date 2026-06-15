@@ -9,3 +9,9 @@ zoom2d = 620
 yan2d = 1940
 xan2d = 340
 name = Seers ring
+//Server
+desc=A mysterious ring that can fill the wearer with magical power...
+wearpos=ring
+weight=4g
+param=magicattack,4
+param=magicdefence,4

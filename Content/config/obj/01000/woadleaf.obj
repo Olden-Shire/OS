@@ -12,3 +12,6 @@ count2 = 5277, 3
 count3 = 5278, 4
 count4 = 5279, 5
 name = Woad leaf
+//Server
+desc=A slightly bluish leaf.
+weight=10g

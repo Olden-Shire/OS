@@ -21,3 +21,6 @@ recol5d = 1810
 recol6s = 6583
 recol6d = 908
 name = Champion scroll
+//Server
+desc=It's a challenge from the Lesser Demon Champion!
+weight=1g

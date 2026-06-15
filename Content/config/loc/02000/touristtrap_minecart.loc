@@ -3,3 +3,5 @@ op1 = Look at
 op2 = Search
 models_only = 1398
 name = Mine Cart
+//Server
+desc=It seems to be used for moving rocks into and out of this area.

@@ -9,3 +9,9 @@ xan2d = 196
 recol1s = 7062
 recol1d = 36133
 name = Runite bar
+//Server
+desc=It's a bar of runite.
+weight=4lb
+category=category_151
+param=smelting_struct,smelting_runite_bar
+param=smithing_anvil_struct,smithing_runite_bar

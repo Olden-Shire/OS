@@ -1,3 +1,5 @@
 // loc 10564
 models_only = 10245 10243
 name = Banner
+//Server
+desc=A banner proclaiming your victory over the Earth Warrior Champion!

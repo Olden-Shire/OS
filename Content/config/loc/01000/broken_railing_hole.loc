@@ -3,3 +3,5 @@ hillskew = true
 nonblockrange = true
 models_only = 1017
 name = Broken Railing
+//Server
+desc=There is a hole in this section of the railing.

@@ -12,3 +12,7 @@ womanwear = obj_perfect_necklace_woman, 0
 recol1s = 9152
 recol1d = 7085
 name = Brass necklace
+//Server
+desc=I'd prefer a gold one.
+wearpos=front
+weight=10g

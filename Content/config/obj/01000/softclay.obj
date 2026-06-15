@@ -7,3 +7,7 @@ yan2d = 1936
 xan2d = 220
 cost = 2
 name = Soft clay
+//Server
+desc=Clay soft enough to mould.
+weight=2lb
+param=crafting_pottery_struct,soft_clay

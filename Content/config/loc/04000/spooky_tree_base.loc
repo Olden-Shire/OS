@@ -3,3 +3,5 @@ sharelight = true
 mapscene = 6
 models_only = 4080
 name = Tree
+//Server
+desc=Spooky!

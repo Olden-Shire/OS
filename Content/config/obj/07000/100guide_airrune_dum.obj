@@ -6,3 +6,6 @@ yan2d = 1012
 xan2d = 528
 ambient = 30
 name = Air rune
+//Server
+desc=One of the 4 basic elemental Runes.
+weight=2g

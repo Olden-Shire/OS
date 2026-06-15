@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 9159 9161
 name = Plantpot
+//Server
+desc=An empty plantpot.

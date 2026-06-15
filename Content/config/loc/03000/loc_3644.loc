@@ -6,3 +6,5 @@ contrast = 40
 nonsolid = true
 models_only = 3698
 name = Spotlight
+//Server
+desc=That's really bright!

@@ -9,3 +9,6 @@ zoom2d = 848
 yan2d = 1715
 xan2d = 39
 name = Toy cat
+//Server
+desc=Nice bit of crafting!
+weight=1kg

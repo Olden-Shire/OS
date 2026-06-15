@@ -4,3 +4,5 @@ op1 = Open
 recol = 6945/8472 6940/8596 7064/8720 6038/8844
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=It's closed.

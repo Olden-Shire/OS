@@ -2,3 +2,5 @@
 op1 = Open
 models = 609/0
 name = Prison Door
+//Server
+desc=It's closed.

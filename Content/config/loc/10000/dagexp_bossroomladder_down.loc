@@ -5,3 +5,5 @@ op1 = Climb-down
 mapscene = 7
 models_only = 4567
 name = Ladder
+//Server
+desc=A sturdy iron frame, for climbing up and down.

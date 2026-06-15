@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 61
 recol1d = 1356
 name = Pink dye
+//Server
+desc=A vial of pink dye.
+weight=50g

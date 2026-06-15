@@ -16,3 +16,6 @@ recol3d = 2475
 recol4s = 5413
 recol4d = 3501
 name = Fresh monkfish
+//Server
+desc=Freshly caught. Needs cooking.
+weight=450g

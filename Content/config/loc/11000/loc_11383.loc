@@ -2,3 +2,5 @@
 op1 = Light
 models_only = 11316
 name = Decorative Pillar
+//Server
+desc=A stone pillar that looks like Saradomin.

@@ -7,3 +7,6 @@ yan2d = 1904
 xan2d = 194
 cost = 0
 name = An empty box
+//Server
+desc='Ingredients; Ground Guam and Ground Seaweed.'
+weight=1oz

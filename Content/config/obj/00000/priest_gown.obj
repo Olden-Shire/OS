@@ -12,3 +12,9 @@ womanwear2 = 348
 recol1s = 8741
 recol1d = 0
 name = Priest gown
+//Server
+desc=Top half of a priest suit.
+wearpos=torso
+wearpos2=arms
+weight=4lb
+param=prayerbonus,3

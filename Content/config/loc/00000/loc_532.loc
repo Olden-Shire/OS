@@ -3,3 +3,5 @@ hillskew = true
 recol = 5916/45
 models_only = 694
 name = Stalagmites
+//Server
+desc=Limestone floor growth.

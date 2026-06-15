@@ -7,3 +7,7 @@ mapscene = 5
 nonsolid = true
 models_only = 1702
 name = Jungle Tree
+//Server
+desc=A leafy tree.
+category=jungle_tree
+param=next_loc_stage,junglestump_kharazi

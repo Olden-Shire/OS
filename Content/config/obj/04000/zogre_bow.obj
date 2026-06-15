@@ -10,3 +10,9 @@ womanwear = obj_comp_ogre_bow_4827_wear, 6
 iop2 = Wield
 iop3 = Check kills
 name = Comp ogre bow
+//Server
+desc=A composite ogre bow.
+weight=5kg
+wearpos=righthand
+wearpos2=lefthand
+weight=4lb

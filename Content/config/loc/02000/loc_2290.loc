@@ -3,3 +3,5 @@ op1 = Squeeze-through
 width = 2
 models_only = 774
 name = Obstacle pipe
+//Server
+desc=A pipe I can squeeze through.

@@ -9,3 +9,7 @@ xan2d = 84
 recol1s = 61
 recol1d = 8111
 name = Liquid honey
+//Server
+desc=This isn't worth much.
+weight=30g
+tradeable=no

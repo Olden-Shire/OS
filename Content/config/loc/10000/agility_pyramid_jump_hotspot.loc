@@ -5,3 +5,5 @@ nonsolid = true
 op1 = Jump
 models_only = 10772
 name = Gap
+//Server
+desc=A gap.

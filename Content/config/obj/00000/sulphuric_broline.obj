@@ -9,3 +9,7 @@ xan2d = 84
 recol1s = 61
 recol1d = 23488
 name = Sulphuric broline
+//Server
+desc=It's highly poisonous.
+weight=30g
+tradeable=no

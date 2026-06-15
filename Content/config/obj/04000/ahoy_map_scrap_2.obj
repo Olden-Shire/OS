@@ -6,3 +6,6 @@ yan2d = 48
 xan2d = 348
 members = true
 name = Map scrap
+//Server
+desc=A section from some kind of map.
+weight=10g

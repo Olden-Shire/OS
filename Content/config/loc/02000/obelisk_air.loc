@@ -1,3 +1,6 @@
 // loc 2152
 models_only = 1742
 name = Obelisk of Air
+//Server
+desc=A column of elemental power.
+param=charge_orb_name,air obelisk

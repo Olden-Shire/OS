@@ -4,3 +4,5 @@ ambient = 10
 nonblockrange = true
 models_only = 11588
 name = Rock
+//Server
+desc=A rock.

@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Axeman's folly(m3)
+//Server
+desc=This keg contains 3 pints of mature Axeman's Folly.
+weight=1oz

@@ -9,3 +9,5 @@ offsetz = 20
 nonblockrange = true
 models_only = 1148
 name = Counter
+//Server
+desc=Items are for sale here.

@@ -3,3 +3,6 @@ width = 4
 nonblockrange = true
 models_only = 1276
 name = Table
+//Server
+desc=A banquet could be eaten from this.
+category=unusable_table

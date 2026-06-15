@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1948
 name = Piano
+//Server
+desc=I was always forced to play this as a child.

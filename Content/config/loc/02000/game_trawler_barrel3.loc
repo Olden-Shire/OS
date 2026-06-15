@@ -2,3 +2,5 @@
 op1 = Climb-on
 models_only = 1886
 name = Barrel
+//Server
+desc=It's a floating barrel.

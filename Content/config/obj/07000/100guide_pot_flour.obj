@@ -9,3 +9,6 @@ cost = 10
 iop5 = Destroy
 members = true
 name = Enchanted flour
+//Server
+desc=A pot of special flour.
+weight=3lb

@@ -5,3 +5,5 @@ active = 1
 nonsolid = true
 models_only = 13617 13590
 name = Snake
+//Server
+desc=A Snake.

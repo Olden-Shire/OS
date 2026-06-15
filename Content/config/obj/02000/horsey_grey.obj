@@ -14,3 +14,6 @@ recol1d = 5161
 recol2s = 7954
 recol2d = 5276
 name = Toy horsey
+//Server
+desc=A grey toy horse.
+weight=50g

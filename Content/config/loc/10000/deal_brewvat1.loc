@@ -5,3 +5,5 @@ resizey = 115
 bgsound = 3117, 3
 models_only = 9861
 name = Brewing vat
+//Server
+desc=A large brass brewing vat.

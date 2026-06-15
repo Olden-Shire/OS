@@ -4,3 +4,5 @@ op1 = Dig-below
 nonblockrange = true
 models_only = 2172
 name = Roots
+//Server
+desc=The roots go down into the mud.

@@ -5,3 +5,6 @@ nonsolid = true
 recol = 35/8076 39/7952 43/7700 30/7050
 models = 12129/22
 name = Soil
+//Server
+desc=Soil - dug up!
+category=digsite_soil

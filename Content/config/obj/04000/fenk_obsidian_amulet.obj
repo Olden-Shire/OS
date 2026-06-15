@@ -7,3 +7,6 @@ zoom2d = 600
 yan2d = 1876
 xan2d = 304
 name = Obsidian amulet
+//Server
+desc=Triangular in shape, made from obsidian, and as large as your hand.
+weight=5g

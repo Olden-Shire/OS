@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 6036/7335
 models_only = 723
 name = Counter
+//Server
+desc=A counter made from a stone block.

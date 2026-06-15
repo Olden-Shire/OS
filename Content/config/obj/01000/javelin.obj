@@ -6,3 +6,6 @@ zoom2d = 1470
 yan2d = 1964
 xan2d = 268
 name = Javelin
+//Server
+desc=A javelin.
+weight=3lb

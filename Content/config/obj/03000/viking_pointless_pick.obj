@@ -7,3 +7,6 @@ yan2d = 1076
 xan2d = 476
 members = true
 name = Small pick
+//Server
+desc=A small pick for cracking small objects.
+weight=2oz

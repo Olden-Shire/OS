@@ -4,3 +4,6 @@ zoom2d = 960
 xan2d = 528
 members = true
 name = Gear
+//Server
+desc=Used in machines and locks the rune over.
+weight=1lb

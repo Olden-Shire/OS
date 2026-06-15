@@ -5,3 +5,7 @@ iop2 = Wear
 zoom2d = 350
 xan2d = 1436
 name = Ring of charos
+//Server
+desc=The Ring of Charos.
+weight=5g
+wearpos=ring

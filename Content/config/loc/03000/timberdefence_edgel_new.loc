@@ -4,3 +4,5 @@ hillskew = true
 nonblockrange = true
 models_only = 1551
 name = Timber defence
+//Server
+desc=These obviously mean keep out!

@@ -8,3 +8,7 @@ zoom2d = 700
 yan2d = 20
 xan2d = 328
 name = Key
+//Server
+desc=A key to a chest.
+weight=10g
+tradeable=no

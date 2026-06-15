@@ -10,3 +10,6 @@ cost = 13
 recol1s = 44263
 recol1d = 6063
 name = Chilli con carne
+//Server
+desc=A bowl of meat in chilli-con-carne sauce.
+weight=500g

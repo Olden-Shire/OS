@@ -12,3 +12,7 @@ cost = 10
 recol1s = 7461
 recol1d = 6585
 name = Thatch spar light
+//Server
+desc=A wooden pole for use in primitive construction.
+weight=100g
+wearpos=lefthand

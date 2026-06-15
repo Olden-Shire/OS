@@ -4,3 +4,7 @@ manwear = obj_a_chair, 0
 womanwear = obj_a_chair, 6
 members = true
 name = A chair
+//Server
+desc=For sitting on.
+wearpos=lefthand
+weight=1g

@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 13518/5582
 models_only = 7778 7779 7782
 name = Fermenting Vat
+//Server
+desc=Dragon Bitter is fermenting in this vat.

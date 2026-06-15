@@ -12,3 +12,15 @@ womanwear = obj_bronze_sq_shield_1173_wear, 6
 recol1s = 57
 recol1d = 36133
 name = Rune sq shield
+//Server
+desc=A medium square shield.
+wearpos=lefthand
+weight=8lb
+category=armour_shield
+param=rangeattack,-2
+param=magicattack,-6
+param=stabdefence,38
+param=slashdefence,40
+param=crushdefence,36
+param=rangedefence,38
+param=defend_anim,human_shield_defence

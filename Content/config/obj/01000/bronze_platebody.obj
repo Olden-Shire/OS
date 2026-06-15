@@ -16,3 +16,16 @@ recol2d = 5652
 recol3s = 41
 recol3d = 7050
 name = Bronze platebody
+//Server
+desc=Provides excellent protection.
+wearpos=torso
+wearpos2=arms
+weight=22lb
+category=armour_body
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,15
+param=slashdefence,14
+param=crushdefence,9
+param=magicdefence,-6
+param=rangedefence,14

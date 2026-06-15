@@ -3,3 +3,5 @@ width = 2
 recol = 12579/5553 12574/5553 12698/5553 12694/5553 12818/5673 12942/5793
 models_only = 9473
 name = Figurehead
+//Server
+desc=This figure brings luck to those who sail.

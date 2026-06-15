@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 24796
 name = Unfinished potion
+//Server
+desc=A vial of coconut milk and Toadflax.
+weight=35g
+category=potion

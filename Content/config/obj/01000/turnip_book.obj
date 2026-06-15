@@ -6,3 +6,7 @@ zoom2d = 840
 yan2d = 152
 xan2d = 256
 name = Book
+//Server
+desc=Turnip growing for beginners.
+weight=18oz
+tradeable=no

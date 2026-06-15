@@ -7,3 +7,5 @@ ambient = 35
 recol = 52416/4544 21811/41393
 models = 8999/0
 name = Dyed fabric
+//Server
+desc=These dyed fabrics are drying off.

@@ -5,3 +5,5 @@ forceapproach = 11
 op1 = Deposit
 models_only = 13381
 name = Mausoleum
+//Server
+desc=Not the best place to live.

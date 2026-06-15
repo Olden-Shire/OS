@@ -5,3 +5,5 @@ op1 = Go-through
 op2 = Look-at
 models_only = 4051
 name = Shantay pass
+//Server
+desc=Looks like a stone doorway to me.

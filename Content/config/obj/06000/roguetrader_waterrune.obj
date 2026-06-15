@@ -6,3 +6,7 @@ yan2d = 1012
 xan2d = 528
 ambient = 30
 name = Water rune
+//Server
+desc=One of the 4 basic elemental Runes.
+weight=10kg
+weight=2g

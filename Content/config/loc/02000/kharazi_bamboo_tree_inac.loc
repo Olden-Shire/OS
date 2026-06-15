@@ -2,3 +2,5 @@
 mapscene = 0
 models_only = 1676
 name = Leafy Palm Tree
+//Server
+desc=This tree is particularly leafy.

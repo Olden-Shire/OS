@@ -12,3 +12,8 @@ iop5 = Destroy
 recol1s = 61
 recol1d = 43297
 name = Bow-sword
+//Server
+desc=A sharp sword that can also fire arrows.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

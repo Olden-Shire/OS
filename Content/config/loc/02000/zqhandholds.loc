@@ -6,3 +6,5 @@ op1 = Climb
 blockwalk = true
 models = 1494/22
 name = Climbing rocks
+//Server
+desc=I can climb the rocky outcrop.

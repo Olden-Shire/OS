@@ -4,3 +4,5 @@ op1 = Open
 resizey = 153
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=The door is closed.

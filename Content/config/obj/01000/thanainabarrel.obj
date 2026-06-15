@@ -20,3 +20,8 @@ recol4d = 6705
 recol5s = 5904
 recol5d = 6701
 name = Ana in a barrel
+//Server
+desc=A mining barrel with Ana in it.
+weight=32kg
+tradeable=no
+param=destroy_death,^true

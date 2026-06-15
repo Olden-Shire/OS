@@ -9,3 +9,8 @@ yan2d = 8
 xan2d = 360
 members = true
 name = Pugel
+//Server
+desc=A good tool for bashing someone.
+wearpos=righthand
+wearpos2=lefthand
+weight=3lb

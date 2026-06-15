@@ -7,3 +7,6 @@ zoom2d = 1850
 yan2d = 604
 xan2d = 356
 name = Sluglings
+//Server
+desc=They look at you balefully. 'Feed us...'
+weight=3kg

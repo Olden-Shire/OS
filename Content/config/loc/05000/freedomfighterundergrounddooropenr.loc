@@ -4,3 +4,5 @@ mirror = true
 op1 = Walk-through
 models_only = 4966
 name = Wooden doors
+//Server
+desc=Large doors set into the hillside.

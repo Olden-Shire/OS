@@ -4,3 +4,5 @@ nonsolid = true
 recol = 6689/7331
 models_only = 5697
 name = Rock
+//Server
+desc=Placed in a perfect position for stumbling over.

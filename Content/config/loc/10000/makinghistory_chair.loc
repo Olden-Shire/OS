@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 5679/6028 5683/7054 5559/6932 5563/6808
 models_only = 4289
 name = Chair
+//Server
+desc=Generally used for sitting.

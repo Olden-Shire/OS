@@ -9,3 +9,7 @@ cost = 5
 manwear = obj_harpoon_311_wear, 0
 womanwear = obj_harpoon_311_wear, 6
 name = Harpoon
+//Server
+desc=Useful for catching really big fish.
+weight=3lb
+param=fish_equipment_struct,fish_equipment_harpoon

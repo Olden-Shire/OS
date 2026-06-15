@@ -16,3 +16,15 @@ womanhead2 = 120
 recol1s = 43059
 recol1d = 8596
 name = Leather cowl
+//Server
+desc=Better than no armour!
+wearpos=hat
+wearpos2=head
+weight=2lb
+category=armour_helmet
+param=rangeattack,1
+param=stabdefence,2
+param=slashdefence,3
+param=crushdefence,4
+param=magicdefence,2
+param=rangedefence,3

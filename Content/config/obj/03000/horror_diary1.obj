@@ -10,3 +10,6 @@ recol1d = 542
 recol2s = 10351
 recol2d = 10465
 name = Journal
+//Server
+desc=A daily journal.
+weight=18oz

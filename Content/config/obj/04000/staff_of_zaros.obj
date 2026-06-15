@@ -11,3 +11,7 @@ manwear = obj_ancient_staff_4675_wear, 0
 womanwear = obj_ancient_staff_4675_wear, 6
 cost = 100000
 name = Ancient staff
+//Server
+desc=A magical staff of ancient origin...
+wearpos=righthand
+weight=5lb

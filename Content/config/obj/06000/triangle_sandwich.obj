@@ -9,3 +9,6 @@ xan2d = 236
 iop1 = Eat
 cost = 25
 name = Triangle sandwich
+//Server
+desc=A freshly made triangle sandwich.
+weight=20g

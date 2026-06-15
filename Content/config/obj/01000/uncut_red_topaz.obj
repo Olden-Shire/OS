@@ -11,3 +11,6 @@ members = true
 recol1s = 61
 recol1d = 61376
 name = Uncut red topaz
+//Server
+desc=This would be worth more cut.
+weight=3g

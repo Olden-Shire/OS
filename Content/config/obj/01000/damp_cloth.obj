@@ -8,3 +8,7 @@ members = true
 recol1s = 7390
 recol1d = 5400
 name = Damp cloth
+//Server
+desc=A damp, wet cloth.
+weight=12g
+tradeable=no

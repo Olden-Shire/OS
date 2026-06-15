@@ -7,3 +7,6 @@ zoom2d = 460
 yan2d = 1116
 xan2d = 1584
 name = Holy symbol
+//Server
+desc=Menaphite lucky charm.
+weight=5lb

@@ -1,3 +1,5 @@
 // loc 708
 models_only = 1267
 name = Bell mechanism
+//Server
+desc=Some kind of pulley system.

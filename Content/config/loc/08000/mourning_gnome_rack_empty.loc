@@ -3,3 +3,5 @@ width = 3
 anim = 2331
 models_only = 8326
 name = An empty rack
+//Server
+desc=Makes creatures taller.

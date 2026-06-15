@@ -10,3 +10,7 @@ iop1 = Ring
 recol1s = 11179
 recol1d = 103
 name = Grail bell
+//Server
+desc=I wonder what happens when I ring it?
+weight=1oz
+tradeable=no

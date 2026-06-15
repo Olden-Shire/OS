@@ -9,3 +9,6 @@ xan2d = 344
 members = true
 ambient = 10
 name = Champion scroll
+//Server
+desc=It's a challenge from the Human Champion!
+weight=1g

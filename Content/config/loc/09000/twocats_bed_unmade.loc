@@ -3,3 +3,5 @@ length = 2
 op1 = Make
 models_only = 9419
 name = Bed
+//Server
+desc=Not so great for sleeping in, it's not made.

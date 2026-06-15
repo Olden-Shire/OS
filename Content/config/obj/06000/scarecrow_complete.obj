@@ -9,3 +9,6 @@ xan2d = 220
 members = true
 ambient = 15
 name = Scarecrow
+//Server
+desc=This should scare the birds.
+weight=4oz

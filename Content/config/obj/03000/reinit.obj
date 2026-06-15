@@ -6,3 +6,5 @@ zoom2d = 2180
 xan2d = 520
 iop1 = Open
 name = Sliding button
+//Server
+desc=It's a sliding button of some kind.

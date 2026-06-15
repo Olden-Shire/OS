@@ -7,3 +7,6 @@ xan2d = 348
 stackable = true
 members = true
 name = Square stone
+//Server
+desc=There is a strange green marking on this stone.
+weight=300g

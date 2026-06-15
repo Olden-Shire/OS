@@ -10,3 +10,6 @@ iop2 = Empty
 recol1s = 127
 recol1d = 74
 name = Bonemeal
+//Server
+desc=A pot of crushed bearded gorilla monkey bones.
+weight=1500g

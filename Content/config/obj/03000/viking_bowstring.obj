@@ -7,3 +7,6 @@ yan2d = 1872
 xan2d = 148
 members = true
 name = Custom bow string
+//Server
+desc=A finely crafted string for a custom bow.
+weight=14g

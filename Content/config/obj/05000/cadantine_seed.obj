@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 64
 name = Cadantine seed
+//Server
+desc=A cadantine seed - plant in a herb patch.
+weight=1g

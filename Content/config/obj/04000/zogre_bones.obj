@@ -10,3 +10,7 @@ members = true
 recol1s = 127
 recol1d = 8514
 name = Zogre bones
+//Server
+desc=A pile of Zombie Ogre bones.
+weight=800g
+category=bones

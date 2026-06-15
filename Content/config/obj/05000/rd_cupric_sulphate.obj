@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 21729
 name = Cupric sulfate
+//Server
+desc=A vial of something labelled 'Cupric Sulfate'.
+weight=2oz

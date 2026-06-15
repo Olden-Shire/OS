@@ -16,3 +16,6 @@ recol4d = 2157
 recol5s = 5338
 recol5d = 5198
 name = White tree sapling
+//Server
+desc=A young White Tree sapling.
+weight=2lb

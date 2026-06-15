@@ -9,3 +9,6 @@ members = true
 manwear = obj_kettle_7688_wear, 0
 womanwear = obj_kettle_7688_wear, 6
 name = Kettle
+//Server
+desc=The kettle is empty
+weight=1g

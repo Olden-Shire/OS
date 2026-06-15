@@ -8,3 +8,6 @@ xan2d = 520
 members = true
 iop5 = Destroy
 name = Rod clay mould
+//Server
+desc=Rod of Ivandis mould.
+weight=50g

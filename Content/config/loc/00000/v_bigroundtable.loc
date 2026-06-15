@@ -4,3 +4,6 @@ length = 5
 nonblockrange = true
 models_only = 1212
 name = Table
+//Server
+desc=It's a banquet table.
+category=unusable_table

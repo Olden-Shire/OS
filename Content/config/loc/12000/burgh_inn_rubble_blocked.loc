@@ -4,3 +4,5 @@ length = 2
 nonsolid = true
 models_only = 14002
 name = Rubble
+//Server
+desc=This rubble is covering a trapdoor.

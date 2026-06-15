@@ -3,3 +3,6 @@ width = 2
 nonblockrange = true
 models_only = 1252
 name = Chemistry Table
+//Server
+desc=There are some strange chemicals here.
+category=unusable_table

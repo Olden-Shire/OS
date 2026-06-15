@@ -15,3 +15,8 @@ manhead = 8721
 womanhead = 8723
 members = true
 name = Spined helm
+//Server
+desc=A helm fit for any Fremennik ranger.
+wearpos=hat
+wearpos2=head
+weight=6lb

@@ -8,3 +8,6 @@ zan2d = 194
 xan2d = 263
 iop1 = Read
 name = Al kharid flyer
+//Server
+desc=The money off voucher has expired.
+weight=1g

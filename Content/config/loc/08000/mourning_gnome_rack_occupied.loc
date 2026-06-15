@@ -4,3 +4,5 @@ op1 = Talk-to
 op2 = Release
 models_only = 14200 8326
 name = Gnome on a rack
+//Server
+desc=Makes gnomes taller.

@@ -8,3 +8,6 @@ ambient = 15
 members = true
 iop1 = Drink
 name = Dragon bitter(m1)
+//Server
+desc=This keg contains 1 pint of mature Dragon Bitter.
+weight=1oz

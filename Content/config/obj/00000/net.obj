@@ -9,3 +9,7 @@ cost = 5
 manwear = obj_small_fishing_net_303_wear, 0
 womanwear = obj_small_fishing_net_303_wear, 6
 name = Small fishing net
+//Server
+desc=Useful for catching small fish.
+weight=10lb
+param=fish_equipment_struct,fish_equipment_net

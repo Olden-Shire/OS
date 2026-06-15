@@ -24,3 +24,13 @@ recol4d = 37340
 recol5s = 5012
 recol5d = 37340
 name = Ice arrows
+//Server
+desc=Can only be fired with yew or magic bows.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,16
+param=levelrequire,40
+param=proj_launch,ice_arrow_launch
+param=proj_travel,ice_arrow_travel
+tradeable=no

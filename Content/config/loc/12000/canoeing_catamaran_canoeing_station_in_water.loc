@@ -4,3 +4,5 @@ width = 5
 op1 = Paddle Canoe
 models_only = 12001 12003 12000
 name = Canoe Station
+//Server
+desc=You can create a canoe here.

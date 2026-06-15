@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 1452
 name = Statue steps
+//Server
+desc=A base for the statue to sit on.

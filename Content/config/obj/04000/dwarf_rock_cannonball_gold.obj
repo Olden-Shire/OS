@@ -9,3 +9,6 @@ members = true
 recol1s = 61
 recol1d = 8128
 name = Cannon ball
+//Server
+desc=A heavy gold metal sphere.
+weight=20kg

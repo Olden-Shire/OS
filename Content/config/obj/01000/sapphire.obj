@@ -18,3 +18,8 @@ recol3d = 43932
 recol4s = 127
 recol4d = 42964
 name = Sapphire
+//Server
+desc=This looks valuable.
+weight=2g
+respawnrate=1000
+category=legends_gem

@@ -7,3 +7,5 @@ raiseobject = 0
 nonblockrange = true
 models_only = 7378
 name = Stile
+//Server
+desc=I can climb over the fence with this.

@@ -11,3 +11,6 @@ recol1d = 5010
 recol2s = 38003
 recol2d = 1932
 name = Coconut shell
+//Server
+desc=All the milk has been removed.
+weight=1oz

@@ -10,3 +10,6 @@ recol1d = 43297
 recol2s = 57
 recol2d = 43297
 name = Mithril arrow
+//Server
+desc=Arrows with mithril heads.
+weight=14g

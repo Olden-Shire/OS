@@ -7,3 +7,6 @@ members = true
 recol1s = 6930
 recol1d = 7054
 name = Willow seedling
+//Server
+desc=A willow tree seed has been sown and watered in this plant pot.
+weight=2lb

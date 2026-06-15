@@ -2,3 +2,5 @@
 op1 = Read
 models_only = 14276
 name = Warning sign
+//Server
+desc=A sign warning of danger.

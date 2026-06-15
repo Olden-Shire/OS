@@ -4,3 +4,5 @@ length = 4
 sharelight = true
 models_only = 715
 name = Platform
+//Server
+desc=The base of a platform.

@@ -12,3 +12,8 @@ zoom2d = 1243
 yan2d = 346
 xan2d = 539
 name = Camel mask
+//Server
+desc=Blend in in the desert.
+weight=500g
+wearpos=hat
+wearpos2=head

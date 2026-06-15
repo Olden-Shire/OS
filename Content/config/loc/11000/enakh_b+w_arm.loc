@@ -4,3 +4,5 @@ op1 = Open
 recol = 7481/5181 8501/5177 8497/5173 8493/5169 8617/5165
 models = 10965/0
 name = Door
+//Server
+desc=There's a recess in it in the shape of an arm.

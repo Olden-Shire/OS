@@ -6,3 +6,6 @@ yan2d = 1472
 xan2d = 48
 members = true
 name = Red hot sauce
+//Server
+desc=The bottle feels warm.
+weight=100g

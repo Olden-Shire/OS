@@ -2,3 +2,5 @@
 anim = 1868
 models_only = 11822
 name = Lantern
+//Server
+desc=Handy that they're already lit.

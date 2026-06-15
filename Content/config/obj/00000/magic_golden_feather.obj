@@ -11,3 +11,7 @@ iop1 = Blow-on
 recol1s = 127
 recol1d = 10820
 name = Magic gold feather
+//Server
+desc=It will point the way for me.
+weight=5g
+tradeable=no

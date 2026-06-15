@@ -3,3 +3,5 @@ sharelight = true
 op1 = Squeeze-through
 models = 6745/0
 name = Fence
+//Server
+desc=A fence.

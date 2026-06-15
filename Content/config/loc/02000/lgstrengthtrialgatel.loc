@@ -4,3 +4,7 @@ op1 = Open
 recol = 41/4 61/33 24/4 10275/1942
 models = 1727/0
 name = Ancient Gate
+//Server
+desc=A heavily constructed, cast-iron, ancient gateway.
+category=double_door_open_and_close_left
+param=next_loc_stage,lgstrengthtrialgate_inact_l

@@ -13,3 +13,6 @@ count2 = 6509, 3
 count3 = 6510, 4
 count4 = 6511, 5
 name = Snowdrop seed
+//Server
+desc=A snowdrop seed.
+weight=1g

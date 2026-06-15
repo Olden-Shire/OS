@@ -3,3 +3,5 @@ op1 = Climb-up
 sharelight = true
 models_only = 10558
 name = Ladder
+//Server
+desc=A wooden ladder.

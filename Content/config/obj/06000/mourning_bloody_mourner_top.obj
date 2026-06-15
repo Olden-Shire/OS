@@ -6,3 +6,6 @@ xan2d = 308
 members = true
 cost = 20
 name = Bloody mourner top
+//Server
+desc=How do I wash blood stains out?
+weight=6lb

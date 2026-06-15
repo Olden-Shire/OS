@@ -14,3 +14,6 @@ recol1d = 39991
 recol2s = 7116
 recol2d = 41156
 name = Kelda stout
+//Server
+desc=A pint of bluish beer.
+weight=550g

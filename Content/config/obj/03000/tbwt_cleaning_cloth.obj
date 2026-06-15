@@ -8,3 +8,6 @@ members = true
 recol1s = 7390
 recol1d = 52446
 name = Cleaning cloth
+//Server
+desc=A spirit soaked piece of silk which can be used to remove poison.
+weight=1kg

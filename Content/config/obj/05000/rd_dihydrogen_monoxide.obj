@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 42330
 name = Vial of liquid
+//Server
+desc=A vial of something labelled 'Dihydrogen Monoxide'.
+weight=2oz

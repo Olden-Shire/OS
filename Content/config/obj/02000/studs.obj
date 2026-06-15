@@ -7,3 +7,6 @@ xan2d = 288
 cost = 150
 members = true
 name = Steel studs
+//Server
+desc=A set of studs for leather armour.
+weight=3lb

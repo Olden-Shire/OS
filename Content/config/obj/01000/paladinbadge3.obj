@@ -10,3 +10,7 @@ members = true
 recol1s = 42570
 recol1d = 1575
 name = Paladin's badge
+//Server
+desc=A coat of arms of the Ardougne Paladins.
+weight=12g
+tradeable=no

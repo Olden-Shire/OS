@@ -5,3 +5,5 @@ active = 1
 blockwalk = true
 models = 11449/22
 name = Dug hole
+//Server
+desc=You can climb down here.

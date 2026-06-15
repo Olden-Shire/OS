@@ -3,3 +3,5 @@ op1 = Open
 active = 1
 models = 609/0
 name = Prison door
+//Server
+desc=There's no getting around it, it's a fairly sturdy prison cell door.

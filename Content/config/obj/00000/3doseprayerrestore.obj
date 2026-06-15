@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 28488
 name = Prayer potion(3)
+//Server
+desc=3 doses of restore prayer potion.
+weight=30g
+category=potion
+param=next_obj_stage,2doseprayerrestore
+param=decant_potion_enum,potion_prayerrestore
+param=dose_count,3

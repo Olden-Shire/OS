@@ -6,3 +6,6 @@ yan2d = 32
 xan2d = 288
 members = true
 name = Worm
+//Server
+desc=Ugh! It's wriggling!
+weight=3g

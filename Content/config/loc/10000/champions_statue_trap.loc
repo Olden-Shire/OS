@@ -3,3 +3,5 @@ ambient = 15
 op1 = Open
 models_only = 10257
 name = Champion Statue
+//Server
+desc=There's a trapdoor in its base.

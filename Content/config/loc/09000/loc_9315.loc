@@ -10,3 +10,5 @@ anim = 3743
 blockwalk = true
 models = 25640/22
 name = Stepping stone
+//Server
+desc=I can jump from this stepping stone.

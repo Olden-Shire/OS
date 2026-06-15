@@ -10,3 +10,7 @@ members = true
 recol1s = 50396
 recol1d = 65222
 name = Locating crystal
+//Server
+desc=A magical crystal sphere.
+weight=2lb
+tradeable=no

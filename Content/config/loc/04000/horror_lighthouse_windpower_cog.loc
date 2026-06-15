@@ -6,3 +6,5 @@ anim = 1348
 bgsound = 3145, 5
 models_only = 4575
 name = Lighting mechanism
+//Server
+desc=Part of the lighthouse Light mechanism.

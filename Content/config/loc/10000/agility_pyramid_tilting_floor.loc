@@ -5,3 +5,5 @@ nonsolid = true
 anim = 3070
 models_only = 10815
 name = Stone block
+//Server
+desc=A stone block.

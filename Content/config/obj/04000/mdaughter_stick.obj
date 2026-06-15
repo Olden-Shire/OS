@@ -4,3 +4,6 @@ members = true
 yan2d = 12
 xan2d = 244
 name = Pole
+//Server
+desc=It's just a long stick, really.
+weight=10g

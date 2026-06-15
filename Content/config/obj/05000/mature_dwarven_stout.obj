@@ -15,3 +15,6 @@ recol2d = 41
 recol3s = 54397
 recol3d = 8514
 name = Dwarven stout(m)
+//Server
+desc=This looks a good deal stronger than normal Dwarven Stout.
+weight=550g

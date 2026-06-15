@@ -9,3 +9,7 @@ members = true
 recol1s = 8128
 recol1d = 127
 name = Bone key
+//Server
+desc=A bone key fashioned from a shard of bone.
+weight=10g
+tradeable=no

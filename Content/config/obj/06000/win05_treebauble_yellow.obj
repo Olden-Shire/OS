@@ -2,3 +2,6 @@
 model = obj_tree_bauble_6841
 zoom2d = 530
 name = Tree bauble
+//Server
+desc=A bauble shaped like a wintumber tree painted yellow.
+weight=200g

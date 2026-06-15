@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 4886/6453 922/5219
 models_only = 1273
 name = Chair
+//Server
+desc=A comfortable seat.

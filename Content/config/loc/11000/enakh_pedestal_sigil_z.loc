@@ -3,3 +3,5 @@ op1 = Take-sigil
 recol = 7481/7618 8617/7595
 models_only = 10897 10898
 name = Pedestal
+//Server
+desc=There's a sigil on it shaped like a Z.

@@ -8,3 +8,5 @@ op1 = Climb-over
 recol = 6689/7952
 models_only = 819
 name = Rock pile
+//Server
+desc=A pile of rocks.

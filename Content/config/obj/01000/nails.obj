@@ -8,3 +8,7 @@ zoom2d = 650
 yan2d = 1984
 xan2d = 308
 name = Steel nails
+//Server
+desc=Keeps things in place fairly permanently.
+weight=5g
+category=category_74

@@ -7,3 +7,5 @@ offsety = -60
 offsetz = 0
 models = 11469/4
 name = Spooky picture
+//Server
+desc=Disturbingly its eyes look everywhere in the room except at you.

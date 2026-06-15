@@ -4,3 +4,5 @@ op2 = Search
 forceapproach = 13
 models_only = 2244
 name = Cupboard
+//Server
+desc=A cupboard.

@@ -9,3 +9,9 @@ xan2d = 196
 recol1s = 7062
 recol1d = 61
 name = Steel bar
+//Server
+desc=It's a bar of steel.
+weight=4lb
+category=category_151
+param=smelting_struct,smelting_steel_bar
+param=smithing_anvil_struct,smithing_steel_bar

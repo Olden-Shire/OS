@@ -4,3 +4,5 @@ active = 1
 resizey = 256
 models_only = 10909
 name = Wall
+//Server
+desc=A half finished wall.

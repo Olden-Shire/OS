@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 2171
 name = Pile of skulls
+//Server
+desc=Disturbing but tidy.

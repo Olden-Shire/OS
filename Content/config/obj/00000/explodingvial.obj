@@ -7,3 +7,6 @@ yof2d = 32
 zoom2d = 510
 xan2d = 1956
 name = Exploding vial
+//Server
+desc=An exploding vial.
+weight=25g

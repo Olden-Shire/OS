@@ -4,3 +4,5 @@ contrast = 25
 recol = 61/18 10153/801
 models_only = 1214
 name = Suit of armour
+//Server
+desc=Looks kind of like a man made of metal.

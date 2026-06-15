@@ -4,3 +4,7 @@ op1 = Open
 raiseobject = 0
 models = 9476/0 9477/9
 name = Door
+//Server
+desc=This way to exit.
+category=door_closed
+param=next_loc_stage,roguesden_door_to_pub_open

@@ -11,3 +11,6 @@ members = true
 recol1s = 4626
 recol1d = 2452
 name = Leather boots
+//Server
+desc=Comfortable leather boots.
+weight=12oz

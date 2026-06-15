@@ -4,3 +4,5 @@ sharelight = true
 hillskew = true
 models_only = 9793
 name = Container
+//Server
+desc=Sounds like there's liquid inside.

@@ -16,3 +16,8 @@ recol2d = 61347
 recol3s = 8741
 recol3d = 61347
 name = Ham hood
+//Server
+desc=Light-weight head protection and eye shield.
+wearpos=hat
+wearpos2=head
+weight=1lb

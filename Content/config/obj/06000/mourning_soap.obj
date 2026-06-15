@@ -8,3 +8,6 @@ xan2d = 284
 members = true
 cost = 10
 name = Tegid's soap
+//Server
+desc=A bar of soap taken from Tegid.
+weight=4oz

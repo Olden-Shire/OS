@@ -8,3 +8,7 @@ zoom2d = 760
 yan2d = 1116
 xan2d = 244
 name = Address label
+//Server
+desc=It says 'To Lord Handelmort, Handelmort Mansion'.
+weight=10g
+tradeable=no

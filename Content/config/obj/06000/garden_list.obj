@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 5351
 recol1d = 4267
 name = List
+//Server
+desc=A list of things that I must collect for Queen Ellamaria.
+weight=1g

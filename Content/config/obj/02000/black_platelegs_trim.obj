@@ -14,3 +14,15 @@ recol2d = 0
 recol3s = 57
 recol3d = 24
 name = Black platelegs (t)
+//Server
+desc=Black platelegs with trim.
+wearpos=legs
+weight=20lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,21
+param=slashdefence,20
+param=crushdefence,19
+param=magicdefence,-4
+param=rangedefence,20

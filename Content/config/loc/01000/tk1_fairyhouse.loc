@@ -1,3 +1,5 @@
 // loc 1149
 models_only = 2009
 name = Fairy house
+//Server
+desc=The abode of a fairy.

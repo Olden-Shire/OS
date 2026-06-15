@@ -13,3 +13,14 @@ recol2d = 16
 recol3s = 49
 recol3d = 24
 name = Black chainbody
+//Server
+desc=A series of connected metal rings.
+wearpos=torso
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=stabdefence,22
+param=slashdefence,32
+param=crushdefence,39
+param=magicdefence,-3
+param=rangedefence,24

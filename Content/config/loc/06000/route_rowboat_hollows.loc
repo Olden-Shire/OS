@@ -4,3 +4,5 @@ length = 3
 op1 = Board
 models_only = 4970
 name = Swamp Boaty
+//Server
+desc=A dirty little swamp boat.

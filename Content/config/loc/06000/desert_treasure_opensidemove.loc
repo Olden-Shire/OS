@@ -7,3 +7,5 @@ op1 = Open
 recol = 10434/8526
 models_only = 6246
 name = Mystical door
+//Server
+desc=This door is sealed by an ancient mystical power...

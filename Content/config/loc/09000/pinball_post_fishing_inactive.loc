@@ -5,3 +5,5 @@ active = 1
 ambient = 35
 models = 8998/0
 name = Dyed fabric
+//Server
+desc=These dyed fabrics are drying off.

@@ -5,3 +5,5 @@ active = 1
 op1 = Squeeze-through
 models = 9238/0
 name = Ornate railing
+//Server
+desc=Used to be ornate, now it's a little bit vandalised.

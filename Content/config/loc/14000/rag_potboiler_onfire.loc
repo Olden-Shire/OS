@@ -4,3 +4,5 @@ active = 1
 bgsound = 2065, 3
 models_only = 14096 14097 14095 14099
 name = Pot-boiler
+//Server
+desc=This smells so very, very bad...

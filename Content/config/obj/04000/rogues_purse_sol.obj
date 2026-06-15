@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 5347
 name = Unfinished potion
+//Server
+desc=I need another ingredient to finish this Rogues purse potion.
+weight=30g
+category=potion

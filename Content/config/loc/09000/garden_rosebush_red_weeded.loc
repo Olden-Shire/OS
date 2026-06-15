@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 8223 7766
 name = Red rose bush patch
+//Server
+desc=You can grow a red rose bush in this patch.

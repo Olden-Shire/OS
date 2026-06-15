@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 61/16916 49/13840 41/3346
 models_only = 1645
 name = Plant
+//Server
+desc=A leafy shrub.

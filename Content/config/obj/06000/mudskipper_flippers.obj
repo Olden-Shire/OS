@@ -12,3 +12,7 @@ womanwear = obj_flippers_woman, 0
 recol1s = 4626
 recol1d = 2452
 name = Flippers
+//Server
+desc=Strangely uncomfortable flippers.
+wearpos=feet
+weight=12oz

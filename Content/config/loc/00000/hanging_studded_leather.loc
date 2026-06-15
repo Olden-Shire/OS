@@ -2,3 +2,5 @@
 active = 1
 models = 2042/4
 name = Studded Leather
+//Server
+desc=Improved Leather armour for archers.

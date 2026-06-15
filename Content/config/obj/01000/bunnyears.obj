@@ -9,3 +9,8 @@ womanwear = obj_bunny_ears_1037_woman, 0
 manhead = 33
 womanhead = 91
 name = Bunny ears
+//Server
+desc=A rabbit-like adornment.
+wearpos=hat
+weight=8oz
+tradeable=no

@@ -11,3 +11,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 10411
 name = Antidote+(2)
+//Server
+desc=2 doses of extra strength poison antidote.
+weight=35g
+category=potion

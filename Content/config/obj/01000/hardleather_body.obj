@@ -7,3 +7,15 @@ iop2 = Wear
 manwear = obj_hardleather_body_1131_man, 0
 womanwear = obj_hardleather_body_1131_woman, 0
 name = Hardleather body
+//Server
+desc=Harder than normal leather.
+wearpos=torso
+weight=8lb
+category=armour_body
+param=magicattack,-4
+param=rangeattack,8
+param=stabdefence,12
+param=slashdefence,15
+param=crushdefence,18
+param=magicdefence,6
+param=rangedefence,15

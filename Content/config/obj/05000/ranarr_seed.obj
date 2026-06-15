@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 19
 name = Ranarr seed
+//Server
+desc=A ranarr seed - plant in a herb patch.
+weight=1g

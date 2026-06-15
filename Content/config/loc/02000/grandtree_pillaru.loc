@@ -3,3 +3,6 @@ active = 1
 nonblockrange = true
 models_only = 1310
 name = Pillar
+//Server
+desc=Wonder what this pillar is for?
+category=grandtree_pillar

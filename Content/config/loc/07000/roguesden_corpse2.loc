@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6241/7500
 models_only = 1079
 name = Corpse
+//Server
+desc=He looks very relaxed.

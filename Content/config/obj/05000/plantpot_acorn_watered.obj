@@ -7,3 +7,6 @@ members = true
 recol1s = 6930
 recol1d = 7054
 name = Oak seedling
+//Server
+desc=An acorn has been sown and watered in this plant pot.
+weight=2lb

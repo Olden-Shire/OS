@@ -9,3 +9,5 @@ blockwalk = true
 recol = 6689/7481
 models = 1743/22
 name = Climbing rocks
+//Server
+desc=A rocky outcrop.

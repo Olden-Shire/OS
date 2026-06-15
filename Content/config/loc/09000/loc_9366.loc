@@ -6,3 +6,5 @@ noshadow = true
 recol = 33676/0
 models_only = 9291
 name = Open hot vent door
+//Server
+desc=The barrier of heat is down.

@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 6161
 name = Golem arm
+//Server
+desc=A broken clay arm.

@@ -4,3 +4,5 @@ length = 2
 op1 = Search
 models_only = 1102
 name = Buried skeleton
+//Server
+desc=I'm glad this isn't around anymore!

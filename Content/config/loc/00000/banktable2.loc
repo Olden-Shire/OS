@@ -5,3 +5,6 @@ contrast = 25
 nonblockrange = true
 models_only = 1229
 name = Bank table
+//Server
+desc=Banking transactions are recorded here.
+category=unusable_table

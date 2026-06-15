@@ -12,3 +12,11 @@ womanwear = obj_glarials_amulet_woman, 0
 recol1s = 11200
 recol1d = 22464
 name = Gnome amulet
+//Server
+desc=It's an amulet of protection given to me by the gnomes.
+wearpos=front
+weight=10g
+param=stabdefence,13
+param=slashdefence,13
+param=crushdefence,13
+tradeable=no

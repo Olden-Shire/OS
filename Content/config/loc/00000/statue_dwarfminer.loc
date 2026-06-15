@@ -1,3 +1,5 @@
 // loc 568
 models_only = 1503
 name = Dwarf statue
+//Server
+desc=A depiction of a great dwarven miner.

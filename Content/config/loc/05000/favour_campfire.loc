@@ -6,3 +6,5 @@ contrast = 75
 nonblockrange = true
 models_only = 3818
 name = Fire
+//Server
+desc=Hot!

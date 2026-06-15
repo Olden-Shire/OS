@@ -16,3 +16,17 @@ recol2d = 22437
 recol3s = 57
 recol3d = 21939
 name = Guthix kiteshield
+//Server
+desc=Rune kiteshield in the colours of Guthix.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,44
+param=slashdefence,48
+param=crushdefence,46
+param=magicdefence,-1
+param=rangedefence,46
+param=defend_anim,human_shield_defence
+param=guthixitem,^true

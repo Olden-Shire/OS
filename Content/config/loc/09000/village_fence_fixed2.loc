@@ -7,3 +7,5 @@ hillskew = true
 nonblockrange = true
 models = 8888/0 8889/9
 name = Short fence
+//Server
+desc=A damaged wooden fence.

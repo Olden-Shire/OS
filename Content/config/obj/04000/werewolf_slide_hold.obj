@@ -8,3 +8,7 @@ yof2d = 113
 zoom2d = 1690
 xan2d = 72
 name = Mouth grip
+//Server
+desc=A holding thingy for the zip line.
+wearpos=righthand
+weight=1g

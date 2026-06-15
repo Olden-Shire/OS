@@ -21,3 +21,6 @@ recol5d = 43319
 recol6s = 5351
 recol6d = 43123
 name = Weather report
+//Server
+desc=Clear skies ahead, with some chance of showers, thunderstorms, ice and hail.
+weight=30g

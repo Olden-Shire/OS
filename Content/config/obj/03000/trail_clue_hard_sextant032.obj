@@ -8,3 +8,6 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=Perhaps someone at the observatory can teach me to navigate?
+weight=20g

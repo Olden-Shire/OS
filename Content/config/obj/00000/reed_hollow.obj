@@ -10,3 +10,6 @@ zoom2d = 1770
 yan2d = 940
 xan2d = 212
 name = Hollow reed
+//Server
+desc=One of nature's pipes.
+weight=12g

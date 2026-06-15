@@ -8,3 +8,6 @@ xan2d = 440
 recol1s = 127
 recol1d = 7566
 name = Hard leather
+//Server
+desc=It's a piece of hard leather.
+weight=7lb

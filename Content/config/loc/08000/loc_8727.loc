@@ -6,3 +6,5 @@ ambient = 30
 recol = 61/9533
 models_only = 5515
 name = Rocks
+//Server
+desc=They're not floating, even though it may look like they are!

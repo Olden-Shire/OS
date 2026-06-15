@@ -12,3 +12,5 @@ resizez = 128
 op1 = Jump-out
 models_only = 10941
 name = Light
+//Server
+desc=There's a hole in the ceiling of the cave.

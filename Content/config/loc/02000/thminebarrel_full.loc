@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 5541/6589 5665/6585 5660/6581 5784/6705 5904/6701
 models_only = 8232 19285
 name = Barrel
+//Server
+desc=A barrel containing rocks and mining debris.

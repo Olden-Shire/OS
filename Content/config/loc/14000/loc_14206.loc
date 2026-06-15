@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models_only = 14408
 name = Mound
+//Server
+desc=Looks like something is buried here.

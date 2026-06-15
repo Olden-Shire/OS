@@ -7,3 +7,7 @@ yan2d = 1956
 xan2d = 168
 members = true
 name = Broken arrow
+//Server
+desc=This must have been shot at high speed.
+weight=15g
+tradeable=no

@@ -5,3 +5,5 @@ mirror = true
 op1 = Inspect
 models_only = 1862
 name = Trawler net
+//Server
+desc=Smells like fish.

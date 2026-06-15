@@ -10,3 +10,8 @@ xan2d = 372
 members = true
 cost = 400
 name = Oak blackjack(d)
+//Server
+desc=A defensive blackjack.
+wearpos=righthand
+weight=1kg
+weight=4lb

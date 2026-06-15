@@ -10,3 +10,7 @@ recol1d = 22420
 recol2s = 7081
 recol2d = 22430
 name = Washing bowl
+//Server
+desc=Used for washing your face, amongst other things.
+weight=1lb
+respawnrate=3

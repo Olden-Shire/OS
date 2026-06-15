@@ -5,3 +5,6 @@ yan2d = 1740
 xan2d = 52
 members = true
 name = Mort myre pear
+//Server
+desc=A pear picked from a dying bush in Mort Myre.
+weight=4oz

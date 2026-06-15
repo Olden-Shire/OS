@@ -7,3 +7,7 @@ yan2d = 204
 xan2d = 417
 members = true
 name = Vulture wing
+//Server
+desc=This bone belongs in a museum!
+weight=3g
+weight=2lb

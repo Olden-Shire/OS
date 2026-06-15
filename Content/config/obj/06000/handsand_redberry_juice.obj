@@ -7,3 +7,6 @@ xan2d = 124
 members = true
 iop5 = Destroy
 name = Redberry juice
+//Server
+desc=Redberry Juice sloshes around in this vial waiting for white berries to be added.
+weight=50g

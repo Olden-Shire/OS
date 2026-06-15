@@ -5,3 +5,5 @@ occlude = true
 op1 = Climb-into
 models_only = 9233
 name = Hole
+//Server
+desc=A rather strategically placed hole, which appears to be in the ground.

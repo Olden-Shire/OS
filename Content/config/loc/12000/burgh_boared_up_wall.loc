@@ -3,3 +3,5 @@ active = 1
 ambient = 20
 models = 13967/4
 name = Repaired wall
+//Server
+desc=This wall has been repaired with wood.

@@ -2,3 +2,5 @@
 op1 = Open
 models_only = 911
 name = Coffin
+//Server
+desc=A really posh upright coffin.

@@ -10,3 +10,9 @@ womanwear = obj_elemental_shield_2890_wear, 0
 members = true
 cost = 20
 name = Elemental shield
+//Server
+desc=A magic shield.
+weight=8oz
+wearpos=lefthand
+category=armour_shield
+param=magicdefence,6

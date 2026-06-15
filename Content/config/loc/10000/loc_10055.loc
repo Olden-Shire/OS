@@ -4,3 +4,5 @@ sharelight = true
 hillskew = true
 models_only = 9782
 name = Gate
+//Server
+desc=I won't be leaving that way then.

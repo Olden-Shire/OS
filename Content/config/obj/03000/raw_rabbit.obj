@@ -8,3 +8,6 @@ xan2d = 308
 cost = 20
 members = true
 name = Raw rabbit
+//Server
+desc=Might taste better cooked.
+weight=6oz

@@ -3,3 +3,5 @@ length = 2
 width = 2
 models_only = 5402
 name = Wheelbarrow
+//Server
+desc=A wooden wheelbarrow.

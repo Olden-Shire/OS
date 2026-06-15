@@ -5,3 +5,5 @@ blockwalk = true
 active = 1
 models_only = 2276
 name = Long branched tree
+//Server
+desc=This tree has an unusually long branch on it.

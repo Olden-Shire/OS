@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 1233
 name = Pew
+//Server
+desc=Church seating.

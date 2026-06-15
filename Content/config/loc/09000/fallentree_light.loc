@@ -7,3 +7,5 @@ noshadow = true
 recol = 5029/5665 4814/5572
 models_only = 1633
 name = Fallen tree
+//Server
+desc=This tree has fallen to the ground.

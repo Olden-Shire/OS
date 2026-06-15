@@ -6,3 +6,6 @@ xan2d = 28
 cost = 400
 members = true
 name = Bullseye lantern
+//Server
+desc=You need to add lamp oil before you can use it.
+weight=3lb

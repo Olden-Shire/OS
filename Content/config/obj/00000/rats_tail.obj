@@ -7,3 +7,7 @@ zoom2d = 590
 yan2d = 168
 xan2d = 340
 name = Rat's tail
+//Server
+desc=A bit of rat.
+weight=3g
+tradeable=no

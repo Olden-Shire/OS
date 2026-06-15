@@ -20,3 +20,6 @@ recol4d = 13619
 recol5s = 6583
 recol5d = 13743
 name = Dusty scroll
+//Server
+desc=An ancient tattered scroll.
+weight=20g

@@ -9,3 +9,7 @@ cost = 1000
 manwear = obj_unstrung_lyre_wear, 0
 members = true
 name = Enchanted lyre(4)
+//Server
+desc=This will teleport me to Rellekka when I play it.
+wearpos=righthand
+weight=4lb

@@ -6,3 +6,7 @@ zoom2d = 860
 yan2d = 76
 xan2d = 312
 name = Rubber tube
+//Server
+desc=It's slightly charred.
+weight=1oz
+tradeable=no

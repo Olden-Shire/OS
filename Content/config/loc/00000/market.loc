@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1421
 name = Market stall
+//Server
+desc=Always a source of good bargains.

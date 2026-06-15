@@ -13,3 +13,16 @@ womanwear = obj_gauntlets_of_cooking_womanwear, 0
 recol1s = 10004
 recol1d = 30600
 name = Klank's gauntlets
+//Server
+desc=Strong dwarvish gloves.
+weight=8oz
+wearpos=hands
+category=category_16
+param=stabattack,2
+param=slashattack,2
+param=crushattack,2
+param=stabdefence,8
+param=slashdefence,9
+param=crushdefence,7
+param=strengthbonus,2
+tradeable=no

@@ -2,3 +2,5 @@
 op2 = Attack
 models_only = 1286
 name = Dummy
+//Server
+desc=The easiest opponent I'll ever fight.

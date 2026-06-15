@@ -4,3 +4,6 @@ members = true
 xof2d = 1
 cost = 1
 name = Tiny elf crystal
+//Server
+desc=A tiny Elf crystal, I need to have this re-enchanted.
+weight=1g

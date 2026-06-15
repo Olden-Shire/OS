@@ -13,3 +13,10 @@ womanwear = obj_wizard_hat_579_woman, 0
 manhead = 44
 womanhead = 102
 name = Blue hat
+//Server
+desc=A strange blue wizards hat.
+wearpos=hat
+weight=1lb
+param=magicattack,3
+param=magicdefence,3
+tradeable=no

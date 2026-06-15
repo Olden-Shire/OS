@@ -4,3 +4,5 @@ length = 3
 ambient = 30
 models_only = 1955
 name = Bed
+//Server
+desc=I don't think anyone's slept here for a long time.

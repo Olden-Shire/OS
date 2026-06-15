@@ -7,3 +7,6 @@ zoom2d = 1590
 xan2d = 488
 iop1 = Poke
 name = Monkey
+//Server
+desc=It's a monkey in your backpack. As you look it pokes you.
+weight=15kg

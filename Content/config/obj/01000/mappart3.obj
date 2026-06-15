@@ -4,3 +4,7 @@ yan2d = 1916
 xan2d = 435
 iop1 = Study
 name = Map part
+//Server
+desc=A piece of a map.
+weight=5g
+tradeable=no

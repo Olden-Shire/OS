@@ -10,3 +10,6 @@ iop1 = Eat
 recol1s = 82
 recol1d = 7987
 name = Tchiki nut paste
+//Server
+desc=Mixing this with jam would just be wrong.
+weight=8g

@@ -8,3 +8,7 @@ xan2d = 200
 iop1 = Read
 members = true
 name = Stone-plaque
+//Server
+desc=A stone plaque with carved letters in it.
+weight=800g
+tradeable=no

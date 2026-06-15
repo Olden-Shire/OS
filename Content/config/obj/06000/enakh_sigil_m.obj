@@ -8,3 +8,6 @@ yan2d = 192
 xan2d = 354
 iop5 = Destroy
 name = M sigil
+//Server
+desc=A metal sigil in the shape of an M.
+weight=500g

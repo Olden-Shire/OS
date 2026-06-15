@@ -11,3 +11,6 @@ iop4 = Listen
 recol1s = 7062
 recol1d = 10533
 name = Enchanted bar
+//Server
+desc=A gold bar invested with a talkative monkey spirit.
+weight=4lb

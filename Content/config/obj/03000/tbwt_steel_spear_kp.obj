@@ -16,3 +16,8 @@ recol1d = 25048
 recol2s = 28
 recol2d = 25048
 name = Steel spear(kp)
+//Server
+desc=A Karambwan poisoned steel tipped spear.
+weight=5lb
+wearpos=righthand
+wearpos2=lefthand

@@ -3,3 +3,5 @@ op1 = Take
 nonsolid = true
 models_only = 6444
 name = Canopic Jar
+//Server
+desc=Has a lid shaped like a crocodile. Yuck, I think there are lungs inside.

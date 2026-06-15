@@ -6,3 +6,5 @@ active = 1
 recol = 127/7357 40004/7473 20/5392 7075/5788 8103/3491 7081/5669
 models_only = 4631 1421
 name = Veg stall
+//Server
+desc=You should eat your greens!

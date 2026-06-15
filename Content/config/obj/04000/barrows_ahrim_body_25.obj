@@ -15,3 +15,8 @@ recol1d = 10512
 recol2s = 14490
 recol2d = 10512
 name = Ahrims top 25
+//Server
+desc=Ahrim the Blighted's armoured robe top.
+weight=10lb
+wearpos=torso
+wearpos2=arms

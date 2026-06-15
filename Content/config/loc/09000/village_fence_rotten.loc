@@ -7,3 +7,5 @@ active = 1
 nonblockrange = true
 models = 8884/0 8885/9
 name = Rotten village fence
+//Server
+desc=A damaged wooden fence.

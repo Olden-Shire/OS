@@ -5,3 +5,5 @@ active = 1
 op1 = Walk-through
 models = 2161/0
 name = Mystic portal
+//Server
+desc=There seems to be some sort of magical field here.

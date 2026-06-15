@@ -15,3 +15,7 @@ recol2d = 7952
 recol3s = 11177
 recol3d = 7952
 name = Translation book
+//Server
+desc=A book to translate the ancient gnome language into English.
+weight=18oz
+tradeable=no

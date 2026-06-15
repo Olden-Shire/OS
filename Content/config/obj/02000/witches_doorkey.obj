@@ -9,3 +9,8 @@ xan2d = 328
 recol1s = 8128
 recol1d = 7087
 name = Door key
+//Server
+desc=A key to the Witch's house's front door.
+weight=10g
+respawnrate=95
+tradeable=no

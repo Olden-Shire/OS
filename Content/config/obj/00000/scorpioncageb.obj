@@ -8,3 +8,8 @@ yan2d = 1904
 xan2d = 156
 iop5 = Destroy
 name = Scorpion cage
+//Server
+desc=There is 1 scorpion inside.
+weight=175g
+category=scorpcage
+tradeable=no

@@ -7,3 +7,6 @@ yan2d = 1928
 xan2d = 404
 members = true
 name = Chisel
+//Server
+desc=Good for detailed crafting.
+weight=1lb

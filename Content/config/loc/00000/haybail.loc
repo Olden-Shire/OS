@@ -3,3 +3,5 @@ op1 = Search
 nonblockrange = true
 models_only = 1501
 name = Hay bale
+//Server
+desc=I bet there's a needle in it somewhere.

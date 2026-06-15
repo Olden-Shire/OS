@@ -7,3 +7,6 @@ members = true
 recol1s = 476
 recol1d = 20948
 name = Bird's egg
+//Server
+desc=A green bird's egg.
+weight=2g

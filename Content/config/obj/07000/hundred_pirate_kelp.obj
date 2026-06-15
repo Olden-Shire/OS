@@ -5,3 +5,6 @@ xan2d = 297
 members = true
 cost = 1
 name = Kelp
+//Server
+desc=Slightly damp seaweed.
+weight=2lb

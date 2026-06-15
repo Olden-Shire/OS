@@ -12,3 +12,6 @@ iop5 = Release
 recol1s = 5790
 recol1d = 49
 name = Balloon toad
+//Server
+desc=An inflated toad tied to a rock like a balloon.
+weight=4kg

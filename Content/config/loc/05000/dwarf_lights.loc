@@ -6,3 +6,5 @@ anim = 1847
 bgsound = 2065, 3
 models_only = 5870
 name = Fire
+//Server
+desc=Lighting for the caves.

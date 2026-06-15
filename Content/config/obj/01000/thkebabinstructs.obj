@@ -11,3 +11,7 @@ xan2d = 472
 recol1s = 5351
 recol1d = 43119
 name = Scrumpled paper
+//Server
+desc=A piece of paper with barely legible writing - looks like a recipe!
+weight=10g
+tradeable=no

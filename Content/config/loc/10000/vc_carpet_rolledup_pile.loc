@@ -3,3 +3,5 @@ length = 2
 nonblockrange = true
 models_only = 7739
 name = Rolled up rugs
+//Server
+desc=A pile of rolled up magic carpets.

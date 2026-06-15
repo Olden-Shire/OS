@@ -13,3 +13,6 @@ count3 = 5109, 4
 count4 = 5110, 5
 cost = 143
 name = Yew seed
+//Server
+desc=Plant this in a plantpot of soil to grow a sapling.
+weight=2g

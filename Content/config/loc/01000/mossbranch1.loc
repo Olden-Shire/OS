@@ -4,3 +4,5 @@ length = 4
 mapscene = 1
 models_only = 1343
 name = Mossy branch
+//Server
+desc=The branch is infested with moss.

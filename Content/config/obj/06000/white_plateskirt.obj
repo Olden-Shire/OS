@@ -16,3 +16,7 @@ recol2d = 82
 recol3s = 15242
 recol3d = 99
 name = White plateskirt
+//Server
+desc=Big, White and heavy looking.
+wearpos=legs
+weight=18lb

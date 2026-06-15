@@ -4,3 +4,5 @@ ambient = 20
 op1 = Search
 models = 13995/4
 name = Plaque
+//Server
+desc=You seem to make out some writing.

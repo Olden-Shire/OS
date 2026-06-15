@@ -5,3 +5,5 @@ op1 = Close
 nonblockrange = true
 models_only = 1362
 name = Coffin
+//Server
+desc=I see dead people.

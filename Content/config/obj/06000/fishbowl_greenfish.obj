@@ -21,3 +21,7 @@ recol2d = 24262
 recol3s = 41938
 recol3d = 42330
 name = Fishbowl
+//Server
+desc=A fishbowl with a Tiny Greenfish in it.
+weight=5lb
+wearpos=righthand

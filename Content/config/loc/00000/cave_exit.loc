@@ -2,3 +2,5 @@
 hillskew = true
 models_only = 776
 name = Cave web
+//Server
+desc=A fissure in the cave wall.

@@ -10,3 +10,7 @@ yan2d = 512
 xan2d = 424
 iop2 = Wield
 name = Bone spear
+//Server
+desc=Basic but brutal!
+weight=3lb
+wearpos=righthand

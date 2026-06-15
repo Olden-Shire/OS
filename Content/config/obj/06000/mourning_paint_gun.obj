@@ -10,3 +10,8 @@ cost = 150
 iop2 = Wield
 iop1 = Empty
 name = Fixed device
+//Server
+desc=A device for firing dye.
+wearpos=righthand
+wearpos2=lefthand
+weight=4kg

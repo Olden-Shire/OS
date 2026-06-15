@@ -2,3 +2,5 @@
 width = 2
 models_only = 11564
 name = Work bench
+//Server
+desc=Might be handy for a workman.

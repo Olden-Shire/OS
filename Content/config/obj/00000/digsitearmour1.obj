@@ -9,3 +9,7 @@ members = true
 recol1s = 45
 recol1d = 8472
 name = Damaged armour
+//Server
+desc=Beyond repair.
+weight=17lb
+tradeable=no

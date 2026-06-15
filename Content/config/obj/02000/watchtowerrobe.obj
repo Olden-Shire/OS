@@ -5,3 +5,7 @@ zoom2d = 1370
 xan2d = 536
 members = true
 name = Old robe
+//Server
+desc=I can't wear this old thing.
+weight=4lb
+tradeable=no

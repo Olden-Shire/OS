@@ -6,3 +6,6 @@ zoom2d = 1600
 yan2d = 904
 xan2d = 812
 name = Farmer's fork
+//Server
+desc=A farmer's fork.
+weight=5lb

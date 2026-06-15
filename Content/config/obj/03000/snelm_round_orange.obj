@@ -22,3 +22,7 @@ recol3d = 6061
 recol4s = 6697
 recol4d = 5033
 name = Broken bark snelm
+//Server
+desc=An orange and bark coloured snail shell helmet.
+weight=2kg
+wearpos=hat

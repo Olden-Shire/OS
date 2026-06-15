@@ -6,3 +6,5 @@ blockwalk = true
 recol = 941/56245 957/55232 24388/7744 24524/7880
 models = 11940/10 16232/22
 name = Fairy ring
+//Server
+desc=Better not eat them!

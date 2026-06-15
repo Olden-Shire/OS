@@ -10,3 +10,7 @@ zoom2d = 1530
 yan2d = 56
 xan2d = 372
 name = Snakeskin chaps
+//Server
+desc=Made from 100% real snake.
+weight=8lb
+wearpos=legs

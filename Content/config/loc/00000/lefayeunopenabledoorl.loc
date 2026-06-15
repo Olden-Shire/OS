@@ -3,3 +3,6 @@ op1 = Open
 op2 = Knock-at
 models = 639/0
 name = Large door
+//Server
+desc=Sturdy looking door.
+category=keep_lefaye_door

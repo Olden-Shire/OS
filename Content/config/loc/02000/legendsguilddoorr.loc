@@ -5,3 +5,8 @@ mirror = true
 recol = 10167/43486 9643/41 9137/41191
 models = 593/0
 name = Legends Guild door
+//Server
+desc=A door to the Legends Guild.
+category=double_door_open_and_close_right
+param=next_loc_stage,inac_legendsguilddoorr
+param=open_sound,door_open

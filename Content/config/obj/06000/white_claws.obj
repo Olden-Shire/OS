@@ -19,3 +19,8 @@ recol3d = 82
 recol4s = 24
 recol4d = 74
 name = White claws
+//Server
+desc=A set of fighting claws.
+wearpos=righthand
+wearpos2=lefthand
+weight=2lb

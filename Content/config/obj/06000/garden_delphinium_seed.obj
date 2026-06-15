@@ -17,3 +17,6 @@ recol1d = 39892
 recol2s = 59738
 recol2d = 40642
 name = Delphinium seed
+//Server
+desc=A delphinium seed.
+weight=1g

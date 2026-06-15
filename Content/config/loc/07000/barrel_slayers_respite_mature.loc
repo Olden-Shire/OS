@@ -4,3 +4,5 @@ op1 = Level
 nonblockrange = true
 models_only = 7775
 name = Mature Slayer's Respite
+//Server
+desc=A barrel of mature Slayer's Respite.

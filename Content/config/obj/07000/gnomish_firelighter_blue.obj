@@ -12,3 +12,7 @@ cost = 15
 recol1s = 2857
 recol1d = 38193
 name = Blue firelighter
+//Server
+desc=Makes firelighting lots easier
+weight=1g
+weight=1g

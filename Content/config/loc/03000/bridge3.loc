@@ -5,3 +5,5 @@ hillskew = true
 recol = 6689/7952
 models_only = 700
 name = Bridge
+//Server
+desc=A bridge.

@@ -19,3 +19,17 @@ recol3d = 33690
 recol4s = 6032
 recol4d = 33690
 name = Guthix cape
+//Server
+desc=A cape from the almighty god Guthix.
+wearpos=back
+weight=1lb
+category=armour_godcape
+param=magicattack,10
+param=stabdefence,1
+param=slashdefence,1
+param=crushdefence,2
+param=magicdefence,10
+param=destroy_death,^true
+param=lose_cape_message,Guthix reclaims the cape as it touches the ground.
+tradeable=no
+param=guthixitem,^true

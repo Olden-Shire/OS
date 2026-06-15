@@ -10,3 +10,7 @@ members = true
 recol1s = 127
 recol1d = 51111
 name = Dragonstone ammy
+//Server
+desc=It needs a string so I can wear it.
+weight=4g
+param=crafting_jewelry_struct,unstrung_dragonstone_amulet

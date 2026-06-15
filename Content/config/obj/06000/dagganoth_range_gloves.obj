@@ -11,3 +11,7 @@ iop2 = Wear
 manwear = obj_spined_gloves_6149_man, 0
 womanwear = obj_spined_gloves_6149_woman, 0
 name = Spined gloves
+//Server
+desc=Fremennik gloves stitched together from spined dagannoth hide.
+weight=7lb
+wearpos=hands

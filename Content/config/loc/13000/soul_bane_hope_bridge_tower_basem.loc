@@ -5,3 +5,5 @@ mirror = true
 ambient = 50
 models_only = 14265
 name = Hope bridge
+//Server
+desc=Does that really exist?

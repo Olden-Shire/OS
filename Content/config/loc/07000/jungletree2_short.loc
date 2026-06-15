@@ -7,3 +7,5 @@ resizex = 130
 mapscene = 5
 models_only = 1702
 name = Leafy tree
+//Server
+desc=A leafy tree.

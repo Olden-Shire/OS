@@ -7,3 +7,6 @@ ambient = 10
 members = true
 cost = 0
 name = Cube
+//Server
+desc=A yellow cube.
+weight=1g

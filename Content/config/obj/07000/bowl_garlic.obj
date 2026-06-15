@@ -9,3 +9,6 @@ cost = 7
 recol1s = 44263
 recol1d = 6063
 name = Chopped garlic
+//Server
+desc=A bowl of chopped garlic.
+weight=500g

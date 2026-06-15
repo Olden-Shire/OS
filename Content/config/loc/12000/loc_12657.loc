@@ -7,3 +7,5 @@ ambient = 20
 recol = 7335/6689 7331/6684 7326/6808 7322/6932 7446/7056 7442/7054
 models = 13573/0
 name = Exit
+//Server
+desc=I can get out this way.

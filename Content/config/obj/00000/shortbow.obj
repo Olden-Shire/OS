@@ -12,3 +12,17 @@ womanwear = obj_shortbow_841_wear, 6
 recol1s = 6674
 recol1d = 6049
 name = Shortbow
+//Server
+desc=Short but effective.
+wearpos=righthand
+wearpos2=lefthand
+category=weapon_bow
+weight=3lb
+respawnrate=200
+param=rangeattack,8
+param=levelrequire,1
+param=attackrange,7
+param=rangeattack_anim,human_bow
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,arrowlaunch2
+param=damagetype,^ranged_style

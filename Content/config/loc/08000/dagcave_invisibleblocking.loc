@@ -4,3 +4,5 @@ blockwalk = true
 nonblockrange = true
 models_only = 6318
 name = Door
+//Server
+desc=A sturdy looking door, propped shut with a support.

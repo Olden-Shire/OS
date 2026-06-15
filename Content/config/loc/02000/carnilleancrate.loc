@@ -3,3 +3,5 @@ active = 1
 op1 = Search
 models_only = 2143
 name = Crate
+//Server
+desc=Used for storage.

@@ -13,3 +13,8 @@ members = true
 recol1s = 61
 recol1d = 0
 name = Spatula
+//Server
+desc=A large spatula... of doom!
+wearpos=righthand
+wearpos2=lefthand
+weight=8lb

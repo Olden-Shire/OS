@@ -4,3 +4,5 @@ mirror = true
 recol = 5541/4667
 models = 10174/0
 name = Door
+//Server
+desc=A wooden door.

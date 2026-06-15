@@ -7,3 +7,8 @@ zoom2d = 700
 yan2d = 20
 xan2d = 328
 name = Chest key
+//Server
+desc=This key opens a chest in the Carnillean household.
+weight=10g
+param=no_alchemy,1
+tradeable=no

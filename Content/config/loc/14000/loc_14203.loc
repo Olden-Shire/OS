@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models_only = 14409
 name = Hole
+//Server
+desc=So small only a rabbit could squeeze down.

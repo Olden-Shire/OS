@@ -10,3 +10,8 @@ iop1 = Extinguish
 recol1s = 127
 recol1d = 8
 name = Lit black candle
+//Server
+desc=A lit spooky candle.
+weight=1oz
+category=light_source_lit
+tradeable=no

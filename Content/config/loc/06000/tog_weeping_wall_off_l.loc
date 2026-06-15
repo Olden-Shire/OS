@@ -2,3 +2,5 @@
 active = 1
 models = 6511/4
 name = Absence of tears
+//Server
+desc=The wall is not weeping at the moment.

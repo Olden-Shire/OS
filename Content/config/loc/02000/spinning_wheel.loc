@@ -3,3 +3,5 @@ forceapproach = 11
 op2 = Spin
 models_only = 2248
 name = Spinning wheel
+//Server
+desc=Used for spinning thread.

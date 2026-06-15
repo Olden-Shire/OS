@@ -4,3 +4,5 @@ op1 = Study
 recol = 5665/6932 5660/7054 5784/6028
 models_only = 10016
 name = Bookcase
+//Server
+desc=A collection of rare books.

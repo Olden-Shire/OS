@@ -4,3 +4,5 @@ ambient = 25
 contrast = 25
 models_only = 1495
 name = Barrel
+//Server
+desc=It's got ale in it.

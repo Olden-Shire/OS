@@ -7,3 +7,6 @@ members = true
 recol1s = 61
 recol1d = 19641
 name = Strange potion
+//Server
+desc=Some strange liquid given to you by Zavistic Rarve.
+weight=1g

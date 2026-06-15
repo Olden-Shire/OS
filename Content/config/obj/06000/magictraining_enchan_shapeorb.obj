@@ -5,3 +5,6 @@ yan2d = 56
 ambient = 10
 members = true
 name = Orb
+//Server
+desc=A white sphere.
+weight=1g

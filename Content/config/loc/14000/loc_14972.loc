@@ -4,3 +4,5 @@ length = 2
 hillskew = true
 models_only = 14898
 name = Net
+//Server
+desc=A large net for pulling in fish.

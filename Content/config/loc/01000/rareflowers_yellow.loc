@@ -3,3 +3,5 @@ nonsolid = true
 recol = 910/7101 712/10176 695/7093 840/8128 842/10176
 models_only = 1623
 name = Flowers
+//Server
+desc=Very rare flowers.

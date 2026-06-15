@@ -6,3 +6,7 @@ zoom2d = 791
 yan2d = 1893
 xan2d = 366
 name = Necklace mould
+//Server
+desc=Used to make gold necklaces.
+weight=1lb
+respawnrate=200

@@ -3,3 +3,5 @@ length = 2
 mirror = true
 models_only = 9595
 name = Trawler net
+//Server
+desc=Smells like fish.

@@ -4,3 +4,5 @@ nonsolid = true
 op1 = Close
 models = 13228/0
 name = Door
+//Server
+desc=A desert door.

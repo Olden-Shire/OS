@@ -13,3 +13,9 @@ members = true
 recol1s = 4626
 recol1d = 43342
 name = Boots
+//Server
+desc=They're soft and silky.
+wearpos=feet
+weight=12oz
+param=slashdefence,1
+param=crushdefence,1

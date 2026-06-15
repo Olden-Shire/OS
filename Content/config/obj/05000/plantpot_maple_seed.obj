@@ -7,3 +7,6 @@ members = true
 recol1s = 6930
 recol1d = 7054
 name = Maple seedling
+//Server
+desc=A maple tree seed has been sown in this plant pot.
+weight=2lb

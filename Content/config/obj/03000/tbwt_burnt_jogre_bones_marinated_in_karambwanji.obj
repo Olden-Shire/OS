@@ -10,3 +10,8 @@ iop1 = Bury
 recol1s = 127
 recol1d = 21970
 name = Marinated j' bones
+//Server
+desc=Burnt Jogre bones marinated in a lovely Karambwanji sauce. Perfect.
+weight=800g
+category=bones
+param=bone_exp,180

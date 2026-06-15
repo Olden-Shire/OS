@@ -11,3 +11,7 @@ manhead = 68
 womanhead = 126
 members = true
 name = Eye patch
+//Server
+desc=A black piece of cloth on a string.
+wearpos=hat
+weight=6g

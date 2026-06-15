@@ -7,3 +7,6 @@ xan2d = 138
 recol1s = 11187
 recol1d = 40772
 name = Bell bauble
+//Server
+desc=A bauble shaped like a bell painted blue.
+weight=200g

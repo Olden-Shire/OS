@@ -8,3 +8,7 @@ xan2d = 264
 recol1s = 82
 recol1d = 115
 name = Chemical powder
+//Server
+desc=An acrid chemical.
+weight=1oz
+tradeable=no

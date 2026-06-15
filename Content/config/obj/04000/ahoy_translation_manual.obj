@@ -15,3 +15,6 @@ recol3d = 22032
 recol4s = 61
 recol4d = 22032
 name = Translation manual
+//Server
+desc=A translation manual.
+weight=18oz

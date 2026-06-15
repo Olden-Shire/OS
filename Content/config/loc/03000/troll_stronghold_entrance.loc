@@ -7,3 +7,5 @@ ambient = 40
 contrast = 40
 models_only = 3806
 name = Secret Door
+//Server
+desc=The back way into the stronghold.

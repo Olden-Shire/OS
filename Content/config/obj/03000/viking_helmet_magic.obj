@@ -18,3 +18,8 @@ womanhead = 4216
 womanhead2 = 4213
 members = true
 name = Farseer helm
+//Server
+desc=This helmet is worn by farseers.
+wearpos=hat
+wearpos2=head
+weight=6lb

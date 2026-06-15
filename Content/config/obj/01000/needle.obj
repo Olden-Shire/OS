@@ -9,3 +9,6 @@ xan2d = 368
 manwear = obj_needle_wear, 0
 womanwear = obj_needle_wear, 0
 name = Needle
+//Server
+desc=Used with a thread to make clothes.
+weight=1g

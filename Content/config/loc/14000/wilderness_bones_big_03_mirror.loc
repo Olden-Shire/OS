@@ -5,3 +5,5 @@ mirror = true
 recol = 6241/10301
 models_only = 14328
 name = Bones
+//Server
+desc=I'm really glad it's dead.

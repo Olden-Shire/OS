@@ -13,3 +13,8 @@ recol1d = 37
 recol2s = 7075
 recol2d = 2749
 name = A stone bowl
+//Server
+desc=This is a stone bowl full of lava.
+weight=8oz
+wearpos=righthand
+tradeable=no

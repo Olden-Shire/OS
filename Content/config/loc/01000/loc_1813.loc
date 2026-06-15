@@ -3,3 +3,5 @@ sharelight = true
 occlude = true
 models_only = 1537
 name = Stone stand
+//Server
+desc=For putting things on.

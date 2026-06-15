@@ -3,3 +3,5 @@ nonsolid = true
 op1 = Pick
 models_only = 5405
 name = Nettles
+//Server
+desc=Probably feels like a mild bee sting.

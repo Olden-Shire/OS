@@ -4,3 +4,5 @@ hillskew = true
 op1 = Search
 models = 6261/0
 name = Sarcophagus
+//Server
+desc=A fancy name for a coffin.

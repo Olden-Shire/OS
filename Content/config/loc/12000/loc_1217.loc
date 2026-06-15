@@ -10,3 +10,5 @@ op1 = Squeeze-past
 nonblockrange = true
 models_only = 11982
 name = Jutting wall
+//Server
+desc=A wall jutting out into the path.

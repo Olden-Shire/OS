@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 2737
 name = Weapon poison(+)
+//Server
+desc=A vial of extra-strength weapon poison, for spears and daggers.
+weight=35g
+category=potion

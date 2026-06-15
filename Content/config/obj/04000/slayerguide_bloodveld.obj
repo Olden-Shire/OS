@@ -3,3 +3,5 @@ model = obj_bloodveld
 yan2d = 100
 xan2d = 76
 name = Bloodveld
+//Server
+desc=A slayer monster.

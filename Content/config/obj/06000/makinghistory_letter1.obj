@@ -7,3 +7,6 @@ yan2d = 184
 xan2d = 316
 iop5 = Destroy
 name = Letter
+//Server
+desc=A sealed letter to the king.
+weight=5g

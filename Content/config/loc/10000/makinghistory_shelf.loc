@@ -3,3 +3,5 @@ active = 1
 recol = 6594/6808 5675/6932
 models = 4318/4
 name = Shelf
+//Server
+desc=There are some pots and pans here.

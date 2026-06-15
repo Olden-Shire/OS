@@ -1,3 +1,5 @@
 // loc 10161
 models_only = 5283
 name = Boxes
+//Server
+desc=Some wooden boxes.

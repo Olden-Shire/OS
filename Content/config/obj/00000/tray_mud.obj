@@ -7,3 +7,7 @@ xan2d = 172
 members = true
 iop2 = Search
 name = Panning tray
+//Server
+desc=This tray contains mud.
+weight=6oz
+tradeable=no

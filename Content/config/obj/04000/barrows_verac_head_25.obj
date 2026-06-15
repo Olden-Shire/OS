@@ -25,3 +25,9 @@ recol5d = 11140
 recol6s = 10638
 recol6d = 11138
 name = Veracs helm 25
+//Server
+desc=Verac the Defiled's helm.
+weight=3lb
+wearpos=hat
+wearpos2=head
+wearpos3=jaw

@@ -1,3 +1,5 @@
 // loc 6332
 models_only = 6182
 name = Statue
+//Server
+desc=A weathered old statue.

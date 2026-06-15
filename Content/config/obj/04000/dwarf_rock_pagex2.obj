@@ -8,3 +8,6 @@ zan2d = 2044
 xan2d = 560
 members = true
 name = Pages
+//Server
+desc=Missing pages!
+weight=2g

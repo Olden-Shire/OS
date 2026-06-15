@@ -3,3 +3,5 @@ ambient = 100
 active = 1
 models = 2041/4
 name = Star chart
+//Server
+desc=I can see the stars on this.

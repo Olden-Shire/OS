@@ -7,3 +7,5 @@ resizez = 196
 bgsound = 2149, 3
 models_only = 691
 name = Sparkling pool
+//Server
+desc=Patterns of light dance hypnotically across the pool's surface.

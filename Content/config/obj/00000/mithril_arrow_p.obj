@@ -18,3 +18,13 @@ recol1d = 43297
 recol2s = 57
 recol2d = 13221
 name = Mithril arrow(p)
+//Server
+desc=Venomous looking arrows.
+wearpos=quiver
+weight=14g
+category=arrows
+param=rangebonus,22
+param=levelrequire,20
+param=proj_launch,mithril_arrow_launch
+param=proj_travel,mithril_arrow_travel
+param=poison_severity,20

@@ -6,3 +6,6 @@ zoom2d = 2010
 yan2d = 36
 xan2d = 300
 name = Extended brush
+//Server
+desc=A typical garden brush, with a cane tied to it.
+weight=900g

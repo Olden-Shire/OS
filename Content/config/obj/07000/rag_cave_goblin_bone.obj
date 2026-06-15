@@ -10,3 +10,7 @@ recol1d = 10314
 recol2s = 7265
 recol2d = 10301
 name = Cave goblin skull
+//Server
+desc=This needs a good polish.
+weight=3g
+weight=2lb

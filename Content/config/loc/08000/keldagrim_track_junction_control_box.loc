@@ -3,3 +3,5 @@ forceapproach = 11
 op1 = Control
 models_only = 8662
 name = Dwarven machinery
+//Server
+desc=Some bizarre mixture between rocks and machinery. Definitely dwarven.

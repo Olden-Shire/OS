@@ -8,3 +8,7 @@ zoom2d = 976
 yan2d = 267
 xan2d = 418
 name = Dart
+//Server
+desc=Not much good in combat, but perfect for the dart board!
+wearpos=righthand
+weight=3lb

@@ -12,3 +12,8 @@ womanwear = obj_highwayman_mask_2631_woman, 0
 manhead = 76
 womanhead = 134
 name = Highwayman mask
+//Server
+desc=Your money or your life!
+weight=20g
+wearpos=hat
+param=party_clean_exempt,^true

@@ -13,3 +13,7 @@ members = true
 recol1s = 61
 recol1d = 99
 name = White battleaxe
+//Server
+desc=A vicious looking axe.
+wearpos=righthand
+weight=6lb

@@ -3,3 +3,5 @@ width = 2
 recol = 7465/7609 7585/7723 7326/9891
 models_only = 1477
 name = Ladder
+//Server
+desc=An old-looking ladder.

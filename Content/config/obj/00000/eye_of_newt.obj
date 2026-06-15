@@ -7,3 +7,8 @@ zoom2d = 690
 yan2d = 256
 xan2d = 364
 name = Eye of newt
+//Server
+desc=It seems to be looking at me.
+weight=7g
+param=brew_potion_struct,3dose1attack
+param=brew_potion_struct_secondary,3dose2attack

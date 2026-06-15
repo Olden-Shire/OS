@@ -9,3 +9,6 @@ count2 = 4281, 3
 stackable = true
 members = true
 name = Ecto-token
+//Server
+desc=A token with ectoplasm on it.
+weight=10g

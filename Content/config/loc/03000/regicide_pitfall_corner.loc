@@ -3,3 +3,5 @@ nonsolid = true
 op1 = Jump
 models = 3980/22
 name = Leaves
+//Server
+desc=A pile of leaves.

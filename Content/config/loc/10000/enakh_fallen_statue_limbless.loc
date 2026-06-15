@@ -1,3 +1,5 @@
 // loc 10971
 models_only = 10916
 name = Fallen statue
+//Server
+desc=It has no limbs.

@@ -6,3 +6,5 @@ mapscene = 5
 recol = 6583/6565 15799/16039 13264/11200
 models_only = 1689
 name = Banana Tree
+//Server
+desc=Grows a yellow fruit.

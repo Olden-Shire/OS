@@ -14,3 +14,6 @@ recol1d = 8613
 recol2s = 7700
 recol2d = 8493
 name = Firemaking tome
+//Server
+desc=A tome of learning which focuses on the firemaking skill.
+weight=1kg

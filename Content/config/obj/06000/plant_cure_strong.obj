@@ -10,3 +10,6 @@ members = true
 recol1s = 61
 recol1d = 21803
 name = Plant cure
+//Server
+desc=This plant cure emits potency.
+weight=35g

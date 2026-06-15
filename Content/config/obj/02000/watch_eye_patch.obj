@@ -5,3 +5,7 @@ yan2d = 1952
 xan2d = 296
 members = true
 name = Tattered eye patch
+//Server
+desc=Useless as an eyepatch.
+weight=6g
+tradeable=no

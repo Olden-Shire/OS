@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 90
 name = Unfinished potion
+//Server
+desc=I need another ingredient to finish this Kwuarm potion.
+weight=2oz
+category=potion

@@ -2,3 +2,5 @@
 width = 3
 models_only = 14364 14365
 name = Bonzo's Table
+//Server
+desc=A table with fish on.

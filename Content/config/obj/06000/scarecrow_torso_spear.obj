@@ -9,3 +9,6 @@ xan2d = 220
 members = true
 ambient = 15
 name = Hay sack
+//Server
+desc=This sack of hay has a bronze spear sticking through it.
+weight=4oz

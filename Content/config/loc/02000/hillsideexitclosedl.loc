@@ -4,3 +4,5 @@ op1 = Open
 op2 = Search
 models_only = 607
 name = Tomb exit
+//Server
+desc=Perhaps you should give them a push.

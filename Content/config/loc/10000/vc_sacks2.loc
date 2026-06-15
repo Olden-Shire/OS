@@ -3,3 +3,5 @@ ambient = 10
 recol = 8094/8481
 models_only = 1482
 name = Sack
+//Server
+desc=Rat infested.

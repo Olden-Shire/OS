@@ -4,3 +4,5 @@ anim = 468
 active = 1
 models = 2258/4
 name = Charms
+//Server
+desc=Trinkets and stuff.

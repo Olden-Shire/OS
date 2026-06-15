@@ -10,3 +10,5 @@ resizey = 128
 resizez = 128
 models_only = 10615
 name = Statue
+//Server
+desc=A statue.

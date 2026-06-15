@@ -4,3 +4,5 @@ op1 = Drain
 nonblockrange = true
 models_only = 7775
 name = Barrel
+//Server
+desc=A barrel of bad ale.

@@ -3,3 +3,5 @@ active = 1
 op1 = Ring-bell
 models = 5649/0
 name = Antiques Shop Stall
+//Server
+desc=Shop counter.

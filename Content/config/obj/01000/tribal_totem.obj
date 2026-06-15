@@ -8,3 +8,7 @@ zoom2d = 1150
 yan2d = 108
 xan2d = 188
 name = Totem
+//Server
+desc=The Rantuki tribes' totem.
+weight=3kg
+tradeable=no

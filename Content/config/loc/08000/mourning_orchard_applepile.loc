@@ -3,3 +3,5 @@ op1 = Take-from
 recol = 17331/3742 22422/9647 3742/3742 18347/3742
 models_only = 8287
 name = Rotten Apple Pile
+//Server
+desc=A pile of rotten apples!

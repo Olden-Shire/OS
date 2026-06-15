@@ -7,3 +7,6 @@ zoom2d = 690
 yan2d = 2040
 xan2d = 452
 name = Woad leaf
+//Server
+desc=A slightly bluish leaf.
+weight=10g

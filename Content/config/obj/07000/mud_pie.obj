@@ -18,3 +18,7 @@ recol2d = 7710
 recol3s = 4416
 recol3d = 6443
 name = Mud pie
+//Server
+desc=All the good of the earth.
+weight=1g
+wearpos=righthand

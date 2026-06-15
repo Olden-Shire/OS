@@ -13,3 +13,8 @@ iop2 = Wear
 recol1s = 926
 recol1d = 22193
 name = Pendant of lucien
+//Server
+desc=The amulet that Lucien gave you.
+wearpos=front
+weight=10g
+tradeable=no

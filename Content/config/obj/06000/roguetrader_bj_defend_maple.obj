@@ -12,3 +12,8 @@ cost = 1600
 recol1s = 8111
 recol1d = 5960
 name = Maple blackjack(d)
+//Server
+desc=A defensive blackjack.
+wearpos=righthand
+weight=1kg
+weight=4lb

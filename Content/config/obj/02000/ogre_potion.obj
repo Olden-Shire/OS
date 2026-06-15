@@ -9,3 +9,7 @@ members = true
 recol1s = 61
 recol1d = 14278
 name = Potion
+//Server
+desc=A strange brew.
+weight=25g
+tradeable=no

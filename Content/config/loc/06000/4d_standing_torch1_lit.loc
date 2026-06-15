@@ -5,3 +5,5 @@ contrast = 15
 recol = 61/6817 49/6817
 models_only = 6372 6361
 name = Standing Torch
+//Server
+desc=An old mystical torch.

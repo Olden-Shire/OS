@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 5392/6600 5388/7609 5640/7723
 models_only = 5524
 name = Bush
+//Server
+desc=A dried up bush, void of life.

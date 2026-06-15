@@ -8,3 +8,7 @@ members = true
 recol1s = 61
 recol1d = 12
 name = Chemical compound
+//Server
+desc=A mixture of strong chemicals.
+weight=35g
+tradeable=no

@@ -11,3 +11,7 @@ womanwear = obj_skirt_5048_woman, 0
 recol1s = 9529
 recol1d = 10130
 name = Skirt
+//Server
+desc=A brown skirt. Size small!
+wearpos=legs
+weight=80g

@@ -13,3 +13,6 @@ count3 = 5153, 4
 count4 = 5154, 5
 cost = 4
 name = Tomato seed
+//Server
+desc=A tomato seed - plant in an allotment.
+weight=1g

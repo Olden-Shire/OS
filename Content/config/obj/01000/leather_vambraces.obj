@@ -10,3 +10,11 @@ iop2 = Wear
 manwear = obj_leather_vambraces_1063_man, 0
 womanwear = obj_leather_vambraces_1063_woman, 0
 name = Leather vambraces
+//Server
+desc=Better than no armour!
+wearpos=hands
+weight=8oz
+param=rangeattack,4
+param=stabdefence,2
+param=slashdefence,2
+param=crushdefence,1

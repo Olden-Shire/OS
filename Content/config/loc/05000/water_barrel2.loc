@@ -4,3 +4,5 @@ resizey = 95
 resizez = 95
 models_only = 5499
 name = Water Barrel
+//Server
+desc=A barrel for collecting rain water.

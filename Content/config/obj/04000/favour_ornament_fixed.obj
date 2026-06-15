@@ -7,3 +7,6 @@ yan2d = 1628
 xan2d = 76
 members = true
 name = Ornament
+//Server
+desc=A fixed Weathervane ornament.
+weight=1g

@@ -2,3 +2,5 @@
 mirror = true
 models_only = 755
 name = Guide rope
+//Server
+desc=Looks like the other rope is holding the bridge up.

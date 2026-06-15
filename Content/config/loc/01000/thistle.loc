@@ -3,3 +3,5 @@ nonsolid = true
 ambient = 30
 models_only = 1724
 name = Thistle
+//Server
+desc=Spiky!

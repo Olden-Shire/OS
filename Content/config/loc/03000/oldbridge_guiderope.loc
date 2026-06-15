@@ -3,3 +3,5 @@ op1 = Fire-at
 active = 1
 models_only = 755
 name = Guide rope
+//Server
+desc=Looks like the rope is holding the bridge up.

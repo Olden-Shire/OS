@@ -9,3 +9,6 @@ iop1 = View
 recol1s = 61
 recol1d = 7566
 name = Spare controls
+//Server
+desc=It looks like some kind of control panel.
+weight=200g

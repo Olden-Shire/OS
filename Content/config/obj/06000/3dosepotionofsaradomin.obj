@@ -13,3 +13,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 10939
 name = Saradomin brew(3)
+//Server
+desc=3 doses of Saradomin Brew.
+weight=30g
+category=potion

@@ -13,3 +13,6 @@ recol1d = 3996
 recol2s = 7116
 recol2d = 5027
 name = Axeman's folly
+//Server
+desc=This might help me chop harder.
+weight=550g

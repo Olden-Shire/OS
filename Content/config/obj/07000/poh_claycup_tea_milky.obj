@@ -14,3 +14,6 @@ womanwear = obj_empty_cup_7728_wear, 6
 recol1s = 49
 recol1d = 10547
 name = Cup of tea
+//Server
+desc=A milky cup of nettle tea.
+weight=150g

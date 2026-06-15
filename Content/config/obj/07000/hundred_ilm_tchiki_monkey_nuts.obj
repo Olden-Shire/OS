@@ -12,3 +12,6 @@ recol1d = 4550
 recol2s = 3990
 recol2d = 3988
 name = Tchiki monkey nuts
+//Server
+desc=Like Monkey Nuts only Tchikier.
+weight=10g

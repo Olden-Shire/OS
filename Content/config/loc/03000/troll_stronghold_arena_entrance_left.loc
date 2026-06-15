@@ -3,3 +3,5 @@ hillskew = true
 op1 = Open
 models = 3803/0 3804/3 3805/9
 name = Arena Entrance
+//Server
+desc=The entrance to the Troll Arena.

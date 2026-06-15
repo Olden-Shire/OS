@@ -3,3 +3,5 @@ op2 = Investigate
 offsetz = -16
 models_only = 2036
 name = Sinclair family crest
+//Server
+desc=It's the Sinclair Family coat of arms.

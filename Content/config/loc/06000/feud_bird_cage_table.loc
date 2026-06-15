@@ -3,3 +3,5 @@ width = 2
 retex = 5/16 22/16
 models_only = 1213 6066
 name = Cage
+//Server
+desc=Bird cage.

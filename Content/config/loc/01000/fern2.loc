@@ -4,3 +4,5 @@ mapscene = 9
 ambient = 40
 models_only = 1655
 name = Fern
+//Server
+desc=A fern is growing here.

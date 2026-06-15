@@ -3,3 +3,5 @@ ambient = 10
 width = 2
 models_only = 11611
 name = Winch
+//Server
+desc=For bringing ore out of the mines.

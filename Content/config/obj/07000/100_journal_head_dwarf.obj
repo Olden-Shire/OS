@@ -4,3 +4,5 @@ xof2d = 1
 yof2d = -3
 zoom2d = 848
 name = Dwarf
+//Server
+desc=It's a Dwarf.

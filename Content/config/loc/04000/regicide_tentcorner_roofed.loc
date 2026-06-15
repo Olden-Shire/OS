@@ -5,3 +5,5 @@ contrast = 10
 recol = 103/41410 17686/7364
 models_only = 3935
 name = Tent wall
+//Server
+desc=A tent wall.

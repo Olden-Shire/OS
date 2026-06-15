@@ -4,3 +4,5 @@ length = 4
 ambient = 20
 models_only = 9534
 name = Crane
+//Server
+desc=It's used for loading and unloading fishing boats.

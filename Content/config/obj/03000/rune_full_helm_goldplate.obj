@@ -17,3 +17,9 @@ recol1d = 7114
 recol2s = 926
 recol2d = 6057
 name = Gilded full helm
+//Server
+desc=Rune full helm with gold plate.
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=6lb

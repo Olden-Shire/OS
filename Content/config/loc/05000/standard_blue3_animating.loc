@@ -4,3 +4,5 @@ ambient = 40
 recol = 43934/40627
 models_only = 5576
 name = Standard
+//Server
+desc=A blue standard.

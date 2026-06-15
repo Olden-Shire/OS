@@ -2,3 +2,7 @@
 nonsolid = true
 models_only = 3601
 name = A small bush
+//Server
+desc=It'll probably die soon.
+param=next_loc_stage,peartree_druidicspirit2
+param=open_sound,bloom_pears

@@ -17,3 +17,7 @@ recol1d = 36036
 recol2s = 5572
 recol2d = 2157
 name = Villager hat
+//Server
+desc=A brightly coloured hat prized by the Tai Bwo Wannai peoples.
+weight=2lb
+wearpos=hat

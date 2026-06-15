@@ -6,3 +6,6 @@ zoom2d = 1190
 yan2d = 116
 xan2d = 440
 name = Cowhide
+//Server
+desc=I should take this to the tannery.
+weight=6lb

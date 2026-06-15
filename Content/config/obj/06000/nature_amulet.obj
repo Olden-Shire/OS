@@ -16,3 +16,7 @@ recol2d = 10520
 recol3s = 4882
 recol3d = 10520
 name = Amulet of nature
+//Server
+desc=An Amulet of Nature.
+wearpos=front
+weight=7g

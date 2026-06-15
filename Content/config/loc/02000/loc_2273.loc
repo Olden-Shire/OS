@@ -4,3 +4,5 @@ nonsolid = true
 op1 = Swing-on
 models_only = 2279
 name = Rope swing
+//Server
+desc=An odd-looking rock with a rope tied to it.

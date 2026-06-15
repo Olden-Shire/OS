@@ -3,3 +3,5 @@ ambient = 10
 length = 2
 models_only = 9592
 name = Wheelbarrow
+//Server
+desc=A wooden wheelbarrow.

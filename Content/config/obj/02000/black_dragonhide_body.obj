@@ -13,3 +13,15 @@ recol1d = 4
 recol2s = 22424
 recol2d = 16
 name = Black d'hide body
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=torso
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=rangeattack,30
+param=stabdefence,55
+param=slashdefence,47
+param=crushdefence,60
+param=magicdefence,50
+param=rangedefence,55

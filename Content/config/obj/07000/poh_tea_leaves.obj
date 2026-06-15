@@ -10,3 +10,6 @@ recol1d = 32691
 recol2s = 22428
 recol2d = 34727
 name = Tea leaves
+//Server
+desc=Mmm, how about a nice cup of tea?
+weight=10g

@@ -4,3 +4,5 @@ length = 3
 nonblockrange = true
 models_only = 1288
 name = Bed
+//Server
+desc=Lovely comfy-looking big bed.

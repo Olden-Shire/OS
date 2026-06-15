@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 9209
 name = Vine patch
+//Server
+desc=You can grow Burthorpe Vines in this patch.

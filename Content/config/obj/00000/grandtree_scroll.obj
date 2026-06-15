@@ -9,3 +9,7 @@ yan2d = 120
 xan2d = 380
 iop1 = Read
 name = Hazelmere's scroll
+//Server
+desc=Hazelmere wrote something down on this scroll.
+weight=20g
+tradeable=no

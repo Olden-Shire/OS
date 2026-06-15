@@ -21,3 +21,6 @@ recol5d = 94
 recol6s = 6042
 recol6d = 82
 name = Signed portrait
+//Server
+desc=A signed classic realist charcoal portrait of Sithik.
+weight=20g

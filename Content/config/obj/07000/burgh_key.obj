@@ -12,3 +12,6 @@ iop5 = Destroy
 recol1s = 8128
 recol1d = 15009
 name = Temple library key
+//Server
+desc=A key for the Temple Library.
+weight=10g

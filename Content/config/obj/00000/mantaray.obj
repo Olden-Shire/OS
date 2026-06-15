@@ -12,3 +12,7 @@ recol1d = 4418
 recol2s = 33
 recol2d = 4517
 name = Manta ray
+//Server
+desc=A rare catch.
+weight=400g
+category=category_58

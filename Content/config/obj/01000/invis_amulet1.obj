@@ -3,3 +3,6 @@ model = obj_sapphire_ring_1649
 yan2d = 4
 xan2d = 20
 name = Sapphire amulet
+//Server
+desc=It needs a string so I can wear it.
+param=crafting_jewelry_struct,unstrung_sapphire_amulet

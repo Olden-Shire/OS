@@ -8,3 +8,8 @@ xan2d = 256
 recol1s = 5018
 recol1d = 334
 name = Diary
+//Server
+desc=A daily journal.
+weight=18oz
+respawnrate=30
+tradeable=no

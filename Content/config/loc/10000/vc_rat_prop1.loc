@@ -2,3 +2,5 @@
 active = 1
 models_only = 10054
 name = Rat barrel
+//Server
+desc=Empty.

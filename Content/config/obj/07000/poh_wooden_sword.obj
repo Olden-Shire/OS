@@ -11,3 +11,7 @@ members = true
 recol1s = 11200
 recol1d = 7952
 name = Wooden sword
+//Server
+desc=A less-than razor sharp sword.
+wearpos=righthand
+weight=4lb

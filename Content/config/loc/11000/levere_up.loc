@@ -4,3 +4,7 @@ op1 = Pull
 op2 = Inspect
 models = 2108/4
 name = Lever E
+//Server
+desc=A lever pointing upwards.
+category=haunted_lever
+param=lever_index,3

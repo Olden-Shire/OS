@@ -4,3 +4,5 @@ ambient = 25
 contrast = 25
 models = 2107/4
 name = Painting
+//Server
+desc=A really bad portrait of the King.

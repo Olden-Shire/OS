@@ -2,3 +2,5 @@
 active = 1
 models_only = 1464
 name = Hole
+//Server
+desc=You can see a cauldron directly below.

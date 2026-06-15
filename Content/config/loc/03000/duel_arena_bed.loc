@@ -5,3 +5,5 @@ contrast = 15
 recol = 33/37970 8770/43067
 models_only = 1256
 name = Bed
+//Server
+desc=Beats the operating table.

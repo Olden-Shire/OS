@@ -8,3 +8,11 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_hard
+param=trail_desc,My giant guardians below|the market streets would|be fans of rock and roll,|if only they could grab hold of it.|Dig near my green bubbles!
+param=trail_coord,0_49_154_25_49
+param=trail_casket,trail_clue_hard_riddle011_casket
+tradeable=no

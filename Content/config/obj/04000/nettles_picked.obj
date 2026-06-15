@@ -8,3 +8,6 @@ yan2d = 1708
 xan2d = 236
 members = true
 name = Nettles
+//Server
+desc=A handful of nettles.
+weight=7g

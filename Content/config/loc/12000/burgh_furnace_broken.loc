@@ -5,3 +5,5 @@ ambient = 25
 op1 = Search
 models_only = 10998 11001
 name = Broken furnace
+//Server
+desc=An old and broken furnace, there is a huge hole in the steel hood.

@@ -7,3 +7,7 @@ nonsolid = true
 recol = 61/16916 49/13840 41/4626
 models_only = 1701
 name = Jungle Tree
+//Server
+desc=Home to many unusual creatures.
+category=jungle_tree
+param=next_loc_stage,junglestump_kharazi

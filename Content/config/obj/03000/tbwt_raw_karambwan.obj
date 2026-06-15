@@ -7,3 +7,6 @@ zoom2d = 1800
 yan2d = 56
 xan2d = 388
 name = Raw karambwan
+//Server
+desc=A raw green octopus.
+weight=700g

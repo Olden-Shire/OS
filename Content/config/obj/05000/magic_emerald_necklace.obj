@@ -10,3 +10,7 @@ iop2 = Wear
 manwear = obj_binding_necklace_5521_man, 0
 womanwear = obj_binding_necklace_5521_woman, 0
 name = Binding necklace
+//Server
+desc=A necklace embedded with mystical power.
+wearpos=front
+weight=10g

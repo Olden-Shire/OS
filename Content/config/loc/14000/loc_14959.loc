@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 14902 14904
 name = Firebox
+//Server
+desc=There are some logs in the firebox of the press.

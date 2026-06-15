@@ -8,3 +8,6 @@ xan2d = 328
 members = true
 iop1 = Read
 name = Letter
+//Server
+desc=A letter addressed to Elstan of Falador.
+weight=1g

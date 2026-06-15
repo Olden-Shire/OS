@@ -16,3 +16,6 @@ recol2d = 920
 recol3s = 5543
 recol3d = 912
 name = Red marionette
+//Server
+desc=I've got no strings ... oh hang on!
+weight=2lb

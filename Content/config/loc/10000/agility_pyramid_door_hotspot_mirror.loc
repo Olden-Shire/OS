@@ -4,3 +4,5 @@ active = 1
 op1 = Enter
 models = 10770/4
 name = Doorway
+//Server
+desc=The doorway leads down into the pyramid.

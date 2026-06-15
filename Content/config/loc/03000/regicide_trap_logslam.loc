@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 3977
 name = Tree
+//Server
+desc=It's a tree.

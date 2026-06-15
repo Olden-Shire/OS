@@ -5,3 +5,6 @@ offsetz = 0
 nonblockrange = true
 models_only = 7704
 name = Crate
+//Server
+desc=For storage.
+category=empty_crate

@@ -4,3 +4,5 @@ width = 2
 active = 1
 models_only = 4981
 name = Pipe
+//Server
+desc=A pipe I can squeeze through.

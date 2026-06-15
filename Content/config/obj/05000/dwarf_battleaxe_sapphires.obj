@@ -8,3 +8,6 @@ xan2d = 356
 members = true
 iop1 = Wield
 name = Dwarven battleaxe
+//Server
+desc=Three sapphires have been crafted onto the hilt.
+weight=2kg

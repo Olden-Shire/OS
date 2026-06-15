@@ -1,3 +1,5 @@
 // loc 200
 models_only = 1324
 name = Lamp
+//Server
+desc=A quirky gnome lamp.

@@ -7,3 +7,6 @@ yan2d = 204
 xan2d = 543
 cost = 1
 name = Fresh crab claw
+//Server
+desc=Fresh off the crab itself.
+weight=2lb

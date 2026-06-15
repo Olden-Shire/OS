@@ -19,3 +19,7 @@ recol3d = 10760
 recol4s = 14490
 recol4d = 11140
 name = Ahrims staff 25
+//Server
+desc=Ahrim the Blighted's quarterstaff.
+weight=5lb
+wearpos=righthand

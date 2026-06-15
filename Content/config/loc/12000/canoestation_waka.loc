@@ -4,3 +4,5 @@ width = 5
 op1 = Float Canoe
 models_only = 12001 12013
 name = Canoe Station
+//Server
+desc=You can create a canoe here.

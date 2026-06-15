@@ -3,3 +3,5 @@ ambient = 15
 op1 = Climb-down
 models_only = 10258
 name = Champion Statue
+//Server
+desc=There's an open trapdoor in its base.

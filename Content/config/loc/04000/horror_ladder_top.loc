@@ -5,3 +5,5 @@ active = 1
 op1 = Climb
 models_only = 4569
 name = Iron ladder
+//Server
+desc=I could climb this if I wanted.

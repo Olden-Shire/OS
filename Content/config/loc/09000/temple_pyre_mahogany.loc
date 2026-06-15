@@ -4,3 +4,5 @@ length = 3
 recol = 7050/5665 7582/6585
 models_only = 4138
 name = Funeral Pyre
+//Server
+desc=A place to cremate the dead. Needs a body.

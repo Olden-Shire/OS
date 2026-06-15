@@ -21,3 +21,7 @@ recol4d = 924
 recol5s = 39463
 recol5d = 0
 name = Mystic robe bottom
+//Server
+desc=The lower half of a dark magical robe.
+wearpos=legs
+weight=4lb

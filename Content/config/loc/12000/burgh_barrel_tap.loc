@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 14499/13477 5541/13596 5665/13716 5660/10768 5784/10892 5904/14216
 models_only = 8232 14000
 name = Barrel
+//Server
+desc=A wooden barrel for storage.

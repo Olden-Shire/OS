@@ -8,3 +8,5 @@ op1 = Exit
 recol = 6036/7335 5008/7219 1932/7232 904/7244 900/7384 0/7269
 models_only = 3717
 name = Cave Exit
+//Server
+desc=The exit to the outside.

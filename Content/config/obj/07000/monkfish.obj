@@ -13,3 +13,6 @@ recol1d = 1211
 recol2s = 103
 recol2d = 1226
 name = Monkfish
+//Server
+desc=A tasty fish.
+weight=400g

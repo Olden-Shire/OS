@@ -5,3 +5,6 @@ xof2d = -7
 zoom2d = 970
 yan2d = 284
 name = Sphinx's token
+//Server
+desc=Miniature golden statue of a sphinx.
+weight=800g

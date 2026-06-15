@@ -4,3 +4,6 @@ mirror = true
 active = 1
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=The right hand side of the gate.
+category=outpost_gate

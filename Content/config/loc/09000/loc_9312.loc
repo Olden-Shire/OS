@@ -6,3 +6,5 @@ op1 = Climb-into
 active = 1
 models_only = 255
 name = Underwall tunnel
+//Server
+desc=An underwall tunnel.

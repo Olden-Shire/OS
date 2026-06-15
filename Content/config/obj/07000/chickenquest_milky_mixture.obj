@@ -10,3 +10,6 @@ iop5 = Destroy
 recol1s = 39834
 recol1d = 6371
 name = Milky mixture
+//Server
+desc=It's a bucket of milk and cream.
+weight=3lb

@@ -2,3 +2,5 @@
 active = 1
 models = 10158/4
 name = Chalice
+//Server
+desc=The antique chalice seems to be attached to the wall.

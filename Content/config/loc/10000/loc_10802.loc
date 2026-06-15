@@ -5,3 +5,5 @@ ambient = 18
 contrast = 15
 models_only = 10605
 name = Pentamid Pile
+//Server
+desc=A pile of pentamids.

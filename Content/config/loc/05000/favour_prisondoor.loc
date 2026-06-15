@@ -5,3 +5,5 @@ op5 = Pick-lock
 recol = 37/5392
 models = 609/0
 name = Door
+//Server
+desc=Stops people getting out.

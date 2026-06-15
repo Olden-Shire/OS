@@ -12,3 +12,7 @@ yan2d = 1268
 xan2d = 303
 cost = 300
 name = Fungicide spray 10
+//Server
+desc=Pumps fungicide.
+wearpos=righthand
+weight=2kg

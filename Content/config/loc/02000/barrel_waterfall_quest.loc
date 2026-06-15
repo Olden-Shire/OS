@@ -2,3 +2,5 @@
 op1 = Get in
 models_only = 1460
 name = Barrel
+//Server
+desc=A wooden barrel, maybe a way off this rock.

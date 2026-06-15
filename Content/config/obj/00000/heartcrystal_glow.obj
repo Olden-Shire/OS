@@ -6,3 +6,7 @@ yof2d = 1
 zoom2d = 660
 iop1 = Look-at
 name = Heart crystal
+//Server
+desc=A heart shaped crystal.
+weight=150g
+tradeable=no

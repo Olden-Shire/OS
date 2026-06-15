@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 7062/5404 7056/5404 28/10270 10270/10266 10275/10270 10279/10275
 models_only = 1410
 name = Well
+//Server
+desc=Best used with a bucket.

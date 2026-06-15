@@ -7,3 +7,6 @@ yan2d = 194
 xan2d = 581
 iop2 = Wear
 name = Easter ring
+//Server
+desc=A ring given to you by the Easter Bunny.
+weight=1g

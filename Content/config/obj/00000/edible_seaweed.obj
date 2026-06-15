@@ -9,3 +9,7 @@ cost = 2
 iop1 = Eat
 members = true
 name = Edible seaweed
+//Server
+desc=Slightly damp seaweed.
+weight=250g
+category=category_59

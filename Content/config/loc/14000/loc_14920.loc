@@ -4,3 +4,5 @@ width = 2
 length = 2
 models_only = 12491
 name = Table
+//Server
+desc=A basic wooden table, suitable for casual meals.

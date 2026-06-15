@@ -5,3 +5,5 @@ mapscene = 12
 nonblockrange = true
 models_only = 1518
 name = Rock
+//Server
+desc=A slippery looking rock.

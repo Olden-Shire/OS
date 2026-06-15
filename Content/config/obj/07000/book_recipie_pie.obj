@@ -14,3 +14,6 @@ recol1d = 829
 recol2s = 6036
 recol2d = 670
 name = Pie recipe book
+//Server
+desc=Lots of pie recipes for me to try.
+weight=1g

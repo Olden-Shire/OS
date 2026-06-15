@@ -3,3 +3,5 @@ sharelight = true
 hillskew = true
 models_only = 6417
 name = Mirror
+//Server
+desc=A shiny mirror.

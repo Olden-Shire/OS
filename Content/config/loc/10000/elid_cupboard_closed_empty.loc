@@ -5,3 +5,5 @@ op3 = Shut
 forceapproach = 11
 models_only = 10159 10161
 name = Cupboard
+//Server
+desc=It's empty.

@@ -5,3 +5,5 @@ active = 1
 bgsound = 3128, 5
 models_only = 9060
 name = Smoke
+//Server
+desc=It shows that the furnace is working.

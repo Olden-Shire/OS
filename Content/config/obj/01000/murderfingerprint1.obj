@@ -7,3 +7,7 @@ zoom2d = 1380
 yan2d = 84
 xan2d = 320
 name = Unknown print
+//Server
+desc=An unidentified fingerprint taken from the murder weapon.
+weight=10g
+tradeable=no

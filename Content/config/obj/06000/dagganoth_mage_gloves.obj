@@ -17,3 +17,7 @@ recol2d = 10262
 recol3s = 3226
 recol3d = 10262
 name = Skeletal gloves
+//Server
+desc=Fremennik gloves stitched together from wallasalki bones fragments.
+weight=7lb
+wearpos=hands

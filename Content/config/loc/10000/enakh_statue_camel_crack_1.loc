@@ -7,3 +7,5 @@ ambient = 25
 recol = 5590/8656
 models_only = 10933 10930 10929
 name = Statue
+//Server
+desc=A large statue.

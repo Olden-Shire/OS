@@ -5,3 +5,7 @@ op1 = Pick
 nonblockrange = true
 models_only = 1627
 name = Pineapple Plant
+//Server
+desc=Looks spiky.
+category=pineapple_plant_wild
+param=next_loc_stage,pineapple_plant_one

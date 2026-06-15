@@ -5,3 +5,5 @@ ambient = 20
 noshadow = true
 models_only = 10163
 name = Fountain
+//Server
+desc=There's no water here.

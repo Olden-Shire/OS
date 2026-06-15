@@ -19,3 +19,6 @@ recol3d = 43548
 recol4s = 127
 recol4d = 43606
 name = Enchanted gem
+//Server
+desc=I can contact the Slayer Masters with this.
+weight=2g

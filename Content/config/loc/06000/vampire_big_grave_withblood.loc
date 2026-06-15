@@ -4,3 +4,5 @@ width = 5
 length = 3
 models_only = 6357
 name = Vampire tomb
+//Server
+desc=An ancient looking tomb.

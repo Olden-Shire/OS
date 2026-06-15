@@ -9,3 +9,7 @@ iop2 = Wear
 manwear = obj_camo_bottoms_6655_man, 0
 womanwear = obj_camo_bottoms_6655_woman, 0
 name = Camo bottoms
+//Server
+desc=Examine what?
+wearpos=legs
+weight=5lb

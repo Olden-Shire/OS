@@ -6,3 +6,5 @@ mapscene = 5
 recol = 61/16916 49/13840 41/4626
 models_only = 1701
 name = Tree
+//Server
+desc=Home to many unusual creatures.

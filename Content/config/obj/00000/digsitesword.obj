@@ -6,3 +6,7 @@ yan2d = 1136
 xan2d = 652
 members = true
 name = Rusty sword
+//Server
+desc=A decent enough weapon gone rusty.
+weight=5lb
+tradeable=no

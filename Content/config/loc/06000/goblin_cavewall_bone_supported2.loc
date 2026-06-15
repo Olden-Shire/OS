@@ -3,3 +3,5 @@ hillskew = true
 sharelight = true
 models_only = 6898
 name = Bone support
+//Server
+desc=Big bones are being used to prop up the wall.

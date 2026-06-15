@@ -3,3 +3,7 @@ model = obj_sapphire_ring_1649
 yan2d = 4
 xan2d = 20
 name = Onyx necklace
+//Server
+desc=I wonder if this is valuable.
+wearpos=righthand
+param=crafting_jewelry_struct,onyx_necklace

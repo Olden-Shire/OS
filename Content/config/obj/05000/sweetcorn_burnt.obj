@@ -12,3 +12,6 @@ recol1d = 3247
 recol2s = 8891
 recol2d = 3243
 name = Burnt sweetcorn
+//Server
+desc=This sweetcorn has been cooked for too long.
+weight=1oz

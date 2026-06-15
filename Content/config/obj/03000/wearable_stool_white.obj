@@ -10,3 +10,7 @@ zoom2d = 740
 yan2d = 2004
 xan2d = 1812
 name = Stool
+//Server
+desc=A comfy stool.
+wearpos=righthand
+weight=5kg

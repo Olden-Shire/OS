@@ -8,3 +8,6 @@ xan2d = 108
 members = true
 iop1 = Wear
 name = Right boot
+//Server
+desc=A good looking boot, for the right foot. Literally.
+weight=500g

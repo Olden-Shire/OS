@@ -11,3 +11,6 @@ recol1d = 4515
 recol2s = 12694
 recol2d = 4515
 name = Repair plank
+//Server
+desc=A plank of wood to repair the hull with.
+weight=5g

@@ -4,3 +4,5 @@ bgsound = 3124, 3
 recol = 43955/43325 115/86 103/70
 models_only = 2281
 name = Flagpole
+//Server
+desc=The flag of Asgarnia.

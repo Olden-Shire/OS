@@ -1,3 +1,5 @@
 // loc 305
 models_only = 1505
 name = Beehive
+//Server
+desc=Where bees live.

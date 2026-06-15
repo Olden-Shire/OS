@@ -22,3 +22,6 @@ recol5d = 13964
 recol6s = 6806
 recol6d = 14216
 name = Crate
+//Server
+desc=An old and musty looking crate.
+weight=10kg

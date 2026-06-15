@@ -9,3 +9,6 @@ members = true
 ambient = 40
 contrast = 20
 name = Fishbowl
+//Server
+desc=An empty fishbowl.
+weight=3lb

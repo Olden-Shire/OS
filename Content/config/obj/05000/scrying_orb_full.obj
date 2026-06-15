@@ -4,3 +4,6 @@ zoom2d = 540
 model = obj_scrying_orb_5518
 members = true
 name = Scrying orb
+//Server
+desc=This contains mystical teleport information...
+weight=1kg

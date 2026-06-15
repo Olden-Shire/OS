@@ -3,3 +3,5 @@ hillskew = true
 op1 = Unlock
 models = 3801/0
 name = Prison Door
+//Server
+desc=The door to the prison.

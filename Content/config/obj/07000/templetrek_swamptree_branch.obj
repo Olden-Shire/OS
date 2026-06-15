@@ -12,3 +12,7 @@ members = true
 recol1s = 5772
 recol1d = 14742
 name = Branch
+//Server
+desc=Leafless bush branch.
+wearpos=righthand
+weight=500g

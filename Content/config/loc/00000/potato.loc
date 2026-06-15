@@ -3,3 +3,5 @@ op2 = Pick
 nonsolid = true
 models_only = 8216
 name = Potato
+//Server
+desc=Potato-licious!

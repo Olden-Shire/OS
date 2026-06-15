@@ -13,3 +13,7 @@ recol1d = 20830
 recol2s = 6482
 recol2d = 25032
 name = Ghostspeak amulet
+//Server
+desc=The amulet of ghostspeak glows green from the crone's enchantment.
+wearpos=front
+weight=10g

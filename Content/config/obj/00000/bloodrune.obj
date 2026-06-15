@@ -9,3 +9,8 @@ xan2d = 528
 members = true
 ambient = 30
 name = Blood rune
+//Server
+desc=Used for high level missile spells.
+weight=2g
+respawnrate=200
+category=category_149

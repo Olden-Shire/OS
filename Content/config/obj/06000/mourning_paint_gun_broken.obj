@@ -6,3 +6,6 @@ yan2d = 572
 members = true
 cost = 10
 name = Broken device
+//Server
+desc=A strange broken device of gnomic design.
+weight=4kg

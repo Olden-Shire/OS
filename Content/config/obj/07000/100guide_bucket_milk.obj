@@ -10,3 +10,6 @@ members = true
 recol1s = 39834
 recol1d = 127
 name = Enchanted milk
+//Server
+desc=Guiding milk.
+weight=2200g

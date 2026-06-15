@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 8128/14150 7104/11840 5056/8763 4019/8623 2987/7463
 models_only = 3818
 name = Fire
+//Server
+desc=Come bask in the fire's warm glowing warming glow.

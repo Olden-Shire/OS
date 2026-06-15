@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 936
 name = Potted plant
+//Server
+desc=A large potted plant.

@@ -9,3 +9,6 @@ ambient = 15
 members = true
 cost = 4
 name = Barley
+//Server
+desc=A handful of Barley.
+weight=1oz

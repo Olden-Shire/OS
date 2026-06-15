@@ -17,3 +17,6 @@ recol3d = 22433
 recol4s = 127
 recol4d = 21460
 name = Emerald
+//Server
+desc=This looks valuable.
+weight=2g

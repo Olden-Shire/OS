@@ -2,3 +2,5 @@
 width = 2
 models_only = 11579
 name = Rack
+//Server
+desc=A rack for displaying fine maces.

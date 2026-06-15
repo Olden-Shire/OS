@@ -6,3 +6,8 @@ yan2d = 648
 xan2d = 216
 iop1 = Bury
 name = Jogre bones
+//Server
+desc=Fairly big bones which smell distinctly of Jogre.
+weight=800g
+category=bones
+param=bone_exp,150

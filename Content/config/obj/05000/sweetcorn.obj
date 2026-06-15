@@ -9,3 +9,6 @@ ambient = 15
 members = true
 cost = 9
 name = Sweetcorn
+//Server
+desc=Raw sweetcorn.
+weight=1oz

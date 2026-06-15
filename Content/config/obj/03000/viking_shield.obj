@@ -11,3 +11,7 @@ womanwear = obj_fremennik_shield_3758_wear, 6
 members = true
 cost = 5000
 name = Fremennik shield
+//Server
+desc=A shield worn by Fremennik warriors.
+wearpos=lefthand
+weight=5lb

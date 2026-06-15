@@ -17,3 +17,6 @@ recol4d = 41
 recol5s = 43968
 recol5d = 41
 name = Steel key red
+//Server
+desc=A steel key with a blood-red painted eyelet.
+weight=10g

@@ -9,3 +9,6 @@ xan2d = 84
 recol1s = 61
 recol1d = 12579
 name = Troll potion
+//Server
+desc=It's part of Eadgar's plan.
+weight=2oz

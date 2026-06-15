@@ -4,3 +4,5 @@ length = 2
 nonblockrange = true
 models_only = 11459
 name = Table
+//Server
+desc=A filthy but sturdy looking table.

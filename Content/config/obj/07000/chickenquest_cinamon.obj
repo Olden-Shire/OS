@@ -7,3 +7,6 @@ yan2d = 770
 xan2d = 168
 members = true
 name = Cinnamon
+//Server
+desc=Some cinnamon sticks.
+weight=3g

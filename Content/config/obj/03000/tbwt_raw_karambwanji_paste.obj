@@ -10,3 +10,6 @@ xan2d = 320
 recol1s = 10529
 recol1d = 20793
 name = Karambwanji paste
+//Server
+desc=This paste smells of raw fish.
+weight=10g

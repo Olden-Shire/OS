@@ -4,3 +4,5 @@ length = 3
 width = 3
 models_only = 6432
 name = Rock
+//Server
+desc=An entrance into a tunnel. I wonder where it leads to.

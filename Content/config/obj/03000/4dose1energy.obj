@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 63929
 name = Energy potion(4)
+//Server
+desc=4 doses of energy potion.
+weight=35g
+category=potion
+param=next_obj_stage,3dose1energy
+param=decant_potion_enum,potion_1energy
+param=dose_count,4

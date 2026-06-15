@@ -11,3 +11,7 @@ zoom2d = 912
 yan2d = 1268
 xan2d = 303
 name = Fungicide spray 3
+//Server
+desc=Pumps fungicide.
+wearpos=righthand
+weight=2kg

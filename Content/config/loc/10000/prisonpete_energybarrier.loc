@@ -9,3 +9,5 @@ bgsound = 2065, 3
 recol = 61/49
 models_only = 5397
 name = Energy Barrier
+//Server
+desc=A glowing barrier of energy prevents your escape.

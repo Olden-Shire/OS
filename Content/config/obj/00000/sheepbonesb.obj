@@ -6,3 +6,7 @@ zoom2d = 1410
 yan2d = 368
 xan2d = 400
 name = Sheep bones (2)
+//Server
+desc=The suspicious-looking remains of a suspicious-looking sheep.
+weight=3lb
+tradeable=no

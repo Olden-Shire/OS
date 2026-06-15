@@ -8,3 +8,5 @@ nonblockrange = true
 recol = 8128/30938 7104/31190 5056/31058 4019/31054 2987/31050
 models_only = 3818 9536
 name = Fire
+//Server
+desc=A bit bluer than I usually like my fires.

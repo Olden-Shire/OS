@@ -10,3 +10,8 @@ xan2d = 148
 recol1s = 43117
 recol1d = 326
 name = Staff of armadyl
+//Server
+desc=The power in this staff causes it to vibrate gently.
+weight=4lb
+wearpos=righthand
+tradeable=no

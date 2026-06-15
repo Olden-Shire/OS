@@ -3,3 +3,5 @@ anim = 488
 bgsound = 2185, 5
 models_only = 2285
 name = Weather vane
+//Server
+desc=Shows which way the wind blows.

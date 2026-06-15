@@ -4,3 +4,5 @@ hillskew = true
 op1 = Leave
 models = 5004/0
 name = Exit
+//Server
+desc=The way to go when I get scared.

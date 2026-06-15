@@ -3,3 +3,5 @@ active = 1
 op1 = Pull
 models = 2077/4
 name = Lever
+//Server
+desc=Yup, definitely a lever.

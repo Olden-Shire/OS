@@ -4,3 +4,5 @@ nonsolid = true
 recol = 17835/19648 48596/36180 53167/36172 37196/36060 10043/36069
 models_only = 237
 name = Rare Flowers
+//Server
+desc=These flowers only grow in one place in the mountains.

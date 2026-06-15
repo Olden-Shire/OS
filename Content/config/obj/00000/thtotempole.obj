@@ -7,3 +7,7 @@ zoom2d = 4070
 yan2d = 132
 zan2d = 1780
 name = Yommi totem
+//Server
+desc=A well carved totem pole made from the trunk of a Yommi tree.
+weight=3kg
+tradeable=no

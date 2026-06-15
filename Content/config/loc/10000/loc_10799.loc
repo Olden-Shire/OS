@@ -5,3 +5,5 @@ ambient = 18
 contrast = 15
 models_only = 10596
 name = Cube Pile
+//Server
+desc=Some simple cubes.

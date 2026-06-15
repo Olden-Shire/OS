@@ -5,3 +5,7 @@ zoom2d = 1450
 yan2d = 80
 xan2d = 288
 name = Portrait
+//Server
+desc=Picture of a posing Paladin.
+weight=3lb
+tradeable=no

@@ -15,3 +15,9 @@ members = true
 recol1s = 38814
 recol1d = 8125
 name = Hat
+//Server
+desc=A silly pointed hat.
+wearpos=hat
+weight=1lb
+param=magicattack,3
+param=magicdefence,3

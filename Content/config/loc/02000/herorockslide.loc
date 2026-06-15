@@ -6,3 +6,5 @@ op2 = Mine
 mapscene = 12
 models_only = 818
 name = Rock slide
+//Server
+desc=Rocks that contain nothing interesting, but block the way.

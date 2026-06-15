@@ -9,3 +9,6 @@ members = true
 cost = 1
 iop1 = Read
 name = Mourner letter
+//Server
+desc=A letter of recommendation.
+weight=10g

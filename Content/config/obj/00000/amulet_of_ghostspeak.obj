@@ -8,3 +8,8 @@ iop2 = Wear
 manwear = obj_ghostspeak_amulet_552_man, 0
 womanwear = obj_ghostspeak_amulet_552_woman, 0
 name = Ghostspeak amulet
+//Server
+desc=It lets me talk to ghosts.
+wearpos=front
+weight=10g
+tradeable=no

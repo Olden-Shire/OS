@@ -9,3 +9,6 @@ yan2d = 32
 xan2d = 344
 iop5 = Drop
 name = New key
+//Server
+desc=This key is newly cut.
+weight=10g

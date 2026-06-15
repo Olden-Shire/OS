@@ -6,3 +6,5 @@ zoom2d = 2350
 yan2d = 140
 xan2d = 192
 name = Swamp cave slime
+//Server
+desc=A slayer monster.

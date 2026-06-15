@@ -4,3 +4,5 @@ mapscene = 9
 blockwalk = true
 models = 1565/10 20041/22
 name = Bush
+//Server
+desc=A leafy bush.

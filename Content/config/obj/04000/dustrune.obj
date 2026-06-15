@@ -9,3 +9,6 @@ xan2d = 528
 ambient = 30
 members = true
 name = Dust rune
+//Server
+desc=A combined Air and Earth Rune.
+weight=2g

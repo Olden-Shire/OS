@@ -12,3 +12,8 @@ members = true
 recol1s = 8741
 recol1d = 6740
 name = Robe of elidinis
+//Server
+desc=This looks quite old.
+wearpos=torso
+wearpos2=arms
+weight=5g

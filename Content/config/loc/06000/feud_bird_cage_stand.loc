@@ -1,3 +1,5 @@
 // loc 6264
 models_only = 6023
 name = Bird cage stand
+//Server
+desc=Useful for keeping birds.

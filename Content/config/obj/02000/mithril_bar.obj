@@ -9,3 +9,9 @@ xan2d = 196
 recol1s = 7062
 recol1d = 43297
 name = Mithril bar
+//Server
+desc=It's a bar of mithril.
+weight=56oz
+category=category_151
+param=smelting_struct,smelting_mithril_bar
+param=smithing_anvil_struct,smithing_mithril_bar

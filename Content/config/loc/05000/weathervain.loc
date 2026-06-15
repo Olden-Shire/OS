@@ -2,3 +2,5 @@
 anim = 1733
 models_only = 5523
 name = Weather vane
+//Server
+desc=Shows which way the wind blows.

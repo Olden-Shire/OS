@@ -10,3 +10,9 @@ cost = 10
 recol1s = 960
 recol1d = 127
 name = White berries
+//Server
+desc=Sour berries, used in potions.
+weight=7g
+respawnrate=10
+param=brew_potion_struct,3dose1defense
+param=brew_potion_struct_secondary,3dose2defense

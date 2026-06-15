@@ -4,3 +4,5 @@ op1 = Climb-down
 recol = 6707/6703 6585/5673 15919/14876
 models_only = 1676
 name = Tropical tree
+//Server
+desc=A terribly tall tropical tree.

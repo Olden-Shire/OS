@@ -7,3 +7,5 @@ resizey = 85
 resizez = 85
 models_only = 9210
 name = White Tree
+//Server
+desc=A White Tree.

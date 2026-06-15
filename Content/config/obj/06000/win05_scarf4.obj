@@ -10,3 +10,7 @@ manwear = obj_woolly_scarf_man, 0
 womanwear = obj_woolly_scarf_woman, 0
 iop5 = Destroy
 name = Woolly scarf
+//Server
+desc=A woolly tobogganing scarf.
+wearpos=front
+weight=250g

@@ -4,3 +4,5 @@ forcedecor = true
 blockwalk = true
 models = 5135/10 5136/22
 name = Zip line
+//Server
+desc=A scary zip line for teeth??

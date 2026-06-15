@@ -8,3 +8,6 @@ xan2d = 152
 members = true
 iop1 = Wear
 name = Exquisite boots
+//Server
+desc=A lovely pair of boots.
+weight=1kg

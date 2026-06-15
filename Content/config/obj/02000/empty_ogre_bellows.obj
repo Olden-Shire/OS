@@ -6,3 +6,8 @@ zoom2d = 970
 yan2d = 36
 xan2d = 112
 name = Ogre bellows
+//Server
+desc=A large pair of ogre bellows.
+weight=18oz
+tradeable=no
+category=ogre_bellows

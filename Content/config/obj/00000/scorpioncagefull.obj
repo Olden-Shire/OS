@@ -8,3 +8,8 @@ xan2d = 156
 cost = 10
 iop5 = Destroy
 name = Scorpion cage
+//Server
+desc=There are 3 scorpions inside.
+weight=225g
+category=scorpcage
+tradeable=no

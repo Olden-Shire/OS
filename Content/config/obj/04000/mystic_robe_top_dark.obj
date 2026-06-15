@@ -17,3 +17,8 @@ recol2d = 0
 recol3s = 40045
 recol3d = 924
 name = Mystic robe top
+//Server
+desc=The upper half of a dark magical robe.
+wearpos=torso
+wearpos2=arms
+weight=6lb

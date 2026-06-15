@@ -19,3 +19,16 @@ members = true
 recol1s = 61
 recol1d = 924
 name = Dragon med helm
+//Server
+desc=Makes the wearer pretty intimidating.
+wearpos=hat
+wearpos2=head
+weight=3lb
+category=armour_helmet
+param=rangeattack,-1
+param=magicattack,-3
+param=stabdefence,33
+param=slashdefence,35
+param=crushdefence,32
+param=magicdefence,-1
+param=rangedefence,34

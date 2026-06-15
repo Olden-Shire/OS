@@ -7,3 +7,5 @@ op1 = Open
 nonblockrange = true
 models_only = 3812
 name = Kitchen Drawers
+//Server
+desc=They're closed.

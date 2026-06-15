@@ -9,3 +9,7 @@ members = true
 recol1s = 61
 recol1d = 43486
 name = Weapon poison
+//Server
+desc=For use on daggers and projectiles.
+weight=20g
+tradeable=no

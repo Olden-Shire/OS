@@ -3,3 +3,5 @@ ambient = 15
 nonblockrange = true
 models_only = 7777
 name = Valve
+//Server
+desc=This controls the flow of ale to the barrel.

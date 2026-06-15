@@ -4,3 +4,5 @@ hillskew = true
 resizey = 115
 models_only = 9866
 name = Brewing vat
+//Server
+desc=A large brass brewing vat.

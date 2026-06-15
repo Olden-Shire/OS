@@ -5,3 +5,5 @@ active = 1
 recol = 5665/8078 5660/8076 5784/7050
 models_only = 9500
 name = Bookcase
+//Server
+desc=A collection of rare books.

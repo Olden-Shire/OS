@@ -4,3 +4,6 @@ mirror = true
 op1 = Enter
 models_only = 627
 name = Hillside entrance
+//Server
+desc=Large doors set into the hillside.
+category=rashiliyia_tomb_door_opened

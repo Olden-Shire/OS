@@ -5,3 +5,5 @@ mapscene = 5
 recol = 61/15799 49/15923 41/6583
 models_only = 1701
 name = Tree
+//Server
+desc=A tree found in tropical areas.

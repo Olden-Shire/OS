@@ -9,3 +9,7 @@ xan2d = 120
 recol1s = 5790
 recol1d = 43038
 name = Rock
+//Server
+desc=Looks like a plain rock, must have some ore in it?
+weight=500g
+tradeable=no

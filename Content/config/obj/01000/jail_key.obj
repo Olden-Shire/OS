@@ -9,3 +9,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 7087
 name = Jail key
+//Server
+desc=Key to a cell.
+weight=10g
+tradeable=no

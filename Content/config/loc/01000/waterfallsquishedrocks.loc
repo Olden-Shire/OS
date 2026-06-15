@@ -2,3 +2,5 @@
 hillskew = true
 models_only = 1473
 name = Waterfall rocks
+//Server
+desc=Some very hard rocks, I wouldn't want to fall on those.

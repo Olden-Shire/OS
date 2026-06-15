@@ -12,3 +12,6 @@ count4 = 5271, 5
 stackable = true
 cost = 12
 name = Limpwurt seed
+//Server
+desc=A limpwurt seed - plant in a flower patch.
+weight=1g

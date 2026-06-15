@@ -6,3 +6,6 @@ zoom2d = 1380
 yan2d = 188
 xan2d = 112
 name = Stuffed monkey
+//Server
+desc=A body of a dead monkey, tastefully stuffed with seaweed.
+weight=1200g

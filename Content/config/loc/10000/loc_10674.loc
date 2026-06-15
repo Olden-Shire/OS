@@ -3,3 +3,5 @@ width = 2
 op1 = Paint-bauble
 models_only = 10466 10557
 name = Paintcans
+//Server
+desc=Equipment for colouring items.

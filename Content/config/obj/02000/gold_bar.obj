@@ -9,3 +9,9 @@ xan2d = 196
 recol1s = 7062
 recol1d = 8128
 name = Gold bar
+//Server
+desc=It's a bar of gold.
+weight=4lb
+category=category_151
+respawnrate=1500
+param=smelting_struct,smelting_gold_bar

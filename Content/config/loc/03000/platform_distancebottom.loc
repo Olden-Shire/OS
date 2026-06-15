@@ -4,3 +4,5 @@ length = 2
 recol = 7952/8070 6798/6020 5772/898 3594/0 3974/0 900/0
 models_only = 686
 name = Platform
+//Server
+desc=A platform.

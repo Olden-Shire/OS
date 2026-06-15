@@ -13,3 +13,15 @@ recol1d = 8
 recol2s = 25238
 recol2d = 0
 name = Black plateskirt
+//Server
+desc=Big, black and heavy looking.
+wearpos=legs
+weight=18lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,21
+param=slashdefence,20
+param=crushdefence,19
+param=magicdefence,-4
+param=rangedefence,20

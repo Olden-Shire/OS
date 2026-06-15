@@ -4,3 +4,5 @@ width = 4
 sharelight = true
 models_only = 6208 6209
 name = Cave
+//Server
+desc=A source of water for the river Elid.

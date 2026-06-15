@@ -4,3 +4,5 @@ ambient = 35
 contrast = 30
 models_only = 9953 9954
 name = Standing Torch
+//Server
+desc=A lit torch.

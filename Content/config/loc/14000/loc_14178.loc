@@ -8,3 +8,5 @@ contrast = 10
 blockwalk = true
 models = 14391/22
 name = Chute
+//Server
+desc=A way down.

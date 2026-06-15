@@ -4,3 +4,5 @@ length = 2
 op3 = Listen-to
 models_only = 3884
 name = Shining pool
+//Server
+desc=The pool looks very peaceful. You can also hear faint singing coming from it.

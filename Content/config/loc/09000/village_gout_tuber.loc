@@ -4,3 +4,5 @@ blockwalk = true
 nonblockrange = true
 models_only = 8883
 name = Gout Tuber Plant
+//Server
+desc=Many rare plants such as this usually have exotic tubers.

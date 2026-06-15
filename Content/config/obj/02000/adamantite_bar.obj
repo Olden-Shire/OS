@@ -9,3 +9,9 @@ xan2d = 196
 recol1s = 7062
 recol1d = 21662
 name = Adamantite bar
+//Server
+desc=It's a bar of adamantite.
+weight=72oz
+category=category_151
+param=smelting_struct,smelting_adamantite_bar
+param=smithing_anvil_struct,smithing_adamantite_bar

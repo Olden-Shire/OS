@@ -2,3 +2,5 @@
 anim = 475
 models_only = 2262
 name = Fire remains
+//Server
+desc=A recently extinguished fire.

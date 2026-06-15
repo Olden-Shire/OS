@@ -11,3 +11,6 @@ members = true
 iop1 = Eat
 cost = 48
 name = Watermelon
+//Server
+desc=A juicy watermelon.
+weight=4oz

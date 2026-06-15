@@ -8,3 +8,6 @@ zoom2d = 950
 yan2d = 272
 xan2d = 184
 name = Ribcage piece
+//Server
+desc=A slightly damaged ribcage.
+weight=7lb

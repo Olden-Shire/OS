@@ -6,3 +6,7 @@ zoom2d = 920
 yan2d = 1904
 xan2d = 194
 name = Poisoned fish food
+//Server
+desc=Doesn't seem very nice to the poor fishes.
+weight=30g
+tradeable=no

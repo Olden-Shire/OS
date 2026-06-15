@@ -9,3 +9,7 @@ xan2d = 380
 iop1 = Read
 members = true
 name = Spell scroll
+//Server
+desc=A spell is written on this parchment.
+weight=10g
+tradeable=no

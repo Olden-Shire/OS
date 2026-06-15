@@ -9,3 +9,6 @@ zan2d = 567
 xan2d = 1961
 iop5 = Destroy
 name = Stone head
+//Server
+desc=A granite head shaped like the god Zamorak.
+weight=500g

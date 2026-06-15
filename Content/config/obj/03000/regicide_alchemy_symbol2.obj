@@ -5,3 +5,6 @@ yof2d = 7
 zoom2d = 1890
 xan2d = 496
 name = Symbol2
+//Server
+desc=An alchemy symbol
+weight=1g

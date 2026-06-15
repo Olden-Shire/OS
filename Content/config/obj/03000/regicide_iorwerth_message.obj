@@ -9,3 +9,6 @@ members = true
 cost = 1
 iop1 = Read
 name = Iorwerths message
+//Server
+desc=A letter for King Lathas from Lord Iorwerth.
+weight=2oz

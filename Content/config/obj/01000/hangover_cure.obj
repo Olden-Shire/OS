@@ -9,3 +9,7 @@ xan2d = 204
 recol1s = 39834
 recol1d = 21706
 name = Hangover cure
+//Server
+desc=It doesn't look very tasty.
+weight=2200g
+tradeable=no

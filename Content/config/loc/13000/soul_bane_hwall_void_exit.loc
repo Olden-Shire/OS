@@ -6,3 +6,5 @@ ambient = 50
 op1 = Use
 models_only = 14237
 name = Exit
+//Server
+desc=I think it's the forward.

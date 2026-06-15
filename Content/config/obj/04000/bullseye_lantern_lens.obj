@@ -8,3 +8,6 @@ xan2d = 436
 cost = 70
 members = true
 name = Lantern lens
+//Server
+desc=A roughly circular disc of glass.
+weight=1oz

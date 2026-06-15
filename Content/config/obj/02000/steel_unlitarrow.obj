@@ -12,3 +12,14 @@ count2 = 2543, 3
 count3 = 2544, 4
 count4 = 2545, 5
 name = Steel fire arrows
+//Server
+desc=Arrows with steel heads and oil soaked cloth.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,16
+param=levelrequire,5
+param=proj_launch,fire_arrow_launch
+param=proj_travel,fire_arrow_travel
+param=next_obj_stage,steel_litarrow
+param=unlit_arrow,^true

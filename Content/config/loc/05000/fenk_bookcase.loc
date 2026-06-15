@@ -3,3 +3,5 @@ blockwalk = true
 op1 = Search
 models_only = 5168
 name = Bookcase
+//Server
+desc=Bookish.

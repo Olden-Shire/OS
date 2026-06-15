@@ -5,3 +5,5 @@ bgsound = 2220, 3
 nonblockrange = true
 models_only = 3453
 name = Spit roast
+//Server
+desc=This fire is already in use, I wouldn't mess with it if I were you...

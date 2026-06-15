@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1421 1445
 name = Bakery stall
+//Server
+desc=Bread cakes and pastries.

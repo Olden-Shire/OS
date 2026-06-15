@@ -9,3 +9,6 @@ iop1 = Fill
 iop2 = Empty
 iop3 = Check
 name = Small pouch
+//Server
+desc=A small pouch used for storing essence.
+weight=1kg

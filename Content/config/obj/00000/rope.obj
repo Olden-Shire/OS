@@ -11,3 +11,6 @@ xan2d = 188
 recol1s = 6558
 recol1d = 7054
 name = Rope
+//Server
+desc=A coil of rope.
+weight=3lb

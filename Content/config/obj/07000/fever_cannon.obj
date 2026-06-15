@@ -5,3 +5,6 @@ zan2d = 24
 xan2d = 220
 members = true
 name = Cannon barrel
+//Server
+desc=A working cannon barrel.
+weight=32kg

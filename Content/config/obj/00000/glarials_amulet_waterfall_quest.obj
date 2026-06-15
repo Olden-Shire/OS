@@ -12,3 +12,8 @@ members = true
 recol1s = 11200
 recol1d = 22464
 name = Glarial's amulet
+//Server
+desc=A bright green gem set in a necklace.
+wearpos=front
+weight=10g
+tradeable=no

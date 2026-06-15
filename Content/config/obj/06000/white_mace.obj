@@ -14,3 +14,7 @@ recol1d = 99
 recol2s = 8722
 recol2d = 7073
 name = White mace
+//Server
+desc=A spiky mace.
+wearpos=righthand
+weight=4lb

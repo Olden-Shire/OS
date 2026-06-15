@@ -7,3 +7,6 @@ zoom2d = 1040
 yan2d = 120
 xan2d = 380
 name = Gnome royal seal
+//Server
+desc=It's the official Gnome Royal Seal, signed by King Narnode Shareen.
+weight=20g

@@ -3,3 +3,5 @@ op1 = Open
 mirror = true
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=The gate has been locked shut.

@@ -13,3 +13,12 @@ members = true
 recol1s = 8741
 recol1d = 937
 name = Zamorak robe
+//Server
+desc=A robe worn by worshippers of Zamorak.
+wearpos=torso
+wearpos2=arms
+weight=2lb
+param=zamorakitem,^true
+param=magicattack,2
+param=magicdefence,3
+param=prayerbonus,3

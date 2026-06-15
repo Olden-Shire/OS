@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 61/5421
 models = 4443/22
 name = Stepping stone
+//Server
+desc=A very slippery stepping stone.

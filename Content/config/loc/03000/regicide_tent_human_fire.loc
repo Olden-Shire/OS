@@ -6,3 +6,5 @@ anim = 1234
 recol = 103/41410 17686/7364
 models = 3954/0 3955/1 3956/9
 name = Tent wall
+//Server
+desc=A tent wall.

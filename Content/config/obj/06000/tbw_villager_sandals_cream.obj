@@ -11,3 +11,7 @@ zoom2d = 900
 yan2d = 240
 xan2d = 244
 name = Villager sandals
+//Server
+desc=A brightly coloured pair of local sandals.
+weight=24oz
+wearpos=feet

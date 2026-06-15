@@ -3,3 +3,5 @@ anim = 446
 length = 2
 models_only = 11877
 name = Magical shield
+//Server
+desc=It has a special magical quality.

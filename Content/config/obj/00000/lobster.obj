@@ -8,3 +8,7 @@ xan2d = 324
 cost = 150
 iop1 = Eat
 name = Lobster
+//Server
+desc=This looks tricky to eat.
+weight=350g
+category=category_58

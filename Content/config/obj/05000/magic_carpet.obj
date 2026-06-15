@@ -6,3 +6,7 @@ ambient = -50
 contrast = -50
 members = true
 name = Magic carpet
+//Server
+desc=A flying Magic carpet.
+wearpos=righthand
+weight=5g

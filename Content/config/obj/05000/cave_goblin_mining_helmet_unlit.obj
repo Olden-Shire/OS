@@ -13,3 +13,9 @@ cost = 600
 members = true
 iop2 = Wear
 name = Mining helmet
+//Server
+desc=A helmet with an unlit lamp on it.
+weight=2lb
+wearpos=hat
+category=light_source_unlit
+param=product,cave_goblin_mining_helmet_lit

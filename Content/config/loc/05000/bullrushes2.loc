@@ -5,3 +5,5 @@ resizez = 100
 nonsolid = true
 models_only = 5564 5565
 name = Bullrushes
+//Server
+desc=Found near the water's edge.

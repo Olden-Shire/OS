@@ -7,3 +7,5 @@ op3 = Status
 forceapproach = 13
 models_only = 5275
 name = Bone grinder
+//Server
+desc=A big grinding thing.

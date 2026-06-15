@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 1454
 name = Hay Bales
+//Server
+desc=A pile of straw.

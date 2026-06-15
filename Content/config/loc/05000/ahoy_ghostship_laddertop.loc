@@ -3,3 +3,5 @@ op1 = Climb-down
 forceapproach = 14
 models_only = 5294
 name = Ship's ladder
+//Server
+desc=I can go below decks with this ladder.

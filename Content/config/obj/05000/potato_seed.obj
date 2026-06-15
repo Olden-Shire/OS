@@ -13,3 +13,6 @@ count3 = 5165, 4
 count4 = 5166, 5
 cost = 2
 name = Potato seed
+//Server
+desc=A potato seed - plant in an allotment.
+weight=2g

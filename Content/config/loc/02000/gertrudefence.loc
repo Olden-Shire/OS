@@ -4,3 +4,5 @@ offsety = -15
 nonblockrange = true
 models_only = 24897
 name = Broken fence
+//Server
+desc=The fence is broken at this point.

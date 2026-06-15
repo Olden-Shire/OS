@@ -7,3 +7,16 @@ iop2 = Wear
 manwear = obj_studded_body_1133_man, 0
 womanwear = obj_studded_body_1133_woman, 0
 name = Studded body
+//Server
+desc=Those studs should provide a bit more protection.
+wearpos=torso
+weight=12lb
+category=armour_body
+param=crafting_studded_struct,studded_body
+param=magicattack,-4
+param=rangeattack,8
+param=stabdefence,18
+param=slashdefence,25
+param=crushdefence,22
+param=magicdefence,8
+param=rangedefence,25

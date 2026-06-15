@@ -6,3 +6,5 @@ ambient = 20
 contrast = 15
 models = 6259/0
 name = Sarcophagus
+//Server
+desc=A strange thing to leave lying around...

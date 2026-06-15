@@ -9,3 +9,6 @@ members = true
 cost = 30
 iop1 = Eat
 name = Choc-ice
+//Server
+desc=Better eat this before it melts.
+weight=1g

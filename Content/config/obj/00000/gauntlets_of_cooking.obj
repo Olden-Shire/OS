@@ -15,3 +15,16 @@ recol1d = 123
 recol2s = 5532
 recol2d = 10299
 name = Cooking gauntlets
+//Server
+desc=These gauntlets empower with a greater ability to cook fish.
+wearpos=hands
+weight=8oz
+category=category_16
+param=stabattack,2
+param=slashattack,2
+param=crushattack,2
+param=stabdefence,8
+param=slashdefence,9
+param=crushdefence,7
+param=strengthbonus,2
+tradeable=no

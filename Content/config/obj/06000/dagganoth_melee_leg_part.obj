@@ -6,3 +6,6 @@ zoom2d = 1360
 yan2d = 1048
 xan2d = 484
 name = Rock-shell splinter
+//Server
+desc=A slim piece of rock-shell.
+weight=7lb

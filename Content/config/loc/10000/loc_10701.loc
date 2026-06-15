@@ -2,3 +2,5 @@
 recol = 6443/42411 6439/42407 6563/42531 6558/42526 6682/42650 6806/42774
 models_only = 7685
 name = Crate
+//Server
+desc=A blue crate. Probably containing puppets.

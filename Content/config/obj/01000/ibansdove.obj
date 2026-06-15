@@ -7,3 +7,7 @@ yan2d = 2012
 xan2d = 472
 members = true
 name = Iban's dove
+//Server
+desc=I thought you only saw these in pairs?
+weight=100g
+tradeable=no

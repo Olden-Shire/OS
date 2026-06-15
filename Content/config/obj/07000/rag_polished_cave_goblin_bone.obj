@@ -6,3 +6,7 @@ yan2d = 1395
 xan2d = 183
 members = true
 name = Cave goblin skull
+//Server
+desc=This bone belongs in a museum!
+weight=3g
+weight=2lb

@@ -12,3 +12,6 @@ recol1d = 912
 recol2s = 22424
 recol2d = 920
 name = Red dragonhide
+//Server
+desc=The scaly rough hide from a Red Dragon.
+weight=7lb

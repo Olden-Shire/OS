@@ -12,3 +12,8 @@ yan2d = 156
 xan2d = 152
 members = true
 name = Chompy bird hat
+//Server
+desc=A symbol of your chompy bird hunting prowess.
+wearpos=hat
+weight=1lb
+tradeable=no

@@ -4,3 +4,6 @@ op1 = Search
 recol = 5417/6032 5413/5908 5537/5784 5532/5665 5656/5541 5652/5660
 models_only = 5283
 name = Boxes
+//Server
+desc=Some wooden boxes.
+category=empty_boxes

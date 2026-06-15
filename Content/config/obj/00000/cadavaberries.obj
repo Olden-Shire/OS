@@ -8,3 +8,6 @@ xan2d = 404
 recol1s = 960
 recol1d = 58316
 name = Cadava berries
+//Server
+desc=Poisonous berries.
+weight=7g

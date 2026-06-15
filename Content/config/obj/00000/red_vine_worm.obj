@@ -10,3 +10,7 @@ xan2d = 340
 recol1s = 5698
 recol1d = 960
 name = Red vine worm
+//Server
+desc=Wormy.
+weight=10g
+tradeable=no

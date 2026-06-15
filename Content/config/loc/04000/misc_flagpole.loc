@@ -4,3 +4,5 @@ bgsound = 3124, 3
 recol = 103/6930 43934/6470 61/0
 models_only = 2280
 name = Flagpole
+//Server
+desc=Flag, pole...Yep, it's a flagpole.

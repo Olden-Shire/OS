@@ -8,3 +8,6 @@ xan2d = 194
 members = true
 iop5 = Destroy
 name = Cake of guidance
+//Server
+desc=Imbued with knowledge itself.
+weight=300g

@@ -6,3 +6,5 @@ ambient = 25
 contrast = 25
 models_only = 8364
 name = Ardougne Wall Door
+//Server
+desc=You can walk through these doors.

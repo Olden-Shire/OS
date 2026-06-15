@@ -5,3 +5,5 @@ ambient = 20
 op1 = Enter
 models_only = 14236
 name = Black hole
+//Server
+desc=There's no way I'm going in there!

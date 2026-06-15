@@ -4,3 +4,5 @@ ambient = 20
 bgsound = 3121, 10
 models_only = 11700
 name = Treadmill
+//Server
+desc=Powers the spinning pole outside.

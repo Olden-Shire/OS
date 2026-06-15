@@ -16,3 +16,6 @@ recol1d = 17953
 recol2s = 6336
 recol2d = 14641
 name = Vine seed
+//Server
+desc=A grapevine seed.
+weight=1g

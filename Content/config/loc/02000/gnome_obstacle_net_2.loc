@@ -3,3 +3,5 @@ width = 2
 op1 = Climb-over
 models_only = 1439
 name = Obstacle net
+//Server
+desc=This must be climbed over.

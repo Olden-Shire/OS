@@ -8,3 +8,8 @@ xan2d = 316
 members = true
 cost = 300
 name = Air orb
+//Server
+desc=A magic glowing orb.
+weight=1lb
+category=craft_orb
+param=crafting_staff_struct,air_orb

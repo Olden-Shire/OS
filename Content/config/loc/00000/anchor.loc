@@ -1,3 +1,5 @@
 // loc 271
 models_only = 1840
 name = Anchor
+//Server
+desc=How much does this weigh?

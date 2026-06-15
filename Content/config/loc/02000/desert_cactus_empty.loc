@@ -4,3 +4,6 @@ ambient = 45
 recol = 22420/22424
 models_only = 1604
 name = Kharidian cactus (Dry)
+//Server
+desc=A less-than-succulent succulent.
+param=next_loc_stage,desert_cactus_full

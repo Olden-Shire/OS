@@ -4,3 +4,5 @@ active = 1
 resizey = 256
 models_only = 10908
 name = Wall
+//Server
+desc=It needs much more repair.

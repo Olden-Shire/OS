@@ -11,3 +11,6 @@ cost = 200000
 recol1s = 61
 recol1d = 43528
 name = Uncut onyx
+//Server
+desc=This would be worth more cut.
+weight=3g

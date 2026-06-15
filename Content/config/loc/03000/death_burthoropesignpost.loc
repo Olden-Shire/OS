@@ -4,3 +4,5 @@ contrast = 40
 nonblockrange = true
 models_only = 1402
 name = Signpost
+//Server
+desc=Town of Burthorpe

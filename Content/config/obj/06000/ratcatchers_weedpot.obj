@@ -7,3 +7,6 @@ zoom2d = 990
 yan2d = 8
 xan2d = 112
 name = Pot of weeds
+//Server
+desc=Contains garden weeds.
+weight=600g

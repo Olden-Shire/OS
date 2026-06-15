@@ -3,3 +3,6 @@ model = obj_dummy_4032
 zoom2d = 130
 xan2d = 512
 name = Dummy
+//Server
+desc=A fade.
+wearpos=righthand

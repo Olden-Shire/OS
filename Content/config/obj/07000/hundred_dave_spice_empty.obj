@@ -6,3 +6,6 @@ zoom2d = 848
 yan2d = 1985
 xan2d = 222
 name = Empty spice shaker
+//Server
+desc=Allows for equal distribution of spice.
+weight=1g

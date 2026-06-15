@@ -7,3 +7,6 @@ zoom2d = 830
 yan2d = 1200
 xan2d = 436
 name = Skull piece
+//Server
+desc=A fearsome looking skull.
+weight=7lb

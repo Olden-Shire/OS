@@ -10,3 +10,6 @@ members = true
 iop1 = Eat
 cost = 16
 name = Watermelon slice
+//Server
+desc=A slice of watermelon.
+weight=1oz

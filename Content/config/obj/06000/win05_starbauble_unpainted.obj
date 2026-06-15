@@ -6,3 +6,6 @@ zoom2d = 465
 yan2d = 297
 xan2d = 194
 name = Star bauble
+//Server
+desc=An unpainted bauble shaped like a star.
+weight=200g

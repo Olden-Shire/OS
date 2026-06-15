@@ -5,3 +5,5 @@ op1 = Put-ore-on
 blockwalk = true
 models_only = 9063
 name = Conveyor belt
+//Server
+desc=Ore rides this into the blast furnace.

@@ -3,3 +3,5 @@ width = 2
 length = 3
 models_only = 2217
 name = Catapult
+//Server
+desc=No cats were harmed in the making of this device.

@@ -9,3 +9,6 @@ members = true
 recol1s = 8128
 recol1d = 7087
 name = Miscellaneous key
+//Server
+desc=I wonder what this unlocks?
+weight=10g

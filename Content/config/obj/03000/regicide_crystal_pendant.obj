@@ -11,3 +11,7 @@ iop2 = Wear
 manwear = obj_glarials_amulet_man, 0
 womanwear = obj_glarials_amulet_woman, 0
 name = Crystal pendant
+//Server
+desc=Lord Iorwerth's crystal pendant.
+weight=5g
+wearpos=front

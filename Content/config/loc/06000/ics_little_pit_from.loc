@@ -7,3 +7,5 @@ nonsolid = true
 sharelight = true
 models_only = 3951
 name = Pit
+//Server
+desc=I can't see the bottom.

@@ -8,3 +8,6 @@ members = true
 ambient = 15
 cost = 38
 name = Mushroom
+//Server
+desc=A Bittercap Mushroom
+weight=1oz

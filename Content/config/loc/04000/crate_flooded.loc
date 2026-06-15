@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 4888
 name = Crate
+//Server
+desc=It doesn't look very watertight.  Any contents will be ruined.

@@ -4,3 +4,5 @@ ambient = 10
 nonblockrange = true
 models_only = 3720
 name = Danger sign
+//Server
+desc=Danger - Trolls!

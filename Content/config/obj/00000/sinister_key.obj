@@ -9,3 +9,6 @@ xan2d = 328
 recol1s = 8128
 recol1d = 10508
 name = Sinister key
+//Server
+desc=You get a sense of dread from this key.
+weight=10g

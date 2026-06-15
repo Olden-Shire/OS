@@ -7,3 +7,5 @@ ambient = 25
 nonblockrange = true
 models = 6756/0
 name = Cage
+//Server
+desc=Sturdy metal bars.

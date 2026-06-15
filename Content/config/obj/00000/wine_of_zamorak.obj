@@ -8,3 +8,8 @@ xan2d = 260
 recol1s = 127
 recol1d = 701
 name = Wine of zamorak
+//Server
+desc=An evil wine for an evil god.
+weight=3oz
+respawnrate=50
+param=brew_potion_struct,3doserangerspotion

@@ -9,3 +9,8 @@ xan2d = 196
 recol1s = 7062
 recol1d = 43096
 name = Silver bar
+//Server
+desc=It's a bar of silver.
+weight=4lb
+category=category_151
+param=smelting_struct,smelting_silver_bar

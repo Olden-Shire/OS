@@ -8,3 +8,6 @@ yan2d = 112
 xan2d = 248
 members = true
 name = Papyrus
+//Server
+desc=Used for making notes.
+weight=20g

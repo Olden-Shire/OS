@@ -8,3 +8,7 @@ zoom2d = 720
 yan2d = 308
 xan2d = 344
 name = Prototype dart tip
+//Server
+desc=A prototype dart tip - it looks deadly.
+weight=8g
+tradeable=no

@@ -11,3 +11,7 @@ iop2 = Wear
 members = true
 cost = 25
 name = Gardening boots
+//Server
+desc=A pair of gardening boots.
+wearpos=feet
+weight=12oz

@@ -13,3 +13,6 @@ count3 = 5242, 4
 count4 = 5243, 5
 cost = 39
 name = Curry tree seed
+//Server
+desc=Plant in a plantpot of soil to grow a sapling.
+weight=1g

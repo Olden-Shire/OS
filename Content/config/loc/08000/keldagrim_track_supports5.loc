@@ -3,3 +3,5 @@ hillskew = true
 forcedecor = true
 models_only = 8667
 name = Track support
+//Server
+desc=A support for the tracks.

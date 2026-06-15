@@ -2,3 +2,5 @@
 ambient = 20
 models_only = 10189
 name = Rock Chair
+//Server
+desc=A sitting stone.

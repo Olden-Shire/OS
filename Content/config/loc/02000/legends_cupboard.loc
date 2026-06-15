@@ -4,3 +4,7 @@ forceapproach = 13
 op1 = Open
 models_only = 2247
 name = Cupboard
+//Server
+desc=An antique by anyone's standards.
+category=cupboard_closed
+param=cupboard_other,legends_cupboardopen

@@ -9,3 +9,7 @@ zoom2d = 1620
 yan2d = 1960
 xan2d = 276
 name = Granite legs
+//Server
+desc=These look pretty heavy.
+wearpos=legs
+weight=35lb

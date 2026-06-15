@@ -17,3 +17,7 @@ recol3d = 24
 recol4s = 25238
 recol4d = 0
 name = Black plateskirt (t)
+//Server
+desc=Black plateskirt with trim.
+wearpos=legs
+weight=20lb

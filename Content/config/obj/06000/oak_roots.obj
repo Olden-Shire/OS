@@ -6,3 +6,6 @@ yan2d = 2008
 xan2d = 504
 members = true
 name = Oak roots
+//Server
+desc=The roots of the Oak tree.
+weight=1g

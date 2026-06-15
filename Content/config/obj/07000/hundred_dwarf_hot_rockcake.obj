@@ -11,3 +11,6 @@ womanwear = obj_dwarven_rock_cake_7509_wear, 6
 iop1 = Eat
 members = true
 name = Dwarven rock cake
+//Server
+desc=Red hot and glowing, ouch! Only for dwarf consumption.
+weight=1lb

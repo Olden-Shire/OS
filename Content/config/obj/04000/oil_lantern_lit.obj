@@ -8,3 +8,7 @@ xan2d = 88
 cost = 125
 members = true
 name = Oil lantern
+//Server
+desc=It lights your way through the dark places of the earth.
+weight=2lb
+category=light_source_lit

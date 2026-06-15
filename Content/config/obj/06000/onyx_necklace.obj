@@ -10,3 +10,7 @@ manwear = obj_onyx_necklace_6577_man, 0
 womanwear = obj_onyx_necklace_6577_woman, 0
 cost = 201000
 name = Onyx necklace
+//Server
+desc=I wonder if this is valuable.
+wearpos=front
+weight=10g

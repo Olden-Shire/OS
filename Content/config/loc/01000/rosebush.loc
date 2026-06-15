@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 1568
 name = Rosebush
+//Server
+desc=A rose by any other name would still have prickly bits.

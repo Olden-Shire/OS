@@ -4,3 +4,5 @@ op4 = Hidden
 op5 = Pick-lock
 models = 9480/0
 name = Door
+//Server
+desc=Stops people getting out.

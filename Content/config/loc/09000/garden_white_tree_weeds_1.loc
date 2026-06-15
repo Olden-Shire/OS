@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 9204 7768
 name = White Tree patch
+//Server
+desc=You can grow a White Tree in this patch.

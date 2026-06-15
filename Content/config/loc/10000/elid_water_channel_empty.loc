@@ -3,3 +3,5 @@ hillskew = true
 ambient = 20
 models_only = 10194
 name = Water Channel
+//Server
+desc=It looks like water once ran here.

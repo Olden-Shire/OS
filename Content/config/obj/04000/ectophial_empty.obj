@@ -6,3 +6,7 @@ zoom2d = 890
 yan2d = 24
 xan2d = 156
 name = Ectophial
+//Server
+desc=The Ectophial.
+weight=35g
+category=potion

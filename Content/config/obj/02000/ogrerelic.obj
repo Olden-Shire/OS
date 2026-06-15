@@ -6,3 +6,7 @@ yan2d = 1668
 xan2d = 104
 iop5 = Destroy
 name = Ogre relic
+//Server
+desc=An old statue of an ogre warrior.
+weight=3kg
+tradeable=no

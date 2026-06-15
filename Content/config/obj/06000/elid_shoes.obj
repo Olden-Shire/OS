@@ -9,3 +9,7 @@ iop2 = Wear
 manwear = obj_shoes_man, 0
 womanwear = obj_shoes_woman, 0
 name = Shoes
+//Server
+desc=Awusah's Shoes.
+weight=8oz
+wearpos=feet

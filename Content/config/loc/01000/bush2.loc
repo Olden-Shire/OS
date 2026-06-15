@@ -5,3 +5,5 @@ contrast = 25
 nonblockrange = true
 models_only = 1566
 name = Bush
+//Server
+desc=Bushy!

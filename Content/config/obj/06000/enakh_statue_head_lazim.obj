@@ -9,3 +9,6 @@ zan2d = 498
 xan2d = 1973
 iop5 = Destroy
 name = Stone head
+//Server
+desc=A granite head shaped like the sculptor Lazim.
+weight=500g

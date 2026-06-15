@@ -11,3 +11,6 @@ cost = 5
 recol1s = 5683
 recol1d = 5665
 name = Part wild pie
+//Server
+desc=Still needs two more ingredients.
+weight=1g

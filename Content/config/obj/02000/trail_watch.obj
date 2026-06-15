@@ -7,3 +7,7 @@ zoom2d = 690
 yan2d = 2032
 xan2d = 368
 name = Watch
+//Server
+desc=A fine looking time piece.
+weight=100g
+tradeable=no

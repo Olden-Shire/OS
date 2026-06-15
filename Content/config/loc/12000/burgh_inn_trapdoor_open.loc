@@ -6,3 +6,5 @@ op2 = Close
 blockwalk = true
 models = 13992/22
 name = Trapdoor
+//Server
+desc=I wonder what's down there?

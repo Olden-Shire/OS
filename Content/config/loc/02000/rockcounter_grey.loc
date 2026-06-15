@@ -3,3 +3,5 @@ width = 2
 recol = 6036/37
 models_only = 723
 name = Counter
+//Server
+desc=A counter made from a stone block.

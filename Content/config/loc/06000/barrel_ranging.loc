@@ -1,3 +1,5 @@
 // loc 6213
 models_only = 6034
 name = Barrel
+//Server
+desc=A barrel full of ranging equipment...

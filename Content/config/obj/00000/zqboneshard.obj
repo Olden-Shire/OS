@@ -8,3 +8,7 @@ xan2d = 152
 members = true
 iop1 = Inspect
 name = Bone shard
+//Server
+desc=A slender bone shard given to you by Zadimus.
+weight=10g
+tradeable=no

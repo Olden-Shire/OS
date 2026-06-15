@@ -4,3 +4,5 @@ length = 2
 nonblockrange = true
 models_only = 1470
 name = Dolmen
+//Server
+desc=Looks suspiciously like a big stone table.

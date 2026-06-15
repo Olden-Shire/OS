@@ -8,3 +8,7 @@ yan2d = 1980
 xan2d = 156
 members = true
 name = Cup of tea
+//Server
+desc=A refreshing cuppa.
+weight=150g
+tradeable=no

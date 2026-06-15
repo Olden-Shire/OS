@@ -2,3 +2,5 @@
 mapscene = 12
 models_only = 1388
 name = Rock
+//Server
+desc=A rock, it looks like something was growing here.

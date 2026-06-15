@@ -8,3 +8,6 @@ zoom2d = 650
 yan2d = 220
 xan2d = 288
 name = Charcoal
+//Server
+desc=A lump of charcoal.
+weight=5g

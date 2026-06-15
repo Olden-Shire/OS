@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 33608
 name = Attack potion(4)
+//Server
+desc=4 doses of attack potion.
+weight=35g
+category=potion
+param=next_obj_stage,3dose1attack
+param=decant_potion_enum,potion_1attack
+param=dose_count,4

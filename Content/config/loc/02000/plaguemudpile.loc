@@ -3,3 +3,5 @@ length = 2
 op1 = Climb
 models_only = 1411
 name = Mud pile
+//Server
+desc=A pile of what is hopefully mud.

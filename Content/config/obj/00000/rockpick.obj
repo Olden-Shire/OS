@@ -9,3 +9,8 @@ manwear = obj_rock_pick_man, 0
 womanwear = obj_rock_pick_woman, 0
 members = true
 name = Rock pick
+//Server
+desc=A small pick for cracking rock samples.
+wearpos=righthand
+weight=2oz
+tradeable=no

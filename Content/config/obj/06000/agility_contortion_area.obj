@@ -7,3 +7,6 @@ members = true
 recol1s = 37824
 recol1d = 17061
 name = Agility contortion
+//Server
+desc=Ability to squeeze your body through small areas.
+weight=1kg

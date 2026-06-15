@@ -7,3 +7,7 @@ zoom2d = 1650
 yan2d = 1480
 xan2d = 180
 name = Oil can
+//Server
+desc=It's pretty full.
+weight=1oz
+tradeable=no

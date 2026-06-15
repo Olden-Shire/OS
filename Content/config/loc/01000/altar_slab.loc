@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 2164
 name = Altar slab
+//Server
+desc=I shudder to think what has taken place here.

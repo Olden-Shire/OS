@@ -8,3 +8,6 @@ xan2d = 222
 recol1s = 37999
 recol1d = 4795
 name = Orange spice (1)
+//Server
+desc=Allows for equal distribution of spice.
+weight=1g

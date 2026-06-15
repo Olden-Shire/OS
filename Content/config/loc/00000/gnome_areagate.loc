@@ -6,3 +6,5 @@ blockwalk = true
 op1 = Open
 models_only = 1321
 name = Gate
+//Server
+desc=A large gate in the gnome style.

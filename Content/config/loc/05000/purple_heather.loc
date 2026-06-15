@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 5527
 name = Heather
+//Server
+desc=Isn't Heather a girls' name?

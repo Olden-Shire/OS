@@ -1,3 +1,5 @@
 // loc 2149
 models_only = 1810
 name = Obelisk
+//Server
+desc=An imposing stone structure.

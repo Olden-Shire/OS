@@ -6,3 +6,7 @@ yan2d = 104
 xan2d = 68
 members = true
 name = Glarial's urn
+//Server
+desc=An urn containing Glarial's ashes.
+weight=5oz
+tradeable=no

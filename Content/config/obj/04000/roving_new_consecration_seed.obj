@@ -7,3 +7,6 @@ resizey = 80
 resizez = 80
 zoom2d = 1450
 name = Consecration seed
+//Server
+desc=This consecration seed glows with a warm light.
+weight=14g

@@ -6,3 +6,7 @@ mapscene = 12
 nonblockrange = true
 models_only = 1391
 name = Rocks
+//Server
+desc=Stoney!
+category=mining_rock_normal
+param=mining_rock_empty,1

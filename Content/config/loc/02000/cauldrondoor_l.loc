@@ -4,3 +4,7 @@ mirror = true
 active = 1
 models = 609/0
 name = Prison door
+//Server
+desc=Looks secure.
+category=double_door_open_and_close_left
+param=next_loc_stage,prisondoor

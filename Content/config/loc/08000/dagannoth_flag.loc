@@ -3,3 +3,5 @@ anim = 2359
 bgsound = 3124, 3
 models_only = 8696
 name = Flag
+//Server
+desc=A tall flag blowing in the wind.

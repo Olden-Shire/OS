@@ -12,3 +12,6 @@ recol1d = 4651
 recol2s = 10351
 recol2d = 10710
 name = Diary
+//Server
+desc=Someone's Diary.
+weight=18oz

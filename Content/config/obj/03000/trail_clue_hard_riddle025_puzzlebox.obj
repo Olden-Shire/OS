@@ -8,3 +8,6 @@ yan2d = 80
 xan2d = 420
 iop1 = Open
 name = Puzzle box
+//Server
+desc=I need to solve this!
+weight=100g

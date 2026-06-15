@@ -11,3 +11,6 @@ recol1d = 10520
 recol2s = 7467
 recol2d = 10644
 name = Magic string
+//Server
+desc=I could use this to make jewellery.
+weight=14g

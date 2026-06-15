@@ -4,3 +4,5 @@ hillskew = true
 op1 = Climb-over
 models_only = 1391
 name = Rocky Ledge
+//Server
+desc=A dangerous path onwards.

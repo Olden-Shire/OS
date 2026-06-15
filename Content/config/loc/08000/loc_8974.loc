@@ -4,3 +4,5 @@ length = 2
 mapscene = 1
 models_only = 1637
 name = Tree
+//Server
+desc=A commonly found tree.

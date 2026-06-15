@@ -15,3 +15,7 @@ recol1d = 99
 recol2s = 7054
 recol2d = 82
 name = White sq shield
+//Server
+desc=A medium square shield.
+wearpos=lefthand
+weight=8lb

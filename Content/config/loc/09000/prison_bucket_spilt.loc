@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 9502
 name = Bucket
+//Server
+desc=Ewww!

@@ -7,3 +7,5 @@ ambient = 25
 contrast = 25
 models = 16918/0
 name = Castle wall
+//Server
+desc=A well constructed castle wall.

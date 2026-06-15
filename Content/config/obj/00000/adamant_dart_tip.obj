@@ -10,3 +10,7 @@ xan2d = 344
 recol1s = 82
 recol1d = 21662
 name = Adamant dart tip
+//Server
+desc=A deadly looking dart tip made of adamantite - needs feathers for flight.
+weight=10g
+category=category_969

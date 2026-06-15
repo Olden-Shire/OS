@@ -7,3 +7,6 @@ members = true
 recol1s = 7260
 recol1d = 10314
 name = Moss giant bone
+//Server
+desc=This needs a good polish.
+weight=3g

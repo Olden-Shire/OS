@@ -8,3 +8,6 @@ xan2d = 352
 members = true
 cost = 6
 name = Jute fibre
+//Server
+desc=I can weave this to make sacks.
+weight=8oz

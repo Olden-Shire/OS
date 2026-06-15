@@ -5,3 +5,5 @@ op1 = Climb-up
 blockwalk = true
 models = 13575/22
 name = Skull slope
+//Server
+desc=A climbing wall made from skulls.

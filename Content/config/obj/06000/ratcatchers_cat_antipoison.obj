@@ -9,3 +9,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 23985
 name = Cat antipoison
+//Server
+desc=Antipoison for Pox.
+weight=35g
+category=potion

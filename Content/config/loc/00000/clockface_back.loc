@@ -2,3 +2,5 @@
 active = 1
 models = 2117/4
 name = Clock face
+//Server
+desc=It's a time machine....sort of!

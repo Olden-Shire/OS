@@ -16,3 +16,7 @@ recol1d = 268
 recol2s = 11200
 recol2d = 24
 name = Darklight
+//Server
+desc=The magical sword 'Silverlight', enhanced with the blood of Agrith-Naar.
+wearpos=righthand
+weight=4lb

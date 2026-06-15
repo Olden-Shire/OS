@@ -6,3 +6,5 @@ nonsolid = true
 bgsound = 3139, 3
 models_only = 9996
 name = Magic circle
+//Server
+desc=A temporary portal to the demon plane.

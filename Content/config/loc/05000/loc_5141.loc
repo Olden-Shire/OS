@@ -5,3 +5,5 @@ mirror = true
 op1 = Teeth-grip
 models_only = 5137
 name = Zip line
+//Server
+desc=A scary zip line for teeth??

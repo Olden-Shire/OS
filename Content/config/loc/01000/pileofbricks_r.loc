@@ -2,3 +2,5 @@
 mirror = true
 models_only = 841
 name = Bricks
+//Server
+desc=A pile of bricks.

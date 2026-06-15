@@ -5,3 +5,5 @@ ambient = 15
 contrast = 15
 models_only = 10592
 name = Bones
+//Server
+desc=A pile of animal Bones.

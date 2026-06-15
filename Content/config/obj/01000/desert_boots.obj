@@ -15,3 +15,8 @@ recol1d = 127
 recol2s = 10128
 recol2d = 127
 name = Desert boots
+//Server
+desc=Comfortable desert shoes.
+weight=8oz
+wearpos=feet
+category=category_118

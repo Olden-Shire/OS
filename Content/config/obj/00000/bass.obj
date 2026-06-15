@@ -12,3 +12,7 @@ recol1d = 2000
 recol2s = 103
 recol2d = 1498
 name = Bass
+//Server
+desc=Wow, this is a big fish.
+weight=350g
+category=category_58

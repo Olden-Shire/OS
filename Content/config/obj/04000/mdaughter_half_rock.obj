@@ -6,3 +6,6 @@ zoom2d = 2220
 yan2d = 2036
 xan2d = 224
 name = Half a rock
+//Server
+desc=It's a piece of the Ancient Rock of the mountain people. It's still just a stone.
+weight=1250g

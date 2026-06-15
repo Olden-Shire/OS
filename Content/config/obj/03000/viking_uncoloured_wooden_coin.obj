@@ -11,3 +11,6 @@ recol1d = 5440
 recol2s = 8128
 recol2d = 5431
 name = Wooden disk
+//Server
+desc=A simple looking disk made of wood.
+weight=2g

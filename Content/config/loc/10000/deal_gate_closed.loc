@@ -3,3 +3,5 @@ op1 = Open
 hillskew = true
 models = 9872/0
 name = Gate
+//Server
+desc=This gate is closed.

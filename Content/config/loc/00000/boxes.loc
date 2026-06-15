@@ -2,3 +2,6 @@
 op1 = Search
 models_only = 2138
 name = Boxes
+//Server
+desc=A pile of boxes for storage.
+category=empty_boxes

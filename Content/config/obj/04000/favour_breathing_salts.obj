@@ -7,3 +7,6 @@ yan2d = 8
 xan2d = 112
 members = true
 name = Breathing salts
+//Server
+desc=An airtight pot with something inside, most likely breathing salts.
+weight=1g

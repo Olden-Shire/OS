@@ -12,3 +12,15 @@ womanwear = obj_bronze_sq_shield_1173_wear, 6
 recol1s = 57
 recol1d = 21662
 name = Adamant sq shield
+//Server
+desc=A medium square shield.
+wearpos=lefthand
+weight=9lb
+category=armour_shield
+param=rangeattack,-2
+param=magicattack,-6
+param=stabdefence,24
+param=slashdefence,26
+param=crushdefence,22
+param=rangedefence,24
+param=defend_anim,human_shield_defence

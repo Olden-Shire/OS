@@ -11,3 +11,9 @@ yan2d = 232
 xan2d = 348
 cost = 375
 name = Rogue mask
+//Server
+desc=Black banded leather armour, a rogue's dream!
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=1lb

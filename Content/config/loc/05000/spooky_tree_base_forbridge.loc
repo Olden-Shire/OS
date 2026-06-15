@@ -8,3 +8,5 @@ blockwalk = true
 recol = 5673/13592 6585/12583
 models = 4967/22
 name = Broken rope bridge
+//Server
+desc=It's old and pretty broken.

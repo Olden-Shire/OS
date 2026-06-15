@@ -3,3 +3,5 @@ length = 2
 recol = 4766/8613 61/5285 43051/5400
 models_only = 5932
 name = Bed
+//Server
+desc=A simple place for a simple dwarf to sleep and dream of gold.

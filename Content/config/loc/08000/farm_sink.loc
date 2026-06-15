@@ -3,3 +3,5 @@ length = 2
 nonblockrange = true
 models_only = 8245
 name = Sink
+//Server
+desc=After working with livestock, why not wash your hands?

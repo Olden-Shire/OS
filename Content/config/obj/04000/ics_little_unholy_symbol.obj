@@ -6,3 +6,6 @@ zoom2d = 430
 yan2d = 164
 xan2d = 424
 name = Unholy symbol
+//Server
+desc=Sign of the devourer.
+weight=5lb

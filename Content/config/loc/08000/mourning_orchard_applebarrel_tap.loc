@@ -2,3 +2,5 @@
 length = 2
 models_only = 8294
 name = Barrel Tap
+//Server
+desc=This tap runs from the apple crushing barrel.

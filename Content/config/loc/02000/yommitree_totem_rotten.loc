@@ -5,3 +5,5 @@ nonsolid = true
 recol = 6315/11045 7333/10925
 models_only = 1789
 name = Rotten Totem pole
+//Server
+desc=A rotten totem pole, it was left to rot in the jungle.

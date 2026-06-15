@@ -4,3 +4,5 @@ mirror = true
 op1 = Jump
 models_only = 5128
 name = Hurdle
+//Server
+desc=A hurdle.

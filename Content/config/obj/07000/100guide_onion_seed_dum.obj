@@ -7,3 +7,6 @@ yan2d = 236
 xan2d = 564
 members = true
 name = Onion seed
+//Server
+desc=An onion seed - plant in an allotment.
+weight=2g

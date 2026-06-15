@@ -3,3 +3,5 @@ op1 = Open
 nonsolid = true
 models = 1205/22
 name = Trapdoor
+//Server
+desc=Don't you open that trapdoor!

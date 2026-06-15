@@ -6,3 +6,6 @@ zoom2d = 1020
 xan2d = 540
 cost = 250
 name = Gilded cross
+//Server
+desc=An old and strangely shaped metal cross.
+weight=10g

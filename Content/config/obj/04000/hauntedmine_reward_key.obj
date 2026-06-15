@@ -7,3 +7,6 @@ yan2d = 20
 xan2d = 328
 members = true
 name = Crystal-mine key
+//Server
+desc=A key I found in the lower levels of the Morytanian mines.
+weight=10g

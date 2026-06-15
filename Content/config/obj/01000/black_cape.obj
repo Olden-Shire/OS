@@ -16,3 +16,11 @@ recol2d = 54676
 recol3s = 926
 recol3d = 12
 name = Cape
+//Server
+desc=A warm black cape.
+wearpos=back
+weight=1lb
+param=slashdefence,1
+param=crushdefence,1
+param=rangedefence,2
+param=crafting_capes_struct,black_cape

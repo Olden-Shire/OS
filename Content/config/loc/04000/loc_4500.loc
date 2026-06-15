@@ -7,3 +7,5 @@ sharelight = true
 op1 = Enter
 models_only = 4459
 name = Tunnel
+//Server
+desc=This leads back to the cruel world above.

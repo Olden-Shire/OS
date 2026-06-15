@@ -15,3 +15,6 @@ recol3d = 8478
 recol4s = 8363
 recol4d = 8483
 name = Trolley
+//Server
+desc=I can use this to move heavy objects.
+weight=80g

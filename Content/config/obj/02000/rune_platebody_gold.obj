@@ -17,3 +17,16 @@ recol2d = 37270
 recol3s = 24
 recol3d = 7114
 name = Rune platebody (g)
+//Server
+desc=Rune plate body with gold trim.
+wearpos=torso
+wearpos2=arms
+weight=22lb
+category=armour_body
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,82
+param=slashdefence,80
+param=crushdefence,72
+param=magicdefence,-6
+param=rangedefence,80

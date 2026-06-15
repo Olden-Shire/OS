@@ -8,3 +8,6 @@ iop5 = Destroy
 recol1s = 21584
 recol1d = 127
 name = Magical orb
+//Server
+desc=An ordinary looking magical scrying orb.
+weight=20g

@@ -6,3 +6,5 @@ sharelight = true
 forceapproach = 11
 models_only = 9482
 name = Trapdoor
+//Server
+desc=I can climb down this.

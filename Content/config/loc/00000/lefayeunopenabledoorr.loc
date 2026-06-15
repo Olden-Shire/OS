@@ -4,3 +4,6 @@ op2 = Knock-at
 mirror = true
 models = 639/0
 name = Large door
+//Server
+desc=Sturdy looking door.
+category=keep_lefaye_door

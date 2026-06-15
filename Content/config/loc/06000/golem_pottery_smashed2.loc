@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 6162
 name = Golem body
+//Server
+desc=Half a golem smashed and broken.

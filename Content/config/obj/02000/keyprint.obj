@@ -5,3 +5,7 @@ zoom2d = 900
 yan2d = 1988
 xan2d = 268
 name = Key print
+//Server
+desc=An imprint of a key in a lump of clay.
+weight=10g
+tradeable=no

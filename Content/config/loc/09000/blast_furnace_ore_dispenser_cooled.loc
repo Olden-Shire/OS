@@ -4,3 +4,5 @@ active = 1
 op1 = Take
 models_only = 9072
 name = Bar dispenser
+//Server
+desc=Your bars are ready to take.

@@ -10,3 +10,8 @@ recol1d = 42419
 recol2s = 4032
 recol2d = 42304
 name = Anchovies
+//Server
+desc=Some nicely cooked fish.
+weight=100g
+category=category_58
+param=pizza_topping_struct,anchovy_topping

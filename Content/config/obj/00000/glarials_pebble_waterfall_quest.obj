@@ -5,3 +5,7 @@ yan2d = 1808
 xan2d = 236
 members = true
 name = Glarial's pebble
+//Server
+desc=A small pebble with elven inscription.
+weight=10g
+tradeable=no

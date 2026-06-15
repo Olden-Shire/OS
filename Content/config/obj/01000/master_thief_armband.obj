@@ -8,3 +8,7 @@ yan2d = 1924
 xan2d = 296
 members = true
 name = Thieves' armband
+//Server
+desc=This denotes a Master Thief.
+weight=25g
+tradeable=no

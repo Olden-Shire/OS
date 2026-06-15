@@ -4,3 +4,5 @@ mirror = true
 op1 = Open
 models = 611/10 607/1
 name = Wooden doors
+//Server
+desc=These doors look very ominous. A sign says 'To the tombs'.

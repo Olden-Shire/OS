@@ -3,3 +3,5 @@ active = 1
 anim = 2898
 models_only = 10054
 name = Rat barrel
+//Server
+desc=Contains rats.

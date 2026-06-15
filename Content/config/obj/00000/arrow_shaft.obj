@@ -13,3 +13,6 @@ count2 = 6441, 3
 count3 = 6442, 4
 count4 = 6443, 5
 name = Arrow shaft
+//Server
+desc=A wooden arrow shaft.
+weight=10g

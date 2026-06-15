@@ -10,3 +10,6 @@ cost = 50
 recol1s = 82
 recol1d = 119
 name = Toxic powder
+//Server
+desc=A pile of toxic powder.
+weight=2oz

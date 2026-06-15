@@ -11,3 +11,7 @@ cost = 100
 recol1s = 43117
 recol1d = 127
 name = Unpowered orb
+//Server
+desc=I'd prefer it if it was powered.
+weight=1lb
+param=crafting_glass_struct,stafforb

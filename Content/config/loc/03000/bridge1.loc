@@ -4,3 +4,5 @@ sharelight = true
 recol = 6689/7952
 models_only = 697
 name = Bridge
+//Server
+desc=A bridge.

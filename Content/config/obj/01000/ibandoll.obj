@@ -9,3 +9,7 @@ zoom2d = 1040
 yan2d = 1736
 xan2d = 364
 name = Doll of iban
+//Server
+desc=A simple doll with Iban's likeness.
+weight=300g
+tradeable=no

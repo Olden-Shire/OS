@@ -7,3 +7,6 @@ yan2d = 100
 xan2d = 320
 members = true
 name = Leaves
+//Server
+desc=A pile of Oak tree leaves.
+weight=1oz

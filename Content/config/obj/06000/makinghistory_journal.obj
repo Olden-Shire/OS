@@ -17,3 +17,6 @@ recol3d = 6032
 recol4s = 5018
 recol4d = 12705
 name = Journal
+//Server
+desc=Somebody's private journal.
+weight=20g

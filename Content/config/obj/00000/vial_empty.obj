@@ -8,3 +8,8 @@ manwear = obj_vial_229_wear, 0
 womanwear = obj_vial_229_wear, 6
 cost = 2
 name = Vial
+//Server
+desc=An empty glass vial.
+weight=15g
+param=crafting_glass_struct,vial_empty
+param=next_obj_stage,vial_water

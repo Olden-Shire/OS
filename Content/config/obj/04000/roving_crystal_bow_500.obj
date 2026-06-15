@@ -10,3 +10,9 @@ iop2 = Wield
 manwear = obj_new_crystal_bow_4212_wear, 0
 womanwear = obj_new_crystal_bow_4212_wear, 6
 name = Crystal bow 5/10
+//Server
+desc=A nice sturdy magical bow.
+weight=3lb
+wearpos=righthand
+wearpos2=lefthand
+weight=4lb

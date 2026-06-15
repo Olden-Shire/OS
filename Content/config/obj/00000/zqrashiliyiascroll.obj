@@ -10,3 +10,7 @@ members = true
 recol1s = 10351
 recol1d = 21704
 name = Crumpled scroll
+//Server
+desc=An ancient crumpled scroll.
+weight=20g
+tradeable=no

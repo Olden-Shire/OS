@@ -9,3 +9,6 @@ members = true
 recol1s = 82
 recol1d = 11200
 name = Ground sulphur
+//Server
+desc=A pile of ground sulphur.
+weight=2oz

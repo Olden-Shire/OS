@@ -6,3 +6,6 @@ yof2d = 1
 zoom2d = 700
 xan2d = 292
 name = Star amulet
+//Server
+desc=A six-pointed marble and obsidian amulet
+weight=10g

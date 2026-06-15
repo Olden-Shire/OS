@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 6689/41
 models_only = 820
 name = Rockslide
+//Server
+desc=A deposit of rocks.

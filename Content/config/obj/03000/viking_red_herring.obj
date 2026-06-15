@@ -13,3 +13,6 @@ recol1d = 65067
 recol2s = 103
 recol2d = 716
 name = Red herring
+//Server
+desc=The colouring on it seems to be some kind of sticky goop...
+weight=500g

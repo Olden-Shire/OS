@@ -8,3 +8,6 @@ zan2d = 2047
 xan2d = 595
 members = true
 name = Weeds
+//Server
+desc=A handful of weeds.
+weight=7g

@@ -4,3 +4,5 @@ hillskew = true
 mapscene = 9
 models_only = 1663
 name = Hedge
+//Server
+desc=Keeps the neighbours out!

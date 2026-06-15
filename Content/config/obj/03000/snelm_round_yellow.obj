@@ -22,3 +22,7 @@ recol3d = 8759
 recol4s = 6697
 recol4d = 8772
 name = Ochre snelm
+//Server
+desc=A muddy yellow snail shell helmet.
+weight=2kg
+wearpos=hat

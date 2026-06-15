@@ -8,3 +8,11 @@ xan2d = 472
 recol1s = 11200
 recol1d = 35344
 name = Criminal's dagger
+//Server
+desc=A flimsy-looking dagger found at the crime scene.
+weight=1lb
+category=murder_proofobj
+param=product,murderweapondust
+param=game_message,You sprinkle a small amount of flour on the murderweapon.
+param=game_message2,The murderweapon is now coated with a thin layer of flour.
+tradeable=no

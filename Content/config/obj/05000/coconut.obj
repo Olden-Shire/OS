@@ -7,3 +7,6 @@ ambient = 15
 members = true
 cost = 87
 name = Coconut
+//Server
+desc=It's a coconut.
+weight=1oz

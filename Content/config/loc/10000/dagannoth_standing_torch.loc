@@ -2,3 +2,5 @@
 anim = 2870
 models_only = 9953
 name = Standing Torch
+//Server
+desc=An unlit torch.

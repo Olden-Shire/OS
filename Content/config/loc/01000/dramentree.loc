@@ -6,3 +6,6 @@ op3 = hidden
 mapscene = 0
 models_only = 1650
 name = Dramen tree
+//Server
+desc=An ancient magical tree.
+param=ent,macro_ent_dramen

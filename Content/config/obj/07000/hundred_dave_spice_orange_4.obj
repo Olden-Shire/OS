@@ -14,3 +14,6 @@ recol3d = 4795
 recol4s = 37999
 recol4d = 4795
 name = Orange spice (4)
+//Server
+desc=Allows for equal distribution of spice.
+weight=1g

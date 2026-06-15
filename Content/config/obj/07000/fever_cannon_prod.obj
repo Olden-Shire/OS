@@ -7,3 +7,6 @@ zoom2d = 950
 yan2d = 72
 xan2d = 1776
 name = Ramrod
+//Server
+desc=For cleaning and packing the cannon.
+weight=2kg

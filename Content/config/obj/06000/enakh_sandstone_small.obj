@@ -6,3 +6,6 @@ yan2d = 1886
 xan2d = 225
 members = true
 name = Sandstone (2kg)
+//Server
+desc=A small chunk of sandstone.
+weight=2kg

@@ -6,3 +6,5 @@ op1 = Look-at
 recol = 21522/10258 26896/10258
 models = 6893/4
 name = Symbol
+//Server
+desc=A symbol is carved into the wall here.

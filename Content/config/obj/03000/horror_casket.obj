@@ -7,3 +7,6 @@ yan2d = 1948
 xan2d = 72
 members = true
 name = Rusty casket
+//Server
+desc=Looks old and rusty...
+weight=5kg

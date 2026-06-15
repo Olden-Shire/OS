@@ -3,3 +3,6 @@ ambient = 15
 recol = 6806/13596 6682/13592 6558/13716 6563/13840 6439/13964 6443/14610
 models_only = 7700
 name = Crates
+//Server
+desc=Some wooden crates.
+category=empty_crate

@@ -7,3 +7,6 @@ members = true
 recol1s = 10562
 recol1d = 10436
 name = Minecart ticket
+//Server
+desc=A ticket to take you from the dwarven mines under Ice Mountain to Keldagrim.
+weight=1g

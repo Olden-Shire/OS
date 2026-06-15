@@ -20,3 +20,6 @@ recol5d = 784
 recol6s = 326
 recol6d = 425
 name = Burnt monkfish
+//Server
+desc=Maybe a little less heat next time.
+weight=300g

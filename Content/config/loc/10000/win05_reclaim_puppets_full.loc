@@ -4,3 +4,5 @@ length = 2
 op1 = Take-marionette
 models_only = 10483 10484
 name = Crate
+//Server
+desc=Reclaim your lost puppets!

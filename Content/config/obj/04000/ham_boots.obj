@@ -13,3 +13,7 @@ members = true
 recol1s = 4626
 recol1d = 61347
 name = Boots
+//Server
+desc=HAM boots as worn by the Humans Against Monsters group.
+wearpos=feet
+weight=12oz

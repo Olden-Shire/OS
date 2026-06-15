@@ -3,3 +3,5 @@ ambient = 25
 op2 = Inspect
 models_only = 9199 7766
 name = Delphinium patch
+//Server
+desc=You can grow delphiniums in this Farming patch.

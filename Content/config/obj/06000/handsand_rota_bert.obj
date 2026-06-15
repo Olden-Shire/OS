@@ -9,3 +9,6 @@ members = true
 iop1 = Read
 iop5 = Destroy
 name = Bert's rota
+//Server
+desc=A copy of a work rota.
+weight=20g

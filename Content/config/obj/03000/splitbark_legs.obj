@@ -10,3 +10,7 @@ yof2d = -1
 zoom2d = 1320
 xan2d = 252
 name = Splitbark legs
+//Server
+desc=These should protect my legs.
+wearpos=legs
+weight=8lb

@@ -2,3 +2,5 @@
 width = 2
 models_only = 14206
 name = Food trough
+//Server
+desc=Animals have no table manners.

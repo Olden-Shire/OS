@@ -5,3 +5,5 @@ length = 2
 recol = 6689/7952
 models_only = 2270
 name = Rock
+//Server
+desc=An odd-looking rock formation.

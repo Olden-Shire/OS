@@ -6,3 +6,5 @@ contrast = 25
 op1 = Leave
 models = 3800/0
 name = Exit
+//Server
+desc=The way out of the Troll Stronghold.

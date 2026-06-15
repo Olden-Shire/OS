@@ -10,3 +10,6 @@ members = true
 recol1s = 4773
 recol1d = 21916
 name = Cooked chicken
+//Server
+desc=This cooked chicken looks disgusting.
+weight=5oz

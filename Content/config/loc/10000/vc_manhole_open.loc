@@ -3,3 +3,5 @@ op1 = Climb-down
 forceapproach = 11
 models_only = 25023
 name = Manhole
+//Server
+desc=How dangerous, someone has left this manhole open.

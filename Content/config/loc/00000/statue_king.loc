@@ -1,3 +1,5 @@
 // loc 563
 models_only = 1527
 name = Statue of a king
+//Server
+desc=A monarch chiselled in stone.

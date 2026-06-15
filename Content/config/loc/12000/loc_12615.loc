@@ -8,3 +8,5 @@ nonblockrange = true
 recol = 6364/4550
 models_only = 7826 7815 13581
 name = Bush
+//Server
+desc=A Bush with monkey nuts growing on it.

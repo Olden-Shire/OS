@@ -4,3 +4,5 @@ length = 5
 nonsolid = true
 models_only = 2322
 name = Hanging log
+//Server
+desc=Why would a log be hung up there?

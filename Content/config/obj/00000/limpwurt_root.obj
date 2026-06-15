@@ -9,3 +9,8 @@ zan2d = 1980
 xan2d = 68
 ambient = 15
 name = Limpwurt root
+//Server
+desc=The root of a limpwurt plant.
+weight=7g
+param=brew_potion_struct,3dose1strength
+param=brew_potion_struct_secondary,3dose2strength

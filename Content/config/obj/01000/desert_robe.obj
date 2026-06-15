@@ -11,3 +11,7 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 127
 name = Desert robe
+//Server
+desc=A cool, light desert robe.
+weight=2lb
+wearpos=legs

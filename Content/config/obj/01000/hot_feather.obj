@@ -10,3 +10,7 @@ members = true
 recol1s = 127
 recol1d = 4032
 name = Fire feather
+//Server
+desc=Firebird feather.
+weight=2g
+tradeable=no

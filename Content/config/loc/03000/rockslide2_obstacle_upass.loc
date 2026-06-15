@@ -5,3 +5,5 @@ op1 = Climb-over
 recol = 6689/7952
 models_only = 781
 name = Rockslide
+//Server
+desc=A deposit of rocks.

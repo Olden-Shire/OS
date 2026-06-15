@@ -6,3 +6,6 @@ yan2d = 207
 xan2d = 165
 iop1 = Examine-closer
 name = Bauble box
+//Server
+desc=A box for storing painted baubles.
+weight=1kg

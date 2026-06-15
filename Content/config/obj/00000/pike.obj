@@ -11,3 +11,7 @@ recol1d = 18760
 recol2s = 103
 recol2d = 19773
 name = Pike
+//Server
+desc=Some nicely cooked Pike.
+weight=500g
+category=category_58

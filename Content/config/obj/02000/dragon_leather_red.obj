@@ -10,3 +10,6 @@ members = true
 recol1s = 127
 recol1d = 912
 name = Red dragon leather
+//Server
+desc=It's a piece of prepared red dragonhide.
+weight=7lb

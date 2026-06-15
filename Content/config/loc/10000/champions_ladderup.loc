@@ -6,3 +6,5 @@ forceapproach = 11
 recol = 5673/7463 5788/8722 5912/7587
 models_only = 5187
 name = Ladder
+//Server
+desc=I can climb this.

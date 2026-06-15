@@ -5,3 +5,5 @@ op1 = Enter
 bgsound = 3139, 3
 models_only = 1783
 name = Magic Portal
+//Server
+desc=A magical portal of teleportation.

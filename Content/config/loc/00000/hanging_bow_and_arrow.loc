@@ -2,3 +2,5 @@
 active = 1
 models = 2030/4
 name = Bow and Arrow
+//Server
+desc=A useful ranging device.

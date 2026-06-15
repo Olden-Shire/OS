@@ -11,3 +11,6 @@ members = true
 recol1s = 127
 recol1d = 82
 name = Damp tinderbox
+//Server
+desc=Not so useful for lighting a fire.
+weight=35g

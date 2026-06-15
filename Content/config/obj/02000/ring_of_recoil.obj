@@ -12,3 +12,8 @@ iop2 = Wear
 recol1s = 127
 recol1d = 43951
 name = Ring of recoil
+//Server
+desc=An enchanted ring.
+wearpos=ring
+weight=6g
+category=category_656

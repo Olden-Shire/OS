@@ -8,3 +8,8 @@ xan2d = 124
 recol1s = 61
 recol1d = 43968
 name = Blue dye
+//Server
+desc=A little bottle of blue dye.
+weight=20g
+category=category_82
+param=crafting_capes_struct,blue_dye

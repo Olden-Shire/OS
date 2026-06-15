@@ -3,3 +3,5 @@ active = 1
 hillskew = true
 models_only = 11946
 name = Potion shelves
+//Server
+desc=Shelves of colourful potion gourds!

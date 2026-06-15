@@ -6,3 +6,7 @@ xan2d = 272
 cost = 5
 iop1 = Eat
 name = Shrimps
+//Server
+desc=Some nicely cooked fish.
+weight=100g
+category=category_58

@@ -13,3 +13,6 @@ recol1d = 11175
 recol2s = 7116
 recol2d = 10927
 name = Cider
+//Server
+desc=A glass of cider.
+weight=550g

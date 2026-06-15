@@ -4,3 +4,5 @@ op1 = Climb-down
 forceapproach = 14
 models_only = 10704
 name = Trapdoor
+//Server
+desc=Perhaps the pixies will be back next year.

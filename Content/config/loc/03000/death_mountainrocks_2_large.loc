@@ -9,3 +9,5 @@ resizez = 256
 nonblockrange = true
 models_only = 3722
 name = Rocks
+//Server
+desc=They're troll eggs. Or perhaps rocks.

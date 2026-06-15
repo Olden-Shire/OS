@@ -5,3 +5,5 @@ op1 = Take
 recol = 61/5652
 models_only = 2544
 name = Bronze axe
+//Server
+desc=Handy for woodcutting.

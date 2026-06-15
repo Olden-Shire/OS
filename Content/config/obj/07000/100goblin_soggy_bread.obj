@@ -9,3 +9,6 @@ cost = 6
 recol1s = 8107
 recol1d = 7349
 name = Soggy bread
+//Server
+desc=Previously a nice crispy loaf of bread.  Now just kind of icky.
+weight=1g

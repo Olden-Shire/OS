@@ -3,3 +3,5 @@ active = 1
 op1 = Walk-across
 models = 1786/4
 name = Balancing ledge
+//Server
+desc=Tread carefully!

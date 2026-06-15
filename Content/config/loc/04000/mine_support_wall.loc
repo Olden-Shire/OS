@@ -3,3 +3,5 @@ hillskew = true
 sharelight = true
 models_only = 4902
 name = Wall support
+//Server
+desc=It prevents the wall unceremoniously squashing people.

@@ -10,3 +10,7 @@ members = true
 manwear = obj_oyster_pearl_411_man, 0
 womanwear = obj_oyster_pearl_411_woman, 0
 name = Oyster pearls
+//Server
+desc=I could work wonders with a chisel on these pearls.
+weight=4g
+wearpos=lefthand

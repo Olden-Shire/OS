@@ -9,3 +9,6 @@ ambient = 15
 members = true
 cost = 64
 name = Papaya fruit
+//Server
+desc=Looks delicious.
+weight=1oz

@@ -4,3 +4,5 @@ sharelight = true
 nonblockrange = true
 models_only = 5488
 name = Dry stone wall
+//Server
+desc=The remains of a stone wall.

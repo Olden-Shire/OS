@@ -6,3 +6,5 @@ op2 = Search
 noshadow = true
 models_only = 1744
 name = Tracks
+//Server
+desc=Tracks in the sand.

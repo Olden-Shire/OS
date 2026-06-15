@@ -10,3 +10,7 @@ members = true
 recol1s = 61
 recol1d = 16
 name = Witch's cat
+//Server
+desc=A cat.
+weight=1200g
+tradeable=no

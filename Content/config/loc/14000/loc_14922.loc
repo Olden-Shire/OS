@@ -7,3 +7,5 @@ active = 1
 forceapproach = 7
 models_only = 14888
 name = Hole
+//Server
+desc=A small hole through which I can crawl.

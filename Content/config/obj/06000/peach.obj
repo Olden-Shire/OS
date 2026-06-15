@@ -6,3 +6,6 @@ zoom2d = 912
 yan2d = 1876
 xan2d = 174
 name = Peach
+//Server
+desc=A tasty fruit.
+weight=10g

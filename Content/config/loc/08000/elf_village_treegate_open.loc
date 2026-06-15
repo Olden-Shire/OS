@@ -2,3 +2,5 @@
 length = 4
 models_only = 8324
 name = Tree
+//Server
+desc=An odd looking tree.

@@ -12,3 +12,8 @@ iop2 = Wear
 recol1s = 127
 recol1d = 51111
 name = Dragonstone ring
+//Server
+desc=A valuable ring.
+wearpos=ring
+weight=6g
+category=category_656

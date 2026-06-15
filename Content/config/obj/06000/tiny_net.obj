@@ -10,3 +10,7 @@ xan2d = 380
 ambient = 20
 contrast = 20
 name = Tiny net
+//Server
+desc=A tiny net for grabbing tiny fish.
+weight=1oz
+weight=20g

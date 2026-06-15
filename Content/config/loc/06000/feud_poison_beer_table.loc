@@ -3,3 +3,5 @@ anim = 1875
 op1 = Take-beer
 models_only = 6046
 name = Table
+//Server
+desc=Has upon it a beer, which I will not take for moral reasons.

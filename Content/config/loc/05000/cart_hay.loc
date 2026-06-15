@@ -3,3 +3,5 @@ width = 2
 length = 3
 models_only = 5563
 name = Cart
+//Server
+desc=Loaded with hay and ready to roll.

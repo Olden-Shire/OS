@@ -8,3 +8,6 @@ yan2d = 1991
 xan2d = 336
 iop5 = Destroy
 name = Stone left arm
+//Server
+desc=The left arm of a large stone statue.
+weight=9kg

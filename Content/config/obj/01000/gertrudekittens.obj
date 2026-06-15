@@ -9,3 +9,8 @@ xan2d = 32
 members = true
 op1 = Use
 name = Fluffs' kitten
+//Server
+desc=It looks like it's lost.
+weight=750g
+category=category_81
+tradeable=no

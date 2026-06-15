@@ -5,3 +5,5 @@ forceapproach = 14
 recol = 5788/8724 5912/8724 5673/8724
 models_only = 5187
 name = ladder
+//Server
+desc=Goes up and down!

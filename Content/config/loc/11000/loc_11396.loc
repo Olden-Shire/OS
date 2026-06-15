@@ -1,3 +1,5 @@
 // loc 11396
 models_only = 11322
 name = Melted candle.
+//Server
+desc=A melted candle.

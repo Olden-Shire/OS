@@ -12,3 +12,6 @@ iop5 = Destroy
 recol1s = 8128
 recol1d = 5553
 name = Enchanted key
+//Server
+desc=It seems to change temperature as I walk.
+weight=10g

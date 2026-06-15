@@ -12,3 +12,7 @@ womanwear = obj_shorts_5042_woman, 0
 recol1s = 9529
 recol1d = 43827
 name = Shorts
+//Server
+desc=Blue shorts, these would look great on dwarves!
+wearpos=legs
+weight=100g

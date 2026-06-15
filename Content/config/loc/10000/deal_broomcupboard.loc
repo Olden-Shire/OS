@@ -4,3 +4,5 @@ forceapproach = 13
 op1 = Open
 models_only = 1951
 name = Cupboard
+//Server
+desc=Probably where the farming kit is stored.

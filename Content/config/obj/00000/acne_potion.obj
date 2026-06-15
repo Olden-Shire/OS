@@ -7,3 +7,7 @@ xan2d = 84
 recol1s = 61
 recol1d = 25026
 name = Potion
+//Server
+desc=This is meant to be good for spots.
+weight=25g
+category=potion

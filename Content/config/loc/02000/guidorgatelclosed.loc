@@ -5,3 +5,6 @@ ambient = 25
 nonblockrange = true
 models = 25029/0
 name = Gate
+//Server
+desc=A wooden gate.
+category=varrock_gate

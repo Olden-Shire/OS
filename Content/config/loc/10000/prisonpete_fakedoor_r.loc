@@ -5,3 +5,5 @@ op1 = Open
 nonblockrange = true
 models = 609/0
 name = Locked door
+//Server
+desc=Doesn't look like the way out.

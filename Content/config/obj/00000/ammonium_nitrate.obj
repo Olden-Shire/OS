@@ -8,3 +8,7 @@ xan2d = 264
 recol1s = 82
 recol1d = 115
 name = Ammonium nitrate
+//Server
+desc=An acrid chemical.
+weight=15g
+tradeable=no

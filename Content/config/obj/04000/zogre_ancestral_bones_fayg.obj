@@ -10,3 +10,7 @@ recol1d = 8094
 recol2s = 7370
 recol2d = 7370
 name = Fayrg bones
+//Server
+desc=Ancient ogre bones from the ogre burial tomb.
+weight=800g
+category=bones

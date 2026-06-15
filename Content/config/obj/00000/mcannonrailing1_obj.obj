@@ -9,3 +9,7 @@ yan2d = 1976
 zan2d = 212
 xan2d = 4
 name = Railing
+//Server
+desc=A metal railing replacement.
+weight=2kg
+tradeable=no

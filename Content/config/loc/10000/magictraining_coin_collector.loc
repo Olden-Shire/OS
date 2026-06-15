@@ -9,3 +9,5 @@ resizez = 128
 op1 = Deposit
 models_only = 10648
 name = Coin Collector
+//Server
+desc=Somewhere to put money.

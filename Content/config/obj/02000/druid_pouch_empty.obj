@@ -13,3 +13,7 @@ recol1d = 22430
 recol2s = 7609
 recol2d = 22464
 name = Druid pouch
+//Server
+desc=An empty druid pouch.
+weight=10g
+tradeable=no

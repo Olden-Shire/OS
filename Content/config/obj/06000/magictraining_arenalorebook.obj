@@ -10,3 +10,6 @@ members = true
 iop1 = Read
 iop5 = Destroy
 name = Arena book
+//Server
+desc=A book about the Training Arena.
+weight=1kg

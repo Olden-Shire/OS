@@ -8,3 +8,6 @@ yan2d = 1892
 xan2d = 195
 cost = 10
 name = Fungicide
+//Server
+desc=Does exactly what it says on the tin. (Kills Fungi.)
+weight=100g

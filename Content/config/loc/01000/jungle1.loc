@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 1617
 name = Creeping plant
+//Server
+desc=The tendrils of a creeping plant.

@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1421 1493
 name = Silver stall
+//Server
+desc=Finely wrought wares of silver.

@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 2397
 name = Bucket
+//Server
+desc=En-suite facilities in every cell!

@@ -3,3 +3,5 @@ length = 2
 width = 2
 models_only = 904
 name = Large urn
+//Server
+desc=A gigantic pottery urn.

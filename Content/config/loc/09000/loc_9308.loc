@@ -6,3 +6,5 @@ active = 1
 recol = 6932/12698 6684/12818 6930/12698
 models = 9239/0
 name = Weathered wall
+//Server
+desc=A well weathered wall.

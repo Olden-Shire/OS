@@ -8,3 +8,6 @@ xan2d = 144
 members = true
 iop5 = Destroy
 name = Enchanted egg
+//Server
+desc=Egg containing knowledge.
+weight=20g

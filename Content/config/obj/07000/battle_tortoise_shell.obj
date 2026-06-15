@@ -9,3 +9,6 @@ xan2d = 285
 ambient = 10
 contrast = 10
 name = Tortoise shell
+//Server
+desc=A word in your shell-like.
+weight=15lb

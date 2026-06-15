@@ -11,3 +11,7 @@ manwear = obj_spork_7437_wear, 0
 womanwear = obj_spork_7437_wear, 6
 members = true
 name = Spork
+//Server
+desc=Use the spork.
+wearpos=righthand
+weight=4lb

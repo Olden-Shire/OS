@@ -4,3 +4,5 @@ recol = 11171/960
 retex = 22/16
 models_only = 10370
 name = Steel Chest
+//Server
+desc=A strangely decorated steel chest, the open lock is painted crimson.

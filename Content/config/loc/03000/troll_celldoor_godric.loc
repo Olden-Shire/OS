@@ -2,3 +2,5 @@
 op1 = Unlock
 models = 3802/0
 name = Cell Door
+//Server
+desc=The door to Godric's cell.

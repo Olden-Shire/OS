@@ -6,3 +6,6 @@ zan2d = 2036
 xan2d = 2036
 members = true
 name = Karidian headpiece
+//Server
+desc=Wear it on your head.
+weight=70g

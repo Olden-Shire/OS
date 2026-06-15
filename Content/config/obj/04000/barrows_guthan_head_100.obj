@@ -16,3 +16,9 @@ recol1d = 10388
 recol2s = 6020
 recol2d = 11140
 name = Guthans helm 100
+//Server
+desc=Guthan the Infested's helm.
+weight=6lb
+wearpos=hat
+wearpos2=head
+wearpos3=jaw

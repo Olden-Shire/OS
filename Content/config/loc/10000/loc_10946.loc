@@ -6,3 +6,5 @@ hillskew = true
 recol = 10299/6829 24/6949
 models_only = 3184
 name = Rocks
+//Server
+desc=A rocky outcrop.

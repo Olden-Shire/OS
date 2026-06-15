@@ -11,3 +11,7 @@ iop1 = Look
 recol1s = 43288
 recol1d = 17344
 name = Yommi tree seeds
+//Server
+desc=These are germinated and ready to be planted in fertile soil.
+weight=1g
+tradeable=no

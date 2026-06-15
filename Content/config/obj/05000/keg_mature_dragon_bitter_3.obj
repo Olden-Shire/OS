@@ -7,3 +7,6 @@ xan2d = 116
 ambient = 15
 iop1 = Drink
 name = Dragon bitter(m3)
+//Server
+desc=This keg contains 3 pints of mature Dragon Bitter.
+weight=1oz

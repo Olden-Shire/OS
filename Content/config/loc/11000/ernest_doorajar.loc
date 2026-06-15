@@ -3,3 +3,5 @@ active = 1
 op1 = Open
 models_only = 11813
 name = Door
+//Server
+desc=The door is slightly ajar.

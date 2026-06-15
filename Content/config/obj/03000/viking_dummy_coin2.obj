@@ -10,3 +10,6 @@ recol1d = 0
 recol2s = 8128
 recol2d = 0
 name = Red disk
+//Server
+desc=A red coloured disk, apparently made of wood.
+weight=1g

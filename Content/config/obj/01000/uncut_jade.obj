@@ -11,3 +11,6 @@ members = true
 recol1s = 61
 recol1d = 17633
 name = Uncut jade
+//Server
+desc=This would be worth more cut.
+weight=3g

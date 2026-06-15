@@ -5,3 +5,6 @@ yan2d = 1024
 xan2d = 400
 cost = 100
 name = Tiara mould
+//Server
+desc=A mould for tiaras.
+weight=1kg

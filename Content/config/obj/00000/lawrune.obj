@@ -8,3 +8,7 @@ yan2d = 1012
 xan2d = 528
 ambient = 30
 name = Law rune
+//Server
+desc=Used for teleport spells.
+weight=2g
+category=category_149

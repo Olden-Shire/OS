@@ -6,3 +6,5 @@ op1 = Search
 nonblockrange = true
 models_only = 13960
 name = Tomb
+//Server
+desc=The resting place of an ancient warrior of Morytania.

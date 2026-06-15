@@ -6,3 +6,5 @@ op1 = Use
 recol = 33668/289
 models_only = 14238
 name = Exit
+//Server
+desc=The exit to the surface.

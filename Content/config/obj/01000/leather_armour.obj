@@ -8,3 +8,15 @@ iop2 = Wear
 manwear = obj_leather_body_1129_man, 0
 womanwear = obj_leather_body_1129_woman, 0
 name = Leather body
+//Server
+desc=Better than no armour!
+wearpos=torso
+weight=6lb
+category=armour_body
+param=magicattack,-2
+param=rangeattack,2
+param=stabdefence,8
+param=slashdefence,9
+param=crushdefence,10
+param=magicdefence,4
+param=rangedefence,9

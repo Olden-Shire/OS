@@ -5,3 +5,6 @@ yan2d = 144
 xan2d = 138
 iop1 = Examine-closer
 name = Puppet box
+//Server
+desc=A box for storing completed puppets.
+weight=2lb

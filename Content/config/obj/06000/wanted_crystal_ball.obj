@@ -14,3 +14,6 @@ iop2 = Contact
 iop4 = Playback
 iop5 = Destroy
 name = Commorb
+//Server
+desc=A Temple Knight Communication Orb. Top Secret!
+weight=1g

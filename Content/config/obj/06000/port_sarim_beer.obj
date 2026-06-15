@@ -7,3 +7,6 @@ zoom2d = 660
 yan2d = 1904
 xan2d = 140
 name = Ahab's beer
+//Server
+desc=Looks nice.
+weight=550g

@@ -4,3 +4,5 @@ op1 = Search
 nonblockrange = true
 models_only = 1229
 name = Desk
+//Server
+desc=The desk of the head mourner.

@@ -4,3 +4,5 @@ nonsolid = true
 recol = 12579/5553 12574/5553 12698/5553 12694/5553 12818/5673 12942/5793
 models_only = 1865
 name = Repaired leak
+//Server
+desc=A patch of swamp tar has bunged up the hole.

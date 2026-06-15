@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 7073/6319 5914/6435 5908/6550 4750/7050 61/8497
 models = 5738/10 659/0 660/9
 name = Standing spears
+//Server
+desc=Very pointy, very sharp.

@@ -8,3 +8,7 @@ xan2d = 320
 recol1s = 10050
 recol1d = 10326
 name = Wig
+//Server
+desc=A grey woollen wig.
+weight=10g
+tradeable=no

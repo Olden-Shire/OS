@@ -7,3 +7,7 @@ yan2d = 112
 xan2d = 248
 members = true
 name = Papyrus
+//Server
+desc=Used papyrus, it has squiggles all over it.
+weight=20g
+tradeable=no

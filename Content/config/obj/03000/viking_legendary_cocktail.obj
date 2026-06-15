@@ -6,3 +6,6 @@ yan2d = 1988
 xan2d = 104
 members = true
 name = Legendary cocktail
+//Server
+desc=Probably the greatest cocktail in the world.
+weight=450g

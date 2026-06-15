@@ -6,3 +6,7 @@ yan2d = 1012
 xan2d = 528
 ambient = 30
 name = Death rune
+//Server
+desc=Used for medium level missile spells.
+weight=10kg
+weight=2g

@@ -5,3 +5,5 @@ bgsound = 2065, 3
 recol = 12/21776 33/16540 5029/9108
 models_only = 5274
 name = Cooking range
+//Server
+desc=An appliance for cooking with.

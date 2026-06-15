@@ -6,3 +6,6 @@ xan2d = 580
 cost = 500
 members = true
 name = Fine cloth
+//Server
+desc=Amazingly untouched by time.
+weight=1kg

@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 6932/6569
 models_only = 5492
 name = Bench
+//Server
+desc=Sit back and relax...

@@ -17,3 +17,6 @@ recol4d = 553
 recol5s = 10043
 recol5d = 796
 name = Exotic flower
+//Server
+desc=Some flowers from a distant land.
+weight=1oz

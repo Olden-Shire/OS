@@ -12,3 +12,7 @@ manhead = 10391
 womanhead = 10403
 iop5 = Destroy
 name = Jester hat
+//Server
+desc=A woolly jester hat.
+wearpos=hat
+weight=250g

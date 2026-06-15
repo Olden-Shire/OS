@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 1632
 name = Potted plant
+//Server
+desc=A plant in a bamboo pot.

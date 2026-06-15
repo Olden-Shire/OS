@@ -3,3 +3,5 @@ ambient = 30
 recol = 8076/5665
 models_only = 2132
 name = Warehouse shelves
+//Server
+desc=Storage for all needs.

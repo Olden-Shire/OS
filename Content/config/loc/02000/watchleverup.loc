@@ -3,3 +3,5 @@ op1 = Pull
 active = 1
 models_only = 20334
 name = Lever
+//Server
+desc=A lever for activating something.

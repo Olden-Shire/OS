@@ -7,3 +7,6 @@ zoom2d = 590
 yan2d = 1644
 xan2d = 248
 name = Thread
+//Server
+desc=Used with a needle to make clothes.
+weight=3g

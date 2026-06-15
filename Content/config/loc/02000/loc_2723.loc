@@ -1,3 +1,5 @@
 // loc 2723
 models_only = 1260
 name = Kebab
+//Server
+desc=A spicy meat kebab is cooking here.

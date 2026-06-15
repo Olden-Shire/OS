@@ -5,3 +5,5 @@ op4 = Hidden
 recol = 7050/6585 7582/5665
 models_only = 4138
 name = Funeral Pyre
+//Server
+desc=A place to cremate the dead. Needs a light.

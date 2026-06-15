@@ -7,3 +7,5 @@ ambient = 25
 contrast = 25
 models_only = 674
 name = Doorway
+//Server
+desc=The top of the archway.

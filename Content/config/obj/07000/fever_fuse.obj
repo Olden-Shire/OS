@@ -12,3 +12,6 @@ recol1d = 5223
 recol2s = 6806
 recol2d = 5214
 name = Fuse
+//Server
+desc=Burns very well.
+weight=7g

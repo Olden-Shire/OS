@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 926
 name = Hag's poison
+//Server
+desc=A red viscous liquid in a vial.
+weight=200g

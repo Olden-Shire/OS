@@ -6,3 +6,5 @@ zoom2d = 1330
 yan2d = 128
 xan2d = 300
 name = Broad arrows
+//Server
+desc=Arrows with a wider than normal tip.

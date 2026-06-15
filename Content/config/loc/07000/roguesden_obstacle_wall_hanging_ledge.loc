@@ -4,3 +4,5 @@ op1 = Climb
 recol = 10518/5667
 models_only = 7562
 name = Ledge
+//Server
+desc=It's a long way down...

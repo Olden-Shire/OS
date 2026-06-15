@@ -6,3 +6,5 @@ forcedecor = true
 op1 = Walk-across
 models = 1128/22
 name = Log balance
+//Server
+desc=The foam from the river makes this log very slippy.

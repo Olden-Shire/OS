@@ -14,3 +14,12 @@ recol1d = 61
 recol2s = 11200
 recol2d = 4044
 name = Amulet of accuracy
+//Server
+desc=It increases my aim.
+wearpos=front
+weight=10g
+param=stabattack,4
+param=slashattack,4
+param=crushattack,4
+param=magicattack,4
+param=rangeattack,4

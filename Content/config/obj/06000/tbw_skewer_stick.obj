@@ -9,3 +9,5 @@ xan2d = 300
 stackable = true
 members = true
 name = Skewer stick
+//Server
+desc=A sharp pointed stick, quite resistant to fire.

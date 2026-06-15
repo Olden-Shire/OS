@@ -20,3 +20,7 @@ recol5d = 10760
 recol6s = 10892
 recol6d = 11140
 name = Karils skirt 100
+//Server
+desc=Karil the Tainted's leather skirt.
+weight=12lb
+wearpos=legs

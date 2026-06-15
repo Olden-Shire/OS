@@ -7,3 +7,6 @@ op1 = Search
 recol = 5669/8078 5665/7954
 models_only = 708
 name = Tomb
+//Server
+desc=I don't much like the look of that...
+category=ibantomb

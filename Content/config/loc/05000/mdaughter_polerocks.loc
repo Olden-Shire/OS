@@ -3,3 +3,5 @@ noshadow = true
 op1 = Jump-across
 models_only = 3722
 name = Clump of rocks
+//Server
+desc=You can't stand on them, but maybe something can be wedged into there.

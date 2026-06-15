@@ -14,3 +14,7 @@ members = true
 iop2 = Wear
 iop3 = Extinguish
 name = Mining helmet
+//Server
+desc=A helmet with a lamp on it.
+weight=2lb
+wearpos=hat

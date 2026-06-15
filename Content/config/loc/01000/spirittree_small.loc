@@ -6,3 +6,5 @@ op1 = Talk-to
 mapscene = 0
 models_only = 2851
 name = Spirit tree
+//Server
+desc=An ancient sentient tree.

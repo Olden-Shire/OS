@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 14902
 name = Firebox
+//Server
+desc=The firebox of a metal pressing machine.

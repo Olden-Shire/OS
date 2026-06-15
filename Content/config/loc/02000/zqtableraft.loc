@@ -3,3 +3,5 @@ op1 = Look-at
 op2 = Craft
 models_only = 1207
 name = Smashed table
+//Server
+desc=This table has seen better days.

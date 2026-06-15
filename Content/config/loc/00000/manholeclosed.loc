@@ -5,3 +5,5 @@ forceapproach = 7
 nonblockrange = true
 models_only = 25033
 name = Manhole
+//Server
+desc=There's a cover over this manhole.

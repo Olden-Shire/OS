@@ -4,3 +4,5 @@ active = 1
 nonblockrange = true
 models = 609/0
 name = Door
+//Server
+desc=Solid bars of iron.

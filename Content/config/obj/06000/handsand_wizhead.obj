@@ -8,3 +8,6 @@ yan2d = 264
 xan2d = 268
 iop5 = Destroy
 name = Wizard's head
+//Server
+desc=A decapitated, sand covered head.
+weight=8lb

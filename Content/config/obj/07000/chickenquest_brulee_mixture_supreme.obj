@@ -13,3 +13,6 @@ recol1d = 3373
 recol2s = 8423
 recol2d = 7485
 name = Brulee supreme
+//Server
+desc=A pot of brulee supreme.
+weight=300g

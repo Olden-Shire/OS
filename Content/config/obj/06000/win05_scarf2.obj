@@ -10,3 +10,7 @@ manwear = obj_jester_scarf_man, 0
 womanwear = obj_jester_scarf_woman, 0
 iop5 = Destroy
 name = Jester scarf
+//Server
+desc=A woolly jester scarf.
+wearpos=front
+weight=250g

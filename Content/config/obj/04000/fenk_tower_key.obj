@@ -8,3 +8,6 @@ xan2d = 468
 recol1s = 8128
 recol1d = 36259
 name = Tower key
+//Server
+desc=Upon close examination, this seems to be a key.
+weight=5g

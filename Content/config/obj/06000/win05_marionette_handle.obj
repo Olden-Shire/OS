@@ -10,3 +10,7 @@ xan2d = 166
 manwear = obj_marionette_handle, 0
 womanwear = obj_marionette_handle, 0
 name = Marionette handle
+//Server
+desc=The controlling part of a marionette.
+wearpos=righthand
+weight=200g

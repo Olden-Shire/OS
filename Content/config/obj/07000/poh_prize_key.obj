@@ -10,3 +10,6 @@ members = true
 recol1s = 8128
 recol1d = 43239
 name = Prize key
+//Server
+desc=You can use this to open the prize chest!
+weight=10g

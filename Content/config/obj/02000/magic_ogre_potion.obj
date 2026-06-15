@@ -11,3 +11,8 @@ members = true
 recol1s = 61
 recol1d = 26849
 name = Magic ogre potion
+//Server
+desc=A dangerous magical liquid.
+wearpos=righthand
+weight=25g
+tradeable=no

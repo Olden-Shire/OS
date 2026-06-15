@@ -14,3 +14,6 @@ recol2d = 670
 recol3s = 2991
 recol3d = 829
 name = Abyssal book
+//Server
+desc=Some research notes on abyssal space.
+weight=10g

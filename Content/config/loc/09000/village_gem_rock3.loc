@@ -9,3 +9,5 @@ nonblockrange = true
 recol = 5289/10908 813/10908 10297/10908 35489/61376
 models_only = 8882
 name = Gem Rock
+//Server
+desc=Gems encrusted in stone.

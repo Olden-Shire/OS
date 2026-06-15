@@ -8,3 +8,6 @@ members = true
 recol1s = 9108
 recol1d = 7580
 name = Willow roots
+//Server
+desc=The roots of the Willow tree.
+weight=1g

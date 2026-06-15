@@ -8,3 +8,6 @@ zan2d = 1940
 xan2d = 32
 members = true
 name = Wily cat
+//Server
+desc=Wild.
+weight=750g

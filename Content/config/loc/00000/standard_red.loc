@@ -1,3 +1,5 @@
 // loc 853
 models_only = 1413
 name = Standard
+//Server
+desc=A standard.

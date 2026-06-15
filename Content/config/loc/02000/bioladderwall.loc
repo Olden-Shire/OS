@@ -3,3 +3,5 @@ mapscene = 21
 retex = 2/23
 models_only = 571
 name = Wall
+//Server
+desc=A wall.

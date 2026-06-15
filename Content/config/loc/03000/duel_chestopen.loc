@@ -4,3 +4,5 @@ op3 = Shut
 forceapproach = 14
 models_only = 1226
 name = Open chest
+//Server
+desc=Use for quick access to your bank.

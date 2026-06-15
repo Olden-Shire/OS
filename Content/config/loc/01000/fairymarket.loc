@@ -1,3 +1,5 @@
 // loc 1151
 models_only = 2018
 name = Fairy market stall
+//Server
+desc=A fairy is selling items here.

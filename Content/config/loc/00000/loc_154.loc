@@ -4,3 +4,6 @@ width = 2
 retex = 2/3
 models_only = 1475
 name = Obstacle pipe
+//Server
+desc=A pipe I can squeeze through.
+param=next_loc_stage,deadtree1_stump

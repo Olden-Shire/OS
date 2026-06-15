@@ -4,3 +4,5 @@ ambient = 10
 active = 1
 models = 2094/4
 name = Jolly Roger
+//Server
+desc=He doesn't look too jolly to me!

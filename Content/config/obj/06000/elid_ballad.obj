@@ -8,3 +8,6 @@ xan2d = 344
 members = true
 iop1 = Read
 name = Ballad
+//Server
+desc=The Ballad of Jareesh.
+weight=5g

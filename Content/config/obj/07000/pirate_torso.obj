@@ -9,3 +9,7 @@ zoom2d = 1178
 xan2d = 568
 cost = 300
 name = Stripy pirate shirt
+//Server
+desc=A sea worthy shirt.
+wearpos=torso
+weight=1kg

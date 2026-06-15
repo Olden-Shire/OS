@@ -12,3 +12,9 @@ zan2d = 144
 xan2d = 1960
 cost = 625
 name = Saradomin mjolnir
+//Server
+desc=A Saradomin Mjolnir.
+wearpos=righthand
+wearpos2=lefthand
+weight=5lb
+param=saradominitem,^true

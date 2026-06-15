@@ -11,3 +11,7 @@ cost = 350
 recol1s = 9763
 recol1d = 819
 name = Pirate leggings
+//Server
+desc=A sea worthy pair of trousers.
+wearpos=legs
+weight=1kg

@@ -14,3 +14,8 @@ womanhead = 120
 womanhead2 = 5813
 members = true
 name = Gold helmet
+//Server
+desc=Made of gold and white gold.
+wearpos=hat
+wearpos2=head
+weight=70lb

@@ -11,3 +11,7 @@ yan2d = 235
 xan2d = 387
 members = true
 name = Meat tenderiser
+//Server
+desc=Often used to soften tough meat up.
+wearpos=righthand
+weight=4lb

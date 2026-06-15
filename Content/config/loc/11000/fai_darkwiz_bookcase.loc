@@ -3,3 +3,5 @@ ambient = 10
 recol = 5400/5660 5784/5652 5008/4626
 models_only = 9500
 name = Bookcase
+//Server
+desc=Books of dark magic for dark wizards.

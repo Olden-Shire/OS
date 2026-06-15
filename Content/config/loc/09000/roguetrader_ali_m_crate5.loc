@@ -3,3 +3,5 @@ ambient = 35
 recol = 6558/55186
 models_only = 9008 9011
 name = Crate
+//Server
+desc=A wooden crate containing clothes.

@@ -8,3 +8,6 @@ yan2d = 136
 xan2d = 300
 members = true
 name = Shears
+//Server
+desc=For shearing sheep.
+weight=4oz

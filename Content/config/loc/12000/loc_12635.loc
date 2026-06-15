@@ -8,3 +8,5 @@ active = 1
 recol = 322/330 3230/5281 3226/5276 5392/3350 21530/21534 21526/21534
 models_only = 14197 14198
 name = Rock
+//Server
+desc=It's a rock with a dead snake on.

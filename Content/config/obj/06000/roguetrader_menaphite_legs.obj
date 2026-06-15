@@ -10,3 +10,7 @@ xan2d = 240
 members = true
 cost = 40
 name = Menaphite robe
+//Server
+desc=A cool light Menaphite robe.
+wearpos=legs
+weight=5g

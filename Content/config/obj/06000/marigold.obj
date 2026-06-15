@@ -9,3 +9,6 @@ members = true
 ambient = 15
 cost = 1
 name = Marigolds
+//Server
+desc=A bunch of marigolds.
+weight=1oz

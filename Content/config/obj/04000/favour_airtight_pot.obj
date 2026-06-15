@@ -13,3 +13,6 @@ recol1d = 4899
 recol2s = 6453
 recol2d = 4775
 name = Airtight pot
+//Server
+desc=This is pretty well sealed.
+weight=21oz

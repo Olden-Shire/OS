@@ -8,3 +8,6 @@ members = true
 recol1s = 61
 recol1d = 21729
 name = ??? mixture
+//Server
+desc=A very hot vial of something or other. The label says 'Cupric Sulfate'.
+weight=2oz

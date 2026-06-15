@@ -12,3 +12,8 @@ model = obj_ham_hood_4302
 recol1s = 8741
 recol1d = 10512
 name = Ahrims hood 50
+//Server
+desc=Ahrim the Blighted's leather hood.
+weight=2lb
+wearpos=hat
+wearpos2=head

@@ -1,3 +1,5 @@
 // loc 695
 models_only = 1142
 name = Clothes model
+//Server
+desc=Helps make human clothing.

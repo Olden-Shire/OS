@@ -8,3 +8,9 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_easy
+param=trail_desc,Search the crate in the left-|hand tower of Lumbridge Castle.
+tradeable=no

@@ -5,3 +5,7 @@ op3 = hidden
 recol = 10299/37 24/43038
 models_only = 3184
 name = Rocks
+//Server
+desc=Rocky!
+category=mining_rock_normal
+param=next_loc_stage_mining,plainrock1

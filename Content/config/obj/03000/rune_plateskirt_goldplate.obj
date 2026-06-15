@@ -18,3 +18,7 @@ recol3d = 6057
 recol4s = 25238
 recol4d = 7097
 name = Gilded plateskirt
+//Server
+desc=Rune plateskirt with gold plate.
+wearpos=legs
+weight=20lb

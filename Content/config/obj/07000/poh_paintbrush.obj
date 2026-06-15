@@ -3,3 +3,7 @@ manwear = obj_paintbrush_7756, 0
 womanwear = obj_paintbrush_7756, 6
 model = obj_paintbrush_7756
 name = Paintbrush
+//Server
+desc=Try dipping it in paint and applying it.
+wearpos=righthand
+weight=0g

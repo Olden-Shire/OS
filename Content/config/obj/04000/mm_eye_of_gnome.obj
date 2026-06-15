@@ -8,3 +8,6 @@ zoom2d = 690
 yan2d = 256
 xan2d = 364
 name = Eye of gnome
+//Server
+desc=It's ... the eye of a gnome! Now what on earth could one do with this?
+weight=7g

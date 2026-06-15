@@ -11,3 +11,7 @@ manwear = obj_spined_chaps_6135_man, 0
 womanwear = obj_spined_chaps_6135_woman, 0
 members = true
 name = Spined chaps
+//Server
+desc=Stylish leg armour for rangers with a lingering smell of raw fish...
+wearpos=legs
+weight=12lb

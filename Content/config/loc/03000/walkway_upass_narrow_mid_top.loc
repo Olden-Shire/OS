@@ -8,3 +8,5 @@ nonblockrange = true
 recol = 6689/7952
 models = 3156/22
 name = Stone bridge
+//Server
+desc=A stone bridge.

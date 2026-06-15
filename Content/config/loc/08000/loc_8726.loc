@@ -7,3 +7,5 @@ ambient = 30
 recol = 61/9533
 models = 5514/10 5515/1
 name = Rock
+//Server
+desc=A small chunk of rock.

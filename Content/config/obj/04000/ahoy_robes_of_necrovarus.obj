@@ -9,3 +9,6 @@ members = true
 recol1s = 6241
 recol1d = 23838
 name = Mystical robes
+//Server
+desc=The Robes of Necrovarus.
+weight=2lb

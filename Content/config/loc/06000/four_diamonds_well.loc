@@ -7,3 +7,5 @@ length = 2
 nonblockrange = true
 models_only = 1525
 name = Well
+//Server
+desc=A well down into the pyramid.

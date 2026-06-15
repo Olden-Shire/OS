@@ -2,3 +2,5 @@
 ambient = 30
 models_only = 8247
 name = Hay bale
+//Server
+desc=I bet there's a needle in it somewhere.

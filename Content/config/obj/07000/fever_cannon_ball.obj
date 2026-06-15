@@ -8,3 +8,6 @@ zoom2d = 950
 yan2d = 72
 xan2d = 1425
 name = Cannon ball
+//Server
+desc=A heavy metal ball.
+weight=20kg

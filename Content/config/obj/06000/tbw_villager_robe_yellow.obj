@@ -13,3 +13,7 @@ recol1d = 41408
 recol2s = 5572
 recol2d = 7112
 name = Villager robe
+//Server
+desc=A brightly coloured robe prized by the Tai Bwo Wannai peoples.
+weight=2kg
+wearpos=legs

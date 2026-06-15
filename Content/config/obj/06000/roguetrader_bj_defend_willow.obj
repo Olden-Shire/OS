@@ -12,3 +12,8 @@ cost = 800
 recol1s = 8111
 recol1d = 8101
 name = Willow blackjack(d)
+//Server
+desc=A defensive blackjack.
+wearpos=righthand
+weight=1kg
+weight=4lb

@@ -13,3 +13,8 @@ iop2 = Wear
 recol1s = 8741
 recol1d = 61347
 name = Ham shirt
+//Server
+desc=A vivid crimson shirt.
+wearpos=torso
+wearpos2=arms
+weight=2lb

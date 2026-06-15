@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 1367
 name = Small gravestone
+//Server
+desc=A small simple gravestone.

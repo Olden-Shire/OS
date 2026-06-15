@@ -3,3 +3,5 @@ ambient = 30
 recol = 5400/5660 5784/5541 5008/4013
 models_only = 9500
 name = Bookcase
+//Server
+desc=A case. With books.

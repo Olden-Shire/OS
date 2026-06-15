@@ -8,3 +8,6 @@ yan2d = 1505
 xan2d = 453
 iop5 = Destroy
 name = Stone head
+//Server
+desc=A granite head shaped like a camel.
+weight=500g

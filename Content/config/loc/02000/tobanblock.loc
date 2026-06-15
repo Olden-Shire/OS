@@ -5,3 +5,5 @@ ambient = 10
 blockwalk = true
 models = 20329/22
 name = Battlement
+//Server
+desc=A low wall is blocking your path.

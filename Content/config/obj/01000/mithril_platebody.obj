@@ -16,3 +16,16 @@ recol2d = 43297
 recol3s = 41
 recol3d = 43282
 name = Mithril platebody
+//Server
+desc=Provides excellent protection.
+wearpos=torso
+wearpos2=arms
+weight=19lb
+category=armour_body
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,46
+param=slashdefence,44
+param=crushdefence,38
+param=magicdefence,-6
+param=rangedefence,44

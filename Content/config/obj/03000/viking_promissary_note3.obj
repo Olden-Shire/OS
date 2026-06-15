@@ -13,3 +13,6 @@ recol2d = 8534
 recol3s = 960
 recol3d = 1847
 name = Warriors' contract
+//Server
+desc=This employment contract is for a warrior to act as a bodyguard.
+weight=5g

@@ -3,3 +3,5 @@ active = 1
 bgsound = 3073, 3
 models_only = 9041
 name = Pipes
+//Server
+desc=Hot air circulates through these.

@@ -20,3 +20,7 @@ recol4d = 119
 recol5s = 37394
 recol5d = 10902
 name = Broodoo shield (4)
+//Server
+desc=A scary broodoo shield.
+weight=12lb
+wearpos=lefthand

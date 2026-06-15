@@ -3,3 +3,7 @@ op1 = Open
 forceapproach = 13
 models_only = 5559
 name = Drawers
+//Server
+desc=These open and close!
+category=drawer
+param=drawer_other,arena_hospital_drawers2open

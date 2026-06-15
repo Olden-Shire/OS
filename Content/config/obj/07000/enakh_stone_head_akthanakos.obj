@@ -8,3 +8,6 @@ yan2d = 1589
 xan2d = 420
 iop5 = Destroy
 name = Stone head
+//Server
+desc=A granite head that will fit exactly into the pedestal.
+weight=500g

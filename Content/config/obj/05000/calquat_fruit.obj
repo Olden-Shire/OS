@@ -7,3 +7,6 @@ ambient = 15
 members = true
 cost = 54
 name = Calquat fruit
+//Server
+desc=This is the largest fruit I've ever seen.
+weight=1oz

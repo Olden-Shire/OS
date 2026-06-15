@@ -11,3 +11,8 @@ recol1d = 9104
 recol2s = 10351
 recol2d = 5330
 name = Old journal
+//Server
+desc=An account of the last times of someone.
+weight=8oz
+category=category_1328
+tradeable=no

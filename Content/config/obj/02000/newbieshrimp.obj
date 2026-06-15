@@ -8,3 +8,6 @@ xan2d = 572
 recol1s = 25238
 recol1d = 62928
 name = Box of delights
+//Server
+desc=What could be in here?
+tradeable=no

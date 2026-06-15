@@ -1,3 +1,5 @@
 // loc 579
 models_only = 913
 name = Statue
+//Server
+desc=An expertly chiselled statue.

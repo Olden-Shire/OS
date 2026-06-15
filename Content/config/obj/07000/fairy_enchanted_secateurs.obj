@@ -17,3 +17,7 @@ recol2d = 22422
 recol3s = 5772
 recol3d = 22439
 name = Magic secateurs
+//Server
+desc=The only way to kill a Tanglefoot.
+wearpos=righthand
+weight=1lb

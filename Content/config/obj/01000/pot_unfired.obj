@@ -9,3 +9,7 @@ cost = 1
 recol1s = 4775
 recol1d = 7062
 name = Unfired pot
+//Server
+desc=I need to put this in a pottery oven.
+weight=24oz
+param=crafting_pottery_struct,unfired_pot

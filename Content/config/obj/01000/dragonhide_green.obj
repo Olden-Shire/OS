@@ -8,3 +8,6 @@ yan2d = 116
 xan2d = 440
 members = true
 name = Green dragonhide
+//Server
+desc=The scaly rough hide from a Green Dragon.
+weight=7lb

@@ -10,3 +10,6 @@ cost = 12
 recol1s = 44263
 recol1d = 6063
 name = Egg and tomato
+//Server
+desc=A bowl of scrambled eggs and tomato.
+weight=500g

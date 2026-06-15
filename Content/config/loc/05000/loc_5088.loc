@@ -5,3 +5,5 @@ op1 = Walk-across
 blockwalk = true
 models = 5000/22
 name = Log balance
+//Server
+desc=I hope I don't fall off this.

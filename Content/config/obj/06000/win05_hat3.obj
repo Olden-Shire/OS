@@ -12,3 +12,7 @@ manhead = 10397
 womanhead = 10408
 iop5 = Destroy
 name = Tri-jester hat
+//Server
+desc=A woolly triple bobble jester hat.
+wearpos=hat
+weight=250g

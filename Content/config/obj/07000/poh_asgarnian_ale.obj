@@ -14,3 +14,6 @@ recol1d = 6059
 recol2s = 7116
 recol2d = 5943
 name = Asgarnian ale
+//Server
+desc=Probably the finest ale in Asgarnia.
+weight=550g

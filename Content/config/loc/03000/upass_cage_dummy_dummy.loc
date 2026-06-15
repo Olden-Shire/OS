@@ -6,3 +6,5 @@ blockwalk = true
 op1 = Search
 models_only = 1822
 name = Cage
+//Server
+desc=I'm glad I'm on this side of those bars.

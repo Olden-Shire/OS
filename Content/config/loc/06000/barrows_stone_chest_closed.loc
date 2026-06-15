@@ -6,3 +6,5 @@ width = 2
 length = 2
 models_only = 6615
 name = Chest
+//Server
+desc=A large stone chest.

@@ -6,3 +6,8 @@ zoom2d = 1390
 yan2d = 1700
 xan2d = 100
 name = Orb of light
+//Server
+desc=A magical sphere that glimmers within.
+weight=2lb
+respawnrate=50
+tradeable=no

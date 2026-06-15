@@ -6,3 +6,6 @@ xan2d = 260
 members = true
 cost = 20
 name = Mourner trousers
+//Server
+desc=These are in need of a good tailor.
+weight=5lb

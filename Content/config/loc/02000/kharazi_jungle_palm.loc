@@ -4,3 +4,5 @@ length = 2
 mapscene = 5
 models_only = 1593
 name = Jungle Palm
+//Server
+desc=A leafy jungle palm, dense foliage.

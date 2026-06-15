@@ -2,3 +2,5 @@
 recol = 6443/12698 6563/12694 6682/12818 6806/12942 6443/13194
 models_only = 7908 7912
 name = Shelves
+//Server
+desc=Farming stock is kept here.

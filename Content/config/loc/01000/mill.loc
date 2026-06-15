@@ -5,3 +5,5 @@ length = 2
 bgsound = 2226, 5
 models_only = 5572
 name = Millstones
+//Server
+desc=These huge stone discs grind grain to make flour.

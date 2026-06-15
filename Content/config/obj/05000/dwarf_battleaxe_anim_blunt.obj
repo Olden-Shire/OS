@@ -9,3 +9,7 @@ members = true
 manwear = obj_dwarven_battleaxe_5060, 0
 womanwear = obj_dwarven_battleaxe_5060, 6
 name = Dwarven battleaxe
+//Server
+desc=This battleaxe is in the process of having sapphires fitted onto it.
+wearpos=righthand
+weight=2kg

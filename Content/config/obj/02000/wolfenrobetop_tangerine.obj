@@ -13,3 +13,10 @@ members = true
 recol1s = 8741
 recol1d = 8125
 name = Robe top
+//Server
+desc=Some fine werewolf clothing.
+wearpos=torso
+wearpos2=arms
+weight=2lb
+param=slashdefence,2
+param=crushdefence,2

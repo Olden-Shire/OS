@@ -2,3 +2,7 @@
 model = obj_daconia_rock
 members = true
 name = Rock
+//Server
+desc=A chunk of rock.
+weight=1g
+tradeable=no

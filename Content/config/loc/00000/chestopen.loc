@@ -4,3 +4,7 @@ op3 = Shut
 forceapproach = 14
 models_only = 1226
 name = Open chest
+//Server
+desc=Perhaps I should search it.
+category=chest_open
+param=chest_other,chestclosed

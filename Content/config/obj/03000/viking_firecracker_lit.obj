@@ -7,3 +7,6 @@ yan2d = 1948
 xan2d = 112
 members = true
 name = Lit strange object
+//Server
+desc=It's some kind of weird little parcel thing. On fire.
+weight=1g

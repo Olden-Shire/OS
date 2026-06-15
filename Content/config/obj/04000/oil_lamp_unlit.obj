@@ -7,3 +7,8 @@ xan2d = 176
 cost = 28
 members = true
 name = Oil lamp
+//Server
+desc=Not the genie sort.
+weight=1lb
+category=light_source_unlit
+param=product,oil_lamp_lit

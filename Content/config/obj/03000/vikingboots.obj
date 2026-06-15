@@ -13,3 +13,7 @@ members = true
 recol1s = 4626
 recol1d = 22416
 name = Fremennik boots
+//Server
+desc=Very stylish!
+wearpos=feet
+weight=12oz

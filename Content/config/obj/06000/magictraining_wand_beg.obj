@@ -11,3 +11,7 @@ xan2d = 1936
 cost = 1200
 members = true
 name = Beginner wand
+//Server
+desc=A beginner level wand.
+wearpos=righthand
+weight=10oz

@@ -6,3 +6,6 @@ yan2d = 228
 xan2d = 184
 members = true
 name = Broken cannon
+//Server
+desc=Not likely to work again.
+weight=32kg

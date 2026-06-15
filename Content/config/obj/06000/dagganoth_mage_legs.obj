@@ -9,3 +9,7 @@ yof2d = 6
 zoom2d = 1710
 xan2d = 536
 name = Skeletal bottoms
+//Server
+desc=A superior set of strengthened slacks for any self respecting seer.
+wearpos=legs
+weight=9lb

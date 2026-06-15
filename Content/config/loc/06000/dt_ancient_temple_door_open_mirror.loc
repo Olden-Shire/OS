@@ -5,3 +5,5 @@ blockwalk = true
 mirror = true
 models_only = 6242
 name = Doorway
+//Server
+desc=Opens into another area.

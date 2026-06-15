@@ -15,3 +15,6 @@ cost = 177
 recol1s = 40237
 recol1d = 52409
 name = Belladonna seed
+//Server
+desc=Also known as Deadly Nightshade - plant in a belladonna patch.
+weight=1g

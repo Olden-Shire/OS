@@ -11,3 +11,7 @@ manwear = obj_mud_battlestaff_6562_wear, 0
 womanwear = obj_mud_battlestaff_6562_wear, 6
 members = true
 name = Mud battlestaff
+//Server
+desc=It's a slightly magical stick.
+wearpos=righthand
+weight=5lb

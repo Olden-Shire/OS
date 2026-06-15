@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 1812
 name = Spear wall
+//Server
+desc=A row of sharp pointy spears.

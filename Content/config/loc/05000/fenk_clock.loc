@@ -4,3 +4,5 @@ blockwalk = true
 bgsound = 3120, 3
 models_only = 1947
 name = Clock
+//Server
+desc=An old grandfather clock.

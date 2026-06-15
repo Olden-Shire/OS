@@ -9,3 +9,7 @@ iop1 = Read
 recol1s = 5018
 recol1d = 14226
 name = Book on baxtorian
+//Server
+desc=A book on elven history in northern RuneScape.
+weight=18oz
+tradeable=no

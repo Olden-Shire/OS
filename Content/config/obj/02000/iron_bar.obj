@@ -9,3 +9,10 @@ xan2d = 196
 recol1s = 7062
 recol1d = 33
 name = Iron bar
+//Server
+desc=It's a bar of iron.
+weight=4lb
+category=category_151
+respawnrate=500
+param=smelting_struct,smelting_iron_bar
+param=smithing_anvil_struct,smithing_iron_bar

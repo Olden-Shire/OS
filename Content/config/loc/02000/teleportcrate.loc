@@ -2,3 +2,5 @@
 op2 = Investigate
 models_only = 2143
 name = Crate
+//Server
+desc=A wooden crate for storage.

@@ -9,3 +9,9 @@ womanwear = obj_unlit_bug_lantern_7051_wear, 6
 iop2 = Wield
 cost = 130
 name = Unlit bug lantern
+//Server
+desc=A lantern to aid attacking Harpie bugs.
+wearpos=lefthand
+weight=5lb
+category=light_source_unlit
+param=product,slayer_buglan_on

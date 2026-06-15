@@ -14,3 +14,8 @@ cost = 20
 recol1s = 8741
 recol1d = 49054
 name = Menaphite top
+//Server
+desc=Colourful.
+wearpos=torso
+wearpos2=arms
+weight=5g

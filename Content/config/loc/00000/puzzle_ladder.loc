@@ -6,3 +6,5 @@ op1 = Climb-up
 recol = 5673/8596 5788/8844 5912/8070
 models_only = 5187
 name = Ladder
+//Server
+desc=An escape route.

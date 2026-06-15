@@ -9,3 +9,6 @@ members = true
 cost = 10
 iop5 = Release
 name = Toy soldier (wound)
+//Server
+desc=Nice bit of crafting!
+weight=1kg

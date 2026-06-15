@@ -6,3 +6,6 @@ zoom2d = 450
 xan2d = 120
 members = true
 name = Newly made crystal
+//Server
+desc=A warm energy radiates from this crystal.
+weight=15g

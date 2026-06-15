@@ -14,3 +14,16 @@ recol1d = 43297
 recol2s = 57
 recol2d = 7054
 name = Mithril kiteshield
+//Server
+desc=A large metal shield.
+wearpos=lefthand
+weight=10lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,18
+param=slashdefence,22
+param=crushdefence,20
+param=magicdefence,-1
+param=rangedefence,20
+param=defend_anim,human_shield_defence

@@ -19,3 +19,6 @@ recol4d = 8483
 recol5s = 960
 recol5d = 16937
 name = Spider carcass
+//Server
+desc=Its creeping days are over!
+weight=800g

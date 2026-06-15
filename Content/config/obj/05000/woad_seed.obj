@@ -13,3 +13,6 @@ count3 = 5202, 4
 count4 = 5203, 5
 cost = 11
 name = Woad seed
+//Server
+desc=A woad seed - plant in a flower patch.
+weight=1g

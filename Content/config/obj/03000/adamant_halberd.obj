@@ -11,3 +11,8 @@ xan2d = 604
 recol1s = 61
 recol1d = 21662
 name = Adamant halberd
+//Server
+desc=An adamant halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=8lb

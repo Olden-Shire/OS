@@ -3,3 +3,5 @@ width = 2
 op1 = Open
 models_only = 1350
 name = Tree Door
+//Server
+desc=A grand door for a grand tree.

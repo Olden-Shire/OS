@@ -4,3 +4,5 @@ op5 = Search
 recol = 4535/3627 4541/3627 5547/3747
 models_only = 5655
 name = Weathervane
+//Server
+desc=Helps the Seers predict the weather when it's working.

@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models = 7382/22
 name = Chart
+//Server
+desc=A map of some ancient land.

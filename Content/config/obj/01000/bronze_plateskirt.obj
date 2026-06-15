@@ -13,3 +13,15 @@ recol1d = 5652
 recol2s = 25238
 recol2d = 7050
 name = Bronze plateskirt
+//Server
+desc=Designer leg protection.
+wearpos=legs
+weight=18lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,8
+param=slashdefence,7
+param=crushdefence,6
+param=magicdefence,-4
+param=rangedefence,7

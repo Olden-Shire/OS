@@ -2,3 +2,6 @@
 nonblockrange = true
 models_only = 1307
 name = Table
+//Server
+desc=The napkins are made from real silk.
+category=unusable_table

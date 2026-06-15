@@ -12,3 +12,10 @@ womanwear2 = 456
 recol1s = 8741
 recol1d = 10508
 name = Black robe
+//Server
+desc=I can do magic better in this.
+wearpos=torso
+wearpos2=arms
+weight=2lb
+param=magicattack,3
+param=magicdefence,3

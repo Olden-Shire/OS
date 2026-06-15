@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 11454
 name = Table
+//Server
+desc=I'm not eating off that.

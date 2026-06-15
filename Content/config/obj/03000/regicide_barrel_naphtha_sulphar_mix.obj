@@ -9,3 +9,6 @@ members = true
 recol1s = 61
 recol1d = 11200
 name = Naphtha mix
+//Server
+desc=A barrel full of naphtha and sulphur.
+weight=32kg

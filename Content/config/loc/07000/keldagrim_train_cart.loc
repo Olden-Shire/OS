@@ -3,3 +3,5 @@ active = 1
 op1 = Ride
 models_only = 1398
 name = Train cart
+//Server
+desc=A steam powered cart.

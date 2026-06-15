@@ -10,3 +10,9 @@ recol1d = 6073
 recol2s = 6550
 recol2d = 7987
 name = Orange goblin mail
+//Server
+desc=Armour designed to fit goblins.
+weight=8lb
+wearpos=torso
+category=category_528
+tradeable=no

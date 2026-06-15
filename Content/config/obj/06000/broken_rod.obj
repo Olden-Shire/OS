@@ -8,3 +8,6 @@ zoom2d = 1640
 yan2d = 2008
 xan2d = 344
 name = Broken fishing rod
+//Server
+desc=This fishing rod seems to have been bitten in half...
+weight=2lb

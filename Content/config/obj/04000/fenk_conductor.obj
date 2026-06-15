@@ -6,3 +6,6 @@ zoom2d = 1540
 yan2d = 500
 xan2d = 292
 name = Conductor
+//Server
+desc=A silver lightning conductor.
+weight=8lb

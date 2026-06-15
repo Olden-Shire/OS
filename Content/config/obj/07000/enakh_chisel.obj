@@ -4,3 +4,6 @@ manwear = obj_chisel_7004_wear, 0
 womanwear = obj_chisel_7004_wear, 6
 members = true
 name = Chisel
+//Server
+desc=For chipping at stuff.
+wearpos=righthand

@@ -12,3 +12,7 @@ xan2d = 396
 recol1s = 82
 recol1d = 5652
 name = Prototype dart
+//Server
+desc=A prototype throwing dart.
+weight=10g
+tradeable=no

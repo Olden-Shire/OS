@@ -12,3 +12,6 @@ iop4 = Empty
 recol1s = 61
 recol1d = 15925
 name = Plant cure
+//Server
+desc=Use this on plants to cure disease.
+weight=35g

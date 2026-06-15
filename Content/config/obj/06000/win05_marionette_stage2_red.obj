@@ -12,3 +12,6 @@ recol2d = 920
 recol3s = 5543
 recol3d = 912
 name = Red marionette
+//Server
+desc=The torso and head of a marionette.
+weight=400g

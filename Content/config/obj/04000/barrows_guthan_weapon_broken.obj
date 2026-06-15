@@ -20,3 +20,8 @@ recol4d = 21543
 recol5s = 21563
 recol5d = 21551
 name = Guthans spear 0
+//Server
+desc=Guthan the Infested's warspear.
+weight=5lb
+wearpos=righthand
+wearpos2=lefthand

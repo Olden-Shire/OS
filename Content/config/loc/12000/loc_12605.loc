@@ -9,3 +9,5 @@ noshadow = true
 op1 = Climb
 models_only = 10941 13593
 name = Light
+//Server
+desc=This thin shaft of light is all the Tchiki Monkey Nut bush needs to grow.

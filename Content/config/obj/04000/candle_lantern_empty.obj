@@ -7,3 +7,6 @@ xan2d = 140
 cost = 10
 members = true
 name = Candle lantern
+//Server
+desc=Put a candle in to complete it.
+weight=2lb

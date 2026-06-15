@@ -3,3 +3,5 @@ active = 1
 nonblockrange = true
 models = 609/0
 name = Prison Door
+//Server
+desc=Steel bars that are locked securely.

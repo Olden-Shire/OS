@@ -6,3 +6,6 @@ xan2d = 376
 members = true
 iop5 = Destroy
 name = Hand mirror
+//Server
+desc=A small hand mirror.
+weight=10g

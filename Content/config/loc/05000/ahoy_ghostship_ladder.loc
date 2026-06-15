@@ -3,3 +3,5 @@ op1 = Climb-up
 forceapproach = 11
 models_only = 5190
 name = Ship's ladder
+//Server
+desc=I can climb up here.

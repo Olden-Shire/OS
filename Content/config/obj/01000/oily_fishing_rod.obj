@@ -8,3 +8,7 @@ yan2d = 136
 xan2d = 328
 members = true
 name = Oily fishing rod
+//Server
+desc=Useful for catching lava eels.
+weight=3lb
+tradeable=no

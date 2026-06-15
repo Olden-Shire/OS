@@ -1,3 +1,5 @@
 // loc 12135
 models_only = 12116
 name = Coffin
+//Server
+desc=Contains dead people.

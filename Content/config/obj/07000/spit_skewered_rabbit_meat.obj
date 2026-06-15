@@ -8,3 +8,6 @@ yan2d = 1775
 xan2d = 162
 members = true
 name = Skewered rabbit
+//Server
+desc=All ready to be used on a fire.
+weight=1800g

@@ -4,3 +4,5 @@ length = 3
 op1 = Search
 models_only = 3573
 name = Grotto
+//Server
+desc=Special grotto area.

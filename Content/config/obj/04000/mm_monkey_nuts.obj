@@ -8,3 +8,6 @@ yan2d = 484
 xan2d = 384
 iop1 = Eat
 name = Monkey nuts
+//Server
+desc=These are monkey nuts. Yummy.
+weight=7g

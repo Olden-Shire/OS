@@ -11,3 +11,7 @@ manwear = obj_h_a_m_logo_4306_wear, 0
 womanwear = obj_h_a_m_logo_4306_wear, 0
 members = true
 name = H.a.m logo
+//Server
+desc=A badge for the HAM cult.
+wearpos=front
+weight=10g

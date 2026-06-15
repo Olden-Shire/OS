@@ -12,3 +12,8 @@ zan2d = 913
 xan2d = 1300
 members = true
 name = Frying pan
+//Server
+desc=Looks like it's non-stick too!
+wearpos=righthand
+wearpos=righthand
+weight=56oz

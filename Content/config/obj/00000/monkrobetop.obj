@@ -12,3 +12,10 @@ womanwear2 = 456
 recol1s = 8741
 recol1d = 4769
 name = Monk's robe
+//Server
+desc=I feel closer to the gods when I am wearing this.
+wearpos=torso
+wearpos2=arms
+weight=2lb
+param=prayerbonus,5
+param=saradominitem,^true

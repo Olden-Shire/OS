@@ -4,3 +4,5 @@ forceapproach = 11
 op1 = Open
 models_only = 10159 10160
 name = Cupboard
+//Server
+desc=For storing junk in.

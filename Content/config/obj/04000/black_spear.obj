@@ -16,3 +16,8 @@ recol1d = 0
 recol2s = 33
 recol2d = 0
 name = Black spear
+//Server
+desc=A black tipped spear.
+wearpos=righthand
+wearpos2=lefthand
+weight=5lb

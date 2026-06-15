@@ -2,3 +2,5 @@
 mirror = true
 models_only = 18691
 name = Lever
+//Server
+desc=This lever can be operated.

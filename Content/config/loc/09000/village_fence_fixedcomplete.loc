@@ -7,3 +7,5 @@ hillskew = true
 nonblockrange = true
 models = 8892/0 8893/9
 name = Village fence
+//Server
+desc=A wooden fence.

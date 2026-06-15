@@ -2,3 +2,5 @@
 sharelight = true
 models_only = 758
 name = Portcullis
+//Server
+desc=A portcullis.

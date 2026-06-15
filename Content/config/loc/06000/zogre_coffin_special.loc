@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 6689/6930 7475/6558
 models_only = 6786
 name = Ogre Coffin
+//Server
+desc=An old crude tomb.

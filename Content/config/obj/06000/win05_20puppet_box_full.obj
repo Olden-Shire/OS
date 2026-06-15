@@ -5,3 +5,6 @@ yan2d = 144
 xan2d = 138
 iop5 = Destroy
 name = Puppet box
+//Server
+desc=A box full of puppets. Bring to the Taverly members gate.
+weight=14lb

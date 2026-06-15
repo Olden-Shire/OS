@@ -6,3 +6,5 @@ op3 = hidden
 mapscene = 1
 models_only = 1571
 name = Oak
+//Server
+desc=A beautiful old oak.

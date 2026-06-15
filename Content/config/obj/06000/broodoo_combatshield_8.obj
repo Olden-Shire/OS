@@ -10,3 +10,7 @@ yan2d = 264
 xan2d = 364
 members = true
 name = Broodoo shield (8)
+//Server
+desc=A scary broodoo shield.
+weight=12lb
+wearpos=lefthand

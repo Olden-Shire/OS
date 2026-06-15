@@ -12,3 +12,6 @@ iop4 = Empty
 recol1s = 8101
 recol1d = 22959
 name = Guthix rest(2)
+//Server
+desc=A cup of Guthix Rest.
+weight=50g

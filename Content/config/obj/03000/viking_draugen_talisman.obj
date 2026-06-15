@@ -9,3 +9,6 @@ cost = 4
 iop1 = Locate
 members = true
 name = Hunters' talisman
+//Server
+desc=Talisman to bind the Draugen.
+weight=15g

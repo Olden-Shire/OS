@@ -11,3 +11,6 @@ iop4 = Empty
 recol1s = 8724
 recol1d = 14767
 name = Apple mush
+//Server
+desc=A bucket of apple mush.
+weight=1100g

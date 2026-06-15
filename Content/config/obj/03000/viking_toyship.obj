@@ -8,3 +8,6 @@ xan2d = 572
 recol1s = 25238
 recol1d = 62928
 name = Lifeboat
+//Server
+desc=Do not use except in case of emergency.
+weight=4lb

@@ -10,3 +10,7 @@ iop1 = Read
 recol1s = 5018
 recol1d = 7710
 name = Herman's book
+//Server
+desc=A book taken from the desk of Herman Caranos.
+weight=70g
+weight=4lb

@@ -4,3 +4,5 @@ op1 = Dig-up
 recol = 27028/5524
 models_only = 2259
 name = Mud
+//Server
+desc=Sticky, dirty mud.

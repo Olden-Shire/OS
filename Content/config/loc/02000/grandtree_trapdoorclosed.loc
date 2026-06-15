@@ -5,3 +5,5 @@ mapscene = 43
 blockwalk = true
 models = 1175/22
 name = Trapdoor
+//Server
+desc=I wonder what's under it?

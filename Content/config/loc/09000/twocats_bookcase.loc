@@ -6,3 +6,5 @@ ambient = 25
 contrast = 25
 models_only = 1263
 name = Bookcase
+//Server
+desc=A good source of books!

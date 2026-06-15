@@ -1,3 +1,5 @@
 // loc 10509
 models_only = 4326 10165
 name = Table
+//Server
+desc=Some old looking scrolls sit here.

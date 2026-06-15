@@ -3,3 +3,5 @@ width = 3
 op1 = Squeeze-through
 models_only = 6894
 name = Hole
+//Server
+desc=A narrow hole in the wall.

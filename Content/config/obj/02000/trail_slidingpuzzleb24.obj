@@ -7,3 +7,9 @@ xan2d = 520
 iop5 = Move
 members = true
 name = Sliding piece
+//Server
+desc=A piece of the puzzle
+weight=1g
+dummyitem=inv_only
+category=trail_puzzle_piece
+param=puzzle_piece_id,23

@@ -10,3 +10,6 @@ iop2 = Empty
 recol1s = 127
 recol1d = 10295
 name = Bonemeal
+//Server
+desc=A pot of crushed Dagannoth-king bones.
+weight=1500g

@@ -3,3 +3,5 @@ forcedecor = true
 sharelight = true
 models_only = 4081
 name = Tree
+//Server
+desc=Spooky!

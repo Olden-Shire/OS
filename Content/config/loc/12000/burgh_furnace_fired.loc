@@ -7,3 +7,6 @@ op2 = Smelt
 bgsound = 2208, 3
 models_only = 10996 11000 10997 10999
 name = Furnace
+//Server
+desc=A repaired furnace, hot and ready for action.
+category=smithing_furnace

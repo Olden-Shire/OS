@@ -13,3 +13,7 @@ recol1d = 8883
 recol2s = 103
 recol2d = 8883
 name = Mackerel
+//Server
+desc=Some nicely cooked fish.
+weight=300g
+category=category_58

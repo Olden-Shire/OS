@@ -5,3 +5,5 @@ length = 2
 bgsound = 2066, 3
 models_only = 14903
 name = Firebox
+//Server
+desc=The firebox is heating the press.

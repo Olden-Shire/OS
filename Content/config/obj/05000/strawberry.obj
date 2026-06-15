@@ -8,3 +8,6 @@ members = true
 iop1 = Eat
 cost = 17
 name = Strawberry
+//Server
+desc=A freshly picked strawberry.
+weight=1oz

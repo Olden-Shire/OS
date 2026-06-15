@@ -8,3 +8,7 @@ zoom2d = 690
 yan2d = 140
 xan2d = 272
 name = Sea slug
+//Server
+desc=A rather nasty looking crustacean.
+weight=8oz
+tradeable=no

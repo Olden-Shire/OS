@@ -13,3 +13,6 @@ recol2d = 8534
 recol3s = 960
 recol3d = 1847
 name = Fiscal statement
+//Server
+desc=A signed statement promising a reduction on sales tax.
+weight=5g

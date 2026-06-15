@@ -7,3 +7,6 @@ yan2d = 88
 xan2d = 116
 members = true
 name = Ogre artefact
+//Server
+desc=An ancient ogre artefact - resembling a heavy large helm.
+weight=800g

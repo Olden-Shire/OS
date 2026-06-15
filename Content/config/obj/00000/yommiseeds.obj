@@ -11,3 +11,7 @@ iop1 = Look
 recol1s = 43288
 recol1d = 22433
 name = Yommi tree seeds
+//Server
+desc=These need to be germinated before they can be used.
+weight=1g
+tradeable=no

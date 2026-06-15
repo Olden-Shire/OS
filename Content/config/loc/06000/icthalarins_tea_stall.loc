@@ -5,3 +5,5 @@ op2 = Steal-from
 recol = 6371/8514
 models_only = 1421 1417
 name = Tea stall
+//Server
+desc=Fine brews from exotic regions.

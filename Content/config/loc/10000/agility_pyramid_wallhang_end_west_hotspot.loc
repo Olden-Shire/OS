@@ -6,3 +6,5 @@ nonsolid = true
 offsety = -128
 models_only = 10772
 name = Gap
+//Server
+desc=A gap.

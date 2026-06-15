@@ -7,3 +7,6 @@ yan2d = 36
 xan2d = 112
 cost = 20
 name = Blue dye bellows
+//Server
+desc=A large pair of ogre bellows filled with blue dye.
+weight=19oz

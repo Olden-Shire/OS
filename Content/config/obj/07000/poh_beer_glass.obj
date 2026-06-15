@@ -9,3 +9,6 @@ xan2d = 140
 manwear = obj_beer_glass_1919_wear, 0
 womanwear = obj_beer_glass_1919_wear, 0
 name = Beer glass
+//Server
+desc=I need to fill this with beer.
+weight=50g

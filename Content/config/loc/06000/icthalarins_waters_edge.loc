@@ -4,3 +4,5 @@ active = 1
 noshadow = true
 models_only = 3951
 name = Water
+//Server
+desc=Wet and salty.

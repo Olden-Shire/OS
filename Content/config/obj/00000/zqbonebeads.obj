@@ -6,3 +6,7 @@ zoom2d = 860
 xan2d = 304
 members = true
 name = Bone beads
+//Server
+desc=Beads carved out of a bone.
+weight=1g
+tradeable=no

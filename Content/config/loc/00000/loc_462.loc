@@ -5,3 +5,5 @@ mapscene = 12
 nonblockrange = true
 models_only = 2162
 name = Mossy rock
+//Server
+desc=Looks slippery!

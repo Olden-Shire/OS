@@ -10,3 +10,7 @@ iop1 = Rub-together
 recol1s = 5010
 recol1d = 5392
 name = Dry sticks
+//Server
+desc=Some dry wooden sticks.
+weight=2oz
+tradeable=no

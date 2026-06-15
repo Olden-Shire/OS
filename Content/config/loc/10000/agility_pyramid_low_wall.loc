@@ -4,3 +4,5 @@ op1 = Climb-over
 nonblockrange = true
 models_only = 10776
 name = Low wall
+//Server
+desc=It looks like I can clamber over this.

@@ -9,3 +9,6 @@ xan2d = 344
 members = true
 iop1 = Chant
 name = Demonic sigil
+//Server
+desc=A sigil used for the summoning of the demon Agrith-Naar.
+weight=4lb

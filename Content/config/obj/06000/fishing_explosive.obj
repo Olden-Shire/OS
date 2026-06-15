@@ -10,3 +10,6 @@ xan2d = 84
 stackable = true
 members = true
 name = Fishing explosive
+//Server
+desc=The jar keeps shaking...I'm scared.
+weight=25g

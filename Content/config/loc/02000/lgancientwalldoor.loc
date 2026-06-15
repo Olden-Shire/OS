@@ -5,3 +5,5 @@ op1 = Use
 op2 = Search
 models = 1816/9
 name = Marked wall
+//Server
+desc=It looks like ancient graffiti.

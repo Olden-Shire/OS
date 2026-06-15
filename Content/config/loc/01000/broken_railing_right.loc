@@ -4,3 +4,5 @@ mirror = true
 nonblockrange = true
 models_only = 1023
 name = Broken Railing
+//Server
+desc=This section of railing has been broken

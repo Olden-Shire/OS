@@ -2,3 +2,5 @@
 op5 = Search
 models_only = 1207
 name = Smashed table
+//Server
+desc=This table has seen better days.

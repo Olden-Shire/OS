@@ -24,3 +24,12 @@ recol4d = 5652
 recol5s = 5652
 recol5d = 5904
 name = Opal bolts
+//Server
+desc=Great if you have a crossbow!
+wearpos=quiver
+weight=18g
+category=bolts
+param=rangebonus,28
+param=levelrequire,1
+param=proj_launch,crossbowbolt_launch
+param=proj_travel,crossbowbolt_travel

@@ -4,3 +4,5 @@ forceapproach = 13
 sharelight = true
 models_only = 11023
 name = Loader
+//Server
+desc=A big grinding thing.

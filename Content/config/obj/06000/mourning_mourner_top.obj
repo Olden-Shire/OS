@@ -13,3 +13,8 @@ manwear2 = 6847
 womanwear = obj_plague_jacket_woman, 0
 womanwear2 = 6851
 name = Mourner top
+//Server
+desc=A thick heavy leather top.
+wearpos=torso
+wearpos2=arms
+weight=6lb

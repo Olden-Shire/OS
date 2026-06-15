@@ -10,3 +10,6 @@ xan2d = 138
 ambient = 50
 contrast = 50
 name = Drunk parrot
+//Server
+desc=It's rather drunk.
+weight=1g

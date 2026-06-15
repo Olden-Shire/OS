@@ -10,3 +10,7 @@ zoom2d = 570
 yan2d = 48
 xan2d = 320
 name = Villager armband
+//Server
+desc=A brown armband, as worn by the Tai Bwo Wannai locals.
+weight=24oz
+wearpos=hands

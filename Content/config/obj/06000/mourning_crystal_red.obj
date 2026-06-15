@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 127
 recol1d = 949
 name = Red crystal
+//Server
+desc=A red crystal.
+weight=15g

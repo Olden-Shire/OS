@@ -11,3 +11,8 @@ iop2 = Wield
 manwear = obj_dragon_halberd_3204_wear, 0
 womanwear = obj_dragon_halberd_3204_wear, 6
 name = Dragon halberd
+//Server
+desc=A dragon halberd.
+wearpos=righthand
+wearpos2=lefthand
+weight=7lb

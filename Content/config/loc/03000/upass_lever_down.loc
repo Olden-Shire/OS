@@ -1,3 +1,5 @@
 // loc 3242
 models_only = 1796
 name = Lever
+//Server
+desc=This lever can be operated.

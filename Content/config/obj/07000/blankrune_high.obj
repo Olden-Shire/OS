@@ -8,3 +8,6 @@ xan2d = 528
 recol1s = 61
 recol1d = 78
 name = Pure essence
+//Server
+desc=An uncharged Rune Stone of extra capability.
+weight=2g

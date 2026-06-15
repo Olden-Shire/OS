@@ -3,3 +3,5 @@ op1 = Search
 mapscene = 12
 models_only = 1388
 name = Rocks
+//Server
+desc=Stoney!

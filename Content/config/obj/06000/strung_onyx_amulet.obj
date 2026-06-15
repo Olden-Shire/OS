@@ -11,3 +11,7 @@ manwear = obj_onyx_amulet_6581_man, 0
 womanwear = obj_onyx_amulet_6581_woman, 0
 cost = 201000
 name = Onyx amulet
+//Server
+desc=I wonder if I can get this enchanted.
+wearpos=front
+weight=7g

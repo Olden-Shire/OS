@@ -5,3 +5,5 @@ contrast = 10
 nonsolid = true
 models_only = 14407
 name = Easter bird perch.
+//Server
+desc=This perch looks overloaded and underpaid!

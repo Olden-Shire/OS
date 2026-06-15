@@ -3,3 +3,5 @@ active = 1
 op1 = Climb-down
 models_only = 6263
 name = Ladder
+//Server
+desc=A ladder that's almost not there at all...

@@ -8,3 +8,6 @@ xan2d = 240
 members = true
 cost = 1
 name = Fresh crab shell
+//Server
+desc=Fresh off the crab itself.
+weight=2lb

@@ -6,3 +6,5 @@ op1 = Prospect
 op2 = Mine
 models_only = 1798
 name = Rock of Dalgroth
+//Server
+desc=A strange looking rock...

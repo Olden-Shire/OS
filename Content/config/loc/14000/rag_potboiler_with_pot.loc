@@ -4,3 +4,5 @@ op1 = Remove-Pot
 active = 1
 models_only = 14095 14097 14099
 name = Pot-boiler
+//Server
+desc=I'm glad this isn't for dinner.

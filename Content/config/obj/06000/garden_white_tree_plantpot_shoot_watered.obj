@@ -16,3 +16,6 @@ recol4d = 2157
 recol5s = 5338
 recol5d = 5198
 name = White tree shoot
+//Server
+desc=This shoot from a White Tree has been watered and will soon grow.
+weight=2lb

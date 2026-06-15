@@ -9,3 +9,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 66
 name = Key
+//Server
+desc=A key to the Witch's shed.
+weight=10g
+tradeable=no

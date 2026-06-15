@@ -8,3 +8,6 @@ iop1 = Wear
 recol1s = 61
 recol1d = 9635
 name = Exquisite clothes
+//Server
+desc=Clothes for the sculptor's model.
+weight=50g

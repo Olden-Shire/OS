@@ -5,3 +5,7 @@ ambient = 25
 contrast = 25
 models = 4603/0
 name = Large door
+//Server
+desc=A large double door.
+category=reverse_door_right_closed
+param=next_loc_stage,posh_doubledoor_reverse_r_open

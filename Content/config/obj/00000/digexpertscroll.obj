@@ -18,3 +18,7 @@ recol4d = 9036
 recol5s = 10351
 recol5d = 8640
 name = Invitation letter
+//Server
+desc=A letter inviting me to use the private digshafts.
+weight=20g
+tradeable=no

@@ -9,3 +9,5 @@ op2 = Search
 blockwalk = true
 models = 1465/10 20043/22
 name = Mound of earth
+//Server
+desc=Something seems to be buried under this.

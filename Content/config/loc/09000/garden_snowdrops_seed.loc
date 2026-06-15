@@ -2,3 +2,5 @@
 ambient = 25
 models_only = 9168 7766
 name = Snowdrops
+//Server
+desc=A patch of snowdrops.

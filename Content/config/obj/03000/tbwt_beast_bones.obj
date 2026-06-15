@@ -6,3 +6,8 @@ yan2d = 648
 xan2d = 216
 iop1 = Bury
 name = Shaikahan bones
+//Server
+desc=Large glistening bones which glow with a pale yellow aura.
+weight=1500g
+category=bones
+param=bone_exp,250

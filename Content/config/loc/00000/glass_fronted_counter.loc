@@ -3,3 +3,6 @@ width = 2
 nonblockrange = true
 models_only = 1227
 name = Counter
+//Server
+desc=Items are for sale here.
+category=usable_table

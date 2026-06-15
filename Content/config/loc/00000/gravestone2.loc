@@ -4,3 +4,5 @@ contrast = 25
 nonblockrange = true
 models_only = 1369
 name = Gravestone
+//Server
+desc='Here lies...' is all I can read.

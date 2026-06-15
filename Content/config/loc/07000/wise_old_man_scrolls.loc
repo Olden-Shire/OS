@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models = 7385/22
 name = Scrolls
+//Server
+desc=Old songs, old stories...

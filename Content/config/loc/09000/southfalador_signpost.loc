@@ -4,3 +4,5 @@ length = 2
 ambient = 30
 models_only = 5498
 name = Signpost
+//Server
+desc=East to Draynor Village :: South to Rimmington :: South-east to Port Sarim.

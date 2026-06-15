@@ -7,3 +7,7 @@ yan2d = 1923
 xan2d = 484
 iop5 = Destroy
 name = Broken shield
+//Server
+desc=Half of the Shield of Arrav.
+weight=6lb
+param=no_alchemy,1

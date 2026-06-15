@@ -11,3 +11,8 @@ yan2d = 2042
 xan2d = 504
 members = true
 name = Anger spear
+//Server
+desc=A heavy duty spear.
+wearpos=righthand
+wearpos2=lefthand
+weight=3g

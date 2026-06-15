@@ -4,3 +4,5 @@ sharelight = true
 nonsolid = true
 models = 10779/22
 name = Plank
+//Server
+desc=A wooden plank.

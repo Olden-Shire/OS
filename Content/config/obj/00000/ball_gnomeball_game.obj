@@ -8,3 +8,7 @@ manwear = obj_gnomeball_751_wear, 0
 womanwear = obj_gnomeball_751_wear, 6
 members = true
 name = Gnomeball
+//Server
+desc=A ball used in Gnomeball.
+weight=500g
+wearpos=righthand

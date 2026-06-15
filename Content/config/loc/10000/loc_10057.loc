@@ -3,3 +3,5 @@ anim = 471
 bgsound = 3124, 3
 models_only = 9537
 name = Flagpole
+//Server
+desc=Flag, pole... Yep, it's a flagpole.

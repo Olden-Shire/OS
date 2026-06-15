@@ -3,3 +3,5 @@ width = 7
 length = 7
 models_only = 1563
 name = Tropical tree
+//Server
+desc=This tree contains dangerous insects no doubt.

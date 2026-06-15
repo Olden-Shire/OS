@@ -7,3 +7,5 @@ mapfunction = 6
 bgsound = 2065, 3
 models_only = 2260
 name = Fire
+//Server
+desc=Looks to me like a quickly built fire.

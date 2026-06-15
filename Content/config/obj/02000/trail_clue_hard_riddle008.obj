@@ -8,3 +8,9 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_hard
+param=trail_desc,Four blades I have|yet I draw no blood.|But I mash and turn|my victims to powder.|Search in my head,|search in my rafters,|where my blades are louder.
+tradeable=no

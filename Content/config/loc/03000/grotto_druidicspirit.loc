@@ -6,3 +6,5 @@ op1 = Look-at
 op2 = Search
 models_only = 3570
 name = Grotto tree
+//Server
+desc=A large tree thriving where trees normally die.

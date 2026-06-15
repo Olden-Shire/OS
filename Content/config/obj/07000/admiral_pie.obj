@@ -20,3 +20,6 @@ recol4d = 7841
 recol5s = 4416
 recol5d = 6443
 name = Admiral pie
+//Server
+desc=Much tastier than a normal fish pie.
+weight=1g

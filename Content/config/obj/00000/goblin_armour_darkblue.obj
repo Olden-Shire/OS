@@ -10,3 +10,9 @@ recol1d = 43932
 recol2s = 6550
 recol2d = 43813
 name = Blue goblin mail
+//Server
+desc=Armour designed to fit goblins.
+weight=8lb
+wearpos=torso
+category=category_528
+tradeable=no

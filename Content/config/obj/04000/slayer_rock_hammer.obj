@@ -10,3 +10,7 @@ yan2d = 88
 xan2d = 248
 members = true
 name = Rock hammer
+//Server
+desc=I can even smash stone with this.
+weight=5lb
+wearpos=righthand

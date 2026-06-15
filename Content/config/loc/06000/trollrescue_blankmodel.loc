@@ -2,3 +2,5 @@
 op1 = Use
 models_only = 6318
 name = Ice ledge
+//Server
+desc=Looks slippery.

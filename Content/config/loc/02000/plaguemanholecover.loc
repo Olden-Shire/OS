@@ -2,3 +2,5 @@
 op1 = Close
 models_only = 1507
 name = Manhole cover
+//Server
+desc=This is supposed to stop people falling down the manhole.

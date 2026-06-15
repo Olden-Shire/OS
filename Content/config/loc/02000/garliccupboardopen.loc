@@ -7,3 +7,7 @@ blockwalk = true
 raiseobject = 0
 models_only = 2243
 name = Cupboard
+//Server
+desc=Smells kind of funny...
+category=cupboard_opened
+param=cupboard_other,garliccupboardshut

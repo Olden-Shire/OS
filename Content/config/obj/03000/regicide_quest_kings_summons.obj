@@ -8,3 +8,6 @@ xan2d = 380
 cost = 1
 iop1 = Read
 name = King's message
+//Server
+desc=A summons from King Lathas.
+weight=2oz

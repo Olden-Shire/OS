@@ -4,3 +4,7 @@ recol = 38119/293 41067/412 5421/3608 5413/3604 5532/3980
 retex = 2/23
 models_only = 11457 11458
 name = Bookcase
+//Server
+desc=Lots of books.
+category=manor_bookcase
+param=end_coord,0_48_52_24_31

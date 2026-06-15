@@ -3,3 +3,5 @@ mapscene = 6
 nonblockrange = true
 models_only = 2173
 name = Roots
+//Server
+desc=The roots of a tree are exposed.

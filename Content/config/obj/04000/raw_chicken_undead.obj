@@ -11,3 +11,6 @@ recol1d = 12961
 recol2s = 3140
 recol2d = 21561
 name = Raw chicken
+//Server
+desc=This raw chicken is rancid.
+weight=6oz

@@ -18,3 +18,13 @@ recol1d = 5652
 recol2s = 57
 recol2d = 13221
 name = Bronze arrow(p)
+//Server
+desc=Venomous looking arrows.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,7
+param=levelrequire,1
+param=proj_launch,bronze_arrow_launch
+param=proj_travel,bronze_arrow_travel
+param=poison_severity,20

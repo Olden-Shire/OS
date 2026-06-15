@@ -6,3 +6,6 @@ zoom2d = 1050
 yan2d = 1788
 xan2d = 176
 name = Watering can
+//Server
+desc=Handy for watering crops.
+weight=1g

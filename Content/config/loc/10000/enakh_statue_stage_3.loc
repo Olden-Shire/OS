@@ -6,3 +6,5 @@ hillskew = true
 ambient = 25
 models_only = 10905
 name = Headless statue
+//Server
+desc=A large statue made of sandstone.

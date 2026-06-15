@@ -18,3 +18,8 @@ womanhead = 4216
 womanhead2 = 4212
 members = true
 name = Berserker helm
+//Server
+desc=This helmet is worn by berserkers.
+wearpos=hat
+wearpos2=head
+weight=6lb

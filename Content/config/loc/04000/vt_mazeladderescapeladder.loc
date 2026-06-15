@@ -3,3 +3,5 @@ active = 1
 op1 = Climb-up
 models_only = 1487
 name = Escape rope
+//Server
+desc=Takes me out of the maze.

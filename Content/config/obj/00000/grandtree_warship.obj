@@ -8,3 +8,7 @@ zoom2d = 710
 yan2d = 1832
 xan2d = 60
 name = War ship
+//Server
+desc=A model of a Karamja warship.
+weight=400g
+tradeable=no

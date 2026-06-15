@@ -14,3 +14,7 @@ recol1d = 10512
 recol2s = 10388
 recol2d = 10760
 name = Dharoks legs 50
+//Server
+desc=Dharok the Wretched's plate leg armour.
+weight=20lb
+wearpos=legs

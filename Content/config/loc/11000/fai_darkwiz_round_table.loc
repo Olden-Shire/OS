@@ -6,3 +6,5 @@ nonblockrange = true
 recol = 9661/5272 8745/5268
 models_only = 11459
 name = Table
+//Server
+desc=A filthy but sturdy table.

@@ -12,3 +12,6 @@ count3 = 5121, 4
 count4 = 5122, 5
 cost = 48
 name = Maple seed
+//Server
+desc=Plant this in a plantpot of soil to grow a sapling.
+weight=2g

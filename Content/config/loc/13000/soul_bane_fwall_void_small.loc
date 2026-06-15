@@ -5,3 +5,5 @@ op1 = Use
 mapscene = 7
 models_only = 14238
 name = Exit
+//Server
+desc=My way back to the surface.

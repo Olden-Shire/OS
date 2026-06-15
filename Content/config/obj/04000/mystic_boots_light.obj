@@ -12,3 +12,7 @@ xan2d = 188
 recol1s = 39463
 recol1d = 127
 name = Mystic boots
+//Server
+desc=Bright magical boots.
+wearpos=feet
+weight=1lb

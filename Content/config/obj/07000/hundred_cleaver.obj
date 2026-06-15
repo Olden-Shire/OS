@@ -11,3 +11,7 @@ manwear = obj_cleaver_7451_wear, 0
 womanwear = obj_cleaver_7451_wear, 6
 members = true
 name = Cleaver
+//Server
+desc=An effective tool for chopping tough meat.
+wearpos=righthand
+weight=4lb

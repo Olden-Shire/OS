@@ -8,3 +8,7 @@ zoom2d = 780
 yan2d = 156
 xan2d = 52
 name = Waterskin(0)
+//Server
+desc=A completely empty waterskin - you'll need to fill it up.
+weight=100g
+param=next_obj_stage,water_skin1

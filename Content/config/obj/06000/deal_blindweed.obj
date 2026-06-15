@@ -7,3 +7,6 @@ zoom2d = 1490
 yan2d = 1596
 xan2d = 408
 name = Blindweed
+//Server
+desc=An inedible, foul smelling herb.
+weight=7g

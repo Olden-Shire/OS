@@ -7,3 +7,7 @@ yan2d = 436
 xan2d = 320
 members = true
 name = Rashiliyia corpse
+//Server
+desc=The remains of the Zombie Queen.
+weight=300g
+tradeable=no

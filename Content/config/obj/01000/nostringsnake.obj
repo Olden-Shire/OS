@@ -10,3 +10,7 @@ members = true
 recol1s = 10163
 recol1d = 94
 name = Unstrung emblem
+//Server
+desc=It needs a string so I can wear it.
+weight=4g
+param=crafting_jewelry_struct,unstrung_emblem

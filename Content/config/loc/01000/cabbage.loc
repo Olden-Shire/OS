@@ -5,3 +5,5 @@ mapscene = 9
 ambient = 17
 models_only = 8196
 name = Cabbage
+//Server
+desc=Cabbage... yuck!

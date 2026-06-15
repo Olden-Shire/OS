@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 9556/8514
 models_only = 6793
 name = Ogre Drums
+//Server
+desc=Ogres bang these to make noise.

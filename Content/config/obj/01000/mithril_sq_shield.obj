@@ -12,3 +12,15 @@ womanwear = obj_bronze_sq_shield_1173_wear, 6
 recol1s = 57
 recol1d = 43297
 name = Mithril sq shield
+//Server
+desc=A medium square shield.
+wearpos=lefthand
+weight=7lb
+category=armour_shield
+param=rangeattack,-2
+param=magicattack,-6
+param=stabdefence,17
+param=slashdefence,19
+param=crushdefence,15
+param=rangedefence,17
+param=defend_anim,human_shield_defence

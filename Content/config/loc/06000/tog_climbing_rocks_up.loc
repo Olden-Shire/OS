@@ -4,3 +4,5 @@ op1 = Climb
 occlude = true
 models_only = 6509
 name = Rocks
+//Server
+desc=I could climb these.

@@ -11,3 +11,7 @@ yan2d = 676
 xan2d = 732
 cost = 2560
 name = Lucky cutlass
+//Server
+desc=Feels quite lucky.
+wearpos=righthand
+weight=4lb

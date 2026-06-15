@@ -14,3 +14,7 @@ recol1d = 41408
 recol2s = 5572
 recol2d = 7112
 name = Villager armband
+//Server
+desc=A dark blue armband, as worn by the Tai Bwo Wannai locals.
+weight=24oz
+wearpos=hands

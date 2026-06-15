@@ -1,3 +1,5 @@
 // loc 678
 models_only = 2234
 name = Fishing spot
+//Server
+desc=I see fish.

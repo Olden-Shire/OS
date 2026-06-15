@@ -12,3 +12,7 @@ iop2 = Wear
 recol1s = 127
 recol1d = 12209
 name = Ring of visibility
+//Server
+desc=A ring that allows you to see things that are normally invisible...
+wearpos=ring
+weight=4g

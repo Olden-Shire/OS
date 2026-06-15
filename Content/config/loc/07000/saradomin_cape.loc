@@ -2,3 +2,5 @@
 active = 1
 models = 7404/4
 name = Hanging cape
+//Server
+desc=A cape from Saradomin, suitable for a battle-mage.

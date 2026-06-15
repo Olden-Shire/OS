@@ -14,3 +14,16 @@ recol1d = 36133
 recol2s = 57
 recol2d = 7054
 name = Rune kiteshield
+//Server
+desc=A large metal shield.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,44
+param=slashdefence,48
+param=crushdefence,46
+param=magicdefence,-1
+param=rangedefence,46
+param=defend_anim,human_shield_defence

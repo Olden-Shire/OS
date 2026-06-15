@@ -11,3 +11,10 @@ womanwear2 = 11418
 cost = 120000
 members = true
 name = Enchanted top
+//Server
+desc=Enchanted Wizards robes.
+wearpos=torso
+wearpos2=arms
+weight=6lb
+param=magicattack,20
+param=magicdefence,20

@@ -9,3 +9,6 @@ members = true
 recol1s = 8128
 recol1d = 5553
 name = Seer's key
+//Server
+desc=The key to leave the Seer's house.
+weight=10g

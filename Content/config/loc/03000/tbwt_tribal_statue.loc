@@ -4,3 +4,6 @@ length = 2
 op1 = Pray-at
 models_only = 1469
 name = Tribal Statue
+//Server
+desc=The tribal statue of Tai Bwo Wannai Village.
+category=prayer_altar

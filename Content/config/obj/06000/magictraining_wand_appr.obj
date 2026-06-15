@@ -11,3 +11,7 @@ xan2d = 1168
 cost = 1500
 members = true
 name = Apprentice wand
+//Server
+desc=A apprentice level wand.
+wearpos=righthand
+weight=9oz

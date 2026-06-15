@@ -8,3 +8,6 @@ zan2d = 1832
 xan2d = 328
 members = true
 name = Weathervane pillar
+//Server
+desc=A fixed weathervane rotating pillar.
+weight=1g

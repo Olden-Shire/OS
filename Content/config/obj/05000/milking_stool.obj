@@ -5,3 +5,7 @@ manwear = obj_stool_5732, 0
 womanwear = obj_stool_5732, 2
 zoom2d = 800
 name = Stool
+//Server
+desc=A stool for milking
+weight=1g
+wearpos=lefthand

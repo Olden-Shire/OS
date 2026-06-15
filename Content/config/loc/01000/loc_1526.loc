@@ -4,3 +4,5 @@ op1 = Open
 raiseobject = 0
 models = 884/0 885/9
 name = Curtain
+//Server
+desc=The curtain is closed.

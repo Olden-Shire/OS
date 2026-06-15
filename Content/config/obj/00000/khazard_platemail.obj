@@ -15,3 +15,13 @@ recol1d = 20
 recol2s = 25238
 recol2d = 3974
 name = Khazard armour
+//Server
+desc=Armour, as worn by the minions of General Khazard.
+wearpos=torso
+wearpos2=arms
+weight=20oz
+category=armour_body
+param=stabdefence,9
+param=slashdefence,11
+param=crushdefence,10
+tradeable=no

@@ -4,3 +4,5 @@ ambient = 20
 anim = 2708
 models_only = 9523
 name = Hot Coals
+//Server
+desc=A bucket full of red hot coals.

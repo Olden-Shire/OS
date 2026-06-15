@@ -11,3 +11,9 @@ manwear2 = 19173
 womanwear = obj_slave_shirt_woman, 0
 womanwear2 = 19189
 name = Slave shirt
+//Server
+desc=A filthy, smelly, flea infested shirt.
+weight=2lb
+wearpos=torso
+wearpos2=arms
+tradeable=no

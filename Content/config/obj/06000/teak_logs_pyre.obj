@@ -13,3 +13,6 @@ recol2d = 6575
 recol3s = 5559
 recol3d = 5784
 name = Teak pyre logs
+//Server
+desc=Teak logs prepared with sacred oil for a funeral pyre.
+weight=3lb

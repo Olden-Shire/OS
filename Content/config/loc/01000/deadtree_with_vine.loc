@@ -5,3 +5,5 @@ sharelight = true
 mapscene = 6
 models_only = 1607
 name = Dead tree
+//Server
+desc=This old tree has been taken over by parasitic plants.

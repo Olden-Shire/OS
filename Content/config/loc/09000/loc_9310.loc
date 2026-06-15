@@ -7,3 +7,5 @@ active = 1
 ambient = 20
 models_only = 11692
 name = Underwall tunnel
+//Server
+desc=A tunnel leading under the wall.

@@ -17,3 +17,14 @@ recol2d = 540
 recol3s = 22416
 recol3d = 912
 name = Red d'hide vamb
+//Server
+desc=Vambraces made from 100% real dragonhide.
+wearpos=hands
+weight=10oz
+category=category_16
+param=magicattack,-10
+param=rangeattack,10
+param=stabdefence,5
+param=slashdefence,4
+param=crushdefence,6
+param=magicdefence,6

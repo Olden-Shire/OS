@@ -8,3 +8,6 @@ xan2d = 328
 recol1s = 8128
 recol1d = 7087
 name = Brass key
+//Server
+desc=Opens a door that leads into a dungeon.
+weight=10g

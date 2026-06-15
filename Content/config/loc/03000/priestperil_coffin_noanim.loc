@@ -3,3 +3,5 @@ length = 2
 op1 = Open
 models_only = 3547
 name = Coffin
+//Server
+desc=An ornately decorated coffin. Something seems to be alive inside.

@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 6163
 name = Golem head
+//Server
+desc=Smashed and half buried.

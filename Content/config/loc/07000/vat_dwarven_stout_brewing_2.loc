@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 13518/28
 models_only = 7778 7781 7782
 name = Fermenting Vat
+//Server
+desc=Dwarven Stout is fermenting in this vat.

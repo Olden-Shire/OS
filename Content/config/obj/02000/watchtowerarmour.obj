@@ -5,3 +5,7 @@ zoom2d = 1500
 xan2d = 608
 members = true
 name = Unusual armour
+//Server
+desc=Looks kind of useless...
+weight=8lb
+tradeable=no

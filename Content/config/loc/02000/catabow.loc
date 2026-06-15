@@ -4,3 +4,5 @@ length = 3
 op2 = Fire
 models_only = 2225
 name = Ballista
+//Server
+desc=It's a war machine.

@@ -3,3 +3,5 @@ mapscene = 4
 nonblockrange = true
 models_only = 1580
 name = Cactus
+//Server
+desc=How do these things manage to grow?

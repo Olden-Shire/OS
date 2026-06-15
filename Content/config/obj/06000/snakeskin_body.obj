@@ -13,3 +13,8 @@ zoom2d = 1370
 yan2d = 128
 xan2d = 312
 name = Snakeskin body
+//Server
+desc=Made from 100% real snakeskin.
+weight=15lb
+wearpos=torso
+wearpos2=arms

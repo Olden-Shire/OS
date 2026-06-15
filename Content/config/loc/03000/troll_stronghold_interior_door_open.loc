@@ -5,3 +5,7 @@ contrast = 25
 op1 = Close
 models = 3801/0
 name = Door
+//Server
+desc=A door in the Stronghold.
+category=door_opened
+param=next_loc_stage,troll_stronghold_interior_door

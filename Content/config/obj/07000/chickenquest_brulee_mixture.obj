@@ -13,3 +13,6 @@ recol1d = 8526
 recol2s = 8423
 recol2d = 10702
 name = Brulee
+//Server
+desc=A pot of brulee mixture - needs egg.
+weight=300g

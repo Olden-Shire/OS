@@ -3,3 +3,5 @@ length = 2
 forceapproach = 13
 models_only = 1954
 name = Bookshelves
+//Server
+desc=This no doubt contains arcane knowledge.

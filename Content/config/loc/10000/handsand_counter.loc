@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 10714
 name = Counter
+//Server
+desc=Betty's counter. There is a vial standing on it.

@@ -6,3 +6,5 @@ op2 = Check
 bgsound = 2150, 3
 models_only = 1497
 name = Fountain
+//Server
+desc=A water feature.

@@ -6,3 +6,5 @@ ambient = 10
 noshadow = true
 models_only = 14158
 name = Ripples
+//Server
+desc=Ripples.

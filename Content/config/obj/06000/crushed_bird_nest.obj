@@ -6,3 +6,6 @@ yan2d = 60
 xan2d = 172
 members = true
 name = Crushed nest
+//Server
+desc=A crushed bird's nest.
+weight=2g

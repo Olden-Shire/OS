@@ -5,3 +5,5 @@ anim = 1631
 bgsound = 2970, 3
 models_only = 5174
 name = Signpost
+//Server
+desc=There is a note pinned to the signpost.

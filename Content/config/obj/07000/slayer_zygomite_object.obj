@@ -9,3 +9,6 @@ yan2d = 6
 xan2d = 468
 members = true
 name = Mutated zygomite
+//Server
+desc=A slayer monster.
+weight=1kg

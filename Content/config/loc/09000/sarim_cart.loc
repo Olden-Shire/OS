@@ -5,3 +5,5 @@ ambient = 25
 recol = 7582/5665 7830/5784 33/5409
 models_only = 1480
 name = Cart
+//Server
+desc=One horse power, wooden suspension. A beauty.

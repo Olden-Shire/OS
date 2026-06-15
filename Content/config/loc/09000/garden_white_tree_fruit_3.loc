@@ -4,3 +4,5 @@ op1 = Pick-fruit
 recol = 21712/2167 21714/2159 21720/2157 5338/5198
 models_only = 9221 9216 9213
 name = White Tree patch
+//Server
+desc=This White Tree bears three fruits.

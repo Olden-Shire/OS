@@ -9,3 +9,8 @@ recol1d = 43206
 recol2s = 4032
 recol2d = 43082
 name = Raw anchovies
+//Server
+desc=I should try cooking this.
+weight=120g
+category=category_57
+param=fishing_struct,fishing_struct_anchovies

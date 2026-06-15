@@ -18,3 +18,7 @@ recol3d = 8138
 recol4s = 49054
 recol4d = 64431
 name = Menap action kilt
+//Server
+desc=Look at those nobbily knees.
+wearpos=legs
+weight=5g

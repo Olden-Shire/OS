@@ -14,3 +14,16 @@ recol1d = 5652
 recol2s = 57
 recol2d = 7054
 name = Bronze kiteshield
+//Server
+desc=A large metal shield.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,5
+param=slashdefence,7
+param=crushdefence,6
+param=magicdefence,-1
+param=rangedefence,6
+param=defend_anim,human_shield_defence

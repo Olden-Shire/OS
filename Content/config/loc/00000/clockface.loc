@@ -2,3 +2,5 @@
 active = 1
 models = 2081/4
 name = Clock face
+//Server
+desc=What has a face and hands but is not a man?

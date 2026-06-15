@@ -9,3 +9,8 @@ recol1d = 3299
 recol2s = 4032
 recol2d = 3546
 name = Raw shrimps
+//Server
+desc=I should try cooking this.
+weight=120g
+category=category_57
+param=fishing_struct,fishing_struct_shrimps

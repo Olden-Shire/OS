@@ -3,3 +3,5 @@ length = 2
 nonblockrange = true
 models_only = 1284
 name = Bath
+//Server
+desc=Wash here.

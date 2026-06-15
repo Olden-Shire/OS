@@ -10,3 +10,6 @@ iop1 = Drop
 iop4 = Release-all
 iop5 = Release
 name = Balloon toad
+//Server
+desc=An inflated toad tied to a rock like a balloon.
+weight=4kg

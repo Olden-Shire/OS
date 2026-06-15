@@ -9,3 +9,8 @@ manwear = obj_snake_charm_man, 0
 womanwear = obj_snake_charm_woman, 0
 members = true
 name = Snake charm
+//Server
+desc=Makes a hissing sound.
+wearpos=righthand
+wearpos2=lefthand
+weight=100g

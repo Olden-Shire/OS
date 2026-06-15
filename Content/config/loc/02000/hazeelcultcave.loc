@@ -5,3 +5,5 @@ active = 1
 op1 = Enter
 models_only = 732
 name = Cave entrance
+//Server
+desc=I can probably squeeze my way inside there.

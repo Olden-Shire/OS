@@ -11,3 +11,7 @@ iop5 = Destroy
 members = true
 cost = 1
 name = Catspeak amulet(e)
+//Server
+desc=It's an amulet of cat speak. It makes vague purring noises.
+weight=3lb
+wearpos=front

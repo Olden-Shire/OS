@@ -13,3 +13,14 @@ xan2d = 164
 recol1s = 61
 recol1d = 36133
 name = Rune boots
+//Server
+desc=These will protect my feet.
+wearpos=feet
+weight=3lb
+category=armour_feet
+param=magicattack,-3
+param=rangeattack,-1
+param=stabdefence,12
+param=slashdefence,13
+param=crushdefence,14
+param=strengthbonus,2

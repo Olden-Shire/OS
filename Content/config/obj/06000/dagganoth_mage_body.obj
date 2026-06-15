@@ -8,3 +8,8 @@ members = true
 zoom2d = 1190
 xan2d = 544
 name = Skeletal top
+//Server
+desc=The bones in this armour seem to vibrate with a magical quality...
+wearpos=torso
+wearpos2=arms
+weight=11lb

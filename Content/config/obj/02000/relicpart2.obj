@@ -5,3 +5,8 @@ zoom2d = 860
 yan2d = 1696
 iop5 = Destroy
 name = Relic part 2
+//Server
+desc=Part of an ogre relic.
+weight=1kg
+category=category_1399
+tradeable=no

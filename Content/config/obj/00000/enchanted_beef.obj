@@ -12,3 +12,7 @@ recol1d = 44510
 recol2s = 127
 recol2d = 43241
 name = Enchanted beef
+//Server
+desc=I don't fancy eating this now.
+weight=500g
+tradeable=no

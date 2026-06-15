@@ -6,3 +6,6 @@ xan2d = 172
 cost = 20
 members = true
 name = Tin
+//Server
+desc=It's full of a white lumpy mixture that seems to be hardening.
+weight=101g

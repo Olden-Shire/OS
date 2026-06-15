@@ -5,3 +5,7 @@ op1 = Open
 op2 = Search
 models = 19288/0
 name = Gate
+//Server
+desc=A solid looking gate.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_1563

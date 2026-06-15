@@ -12,3 +12,9 @@ zan2d = 144
 xan2d = 1960
 cost = 625
 name = Zamorak mjolnir
+//Server
+desc=A Zamorak Mjolnir.
+wearpos=righthand
+wearpos2=lefthand
+weight=5lb
+param=zamorakitem,^true

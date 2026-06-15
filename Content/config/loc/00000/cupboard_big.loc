@@ -5,3 +5,7 @@ forceapproach = 13
 op1 = Open
 models_only = 2246
 name = Large cupboard
+//Server
+desc=This may be worth opening.
+category=cupboard_closed
+param=cupboard_other,cupboardopen_big

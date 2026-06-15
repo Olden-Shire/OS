@@ -2,3 +2,5 @@
 anim = 3107
 models_only = 11019
 name = Pillar candle flame.
+//Server
+desc=A candle flame.

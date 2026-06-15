@@ -5,3 +5,5 @@ resizez = 99
 recol = 5673/6684 5795/5165
 models_only = 1890
 name = Ship's wheel
+//Server
+desc=Without this I'm going around in circles.

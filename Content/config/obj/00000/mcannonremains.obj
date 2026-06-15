@@ -8,3 +8,7 @@ xan2d = 320
 members = true
 iop5 = Destroy
 name = Dwarf remains
+//Server
+desc=The body of a Dwarf savaged by Goblins.
+weight=16kg
+tradeable=no

@@ -15,3 +15,6 @@ recol2d = 5943
 recol3s = 54397
 recol3d = 6104
 name = Asgarnian ale(m)
+//Server
+desc=This looks a good deal stronger than normal Asgarnian Ale.
+weight=550g

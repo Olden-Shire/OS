@@ -9,3 +9,6 @@ members = true
 recol1s = 61
 recol1d = 10708
 name = Unfinished potion
+//Server
+desc=I need another ingredient to finish this potion.
+weight=2oz

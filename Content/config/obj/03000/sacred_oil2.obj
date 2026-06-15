@@ -10,3 +10,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 15269
 name = Sacred oil(2)
+//Server
+desc=2 doses of sacred Oil.
+weight=25g
+category=sacred_oil

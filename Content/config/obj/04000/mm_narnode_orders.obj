@@ -9,3 +9,6 @@ xan2d = 380
 recol1s = 10351
 recol1d = 231
 name = Narnode's orders
+//Server
+desc=Unreadable orders handwritten by King Narnode Shareen.
+weight=20g

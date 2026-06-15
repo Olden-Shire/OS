@@ -4,3 +4,7 @@ op3 = Shut
 forceapproach = 13
 models_only = 1167
 name = Drawers
+//Server
+desc=This may be worth searching.
+category=empty_drawer
+param=drawer_other,drawers3

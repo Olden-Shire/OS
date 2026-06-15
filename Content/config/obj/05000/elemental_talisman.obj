@@ -11,3 +11,6 @@ members = true
 recol1s = 61
 recol1d = 931
 name = Elemental talisman
+//Server
+desc=A mysterious power emanates from the talisman...
+weight=15g

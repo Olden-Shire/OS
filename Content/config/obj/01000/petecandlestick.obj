@@ -7,3 +7,6 @@ yan2d = 1628
 xan2d = 184
 members = true
 name = Pete's candlestick
+//Server
+desc=Scarface Pete's Candlestick.
+weight=500g

@@ -10,3 +10,6 @@ cost = 5
 recol1s = 44263
 recol1d = 6063
 name = Burnt egg
+//Server
+desc=A bowl of burnt, overcooked egg.
+weight=500g

@@ -1,3 +1,5 @@
 // loc 1780
 models_only = 1372
 name = Sails
+//Server
+desc=These sails use the wind to drive the windmill.

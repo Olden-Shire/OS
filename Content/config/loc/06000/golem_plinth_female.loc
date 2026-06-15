@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 6174 6176
 name = Plinth
+//Server
+desc=Contains a statue of a woman.

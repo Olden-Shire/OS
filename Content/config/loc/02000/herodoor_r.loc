@@ -6,3 +6,7 @@ recol = 24/4762
 retex = 2/45
 models = 639/0
 name = Door
+//Server
+desc=The entrance to the Hero's Guild.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_1523

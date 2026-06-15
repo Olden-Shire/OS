@@ -4,3 +4,7 @@ op1 = Close
 raiseobject = 0
 models = 3197/0
 name = Door
+//Server
+desc=The door is open.
+category=door_opened
+param=next_loc_stage,loc_2997

@@ -8,3 +8,9 @@ zoom2d = 780
 yan2d = 156
 xan2d = 52
 name = Waterskin(3)
+//Server
+desc=A nearly full waterskin with three portions of water.
+weight=30oz
+param=is_water_source,^true
+param=next_obj_stage,water_skin4
+category=water_skin_filled

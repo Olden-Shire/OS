@@ -7,3 +7,5 @@ anim = 1347
 bgsound = 3132, 5
 models_only = 4570 4573 4572
 name = Lighting mechanism
+//Server
+desc=It turns the light around.

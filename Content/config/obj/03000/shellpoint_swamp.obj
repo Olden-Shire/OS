@@ -7,3 +7,6 @@ zoom2d = 1800
 yan2d = 1948
 xan2d = 232
 name = Blamish myre shell
+//Server
+desc=A large 'Myre' coloured blamish snail shell, looks protective.
+weight=10kg

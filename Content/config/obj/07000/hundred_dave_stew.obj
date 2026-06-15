@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 44263
 recol1d = 7062
 name = Spicy stew
+//Server
+desc=It's a meat and potato stew with fancy seasoning.
+weight=1500g

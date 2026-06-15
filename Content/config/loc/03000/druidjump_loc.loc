@@ -8,3 +8,5 @@ nonsolid = true
 op1 = Jump
 models = 1089/22
 name = Bridge
+//Server
+desc=It's a bridge.

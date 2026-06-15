@@ -8,3 +8,15 @@ iop2 = Wear
 manwear = obj_green_dhide_body_1135_man, 0
 womanwear = obj_green_dhide_body_1135_woman, 0
 name = Green d'hide body
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=torso
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=rangeattack,15
+param=stabdefence,40
+param=slashdefence,32
+param=crushdefence,45
+param=magicdefence,20
+param=rangedefence,40

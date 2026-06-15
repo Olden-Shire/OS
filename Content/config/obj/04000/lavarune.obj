@@ -9,3 +9,6 @@ xan2d = 528
 ambient = 30
 members = true
 name = Lava rune
+//Server
+desc=A combined Earth and Fire Rune.
+weight=2g

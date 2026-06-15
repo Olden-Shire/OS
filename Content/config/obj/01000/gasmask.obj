@@ -13,3 +13,10 @@ womanwear = obj_gas_mask_woman, 0
 manhead = 51
 womanhead = 112
 name = Gas mask
+//Server
+desc=Stops me from breathing nasty stuff!
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+weight=9oz
+tradeable=no

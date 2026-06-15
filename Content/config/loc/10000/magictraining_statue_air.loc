@@ -12,3 +12,5 @@ resizez = 128
 bgsound = 3144, 3
 models_only = 10622 10620
 name = Statue
+//Server
+desc=A statue representing air.

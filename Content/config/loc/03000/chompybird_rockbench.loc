@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 6036/6689
 models_only = 723
 name = Ogre bench
+//Server
+desc=An ogre bench, useful for taking all that weight off their legs.

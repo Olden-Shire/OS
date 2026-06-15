@@ -4,3 +4,6 @@ op1 = Search
 recol = 6443/5541 6439/5665 6563/5660 6558/5784 6682/5908 6806/6032
 models_only = 7700
 name = Crates
+//Server
+desc=Some wooden crates.
+category=empty_crate

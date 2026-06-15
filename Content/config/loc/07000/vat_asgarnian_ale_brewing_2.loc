@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 13518/5440
 models_only = 7778 7781 7782
 name = Fermenting Vat
+//Server
+desc=Asgarnian Ale is fermenting in this vat.

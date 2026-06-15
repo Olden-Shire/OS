@@ -8,3 +8,6 @@ xan2d = 264
 iop1 = Read
 cost = 1
 name = Newcomer map
+//Server
+desc=Issued by RuneScape Council to all new citizens.
+weight=18oz

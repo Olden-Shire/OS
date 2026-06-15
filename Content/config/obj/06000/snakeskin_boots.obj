@@ -10,3 +10,7 @@ zoom2d = 880
 yan2d = 212
 xan2d = 104
 name = Snakeskin boots
+//Server
+desc=Made from snakes.
+weight=12oz
+wearpos=feet

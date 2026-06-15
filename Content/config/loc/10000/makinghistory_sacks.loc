@@ -1,3 +1,5 @@
 // loc 10274
 models_only = 7907
 name = Sacks
+//Server
+desc=Some sacks here...

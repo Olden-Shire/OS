@@ -4,3 +4,5 @@ noshadow = true
 nonsolid = true
 models_only = 6333
 name = Ice chunks
+//Server
+desc=Chunky pieces of ice.

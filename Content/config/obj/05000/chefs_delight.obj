@@ -13,3 +13,6 @@ recol1d = 9015
 recol2s = 7116
 recol2d = 8896
 name = Chef's delight
+//Server
+desc=A fruity, full-bodied ale.
+weight=550g

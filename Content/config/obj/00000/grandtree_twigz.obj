@@ -5,3 +5,7 @@ zoom2d = 1170
 yan2d = 48
 xan2d = 420
 name = Twigs
+//Server
+desc=Twigs bound together in the shape of a Z.
+weight=20g
+tradeable=no

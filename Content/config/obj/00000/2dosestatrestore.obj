@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 840
 name = Restore potion(2)
+//Server
+desc=2 doses of stat restoration potion.
+weight=25g
+category=potion
+param=next_obj_stage,1dosestatrestore
+param=decant_potion_enum,potion_1restore
+param=dose_count,2

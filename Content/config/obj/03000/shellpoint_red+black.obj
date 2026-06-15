@@ -11,3 +11,6 @@ recol1d = 551
 recol2s = 7605
 recol2d = 16
 name = Blamish red shell
+//Server
+desc=A large red coloured blamish snail shell, looks protective.
+weight=10kg

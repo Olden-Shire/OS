@@ -4,3 +4,6 @@ active = 1
 blockwalk = true
 models = 1046/22
 name = Stepping stones
+//Server
+desc=A rocky outcrop from the running water.
+category=karamja_stepping_stone

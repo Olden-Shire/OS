@@ -21,3 +21,6 @@ recol5d = 2966
 recol6s = 60184
 recol6d = 2962
 name = Champion scroll
+//Server
+desc=It's a challenge from the Imp Champion!
+weight=1g

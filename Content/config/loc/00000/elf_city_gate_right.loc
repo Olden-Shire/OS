@@ -3,3 +3,5 @@ width = 2
 op1 = Enter
 models_only = 3996
 name = City Gate
+//Server
+desc=You'd need a big siege engine to force that.

@@ -10,3 +10,6 @@ members = true
 recol1s = 10258
 recol1d = 10518
 name = Burnt spider
+//Server
+desc=A badly burnt spider threaded onto a charred skewer stick.
+weight=250g

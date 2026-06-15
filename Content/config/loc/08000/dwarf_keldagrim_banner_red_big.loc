@@ -4,3 +4,5 @@ width = 2
 sharelight = true
 models_only = 8655
 name = Banner
+//Server
+desc=A symbol of the Red Axe.

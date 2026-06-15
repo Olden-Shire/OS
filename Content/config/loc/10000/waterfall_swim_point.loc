@@ -8,3 +8,5 @@ sharelight = true
 op1 = Swim
 models_only = 3951
 name = River
+//Server
+desc=Maybe I can swim across here!

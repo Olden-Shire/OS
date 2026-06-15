@@ -4,3 +4,5 @@ active = 1
 op1 = Pick
 models_only = 8195
 name = Cabbage
+//Server
+desc=An enigmatic cabbage.

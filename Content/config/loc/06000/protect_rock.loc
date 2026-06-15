@@ -4,3 +4,5 @@ resizey = 300
 resizez = 150
 models_only = 4956
 name = Icy rock
+//Server
+desc=Even rocks could freeze in this cold!

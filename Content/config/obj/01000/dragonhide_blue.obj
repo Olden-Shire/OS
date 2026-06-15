@@ -12,3 +12,6 @@ recol1d = 43926
 recol2s = 22424
 recol2d = 42939
 name = Blue dragonhide
+//Server
+desc=The scaly rough hide from a Blue Dragon.
+weight=7lb

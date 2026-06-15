@@ -8,3 +8,6 @@ members = true
 recol1s = 4535
 recol1d = 3627
 name = Broken vane part
+//Server
+desc=These weathervane directionals are broken.
+weight=1g

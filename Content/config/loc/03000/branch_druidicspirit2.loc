@@ -4,3 +4,5 @@ nonsolid = true
 anim = 1098
 models_only = 3590
 name = Budding branch
+//Server
+desc=Not sure if that's any use.

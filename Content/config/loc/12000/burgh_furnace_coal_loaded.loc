@@ -5,3 +5,5 @@ ambient = 25
 op1 = Search
 models_only = 10996 11001 10997
 name = Repaired furnace
+//Server
+desc=The furnace has been repaired and has some coal in it.

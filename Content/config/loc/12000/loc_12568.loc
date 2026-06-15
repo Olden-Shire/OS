@@ -5,3 +5,5 @@ blockwalk = true
 nonblockrange = true
 models = 13604/22
 name = Stepping stone
+//Server
+desc=A very slippery stepping stone.

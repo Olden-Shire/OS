@@ -7,3 +7,5 @@ bgsound = 2208, 10
 recol = 37/5285 33/5409 28/5404 24/5400 20/5524 10514/5524
 models_only = 11582
 name = Pottery Oven
+//Server
+desc=Bake your clay pots in here.

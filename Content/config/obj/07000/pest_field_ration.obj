@@ -7,3 +7,6 @@ xan2d = 373
 iop1 = Eat
 members = true
 name = Field ration
+//Server
+desc=A field ration to help your wounds go away.
+weight=1g

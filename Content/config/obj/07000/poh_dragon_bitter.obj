@@ -15,3 +15,6 @@ recol1d = 933
 recol2s = 7116
 recol2d = 935
 name = Dragon bitter
+//Server
+desc=A glass of bitter.
+weight=550g

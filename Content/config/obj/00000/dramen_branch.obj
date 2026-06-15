@@ -8,3 +8,7 @@ zoom2d = 940
 yan2d = 152
 xan2d = 268
 name = Dramen branch
+//Server
+desc=A limb of the fabled Dramen tree.
+weight=5lb
+tradeable=no

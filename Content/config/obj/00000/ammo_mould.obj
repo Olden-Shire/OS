@@ -7,3 +7,7 @@ xan2d = 308
 cost = 5
 members = true
 name = Ammo mould
+//Server
+desc=Used to make cannon ammunition.
+weight=10lb
+tradeable=no

@@ -8,3 +8,6 @@ yan2d = 1631
 xan2d = 252
 members = true
 name = Iron sheet
+//Server
+desc=A sturdy sheet of iron.
+weight=4lb

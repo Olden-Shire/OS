@@ -6,3 +6,5 @@ mapscene = 7
 recol = 13592/7580 13601/6439 13481/7469
 models_only = 10464
 name = Ladder
+//Server
+desc=A wooden ladder.

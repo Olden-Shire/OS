@@ -3,3 +3,6 @@ width = 2
 forceapproach = 14
 models_only = 1379
 name = Hopper
+//Server
+desc=Grain goes in here.
+category=hopper_nonfull

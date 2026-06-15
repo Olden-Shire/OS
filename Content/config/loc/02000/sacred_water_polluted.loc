@@ -6,3 +6,5 @@ bgsound = 2171, 3
 retex = 1/32
 models_only = 1435
 name = Polluted water
+//Server
+desc=Disgusting filthy quagmire that oozes from the ground.

@@ -17,3 +17,6 @@ recol1d = 9445
 recol2s = 59738
 recol2d = 59503
 name = White rose seed
+//Server
+desc=A white rosebush seed.
+weight=1g

@@ -6,3 +6,6 @@ zoom2d = 770
 xan2d = 136
 members = true
 name = Unfired pot lid
+//Server
+desc=This needs firing, then it should fit on a normal-sized pot.
+weight=7oz

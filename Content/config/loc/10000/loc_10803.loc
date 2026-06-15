@@ -4,3 +4,5 @@ noshadow = true
 op1 = Deposit
 models_only = 10601
 name = Hole
+//Server
+desc=A hole the perfect shape for spheres

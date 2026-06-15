@@ -3,3 +3,5 @@ op1 = Collect
 forceapproach = 11
 models_only = 9038
 name = Coke
+//Server
+desc=A big pile of refined coal.

@@ -2,3 +2,5 @@
 model = obj_dial
 members = true
 name = Dial
+//Server
+desc=I wonder what this does?

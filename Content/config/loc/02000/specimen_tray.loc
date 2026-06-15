@@ -4,3 +4,5 @@ width = 2
 op2 = Search
 models_only = 17316
 name = Specimen tray
+//Server
+desc=Used to keep specimens on.

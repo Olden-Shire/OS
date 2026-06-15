@@ -10,3 +10,16 @@ iop2 = Wear
 manwear = obj_studded_chaps_1097_man, 0
 womanwear = obj_studded_chaps_1097_woman, 0
 name = Studded chaps
+//Server
+desc=Those studs should provide a bit more protection.
+wearpos=legs
+weight=10lb
+category=armour_legs
+param=crafting_studded_struct,studded_chaps
+param=magicattack,-5
+param=rangeattack,6
+param=stabdefence,15
+param=slashdefence,16
+param=crushdefence,17
+param=magicdefence,6
+param=rangedefence,16

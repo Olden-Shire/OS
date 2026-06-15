@@ -8,3 +8,10 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Clue scroll
+//Server
+desc=A clue!
+weight=20g
+category=trail_clue_hard
+param=trail_desc,If a man carried my burden,|he would break his back.|I am not rich,|but leave silver in my track.|Speak to the keeper of my trail.
+param=trail_casket,trail_clue_hard_riddle004_casket
+tradeable=no

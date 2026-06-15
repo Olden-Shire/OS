@@ -7,3 +7,6 @@ zoom2d = 620
 yan2d = 84
 xan2d = 156
 name = Porcelain cup
+//Server
+desc=A porcelain cup.
+weight=50g

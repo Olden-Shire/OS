@@ -6,3 +6,5 @@ length = 3
 bgsound = 3138, 5
 models_only = 7573 7571 7572
 name = Pendulum
+//Server
+desc=That's going to hurt if it hits me!

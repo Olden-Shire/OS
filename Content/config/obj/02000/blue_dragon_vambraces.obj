@@ -17,3 +17,14 @@ recol2d = 43177
 recol3s = 22416
 recol3d = 43288
 name = Blue d'hide vamb
+//Server
+desc=Vambraces made from 100% real dragonhide.
+wearpos=hands
+weight=10oz
+category=category_16
+param=magicattack,-10
+param=rangeattack,9
+param=stabdefence,4
+param=slashdefence,3
+param=crushdefence,5
+param=magicdefence,4

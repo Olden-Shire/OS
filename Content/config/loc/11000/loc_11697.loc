@@ -3,3 +3,5 @@ ambient = 30
 recol = 70/8406 61/7378 49/8398 45/8394
 models_only = 7711
 name = Statue
+//Server
+desc=A statue of a famous White Knight.

@@ -10,3 +10,6 @@ zoom2d = 1400
 yan2d = 132
 xan2d = 228
 name = Glassblowing pipe
+//Server
+desc=Used to form molten glass into useful items.
+weight=2oz

@@ -17,3 +17,6 @@ recol3d = 57
 recol4s = 12589
 recol4d = 2960
 name = Cave eel
+//Server
+desc=It's a bit slimy.
+weight=500g

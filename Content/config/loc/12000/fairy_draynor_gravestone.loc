@@ -3,3 +3,5 @@ active = 1
 nonblockrange = true
 models_only = 2218
 name = Gravestone
+//Server
+desc=Here lies Guy, he told a lie, so we swung him from the gallows high.

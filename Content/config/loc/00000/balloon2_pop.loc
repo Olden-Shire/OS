@@ -4,3 +4,5 @@ nonsolid = true
 ambient = 60
 models_only = 2230
 name = Party Balloon
+//Server
+desc=A party balloon.

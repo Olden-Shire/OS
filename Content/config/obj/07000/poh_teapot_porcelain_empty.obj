@@ -8,3 +8,6 @@ cost = 1
 recol1s = 127
 recol1d = 61
 name = Teapot
+//Server
+desc=This teapot is empty.
+weight=1lb

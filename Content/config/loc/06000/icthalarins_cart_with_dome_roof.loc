@@ -4,3 +4,5 @@ length = 3
 recol = 5330/8514 5326/8514
 models_only = 1480 5493
 name = Cart
+//Server
+desc=Best used with a horse.

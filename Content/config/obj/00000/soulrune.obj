@@ -9,3 +9,7 @@ xan2d = 528
 members = true
 ambient = 30
 name = Soul rune
+//Server
+desc=Used for high level curse spells.
+weight=2g
+category=category_149

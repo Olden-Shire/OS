@@ -8,3 +8,5 @@ op2 = Search
 nonblockrange = true
 models_only = 3813
 name = Kitchen Drawers
+//Server
+desc=They're open.

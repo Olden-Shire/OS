@@ -6,3 +6,5 @@ hillskew = true
 recol = 3489/5281
 models = 14889/0
 name = Colony gate
+//Server
+desc=The gate of the Piscatoris Fishing Colony.

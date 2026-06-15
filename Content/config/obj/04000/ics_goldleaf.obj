@@ -9,3 +9,6 @@ members = true
 recol1s = 5351
 recol1d = 11072
 name = Gold leaf
+//Server
+desc=Very delicate thin pressed gold.
+weight=20g

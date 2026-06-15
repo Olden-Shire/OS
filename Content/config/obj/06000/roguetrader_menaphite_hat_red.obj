@@ -13,3 +13,8 @@ cost = 35
 recol1s = 49054
 recol1d = 64431
 name = Menap headgear
+//Server
+desc=Good for keeping the sun off my neck.
+wearpos=hat
+wearpos2=head
+weight=5g

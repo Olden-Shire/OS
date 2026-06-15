@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 43051/28
 models_only = 2328
 name = Dwarf MultiCannon
+//Server
+desc=A powerful ranging device that fires metal balls.

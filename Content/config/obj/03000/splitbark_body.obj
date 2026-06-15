@@ -13,3 +13,8 @@ zoom2d = 1373
 yan2d = 2047
 xan2d = 498
 name = Splitbark body
+//Server
+desc=Provides good protection.
+wearpos=torso
+wearpos2=arms
+weight=10lb

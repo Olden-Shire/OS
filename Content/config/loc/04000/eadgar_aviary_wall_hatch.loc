@@ -3,3 +3,5 @@ hillskew = true
 active = 1
 models = 4063/0
 name = Aviary Hatch
+//Server
+desc=Presumably the hatch the zookeeper feeds the parrots through.

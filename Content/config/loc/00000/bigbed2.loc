@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 1194
 name = Bed
+//Server
+desc=Posh-looking bed.

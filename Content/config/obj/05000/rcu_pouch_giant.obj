@@ -8,3 +8,6 @@ iop1 = Fill
 iop2 = Empty
 iop3 = Check
 name = Giant pouch
+//Server
+desc=A giant-sized pouch used for storing essence.
+weight=1kg

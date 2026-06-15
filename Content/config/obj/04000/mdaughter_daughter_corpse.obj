@@ -7,3 +7,6 @@ zoom2d = 1780
 yan2d = 1968
 xan2d = 352
 name = Corpse of woman
+//Server
+desc=The corpse of a woman who died long ago.
+weight=1kg

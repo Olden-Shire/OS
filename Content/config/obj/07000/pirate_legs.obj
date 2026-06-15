@@ -9,3 +9,7 @@ zoom2d = 1740
 xan2d = 444
 cost = 350
 name = Pirate leggings
+//Server
+desc=A sea worthy pair of trousers.
+wearpos=legs
+weight=1kg

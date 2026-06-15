@@ -4,3 +4,5 @@ nonsolid = true
 recol = 21534/13592 21530/13716 21526/13840 21522/13964 21646/14216 21642/13592
 models_only = 4476
 name = Pile of bricks
+//Server
+desc=A veritable pile of bricks.

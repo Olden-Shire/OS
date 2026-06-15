@@ -7,3 +7,7 @@ xan2d = 320
 members = true
 model = obj_killers_print
 name = Killer's print
+//Server
+desc=The fingerprints of the murderer.
+weight=10g
+tradeable=no

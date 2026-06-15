@@ -8,3 +8,6 @@ xan2d = 186
 recol1s = 11187
 recol1d = 695
 name = Diamond bauble
+//Server
+desc=A bauble shaped like a diamond painted red.
+weight=200g

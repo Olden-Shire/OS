@@ -13,3 +13,7 @@ recol1d = 5652
 recol2s = 57
 recol2d = 5652
 name = Bronze arrowtips
+//Server
+desc=I can make an arrow with these.
+weight=4g
+category=category_968

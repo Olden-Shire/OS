@@ -9,3 +9,6 @@ xan2d = 444
 manwear = obj_knife_946_wear, 0
 womanwear = obj_knife_946_wear, 0
 name = Knife
+//Server
+desc=A dangerous looking knife.
+weight=1lb

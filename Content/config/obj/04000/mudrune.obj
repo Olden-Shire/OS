@@ -9,3 +9,6 @@ model = obj_mud_rune
 ambient = 30
 members = true
 name = Mud rune
+//Server
+desc=A combined Earth and Water Rune.
+weight=2g

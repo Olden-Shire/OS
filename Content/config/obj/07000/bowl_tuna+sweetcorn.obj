@@ -10,3 +10,6 @@ cost = 113
 recol1s = 44263
 recol1d = 6063
 name = Tuna and corn
+//Server
+desc=A bowl of cooked tuna and sweetcorn.
+weight=500g

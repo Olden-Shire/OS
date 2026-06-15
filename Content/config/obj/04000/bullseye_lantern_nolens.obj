@@ -6,3 +6,6 @@ xan2d = 28
 cost = 300
 members = true
 name = Bullseye lantern
+//Server
+desc=You need to add a lens before you can use it.
+weight=3lb

@@ -16,3 +16,16 @@ recol2d = 24
 recol3s = 7054
 recol3d = 24
 name = Black kiteshield (t)
+//Server
+desc=Black kiteshield with trim.
+wearpos=lefthand
+weight=12lb
+category=armour_shield
+param=magicattack,-8
+param=rangeattack,-2
+param=stabdefence,17
+param=slashdefence,19
+param=crushdefence,18
+param=magicdefence,-1
+param=rangedefence,18
+param=defend_anim,human_shield_defence

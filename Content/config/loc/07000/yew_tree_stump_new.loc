@@ -5,3 +5,5 @@ mapscene = 3
 op3 = hidden
 models_only = 8162
 name = Tree Stump
+//Server
+desc=This is what is left of a yew tree.

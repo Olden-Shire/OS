@@ -6,3 +6,8 @@ yof2d = 6
 zoom2d = 510
 yan2d = 60
 name = Lump of crystal
+//Server
+desc=It looks like it's been snapped off of something.
+weight=50g
+tradeable=no
+param=crystal_bit,^legends_smelting_lump

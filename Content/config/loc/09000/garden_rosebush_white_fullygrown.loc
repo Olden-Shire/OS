@@ -3,3 +3,5 @@ ambient = 25
 recol = 63296/9445
 models_only = 9167 7767
 name = Rose bush
+//Server
+desc=This white rosebush is fully grown.

@@ -3,3 +3,5 @@ active = 1
 hillskew = true
 models_only = 11950
 name = Wall
+//Server
+desc=Its a wall.

@@ -3,3 +3,5 @@ ambient = 15
 nonblockrange = true
 models_only = 13966
 name = Barrel
+//Server
+desc=It looks a tad bloody...

@@ -6,3 +6,6 @@ ambient = 10
 members = true
 cost = 0
 name = Icosahedron
+//Server
+desc=A blue icosahedron.
+weight=1g

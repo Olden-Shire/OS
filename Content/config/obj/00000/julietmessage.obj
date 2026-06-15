@@ -8,3 +8,7 @@ xan2d = 441
 ambient = 10
 contrast = 12
 name = Message
+//Server
+desc=A message from Juliet to Romeo.
+weight=20g
+tradeable=no

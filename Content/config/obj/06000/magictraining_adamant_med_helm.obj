@@ -11,3 +11,6 @@ members = true
 recol1s = 61
 recol1d = 21662
 name = Adamant med helm
+//Server
+desc=A medium sized helmet.
+weight=5lb

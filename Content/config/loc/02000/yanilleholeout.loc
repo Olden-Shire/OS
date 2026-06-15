@@ -1,3 +1,5 @@
 // loc 2824
 models_only = 1464
 name = Hole
+//Server
+desc=A hole

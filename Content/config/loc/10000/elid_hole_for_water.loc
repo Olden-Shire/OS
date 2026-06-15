@@ -3,3 +3,5 @@ active = 1
 blockwalk = true
 models = 10188/22
 name = Hole
+//Server
+desc=A strange hole carefully made in the ground.

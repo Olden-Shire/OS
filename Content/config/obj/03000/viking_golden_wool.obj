@@ -11,3 +11,6 @@ members = true
 recol1s = 10353
 recol1d = 8666
 name = Golden wool
+//Server
+desc=I can use this to make a lyre.
+weight=12g

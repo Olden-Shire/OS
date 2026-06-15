@@ -6,3 +6,6 @@ yan2d = 1395
 xan2d = 183
 members = true
 name = Goblin skull
+//Server
+desc=This bone belongs in a museum!
+weight=3g

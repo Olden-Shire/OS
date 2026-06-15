@@ -15,3 +15,9 @@ recol1d = 10388
 recol2s = 6020
 recol2d = 11140
 name = Torags helm
+//Server
+desc=Torag the Corrupted's helm.
+weight=6lb
+wearpos=hat
+wearpos2=head
+wearpos3=jaw

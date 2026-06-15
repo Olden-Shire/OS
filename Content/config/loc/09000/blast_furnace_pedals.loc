@@ -4,3 +4,5 @@ active = 1
 raiseobject = 0
 models_only = 9039
 name = Pedals
+//Server
+desc=They power the conveyor belt.

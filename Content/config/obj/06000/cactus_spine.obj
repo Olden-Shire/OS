@@ -8,3 +8,6 @@ xan2d = 324
 ambient = 15
 members = true
 name = Cactus spine
+//Server
+desc=Don't prick yourself with this.
+weight=1oz

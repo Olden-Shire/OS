@@ -7,3 +7,6 @@ zan2d = 12
 xan2d = 116
 model = obj_dwarf_5054
 name = Dwarf
+//Server
+desc=Petit.
+weight=10kg

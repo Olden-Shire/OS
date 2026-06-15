@@ -4,3 +4,5 @@ ambient = 20
 op1 = Clear
 models_only = 10199 10202 10200
 name = Water Channel
+//Server
+desc=It looks like water once ran here.

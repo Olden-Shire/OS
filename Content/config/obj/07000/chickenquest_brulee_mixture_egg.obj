@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 8423
 recol1d = 9664
 name = Brulee
+//Server
+desc=It's just missing a sprinkling of cinnamon.
+weight=300g

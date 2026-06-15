@@ -9,3 +9,6 @@ members = true
 iop4 = Empty
 iop5 = Destroy
 name = Cornflour mixture
+//Server
+desc=A mixture of milk, cream and cornflour.
+weight=3lb

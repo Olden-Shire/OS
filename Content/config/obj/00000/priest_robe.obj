@@ -10,3 +10,8 @@ womanwear = obj_priest_gown_428_woman, 0
 recol1s = 25238
 recol1d = 0
 name = Priest gown
+//Server
+desc=Bottom half of a priest suit.
+wearpos=legs
+weight=4lb
+param=prayerbonus,3

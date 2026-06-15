@@ -5,3 +5,6 @@ zoom2d = 790
 xan2d = 423
 members = true
 name = Tile
+//Server
+desc=For a mosaic.
+weight=1lb

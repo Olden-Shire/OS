@@ -4,3 +4,5 @@ length = 2
 active = 1
 models_only = 10884
 name = Fountain
+//Server
+desc=This fountain is frozen solid.

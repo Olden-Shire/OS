@@ -17,3 +17,8 @@ recol3d = 937
 recol4s = 25238
 recol4d = 35220
 name = Zamorak plateskirt
+//Server
+desc=Rune plateskirt in the colours of Zamorak.
+wearpos=legs
+weight=20lb
+param=zamorakitem,^true

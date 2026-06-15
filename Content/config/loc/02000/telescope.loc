@@ -3,3 +3,5 @@ length = 3
 op1 = Use
 models_only = 1174
 name = Telescope
+//Server
+desc=Looking through it makes far off things look closer!

@@ -12,3 +12,8 @@ iop2 = Wield
 iop3 = Extinguish
 cost = 130
 name = Lit bug lantern
+//Server
+desc=A lantern to aid attacking Harpie bugs.
+wearpos=lefthand
+weight=5lb
+category=light_source_lit

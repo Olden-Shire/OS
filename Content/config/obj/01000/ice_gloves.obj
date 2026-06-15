@@ -15,3 +15,11 @@ recol1d = 35290
 recol2s = 5532
 recol2d = 35290
 name = Ice gloves
+//Server
+desc=These will keep my hands cold!
+wearpos=hands
+weight=8oz
+param=slashdefence,3
+param=crushdefence,4
+param=rangedefence,2
+tradeable=no

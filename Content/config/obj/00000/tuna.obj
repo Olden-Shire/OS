@@ -11,3 +11,7 @@ recol1d = 1211
 recol2s = 103
 recol2d = 1226
 name = Tuna
+//Server
+desc=Wow, this is a big fish.
+weight=400g
+category=category_58

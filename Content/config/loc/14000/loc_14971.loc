@@ -5,3 +5,5 @@ op1 = Search
 nonblockrange = true
 models_only = 10715
 name = Herman's desk
+//Server
+desc=Apparently there's a lot of paperwork involved in running a Fishing Colony.

@@ -6,3 +6,5 @@ active = 1
 op1 = Open
 models_only = 6931
 name = Door
+//Server
+desc=A heavy portal decorated with bone.

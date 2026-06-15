@@ -7,3 +7,5 @@ nonblockrange = true
 recol = 127/7060 8094/5008 937/7060
 models_only = 1213 9411 9410
 name = Table
+//Server
+desc=A hearty meal for Unferth.

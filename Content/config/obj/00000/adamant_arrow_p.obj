@@ -18,3 +18,13 @@ recol1d = 21662
 recol2s = 57
 recol2d = 13221
 name = Adamant arrow(p)
+//Server
+desc=Venomous looking arrows.
+wearpos=quiver
+weight=18g
+category=arrows
+param=rangebonus,31
+param=levelrequire,30
+param=proj_launch,adamant_arrow_launch
+param=proj_travel,adamant_arrow_travel
+param=poison_severity,20

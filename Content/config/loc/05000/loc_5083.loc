@@ -9,3 +9,5 @@ width = 4
 op1 = Enter
 models_only = 4998 4999
 name = Dungeon entrance
+//Server
+desc=A closed overgrown dungeon entrance.

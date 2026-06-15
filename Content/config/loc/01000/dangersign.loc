@@ -3,3 +3,5 @@ ambient = 17
 contrast = 17
 models_only = 1552
 name = Danger sign
+//Server
+desc=Danger!

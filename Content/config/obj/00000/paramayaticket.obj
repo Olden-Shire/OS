@@ -8,3 +8,6 @@ yan2d = 132
 xan2d = 320
 members = true
 name = Paramaya ticket
+//Server
+desc=Allows you to rest in the luxurious Paramayer Inn.
+weight=4g

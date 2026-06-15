@@ -7,3 +7,6 @@ xan2d = 204
 members = true
 iop5 = Destroy
 name = Frozen bucket
+//Server
+desc=This bucket of water is frozen solid.
+weight=1g

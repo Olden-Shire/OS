@@ -13,3 +13,6 @@ recol2d = 6827
 recol3s = 15013
 recol3d = 5675
 name = Leaves
+//Server
+desc=A pile of Maple tree leaves.
+weight=1oz

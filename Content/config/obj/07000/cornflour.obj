@@ -8,3 +8,6 @@ xan2d = 264
 recol1s = 82
 recol1d = 111
 name = Cornflour
+//Server
+desc=A little heap of cornflour.
+weight=500g

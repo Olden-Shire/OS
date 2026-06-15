@@ -6,3 +6,5 @@ active = 1
 recol = 5014/6449
 models = 1128/22
 name = Log balance
+//Server
+desc=I can balance on this log.

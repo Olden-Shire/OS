@@ -9,3 +9,7 @@ iop2 = Wear
 members = true
 ambient = 20
 name = Grain
+//Server
+desc=A sack full of grain.
+wearpos=back
+weight=5kg

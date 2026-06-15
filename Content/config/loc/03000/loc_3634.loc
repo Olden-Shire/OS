@@ -6,3 +6,5 @@ op1 = Touch
 bgsound = 3144, 10
 models_only = 3690
 name = Strange shrine
+//Server
+desc=A shrine of the gods!

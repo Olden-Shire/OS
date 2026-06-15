@@ -3,3 +3,6 @@ width = 3
 length = 3
 models_only = 1761
 name = Obelisk of Earth
+//Server
+desc=A column of elemental power.
+param=charge_orb_name,earth obelisk

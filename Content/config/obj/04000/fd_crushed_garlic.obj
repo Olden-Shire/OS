@@ -10,3 +10,6 @@ cost = 10
 recol1s = 82
 recol1d = 10330
 name = Garlic powder
+//Server
+desc=Finely ground garlic powder.
+weight=7g

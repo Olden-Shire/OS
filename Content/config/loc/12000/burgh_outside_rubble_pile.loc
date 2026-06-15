@@ -7,3 +7,5 @@ length = 2
 op2 = Search
 models_only = 14031
 name = Rubble Pile
+//Server
+desc=Looks like the locals dump their rubble here.

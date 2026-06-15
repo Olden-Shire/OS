@@ -12,3 +12,6 @@ members = true
 recol1s = 61
 recol1d = 36133
 name = Rune longsword
+//Server
+desc=A razor sharp longsword.
+weight=4lb

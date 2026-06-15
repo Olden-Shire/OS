@@ -8,3 +8,7 @@ xan2d = 328
 recol1s = 8128
 recol1d = 6080
 name = Key
+//Server
+desc=An orange key.
+weight=10g
+tradeable=no

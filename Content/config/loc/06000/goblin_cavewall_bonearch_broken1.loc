@@ -3,3 +3,5 @@ hillskew = true
 sharelight = true
 models_only = 6900
 name = Bone arch
+//Server
+desc=This arch is broken. I hope the ceiling doesn't come down!

@@ -4,3 +4,6 @@ op1 = Pray-at
 nonblockrange = true
 models_only = 14201
 name = Altar
+//Server
+desc=A Shrine to the glory of Seren.
+category=prayer_altar

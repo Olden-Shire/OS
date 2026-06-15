@@ -9,3 +9,6 @@ yan2d = 56
 zan2d = 1900
 xan2d = 128
 name = Fake man
+//Server
+desc=It's good enough to fool a troll.
+weight=1g

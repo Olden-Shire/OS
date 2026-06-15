@@ -10,3 +10,7 @@ members = true
 recol1s = 8417
 recol1d = 8
 name = Candle lantern
+//Server
+desc=A flickering candle in a glass cage.
+weight=2lb
+category=light_source_lit

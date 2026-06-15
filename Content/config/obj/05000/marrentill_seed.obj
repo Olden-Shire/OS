@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 5
 name = Marrentill seed
+//Server
+desc=A marrentill seed - plant in a herb patch.
+weight=1g

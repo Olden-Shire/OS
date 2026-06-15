@@ -2,3 +2,5 @@
 op1 = Climb-up
 models = 2103/4
 name = Climbing rocks
+//Server
+desc=The irregular surface can be climbed.

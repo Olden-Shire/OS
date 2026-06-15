@@ -11,3 +11,6 @@ xan2d = 164
 members = true
 cost = 6
 name = Rake
+//Server
+desc=Use this to clear weeds.
+weight=3lb

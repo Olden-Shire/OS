@@ -9,3 +9,6 @@ xan2d = 560
 recol1s = 8128
 recol1d = 7087
 name = Shed key
+//Server
+desc=Upon close examination, this seems to be a key.
+weight=5g

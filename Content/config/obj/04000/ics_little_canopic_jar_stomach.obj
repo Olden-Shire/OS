@@ -7,3 +7,6 @@ yan2d = 1760
 xan2d = 136
 op3 = Take
 name = Canopic jar
+//Server
+desc=Has a lid shaped like a bug. Disgusting! I think there's a stomach inside.
+weight=100g

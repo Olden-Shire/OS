@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 61
 recol1d = 6728
 name = Truth serum
+//Server
+desc=Fluid sloshes innocently in this vial.
+weight=50g

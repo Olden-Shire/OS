@@ -9,3 +9,6 @@ members = true
 recol1s = 4626
 recol1d = 10283
 name = Shoe.
+//Server
+desc=A shoe.
+weight=0g

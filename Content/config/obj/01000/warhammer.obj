@@ -6,3 +6,6 @@ zoom2d = 1050
 yan2d = 456
 xan2d = 344
 name = Warhammer
+//Server
+desc=A warhammer.
+weight=4lb

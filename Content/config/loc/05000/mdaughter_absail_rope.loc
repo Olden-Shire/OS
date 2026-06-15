@@ -3,3 +3,5 @@ hillskew = true
 nonsolid = true
 models_only = 5692
 name = Rope
+//Server
+desc=Someone is climbing down the rope.

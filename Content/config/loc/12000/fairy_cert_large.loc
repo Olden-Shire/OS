@@ -5,3 +5,5 @@ ambient = 20
 op1 = Examine
 models = 11932/4
 name = Healing certificate
+//Server
+desc=Fairy Nuff passed healing 101!

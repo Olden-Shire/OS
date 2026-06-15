@@ -13,3 +13,8 @@ zoom2d = 1130
 yan2d = 2032
 xan2d = 384
 name = Tribal top
+//Server
+desc=Local dress.
+weight=1kg
+wearpos=torso
+wearpos2=arms

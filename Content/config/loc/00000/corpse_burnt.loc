@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 6241/28
 models_only = 1078
 name = Corpse
+//Server
+desc=Now that's what I call slimline!

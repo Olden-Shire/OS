@@ -9,3 +9,6 @@ cost = 8
 recol1s = 44263
 recol1d = 6063
 name = Uncooked egg
+//Server
+desc=A bowl of uncooked egg.
+weight=500g

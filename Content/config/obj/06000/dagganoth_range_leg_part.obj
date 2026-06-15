@@ -6,3 +6,6 @@ zoom2d = 1840
 yan2d = 996
 xan2d = 544
 name = Stretched hide
+//Server
+desc=A weathered chunk of dagannoth hide.
+weight=7lb

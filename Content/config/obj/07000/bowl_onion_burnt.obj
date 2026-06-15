@@ -10,3 +10,6 @@ cost = 5
 recol1s = 44263
 recol1d = 6063
 name = Burnt onion
+//Server
+desc=A bowl of blackened onions.
+weight=500g

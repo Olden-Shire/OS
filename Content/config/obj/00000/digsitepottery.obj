@@ -9,3 +9,7 @@ recol1d = 9104
 recol2s = 6040
 recol2d = 9098
 name = Ceramic remains
+//Server
+desc=Smashing!
+weight=2oz
+tradeable=no

@@ -17,3 +17,6 @@ recol3d = 9098
 recol4s = 8722
 recol4d = 9098
 name = Magic pyre logs
+//Server
+desc=Magic logs prepared with sacred oil for a funeral pyre.
+weight=3lb

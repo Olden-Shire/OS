@@ -4,3 +4,5 @@ hillskew = true
 nonsolid = true
 models_only = 2326
 name = Stalagmites
+//Server
+desc=Formed over many years.

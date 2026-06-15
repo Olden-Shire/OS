@@ -10,3 +10,8 @@ zan2d = 2024
 xan2d = 322
 iop2 = Wear
 name = Ring of life
+//Server
+desc=An enchanted ring.
+wearpos=ring
+weight=6g
+category=category_656

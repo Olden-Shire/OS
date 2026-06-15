@@ -4,3 +4,5 @@ length = 2
 mapscene = 5
 models_only = 1612
 name = Palm
+//Server
+desc=This would be good to sleep under.

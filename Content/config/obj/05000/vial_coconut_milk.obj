@@ -9,3 +9,7 @@ iop4 = Empty
 recol1s = 61
 recol1d = 38003
 name = Coconut milk
+//Server
+desc=A vial filled with coconut milk
+weight=35g
+category=potion

@@ -5,3 +5,6 @@ op1 = Pray-at
 nonblockrange = true
 models_only = 1470
 name = Altar of Guthix
+//Server
+desc=An ancient altar to the glory of Guthix.
+category=prayer_altar

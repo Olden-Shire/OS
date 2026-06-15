@@ -9,3 +9,6 @@ members = true
 recol1s = 1942
 recol1d = 40047
 name = Empty wine bottle
+//Server
+desc=This one has clearly been taken down and passed around.
+weight=1kg

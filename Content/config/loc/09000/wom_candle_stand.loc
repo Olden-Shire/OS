@@ -2,3 +2,5 @@
 active = 1
 models_only = 3496 9107
 name = Candelabrum
+//Server
+desc=Some kind of jewellery is dangling from this ornament.

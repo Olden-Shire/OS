@@ -9,3 +9,5 @@ active = 1
 recol = 6932/12698 6684/12818
 models = 1089/22
 name = Bridge
+//Server
+desc=There's no way to cross this bridge.

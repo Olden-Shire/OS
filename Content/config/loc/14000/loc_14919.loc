@@ -4,3 +4,5 @@ forceapproach = 13
 bgsound = 2198, 3
 models_only = 12616
 name = Range
+//Server
+desc=Smells of fried fish.

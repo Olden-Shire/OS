@@ -2,3 +2,5 @@
 recol = 5559/5541 5799/5665 5679/5660 5675/5784
 models_only = 4326
 name = Table
+//Server
+desc=It's a small table.

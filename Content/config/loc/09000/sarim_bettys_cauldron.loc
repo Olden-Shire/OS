@@ -5,3 +5,5 @@ nonblockrange = true
 recol = 41/5161 37/5157 28/1325 22435/561 22420/681
 models_only = 2241
 name = Betty's cauldron
+//Server
+desc=I wonder what she's making?

@@ -15,3 +15,6 @@ count4 = 7926, 5
 recol1s = 5012
 recol1d = 7582
 name = Ogre arrow shaft
+//Server
+desc=A wooden arrow shaft.
+weight=10g

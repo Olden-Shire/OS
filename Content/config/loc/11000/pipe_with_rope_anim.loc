@@ -2,3 +2,5 @@
 active = 1
 models_only = 11438
 name = Pipe
+//Server
+desc=It's a sewer pipe with some rope tied to it.

@@ -4,3 +4,5 @@ length = 4
 op1 = Rotate
 models_only = 2232
 name = Crane
+//Server
+desc=It's used for loading and unloading fishing boats.

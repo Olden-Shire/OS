@@ -15,3 +15,15 @@ recol1d = 43288
 recol2s = 22424
 recol2d = 43177
 name = Blue d'hide chaps
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=legs
+weight=12lb
+category=armour_legs
+param=magicattack,-10
+param=rangeattack,11
+param=stabdefence,25
+param=slashdefence,19
+param=crushdefence,27
+param=magicdefence,14
+param=rangedefence,25

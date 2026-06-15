@@ -1,3 +1,5 @@
 // loc 854
 models_only = 1536
 name = Standard
+//Server
+desc=A blue standard.

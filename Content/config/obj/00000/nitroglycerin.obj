@@ -8,3 +8,7 @@ members = true
 recol1s = 61
 recol1d = 6080
 name = Nitroglycerin
+//Server
+desc=A strong chemical.
+weight=25g
+tradeable=no

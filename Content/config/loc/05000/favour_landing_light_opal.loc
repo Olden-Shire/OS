@@ -9,3 +9,5 @@ op1 = Look
 recol = 40918/10343
 models_only = 5645
 name = Flashing landing light
+//Server
+desc=A beacon so gnome gliders can safely land.

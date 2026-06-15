@@ -9,3 +9,7 @@ iop2 = Drink
 recol1s = 61
 recol1d = 58316
 name = Cadava potion
+//Server
+desc=I'm meant to give this to Juliet.
+weight=25g
+tradeable=no

@@ -7,3 +7,5 @@ resizez = 100
 mapscene = 6
 models_only = 1629
 name = Tree stump
+//Server
+desc=This tree has been cut down.

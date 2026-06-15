@@ -11,3 +11,7 @@ recol1d = 41938
 recol2s = 8419
 recol2d = 41938
 name = Sapphire lantern
+//Server
+desc=A lantern casting a bright blue beam.
+weight=3lb
+category=light_source_lit

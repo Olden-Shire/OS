@@ -2,3 +2,5 @@
 width = 3
 models_only = 6895
 name = Rubble
+//Server
+desc=Rubble is blocking the passage.

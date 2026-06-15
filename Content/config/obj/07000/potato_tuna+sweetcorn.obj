@@ -9,3 +9,6 @@ iop1 = Eat
 members = true
 cost = 113
 name = Tuna potato
+//Server
+desc=A baked potato with tuna and sweetcorn.
+weight=500g

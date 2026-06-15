@@ -3,3 +3,5 @@ width = 3
 op1 = Jump
 models_only = 5127
 name = Hurdle
+//Server
+desc=A hurdle.

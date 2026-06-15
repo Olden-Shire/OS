@@ -1,3 +1,5 @@
 // loc 707
 models_only = 1266
 name = Bell
+//Server
+desc=Ding-Dong!

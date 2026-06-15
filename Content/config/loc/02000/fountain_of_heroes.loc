@@ -6,3 +6,5 @@ bgsound = 2151, 5
 recol = 28/8103 61/9129
 models_only = 1497
 name = Fountain of Heroes
+//Server
+desc=A source of pure water.

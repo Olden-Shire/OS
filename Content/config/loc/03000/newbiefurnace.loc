@@ -7,3 +7,6 @@ op1 = Use
 bgsound = 2208, 3
 models_only = 11546
 name = Furnace
+//Server
+desc=A hot place for forging things in.
+category=smithing_furnace

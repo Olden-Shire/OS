@@ -8,3 +8,8 @@ xan2d = 112
 recol1s = 6457
 recol1d = 20007
 name = Ogre bellows (3)
+//Server
+desc=A large pair of ogre bellows, it has three loads of swamp gas in it.
+weight=18oz
+tradeable=no
+category=ogre_bellows

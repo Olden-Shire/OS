@@ -13,3 +13,6 @@ recol1d = 8369
 recol2s = 10351
 recol2d = 6722
 name = Treaty
+//Server
+desc=Just needs the King's signature.
+weight=5g

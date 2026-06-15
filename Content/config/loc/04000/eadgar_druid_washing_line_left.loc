@@ -7,3 +7,5 @@ contrast = 35
 recol = 127/74
 models = 4070/9
 name = Druid's robes
+//Server
+desc=These clean Druid's robes are drying off.

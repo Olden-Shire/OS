@@ -3,3 +3,5 @@ length = 2
 op2 = Disembark
 models_only = 1461
 name = Crude raft
+//Server
+desc=A crudely constructed raft.

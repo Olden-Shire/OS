@@ -12,3 +12,6 @@ recol1d = 61
 recol2s = 61
 recol2d = 43100
 name = Frozen jug
+//Server
+desc=This jug of water is frozen solid.
+weight=1lb

@@ -9,3 +9,6 @@ zoom2d = 690
 yan2d = 256
 xan2d = 364
 name = Monkey magic
+//Server
+desc=A small sample of monkey magic.
+weight=7g

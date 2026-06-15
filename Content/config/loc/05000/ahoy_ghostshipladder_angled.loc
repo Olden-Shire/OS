@@ -4,3 +4,5 @@ op1 = Climb-up
 forceapproach = 11
 models_only = 14188
 name = Ship's ladder
+//Server
+desc=Allows access to other parts of the ship.

@@ -16,3 +16,6 @@ recol3d = 127
 recol4s = 123
 recol4d = 0
 name = Wily cat
+//Server
+desc=Wild.
+weight=750g

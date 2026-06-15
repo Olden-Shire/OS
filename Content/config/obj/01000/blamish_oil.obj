@@ -10,3 +10,7 @@ members = true
 recol1s = 42436
 recol1d = 16495
 name = Blamish oil
+//Server
+desc=Made from the finest snail slime.
+weight=25g
+tradeable=no

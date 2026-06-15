@@ -4,3 +4,5 @@ anim = 912
 recol = 48596/11200 37196/11200 53167/11200
 models_only = 237
 name = Flowers
+//Server
+desc=Some beautiful flowers.

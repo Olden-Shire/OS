@@ -4,3 +4,5 @@ ambient = 20
 anim = 3264
 models_only = 11951
 name = Chicken Shrine
+//Server
+desc=A shrine to the evil chicken.

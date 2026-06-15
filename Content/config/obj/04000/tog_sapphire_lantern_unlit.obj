@@ -8,3 +8,8 @@ members = true
 recol1s = 41193
 recol1d = 43951
 name = Sapphire lantern
+//Server
+desc=A bullseye lantern with a sapphire for a lens.
+weight=3lb
+category=light_source_unlit
+param=product,tog_sapphire_lantern_lit

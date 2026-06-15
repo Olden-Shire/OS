@@ -6,3 +6,5 @@ forcedecor = true
 op1 = Walk-across
 models = 1115/22
 name = Log balance
+//Server
+desc=A slippery well worn log.

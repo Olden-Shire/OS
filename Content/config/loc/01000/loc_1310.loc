@@ -5,3 +5,5 @@ mapscene = 0
 active = 1
 models_only = 1576
 name = Tree
+//Server
+desc=This tree has vines hanging from it.

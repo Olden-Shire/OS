@@ -6,3 +6,5 @@ active = 1
 bgsound = 3114, 5
 models_only = 23899 23898 23900 23897
 name = Cow wheel
+//Server
+desc=She likes the exercise.

@@ -10,3 +10,6 @@ members = true
 recol1s = 44263
 recol1d = 24914
 name = Nettle-water
+//Server
+desc=It's a bowl of water, with some nettles in it.
+weight=2lb

@@ -9,3 +9,5 @@ xan2d = 168
 iop1 = Extinguish
 stackable = true
 name = Lit candle
+//Server
+desc=A lit candle.

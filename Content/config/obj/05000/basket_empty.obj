@@ -7,3 +7,6 @@ xan2d = 84
 members = true
 iop1 = Fill
 name = Basket
+//Server
+desc=An empty fruit basket.
+weight=1oz

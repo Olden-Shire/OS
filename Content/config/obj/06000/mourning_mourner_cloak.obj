@@ -15,3 +15,7 @@ recol1d = 43270
 recol2s = 11200
 recol2d = 43270
 name = Mourner cloak
+//Server
+desc=A dull brown cape.
+weight=5lb
+wearpos=back

@@ -3,3 +3,5 @@ width = 3
 length = 3
 models_only = 5280
 name = Boat
+//Server
+desc=A wooden rowing boat.

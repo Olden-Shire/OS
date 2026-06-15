@@ -5,3 +5,5 @@ anim = 474
 active = 1
 models_only = 2292
 name = Bridge
+//Server
+desc=A bridge.

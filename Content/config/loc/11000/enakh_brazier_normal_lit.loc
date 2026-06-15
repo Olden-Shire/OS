@@ -4,3 +4,5 @@ active = 1
 recol = 268/4760 6466/6707
 models_only = 10991 10994 10995
 name = Brazier
+//Server
+desc=Something's burning here.

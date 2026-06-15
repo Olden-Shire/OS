@@ -3,3 +3,5 @@ active = 1
 op1 = Climb-down
 models_only = 6144
 name = Smokey well
+//Server
+desc=There is a rope leading to the bottom of this smoke filled well.

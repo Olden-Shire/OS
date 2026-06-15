@@ -9,3 +9,6 @@ iop1 = Read
 recol1s = 5018
 recol1d = 7710
 name = Strange book
+//Server
+desc=A tatty old book belonging to the Wise Old Man of Draynor Village.
+weight=70g

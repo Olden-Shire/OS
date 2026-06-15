@@ -4,3 +4,5 @@ active = 1
 nonblockrange = true
 models_only = 13961
 name = Bank Booth
+//Server
+desc=This bank booth could probably be repaired.

@@ -7,3 +7,8 @@ zoom2d = 890
 yan2d = 228
 xan2d = 508
 name = Khazard cell keys
+//Server
+desc=These keys open the cells at the Khazard fight arena.
+weight=10g
+param=no_alchemy,1
+tradeable=no

@@ -4,3 +4,5 @@ length = 3
 active = 1
 models_only = 2217
 name = Catapult
+//Server
+desc=It's a war machine.

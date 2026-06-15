@@ -8,3 +8,6 @@ xan2d = 194
 recol1s = 11187
 recol1d = 22340
 name = Star bauble
+//Server
+desc=A bauble shaped like a star painted green.
+weight=200g

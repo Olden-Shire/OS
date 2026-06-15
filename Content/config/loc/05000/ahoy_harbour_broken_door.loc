@@ -4,3 +4,5 @@ length = 2
 recol = 6550/12818 5559/12818 5675/12698 6674/13194
 models_only = 5276
 name = Broken Door
+//Server
+desc=It's been knocked off its hinges.

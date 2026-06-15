@@ -13,3 +13,8 @@ womanwear2 = 332
 recol1s = 8741
 recol1d = 12820
 name = Camo top
+//Server
+desc=Examine what?
+wearpos=torso
+wearpos2=arms
+weight=6lb

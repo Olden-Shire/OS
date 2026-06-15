@@ -12,3 +12,7 @@ zoom2d = 980
 yan2d = 220
 xan2d = 208
 name = Mystic hat
+//Server
+desc=A magical hat.
+wearpos=hat
+weight=1lb

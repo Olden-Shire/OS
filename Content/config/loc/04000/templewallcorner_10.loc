@@ -4,3 +4,5 @@ op1 = Reinforce
 op3 = hidden
 models_only = 4136
 name = Temple wall
+//Server
+desc=The repaired wall of a temple.

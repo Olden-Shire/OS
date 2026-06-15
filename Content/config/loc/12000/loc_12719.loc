@@ -3,3 +3,5 @@ blockwalk = true
 op1 = Read
 models_only = 13379
 name = Gravestone
+//Server
+desc=This will show me who is supposed to go here.

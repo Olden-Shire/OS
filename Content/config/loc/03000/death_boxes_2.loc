@@ -4,3 +4,6 @@ nonblockrange = true
 retex = 16/22
 models_only = 2139
 name = Boxes
+//Server
+desc=A pile of boxes for storage.
+category=empty_boxes

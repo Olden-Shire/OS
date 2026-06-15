@@ -7,3 +7,7 @@ zoom2d = 550
 yan2d = 1996
 xan2d = 84
 name = Ethenea
+//Server
+desc=An expensive colourless liquid.
+weight=30g
+tradeable=no

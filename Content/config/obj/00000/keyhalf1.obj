@@ -7,3 +7,6 @@ zoom2d = 740
 yan2d = 8
 xan2d = 296
 name = Half of a key
+//Server
+desc=The tooth end of the mysterious Crystal Key. Can you find the other half?
+weight=5g

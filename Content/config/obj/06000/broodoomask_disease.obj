@@ -24,3 +24,7 @@ recol5d = 4663
 recol6s = 37394
 recol6d = 37394
 name = Tribal mask
+//Server
+desc=A ceremonial wooden mask.
+weight=2kg
+wearpos=hat

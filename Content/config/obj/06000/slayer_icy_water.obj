@@ -12,3 +12,6 @@ xan2d = 164
 members = true
 stackable = true
 name = Ice cooler
+//Server
+desc=Contains ice cubes.
+weight=2kg

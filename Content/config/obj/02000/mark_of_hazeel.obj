@@ -10,3 +10,8 @@ iop2 = Wear
 manwear = obj_hazeels_mark_man, 0
 womanwear = obj_hazeels_mark_woman, 0
 name = Hazeel's mark
+//Server
+desc=A sign of my commitment to Hazeel.
+wearpos=front
+weight=12g
+tradeable=no

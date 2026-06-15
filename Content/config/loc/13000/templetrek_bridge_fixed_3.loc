@@ -9,3 +9,5 @@ blockwalk = true
 recol = 6932/12698 6684/12818
 models = 14153/22
 name = Fixed bridge
+//Server
+desc=This bridge can be traversed safely.

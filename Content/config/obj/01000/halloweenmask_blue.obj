@@ -12,3 +12,10 @@ iop2 = Wear
 recol1s = 926
 recol1d = 43934
 name = Blue h'ween mask
+//Server
+desc=Aaaarrrghhh ... I'm a monster.
+weight=12oz
+wearpos=hat
+wearpos2=head
+wearpos3=jaw
+param=party_clean_exempt,^true

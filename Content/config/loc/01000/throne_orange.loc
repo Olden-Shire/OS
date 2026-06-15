@@ -3,3 +3,5 @@ nonblockrange = true
 recol = 926/6080 9098/6080
 models_only = 1234
 name = Throne
+//Server
+desc=A kingly seat for a royal behind.

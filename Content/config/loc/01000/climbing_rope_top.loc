@@ -1,3 +1,5 @@
 // loc 1763
 models_only = 1433
 name = Climbing rope
+//Server
+desc=A rope hangs here.

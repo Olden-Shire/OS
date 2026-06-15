@@ -3,3 +3,5 @@ blockwalk = true
 op1 = Open
 models = 609/0
 name = Entrance
+//Server
+desc=The entrance to an extravagantly decorated mausoleum.

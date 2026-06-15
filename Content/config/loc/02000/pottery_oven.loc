@@ -5,3 +5,5 @@ op1 = Fire
 bgsound = 2065, 3
 models_only = 1184
 name = Pottery Oven
+//Server
+desc=Bake your clay items in here.

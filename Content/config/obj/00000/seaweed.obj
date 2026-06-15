@@ -8,3 +8,7 @@ xan2d = 272
 cost = 2
 members = true
 name = Seaweed
+//Server
+desc=Slightly damp seaweed.
+weight=200g
+category=cooking_generic

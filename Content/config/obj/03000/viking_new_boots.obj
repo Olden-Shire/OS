@@ -7,3 +7,6 @@ yan2d = 160
 xan2d = 152
 members = true
 name = Sturdy boots
+//Server
+desc=A pair of sturdy custom made boots.
+weight=12oz

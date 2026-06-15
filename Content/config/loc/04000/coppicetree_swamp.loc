@@ -4,3 +4,5 @@ length = 2
 mapscene = 6
 models_only = 4079
 name = Tree
+//Server
+desc=It's covered in slime.

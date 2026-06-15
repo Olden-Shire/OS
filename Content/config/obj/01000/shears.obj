@@ -7,3 +7,6 @@ zoom2d = 710
 yan2d = 136
 xan2d = 300
 name = Shears
+//Server
+desc=For shearing sheep.
+weight=4oz

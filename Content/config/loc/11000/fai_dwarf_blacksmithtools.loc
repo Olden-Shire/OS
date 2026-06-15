@@ -4,3 +4,5 @@ active = 1
 recol = 5404/7830
 models = 5964/4
 name = Blacksmiths' tools
+//Server
+desc=Various implements for working with metal.

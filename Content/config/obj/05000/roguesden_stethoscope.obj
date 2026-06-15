@@ -8,3 +8,7 @@ yan2d = 1760
 xan2d = 244
 cost = 10
 name = Stethoscope
+//Server
+desc=A useful hearing aid.
+wearpos=lefthand
+weight=1lb

@@ -4,3 +4,5 @@ ambient = 20
 contrast = 15
 models_only = 11676
 name = Bricks
+//Server
+desc=A pile of bricks.

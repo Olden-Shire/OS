@@ -7,3 +7,6 @@ yan2d = 268
 xan2d = 144
 members = true
 name = Solus's hat
+//Server
+desc=Proof that I have defeated the evil mage Solus.
+weight=1g

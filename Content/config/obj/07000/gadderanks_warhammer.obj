@@ -10,3 +10,8 @@ iop2 = Wield
 cost = 3000
 members = true
 name = Gadderhammer
+//Server
+desc=A specially crafted hammer with strange markings on it.
+wearpos=righthand
+wearpos2=lefthand
+weight=4lb

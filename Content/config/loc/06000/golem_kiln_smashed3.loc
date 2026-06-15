@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 6173
 name = Broken kiln
+//Server
+desc=There was a lot of pottery made here a long time ago.

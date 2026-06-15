@@ -12,3 +12,6 @@ recol1d = 13200
 recol2s = 10351
 recol2d = 10308
 name = Book
+//Server
+desc=The book of Rats.
+weight=40g

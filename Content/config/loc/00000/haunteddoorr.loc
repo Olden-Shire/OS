@@ -4,3 +4,7 @@ op1 = Open
 mirror = true
 models = 11472/0
 name = Large door
+//Server
+desc=A large double door.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_1523

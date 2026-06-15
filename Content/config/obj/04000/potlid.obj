@@ -10,3 +10,6 @@ recol1d = 4899
 recol2s = 6453
 recol2d = 4775
 name = Pot lid
+//Server
+desc=This should fit on a normal-sized pot.
+weight=7oz

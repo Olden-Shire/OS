@@ -13,3 +13,8 @@ womanwear2 = 348
 recol1s = 8741
 recol1d = 127
 name = Desert shirt
+//Server
+desc=A cool, light desert shirt.
+weight=2lb
+wearpos=torso
+wearpos2=arms

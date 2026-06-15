@@ -8,3 +8,6 @@ zoom2d = 690
 yan2d = 256
 xan2d = 364
 name = Monkey wrench
+//Server
+desc=For wrenching monkeys I'd guess.
+weight=21lb

@@ -7,3 +7,7 @@ zoom2d = 930
 yan2d = 1936
 xan2d = 120
 name = Sheep feed
+//Server
+desc=Councillor Halgrive gave me this to kill some sheep.
+weight=5lb
+tradeable=no

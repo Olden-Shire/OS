@@ -6,3 +6,6 @@ xan2d = 180
 iop1 = Eat
 cost = 25
 name = Roll
+//Server
+desc=A freshly made roll.
+weight=20g

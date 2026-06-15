@@ -10,3 +10,6 @@ iop1 = Look-at
 iop5 = Destroy
 members = true
 name = Reward token
+//Server
+desc=Yellow reward token.
+weight=10g

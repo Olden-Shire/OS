@@ -6,3 +6,5 @@ mapscene = 0
 ambient = 25
 models_only = 8110
 name = Spirit tree
+//Server
+desc=A young sentient tree.

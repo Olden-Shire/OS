@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 5417/12942 5532/12698 5656/12694 5652/12818 5413/13194 5537/13194
 models_only = 5283
 name = Boxes
+//Server
+desc=A pile of boxes for storage.

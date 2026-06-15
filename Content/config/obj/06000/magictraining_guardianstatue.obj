@@ -8,3 +8,6 @@ zoom2d = 1560
 yan2d = 1876
 xan2d = 140
 name = Guardian statue
+//Server
+desc=The statue looks like he can be moved.
+weight=20lb

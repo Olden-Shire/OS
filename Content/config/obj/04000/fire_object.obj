@@ -4,3 +4,6 @@ op3 = Study
 members = true
 cost = 250
 name = Fire
+//Server
+desc=Hot!
+weight=1oz

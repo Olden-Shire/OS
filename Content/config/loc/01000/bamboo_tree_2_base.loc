@@ -2,3 +2,5 @@
 mapscene = 0
 models_only = 1684
 name = Tropical tree
+//Server
+desc=This tree contains dangerous insects no doubt.

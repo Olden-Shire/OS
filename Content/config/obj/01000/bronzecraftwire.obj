@@ -7,3 +7,6 @@ yan2d = 132
 xan2d = 332
 members = true
 name = Bronze wire
+//Server
+desc=Useful for crafting items.
+weight=5g

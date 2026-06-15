@@ -3,3 +3,5 @@ ambient = 50
 active = 1
 models = 2046/4
 name = Shelf
+//Server
+desc=I don't want to know what's in those little urns.

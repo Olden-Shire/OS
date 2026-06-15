@@ -4,3 +4,8 @@ mirror = true
 raiseobject = 0
 models = 639/0
 name = Magic guild door
+//Server
+desc=The doors to the Magic guild.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_1523
+param=open_sound,null

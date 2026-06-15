@@ -15,3 +15,6 @@ recol1d = 6963
 recol2s = 7116
 recol2d = 6843
 name = Greenman's ale
+//Server
+desc=A glass of frothy ale.
+weight=550g

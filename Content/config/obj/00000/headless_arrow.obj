@@ -13,3 +13,6 @@ count2 = 6445, 3
 count3 = 6446, 4
 count4 = 6447, 5
 name = Headless arrow
+//Server
+desc=A wooden arrow shaft with flights attached.
+weight=12g

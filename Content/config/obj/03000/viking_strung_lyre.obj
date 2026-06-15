@@ -9,3 +9,7 @@ yan2d = 144
 xan2d = 464
 members = true
 name = Lyre
+//Server
+desc=It's a musical instrument I don't know how to play.
+wearpos=righthand
+weight=4lb

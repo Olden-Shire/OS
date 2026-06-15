@@ -12,3 +12,6 @@ recol2d = 14412
 recol3s = 22402
 recol3d = 14499
 name = Unusual fish
+//Server
+desc=An extremely rare, non edible fish.
+weight=400g

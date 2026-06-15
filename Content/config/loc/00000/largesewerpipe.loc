@@ -1,3 +1,5 @@
 // loc 872
 models_only = 1476
 name = Large sewer pipe
+//Server
+desc=It smells horrible in there.

@@ -9,3 +9,8 @@ xan2d = 368
 recol1s = 7062
 recol1d = 43486
 name = Blurite ore
+//Server
+desc=Definitely blue.
+weight=5lb
+category=category_91
+tradeable=no

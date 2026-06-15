@@ -5,3 +5,5 @@ ambient = 25
 contrast = 25
 models = 653/10 644/0
 name = Doorway
+//Server
+desc=The base of the archway.

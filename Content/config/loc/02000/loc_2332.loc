@@ -5,3 +5,5 @@ mapscene = 13
 blockwalk = true
 models = 1115/22
 name = A wooden log
+//Server
+desc=A nearly rotten wooden log that crosses the river.

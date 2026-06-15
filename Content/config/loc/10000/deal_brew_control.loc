@@ -5,3 +5,5 @@ width = 2
 anim = 2807
 models_only = 14316
 name = Brewing control
+//Server
+desc=This controls the entire brewery.

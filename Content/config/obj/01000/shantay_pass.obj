@@ -11,3 +11,6 @@ xan2d = 484
 contrast = 15
 ambient = 15
 name = Shantay pass
+//Server
+desc=Allows you to pass through the Shantay pass into the Kharid Desert.
+weight=10g

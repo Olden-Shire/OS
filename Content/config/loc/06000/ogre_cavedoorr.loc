@@ -5,3 +5,5 @@ op1 = Open
 recol = 61/6558
 models = 6791/0
 name = Ogre stone door
+//Server
+desc=A bulky door made from solid rock.

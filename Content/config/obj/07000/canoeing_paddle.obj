@@ -8,3 +8,7 @@ womanwear = obj_paddle_7414_wear, 6
 manwear = obj_paddle_7414_wear, 0
 iop2 = Wield
 name = Paddle
+//Server
+desc=With it, you row.
+weight=20g
+wearpos=righthand

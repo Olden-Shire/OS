@@ -4,3 +4,5 @@ nonsolid = true
 op5 = Search
 models_only = 7569
 name = Floor
+//Server
+desc=It's the floor...

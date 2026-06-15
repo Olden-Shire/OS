@@ -4,3 +4,5 @@ length = 2
 bgsound = 2197, 3
 models_only = 1219
 name = Range
+//Server
+desc=A hot range, where some soup is bubbling nicely.

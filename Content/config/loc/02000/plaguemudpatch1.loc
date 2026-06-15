@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models_only = 11448
 name = Mud patch
+//Server
+desc=Looks like someone's tried digging here.

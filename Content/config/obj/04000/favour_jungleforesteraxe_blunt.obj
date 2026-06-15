@@ -9,3 +9,6 @@ members = true
 recol1s = 926
 recol1d = 61
 name = Blunt axe
+//Server
+desc=A jungle forester's blunt axe.
+weight=3lb

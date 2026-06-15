@@ -11,3 +11,6 @@ members = true
 recol1s = 61
 recol1d = 21793
 name = Cup of tea
+//Server
+desc=Some nettle tea in a porcelain cup.
+weight=150g

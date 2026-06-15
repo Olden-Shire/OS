@@ -7,3 +7,6 @@ members = true
 recol1s = 6930
 recol1d = 7054
 name = Spirit seedling
+//Server
+desc=A spirit tree seed has been sown and watered in this plant pot.
+weight=2lb

@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 5526
 name = Heather
+//Server
+desc=Smells lovely!

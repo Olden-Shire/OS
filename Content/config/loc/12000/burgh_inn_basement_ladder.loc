@@ -4,3 +4,5 @@ mapscene = 7
 op1 = Climb-up
 models_only = 1208
 name = Ladder
+//Server
+desc=I can climb this.

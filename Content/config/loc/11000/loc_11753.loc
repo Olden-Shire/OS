@@ -3,3 +3,5 @@ active = 1
 recol = 10467/7277 36133/5219 37270/5202 22/6453 0/5190
 models_only = 7400
 name = Suit of Armour
+//Server
+desc=Armour of a White Knight. Decorative, but still effective.

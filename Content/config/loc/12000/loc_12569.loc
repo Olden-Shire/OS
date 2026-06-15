@@ -6,3 +6,5 @@ blockwalk = true
 nonblockrange = true
 models = 13604/22
 name = Temp Stone 4 Zip
+//Server
+desc=A very slippery stepping stone.

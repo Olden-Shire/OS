@@ -4,3 +4,5 @@ mapscene = 32
 nonsolid = true
 models_only = 1668
 name = Flax
+//Server
+desc=A plant cultivated for fibres.

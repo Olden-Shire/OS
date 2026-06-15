@@ -3,3 +3,5 @@ nonsolid = true
 op1 = Pick
 models_only = 5406
 name = Nettles
+//Server
+desc=I wish I could sting other people.

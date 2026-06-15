@@ -8,3 +8,7 @@ xan2d = 292
 members = true
 iop5 = Destroy
 name = Ogre tooth
+//Server
+desc=Very tooth like.
+weight=10g
+tradeable=no

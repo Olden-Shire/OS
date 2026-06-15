@@ -12,3 +12,7 @@ recol1d = 933
 recol2s = 127
 recol2d = 916
 name = Amulet of holthion
+//Server
+desc=A mystical demonic amulet.
+weight=10g
+tradeable=no

@@ -2,3 +2,5 @@
 op2 = Inspect
 models_only = 7794
 name = Blindweed Patch
+//Server
+desc=Free from weeds.

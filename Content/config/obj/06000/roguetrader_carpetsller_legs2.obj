@@ -9,3 +9,7 @@ xan2d = 572
 members = true
 cost = 25
 name = Desert legs
+//Server
+desc=Better than factor 50 sun cream.
+wearpos=legs
+weight=5g

@@ -8,3 +8,5 @@ op1 = Touch
 op3 = Open
 models_only = 14199
 name = Door
+//Server
+desc=A large door with a hieroglyph of a cat.

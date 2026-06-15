@@ -7,3 +7,5 @@ op1 = Jump-over
 nonblockrange = true
 models_only = 7603
 name = Strange floor
+//Server
+desc=Funny looking holes that don't look too inviting.

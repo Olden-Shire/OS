@@ -8,3 +8,6 @@ yan2d = 8
 xan2d = 112
 cost = 250
 name = Blessed pot
+//Server
+desc=A blessed silver pot made by Ruantun filled with your blood.
+weight=1lb

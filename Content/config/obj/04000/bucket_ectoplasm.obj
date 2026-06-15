@@ -9,3 +9,6 @@ iop4 = Empty
 recol1s = 39834
 recol1d = 22472
 name = Bucket of slime
+//Server
+desc=It's a bucket of ectoplasm.
+weight=3kg

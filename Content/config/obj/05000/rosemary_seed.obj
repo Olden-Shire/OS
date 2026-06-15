@@ -13,3 +13,6 @@ count3 = 5137, 4
 count4 = 5138, 5
 cost = 4
 name = Rosemary seed
+//Server
+desc=A rosemary seed - plant in a flower patch.
+weight=1g

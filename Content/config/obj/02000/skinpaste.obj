@@ -8,3 +8,7 @@ xan2d = 124
 recol1s = 61
 recol1d = 3550
 name = Paste
+//Server
+desc=A bottle of skin coloured paste.
+weight=15g
+tradeable=no

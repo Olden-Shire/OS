@@ -4,3 +4,5 @@ active = 1
 op2 = Search
 models = 2045/4
 name = Window
+//Server
+desc=Gives a lovely view of the desert, complete with metalic bars.

@@ -10,3 +10,7 @@ model = obj_priest_gown_426
 iop1 = Search
 members = true
 name = Shaman robe
+//Server
+desc=A tattered old robe.
+weight=4lb
+tradeable=no

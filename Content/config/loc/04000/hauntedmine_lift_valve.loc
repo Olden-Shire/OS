@@ -3,3 +3,5 @@ op1 = Turn
 recol = 21543/7566
 models_only = 1746
 name = Water Valve
+//Server
+desc=A valve to start and stop the flow of water.

@@ -13,3 +13,8 @@ yan2d = 156
 xan2d = 108
 cost = 1
 name = Crab helmet
+//Server
+desc=If it's good enough for crabs, it's good enough for me!
+wearpos=hat
+wearpos2=head
+weight=2lb

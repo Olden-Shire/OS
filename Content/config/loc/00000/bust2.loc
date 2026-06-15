@@ -1,3 +1,5 @@
 // loc 575
 models_only = 1165
 name = Statue
+//Server
+desc=A carving of a figure from the history of RuneScape.

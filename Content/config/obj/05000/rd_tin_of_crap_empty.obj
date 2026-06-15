@@ -8,3 +8,6 @@ members = true
 recol1s = 6379
 recol1d = 24850
 name = Tin
+//Server
+desc=A tin layered with some stuff from a vial.
+weight=101g

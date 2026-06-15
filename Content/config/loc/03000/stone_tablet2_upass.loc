@@ -2,3 +2,5 @@
 op1 = Read
 models_only = 759
 name = Stone tablet
+//Server
+desc=It's covered in strange writing.

@@ -3,3 +3,5 @@ nonsolid = true
 recol = 6090/8732 5594/7830 5970/7954
 models_only = 5023
 name = Fungus
+//Server
+desc=I doubt that's edible.

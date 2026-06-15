@@ -4,3 +4,5 @@ nonsolid = true
 mapscene = 33
 models_only = 8206
 name = Onion
+//Server
+desc=Makes you cry.

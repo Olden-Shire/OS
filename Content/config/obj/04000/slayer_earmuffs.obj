@@ -18,3 +18,7 @@ recol1d = 5006
 recol2s = 900
 recol2d = 4634
 name = Earmuffs
+//Server
+desc=These will protect my ears from loud noise.
+wearpos=hat
+weight=4oz

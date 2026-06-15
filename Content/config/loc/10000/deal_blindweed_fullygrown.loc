@@ -3,3 +3,5 @@ op1 = Pick
 op2 = Inspect
 models_only = 9870 7766
 name = Blindweed Patch
+//Server
+desc=Fully grown Blindweed.

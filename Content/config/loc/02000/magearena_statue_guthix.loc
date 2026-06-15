@@ -3,3 +3,5 @@ op1 = Pray at
 forceapproach = 11
 models_only = 3662
 name = Statue of Guthix
+//Server
+desc=I wonder how accurate a representation this is.

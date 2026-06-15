@@ -5,3 +5,6 @@ mirror = true
 op1 = Walk through
 models = 19291/0
 name = Mine cave
+//Server
+desc=A cave which has been mined out.
+category=desertrescue_minecave

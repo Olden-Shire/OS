@@ -3,3 +3,5 @@ active = 1
 nonsolid = true
 models = 7383/22
 name = Chart
+//Server
+desc=There are plenty of shelves - why's this on the floor?

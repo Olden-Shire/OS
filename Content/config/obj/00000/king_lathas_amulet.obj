@@ -11,3 +11,8 @@ iop2 = Wear
 manwear = obj_pendant_of_lucien_man, 0
 womanwear = obj_pendant_of_lucien_woman, 0
 name = Lathas' amulet
+//Server
+desc=Yup. It's an amulet.
+wearpos=front
+weight=10g
+tradeable=no

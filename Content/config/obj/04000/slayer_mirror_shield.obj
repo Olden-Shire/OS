@@ -11,3 +11,7 @@ womanwear = obj_mirror_shield_4156_wear, 6
 members = true
 cost = 5000
 name = Mirror shield
+//Server
+desc=I can just about see things in this shield's reflection.
+wearpos=lefthand
+weight=5lb

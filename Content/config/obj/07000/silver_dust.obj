@@ -9,3 +9,6 @@ xan2d = 264
 recol1s = 82
 recol1d = 61
 name = Silver dust
+//Server
+desc=It's ground up silver.
+weight=150g

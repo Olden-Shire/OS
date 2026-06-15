@@ -3,3 +3,6 @@ width = 3
 op1 = Pray-at
 models_only = 6264
 name = Altar
+//Server
+desc=A mysterious ancient altar to some forgotten god...
+category=prayer_altar

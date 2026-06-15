@@ -5,3 +5,5 @@ anim = 1632
 blockwalk = true
 models_only = 5172
 name = Lightning conductor
+//Server
+desc=A shocking piece of kit.

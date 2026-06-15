@@ -5,3 +5,7 @@ active = 1
 nonblockrange = true
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=A wrought iron gate.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_1563

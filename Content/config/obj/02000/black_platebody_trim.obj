@@ -17,3 +17,16 @@ recol2d = 8
 recol3s = 41
 recol3d = 0
 name = Black platebody (t)
+//Server
+desc=Black plate body with trim.
+wearpos=torso
+wearpos2=arms
+weight=22lb
+category=armour_body
+param=magicattack,-30
+param=rangeattack,-10
+param=stabdefence,41
+param=slashdefence,40
+param=crushdefence,30
+param=magicdefence,-6
+param=rangedefence,40

@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 5524/5904
 models_only = 14087 14088
 name = Barrel
+//Server
+desc=A wooden barrel for storage.

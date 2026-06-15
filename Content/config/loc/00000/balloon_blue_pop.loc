@@ -5,3 +5,5 @@ ambient = 60
 recol = 11200/43968
 models_only = 2229
 name = Party Balloon
+//Server
+desc=A party balloon.

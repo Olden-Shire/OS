@@ -7,3 +7,5 @@ xan2d = 124
 members = true
 stackable = true
 name = Flash powder
+//Server
+desc=A small satchel of bright powder!

@@ -6,3 +6,5 @@ sharelight = true
 op1 = Enter
 models_only = 6512
 name = Tunnel
+//Server
+desc=A tunnel leading into the depths of the earth.

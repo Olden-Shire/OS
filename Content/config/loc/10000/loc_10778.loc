@@ -5,3 +5,5 @@ op1 = Enter
 raiseobject = 0
 models_only = 10619 10618
 name = Telekinetic Teleport
+//Server
+desc=A teleport to the Telekinetic Theatre.

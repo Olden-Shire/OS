@@ -12,3 +12,8 @@ manhead = 69
 womanhead = 127
 iop2 = Wear
 name = Santa hat
+//Server
+desc=It's a Santa hat.
+wearpos=hat
+weight=4oz
+param=party_clean_exempt,^true

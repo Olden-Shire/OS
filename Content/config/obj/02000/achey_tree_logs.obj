@@ -10,3 +10,7 @@ members = true
 op4 = Light
 op5 = hidden
 name = Achey tree logs
+//Server
+desc=These logs are longer than normal.
+weight=3lb
+category=category_22

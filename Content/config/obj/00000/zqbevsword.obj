@@ -8,3 +8,7 @@ yan2d = 144
 xan2d = 604
 members = true
 name = Sword pommel
+//Server
+desc=An ivory sword pommel.
+weight=3oz
+tradeable=no

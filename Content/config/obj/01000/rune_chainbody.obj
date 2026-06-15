@@ -14,3 +14,14 @@ recol2d = 36141
 recol3s = 49
 recol3d = 35111
 name = Rune chainbody
+//Server
+desc=A series of connected metal rings.
+wearpos=torso
+weight=15lb
+category=armour_body
+param=magicattack,-15
+param=stabdefence,63
+param=slashdefence,72
+param=crushdefence,78
+param=magicdefence,-3
+param=rangedefence,65

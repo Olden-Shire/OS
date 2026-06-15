@@ -5,3 +5,5 @@ hillskew = true
 retex = 12/26
 models_only = 776
 name = Cave exit
+//Server
+desc=I think I can get out here...

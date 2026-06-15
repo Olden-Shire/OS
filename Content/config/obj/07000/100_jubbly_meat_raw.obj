@@ -8,3 +8,6 @@ yan2d = 1781
 xan2d = 150
 members = true
 name = Raw jubbly
+//Server
+desc=The uncooked meat of a Jubbly bird.
+weight=10kg

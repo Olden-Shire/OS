@@ -6,3 +6,5 @@ ambient = 40
 bgsound = 2150, 3
 models_only = 11934
 name = Fairy fountain
+//Server
+desc=A beautiful fairy fountain!

@@ -2,3 +2,5 @@
 active = 1
 models = 2067/4
 name = Dragonhide Leather
+//Server
+desc=Leather made from the skin of a Dragon.

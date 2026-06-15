@@ -6,3 +6,6 @@ xan2d = 172
 cost = 10
 members = true
 name = Tin
+//Server
+desc=I could probably pour something into this.
+weight=100g

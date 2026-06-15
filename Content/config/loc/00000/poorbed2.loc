@@ -3,3 +3,5 @@ width = 2
 length = 3
 models_only = 1239
 name = Bed
+//Server
+desc=I guess I could sleep in it if I were really tired.

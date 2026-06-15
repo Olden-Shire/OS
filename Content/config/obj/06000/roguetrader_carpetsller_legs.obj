@@ -13,3 +13,7 @@ cost = 25
 recol1s = 25238
 recol1d = 7390
 name = Desert robes
+//Server
+desc=Has a coarse hard wearing texture.
+wearpos=legs
+weight=5g

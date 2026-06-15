@@ -2,3 +2,5 @@
 ambient = 25
 models_only = 9167 7767
 name = Rose bush
+//Server
+desc=This red rosebush is fully grown.

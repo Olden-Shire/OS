@@ -3,3 +3,5 @@ op1 = Investigate
 active = 1
 models_only = 10991 10878
 name = Brazier
+//Server
+desc=Something burned in here long ago.

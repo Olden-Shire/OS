@@ -15,3 +15,15 @@ recol1d = 4
 recol2s = 22424
 recol2d = 16
 name = Black d'hide chaps
+//Server
+desc=Made from 100% real dragonhide.
+wearpos=legs
+weight=12lb
+category=armour_legs
+param=magicattack,-10
+param=rangeattack,17
+param=stabdefence,31
+param=slashdefence,25
+param=crushdefence,33
+param=magicdefence,28
+param=rangedefence,31

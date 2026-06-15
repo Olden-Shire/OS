@@ -13,3 +13,7 @@ recol1d = 17682
 recol2s = 10351
 recol2d = 15591
 name = Glough's journal
+//Server
+desc=Perhaps I should read it and see what Glough is up to!
+weight=18oz
+tradeable=no

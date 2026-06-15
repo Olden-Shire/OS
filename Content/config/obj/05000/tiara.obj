@@ -10,3 +10,7 @@ manhead = 7465
 womanhead = 7465
 cost = 100
 name = Tiara
+//Server
+desc=Makes me feel like a Princess.
+wearpos=hat
+weight=1kg

@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 7516
 recol1d = 6744
 name = Recipe
+//Server
+desc=It says on the back 'My favourite recipe.'
+weight=5g

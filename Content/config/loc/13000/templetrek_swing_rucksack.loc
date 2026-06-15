@@ -5,3 +5,5 @@ nonsolid = true
 op1 = Search
 models_only = 14145
 name = Backpack
+//Server
+desc=An old backpack, it seems to be falling apart.

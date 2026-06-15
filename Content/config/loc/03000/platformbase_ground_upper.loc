@@ -6,3 +6,5 @@ hillskew = true
 recol = 6689/7952
 models_only = 757
 name = Platform
+//Server
+desc=The base of a platform.

@@ -7,3 +7,5 @@ active = 1
 op1 = Climb
 models = 10765/4
 name = Climbing rocks
+//Server
+desc=I can climb this rocky outcrop.

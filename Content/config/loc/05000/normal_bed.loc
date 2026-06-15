@@ -2,3 +2,5 @@
 length = 2
 models_only = 5192
 name = Bed
+//Server
+desc=A well slept in bed.

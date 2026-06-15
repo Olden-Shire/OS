@@ -5,3 +5,5 @@ op1 = Enter
 recol = 49/20 41/16
 models_only = 6194 6195
 name = Portal
+//Server
+desc=It looks like the magic is failing!

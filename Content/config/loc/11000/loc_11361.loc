@@ -3,3 +3,5 @@ anim = 3180
 bgsound = 2220, 5
 models_only = 11291 11292
 name = Raw chompy bird
+//Server
+desc=It's a raw chompybird on a spit.

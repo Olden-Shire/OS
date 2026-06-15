@@ -8,3 +8,7 @@ yan2d = 1960
 xan2d = 240
 members = true
 name = Piece of railing
+//Server
+desc=A broken piece of railing.
+weight=2kg
+tradeable=no

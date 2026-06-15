@@ -4,3 +4,5 @@ sharelight = true
 recol = 12579/5553 12574/5553 12698/5553 12694/5553 12818/5673 13194/5553
 models_only = 5290 9593
 name = Figurehead
+//Server
+desc=This figure brings luck to those who sail.

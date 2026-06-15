@@ -6,3 +6,8 @@ recol = 24/4762
 retex = 2/45
 models = 1509/0 1511/9
 name = Gate
+//Server
+desc=This gate is closed shut.
+category=double_door_open_and_close_right
+param=next_loc_stage,loc_1563
+param=open_sound,grate_open

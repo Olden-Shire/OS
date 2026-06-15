@@ -9,3 +9,8 @@ zoom2d = 600
 yan2d = 1916
 xan2d = 324
 name = Berserker ring
+//Server
+desc=A ring reputed to bring out a berserk fury in its wearer.
+wearpos=ring
+weight=4g
+param=strengthbonus,4

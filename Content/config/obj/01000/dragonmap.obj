@@ -7,3 +7,7 @@ yan2d = 1881
 xan2d = 526
 iop1 = Study
 name = Crandor map
+//Server
+desc=A map of the route to Crandor.
+weight=15g
+tradeable=no

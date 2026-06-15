@@ -7,3 +7,6 @@ yan2d = 1816
 xan2d = 344
 iop1 = Eat
 name = Seaweed sandwich
+//Server
+desc=A 'Seaweed in Monkey Skin' sandwich. Perfect for statue repair.
+weight=500g

@@ -4,3 +4,5 @@ op1 = Open
 recol = 14499/10638 12698/12818 16536/16656 12818/12942
 models_only = 5272
 name = Closed chest
+//Server
+desc=I wonder what's inside.

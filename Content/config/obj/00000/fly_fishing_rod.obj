@@ -9,3 +9,7 @@ cost = 5
 manwear = obj_fishing_rod_307_wear, 0
 womanwear = obj_fishing_rod_307_wear, 6
 name = Fly fishing rod
+//Server
+desc=Useful for catching salmon or trout.
+weight=3lb
+param=fish_equipment_struct,fish_equipment_fly_fishing_rod

@@ -4,3 +4,5 @@ active = 1
 op1 = Search
 models_only = 9073
 name = Bar dispenser
+//Server
+desc=Your bars will come out here.

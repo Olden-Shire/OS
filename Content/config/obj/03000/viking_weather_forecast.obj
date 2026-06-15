@@ -8,3 +8,6 @@ members = true
 recol1s = 7516
 recol1d = 7500
 name = Weather forecast
+//Server
+desc=An estimate of expected local weather patterns.
+weight=5g

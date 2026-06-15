@@ -11,3 +11,8 @@ zoom2d = 1620
 yan2d = 1212
 xan2d = 272
 name = Torags hammer 50
+//Server
+desc=Torag the Corrupted's twin hammers.
+weight=8lb
+wearpos=righthand
+wearpos2=lefthand

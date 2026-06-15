@@ -8,3 +8,5 @@ resizey = 130
 nonsolid = true
 models_only = 4476
 name = Heap of bricks
+//Server
+desc=I doubt that was built to last...

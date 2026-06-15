@@ -15,3 +15,6 @@ cost = 6
 recol1s = 12587
 recol1d = 10157
 name = Yanillian seed
+//Server
+desc=A Yanillian hop seed - plant in a hops patch.
+weight=1g

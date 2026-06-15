@@ -24,3 +24,12 @@ recol4d = 13790
 recol5s = 74
 recol5d = 9329
 name = Ogre arrow
+//Server
+desc=A large ogre arrow with a bone tip.
+wearpos=quiver
+weight=16g
+category=ogre_arrows
+param=rangebonus,22
+param=levelrequire,30
+param=proj_launch,ogre_arrow_launch
+param=proj_travel,ogre_arrow_travel

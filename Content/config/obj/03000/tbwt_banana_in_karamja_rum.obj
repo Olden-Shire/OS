@@ -3,3 +3,6 @@ cost = 30
 model = obj_karamjan_rum_3165
 zoom2d = 1560
 name = Karamjan rum
+//Server
+desc=A banana has been stuffed into the neck of this bottle.
+weight=2lb

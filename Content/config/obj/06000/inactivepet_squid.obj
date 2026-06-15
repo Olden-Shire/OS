@@ -7,3 +7,6 @@ zoom2d = 1740
 yan2d = 60
 xan2d = 132
 name = Karamthulhu
+//Server
+desc=My pet sinister squid.
+weight=1g

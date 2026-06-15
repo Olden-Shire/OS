@@ -3,3 +3,5 @@ hillskew = true
 length = 2
 models_only = 11712
 name = Thorns
+//Server
+desc=Vicious thorns.

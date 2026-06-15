@@ -7,3 +7,5 @@ resizey = 128
 active = 1
 models_only = 14197
 name = Rock
+//Server
+desc=It's a long, hot rock.

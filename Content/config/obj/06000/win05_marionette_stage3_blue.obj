@@ -12,3 +12,6 @@ recol2d = 42795
 recol3s = 5543
 recol3d = 42910
 name = Blue marionette
+//Server
+desc=Needs legs.
+weight=600g

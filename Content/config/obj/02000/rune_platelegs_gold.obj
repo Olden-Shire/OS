@@ -14,3 +14,15 @@ recol2d = 37270
 recol3s = 57
 recol3d = 7114
 name = Rune platelegs (g)
+//Server
+desc=Rune platelegs with gold trim.
+wearpos=legs
+weight=20lb
+category=armour_legs
+param=magicattack,-21
+param=rangeattack,-7
+param=stabdefence,51
+param=slashdefence,49
+param=crushdefence,47
+param=magicdefence,-4
+param=rangedefence,49

@@ -7,3 +7,5 @@ ambient = 7
 recol = 4899/28310 5921/28310 4892/28310
 models = 1124/22
 name = Path
+//Server
+desc=A path leading out of this swampy dead end.

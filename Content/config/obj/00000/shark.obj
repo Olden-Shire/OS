@@ -13,3 +13,7 @@ recol1d = 4418
 recol2s = 103
 recol2d = 4517
 name = Shark
+//Server
+desc=I'd better be careful eating this.
+weight=650g
+category=category_58

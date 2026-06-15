@@ -9,3 +9,6 @@ members = true
 recol1s = 82
 recol1d = 152
 name = Vampire dust
+//Server
+desc=That used to be a vampire!
+weight=2oz

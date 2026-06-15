@@ -2,3 +2,5 @@
 op1 = Climb-up
 models_only = 1208
 name = Ladder
+//Server
+desc=This leads up to the sleeping area.

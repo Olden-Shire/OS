@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 14494/7465
 models_only = 775
 name = Rocks
+//Server
+desc=A rock with a pickaxe and mining tools.

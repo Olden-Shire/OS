@@ -12,3 +12,6 @@ recol1d = 16470
 recol2s = 4661
 recol2d = 6319
 name = Burnt crab meat
+//Server
+desc=Oh dear, it's burnt.
+weight=2lb

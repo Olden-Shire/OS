@@ -5,3 +5,5 @@ mirror = true
 op1 = Open
 models_only = 570
 name = Door
+//Server
+desc=It's a door.

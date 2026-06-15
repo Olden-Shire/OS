@@ -6,3 +6,6 @@ xan2d = 36
 members = true
 iop5 = Destroy
 name = Sandstone base
+//Server
+desc=The base and legs of a sandstone statue.
+weight=23kg

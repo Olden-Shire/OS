@@ -6,3 +6,5 @@ op1 = Open
 op2 = Search
 models_only = 1823
 name = Ancient Gate
+//Server
+desc=A huge, strangely constructed doorway, not sure how this opens.

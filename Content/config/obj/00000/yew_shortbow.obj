@@ -13,3 +13,16 @@ womanwear = obj_shortbow_841_wear, 6
 recol1s = 6674
 recol1d = 9135
 name = Yew shortbow
+//Server
+desc=A shortbow made out of yew, still effective.
+wearpos=righthand
+wearpos2=lefthand
+category=weapon_bow
+weight=3lb
+param=rangeattack,47
+param=levelrequire,40
+param=attackrange,7
+param=rangeattack_anim,human_bow
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,arrowlaunch2
+param=damagetype,^ranged_style

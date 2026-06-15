@@ -10,3 +10,9 @@ members = true
 recol1s = 7062
 recol1d = 8128
 name = 'perfect' gold bar
+//Server
+desc=It's a bar of 'perfect' gold.
+weight=4lb
+category=category_151
+param=smelting_struct,smelting_perfect_gold_bar
+tradeable=no

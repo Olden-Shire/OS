@@ -6,3 +6,5 @@ op1 = Enter
 forceapproach = 7
 models_only = 732
 name = Hollowed rock
+//Server
+desc=The entrance to the cave.

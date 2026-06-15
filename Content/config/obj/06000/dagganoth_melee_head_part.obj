@@ -8,3 +8,6 @@ zoom2d = 890
 yan2d = 1100
 xan2d = 556
 name = Rock-shell chunk
+//Server
+desc=A spherical chunk of rock-shell.
+weight=7lb

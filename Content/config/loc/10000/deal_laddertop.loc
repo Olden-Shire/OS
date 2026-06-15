@@ -9,3 +9,5 @@ resizey = 151
 resizez = 128
 models_only = 9504
 name = Ladder
+//Server
+desc=I can climb down this.

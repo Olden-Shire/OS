@@ -6,3 +6,8 @@ yan2d = 1856
 xan2d = 204
 iop4 = Empty
 name = Bowl of water
+//Server
+desc=It's a bowl of water.
+weight=2lb
+param=is_water_source,^true
+param=next_obj_stage,bowl_empty

@@ -3,3 +3,5 @@ active = 1
 ambient = 10
 models = 3507/4
 name = Hanging meat
+//Server
+desc=So how long has this been dead, then?

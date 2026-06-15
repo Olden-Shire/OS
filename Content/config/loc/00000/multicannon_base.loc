@@ -5,3 +5,5 @@ op1 = Pick-up
 nonsolid = true
 models_only = 1800
 name = Cannon base
+//Server
+desc=The cannon is built on here.

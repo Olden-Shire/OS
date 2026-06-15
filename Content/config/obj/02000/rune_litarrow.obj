@@ -14,3 +14,13 @@ count2 = 2547, 3
 count3 = 2548, 4
 count4 = 2549, 5
 name = Rune fire arrows
+//Server
+desc=These rune headed arrows are ablaze with fire.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,49
+param=levelrequire,40
+param=proj_launch,fire_arrow_launch
+param=proj_travel,fire_arrow_travel
+param=lit_arrow,^true

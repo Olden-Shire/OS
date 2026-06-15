@@ -14,3 +14,6 @@ recol1d = 111
 recol2s = 78
 recol2d = 103
 name = Spinning plate
+//Server
+desc=It has a picture of a dragon on it.
+weight=50g

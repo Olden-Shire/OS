@@ -13,3 +13,8 @@ members = true
 recol1s = 61
 recol1d = 99
 name = White warhammer
+//Server
+desc=I don't think it's intended for joinery.
+wearpos=righthand
+wearpos=righthand
+weight=4lb

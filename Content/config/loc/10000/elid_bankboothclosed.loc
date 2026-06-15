@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 12579/5541 12698/5665 12818/5784 21776/6032 27152/5660
 models_only = 5271
 name = Closed bank booth
+//Server
+desc=This booth is closed.

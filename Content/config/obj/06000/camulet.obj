@@ -14,3 +14,7 @@ manwear = obj_camulet_man, 0
 womanwear = obj_camulet_woman, 0
 members = true
 name = Camulet
+//Server
+desc=An amulet of Camel-speak. It makes vague braying noises.
+wearpos=front
+weight=7g

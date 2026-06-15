@@ -11,3 +11,7 @@ xan2d = 498
 contrast = 15
 ambient = 15
 name = Technical plans
+//Server
+desc=Plans of a technical nature.
+weight=15g
+tradeable=no

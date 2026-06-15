@@ -6,3 +6,5 @@ forceapproach = 7
 nonblockrange = true
 models_only = 25035
 name = Manhole
+//Server
+desc=How dangerous, someone has left this manhole open.

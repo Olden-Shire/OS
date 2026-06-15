@@ -9,3 +9,6 @@ zoom2d = 1830
 yan2d = 1500
 xan2d = 300
 name = Giant pen
+//Server
+desc=The King should be able to use this.
+weight=35g

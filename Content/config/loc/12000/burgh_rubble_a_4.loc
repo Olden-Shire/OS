@@ -3,3 +3,5 @@ mapscene = 12
 nonblockrange = true
 models_only = 14034
 name = Rubble
+//Server
+desc=Hard rubble reduced to small pieces, it's quite dusty and not easy to move.

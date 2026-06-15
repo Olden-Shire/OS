@@ -13,3 +13,6 @@ count4 = 5227, 5
 stackable = true
 cost = 64
 name = Torstol seed
+//Server
+desc=A torstol seed - plant in a herb patch.
+weight=1g

@@ -11,3 +11,7 @@ yan2d = 156
 xan2d = 164
 cost = 350
 name = Pirate boots
+//Server
+desc=Not for land lubbers.
+wearpos=feet
+weight=4kg

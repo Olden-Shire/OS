@@ -9,3 +9,7 @@ cost = 187500
 iop1 = Set-up
 members = true
 name = Cannon base
+//Server
+desc=The cannon is built on this.
+weight=10kg
+category=cannon_parts

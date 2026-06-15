@@ -6,3 +6,5 @@ resizey = 1
 bgsound = 2171, 3
 models_only = 2320
 name = Whirlpool
+//Server
+desc=A whirlpool.

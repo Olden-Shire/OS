@@ -10,3 +10,7 @@ yan2d = 764
 xan2d = 489
 members = true
 name = Queen's secateurs
+//Server
+desc=Contains the Fairy Queen's magic essence.
+wearpos=righthand
+weight=1lb

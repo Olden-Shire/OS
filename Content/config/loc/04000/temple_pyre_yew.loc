@@ -3,3 +3,5 @@ anim = 1304
 length = 3
 models_only = 4138
 name = Funeral Pyre
+//Server
+desc=A place to cremate the dead. Needs a body.

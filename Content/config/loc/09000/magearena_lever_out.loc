@@ -2,3 +2,5 @@
 op1 = Pull
 models_only = 9615
 name = Lever
+//Server
+desc=This must let me out of the arena somehow...

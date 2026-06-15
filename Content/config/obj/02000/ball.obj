@@ -6,3 +6,7 @@ yan2d = 1956
 xan2d = 300
 members = true
 name = Ball
+//Server
+desc=A child's ball.
+weight=150g
+tradeable=no

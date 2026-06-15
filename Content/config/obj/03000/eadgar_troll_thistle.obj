@@ -10,3 +10,6 @@ xan2d = 128
 ambient = 30
 contrast = 30
 name = Troll thistle
+//Server
+desc=It's tough and spiky.
+weight=1g

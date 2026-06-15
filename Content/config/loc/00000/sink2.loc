@@ -6,3 +6,6 @@ nonblockrange = true
 retex = 22/16
 models_only = 1182
 name = Sink
+//Server
+desc=Ideal for washing things in.
+category=watersource

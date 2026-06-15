@@ -12,3 +12,8 @@ recol1d = 28
 recol2s = 10529
 recol2d = 20793
 name = Pasty jogre bones
+//Server
+desc=Burnt Jogre bones smothered with raw Karambwanji Paste.
+weight=800g
+category=bones
+param=bone_exp,170

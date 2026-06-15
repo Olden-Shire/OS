@@ -5,3 +5,5 @@ nonsolid = true
 recol = 6315/11045 8497/11045
 models_only = 1818
 name = Dead Yommi
+//Server
+desc=A dead fully grown Yommi tree, you'll need a tough, sharp axe to remove this.

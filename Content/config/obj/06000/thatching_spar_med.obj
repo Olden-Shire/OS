@@ -12,3 +12,7 @@ cost = 15
 recol1s = 7461
 recol1d = 7841
 name = Thatch spar med
+//Server
+desc=A wooden pole for use in primitive construction.
+weight=100g
+wearpos=lefthand

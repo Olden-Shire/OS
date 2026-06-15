@@ -8,3 +8,7 @@ members = true
 recol1s = 61
 recol1d = 17344
 name = Snakeweed mixture
+//Server
+desc=It's a mixture of Snakeweed and water. Needs another ingredient.
+weight=25g
+tradeable=no

@@ -8,3 +8,10 @@ yan2d = 672
 xan2d = 360
 iop1 = Read
 name = Challenge scroll
+//Server
+desc=I need to answer this correctly.
+weight=20g
+category=trail_challenge
+param=trail_desc,If x is 15 and y is 3|What is 3x + y?
+param=trail_challenge_answer,48
+tradeable=no

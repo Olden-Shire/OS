@@ -11,3 +11,6 @@ xan2d = 132
 cost = 20
 members = true
 name = Beer
+//Server
+desc=Frothy and alcoholic.
+weight=550g

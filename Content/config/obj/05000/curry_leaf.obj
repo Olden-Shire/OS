@@ -8,3 +8,6 @@ ambient = 15
 members = true
 cost = 19
 name = Curry leaf
+//Server
+desc=I could make a spicy curry with this.
+weight=1oz

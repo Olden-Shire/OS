@@ -4,3 +4,5 @@ active = 1
 recol = 24/8128
 models = 2111/4
 name = Plaque
+//Server
+desc=This mentions the monk trapped here...

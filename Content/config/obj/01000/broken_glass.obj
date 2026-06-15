@@ -10,3 +10,7 @@ cost = 0
 ambient = 40
 contrast = 20
 name = Broken glass
+//Server
+desc=Smashed glass.
+weight=2oz
+tradeable=no

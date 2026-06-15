@@ -3,3 +3,5 @@ width = 2
 length = 3
 models_only = 1480
 name = Cart
+//Server
+desc=One horse power, wooden suspension. A beauty.

@@ -9,3 +9,9 @@ xan2d = 196
 recol1s = 7062
 recol1d = 5652
 name = Bronze bar
+//Server
+desc=It's a bar of bronze.
+weight=4lb
+category=category_151
+param=smelting_struct,smelting_bronze_bar
+param=smithing_anvil_struct,smithing_bronze_bar

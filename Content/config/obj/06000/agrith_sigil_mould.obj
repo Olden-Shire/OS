@@ -5,3 +5,6 @@ yan2d = 880
 xan2d = 212
 members = true
 name = Demonic sigil mould
+//Server
+desc=Used to make the sigil of the demon Agrith-Naar.
+weight=1lb

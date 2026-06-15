@@ -15,3 +15,6 @@ cost = 2
 recol1s = 12587
 recol1d = 13617
 name = Hammerstone seed
+//Server
+desc=A Hammerstone hop seed - plant in a hops patch.
+weight=1g

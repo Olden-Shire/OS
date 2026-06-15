@@ -1,3 +1,5 @@
 // loc 12661
 models_only = 1402
 name = Signpost
+//Server
+desc=Entrance to the monkey agility arena.

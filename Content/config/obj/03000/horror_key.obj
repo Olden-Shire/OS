@@ -9,3 +9,6 @@ members = true
 recol1s = 8128
 recol1d = 5553
 name = Lighthouse key
+//Server
+desc=The key to the front door of the lighthouse.
+weight=10g

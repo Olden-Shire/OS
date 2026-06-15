@@ -6,3 +6,8 @@ yan2d = 1700
 xan2d = 100
 members = true
 name = Orb of light
+//Server
+desc=A magical sphere that glimmers within.
+weight=1lb
+param=orb_bit,^upass_orb4_bit
+tradeable=no

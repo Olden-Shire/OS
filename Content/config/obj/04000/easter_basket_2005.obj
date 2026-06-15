@@ -10,3 +10,7 @@ zoom2d = 960
 yan2d = 184
 xan2d = 136
 name = Basket of eggs
+//Server
+desc=Hand them out to spread the Easter happiness.
+wearpos=righthand
+weight=100g

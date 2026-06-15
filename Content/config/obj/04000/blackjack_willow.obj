@@ -12,3 +12,8 @@ cost = 600
 recol1s = 5640
 recol1d = 9903
 name = Willow-blackjack
+//Server
+desc=A handy little club made out of willow.
+weight=1kg
+wearpos=righthand
+weight=4lb

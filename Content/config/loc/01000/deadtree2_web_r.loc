@@ -3,3 +3,5 @@ mapscene = 6
 sharelight = true
 models_only = 1621
 name = Dead tree
+//Server
+desc=It's only useful for firewood now.

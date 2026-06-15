@@ -3,3 +3,5 @@ hillskew = true
 sharelight = true
 models_only = 756
 name = Bridge
+//Server
+desc=A bridge.

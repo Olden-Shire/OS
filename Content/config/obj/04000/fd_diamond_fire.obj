@@ -15,3 +15,6 @@ recol2d = 10262
 recol3s = 478
 recol3d = 70
 name = Smoke diamond
+//Server
+desc=The Diamond of Smoke.
+weight=1g

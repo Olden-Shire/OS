@@ -12,3 +12,7 @@ manwear = obj_kitchen_knife_7447_wear, 0
 womanwear = obj_kitchen_knife_7447_wear, 6
 members = true
 name = Kitchen knife
+//Server
+desc=A sharp, dependable knife, for filleting meat.
+wearpos=righthand
+weight=1lb

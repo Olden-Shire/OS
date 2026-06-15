@@ -12,3 +12,8 @@ yan2d = 212
 xan2d = 364
 cost = 625
 name = Rogue top
+//Server
+desc=Black banded leather armour, a rogue's dream!
+wearpos=torso
+wearpos2=arms
+weight=1lb

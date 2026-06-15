@@ -6,3 +6,5 @@ noshadow = true
 active = 1
 models_only = 14149 14155
 name = Swamp tree
+//Server
+desc=Small swamp tree.

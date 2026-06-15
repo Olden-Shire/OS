@@ -19,3 +19,8 @@ recol3d = 2863
 recol4s = 11173
 recol4d = 2987
 name = Red banana
+//Server
+desc=Like a banana only redder.
+weight=10g
+wearpos=lefthand
+weight=1oz

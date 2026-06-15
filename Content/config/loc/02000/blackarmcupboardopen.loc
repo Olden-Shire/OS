@@ -8,3 +8,6 @@ op2 = Search
 forceapproach = 13
 models_only = 25048
 name = Cupboard
+//Server
+desc=Might be worth searching.
+param=cupboard_other,blackarmcupboardshut

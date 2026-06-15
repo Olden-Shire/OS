@@ -8,3 +8,6 @@ xan2d = 200
 iop1 = Eat
 cost = 25
 name = Baguette
+//Server
+desc=A freshly baked baguette.
+weight=20g

@@ -10,3 +10,8 @@ womanwear = obj_granite_maul_4153_wear, 6
 members = true
 cost = 50000
 name = Granite maul
+//Server
+desc=Simplicity is the best weapon.
+wearpos=righthand
+wearpos2=lefthand
+weight=10lb

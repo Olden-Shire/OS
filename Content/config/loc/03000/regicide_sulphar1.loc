@@ -3,3 +3,5 @@ hillskew = true
 op1 = Take
 models_only = 3927
 name = Sulphur
+//Server
+desc=A yellow crystal structure.

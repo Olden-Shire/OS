@@ -7,3 +7,7 @@ yan2d = 512
 xan2d = 192
 members = true
 name = Broken staff
+//Server
+desc=I pity the poor person beaten with this!
+weight=4lb
+tradeable=no

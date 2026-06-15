@@ -6,3 +6,6 @@ zoom2d = 1580
 yan2d = 400
 xan2d = 224
 name = Halberd
+//Server
+desc=A halberd.
+weight=10lb

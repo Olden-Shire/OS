@@ -4,3 +4,5 @@ length = 2
 op1 = Read
 models_only = 1370
 name = Grave of Scorpius
+//Server
+desc=A weathered old gravestone.

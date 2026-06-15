@@ -4,3 +4,7 @@ hillskew = true
 recol = 5667/17938 5786/17036
 models_only = 3595
 name = Rotting log
+//Server
+desc=Not sure if I should sit on that.
+param=next_loc_stage,log_druidicspirit2
+param=open_sound,bloom_mushroom

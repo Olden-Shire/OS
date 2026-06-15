@@ -2,3 +2,5 @@
 nonblockrange = true
 models_only = 1328
 name = Throne
+//Server
+desc=A kingly seat for a royal behind.

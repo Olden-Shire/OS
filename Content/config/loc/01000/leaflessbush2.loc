@@ -9,3 +9,5 @@ nonblockrange = true
 recol = 5388/8483
 models_only = 1640
 name = Bush
+//Server
+desc=All the leaves have fallen off.

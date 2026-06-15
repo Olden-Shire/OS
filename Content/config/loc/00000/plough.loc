@@ -3,3 +3,5 @@ width = 3
 length = 2
 models_only = 1520
 name = Plough
+//Server
+desc=It's like a land rudder.

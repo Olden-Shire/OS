@@ -4,3 +4,5 @@ length = 2
 mapscene = 5
 models_only = 1575
 name = Palm
+//Server
+desc=An essential for tropical islands.

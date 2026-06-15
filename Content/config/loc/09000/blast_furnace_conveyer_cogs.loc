@@ -2,3 +2,5 @@
 active = 1
 models_only = 9064
 name = Drive belt
+//Server
+desc=It keeps the conveyor belt running.

@@ -2,3 +2,5 @@
 nonsolid = true
 models_only = 764
 name = Stalactite
+//Server
+desc=A tooth shaped rock formation protruding from the ceiling.

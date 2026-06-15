@@ -4,3 +4,5 @@ width = 2
 recol = 6689/41
 models_only = 774
 name = Obstacle pipe
+//Server
+desc=A pipe I can squeeze through.

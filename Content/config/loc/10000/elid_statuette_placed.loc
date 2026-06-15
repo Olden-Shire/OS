@@ -3,3 +3,6 @@ ambient = 15
 op1 = Pray-at
 models_only = 10190 10191
 name = Elidinis Statuette
+//Server
+desc=The Elidinis Statuette is back in its place.
+category=prayer_altar

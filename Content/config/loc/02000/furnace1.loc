@@ -7,3 +7,6 @@ op2 = Smelt
 bgsound = 2210, 10
 models_only = 1192
 name = Furnace
+//Server
+desc=A hot place for forging things in.
+category=smithing_furnace

@@ -1,3 +1,5 @@
 // loc 5271
 models_only = 5273
 name = Open chest
+//Server
+desc=I wonder what's inside.

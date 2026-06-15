@@ -4,3 +4,5 @@ op1 = View-game
 nonblockrange = true
 models_only = 4599
 name = Table
+//Server
+desc=A game of draughts is being played on this table.

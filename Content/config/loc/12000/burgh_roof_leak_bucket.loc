@@ -6,3 +6,5 @@ resizez = 192
 nonblockrange = true
 models_only = 14028 14030
 name = Bucket
+//Server
+desc=It's catching the leaking water from the roof.

@@ -8,3 +8,6 @@ members = true
 recol1s = 4773
 recol1d = 26
 name = Burnt chompy
+//Server
+desc=Overly crispy chompy.
+weight=1kg

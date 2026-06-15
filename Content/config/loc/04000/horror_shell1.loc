@@ -4,3 +4,5 @@ blockwalk = true
 recol = 8644/64 7890/10326
 models = 1420/22
 name = Shell
+//Server
+desc=Best left on the beach.

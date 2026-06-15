@@ -13,3 +13,15 @@ count2 = 911, 3
 count3 = 910, 4
 count4 = 913, 5
 name = Steel arrow
+//Server
+desc=Arrows with steel heads.
+wearpos=quiver
+weight=16g
+category=arrows
+param=rangebonus,16
+param=levelrequire,5
+param=proj_launch,steel_arrow_launch
+param=proj_travel,steel_arrow_travel
+param=weapon_poisoned,steel_arrow_p
+param=weapon_poisoned_message,You poison some arrows.
+param=next_obj_stage,steel_unlitarrow

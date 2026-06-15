@@ -12,3 +12,7 @@ womanwear = obj_diamond_1601_wear, 6
 recol1s = 127
 recol1d = 931
 name = Ruby
+//Server
+desc=This looks valuable.
+weight=2g
+category=legends_gem

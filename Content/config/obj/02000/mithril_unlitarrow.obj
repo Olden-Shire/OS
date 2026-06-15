@@ -12,3 +12,14 @@ count2 = 2543, 3
 count3 = 2544, 4
 count4 = 2545, 5
 name = Mithril fire arrows
+//Server
+desc=Arrows with mithril heads and oil soaked cloth.
+wearpos=quiver
+weight=14g
+category=arrows
+param=rangebonus,22
+param=levelrequire,20
+param=proj_launch,fire_arrow_launch
+param=proj_travel,fire_arrow_travel
+param=next_obj_stage,mithril_litarrow
+param=unlit_arrow,^true

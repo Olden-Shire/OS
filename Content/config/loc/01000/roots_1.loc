@@ -3,3 +3,5 @@ mapscene = 6
 nonblockrange = true
 models_only = 2172
 name = Roots
+//Server
+desc=A gnarly old tree root.

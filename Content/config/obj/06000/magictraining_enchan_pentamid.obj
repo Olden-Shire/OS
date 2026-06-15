@@ -9,3 +9,6 @@ ambient = 10
 members = true
 cost = 0
 name = Pentamid
+//Server
+desc=A red pentamid.
+weight=1g

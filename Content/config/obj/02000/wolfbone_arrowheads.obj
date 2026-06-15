@@ -15,3 +15,6 @@ recol2d = 13790
 recol3s = 74
 recol3d = 10326
 name = Wolfbone arrowtips
+//Server
+desc=I can make an ogre arrow with these.
+weight=4g

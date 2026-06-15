@@ -12,3 +12,7 @@ womanwear = obj_studded_chaps_g_7366_woman, 0
 recol1s = 24
 recol1d = 7114
 name = Studded chaps (g)
+//Server
+desc=Those studs should provide a bit more protection. Nice trim too!
+wearpos=legs
+weight=10lb

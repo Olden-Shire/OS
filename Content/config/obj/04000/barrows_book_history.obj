@@ -17,3 +17,6 @@ recol3d = 12818
 recol4s = 10351
 recol4d = 18665
 name = Crumbling tome
+//Server
+desc=This book must be really old!
+weight=18oz

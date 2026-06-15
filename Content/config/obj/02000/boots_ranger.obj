@@ -11,3 +11,14 @@ zoom2d = 770
 yan2d = 160
 xan2d = 152
 name = Ranger boots
+//Server
+desc=Lightweight boots ideal for rangers.
+weight=10oz
+wearpos=feet
+category=category_17
+param=magicattack,-10
+param=rangeattack,8
+param=stabdefence,2
+param=slashdefence,3
+param=crushdefence,4
+param=magicdefence,2

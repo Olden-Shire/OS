@@ -3,3 +3,5 @@ ambient = 20
 op1 = Fire-at
 models_only = 1451
 name = Target
+//Server
+desc=I wonder if I can hit a bullseye?

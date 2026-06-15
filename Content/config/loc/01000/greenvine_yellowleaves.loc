@@ -3,3 +3,5 @@ hillskew = true
 sharelight = true
 models_only = 1654
 name = Vine
+//Server
+desc=The leaves of a nasty creeping plant.

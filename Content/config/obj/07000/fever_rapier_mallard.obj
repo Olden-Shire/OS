@@ -11,3 +11,7 @@ yan2d = 1403
 xan2d = 263
 cost = 25600
 name = Rapier
+//Server
+desc=The very butcher of a silk button.
+wearpos=righthand
+weight=4lb

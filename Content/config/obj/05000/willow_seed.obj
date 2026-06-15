@@ -13,3 +13,6 @@ count3 = 5117, 4
 count4 = 5118, 5
 cost = 16
 name = Willow seed
+//Server
+desc=Plant this in a plantpot of soil to grow a sapling.
+weight=1g

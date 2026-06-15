@@ -5,3 +5,6 @@ zoom2d = 1090
 yan2d = 2020
 xan2d = 304
 name = Sticky red goop
+//Server
+desc=Yup, it's sticky, it's red and it's goop.
+weight=1g

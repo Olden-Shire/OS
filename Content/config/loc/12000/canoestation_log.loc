@@ -5,3 +5,5 @@ op1 = Float Log
 op3 = hidden
 models_only = 12001 12010
 name = Canoe Station
+//Server
+desc=You can create a canoe here.

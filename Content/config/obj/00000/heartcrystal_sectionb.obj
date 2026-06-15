@@ -5,3 +5,8 @@ xof2d = 2
 yof2d = 1
 zoom2d = 660
 name = Hunk of crystal
+//Server
+desc=It looks like it's been snapped off of something.
+weight=50g
+tradeable=no
+param=crystal_bit,^legends_smelting_hunk

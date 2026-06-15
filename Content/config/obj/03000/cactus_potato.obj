@@ -6,3 +6,7 @@ yan2d = 300
 xan2d = 348
 members = true
 name = Potato cactus
+//Server
+desc=How am I supposed to eat that?!
+weight=500g
+param=brew_potion_struct,3dose1magic

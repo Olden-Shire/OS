@@ -6,3 +6,7 @@ yan2d = 1826
 xan2d = 83
 members = true
 name = Specimen jar
+//Server
+desc=A receptacle for specimens!
+weight=2oz
+tradeable=no

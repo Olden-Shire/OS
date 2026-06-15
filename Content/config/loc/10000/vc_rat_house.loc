@@ -5,3 +5,5 @@ width = 3
 length = 2
 models_only = 10056
 name = Rat barn
+//Server
+desc=Contains many rats.

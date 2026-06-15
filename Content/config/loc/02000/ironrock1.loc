@@ -7,3 +7,8 @@ nonblockrange = true
 recol = 24/2576
 models_only = 1390
 name = Rocks
+//Server
+desc=A rocky outcrop.
+category=mining_rock_fast
+param=next_loc_stage_mining,plainrock1
+param=macro_gas,macro_ironrock1

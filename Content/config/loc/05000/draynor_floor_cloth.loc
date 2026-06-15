@@ -1,3 +1,5 @@
 // loc 5562
 models_only = 5561
 name = Cloth
+//Server
+desc=Aggie has already dyed this cloth.

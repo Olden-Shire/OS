@@ -6,3 +6,5 @@ ambient = 20
 contrast = 20
 models_only = 21236
 name = Lift
+//Server
+desc=It looks like it's water powered.

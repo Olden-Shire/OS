@@ -8,3 +8,5 @@ nonblockrange = true
 recol = 10299/7952 24/53
 models_only = 3184
 name = Rocks
+//Server
+desc=A rocky outcrop.

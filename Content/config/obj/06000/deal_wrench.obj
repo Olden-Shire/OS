@@ -10,3 +10,6 @@ zoom2d = 1210
 yan2d = 2032
 xan2d = 588
 name = Wrench
+//Server
+desc=A heavy metal wrench.
+weight=5g

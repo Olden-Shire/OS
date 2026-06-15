@@ -15,3 +15,6 @@ count7 = 1002, 250
 count8 = 1003, 1000
 count9 = 1004, 10000
 name = Coins
+//Server
+desc=Lovely money!
+weight=2g

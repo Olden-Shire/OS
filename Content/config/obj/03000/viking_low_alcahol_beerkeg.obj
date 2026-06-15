@@ -6,3 +6,6 @@ yan2d = 4
 xan2d = 128
 members = true
 name = Low alcohol keg
+//Server
+desc=Suspiciously close to beer, but without the side effects.
+weight=20kg

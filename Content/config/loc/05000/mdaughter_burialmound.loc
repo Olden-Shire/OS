@@ -3,3 +3,5 @@ length = 2
 hillskew = true
 models_only = 5694
 name = Burial mound
+//Server
+desc=This is the place where you buried Asleif.

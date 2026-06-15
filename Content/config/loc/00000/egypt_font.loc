@@ -2,3 +2,5 @@
 active = 1
 models_only = 905
 name = Font
+//Server
+desc=A posh water bowl.

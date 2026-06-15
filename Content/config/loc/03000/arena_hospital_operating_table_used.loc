@@ -3,3 +3,5 @@ length = 2
 active = 1
 models_only = 3248
 name = Operating Table
+//Server
+desc=I don't really want to end up here...

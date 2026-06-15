@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 8321
 name = Well
+//Server
+desc=A local water source.

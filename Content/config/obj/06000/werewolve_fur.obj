@@ -7,3 +7,6 @@ yan2d = 168
 xan2d = 388
 cost = 10
 name = Fur
+//Server
+desc=This would make warm clothing.
+weight=3kg

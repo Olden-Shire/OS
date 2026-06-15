@@ -5,3 +5,5 @@ active = 1
 op1 = Climb
 models = 2078/4
 name = Hand holds
+//Server
+desc=Rocky walls, you may be able to climb it.

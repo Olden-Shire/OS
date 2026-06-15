@@ -3,3 +3,5 @@ op1 = Take-axe
 recol = 61/5652
 models_only = 5495
 name = Logs
+//Server
+desc=Someone's been chopping logs.

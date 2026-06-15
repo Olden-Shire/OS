@@ -5,3 +5,6 @@ yan2d = 1856
 xan2d = 204
 members = true
 name = Puddle of slime
+//Server
+desc=It's a Puddle of slime.
+weight=1lb

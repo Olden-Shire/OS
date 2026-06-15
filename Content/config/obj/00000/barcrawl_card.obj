@@ -9,3 +9,7 @@ yan2d = 1644
 xan2d = 404
 iop1 = Read
 name = Barcrawl card
+//Server
+desc=The official Alfred Grimhand bar crawl card.
+weight=14g
+tradeable=no

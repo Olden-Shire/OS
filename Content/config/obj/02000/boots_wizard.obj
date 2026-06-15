@@ -13,3 +13,9 @@ xan2d = 152
 recol1s = 4626
 recol1d = 38814
 name = Wizard boots
+//Server
+desc=Slightly magical boots.
+weight=10oz
+wearpos=feet
+param=magicattack,4
+param=magicdefence,4

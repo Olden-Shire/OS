@@ -9,3 +9,8 @@ members = true
 recol1s = 82
 recol1d = 40487
 name = Dragon scale dust
+//Server
+desc=Finely ground scale of Dragon.
+weight=7g
+param=brew_potion_struct,weapon_poison
+param=brew_potion_struct_secondary,3dose1antidragon

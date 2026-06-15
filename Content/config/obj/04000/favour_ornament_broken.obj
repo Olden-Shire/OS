@@ -9,3 +9,6 @@ members = true
 recol1s = 4541
 recol1d = 3627
 name = Broken vane part
+//Server
+desc=This weathervane ornament is damaged.
+weight=1g

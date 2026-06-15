@@ -12,3 +12,7 @@ womanwear = obj_longbow_u_48_wear, 6
 recol1s = 6674
 recol1d = 9903
 name = Willow longbow (u)
+//Server
+desc=An unstrung willow longbow, I need a bowstring for this.
+weight=47oz
+category=unstrung_bow

@@ -8,3 +8,5 @@ nonblockrange = true
 recol = 6689/7331
 models_only = 818
 name = Boulder
+//Server
+desc=It overlooks the path below. Let's hope it won't fall on your head.

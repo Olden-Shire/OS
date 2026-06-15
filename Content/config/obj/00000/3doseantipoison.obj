@@ -11,3 +11,11 @@ iop4 = Empty
 recol1s = 61
 recol1d = 18372
 name = Antipoison(3)
+//Server
+desc=3 doses of antipoison potion.
+weight=30g
+category=potion
+param=cures_poison,yes
+param=next_obj_stage,2doseantipoison
+param=decant_potion_enum,potion_antipoison
+param=dose_count,3

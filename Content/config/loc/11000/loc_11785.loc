@@ -7,3 +7,5 @@ mapscene = 11
 models_only = 11707 11709 11708
 models_only = 11707 7767 7767
 name = Standing stone
+//Server
+desc=What ancient rites were performed here?

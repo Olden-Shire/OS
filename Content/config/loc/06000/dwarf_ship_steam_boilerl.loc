@@ -3,3 +3,5 @@ length = 2
 mirror = true
 models_only = 6001
 name = Boiler
+//Server
+desc=Powers the boat.

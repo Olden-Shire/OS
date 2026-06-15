@@ -3,3 +3,5 @@ width = 2
 nonblockrange = true
 models_only = 1364
 name = Tombstone
+//Server
+desc=The remains of someone lie inside.

@@ -10,3 +10,6 @@ cost = 1
 recol1s = 82
 recol1d = 15120
 name = Ground kelp
+//Server
+desc=Kelp flakes. Smells of the sea.
+weight=2oz

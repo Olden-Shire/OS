@@ -6,3 +6,5 @@ contrast = 100
 bgsound = 3139, 3
 models_only = 2318
 name = Portal
+//Server
+desc=A portal from this mystical place.

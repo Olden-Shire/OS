@@ -10,3 +10,6 @@ cost = 1
 recol1s = 61
 recol1d = 22356
 name = Toxic naphtha
+//Server
+desc=A barrel full of toxic naphtha.
+weight=32kg

@@ -13,3 +13,10 @@ womanhead = 11408
 cost = 15000
 members = true
 name = Enchanted hat
+//Server
+desc=A three pointed hat of magic.
+wearpos=hat
+wearpos2=head
+weight=1lb
+param=magicattack,4
+param=magicdefence,4

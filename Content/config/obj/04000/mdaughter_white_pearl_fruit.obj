@@ -7,3 +7,6 @@ zoom2d = 880
 yan2d = 516
 xan2d = 304
 name = White pearl
+//Server
+desc=This fruit is known as White Pearl. Should taste good.
+weight=750g

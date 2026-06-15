@@ -13,3 +13,6 @@ recol1d = 2000
 recol2s = 103
 recol2d = 1498
 name = Raw admiral pie
+//Server
+desc=This would taste a lot better cooked.
+weight=1g

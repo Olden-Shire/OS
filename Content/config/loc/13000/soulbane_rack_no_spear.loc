@@ -4,3 +4,5 @@ offsetx = -40
 op1 = Take-from
 models_only = 5924 6382 5923
 name = Weapon rack
+//Server
+desc=Oooo, sharp, pointy things!

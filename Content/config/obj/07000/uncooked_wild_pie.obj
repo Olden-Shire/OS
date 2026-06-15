@@ -9,3 +9,6 @@ contrast = 10
 ambient = 10
 cost = 91
 name = Raw wild pie
+//Server
+desc=Good as it looks, I'd better cook it.
+weight=1g

@@ -9,3 +9,5 @@ forceapproach = 14
 nonblockrange = true
 models_only = 13614 13612 13610
 name = Red Banana Tree
+//Server
+desc=A Banana Tree.

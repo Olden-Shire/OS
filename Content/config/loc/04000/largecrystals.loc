@@ -3,3 +3,5 @@ hillskew = true
 op1 = Cut
 models_only = 4895
 name = Crystal outcrop
+//Server
+desc=Shiny!

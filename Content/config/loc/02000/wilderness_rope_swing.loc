@@ -4,3 +4,5 @@ length = 6
 nonsolid = true
 models_only = 2269
 name = Ropeswing
+//Server
+desc=Use this to swing over crevices.

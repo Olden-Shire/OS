@@ -5,3 +5,5 @@ hillskew = true
 op1 = Exit
 models_only = 3578
 name = Grotto
+//Server
+desc=The door.

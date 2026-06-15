@@ -2,3 +2,5 @@
 ambient = 30
 models_only = 7908 10187
 name = Shelves
+//Server
+desc=Contains equipment for growing herbs.

@@ -7,3 +7,7 @@ zoom2d = 848
 yan2d = 279
 xan2d = 330
 name = Hoop
+//Server
+desc=Try to throw it over the stick.
+wearpos=righthand
+weight=3lb

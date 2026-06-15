@@ -6,3 +6,5 @@ mapscene = 5
 ambient = 25
 models_only = 7935
 name = Banana Tree
+//Server
+desc=Grows weird yellow fruit.

@@ -8,3 +8,6 @@ xan2d = 468
 recol1s = 127
 recol1d = 6932
 name = Monkey skin
+//Server
+desc=It's the skin of a (hopefully) dead monkey.
+weight=300g

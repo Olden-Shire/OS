@@ -20,3 +20,15 @@ recol3d = 127
 recol4s = 11200
 recol4d = 94
 name = Unholy symbol
+//Server
+desc=An unholy symbol of Zamorak.
+wearpos=front
+weight=7g
+param=stabattack,2
+param=slashattack,2
+param=crushattack,2
+param=magicattack,2
+param=rangeattack,2
+param=prayerbonus,8
+tradeable=no
+param=zamorakitem,^true

@@ -3,3 +3,5 @@ active = 1
 op1 = Open
 models = 6623/0
 name = Door
+//Server
+desc=I wonder what awaits me on the other side?

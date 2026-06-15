@@ -3,3 +3,5 @@ length = 3
 width = 3
 models_only = 6431
 name = Rock
+//Server
+desc=Rocky.

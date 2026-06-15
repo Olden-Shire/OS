@@ -3,3 +3,5 @@ active = 1
 op1 = Open
 models = 9476/0 9477/9
 name = Exit door
+//Server
+desc=Probably the nicest door in this ghastly place.

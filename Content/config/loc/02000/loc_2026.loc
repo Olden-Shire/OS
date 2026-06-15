@@ -1,3 +1,5 @@
 // loc 2026
 models_only = 1491
 name = Fishing spot
+//Server
+desc=I can see fish swimming in the water.

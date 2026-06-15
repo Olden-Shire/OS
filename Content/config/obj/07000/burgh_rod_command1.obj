@@ -16,3 +16,7 @@ recol2d = 37925
 recol3s = 37949
 recol3d = 32798
 name = Silvthrill rod
+//Server
+desc=A silvery rod of mithril and silver with a sapphire on the top.
+weight=1g
+wearpos=righthand

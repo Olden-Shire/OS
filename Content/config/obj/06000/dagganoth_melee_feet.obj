@@ -17,3 +17,7 @@ recol2d = 10262
 recol3s = 3226
 recol3d = 10262
 name = Rock-shell boots
+//Server
+desc=Some Fremennik boots, made from the shards of a rock crabs' shell.
+weight=7lb
+wearpos=feet

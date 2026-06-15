@@ -9,3 +9,7 @@ xan2d = 316
 recol1s = 5010
 recol1d = 5392
 name = Damp sticks
+//Server
+desc=Some damp wooden sticks.
+weight=3oz
+tradeable=no

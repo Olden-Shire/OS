@@ -17,3 +17,7 @@ recol3d = 38226
 recol4s = 25238
 recol4d = 37270
 name = Rune plateskirt (t)
+//Server
+desc=Rune plateskirt with trim.
+wearpos=legs
+weight=20lb

@@ -9,3 +9,7 @@ xan2d = 368
 recol1s = 7062
 recol1d = 10508
 name = Coal
+//Server
+desc=Hmm a non-renewable energy source!
+weight=5lb
+category=category_91

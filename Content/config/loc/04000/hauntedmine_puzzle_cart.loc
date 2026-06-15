@@ -2,3 +2,5 @@
 op1 = Search
 models_only = 1398
 name = Mine cart
+//Server
+desc=Useful for moving items around the mine.

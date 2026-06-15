@@ -4,3 +4,5 @@ nonblockrange = true
 recol = 13518/40008
 models_only = 7778 7779 7782
 name = Fermenting Vat
+//Server
+desc=Kelda Stout is fermenting in this vat.

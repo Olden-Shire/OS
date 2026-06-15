@@ -4,3 +4,5 @@ noshadow = true
 recol = 27028/127
 models_only = 2259
 name = Swamp
+//Server
+desc=This stinks...

@@ -6,3 +6,6 @@ zoom2d = 1310
 yan2d = 1920
 xan2d = 412
 name = Torso
+//Server
+desc=A decomposing torso, from which issues the acrid stench of the grave.
+weight=42lb

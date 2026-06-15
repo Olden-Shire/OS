@@ -1,3 +1,5 @@
 // loc 9083
 models_only = 8997
 name = Dye Pots
+//Server
+desc=Pots full of dye.

@@ -4,3 +4,5 @@ op1 = Climb-up
 forceapproach = 14
 models = 10485/4
 name = Trapdoor Steps
+//Server
+desc=You can climb up these.

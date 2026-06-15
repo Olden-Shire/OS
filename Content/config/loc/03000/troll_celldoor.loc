@@ -2,3 +2,8 @@
 op1 = Open
 models = 3802/0
 name = Cell Door
+//Server
+desc=The door is closed.
+category=door_closed
+param=next_loc_stage,troll_celldoor_open
+param=open_sound,iron_door_open

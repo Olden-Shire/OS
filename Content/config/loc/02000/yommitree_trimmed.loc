@@ -4,3 +4,5 @@ length = 3
 nonsolid = true
 models_only = 1741
 name = Trimmed Yommi
+//Server
+desc=A trimmed Yommi tree log, perfect for sculpting into a totem pole.

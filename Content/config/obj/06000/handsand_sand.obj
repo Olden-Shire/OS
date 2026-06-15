@@ -9,3 +9,6 @@ iop5 = Destroy
 recol1s = 82
 recol1d = 8891
 name = Sand
+//Server
+desc=A handful of sand from Sandy's pocket.
+weight=1g

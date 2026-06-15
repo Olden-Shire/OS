@@ -1,3 +1,5 @@
 // loc 709
 models_only = 1280
 name = Bell rope
+//Server
+desc=Surprisingly rope-shaped.

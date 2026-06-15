@@ -13,3 +13,16 @@ iop2 = Wield
 recol1s = 22459
 recol1d = 13221
 name = Poisoned dart(p)
+//Server
+desc=A deadly throwing dart with a poisoned tip.
+wearpos=righthand
+weight=10g
+category=weapon_thrown
+param=attackrate,3
+param=attackrange,3
+param=rangeattack_anim,human_stake2
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,dart
+param=proj_launch,bronze_dart_launch
+param=proj_travel,bronze_dart_travel
+tradeable=no

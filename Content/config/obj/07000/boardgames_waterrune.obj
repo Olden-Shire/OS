@@ -7,3 +7,7 @@ xan2d = 528
 members = true
 ambient = 30
 name = Board game piece
+//Server
+desc=A piece used in board games.
+weight=2g
+category=boardgames_piece

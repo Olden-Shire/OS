@@ -4,3 +4,5 @@ nonblockrange = true
 retex = 5/16 22/16
 models_only = 1213 5491
 name = Ned's Table
+//Server
+desc=Ned is making some rope here.

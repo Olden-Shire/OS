@@ -9,3 +9,7 @@ iop2 = Empty
 recol1s = 61
 recol1d = 6080
 name = Unidentified liquid
+//Server
+desc=A strong chemical.
+weight=25g
+tradeable=no

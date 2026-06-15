@@ -3,3 +3,6 @@ active = 1
 op1 = Open
 models = 14353/0
 name = Gate
+//Server
+desc=A wooden gate.
+category=hemenster_gate

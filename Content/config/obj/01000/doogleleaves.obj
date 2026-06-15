@@ -11,3 +11,6 @@ recol1d = 21962
 recol2s = 103
 recol2d = 21731
 name = Doogle leaves
+//Server
+desc=A tasty herb good for seasoning.
+weight=7g

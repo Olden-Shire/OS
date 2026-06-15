@@ -4,3 +4,5 @@ op1 = Climb-down
 mapscene = 7
 models_only = 1215
 name = Ladder
+//Server
+desc=Takes me into the ship.

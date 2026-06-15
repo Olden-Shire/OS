@@ -8,3 +8,6 @@ yan2d = 1776
 zan2d = 1828
 xan2d = 396
 name = Forlorn boot
+//Server
+desc=It seems someone vacated this boot in a hurry...
+weight=2oz

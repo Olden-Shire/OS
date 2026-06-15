@@ -16,3 +16,6 @@ recol2d = 7461
 recol3s = 17292
 recol3d = 7461
 name = Dried thistle
+//Server
+desc=It'll be easier to grind now.
+weight=1g

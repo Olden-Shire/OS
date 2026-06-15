@@ -3,3 +3,5 @@ width = 2
 length = 2
 models_only = 733
 name = Cave entrance
+//Server
+desc=The entrance to the cave.

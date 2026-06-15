@@ -7,3 +7,6 @@ yan2d = 1892
 xan2d = 264
 members = true
 name = Ground bat bones
+//Server
+desc=Let's see it fly now!
+weight=100g

@@ -14,3 +14,7 @@ recol2d = 10508
 recol3s = 10388
 recol3d = 10760
 name = Guthans skirt 0
+//Server
+desc=Guthan the Infested's chainskirt.
+weight=18lb
+wearpos=legs

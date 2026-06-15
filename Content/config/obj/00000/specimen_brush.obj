@@ -7,3 +7,7 @@ yan2d = 116
 xan2d = 272
 members = true
 name = Specimen brush
+//Server
+desc=A small brush used to clean rock samples.
+weight=2oz
+tradeable=no

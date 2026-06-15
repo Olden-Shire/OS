@@ -6,3 +6,7 @@ yan2d = 1276
 xan2d = 472
 members = true
 name = Damaged dagger
+//Server
+desc=Pointy.
+weight=1lb
+tradeable=no

@@ -12,3 +12,7 @@ iop2 = Wield
 members = true
 cost = 500
 name = Mage's book
+//Server
+desc=The magical book of the Mage.
+wearpos=lefthand
+weight=1kg

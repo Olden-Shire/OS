@@ -4,3 +4,5 @@ active = 1
 op1 = Climb-through
 models = 6430/0
 name = Hole
+//Server
+desc=It looks like a hole in the wall.

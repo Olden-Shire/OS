@@ -17,3 +17,8 @@ recol1d = 8485
 recol2s = 8390
 recol2d = 8373
 name = Facemask
+//Server
+desc=Stops me breathing in too much dust.
+wearpos=hat
+wearpos2=jaw
+weight=4oz

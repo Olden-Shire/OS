@@ -11,3 +11,10 @@ iop4 = Empty
 recol1s = 61
 recol1d = 58946
 name = Super energy(4)
+//Server
+desc=4 doses of super energy potion.
+weight=35g
+category=potion
+param=next_obj_stage,3dose2energy
+param=decant_potion_enum,potion_2energy
+param=dose_count,4

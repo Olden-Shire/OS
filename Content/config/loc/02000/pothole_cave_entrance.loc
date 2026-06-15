@@ -6,3 +6,5 @@ occlude = true
 op2 = Search
 models_only = 830
 name = Rocks
+//Server
+desc=A collection of rocks over what looks like a depression.

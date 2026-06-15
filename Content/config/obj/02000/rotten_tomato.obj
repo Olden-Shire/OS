@@ -11,3 +11,6 @@ recol1d = 3742
 recol2s = 22430
 recol2d = 9647
 name = Rotten tomato
+//Server
+desc=Pretty smelly.
+weight=80g

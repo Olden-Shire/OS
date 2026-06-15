@@ -7,3 +7,5 @@ op1 = Cross
 recol = 5014/6449
 models = 1115/22
 name = Log balance
+//Server
+desc=I can balance on this log.

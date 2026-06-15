@@ -13,3 +13,7 @@ yan2d = 156
 xan2d = 236
 iop5 = Destroy
 name = Doctors hat
+//Server
+desc=A mirror helps reflect light on the subject.
+wearpos=hat
+weight=300g

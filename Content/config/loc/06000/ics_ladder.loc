@@ -4,3 +4,5 @@ op1 = Climb-up
 mapscene = 7
 models_only = 6243
 name = Ladder
+//Server
+desc=A ladder!! Never seen one of those before.

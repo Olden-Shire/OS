@@ -3,3 +3,5 @@ mapscene = 6
 recol = 6028/61985
 models_only = 2173
 name = Roots
+//Server
+desc=The roots of this tree are exposed.

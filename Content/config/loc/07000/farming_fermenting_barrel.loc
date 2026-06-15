@@ -3,3 +3,5 @@ ambient = 15
 nonblockrange = true
 models_only = 7775
 name = Barrel
+//Server
+desc=An ale barrel.

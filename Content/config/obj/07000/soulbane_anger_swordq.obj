@@ -10,3 +10,7 @@ manwear = obj_anger_sword_wear, 0
 womanwear = obj_anger_sword_wear, 6
 members = true
 name = Anger sword
+//Server
+desc=A heavy duty sword.
+wearpos=righthand
+weight=4lb

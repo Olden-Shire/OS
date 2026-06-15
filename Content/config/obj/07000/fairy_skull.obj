@@ -11,3 +11,6 @@ iop5 = Destroy
 recol1s = 5231
 recol1d = 7514
 name = Draynor skull
+//Server
+desc=I shouldn't joke, this is a grave matter.
+weight=80g

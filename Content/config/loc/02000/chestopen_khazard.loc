@@ -4,3 +4,5 @@ op2 = Close
 forceapproach = 14
 models_only = 1226
 name = Open chest
+//Server
+desc=It can't hurt to just have a look, can it?

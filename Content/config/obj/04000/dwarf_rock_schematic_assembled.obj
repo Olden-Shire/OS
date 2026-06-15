@@ -5,3 +5,6 @@ zoom2d = 1100
 xan2d = 516
 members = true
 name = Schematic
+//Server
+desc=The assembled schematic for modifying the dwarven multicannon.
+weight=14g

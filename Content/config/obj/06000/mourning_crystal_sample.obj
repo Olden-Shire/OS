@@ -11,3 +11,6 @@ members = true
 recol1s = 127
 recol1d = 24
 name = Blackened crystal
+//Server
+desc=A blackened crystal sample.
+weight=15g

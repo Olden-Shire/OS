@@ -3,3 +3,5 @@ op1 = Hit
 forceapproach = 11
 models_only = 1286
 name = Dummy
+//Server
+desc=I've met less intelligent conversationalists.

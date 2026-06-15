@@ -9,3 +9,7 @@ members = true
 cost = 0
 iop1 = Read
 name = Demonic tome
+//Server
+desc=Will this book help in summoning Agrith-Naar?
+weight=1kg
+weight=1lb

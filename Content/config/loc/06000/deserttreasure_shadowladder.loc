@@ -2,3 +2,5 @@
 op3 = Climb-down
 models_only = 6263
 name = Ladder
+//Server
+desc=This leads downwards.

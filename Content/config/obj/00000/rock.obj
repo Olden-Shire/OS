@@ -7,3 +7,6 @@ yan2d = 20
 xan2d = 204
 members = true
 name = Rock
+//Server
+desc=A rock
+weight=1kg
