@@ -22,7 +22,9 @@ pub fn packet_size(opcode: u8) -> Option<i32> {
         197 => 0,
 
         22 => 12,  // IF_BUTTOND (drag)
-        92 => -1,  // CLIENT_CHEAT (::commands)
+        // CLIENT_CHEAT (::commands) — the client (Client.doCheat) sends opcode
+        // 30 with a p1 length + jstr body (sans `::`). 30 is already var-sized
+        // in the group below; decode routes it to ClientCheat.
         155 => 4,  // IF_BUTTON — opcode + p4(component), no sub (deob 8514)
         93 => -1,  // clan/social
 
@@ -133,7 +135,7 @@ pub enum ClientMessage {
 pub fn decode(opcode: u8, buf: &mut Packet, length: usize) -> ClientMessage {
     match opcode {
         176 | 60 | 214 => decode_move_click(opcode, buf, length),
-        92 => ClientMessage::ClientCheat { command: buf.gjstr() },
+        30 => ClientMessage::ClientCheat { command: buf.gjstr() },
         155 => {
             // IF_BUTTON — the deob sends `p1Enc(155); p4(component)` and nothing
             // else (4-byte body, no sub). Reading a phantom 2-byte sub here
@@ -339,6 +341,21 @@ mod tests {
                 }
                 other => panic!("expected IfButton, got {other:?}"),
             }
+        }
+    }
+
+    #[test]
+    fn client_cheat_decodes_from_opcode_30() {
+        use super::{decode, packet_size, ClientMessage};
+        use io::packet::Packet;
+        // Client.doCheat sends opcode 30 + p1 length + jstr (with the `::` stripped).
+        assert_eq!(packet_size(30), Some(-1), "CLIENT_CHEAT is var-length");
+        let mut p = Packet::new(32);
+        p.pjstr("if 231");
+        p.pos = 0;
+        match decode(30, &mut p, 7) {
+            ClientMessage::ClientCheat { command } => assert_eq!(command, "if 231"),
+            other => panic!("expected ClientCheat, got {other:?}"),
         }
     }
 
