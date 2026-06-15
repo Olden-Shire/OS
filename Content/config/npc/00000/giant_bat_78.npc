@@ -1,8 +1,0 @@
-// npc 78
-size = 2
-walkanim = seq_4913
-readyanim = seq_4914
-op2 = Attack
-vislevel = 27
-name = Giant bat
-model1 = model_18898

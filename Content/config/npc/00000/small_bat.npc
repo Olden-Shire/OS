@@ -1,0 +1,10 @@
+// npc 412
+size = 1
+resizeh = 64
+resizev = 64
+walkanim = seq_4913
+readyanim = seq_4914
+op2 = Attack
+vislevel = 6
+name = Bat
+model1 = model_18900
