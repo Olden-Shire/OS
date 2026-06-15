@@ -199,12 +199,10 @@ impl Packet {
             panic!("");
         }
         for ch in s.chars() {
-            let cp = ch as u32;
-            // Cp1252 maps U+0000..U+007F + U+00A0..U+00FF identically
-            // (1:1 byte). Other BMP chars in 0x80..0x9F use a small
-            // override table; for now we narrow with `as u8` which
-            // matches Java's `(byte) ch` for the common case.
-            let b = if cp <= 0xFF { cp as u8 } else { b'?' };
+            // Cp1252.encodeStringToCp1252 via the canonical jstring codec:
+            // 1:1 for U+0001..U+007F + U+00A0..U+00FF, the smart-punctuation
+            // override table for the 0x80..0x9F slots, '?' otherwise.
+            let b = (crate::jstring::wide_to_cp1252(ch) & 0xFF) as u8;
             let i = self.pos as usize;
             self.pos += 1;
             self.data[i] = b;
@@ -371,8 +369,7 @@ impl Packet {
         if var2 == 0 {
             String::new()
         } else {
-            // Cp1252 → UTF-8; for ASCII this is identity.
-            String::from_utf8_lossy(&self.data[var1..var1 + var2]).into_owned()
+            crate::jstring::cp1252_slice_to_string(&self.data, var1, var2)
         }
     }
 
@@ -396,7 +393,7 @@ impl Packet {
         if var3 == 0 {
             String::new()
         } else {
-            String::from_utf8_lossy(&self.data[var2..var2 + var3]).into_owned()
+            crate::jstring::cp1252_slice_to_string(&self.data, var2, var3)
         }
     }
 

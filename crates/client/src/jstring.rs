@@ -30,7 +30,12 @@ const CP1252_EXTENDED: [i32; 32] = [
 pub fn wide_to_cp1252(ch: char) -> i32 {
     let c = ch as u32;
     // Java: `arg0 > 0 && arg0 < 128` — NUL is NOT passed through; it
-    // falls to the '?' fallback like any other unmappable char.
+    // falls to the '?' fallback like any other unmappable char. (The
+    // extended-table search below would otherwise match NUL against a
+    // `'\0'` hole and wrongly return 0x81, so guard it explicitly.)
+    if c == 0 {
+        return b'?' as i32;
+    }
     if (1..0x80).contains(&c) || (0xA0..=0xFF).contains(&c) {
         return c as i32;
     }
@@ -109,6 +114,7 @@ pub fn encode_string_to_cp1252_range(
 pub fn cp1252_slice_to_string(buf: &[u8], off: usize, len: usize) -> String {
     buf[off..(off + len).min(buf.len())]
         .iter()
+        .filter(|&&b| b != 0) // Java cp1252ToUtf8 skips `var6 == 0`
         .map(|&b| cp1252_to_utf8(b))
         .collect()
 }

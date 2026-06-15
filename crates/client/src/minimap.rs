@@ -462,13 +462,16 @@ pub fn update(c: &mut Client) {
         };
         d.players.push((p.entity.x, p.entity.z, kind));
     }
+    // Java guards `hintNpc >= 0 && hintNpc < length` (and likewise
+    // hintPlayer) — a negative id draws NO arrow, so the match-guards
+    // must reject < 0 rather than clamp it to slot 0.
     d.hint = match c.hint_type {
-        1 => c.npcs.get(c.hint_npc.max(0) as usize)
+        1 if c.hint_npc >= 0 => c.npcs.get(c.hint_npc as usize)
             .and_then(|o| o.as_ref())
             .map(|n| (n.entity.x / 32, n.entity.z / 32)),
         2 => Some((c.hint_tile_x * 4 - c.map_build_base_x * 4 + 2,
                    c.hint_tile_z * 4 - c.map_build_base_z * 4 + 2)),
-        10 => c.players.get(c.hint_player.max(0) as usize)
+        10 if c.hint_player >= 0 => c.players.get(c.hint_player as usize)
             .and_then(|o| o.as_ref())
             .map(|p| (p.entity.x / 32, p.entity.z / 32)),
         _ => None,
