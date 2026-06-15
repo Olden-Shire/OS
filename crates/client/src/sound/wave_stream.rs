@@ -138,6 +138,15 @@ impl WaveStream {
         self.set_mlr_vol();
     }
 
+    // @ObfuscatedName("et.applyVolume(I)V") — WaveStream.applyVolume(int).
+    // Verbatim port of WaveStream.java:131-133: `setVolPanFine(vol << 6,
+    // getPanFine())` — the raw (un-shifted) volume convenience used by
+    // BgSound; keeps the current pan.
+    pub fn apply_volume_int(&mut self, vol: i32) {
+        let pan = self.get_pan_fine();
+        self.apply_volume(vol << 6, pan);
+    }
+
     // @ObfuscatedName("et.av(I)V") — WaveStream.setVolumeFine. Verbatim
     // port of WaveStream.java:137-138. Keeps the current pan but
     // updates the volume to the fine value (already in 6-bit-shifted
@@ -445,4 +454,35 @@ fn get_l_vol(vol: i32, pan: i32) -> i32 {
 }
 fn get_r_vol(vol: i32, pan: i32) -> i32 {
     if pan < 0 { -vol } else { (vol as f64 * (pan as f64 * 1.220_703_125e-4).sqrt() + 0.5) as i32 }
+}
+
+// Bridge WaveStream into the Mixer's voice list. Java's WaveStream IS a
+// PcmStream subclass; we expose the same contract so `Mixer.add_stream`
+// can hold it as `Box<dyn PcmStream>`. The trait's sample-offset
+// do_mix maps 1:1 to the inherent frame-based mixer (off/len are
+// frames; the inherent writer indexes `out[(frame_start+f)*2]`).
+impl crate::sound::pcm_streamable::PcmStreamable for WaveStream {
+    // WaveStream voices don't chain off the mixer clock; Java only reads
+    // PcmStreamable.position for stream sequencing, which WaveStream
+    // doesn't use.
+    fn position(&self) -> i64 { 0 }
+}
+
+impl crate::sound::pcm_stream::PcmStream for WaveStream {
+    fn do_mix(&mut self, buf: &mut [i32], off: i32, len: i32) -> bool {
+        WaveStream::do_mix(self, buf, off as usize, len as usize);
+        self.is_finished()
+    }
+    fn pretend_to_mix(&mut self, len: i32) {
+        WaveStream::pretend_to_mix(self, len);
+    }
+    fn priority(&self) -> i32 {
+        WaveStream::priority(self)
+    }
+    fn is_active(&self) -> bool {
+        !self.is_finished()
+    }
+    fn set_secondary_volume(&mut self, vol: i32) {
+        self.apply_volume_int(vol);
+    }
 }

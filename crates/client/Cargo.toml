@@ -45,11 +45,21 @@ js-sys = "0.3"
 web-time = "1"
 console_error_panic_hook = "0.1"
 web-sys = { version = "0.3", features = [
+    "AudioContext",
+    "AudioContextState",
+    "AudioDestinationNode",
+    "AudioNode",
+    "AudioProcessingEvent",
+    "AudioBuffer",
+    "BaseAudioContext",
+    "GainNode",
+    "ScriptProcessorNode",
     "BinaryType",
     "CloseEvent",
     "console",
     "Document",
     "ErrorEvent",
+    "EventTarget",
     "Headers",
     "HtmlCanvasElement",
     "Location",

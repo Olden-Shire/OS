@@ -412,6 +412,7 @@ pub fn open(binary_slot: i32, sprites_slot: i32, songs_slot: i32) {
 // transitions out of state 10/20 into 25 (loading) or 30 (in-game).
 pub fn close() {
     let mut s = STATE.lock().unwrap();
+    if !s.open { return; } // Java: `if (!open) return;` — idempotent.
     s.open = false;
     s.title_back = None;
     s.title_back2 = None;
@@ -436,6 +437,13 @@ pub fn close() {
     s.flame_cycle = 0;
     s.login_user.clear();
     s.login_pass.clear();
+    drop(s);
+
+    // Java TitleScreen.close: fade the title song (scape main) out on the
+    // login transition — even with no server MIDI_SONG packet to follow.
+    if let Some(h) = MUSIC_HANDLE.lock().unwrap().as_ref() {
+        h.manager.lock().begin_login_fade_out();
+    }
 }
 
 // @ObfuscatedName("br.n(Lft;B)V") — TitleScreen.generateFlameCoolingMap

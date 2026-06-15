@@ -383,6 +383,7 @@ pub fn game_tick_housekeeping(c: &mut Client) {
     crate::client::move_npcs(c);
     crate::client::timeout_chat(c);
     crate::client::loc_change_do_queue(c);
+    crate::client::sounds_do_queue(c); // Java: soundsDoQueue() (Client.java:2420)
     // Projectile / map-anim motion advances per FRAME in Java's
     // addProjectiles/addMapAnim (scaled by worldUpdateNum); it now
     // runs from scene::push_entities like Java's drawScene prologue.
@@ -1872,6 +1873,10 @@ fn zone_packet(c: &mut Client, opcode: i32, p: &mut crate::io::packet::Packet) {
                     c.wave_sound_ids[idx] = sound_id;
                     c.wave_loops[idx] = loops;
                     c.wave_delay[idx] = delay;
+                    c.wave_sounds[idx] = None;
+                    // Java: waveAmbient = (x<<16)+(z<<8)+radius — the packed
+                    // positional-volume key soundsDoQueue fades by distance.
+                    c.wave_ambient[idx] = (tile_x << 16) + (tile_z << 8) + radius;
                     c.wave_count += 1;
                 }
             }

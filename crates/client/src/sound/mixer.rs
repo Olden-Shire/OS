@@ -17,14 +17,19 @@ use std::sync::Mutex;
 use super::pcm_stream::PcmStream;
 
 pub struct Mixer {
-    // @ObfuscatedName("bo.r") — active voices.
-    pub streams: Vec<Box<dyn PcmStream + Send>>,
+    // @ObfuscatedName("bo.r") — active voices, each tagged with a stable
+    // voice id so callers (BgSound) can adjust/stop a specific voice
+    // without holding the `WaveStream` by reference (Java holds it
+    // directly; the mixer owns it here, so we hand back an id handle).
+    pub streams: Vec<(i64, Box<dyn PcmStream + Send>)>,
     // @ObfuscatedName("bo.d") — pending events sorted by `next_time`.
     pub controllers: Vec<Box<dyn MixerController + Send>>,
     // @ObfuscatedName("bo.l") — sample-rate clock (44_100 default).
     pub sample_rate: i32,
     // @ObfuscatedName("bo.m") — current absolute sample position.
     pub position: i64,
+    // Monotonic voice-id allocator.
+    next_id: i64,
 }
 
 impl Mixer {
@@ -34,11 +39,35 @@ impl Mixer {
             controllers: Vec::new(),
             sample_rate,
             position: 0,
+            next_id: 1,
         }
     }
 
-    pub fn add_stream(&mut self, stream: Box<dyn PcmStream + Send>) {
-        self.streams.push(stream);
+    // @ObfuscatedName("bo.playStream") — add a voice; returns its id.
+    pub fn add_stream(&mut self, stream: Box<dyn PcmStream + Send>) -> i64 {
+        let id = self.next_id;
+        self.next_id += 1;
+        self.streams.push((id, stream));
+        id
+    }
+
+    // @ObfuscatedName("bo.stopStream") — remove the voice with `id`.
+    pub fn stop_stream(&mut self, id: i64) {
+        if let Some(i) = self.streams.iter().position(|(vid, _)| *vid == id) {
+            self.streams.swap_remove(i);
+        }
+    }
+
+    // BgSound.applyVolume — set a live voice's volume (raw scale).
+    pub fn set_voice_volume(&mut self, id: i64, vol: i32) {
+        if let Some((_, s)) = self.streams.iter_mut().find(|(vid, _)| *vid == id) {
+            s.set_secondary_volume(vol);
+        }
+    }
+
+    // WaveStream.isLinked — is the voice still active in the mix bus?
+    pub fn is_linked(&self, id: i64) -> bool {
+        self.streams.iter().any(|(vid, _)| *vid == id)
     }
 
     pub fn add_controller(&mut self, ctrl: Box<dyn MixerController + Send>) {
@@ -67,7 +96,7 @@ impl Mixer {
         // doMix; we do the same.
         let mut i = 0;
         while i < self.streams.len() {
-            let done = self.streams[i].do_mix(buf, off, len);
+            let done = self.streams[i].1.do_mix(buf, off, len);
             if done { self.streams.swap_remove(i); }
             else { i += 1; }
         }

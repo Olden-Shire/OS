@@ -49,4 +49,9 @@ pub trait PcmStream: PcmStreamable {
     /// returns true; voices that go silent should override to false
     /// so maybe_mix routes through pretend_to_mix.
     fn is_active(&self) -> bool { true }
+
+    /// Set the voice's volume (Java's raw `applyVolume(int)` scale).
+    /// Default no-op; `WaveStream` overrides. Used by BgSound to fade
+    /// positional ambient loops by player distance.
+    fn set_secondary_volume(&mut self, _vol: i32) {}
 }

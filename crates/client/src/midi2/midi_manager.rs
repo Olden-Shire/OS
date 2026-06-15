@@ -98,6 +98,29 @@ impl MidiManager {
         self.sfx.clear();
     }
 
+    // @ObfuscatedName(— TitleScreen.close MIDI block, TitleScreen.java:235-242).
+    // Fade the current song (the title's "scape main") to silence with NO
+    // replacement queued, then go idle — Java's login transition sets
+    // state=1, clears the pending song, and fadeOutRate=2. update_fade_out
+    // drives the per-tick volume drop and lands in state 0 (silent) since
+    // nothing is queued. Without this, scape main keeps playing into the
+    // game until a server MIDI_SONG packet arrives.
+    pub fn begin_login_fade_out(&mut self) {
+        self.state = 1;
+        self.fade_out_rate = 2;
+        self.pending = None;
+        self.queued_pending = None;
+    }
+
+    // @ObfuscatedName("by.isInitialised") — MidiManager.isInitialised
+    // (MidiManager.java:112-114): when idle, reflects whether the player
+    // still has MIDI loaded; while fading/loading it's always "busy". Used
+    // by jingle_complete_check to detect a finished (non-looping) jingle —
+    // the player clears `loaded()` via drop_midi when the song ends.
+    pub fn is_initialised(&self) -> bool {
+        if self.state == 0 { self.player.loaded() } else { true }
+    }
+
     // @ObfuscatedName("by.j(I)V") — MidiManager.updateFadeOut, Java-
     // verbatim (MidiManager.java:117-149). Called every mainloop tick.
     // state 1: while the player is loaded and volume > 0, drop volume

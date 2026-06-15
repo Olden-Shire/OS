@@ -140,6 +140,16 @@ pub fn draw_chrome(fb: &mut Framebuffer, c: &mut crate::client::Client) {
     // scrolled. Must precede the world_update_num reset below.
     crate::dash3d::texture_manager::run_anims(c.world_update_num);
 
+    // Java gameDraw :2798 — fade positional ambient loc sounds by player
+    // distance, starting/stopping their mixer voices. Uses worldUpdateNum
+    // as the per-frame tick before it's reset below.
+    if let (Some(dec), Some(lp)) = (c.decimator.as_ref(), c.local_player.as_ref()) {
+        let pcm_freq = c.pcm_player.as_ref().map(|p| p.frequency as i32).unwrap_or(22050);
+        crate::sound::bg_sound::do_mix(
+            c.minusedlevel, lp.entity.x, lp.entity.z, c.world_update_num,
+            c.ambient_volume, pcm_freq, dec);
+    }
+
     // Java gameDraw :2799 — a completed draw resets the tick counter
     // the per-tick-unit motion scaled by.
     c.world_update_num = 0;
@@ -705,28 +715,40 @@ fn draw_layer(
                 // not yet ported); no placeholder box.
             }
             9 => {
-                // line — Bresenham via Pix2D::line. lineWidth > 1 follows
-                // Java's DrawLineWithStrokeWidth approach but with our
-                // axis-stepping stroker; close enough for chrome borders.
-                let col = com.colour & 0xFFFFFF;
-                let x1 = renderx;
-                let y1 = rendery;
-                let x2 = renderx + com.width;
-                let y2 = rendery + com.height;
-                if com.line_width <= 1 {
-                    pix2d::line(x1, y1, x2, y2, col);
+                // line — Java drawInterface 10614-10653. lineWidth == 1 is a
+                // plain Pix2D.line; thicker lines build a stroke quad from two
+                // Pix3D.flatTriangles offset perpendicular to the line by the
+                // stroke width (verbatim port — no approximation).
+                use crate::dash3d::pix3d;
+                if com.line_width == 1 {
+                    pix2d::line(renderx, rendery, com.width + renderx,
+                                com.height + rendery, com.colour);
                 } else {
-                    let stride = com.line_width.max(1);
                     let aw = com.width.abs();
                     let ah = com.height.abs();
-                    if ah >= aw {
-                        for i in 0..stride {
-                            pix2d::line(x1 + i - stride / 2, y1, x2 + i - stride / 2, y2, col);
-                        }
-                    } else {
-                        for i in 0..stride {
-                            pix2d::line(x1, y1 + i - stride / 2, x2, y2 + i - stride / 2, col);
-                        }
+                    let len = aw.max(ah);
+                    if len != 0 {
+                        let mut sx = (com.width << 16) / len;
+                        let mut sy = (com.height << 16) / len;
+                        if sy <= sx { sx = -sx; } else { sy = -sy; }
+                        let ox0 = com.line_width * sy >> 17;
+                        let ox1 = (com.line_width * sy + 1) >> 17;
+                        let oy0 = com.line_width * sx >> 17;
+                        let oy1 = (com.line_width * sx + 1) >> 17;
+                        let xa = renderx + ox0;
+                        let xb = renderx - ox1;
+                        let xc = com.width + renderx - ox1;
+                        let xd = com.width + renderx + ox0;
+                        let ya = rendery + oy0;
+                        let yb = rendery - oy1;
+                        let yc = com.height + rendery - oy1;
+                        let yd = com.height + rendery + oy0;
+                        // Java flatTriangle(yA,yB,yC, xA,xB,xC, col) — our
+                        // fill_triangle takes per-vertex (x,y) order.
+                        pix3d::set_hclip_xyz(xa, xb, xc);
+                        pix3d::fill_triangle(xa, ya, xb, yb, xc, yc, com.colour);
+                        pix3d::set_hclip_xyz(xa, xc, xd);
+                        pix3d::fill_triangle(xa, ya, xc, yc, xd, yd, com.colour);
                     }
                 }
             }
@@ -917,11 +939,13 @@ fn draw_layer(
                                     // Java centres/right-aligns against
                                     // com.width — the COLUMN COUNT, not a
                                     // pixel width (Client.java:10546-10550,
-                                    // verbatim oddity).
+                                    // verbatim oddity). y is passed as the
+                                    // BASELINE straight through (drawStringInner
+                                    // subtracts ascent itself) — no +ascent.
                                     match com.h_align {
-                                        1 => font.base.centre_string(&label, com.width / 2 + cx, cy + font.base.ascent, col_rgb, shadow),
-                                        2 => font.base.right_string(&label, com.width + cx - 1, cy + font.base.ascent, col_rgb, shadow),
-                                        _ => font.base.draw_string(&label, cx, cy + font.base.ascent, col_rgb, shadow),
+                                        1 => font.base.centre_string(&label, com.width / 2 + cx, cy, col_rgb, shadow),
+                                        2 => font.base.right_string(&label, com.width + cx - 1, cy, col_rgb, shadow),
+                                        _ => font.base.draw_string(&label, cx, cy, col_rgb, shadow),
                                     }
                                 }
                             }
@@ -950,11 +974,29 @@ fn draw_layer(
                 };
                 let p12_owned = client.as_deref().and_then(|c| c.p12.clone());
                 let font_ref = p12_owned.as_ref().or(p11);
-                if gate && !text.is_empty() {
+                if gate {
                     if let Some(font) = font_ref {
                         let line_h = font.base.ascent + 1;
-                        let lines: Vec<&str> =
-                            text.split(crate::string_constants::TAG_BREAK).collect();
+                        // Java segments by consuming the string until it is
+                        // empty (drawInterface 10561-10569): a trailing <br>
+                        // (or empty text) yields NO extra blank line, unlike
+                        // str::split's trailing-empty behaviour. Empty text
+                        // therefore still draws the bare 6×7 box, as in Java.
+                        let tag = crate::string_constants::TAG_BREAK;
+                        let mut lines: Vec<&str> = Vec::new();
+                        let mut rest = text.as_str();
+                        while !rest.is_empty() {
+                            match rest.find(tag) {
+                                Some(i) => {
+                                    lines.push(&rest[..i]);
+                                    rest = &rest[i + tag.len()..];
+                                }
+                                None => {
+                                    lines.push(rest);
+                                    break;
+                                }
+                            }
+                        }
                         let mut box_w = 0i32;
                         for line in &lines {
                             let wid = font.base.string_wid(line);

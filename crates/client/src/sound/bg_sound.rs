@@ -33,7 +33,7 @@ pub struct BgSound {
     // @ObfuscatedName("de.s")
     pub mindelay: i32,
     // @ObfuscatedName("de.u") — continuous WaveStream voice id (-1 = none).
-    pub continuous_stream: i32,
+    pub continuous_stream: i64,
     // @ObfuscatedName("de.v")
     pub maxdelay: i32,
     // @ObfuscatedName("de.w")
@@ -41,7 +41,7 @@ pub struct BgSound {
     // @ObfuscatedName("de.e")
     pub random_sound_timer: i32,
     // @ObfuscatedName("de.b") — random one-shot voice id (-1 = none).
-    pub random_stream: i32,
+    pub random_stream: i64,
     // @ObfuscatedName("de.y") — multiloc dispatch source LocType id; -1
     // if the emitter doesn't change with multivar.
     pub multiloc_id: i32,
@@ -158,8 +158,11 @@ pub fn add_sound(level: i32, tile_x: i32, tile_z: i32, loc: &crate::config::loc_
 //
 // `tick_ms` is the elapsed ms since the previous doMix call (Java's
 // arg3); we decrement random_sound_timer by that each tick.
-pub fn do_mix(player_level: i32, player_x: i32, player_z: i32, tick_ms: i32) {
-    let ambient = ambient_volume();
+pub fn do_mix(
+    player_level: i32, player_x: i32, player_z: i32, tick_ms: i32,
+    ambient: i32, pcm_freq: i32,
+    decimator: &crate::sound::decimator::Decimator,
+) {
     let mut list = SOUNDLIST.lock().unwrap();
     for bg in list.iter_mut() {
         if bg.sound == -1 && bg.random.is_none() { continue; }
@@ -179,7 +182,7 @@ pub fn do_mix(player_level: i32, player_x: i32, player_z: i32, tick_ms: i32) {
             if bg.continuous_stream != -1 {
                 apply_volume(bg.continuous_stream, vol);
             } else if bg.sound >= 0 {
-                bg.continuous_stream = play_jag_fx(bg.sound, vol, -1);
+                bg.continuous_stream = play_jag_fx(bg.sound, vol, -1, pcm_freq, decimator);
             }
             if bg.random_stream != -1 {
                 apply_volume(bg.random_stream, vol);
@@ -191,7 +194,7 @@ pub fn do_mix(player_level: i32, player_x: i32, player_z: i32, tick_ms: i32) {
                 if bg.random_sound_timer <= 0 && !randoms.is_empty() {
                     let pick = (rand_unit() * randoms.len() as f64) as usize;
                     let pick = pick.min(randoms.len() - 1);
-                    bg.random_stream = play_jag_fx(randoms[pick], vol, 0);
+                    bg.random_stream = play_jag_fx(randoms[pick], vol, 0, pcm_freq, decimator);
                     bg.random_sound_timer = bg.mindelay
                         + ((rand_unit() * (bg.maxdelay - bg.mindelay) as f64) as i32);
                 }
@@ -214,20 +217,33 @@ pub fn reset() {
 
 pub fn clear() { reset(); }
 
-// Stubs for the audio plumbing — Java goes through
-// `Client.mixer.stopStream(WaveStream)`, `Client.mixer.playStream(...)`,
-// `WaveStream.applyVolume(int)`. We don't have those wired up yet, so
-// the helpers below are no-ops returning a sentinel voice id.
+// Audio plumbing — routes to the live FX mixer (Java's `Client.mixer`).
+// `stop_stream`/`apply_volume`/`stream_is_linked` act on a mixer voice id;
+// `play_jag_fx` mirrors BgSound.doMix's inline load (JagFX.load → toWave →
+// decimate → WaveStream.newRatePercent → mixer.playStream).
 
-fn stop_stream(_voice_id: i32) {}
-fn apply_volume(_voice_id: i32, _vol: i32) {}
-fn stream_is_linked(_voice_id: i32) -> bool { false }
-fn play_jag_fx(_sound_id: i32, _vol: i32, _loop_count: i32) -> i32 { -1 }
+fn stop_stream(voice_id: i64) { crate::sound::pcm_player::fx_stop(voice_id); }
+fn apply_volume(voice_id: i64, vol: i32) { crate::sound::pcm_player::fx_apply_volume(voice_id, vol); }
+fn stream_is_linked(voice_id: i64) -> bool { crate::sound::pcm_player::fx_is_linked(voice_id) }
 
-fn ambient_volume() -> i32 {
-    // Java's `Client.ambientVolume` — 0..255. Stub at 128 until the
-    // Client settings struct exposes it.
-    128
+// @ObfuscatedName(— inline in BgSound.doMix, Client.java:176-200).
+// loop_count: -1 = loop forever (continuous), 0 = play once (random).
+fn play_jag_fx(
+    sound_id: i32, vol: i32, loop_count: i32,
+    pcm_freq: i32, decimator: &crate::sound::decimator::Decimator,
+) -> i64 {
+    let bytes = crate::sound::js5_cache::Js5Cache::new()
+        .read_group(4, sound_id as u32)
+        .ok()
+        .flatten();
+    let Some(bytes) = bytes else { return -1 };
+    let mut fx = crate::sound::jagfx::JagFX::decode(&bytes);
+    let mut wave = fx.to_wave();
+    wave.decimate(decimator);
+    let Some(mut stream) = crate::sound::wave_stream::WaveStream::new_rate_percent_full(
+        std::sync::Arc::new(wave), 100, vol, pcm_freq) else { return -1 };
+    stream.set_loop_count(loop_count);
+    crate::sound::pcm_player::play_fx_stream(stream)
 }
 
 fn rand_unit() -> f64 {

@@ -295,7 +295,12 @@ pub fn try_move(
                 out.p1_alt3(c.route_z[idx] - goal_z);
             }
             out.p2_alt3(c.map_build_base_z + goal_z);
-            out.p1(if c.key_ctrl_held { 1 } else { 0 });
+            // Java: out.p1(keyHeld[82] ? 1 : 0) — ctrl held ⇒ run to the
+            // clicked tile. Read the live keyboard state (gamepack code 82 =
+            // ctrl); the prior `c.key_ctrl_held` field was never wired to the
+            // keyboard handler, so ctrl-click-run silently never fired.
+            let ctrl_run = crate::input::KEYBOARD.lock().unwrap().key_held[82];
+            out.p1(if ctrl_run { 1 } else { 0 });
             out.p2(c.map_build_base_x + goal_x);
         } else {
             c.minimap_flag_x = c.route_x[0];
@@ -1346,11 +1351,21 @@ fn decay_entity_damage(entity: &mut crate::dash3d::ClientEntity, current_cycle: 
 // approximate by checking whether playing_jingle was set but the
 // queue has drained.
 pub fn jingle_complete_check(c: &mut Client) {
-    if c.playing_jingle && c.queued_jingle_id == -1 {
-        c.playing_jingle = false;
-        if c.next_midi_song != -1 {
+    // Wait until the jingle has actually been dispatched (the drain clears
+    // queued_jingle_id) AND the MidiManager has finished playing it — a
+    // non-looping jingle clears `loaded()` on end, so is_initialised()
+    // goes false. Java: `if (playingJingle && !MidiManager.isInitialised())`.
+    if !c.playing_jingle || c.queued_jingle_id != -1 {
+        return;
+    }
+    let done = c.pcm_player.as_ref()
+        .map(|p| !p.manager().lock().is_initialised())
+        .unwrap_or(true);
+    if done {
+        if c.midi_volume != 0 && c.next_midi_song != -1 {
             c.queued_song_id = c.next_midi_song;
         }
+        c.playing_jingle = false;
     }
 }
 
@@ -4917,7 +4932,11 @@ pub fn send_window_status(c: &mut Client) {
 // drain can fire.
 pub fn play_songs(c: &mut Client, song_id: i32) {
     if song_id == -1 && !c.playing_jingle {
-        // MidiManager.stop() — clear the in-flight song.
+        // Java: MidiManager.stop() — stop the in-flight song.
+        if let Some(p) = c.pcm_player.as_ref() {
+            p.manager().lock().stop();
+        }
+        c.queued_song_id = -1;
         c.next_midi_song = -1;
         return;
     }
@@ -4947,7 +4966,89 @@ pub fn play_synth(c: &mut Client, sound: i32, loops: i32, delay: i32) {
     c.wave_sound_ids[idx] = sound;
     c.wave_loops[idx] = loops;
     c.wave_delay[idx] = delay;
+    c.wave_ambient[idx] = 0;
+    c.wave_sounds[idx] = None;
     c.wave_count += 1;
+}
+
+// @ObfuscatedName(— Client.soundsDoQueue). Verbatim port of
+// Client.java:3502-3585 (the FX-queue portion). Each tick: decrement
+// every slot's delay; lazily decode its JagFX (offsetting the delay by
+// optimiseStart once); when the delay expires, build + decimate the Wave
+// and push a WaveStream voice onto the FX mixer at the computed volume
+// (flat waveVolume, or positional when waveAmbient is set). Expired
+// slots (delay < -10) are compacted out.
+pub fn sounds_do_queue(c: &mut Client) {
+    if c.decimator.is_none() { return; }
+    let pcm_freq = c.pcm_player.as_ref().map(|p| p.frequency as i32).unwrap_or(22050);
+    let (px, pz) = c.local_player.as_ref()
+        .map(|lp| (lp.entity.x, lp.entity.z)).unwrap_or((0, 0));
+
+    let mut i = 0i32;
+    while i < c.wave_count {
+        let iu = i as usize;
+        c.wave_delay[iu] -= 1;
+
+        if c.wave_delay[iu] >= -10 {
+            // Decode the synth once; its leading-silence skip pushes the
+            // play-out delay (Java: waveDelay += sound.optimiseStart()).
+            if c.wave_sounds[iu].is_none() {
+                let bytes = crate::sound::js5_cache::Js5Cache::new()
+                    .read_group(4, c.wave_sound_ids[iu] as u32)
+                    .ok()
+                    .flatten();
+                let Some(bytes) = bytes else { i += 1; continue; };
+                let mut fx = crate::sound::jagfx::JagFX::decode(&bytes);
+                c.wave_delay[iu] += fx.optimise_start();
+                c.wave_sounds[iu] = Some(fx);
+            }
+
+            if c.wave_delay[iu] < 0 {
+                let amb = c.wave_ambient[iu];
+                let final_volume = if amb != 0 {
+                    // getFinalAmbientVolume (Client.java:3520-3548).
+                    let range = (amb & 0xFF) * 128;
+                    let dx = ((amb >> 16 & 0xFF) * 128 + 64 - px).abs();
+                    let dz = ((amb >> 8 & 0xFF) * 128 + 64 - pz).abs();
+                    let mut dist = dx + dz - 128;
+                    if dist > range {
+                        c.wave_delay[iu] = -100;
+                        i += 1;
+                        continue;
+                    }
+                    if dist < 0 { dist = 0; }
+                    c.ambient_volume * (range - dist) / range.max(1)
+                } else {
+                    c.wave_volume
+                };
+
+                if final_volume > 0 {
+                    let mut wave = c.wave_sounds[iu].as_mut().unwrap().to_wave();
+                    wave.decimate(c.decimator.as_ref().unwrap());
+                    if let Some(mut stream) = crate::sound::wave_stream::WaveStream::new_rate_percent_full(
+                        std::sync::Arc::new(wave), 100, final_volume, pcm_freq)
+                    {
+                        stream.set_loop_count(c.wave_loops[iu] - 1);
+                        crate::sound::pcm_player::play_fx_stream(stream);
+                    }
+                }
+                c.wave_delay[iu] = -100;
+            }
+            i += 1;
+        } else {
+            // Slot expired — compact it out (Java shifts all 5 arrays).
+            c.wave_count -= 1;
+            let n = c.wave_count as usize;
+            for j in iu..n {
+                c.wave_sound_ids[j] = c.wave_sound_ids[j + 1];
+                c.wave_sounds[j] = c.wave_sounds[j + 1].take();
+                c.wave_loops[j] = c.wave_loops[j + 1];
+                c.wave_delay[j] = c.wave_delay[j + 1];
+                c.wave_ambient[j] = c.wave_ambient[j + 1];
+            }
+            // Stay on the same index (Java's i-- before the for's i++).
+        }
+    }
 }
 
 // @ObfuscatedName("eh.dp(Ljava/lang/String;S)V") — Client.doCheat.
@@ -6512,11 +6613,6 @@ pub struct Client {
     // @ObfuscatedName("client.bx") — outbound game packet ("out" in
     // Java). Allocated after login succeeds; cleared on disconnect.
     pub out_packet: Option<crate::io::packet::Packet>,
-    // @ObfuscatedName(via ClientKeyboardListener.keyHeld[82]) — ctrl
-    // key state, sampled by tryMove to set the "run-toggle" flag on
-    // the outbound move packet. The full keyboard listener is wired
-    // elsewhere; this mirrors the single bit tryMove needs.
-    pub key_ctrl_held: bool,
     // @ObfuscatedName("client.di")
     pub network_error: bool,
     // custom — Engine2007 expects opcode 228 (NoOp) every few seconds
@@ -6648,6 +6744,16 @@ pub struct Client {
     pub wave_sound_ids: [i32; 50],
     pub wave_loops: [i32; 50],
     pub wave_delay: [i32; 50],
+    // @ObfuscatedName("client.waveSounds") — cached decoded JagFX per queue
+    // slot (loaded lazily; persists across ticks so optimiseStart's delay
+    // offset applies once). Vec (not array) since JagFX isn't Copy.
+    pub wave_sounds: Vec<Option<crate::sound::jagfx::JagFX>>,
+    // @ObfuscatedName("client.waveAmbient") — packed positional-volume key
+    // for area sounds (0 = flat waveVolume): bits 0-7 range, 8-15 z, 16-23 x.
+    pub wave_ambient: [i32; 50],
+    // Decimator from JagFX's 22050Hz to the output device rate (Java's
+    // static `decimator`). Built at audio init.
+    pub decimator: Option<crate::sound::decimator::Decimator>,
 
     // @ObfuscatedName(none — collected from RUNCLIENTSCRIPT packets
     // until the cs2 dispatcher lands). Each entry holds the decoded
@@ -7254,7 +7360,6 @@ impl Client {
             // when it's None, so leaving this unallocated silently
             // swallowed every outbound game packet.
             out_packet: Some(crate::io::packet::Packet::with_size(5000)),
-            key_ctrl_held: false,
             network_error: false,
             heartbeat_ticker: 0,
             toplevelinterface: -1,
@@ -7312,13 +7417,16 @@ impl Client {
             queued_jingle_fade_ms: 0,
             queued_synth: Vec::new(),
             midi_volume: 255,
-            wave_volume: 255,
+            wave_volume: 127,
             next_midi_song: -1,
             playing_jingle: false,
             wave_count: 0,
             wave_sound_ids: [0; 50],
             wave_loops: [0; 50],
             wave_delay: [0; 50],
+            wave_sounds: (0..50).map(|_| None).collect(),
+            wave_ambient: [0; 50],
+            decimator: None,
             pending_client_scripts: Vec::new(),
             zone_update_x: 0,
             zone_update_z: 0,
@@ -7789,6 +7897,32 @@ impl GameShellLifecycle for Client {
                     self.music_started = true;
                 }
             }
+
+            // Drain server song / jingle requests (MIDI_SONG → play_songs,
+            // MIDI_JINGLE → play_jingle). Java's playSongs/playJingle hit
+            // MidiManager directly; our swap_songs takes pre-loaded bytes,
+            // so we defer the load here and retry each tick — fetch_file
+            // requests the group on miss and returns it once it streams in.
+            if self.queued_song_id != -1 && self.songs >= 0 {
+                let mut reg = js5_net::LOADERS.lock().unwrap();
+                let bytes = reg.get_mut(self.songs as usize).and_then(|o| o.as_mut())
+                    .and_then(|l| l.fetch_file(self.queued_song_id, 0));
+                drop(reg);
+                if let Some(bytes) = bytes {
+                    player.manager().lock().swap_songs(2, bytes, false);
+                    self.queued_song_id = -1;
+                }
+            }
+            if self.queued_jingle_id != -1 && self.jingles >= 0 {
+                let mut reg = js5_net::LOADERS.lock().unwrap();
+                let bytes = reg.get_mut(self.jingles as usize).and_then(|o| o.as_mut())
+                    .and_then(|l| l.fetch_file(self.queued_jingle_id, 0));
+                drop(reg);
+                if let Some(bytes) = bytes {
+                    player.manager().lock().swap_songs(2, bytes, false);
+                    self.queued_jingle_id = -1;
+                }
+            }
         }
 
         // Java loadingStep 120 (Client.java:1967-1972): build the chat
@@ -8179,6 +8313,10 @@ impl Client {
                 // Client so the audio thread lives as long as the client.
                 if self.pcm_player.is_none() {
                     if let Ok(p) = crate::sound::pcm_player::PcmPlayer::init(22050, !self.low_mem) {
+                        // Java: decimator = new Decimator(22050, PcmPlayer.frequency).
+                        let freq = p.frequency as i32;
+                        self.decimator =
+                            Some(crate::sound::decimator::Decimator::new(22050, freq));
                         self.pcm_player = Some(p);
                     }
                 }
@@ -8430,7 +8568,6 @@ impl Client {
     // We mirror those side effects here so callers don't need to
     // do them manually each time.
     pub fn set_main_state(&mut self, state: i32) {
-        let prev = self.state;
         self.state = state;
 
         match state {
@@ -8456,11 +8593,12 @@ impl Client {
             self.prev_stream = None;
         }
 
-        // Leaving the title-screen states releases their assets.
-        // Java's `TitleScreen.close()` runs here; until that helper
-        // lands we use a no-op marker so the call site shape matches.
-        if matches!(prev, 10 | 20) && !matches!(state, 10 | 20) {
-            // TODO: title_screen::close(self) once Round 16 lands it.
+        // Java setMainState: the title stays open for states 5/10/20 and
+        // is closed otherwise — which frees its assets AND fades the title
+        // song ("scape main") out on the login transition, even with no
+        // server MIDI_SONG packet to follow. close() is idempotent.
+        if !matches!(state, 5 | 10 | 20) {
+            crate::title_screen::close();
         }
     }
 }
