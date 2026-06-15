@@ -143,6 +143,9 @@ pub struct World {
     /// Category name→id (server-side registry from `category.pack`); resolves the
     /// `category =` keys on npc/obj/loc. Backs the `*_category` ops.
     pub category_ids: std::collections::HashMap<String, i32>,
+    /// Per-font character advance widths (font id → 256 byte widths), from the
+    /// fonts archive metrics. SPLIT_INIT word-wraps dialogue text with these.
+    pub fonts: std::collections::HashMap<i32, Vec<i32>>,
     /// InvType sizes (config group 5), keyed by inv id — the capacity a player
     /// inventory is created at. Backs INV_SIZE and the INV_* slot ops.
     pub inv_sizes: std::collections::HashMap<i32, i32>,
@@ -443,6 +446,7 @@ impl World {
             constants_int: std::collections::HashMap::new(),
             constants_str: std::collections::HashMap::new(),
             category_ids: std::collections::HashMap::new(),
+            fonts: std::collections::HashMap::new(),
             inv_sizes: std::collections::HashMap::new(),
             delayed_objs: Vec::new(),
             npc_events: Vec::new(),
@@ -541,6 +545,15 @@ impl World {
                 // matches for the common case of explicit delays.)
                 let total: i32 = st.delay.iter().map(|&d| if d == 0 { 1 } else { d }).sum();
                 self.seq_lengths.insert(id, total);
+            }
+        }
+        // Font metrics (archive 13): the first 256 bytes are per-char advance
+        // widths, used by SPLIT_INIT to word-wrap dialogue text.
+        for id in cache.index(cache::FONTS_ARCHIVE).group_ids.clone() {
+            if let Ok(Some(bytes)) = cache.read_raw(cache::FONTS_ARCHIVE, id as u32)
+                && bytes.len() >= 256
+            {
+                self.fonts.insert(id, bytes[..256].iter().map(|&b| i32::from(b)).collect());
             }
         }
     }

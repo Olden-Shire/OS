@@ -86,6 +86,10 @@ pub const INTERFACES_ARCHIVE: u8 = 3;
 pub const MAPS_ARCHIVE: u8 = 5;
 pub const VORBIS_ARCHIVE: u8 = 14;
 
+/// Archive 13 — font metrics (one group per font; first 256 bytes are per-char
+/// advance widths).
+pub const FONTS_ARCHIVE: u8 = 13;
+
 /// Archive 7 — 3D models (ModelUnlit), one group per model (file 0 is the mesh).
 pub const MODELS_ARCHIVE: u8 = 7;
 

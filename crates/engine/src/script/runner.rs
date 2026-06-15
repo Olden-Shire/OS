@@ -105,35 +105,33 @@ fn active_npc<'w>(state: &ScriptState, world: &'w mut World)
         .ok_or_else(|| "active_npc slot empty".to_string())
 }
 
-/// Approximate per-character pixel width by font id. Placeholder until the
-/// engine carries real font glyph widths — chat/dialogue (p12) averages ~7px.
-fn approx_char_width(_font_id: i32) -> i32 {
-    7
+/// Pixel width of `s` using the font's 256-entry `char_advance` table (chars
+/// outside 0..256 contribute 0). Falls back to ~7px/char if `widths` is empty.
+fn line_width(s: &str, widths: &[i32]) -> i32 {
+    s.chars()
+        .map(|c| widths.get(c as usize).copied().unwrap_or(if widths.is_empty() { 7 } else { 0 }))
+        .sum()
 }
 
-/// Greedy word-wrap `text` to `max_width` pixels (Engine-TS `FontType.split`);
-/// the caller paginates the lines. Honors explicit `\n`. Always returns ≥1 line.
-/// Width is approximated (see [`approx_char_width`]) so page counts match vanilla
-/// for short dialogue and degrade gracefully for long text.
-fn font_split(text: &str, max_width: i32, font_id: i32) -> Vec<String> {
-    let cw = approx_char_width(font_id).max(1);
+/// Greedy word-wrap `text` to `max_width` pixels using the font's advance
+/// `widths` (Engine-TS `FontType.split`); the caller paginates. Honors explicit
+/// `\n`, always returns ≥1 line. An empty `widths` slice uses a 7px/char
+/// fallback (e.g. before fonts are loaded, or in unit tests).
+fn font_split(text: &str, max_width: i32, widths: &[i32]) -> Vec<String> {
     let mut lines = Vec::new();
     for raw in text.split('\n') {
         let mut cur = String::new();
         for word in raw.split(' ') {
-            let cand = if cur.is_empty() {
-                word.chars().count()
+            let candidate = if cur.is_empty() {
+                word.to_string()
             } else {
-                cur.chars().count() + 1 + word.chars().count()
+                format!("{cur} {word}")
             };
-            if cur.is_empty() || (cand as i32) * cw <= max_width {
-                if !cur.is_empty() {
-                    cur.push(' ');
-                }
-                cur.push_str(word);
+            if cur.is_empty() || line_width(&candidate, widths) <= max_width {
+                cur = candidate;
             } else {
                 lines.push(std::mem::take(&mut cur));
-                cur.push_str(word);
+                cur = word.to_string();
             }
         }
         lines.push(cur);
@@ -915,7 +913,9 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             {
                 text = rest[end + 1..].to_string();
             }
-            let lines = font_split(&text, max_width, font_id);
+            // Real per-char advance widths for this font; empty -> 7px fallback.
+            let widths = world.fonts.get(&font_id).map_or(&[][..], Vec::as_slice);
+            let lines = font_split(&text, max_width, widths);
             let per = (lines_per_page.max(1)) as usize;
             state.split_pages = lines.chunks(per).map(<[String]>::to_vec).collect();
             if state.split_pages.is_empty() {
@@ -3416,14 +3416,18 @@ mod tests {
 
     #[test]
     fn font_split_wraps_and_honors_newlines() {
-        // cw=7: "aaaa"=28 fits in 30, "aaaa bbbb"=63 doesn't -> one word per line.
-        assert_eq!(super::font_split("aaaa bbbb cccc", 30, 1), vec!["aaaa", "bbbb", "cccc"]);
+        // Empty widths -> 7px/char fallback: "aaaa"=28 fits 30, "aaaa bbbb"=63 doesn't.
+        assert_eq!(super::font_split("aaaa bbbb cccc", 30, &[]), vec!["aaaa", "bbbb", "cccc"]);
         // Wide enough to keep on one line.
-        assert_eq!(super::font_split("aa bb", 100, 1), vec!["aa bb"]);
+        assert_eq!(super::font_split("aa bb", 100, &[]), vec!["aa bb"]);
         // Explicit newline forces a break regardless of width.
-        assert_eq!(super::font_split("a\nb", 100, 1), vec!["a", "b"]);
+        assert_eq!(super::font_split("a\nb", 100, &[]), vec!["a", "b"]);
         // Empty text -> a single empty line (never zero).
-        assert_eq!(super::font_split("", 100, 1), vec![String::new()]);
+        assert_eq!(super::font_split("", 100, &[]), vec![String::new()]);
+        // Real per-char widths: 'W' wide (10), others 5 -> "WW" = 20 forces wrap at 18.
+        let mut widths = vec![5; 256];
+        widths['W' as usize] = 10;
+        assert_eq!(super::font_split("W W", 18, &widths), vec!["W", "W"]);
     }
 
     #[test]
