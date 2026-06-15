@@ -30,4 +30,8 @@ $exe = Join-Path $PSScriptRoot "target\release\server.exe"
 if (-not (Test-Path $exe)) { throw "server.exe not found at $exe (build it without -NoBuild)." }
 
 Write-Host "==> starting headless server: server.exe --addr $Addr --content $Content" -ForegroundColor Green
-& $exe --addr $Addr --content $Content
+# Log the full run + ask for backtraces; panics are also appended to server_crash.log.
+$env:RUST_BACKTRACE = "1"
+$log = Join-Path $PSScriptRoot "server.log"
+Write-Host "==> logging to $log (crashes also in server_crash.log)" -ForegroundColor DarkGray
+& $exe --addr $Addr --content $Content 2>&1 | Tee-Object -FilePath $log

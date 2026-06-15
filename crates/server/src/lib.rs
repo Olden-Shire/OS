@@ -144,6 +144,27 @@ impl Default for ServerConfig {
     }
 }
 
+/// Install a process-wide panic hook that appends each panic — thread name,
+/// payload, location, and a full backtrace — to `log_name` in the working dir,
+/// then chains the default (stderr) hook. Without this a panic on the panel's
+/// background server thread just kills that thread and scrolls off the console,
+/// so a "crash after a while" leaves nothing to diagnose. Call once at startup.
+pub fn install_crash_logger(log_name: &'static str) {
+    let default = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        let bt = std::backtrace::Backtrace::force_capture();
+        let tname = std::thread::current().name().unwrap_or("<unnamed>").to_string();
+        let body = format!("\n==== PANIC (thread: {tname}) ====\n{info}\n--- backtrace ---\n{bt}\n");
+        if let Ok(mut f) =
+            std::fs::OpenOptions::new().create(true).append(true).open(log_name)
+        {
+            use std::io::Write;
+            let _ = f.write_all(body.as_bytes());
+        }
+        default(info);
+    }));
+}
+
 pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
     let mut progress = config.progress.take();
     let mut tick_hook = config.tick_hook.take();

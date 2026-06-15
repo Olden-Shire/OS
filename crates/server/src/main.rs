@@ -5,6 +5,7 @@
 //! holding server/script.{dat,idx}; optional).
 
 fn main() -> std::io::Result<()> {
+    server::install_crash_logger("server_crash.log");
     let args: Vec<String> = std::env::args().collect();
     let mut config = server::ServerConfig::default();
 

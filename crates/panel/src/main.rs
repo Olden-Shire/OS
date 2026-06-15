@@ -204,6 +204,9 @@ impl PanelState {
 }
 
 fn main() -> eframe::Result<()> {
+    // Record any panic (incl. the background server/worldmap threads) to a file,
+    // since a thread panic otherwise vanishes with the console window.
+    server::install_crash_logger("panel_crash.log");
     let state = Arc::new(Mutex::new(PanelState::new()));
     let (cmd_tx, cmd_rx) = std::sync::mpsc::channel::<server::PanelCommand>();
 
