@@ -562,7 +562,7 @@ pub fn draw(
     // State 20 — connecting screen. Shows the messages + the read-only
     // username/password fields. No caret, no buttons.
     if client_state == 20 {
-        if let Some(p) = p11 {
+        if let Some(p) = b12 {
             let s = STATE.lock().unwrap();
             let login_user = s.login_user.clone();
             let login_pass = s.login_pass.clone();
@@ -574,20 +574,19 @@ pub fn draw(
             p.base.centre_string(&login_mes1, 382, y, 0xFFFF00, 0); y += 15;
             p.base.centre_string(&login_mes2, 382, y, 0xFFFF00, 0); y += 15;
             p.base.centre_string(&login_mes3, 382, y, 0xFFFF00, 0); y += 15 + 10;
+            // Java: prompt at 272, value at the FIXED 312; password is ONE string
+            // (prompt + asterisks) at 274 — b12 metrics make the offsets line up.
             p.base.draw_string(text::USERNAMEPROMPT, 272, y, 0xFFFFFF, 0);
-            let user_input_x = 272 + p.base.string_wid(text::USERNAMEPROMPT);
-            p.base.draw_string(&login_user, user_input_x, y, 0xFFFFFF, 0);
+            p.base.draw_string(&login_user, 312, y, 0xFFFFFF, 0);
             y += 15;
-            let stars: String = "*".repeat(login_pass.len());
-            p.base.draw_string(text::PASSWORDPROMPT, 274, y, 0xFFFFFF, 0);
-            let pass_input_x = 274 + p.base.string_wid(text::PASSWORDPROMPT);
-            p.base.draw_string(&stars, pass_input_x, y, 0xFFFFFF, 0);
+            let pass_line = format!("{}{}", text::PASSWORDPROMPT, "*".repeat(login_pass.len()));
+            p.base.draw_string(&pass_line, 274, y, 0xFFFFFF, 0);
         }
     }
 
-    // Java state 10 / login form variants
+    // Java state 10 / login form variants. All title text is arg0 = b12 (bold).
     if client_state == 10 {
-        if let Some(p) = p11 {
+        if let Some(p) = b12 {
             let s = STATE.lock().unwrap();
             let loginscreen = s.loginscreen;
             let login_user = s.login_user.clone();
@@ -675,8 +674,9 @@ pub fn draw(
         }
     } else if client_state == 5 {
         // Java draws Text.LOADING_TITLE + a progress bar + load_string
-        // overlaid on the title background while state-5 boots config.
-        if let Some(p) = p11 {
+        // overlaid on the title background while state-5 boots config. Java uses
+        // arg0 = b12 (bold) for all title-screen text.
+        if let Some(p) = b12 {
             let (load_pos, msg) = {
                 let s = STATE.lock().unwrap();
                 (s.load_pos, s.load_string.clone())
@@ -949,12 +949,15 @@ pub fn draw(
             sl.plot_sprite(5, 463);
             let worldid = crate::client::Client::worldid_global();
             drop(s);
-            if let Some(p) = p11 {
-                let world_label = format!("{} {}", text::WORLD, worldid);
+            // Java (TitleScreen.java:743-748): "World N" is arg0 = b12 (bold), but
+            // the hint below is arg1 = p11 (PLAIN).
+            let world_label = format!("{} {}", text::WORLD, worldid);
+            if let Some(p) = b12 {
                 p.base.centre_string(&world_label, 5 + 100 / 2, 463 + 35 / 2 - 2, 0xFFFFFF, 0);
-                // Java swaps the hint for "Loading..." while the
-                // worldlist request is in flight (TitleScreen.java:745-748).
-                let hint = if worldlist_request_active() { text::LOADINGDOTDOTDOT } else { text::CLICKTOSWITCH };
+            }
+            // Hint swaps to "Loading..." while the worldlist request is in flight.
+            let hint = if worldlist_request_active() { text::LOADINGDOTDOTDOT } else { text::CLICKTOSWITCH };
+            if let Some(p) = p11 {
                 p.base.centre_string(hint, 5 + 100 / 2, 463 + 35 / 2 + 12, 0xFFFFFF, 0);
             }
         }

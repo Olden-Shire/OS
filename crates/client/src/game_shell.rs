@@ -249,11 +249,15 @@ pub struct ProgressCache {
     // @ObfuscatedName("ca.f") + @ObfuscatedName("fr.k") — progressFont and
     // progressFontMetrics, fused into a single ab_glyph FontVec.
     pub font: Option<FontVec>,
+
+    // true when `font` is the embedded Ubuntu-Light fallback (a light weight), so
+    // the message is rendered faux-bold to approximate Java's Helvetica BOLD.
+    pub faux_bold: bool,
 }
 
 impl ProgressCache {
     pub const fn new() -> Self {
-        Self { bar: None, font: None }
+        Self { bar: None, font: None, faux_bold: false }
     }
 }
 
@@ -306,6 +310,7 @@ pub fn reset_progress() {
     let mut cache = PROGRESS.lock().unwrap();
     cache.bar = None;
     cache.font = None;
+    cache.faux_bold = false;
 }
 
 // custom helper — drawProgress's `bar.drawString(message, ..., 22)` line.
@@ -314,12 +319,14 @@ pub fn reset_progress() {
 fn draw_progress_text(fb: &mut Framebuffer, box_x: i32, box_y: i32, message: &str) {
     let mut cache = PROGRESS.lock().unwrap();
     if cache.font.is_none() {
-        if let Some(bytes) = load_system_bold_font() {
+        if let Some((bytes, faux_bold)) = load_system_bold_font() {
             if let Ok(f) = FontVec::try_from_vec(bytes) {
                 cache.font = Some(f);
+                cache.faux_bold = faux_bold;
             }
         }
     }
+    let faux_bold = cache.faux_bold;
     let Some(font) = cache.font.as_ref() else { return };
 
     // AWT renders 13pt at 96dpi which is ~17px tall.
@@ -347,39 +354,60 @@ fn draw_progress_text(fb: &mut Framebuffer, box_x: i32, box_y: i32, message: &st
                 }
                 let px = bounds.min.x as i32 + gx as i32;
                 let py = bounds.min.y as i32 + gy as i32;
-                if px < 0 || py < 0 || px >= fb.width || py >= fb.height {
-                    return;
+                // bar.setColor(Color.white). Faux-bold inks the pixel to the right
+                // too (only when on the light embedded fallback font).
+                blend_white_px(fb, px, py, coverage);
+                if faux_bold {
+                    blend_white_px(fb, px + 1, py, coverage);
                 }
-                let idx = (py * fb.width + px) as usize;
-                let prev = fb.pixels[idx];
-                let pr = ((prev >> 16) & 0xff) as f32;
-                let pg = ((prev >> 8) & 0xff) as f32;
-                let pb = (prev & 0xff) as f32;
-                let a = coverage.clamp(0.0, 1.0);
-                // bar.setColor(Color.white)
-                let nr = (pr * (1.0 - a) + 255.0 * a) as u8;
-                let ng = (pg * (1.0 - a) + 255.0 * a) as u8;
-                let nb = (pb * (1.0 - a) + 255.0 * a) as u8;
-                fb.pixels[idx] = pack_rgb(nr, ng, nb);
             });
         }
         cursor += h_advance;
     }
 }
 
-// custom helper — system font lookup for the Arial Bold substitution.
-fn load_system_bold_font() -> Option<Vec<u8>> {
-    const CANDIDATES: &[&str] = &[
-        "C:\\Windows\\Fonts\\arialbd.ttf",
-        "C:\\Windows\\Fonts\\Arial Bold.ttf",
-        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
-    ];
-    for path in CANDIDATES {
-        if let Ok(bytes) = std::fs::read(path) {
-            return Some(bytes);
+// Embedded fallback so the early loading text renders even where no OS font is
+// reachable — notably wasm (no filesystem). Ubuntu-Light (Ubuntu Font License;
+// see assets/Ubuntu-Light-LICENSE.txt). It's a light weight, so it's drawn
+// faux-bold to approximate Java's Helvetica BOLD.
+const EMBEDDED_PROGRESS_FONT: &[u8] = include_bytes!("../assets/Ubuntu-Light.ttf");
+
+// custom helper — the font for the progress message. Returns `(bytes, faux_bold)`:
+// a real OS bold (AWT's Helvetica->Arial substitution, the faithful look) when one
+// is reachable, else the embedded Ubuntu-Light drawn faux-bold. wasm has no
+// filesystem, so it always lands on the embedded font.
+fn load_system_bold_font() -> Option<(Vec<u8>, bool)> {
+    #[cfg(not(target_arch = "wasm32"))]
+    {
+        const CANDIDATES: &[&str] = &[
+            "C:\\Windows\\Fonts\\arialbd.ttf",
+            "C:\\Windows\\Fonts\\Arial Bold.ttf",
+            "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
+        ];
+        for path in CANDIDATES {
+            if let Ok(bytes) = std::fs::read(path) {
+                return Some((bytes, false));
+            }
         }
     }
-    None
+    Some((EMBEDDED_PROGRESS_FONT.to_vec(), true))
+}
+
+// Alpha-blend white into one framebuffer pixel — the progress message ink.
+fn blend_white_px(fb: &mut Framebuffer, px: i32, py: i32, coverage: f32) {
+    if px < 0 || py < 0 || px >= fb.width || py >= fb.height {
+        return;
+    }
+    let idx = (py * fb.width + px) as usize;
+    let prev = fb.pixels[idx];
+    let pr = ((prev >> 16) & 0xff) as f32;
+    let pg = ((prev >> 8) & 0xff) as f32;
+    let pb = (prev & 0xff) as f32;
+    let a = coverage.clamp(0.0, 1.0);
+    let nr = (pr * (1.0 - a) + 255.0 * a) as u8;
+    let ng = (pg * (1.0 - a) + 255.0 * a) as u8;
+    let nb = (pb * (1.0 - a) + 255.0 * a) as u8;
+    fb.pixels[idx] = pack_rgb(nr, ng, nb);
 }
