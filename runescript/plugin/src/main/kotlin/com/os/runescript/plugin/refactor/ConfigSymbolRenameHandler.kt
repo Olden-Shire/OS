@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.DataContext
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.fileEditor.FileDocumentManager
+import com.intellij.openapi.fileEditor.impl.LoadTextUtil
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.InputValidator
 import com.intellij.openapi.ui.Messages
@@ -16,6 +17,8 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.PsiManager
 import com.intellij.psi.search.FileTypeIndex
 import com.intellij.psi.search.GlobalSearchScope
+import com.intellij.psi.search.PsiSearchHelper
+import com.intellij.psi.search.UsageSearchContext
 import com.intellij.psi.util.elementType
 import com.intellij.refactoring.rename.RenameHandler
 import com.os.runescript.plugin.config.ConfigFileType
@@ -92,7 +95,7 @@ class ConfigSymbolRenameHandler : RenameHandler {
                 if (key == target.id && value == target.oldName) "$key=$newName" else null
             }
             // 2. the sharded config/model file — stem is the pack name.
-            findSymbolFile(project, target.type, target.oldName)?.let { vf ->
+            findSymbolFile(project, target.type, target.id, target.oldName)?.let { vf ->
                 val ext = vf.extension?.let { ".$it" } ?: ""
                 runCatching { vf.rename(this, "$newName$ext") }
             }
@@ -107,8 +110,8 @@ class ConfigSymbolRenameHandler : RenameHandler {
     /** Replace every `VALUE` token equal to `oldName` with `newName` across config files. */
     private fun renameConfigRefs(project: Project, oldName: String, newName: String, touched: MutableSet<VirtualFile>) {
         val psiManager = PsiManager.getInstance(project)
-        val files = FileTypeIndex.getFiles(ConfigFileType.INSTANCE, GlobalSearchScope.projectScope(project))
-        for (vf in files) {
+        for (vf in candidateFiles(project, oldName)) {
+            if (vf.fileType !is ConfigFileType) continue
             val psi = psiManager.findFile(vf) ?: continue
             val edits = ArrayList<Pair<IntRange, String>>()
             collectLeaves(psi) { leaf ->
@@ -124,6 +127,25 @@ class ConfigSymbolRenameHandler : RenameHandler {
             PsiDocumentManager.getInstance(project).commitDocument(doc)
             touched += vf
         }
+    }
+
+    /**
+     * Config files that may reference `name`. Uses the word index so we only
+     * parse the handful of files that actually contain the token — parsing
+     * every config file (tens of thousands) was what made rename crawl. Falls
+     * back to a plain text scan if the index didn't tokenise the name.
+     */
+    private fun candidateFiles(project: Project, name: String): Collection<VirtualFile> {
+        val scope = GlobalSearchScope.projectScope(project)
+        val hits = LinkedHashSet<VirtualFile>()
+        PsiSearchHelper.getInstance(project)
+            .processCandidateFilesForText(scope, UsageSearchContext.ANY, true, name) { vf ->
+                hits.add(vf)
+                true
+            }
+        if (hits.isNotEmpty()) return hits
+        return FileTypeIndex.getFiles(ConfigFileType.INSTANCE, scope)
+            .filter { LoadTextUtil.loadText(it).contains(name) }
     }
 
     /** Rewrite `<type>.pack` line by line via `map(key, value) -> newLine?`. */
@@ -149,9 +171,12 @@ class ConfigSymbolRenameHandler : RenameHandler {
         }
     }
 
-    /** Locate a symbol's on-disk file by stem (recursing shard dirs): models in
-     *  Content/models (.ob2), config types in Content/config/<type> (.<type>). */
-    private fun findSymbolFile(project: Project, type: String, name: String): VirtualFile? {
+    /** Locate a symbol's on-disk file by stem: models in Content/models (.ob2),
+     *  config types in Content/config/<type> (.<type>). Sharded types bucket
+     *  files into a `%05d` id-dir (mirrors the Rust packer), so we go straight
+     *  there instead of walking the whole tree; falls back to a recursive scan
+     *  for flat/unexpected layouts. */
+    private fun findSymbolFile(project: Project, type: String, id: Int, name: String): VirtualFile? {
         val root = contentRoot(project) ?: return null
         val (dir, ext) = when (type) {
             "model" -> root.findChild("models") to "ob2"
@@ -160,6 +185,10 @@ class ConfigSymbolRenameHandler : RenameHandler {
         }
         val base = dir ?: return null
         val wantName = "$name.$ext"
+        // Fast path: the id's shard dir, or directly under base (un-sharded).
+        val shard = "%05d".format(id / 1000 * 1000)
+        (base.findChild(shard)?.findChild(wantName) ?: base.findChild(wantName))?.let { return it }
+        // Fallback: walk (covers any layout drift).
         val stack = ArrayDeque(listOf(base))
         while (stack.isNotEmpty()) {
             val d = stack.removeLast()
