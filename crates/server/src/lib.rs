@@ -709,7 +709,8 @@ fn handle_login(conn: &mut Connection, login: connection::LoginRequest,
         return;
     }
 
-    let Some(pid) = world.add_player(login.username.clone(), 3222, 3222, 0) else {
+    // Lumbridge spawn — Engine-TS World.ts default (player.teleport(3221, 3219, 0)).
+    let Some(pid) = world.add_player(login.username.clone(), 3221, 3219, 0) else {
         conn.write(&[7]); // world full
         conn.state = ConnState::Closed;
         return;
