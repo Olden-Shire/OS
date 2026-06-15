@@ -1,0 +1,10 @@
+// Logout button — the logout sidepanel tab (interface 182), component 6.
+// Close any open modal, then request a logout (the engine's process_logouts
+// grants it when the player is eligible).
+//
+// content-old's full handler also blocks logout in a duel / on a gnomeball
+// pitch via procs (~in_duel_arena, ~inzone_coord_pair_table) we don't have yet;
+// add those guards back when those systems are ported.
+[if_button,if_182:com_6]
+if_close();
+p_logout();
