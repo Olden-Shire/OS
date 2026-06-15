@@ -24,16 +24,16 @@ use io::Packet;
 /// numeric stub (`995=995`) are ignored, so unnamed models render as their id and
 /// round-trip unchanged. The default (empty) resolver makes every `Model` operand
 /// behave exactly like a raw `U16`.
+/// One id↔name table built from a `*.pack` file (numeric stubs filtered out, so
+/// unnamed ids render as their number and round-trip unchanged).
 #[derive(Default)]
-pub struct ModelRefs {
+struct PackRefs {
     by_id: HashMap<u32, String>,
     by_name: HashMap<String, u32>,
 }
 
-impl ModelRefs {
-    /// Build from a `model.pack` id→stem map (numeric stubs filtered out).
-    #[must_use]
-    pub fn from_pack(map: &BTreeMap<u32, String>) -> Self {
+impl PackRefs {
+    fn from_pack(map: &BTreeMap<u32, String>) -> Self {
         let mut by_id = HashMap::new();
         let mut by_name = HashMap::new();
         for (&id, name) in map {
@@ -45,13 +45,37 @@ impl ModelRefs {
         }
         Self { by_id, by_name }
     }
-
     fn name_of(&self, id: i32) -> Option<&str> {
         u32::try_from(id).ok().and_then(|i| self.by_id.get(&i)).map(String::as_str)
     }
-
     fn id_of(&self, name: &str) -> Option<i32> {
         self.by_name.get(name).map(|&i| i as i32)
+    }
+}
+
+/// Resolves config id references to/from `*.pack` names so config text can use
+/// names (`model = obj_cannonball`, `readyanim = seq_447`) instead of raw ids:
+/// [`Operand::Model`]/[`Operand::ModelList`] go through `model.pack`,
+/// [`Operand::Seq`] through `seq.pack`. The default (empty) resolver makes every
+/// ref behave like a raw number.
+#[derive(Default)]
+pub struct ConfigRefs {
+    model: PackRefs,
+    seq: PackRefs,
+}
+
+impl ConfigRefs {
+    /// Build from a `model.pack` id→stem map (seqs unnamed). Back-compat for
+    /// callers that only resolve models.
+    #[must_use]
+    pub fn from_pack(model: &BTreeMap<u32, String>) -> Self {
+        Self { model: PackRefs::from_pack(model), seq: PackRefs::default() }
+    }
+
+    /// Build from both `model.pack` and `seq.pack` id→stem maps.
+    #[must_use]
+    pub fn from_packs(model: &BTreeMap<u32, String>, seq: &BTreeMap<u32, String>) -> Self {
+        Self { model: PackRefs::from_pack(model), seq: PackRefs::from_pack(seq) }
     }
 }
 
@@ -98,10 +122,14 @@ impl Prim {
 pub enum Operand {
     /// a scalar
     Num(Prim),
-    /// a `U16` model id resolved through [`ModelRefs`]: rendered as its
-    /// `model.pack` name when one exists, else the raw id; parsed back from
-    /// either form on encode.
+    /// a `U16` model id resolved through `model.pack`: rendered as its name when
+    /// one exists, else the raw id; parsed back from either form on encode.
     Model,
+    /// a `U16` seq (animation) id resolved through `seq.pack`, same as `Model`.
+    Seq,
+    /// a `U8` count then `count` × `U16` model ids, each resolved through
+    /// `model.pack`; rendered space-separated (`models = a b c`).
+    ModelList,
     /// length-prefixed cp1252 string (gjstr / pjstr) — must be the LAST operand
     Str,
     /// `count` (a scalar) then `count` rows of `cols`. `col_major` reads all
@@ -156,7 +184,7 @@ pub fn is_server_only_key(key: &str) -> bool {
 /// Decode a config record to readable text iff it re-encodes BYTE-EXACTLY
 /// (else `None` → caller keeps `.dat`). First line is a `// <kind> <id>`
 /// context comment, ignored on encode.
-pub fn decode(schema: Schema, kind: &str, id: u32, bytes: &[u8], refs: &ModelRefs) -> Option<String> {
+pub fn decode(schema: Schema, kind: &str, id: u32, bytes: &[u8], refs: &ConfigRefs) -> Option<String> {
     let lines = decode_lines(schema, bytes, refs)?;
     let mut text = format!("// {kind} {id}\n");
     text.push_str(&lines.join("\n"));
@@ -169,7 +197,7 @@ pub fn decode(schema: Schema, kind: &str, id: u32, bytes: &[u8], refs: &ModelRef
     }
 }
 
-fn decode_lines(schema: Schema, bytes: &[u8], refs: &ModelRefs) -> Option<Vec<String>> {
+fn decode_lines(schema: Schema, bytes: &[u8], refs: &ConfigRefs) -> Option<Vec<String>> {
     let mut p = Packet::from_vec(bytes.to_vec());
     let mut lines = Vec::new();
     loop {
@@ -190,7 +218,21 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ModelRefs) -> Option<Vec<St
                 Operand::Num(prim) => parts.push(prim.read(&mut p).to_string()),
                 Operand::Model => {
                     let id = p.g2();
-                    parts.push(refs.name_of(id).map_or_else(|| id.to_string(), str::to_string));
+                    parts.push(refs.model.name_of(id).map_or_else(|| id.to_string(), str::to_string));
+                }
+                Operand::Seq => {
+                    let id = p.g2();
+                    parts.push(refs.seq.name_of(id).map_or_else(|| id.to_string(), str::to_string));
+                }
+                Operand::ModelList => {
+                    let n = p.g1() as usize;
+                    let vals: Vec<String> = (0..n)
+                        .map(|_| {
+                            let id = p.g2();
+                            refs.model.name_of(id).map_or_else(|| id.to_string(), str::to_string)
+                        })
+                        .collect();
+                    parts.push(vals.join(" "));
                 }
                 Operand::Str => parts.push(escape_str(&p.gjstr())),
                 Operand::Counted { count, cols, col_major } => {
@@ -238,7 +280,7 @@ fn decode_lines(schema: Schema, bytes: &[u8], refs: &ModelRefs) -> Option<Vec<St
 /// Re-encode readable text to the exact config byte stream. Lines run in
 /// order (opcode order preserved); blank/`//` lines skipped. `None` on any
 /// unparseable line.
-pub fn encode(schema: Schema, text: &str, refs: &ModelRefs) -> Option<Vec<u8>> {
+pub fn encode(schema: Schema, text: &str, refs: &ConfigRefs) -> Option<Vec<u8>> {
     let mut p = Packet::from_vec(Vec::new());
     for raw in text.lines() {
         let line = raw.trim();
@@ -279,9 +321,34 @@ pub fn encode(schema: Schema, text: &str, refs: &ModelRefs) -> Option<Vec<u8>> {
                     let f = field.trim();
                     let id = match f.parse::<i32>() {
                         Ok(n) => n,
-                        Err(_) => refs.id_of(f)?,
+                        Err(_) => refs.model.id_of(f)?,
                     };
                     p.p2(id);
+                }
+                Operand::Seq => {
+                    let f = field.trim();
+                    let id = match f.parse::<i32>() {
+                        Ok(n) => n,
+                        Err(_) => refs.seq.id_of(f)?,
+                    };
+                    p.p2(id);
+                }
+                Operand::ModelList => {
+                    let f = field.trim();
+                    let ids: Vec<i32> = if f.is_empty() {
+                        Vec::new()
+                    } else {
+                        f.split_whitespace()
+                            .map(|t| match t.parse::<i32>() {
+                                Ok(n) => Some(n),
+                                Err(_) => refs.model.id_of(t),
+                            })
+                            .collect::<Option<Vec<_>>>()?
+                    };
+                    p.p1(ids.len() as i32);
+                    for id in ids {
+                        p.p2(id);
+                    }
                 }
                 Operand::Str => p.pjstr(&unescape_str(field)),
                 Operand::Counted { count, cols, col_major } => {
@@ -497,11 +564,11 @@ pub const LOC: Schema = &[
 
 // ── npc (group 9) ─ opcode 106 (multivar n+1 list) omitted ──────────────
 pub const NPC: Schema = &[
-    OpDef { code: 1, name: "models", operands: &[U16_LIST] },
+    OpDef { code: 1, name: "models", operands: &[Operand::ModelList] },
     OpDef { code: 2, name: "name", operands: &[Str] },
     OpDef { code: 12, name: "size", operands: &[n(U8)] },
-    OpDef { code: 13, name: "readyanim", operands: &[n(U16)] },
-    OpDef { code: 14, name: "walkanim", operands: &[n(U16)] },
+    OpDef { code: 13, name: "readyanim", operands: &[Operand::Seq] },
+    OpDef { code: 14, name: "walkanim", operands: &[Operand::Seq] },
     OpDef { code: 15, name: "turnleftanim", operands: &[n(U16)] },
     OpDef { code: 16, name: "turnrightanim", operands: &[n(U16)] },
     OpDef { code: 17, name: "walkanims", operands: &[n(U16), n(U16), n(U16), n(U16)] },
@@ -512,7 +579,7 @@ pub const NPC: Schema = &[
     OpDef { code: 34, name: "op5", operands: &[Str] },
     OpDef { code: 40, name: "recol", operands: &[PAIRS] },
     OpDef { code: 41, name: "retex", operands: &[PAIRS] },
-    OpDef { code: 60, name: "headmodels", operands: &[U16_LIST] },
+    OpDef { code: 60, name: "headmodels", operands: &[Operand::ModelList] },
     OpDef { code: 93, name: "nominimap", operands: &[] },
     OpDef { code: 95, name: "vislevel", operands: &[n(U16)] },
     OpDef { code: 97, name: "resizeh", operands: &[n(U16)] },

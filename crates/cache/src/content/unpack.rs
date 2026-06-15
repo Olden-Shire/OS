@@ -321,7 +321,7 @@ fn unpack_one_group(
                     // Model names aren't known yet mid-unpack (model.pack is written
                     // at the end), so configs unpack with raw model ids; the
                     // post-unpack rename tools rewrite them to names.
-                    let model_refs = crate::content::config_text::ModelRefs::default();
+                    let model_refs = crate::content::config_text::ConfigRefs::default();
                     crate::content::config_text::decode(schema, kind, fid as u32, file_bytes, &model_refs)
                         .map(|text| fs::write(dir.join(format!("{fid}.{kind}")), text))
                         .transpose()?

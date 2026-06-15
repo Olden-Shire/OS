@@ -259,10 +259,10 @@ fn read_group_payload(
         let model_refs = if config_codec.is_some() {
             packs
                 .get("model")
-                .map(crate::content::config_text::ModelRefs::from_pack)
+                .map(crate::content::config_text::ConfigRefs::from_pack)
                 .unwrap_or_default()
         } else {
-            crate::content::config_text::ModelRefs::default()
+            crate::content::config_text::ConfigRefs::default()
         };
         let nfiles = file_ids.len();
         let mut files: Vec<Vec<u8>> = Vec::with_capacity(nfiles);

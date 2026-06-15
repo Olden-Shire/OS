@@ -31,7 +31,7 @@ use cache::Cache;
 use cache::config::group;
 use cache::configs::Configs;
 use cache::content::{config_text, pack_file};
-use cache::content::config_text::ModelRefs;
+use cache::content::config_text::ConfigRefs;
 
 fn main() {
     let write = std::env::args().any(|a| a == "--write");
@@ -123,7 +123,7 @@ fn main() {
     // the new model NAMES instead of raw ids. Round-trip through the now
     // model-aware codec (encode tolerates both names and ids, so this is
     // idempotent): text -> bytes -> name-bearing text.
-    let refs = ModelRefs::from_pack(&pack);
+    let refs = ConfigRefs::from_pack(&pack);
     let (schema, kind) = config_text::schema_for_group(group::OBJ).expect("obj schema");
     let obj_dir = PathBuf::from("Content/config/obj");
     let mut rewritten = 0usize;

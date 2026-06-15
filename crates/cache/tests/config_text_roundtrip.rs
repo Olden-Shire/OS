@@ -49,7 +49,7 @@ fn all_config_text_roundtrips_byte_exact() {
         let (schema, kind) = config_text::schema_for_group(gid).expect("schema");
         let mut converted = 0usize;
         let mut sample = Vec::new();
-        let refs = config_text::ModelRefs::default();
+        let refs = config_text::ConfigRefs::default();
         for (fid, bytes) in &files {
             if let Some(text) = config_text::decode(schema, kind, *fid as u32, bytes, &refs) {
                 let re = config_text::encode(schema, &text, &refs).expect("re-encode");
