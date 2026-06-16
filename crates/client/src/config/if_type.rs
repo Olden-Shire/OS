@@ -732,6 +732,19 @@ pub fn modify<F: FnOnce(&mut IfType)>(component_id: i32, f: F) -> bool {
     let group = (component_id >> 16) & 0xFFFF;
     let sub = component_id & 0xFFFF;
     if group < 0 || sub < 0 { return false; }
+    // Lazy-load the group on demand — Java's IfType.get loads the archive group
+    // if absent, so an IF_SET* (e.g. chatnpc dialogue text) applied BEFORE the
+    // interface is opened still lands. Without this, the first set on a
+    // not-yet-loaded interface was silently dropped and the component rendered
+    // blank (chatnpc lines, npc head). open_interface is idempotent + locks
+    // STORE itself, so check/load before taking our own lock.
+    let loaded = { STORE.lock().unwrap().open.get(group as usize).copied().unwrap_or(false) };
+    if !loaded {
+        let slot = INTERFACES_SLOT.load(std::sync::atomic::Ordering::Relaxed);
+        if slot >= 0 {
+            open_interface(group, slot);
+        }
+    }
     let mut s = STORE.lock().unwrap();
     let Some(list) = s.list.get_mut(group as usize).and_then(|o| o.as_mut()) else {
         return false;

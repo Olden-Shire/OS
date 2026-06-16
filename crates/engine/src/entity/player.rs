@@ -963,6 +963,19 @@ impl Player {
         self.run_energy = (self.run_energy + amount).clamp(0, MAX_RUN_ENERGY);
     }
 
+    /// God-action (control panel): fully restore the player — every skill's
+    /// current level back to its base (clearing both boosts and drains) and run
+    /// energy to the maximum. Level changes flush via `update_stats` next tick;
+    /// the energy is pushed immediately since `update_energy` only emits on a
+    /// percent *delta* (a jump straight to full wouldn't otherwise sync).
+    pub fn restore_full(&mut self) {
+        for stat in 0..STAT_COUNT {
+            self.levels[stat] = self.base_levels[stat];
+        }
+        self.run_energy = MAX_RUN_ENERGY;
+        self.write(msg::update_runenergy(self.run_energy / 100));
+    }
+
     /// Cancel any queued walk and clear the client's minimap move-to flag —
     /// 1:1 with Engine-TS `Player.unsetMapFlag`. Called when the engine takes
     /// over movement (e.g. an exact-move) so the client stops trying to walk

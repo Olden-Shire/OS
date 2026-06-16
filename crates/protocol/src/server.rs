@@ -79,12 +79,14 @@ pub fn if_opensub(component: i32, sub_id: i32, kind: i32) -> ServerPacket {
 }
 
 /// IF_SETTEXT (197) — set a component's text. Variable length: the client
-/// reads jstr(text) then g4_alt3(component) (Client.java:7164-7172).
+/// reads jstr(text) then g4_alt3(component) (Client.java:7164-7172). The Java
+/// client's Protocol.SERVERPROT_SIZES[197] is -2, i.e. a 2-byte length prefix
+/// (Var2) — sending Var1 desyncs the read pump and disconnect-loops the client.
 pub fn if_settext(component: i32, text: &str) -> ServerPacket {
     let mut p = body(text.len() + 6);
     p.pjstr(text);
     p.p4_alt3(component);
-    finish(197, SizeKind::Var1, p)
+    finish(197, SizeKind::Var2, p)
 }
 
 /// IF_SETHIDE (84) — show or hide a component. Client reads g4_alt1(component)

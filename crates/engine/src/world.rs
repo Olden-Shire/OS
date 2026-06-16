@@ -146,6 +146,10 @@ pub struct World {
     /// Per-font character advance widths (font id → 256 byte widths), from the
     /// fonts archive metrics. SPLIT_INIT word-wraps dialogue text with these.
     pub fonts: std::collections::HashMap<i32, Vec<i32>>,
+    /// Mesanim ("message animation") configs: name (e.g. "neutral") → the four
+    /// chathead talk seqs, one per dialogue line-count. The `<p,name>` prefix on
+    /// a chat string selects one; SPLIT_GETANIM returns `len[lineCount-1]`.
+    pub mesanim: std::collections::HashMap<String, [i32; 4]>,
     /// InvType sizes (config group 5), keyed by inv id — the capacity a player
     /// inventory is created at. Backs INV_SIZE and the INV_* slot ops.
     pub inv_sizes: std::collections::HashMap<i32, i32>,
@@ -447,6 +451,7 @@ impl World {
             constants_str: std::collections::HashMap::new(),
             category_ids: std::collections::HashMap::new(),
             fonts: std::collections::HashMap::new(),
+            mesanim: std::collections::HashMap::new(),
             inv_sizes: std::collections::HashMap::new(),
             delayed_objs: Vec::new(),
             npc_events: Vec::new(),
@@ -941,6 +946,72 @@ impl World {
                 }
             }
             self.param_defs.insert(id, def);
+        }
+    }
+
+    /// Load mesanim configs (`*.mesanim` under `scripts/`): each `[name]` block
+    /// maps `len1..len4` (chathead talk seqs, by seq NAME) to a per-line-count
+    /// seq array. Resolves seq names via `pack/seq.pack` (so the chathead seqs
+    /// must be named there — see rename_seqs_to_ref). Server-side only; the
+    /// client just plays the seq SPLIT_GETANIM hands back. Call after configs.
+    pub fn load_mesanim(&mut self, content_dir: &std::path::Path) {
+        // seq name -> id (skip numeric-stub names).
+        let mut seq_ids: std::collections::HashMap<String, i32> = std::collections::HashMap::new();
+        if let Ok(t) = std::fs::read_to_string(content_dir.join("pack").join("seq.pack")) {
+            for line in t.lines() {
+                if let Some((id, name)) = line.split_once('=')
+                    && let Ok(id) = id.trim().parse::<i32>()
+                {
+                    let name = name.trim();
+                    if name.parse::<i32>().is_err() {
+                        seq_ids.insert(name.to_string(), id);
+                    }
+                }
+            }
+        }
+        // Collect every `.mesanim` file under scripts/.
+        let mut files = Vec::new();
+        let mut stack = vec![content_dir.join("scripts")];
+        while let Some(dir) = stack.pop() {
+            let Ok(rd) = std::fs::read_dir(&dir) else { continue };
+            for e in rd.flatten() {
+                let p = e.path();
+                if p.is_dir() {
+                    stack.push(p);
+                } else if p.extension().and_then(|x| x.to_str()) == Some("mesanim") {
+                    files.push(p);
+                }
+            }
+        }
+        for p in &files {
+            let Ok(t) = std::fs::read_to_string(p) else { continue };
+            let mut cur: Option<String> = None;
+            let mut lens = [-1i32; 4];
+            for line in t.lines() {
+                let l = line.trim();
+                if let Some(inner) = l.strip_prefix('[').and_then(|s| s.strip_suffix(']')) {
+                    if let Some(n) = cur.take()
+                        && lens.iter().any(|&v| v >= 0)
+                    {
+                        self.mesanim.insert(n, lens);
+                    }
+                    cur = Some(inner.to_string());
+                    lens = [-1; 4];
+                } else if let Some(rest) = l.strip_prefix("len")
+                    && let Some((idx, val)) = rest.split_once('=')
+                    && let Ok(i) = idx.parse::<usize>()
+                    && (1..=4).contains(&i)
+                {
+                    let v = val.trim();
+                    // Value may be a seq name (chatneu1) or a literal id.
+                    lens[i - 1] = v.parse::<i32>().ok().or_else(|| seq_ids.get(v).copied()).unwrap_or(-1);
+                }
+            }
+            if let Some(n) = cur.take()
+                && lens.iter().any(|&v| v >= 0)
+            {
+                self.mesanim.insert(n, lens);
+            }
         }
     }
 
@@ -3374,6 +3445,17 @@ impl World {
             ClientMessage::ResumePauseButton { .. } => {
                 // Continue a dialog paused on P_PAUSEBUTTON.
                 self.resume_pausebutton(pid);
+            }
+            ClientMessage::OpNpc { nid, op } => {
+                // The player clicked an npc op (Talk-to = op1, …). Set the ap/op
+                // interaction so try_interact fires [apnpc<op>]/[opnpc<op>] once
+                // the player reaches operable distance. `op` (the ap trigger) is
+                // APNPC1 + (op-1); try_interact derives the op trigger as op+7.
+                let nid = nid as usize;
+                if nid < self.npcs.len() && self.npcs[nid].is_some() {
+                    let ap = trigger::APNPC1 as i32 + (op - 1);
+                    self.set_interaction(pid, player::InteractTarget::Npc(nid), ap, -1);
+                }
             }
             ClientMessage::NoOp => {}
         }

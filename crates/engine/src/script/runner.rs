@@ -906,11 +906,19 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
         op::SPLIT_INIT => {
             let [max_width, lines_per_page, font_id] = state.pop_ints::<3>();
             let mut text = state.pop_string();
-            // Optional `<p,mesanim>` prefix — no mesanim configs yet, so strip + -1.
+            // Optional `<p,mesanim>` prefix selects the chathead talk animation
+            // (Engine-TS StringOps SPLIT_INIT). Resolve the name against the
+            // mesanim registry; SPLIT_GETANIM returns len[lineCount-1].
             state.split_mesanim = -1;
+            state.split_mesanim_lens = [-1; 4];
             if let Some(rest) = text.strip_prefix("<p,")
                 && let Some(end) = rest.find('>')
             {
+                let name = &rest[..end];
+                if let Some(lens) = world.mesanim.get(name) {
+                    state.split_mesanim = 1;
+                    state.split_mesanim_lens = *lens;
+                }
                 text = rest[end + 1..].to_string();
             }
             // Real per-char advance widths for this font; empty -> 7px fallback.
@@ -940,15 +948,19 @@ fn step(state: &mut ScriptState, world: &mut World, opcode: u16) -> Result<(), S
             state.push_int(state.split_pages.get(page as usize).map_or(0, |p| p.len() as i32));
         }
         op::SPLIT_GETANIM => {
-            let _page = state.pop_int();
-            state.push_int(-1); // no mesanim data yet
+            // Engine-TS: mesanim.len[splitPages[page].length - 1] — the chathead
+            // talk seq sized to this page's line count (-1 when no mesanim).
+            let page = state.pop_int();
+            let lines = state.split_pages.get(page as usize).map_or(0, Vec::len);
+            let anim = if (1..=4).contains(&lines) { state.split_mesanim_lens[lines - 1] } else { -1 };
+            state.push_int(anim);
         }
         op::IF_OPENCHAT => {
             // Open an interface as the chatbox modal (Engine-TS openChatModal).
             // 2007 has no dedicated IF_OPENCHAT opcode — attach it as a modal sub
-            // on the fixed gameframe's chat slot (548:com_90). The exact attach
-            // point is TBD vs the client; refine when testing dialogue rendering.
-            const CHAT_SLOT: i32 = (548 << 16) | 90;
+            // on the fixed gameframe's chat-overlay slot (548:com_91). com_90 is
+            // the chat text area; the dialogue overlays com_91 to sit authentically.
+            const CHAT_SLOT: i32 = (548 << 16) | 91;
             let component = state.pop_int();
             if let Some(pid) = state.active_player
                 && let Some(p) = world.players[pid].as_mut()

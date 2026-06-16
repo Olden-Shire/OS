@@ -79,6 +79,10 @@ pub struct ScriptState {
     pub split_pages: Vec<Vec<String>>,
     /// Mesanim id parsed from a `<p,name>` text prefix (-1 = none).
     pub split_mesanim: i32,
+    /// The resolved mesanim's per-line-count chathead talk seqs (len1..len4,
+    /// -1 = none), looked up from `World.mesanim` in SPLIT_INIT. SPLIT_GETANIM
+    /// returns the entry for the page's line count.
+    pub split_mesanim_lens: [i32; 4],
 
     pointers: u32,
 
@@ -152,6 +156,7 @@ impl ScriptState {
             string_locals,
             split_pages: Vec::new(),
             split_mesanim: -1,
+            split_mesanim_lens: [-1; 4],
             pointers: 0,
             active_player: None,
             active_player2: None,

@@ -127,6 +127,10 @@ pub enum ClientMessage {
     /// client resolves the multinpc redirect before sending); the server replies
     /// with that type's `desc` examine text.
     ExamineNpc { type_id: i32 },
+    /// OPNPC1-5 — the player clicked one of an npc's ops (Talk-to, etc.). Carries
+    /// the npc's server index and the 1-based op number; the server sets the
+    /// matching ap/op interaction so the [opnpc<n>, …] script fires when in range.
+    OpNpc { nid: i32, op: i32 },
     NoOp,
 }
 
@@ -154,6 +158,16 @@ pub fn decode(opcode: u8, buf: &mut Packet, length: usize) -> ClientMessage {
             let component = buf.g4();
             let sub = buf.g2();
             ClientMessage::IfButton { op, component, sub }
+        }
+        // OPNPC1-5 — an npc op click (Talk-to, etc.): p2_alt3(npc index). The
+        // opcode selects the op; the client builder is send_op_entity_g2_alt3.
+        84 | 13 | 67 | 95 | 88 => {
+            let op = match opcode {
+                84 => 1, 13 => 2, 67 => 3, 95 => 4, 88 => 5,
+                _ => unreachable!(),
+            };
+            let nid = buf.g2_alt3();
+            ClientMessage::OpNpc { nid, op }
         }
         // RESUME_PAUSEBUTTON — the player clicked "continue" on a paused dialog:
         // p2_alt2(sub) + p4(component).

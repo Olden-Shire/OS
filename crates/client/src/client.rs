@@ -431,8 +431,12 @@ pub fn logout(c: &mut Client) {
     c.idk_design_button2 = -1;
     crate::dash3d::player_model::reset_cache();
 
-    // Return to title screen.
-    c.state = 10;
+    // Return to title screen. Going through set_main_state (not a bare
+    // `c.state = 10`) re-opens the title screen — Java setMainState:1548 —
+    // which re-populates the flame gradient/buffer arrays that close() cleared
+    // on login. A bare assignment skips that and title_screen::draw panics
+    // indexing the empty flame_gradient.
+    c.set_main_state(10);
 }
 
 // @ObfuscatedName("bh.da(B)V") — Client.clearCaches. Verbatim port of
@@ -8568,6 +8572,11 @@ impl Client {
     // We mirror those side effects here so callers don't need to
     // do them manually each time.
     pub fn set_main_state(&mut self, state: i32) {
+        // Java setMainState:1521 — no-op (and no title close/reopen) when the
+        // state is unchanged.
+        if self.state == state {
+            return;
+        }
         self.state = state;
 
         match state {
@@ -8593,11 +8602,16 @@ impl Client {
             self.prev_stream = None;
         }
 
-        // Java setMainState: the title stays open for states 5/10/20 and
-        // is closed otherwise — which frees its assets AND fades the title
-        // song ("scape main") out on the login transition, even with no
-        // server MIDI_SONG packet to follow. close() is idempotent.
-        if !matches!(state, 5 | 10 | 20) {
+        // Java setMainState:1548-1552 — the title screen is (re)opened for
+        // states 5/10/20 and closed otherwise. Re-opening on the logout
+        // transition (30 -> 10) re-populates the flame gradient/buffer arrays
+        // that close() cleared on login; without it title_screen::draw would
+        // index the now-empty flame_gradient and panic. open() is guarded by
+        // `if open return`, and close() frees its assets AND fades the title
+        // song ("scape main") out (close() is idempotent).
+        if matches!(state, 5 | 10 | 20) {
+            crate::title_screen::open(self.binary, self.sprites, self.songs);
+        } else {
             crate::title_screen::close();
         }
     }

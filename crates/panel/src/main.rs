@@ -63,6 +63,10 @@ struct PlayerRow {
     ready_anim: i32,
     walk_anim: i32,
     moving: bool,
+    /// Current (boosted/drained) skill levels, indexed by the engine STAT_* order.
+    levels: [i32; 23],
+    /// Base (un-boosted) skill levels — the "real" level a boost is measured against.
+    base_levels: [i32; 23],
 }
 
 #[derive(Clone, Default)]
@@ -73,6 +77,10 @@ struct NpcRow {
     z: i32,
     level: i32,
     moving: bool,
+    /// Current (boosted/drained) combat levels: atk, def, str, hp, range, mage.
+    levels: [i32; 6],
+    /// Base combat levels — what a current value is measured against.
+    base_levels: [i32; 6],
 }
 
 /// One tick's stacked time-accounting sample. `stack` are the six
@@ -404,6 +412,8 @@ fn main() -> eframe::Result<()> {
                 console_tab: ConsoleTab::Activity,
                 last_title: String::new(),
                 msg_text: String::new(),
+                edit_stat: 0,
+                edit_level: 99,
                 scroll_sel: Selection::None,
                 last_screen: egui::Vec2::ZERO,
                 reanchor: false,
@@ -439,6 +449,8 @@ fn build_snapshot(world: &engine::World, stats: server::TickStats) -> Snapshot {
             ready_anim: p.ready_anim,
             walk_anim: p.walk_anim,
             moving: p.entity.walk_dir >= 0,
+            levels: p.levels,
+            base_levels: p.base_levels,
         })
         .collect();
     let npcs = world
@@ -452,6 +464,8 @@ fn build_snapshot(world: &engine::World, stats: server::TickStats) -> Snapshot {
             z: n.entity.z,
             level: n.entity.level,
             moving: n.entity.walk_dir >= 0,
+            levels: n.levels,
+            base_levels: n.base_levels,
         })
         .collect();
     let ms = |d: Duration| d.as_secs_f32() * 1000.0;
@@ -524,6 +538,9 @@ struct PanelApp {
     last_title: String,
     /// Per-player private-message composer (inspector).
     msg_text: String,
+    /// "Set level" editor state: the selected skill index + target level.
+    edit_stat: usize,
+    edit_level: i32,
     /// Last selection we auto-scrolled the side lists to (so we scroll on change
     /// — e.g. selecting via the map — without fighting manual scrolling).
     scroll_sel: Selection,
@@ -782,6 +799,7 @@ impl PanelApp {
                 ui.label(egui::RichText::new("SELECTED NPC").weak().size(11.0));
                 if let Some(n) = snap.npcs.iter().find(|n| n.nid == nid) {
                     let (tid, level, x, z, moving) = (n.type_id, n.level, n.x, n.z, n.moving);
+                    let (levels, base_levels) = (n.levels, n.base_levels);
                     if let Some(px) = self.scene.npc_portrait(tid, 150, 200) {
                         let tex = pix_bridge::upload_rgb(ui.ctx(), "npc_portrait", &px, 150, 200);
                         ui.vertical_centered(|ui| ui.image((tex.id(), egui::vec2(150.0, 200.0))));
@@ -797,6 +815,8 @@ impl PanelApp {
                     kv(ui, "type", &tid.to_string());
                     kv(ui, "Coord", &format!("{level} : {x}, {z}"));
                     kv(ui, "State", if moving { "moving" } else { "idle" });
+                    // Live combat stats: a HP bar (current/max) + the 6 levels.
+                    npc_stats(ui, &levels, &base_levels);
                 } else {
                     self.selected = Selection::None;
                 }
@@ -822,6 +842,8 @@ impl PanelApp {
                     kv(ui, "Coord", &format!("{} : {}, {}", p.level, p.x, p.z));
                     kv(ui, "Combat", &p.combat.to_string());
                     kv(ui, "Run energy", &format!("{}%", p.run_energy / 100));
+                    ui.add_space(4.0);
+                    skills_grid(ui, &p.levels, &p.base_levels);
                     if self.last_inspected != Some(pid) {
                         self.last_inspected = Some(pid);
                         self.tp_x = p.x;
@@ -841,11 +863,39 @@ impl PanelApp {
                             let _ = self.cmd_tx.send(server::PanelCommand::Teleport { pid, x, z, level: lvl });
                             self.log(format!("➡ teleported pid {pid} -> {lvl}:{x},{z}"));
                         }
+                        if ui.button("✚  Heal").on_hover_text("Restore all skills to base + full run energy").clicked() {
+                            let _ = self.cmd_tx.send(server::PanelCommand::Heal(pid));
+                            self.log(format!("✚ healed pid {pid} (stats + energy restored)"));
+                        }
                         if ui.button("⨯  Kick").clicked() {
                             let _ = self.cmd_tx.send(server::PanelCommand::Kick(pid));
                             self.log(format!("⨯ kicked pid {pid}"));
                             self.selected = Selection::None;
                         }
+                    });
+
+                    // Set-level editor: pick a skill + target level, push it to
+                    // the engine (set_level resets base+current+xp, recomputes
+                    // combat). Seeds the level field from the current value.
+                    ui.add_space(4.0);
+                    ui.label(egui::RichText::new("SET LEVEL").weak().size(11.0));
+                    ui.horizontal(|ui| {
+                        egui::ComboBox::from_id_salt("set_skill")
+                            .selected_text(SKILL_NAMES[self.edit_stat])
+                            .width(64.0)
+                            .show_ui(ui, |ui| {
+                                for (i, name) in SKILL_NAMES.iter().enumerate() {
+                                    ui.selectable_value(&mut self.edit_stat, i, *name);
+                                }
+                            });
+                        ui.add(egui::DragValue::new(&mut self.edit_level).range(1..=99).prefix("lvl "));
+                        if ui.button("Set").clicked() {
+                            let (stat, level) = (self.edit_stat, self.edit_level.clamp(1, 99));
+                            let _ = self.cmd_tx.send(server::PanelCommand::SetLevel { pid, stat, level });
+                            self.log(format!("⇪ set pid {pid} {} -> {level}", SKILL_NAMES[stat]));
+                        }
+                        ui.label(egui::RichText::new(format!("(now {})", p.base_levels[self.edit_stat]))
+                            .size(11.0).weak());
                     });
 
                     // Private message to just this player (individual chat).
@@ -963,17 +1013,22 @@ impl PanelApp {
             painter.hline(rect.x_range(), y, egui::Stroke::new(if wl_z % 64 == 0 { 1.5 } else { 1.0 }, colz));
         }
 
-        // Entity dots (only those within the baked build area).
+        // Entity dots (only those within the baked build area). A damaged
+        // entity (current HP below max) also gets a small health bar above it —
+        // the OSRS convention of only showing the bar mid-combat.
         let in_area = |x: i32, z: i32| x >= ox && x < ox + tiles && z >= oz && z < oz + tiles;
         for n in &snap.npcs {
             if in_area(n.x, n.z) {
-                painter.circle_filled(to_canvas(n.x, n.z), 2.5, egui::Color32::from_rgb(90, 150, 230));
+                let c = to_canvas(n.x, n.z);
+                painter.circle_filled(c, 2.5, egui::Color32::from_rgb(90, 150, 230));
+                hp_bar(&painter, c, n.levels[3], n.base_levels[3]);
             }
         }
         for p in &snap.players {
             if in_area(p.x, p.z) {
                 let c = to_canvas(p.x, p.z);
                 painter.circle_filled(c, 4.0, egui::Color32::LIGHT_GREEN);
+                hp_bar(&painter, c, p.levels[3], p.base_levels[3]);
                 painter.text(c + egui::vec2(5.0, -2.0), egui::Align2::LEFT_CENTER, &p.name,
                              egui::FontId::proportional(11.0), egui::Color32::from_white_alpha(220));
             }
@@ -1222,15 +1277,22 @@ impl PanelApp {
         }
 
         // Entity dots (npcs faint, players bright, selection ringed). Player
-        // names label when zoomed in enough to be legible.
+        // names + damaged-entity HP bars show only when zoomed in enough to be
+        // legible (same threshold as the labels), so the whole-world view stays
+        // uncluttered.
         let labels = z * 64.0 > 110.0;
         for n in &snap.npcs {
-            painter.circle_filled(to_screen(n.x, n.z), 1.6, egui::Color32::from_rgb(90, 150, 230));
+            let c = to_screen(n.x, n.z);
+            painter.circle_filled(c, 1.6, egui::Color32::from_rgb(90, 150, 230));
+            if labels {
+                hp_bar(&painter, c, n.levels[3], n.base_levels[3]);
+            }
         }
         for p in &snap.players {
             let c = to_screen(p.x, p.z);
             painter.circle_filled(c, 2.8, egui::Color32::LIGHT_GREEN);
             if labels {
+                hp_bar(&painter, c, p.levels[3], p.base_levels[3]);
                 painter.text(c + egui::vec2(5.0, -1.0), egui::Align2::LEFT_CENTER, &p.name,
                              egui::FontId::proportional(11.0), egui::Color32::from_white_alpha(230));
             }
@@ -1434,6 +1496,7 @@ impl PanelApp {
                     z: pl.z,
                     color: if sel { egui::Color32::YELLOW } else { egui::Color32::LIGHT_GREEN },
                     label: Some(pl.name.clone()),
+                    hp: Some((pl.levels[3], pl.base_levels[3])),
                     kind: scene::MarkerKind::Player {
                         worn,
                         colours: pl.colours,
@@ -1455,6 +1518,7 @@ impl PanelApp {
                     z: n.z,
                     color: if sel { egui::Color32::YELLOW } else { egui::Color32::from_rgb(90, 150, 230) },
                     label: None,
+                    hp: Some((n.levels[3], n.base_levels[3])),
                     kind: scene::MarkerKind::Npc { type_id: n.type_id, moving: n.moving },
                 });
                 picks.push(Selection::Npc(n.nid));
@@ -1754,6 +1818,106 @@ fn splash(ctx: &egui::Context, state: &PanelState) {
                 }
             });
         });
+    });
+}
+
+/// Short labels for the 23 skills, indexed by the engine STAT_* order
+/// (attack=0 … construction=22).
+const SKILL_NAMES: [&str; 23] = [
+    "Atk", "Def", "Str", "HP", "Range", "Pray", "Mage", "Cook", "WC", "Fletch",
+    "Fish", "FM", "Craft", "Smith", "Mine", "Herb", "Agi", "Thief", "Slay",
+    "Farm", "RC", "Hunt", "Con",
+];
+
+/// Compact live skills panel for the selected player: a 3-column grid of
+/// `name cur` cells (boosted skills cyan, drained orange), with the total level.
+/// Mirrors the in-game skills tab so an admin can read a character at a glance.
+fn skills_grid(ui: &mut egui::Ui, levels: &[i32; 23], base: &[i32; 23]) {
+    let total: i32 = base.iter().sum();
+    ui.horizontal(|ui| {
+        ui.label(egui::RichText::new("SKILLS").weak().size(11.0));
+        ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+            ui.label(egui::RichText::new(format!("total {total}")).size(11.0).weak());
+        });
+    });
+    egui::Grid::new("skills_grid").num_columns(3).spacing([10.0, 2.0]).show(ui, |ui| {
+        for i in 0..23 {
+            let (cur, b) = (levels[i], base[i]);
+            // Boosted = cyan, drained = amber, normal = default text.
+            let col = if cur > b {
+                egui::Color32::from_rgb(79, 195, 247)
+            } else if cur < b {
+                egui::Color32::from_rgb(255, 167, 38)
+            } else {
+                egui::Color32::from_white_alpha(210)
+            };
+            let txt = if cur == b {
+                format!("{:<5} {cur}", SKILL_NAMES[i])
+            } else {
+                format!("{:<5} {cur}/{b}", SKILL_NAMES[i])
+            };
+            ui.label(egui::RichText::new(txt).monospace().size(11.0).color(col))
+                .on_hover_text(format!("{} — current {cur}, base {b}", SKILL_NAMES[i]));
+            if i % 3 == 2 {
+                ui.end_row();
+            }
+        }
+    });
+}
+
+/// Draw a small health bar centred above a map dot — but only for a *damaged*
+/// entity (current HP below max). Green→red fill over a dark-red backing, the
+/// OSRS overhead-healthbar look, so combat is readable at a glance on the map.
+fn hp_bar(painter: &egui::Painter, center: egui::Pos2, cur: i32, max: i32) {
+    if max <= 0 || cur >= max || cur < 0 {
+        return;
+    }
+    let frac = (cur as f32 / max as f32).clamp(0.0, 1.0);
+    let (w, h) = (16.0_f32, 2.5_f32);
+    let top = center.y - 7.0;
+    let bg = egui::Rect::from_min_size(egui::pos2(center.x - w / 2.0, top), egui::vec2(w, h));
+    painter.rect_filled(bg, 0.5, egui::Color32::from_rgb(120, 30, 30));
+    let fg = egui::Rect::from_min_size(bg.min, egui::vec2(w * frac, h));
+    painter.rect_filled(fg, 0.5, egui::Color32::from_rgb(60, 200, 60));
+}
+
+/// Short labels for the 6 NPC combat stats (engine NPC_STAT_* order).
+const NPC_STAT_NAMES: [&str; 6] = ["Atk", "Def", "Str", "HP", "Range", "Mage"];
+
+/// Live combat-stat readout for the selected NPC: a hitpoints bar (current vs
+/// max from the base level, index 3) plus the six current/base levels — so an
+/// admin can watch an NPC's health and any boost/drain during combat.
+fn npc_stats(ui: &mut egui::Ui, levels: &[i32; 6], base: &[i32; 6]) {
+    ui.add_space(4.0);
+    let (hp, max_hp) = (levels[3], base[3].max(1));
+    let frac = (hp as f32 / max_hp as f32).clamp(0.0, 1.0);
+    // Green -> red as health drops.
+    let col = egui::Color32::from_rgb((220.0 * (1.0 - frac)) as u8 + 35, (200.0 * frac) as u8 + 30, 40);
+    ui.add(egui::ProgressBar::new(frac)
+        .desired_height(12.0)
+        .fill(col)
+        .text(egui::RichText::new(format!("HP {hp} / {max_hp}")).size(11.0)));
+    ui.add_space(2.0);
+    egui::Grid::new("npc_stats_grid").num_columns(3).spacing([10.0, 2.0]).show(ui, |ui| {
+        for i in 0..6 {
+            let (cur, b) = (levels[i], base[i]);
+            let c = if cur > b {
+                egui::Color32::from_rgb(79, 195, 247)
+            } else if cur < b {
+                egui::Color32::from_rgb(255, 167, 38)
+            } else {
+                egui::Color32::from_white_alpha(210)
+            };
+            let txt = if cur == b {
+                format!("{:<5} {cur}", NPC_STAT_NAMES[i])
+            } else {
+                format!("{:<5} {cur}/{b}", NPC_STAT_NAMES[i])
+            };
+            ui.label(egui::RichText::new(txt).monospace().size(11.0).color(c));
+            if i % 3 == 2 {
+                ui.end_row();
+            }
+        }
     });
 }
 

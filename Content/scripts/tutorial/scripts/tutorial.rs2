@@ -1,0 +1,22 @@
+// Shared tutorial procs.
+//
+// INCREMENTAL: only the newbie-basics-instructor step is wired so far. The full
+// progress switch and the completion sequence (starter inventory, equipment,
+// etc.) from Content-old/scripts/tutorial/scripts/tutorial.rs2 land as the
+// later instructors are ported.
+
+// Refresh the hint arrow / step state for the player's current %tutorial value.
+[proc,set_tutorial_progress]
+if (%tutorial = ^newbie_basics_instructor_start
+    | %tutorial = ^newbie_basics_instructor_designed_character
+    | %tutorial = ^newbie_basics_instructor_interact_with_scenery) {
+    ~set_hint_newbie_basics_instructor;
+}
+
+// Finish the tutorial: close any dialogue, mark complete, release to Lumbridge.
+// The vanilla version also seeds a starter inventory (bronze_axe, tinderbox,
+// net, …) — deferred until the inventory system is wired.
+[label,tutorial_complete]
+if_close();
+%tutorial = ^tutorial_complete;
+p_telejump(0_50_50_22_22);

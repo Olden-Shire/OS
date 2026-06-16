@@ -106,7 +106,8 @@
 // info: Show the hint arrow at $coord
 [command,hint_coord](int $offset, coord $coord, int $height)
 // info: Show the hint arrow over the active player
-[command,hint_npc] // todo: signature
+// info: Show the hint arrow over the npc found by the preceding npc_find
+[command,hint_npc]()
 // info: Show a hint arrow over the second active player
 [command,hint_pl] // todo: signature
 // info: Clear the hint arrow
@@ -225,7 +226,8 @@
 // info: Requires protected access - cast a spell on the active_player
 [command,p_opplayert](component $spell)
 // info: Requires protected access - open a "Click here to continue" dialog
-[command,p_pausebutton] // todo: signature
+// info: Pause the script until the player clicks a registered resume button
+[command,p_pausebutton]()
 // info: Prevent logout for a duration
 [command,p_preventlogout](string $message, int $duration)
 // info: Toggle the player's run-mode

@@ -694,11 +694,21 @@ fn handle_packet(c: &mut Client, opcode: i32, buf: &[u8]) {
                  // diff-against-future-revision alignment.
             let text = p.gjstr();
             let component = p.g4_alt3();
+            let mut changed = false;
             if_type::modify(component, |c| {
                 if c.text != text {
                     c.text = text.clone();
+                    changed = true;
                 }
             });
+            // Java Client.java:7170 calls componentUpdated(var379) after setting
+            // the text — it marks the component dirty so the new text actually
+            // renders. Omitting it left chatnpc lines blank (set but not redrawn).
+            if changed {
+                if let Some(com) = if_type::get(component) {
+                    crate::client::component_updated(&com);
+                }
+            }
         }
         84 => { // IF_SETHIDE — Java: g4_alt1 component + g1_alt3 hide.
             let component = p.g4_alt1();

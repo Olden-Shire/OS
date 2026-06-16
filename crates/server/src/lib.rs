@@ -97,6 +97,11 @@ pub enum PanelCommand {
     Teleport { pid: usize, x: i32, z: i32, level: i32 },
     /// Send a private chatbox message to a single player.
     Message { pid: usize, text: String },
+    /// Fully restore a player: all skill levels back to base + run energy to max.
+    Heal(usize),
+    /// Set one of a player's skills to an exact level (engine clamps to 1..=99,
+    /// resets base+current+xp, recomputes combat). `stat` is the STAT_* index.
+    SetLevel { pid: usize, stat: usize, level: i32 },
 }
 
 pub struct ServerConfig {
@@ -244,6 +249,8 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
     // Param registry + RuneScript constants first — load_server_npc_props
     // resolves `param =` lines against them.
     world.load_param_configs(Path::new(&spawn_dir));
+    // Mesanim configs (chathead talk anims) — resolves len seq names via seq.pack.
+    world.load_mesanim(Path::new(&spawn_dir));
     world.load_server_npc_props(Path::new(&spawn_dir));
     world.load_server_obj_props(Path::new(&spawn_dir));
     world.load_server_loc_props(Path::new(&spawn_dir));
@@ -358,6 +365,16 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
                         PanelCommand::Message { pid, text } => {
                             if let Some(Some(p)) = world.players.get_mut(pid) {
                                 p.out.push(sproto::message_game(&text));
+                            }
+                        }
+                        PanelCommand::Heal(pid) => {
+                            if let Some(Some(p)) = world.players.get_mut(pid) {
+                                p.restore_full();
+                            }
+                        }
+                        PanelCommand::SetLevel { pid, stat, level } => {
+                            if let Some(Some(p)) = world.players.get_mut(pid) {
+                                p.set_level(stat, level);
                             }
                         }
                     }
@@ -709,8 +726,9 @@ fn handle_login(conn: &mut Connection, login: connection::LoginRequest,
         return;
     }
 
-    // Lumbridge spawn — Engine-TS World.ts default (player.teleport(3221, 3219, 0)).
-    let Some(pid) = world.add_player(login.username.clone(), 3221, 3219, 0) else {
+    // Tutorial Island spawn — Engine-TS Player.ts new-player coord (0, 3094, 3106):
+    // the first room, by the newbie basics instructor (RuneScape Guide).
+    let Some(pid) = world.add_player(login.username.clone(), 3094, 3106, 0) else {
         conn.write(&[7]); // world full
         conn.state = ConnState::Closed;
         return;

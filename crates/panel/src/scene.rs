@@ -56,6 +56,9 @@ pub struct Marker {
     pub color: egui::Color32,
     pub label: Option<String>,
     pub kind: MarkerKind,
+    /// (current, max) hitpoints — when current < max a small health bar is drawn
+    /// above the entity (OSRS overhead-bar convention). `None` = no bar.
+    pub hp: Option<(i32, i32)>,
 }
 
 /// Persistent client-entity for one tracked actor — the real `ClientEntity` the
@@ -601,6 +604,18 @@ impl Scene {
             // selected one and labels players (names float at the feet point).
             if m.color == egui::Color32::YELLOW {
                 painter.circle_stroke(pos, 9.0, egui::Stroke::new(2.0, egui::Color32::YELLOW));
+            }
+            // Overhead health bar for a damaged entity (current HP below max).
+            if let Some((cur, max)) = m.hp {
+                if max > 0 && cur >= 0 && cur < max {
+                    let frac = (cur as f32 / max as f32).clamp(0.0, 1.0);
+                    let (bw, bh) = (24.0_f32, 3.0_f32);
+                    let top = pos.y - 16.0;
+                    let bg = egui::Rect::from_min_size(egui::pos2(pos.x - bw / 2.0, top), egui::vec2(bw, bh));
+                    painter.rect_filled(bg, 0.5, egui::Color32::from_rgb(120, 30, 30));
+                    let fg = egui::Rect::from_min_size(bg.min, egui::vec2(bw * frac, bh));
+                    painter.rect_filled(fg, 0.5, egui::Color32::from_rgb(60, 200, 60));
+                }
             }
             if let Some(label) = &m.label {
                 painter.text(
