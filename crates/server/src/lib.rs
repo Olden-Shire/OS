@@ -217,7 +217,8 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
     // back to the existing data/pack bundle if the RuneScript toolchain/JDK
     // isn't available). Gated by a source hash so it only recompiles on change.
     stage!("compiling scripts");
-    if let Err(msg) = compile_server_scripts(&config) {
+    let content_dir = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
+    if let Err(msg) = compile_server_scripts(&content_dir) {
         // A broken script bundle halts startup — surface it to the control panel
         // splash first, then refuse to start (don't run on a stale bundle).
         if let Some(p) = progress.as_mut() {
@@ -278,12 +279,42 @@ pub fn run(mut config: ServerConfig) -> std::io::Result<()> {
         },
     );
 
+    // Script hot-reload: a background thread polls Content/scripts for changes,
+    // recompiles via the RuneScript toolchain, and — only on a successful build —
+    // signals the main loop to swap the bundle into the live world. A failed
+    // compile is logged and ignored, so the running server keeps the old pack.
+    // Disable with OS_NO_SCRIPT_WATCH=1.
+    let script_reload_rx = if std::env::var_os("OS_NO_SCRIPT_WATCH").is_some() {
+        None
+    } else {
+        Some(spawn_script_watcher(content_dir.clone()))
+    };
+
     let mut connections: Vec<Connection> = Vec::new();
     let mut next_tick = Instant::now() + TICK;
     let mut io_accum = Duration::ZERO;
 
     loop {
         let io_start = Instant::now();
+
+        // Hot-reload: drain any "recompiled bundle ready" signals and swap the
+        // new scripts into the live world (must run on this thread — World lives
+        // here). Coalesce bursts into a single reload.
+        if let Some(rx) = script_reload_rx.as_ref() {
+            let mut reload = false;
+            while rx.try_recv().is_ok() {
+                reload = true;
+            }
+            if reload {
+                if let Some(dir) = &config.script_dir {
+                    world.load_scripts(dir);
+                    eprintln!("[hot-reload] script bundle reloaded into live world");
+                    for p in world.players.iter_mut().flatten() {
+                        p.out.push(sproto::message_game("Server scripts reloaded."));
+                    }
+                }
+            }
+        }
         // Accept.
         loop {
             match listener.accept() {
@@ -542,8 +573,61 @@ fn prepare_served_cache(
 /// FATAL — returns `Err` so the server refuses to start on a broken bundle. The
 /// only non-fatal cases are "nothing to compile" (no source dir) and "compiler
 /// not installed" (no gradlew — a deploy may ship the prebuilt bundle).
-fn compile_server_scripts(config: &ServerConfig) -> Result<(), String> {
-    let content = config.content_dir.clone().unwrap_or_else(|| "Content".to_string());
+/// Spawn the script hot-reload watcher. Polls `{content_dir}/scripts` for source
+/// changes (the same path+size+mtime hash the boot compile is gated on) and, on a
+/// change, recompiles the bundle via [`compile_server_scripts`]. Each *successful*
+/// recompile sends `()` over the returned channel; the main loop reloads the
+/// bundle on receipt. A failed compile is logged and dropped — the server keeps
+/// running the previously-good pack until the next edit fixes the build.
+///
+/// Returns a never-firing receiver (and logs why) when hot-reload can't run:
+/// no script tree, or no RuneScript toolchain present.
+fn spawn_script_watcher(content_dir: String) -> std::sync::mpsc::Receiver<()> {
+    let (tx, rx) = std::sync::mpsc::channel();
+    let scripts_dir = Path::new(&content_dir).join("scripts");
+    let gradlew = if cfg!(windows) { "runescript/gradlew.bat" } else { "runescript/gradlew" };
+    if !scripts_dir.exists() {
+        eprintln!("[hot-reload] no {} — script watching disabled", scripts_dir.display());
+        return rx;
+    }
+    if !Path::new(gradlew).exists() {
+        eprintln!("[hot-reload] no RuneScript compiler ({gradlew}) — script watching disabled");
+        return rx;
+    }
+    eprintln!("[hot-reload] watching {} for script changes", scripts_dir.display());
+    std::thread::spawn(move || {
+        // Seed with the current state so we only react to edits made while the
+        // server is up (boot already compiled the present sources).
+        let mut last = scripts_source_hash(&scripts_dir);
+        loop {
+            std::thread::sleep(Duration::from_secs(2));
+            let h = scripts_source_hash(&scripts_dir);
+            if h == last {
+                continue;
+            }
+            // Advance the watermark even if the build fails: a broken edit
+            // shouldn't make us recompile every 2s. The next edit (e.g. the fix)
+            // changes the hash again and re-triggers.
+            last = h;
+            eprintln!("[hot-reload] script change detected — recompiling …");
+            match compile_server_scripts(&content_dir) {
+                Ok(()) => {
+                    if tx.send(()).is_err() {
+                        // Main loop is gone; stop watching.
+                        return;
+                    }
+                }
+                Err(msg) => {
+                    eprintln!("[hot-reload] compile FAILED — keeping the running pack:\n{msg}");
+                }
+            }
+        }
+    });
+    rx
+}
+
+fn compile_server_scripts(content_dir: &str) -> Result<(), String> {
+    let content = content_dir.to_string();
     let scripts_dir = Path::new(&content).join("scripts");
     if !scripts_dir.exists() {
         eprintln!("[server] no {} — keeping existing script bundle", scripts_dir.display());
