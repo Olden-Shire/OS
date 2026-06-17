@@ -411,7 +411,13 @@ pub fn logout(c: &mut Client) {
         }
     }
 
-    // Stop MIDI + clear queued audio.
+    // Stop MIDI + clear queued audio. Java logout() calls MidiManager.stop2()
+    // to fade the in-game song out — without it the region track keeps playing
+    // over the login screen. Clearing only the Client-level queues (as before)
+    // left the MidiManager itself running its current song.
+    if let Some(player) = c.pcm_player.as_ref() {
+        player.manager().lock().stop2();
+    }
     c.queued_song_id = -1;
     c.queued_jingle_id = -1;
     c.queued_jingle_fade_ms = 0;
@@ -2608,25 +2614,33 @@ pub fn if_button_x(c: &mut Client, op_index: i32, parent: i32, child: i32, op_ba
     // gate always passes (transmit = true).
     // Java 9382: only transmit the IF_BUTTON packet when the server op
     // bit is set; the onop hook above already ran regardless.
+    // `ifButtonX` is called with a 1-based opindex and gates on
+    // `ServerActive.hasOp(getActive(com), opindex - 1)`, i.e. event_code
+    // bit `op_index` (hasOp(ec, i) = (ec >> (i+1)) & 1). The old
+    // `1 << (op_index + 15)` checked the wrong field entirely (bits
+    // 16-20 are draggable/target flags), so a server op like the
+    // settings spanner never transmitted its IF_BUTTON1 packet.
     let active = get_active(c, &com);
-    let server_op_bit = active & (1 << (op_index + 15));
-    if server_op_bit == 0 {
+    if !crate::config::server_active::has_op(active, op_index - 1) {
         return;
     }
-    let parent_id = (parent << 16) | child;
-    let parent_top = parent_id >> 16;
-    let parent_low = parent_id & 0xFFFF;
+    // Java 9384-9387: IF_BUTTON{N} sends `p4(arg1) p2(arg2)` where arg1 is the
+    // PACKED component id (com.parentId) and arg2 is com.subId — the exact
+    // values handed to ifButtonX. `parent`/`child` here are already those
+    // (menuParamC/menuParamB), so pass them straight through. The old code
+    // re-packed an already-packed id (`(parent << 16) | child`), sending a
+    // garbage component id the server's [if_button] trigger never matched.
     match op_index {
-        1  => send_if_button_1(c, parent_top, parent_low),
-        2  => send_if_button_2(c, parent_top, parent_low),
-        3  => send_if_button_3(c, parent_top, parent_low),
-        4  => send_if_button_4(c, parent_top, parent_low),
-        5  => send_if_button_5(c, parent_top, parent_low),
-        6  => send_if_button_6(c, parent_top, parent_low),
-        7  => send_if_button_7(c, parent_top, parent_low),
-        8  => send_if_button_8(c, parent_top, parent_low),
-        9  => send_if_button_9(c, parent_top, parent_low),
-        10 => send_if_button_10(c, parent_top, parent_low),
+        1  => send_if_button_1(c, parent, child),
+        2  => send_if_button_2(c, parent, child),
+        3  => send_if_button_3(c, parent, child),
+        4  => send_if_button_4(c, parent, child),
+        5  => send_if_button_5(c, parent, child),
+        6  => send_if_button_6(c, parent, child),
+        7  => send_if_button_7(c, parent, child),
+        8  => send_if_button_8(c, parent, child),
+        9  => send_if_button_9(c, parent, child),
+        10 => send_if_button_10(c, parent, child),
         _  => {}
     }
 }
@@ -5213,8 +5227,13 @@ pub fn hide_component(c: &Client, com: &crate::config::if_type::IfType) -> bool 
 pub fn get_if_type_op_name(c: &Client, com: &crate::config::if_type::IfType, op_index: i32) -> Option<String> {
     if op_index < 0 { return None; }
     let active = get_active(c, com);
-    let server_op_bit = active & (1 << (op_index + 16));
-    if server_op_bit == 0 && com.hook_onop.is_none() {
+    // Java 12412: `!ServerActive.hasOp(getActive(com), opindex) && com.onop ==
+    // null`. `opindex` is 0-based here (the caller's loop var, NOT the +1
+    // form ifButtonX takes), so gate on hasOp(active, op_index) directly. The
+    // old `1 << (op_index + 16)` checked the wrong field (bits 16+ are
+    // draggable/target flags) — components with a server op but no onop hook
+    // would have dropped their op from the menu entirely.
+    if !crate::config::server_active::has_op(active, op_index) && com.hook_onop.is_none() {
         return None;
     }
     let idx = op_index as usize;
@@ -6966,6 +6985,12 @@ pub struct Client {
     // layer-type (type==0) and any that have an event handler
     // attached. Toggled by IF_OPENSUB / IF_CLOSESUB.
     pub modal_dialog_open: bool,
+    // custom — set during the interface draw pass when the mouse is over an
+    // open MODAL (type 0) sub-interface (the same condition that seeds the
+    // "Cancel" menu entry). Gates the scene-action ("Walk here" / loc / npc op)
+    // build at the gameDrawMain tail so clicks don't fall through a modal (e.g.
+    // the character-design screen) to the 3D scene. Reset each frame.
+    pub mouse_over_modal: bool,
     // @ObfuscatedName("client.chatPublicMode")/PrivateMode/TradeMode —
     // user-controlled chat filters.
     pub chat_public_mode: i32,
@@ -7519,6 +7544,7 @@ impl Client {
             stat_transmit_num: 0,
             server_active: std::collections::HashMap::new(),
             modal_dialog_open: false,
+            mouse_over_modal: false,
             chat_min_kick: 0,
             chat_rank: 0,
             chat_public_mode: 0,
@@ -7897,7 +7923,7 @@ impl GameShellLifecycle for Client {
                 drop(reg);
                 if let Some(midi) = midi {
                     dbg_log!("[audio] mainloop: scape_main arrived, {} bytes — calling swap_songs", midi.len());
-                    player.manager().lock().swap_songs(2, midi, false);
+                    player.manager().lock().swap_songs(2, midi, self.midi_volume, false);
                     self.music_started = true;
                 }
             }
@@ -7913,7 +7939,7 @@ impl GameShellLifecycle for Client {
                     .and_then(|l| l.fetch_file(self.queued_song_id, 0));
                 drop(reg);
                 if let Some(bytes) = bytes {
-                    player.manager().lock().swap_songs(2, bytes, false);
+                    player.manager().lock().swap_songs(2, bytes, self.midi_volume, false);
                     self.queued_song_id = -1;
                 }
             }
@@ -7923,7 +7949,7 @@ impl GameShellLifecycle for Client {
                     .and_then(|l| l.fetch_file(self.queued_jingle_id, 0));
                 drop(reg);
                 if let Some(bytes) = bytes {
-                    player.manager().lock().swap_songs(2, bytes, false);
+                    player.manager().lock().swap_songs(2, bytes, self.midi_volume, false);
                     self.queued_jingle_id = -1;
                 }
             }

@@ -85,7 +85,10 @@ fn play_scape_main() {
         .and_then(|l| l.get_file_by_name("scape main", ""));
     drop(reg);
     if let Some(midi) = midi {
-        manager.lock().swap_songs(2, midi, false);
+        // Full MIDI volume (255 = the Client.midi_volume default). The title
+        // song plays before the in-game volume option is applied, matching
+        // Java's TitleScreen using midiVolume's default.
+        manager.lock().swap_songs(2, midi, 255, false);
     }
 }
 

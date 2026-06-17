@@ -112,6 +112,19 @@ impl MidiManager {
         self.queued_pending = None;
     }
 
+    // @ObfuscatedName("by.stop2") — MidiManager.stop2 (MidiManager.java:191-199).
+    // Client.logout() calls this so the region track fades out (state 1, rate 2)
+    // and nothing is queued behind it — otherwise the in-game song keeps playing
+    // over the login screen after logout. Identical shape to begin_login_fade_out
+    // (TitleScreen.close's inline fade); kept separate to track its Java origin.
+    pub fn stop2(&mut self) {
+        self.state = 1;
+        self.queued_pending = None;
+        self.pending = None;
+        self.queued_volume = 0;
+        self.fade_out_rate = 2;
+    }
+
     // @ObfuscatedName("by.isInitialised") — MidiManager.isInitialised
     // (MidiManager.java:112-114): when idle, reflects whether the player
     // still has MIDI loaded; while fading/loading it's always "busy". Used
@@ -164,8 +177,8 @@ impl MidiManager {
     // playing and fades by fade_rate per tick (updateFadeOut); the new
     // one loads after the fade completes. (Java defers the MIDI decode
     // to updateLoading; we decode up front — same bytes either way.)
-    pub fn swap_songs(&mut self, fade_rate: i32, raw_midi: Vec<u8>, loop_song: bool) {
-        dbg_log!("[audio] swap_songs: raw={} bytes, fade_rate={fade_rate}", raw_midi.len());
+    pub fn swap_songs(&mut self, fade_rate: i32, raw_midi: Vec<u8>, volume: i32, loop_song: bool) {
+        dbg_log!("[audio] swap_songs: raw={} bytes, fade_rate={fade_rate}, vol={volume}", raw_midi.len());
         let midi = match std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
             crate::midi2::jagex_codec::decode(&raw_midi)
         })) {
@@ -177,12 +190,13 @@ impl MidiManager {
         };
         let mut file = MidiFile::from_standard(midi.clone());
         file.discover_patches();
-        // pendingVolume: Java callers pass the midiVolume option; our
-        // callers don't carry it, so capture the pre-fade volume once
-        // (a re-queue mid-fade keeps the original target).
-        if self.state != 1 {
-            self.queued_volume = self.player.global_volume;
-        }
+        // pendingVolume: Java's swapSongs(fadeRate, songs, group, file, vol,
+        // loop) records the caller's TARGET volume (midiVolume) and
+        // updateLoading restores it when the song starts. The old port
+        // captured `player.global_volume` instead — which is 0 after a login
+        // fade-out, so the region track loaded silent. Take the target volume
+        // from the caller, exactly like Java.
+        self.queued_volume = volume;
         self.state = 1;
         self.fade_out_rate = fade_rate;
         self.queued_pending = Some(PendingSong { midi, loop_song, file });
