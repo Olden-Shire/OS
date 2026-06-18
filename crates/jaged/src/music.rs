@@ -210,7 +210,8 @@ fn play_song(
         }
         return;
     };
-    p.manager().lock().swap_songs(2, raw_bytes.to_vec(), false);
+    // Full MIDI volume (255 = the client default); jaged previews at full level.
+    p.manager().lock().swap_songs(2, raw_bytes.to_vec(), 255, false);
     *player_error = None;
 }
 

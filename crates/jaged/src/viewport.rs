@@ -5,10 +5,7 @@
 //! if it ever shows up in a profile, share via a per-frame cache.
 
 use cache::content::pack_file;
-use cache::{
-    ANIMS_ARCHIVE, BASES_ARCHIVE, CONFIG_ARCHIVE, Cache, INTERFACES_ARCHIVE, MAPS_ARCHIVE,
-    MODELS_ARCHIVE,
-};
+use cache::{Cache, INTERFACES_ARCHIVE, MAPS_ARCHIVE, MODELS_ARCHIVE};
 use eframe::egui;
 
 use crate::Selection;
