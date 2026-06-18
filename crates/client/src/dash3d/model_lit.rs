@@ -1235,6 +1235,65 @@ impl ModelLit {
             let c = self.face_vertex_c[f] as usize;
             // Java ModelLit.draw line 1286-1290: Pix3D.trans = faceAlpha[face] & 0xFF.
             let trans = self.face_alpha.as_ref().map_or(0i32, |v| v[f] as i32 & 0xFF);
+            // Optional GPU scene path: instead of rasterizing, divert this face
+            // (in painter's order) into the per-frame capture buffer. View-space
+            // coords go straight to the GPU; textured faces are captured as their
+            // average-RGB tint until the GPU texture atlas lands. Skip the CPU
+            // pixel writes entirely. (No-op when the toggle is off.)
+            if crate::dash3d::scene_capture::capturing() {
+                use crate::dash3d::scene_capture as cap;
+                let alpha = cap::trans_to_alpha(trans);
+                let tex_id = self.face_texture_id.as_ref().map_or(-1i32, |v| v[f] as i32);
+                let cc_sentinel = self.face_colour_c[f];
+                // For flat faces (face_colour_c == -1) all three corners use
+                // face_colour_a; otherwise the three gouraud values. For
+                // textured faces these are the `tex_light` brightness scalars
+                // (2..126); for plain faces they're HSL palette indices.
+                let (ca, cb, cc) = if cc_sentinel == -1 {
+                    let a_ = self.face_colour_a[f];
+                    (a_, a_, a_)
+                } else {
+                    (self.face_colour_a[f], self.face_colour_b[f], cc_sentinel)
+                };
+                if tex_id >= 0 {
+                    // Texture anchor (P, M, N): the face's own verts when axis
+                    // is -1, else the explicit face_texture_p/m/n triple — same
+                    // selection as the CPU textured branch below.
+                    let axis = self.face_texture_axis.as_ref().map_or(-1i32, |v| v[f] as i32);
+                    let (pa, pb, pc) = if axis < 0 {
+                        (a, b, c)
+                    } else {
+                        let ai = axis as usize;
+                        let p = self.face_texture_p.as_ref().map_or(a as i16, |v| v[ai]) as usize;
+                        let m = self.face_texture_m.as_ref().map_or(b as i16, |v| v[ai]) as usize;
+                        let n = self.face_texture_n.as_ref().map_or(c as i16, |v| v[ai]) as usize;
+                        (p, m, n)
+                    };
+                    let uv = |q: usize| cap::jagex_uv(
+                        view_x[pa], view_y[pa], view_z[pa],
+                        view_x[pb], view_y[pb], view_z[pb],
+                        view_x[pc], view_y[pc], view_z[pc],
+                        view_x[q], view_y[q], view_z[q],
+                        zoom);
+                    let (ua, va) = uv(a);
+                    let (ub, vb) = uv(b);
+                    let (uc, vc) = uv(c);
+                    cap::emit_tri_tex(
+                        view_x[a], view_y[a], view_z[a], ca, ua, va,
+                        view_x[b], view_y[b], view_z[b], cb, ub, vb,
+                        view_x[c], view_y[c], view_z[c], cc, uc, vc,
+                        tex_id, alpha,
+                    );
+                } else {
+                    cap::emit_tri(
+                        view_x[a], view_y[a], view_z[a], ca,
+                        view_x[b], view_y[b], view_z[b], cb,
+                        view_x[c], view_y[c], view_z[c], cc,
+                        alpha,
+                    );
+                }
+                continue;
+            }
             pix3d::set_trans(trans);
             // Near-plane clipping path: interpolate any vertex with
             // view_z < NEAR_PLANE to the plane. Generates either 3

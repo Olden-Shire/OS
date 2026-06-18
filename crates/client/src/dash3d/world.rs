@@ -1933,7 +1933,13 @@ impl World {
                 self.ground_x = tile_x;
                 self.ground_z = tile_z;
             }
-            if underlay.texture == -1 {
+            if crate::dash3d::scene_capture::capturing() {
+                self.capture_ground_tri(
+                    [(vx2, vy2, vz2), (vx3, vy3, vz3), (vx1, vy1, vz1)],
+                    [(vx0, vy0, vz0), (vx1, vy1, vz1), (vx3, vy3, vz3)],
+                    [underlay.colour_ne, underlay.colour_nw, underlay.colour_se],
+                    underlay.texture);
+            } else if underlay.texture == -1 {
                 if underlay.colour_ne != 12345678 {
                     pix3d::gouraud_triangle(sx2, sy2, underlay.colour_ne,
                                             sx3, sy3, underlay.colour_nw,
@@ -1969,7 +1975,13 @@ impl World {
                 self.ground_x = tile_x;
                 self.ground_z = tile_z;
             }
-            if underlay.texture == -1 {
+            if crate::dash3d::scene_capture::capturing() {
+                self.capture_ground_tri(
+                    [(vx0, vy0, vz0), (vx1, vy1, vz1), (vx3, vy3, vz3)],
+                    [(vx0, vy0, vz0), (vx1, vy1, vz1), (vx3, vy3, vz3)],
+                    [underlay.colour_sw, underlay.colour_se, underlay.colour_nw],
+                    underlay.texture);
+            } else if underlay.texture == -1 {
                 if underlay.colour_sw != 12345678 {
                     pix3d::gouraud_triangle(sx0, sy0, underlay.colour_sw,
                                             sx1, sy1, underlay.colour_se,
@@ -2015,7 +2027,9 @@ impl World {
             if z < 50 {
                 return;
             }
-            if has_texture {
+            // The GPU capture path needs view-space coords for every vertex
+            // (not just textured tiles), so it can re-project on the GPU.
+            if has_texture || crate::dash3d::scene_capture::capturing() {
                 tex_x[i] = x;
                 tex_y[i] = y;
                 tex_z[i] = z;
@@ -2046,7 +2060,17 @@ impl World {
                     self.ground_z = tile_z;
                 }
                 let tex = overlay.face_texture[f];
-                if tex == -1 {
+                if crate::dash3d::scene_capture::capturing() {
+                    let va = (tex_x[a], tex_y[a], tex_z[a]);
+                    let vb = (tex_x[b], tex_y[b], tex_z[b]);
+                    let vc = (tex_x[c], tex_y[c], tex_z[c]);
+                    self.capture_ground_tri(
+                        [va, vb, vc],
+                        [va, vb, vc],
+                        [overlay.face_colour_a[f], overlay.face_colour_b[f],
+                         overlay.face_colour_c[f]],
+                        tex);
+                } else if tex == -1 {
                     if overlay.face_colour_a[f] != 12345678 {
                         pix3d::gouraud_triangle(x_a, y_a, overlay.face_colour_a[f],
                                                 x_b, y_b, overlay.face_colour_b[f],
@@ -2078,6 +2102,48 @@ impl World {
                         tex);
                 }
             }
+        }
+    }
+
+    // GPU scene capture: emit one terrain triangle (view-space coords) into the
+    // per-frame buffer. `v` is the triangle's 3 vertices; `anchor` is the
+    // (P, M, N) texture-plane anchor the CPU's texture_triangle_affine would use.
+    // For an untextured tile `col` holds per-corner HSL palette indices (and
+    // 12345678 marks a hidden tile to skip); for a textured tile `col` holds the
+    // per-corner light/brightness scalars and the texels come from the atlas
+    // with per-vertex UVs from the exact Jagex plane math. Terrain trans is 0
+    // (opaque), so alpha is 1.0; terrain zoom is the scene focal length (512).
+    fn capture_ground_tri(
+        &self,
+        v: [(i32, i32, i32); 3],
+        anchor: [(i32, i32, i32); 3],
+        col: [i32; 3],
+        texture: i32,
+    ) {
+        use crate::dash3d::scene_capture as cap;
+        if texture == -1 {
+            if col[0] == 12345678 {
+                return; // hidden tile — CPU skips it too
+            }
+            cap::emit_tri(
+                v[0].0, v[0].1, v[0].2, col[0],
+                v[1].0, v[1].1, v[1].2, col[1],
+                v[2].0, v[2].1, v[2].2, col[2],
+                1.0,
+            );
+        } else {
+            let (p, m, n) = (anchor[0], anchor[1], anchor[2]);
+            let uv = |q: (i32, i32, i32)| cap::jagex_uv(
+                p.0, p.1, p.2, m.0, m.1, m.2, n.0, n.1, n.2, q.0, q.1, q.2, 512);
+            let (u0, w0) = uv(v[0]);
+            let (u1, w1) = uv(v[1]);
+            let (u2, w2) = uv(v[2]);
+            cap::emit_tri_tex(
+                v[0].0, v[0].1, v[0].2, col[0], u0, w0,
+                v[1].0, v[1].1, v[1].2, col[1], u1, w1,
+                v[2].0, v[2].1, v[2].2, col[2], u2, w2,
+                texture, 1.0,
+            );
         }
     }
 

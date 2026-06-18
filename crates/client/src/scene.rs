@@ -917,6 +917,53 @@ pub fn ensure_world_built(collision: &mut [Option<crate::dash3d::CollisionMap>; 
 // Persistent offscreen image for the 3D viewport, reused per frame.
 static SCENE_IMAGE: Mutex<Vec<i32>> = Mutex::new(Vec::new());
 
+// Optional GPU scene path: the GL Present backend owns the only GL context, so
+// app.rs lends it to the scene render for the duration of the mainredraw call
+// via this thread-local raw pointer (set before mainredraw, cleared after). The
+// pointer is only ever dereferenced on this same (render) thread while the
+// borrow is live, and the Present object is never moved during the call.
+thread_local! {
+    static SCENE_PRESENT: std::cell::Cell<Option<*mut dyn crate::present::Present>> =
+        const { std::cell::Cell::new(None) };
+}
+
+/// Lend the active Present backend to the scene render for one frame. Unsafe:
+/// `p` must outlive the matching `clear_present`, which app.rs guarantees by
+/// calling it immediately after `mainredraw` returns.
+pub fn set_present(p: *mut dyn crate::present::Present) {
+    SCENE_PRESENT.with(|c| c.set(Some(p)));
+}
+pub fn clear_present() {
+    SCENE_PRESENT.with(|c| c.set(None));
+}
+
+// Reusable readback buffer for the GPU scene pixels.
+static SCENE_GPU_OUT: Mutex<Vec<u32>> = Mutex::new(Vec::new());
+
+// Try to render the captured scene on the GPU. Returns true and fills the bound
+// pix2d scene image on success; false (no present lent, soft backend, or GPU
+// failure) means the caller must fall back to the CPU rasterizer.
+fn try_gpu_scene() -> bool {
+    let ptr = SCENE_PRESENT.with(|c| c.get());
+    let Some(ptr) = ptr else { return false; };
+    let mut out = std::mem::take(&mut *SCENE_GPU_OUT.lock().unwrap());
+    let ok = {
+        let frame = crate::dash3d::scene_capture::CAPTURE.lock().unwrap();
+        // SAFETY: ptr is valid for this call (set around mainredraw, cleared
+        // after) and only used on this thread.
+        unsafe { (*ptr).render_scene(&*frame, &mut out) }
+    };
+    if ok {
+        let mut s = pix2d::STATE.lock().unwrap();
+        let n = out.len().min(s.pixels.len());
+        for i in 0..n {
+            s.pixels[i] = out[i] as i32;
+        }
+    }
+    *SCENE_GPU_OUT.lock().unwrap() = out;
+    ok
+}
+
 // Java renders the whole 3D pass into areaViewport — its own PixMap —
 // then blits it at (x, y); an escaped rasterizer span physically
 // cannot touch other UI areas. Mirror that: bind a scene-sized image,
@@ -1083,12 +1130,30 @@ fn draw_viewport_inner(w: i32, h: i32, mouse_off_x: i32, mouse_off_y: i32) {
     };
     let top_level = roof_check(cam_world_x, cam_world_z, cam_pitch.clamp(128, 383),
                                lp_x, lp_z, minusedlevel);
+    // Optional GPU path: capture the scene geometry (in painter's order) during
+    // render_all instead of rasterizing, then replay it on the GPU and read the
+    // pixels back into the bound scene image. On any failure (no GL present, or
+    // pipeline init failed) re-run render_all on the CPU. Off by default → the
+    // plain CPU path below.
+    let gpu = crate::debug_opts::gpu_scene();
+    let (origin_x, origin_y) = pix3d::origin();
+    let mut gpu_done = false;
     {
         let mut cache = WORLD_CACHE.lock().unwrap();
         if let Some(world) = cache.world.as_mut() {
-            world.render_all(cam_world_x, cam_world_y, cam_world_z,
-                             cam_pitch.clamp(128, 383), cam_yaw & 0x7FF, top_level);
-            world.remove_sprites();
+            if gpu {
+                crate::dash3d::scene_capture::begin(512, origin_x, origin_y, w, h);
+                world.render_all(cam_world_x, cam_world_y, cam_world_z,
+                                 cam_pitch.clamp(128, 383), cam_yaw & 0x7FF, top_level);
+                crate::dash3d::scene_capture::end();
+                world.remove_sprites();
+                gpu_done = try_gpu_scene();
+            }
+            if !gpu_done {
+                world.render_all(cam_world_x, cam_world_y, cam_world_z,
+                                 cam_pitch.clamp(128, 383), cam_yaw & 0x7FF, top_level);
+                world.remove_sprites();
+            }
         }
     }
     pix3d::set_trans(0);

@@ -356,7 +356,15 @@ impl App {
         // backend stretches it to the window and draws the perf overlay on
         // top at native resolution.
         let mut fb = Framebuffer::new(&mut self.frame, WIDTH as i32, HEIGHT as i32);
+        // Lend the Present backend (which owns the only GL context) to the scene
+        // render for the duration of mainredraw so the optional GPU scene path
+        // can reach it. The raw pointer is cleared immediately after; the
+        // Present is not touched elsewhere during the call.
+        if let Some(p) = self.present.as_deref_mut() {
+            crate::scene::set_present(p as *mut dyn present::Present);
+        }
         self.client.mainredraw(&mut fb);
+        crate::scene::clear_present();
 
         // Debug ground truth: CLIENT_FRAME_DUMP=path dumps the finished CPU
         // frame every 300 redraws — verifies mainredraw output without any

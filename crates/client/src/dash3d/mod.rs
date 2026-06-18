@@ -27,6 +27,7 @@ pub mod model_unlit;
 pub mod occlude;
 pub mod pix3d;
 pub mod player_model;
+pub mod scene_capture;
 pub mod texture_manager;
 
 pub use client_entity::ClientEntity;

@@ -286,6 +286,10 @@ impl PerfOverlay {
                 if ui.checkbox("extended draw distance", &mut extended) {
                     crate::debug_opts::set_extended_draw(extended);
                 }
+                let mut gpu = crate::debug_opts::gpu_scene();
+                if ui.checkbox("GPU scene render (experimental)", &mut gpu) {
+                    crate::debug_opts::set_gpu_scene(gpu);
+                }
             });
 
         let draw_data = self.ctx.render();

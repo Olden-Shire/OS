@@ -98,6 +98,10 @@ pub struct GlPresent {
     pipe: Pipeline,
     frame_tex_size: (u32, u32),
     font_tex: Option<glow::Texture>,
+    // GLES/WebGL2 shader variant flag + the lazily-built optional GPU scene
+    // pipeline (only allocated the first time the gpu_scene toggle renders).
+    es: bool,
+    scene_pipe: Option<super::scene_gpu::ScenePipeline>,
 }
 
 impl GlPresent {
@@ -150,6 +154,8 @@ impl GlPresent {
                 pipe,
                 frame_tex_size: (0, 0),
                 font_tex: None,
+                es,
+                scene_pipe: None,
             },
         ))
     }
@@ -194,6 +200,8 @@ impl GlPresent {
                 pipe,
                 frame_tex_size: (0, 0),
                 font_tex: None,
+                es: true,
+                scene_pipe: None,
             },
         ))
     }
@@ -298,6 +306,26 @@ impl GlPresent {
 impl super::Present for GlPresent {
     fn name(&self) -> &'static str {
         "gl"
+    }
+
+    fn render_scene(
+        &mut self,
+        frame: &crate::dash3d::scene_capture::SceneFrame,
+        out: &mut Vec<u32>,
+    ) -> bool {
+        // Lazily build the scene pipeline on first use; if it fails to compile,
+        // disable the path for the rest of the session (returns false → CPU).
+        if self.scene_pipe.is_none() {
+            match unsafe { super::scene_gpu::ScenePipeline::new(&self.gl, self.es) } {
+                Ok(p) => self.scene_pipe = Some(p),
+                Err(e) => {
+                    eprintln!("[present] gpu scene pipeline failed to init: {e} — using CPU");
+                    return false;
+                }
+            }
+        }
+        let pipe = self.scene_pipe.as_mut().unwrap();
+        unsafe { pipe.render(&self.gl, frame, out) }
     }
 
     fn resize(&mut self, width: u32, height: u32) {
@@ -474,11 +502,11 @@ fn err(e: String) -> Box<dyn Error> {
     e.into()
 }
 
-fn as_bytes<T: Copy>(v: &[T]) -> &[u8] {
+pub(super) fn as_bytes<T: Copy>(v: &[T]) -> &[u8] {
     unsafe { std::slice::from_raw_parts(v.as_ptr().cast(), std::mem::size_of_val(v)) }
 }
 
-unsafe fn tex_params(gl: &glow::Context, filter: u32) {
+pub(super) unsafe fn tex_params(gl: &glow::Context, filter: u32) {
     unsafe {
         gl.tex_parameter_i32(glow::TEXTURE_2D, glow::TEXTURE_MIN_FILTER, filter as i32);
         gl.tex_parameter_i32(glow::TEXTURE_2D, glow::TEXTURE_MAG_FILTER, filter as i32);
@@ -495,7 +523,7 @@ unsafe fn tex_params(gl: &glow::Context, filter: u32) {
     }
 }
 
-unsafe fn link_program(
+pub(super) unsafe fn link_program(
     gl: &glow::Context,
     vs_src: &str,
     fs_src: &str,

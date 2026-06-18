@@ -39,6 +39,13 @@ static ALWAYS_HIDE_ROOFS: AtomicBool = AtomicBool::new(false);
 /// gating) and push the model far-cull out to match.
 static EXTENDED_DRAW: AtomicBool = AtomicBool::new(false);
 
+/// Render the 3D viewport on the GPU (offscreen FBO → readback → the same
+/// SCENE_IMAGE composite) instead of the CPU software rasterizer. Optional,
+/// experimental, visually close but not byte-identical. Falls back to the CPU
+/// path automatically when unsupported (soft present backend / FBO failure).
+/// Disabled by default for 1:1.
+static GPU_SCENE: AtomicBool = AtomicBool::new(false);
+
 pub fn middle_drag_camera() -> bool { MIDDLE_DRAG_CAMERA.load(Ordering::Relaxed) }
 pub fn set_middle_drag_camera(v: bool) { MIDDLE_DRAG_CAMERA.store(v, Ordering::Relaxed); }
 
@@ -59,3 +66,6 @@ pub fn set_always_hide_roofs(v: bool) { ALWAYS_HIDE_ROOFS.store(v, Ordering::Rel
 
 pub fn extended_draw() -> bool { EXTENDED_DRAW.load(Ordering::Relaxed) }
 pub fn set_extended_draw(v: bool) { EXTENDED_DRAW.store(v, Ordering::Relaxed); }
+
+pub fn gpu_scene() -> bool { GPU_SCENE.load(Ordering::Relaxed) }
+pub fn set_gpu_scene(v: bool) { GPU_SCENE.store(v, Ordering::Relaxed); }

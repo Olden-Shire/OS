@@ -17,6 +17,7 @@
 // path must keep working as the fidelity reference.
 
 pub mod gl;
+pub mod scene_gpu;
 pub mod soft;
 
 // Destination rect (x, y, w, h, top-left origin in window coords) of the
@@ -47,6 +48,20 @@ pub trait Present {
 
     // Window grew/shrank — resize the swapchain/surface to match.
     fn resize(&mut self, width: u32, height: u32);
+
+    // Optional GPU scene path: render the captured `frame` geometry to an
+    // offscreen target and read the pixels back into `out` (sized w*h,
+    // 0x00RRGGBB, top-left origin). Returns true if it ran; the default
+    // (and the soft backend) returns false so the caller falls back to the
+    // CPU rasterizer. Only the GL backend overrides this.
+    fn render_scene(
+        &mut self,
+        frame: &crate::dash3d::scene_capture::SceneFrame,
+        out: &mut Vec<u32>,
+    ) -> bool {
+        let _ = (frame, out);
+        false
+    }
 
     // Stretch the finished game frame (`frame`, `fw` x `fh`) to the window
     // (`win_w` x `win_h`), draw the overlay, and flip.
